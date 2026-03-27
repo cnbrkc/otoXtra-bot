@@ -18,23 +18,16 @@
 name: otoXtra News Bot
 
 on:
-  # ── Zamanlanmış çalışma (UTC cinsinden) ──
-  # Türkiye = UTC + 3 saat
   schedule:
-    - cron: '0 5 * * *'    # Türkiye saati 08:00
-    - cron: '0 7 * * *'    # Türkiye saati 10:00
-    - cron: '0 9 * * *'    # Türkiye saati 12:00
-    - cron: '0 11 * * *'   # Türkiye saati 14:00
-    - cron: '0 13 * * *'   # Türkiye saati 16:00
-    - cron: '0 15 * * *'   # Türkiye saati 18:00
-    - cron: '0 17 * * *'   # Türkiye saati 20:00
-
-  # ── Manuel tetikleme ──
-  # GitHub'da Actions sekmesinde "Run workflow" butonuyla çalıştırılabilir
+    - cron: '0 5 * * *'
+    - cron: '0 7 * * *'
+    - cron: '0 9 * * *'
+    - cron: '0 11 * * *'
+    - cron: '0 13 * * *'
+    - cron: '0 15 * * *'
+    - cron: '0 17 * * *'
   workflow_dispatch:
 
-# ── İzinler ──
-# posted_news.json dosyasını güncelleyip commit etmek için yazma izni gerekli
 permissions:
   contents: write
 
@@ -44,23 +37,19 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ── Adım 1: Repo'yu indir ──
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      # ── Adım 2: Python kur ──
       - name: Setup Python 3.11
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      # ── Adım 3: Bağımlılıkları yükle ──
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      # ── Adım 4: Botu çalıştır ──
       - name: Run otoXtra bot
         run: python src/main.py
         env:
@@ -69,11 +58,8 @@ jobs:
           HF_API_KEY: ${{ secrets.HF_API_KEY }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
 
-      # ── Adım 5: Güncellenen veriyi commit et ──
-      # posted_news.json her paylaşımda güncellenir
-      # Bu adım değişiklik varsa commit + push yapar
-      # Değişiklik yoksa (paylaşım yapılmadıysa) hiçbir şey yapmaz
       - name: Commit and push updated data
         run: |
           git config user.name "otoXtra Bot"
