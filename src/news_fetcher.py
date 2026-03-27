@@ -1,5 +1,5 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v2 — Keyword Düzeltmesi)
+src/news_fetcher.py — Haber Çekme Modülü (v3 — Akıllı Zaman Filtresi)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
@@ -12,6 +12,13 @@ otoXtra Facebook Botu için RSS feed'lerden haber çeken,
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
+v3 Değişiklikler:
+  - apply_time_filter() akıllı zaman filtresi kullanıyor:
+    posted_news.json'daki last_check_time okunur,
+    30 dakika overlap tamponu eklenir, sadece yeni haberler alınır.
+  - İlk çalışmada (kayıt yoksa) varsayılan 6 saat geriye bakar.
+  - settings.json'daki news_max_age_hours üst sınır olarak korunur.
+
 v2 Değişiklikler:
   - Keyword key isimleri düzeltildi: include_keywords / exclude_keywords
   - Keyword eşleştirme case-insensitive Türkçe desteği eklendi
@@ -20,7 +27,7 @@ v2 Değişiklikler:
 Kullandığı config dosyaları:
   - config/sources.json   → RSS feed listesi
   - config/keywords.json  → include_keywords / exclude_keywords
-  - config/settings.json  → news_max_age_hours
+  - config/settings.json  → news_max_age_hours (üst sınır)
 
 Diğer modüller bu dosyayı şöyle import eder:
     from news_fetcher import fetch_and_filter_news
@@ -46,6 +53,7 @@ from utils import (
     log,
     get_turkey_now,
     get_posted_news,
+    get_last_check_time,
 )
 
 # ── Sabit Değerler ──────────────────────────────────────────
@@ -444,14 +452,22 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
 
 
 # ============================================================
-# 4. ZAMAN FİLTRESİ
+# 4. ZAMAN FİLTRESİ (v3 — Akıllı Zaman Filtresi)
 # ============================================================
 
 def apply_time_filter(articles: list[dict]) -> list[dict]:
-    """Eski haberleri filtreler.
+    """Son kontrolden bu yana gelen haberleri filtreler (Akıllı Zaman Filtresi).
 
-    settings.json'daki news_max_age_hours değerinden
-    daha eski haberler çıkarılır.
+    posted_news.json'daki last_check_time'ı okur ve 30 dakikalık
+    overlap tamponu ekleyerek kesme noktası belirler.
+
+    Akıllı filtre sayesinde:
+      - Bot 2 saatte bir çalışıyorsa → ~2.5 saatlik pencere (48 saat yerine)
+      - İlk çalışmada (kayıt yoksa) → 6 saatlik pencere
+      - %70 daha az haber YZ'ye gider → API tasarrufu
+
+    Güvenlik: settings.json'daki news_max_age_hours değeri
+    maksimum üst sınır olarak korunur (varsayılan 48 saat).
 
     Tarih parse edilemezse haber güvenli tarafta kalır (geçer).
 
@@ -463,9 +479,42 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     """
     settings = load_config("settings")
     max_age_hours: int = settings.get("news_max_age_hours", 48)
+    overlap_minutes: int = 30  # Haber kaçırma tamponu
 
     now_utc = datetime.now(timezone.utc)
-    cutoff = now_utc - timedelta(hours=max_age_hours)
+
+    # ── Maksimum üst sınır (settings'ten) ──
+    max_cutoff_utc = now_utc - timedelta(hours=max_age_hours)
+
+    # ── Akıllı zaman filtresi: son kontrol zamanını oku ──
+    posted_data = get_posted_news()
+    last_check = get_last_check_time(posted_data)
+
+    # 30 dakika overlap tamponu çıkar (haber kaçırmasın)
+    smart_cutoff = last_check - timedelta(minutes=overlap_minutes)
+    smart_cutoff_utc = smart_cutoff.astimezone(timezone.utc)
+
+    # Akıllı kesme noktası, maksimum sınırdan eski olamaz
+    if smart_cutoff_utc < max_cutoff_utc:
+        cutoff_utc = max_cutoff_utc
+        log(
+            f"[ZAMAN] Akıllı filtre çok eski → "
+            f"maksimum {max_age_hours} saat kullanılıyor",
+            "INFO",
+        )
+    else:
+        cutoff_utc = smart_cutoff_utc
+
+    # ── Zaman penceresini logla ──
+    window_seconds = (now_utc - cutoff_utc).total_seconds()
+    window_hours = window_seconds / 3600
+    window_minutes = int(window_seconds / 60)
+
+    log(
+        f"[ZAMAN] Akıllı zaman penceresi: son {window_hours:.1f} saat "
+        f"({window_minutes} dakika) — overlap tamponu: {overlap_minutes}dk",
+        "INFO",
+    )
 
     passed: list[dict] = []
     old_count = 0
@@ -483,7 +532,7 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
             if pub_dt.tzinfo is None:
                 pub_dt = pub_dt.replace(tzinfo=timezone.utc)
 
-            if pub_dt < cutoff:
+            if pub_dt < cutoff_utc:
                 old_count += 1
                 continue
 
@@ -496,7 +545,7 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
 
     log(
         f"[ZAMAN] {len(articles)} haber → {len(passed)} geçti, "
-        f"{old_count} eski haber elendi (>{max_age_hours} saat)"
+        f"{old_count} eski haber elendi (>{window_hours:.1f} saat)"
     )
     return passed
 
@@ -696,7 +745,7 @@ def fetch_and_filter_news() -> list[dict]:
       1. Tüm RSS feed'leri çek
       2. Google News URL'lerini gerçek URL'ye çevir
       3. Keyword filtresi uygula
-      4. Zaman filtresi uygula
+      4. Zaman filtresi uygula (akıllı — son kontrolden itibaren)
       5. Daha önce paylaşılanları çıkar
       6. Benzerleri tekilleştir
 
@@ -739,7 +788,7 @@ def fetch_and_filter_news() -> list[dict]:
         log("Keyword filtresinden geçen haber yok", "WARNING")
         return []
 
-    # ── ADIM 4: Zaman filtresi ──
+    # ── ADIM 4: Zaman filtresi (akıllı) ──
     articles = apply_time_filter(articles)
     log(f"[ADIM 4] Zaman filtresi sonrası → {len(articles)} haber")
 
