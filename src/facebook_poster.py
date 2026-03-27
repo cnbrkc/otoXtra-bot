@@ -1,27 +1,19 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v3 — Timeline Fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v4 — Feed Fix)
 
-v3 Değişiklik:
-  - Fotoğraflı paylaşımda 3 yöntem sırayla denenir:
-    Yöntem A: /{page_id}/photos + published=true (en basit, direkt timeline)
-              → message parametresi ile metin de eklenir
-              → Facebook bunu timeline'a atar (photos endpoint AMA published=true)
-    Yöntem B: Görsel URL ile /{page_id}/feed (url parametresi)
-    Yöntem C: Sadece metin /{page_id}/feed (son çare)
-  
-  NOT: Eski v2'deki "published=false + attached_media" yöntemi
-  bazı sayfalarda Fotoğraflar albümüne düşürüyordu.
-  
-  v3'te photos endpoint'i published=true ile kullanılıyor.
-  Bu yöntemde görsel + metin birlikte timeline'da görünür.
-  Facebook'un kendi dokümantasyonuna göre /{page_id}/photos 
-  endpoint'ine published=true (varsayılan) ile yapılan paylaşımlar
-  hem Fotoğraflar albümüne EKLENİR hem de timeline'da GÖRÜNÜR.
-  
-  Sorun: Eğer sayfanın ayarlarında "Fotoğraf paylaşımlarını 
-  timeline'da göster" kapalıysa, sadece albüme düşer.
-  
-  ÇÖZÜM: Bu durumda Yöntem B devreye girer (feed + görsel URL).
+v4 Değişiklik:
+  - Fotoğraflı paylaşımda TEK DOĞRU YÖNTEM kullanılır:
+    1. Görseli published=false ile yükle (temporary OLMADAN)
+    2. /{page_id}/feed + attached_media ile paylaş
+    
+  - Bu yöntem görseli FEED'de (ana sayfada) gösterir
+  - Eski yöntemlerdeki sorunlar:
+    * object_attachment → "unknown error" hatası veriyordu
+    * temporary=true → Fotoğraflar sekmesine düşürüyordu
+    * photos + published=true → Bazen sadece albüme ekliyordu
+    
+  - Yedek olarak: photos + published=true (Yöntem B)
+  - Son çare: Sadece metin paylaşımı
 
 Ortam değişkenleri (GitHub Secrets'ta saklanır):
   - FB_PAGE_ID       → Facebook sayfa ID numarası  
@@ -49,7 +41,7 @@ from utils import (
 # Sabitler
 # ──────────────────────────────────────────────
 
-_FB_API_VERSION: str = "v19.0"
+_FB_API_VERSION: str = "v21.0"
 _FB_BASE_URL: str = f"https://graph.facebook.com/{_FB_API_VERSION}"
 
 # HTTP istek zaman aşımı (saniye)
@@ -84,51 +76,18 @@ def _extract_post_id(fb_response: dict) -> str:
     return fb_response.get("id", "")
 
 
-def _check_timeline_visibility(post_id: str, access_token: str) -> bool:
-    """
-    Paylaşılan postun timeline'da görünüp görünmediğini kontrol eder.
-    
-    Facebook Graph API ile post'un detaylarını çeker.
-    Post bulunabiliyorsa timeline'da var demektir.
-    
-    Args:
-        post_id: Facebook post ID'si.
-        access_token: Sayfa erişim tokenı.
-    
-    Returns:
-        True: Post timeline'da görünüyor.
-        False: Kontrol edilemedi veya görünmüyor.
-    """
+def _mask_id(post_id: str) -> str:
+    """Post ID'sini logda kısmen maskeler."""
     if not post_id:
-        return False
-    
-    try:
-        check_url = f"{_FB_BASE_URL}/{post_id}"
-        params = {
-            "fields": "id,message,created_time",
-            "access_token": access_token,
-        }
-        
-        resp = requests.get(check_url, params=params, timeout=10)
-        resp_json = resp.json()
-        
-        if "error" in resp_json:
-            log(f"⚠️ Timeline kontrol hatası: {resp_json['error'].get('message', '')}", "WARNING")
-            return False
-        
-        if resp_json.get("id"):
-            log(f"✅ Post timeline'da doğrulandı: {resp_json.get('id')}", "INFO")
-            return True
-        
-        return False
-        
-    except Exception as e:
-        log(f"⚠️ Timeline kontrol hatası: {e}", "WARNING")
-        return False
+        return "???"
+    parts = post_id.split("_")
+    if len(parts) == 2:
+        return f"***_{parts[1]}"
+    return post_id
 
 
 # ──────────────────────────────────────────────
-# YÖNTEM A: photos + published=true
+# YÖNTEM A (ÖNCELİKLİ): Upload + Feed attached_media
 # ──────────────────────────────────────────────
 
 def _post_photo_method_a(
@@ -138,161 +97,19 @@ def _post_photo_method_a(
     message: str,
 ) -> Optional[dict]:
     """
-    Yöntem A: /{page_id}/photos endpoint'ine published=true ile gönder.
+    Yöntem A: Görseli unpublished yükle → feed'e attached_media ile paylaş.
     
-    Facebook dokümantasyonuna göre:
-    - published=true (varsayılan) → Görsel hem albüme eklenir HEM timeline'da görünür
-    - published=false → Sadece albüme eklenir, timeline'da görünmez
+    Bu yöntem Facebook'un resmi olarak desteklediği
+    "fotoğraflı feed post" yöntemidir.
     
-    ÖNCEKİ SORUN: published parametresi gönderilmiyordu,
-    Facebook varsayılan olarak true kabul eder ama bazen
-    sayfa ayarlarına göre timeline'a eklemeyebilir.
+    ADIM 1: /{page_id}/photos → published=false (temporary YOK!)
+            → photo_id alınır
+    ADIM 2: /{page_id}/feed  → attached_media[0]={"media_fbid": photo_id}
+            → Post FEED'de (ana sayfada) görünür
     
-    Args:
-        page_id: Facebook sayfa ID.
-        access_token: Sayfa erişim tokenı.
-        image_path: Görsel dosya yolu.
-        message: Post metni.
-    
-    Returns:
-        Başarılıysa API yanıt dict'i, değilse None.
-    """
-    url: str = f"{_FB_BASE_URL}/{page_id}/photos"
-    
-    log(f"📤 Yöntem A: photos + published=true", "INFO")
-    
-    try:
-        with open(image_path, "rb") as image_file:
-            files = {
-                "source": image_file,
-            }
-            data = {
-                "message": message,
-                "published": "true",
-                "access_token": access_token,
-            }
-            
-            response = requests.post(
-                url,
-                files=files,
-                data=data,
-                timeout=_REQUEST_TIMEOUT,
-            )
-        
-        response_json: dict = response.json()
-        
-        if "error" in response_json:
-            error_info = response_json["error"]
-            log(
-                f"❌ Yöntem A hatası: [{error_info.get('code', 0)}] "
-                f"{error_info.get('message', 'Bilinmeyen')}",
-                "ERROR",
-            )
-            return None
-        
-        post_id = _extract_post_id(response_json)
-        if post_id:
-            log(f"✅ Yöntem A başarılı: photo_id={post_id}", "INFO")
-            
-            # Timeline'da görünüp görünmediğini kontrol et
-            # photos endpoint'i page_id_photo_id formatında döner
-            # Feed'deki post ID'si farklı olabilir
-            # Ama genelde timeline'da görünür
-            
-            return response_json
-        
-        log(f"⚠️ Yöntem A: Beklenmeyen yanıt: {response_json}", "WARNING")
-        return None
-        
-    except FileNotFoundError:
-        log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
-        return None
-    except requests.exceptions.Timeout:
-        log(f"❌ Yöntem A zaman aşımı", "ERROR")
-        return None
-    except requests.exceptions.RequestException as e:
-        log(f"❌ Yöntem A istek hatası: {e}", "ERROR")
-        return None
-    except Exception as e:
-        log(f"❌ Yöntem A beklenmeyen hata: {e}", "ERROR")
-        return None
-
-
-# ──────────────────────────────────────────────
-# YÖNTEM B: feed + görsel URL
-# ──────────────────────────────────────────────
-
-def _upload_photo_get_url(
-    page_id: str,
-    access_token: str,
-    image_path: str,
-) -> Optional[str]:
-    """
-    Görseli Facebook'a yükler ve URL'sini döner.
-    
-    published=false ile yükler, sonra photo ID üzerinden
-    URL'yi çeker.
-    
-    Returns:
-        Görsel URL'si veya None.
-    """
-    url: str = f"{_FB_BASE_URL}/{page_id}/photos"
-    
-    try:
-        with open(image_path, "rb") as image_file:
-            files = {"source": image_file}
-            data = {
-                "published": "false",
-                "access_token": access_token,
-            }
-            
-            response = requests.post(
-                url, files=files, data=data, timeout=_REQUEST_TIMEOUT
-            )
-        
-        response_json = response.json()
-        
-        if "error" in response_json:
-            return None
-        
-        photo_id = response_json.get("id", "")
-        if not photo_id:
-            return None
-        
-        # Photo URL'sini çek
-        photo_url_endpoint = f"{_FB_BASE_URL}/{photo_id}"
-        params = {
-            "fields": "images",
-            "access_token": access_token,
-        }
-        
-        photo_resp = requests.get(
-            photo_url_endpoint, params=params, timeout=10
-        )
-        photo_data = photo_resp.json()
-        
-        images = photo_data.get("images", [])
-        if images:
-            # En büyük görselin URL'sini al
-            return images[0].get("source", "")
-        
-        return None
-        
-    except Exception:
-        return None
-
-
-def _post_photo_method_b(
-    page_id: str,
-    access_token: str,
-    image_path: str,
-    message: str,
-) -> Optional[dict]:
-    """
-    Yöntem B: Görseli yükle → URL al → /{page_id}/feed ile paylaş.
-    
-    Bu yöntem görseli feed'e "link" olarak ekler.
-    Timeline'da kesinlikle görünür.
+    ÖNEMLİ: "temporary" parametresi KULLANILMAZ!
+    temporary=true olunca Facebook görseli geçici sayar ve
+    feed'e düzgün bağlayamaz, Fotoğraflar sekmesine düşürür.
     
     Args:
         page_id: Facebook sayfa ID.
@@ -303,9 +120,9 @@ def _post_photo_method_b(
     Returns:
         Başarılıysa API yanıt dict'i, değilse None.
     """
-    log(f"📤 Yöntem B: feed + object_attachment", "INFO")
+    log("📤 Yöntem A: Upload (published=false) → Feed (attached_media)", "INFO")
     
-    # Adım 1: Görseli unpublished olarak yükle
+    # ── ADIM 1: Görseli unpublished olarak yükle ──
     upload_url: str = f"{_FB_BASE_URL}/{page_id}/photos"
     
     try:
@@ -313,9 +130,10 @@ def _post_photo_method_b(
             files = {"source": image_file}
             data = {
                 "published": "false",
-                "temporary": "true",
                 "access_token": access_token,
             }
+            # NOT: "temporary" parametresi KASITLI OLARAK YOK!
+            # temporary=true görseli geçici yapar ve feed'e düzgün bağlanamaz
             
             upload_resp = requests.post(
                 upload_url, files=files, data=data, timeout=_REQUEST_TIMEOUT
@@ -325,32 +143,41 @@ def _post_photo_method_b(
         
         if "error" in upload_json:
             error_msg = upload_json["error"].get("message", "Bilinmeyen")
-            log(f"❌ Yöntem B görsel yükleme hatası: {error_msg}", "ERROR")
+            error_code = upload_json["error"].get("code", 0)
+            log(
+                f"❌ Yöntem A Adım 1 hatası: [{error_code}] {error_msg}",
+                "ERROR",
+            )
             return None
         
         photo_id = upload_json.get("id", "")
         if not photo_id:
-            log("❌ Yöntem B: photo_id alınamadı", "ERROR")
+            log("❌ Yöntem A: photo_id alınamadı", "ERROR")
             return None
         
-        log(f"✅ Yöntem B Adım 1: Görsel yüklendi → photo_id={photo_id}", "INFO")
+        log(f"✅ Yöntem A Adım 1: Görsel yüklendi → photo_id={photo_id}", "INFO")
         
     except FileNotFoundError:
         log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
         return None
+    except requests.exceptions.Timeout:
+        log("❌ Yöntem A Adım 1: Görsel yükleme zaman aşımı", "ERROR")
+        return None
     except Exception as e:
-        log(f"❌ Yöntem B görsel yükleme hatası: {e}", "ERROR")
+        log(f"❌ Yöntem A Adım 1 hatası: {e}", "ERROR")
         return None
     
-    # Adım 2: Feed'e post at, object_attachment ile görseli bağla
+    # ── ADIM 2: Feed'e attached_media ile paylaş ──
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
     
     try:
         post_data = {
             "message": message,
-            "object_attachment": photo_id,
+            "attached_media[0]": json.dumps({"media_fbid": photo_id}),
             "access_token": access_token,
         }
+        
+        log("📤 Yöntem A Adım 2: Feed'e attached_media ile paylaşılıyor...", "INFO")
         
         post_resp = requests.post(
             feed_url, data=post_data, timeout=_REQUEST_TIMEOUT
@@ -363,51 +190,101 @@ def _post_photo_method_b(
             error_msg = error_info.get("message", "Bilinmeyen")
             error_code = error_info.get("code", 0)
             log(
-                f"❌ Yöntem B feed hatası: [{error_code}] {error_msg}",
+                f"❌ Yöntem A Adım 2 hatası: [{error_code}] {error_msg}",
                 "ERROR",
             )
-            
-            # object_attachment desteklenmiyorsa attached_media dene
-            log("🔄 object_attachment başarısız, attached_media deneniyor...", "INFO")
-            
-            post_data_v2 = {
-                "message": message,
-                "attached_media[0]": json.dumps({"media_fbid": photo_id}),
-                "access_token": access_token,
-            }
-            
-            post_resp_v2 = requests.post(
-                feed_url, data=post_data_v2, timeout=_REQUEST_TIMEOUT
-            )
-            
-            post_json_v2 = post_resp_v2.json()
-            
-            if "error" in post_json_v2:
-                error_msg_v2 = post_json_v2["error"].get("message", "")
-                log(f"❌ attached_media da başarısız: {error_msg_v2}", "ERROR")
-                return None
-            
-            pid = _extract_post_id(post_json_v2)
-            if pid:
-                log(f"✅ Yöntem B (attached_media) başarılı: ID={pid}", "INFO")
-                return post_json_v2
-            
             return None
         
         post_id = _extract_post_id(post_json)
         if post_id:
-            log(f"✅ Yöntem B başarılı: ID={post_id}", "INFO")
-            log(f"🎯 Post ANA SAYFADA görünecek (feed endpoint)", "INFO")
+            log(f"✅ Yöntem A Adım 2: Feed post başarılı → ID={_mask_id(post_id)}", "INFO")
+            log("🎯 Post ANA SAYFADA (feed'de) görünecek!", "INFO")
             return post_json
         
-        log(f"⚠️ Yöntem B: Beklenmeyen yanıt: {post_json}", "WARNING")
+        log(f"⚠️ Yöntem A: Beklenmeyen yanıt: {post_json}", "WARNING")
         return None
         
     except requests.exceptions.Timeout:
-        log(f"❌ Yöntem B feed zaman aşımı", "ERROR")
+        log("❌ Yöntem A Adım 2: Feed paylaşım zaman aşımı", "ERROR")
         return None
     except Exception as e:
-        log(f"❌ Yöntem B feed hatası: {e}", "ERROR")
+        log(f"❌ Yöntem A Adım 2 hatası: {e}", "ERROR")
+        return None
+
+
+# ──────────────────────────────────────────────
+# YÖNTEM B (YEDEK): photos + published=true
+# ──────────────────────────────────────────────
+
+def _post_photo_method_b(
+    page_id: str,
+    access_token: str,
+    image_path: str,
+    message: str,
+) -> Optional[dict]:
+    """
+    Yöntem B (yedek): /{page_id}/photos + published=true.
+    
+    Bu yöntemde görsel Fotoğraflar albümüne eklenir ve
+    AYNI ZAMANDA timeline'da da görünür (sayfa ayarlarına bağlı).
+    
+    Yöntem A başarısız olursa bu denenır.
+    
+    Args:
+        page_id: Facebook sayfa ID.
+        access_token: Sayfa erişim tokenı.
+        image_path: Görsel dosya yolu.
+        message: Post metni.
+    
+    Returns:
+        Başarılıysa API yanıt dict'i, değilse None.
+    """
+    url: str = f"{_FB_BASE_URL}/{page_id}/photos"
+    
+    log("📤 Yöntem B: photos + published=true (yedek)", "INFO")
+    
+    try:
+        with open(image_path, "rb") as image_file:
+            files = {"source": image_file}
+            data = {
+                "message": message,
+                "published": "true",
+                "access_token": access_token,
+            }
+            
+            response = requests.post(
+                url, files=files, data=data, timeout=_REQUEST_TIMEOUT
+            )
+        
+        response_json: dict = response.json()
+        
+        if "error" in response_json:
+            error_info = response_json["error"]
+            error_msg = error_info.get("message", "Bilinmeyen")
+            error_code = error_info.get("code", 0)
+            log(
+                f"❌ Yöntem B hatası: [{error_code}] {error_msg}",
+                "ERROR",
+            )
+            return None
+        
+        post_id = _extract_post_id(response_json)
+        if post_id:
+            log(f"✅ Yöntem B başarılı: photo_id={_mask_id(post_id)}", "INFO")
+            log("ℹ️ Görsel albüme + timeline'a eklendi (sayfa ayarına bağlı)", "INFO")
+            return response_json
+        
+        log(f"⚠️ Yöntem B: Beklenmeyen yanıt: {response_json}", "WARNING")
+        return None
+        
+    except FileNotFoundError:
+        log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
+        return None
+    except requests.exceptions.Timeout:
+        log("❌ Yöntem B zaman aşımı", "ERROR")
+        return None
+    except Exception as e:
+        log(f"❌ Yöntem B hatası: {e}", "ERROR")
         return None
 
 
@@ -419,10 +296,9 @@ def post_photo_with_text(image_path: str, message: str) -> Optional[dict]:
     """
     Facebook sayfasına fotoğraflı post paylaşır — ANA SAYFADA görünür.
     
-    3 yöntem sırayla denenir:
-      Yöntem B: feed + object_attachment (EN GÜVENLİ — önce bu)
-      Yöntem A: photos + published=true (yedek)
-      Metin:    Sadece metin (son çare)
+    2 yöntem sırayla denenir:
+      Yöntem A: Upload (published=false) → Feed (attached_media) — ÖNCELİKLİ
+      Yöntem B: photos + published=true — YEDEK
     
     Args:
         image_path: Paylaşılacak görselin dosya yolu.
@@ -437,26 +313,26 @@ def post_photo_with_text(image_path: str, message: str) -> Optional[dict]:
         log("❌ Facebook kimlik bilgileri eksik", "ERROR")
         return None
     
-    log(f"📤 Fotoğraflı paylaşım başlatılıyor (3 yöntemli)", "INFO")
+    log("📤 Fotoğraflı paylaşım başlatılıyor (2 yöntemli)", "INFO")
     log(f"📎 Görsel: {image_path}", "INFO")
     log(f"📝 Metin uzunluğu: {len(message)} karakter", "INFO")
     
-    # ── YÖNTEM B (ÖNCELİKLİ): feed + object_attachment ──
+    # ── YÖNTEM A (ÖNCELİKLİ): Upload → Feed ──
     log("━" * 40, "INFO")
-    log("🔵 YÖNTEM B deneniyor (feed + object_attachment)...", "INFO")
-    result = _post_photo_method_b(page_id, access_token, image_path, message)
-    
-    if result:
-        log("🎯 YÖNTEM B BAŞARILI — Post feed'de (ana sayfada) görünecek", "INFO")
-        return result
-    
-    # ── YÖNTEM A (YEDEK): photos + published=true ──
-    log("━" * 40, "INFO")
-    log("🟡 Yöntem B başarısız, YÖNTEM A deneniyor (photos + published=true)...", "INFO")
+    log("🔵 YÖNTEM A deneniyor (Upload → Feed attached_media)...", "INFO")
     result = _post_photo_method_a(page_id, access_token, image_path, message)
     
     if result:
-        log("✅ YÖNTEM A BAŞARILI — Görsel paylaşıldı", "INFO")
+        log("🎯 YÖNTEM A BAŞARILI — Post FEED'de (ana sayfada) görünecek!", "INFO")
+        return result
+    
+    # ── YÖNTEM B (YEDEK): photos + published=true ──
+    log("━" * 40, "INFO")
+    log("🟡 Yöntem A başarısız, YÖNTEM B deneniyor (photos + published=true)...", "INFO")
+    result = _post_photo_method_b(page_id, access_token, image_path, message)
+    
+    if result:
+        log("✅ YÖNTEM B BAŞARILI — Görsel paylaşıldı (albüm + timeline)", "INFO")
         return result
     
     # ── Her iki yöntem de başarısız ──
@@ -479,7 +355,7 @@ def post_text_only(message: str) -> Optional[dict]:
     
     url: str = f"{_FB_BASE_URL}/{page_id}/feed"
     
-    log(f"📤 Metin paylaşımı gönderiliyor: {url}", "INFO")
+    log(f"📤 Metin paylaşımı gönderiliyor", "INFO")
     log(f"📝 Metin uzunluğu: {len(message)} karakter", "INFO")
     
     try:
@@ -502,7 +378,7 @@ def post_text_only(message: str) -> Optional[dict]:
         
         post_id = _extract_post_id(response_json)
         if post_id:
-            log(f"✅ Metin paylaşımı başarılı: ID={post_id}", "INFO")
+            log(f"✅ Metin paylaşımı başarılı: ID={_mask_id(post_id)}", "INFO")
             return response_json
         
         log(f"⚠️ Beklenmeyen yanıt: {response_json}", "WARNING")
@@ -582,7 +458,7 @@ def publish(
     ANA FONKSİYON — Haberi Facebook sayfasında paylaşır.
     
     İşleyiş:
-      1. Görsel varsa fotoğraflı paylaşım dene (3 yöntemli)
+      1. Görsel varsa fotoğraflı paylaşım dene (2 yöntemli)
       2. Fotoğraflı başarısızsa sadece metin paylaşımı dene
       3. İlk deneme başarısızsa 5 saniye bekleyip tekrar dene
       4. Başarılıysa paylaşımı kaydet
@@ -667,7 +543,7 @@ def publish(
     record_posted(article, fb_response, image_source)
     
     log(separator, "INFO")
-    log(f"🎉 BAŞARIYLA PAYLAŞILDI: {title} | FB ID: {fb_post_id}", "INFO")
+    log(f"🎉 BAŞARIYLA PAYLAŞILDI: {title} | FB ID: {_mask_id(fb_post_id)}", "INFO")
     log(separator, "INFO")
     
     return True
