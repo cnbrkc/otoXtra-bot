@@ -1,33 +1,58 @@
 {
-  "rss_feeds": [
+  "feeds": [
     {
-      "name": "Google News - Otomobil TR",
-      "url": "https://news.google.com/rss/search?q=otomobil+OR+benzin+OR+motorin+OR+ara%C3%A7+when:2d&hl=tr&gl=TR&ceid=TR:tr",
-      "priority": "high",
-      "language": "tr",
-      "can_scrape_image": false
+      "name": "Google News - Otomobil",
+      "url": "https://news.google.com/rss/search?q=otomobil+araba+yeni+model&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "genel",
+      "can_scrape_image": true
     },
     {
-      "name": "Google News - Yakıt Zam",
-      "url": "https://news.google.com/rss/search?q=benzin+zam+OR+motorin+zam+OR+lpg+zam+when:1d&hl=tr&gl=TR&ceid=TR:tr",
-      "priority": "high",
-      "language": "tr",
-      "can_scrape_image": false
+      "name": "Google News - Elektrikli Araç",
+      "url": "https://news.google.com/rss/search?q=elektrikli+araba+OR+elektrikli+otomobil+OR+EV&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "elektrikli",
+      "can_scrape_image": true
     },
     {
-      "name": "Google News - Automotive EN",
-      "url": "https://news.google.com/rss/search?q=automotive+OR+electric+vehicle+OR+car+launch+when:2d&hl=en&gl=US&ceid=US:en",
-      "priority": "medium",
-      "language": "en",
-      "can_scrape_image": false
+      "name": "Google News - Otomobil Fiyat",
+      "url": "https://news.google.com/rss/search?q=otomobil+fiyat+OR+araba+fiyat+OR+fiyat+listesi&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "fiyat",
+      "can_scrape_image": true
     },
     {
-      "name": "Donanim Haber Otomobil",
-      "url": "RSS_URL_BURAYA",
-      "priority": "high",
-      "language": "tr",
-      "can_scrape_image": true,
-      "_note": "Gerçek RSS URL'sini bulup buraya yapıştır. URL geçersizse bu kaynak otomatik atlanır, diğer kaynaklar çalışmaya devam eder."
+      "name": "Google News - Otomotiv Sektör",
+      "url": "https://news.google.com/rss/search?q=otomotiv+sekt%C3%B6r+OR+otomotiv+%C3%BCretim+OR+otomotiv+sat%C4%B1%C5%9F&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "sektor",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Google News - Markalar",
+      "url": "https://news.google.com/rss/search?q=(Tesla+OR+BMW+OR+Mercedes+OR+Toyota+OR+Volkswagen+OR+Togg+OR+BYD+OR+Hyundai)+otomobil&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "marka",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Google News - SUV Crossover",
+      "url": "https://news.google.com/rss/search?q=SUV+OR+crossover+yeni+2025+2026&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "suv",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Otopark",
+      "url": "https://www.otopark.com/feed/",
+      "category": "genel",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Sekiz Silindir",
+      "url": "https://www.sekizsilindir.com/feed/",
+      "category": "genel",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Otomobil Haberleri",
+      "url": "https://news.google.com/rss/search?q=otomobil+haberleri+OR+araba+haberleri&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "genel",
+      "can_scrape_image": true
     }
   ]
 }
