@@ -1,8 +1,13 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v5 — 12 Saat Filtre)
+src/news_fetcher.py — Haber Çekme Modülü (v5.1 — Test Modu Tekrar Filtresi)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
+
+v5.1 Değişiklikler:
+  - TEST MODU aktifken "daha önce paylaşılanları çıkar" adımı ATLANIR
+  - Bu sayede test sırasında haber havuzu boşalmaz
+  - Canlı modda her şey eskisi gibi çalışır
 
 v5 Değişiklikler:
   - Zaman filtresi basitleştirildi: TÜM kaynaklar için 12 saat
@@ -15,6 +20,7 @@ v5 Değişiklikler:
   3. Keyword filtresi uygula          → apply_keyword_filter()
   4. Zaman filtresi uygula            → apply_time_filter()
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
+     ⚠️ TEST MODUNDA BU ADIM ATLANIR
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
 Kullandığı config dosyaları:
@@ -26,6 +32,7 @@ Diğer modüller bu dosyayı şöyle import eder:
     from news_fetcher import fetch_and_filter_news
 """
 
+import os
 import re
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -54,6 +61,13 @@ _USER_AGENT = (
 )
 
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
+
+
+# ── Test Modu Kontrolü ─────────────────────────────────────
+
+def _is_test_mode() -> bool:
+    """TEST_MODE ortam değişkenini kontrol eder."""
+    return os.environ.get("TEST_MODE", "false").lower() == "true"
 
 
 # ── Türkçe Küçük Harf Dönüşümü ─────────────────────────────
@@ -498,7 +512,11 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
 # ============================================================
 
 def remove_already_posted(articles: list[dict]) -> list[dict]:
-    """Daha önce paylaşılmış haberleri listeden çıkarır."""
+    """Daha önce paylaşılmış haberleri listeden çıkarır.
+
+    ⚠️ TEST MODUNDA bu fonksiyon çağrılsa bile tüm haberleri geçirir.
+    Ancak fetch_and_filter_news() zaten test modunda bu adımı ATLAR.
+    """
     posted_data = get_posted_news()
     posts_list = posted_data.get("posts", [])
 
@@ -700,11 +718,20 @@ def get_article_full_text(url: str) -> str:
 def fetch_and_filter_news() -> list[dict]:
     """Ana fonksiyon: Tüm kaynakları tarar, filtreler, tekil listeyi döner.
 
+    TEST MODU aktifken:
+      - ADIM 5 (tekrar kontrolü) ATLANIR
+      - Daha önce paylaşılmış haberler de havuzda kalır
+      - Test sırasında "uygun haber yok" sorunu yaşanmaz
+
     Returns:
         list[dict]: Filtrelenmiş, tekil, paylaşıma aday haber listesi.
     """
+    test_mode: bool = _is_test_mode()
+
     log("=" * 55)
     log("HABER ÇEKME VE FİLTRELEME BAŞLIYOR")
+    if test_mode:
+        log("🧪 TEST MODU: Tekrar paylaşım filtresi DEVRE DIŞI")
     log("=" * 55)
 
     # ── ADIM 1: Tüm feed'leri çek ──
@@ -746,12 +773,19 @@ def fetch_and_filter_news() -> list[dict]:
         return []
 
     # ── ADIM 5: Tekrar kontrolü ──
-    articles = remove_already_posted(articles)
-    log(f"[ADIM 5] Tekrar kontrolü sonrası → {len(articles)} haber")
+    if test_mode:
+        log(
+            f"[ADIM 5] 🧪 TEST MODU: Tekrar kontrolü ATLANDI "
+            f"— {len(articles)} haber korundu",
+            "INFO",
+        )
+    else:
+        articles = remove_already_posted(articles)
+        log(f"[ADIM 5] Tekrar kontrolü sonrası → {len(articles)} haber")
 
-    if not articles:
-        log("Tüm haberler daha önce paylaşılmış", "WARNING")
-        return []
+        if not articles:
+            log("Tüm haberler daha önce paylaşılmış", "WARNING")
+            return []
 
     # ── ADIM 6: Benzerlik tekilleştirme ──
     articles = remove_duplicates(articles)
