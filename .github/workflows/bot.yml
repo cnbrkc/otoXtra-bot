@@ -1,70 +1,80 @@
-# otoXtra News Bot — GitHub Actions Workflow
+# otoXtra News Bot — GitHub Actions Workflow (v3)
 #
-# Bu workflow otoXtra otomobil haberleri botunu çalıştırır.
-# Günde 7 kez tetiklenir (Türkiye saatine göre 08:00-20:00 arası).
-# Her tetiklemede:
-#   1. Haber kaynakları taranır
-#   2. En kaliteli haber seçilir
-#   3. YZ ile içerik ve görsel üretilir
-#   4. Facebook sayfasında paylaşılır
-#   5. Paylaşım kaydı güncellenir ve commit edilir
+# Günde 10 kez tetiklenir (Türkiye saatine göre 06:00-00:00 arası, 2 saat aralıkla).
+# Her tetiklemede 1 post paylaşılır (en viral haber seçilir).
 #
-# Anti-bot stratejisi sayesinde her tetiklemede paylaşım garanti değildir:
-#   - %10 olasılıkla hiç paylaşmadan çıkar
-#   - 0-8 dk rastgele gecikme ekler
-#   - Son paylaşımdan 2 saat geçmemişse paylaşmaz
-#   - Kaliteli haber bulamazsa paylaşmaz
+# v3: Git push hatası düzeltildi (pull --rebase eklendi)
 
-name: otoXtra News Bot
+name: otoXtra Bot
 
 on:
   schedule:
-    - cron: '0 5 * * *'
-    - cron: '0 7 * * *'
-    - cron: '0 9 * * *'
-    - cron: '0 11 * * *'
-    - cron: '0 13 * * *'
-    - cron: '0 15 * * *'
-    - cron: '0 17 * * *'
-  workflow_dispatch:
+    # Her 2 saatte bir, 06:00-00:00 arası (UTC+3 = Türkiye)
+    # UTC'de: 03:00, 05:00, 07:00, 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00
+    - cron: '0 3,5,7,9,11,13,15,17,19,21 * * *'
 
-permissions:
-  contents: write
+  workflow_dispatch:
+    inputs:
+      test_mode:
+        description: 'Test modu (gecikmeler devre dışı)'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+# Aynı anda birden fazla workflow çalışmasını engelle
+concurrency:
+  group: otoxtra-bot
+  cancel-in-progress: false
 
 jobs:
   run-bot:
-    name: Run otoXtra Bot
     runs-on: ubuntu-latest
-
+    
+    permissions:
+      contents: write
+    
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Setup Python 3.11
+          fetch-depth: 0
+      
+      - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
+      
       - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run otoXtra bot
-        run: python src/main.py
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+      
+      - name: Run bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_API_KEY: ${{ secrets.HF_API_KEY }}
-          FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
-          TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
-
-      - name: Commit and push updated data
+          FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+          TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
+        run: python src/main.py
+      
+      - name: Save posted news data
         run: |
-          git config user.name "otoXtra Bot"
-          git config user.email "bot@otoxtra.com"
+          git config --local user.email "bot@otoxtra.com"
+          git config --local user.name "otoXtra Bot"
           git add data/posted_news.json
-          git diff --staged --quiet || git commit -m "Auto: posted news update - $(date +'%Y-%m-%d %H:%M')"
-          git pull --rebase || true
-          git push || echo "Push başarısız, bir sonraki çalışmada tekrar denenecek"
+          git diff --staged --quiet && echo "Değişiklik yok, commit atlanıyor" && exit 0
+          git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
+          
+          # Push başarısız olursa pull --rebase ile tekrar dene
+          for i in 1 2 3; do
+            git push && break
+            echo "Push başarısız (deneme $i/3), pull --rebase yapılıyor..."
+            git pull --rebase origin $(git branch --show-current)
+            sleep 2
+          done
