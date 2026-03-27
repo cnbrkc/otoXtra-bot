@@ -1,163 +1,52 @@
 {
   "feeds": [
     {
-      "name": "Google News - Otomobil",
-      "url": "https://news.google.com/rss/search?q=otomobil+araba+yeni+model&hl=tr&gl=TR&ceid=TR:tr",
+      "name": "Otohaber",
+      "url": "https://www.otohaber.com.tr/rss",
       "category": "genel",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Google News - Elektrikli Araç",
-      "url": "https://news.google.com/rss/search?q=elektrikli+araba+OR+elektrikli+otomobil+OR+EV&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "elektrikli",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Google News - Otomobil Fiyat",
-      "url": "https://news.google.com/rss/search?q=otomobil+fiyat+OR+araba+fiyat+OR+fiyat+listesi&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "fiyat",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Google News - Otomotiv Sektör",
-      "url": "https://news.google.com/rss/search?q=otomotiv+sekt%C3%B6r+OR+otomotiv+%C3%BCretim+OR+otomotiv+sat%C4%B1%C5%9F&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "sektor",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Google News - Markalar",
-      "url": "https://news.google.com/rss/search?q=(Tesla+OR+BMW+OR+Mercedes+OR+Toyota+OR+Volkswagen+OR+Togg+OR+BYD+OR+Hyundai)+otomobil&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "marka",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Google News - SUV Crossover",
-      "url": "https://news.google.com/rss/search?q=SUV+OR+crossover+yeni+2025+2026&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "suv",
-      "can_scrape_image": true
+      "quality": "high"
     },
     {
       "name": "Otopark",
       "url": "https://www.otopark.com/feed/",
       "category": "genel",
-      "can_scrape_image": true
+      "quality": "high"
     },
     {
       "name": "Sekiz Silindir",
       "url": "https://www.sekizsilindir.com/feed/",
       "category": "genel",
-      "can_scrape_image": true
-    },
-        {
-      "name": "Otohaber",
-      "url": "https://www.otohaber.com.tr/rss",
-      "category": "genel",
-      "language": "tr",
-      "can_scrape_image": true
+      "quality": "high"
     },
     {
-      "name": "Otopark",
-      "url": "https://www.otopark.com/feed",
-      "category": "genel",
-      "language": "tr",
-      "can_scrape_image": true
+      "name": "Autocar",
+      "url": "https://www.autocar.co.uk/rss",
+      "category": "global",
+      "quality": "high"
     },
     {
-      "name": "Sekiz Silindir",
-      "url": "https://www.sekizsilindir.com/feed",
-      "category": "genel",
-      "language": "tr",
-      "can_scrape_image": true
+      "name": "Car and Driver",
+      "url": "https://www.caranddriver.com/rss/all.xml",
+      "category": "global",
+      "quality": "high"
     },
     {
-      "name": "Araba Firsati",
-      "url": "https://www.arabafirsati.com/rss",
-      "category": "genel",
-      "language": "tr",
-      "can_scrape_image": true
+      "name": "Motor1",
+      "url": "https://www.motor1.com/rss/news/all/",
+      "category": "global",
+      "quality": "medium"
     },
     {
-      "name": "Shiftdelete Otomobil",
-      "url": "https://shiftdelete.net/kategori/otomobil/feed",
-      "category": "teknoloji",
-      "language": "tr",
-      "can_scrape_image": true
+      "name": "InsideEVs",
+      "url": "https://insideevs.com/rss/news/",
+      "category": "elektrikli",
+      "quality": "high"
     },
     {
-      "name": "Webtekno Otomobil",
-      "url": "https://www.webtekno.com/rss/otomobil.xml",
-      "category": "teknoloji",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Donanim Haber Otomobil",
+      "name": "DonanimHaber Otomobil",
       "url": "https://www.donanimhaber.com/otomobil/rss",
-      "category": "teknoloji",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Hurriyet Oto",
-      "url": "https://www.hurriyet.com.tr/rss/otomobil",
-      "category": "haber",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Sozcu Otomotiv",
-      "url": "https://www.sozcu.com.tr/rss/otomotiv.xml",
-      "category": "haber",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "NTV Otomobil",
-      "url": "https://www.ntv.com.tr/otomobil.rss",
-      "category": "haber",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "Haberturk Otomobil",
-      "url": "https://www.haberturk.com/rss/otomobil.xml",
-      "category": "haber",
-      "language": "tr",
-      "can_scrape_image": true
-    },
-    {
-      "name": "AA Otomotiv",
-      "url": "https://www.aa.com.tr/tr/rss/default?cat=otomotiv",
-      "category": "haber",
-      "language": "tr",
-      "can_scrape_image": false
-    },
-    {
-      "name": "Google News Otomobil TR",
-      "url": "https://news.google.com/rss/search?q=otomobil+OR+otomotiv+OR+araba&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "google_news",
-      "language": "tr",
-      "can_scrape_image": false
-    },
-    {
-      "name": "Google News Elektrikli Araba",
-      "url": "https://news.google.com/rss/search?q=elektrikli+araba+OR+elektrikli+otomobil&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "google_news",
-      "language": "tr",
-      "can_scrape_image": false
-    },
-    {
-      "name": "Google News Araba Fiyat",
-      "url": "https://news.google.com/rss/search?q=araba+fiyat+OR+otomobil+fiyat+OR+lansman&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "google_news",
-      "language": "tr",
-      "can_scrape_image": false
-    },
-    {
-      "name": "Otomobil Haberleri",
-      "url": "https://news.google.com/rss/search?q=otomobil+haberleri+OR+araba+haberleri&hl=tr&gl=TR&ceid=TR:tr",
-      "category": "genel",
-      "can_scrape_image": true
+      "category": "low_priority",
+      "quality": "low"
     }
   ]
 }
