@@ -48,6 +48,111 @@
       "category": "genel",
       "can_scrape_image": true
     },
+        {
+      "name": "Otohaber",
+      "url": "https://www.otohaber.com.tr/rss",
+      "category": "genel",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Otopark",
+      "url": "https://www.otopark.com/feed",
+      "category": "genel",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Sekiz Silindir",
+      "url": "https://www.sekizsilindir.com/feed",
+      "category": "genel",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Araba Firsati",
+      "url": "https://www.arabafirsati.com/rss",
+      "category": "genel",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Shiftdelete Otomobil",
+      "url": "https://shiftdelete.net/kategori/otomobil/feed",
+      "category": "teknoloji",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Webtekno Otomobil",
+      "url": "https://www.webtekno.com/rss/otomobil.xml",
+      "category": "teknoloji",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Donanim Haber Otomobil",
+      "url": "https://www.donanimhaber.com/otomobil/rss",
+      "category": "teknoloji",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Hurriyet Oto",
+      "url": "https://www.hurriyet.com.tr/rss/otomobil",
+      "category": "haber",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Sozcu Otomotiv",
+      "url": "https://www.sozcu.com.tr/rss/otomotiv.xml",
+      "category": "haber",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "NTV Otomobil",
+      "url": "https://www.ntv.com.tr/otomobil.rss",
+      "category": "haber",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "Haberturk Otomobil",
+      "url": "https://www.haberturk.com/rss/otomobil.xml",
+      "category": "haber",
+      "language": "tr",
+      "can_scrape_image": true
+    },
+    {
+      "name": "AA Otomotiv",
+      "url": "https://www.aa.com.tr/tr/rss/default?cat=otomotiv",
+      "category": "haber",
+      "language": "tr",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Google News Otomobil TR",
+      "url": "https://news.google.com/rss/search?q=otomobil+OR+otomotiv+OR+araba&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "google_news",
+      "language": "tr",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Google News Elektrikli Araba",
+      "url": "https://news.google.com/rss/search?q=elektrikli+araba+OR+elektrikli+otomobil&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "google_news",
+      "language": "tr",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Google News Araba Fiyat",
+      "url": "https://news.google.com/rss/search?q=araba+fiyat+OR+otomobil+fiyat+OR+lansman&hl=tr&gl=TR&ceid=TR:tr",
+      "category": "google_news",
+      "language": "tr",
+      "can_scrape_image": false
+    }
     {
       "name": "Otomobil Haberleri",
       "url": "https://news.google.com/rss/search?q=otomobil+haberleri+OR+araba+haberleri&hl=tr&gl=TR&ceid=TR:tr",
