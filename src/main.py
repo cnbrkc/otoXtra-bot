@@ -18,8 +18,8 @@ Kullandığı modüller:
   - image_handler.py   → prepare_image()
   - facebook_poster.py → publish()
   - utils.py           → load_config(), log(), get_today_post_count(),
-                          get_posted_news(), random_delay(),
-                          get_turkey_now(), get_today_str(),
+                          get_posted_news(), save_posted_news(),
+                          random_delay(), get_turkey_now(), get_today_str(),
                           save_last_check_time()
 """
 
@@ -38,6 +38,7 @@ from utils import (
     log,
     get_today_post_count,
     get_posted_news,
+    save_posted_news,
     random_delay,
     get_turkey_now,
     get_today_str,
@@ -59,6 +60,24 @@ def is_test_mode() -> bool:
         False: Normal mod (anti-bot gecikmeleri uygula).
     """
     return os.environ.get("TEST_MODE", "false").lower() == "true"
+
+
+def _save_check_time() -> None:
+    """Son kontrol zamanını güvenli şekilde kaydeder.
+
+    Her çağrıda dosyadan TAZE veri okur, last_check_time'ı günceller
+    ve dosyaya geri yazar.
+
+    Neden taze okuma?
+    → publish() fonksiyonu posted_news.json'ı kendi içinde günceller
+      (yeni post ekler, daily_counts artırır).
+      Eğer main()'deki ESKİ posted_data ile üzerine yazsak,
+      publish()'in eklediği post kaydı silinir.
+      Taze okuma bu riski ortadan kaldırır.
+    """
+    fresh_data: dict = get_posted_news()
+    save_last_check_time(fresh_data)
+    save_posted_news(fresh_data)
 
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
@@ -211,7 +230,7 @@ def main() -> None:
       - %10 rastgele atlama
       - 2 saat minimum aralık
 
-    Her çalışma sonunda save_last_check_time() çağrılır.
+    Her çalışma sonunda _save_check_time() çağrılır.
     Böylece bir sonraki çalışma sadece yeni haberleri tarar.
     """
     separator: str = "═" * 60
@@ -272,7 +291,7 @@ def main() -> None:
             log(separator, "INFO")
 
             # Haber bulunamasa bile tarama yapıldı → zamanı kaydet
-            save_last_check_time()
+            _save_check_time()
             log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
@@ -298,7 +317,7 @@ def main() -> None:
             log(separator, "INFO")
 
             # Filtre sonucu boş olsa bile tarama yapıldı → zamanı kaydet
-            save_last_check_time()
+            _save_check_time()
             log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
@@ -341,7 +360,7 @@ def main() -> None:
             log(separator, "INFO")
 
             # İçerik üretilemese bile tarama yapıldı → zamanı kaydet
-            save_last_check_time()
+            _save_check_time()
             log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
@@ -381,7 +400,9 @@ def main() -> None:
         log(separator, "INFO")
 
         # Başarılı veya başarısız, tarama yapıldı → zamanı kaydet
-        save_last_check_time()
+        # NOT: _save_check_time() dosyadan TAZE veri okur,
+        #       böylece publish()'in eklediği post kaydı korunur
+        _save_check_time()
         log("💾 Son kontrol zamanı kaydedildi", "INFO")
 
     except KeyboardInterrupt:
@@ -400,8 +421,10 @@ def main() -> None:
 
         # Kritik hata olsa bile tarama başlamışsa zamanı kaydet
         # Böylece aynı haberleri tekrar tekrar denemez
+        # NOT: _save_check_time() kendi içinde taze veri okur,
+        #       posted_data tanımlı olmasa bile çalışır
         try:
-            save_last_check_time()
+            _save_check_time()
             log("💾 Son kontrol zamanı kaydedildi (hata sonrası)", "INFO")
         except Exception:
             log("⚠️ Son kontrol zamanı kaydedilemedi", "WARNING")
