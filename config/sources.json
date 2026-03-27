@@ -1,52 +1,14 @@
 {
   "feeds": [
     {
-      "name": "Otohaber",
-      "url": "https://www.otohaber.com.tr/rss",
+      "name": "Donanımhaber",
+      "url": "https://www.donanimhaber.com/rss/anasayfa",
       "category": "genel",
-      "quality": "high"
-    },
-    {
-      "name": "Otopark",
-      "url": "https://www.otopark.com/feed/",
-      "category": "genel",
-      "quality": "high"
-    },
-    {
-      "name": "Sekiz Silindir",
-      "url": "https://www.sekizsilindir.com/feed/",
-      "category": "genel",
-      "quality": "high"
-    },
-    {
-      "name": "Autocar",
-      "url": "https://www.autocar.co.uk/rss",
-      "category": "global",
-      "quality": "high"
-    },
-    {
-      "name": "Car and Driver",
-      "url": "https://www.caranddriver.com/rss/all.xml",
-      "category": "global",
-      "quality": "high"
-    },
-    {
-      "name": "Motor1",
-      "url": "https://www.motor1.com/rss/news/all/",
-      "category": "global",
-      "quality": "medium"
-    },
-    {
-      "name": "InsideEVs",
-      "url": "https://insideevs.com/rss/news/",
-      "category": "elektrikli",
-      "quality": "high"
-    },
-    {
-      "name": "DonanimHaber Otomobil",
-      "url": "https://www.donanimhaber.com/otomobil/rss",
-      "category": "low_priority",
-      "quality": "low"
+      "quality": "high",
+      "priority": "high",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
     }
   ]
 }
