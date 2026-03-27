@@ -1,5 +1,5 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v3 — Akıllı Zaman Filtresi)
+src/news_fetcher.py — Haber Çekme Modülü (v4 — Donanımhaber Odaklı)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
@@ -12,17 +12,15 @@ otoXtra Facebook Botu için RSS feed'lerden haber çeken,
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
-v3 Değişiklikler:
-  - apply_time_filter() akıllı zaman filtresi kullanıyor:
-    posted_news.json'daki last_check_time okunur,
-    30 dakika overlap tamponu eklenir, sadece yeni haberler alınır.
-  - İlk çalışmada (kayıt yoksa) varsayılan 6 saat geriye bakar.
-  - settings.json'daki news_max_age_hours üst sınır olarak korunur.
+v4 Değişiklikler:
+  - RSS'den görsel URL'si çekme eklendi (enclosure, media:content, media:thumbnail)
+  - Donanımhaber'e özel tam metin çekme (scrape_full_article) eklendi
+  - fetch_all_feeds() artık her habere "image_url" alanı ekliyor
 
-v2 Değişiklikler:
-  - Keyword key isimleri düzeltildi: include_keywords / exclude_keywords
-  - Keyword eşleştirme case-insensitive Türkçe desteği eklendi
-  - Keyword log mesajları detaylandırıldı (hangi kelime eledi)
+v3 Değişiklikler:
+  - apply_time_filter() akıllı zaman filtresi kullanıyor
+  - İlk çalışmada varsayılan 6 saat geriye bakar
+  - settings.json'daki news_max_age_hours üst sınır olarak korunur
 
 Kullandığı config dosyaları:
   - config/sources.json   → RSS feed listesi
@@ -88,12 +86,81 @@ def _turkish_lower(text: str) -> str:
 # 1. TÜM RSS FEED'LERİ ÇEK
 # ============================================================
 
+def _extract_image_from_entry(entry) -> str:
+    """RSS entry'sinden görsel URL'sini çıkarır.
+
+    Sırasıyla şu kaynakları dener:
+      1. media:content → url attribute
+      2. media:thumbnail → url attribute
+      3. enclosure (type=image) → href/url
+      4. entry içindeki <img> tag'i (summary/content HTML'inde)
+
+    Args:
+        entry: feedparser entry nesnesi.
+
+    Returns:
+        str: Görsel URL'si. Bulunamazsa boş string.
+    """
+    # ── Yöntem 1: media:content ──
+    media_content = entry.get("media_content", [])
+    if media_content:
+        for media in media_content:
+            media_url = media.get("url", "")
+            media_type = media.get("type", "")
+            if media_url and ("image" in media_type or media_type == ""):
+                return media_url
+
+    # ── Yöntem 2: media:thumbnail ──
+    media_thumbnail = entry.get("media_thumbnail", [])
+    if media_thumbnail:
+        for thumb in media_thumbnail:
+            thumb_url = thumb.get("url", "")
+            if thumb_url:
+                return thumb_url
+
+    # ── Yöntem 3: enclosure ──
+    enclosures = entry.get("enclosures", [])
+    if enclosures:
+        for enc in enclosures:
+            enc_type = enc.get("type", "")
+            enc_url = enc.get("href", "") or enc.get("url", "")
+            if enc_url and "image" in enc_type:
+                return enc_url
+
+    # ── Yöntem 4: summary/content içindeki <img> tag'i ──
+    html_content = (
+        entry.get("summary", "")
+        or entry.get("description", "")
+        or ""
+    )
+    # content:encoded alanını da dene
+    content_list = entry.get("content", [])
+    if content_list:
+        for content_item in content_list:
+            html_content += content_item.get("value", "")
+
+    if html_content and "<img" in html_content:
+        try:
+            soup = BeautifulSoup(html_content, "html.parser")
+            img_tag = soup.find("img")
+            if img_tag:
+                img_src = img_tag.get("src", "")
+                if img_src and img_src.startswith("http"):
+                    return img_src
+        except Exception:
+            pass
+
+    return ""
+
+
 def fetch_all_feeds() -> list[dict]:
     """sources.json'daki tüm RSS feed'leri çeker.
 
     Her feed ayrı ayrı indirilir. Hata olan feed atlanır,
     diğerlerine devam edilir. Her haberden standart bilgiler
     çıkarılarak düz bir listeye eklenir.
+
+    v4: Artık her habere "image_url" alanı da ekleniyor.
 
     Returns:
         list[dict]: Çekilen haberlerin listesi. Her eleman:
@@ -102,6 +169,7 @@ def fetch_all_feeds() -> list[dict]:
                 "link": str,
                 "published": str,        # ISO 8601 format
                 "summary": str,
+                "image_url": str,         # RSS'den çekilen görsel URL (v4)
                 "source_name": str,
                 "source_priority": str,   # "high" / "medium" / "low"
                 "language": str,          # "tr" / "en"
@@ -180,11 +248,17 @@ def fetch_all_feeds() -> list[dict]:
                 if len(summary) < 10:
                     summary = ""
 
+                # ── v4: RSS'den görsel URL'si çek ──
+                image_url = _extract_image_from_entry(entry)
+                if image_url:
+                    log(f"    🖼️ RSS görsel bulundu: {image_url[:80]}...", "INFO")
+
                 article = {
                     "title": title,
                     "link": link,
                     "published": published_str,
                     "summary": summary,
+                    "image_url": image_url,
                     "source_name": feed_name,
                     "source_priority": feed_priority,
                     "language": feed_language,
@@ -347,8 +421,6 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     keywords_cfg = load_config("keywords")
 
     # ── v2 DÜZELTMESİ: Doğru key isimleri ──
-    # Önce yeni (doğru) key isimlerini dene
-    # Sonra eski key isimlerini dene (geriye uyumluluk)
     include_keywords: list[str] = (
         keywords_cfg.get("include_keywords")
         or keywords_cfg.get("must_match_any")
@@ -398,7 +470,6 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
 
         if excluded:
             excluded_by_exclude += 1
-            # Sadece ilk 20 elemeyi logla (spam önleme)
             if excluded_by_exclude <= 20:
                 log(
                     f"  🚫 EXCLUDE elendi [{matched_exclude_kw}]: "
@@ -417,7 +488,6 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
 
             if not found_include:
                 excluded_by_include += 1
-                # Sadece ilk 20 elemeyi logla
                 if excluded_by_include <= 20:
                     log(
                         f"  ⛔ INCLUDE eşleşmedi: {title[:70]}",
@@ -461,16 +531,6 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     posted_news.json'daki last_check_time'ı okur ve 30 dakikalık
     overlap tamponu ekleyerek kesme noktası belirler.
 
-    Akıllı filtre sayesinde:
-      - Bot 2 saatte bir çalışıyorsa → ~2.5 saatlik pencere (48 saat yerine)
-      - İlk çalışmada (kayıt yoksa) → 6 saatlik pencere
-      - %70 daha az haber YZ'ye gider → API tasarrufu
-
-    Güvenlik: settings.json'daki news_max_age_hours değeri
-    maksimum üst sınır olarak korunur (varsayılan 48 saat).
-
-    Tarih parse edilemezse haber güvenli tarafta kalır (geçer).
-
     Args:
         articles: Filtrelenecek haber listesi.
 
@@ -479,7 +539,7 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     """
     settings = load_config("settings")
     max_age_hours: int = settings.get("news_max_age_hours", 48)
-    overlap_minutes: int = 30  # Haber kaçırma tamponu
+    overlap_minutes: int = 30
 
     now_utc = datetime.now(timezone.utc)
 
@@ -490,7 +550,7 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     posted_data = get_posted_news()
     last_check = get_last_check_time(posted_data)
 
-    # 30 dakika overlap tamponu çıkar (haber kaçırmasın)
+    # 30 dakika overlap tamponu çıkar
     smart_cutoff = last_check - timedelta(minutes=overlap_minutes)
     smart_cutoff_utc = smart_cutoff.astimezone(timezone.utc)
 
@@ -522,13 +582,11 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     for article in articles:
         published_str = article.get("published", "")
         if not published_str:
-            # Tarih yoksa geçir (güvenli taraf)
             passed.append(article)
             continue
 
         try:
             pub_dt = dateutil_parser.parse(published_str)
-            # timezone yoksa UTC varsay
             if pub_dt.tzinfo is None:
                 pub_dt = pub_dt.replace(tzinfo=timezone.utc)
 
@@ -537,7 +595,6 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
                 continue
 
         except (ValueError, OverflowError, TypeError):
-            # Tarih parse edilemezse haberi geçir
             passed.append(article)
             continue
 
@@ -557,9 +614,6 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
 def remove_already_posted(articles: list[dict]) -> list[dict]:
     """Daha önce paylaşılmış haberleri listeden çıkarır.
 
-    data/posted_news.json kaydını okur ve her haberin
-    URL'si veya başlığı ile karşılaştırır.
-
     Args:
         articles: Kontrol edilecek haber listesi.
 
@@ -569,7 +623,6 @@ def remove_already_posted(articles: list[dict]) -> list[dict]:
     posted_data = get_posted_news()
     posts_list = posted_data.get("posts", [])
 
-    # Hiç kayıt yoksa hepsini geçir
     if not posts_list:
         log("[TEKRAR] Henüz paylaşılmış haber kaydı yok — filtre atlanıyor")
         return articles
@@ -600,10 +653,6 @@ def remove_already_posted(articles: list[dict]) -> list[dict]:
 def remove_duplicates(articles: list[dict]) -> list[dict]:
     """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer.
 
-    Başlık benzerliği %80+ olan haberler aynı grup sayılır.
-    Her gruptan source_priority'si en yüksek olan seçilir
-    (high > medium > low). Eşit priority ise ilk gelen seçilir.
-
     Args:
         articles: Tekilleştirilecek haber listesi.
 
@@ -613,7 +662,6 @@ def remove_duplicates(articles: list[dict]) -> list[dict]:
     if len(articles) <= 1:
         return articles
 
-    # Grup oluştur: her grup benzer haberleri içerir
     groups: list[list[dict]] = []
     used: list[bool] = [False] * len(articles)
 
@@ -636,7 +684,6 @@ def remove_duplicates(articles: list[dict]) -> list[dict]:
 
         groups.append(group)
 
-    # Her gruptan en yüksek priority olanı seç
     unique: list[dict] = []
     for group in groups:
         best = max(
@@ -660,27 +707,33 @@ def remove_duplicates(articles: list[dict]) -> list[dict]:
 
 
 # ============================================================
-# 7. HABER TAM METNİ ÇEK
+# 7. HABER TAM METNİ ÇEK (v4 — Donanımhaber desteği)
 # ============================================================
 
-def get_article_full_text(url: str) -> str:
+def scrape_full_article(url: str) -> str:
     """Haber URL'sine gidip tam metin içeriğini çeker.
 
-    Önce <article> tag'ini arar, yoksa sayfadaki <p>
-    tag'lerini birleştirir. Sonuç en fazla 5000 karakter.
+    Donanımhaber için özel selector'lar dener, bulamazsa
+    genel yöntemlerle (article tag, p tag) çeker.
 
-    BeautifulSoup parser olarak 'html.parser' kullanılır.
+    Çekme sırası:
+      1. Donanımhaber özel: div.article-content veya div.newsContent
+      2. Genel: <article> tag'i içindeki <p>'ler
+      3. Fallback: Sayfadaki tüm anlamlı <p> tag'leri (30+ karakter)
 
     Args:
         url: Haberin tam URL'si.
 
     Returns:
-        str: Haberin düz metin içeriği. Çekilemezse boş string.
+        str: Haberin düz metin içeriği (max 5000 karakter).
+             Çekilemezse boş string.
     """
     if not url:
         return ""
 
     try:
+        log(f"📄 Tam metin çekiliyor: {url[:80]}...", "INFO")
+
         resp = requests.get(
             url,
             headers={"User-Agent": _USER_AGENT},
@@ -694,19 +747,54 @@ def get_article_full_text(url: str) -> str:
 
         soup = BeautifulSoup(resp.text, "html.parser")
 
+        # Gereksiz elementleri temizle (reklam, script, style, nav)
+        for unwanted in soup.find_all(["script", "style", "nav", "footer", "aside", "iframe"]):
+            unwanted.decompose()
+
         full_text = ""
 
-        # Yöntem 1: <article> tag'i
-        article_tag = soup.find("article")
-        if article_tag:
-            paragraphs = article_tag.find_all("p")
-            if paragraphs:
-                full_text = " ".join(p.get_text(strip=True) for p in paragraphs)
+        # ── Yöntem 1: Donanımhaber özel selector'ları ──
+        if "donanimhaber.com" in url:
+            # Donanımhaber makale içeriği selector'ları
+            content_selectors = [
+                {"class_": "article-content"},
+                {"class_": "newsContent"},
+                {"class_": "content-text"},
+                {"class_": "news-detail-text"},
+                {"id": "newsDetailText"},
+            ]
 
-        # Yöntem 2: Sayfadaki tüm <p> tag'leri
-        if not full_text:
+            for selector in content_selectors:
+                content_div = soup.find("div", **selector)
+                if content_div:
+                    paragraphs = content_div.find_all("p")
+                    if paragraphs:
+                        full_text = " ".join(
+                            p.get_text(strip=True) for p in paragraphs
+                            if len(p.get_text(strip=True)) > 10
+                        )
+                    else:
+                        # <p> yoksa div'in tüm metnini al
+                        full_text = content_div.get_text(separator=" ", strip=True)
+
+                    if full_text and len(full_text) > 50:
+                        log(f"  ✅ Donanımhaber özel selector ile metin çekildi ({len(full_text)} karakter)", "INFO")
+                        break
+
+        # ── Yöntem 2: Genel <article> tag'i ──
+        if not full_text or len(full_text) < 50:
+            article_tag = soup.find("article")
+            if article_tag:
+                paragraphs = article_tag.find_all("p")
+                if paragraphs:
+                    full_text = " ".join(
+                        p.get_text(strip=True) for p in paragraphs
+                        if len(p.get_text(strip=True)) > 10
+                    )
+
+        # ── Yöntem 3: Tüm anlamlı <p> tag'leri ──
+        if not full_text or len(full_text) < 50:
             all_paragraphs = soup.find_all("p")
-            # En az 30 karakterlik paragrafları al (menü/footer değil)
             meaningful = [
                 p.get_text(strip=True)
                 for p in all_paragraphs
@@ -721,17 +809,28 @@ def get_article_full_text(url: str) -> str:
         if len(full_text) > 5000:
             full_text = full_text[:5000].rsplit(" ", 1)[0] + "..."
 
+        if full_text:
+            log(f"  📄 Tam metin çekildi: {len(full_text)} karakter", "INFO")
+        else:
+            log(f"  ⚠️ Tam metin çekilemedi: {url[:60]}", "WARNING")
+
         return full_text
 
     except requests.exceptions.Timeout:
-        log(f"Tam metin çekme zaman aşımı: {url}", "WARNING")
+        log(f"⚠️ Tam metin çekme zaman aşımı: {url}", "WARNING")
         return ""
     except requests.exceptions.RequestException as exc:
-        log(f"Tam metin çekme HTTP hatası ({url}): {exc}", "WARNING")
+        log(f"⚠️ Tam metin çekme HTTP hatası ({url}): {exc}", "WARNING")
         return ""
     except Exception as exc:
-        log(f"Tam metin çekme genel hata ({url}): {exc}", "ERROR")
+        log(f"⚠️ Tam metin çekme genel hata ({url}): {exc}", "ERROR")
         return ""
+
+
+# ── Eski fonksiyon adı ile uyumluluk (main.py bunu çağırıyor olabilir) ──
+def get_article_full_text(url: str) -> str:
+    """Eski fonksiyon adı ile uyumluluk. scrape_full_article'ı çağırır."""
+    return scrape_full_article(url)
 
 
 # ============================================================
@@ -748,8 +847,6 @@ def fetch_and_filter_news() -> list[dict]:
       4. Zaman filtresi uygula (akıllı — son kontrolden itibaren)
       5. Daha önce paylaşılanları çıkar
       6. Benzerleri tekilleştir
-
-    Her adımda kalan haber sayısı loglanır.
 
     Returns:
         list[dict]: Filtrelenmiş, tekil, paylaşıma aday haber listesi.
@@ -833,6 +930,7 @@ if __name__ == "__main__":
             log(f"     Kaynak   : {article['source_name']} ({article['source_priority']})")
             log(f"     Tarih    : {article['published']}")
             log(f"     URL      : {article['link'][:80]}...")
+            log(f"     Görsel   : {article.get('image_url', 'YOK')[:80]}")
             summary_preview = article.get("summary", "")[:100]
             if summary_preview:
                 log(f"     Özet     : {summary_preview}...")
