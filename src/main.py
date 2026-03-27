@@ -4,19 +4,12 @@ main.py — Ana Orkestrasyon Modülü
 Bu dosya otoXtra botunun ana kontrolcüsüdür.
 GitHub Actions tarafından "python src/main.py" komutuyla çalıştırılır.
 
-Tüm modülleri sırayla çağırarak şu akışı yönetir:
-  1. Başlangıç kontrolleri (günlük limit, anti-bot, min aralık)
-  2. Haber tarama (RSS/Google News'ten çekme + temel filtreleme)
-  3. Kalite kapısı + viral puanlama (YZ ile değerlendirme)
-  4. İçerik üretimi (YZ ile Facebook post metni yazma)
-  5. Görsel temini (scraping veya YZ ile üretim + logo ekleme)
-  6. Facebook'a paylaşım (Graph API ile post + kayıt tutma)
-
-Anti-bot stratejisi:
-  - Rastgele gecikme (0-8 dk) → paylaşım saati her seferinde farklı
-  - Rastgele atlama (%10) → her tetiklemede paylaşım garanti değil
-  - Minimum aralık (2 saat) → art arda paylaşım engellenir
-  - Değişken üslup → YZ her seferinde farklı tonda yazar
+TEST MODU:
+  Manuel çalıştırmada (Run workflow butonu) otomatik aktif olur.
+  - Rastgele gecikme ATLANIR (0 saniye bekleme)
+  - Rastgele atlama ATLANIR (her seferinde çalışır)
+  - Minimum aralık kontrolü ATLANIR
+  - Böylece test 30 saniyede biter, 7 dakika beklemezsin
 
 Kullandığı modüller:
   - news_fetcher.py    → fetch_and_filter_news(), get_article_full_text()
@@ -29,6 +22,7 @@ Kullandığı modüller:
                           get_turkey_now(), get_today_str()
 """
 
+import os
 import random
 from datetime import datetime, timedelta
 from typing import Optional
@@ -47,6 +41,22 @@ from utils import (
     get_turkey_now,
     get_today_str,
 )
+
+
+def is_test_mode() -> bool:
+    """
+    Test modunun aktif olup olmadığını kontrol eder.
+
+    TEST_MODE ortam değişkeni "true" ise test modu aktiftir.
+    Bu değişken bot.yml'de otomatik ayarlanır:
+      - "Run workflow" butonu → TEST_MODE=true
+      - Zamanlanmış çalışma   → TEST_MODE=false
+
+    Returns:
+        True: Test modu aktif (hızlı çalış).
+        False: Normal mod (anti-bot gecikmeleri uygula).
+    """
+    return os.environ.get("TEST_MODE", "false").lower() == "true"
 
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
@@ -68,8 +78,7 @@ def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
 
     if today_count >= max_daily:
         log(
-            f"🛑 Günlük limit doldu ({today_count}/{max_daily}). "
-            "Çıkılıyor.",
+            f"🛑 Günlük limit doldu ({today_count}/{max_daily}). Çıkılıyor.",
             "INFO",
         )
         return False
@@ -81,16 +90,19 @@ def _check_random_skip(settings: dict) -> bool:
     """
     Anti-bot rastgele atlama kontrolü yapar.
 
-    Belirli bir olasılıkla (varsayılan %10) paylaşım yapmadan çıkar.
-    Bu, botun daha doğal görünmesini sağlar.
+    TEST MODUNDA: Her zaman devam eder (atlamaz).
 
     Args:
         settings: settings.json içeriği.
 
     Returns:
-        True: Devam edilebilir (atlanmadı).
-        False: Bu sefer atlanacak, çıkılmalı.
+        True: Devam edilebilir.
+        False: Bu sefer atlanacak.
     """
+    if is_test_mode():
+        log("🧪 TEST MODU: Rastgele atlama devre dışı", "INFO")
+        return True
+
     skip_probability: int = settings.get("posting", {}).get(
         "skip_probability_percent", 10
     )
@@ -117,17 +129,20 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
     """
     Son paylaşımdan yeterli süre geçip geçmediğini kontrol eder.
 
-    Art arda paylaşım yapılmasını engeller (varsayılan minimum 2 saat).
-    Bu hem anti-bot stratejisi hem de içerik kalitesi için önemlidir.
+    TEST MODUNDA: Her zaman devam eder (beklemez).
 
     Args:
         settings:    settings.json içeriği.
         posted_data: posted_news.json içeriği.
 
     Returns:
-        True: Devam edilebilir (yeterli süre geçmiş).
-        False: Henüz erken, çıkılmalı.
+        True: Devam edilebilir.
+        False: Henüz erken.
     """
+    if is_test_mode():
+        log("🧪 TEST MODU: Minimum aralık kontrolü devre dışı", "INFO")
+        return True
+
     min_interval_hours: float = settings.get("posting", {}).get(
         "min_post_interval_hours", 2
     )
@@ -138,7 +153,6 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         log("ℹ️ Daha önce paylaşım yapılmamış, devam ediliyor", "INFO")
         return True
 
-    # Son paylaşımın zamanını al
     last_post: dict = posts[-1]
     last_posted_at_str: str = last_post.get("posted_at", "")
 
@@ -147,16 +161,10 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         return True
 
     try:
-        # ISO format parse et
-        # python-dateutil ile esnek parse
         from dateutil import parser as date_parser
 
         last_posted_at: datetime = date_parser.isoparse(last_posted_at_str)
-
-        # Şu anki Türkiye zamanı
         now_turkey: datetime = get_turkey_now()
-
-        # Zaman farkı
         time_diff: timedelta = now_turkey - last_posted_at
         hours_since_last: float = time_diff.total_seconds() / 3600
 
@@ -181,8 +189,7 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
 
     except (ValueError, TypeError) as e:
         log(
-            f"⚠️ Son paylaşım zamanı parse edilemedi: {e}. "
-            "Devam ediliyor.",
+            f"⚠️ Son paylaşım zamanı parse edilemedi: {e}. Devam ediliyor.",
             "WARNING",
         )
         return True
@@ -192,18 +199,18 @@ def main() -> None:
     """
     otoXtra botunun ana fonksiyonu.
 
-    Tüm adımları sırayla çalıştırır:
-      1. Başlangıç kontrolleri (limit, anti-bot, min aralık)
-      2. Haber tarama
-      3. Kalite filtre + puanlama
-      4. İçerik üretimi
-      5. Görsel temini
-      6. Facebook paylaşımı
+    TEST MODUNDA (Run workflow butonu):
+      - Gecikme yok → anında çalışır
+      - Atlama yok → her seferinde paylaşır
+      - Aralık kontrolü yok → art arda test edilebilir
 
-    Bu fonksiyon hiçbir zaman exception fırlatmaz (graceful çıkış).
-    Tüm hatalar loglanır ama program çökmez.
+    NORMAL MODDA (zamanlanmış çalışma):
+      - 0-8 dk rastgele gecikme
+      - %10 rastgele atlama
+      - 2 saat minimum aralık
     """
     separator: str = "═" * 60
+    test_mode: bool = is_test_mode()
 
     try:
         # ══════════════════════════════════════════════
@@ -211,24 +218,23 @@ def main() -> None:
         # ══════════════════════════════════════════════
         log(separator, "INFO")
         log("🚗 otoXtra Bot Başlatılıyor", "INFO")
+        if test_mode:
+            log("🧪 ══ TEST MODU AKTİF — Gecikmeler devre dışı ══", "INFO")
         log(separator, "INFO")
 
-        # Şu anki Türkiye zamanını göster
         turkey_now: datetime = get_turkey_now()
         log(f"🕐 Türkiye saati: {turkey_now.strftime('%Y-%m-%d %H:%M:%S')}", "INFO")
 
-        # Ayarları yükle
         settings: dict = load_config("settings")
         log("✅ Ayarlar yüklendi", "INFO")
 
-        # Paylaşım geçmişini yükle
         posted_data: dict = get_posted_news()
 
         # ── Kontrol 1: Günlük limit ──
         if not _check_daily_limit(settings, posted_data):
             return
 
-        # ── Kontrol 2: Rastgele atlama (anti-bot) ──
+        # ── Kontrol 2: Rastgele atlama ──
         if not _check_random_skip(settings):
             return
 
@@ -236,11 +242,14 @@ def main() -> None:
         if not _check_min_interval(settings, posted_data):
             return
 
-        # ── Anti-bot: Rastgele gecikme ──
-        max_delay_minutes: int = settings.get("posting", {}).get(
-            "random_delay_max_minutes", 8
-        )
-        random_delay(max_delay_minutes)
+        # ── Rastgele gecikme ──
+        if test_mode:
+            log("🧪 TEST MODU: Rastgele gecikme atlandı (0 saniye)", "INFO")
+        else:
+            max_delay_minutes: int = settings.get("posting", {}).get(
+                "random_delay_max_minutes", 8
+            )
+            random_delay(max_delay_minutes)
 
         # ══════════════════════════════════════════════
         # ADIM 2: HABER TARAMA
@@ -294,7 +303,6 @@ def main() -> None:
         log("✍️ ADIM 5: İçerik üretimi...", "INFO")
         log(separator, "INFO")
 
-        # Haber tam metnini çekmeyi dene (daha iyi içerik için)
         article_link: str = selected.get("link", "")
         if article_link:
             log("📄 Haber tam metni çekiliyor...", "INFO")
@@ -311,14 +319,10 @@ def main() -> None:
                     "INFO",
                 )
 
-        # YZ ile Facebook post metni üret
         post_text: str = generate_post_text(selected)
 
         if not post_text:
-            log(
-                "❌ İçerik üretilemedi. Çıkılıyor.",
-                "ERROR",
-            )
+            log("❌ İçerik üretilemedi. Çıkılıyor.", "ERROR")
             log(separator, "INFO")
             log("🏁 İşlem tamamlandı: İçerik üretim hatası", "INFO")
             log(separator, "INFO")
@@ -352,7 +356,6 @@ def main() -> None:
 
         success: bool = publish(selected, post_text, image_path)
 
-        # ── Final ──
         log(separator, "INFO")
         if success:
             log("🎉 ═══ İşlem tamamlandı: BAŞARILI ═══", "INFO")
@@ -364,22 +367,14 @@ def main() -> None:
         log("⚠️ Kullanıcı tarafından durduruldu (Ctrl+C)", "WARNING")
 
     except Exception as e:
-        # Tüm beklenmeyen hataları yakala — graceful çıkış
-        # exit(1) yapmıyoruz: GitHub Actions workflow'un hata
-        # göstermesini engelliyoruz (bir sonraki çalışmada tekrar dener)
         log(separator, "ERROR")
         log(f"💥 KRİTİK HATA: {str(e)}", "ERROR")
 
-        # Hata detayını logla (debug için)
         import traceback
-
         error_details: str = traceback.format_exc()
         log(f"📋 Hata detayı:\n{error_details}", "ERROR")
 
-        log(
-            "ℹ️ Bot bir sonraki çalışmada tekrar deneyecek.",
-            "INFO",
-        )
+        log("ℹ️ Bot bir sonraki çalışmada tekrar deneyecek.", "INFO")
         log(separator, "ERROR")
 
 
