@@ -12,7 +12,7 @@ TEST MODU:
   - Böylece test 30 saniyede biter, 7 dakika beklemezsin
 
 Kullandığı modüller:
-  - news_fetcher.py    → fetch_and_filter_news(), get_article_full_text()
+  - news_fetcher.py    → fetch_and_filter_news(), scrape_full_article()
   - content_filter.py  → filter_and_score()
   - ai_processor.py    → generate_post_text()
   - image_handler.py   → prepare_image()
@@ -28,7 +28,7 @@ import random
 from datetime import datetime, timedelta
 from typing import Optional
 
-from news_fetcher import fetch_and_filter_news, get_article_full_text
+from news_fetcher import fetch_and_filter_news, scrape_full_article
 from content_filter import filter_and_score
 from ai_processor import generate_post_text
 from image_handler import prepare_image
@@ -338,7 +338,7 @@ def main() -> None:
         article_link: str = selected.get("link", "")
         if article_link:
             log("📄 Haber tam metni çekiliyor...", "INFO")
-            full_text: str = get_article_full_text(article_link)
+            full_text: str = scrape_full_article(article_link)
             if full_text:
                 selected["full_text"] = full_text
                 log(
@@ -420,9 +420,6 @@ def main() -> None:
         log(separator, "ERROR")
 
         # Kritik hata olsa bile tarama başlamışsa zamanı kaydet
-        # Böylece aynı haberleri tekrar tekrar denemez
-        # NOT: _save_check_time() kendi içinde taze veri okur,
-        #       posted_data tanımlı olmasa bile çalışır
         try:
             _save_check_time()
             log("💾 Son kontrol zamanı kaydedildi (hata sonrası)", "INFO")
