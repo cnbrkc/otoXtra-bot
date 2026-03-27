@@ -1,5 +1,5 @@
 """
-content_filter.py — Kalite Kapısı + Viral Puanlama Modülü (v2 — Batch İşleme)
+content_filter.py — Kalite Kapısı + Viral Puanlama Modülü (v3 — Batch Karışma Düzeltmesi)
 
 Bu modül haberleri YZ (yapay zeka) ile iki aşamada değerlendirir:
 
@@ -19,15 +19,21 @@ Akış:
     → Eşik Kontrolü (düşük puanlılar elenir)
     → En İyi Haber seçilir ve döner
 
+v3 Değişiklikler:
+  - match_ai_results_to_articles() güçlendirildi:
+    Sıra numarası ile eşleşirken başlık ÇAPRAZ DOĞRULAMASI yapılır.
+    Sıra doğru ama başlık farklı habere aitse → sıra güvenilmez,
+    başlık eşleştirmesine düşer. Bu batch karışma sorununu çözer.
+
 v2 Değişiklikler:
   - Haberler BATCH_SIZE'lık gruplar halinde YZ'ye gönderilir (token limiti aşılmaz)
   - Puanlanamayan haberlere varsayılan 0 puan verilir (50 DEĞİL)
   - Batch'ler arası rate limit gecikmesi eklendi
 
-YZ Yanıtı Eşleştirme Stratejisi:
+YZ Yanıtı Eşleştirme Stratejisi (v3):
   Haberler YZ'ye numaralı gönderilir, yanıt "sira" + "baslik" içerir.
-  1. Önce "sira" (numara) ile eşleştir
-  2. Sıra yoksa / uyuşmazsa → "baslik" ile birebir eşleştir
+  1. Önce "sira" (numara) ile eşleştir + başlık ÇAPRAZ DOĞRULAMA (%40+)
+  2. Sıra yoksa / başlık doğrulanamadıysa → "baslik" ile birebir eşleştir
   3. Birebir bulunamazsa → fuzzy match (benzerlik ≥ 0.6)
   4. Hiçbiri tutmazsa → atla, logla
 
@@ -68,6 +74,10 @@ BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
 """YZ'nin puanlayamadığı haberlere verilen varsayılan puan.
 0 = eşiğin altında kalır, paylaşılmaz. (Eski değer 50'ydi → hatalıydı)"""
+
+CROSS_VALIDATE_THRESHOLD: float = 0.4
+"""Sıra numarası ile eşleşirken başlık çapraz doğrulama eşiği.
+Bu değerin altında benzerlik varsa sıra numarası güvenilmez kabul edilir."""
 
 
 # ──────────────────────────────────────────────
@@ -121,7 +131,7 @@ def _split_into_batches(articles: list[dict]) -> list[list[dict]]:
 
 
 # ──────────────────────────────────────────────
-# 1) YZ Sonuçlarını Haberlerle Eşleştirme
+# 1) YZ Sonuçlarını Haberlerle Eşleştirme (v3)
 # ──────────────────────────────────────────────
 
 def match_ai_results_to_articles(
@@ -131,8 +141,14 @@ def match_ai_results_to_articles(
     """
     YZ'den gelen sonuç listesini orijinal haber article'larıyla eşleştirir.
 
+    v3 — Çapraz doğrulama eklendi:
+    Sıra numarası ile eşleşirken, YZ'nin döndürdüğü "baslik" alanı da
+    kontrol edilir. Eğer başlık benzerliği %40'ın altındaysa, bu sıra
+    numarası güvenilmez kabul edilir ve başlık eşleştirmesine düşülür.
+    Bu sayede YZ'nin haber sıralarını karıştırması engellenir.
+
     Eşleştirme stratejisi (sırasıyla denenir):
-      1. "sira" (index numarası) ile eşleştir
+      1. "sira" (index) ile eşleştir + başlık ÇAPRAZ DOĞRULAMA (≥0.4)
       2. "baslik" alanı ile birebir (case-insensitive) eşleştir
       3. is_similar_title() ile fuzzy eşleştir (benzerlik eşiği 0.6)
       4. Hiçbiri tutmazsa → sonucu atla, uyarı logla
@@ -153,41 +169,61 @@ def match_ai_results_to_articles(
         matched_article: Optional[dict] = None
         matched_index: Optional[int] = None
 
-        # ── Strateji 1: "sira" numarası ile eşleştir ──
+        # ── Strateji 1: "sira" numarası ile eşleştir + çapraz doğrulama ──
         sira = ai_result.get("sira")
         if sira is not None:
             try:
                 index: int = int(sira) - 1
                 if 0 <= index < len(articles) and index not in used_indices:
-                    matched_article = articles[index]
-                    matched_index = index
+                    # v3: Çapraz doğrulama — başlık da uyuşuyor mu?
+                    ai_baslik: str = ai_result.get("baslik", "").strip()
+                    article_title: str = articles[index].get("title", "").strip()
+
+                    if not ai_baslik:
+                        # YZ başlık döndürmemiş → sıraya güven
+                        matched_article = articles[index]
+                        matched_index = index
+                    elif is_similar_title(ai_baslik, article_title, threshold=CROSS_VALIDATE_THRESHOLD):
+                        # Sıra ve başlık uyuşuyor → güvenilir eşleşme ✓
+                        matched_article = articles[index]
+                        matched_index = index
+                    else:
+                        # UYUŞMAZLIK: Sıra diyor ama başlık tutmuyor!
+                        # Bu batch karışma belirtisi → sıraya güvenme
+                        log(
+                            f"  ⚠️ ÇAPRAZ DOĞRULAMA: Sıra {sira} ile başlık uyuşmuyor → "
+                            f"sıra atlanıyor, başlık eşleştirmesine düşülüyor | "
+                            f"YZ: '{ai_baslik[:50]}' vs Gerçek: '{article_title[:50]}'",
+                            "WARNING",
+                        )
+                        # matched_article None kalır → strateji 2'ye düşer
             except (ValueError, TypeError):
                 pass
 
         # ── Strateji 2: "baslik" ile birebir eşleştir ──
         if matched_article is None:
-            ai_baslik: str = ai_result.get("baslik", "").strip()
-            if ai_baslik:
-                ai_baslik_lower: str = ai_baslik.lower()
+            ai_baslik_str: str = ai_result.get("baslik", "").strip()
+            if ai_baslik_str:
+                ai_baslik_lower: str = ai_baslik_str.lower()
                 for i, article in enumerate(articles):
                     if i in used_indices:
                         continue
-                    article_title: str = article.get("title", "").strip()
-                    if ai_baslik_lower == article_title.lower():
+                    article_title_str: str = article.get("title", "").strip()
+                    if ai_baslik_lower == article_title_str.lower():
                         matched_article = article
                         matched_index = i
                         break
 
         # ── Strateji 3: fuzzy match (benzerlik eşiği 0.6) ──
         if matched_article is None:
-            ai_baslik = ai_result.get("baslik", "").strip()
-            if ai_baslik:
+            ai_baslik_fuzzy: str = ai_result.get("baslik", "").strip()
+            if ai_baslik_fuzzy:
                 for i, article in enumerate(articles):
                     if i in used_indices:
                         continue
-                    article_title = article.get("title", "").strip()
+                    article_title_fuzzy: str = article.get("title", "").strip()
                     try:
-                        if is_similar_title(ai_baslik, article_title, threshold=0.6):
+                        if is_similar_title(ai_baslik_fuzzy, article_title_fuzzy, threshold=0.6):
                             matched_article = article
                             matched_index = i
                             break
