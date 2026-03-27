@@ -1,5 +1,5 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü
+src/news_fetcher.py — Haber Çekme Modülü (v2 — Keyword Düzeltmesi)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
@@ -12,9 +12,14 @@ otoXtra Facebook Botu için RSS feed'lerden haber çeken,
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
+v2 Değişiklikler:
+  - Keyword key isimleri düzeltildi: include_keywords / exclude_keywords
+  - Keyword eşleştirme case-insensitive Türkçe desteği eklendi
+  - Keyword log mesajları detaylandırıldı (hangi kelime eledi)
+
 Kullandığı config dosyaları:
   - config/sources.json   → RSS feed listesi
-  - config/keywords.json  → Dahil/hariç anahtar kelimeler
+  - config/keywords.json  → include_keywords / exclude_keywords
   - config/settings.json  → news_max_age_hours
 
 Diğer modüller bu dosyayı şöyle import eder:
@@ -51,6 +56,24 @@ _USER_AGENT = (
 )
 
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
+
+
+# ── Türkçe Küçük Harf Dönüşümü ─────────────────────────────
+
+def _turkish_lower(text: str) -> str:
+    """Türkçe karakterleri doğru küçük harfe çevirir.
+
+    Python'un str.lower() metodu Türkçe İ→i dönüşümünü
+    doğru yapmaz (İ→i̇ yapar). Bu fonksiyon düzeltir.
+
+    Args:
+        text: Küçük harfe çevrilecek metin.
+
+    Returns:
+        str: Türkçe kurallarına uygun küçük harf metin.
+    """
+    text = text.replace("İ", "i").replace("I", "ı")
+    return text.lower()
 
 
 # ============================================================
@@ -290,21 +313,22 @@ def resolve_google_news_url(url: str) -> str:
 
 
 # ============================================================
-# 3. KEYWORD FİLTRESİ
+# 3. KEYWORD FİLTRESİ (v2 — Düzeltilmiş)
 # ============================================================
 
 def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     """Anahtar kelime filtresini uygular.
 
-    keywords.json'dan dahil (must_match_any) ve hariç
-    (must_not_match) listelerini okur.
+    keywords.json'dan dahil (include_keywords) ve hariç
+    (exclude_keywords) listelerini okur.
 
     Geçiş kuralı:
-      - Başlık+özette must_match_any'den EN AZ 1 kelime → geçer
-      - Başlık+özette must_not_match'ten herhangi biri → reddedilir
-      - must_match_any boşsa keyword kontrolü atlanır (hepsi geçer)
+      1. ÖNCE exclude kontrolü: Başlık+özette exclude kelimesi varsa → RED
+      2. SONRA include kontrolü: include listesi doluysa,
+         başlık+özette en az 1 include kelimesi olmalı → yoksa RED
+      3. include listesi boşsa → exclude'dan geçen herkes kabul
 
-    Karşılaştırmalar case-insensitive (küçük harf) yapılır.
+    Karşılaştırmalar Türkçe-uyumlu case-insensitive yapılır.
 
     Args:
         articles: Filtrelenecek haber listesi.
@@ -314,55 +338,108 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     """
     keywords_cfg = load_config("keywords")
 
-    must_match_any: list[str] = keywords_cfg.get("must_match_any", [])
-    must_not_match: list[str] = keywords_cfg.get("must_not_match", [])
+    # ── v2 DÜZELTMESİ: Doğru key isimleri ──
+    # Önce yeni (doğru) key isimlerini dene
+    # Sonra eski key isimlerini dene (geriye uyumluluk)
+    include_keywords: list[str] = (
+        keywords_cfg.get("include_keywords")
+        or keywords_cfg.get("must_match_any")
+        or []
+    )
+
+    exclude_keywords: list[str] = (
+        keywords_cfg.get("exclude_keywords")
+        or keywords_cfg.get("must_not_match")
+        or []
+    )
 
     # Kelime listeleri boşsa tüm haberleri geçir
-    if not must_match_any and not must_not_match:
-        log("[KEYWORD] Keyword listesi boş — filtre atlanıyor")
+    if not include_keywords and not exclude_keywords:
+        log("[KEYWORD] ⚠️ Keyword listesi boş — filtre atlanıyor", "WARNING")
         return articles
 
-    # Küçük harfe çevir (bir kez)
-    include_lower = [kw.lower() for kw in must_match_any]
-    exclude_lower = [kw.lower() for kw in must_not_match]
+    # Türkçe-uyumlu küçük harfe çevir (bir kez)
+    include_lower = [_turkish_lower(kw) for kw in include_keywords]
+    exclude_lower = [_turkish_lower(kw) for kw in exclude_keywords]
+
+    log(
+        f"[KEYWORD] Filtre başlıyor: "
+        f"{len(include_lower)} dahil, {len(exclude_lower)} hariç kelime",
+        "INFO",
+    )
 
     passed: list[dict] = []
-    excluded_count = 0
+    excluded_by_exclude: int = 0
+    excluded_by_include: int = 0
 
     for article in articles:
-        text = (
-            f"{article.get('title', '')} {article.get('summary', '')}"
-        ).lower()
+        title: str = article.get("title", "")
+        summary: str = article.get("summary", "")
+        text = _turkish_lower(f"{title} {summary}")
 
-        # Hariç kelime kontrolü (önce)
-        has_excluded = False
+        # ── ADIM 1: Hariç kelime kontrolü (önce) ──
+        excluded: bool = False
+        matched_exclude_kw: str = ""
+
         if exclude_lower:
             for kw in exclude_lower:
                 if kw in text:
-                    has_excluded = True
+                    excluded = True
+                    matched_exclude_kw = kw
                     break
 
-        if has_excluded:
-            excluded_count += 1
+        if excluded:
+            excluded_by_exclude += 1
+            # Sadece ilk 20 elemeyi logla (spam önleme)
+            if excluded_by_exclude <= 20:
+                log(
+                    f"  🚫 EXCLUDE elendi [{matched_exclude_kw}]: "
+                    f"{title[:70]}",
+                    "INFO",
+                )
             continue
 
-        # Dahil kelime kontrolü
+        # ── ADIM 2: Dahil kelime kontrolü ──
         if include_lower:
-            has_included = False
+            found_include: bool = False
             for kw in include_lower:
                 if kw in text:
-                    has_included = True
+                    found_include = True
                     break
-            if not has_included:
-                excluded_count += 1
+
+            if not found_include:
+                excluded_by_include += 1
+                # Sadece ilk 20 elemeyi logla
+                if excluded_by_include <= 20:
+                    log(
+                        f"  ⛔ INCLUDE eşleşmedi: {title[:70]}",
+                        "INFO",
+                    )
                 continue
 
         passed.append(article)
 
+    total_excluded: int = excluded_by_exclude + excluded_by_include
+
     log(
         f"[KEYWORD] {len(articles)} haber → {len(passed)} geçti, "
-        f"{excluded_count} elendi"
+        f"{total_excluded} elendi "
+        f"(exclude: {excluded_by_exclude}, include yok: {excluded_by_include})",
+        "INFO",
     )
+
+    if excluded_by_exclude > 20:
+        log(
+            f"  ℹ️ ... ve {excluded_by_exclude - 20} exclude elenme daha (loglanmadı)",
+            "INFO",
+        )
+
+    if excluded_by_include > 20:
+        log(
+            f"  ℹ️ ... ve {excluded_by_include - 20} include elenme daha (loglanmadı)",
+            "INFO",
+        )
+
     return passed
 
 
