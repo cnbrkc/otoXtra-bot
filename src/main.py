@@ -19,7 +19,8 @@ Kullandığı modüller:
   - facebook_poster.py → publish()
   - utils.py           → load_config(), log(), get_today_post_count(),
                           get_posted_news(), random_delay(),
-                          get_turkey_now(), get_today_str()
+                          get_turkey_now(), get_today_str(),
+                          save_last_check_time()
 """
 
 import os
@@ -40,6 +41,7 @@ from utils import (
     random_delay,
     get_turkey_now,
     get_today_str,
+    save_last_check_time,
 )
 
 
@@ -208,6 +210,9 @@ def main() -> None:
       - 0-8 dk rastgele gecikme
       - %10 rastgele atlama
       - 2 saat minimum aralık
+
+    Her çalışma sonunda save_last_check_time() çağrılır.
+    Böylece bir sonraki çalışma sadece yeni haberleri tarar.
     """
     separator: str = "═" * 60
     test_mode: bool = is_test_mode()
@@ -265,6 +270,10 @@ def main() -> None:
             log(separator, "INFO")
             log("🏁 İşlem tamamlandı: Paylaşılacak haber yok", "INFO")
             log(separator, "INFO")
+
+            # Haber bulunamasa bile tarama yapıldı → zamanı kaydet
+            save_last_check_time()
+            log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
         log(f"📋 {len(articles)} aday haber bulundu", "INFO")
@@ -287,6 +296,10 @@ def main() -> None:
             log(separator, "INFO")
             log("🏁 İşlem tamamlandı: Kaliteli haber yok", "INFO")
             log(separator, "INFO")
+
+            # Filtre sonucu boş olsa bile tarama yapıldı → zamanı kaydet
+            save_last_check_time()
+            log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
         selected_title: str = selected.get("title", "Başlık yok")
@@ -326,6 +339,10 @@ def main() -> None:
             log(separator, "INFO")
             log("🏁 İşlem tamamlandı: İçerik üretim hatası", "INFO")
             log(separator, "INFO")
+
+            # İçerik üretilemese bile tarama yapıldı → zamanı kaydet
+            save_last_check_time()
+            log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
         log("✅ Facebook post metni hazır", "INFO")
@@ -363,6 +380,10 @@ def main() -> None:
             log("😞 ═══ İşlem tamamlandı: BAŞARISIZ ═══", "WARNING")
         log(separator, "INFO")
 
+        # Başarılı veya başarısız, tarama yapıldı → zamanı kaydet
+        save_last_check_time()
+        log("💾 Son kontrol zamanı kaydedildi", "INFO")
+
     except KeyboardInterrupt:
         log("⚠️ Kullanıcı tarafından durduruldu (Ctrl+C)", "WARNING")
 
@@ -376,6 +397,14 @@ def main() -> None:
 
         log("ℹ️ Bot bir sonraki çalışmada tekrar deneyecek.", "INFO")
         log(separator, "ERROR")
+
+        # Kritik hata olsa bile tarama başlamışsa zamanı kaydet
+        # Böylece aynı haberleri tekrar tekrar denemez
+        try:
+            save_last_check_time()
+            log("💾 Son kontrol zamanı kaydedildi (hata sonrası)", "INFO")
+        except Exception:
+            log("⚠️ Son kontrol zamanı kaydedilemedi", "WARNING")
 
 
 if __name__ == "__main__":
