@@ -1,0 +1,39 @@
+{
+  "general": {
+    "brand_name": "otoXtra",
+    "language": "tr",
+    "timezone": "Europe/Istanbul"
+  },
+  "posting": {
+    "max_daily_posts": 7,
+    "min_post_interval_hours": 2,
+    "random_delay_max_minutes": 8,
+    "news_max_age_hours": 48,
+    "skip_probability_percent": 10
+  },
+  "images": {
+    "try_scrape_first": true,
+    "add_logo": true,
+    "fallback_ai_generate": true,
+    "feed_image_width": 1200,
+    "feed_image_height": 630,
+    "logo_position": "bottom_right",
+    "logo_opacity": 0.7,
+    "logo_size_percent": 15
+  },
+  "ai_providers": {
+    "text_generation": {
+      "primary": "gemini",
+      "fallback_1": "groq",
+      "fallback_2": "huggingface"
+    },
+    "image_generation": {
+      "primary": "pollinations",
+      "fallback": "huggingface"
+    }
+  },
+  "facebook": {
+    "post_type": "photo_with_text",
+    "enable_stories": false
+  }
+}
