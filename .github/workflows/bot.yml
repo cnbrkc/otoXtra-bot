@@ -1,7 +1,9 @@
-# otoXtra News Bot — GitHub Actions Workflow (v2)
+# otoXtra News Bot — GitHub Actions Workflow (v3)
 #
 # Günde 10 kez tetiklenir (Türkiye saatine göre 06:00-00:00 arası, 2 saat aralıkla).
 # Her tetiklemede 1 post paylaşılır (en viral haber seçilir).
+#
+# v3: Git push hatası düzeltildi (pull --rebase eklendi)
 
 name: otoXtra Bot
 
@@ -9,18 +11,6 @@ on:
   schedule:
     # Her 2 saatte bir, 06:00-00:00 arası (UTC+3 = Türkiye)
     # UTC'de: 03:00, 05:00, 07:00, 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00
-    #
-    # Türkiye Saati → UTC
-    # 06:00 → 03:00
-    # 08:00 → 05:00
-    # 10:00 → 07:00
-    # 12:00 → 09:00
-    # 14:00 → 11:00
-    # 16:00 → 13:00
-    # 18:00 → 15:00
-    # 20:00 → 17:00
-    # 22:00 → 19:00
-    # 00:00 → 21:00
     - cron: '0 3,5,7,9,11,13,15,17,19,21 * * *'
 
   workflow_dispatch:
@@ -34,6 +24,11 @@ on:
           - 'true'
           - 'false'
 
+# Aynı anda birden fazla workflow çalışmasını engelle
+concurrency:
+  group: otoxtra-bot
+  cancel-in-progress: false
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
@@ -46,6 +41,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
+          fetch-depth: 0
       
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -72,5 +68,13 @@ jobs:
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
           git add data/posted_news.json
-          git diff --staged --quiet || git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
-          git push
+          git diff --staged --quiet && echo "Değişiklik yok, commit atlanıyor" && exit 0
+          git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
+          
+          # Push başarısız olursa pull --rebase ile tekrar dene
+          for i in 1 2 3; do
+            git push && break
+            echo "Push başarısız (deneme $i/3), pull --rebase yapılıyor..."
+            git pull --rebase origin $(git branch --show-current)
+            sleep 2
+          done
