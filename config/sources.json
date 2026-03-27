@@ -1,0 +1,33 @@
+{
+  "rss_feeds": [
+    {
+      "name": "Google News - Otomobil TR",
+      "url": "https://news.google.com/rss/search?q=otomobil+OR+benzin+OR+motorin+OR+ara%C3%A7+when:2d&hl=tr&gl=TR&ceid=TR:tr",
+      "priority": "high",
+      "language": "tr",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Google News - Yakıt Zam",
+      "url": "https://news.google.com/rss/search?q=benzin+zam+OR+motorin+zam+OR+lpg+zam+when:1d&hl=tr&gl=TR&ceid=TR:tr",
+      "priority": "high",
+      "language": "tr",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Google News - Automotive EN",
+      "url": "https://news.google.com/rss/search?q=automotive+OR+electric+vehicle+OR+car+launch+when:2d&hl=en&gl=US&ceid=US:en",
+      "priority": "medium",
+      "language": "en",
+      "can_scrape_image": false
+    },
+    {
+      "name": "Donanim Haber Otomobil",
+      "url": "RSS_URL_BURAYA",
+      "priority": "high",
+      "language": "tr",
+      "can_scrape_image": true,
+      "_note": "Gerçek RSS URL'sini bulup buraya yapıştır. URL geçersizse bu kaynak otomatik atlanır, diğer kaynaklar çalışmaya devam eder."
+    }
+  ]
+}
