@@ -474,7 +474,8 @@ def apply_thresholds(scored_articles: list[dict]) -> list[dict]:
     slow_day_score: int = thresholds.get("slow_day_score", 50)
 
     # ── Bugün kaç post yapıldığını kontrol et ──
-    today_post_count: int = get_today_post_count()
+    posted_data: dict = get_posted_news()
+    today_post_count: int = get_today_post_count(posted_data)
 
     # ── Eşiği belirle ──
     if today_post_count < 2:
