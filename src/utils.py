@@ -1,3 +1,4 @@
+"""
 src/utils.py — Yardımcı Fonksiyonlar
 
 otoXtra Facebook Botu için tüm modüller tarafından kullanılan
