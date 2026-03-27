@@ -1,5 +1,5 @@
 """
-ai_processor.py — Yapay Zeka Metin İşleme Modülü
+ai_processor.py — Yapay Zeka Metin İşleme Modülü (v2 — Kesik JSON Kurtarma)
 
 Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Haber değerlendirme için YZ'ye soru sorma
@@ -11,10 +11,10 @@ YZ Sağlayıcı Zinciri (fallback):
   2. Groq (yedek 1)         → GROQ_API_KEY
   3. HuggingFace (yedek 2)  → HF_API_KEY
 
-Eğer bir sağlayıcı başarısız olursa otomatik olarak sonrakine geçer.
-
-Kullandığı modüller:
-  - utils.py → load_config(), log(), get_project_root()
+v2 Değişiklikler:
+  - parse_ai_json: Kesik JSON kurtarma (token limiti dolmuş yanıtlar)
+  - parse_ai_json: Trailing comma temizleme
+  - parse_ai_json: Satır satır JSON parse (fallback)
 
 Ortam değişkenleri:
   - GEMINI_API_KEY  (Google AI Studio'dan alınır)
@@ -40,8 +40,6 @@ from utils import load_config, log
 def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: str) -> Optional[str]:
     """
     Google Gemini API ile metin üretir.
-
-    Yeni google-genai paketi kullanılır (eski google-generativeai DEĞİL).
 
     Args:
         prompt:      YZ'ye gönderilecek metin.
@@ -208,16 +206,12 @@ def ask_ai(prompt: str) -> str:
     Sağlayıcıları sırayla dener: Gemini → Groq → HuggingFace.
     İlk başarılı yanıtı döndürür.
 
-    Bu fonksiyon content_filter.py tarafından kalite kapısı
-    ve viral puanlama için çağrılır.
-
     Args:
         prompt: YZ'ye gönderilecek metin.
 
     Returns:
         YZ yanıtı string. Hiçbir sağlayıcı başarılı olmazsa boş string.
     """
-    # Ayarları oku
     settings: dict = load_config("settings")
     ai_settings: dict = settings.get("ai", {})
 
@@ -251,19 +245,85 @@ def ask_ai(prompt: str) -> str:
     return ""
 
 
+# ──────────────────────────────────────────────
+# JSON Parse — Kesik JSON Kurtarma
+# ──────────────────────────────────────────────
+
+def _fix_truncated_json_array(text: str) -> Optional[str]:
+    """
+    Token limiti dolunca yarım kalan JSON array'i düzeltmeye çalışır.
+
+    Strateji:
+      1. Son tam '}' karakterini bul
+      2. Sonrasını kes (yarım kalan son element)
+      3. Trailing virgülü temizle
+      4. ']' ekle
+      5. JSON olarak parse et
+      6. Parse başarısızsa bir önceki '}' ile tekrar dene (max 20 deneme)
+
+    Örnek:
+      Girdi:  [{"sira":1,"puan":85},{"sira":2,"puan":72},{"sira":3,"pu
+      Çıktı:  [{"sira":1,"puan":85},{"sira":2,"puan":72}]
+
+    Args:
+        text: '[' ile başlayan ama ']' ile bitmeyen JSON string.
+
+    Returns:
+        Düzeltilmiş JSON string veya None.
+    """
+    text = text.strip()
+
+    if not text.startswith("["):
+        return None
+
+    # Zaten tam ve geçerli JSON ise dokunma
+    if text.endswith("]"):
+        try:
+            json.loads(text)
+            return text
+        except json.JSONDecodeError:
+            pass  # ] var ama JSON hatalı, düzeltmeyi dene
+
+    # Son tam }'den geriye doğru dene
+    search_end: int = len(text)
+
+    for _attempt in range(20):
+        close_pos: int = text.rfind("}", 0, search_end)
+        if close_pos <= 0:
+            break
+
+        candidate: str = text[: close_pos + 1].rstrip()
+
+        # Trailing virgül temizle
+        if candidate.endswith(","):
+            candidate = candidate[:-1].rstrip()
+
+        candidate += "\n]"
+
+        try:
+            result = json.loads(candidate)
+            if isinstance(result, list) and len(result) > 0:
+                return candidate
+        except json.JSONDecodeError:
+            pass
+
+        search_end = close_pos
+
+    return None
+
+
 def parse_ai_json(text: str) -> Optional[Union[list, dict]]:
     """
     YZ yanıtından JSON verisini çıkarır ve parse eder.
 
-    YZ bazen JSON'u markdown code block içinde döner:
-      ```json
-      [{"key": "value"}]
-      ```
-
-    Bu fonksiyon tüm bu formatları destekler:
-    1. Düz JSON
-    2. Markdown code block içinde JSON
-    3. Metin içinde gömülü JSON (ilk [ veya { ile başlayan kısım)
+    7 aşamalı parse stratejisi (sırasıyla denenir):
+      1. Düz JSON parse
+      2. Markdown code block içinden çıkar
+      3. Trailing comma temizle ve tekrar dene
+      4. Regex ile [ ... ] array bul
+      5. Kesik JSON kurtarma (token limiti dolmuş yanıtlar)
+      6. Regex ile { ... } tek object bul
+      7. Satır satır JSON parse (JSON Lines format)
 
     Args:
         text: YZ'den gelen ham yanıt metni.
@@ -275,50 +335,99 @@ def parse_ai_json(text: str) -> Optional[Union[list, dict]]:
         log("⚠️ parse_ai_json: Boş metin", "WARNING")
         return None
 
-    # Temizlik
     cleaned: str = text.strip()
 
-    # ── Deneme 1: Direkt JSON parse ──
+    # ── Deneme 1: Düz JSON parse ──
     try:
-        result = json.loads(cleaned)
-        return result
+        return json.loads(cleaned)
     except json.JSONDecodeError:
         pass
 
     # ── Deneme 2: Markdown code block içinden çıkar ──
-    # ```json ... ``` veya ``` ... ```
     code_block_pattern = r"```(?:json)?\s*\n?(.*?)\n?\s*```"
     code_match = re.search(code_block_pattern, cleaned, re.DOTALL)
     if code_match:
+        block_content: str = code_match.group(1).strip()
         try:
-            result = json.loads(code_match.group(1).strip())
-            return result
+            return json.loads(block_content)
+        except json.JSONDecodeError:
+            # Code block içeriğiyle devam et (sonraki denemelerde kullanılır)
+            cleaned = block_content
+
+    # ── Deneme 3: Trailing comma temizle ──
+    # YZ bazen geçersiz trailing comma bırakır: [{"a":1},{"b":2},]
+    fixed: str = re.sub(r",\s*([}\]])", r"\1", cleaned)
+    if fixed != cleaned:
+        try:
+            return json.loads(fixed)
         except json.JSONDecodeError:
             pass
 
-    # ── Deneme 3: İlk [ ... ] veya { ... } bloğunu bul ──
-    # JSON array
-    array_match = re.search(r"\[.*\]", cleaned, re.DOTALL)
+    # ── Deneme 4: Regex ile [ ... ] array bul ──
+    array_match = re.search(r"\[.*\]", fixed, re.DOTALL)
     if array_match:
         try:
-            result = json.loads(array_match.group(0))
-            return result
+            return json.loads(array_match.group(0))
         except json.JSONDecodeError:
             pass
 
-    # JSON object
-    object_match = re.search(r"\{.*\}", cleaned, re.DOTALL)
+    # ── Deneme 5: Kesik JSON kurtarma ──
+    # Token limiti dolunca JSON yarım kalıyor: [{"a":1},{"b":2},{"c":
+    # Bu durumda son tam element'e kadar kes ve ] ekle
+    bracket_pos: int = cleaned.find("[")
+    if bracket_pos >= 0:
+        partial: str = cleaned[bracket_pos:]
+        recovered: Optional[str] = _fix_truncated_json_array(partial)
+        if recovered is not None:
+            try:
+                result = json.loads(recovered)
+                count: int = len(result) if isinstance(result, list) else 1
+                log(
+                    f"🔧 Kesik JSON kurtarıldı: {count} öğe recover edildi",
+                    "INFO",
+                )
+                return result
+            except json.JSONDecodeError:
+                pass
+
+    # ── Deneme 6: Tek { ... } object bul ──
+    # Nested olmayan en dıştaki object
+    object_match = re.search(r"\{[^{}]*\}", cleaned)
     if object_match:
         try:
             result = json.loads(object_match.group(0))
-            # Eğer tek bir dict ise ve list bekleniyorsa, listeye çevir
             if isinstance(result, dict):
                 return [result]
             return result
         except json.JSONDecodeError:
             pass
 
-    log(f"⚠️ parse_ai_json: JSON parse edilemedi. İlk 200 karakter: {cleaned[:200]}", "WARNING")
+    # ── Deneme 7: Satır satır JSON parse (JSON Lines) ──
+    lines: list[str] = cleaned.split("\n")
+    line_results: list[dict] = []
+    for line in lines:
+        line = line.strip().rstrip(",")
+        if line.startswith("{") and line.endswith("}"):
+            try:
+                obj = json.loads(line)
+                if isinstance(obj, dict):
+                    line_results.append(obj)
+            except json.JSONDecodeError:
+                pass
+
+    if line_results:
+        log(
+            f"🔧 Satır satır JSON parse: {len(line_results)} öğe bulundu",
+            "INFO",
+        )
+        return line_results
+
+    # ── Hiçbiri başarılı olmadı ──
+    preview: str = cleaned[:200]
+    log(
+        f"⚠️ parse_ai_json: JSON parse edilemedi. İlk 200 karakter: {preview}",
+        "WARNING",
+    )
     return None
 
 
@@ -326,16 +435,12 @@ def generate_post_text(article: dict) -> str:
     """
     Haber bilgilerinden Facebook post metni üretir.
 
-    prompts.json'daki "post_writer" promptunu kullanır.
-    Haberin başlığı, özeti ve (varsa) tam metnini YZ'ye gönderir.
-
     Args:
         article: Haber dict'i (title, summary, full_text, source_name vb.).
 
     Returns:
         Facebook'ta paylaşılacak post metni. Üretilemezse boş string.
     """
-    # Promptu oku
     prompts_config: dict = load_config("prompts")
     writer_prompt: str = prompts_config.get("post_writer", "")
 
@@ -343,13 +448,11 @@ def generate_post_text(article: dict) -> str:
         log("⚠️ post_writer promptu prompts.json'da bulunamadı", "WARNING")
         return ""
 
-    # Haber bilgilerini hazırla
     title: str = article.get("title", "")
     summary: str = article.get("summary", "")
     full_text: str = article.get("full_text", "")
     source: str = article.get("source_name", "")
 
-    # Haber bilgilerini prompt'a ekle
     news_info_parts: list[str] = []
     news_info_parts.append(f"BAŞLIK: {title}")
 
@@ -360,7 +463,6 @@ def generate_post_text(article: dict) -> str:
         news_info_parts.append(f"ÖZET: {summary[:500]}")
 
     if full_text:
-        # Tam metni kısalt (YZ token limitini aşmasın)
         news_info_parts.append(f"TAM METİN: {full_text[:1500]}")
 
     news_info: str = "\n".join(news_info_parts)
@@ -368,17 +470,14 @@ def generate_post_text(article: dict) -> str:
 
     log(f"✍️ Post metni üretiliyor: {title[:80]}...", "INFO")
 
-    # YZ'ye gönder
     post_text: str = ask_ai(full_prompt)
 
     if not post_text:
         log("❌ Post metni üretilemedi", "ERROR")
         return ""
 
-    # Temizlik: YZ bazen tırnak veya ekstra boşluk ekler
     post_text = post_text.strip().strip('"').strip("'")
 
-    # Çok kısa mı kontrol et
     if len(post_text) < 30:
         log(f"⚠️ Üretilen metin çok kısa ({len(post_text)} karakter)", "WARNING")
         return ""
@@ -391,26 +490,20 @@ def generate_image_prompt(title: str, summary: str) -> str:
     """
     Haber başlığı ve özetinden İngilizce görsel üretim promptu oluşturur.
 
-    Pollinations.ai ve HuggingFace görsel üretim servisleri İngilizce
-    prompt ile daha iyi çalışır.
-
     Args:
         title:   Haber başlığı (Türkçe).
         summary: Haber özeti (Türkçe).
 
     Returns:
-        İngilizce görsel üretim promptu. Üretilemezse boş string.
+        İngilizce görsel üretim promptu. Üretilemezse fallback prompt döner.
     """
-    # Promptu oku
     prompts_config: dict = load_config("prompts")
     image_prompt_template: str = prompts_config.get("image_prompt_generator", "")
 
     if not image_prompt_template:
         log("⚠️ image_prompt_generator promptu bulunamadı", "WARNING")
-        # Basit fallback prompt oluştur
         return f"Professional automotive photography, {title[:50]}, cinematic lighting, 4k"
 
-    # Haber bilgisini ekle
     news_text: str = f"Başlık: {title}"
     if summary:
         news_text += f"\nÖzet: {summary[:300]}"
@@ -419,17 +512,14 @@ def generate_image_prompt(title: str, summary: str) -> str:
 
     log("🎨 Görsel promptu üretiliyor...", "INFO")
 
-    # YZ'ye gönder
     image_prompt: str = ask_ai(full_prompt)
 
     if not image_prompt:
         log("⚠️ Görsel promptu üretilemedi, varsayılan kullanılıyor", "WARNING")
-        return f"Professional automotive photography, modern car, cinematic lighting, 4k"
+        return "Professional automotive photography, modern car, cinematic lighting, 4k"
 
-    # Temizlik
     image_prompt = image_prompt.strip().strip('"').strip("'")
 
-    # Çok uzunsa kısalt (görsel API'ler uzun promptları sevmez)
     if len(image_prompt) > 200:
         image_prompt = image_prompt[:200]
 
