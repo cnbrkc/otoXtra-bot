@@ -18,6 +18,8 @@ ortak yardımcı fonksiyonları içerir.
   - save_posted_news()    : Paylaşılmış haberler kaydını yazar
   - is_already_posted()   : Haberin daha önce paylaşılıp paylaşılmadığını kontrol eder
   - get_today_post_count(): Bugün kaç post yapıldığını döner
+  - get_last_check_time() : Son kontrol zamanını okur (Akıllı Zaman Filtresi)
+  - save_last_check_time(): Son kontrol zamanını yazar (Akıllı Zaman Filtresi)
   - random_delay()        : Rastgele süre bekler
 
 Diğer modüller bu dosyayı şöyle import eder:
@@ -240,7 +242,11 @@ def get_posted_news() -> dict:
     Eksik anahtarları otomatik ekler.
 
     Returns:
-        dict: Yapı → {"posts": [...], "daily_counts": {"2025-01-15": 3, ...}}
+        dict: Yapı → {
+            "posts": [...],
+            "daily_counts": {"2025-01-15": 3, ...},
+            "last_check_time": "2025-01-15T14:30:00+03:00"  (opsiyonel)
+        }
     """
     filepath = os.path.join(get_project_root(), "data", "posted_news.json")
     data = load_json(filepath)
@@ -254,6 +260,9 @@ def get_posted_news() -> dict:
 
     if "daily_counts" not in data or not isinstance(data.get("daily_counts"), dict):
         data["daily_counts"] = {}
+
+    # last_check_time alanı opsiyoneldir, yoksa eklenmez
+    # (get_last_check_time() bu durumu kendi yönetir)
 
     return data
 
@@ -343,7 +352,80 @@ def get_today_post_count(posted_data: dict) -> int:
 
 
 # ============================================================
-# 12. RASTGELE GECİKME
+# 12. AKILLI ZAMAN FİLTRESİ
+# ============================================================
+
+def get_last_check_time(posted_data: dict) -> datetime:
+    """Son kontrol zamanını okur.
+
+    posted_news.json'daki "last_check_time" alanından okur.
+    Alan yoksa veya parse edilemezse varsayılan olarak
+    6 saat öncesini döner (ilk çalışma güvenliği).
+
+    Args:
+        posted_data: get_posted_news() ile alınan dict.
+
+    Returns:
+        datetime: Son kontrol zamanı (timezone-aware, UTC+3).
+    """
+    turkey_tz = timezone(timedelta(hours=3))
+    default_fallback = get_turkey_now() - timedelta(hours=6)
+
+    raw_value = posted_data.get("last_check_time")
+
+    if not raw_value or not isinstance(raw_value, str):
+        log("last_check_time bulunamadı → varsayılan 6 saat önce", "INFO")
+        return default_fallback
+
+    try:
+        # ISO format parse: "2025-01-15T14:30:00+03:00"
+        parsed = datetime.fromisoformat(raw_value)
+
+        # Timezone bilgisi yoksa UTC+3 olarak kabul et
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=turkey_tz)
+
+        # Mantık kontrolü: gelecekte olamaz
+        now = get_turkey_now()
+        if parsed > now:
+            log("last_check_time gelecekte → şu an olarak düzeltildi", "WARNING")
+            return now - timedelta(hours=1)
+
+        # Mantık kontrolü: 48 saatten eski olamaz (çok eski veriyle uğraşma)
+        max_age = now - timedelta(hours=48)
+        if parsed < max_age:
+            log("last_check_time 48 saatten eski → 6 saat öncesine sıfırlandı", "WARNING")
+            return default_fallback
+
+        return parsed
+
+    except (ValueError, TypeError) as e:
+        log(f"last_check_time parse hatası: {e} → varsayılan 6 saat önce", "WARNING")
+        return default_fallback
+
+
+def save_last_check_time(posted_data: dict) -> None:
+    """Şu anki zamanı last_check_time olarak posted_data'ya yazar.
+
+    DİKKAT: Bu fonksiyon sadece dict'e yazar, dosyaya KAYDETMEZ.
+    Dosyaya kaydetmek için ardından save_posted_news() çağrılmalıdır.
+
+    Kullanım:
+        posted_data = get_posted_news()
+        save_last_check_time(posted_data)
+        save_posted_news(posted_data)  # ← dosyaya kaydeder
+
+    Args:
+        posted_data: get_posted_news() ile alınan dict.
+                     Bu dict'e "last_check_time" anahtarı eklenir/güncellenir.
+    """
+    now = get_turkey_now()
+    posted_data["last_check_time"] = now.isoformat()
+    log(f"last_check_time güncellendi: {now.strftime('%Y-%m-%d %H:%M:%S')}")
+
+
+# ============================================================
+# 13. RASTGELE GECİKME
 # ============================================================
 
 def random_delay(max_minutes: int) -> None:
@@ -419,5 +501,9 @@ if __name__ == "__main__":
     posted = get_posted_news()
     log(f"Paylaşılmış haber sayısı: {len(posted.get('posts', []))}")
     log(f"Bugünkü post sayısı: {get_today_post_count(posted)}")
+
+    # Akıllı zaman filtresi testi
+    last_check = get_last_check_time(posted)
+    log(f"Son kontrol zamanı: {last_check.strftime('%Y-%m-%d %H:%M:%S')}")
 
     log("=== utils.py modül testi tamamlandı ===")
