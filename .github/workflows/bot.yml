@@ -1,37 +1,38 @@
-# otoXtra News Bot — GitHub Actions Workflow
+# otoXtra News Bot — GitHub Actions Workflow (v2)
 #
-# Bu workflow otoXtra otomobil haberleri botunu çalıştırır.
-# Günde 7 kez tetiklenir (Türkiye saatine göre 08:00-20:00 arası).
-# Her tetiklemede:
-#   1. Haber kaynakları taranır
-#   2. En kaliteli haber seçilir
-#   3. YZ ile içerik ve görsel üretilir
-#   4. Facebook sayfasında paylaşılır
-#   5. Paylaşım kaydı güncellenir ve commit edilir
-#
-# Anti-bot stratejisi sayesinde her tetiklemede paylaşım garanti değildir:
-#   - %10 olasılıkla hiç paylaşmadan çıkar
-#   - 0-8 dk rastgele gecikme ekler
-#   - Son paylaşımdan 2 saat geçmemişse paylaşmaz
-#   - Kaliteli haber bulamazsa paylaşmaz
+# Günde 10 kez tetiklenir (Türkiye saatine göre 06:00-00:00 arası, 2 saat aralıkla).
+# Her tetiklemede 1 post paylaşılır (en viral haber seçilir).
 
 name: otoXtra Bot
 
 on:
   schedule:
-    # Her 2 saatte bir, 06:00-24:00 arası (UTC+3 = Türkiye)
+    # Her 2 saatte bir, 06:00-00:00 arası (UTC+3 = Türkiye)
     # UTC'de: 03:00, 05:00, 07:00, 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00
-    - cron: '0 3 * * *'
-    - cron: '0 5 * * *'
-    - cron: '0 7 * * *'
-    - cron: '0 9 * * *'
-    - cron: '0 11 * * *'
-    - cron: '0 13 * * *'
-    - cron: '0 15 * * *'
-    - cron: '0 17 * * *'
-    - cron: '0 19 * * *'
-    - cron: '0 21 * * *'
+    #
+    # Türkiye Saati → UTC
+    # 06:00 → 03:00
+    # 08:00 → 05:00
+    # 10:00 → 07:00
+    # 12:00 → 09:00
+    # 14:00 → 11:00
+    # 16:00 → 13:00
+    # 18:00 → 15:00
+    # 20:00 → 17:00
+    # 22:00 → 19:00
+    # 00:00 → 21:00
+    - cron: '0 3,5,7,9,11,13,15,17,19,21 * * *'
+
   workflow_dispatch:
+    inputs:
+      test_mode:
+        description: 'Test modu (gecikmeler devre dışı)'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 jobs:
   run-bot:
@@ -63,6 +64,7 @@ jobs:
           HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
+          TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
         run: python src/main.py
       
       - name: Save posted news data
