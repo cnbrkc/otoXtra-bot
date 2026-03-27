@@ -1,5 +1,5 @@
 """
-ai_processor.py — Yapay Zeka Metin İşleme Modülü (v2 — Kesik JSON Kurtarma)
+ai_processor.py — Yapay Zeka Metin İşleme Modülü (v3 — Karakter Temizleme)
 
 Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Haber değerlendirme için YZ'ye soru sorma
@@ -10,6 +10,10 @@ YZ Sağlayıcı Zinciri (fallback):
   1. Google Gemini (ana)     → GEMINI_API_KEY
   2. Groq (yedek 1)         → GROQ_API_KEY
   3. HuggingFace (yedek 2)  → HF_API_KEY
+
+v3 Değişiklikler:
+  - _clean_non_turkish_chars: Korece/Japonca/Çince karakter temizleme
+  - generate_post_text: Üretilen metin otomatik temizleniyor
 
 v2 Değişiklikler:
   - parse_ai_json: Kesik JSON kurtarma (token limiti dolmuş yanıtlar)
@@ -31,6 +35,92 @@ import re
 from typing import Optional, Union
 
 from utils import load_config, log
+
+
+# ──────────────────────────────────────────────
+# Karakter Temizleme
+# ──────────────────────────────────────────────
+
+def _clean_non_turkish_chars(text: str) -> str:
+    """
+    Türkçe dışı alfabe karakterlerini temizler.
+
+    Groq (Llama) modeli bazen Korece, Japonca, Çince veya
+    başka alfabe karakterleri üretiyor. Bu fonksiyon onları siler.
+
+    İzin verilen karakterler:
+      - Türkçe Latin alfabesi (a-z, A-Z, çğıöşüÇĞİÖŞÜ)
+      - Rakamlar (0-9)
+      - Noktalama işaretleri ve semboller
+      - Emoji'ler (Unicode emoji blokları)
+      - Boşluk ve satır sonu karakterleri
+
+    Silinen karakterler:
+      - CJK (Çince, Japonca, Korece) karakterler
+      - Arapça / İbranice karakterler
+      - Kiril alfabesi
+      - Devanagari, Tay ve diğer alfabeler
+
+    Args:
+        text: Temizlenecek metin.
+
+    Returns:
+        Temizlenmiş metin.
+    """
+    if not text:
+        return text
+
+    cleaned: str = text
+
+    # ── CJK karakterleri sil (Çince, Japonca, Korece) ──
+    # CJK Unified Ideographs, Extensions, Compatibility
+    cleaned = re.sub(r"[\u2e80-\u2eff]", "", cleaned)  # CJK Radicals
+    cleaned = re.sub(r"[\u3000-\u303f]", "", cleaned)  # CJK Symbols
+    cleaned = re.sub(r"[\u3040-\u309f]", "", cleaned)  # Hiragana
+    cleaned = re.sub(r"[\u30a0-\u30ff]", "", cleaned)  # Katakana
+    cleaned = re.sub(r"[\u3100-\u312f]", "", cleaned)  # Bopomofo
+    cleaned = re.sub(r"[\u3130-\u318f]", "", cleaned)  # Hangul Compatibility
+    cleaned = re.sub(r"[\u31a0-\u31bf]", "", cleaned)  # Bopomofo Extended
+    cleaned = re.sub(r"[\u31f0-\u31ff]", "", cleaned)  # Katakana Extension
+    cleaned = re.sub(r"[\u3200-\u32ff]", "", cleaned)  # Enclosed CJK
+    cleaned = re.sub(r"[\u3300-\u33ff]", "", cleaned)  # CJK Compatibility
+    cleaned = re.sub(r"[\u3400-\u4dbf]", "", cleaned)  # CJK Extension A
+    cleaned = re.sub(r"[\u4e00-\u9fff]", "", cleaned)  # CJK Unified Ideographs
+    cleaned = re.sub(r"[\uac00-\ud7af]", "", cleaned)  # Hangul Syllables
+    cleaned = re.sub(r"[\ud7b0-\ud7ff]", "", cleaned)  # Hangul Jamo Extended-B
+    cleaned = re.sub(r"[\uf900-\ufaff]", "", cleaned)  # CJK Compatibility Ideographs
+    cleaned = re.sub(r"[\u1100-\u11ff]", "", cleaned)  # Hangul Jamo
+    cleaned = re.sub(r"[\ua960-\ua97f]", "", cleaned)  # Hangul Jamo Extended-A
+
+    # ── Arapça / İbranice sil ──
+    cleaned = re.sub(r"[\u0590-\u05ff]", "", cleaned)  # Hebrew
+    cleaned = re.sub(r"[\u0600-\u06ff]", "", cleaned)  # Arabic
+    cleaned = re.sub(r"[\u0750-\u077f]", "", cleaned)  # Arabic Supplement
+    cleaned = re.sub(r"[\ufb50-\ufdff]", "", cleaned)  # Arabic Presentation A
+    cleaned = re.sub(r"[\ufe70-\ufeff]", "", cleaned)  # Arabic Presentation B
+
+    # ── Kiril alfabesi sil ──
+    cleaned = re.sub(r"[\u0400-\u04ff]", "", cleaned)  # Cyrillic
+    cleaned = re.sub(r"[\u0500-\u052f]", "", cleaned)  # Cyrillic Supplement
+
+    # ── Diğer alfabeler sil ──
+    cleaned = re.sub(r"[\u0900-\u097f]", "", cleaned)  # Devanagari
+    cleaned = re.sub(r"[\u0e00-\u0e7f]", "", cleaned)  # Thai
+    cleaned = re.sub(r"[\u1000-\u109f]", "", cleaned)  # Myanmar
+    cleaned = re.sub(r"[\u10a0-\u10ff]", "", cleaned)  # Georgian
+
+    # ── Temizlik: Birden fazla boşluğu tek boşluğa indir ──
+    cleaned = re.sub(r"  +", " ", cleaned)
+
+    # ── Temizlik: 3+ boş satırı 2'ye indir ──
+    cleaned = re.sub(r"\n\s*\n\s*\n", "\n\n", cleaned)
+
+    # ── Temizlik: Satır başı/sonu gereksiz boşluklar ──
+    lines: list[str] = cleaned.split("\n")
+    lines = [line.rstrip() for line in lines]
+    cleaned = "\n".join(lines)
+
+    return cleaned.strip()
 
 
 # ──────────────────────────────────────────────
@@ -435,6 +525,9 @@ def generate_post_text(article: dict) -> str:
     """
     Haber bilgilerinden Facebook post metni üretir.
 
+    Üretilen metin otomatik olarak karakter temizlemesinden geçer:
+    Korece, Japonca, Çince vb. karakterler silinir.
+
     Args:
         article: Haber dict'i (title, summary, full_text, source_name vb.).
 
@@ -476,7 +569,20 @@ def generate_post_text(article: dict) -> str:
         log("❌ Post metni üretilemedi", "ERROR")
         return ""
 
+    # ── Temel temizlik ──
     post_text = post_text.strip().strip('"').strip("'")
+
+    # ── Yabancı alfabe temizliği (Korece, Japonca, Çince vb.) ──
+    original_len: int = len(post_text)
+    post_text = _clean_non_turkish_chars(post_text)
+    cleaned_len: int = len(post_text)
+
+    if cleaned_len < original_len:
+        removed_count: int = original_len - cleaned_len
+        log(
+            f"🧹 Yabancı karakter temizlendi: {removed_count} karakter silindi",
+            "INFO",
+        )
 
     if len(post_text) < 30:
         log(f"⚠️ Üretilen metin çok kısa ({len(post_text)} karakter)", "WARNING")
@@ -489,6 +595,8 @@ def generate_post_text(article: dict) -> str:
 def generate_image_prompt(title: str, summary: str) -> str:
     """
     Haber başlığı ve özetinden İngilizce görsel üretim promptu oluşturur.
+
+    Üretilen prompt otomatik olarak karakter temizlemesinden geçer.
 
     Args:
         title:   Haber başlığı (Türkçe).
@@ -519,6 +627,9 @@ def generate_image_prompt(title: str, summary: str) -> str:
         return "Professional automotive photography, modern car, cinematic lighting, 4k"
 
     image_prompt = image_prompt.strip().strip('"').strip("'")
+
+    # ── Yabancı alfabe temizliği ──
+    image_prompt = _clean_non_turkish_chars(image_prompt)
 
     if len(image_prompt) > 200:
         image_prompt = image_prompt[:200]
