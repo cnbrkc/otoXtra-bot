@@ -1,5 +1,5 @@
 """
-ai_processor.py — Yapay Zeka Metin İşleme Modülü (v5 — OpenRouter Çoklu Model + Akıllı Retry)
+ai_processor.py — Yapay Zeka Metin İşleme Modülü (v6 — Güncel Modeller + Gemini Fallback)
 
 Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Haber değerlendirme için YZ'ye soru sorma
@@ -7,30 +7,17 @@ Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Görsel üretim promptu oluşturma
 
 YZ Sağlayıcı Zinciri (fallback):
-  1. Google Gemini (ana)     → GEMINI_API_KEY
-  2. Groq (yedek 1)         → GROQ_API_KEY
-  3. OpenRouter (yedek 2)   → OPENROUTER_API_KEY
-  4. HuggingFace (yedek 3)  → HF_API_KEY
+  1. Google Gemini (ana)     → GEMINI_API_KEY  (2 model dener)
+  2. Groq (yedek 1)         → GROQ_API_KEY    (2 model dener)
+  3. OpenRouter (yedek 2)   → OPENROUTER_API_KEY (3 model dener)
+  4. HuggingFace (yedek 3)  → HF_API_KEY      (3 model dener)
 
-v5 Değişiklikler:
-  - OpenRouter: 3 ücretsiz model zinciri (biri başarısız olursa diğerini dener)
-  - Groq: 429'da bekleme süresi parse edilip retry eklendi
-  - HuggingFace: Model güncellemesi (Qwen2.5-72B-Instruct)
-  - Tüm sağlayıcılarda daha detaylı loglama
-
-v4 Değişiklikler:
-  - OpenRouter desteği eklendi (ücretsiz modeller)
-  - Rate limit retry mantığı eklendi (429 hatalarında bekleme)
-  - Gemini 429 hatasında 20sn bekleme ve tekrar deneme
-
-v3 Değişiklikler:
-  - _clean_non_turkish_chars: Korece/Japonca/Çince karakter temizleme
-  - generate_post_text: Üretilen metin otomatik temizleniyor
-
-v2 Değişiklikler:
-  - parse_ai_json: Kesik JSON kurtarma (token limiti dolmuş yanıtlar)
-  - parse_ai_json: Trailing comma temizleme
-  - parse_ai_json: Satır satır JSON parse (fallback)
+v6 Değişiklikler:
+  - OpenRouter model listesi güncellendi (404 hatası düzeltildi)
+  - Gemini: gemini-2.0-flash başarısızsa gemini-1.5-flash dener
+  - Groq: llama-3.3-70b başarısızsa llama-3.1-8b dener
+  - HuggingFace: Model listesi güncellendi
+  - Tüm sağlayıcılarda gelişmiş hata loglama
 
 Ortam değişkenleri:
   - GEMINI_API_KEY      (Google AI Studio'dan alınır)
@@ -145,6 +132,7 @@ def _clean_non_turkish_chars(text: str) -> str:
 def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: str) -> Optional[str]:
     """
     Google Gemini API ile metin üretir.
+    İlk model başarısızsa yedek modeli dener.
     429 hatasında 20sn bekleyip bir kez daha dener.
     """
     api_key: str = os.environ.get("GEMINI_API_KEY", "")
@@ -152,64 +140,75 @@ def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: st
         log("ℹ️ GEMINI_API_KEY bulunamadı, Gemini atlanıyor", "INFO")
         return None
 
+    # Denenecek modeller — ana model + yedek
+    models_to_try: list[str] = [model_name]
+    if model_name != "gemini-1.5-flash":
+        models_to_try.append("gemini-1.5-flash")
+
     try:
         from google import genai
         from google.genai import types
 
         client = genai.Client(api_key=api_key)
 
-        # ── İlk deneme ──
-        try:
-            response = client.models.generate_content(
-                model=model_name,
-                contents=prompt,
-                config=types.GenerateContentConfig(
-                    temperature=temperature,
-                    max_output_tokens=max_tokens,
-                ),
-            )
+        for current_model in models_to_try:
+            # ── İlk deneme ──
+            try:
+                response = client.models.generate_content(
+                    model=current_model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=temperature,
+                        max_output_tokens=max_tokens,
+                    ),
+                )
 
-            if response and response.text:
-                log(f"✅ Gemini ({model_name}) yanıt verdi", "INFO")
-                return response.text.strip()
+                if response and response.text:
+                    log(f"✅ Gemini ({current_model}) yanıt verdi", "INFO")
+                    return response.text.strip()
 
-            log("⚠️ Gemini boş yanıt döndü", "WARNING")
-            return None
+                log(f"⚠️ Gemini ({current_model}) boş yanıt döndü", "WARNING")
 
-        except Exception as first_err:
-            err_str = str(first_err)
-            if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                # Hata mesajından bekleme süresini parse et
-                wait_time = 20
-                retry_match = re.search(r"(\d+\.?\d*)\s*s", err_str)
-                if retry_match:
-                    parsed_wait = float(retry_match.group(1))
-                    wait_time = min(int(parsed_wait) + 2, 60)  # Max 60sn bekle
+            except Exception as first_err:
+                err_str = str(first_err)
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                    # limit: 0 kontrolü — kota tamamen sıfırlanmışsa bekleme anlamsız
+                    if "limit: 0" in err_str:
+                        log(f"⚠️ Gemini ({current_model}) kota tamamen dolmuş (limit: 0), sonraki model deneniyor...", "WARNING")
+                        continue
 
-                log(f"⚠️ Gemini rate limit (429), {wait_time}sn bekleniyor...", "WARNING")
-                time.sleep(wait_time)
+                    # Hata mesajından bekleme süresini parse et
+                    wait_time = 20
+                    retry_match = re.search(r"(\d+\.?\d*)\s*s", err_str)
+                    if retry_match:
+                        parsed_wait = float(retry_match.group(1))
+                        wait_time = min(int(parsed_wait) + 2, 45)  # Max 45sn bekle
 
-                # ── Tekrar dene ──
-                try:
-                    response = client.models.generate_content(
-                        model=model_name,
-                        contents=prompt,
-                        config=types.GenerateContentConfig(
-                            temperature=temperature,
-                            max_output_tokens=max_tokens,
-                        ),
-                    )
-                    if response and response.text:
-                        log(f"✅ Gemini ({model_name}) 2. denemede yanıt verdi", "INFO")
-                        return response.text.strip()
-                except Exception as retry_err:
-                    log(f"⚠️ Gemini 2. deneme hatası: {retry_err}", "WARNING")
+                    log(f"⚠️ Gemini ({current_model}) rate limit (429), {wait_time}sn bekleniyor...", "WARNING")
+                    time.sleep(wait_time)
 
-                log("⚠️ Gemini 2. deneme de başarısız", "WARNING")
-                return None
-            else:
-                log(f"⚠️ Gemini hatası: {first_err}", "WARNING")
-                return None
+                    # ── Tekrar dene ──
+                    try:
+                        response = client.models.generate_content(
+                            model=current_model,
+                            contents=prompt,
+                            config=types.GenerateContentConfig(
+                                temperature=temperature,
+                                max_output_tokens=max_tokens,
+                            ),
+                        )
+                        if response and response.text:
+                            log(f"✅ Gemini ({current_model}) 2. denemede yanıt verdi", "INFO")
+                            return response.text.strip()
+                    except Exception as retry_err:
+                        log(f"⚠️ Gemini ({current_model}) 2. deneme hatası: {str(retry_err)[:150]}", "WARNING")
+
+                    log(f"⚠️ Gemini ({current_model}) 2. deneme de başarısız, sonraki model deneniyor...", "WARNING")
+                else:
+                    log(f"⚠️ Gemini ({current_model}) hatası: {first_err}", "WARNING")
+
+        log("⚠️ Gemini: Tüm modeller başarısız", "WARNING")
+        return None
 
     except ImportError:
         log(
@@ -227,77 +226,86 @@ def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: st
 def _try_groq(prompt: str, temperature: float, max_tokens: int, model_name: str) -> Optional[str]:
     """
     Groq API ile metin üretir (yedek sağlayıcı 1).
-    429 hatasında bekleme süresini parse edip retry yapar.
+    İlk model başarısızsa yedek modeli dener.
+    429 hatasında bekleme süresi kısaysa retry yapar.
     """
     api_key: str = os.environ.get("GROQ_API_KEY", "")
     if not api_key:
         log("ℹ️ GROQ_API_KEY bulunamadı, Groq atlanıyor", "INFO")
         return None
 
+    # Denenecek modeller — ana model + yedek (daha küçük, limiti ayrı)
+    models_to_try: list[str] = [model_name]
+    if "llama-3.3-70b" in model_name:
+        models_to_try.append("llama-3.1-8b-instant")
+
     try:
         from groq import Groq
 
         client = Groq(api_key=api_key)
 
-        try:
-            response = client.chat.completions.create(
-                model=model_name,
-                messages=[
-                    {
-                        "role": "user",
-                        "content": prompt,
-                    }
-                ],
-                temperature=temperature,
-                max_tokens=max_tokens,
-            )
+        for current_model in models_to_try:
+            try:
+                response = client.chat.completions.create(
+                    model=current_model,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                )
 
-            if response and response.choices:
-                text: str = response.choices[0].message.content
-                if text:
-                    log(f"✅ Groq ({model_name}) yanıt verdi", "INFO")
-                    return text.strip()
+                if response and response.choices:
+                    text: str = response.choices[0].message.content
+                    if text:
+                        log(f"✅ Groq ({current_model}) yanıt verdi", "INFO")
+                        return text.strip()
 
-            log("⚠️ Groq boş yanıt döndü", "WARNING")
-            return None
+                log(f"⚠️ Groq ({current_model}) boş yanıt döndü", "WARNING")
 
-        except Exception as groq_err:
-            err_str = str(groq_err)
-            if "429" in err_str or "rate_limit" in err_str:
-                # Bekleme süresini parse et
-                wait_match = re.search(r"in\s+(\d+)m(\d+\.?\d*)s", err_str)
-                if wait_match:
-                    wait_minutes = int(wait_match.group(1))
-                    wait_seconds = float(wait_match.group(2))
-                    total_wait = wait_minutes * 60 + wait_seconds
+            except Exception as groq_err:
+                err_str = str(groq_err)
+                if "429" in err_str or "rate_limit" in err_str:
+                    # Bekleme süresini parse et
+                    wait_match = re.search(r"in\s+(\d+)m(\d+\.?\d*)s", err_str)
+                    if wait_match:
+                        wait_minutes = int(wait_match.group(1))
+                        wait_seconds = float(wait_match.group(2))
+                        total_wait = wait_minutes * 60 + wait_seconds
 
-                    # Eğer bekleme süresi 90 saniyeden azsa bekle ve tekrar dene
-                    if total_wait <= 90:
-                        log(f"⚠️ Groq rate limit, {int(total_wait)}sn bekleniyor...", "WARNING")
-                        time.sleep(total_wait + 1)
+                        # Eğer bekleme süresi 60 saniyeden azsa bekle ve tekrar dene
+                        if total_wait <= 60:
+                            log(f"⚠️ Groq ({current_model}) rate limit, {int(total_wait)}sn bekleniyor...", "WARNING")
+                            time.sleep(total_wait + 1)
 
-                        try:
-                            response = client.chat.completions.create(
-                                model=model_name,
-                                messages=[{"role": "user", "content": prompt}],
-                                temperature=temperature,
-                                max_tokens=max_tokens,
-                            )
-                            if response and response.choices:
-                                text = response.choices[0].message.content
-                                if text:
-                                    log(f"✅ Groq ({model_name}) 2. denemede yanıt verdi", "INFO")
-                                    return text.strip()
-                        except Exception:
-                            pass
+                            try:
+                                response = client.chat.completions.create(
+                                    model=current_model,
+                                    messages=[{"role": "user", "content": prompt}],
+                                    temperature=temperature,
+                                    max_tokens=max_tokens,
+                                )
+                                if response and response.choices:
+                                    text = response.choices[0].message.content
+                                    if text:
+                                        log(f"✅ Groq ({current_model}) 2. denemede yanıt verdi", "INFO")
+                                        return text.strip()
+                            except Exception:
+                                pass
 
-                    log(f"⚠️ Groq rate limit — bekleme çok uzun ({int(total_wait)}sn), atlanıyor", "WARNING")
+                        log(f"⚠️ Groq ({current_model}) rate limit — bekleme {int(total_wait)}sn, sonraki model deneniyor...", "WARNING")
+                    else:
+                        log(f"⚠️ Groq ({current_model}) rate limit, sonraki model deneniyor...", "WARNING")
                 else:
-                    log(f"⚠️ Groq hatası: {groq_err}", "WARNING")
-                return None
-            else:
-                log(f"⚠️ Groq hatası: {groq_err}", "WARNING")
-                return None
+                    log(f"⚠️ Groq ({current_model}) hatası: {str(groq_err)[:150]}", "WARNING")
+
+                continue
+
+        log("⚠️ Groq: Tüm modeller başarısız", "WARNING")
+        return None
 
     except ImportError:
         log("⚠️ groq paketi yüklü değil", "WARNING")
@@ -312,11 +320,13 @@ def _try_groq(prompt: str, temperature: float, max_tokens: int, model_name: str)
 # OpenRouter API (yedek sağlayıcı 2)
 # ──────────────────────────────────────────────
 
-# Ücretsiz OpenRouter modelleri — sırasıyla denenir
+# Güncel ücretsiz OpenRouter modelleri (Mart 2025)
+# https://openrouter.ai/models?q=free adresinden kontrol edildi
 OPENROUTER_FREE_MODELS: list[str] = [
-    "google/gemini-2.0-flash-exp:free",
-    "meta-llama/llama-3.1-8b-instruct:free",
-    "qwen/qwen3-8b:free",
+    "deepseek/deepseek-r1-0528:free",
+    "google/gemma-3-27b-it:free",
+    "mistralai/mistral-small-3.1-24b-instruct:free",
+    "qwen/qwen3-14b:free",
 ]
 
 
@@ -334,7 +344,7 @@ def _try_openrouter_single(
         prompt:      YZ'ye gönderilecek metin.
         temperature: Yaratıcılık seviyesi.
         max_tokens:  Maksimum çıktı token sayısı.
-        model:       Model adı (örn: "google/gemini-2.0-flash-exp:free").
+        model:       Model adı.
         api_key:     OpenRouter API anahtarı.
 
     Returns:
@@ -364,7 +374,7 @@ def _try_openrouter_single(
             # OpenRouter bazen hata mesajını 200 ile döner
             if "error" in data:
                 error_msg = data["error"].get("message", str(data["error"]))
-                log(f"  ⚠️ OpenRouter ({model}) hata döndü: {error_msg[:120]}", "WARNING")
+                log(f"  ⚠️ OpenRouter ({model}) hata döndü: {error_msg[:150]}", "WARNING")
                 return None
 
             choices = data.get("choices", [])
@@ -375,6 +385,10 @@ def _try_openrouter_single(
                     return text
 
             log(f"  ⚠️ OpenRouter ({model}) boş yanıt", "WARNING")
+            return None
+
+        elif response.status_code == 404:
+            log(f"  ⚠️ OpenRouter ({model}) model bulunamadı (404)", "WARNING")
             return None
 
         elif response.status_code == 429:
@@ -399,11 +413,7 @@ def _try_openrouter(prompt: str, temperature: float, max_tokens: int) -> Optiona
     """
     OpenRouter API ile ücretsiz model çağrısı (yedek sağlayıcı 2).
 
-    Birden fazla ücretsiz modeli sırasıyla dener:
-      1. google/gemini-2.0-flash-exp:free (en kaliteli)
-      2. meta-llama/llama-3.1-8b-instruct:free
-      3. qwen/qwen3-8b:free
-
+    Birden fazla ücretsiz modeli sırasıyla dener.
     Biri yanıt verdiğinde döner, hiçbiri vermezse None döner.
 
     Args:
@@ -425,8 +435,8 @@ def _try_openrouter(prompt: str, temperature: float, max_tokens: int) -> Optiona
         result = _try_openrouter_single(prompt, temperature, max_tokens, model, api_key)
         if result:
             return result
-        # Rate limit'e takılmışsa kısa bir bekleme
-        time.sleep(2)
+        # Modeller arası kısa bekleme
+        time.sleep(1)
 
     log("⚠️ OpenRouter: Tüm ücretsiz modeller başarısız", "WARNING")
     return None
@@ -444,9 +454,9 @@ def _try_huggingface(prompt: str, temperature: float, max_tokens: int) -> Option
 
     # Denenecek modeller (sırasıyla)
     hf_models: list[str] = [
-        "Qwen/Qwen2.5-72B-Instruct",
-        "mistralai/Mixtral-8x7B-Instruct-v0.1",
+        "mistralai/Mistral-7B-Instruct-v0.3",
         "microsoft/Phi-3-mini-4k-instruct",
+        "HuggingFaceH4/zephyr-7b-beta",
     ]
 
     try:
@@ -479,7 +489,14 @@ def _try_huggingface(prompt: str, temperature: float, max_tokens: int) -> Option
                 log(f"  ⚠️ HuggingFace ({model}) boş yanıt", "WARNING")
 
             except Exception as model_err:
-                log(f"  ⚠️ HuggingFace ({model}) hatası: {model_err}", "WARNING")
+                err_str = str(model_err)
+                if "401" in err_str or "Unauthorized" in err_str:
+                    log(f"  ❌ HuggingFace API KEY GEÇERSİZ! Token'ını yenile: https://huggingface.co/settings/tokens", "ERROR")
+                    return None  # Tüm modellerde aynı key kullanılacağı için diğerlerini denemenin anlamı yok
+                elif "429" in err_str or "rate" in err_str.lower():
+                    log(f"  ⚠️ HuggingFace ({model}) rate limit, sonraki model...", "WARNING")
+                else:
+                    log(f"  ⚠️ HuggingFace ({model}) hatası: {err_str[:150]}", "WARNING")
                 continue
 
         log("⚠️ HuggingFace: Tüm modeller başarısız", "WARNING")
