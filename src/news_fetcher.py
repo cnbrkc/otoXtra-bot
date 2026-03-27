@@ -1,8 +1,13 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v4 — Donanımhaber Odaklı)
+src/news_fetcher.py — Haber Çekme Modülü (v5 — 12 Saat Filtre)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
+
+v5 Değişiklikler:
+  - Zaman filtresi basitleştirildi: TÜM kaynaklar için 12 saat
+  - settings.json'daki max_article_age_hours = 12 kullanılır
+  - Kaynak bazlı özel zaman filtresi kaldırıldı
 
 Çalışma sırası (fetch_and_filter_news):
   1. Tüm RSS feed'leri çek           → fetch_all_feeds()
@@ -12,26 +17,13 @@ otoXtra Facebook Botu için RSS feed'lerden haber çeken,
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
-v4 Değişiklikler:
-  - RSS'den görsel URL'si çekme eklendi (enclosure, media:content, media:thumbnail)
-  - Donanımhaber'e özel tam metin çekme (scrape_full_article) eklendi
-  - fetch_all_feeds() artık her habere "image_url" alanı ekliyor
-
-v3 Değişiklikler:
-  - apply_time_filter() akıllı zaman filtresi kullanıyor
-  - İlk çalışmada varsayılan 6 saat geriye bakar
-  - settings.json'daki news_max_age_hours üst sınır olarak korunur
-
 Kullandığı config dosyaları:
   - config/sources.json   → RSS feed listesi
   - config/keywords.json  → include_keywords / exclude_keywords
-  - config/settings.json  → news_max_age_hours (üst sınır)
+  - config/settings.json  → max_article_age_hours (12 saat)
 
 Diğer modüller bu dosyayı şöyle import eder:
     from news_fetcher import fetch_and_filter_news
-
-YANLIŞ kullanım (YAPMA):
-    from src.news_fetcher import fetch_and_filter_news
 """
 
 import re
@@ -67,17 +59,7 @@ _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
 # ── Türkçe Küçük Harf Dönüşümü ─────────────────────────────
 
 def _turkish_lower(text: str) -> str:
-    """Türkçe karakterleri doğru küçük harfe çevirir.
-
-    Python'un str.lower() metodu Türkçe İ→i dönüşümünü
-    doğru yapmaz (İ→i̇ yapar). Bu fonksiyon düzeltir.
-
-    Args:
-        text: Küçük harfe çevrilecek metin.
-
-    Returns:
-        str: Türkçe kurallarına uygun küçük harf metin.
-    """
+    """Türkçe karakterleri doğru küçük harfe çevirir."""
     text = text.replace("İ", "i").replace("I", "ı")
     return text.lower()
 
@@ -94,9 +76,6 @@ def _extract_image_from_entry(entry) -> str:
       2. media:thumbnail → url attribute
       3. enclosure (type=image) → href/url
       4. entry içindeki <img> tag'i (summary/content HTML'inde)
-
-    Args:
-        entry: feedparser entry nesnesi.
 
     Returns:
         str: Görsel URL'si. Bulunamazsa boş string.
@@ -133,7 +112,6 @@ def _extract_image_from_entry(entry) -> str:
         or entry.get("description", "")
         or ""
     )
-    # content:encoded alanını da dene
     content_list = entry.get("content", [])
     if content_list:
         for content_item in content_list:
@@ -156,25 +134,8 @@ def _extract_image_from_entry(entry) -> str:
 def fetch_all_feeds() -> list[dict]:
     """sources.json'daki tüm RSS feed'leri çeker.
 
-    Her feed ayrı ayrı indirilir. Hata olan feed atlanır,
-    diğerlerine devam edilir. Her haberden standart bilgiler
-    çıkarılarak düz bir listeye eklenir.
-
-    v4: Artık her habere "image_url" alanı da ekleniyor.
-
     Returns:
-        list[dict]: Çekilen haberlerin listesi. Her eleman:
-            {
-                "title": str,
-                "link": str,
-                "published": str,        # ISO 8601 format
-                "summary": str,
-                "image_url": str,         # RSS'den çekilen görsel URL (v4)
-                "source_name": str,
-                "source_priority": str,   # "high" / "medium" / "low"
-                "language": str,          # "tr" / "en"
-                "can_scrape_image": bool
-            }
+        list[dict]: Çekilen haberlerin listesi.
     """
     sources_cfg = load_config("sources")
     feeds = sources_cfg.get("feeds", [])
@@ -196,7 +157,6 @@ def fetch_all_feeds() -> list[dict]:
         feed_can_scrape: bool = feed_info.get("can_scrape_image", False)
         feed_enabled: bool = feed_info.get("enabled", True)
 
-        # Devre dışı feed'i atla
         if not feed_enabled:
             log(f"  ⏭  {feed_name} — devre dışı, atlanıyor")
             continue
@@ -208,7 +168,6 @@ def fetch_all_feeds() -> list[dict]:
         try:
             parsed_feed = feedparser.parse(feed_url)
 
-            # feedparser hata kontrolü
             if parsed_feed.bozo and not parsed_feed.entries:
                 log(
                     f"  ✗  {feed_name} — feed parse hatası: "
@@ -219,7 +178,6 @@ def fetch_all_feeds() -> list[dict]:
 
             entry_count = 0
             for entry in parsed_feed.entries:
-                # Başlık zorunlu
                 title_raw = entry.get("title", "")
                 if not title_raw:
                     continue
@@ -228,15 +186,12 @@ def fetch_all_feeds() -> list[dict]:
                 if not title:
                     continue
 
-                # Link
                 link = entry.get("link", "")
                 if not link:
                     continue
 
-                # Yayın tarihi
                 published_str = _extract_published_date(entry, now_iso)
 
-                # Özet
                 summary_raw = (
                     entry.get("summary", "")
                     or entry.get("description", "")
@@ -244,11 +199,9 @@ def fetch_all_feeds() -> list[dict]:
                 )
                 summary = clean_html(summary_raw).strip()
 
-                # Çok kısa özetleri boş kabul et
                 if len(summary) < 10:
                     summary = ""
 
-                # ── v4: RSS'den görsel URL'si çek ──
                 image_url = _extract_image_from_entry(entry)
                 if image_url:
                     log(f"    🖼️ RSS görsel bulundu: {image_url[:80]}...", "INFO")
@@ -278,19 +231,7 @@ def fetch_all_feeds() -> list[dict]:
 
 
 def _extract_published_date(entry, fallback_iso: str) -> str:
-    """Feed entry'sinden yayın tarihini ISO formatında çıkarır.
-
-    feedparser birden fazla tarih alanı sağlayabilir. Sırasıyla
-    published_parsed, updated_parsed ve string versiyonları denenir.
-
-    Args:
-        entry: feedparser entry nesnesi.
-        fallback_iso: Tarih bulunamazsa kullanılacak ISO string.
-
-    Returns:
-        str: ISO 8601 formatında tarih stringi.
-    """
-    # Yöntem 1: feedparser struct_time
+    """Feed entry'sinden yayın tarihini ISO formatında çıkarır."""
     struct = entry.get("published_parsed") or entry.get("updated_parsed")
     if struct:
         try:
@@ -301,7 +242,6 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
         except Exception:
             pass
 
-    # Yöntem 2: Ham tarih stringi → dateutil parse
     date_str = (
         entry.get("published", "")
         or entry.get("updated", "")
@@ -310,14 +250,12 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
     if date_str:
         try:
             dt = dateutil_parser.parse(date_str)
-            # timezone yoksa UTC varsay
             if dt.tzinfo is None:
                 dt = dt.replace(tzinfo=timezone.utc)
             return dt.isoformat()
         except (ValueError, OverflowError):
             pass
 
-    # Hiçbiri çalışmadıysa şu anki zaman
     return fallback_iso
 
 
@@ -326,23 +264,10 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
 # ============================================================
 
 def resolve_google_news_url(url: str) -> str:
-    """Google News redirect URL'sini gerçek haber URL'sine çevirir.
-
-    Yöntem 1: HTTP redirect takibi (requests).
-    Yöntem 2: URL parametresinden gerçek URL çıkarma.
-
-    Google News URL'si değilse orijinal URL'yi aynen döner.
-
-    Args:
-        url: Kontrol edilecek / çözülecek URL.
-
-    Returns:
-        str: Gerçek haber URL'si veya orijinal URL.
-    """
+    """Google News redirect URL'sini gerçek haber URL'sine çevirir."""
     if not url:
         return url
 
-    # Google News URL'si mi kontrol et
     is_google = any(
         domain in url
         for domain in ["news.google.com", "google.com/rss", "google.com/news"]
@@ -350,7 +275,6 @@ def resolve_google_news_url(url: str) -> str:
     if not is_google:
         return url
 
-    # ── Yöntem 1: HTTP redirect takibi ──
     try:
         resp = requests.get(
             url,
@@ -360,7 +284,6 @@ def resolve_google_news_url(url: str) -> str:
         )
         resolved = resp.url
 
-        # Hâlâ Google'da mıyız?
         still_google = any(
             domain in resolved
             for domain in ["news.google.com", "google.com"]
@@ -369,58 +292,35 @@ def resolve_google_news_url(url: str) -> str:
             return resolved
 
     except Exception:
-        pass  # Yöntem 2'ye geç
+        pass
 
-    # ── Yöntem 2: URL parametresinden çıkar ──
     try:
         parsed = urllib.parse.urlparse(url)
         query_params = urllib.parse.parse_qs(parsed.query)
 
-        # "url" veya "q" parametresi gerçek URL'yi içerebilir
         for param_name in ("url", "q"):
             values = query_params.get(param_name, [])
             for val in values:
                 if val.startswith("http") and "google.com" not in val:
                     return val
 
-        # Fragment içinde olabilir (#)
         if parsed.fragment and parsed.fragment.startswith("http"):
             return parsed.fragment
 
     except Exception:
         pass
 
-    # Hiçbir yöntem çalışmadıysa orijinal URL
     return url
 
 
 # ============================================================
-# 3. KEYWORD FİLTRESİ (v2 — Düzeltilmiş)
+# 3. KEYWORD FİLTRESİ
 # ============================================================
 
 def apply_keyword_filter(articles: list[dict]) -> list[dict]:
-    """Anahtar kelime filtresini uygular.
-
-    keywords.json'dan dahil (include_keywords) ve hariç
-    (exclude_keywords) listelerini okur.
-
-    Geçiş kuralı:
-      1. ÖNCE exclude kontrolü: Başlık+özette exclude kelimesi varsa → RED
-      2. SONRA include kontrolü: include listesi doluysa,
-         başlık+özette en az 1 include kelimesi olmalı → yoksa RED
-      3. include listesi boşsa → exclude'dan geçen herkes kabul
-
-    Karşılaştırmalar Türkçe-uyumlu case-insensitive yapılır.
-
-    Args:
-        articles: Filtrelenecek haber listesi.
-
-    Returns:
-        list[dict]: Filtreden geçen haberler.
-    """
+    """Anahtar kelime filtresini uygular."""
     keywords_cfg = load_config("keywords")
 
-    # ── v2 DÜZELTMESİ: Doğru key isimleri ──
     include_keywords: list[str] = (
         keywords_cfg.get("include_keywords")
         or keywords_cfg.get("must_match_any")
@@ -433,12 +333,10 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
         or []
     )
 
-    # Kelime listeleri boşsa tüm haberleri geçir
     if not include_keywords and not exclude_keywords:
         log("[KEYWORD] ⚠️ Keyword listesi boş — filtre atlanıyor", "WARNING")
         return articles
 
-    # Türkçe-uyumlu küçük harfe çevir (bir kez)
     include_lower = [_turkish_lower(kw) for kw in include_keywords]
     exclude_lower = [_turkish_lower(kw) for kw in exclude_keywords]
 
@@ -457,7 +355,6 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
         summary: str = article.get("summary", "")
         text = _turkish_lower(f"{title} {summary}")
 
-        # ── ADIM 1: Hariç kelime kontrolü (önce) ──
         excluded: bool = False
         matched_exclude_kw: str = ""
 
@@ -478,7 +375,6 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
                 )
             continue
 
-        # ── ADIM 2: Dahil kelime kontrolü ──
         if include_lower:
             found_include: bool = False
             for kw in include_lower:
@@ -506,30 +402,21 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
         "INFO",
     )
 
-    if excluded_by_exclude > 20:
-        log(
-            f"  ℹ️ ... ve {excluded_by_exclude - 20} exclude elenme daha (loglanmadı)",
-            "INFO",
-        )
-
-    if excluded_by_include > 20:
-        log(
-            f"  ℹ️ ... ve {excluded_by_include - 20} include elenme daha (loglanmadı)",
-            "INFO",
-        )
-
     return passed
 
 
 # ============================================================
-# 4. ZAMAN FİLTRESİ (v3 — Akıllı Zaman Filtresi)
+# 4. ZAMAN FİLTRESİ (v5 — Basit 12 Saat)
 # ============================================================
 
 def apply_time_filter(articles: list[dict]) -> list[dict]:
-    """Son kontrolden bu yana gelen haberleri filtreler (Akıllı Zaman Filtresi).
+    """Zaman filtresini uygular.
 
-    posted_news.json'daki last_check_time'ı okur ve 30 dakikalık
-    overlap tamponu ekleyerek kesme noktası belirler.
+    v5 Basitleştirme:
+      - TÜM kaynaklar için aynı zaman dilimi: settings.json'daki
+        max_article_age_hours (varsayılan 12 saat)
+      - Akıllı zaman filtresi (last_check_time) da korunuyor
+      - Hangisi DAHA KISA ise o kullanılır
 
     Args:
         articles: Filtrelenecek haber listesi.
@@ -538,15 +425,15 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
         list[dict]: Zaman filtresinden geçen haberler.
     """
     settings = load_config("settings")
-    max_age_hours: int = settings.get("news_max_age_hours", 48)
+    max_age_hours: int = settings.get("news", {}).get("max_article_age_hours", 12)
     overlap_minutes: int = 30
 
     now_utc = datetime.now(timezone.utc)
 
-    # ── Maksimum üst sınır (settings'ten) ──
+    # ── Maksimum üst sınır: settings'teki max_article_age_hours ──
     max_cutoff_utc = now_utc - timedelta(hours=max_age_hours)
 
-    # ── Akıllı zaman filtresi: son kontrol zamanını oku ──
+    # ── Akıllı zaman filtresi: son kontrol zamanı ──
     posted_data = get_posted_news()
     last_check = get_last_check_time(posted_data)
 
@@ -568,11 +455,10 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     # ── Zaman penceresini logla ──
     window_seconds = (now_utc - cutoff_utc).total_seconds()
     window_hours = window_seconds / 3600
-    window_minutes = int(window_seconds / 60)
 
     log(
-        f"[ZAMAN] Akıllı zaman penceresi: son {window_hours:.1f} saat "
-        f"({window_minutes} dakika) — overlap tamponu: {overlap_minutes}dk",
+        f"[ZAMAN] Zaman penceresi: son {window_hours:.1f} saat "
+        f"(maks: {max_age_hours} saat, overlap: {overlap_minutes}dk)",
         "INFO",
     )
 
@@ -612,14 +498,7 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
 # ============================================================
 
 def remove_already_posted(articles: list[dict]) -> list[dict]:
-    """Daha önce paylaşılmış haberleri listeden çıkarır.
-
-    Args:
-        articles: Kontrol edilecek haber listesi.
-
-    Returns:
-        list[dict]: Daha önce paylaşılmamış haberler.
-    """
+    """Daha önce paylaşılmış haberleri listeden çıkarır."""
     posted_data = get_posted_news()
     posts_list = posted_data.get("posts", [])
 
@@ -651,14 +530,7 @@ def remove_already_posted(articles: list[dict]) -> list[dict]:
 # ============================================================
 
 def remove_duplicates(articles: list[dict]) -> list[dict]:
-    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer.
-
-    Args:
-        articles: Tekilleştirilecek haber listesi.
-
-    Returns:
-        list[dict]: Tekil haber listesi.
-    """
+    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer."""
     if len(articles) <= 1:
         return articles
 
@@ -707,7 +579,7 @@ def remove_duplicates(articles: list[dict]) -> list[dict]:
 
 
 # ============================================================
-# 7. HABER TAM METNİ ÇEK (v4 — Donanımhaber desteği)
+# 7. HABER TAM METNİ ÇEK
 # ============================================================
 
 def scrape_full_article(url: str) -> str:
@@ -715,11 +587,6 @@ def scrape_full_article(url: str) -> str:
 
     Donanımhaber için özel selector'lar dener, bulamazsa
     genel yöntemlerle (article tag, p tag) çeker.
-
-    Çekme sırası:
-      1. Donanımhaber özel: div.article-content veya div.newsContent
-      2. Genel: <article> tag'i içindeki <p>'ler
-      3. Fallback: Sayfadaki tüm anlamlı <p> tag'leri (30+ karakter)
 
     Args:
         url: Haberin tam URL'si.
@@ -742,12 +609,10 @@ def scrape_full_article(url: str) -> str:
         )
         resp.raise_for_status()
 
-        # Encoding düzeltme (Türkçe karakterler için)
         resp.encoding = resp.apparent_encoding or "utf-8"
 
         soup = BeautifulSoup(resp.text, "html.parser")
 
-        # Gereksiz elementleri temizle (reklam, script, style, nav)
         for unwanted in soup.find_all(["script", "style", "nav", "footer", "aside", "iframe"]):
             unwanted.decompose()
 
@@ -755,7 +620,6 @@ def scrape_full_article(url: str) -> str:
 
         # ── Yöntem 1: Donanımhaber özel selector'ları ──
         if "donanimhaber.com" in url:
-            # Donanımhaber makale içeriği selector'ları
             content_selectors = [
                 {"class_": "article-content"},
                 {"class_": "newsContent"},
@@ -774,7 +638,6 @@ def scrape_full_article(url: str) -> str:
                             if len(p.get_text(strip=True)) > 10
                         )
                     else:
-                        # <p> yoksa div'in tüm metnini al
                         full_text = content_div.get_text(separator=" ", strip=True)
 
                     if full_text and len(full_text) > 50:
@@ -802,10 +665,8 @@ def scrape_full_article(url: str) -> str:
             ]
             full_text = " ".join(meaningful)
 
-        # Boşlukları temizle
         full_text = re.sub(r"\s+", " ", full_text).strip()
 
-        # Maksimum 5000 karakter
         if len(full_text) > 5000:
             full_text = full_text[:5000].rsplit(" ", 1)[0] + "..."
 
@@ -827,9 +688,8 @@ def scrape_full_article(url: str) -> str:
         return ""
 
 
-# ── Eski fonksiyon adı ile uyumluluk (main.py bunu çağırıyor olabilir) ──
 def get_article_full_text(url: str) -> str:
-    """Eski fonksiyon adı ile uyumluluk. scrape_full_article'ı çağırır."""
+    """Eski fonksiyon adı ile uyumluluk."""
     return scrape_full_article(url)
 
 
@@ -839,14 +699,6 @@ def get_article_full_text(url: str) -> str:
 
 def fetch_and_filter_news() -> list[dict]:
     """Ana fonksiyon: Tüm kaynakları tarar, filtreler, tekil listeyi döner.
-
-    Çalışma sırası:
-      1. Tüm RSS feed'leri çek
-      2. Google News URL'lerini gerçek URL'ye çevir
-      3. Keyword filtresi uygula
-      4. Zaman filtresi uygula (akıllı — son kontrolden itibaren)
-      5. Daha önce paylaşılanları çıkar
-      6. Benzerleri tekilleştir
 
     Returns:
         list[dict]: Filtrelenmiş, tekil, paylaşıma aday haber listesi.
@@ -885,7 +737,7 @@ def fetch_and_filter_news() -> list[dict]:
         log("Keyword filtresinden geçen haber yok", "WARNING")
         return []
 
-    # ── ADIM 4: Zaman filtresi (akıllı) ──
+    # ── ADIM 4: Zaman filtresi ──
     articles = apply_time_filter(articles)
     log(f"[ADIM 4] Zaman filtresi sonrası → {len(articles)} haber")
 
@@ -913,7 +765,7 @@ def fetch_and_filter_news() -> list[dict]:
 
 
 # ============================================================
-# MODÜL TESTİ (doğrudan çalıştırılırsa)
+# MODÜL TESTİ
 # ============================================================
 
 if __name__ == "__main__":
