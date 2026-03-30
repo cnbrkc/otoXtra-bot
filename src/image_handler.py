@@ -1,49 +1,40 @@
 """
-image_handler.py — Görsel İşleme Modülü (v3 — Yedek Görsel Desteği)
+image_handler.py — Görsel İşleme Modülü (v3.1 — Lacivert Yedek Görsel)
 
 Bu modül haber paylaşımı için görsel temin eder ve işler.
 
 Görsel kaynakları (öncelik sırasıyla):
   1. RSS'den gelen image_url (news_fetcher tarafından çekilir)
   2. Haber sitesinden og:image scraping
-  3. YEDEK GÖRSEL (fallback) — assets/fallback_image.jpg  ← YENİ v3
+  3. YEDEK GÖRSEL — lacivert arka plan + solid logo (v3.1)
 
-v3 Değişiklikler:
-•   Yedek görsel desteği eklendi: Hiçbir kaynaktan görsel elde
-    edilemezse assets/fallback_image.jpg kullanılır
-•   prepare_image() ASLA None dönmez — her zaman bir görsel yolu döner
-•   _create_fallback_copy() fonksiyonu eklendi
-•   "Görselsiz paylaşma" durumu ortadan kalktı
-
-Elde edilen görsel:
-•   Facebook için uygun boyuta getirilir (1200×630 varsayılan)
-•   otoXtra logosu/watermark eklenir
-•   Geçici dosya olarak kaydedilir
+v3.1 Değişiklikler:
+•   Yedek görsel: #12192c lacivert arka plan üzerine solid logo
+•   Logo ince şerit hissiyatında — büyük arka plan, küçük logo
+•   prepare_image() ASLA None dönmez — her zaman görsel yolu döner
+•   _create_fallback_image() fonksiyonu eklendi
+•   Acil durum görseli de aynı lacivert tema ile oluşturulur
 
 Akış:
   prepare_image(article)
-    ├─ download_image()      → RSS'den gelen URL'yi indir
-    ├─ scrape_og_image()     → RSS'de yoksa siteden og:image çek
-    ├─ _create_fallback_copy() → ikisi de yoksa yedek görseli kopyala  ← YENİ
-    ├─ resize_and_crop()     → Facebook boyutuna getir
-    └─ add_logo()            → logo/watermark ekle
-
-Kullandığı modüller:
-•   utils.py → load_config(), log(), get_project_root()
+    ├─ download_image()          → RSS'den gelen URL'yi indir
+    ├─ scrape_og_image()         → RSS'de yoksa siteden og:image çek
+    ├─ _create_fallback_image()  → ikisi de yoksa lacivert+logo oluştur
+    ├─ resize_and_crop()         → Facebook boyutuna getir
+    └─ add_logo()                → logo/watermark ekle (sadece haber görseli)
 
 Kullandığı dosyalar:
-•   config/settings.json    → images ayarları
-•   assets/logo.png         → watermark logosu
-•   assets/fallback_image.jpg → yedek görsel (v3)
+•   config/settings.json        → images ayarları
+•   assets/logo.png             → watermark logosu (transparan)
+•   assets/logo_solid.png       → yedek görsel logosu (transparan olmayan)
 """
 
 import os
-import shutil
 import tempfile
 from typing import Optional
 
 import requests
-from PIL import Image
+from PIL import Image, ImageDraw
 
 from utils import load_config, log, get_project_root
 
@@ -59,7 +50,11 @@ _USER_AGENT: str = (
 )
 
 _REQUEST_TIMEOUT: int = 15
-_MIN_IMAGE_WIDTH: int = 400  # Minimum genişlik (v2: 600→400 düşürüldü)
+_MIN_IMAGE_WIDTH: int = 400
+
+# Yedek görsel renk ayarları (v3.1)
+_FALLBACK_BG_COLOR: tuple = (18, 25, 44)     # #12192c — lacivert
+_FALLBACK_STRIPE_COLOR: tuple = (24, 35, 60)  # biraz daha açık lacivert (ince şerit)
 
 
 # ──────────────────────────────────────────────
@@ -69,10 +64,6 @@ _MIN_IMAGE_WIDTH: int = 400  # Minimum genişlik (v2: 600→400 düşürüldü)
 def download_image(image_url: str) -> Optional[str]:
     """
     Verilen URL'den görseli indirir ve geçici dosyaya kaydeder.
-
-    RSS feed'den gelen image_url için kullanılır.
-    og:image scraping'den farklı olarak direkt URL'ye gider,
-    HTML parse etmez.
 
     Args:
         image_url: İndirilecek görselin URL'si.
@@ -180,12 +171,6 @@ def scrape_og_image(url: str) -> Optional[str]:
     """
     Haber URL'sindeki og:image meta etiketinden görsel indirir.
 
-    İşleyiş:
-      1. Haber sayfasının HTML'ini indir
-      2. <meta property="og:image" content="..."> etiketini bul
-      3. Görseli indir, boyut ve tip kontrolü yap
-      4. Geçici dosyaya kaydet
-
     Args:
         url: Haber sayfasının URL'si.
 
@@ -205,12 +190,10 @@ def scrape_og_image(url: str) -> Optional[str]:
         )
         response.raise_for_status()
 
-        # HTML'i parse et
         from bs4 import BeautifulSoup
 
         soup = BeautifulSoup(response.text, "html.parser")
 
-        # og:image meta tag'ini bul
         og_tag = soup.find("meta", property="og:image")
 
         if not og_tag:
@@ -226,7 +209,6 @@ def scrape_og_image(url: str) -> Optional[str]:
             log(f"ℹ️ og:image URL geçersiz: {image_url[:80]}", "INFO")
             return None
 
-        # Görseli indir (download_image fonksiyonunu kullan)
         return download_image(image_url)
 
     except requests.exceptions.Timeout:
@@ -247,65 +229,194 @@ def scrape_og_image(url: str) -> Optional[str]:
 
 
 # ──────────────────────────────────────────────
-# 3) Yedek Görsel Kopyalama (v3 — YENİ)
+# 3) Yedek Görsel Oluşturma (v3.1 — Lacivert + Solid Logo)
 # ──────────────────────────────────────────────
 
-def _create_fallback_copy() -> Optional[str]:
+def _create_fallback_image(width: int, height: int) -> str:
     """
-    Yedek görseli (fallback_image.jpg) geçici dosyaya kopyalar.
+    Lacivert arka plan üzerine solid logo ile yedek görsel oluşturur.
 
-    assets/fallback_image.jpg dosyasını okur ve temp dizinine
-    kopyasını oluşturur. Böylece resize_and_crop() ve add_logo()
-    orijinal dosyayı değiştirmez.
+    Tasarım:
+    ┌──────────────────────────────────────────┐
+    │                                          │
+    │          #12192c lacivert arka plan       │
+    │     ─────────────────────────────────     │  ← ince açık şerit (üst)
+    │                                          │
+    │              ┌──────────┐                │
+    │              │  LOGO    │                │  ← solid logo, ortada
+    │              │ (solid)  │                │
+    │              └──────────┘                │
+    │                                          │
+    │     ─────────────────────────────────     │  ← ince açık şerit (alt)
+    │          #12192c lacivert arka plan       │
+    │                                          │
+    └──────────────────────────────────────────┘
+
+    Logo, görselin %25'i kadar genişlikte tutulur (ince şerit hissi).
+
+    Args:
+        width:  Görsel genişliği (varsayılan 1200).
+        height: Görsel yüksekliği (varsayılan 630).
 
     Returns:
-        Kopyalanan geçici dosya yolu. Dosya yoksa None.
+        Oluşturulan görselin geçici dosya yolu.
     """
-    fallback_path: str = os.path.join(
-        get_project_root(), "assets", "fallback_image.jpg"
-    )
+    # ── Solid logo dosyasını bul ──
+    project_root: str = get_project_root()
 
-    if not os.path.exists(fallback_path):
-        log(
-            f"❌ Yedek görsel dosyası bulunamadı: {fallback_path}",
-            "ERROR",
-        )
-        log(
-            "💡 Lütfen 1200x630 boyutunda bir JPEG dosyasını "
-            "assets/fallback_image.jpg olarak kaydedin",
-            "ERROR",
-        )
-        return None
+    # Önce logo_solid.png dene, yoksa logo_solid.jpg, yoksa logo.png kullan
+    logo_candidates = [
+        os.path.join(project_root, "assets", "logo_solid.png"),
+        os.path.join(project_root, "assets", "logo_solid.jpg"),
+        os.path.join(project_root, "assets", "logo.png"),
+    ]
+
+    logo_path: Optional[str] = None
+    for candidate in logo_candidates:
+        if os.path.exists(candidate):
+            logo_path = candidate
+            break
 
     try:
-        # Geçici dosyaya kopyala (orijinali korumak için)
         temp_file = tempfile.NamedTemporaryFile(
             suffix=".jpg", delete=False, prefix="otoxtra_fallback_"
         )
         temp_path: str = temp_file.name
         temp_file.close()
 
-        shutil.copy2(fallback_path, temp_path)
+        # ── Lacivert arka plan oluştur ──
+        img = Image.new("RGB", (width, height), _FALLBACK_BG_COLOR)
+        draw = ImageDraw.Draw(img)
 
-        # Dosya bütünlüğünü kontrol et
-        img = Image.open(temp_path)
-        img_width, img_height = img.size
+        # ── İnce dekoratif şeritler (üst ve alt) ──
+        stripe_thickness: int = 2
+        stripe_margin: int = int(height * 0.22)  # üst/alttan %22 içeride
+        stripe_padding_x: int = int(width * 0.15)  # soldan/sağdan %15 boşluk
+
+        # Üst şerit
+        draw.rectangle(
+            [
+                stripe_padding_x,
+                stripe_margin,
+                width - stripe_padding_x,
+                stripe_margin + stripe_thickness,
+            ],
+            fill=_FALLBACK_STRIPE_COLOR,
+        )
+
+        # Alt şerit
+        draw.rectangle(
+            [
+                stripe_padding_x,
+                height - stripe_margin - stripe_thickness,
+                width - stripe_padding_x,
+                height - stripe_margin,
+            ],
+            fill=_FALLBACK_STRIPE_COLOR,
+        )
+
+        # ── Logo ekle (varsa) ──
+        if logo_path:
+            try:
+                logo_img = Image.open(logo_path)
+
+                # RGBA'ya çevir (transparan veya değil fark etmez)
+                if logo_img.mode != "RGBA":
+                    logo_img = logo_img.convert("RGBA")
+
+                # Logo boyutu: görselin %25 genişliğinde (ince şerit hissi)
+                logo_max_width: int = int(width * 0.25)
+                logo_orig_w, logo_orig_h = logo_img.size
+                aspect: float = logo_orig_h / logo_orig_w
+                logo_new_width: int = logo_max_width
+                logo_new_height: int = int(logo_new_width * aspect)
+
+                # Yükseklik sınırı — görselin %30'unu geçmesin
+                max_logo_height: int = int(height * 0.30)
+                if logo_new_height > max_logo_height:
+                    logo_new_height = max_logo_height
+                    logo_new_width = int(logo_new_height / aspect)
+
+                logo_img = logo_img.resize(
+                    (logo_new_width, logo_new_height),
+                    Image.LANCZOS,
+                )
+
+                # Tam ortaya yerleştir
+                paste_x: int = (width - logo_new_width) // 2
+                paste_y: int = (height - logo_new_height) // 2
+
+                # RGBA arka plan ile birleştir
+                img_rgba = img.convert("RGBA")
+                overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
+                overlay.paste(logo_img, (paste_x, paste_y))
+                img_rgba = Image.alpha_composite(img_rgba, overlay)
+                img = img_rgba.convert("RGB")
+
+                logo_img.close()
+                overlay.close()
+                img_rgba.close()
+
+                log(
+                    f"✅ Yedek görsel oluşturuldu: {width}x{height}, "
+                    f"logo={os.path.basename(logo_path)} "
+                    f"({logo_new_width}x{logo_new_height})",
+                    "INFO",
+                )
+
+            except Exception as logo_err:
+                log(
+                    f"⚠️ Yedek görsele logo eklenemedi: {logo_err}",
+                    "WARNING",
+                )
+                log(
+                    "⚠️ Sadece lacivert arka plan kullanılacak",
+                    "WARNING",
+                )
+        else:
+            log(
+                "⚠️ Logo dosyası bulunamadı — "
+                "sadece lacivert arka plan oluşturuldu",
+                "WARNING",
+            )
+
+        # ── Kaydet ──
+        img.save(temp_path, format="JPEG", quality=95)
         img.close()
 
         log(
-            f"🔄 Yedek görsel kopyalandı: {img_width}x{img_height} → "
-            f"{temp_path}",
+            f"🔄 Yedek görsel hazır: {width}x{height} → {temp_path}",
             "INFO",
         )
         return temp_path
 
     except Exception as e:
-        log(f"❌ Yedek görsel kopyalama hatası: {e}", "ERROR")
+        log(f"❌ Yedek görsel oluşturma hatası: {e}", "ERROR")
+
+        # Son çare: düz lacivert
         try:
-            os.unlink(temp_path)
-        except (OSError, UnboundLocalError):
-            pass
-        return None
+            temp_file = tempfile.NamedTemporaryFile(
+                suffix=".jpg", delete=False, prefix="otoxtra_emergency_"
+            )
+            temp_path = temp_file.name
+            temp_file.close()
+
+            img = Image.new("RGB", (width, height), _FALLBACK_BG_COLOR)
+            img.save(temp_path, format="JPEG", quality=90)
+            img.close()
+            return temp_path
+        except Exception as e2:
+            log(f"❌ Son çare görsel de oluşturulamadı: {e2}", "ERROR")
+            # Boş dosya bile oluştur
+            temp_file = tempfile.NamedTemporaryFile(
+                suffix=".jpg", delete=False, prefix="otoxtra_empty_"
+            )
+            temp_path = temp_file.name
+            temp_file.close()
+            img = Image.new("RGB", (width, height), (50, 50, 50))
+            img.save(temp_path, format="JPEG", quality=85)
+            img.close()
+            return temp_path
 
 
 # ──────────────────────────────────────────────
@@ -319,13 +430,6 @@ def resize_and_crop(
 ) -> str:
     """
     Görseli hedef boyuta getirir (resize + center crop).
-
-    İşleyiş:
-      1. En-boy oranlarını karşılaştır
-      2. Kısa kenarı hedef boyuta getir (oranı koruyarak resize)
-      3. Uzun kenardan ortadan kırp (center crop)
-      4. Tam hedef boyuta getir
-      5. RGB moduna çevir (JPEG uyumluluğu)
 
     Args:
         image_path:    İşlenecek görselin dosya yolu.
@@ -404,23 +508,22 @@ def resize_and_crop(
 
 
 # ──────────────────────────────────────────────
-# 5) Logo / Watermark Ekleme
+# 5) Logo / Watermark Ekleme (Sadece Haber Görseli İçin)
 # ──────────────────────────────────────────────
 
 def add_logo(image_path: str) -> str:
     """
-    Ana görsele otoXtra logosunu (watermark) ekler.
+    Ana görsele otoXtra logosunu (transparan watermark) ekler.
 
-    Logo ayarları settings.json'dan okunur:
-      - logo_position:     konum (bottom_right, bottom_left, vb.)
-      - logo_opacity:      saydamlık (0.0 - 1.0)
-      - logo_size_percent: ana görselin genişliğinin yüzdesi
+    Bu fonksiyon SADECE haber görselleri için çalışır.
+    Yedek görselde zaten solid logo var, üstüne watermark eklenmez
+    (prepare_image'da kontrol ediliyor).
 
     Args:
         image_path: Logo eklenecek görselin dosya yolu.
 
     Returns:
-        Logo eklenmiş görselin dosya yolu (aynı dosya üzerine yazılır).
+        Logo eklenmiş görselin dosya yolu.
     """
     settings_config: dict = load_config("settings")
     images_settings: dict = settings_config.get("images", {})
@@ -528,33 +631,32 @@ def add_logo(image_path: str) -> str:
 
 
 # ──────────────────────────────────────────────
-# 6) Ana Fonksiyon — Görsel Hazırlama (v3)
+# 6) Ana Fonksiyon — Görsel Hazırlama (v3.1)
 # ──────────────────────────────────────────────
 
 def prepare_image(article: dict) -> str:
     """
-    ANA FONKSİYON — Haber için görsel hazırlar (v3 — Yedek Görsel).
+    ANA FONKSİYON — Haber için görsel hazırlar.
 
-    Tüm adımları sırayla çalıştırır:
-      1. RSS'den gelen image_url'yi indir (ÖNCELİKLİ)
+    v3.1: Bu fonksiyon ASLA None dönmez.
+
+    Adımlar:
+      1. RSS'den gelen image_url'yi indir
       2. Başarısızsa haber sitesinden og:image çek
-      3. İkisi de yoksa YEDEK GÖRSELİ kullan (v3)
-      4. Görseli Facebook boyutuna getir (resize + crop)
-      5. Logo/watermark ekle
-
-    v3 DEĞİŞİKLİK: Bu fonksiyon ASLA None dönmez.
-    Her zaman bir görsel yolu döner (en kötü ihtimalle yedek görsel).
+      3. İkisi de yoksa lacivert arka plan + solid logo oluştur
+      4. Görseli Facebook boyutuna getir
+      5. Logo/watermark ekle (SADECE haber görseli için, yedek görsele eklenmez)
 
     Article dict'ine "image_source" alanı eklenir:
-      - "rss_image"      → RSS feed'den gelen görsel URL'si
-      - "og:image"       → haber sitesinden çekildi
-      - "fallback"       → yedek görsel kullanıldı (v3)
+      - "rss_image"  → RSS feed'den gelen görsel
+      - "og:image"   → haber sitesinden çekildi
+      - "fallback"   → lacivert+logo yedek görsel
 
     Args:
-        article: Haber dict'i (en az "link", "title", "image_url").
+        article: Haber dict'i.
 
     Returns:
-        str: İşlenmiş görselin dosya yolu. Her zaman geçerli bir yol döner.
+        str: İşlenmiş görselin dosya yolu. Her zaman geçerli yol döner.
     """
     separator: str = "-" * 40
 
@@ -576,7 +678,7 @@ def prepare_image(article: dict) -> str:
     image_path: Optional[str] = None
     image_source: Optional[str] = None
 
-    # ── ADIM 1: RSS'den gelen görsel URL'sini indir (ÖNCELİKLİ) ──
+    # ── ADIM 1: RSS'den gelen görsel URL'sini indir ──
     rss_image_url: str = article.get("image_url", "")
     if rss_image_url:
         log("📸 ADIM 1: RSS'den gelen görsel indiriliyor...", "INFO")
@@ -625,43 +727,47 @@ def prepare_image(article: dict) -> str:
                 "INFO",
             )
 
-    # ── ADIM 3: YEDEK GÖRSEL (v3 — YENİ) ──
+    # ── ADIM 3: YEDEK GÖRSEL — Lacivert + Solid Logo (v3.1) ──
     if image_path is None:
         log(
             "🔄 ADIM 3: RSS ve og:image başarısız — "
-            "YEDEK GÖRSEL kullanılıyor...",
+            "YEDEK GÖRSEL oluşturuluyor (lacivert + logo)...",
             "WARNING",
         )
-        image_path = _create_fallback_copy()
-        if image_path:
-            image_source = "fallback"
-            log("✅ Yedek görsel yüklendi", "INFO")
-        else:
-            # Yedek görsel de yoksa — son çare
-            # Bu durumda basit bir görsel oluştur
-            log(
-                "❌ Yedek görsel de bulunamadı — "
-                "boş görsel oluşturuluyor...",
-                "ERROR",
-            )
-            image_path = _create_emergency_image(
-                feed_image_width, feed_image_height
-            )
-            image_source = "emergency"
-            log("⚠️ Acil durum görseli oluşturuldu", "WARNING")
+        image_path = _create_fallback_image(
+            feed_image_width, feed_image_height
+        )
+        image_source = "fallback"
+        log("✅ Yedek görsel (lacivert + logo) oluşturuldu", "INFO")
 
     # ── ADIM 4: Boyutlandır ve kırp ──
-    log(
-        f"📐 ADIM 4: Boyutlandırma "
-        f"({feed_image_width}x{feed_image_height})",
-        "INFO",
-    )
-    image_path = resize_and_crop(
-        image_path, feed_image_width, feed_image_height
-    )
+    # Yedek görsel zaten doğru boyutta oluşturuluyor ama
+    # RSS/og:image görselleri için gerekli
+    if image_source != "fallback":
+        log(
+            f"📐 ADIM 4: Boyutlandırma "
+            f"({feed_image_width}x{feed_image_height})",
+            "INFO",
+        )
+        image_path = resize_and_crop(
+            image_path, feed_image_width, feed_image_height
+        )
+    else:
+        log(
+            "📐 ADIM 4: Yedek görsel zaten doğru boyutta — "
+            "boyutlandırma atlanıyor",
+            "INFO",
+        )
 
-    # ── ADIM 5: Logo ekle ──
-    if should_add_logo:
+    # ── ADIM 5: Logo/Watermark ekle ──
+    # ⚠️ SADECE haber görseli için! Yedek görselde zaten logo var.
+    if image_source == "fallback":
+        log(
+            "🏷️ ADIM 5: Yedek görselde logo zaten var — "
+            "watermark ATLANYOR",
+            "INFO",
+        )
+    elif should_add_logo:
         log("🏷️ ADIM 5: Logo/watermark ekleniyor...", "INFO")
         image_path = add_logo(image_path)
     else:
@@ -677,68 +783,3 @@ def prepare_image(article: dict) -> str:
     log(separator, "INFO")
 
     return image_path
-
-
-# ──────────────────────────────────────────────
-# 7) Acil Durum Görseli (v3 — Son Çare)
-# ──────────────────────────────────────────────
-
-def _create_emergency_image(width: int, height: int) -> str:
-    """
-    Yedek görsel dosyası bile yoksa son çare olarak
-    basit düz renkli bir görsel oluşturur.
-
-    Bu sadece assets/fallback_image.jpg dosyası olmadığında çalışır.
-    Koyu gri arka plan üzerine beyaz bir çizgi koyar.
-
-    Args:
-        width:  Görsel genişliği.
-        height: Görsel yüksekliği.
-
-    Returns:
-        Oluşturulan görselin geçici dosya yolu.
-    """
-    try:
-        temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_emergency_"
-        )
-        temp_path: str = temp_file.name
-        temp_file.close()
-
-        # Koyu gri arka plan
-        img = Image.new("RGB", (width, height), (30, 30, 30))
-
-        # Ortada ince beyaz şerit
-        from PIL import ImageDraw
-
-        draw = ImageDraw.Draw(img)
-        stripe_y = height // 2
-        stripe_height = 2
-        draw.rectangle(
-            [0, stripe_y, width, stripe_y + stripe_height],
-            fill=(200, 200, 200),
-        )
-
-        img.save(temp_path, format="JPEG", quality=90)
-        img.close()
-
-        log(
-            f"🆘 Acil durum görseli oluşturuldu: "
-            f"{width}x{height} → {temp_path}",
-            "INFO",
-        )
-        return temp_path
-
-    except Exception as e:
-        log(f"❌ Acil durum görseli oluşturulamadı: {e}", "ERROR")
-        # Gerçekten hiçbir şey olmadıysa boş dosya oluştur
-        temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_empty_"
-        )
-        temp_path = temp_file.name
-        temp_file.close()
-
-        img = Image.new("RGB", (width, height), (50, 50, 50))
-        img.save(temp_path, format="JPEG", quality=85)
-        img.close()
-        return temp_path
