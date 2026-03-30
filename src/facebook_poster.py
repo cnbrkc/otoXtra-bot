@@ -1,22 +1,22 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v9 — params fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v10 — files+data split fix)
 
-v9 Değişiklik:
+v10 Değişiklik:
 
-  ❌ v8 HATASI: Adım 1'de requests.post(url, files=files, data=data) kullanılıyordu
-     → requests, files + data birlikte verildiğinde hepsini body'ye yığıyor
-     → Facebook API, dosya yüklerken published/temporary/access_token
-       parametrelerini URL query string'inde bekliyor
-     → temporary=true parametresi body'de kayboluyordu
-     → Facebook geçici yüklemeyi tanımıyordu
+  ❌ v9 HATASI: Adım 2'de access_token ve message dahil HER ŞEY
+     files= sözlüğüne konulmuştu → API bunları "dosya" gibi yorumladı
+     → Facebook access_token'ı ve message'ı düzgün ayrıştıramadı
 
-  ✅ v9 ÇÖZÜM:
-     ADIM 1: files= ile SADECE dosya gönderiliyor
-             params= ile published, temporary, access_token URL'ye ekleniyor
-             → Facebook temporary=true'yu görüyor, fotoğrafı geçici yüklüyor
+  ✅ v10 ÇÖZÜM:
+     ADIM 1: (v9'dan kalma, doğru)
+             params= ile published/temporary/access_token URL'ye ekleniyor
+             files=  ile sadece dosya gönderiliyor
 
-     ADIM 2: files= ile multipart/form-data zorlanıyor (v8'den kalma, doğru)
-             → attached_media[0] doğru ayrıştırılıyor
+     ADIM 2: (YENİ FIX)
+             files= → SADECE attached_media[0] (dosya referansı)
+             data=  → message + access_token (standart metin alanları)
+             → requests ikisini aynı multipart isteğinde birleştirir
+             → Facebook her alanı doğru yorumlar
 
   ✅ YEDEK: photos + published=true (en azından paylaşım yapılsın)
 
@@ -169,23 +169,23 @@ def _post_photo_method_a(
     Yöntem A: Görseli GEÇİCİ olarak yükle → Feed'e attached_media ile paylaş.
 
     ADIM 1: POST /{page_id}/photos?published=false&temporary=true&access_token=...
-              files: source = <dosya>
               params: published, temporary, access_token → URL query string
+              files:  source = <dosya> → body
             → photo_id alınır
             → Fotoğraflar'a DÜŞMEZ (temporary=true)
 
     ADIM 2: POST /{page_id}/feed
-              files (multipart): message, attached_media[0], access_token
+              files: attached_media[0] → dosya referansı olarak (multipart)
+              data:  message, access_token → standart metin alanları olarak
+            → requests ikisini aynı multipart isteğinde birleştirir
             → Feed'de görselli post oluşturulur
 
-    v9 FIX:
-      - Adım 1: data= yerine params= kullanılıyor
-        → published/temporary/access_token URL'ye ekleniyor
-        → Facebook bu parametreleri URL query string'inde bekliyor
-        → Dosya tek başına body'de gönderiliyor
-
-      - Adım 2: files= ile multipart/form-data zorlanıyor (v8'den kalma)
-        → attached_media doğru ayrıştırılıyor
+    v10 FIX:
+      - Adım 1: v9'dan kalma (doğru) — params= ile URL'ye, files= ile body'ye
+      - Adım 2: files= ve data= AYRILDI
+        → files= SADECE attached_media[0] içeriyor (dosya referansı)
+        → data= message + access_token içeriyor (standart alanlar)
+        → v9'da hepsi files= içindeydi → API bunları "dosya" sanıyordu
     """
     log("📤 Yöntem A: Geçici yükleme (temporary=true) → Feed postu", "INFO")
 
@@ -193,23 +193,7 @@ def _post_photo_method_a(
     upload_url: str = f"{_FB_BASE_URL}/{page_id}/photos"
 
     try:
-        # ✅ v9 FIX: published, temporary, access_token parametreleri
-        # params= ile URL query string'ine ekleniyor.
-        # Facebook API, dosya yüklerken bu parametreleri URL'de bekliyor.
-        #
-        # ÖNCEKİ (v7/v8 — ÇALIŞMIYORDU):
-        #   data = {"published": "false", "temporary": "true", "access_token": ...}
-        #   requests.post(url, files=files, data=data)
-        #   → Tüm parametreler body'ye yığılıyordu
-        #   → Facebook temporary=true'yu göremiyordu
-        #
-        # YENİ (v9 — FIX):
-        #   params = {"published": "false", "temporary": "true", "access_token": ...}
-        #   requests.post(url, params=params, files=files)
-        #   → Parametreler URL'ye ekleniyor: /photos?published=false&temporary=true&...
-        #   → Dosya tek başına body'de gönderiliyor
-        #   → Facebook temporary=true'yu görüyor
-
+        # ✅ v9'dan kalma (doğru): params= ile URL query string'ine ekleniyor
         upload_params = {
             "published": "false",
             "temporary": "true",
@@ -222,11 +206,10 @@ def _post_photo_method_a(
             log("📤 Adım 1: Görsel geçici olarak yükleniyor (parametreler URL'de)...", "INFO")
             log("  ℹ️ params= kullanılıyor (published/temporary URL query string'inde)", "INFO")
 
-            # ✅ DİKKAT: data= DEĞİL, params= kullanılıyor!
             upload_resp = requests.post(
                 upload_url,
-                params=upload_params,   # → URL'ye eklenir: ?published=false&temporary=true&...
-                files=files_payload,     # → Body'de sadece dosya gönderilir
+                params=upload_params,
+                files=files_payload,
                 timeout=_REQUEST_TIMEOUT,
             )
 
@@ -263,22 +246,49 @@ def _post_photo_method_a(
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
 
     try:
-        # ✅ v8'den kalma (doğru): files= ile multipart/form-data zorlanıyor
-        # (None, value) tuple: None = dosya adı yok, value = string değer
-        # requests, files= parametresiyle isteği her zaman
-        # multipart/form-data formatında gönderir.
+        # ✅ v10 FİNAL FIX: files= ve data= AYRILDI
+        #
+        # ÖNCEKİ (v9 — ÇALIŞMIYORDU):
+        #   post_files_payload = {
+        #       "message": (None, message),                              ← YANLIŞ YER
+        #       "attached_media[0]": (None, f'{{"media_fbid":"..."}}'),
+        #       "access_token": (None, access_token),                    ← YANLIŞ YER
+        #   }
+        #   requests.post(feed_url, files=post_files_payload)
+        #   → message ve access_token da "dosya" gibi gönderiliyordu
+        #   → Facebook bunları doğru ayrıştıramıyordu
+        #
+        # YENİ (v10 — FIX):
+        #   files= → SADECE attached_media[0] (dosya referansı)
+        #   data=  → message + access_token (standart metin alanları)
+        #   → requests ikisini aynı multipart isteğinde doğru şekilde birleştirir
+        #   → Facebook her alanı beklediği formatta alır
+
+        # 1. files= → SADECE dosya referansı (attached_media)
         post_files_payload = {
-            "message": (None, message),
             "attached_media[0]": (None, f'{{"media_fbid":"{photo_id}"}}'),
-            "access_token": (None, access_token),
         }
 
-        log("📤 Adım 2: Feed'e multipart/form-data ile paylaşılıyor...", "INFO")
-        log(f"  📎 attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
+        # 2. data= → Standart metin alanları (message + access_token)
+        post_data_payload = {
+            "message": message,
+            "access_token": access_token,
+        }
 
-        # ✅ files= kullanılıyor → multipart/form-data zorlanıyor
+        log("📤 Adım 2: Feed'e files= + data= ile paylaşılıyor...", "INFO")
+        log(f"  📎 [files] attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
+        log(f"  📝 [data]  message = {len(message)} karakter", "INFO")
+        log("  🔑 [data]  access_token = *** (gizli)", "INFO")
+
+        # ✅ files= VE data= AYNI ANDA, AYRI AYRI kullanılıyor!
+        # requests her ikisini de tek bir multipart/form-data isteğinde birleştirir:
+        #   - files'daki alanlar → dosya referansı olarak paketlenir
+        #   - data'daki alanlar → standart metin alanları olarak paketlenir
         post_resp = requests.post(
-            feed_url, files=post_files_payload, timeout=_REQUEST_TIMEOUT
+            feed_url,
+            files=post_files_payload,   # Dosya referansları için
+            data=post_data_payload,     # Metin ve token gibi standart alanlar için
+            timeout=_REQUEST_TIMEOUT,
         )
 
         post_json = post_resp.json()
