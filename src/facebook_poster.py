@@ -1,29 +1,22 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v6 — Temporary Upload Fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v10 — files+data split fix)
 
-v6 Değişiklik:
+v10 Değişiklik:
 
-  ❌ v4 HATASI: published=false ANCAK temporary=true YOK
-     → Fotoğraf "taslak" olarak kaydediliyor, attached_media bağlandığında
-       Fotoğraflar sekmesine de düşüyordu
+  ❌ v9 HATASI: Adım 2'de access_token ve message dahil HER ŞEY
+     files= sözlüğüne konulmuştu → API bunları "dosya" gibi yorumladı
+     → Facebook access_token'ı ve message'ı düzgün ayrıştıramadı
 
-  ❌ v5 HATASI: photos + published=true (tek çağrı)
-     → Facebook bunu "fotoğraf yüklemesi" sayıyor
-     → Fotoğraflar sekmesine düşüyor (normal davranış)
+  ✅ v10 ÇÖZÜM:
+     ADIM 1: (v9'dan kalma, doğru)
+             params= ile published/temporary/access_token URL'ye ekleniyor
+             files=  ile sadece dosya gönderiliyor
 
-  ✅ v6 ÇÖZÜM: published=false + temporary=true → attached_media
-     ADIM 1: POST /{page_id}/photos
-               source    = <dosya>
-               published = false
-               temporary = true   ← BU ANAHTAR PARAMETRE!
-             → photo_id alınır
-             → Fotoğraflar sekmesine EKLENMEZz (geçici dosya)
-
-     ADIM 2: POST /{page_id}/feed
-               message           = <metin>
-               attached_media[0] = {"media_fbid": photo_id}
-             → FEED'de görselli post oluşturulur
-             → Fotoğraflar sekmesine DÜŞMEZ
+     ADIM 2: (YENİ FIX)
+             files= → SADECE attached_media[0] (dosya referansı)
+             data=  → message + access_token (standart metin alanları)
+             → requests ikisini aynı multipart isteğinde birleştirir
+             → Facebook her alanı doğru yorumlar
 
   ✅ YEDEK: photos + published=true (en azından paylaşım yapılsın)
 
@@ -34,7 +27,6 @@ Ortam değişkenleri (GitHub Secrets):
 
 import os
 import time
-import json
 from typing import Optional
 
 import requests
@@ -52,7 +44,7 @@ from utils import (
 # Sabitler
 # ──────────────────────────────────────────────
 
-_FB_API_VERSION: str = "v21.0"
+_FB_API_VERSION: str = "v25.0"
 _FB_BASE_URL: str = f"https://graph.facebook.com/{_FB_API_VERSION}"
 
 _REQUEST_TIMEOUT: int = 60
@@ -176,26 +168,24 @@ def _post_photo_method_a(
     """
     Yöntem A: Görseli GEÇİCİ olarak yükle → Feed'e attached_media ile paylaş.
 
-    Bu yöntem Facebook'un resmi "multi-photo story" dokümantasyonuna
-    dayanır ve TEK fotoğraf için de çalışır.
-
-    ADIM 1: POST /{page_id}/photos
-              source    = <dosya>
-              published = false    ← Yayınlama
-              temporary = true     ← GEÇİCİ dosya (Fotoğraflar'a DÜŞMEZ!)
+    ADIM 1: POST /{page_id}/photos?published=false&temporary=true&access_token=...
+              params: published, temporary, access_token → URL query string
+              files:  source = <dosya> → body
             → photo_id alınır
+            → Fotoğraflar'a DÜŞMEZ (temporary=true)
 
     ADIM 2: POST /{page_id}/feed
-              message           = <metin>
-              attached_media[0] = {"media_fbid": photo_id}
+              files: attached_media[0] → dosya referansı olarak (multipart)
+              data:  message, access_token → standart metin alanları olarak
+            → requests ikisini aynı multipart isteğinde birleştirir
             → Feed'de görselli post oluşturulur
 
-    NEDEN temporary=true GEREKLİ:
-      - temporary=true olmadan: Fotoğraf "taslak" olarak kaydedilir.
-        attached_media ile bağlandığında Fotoğraflar sekmesine de düşer.
-      - temporary=true ile: Fotoğraf SADECE geçici bir dosya olarak tutulur.
-        Feed postuna bağlandığında Fotoğraflar sekmesine DÜŞMEZ.
-        Post SADECE feed'de görünür.
+    v10 FIX:
+      - Adım 1: v9'dan kalma (doğru) — params= ile URL'ye, files= ile body'ye
+      - Adım 2: files= ve data= AYRILDI
+        → files= SADECE attached_media[0] içeriyor (dosya referansı)
+        → data= message + access_token içeriyor (standart alanlar)
+        → v9'da hepsi files= içindeydi → API bunları "dosya" sanıyordu
     """
     log("📤 Yöntem A: Geçici yükleme (temporary=true) → Feed postu", "INFO")
 
@@ -203,18 +193,24 @@ def _post_photo_method_a(
     upload_url: str = f"{_FB_BASE_URL}/{page_id}/photos"
 
     try:
-        with open(image_path, "rb") as image_file:
-            files = {"source": image_file}
-            data = {
-                "published": "false",
-                "temporary": "true",
-                "access_token": access_token,
-            }
+        # ✅ v9'dan kalma (doğru): params= ile URL query string'ine ekleniyor
+        upload_params = {
+            "published": "false",
+            "temporary": "true",
+            "access_token": access_token,
+        }
 
-            log("📤 Adım 1: Görsel geçici olarak yükleniyor (published=false, temporary=true)...", "INFO")
+        with open(image_path, "rb") as image_file:
+            files_payload = {"source": image_file}
+
+            log("📤 Adım 1: Görsel geçici olarak yükleniyor (parametreler URL'de)...", "INFO")
+            log("  ℹ️ params= kullanılıyor (published/temporary URL query string'inde)", "INFO")
 
             upload_resp = requests.post(
-                upload_url, files=files, data=data, timeout=_REQUEST_TIMEOUT
+                upload_url,
+                params=upload_params,
+                files=files_payload,
+                timeout=_REQUEST_TIMEOUT,
             )
 
         upload_json = upload_resp.json()
@@ -234,7 +230,7 @@ def _post_photo_method_a(
             return None
 
         log(f"✅ Adım 1 OK: Geçici görsel yüklendi → photo_id={photo_id}", "INFO")
-        log("  ℹ️ temporary=true → Bu görsel Fotoğraflar'a EKLENMEDİ", "INFO")
+        log("  ℹ️ temporary=true (URL'de) → Bu görsel Fotoğraflar'a EKLENMEDİ", "INFO")
 
     except FileNotFoundError:
         log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
@@ -250,17 +246,49 @@ def _post_photo_method_a(
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
 
     try:
-        post_data = {
+        # ✅ v10 FİNAL FIX: files= ve data= AYRILDI
+        #
+        # ÖNCEKİ (v9 — ÇALIŞMIYORDU):
+        #   post_files_payload = {
+        #       "message": (None, message),                              ← YANLIŞ YER
+        #       "attached_media[0]": (None, f'{{"media_fbid":"..."}}'),
+        #       "access_token": (None, access_token),                    ← YANLIŞ YER
+        #   }
+        #   requests.post(feed_url, files=post_files_payload)
+        #   → message ve access_token da "dosya" gibi gönderiliyordu
+        #   → Facebook bunları doğru ayrıştıramıyordu
+        #
+        # YENİ (v10 — FIX):
+        #   files= → SADECE attached_media[0] (dosya referansı)
+        #   data=  → message + access_token (standart metin alanları)
+        #   → requests ikisini aynı multipart isteğinde doğru şekilde birleştirir
+        #   → Facebook her alanı beklediği formatta alır
+
+        # 1. files= → SADECE dosya referansı (attached_media)
+        post_files_payload = {
+            "attached_media[0]": (None, f'{{"media_fbid":"{photo_id}"}}'),
+        }
+
+        # 2. data= → Standart metin alanları (message + access_token)
+        post_data_payload = {
             "message": message,
-            "attached_media[0]": json.dumps({"media_fbid": str(photo_id)}),
             "access_token": access_token,
         }
 
-        log("📤 Adım 2: Feed'e attached_media ile paylaşılıyor...", "INFO")
-        log(f"  📎 attached_media[0] = media_fbid:{photo_id}", "INFO")
+        log("📤 Adım 2: Feed'e files= + data= ile paylaşılıyor...", "INFO")
+        log(f"  📎 [files] attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
+        log(f"  📝 [data]  message = {len(message)} karakter", "INFO")
+        log("  🔑 [data]  access_token = *** (gizli)", "INFO")
 
+        # ✅ files= VE data= AYNI ANDA, AYRI AYRI kullanılıyor!
+        # requests her ikisini de tek bir multipart/form-data isteğinde birleştirir:
+        #   - files'daki alanlar → dosya referansı olarak paketlenir
+        #   - data'daki alanlar → standart metin alanları olarak paketlenir
         post_resp = requests.post(
-            feed_url, data=post_data, timeout=_REQUEST_TIMEOUT
+            feed_url,
+            files=post_files_payload,   # Dosya referansları için
+            data=post_data_payload,     # Metin ve token gibi standart alanlar için
+            timeout=_REQUEST_TIMEOUT,
         )
 
         post_json = post_resp.json()
