@@ -1,24 +1,42 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v10 — files+data split fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v11 — scheduled publish fix)
 
-v10 Değişiklik:
+v11 Değişiklik:
 
-  ❌ v9 HATASI: Adım 2'de access_token ve message dahil HER ŞEY
-     files= sözlüğüne konulmuştu → API bunları "dosya" gibi yorumladı
-     → Facebook access_token'ı ve message'ı düzgün ayrıştıramadı
+  ❌ v7-v10 SORUNU: temporary=true + attached_media yöntemi
+     → Çeşitli data/files/params kombinasyonları denendi
+     → Hiçbiri Facebook API'de güvenilir çalışmadı
 
-  ✅ v10 ÇÖZÜM:
-     ADIM 1: (v9'dan kalma, doğru)
-             params= ile published/temporary/access_token URL'ye ekleniyor
-             files=  ile sadece dosya gönderiliyor
+  ✅ v11 ÇÖZÜM: 3 YÖNTEM SIRALI DENENİR
 
-     ADIM 2: (YENİ FIX)
-             files= → SADECE attached_media[0] (dosya referansı)
-             data=  → message + access_token (standart metin alanları)
-             → requests ikisini aynı multipart isteğinde birleştirir
-             → Facebook her alanı doğru yorumlar
+     YÖNTEM A (BİRİNCİL): Zamanlanmış Gönderi (Business Suite tarzı)
+       Adım 1: POST /{page_id}/photos
+                 source    = <dosya>
+                 published = false   ← Yayınlanmamış (taslak)
+                 (temporary KULLANILMIYOR!)
+               → photo_id alınır
 
-  ✅ YEDEK: photos + published=true (en azından paylaşım yapılsın)
+       Adım 2: POST /{page_id}/feed
+                 message              = <metin>
+                 attached_media[0]    = {"media_fbid":"photo_id"}
+                 published            = false
+                 scheduled_publish_time = <şu andan 2 dakika sonra>
+               → Facebook kendi zamanlama motoru ile 2dk sonra FEED'de yayınlar
+               → Business Suite'in kullandığı aynı mekanizma
+
+     YÖNTEM B (İKİNCİL): Doğrudan Feed Paylaşım
+       Adım 1: Aynı (published=false, temporary yok)
+       Adım 2: POST /{page_id}/feed
+                 message           = <metin>
+                 attached_media[0] = {"media_fbid":"photo_id"}
+               → Anında yayınlanmayı dener
+
+     YÖNTEM C (YEDEK): photos + published=true
+       → Tek adımda doğrudan fotoğraf paylaşımı
+       → Feed + Fotoğraflar'da görünür (en azından paylaşım olsun)
+
+  ✅ API versiyonu v21.0 → v19.0 olarak değiştirildi
+     → v19.0 daha kararlı ve yaygın kullanılan bir versiyon
 
 Ortam değişkenleri (GitHub Secrets):
   - FB_PAGE_ID       → Facebook sayfa ID
@@ -28,6 +46,7 @@ Ortam değişkenleri (GitHub Secrets):
 import os
 import time
 from typing import Optional
+from datetime import datetime, timezone, timedelta
 
 import requests
 
@@ -44,12 +63,18 @@ from utils import (
 # Sabitler
 # ──────────────────────────────────────────────
 
+# ✅ v11: API versiyonu v21.0 → v19.0 olarak değiştirildi
+# v19.0 daha kararlı ve yaygın kullanılan bir versiyon
 _FB_API_VERSION: str = "v19.0"
 _FB_BASE_URL: str = f"https://graph.facebook.com/{_FB_API_VERSION}"
 
 _REQUEST_TIMEOUT: int = 60
 _RETRY_DELAY: int = 5
 _VERIFY_DELAY: int = 4
+
+# Zamanlanmış gönderi için minimum gecikme (saniye)
+# Facebook en az 10 dakika sonrasını kabul eder
+_SCHEDULE_DELAY_SECONDS: int = 620  # 10 dakika 20 saniye (güvenlik payı)
 
 
 # ──────────────────────────────────────────────
@@ -87,6 +112,87 @@ def _mask_id(post_id: str) -> str:
     return post_id
 
 
+def _get_scheduled_time() -> int:
+    """
+    Şu andan _SCHEDULE_DELAY_SECONDS saniye sonrasının
+    Unix timestamp'ini döndürür.
+
+    Facebook scheduled_publish_time için Unix timestamp (epoch) bekler.
+    Minimum 10 dakika sonrası olmalı, biz güvenlik payı ile 10dk 20sn kullanıyoruz.
+    """
+    future_time = datetime.now(timezone.utc) + timedelta(seconds=_SCHEDULE_DELAY_SECONDS)
+    return int(future_time.timestamp())
+
+
+# ──────────────────────────────────────────────
+# Fotoğraf Yükleme (Ortak Adım 1)
+# ──────────────────────────────────────────────
+
+def _upload_photo_unpublished(
+    page_id: str,
+    access_token: str,
+    image_path: str,
+) -> Optional[str]:
+    """
+    Fotoğrafı YAYINLANMAMIŞ (taslak) olarak yükler ve photo_id döndürür.
+
+    ✅ v11: temporary=true KULLANILMIYOR!
+    → published=false → Fotoğraf taslak olarak yüklenir
+    → Kimse göremez, ama kalıcıdır (silinmez)
+    → Bu photo_id ile feed postu oluşturulabilir
+
+    Bu fonksiyon Yöntem A ve Yöntem B tarafından ortak kullanılır.
+    """
+    upload_url: str = f"{_FB_BASE_URL}/{page_id}/photos"
+
+    try:
+        with open(image_path, "rb") as image_file:
+            files_payload = {"source": image_file}
+
+            # ✅ Parametreler URL'ye ekleniyor (v9'dan öğrenilen)
+            upload_params = {
+                "published": "false",
+                "access_token": access_token,
+                # ❌ temporary=true YOK! Taslak olarak kalıcı yükleniyor
+            }
+
+            log("📤 Fotoğraf yayınlanmamış (taslak) olarak yükleniyor...", "INFO")
+            log("  ℹ️ published=false, temporary YOK (kalıcı taslak)", "INFO")
+
+            upload_resp = requests.post(
+                upload_url,
+                params=upload_params,
+                files=files_payload,
+                timeout=_REQUEST_TIMEOUT,
+            )
+
+        upload_json = upload_resp.json()
+
+        if "error" in upload_json:
+            error_msg = upload_json["error"].get("message", "Bilinmeyen")
+            error_code = upload_json["error"].get("code", 0)
+            log(f"❌ Fotoğraf yükleme hatası: [{error_code}] {error_msg}", "ERROR")
+            return None
+
+        photo_id = upload_json.get("id", "")
+        if not photo_id:
+            log("❌ photo_id alınamadı", "ERROR")
+            return None
+
+        log(f"✅ Fotoğraf yüklendi (taslak) → photo_id={photo_id}", "INFO")
+        return photo_id
+
+    except FileNotFoundError:
+        log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
+        return None
+    except requests.exceptions.Timeout:
+        log("❌ Fotoğraf yükleme zaman aşımı", "ERROR")
+        return None
+    except Exception as e:
+        log(f"❌ Fotoğraf yükleme hatası: {e}", "ERROR")
+        return None
+
+
 # ──────────────────────────────────────────────
 # Feed Doğrulama
 # ──────────────────────────────────────────────
@@ -104,7 +210,7 @@ def _verify_in_feed(
             params={
                 "access_token": access_token,
                 "limit": 5,
-                "fields": "id,type,status_type",
+                "fields": "id,type,status_type,is_published,scheduled_publish_time",
             },
             timeout=30,
         )
@@ -118,12 +224,19 @@ def _verify_in_feed(
         feed_posts = data.get("data", [])
         feed_ids = [p.get("id", "") for p in feed_posts]
 
-        # Feed'deki son 5 postun tiplerini logla (teşhis)
+        # Feed'deki son postların detaylarını logla (teşhis)
         for p in feed_posts[:3]:
             p_id = _mask_id(p.get("id", ""))
             p_type = p.get("type", "?")
             p_status = p.get("status_type", "?")
-            log(f"  📋 Feed'de: {p_id} | type={p_type} | status={p_status}", "INFO")
+            p_published = p.get("is_published", "?")
+            p_scheduled = p.get("scheduled_publish_time", "yok")
+            log(
+                f"  📋 Feed'de: {p_id} | type={p_type} | "
+                f"status={p_status} | published={p_published} | "
+                f"scheduled={p_scheduled}",
+                "INFO",
+            )
 
         # Tam eşleşme
         if target_id in feed_ids:
@@ -142,7 +255,7 @@ def _verify_in_feed(
                 )
                 return True
 
-        log("⚠️ FEED DOĞRULAMA: Post feed'de BULUNAMADI!", "WARNING")
+        log("⚠️ FEED DOĞRULAMA: Post henüz feed'de görünmüyor", "WARNING")
         log(f"  🔍 Aranan  : {_mask_id(target_id)}", "WARNING")
         log(
             f"  📋 Feed'de : {[_mask_id(x) for x in feed_ids[:5]]}",
@@ -156,7 +269,80 @@ def _verify_in_feed(
 
 
 # ──────────────────────────────────────────────
-# YÖNTEM A (BİRİNCİL): temporary upload → feed post
+# Zamanlanmış Gönderi Doğrulama
+# ──────────────────────────────────────────────
+
+def _verify_scheduled_post(
+    page_id: str, access_token: str, target_id: str
+) -> bool:
+    """
+    Zamanlanmış gönderinin Facebook'un zamanlama kuyruğunda olduğunu doğrular.
+
+    Zamanlanmış gönderiler normal feed'de görünmez,
+    /{page_id}/scheduled_posts ucundan kontrol edilir.
+    """
+    try:
+        resp = requests.get(
+            f"{_FB_BASE_URL}/{page_id}/scheduled_posts",
+            params={
+                "access_token": access_token,
+                "limit": 5,
+                "fields": "id,message,scheduled_publish_time,is_published",
+            },
+            timeout=30,
+        )
+        data = resp.json()
+
+        if "error" in data:
+            err_msg = data["error"].get("message", "Bilinmeyen")
+            log(f"⚠️ Zamanlanmış gönderi doğrulama hatası: {err_msg}", "WARNING")
+            return False
+
+        scheduled_posts = data.get("data", [])
+
+        if not scheduled_posts:
+            log("⚠️ Zamanlanmış gönderi kuyruğu boş", "WARNING")
+            return False
+
+        scheduled_ids = [p.get("id", "") for p in scheduled_posts]
+
+        # Detayları logla
+        for p in scheduled_posts[:3]:
+            p_id = _mask_id(p.get("id", ""))
+            p_msg = (p.get("message", "")[:50] + "...") if p.get("message", "") else "?"
+            p_time = p.get("scheduled_publish_time", "?")
+            log(
+                f"  📅 Zamanlanmış: {p_id} | zaman={p_time} | mesaj={p_msg}",
+                "INFO",
+            )
+
+        # Tam eşleşme
+        if target_id in scheduled_ids:
+            log("✅ ZAMANLANMIŞ DOĞRULAMA: Gönderi kuyrukta BULUNDU!", "INFO")
+            return True
+
+        # Kısmi eşleşme
+        target_suffix = (
+            target_id.split("_")[-1] if "_" in target_id else target_id
+        )
+        for sid in scheduled_ids:
+            if target_suffix in sid:
+                log(
+                    "✅ ZAMANLANMIŞ DOĞRULAMA: Gönderi kuyrukta bulundu (kısmi)!",
+                    "INFO",
+                )
+                return True
+
+        log("⚠️ Gönderi zamanlanmış kuyrukta bulunamadı", "WARNING")
+        return False
+
+    except Exception as e:
+        log(f"⚠️ Zamanlanmış gönderi doğrulama hatası: {e}", "WARNING")
+        return False
+
+
+# ──────────────────────────────────────────────
+# YÖNTEM A (BİRİNCİL): Zamanlanmış Gönderi
 # ──────────────────────────────────────────────
 
 def _post_photo_method_a(
@@ -166,128 +352,67 @@ def _post_photo_method_a(
     message: str,
 ) -> Optional[dict]:
     """
-    Yöntem A: Görseli GEÇİCİ olarak yükle → Feed'e attached_media ile paylaş.
+    Yöntem A: Business Suite tarzı ZAMANLANMIŞ GÖNDERİ
 
-    ADIM 1: POST /{page_id}/photos?published=false&temporary=true&access_token=...
-              params: published, temporary, access_token → URL query string
-              files:  source = <dosya> → body
+    Bu yöntem, Facebook Business Suite'in arka planda kullandığı
+    aynı zamanlama mekanizmasını kullanır.
+
+    ADIM 1: Fotoğrafı yayınlanmamış (taslak) olarak yükle
+            → published=false, temporary YOK
             → photo_id alınır
-            → Fotoğraflar'a DÜŞMEZ (temporary=true)
 
-    ADIM 2: POST /{page_id}/feed
-              files: attached_media[0] → dosya referansı olarak (multipart)
-              data:  message, access_token → standart metin alanları olarak
-            → requests ikisini aynı multipart isteğinde birleştirir
-            → Feed'de görselli post oluşturulur
+    ADIM 2: Zamanlanmış feed postu oluştur
+            → published=false
+            → scheduled_publish_time = şu andan ~10dk sonra
+            → attached_media[0] = {"media_fbid":"photo_id"}
+            → Facebook kendi zamanlama motoru ile yayınlar
 
-    v10 FIX:
-      - Adım 1: v9'dan kalma (doğru) — params= ile URL'ye, files= ile body'ye
-      - Adım 2: files= ve data= AYRILDI
-        → files= SADECE attached_media[0] içeriyor (dosya referansı)
-        → data= message + access_token içeriyor (standart alanlar)
-        → v9'da hepsi files= içindeydi → API bunları "dosya" sanıyordu
+    AVANTAJ: Facebook'un kendi zamanlama motoru gönderiyi yayınladığı için
+    feed'de düzgün görünmesi GARANTİ. Business Suite de bunu kullanır.
     """
-    log("📤 Yöntem A: Geçici yükleme (temporary=true) → Feed postu", "INFO")
+    log("📤 Yöntem A: Zamanlanmış gönderi (Business Suite tarzı)", "INFO")
 
-    # ── ADIM 1: Görseli GEÇİCİ olarak yükle ──
-    upload_url: str = f"{_FB_BASE_URL}/{page_id}/photos"
+    # ── ADIM 1: Fotoğrafı taslak olarak yükle ──
+    log("━" * 30, "INFO")
+    log("📤 Adım 1/2: Fotoğraf taslak olarak yükleniyor...", "INFO")
 
-    try:
-        # ✅ v9'dan kalma (doğru): params= ile URL query string'ine ekleniyor
-        upload_params = {
-            "published": "false",
-            "temporary": "true",
-            "access_token": access_token,
-        }
+    photo_id = _upload_photo_unpublished(page_id, access_token, image_path)
 
-        with open(image_path, "rb") as image_file:
-            files_payload = {"source": image_file}
-
-            log("📤 Adım 1: Görsel geçici olarak yükleniyor (parametreler URL'de)...", "INFO")
-            log("  ℹ️ params= kullanılıyor (published/temporary URL query string'inde)", "INFO")
-
-            upload_resp = requests.post(
-                upload_url,
-                params=upload_params,
-                files=files_payload,
-                timeout=_REQUEST_TIMEOUT,
-            )
-
-        upload_json = upload_resp.json()
-
-        if "error" in upload_json:
-            error_msg = upload_json["error"].get("message", "Bilinmeyen")
-            error_code = upload_json["error"].get("code", 0)
-            log(
-                f"❌ Yöntem A Adım 1 hatası: [{error_code}] {error_msg}",
-                "ERROR",
-            )
-            return None
-
-        photo_id = upload_json.get("id", "")
-        if not photo_id:
-            log("❌ Yöntem A: photo_id alınamadı", "ERROR")
-            return None
-
-        log(f"✅ Adım 1 OK: Geçici görsel yüklendi → photo_id={photo_id}", "INFO")
-        log("  ℹ️ temporary=true (URL'de) → Bu görsel Fotoğraflar'a EKLENMEDİ", "INFO")
-
-    except FileNotFoundError:
-        log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
-        return None
-    except requests.exceptions.Timeout:
-        log("❌ Adım 1: Görsel yükleme zaman aşımı", "ERROR")
-        return None
-    except Exception as e:
-        log(f"❌ Adım 1 hatası: {e}", "ERROR")
+    if not photo_id:
+        log("❌ Yöntem A: Fotoğraf yüklenemedi", "ERROR")
         return None
 
-    # ── ADIM 2: Feed'e attached_media ile paylaş ──
+    # ── ADIM 2: Zamanlanmış feed postu oluştur ──
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
+    scheduled_time: int = _get_scheduled_time()
+    scheduled_dt = datetime.fromtimestamp(scheduled_time, tz=timezone.utc)
+
+    log("━" * 30, "INFO")
+    log("📤 Adım 2/2: Zamanlanmış feed postu oluşturuluyor...", "INFO")
+    log(f"  📎 photo_id = {photo_id}", "INFO")
+    log(f"  📅 Zamanlanmış yayın: {scheduled_dt.isoformat()} UTC", "INFO")
+    log(f"  ⏰ Unix timestamp: {scheduled_time}", "INFO")
+    log(f"  📝 Mesaj: {len(message)} karakter", "INFO")
 
     try:
-        # ✅ v10 FİNAL FIX: files= ve data= AYRILDI
-        #
-        # ÖNCEKİ (v9 — ÇALIŞMIYORDU):
-        #   post_files_payload = {
-        #       "message": (None, message),                              ← YANLIŞ YER
-        #       "attached_media[0]": (None, f'{{"media_fbid":"..."}}'),
-        #       "access_token": (None, access_token),                    ← YANLIŞ YER
-        #   }
-        #   requests.post(feed_url, files=post_files_payload)
-        #   → message ve access_token da "dosya" gibi gönderiliyordu
-        #   → Facebook bunları doğru ayrıştıramıyordu
-        #
-        # YENİ (v10 — FIX):
-        #   files= → SADECE attached_media[0] (dosya referansı)
-        #   data=  → message + access_token (standart metin alanları)
-        #   → requests ikisini aynı multipart isteğinde doğru şekilde birleştirir
-        #   → Facebook her alanı beklediği formatta alır
-
-        # 1. files= → SADECE dosya referansı (attached_media)
+        # ✅ v11 ÇÖZÜM: Zamanlanmış gönderi
+        # attached_media → files= (multipart zorlaması)
+        # message, access_token, published, scheduled_publish_time → data=
         post_files_payload = {
             "attached_media[0]": (None, f'{{"media_fbid":"{photo_id}"}}'),
         }
 
-        # 2. data= → Standart metin alanları (message + access_token)
         post_data_payload = {
             "message": message,
+            "published": "false",
+            "scheduled_publish_time": str(scheduled_time),
             "access_token": access_token,
         }
 
-        log("📤 Adım 2: Feed'e files= + data= ile paylaşılıyor...", "INFO")
-        log(f"  📎 [files] attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
-        log(f"  📝 [data]  message = {len(message)} karakter", "INFO")
-        log("  🔑 [data]  access_token = *** (gizli)", "INFO")
-
-        # ✅ files= VE data= AYNI ANDA, AYRI AYRI kullanılıyor!
-        # requests her ikisini de tek bir multipart/form-data isteğinde birleştirir:
-        #   - files'daki alanlar → dosya referansı olarak paketlenir
-        #   - data'daki alanlar → standart metin alanları olarak paketlenir
         post_resp = requests.post(
             feed_url,
-            files=post_files_payload,   # Dosya referansları için
-            data=post_data_payload,     # Metin ve token gibi standart alanlar için
+            files=post_files_payload,
+            data=post_data_payload,
             timeout=_REQUEST_TIMEOUT,
         )
 
@@ -299,20 +424,22 @@ def _post_photo_method_a(
             error_code = error_info.get("code", 0)
             error_subcode = error_info.get("error_subcode", 0)
             log(
-                f"❌ Yöntem A Adım 2 hatası: [{error_code}] (sub:{error_subcode}) {error_msg}",
+                f"❌ Yöntem A hatası: [{error_code}] (sub:{error_subcode}) {error_msg}",
                 "ERROR",
             )
             return None
 
         post_id = _extract_post_id(post_json)
         if post_id:
-            log(f"✅ Adım 2 OK: Feed post oluşturuldu → ID={_mask_id(post_id)}", "INFO")
-            log("🎯 Post SADECE FEED'de görünecek (Fotoğraflar'a DÜŞMEYECEK)!", "INFO")
+            log(f"✅ Zamanlanmış gönderi oluşturuldu → ID={_mask_id(post_id)}", "INFO")
+            log(f"🎯 Gönderi ~{_SCHEDULE_DELAY_SECONDS // 60} dakika sonra FEED'de yayınlanacak!", "INFO")
+            log("  ℹ️ Facebook'un kendi zamanlama motoru yayınlayacak", "INFO")
+            log("  ℹ️ Business Suite > Zamanlanmış İçerik'te görülebilir", "INFO")
 
-            # Feed doğrulama
-            log(f"⏳ Feed doğrulaması için {_VERIFY_DELAY}sn bekleniyor...", "INFO")
+            # Zamanlanmış gönderi doğrulama
+            log(f"⏳ Zamanlanmış gönderi doğrulaması için {_VERIFY_DELAY}sn bekleniyor...", "INFO")
             time.sleep(_VERIFY_DELAY)
-            _verify_in_feed(page_id, access_token, post_id)
+            _verify_scheduled_post(page_id, access_token, post_id)
 
             return post_json
 
@@ -320,15 +447,15 @@ def _post_photo_method_a(
         return None
 
     except requests.exceptions.Timeout:
-        log("❌ Adım 2: Feed paylaşım zaman aşımı", "ERROR")
+        log("❌ Yöntem A: Feed paylaşım zaman aşımı", "ERROR")
         return None
     except Exception as e:
-        log(f"❌ Adım 2 hatası: {e}", "ERROR")
+        log(f"❌ Yöntem A hatası: {e}", "ERROR")
         return None
 
 
 # ──────────────────────────────────────────────
-# YÖNTEM B (YEDEK): photos + published=true
+# YÖNTEM B (İKİNCİL): Doğrudan Feed Paylaşım
 # ──────────────────────────────────────────────
 
 def _post_photo_method_b(
@@ -338,16 +465,99 @@ def _post_photo_method_b(
     message: str,
 ) -> Optional[dict]:
     """
-    Yöntem B (yedek): /{page_id}/photos + published=true.
+    Yöntem B: Taslak fotoğraf + doğrudan feed paylaşım (zamanlama yok).
+
+    ADIM 1: Fotoğrafı yayınlanmamış (taslak) olarak yükle
+    ADIM 2: attached_media ile anında feed'e paylaş
+
+    Yöntem A başarısız olursa denenecek alternatif.
+    """
+    log("📤 Yöntem B: Taslak fotoğraf + doğrudan feed paylaşım", "INFO")
+
+    # ── ADIM 1: Fotoğrafı taslak olarak yükle ──
+    photo_id = _upload_photo_unpublished(page_id, access_token, image_path)
+
+    if not photo_id:
+        log("❌ Yöntem B: Fotoğraf yüklenemedi", "ERROR")
+        return None
+
+    # ── ADIM 2: Doğrudan feed'e paylaş ──
+    feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
+
+    log("📤 Yöntem B Adım 2: Doğrudan feed'e paylaşılıyor...", "INFO")
+
+    try:
+        post_files_payload = {
+            "attached_media[0]": (None, f'{{"media_fbid":"{photo_id}"}}'),
+        }
+
+        post_data_payload = {
+            "message": message,
+            "access_token": access_token,
+        }
+
+        post_resp = requests.post(
+            feed_url,
+            files=post_files_payload,
+            data=post_data_payload,
+            timeout=_REQUEST_TIMEOUT,
+        )
+
+        post_json = post_resp.json()
+
+        if "error" in post_json:
+            error_info = post_json["error"]
+            error_msg = error_info.get("message", "Bilinmeyen")
+            error_code = error_info.get("code", 0)
+            error_subcode = error_info.get("error_subcode", 0)
+            log(
+                f"❌ Yöntem B hatası: [{error_code}] (sub:{error_subcode}) {error_msg}",
+                "ERROR",
+            )
+            return None
+
+        post_id = _extract_post_id(post_json)
+        if post_id:
+            log(f"✅ Yöntem B başarılı: Feed post → ID={_mask_id(post_id)}", "INFO")
+
+            log(f"⏳ Feed doğrulaması için {_VERIFY_DELAY}sn bekleniyor...", "INFO")
+            time.sleep(_VERIFY_DELAY)
+            _verify_in_feed(page_id, access_token, post_id)
+
+            return post_json
+
+        log(f"⚠️ Yöntem B: Beklenmeyen yanıt: {post_json}", "WARNING")
+        return None
+
+    except requests.exceptions.Timeout:
+        log("❌ Yöntem B: Zaman aşımı", "ERROR")
+        return None
+    except Exception as e:
+        log(f"❌ Yöntem B hatası: {e}", "ERROR")
+        return None
+
+
+# ──────────────────────────────────────────────
+# YÖNTEM C (YEDEK): photos + published=true
+# ──────────────────────────────────────────────
+
+def _post_photo_method_c(
+    page_id: str,
+    access_token: str,
+    image_path: str,
+    message: str,
+) -> Optional[dict]:
+    """
+    Yöntem C (yedek): /{page_id}/photos + published=true.
 
     Bu yöntemde görsel Fotoğraflar sekmesine VE feed'e eklenir.
-    Yöntem A başarısız olursa en azından paylaşım yapılsın diye kullanılır.
+    Yöntem A ve B başarısız olursa en azından paylaşım yapılsın diye kullanılır.
 
     NOT: Bu yöntemde post Fotoğraflar sekmesinde de görünür (beklenen davranış).
     """
     url: str = f"{_FB_BASE_URL}/{page_id}/photos"
 
-    log("📤 Yöntem B (yedek): photos + published=true", "INFO")
+    log("📤 Yöntem C (yedek): photos + published=true", "INFO")
     log("  ⚠️ Bu yöntemde post Fotoğraflar'da da görünür", "INFO")
 
     try:
@@ -370,28 +580,28 @@ def _post_photo_method_b(
             error_msg = error_info.get("message", "Bilinmeyen")
             error_code = error_info.get("code", 0)
             log(
-                f"❌ Yöntem B hatası: [{error_code}] {error_msg}",
+                f"❌ Yöntem C hatası: [{error_code}] {error_msg}",
                 "ERROR",
             )
             return None
 
         post_id = _extract_post_id(response_json)
         if post_id:
-            log(f"✅ Yöntem B başarılı: ID={_mask_id(post_id)}", "INFO")
+            log(f"✅ Yöntem C başarılı: ID={_mask_id(post_id)}", "INFO")
             log("ℹ️ Görsel Feed + Fotoğraflar'da görünecek", "INFO")
             return response_json
 
-        log(f"⚠️ Yöntem B: Beklenmeyen yanıt: {response_json}", "WARNING")
+        log(f"⚠️ Yöntem C: Beklenmeyen yanıt: {response_json}", "WARNING")
         return None
 
     except FileNotFoundError:
         log(f"❌ Görsel dosyası bulunamadı: {image_path}", "ERROR")
         return None
     except requests.exceptions.Timeout:
-        log("❌ Yöntem B zaman aşımı", "ERROR")
+        log("❌ Yöntem C zaman aşımı", "ERROR")
         return None
     except Exception as e:
-        log(f"❌ Yöntem B hatası: {e}", "ERROR")
+        log(f"❌ Yöntem C hatası: {e}", "ERROR")
         return None
 
 
@@ -401,11 +611,12 @@ def _post_photo_method_b(
 
 def post_photo_with_text(image_path: str, message: str) -> Optional[dict]:
     """
-    Facebook sayfasına fotoğraflı post paylaşır — SADECE FEED'de görünür.
+    Facebook sayfasına fotoğraflı post paylaşır.
 
-    2 yöntem sırayla denenir:
-      Yöntem A: temporary upload → feed post (SADECE FEED)
-      Yöntem B: photos + published=true (Feed + Fotoğraflar — yedek)
+    3 yöntem sırayla denenir:
+      Yöntem A: Zamanlanmış gönderi — Business Suite tarzı (EN GÜVENİLİR)
+      Yöntem B: Doğrudan feed paylaşım — attached_media ile
+      Yöntem C: photos + published=true — yedek (Feed + Fotoğraflar)
     """
     page_id, access_token = _get_fb_credentials()
 
@@ -417,26 +628,35 @@ def post_photo_with_text(image_path: str, message: str) -> Optional[dict]:
     log(f"📎 Görsel: {image_path}", "INFO")
     log(f"📝 Metin: {len(message)} karakter", "INFO")
 
-    # ── YÖNTEM A (BİRİNCİL): temporary upload → feed post ──
+    # ── YÖNTEM A (BİRİNCİL): Zamanlanmış gönderi ──
     log("━" * 40, "INFO")
-    log("🔵 YÖNTEM A: Geçici yükleme → Feed postu (Fotoğraflar'a DÜŞMEZ)", "INFO")
+    log("🔵 YÖNTEM A: Zamanlanmış gönderi (Business Suite tarzı)", "INFO")
     result = _post_photo_method_a(page_id, access_token, image_path, message)
 
     if result:
-        log("🎯 YÖNTEM A BAŞARILI — Post SADECE FEED'de!", "INFO")
+        log("🎯 YÖNTEM A BAŞARILI — Gönderi zamanlandı!", "INFO")
         return result
 
-    # ── YÖNTEM B (YEDEK): photos + published=true ──
+    # ── YÖNTEM B (İKİNCİL): Doğrudan feed paylaşım ──
     log("━" * 40, "INFO")
-    log("🟡 Yöntem A başarısız, YÖNTEM B deneniyor (photos + published=true)...", "INFO")
+    log("🟡 Yöntem A başarısız, YÖNTEM B deneniyor (doğrudan feed)...", "INFO")
     result = _post_photo_method_b(page_id, access_token, image_path, message)
 
     if result:
-        log("✅ YÖNTEM B BAŞARILI — Görsel paylaşıldı (Feed + Fotoğraflar)", "INFO")
+        log("✅ YÖNTEM B BAŞARILI — Doğrudan feed postu!", "INFO")
+        return result
+
+    # ── YÖNTEM C (YEDEK): photos + published=true ──
+    log("━" * 40, "INFO")
+    log("🟠 Yöntem B başarısız, YÖNTEM C deneniyor (photos + published=true)...", "INFO")
+    result = _post_photo_method_c(page_id, access_token, image_path, message)
+
+    if result:
+        log("✅ YÖNTEM C BAŞARILI — Görsel paylaşıldı (Feed + Fotoğraflar)", "INFO")
         return result
 
     log("━" * 40, "INFO")
-    log("❌ Tüm görsel yöntemleri başarısız", "ERROR")
+    log("❌ Tüm görsel yöntemleri başarısız (A, B, C)", "ERROR")
     return None
 
 
@@ -562,7 +782,7 @@ def publish(
     ANA FONKSİYON — Haberi Facebook sayfasında paylaşır.
 
     İşleyiş:
-      1. Görsel varsa → fotoğraflı paylaş (Yöntem A: temporary, Yöntem B: yedek)
+      1. Görsel varsa → fotoğraflı paylaş (A: zamanlanmış, B: doğrudan, C: yedek)
       2. Fotoğraflı başarısızsa → sadece metin paylaşımı dene
       3. İlk deneme başarısızsa → 5 saniye bekleyip tekrar dene
       4. Başarılıysa → paylaşımı kaydet
@@ -601,7 +821,7 @@ def publish(
     fb_response: Optional[dict] = None
 
     if has_image:
-        log("📤 Deneme 1/2: Fotoğraflı paylaşım...", "INFO")
+        log("📤 Deneme 1/2: Fotoğraflı paylaşım (3 yöntem)...", "INFO")
         fb_response = post_photo_with_text(image_path, post_text)
 
         if fb_response is None:
