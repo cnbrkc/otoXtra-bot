@@ -1,8 +1,17 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v5 — 12 Saat Filtre)
+src/news_fetcher.py — Haber Çekme Modülü (v5.2 — Test Modu Tam Bypass)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
+
+v5.2 Değişiklikler:
+  - TEST MODUNDA zaman filtresi max_article_age_hours kullanır
+    (akıllı last_check_time filtresi ATLANIR)
+  - TEST MODUNDA tekrar kontrolü ATLANIR
+  - Canlı modda her şey eskisi gibi çalışır
+
+v5.1 Değişiklikler:
+  - TEST MODU aktifken "daha önce paylaşılanları çıkar" adımı ATLANIR
 
 v5 Değişiklikler:
   - Zaman filtresi basitleştirildi: TÜM kaynaklar için 12 saat
@@ -14,7 +23,9 @@ v5 Değişiklikler:
   2. Google News URL'lerini çöz       → resolve_google_news_url()
   3. Keyword filtresi uygula          → apply_keyword_filter()
   4. Zaman filtresi uygula            → apply_time_filter()
+     ⚠️ TEST MODUNDA: Akıllı filtre devre dışı, sadece max saat kullanılır
   5. Daha önce paylaşılanları çıkar   → remove_already_posted()
+     ⚠️ TEST MODUNDA BU ADIM ATLANIR
   6. Benzer haberleri tekil yap       → remove_duplicates()
 
 Kullandığı config dosyaları:
@@ -26,6 +37,7 @@ Diğer modüller bu dosyayı şöyle import eder:
     from news_fetcher import fetch_and_filter_news
 """
 
+import os
 import re
 import urllib.parse
 from datetime import datetime, timezone, timedelta
@@ -54,6 +66,13 @@ _USER_AGENT = (
 )
 
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
+
+
+# ── Test Modu Kontrolü ─────────────────────────────────────
+
+def _is_test_mode() -> bool:
+    """TEST_MODE ortam değişkenini kontrol eder."""
+    return os.environ.get("TEST_MODE", "false").lower() == "true"
 
 
 # ── Türkçe Küçük Harf Dönüşümü ─────────────────────────────
@@ -406,17 +425,20 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
 
 
 # ============================================================
-# 4. ZAMAN FİLTRESİ (v5 — Basit 12 Saat)
+# 4. ZAMAN FİLTRESİ (v5.2 — Test Modu Desteği)
 # ============================================================
 
 def apply_time_filter(articles: list[dict]) -> list[dict]:
     """Zaman filtresini uygular.
 
-    v5 Basitleştirme:
-      - TÜM kaynaklar için aynı zaman dilimi: settings.json'daki
-        max_article_age_hours (varsayılan 12 saat)
-      - Akıllı zaman filtresi (last_check_time) da korunuyor
+    CANLI MOD:
+      - Akıllı zaman filtresi (last_check_time) + max_article_age_hours
       - Hangisi DAHA KISA ise o kullanılır
+
+    TEST MODU:
+      - Akıllı filtre DEVRE DIŞI
+      - Sadece max_article_age_hours kullanılır (varsayılan 12 saat)
+      - Böylece tüm güncel haberler test edilebilir
 
     Args:
         articles: Filtrelenecek haber listesi.
@@ -424,43 +446,55 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     Returns:
         list[dict]: Zaman filtresinden geçen haberler.
     """
+    test_mode: bool = _is_test_mode()
     settings = load_config("settings")
     max_age_hours: int = settings.get("news", {}).get("max_article_age_hours", 12)
-    overlap_minutes: int = 30
 
     now_utc = datetime.now(timezone.utc)
 
     # ── Maksimum üst sınır: settings'teki max_article_age_hours ──
     max_cutoff_utc = now_utc - timedelta(hours=max_age_hours)
 
-    # ── Akıllı zaman filtresi: son kontrol zamanı ──
-    posted_data = get_posted_news()
-    last_check = get_last_check_time(posted_data)
-
-    # 30 dakika overlap tamponu çıkar
-    smart_cutoff = last_check - timedelta(minutes=overlap_minutes)
-    smart_cutoff_utc = smart_cutoff.astimezone(timezone.utc)
-
-    # Akıllı kesme noktası, maksimum sınırdan eski olamaz
-    if smart_cutoff_utc < max_cutoff_utc:
+    if test_mode:
+        # ── TEST MODU: Sadece max_article_age_hours kullan ──
         cutoff_utc = max_cutoff_utc
+        window_hours = max_age_hours
+
         log(
-            f"[ZAMAN] Akıllı filtre çok eski → "
-            f"maksimum {max_age_hours} saat kullanılıyor",
+            f"[ZAMAN] 🧪 TEST MODU: Akıllı filtre DEVRE DIŞI — "
+            f"son {max_age_hours} saat kullanılıyor",
             "INFO",
         )
     else:
-        cutoff_utc = smart_cutoff_utc
+        # ── CANLI MOD: Akıllı zaman filtresi ──
+        overlap_minutes: int = 30
 
-    # ── Zaman penceresini logla ──
-    window_seconds = (now_utc - cutoff_utc).total_seconds()
-    window_hours = window_seconds / 3600
+        posted_data = get_posted_news()
+        last_check = get_last_check_time(posted_data)
 
-    log(
-        f"[ZAMAN] Zaman penceresi: son {window_hours:.1f} saat "
-        f"(maks: {max_age_hours} saat, overlap: {overlap_minutes}dk)",
-        "INFO",
-    )
+        # 30 dakika overlap tamponu çıkar
+        smart_cutoff = last_check - timedelta(minutes=overlap_minutes)
+        smart_cutoff_utc = smart_cutoff.astimezone(timezone.utc)
+
+        # Akıllı kesme noktası, maksimum sınırdan eski olamaz
+        if smart_cutoff_utc < max_cutoff_utc:
+            cutoff_utc = max_cutoff_utc
+            log(
+                f"[ZAMAN] Akıllı filtre çok eski → "
+                f"maksimum {max_age_hours} saat kullanılıyor",
+                "INFO",
+            )
+        else:
+            cutoff_utc = smart_cutoff_utc
+
+        window_seconds = (now_utc - cutoff_utc).total_seconds()
+        window_hours = window_seconds / 3600
+
+        log(
+            f"[ZAMAN] Zaman penceresi: son {window_hours:.1f} saat "
+            f"(maks: {max_age_hours} saat, overlap: {overlap_minutes}dk)",
+            "INFO",
+        )
 
     passed: list[dict] = []
     old_count = 0
@@ -700,11 +734,21 @@ def get_article_full_text(url: str) -> str:
 def fetch_and_filter_news() -> list[dict]:
     """Ana fonksiyon: Tüm kaynakları tarar, filtreler, tekil listeyi döner.
 
+    TEST MODU aktifken:
+      - ADIM 4: Zaman filtresi max_article_age_hours kullanır
+        (akıllı last_check_time filtresi ATLANIR)
+      - ADIM 5: Tekrar kontrolü ATLANIR
+      - Test sırasında "uygun haber yok" sorunu yaşanmaz
+
     Returns:
         list[dict]: Filtrelenmiş, tekil, paylaşıma aday haber listesi.
     """
+    test_mode: bool = _is_test_mode()
+
     log("=" * 55)
     log("HABER ÇEKME VE FİLTRELEME BAŞLIYOR")
+    if test_mode:
+        log("🧪 TEST MODU: Zaman filtresi GEVŞETİLDİ + Tekrar filtresi DEVRE DIŞI")
     log("=" * 55)
 
     # ── ADIM 1: Tüm feed'leri çek ──
@@ -738,6 +782,7 @@ def fetch_and_filter_news() -> list[dict]:
         return []
 
     # ── ADIM 4: Zaman filtresi ──
+    # (Test modunda otomatik olarak max_article_age_hours kullanılır)
     articles = apply_time_filter(articles)
     log(f"[ADIM 4] Zaman filtresi sonrası → {len(articles)} haber")
 
@@ -746,12 +791,19 @@ def fetch_and_filter_news() -> list[dict]:
         return []
 
     # ── ADIM 5: Tekrar kontrolü ──
-    articles = remove_already_posted(articles)
-    log(f"[ADIM 5] Tekrar kontrolü sonrası → {len(articles)} haber")
+    if test_mode:
+        log(
+            f"[ADIM 5] 🧪 TEST MODU: Tekrar kontrolü ATLANDI "
+            f"— {len(articles)} haber korundu",
+            "INFO",
+        )
+    else:
+        articles = remove_already_posted(articles)
+        log(f"[ADIM 5] Tekrar kontrolü sonrası → {len(articles)} haber")
 
-    if not articles:
-        log("Tüm haberler daha önce paylaşılmış", "WARNING")
-        return []
+        if not articles:
+            log("Tüm haberler daha önce paylaşılmış", "WARNING")
+            return []
 
     # ── ADIM 6: Benzerlik tekilleştirme ──
     articles = remove_duplicates(articles)

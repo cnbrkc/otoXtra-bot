@@ -1,16 +1,14 @@
-# otoXtra News Bot — GitHub Actions Workflow (v3)
+# otoXtra News Bot — GitHub Actions Workflow (v4)
 #
 # Günde 10 kez tetiklenir (Türkiye saatine göre 06:00-00:00 arası, 2 saat aralıkla).
 # Her tetiklemede 1 post paylaşılır (en viral haber seçilir).
 #
-# v3: Git push hatası düzeltildi (pull --rebase eklendi)
+# v4: HF_API_KEY secret ismi düzeltildi, OPENROUTER eklendi
 
 name: otoXtra Bot
 
 on:
   schedule:
-    # Her 2 saatte bir, 06:00-00:00 arası (UTC+3 = Türkiye)
-    # UTC'de: 03:00, 05:00, 07:00, 09:00, 11:00, 13:00, 15:00, 17:00, 19:00, 21:00
     - cron: '0 3,5,7,9,11,13,15,17,19,21 * * *'
 
   workflow_dispatch:
@@ -24,7 +22,6 @@ on:
           - 'true'
           - 'false'
 
-# Aynı anda birden fazla workflow çalışmasını engelle
 concurrency:
   group: otoxtra-bot
   cancel-in-progress: false
@@ -57,12 +54,13 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
-          HF_API_TOKEN: ${{ secrets.HF_API_TOKEN }}
+          OPENROUTER_API_KEY: ${{ secrets.OPENROUTER_API_KEY }}
+          HF_API_KEY: ${{ secrets.HF_API_KEY }}
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
         run: python src/main.py
-      
+        
       - name: Save posted news data
         run: |
           git config --local user.email "bot@otoxtra.com"
@@ -71,7 +69,6 @@ jobs:
           git diff --staged --quiet && echo "Değişiklik yok, commit atlanıyor" && exit 0
           git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
           
-          # Push başarısız olursa pull --rebase ile tekrar dene
           for i in 1 2 3; do
             git push && break
             echo "Push başarısız (deneme $i/3), pull --rebase yapılıyor..."

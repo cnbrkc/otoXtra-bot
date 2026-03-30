@@ -1,5 +1,5 @@
 """
-ai_processor.py — Yapay Zeka Metin İşleme Modülü (v3 — Karakter Temizleme)
+ai_processor.py — Yapay Zeka Metin İşleme Modülü (v6 — Güncel Modeller + Gemini Fallback)
 
 Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Haber değerlendirme için YZ'ye soru sorma
@@ -7,23 +7,23 @@ Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Görsel üretim promptu oluşturma
 
 YZ Sağlayıcı Zinciri (fallback):
-  1. Google Gemini (ana)     → GEMINI_API_KEY
-  2. Groq (yedek 1)         → GROQ_API_KEY
-  3. HuggingFace (yedek 2)  → HF_API_KEY
+  1. Google Gemini (ana)     → GEMINI_API_KEY  (2 model dener)
+  2. Groq (yedek 1)         → GROQ_API_KEY    (2 model dener)
+  3. OpenRouter (yedek 2)   → OPENROUTER_API_KEY (3 model dener)
+  4. HuggingFace (yedek 3)  → HF_API_KEY      (3 model dener)
 
-v3 Değişiklikler:
-  - _clean_non_turkish_chars: Korece/Japonca/Çince karakter temizleme
-  - generate_post_text: Üretilen metin otomatik temizleniyor
-
-v2 Değişiklikler:
-  - parse_ai_json: Kesik JSON kurtarma (token limiti dolmuş yanıtlar)
-  - parse_ai_json: Trailing comma temizleme
-  - parse_ai_json: Satır satır JSON parse (fallback)
+v6 Değişiklikler:
+  - OpenRouter model listesi güncellendi (404 hatası düzeltildi)
+  - Gemini: gemini-2.0-flash başarısızsa gemini-1.5-flash dener
+  - Groq: llama-3.3-70b başarısızsa llama-3.1-8b dener
+  - HuggingFace: Model listesi güncellendi
+  - Tüm sağlayıcılarda gelişmiş hata loglama
 
 Ortam değişkenleri:
-  - GEMINI_API_KEY  (Google AI Studio'dan alınır)
-  - GROQ_API_KEY    (console.groq.com'dan alınır)
-  - HF_API_KEY      (huggingface.co'dan alınır)
+  - GEMINI_API_KEY      (Google AI Studio'dan alınır)
+  - GROQ_API_KEY        (console.groq.com'dan alınır)
+  - OPENROUTER_API_KEY  (openrouter.ai'dan alınır)
+  - HF_API_KEY          (huggingface.co'dan alınır)
 
 NOT: google-genai paketi kullanılıyor (google-generativeai DEĞİL).
      pip install google-genai
@@ -32,7 +32,10 @@ NOT: google-genai paketi kullanılıyor (google-generativeai DEĞİL).
 import json
 import os
 import re
+import time
 from typing import Optional, Union
+
+import requests
 
 from utils import load_config, log
 
@@ -73,41 +76,40 @@ def _clean_non_turkish_chars(text: str) -> str:
     cleaned: str = text
 
     # ── CJK karakterleri sil (Çince, Japonca, Korece) ──
-    # CJK Unified Ideographs, Extensions, Compatibility
-    cleaned = re.sub(r"[\u2e80-\u2eff]", "", cleaned)  # CJK Radicals
-    cleaned = re.sub(r"[\u3000-\u303f]", "", cleaned)  # CJK Symbols
-    cleaned = re.sub(r"[\u3040-\u309f]", "", cleaned)  # Hiragana
-    cleaned = re.sub(r"[\u30a0-\u30ff]", "", cleaned)  # Katakana
-    cleaned = re.sub(r"[\u3100-\u312f]", "", cleaned)  # Bopomofo
-    cleaned = re.sub(r"[\u3130-\u318f]", "", cleaned)  # Hangul Compatibility
-    cleaned = re.sub(r"[\u31a0-\u31bf]", "", cleaned)  # Bopomofo Extended
-    cleaned = re.sub(r"[\u31f0-\u31ff]", "", cleaned)  # Katakana Extension
-    cleaned = re.sub(r"[\u3200-\u32ff]", "", cleaned)  # Enclosed CJK
-    cleaned = re.sub(r"[\u3300-\u33ff]", "", cleaned)  # CJK Compatibility
-    cleaned = re.sub(r"[\u3400-\u4dbf]", "", cleaned)  # CJK Extension A
-    cleaned = re.sub(r"[\u4e00-\u9fff]", "", cleaned)  # CJK Unified Ideographs
-    cleaned = re.sub(r"[\uac00-\ud7af]", "", cleaned)  # Hangul Syllables
-    cleaned = re.sub(r"[\ud7b0-\ud7ff]", "", cleaned)  # Hangul Jamo Extended-B
-    cleaned = re.sub(r"[\uf900-\ufaff]", "", cleaned)  # CJK Compatibility Ideographs
-    cleaned = re.sub(r"[\u1100-\u11ff]", "", cleaned)  # Hangul Jamo
-    cleaned = re.sub(r"[\ua960-\ua97f]", "", cleaned)  # Hangul Jamo Extended-A
+    cleaned = re.sub(r"[\u2e80-\u2eff]", "", cleaned)
+    cleaned = re.sub(r"[\u3000-\u303f]", "", cleaned)
+    cleaned = re.sub(r"[\u3040-\u309f]", "", cleaned)
+    cleaned = re.sub(r"[\u30a0-\u30ff]", "", cleaned)
+    cleaned = re.sub(r"[\u3100-\u312f]", "", cleaned)
+    cleaned = re.sub(r"[\u3130-\u318f]", "", cleaned)
+    cleaned = re.sub(r"[\u31a0-\u31bf]", "", cleaned)
+    cleaned = re.sub(r"[\u31f0-\u31ff]", "", cleaned)
+    cleaned = re.sub(r"[\u3200-\u32ff]", "", cleaned)
+    cleaned = re.sub(r"[\u3300-\u33ff]", "", cleaned)
+    cleaned = re.sub(r"[\u3400-\u4dbf]", "", cleaned)
+    cleaned = re.sub(r"[\u4e00-\u9fff]", "", cleaned)
+    cleaned = re.sub(r"[\uac00-\ud7af]", "", cleaned)
+    cleaned = re.sub(r"[\ud7b0-\ud7ff]", "", cleaned)
+    cleaned = re.sub(r"[\uf900-\ufaff]", "", cleaned)
+    cleaned = re.sub(r"[\u1100-\u11ff]", "", cleaned)
+    cleaned = re.sub(r"[\ua960-\ua97f]", "", cleaned)
 
     # ── Arapça / İbranice sil ──
-    cleaned = re.sub(r"[\u0590-\u05ff]", "", cleaned)  # Hebrew
-    cleaned = re.sub(r"[\u0600-\u06ff]", "", cleaned)  # Arabic
-    cleaned = re.sub(r"[\u0750-\u077f]", "", cleaned)  # Arabic Supplement
-    cleaned = re.sub(r"[\ufb50-\ufdff]", "", cleaned)  # Arabic Presentation A
-    cleaned = re.sub(r"[\ufe70-\ufeff]", "", cleaned)  # Arabic Presentation B
+    cleaned = re.sub(r"[\u0590-\u05ff]", "", cleaned)
+    cleaned = re.sub(r"[\u0600-\u06ff]", "", cleaned)
+    cleaned = re.sub(r"[\u0750-\u077f]", "", cleaned)
+    cleaned = re.sub(r"[\ufb50-\ufdff]", "", cleaned)
+    cleaned = re.sub(r"[\ufe70-\ufeff]", "", cleaned)
 
     # ── Kiril alfabesi sil ──
-    cleaned = re.sub(r"[\u0400-\u04ff]", "", cleaned)  # Cyrillic
-    cleaned = re.sub(r"[\u0500-\u052f]", "", cleaned)  # Cyrillic Supplement
+    cleaned = re.sub(r"[\u0400-\u04ff]", "", cleaned)
+    cleaned = re.sub(r"[\u0500-\u052f]", "", cleaned)
 
     # ── Diğer alfabeler sil ──
-    cleaned = re.sub(r"[\u0900-\u097f]", "", cleaned)  # Devanagari
-    cleaned = re.sub(r"[\u0e00-\u0e7f]", "", cleaned)  # Thai
-    cleaned = re.sub(r"[\u1000-\u109f]", "", cleaned)  # Myanmar
-    cleaned = re.sub(r"[\u10a0-\u10ff]", "", cleaned)  # Georgian
+    cleaned = re.sub(r"[\u0900-\u097f]", "", cleaned)
+    cleaned = re.sub(r"[\u0e00-\u0e7f]", "", cleaned)
+    cleaned = re.sub(r"[\u1000-\u109f]", "", cleaned)
+    cleaned = re.sub(r"[\u10a0-\u10ff]", "", cleaned)
 
     # ── Temizlik: Birden fazla boşluğu tek boşluğa indir ──
     cleaned = re.sub(r"  +", " ", cleaned)
@@ -130,20 +132,18 @@ def _clean_non_turkish_chars(text: str) -> str:
 def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: str) -> Optional[str]:
     """
     Google Gemini API ile metin üretir.
-
-    Args:
-        prompt:      YZ'ye gönderilecek metin.
-        temperature: Yaratıcılık seviyesi (0.0 - 1.0).
-        max_tokens:  Maksimum çıktı token sayısı.
-        model_name:  Kullanılacak Gemini modeli.
-
-    Returns:
-        YZ yanıtı string veya None.
+    İlk model başarısızsa yedek modeli dener.
+    429 hatasında 20sn bekleyip bir kez daha dener.
     """
     api_key: str = os.environ.get("GEMINI_API_KEY", "")
     if not api_key:
         log("ℹ️ GEMINI_API_KEY bulunamadı, Gemini atlanıyor", "INFO")
         return None
+
+    # Denenecek modeller — ana model + yedek
+    models_to_try: list[str] = [model_name]
+    if model_name != "gemini-1.5-flash":
+        models_to_try.append("gemini-1.5-flash")
 
     try:
         from google import genai
@@ -151,20 +151,63 @@ def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: st
 
         client = genai.Client(api_key=api_key)
 
-        response = client.models.generate_content(
-            model=model_name,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=temperature,
-                max_output_tokens=max_tokens,
-            ),
-        )
+        for current_model in models_to_try:
+            # ── İlk deneme ──
+            try:
+                response = client.models.generate_content(
+                    model=current_model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        temperature=temperature,
+                        max_output_tokens=max_tokens,
+                    ),
+                )
 
-        if response and response.text:
-            log(f"✅ Gemini ({model_name}) yanıt verdi", "INFO")
-            return response.text.strip()
+                if response and response.text:
+                    log(f"✅ Gemini ({current_model}) yanıt verdi", "INFO")
+                    return response.text.strip()
 
-        log("⚠️ Gemini boş yanıt döndü", "WARNING")
+                log(f"⚠️ Gemini ({current_model}) boş yanıt döndü", "WARNING")
+
+            except Exception as first_err:
+                err_str = str(first_err)
+                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
+                    # limit: 0 kontrolü — kota tamamen sıfırlanmışsa bekleme anlamsız
+                    if "limit: 0" in err_str:
+                        log(f"⚠️ Gemini ({current_model}) kota tamamen dolmuş (limit: 0), sonraki model deneniyor...", "WARNING")
+                        continue
+
+                    # Hata mesajından bekleme süresini parse et
+                    wait_time = 20
+                    retry_match = re.search(r"(\d+\.?\d*)\s*s", err_str)
+                    if retry_match:
+                        parsed_wait = float(retry_match.group(1))
+                        wait_time = min(int(parsed_wait) + 2, 45)  # Max 45sn bekle
+
+                    log(f"⚠️ Gemini ({current_model}) rate limit (429), {wait_time}sn bekleniyor...", "WARNING")
+                    time.sleep(wait_time)
+
+                    # ── Tekrar dene ──
+                    try:
+                        response = client.models.generate_content(
+                            model=current_model,
+                            contents=prompt,
+                            config=types.GenerateContentConfig(
+                                temperature=temperature,
+                                max_output_tokens=max_tokens,
+                            ),
+                        )
+                        if response and response.text:
+                            log(f"✅ Gemini ({current_model}) 2. denemede yanıt verdi", "INFO")
+                            return response.text.strip()
+                    except Exception as retry_err:
+                        log(f"⚠️ Gemini ({current_model}) 2. deneme hatası: {str(retry_err)[:150]}", "WARNING")
+
+                    log(f"⚠️ Gemini ({current_model}) 2. deneme de başarısız, sonraki model deneniyor...", "WARNING")
+                else:
+                    log(f"⚠️ Gemini ({current_model}) hatası: {first_err}", "WARNING")
+
+        log("⚠️ Gemini: Tüm modeller başarısız", "WARNING")
         return None
 
     except ImportError:
@@ -183,45 +226,85 @@ def _try_gemini(prompt: str, temperature: float, max_tokens: int, model_name: st
 def _try_groq(prompt: str, temperature: float, max_tokens: int, model_name: str) -> Optional[str]:
     """
     Groq API ile metin üretir (yedek sağlayıcı 1).
-
-    Args:
-        prompt:      YZ'ye gönderilecek metin.
-        temperature: Yaratıcılık seviyesi.
-        max_tokens:  Maksimum çıktı token sayısı.
-        model_name:  Kullanılacak Groq modeli.
-
-    Returns:
-        YZ yanıtı string veya None.
+    İlk model başarısızsa yedek modeli dener.
+    429 hatasında bekleme süresi kısaysa retry yapar.
     """
     api_key: str = os.environ.get("GROQ_API_KEY", "")
     if not api_key:
         log("ℹ️ GROQ_API_KEY bulunamadı, Groq atlanıyor", "INFO")
         return None
 
+    # Denenecek modeller — ana model + yedek (daha küçük, limiti ayrı)
+    models_to_try: list[str] = [model_name]
+    if "llama-3.3-70b" in model_name:
+        models_to_try.append("llama-3.1-8b-instant")
+
     try:
         from groq import Groq
 
         client = Groq(api_key=api_key)
 
-        response = client.chat.completions.create(
-            model=model_name,
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ],
-            temperature=temperature,
-            max_tokens=max_tokens,
-        )
+        for current_model in models_to_try:
+            try:
+                response = client.chat.completions.create(
+                    model=current_model,
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
+                    temperature=temperature,
+                    max_tokens=max_tokens,
+                )
 
-        if response and response.choices:
-            text: str = response.choices[0].message.content
-            if text:
-                log(f"✅ Groq ({model_name}) yanıt verdi", "INFO")
-                return text.strip()
+                if response and response.choices:
+                    text: str = response.choices[0].message.content
+                    if text:
+                        log(f"✅ Groq ({current_model}) yanıt verdi", "INFO")
+                        return text.strip()
 
-        log("⚠️ Groq boş yanıt döndü", "WARNING")
+                log(f"⚠️ Groq ({current_model}) boş yanıt döndü", "WARNING")
+
+            except Exception as groq_err:
+                err_str = str(groq_err)
+                if "429" in err_str or "rate_limit" in err_str:
+                    # Bekleme süresini parse et
+                    wait_match = re.search(r"in\s+(\d+)m(\d+\.?\d*)s", err_str)
+                    if wait_match:
+                        wait_minutes = int(wait_match.group(1))
+                        wait_seconds = float(wait_match.group(2))
+                        total_wait = wait_minutes * 60 + wait_seconds
+
+                        # Eğer bekleme süresi 60 saniyeden azsa bekle ve tekrar dene
+                        if total_wait <= 60:
+                            log(f"⚠️ Groq ({current_model}) rate limit, {int(total_wait)}sn bekleniyor...", "WARNING")
+                            time.sleep(total_wait + 1)
+
+                            try:
+                                response = client.chat.completions.create(
+                                    model=current_model,
+                                    messages=[{"role": "user", "content": prompt}],
+                                    temperature=temperature,
+                                    max_tokens=max_tokens,
+                                )
+                                if response and response.choices:
+                                    text = response.choices[0].message.content
+                                    if text:
+                                        log(f"✅ Groq ({current_model}) 2. denemede yanıt verdi", "INFO")
+                                        return text.strip()
+                            except Exception:
+                                pass
+
+                        log(f"⚠️ Groq ({current_model}) rate limit — bekleme {int(total_wait)}sn, sonraki model deneniyor...", "WARNING")
+                    else:
+                        log(f"⚠️ Groq ({current_model}) rate limit, sonraki model deneniyor...", "WARNING")
+                else:
+                    log(f"⚠️ Groq ({current_model}) hatası: {str(groq_err)[:150]}", "WARNING")
+
+                continue
+
+        log("⚠️ Groq: Tüm modeller başarısız", "WARNING")
         return None
 
     except ImportError:
@@ -233,9 +316,105 @@ def _try_groq(prompt: str, temperature: float, max_tokens: int, model_name: str)
         return None
 
 
-def _try_huggingface(prompt: str, temperature: float, max_tokens: int) -> Optional[str]:
+# ──────────────────────────────────────────────
+# OpenRouter API (yedek sağlayıcı 2)
+# ──────────────────────────────────────────────
+
+# Güncel ücretsiz OpenRouter modelleri (Mart 2025)
+# https://openrouter.ai/models?q=free adresinden kontrol edildi
+OPENROUTER_FREE_MODELS: list[str] = [
+    "deepseek/deepseek-r1-0528:free",
+    "google/gemma-3-27b-it:free",
+    "mistralai/mistral-small-3.1-24b-instruct:free",
+    "qwen/qwen3-14b:free",
+]
+
+
+def _try_openrouter_single(
+    prompt: str,
+    temperature: float,
+    max_tokens: int,
+    model: str,
+    api_key: str,
+) -> Optional[str]:
     """
-    HuggingFace Inference API ile metin üretir (yedek sağlayıcı 2).
+    OpenRouter API'ye tek model ile istek gönderir.
+
+    Args:
+        prompt:      YZ'ye gönderilecek metin.
+        temperature: Yaratıcılık seviyesi.
+        max_tokens:  Maksimum çıktı token sayısı.
+        model:       Model adı.
+        api_key:     OpenRouter API anahtarı.
+
+    Returns:
+        YZ yanıtı string veya None.
+    """
+    try:
+        response = requests.post(
+            "https://openrouter.ai/api/v1/chat/completions",
+            headers={
+                "Authorization": f"Bearer {api_key}",
+                "Content-Type": "application/json",
+                "HTTP-Referer": "https://github.com/otoXtra-bot",
+                "X-Title": "otoXtra Bot",
+            },
+            json={
+                "model": model,
+                "messages": [{"role": "user", "content": prompt}],
+                "max_tokens": max_tokens,
+                "temperature": temperature,
+            },
+            timeout=90,
+        )
+
+        if response.status_code == 200:
+            data = response.json()
+
+            # OpenRouter bazen hata mesajını 200 ile döner
+            if "error" in data:
+                error_msg = data["error"].get("message", str(data["error"]))
+                log(f"  ⚠️ OpenRouter ({model}) hata döndü: {error_msg[:150]}", "WARNING")
+                return None
+
+            choices = data.get("choices", [])
+            if choices:
+                text = choices[0].get("message", {}).get("content", "").strip()
+                if text:
+                    log(f"  ✅ OpenRouter ({model}) yanıt verdi", "INFO")
+                    return text
+
+            log(f"  ⚠️ OpenRouter ({model}) boş yanıt", "WARNING")
+            return None
+
+        elif response.status_code == 404:
+            log(f"  ⚠️ OpenRouter ({model}) model bulunamadı (404)", "WARNING")
+            return None
+
+        elif response.status_code == 429:
+            log(f"  ⚠️ OpenRouter ({model}) rate limit (429)", "WARNING")
+            return None
+
+        else:
+            body = response.text[:200] if response.text else "boş yanıt"
+            log(f"  ⚠️ OpenRouter ({model}) hata: {response.status_code} — {body}", "WARNING")
+            return None
+
+    except requests.exceptions.Timeout:
+        log(f"  ⚠️ OpenRouter ({model}) zaman aşımı (90sn)", "WARNING")
+        return None
+
+    except Exception as e:
+        log(f"  ⚠️ OpenRouter ({model}) exception: {e}", "WARNING")
+        return None
+
+
+def _try_openrouter(prompt: str, temperature: float, max_tokens: int) -> Optional[str]:
+    """
+    OpenRouter API ile ücretsiz model çağrısı (yedek sağlayıcı 2).
+
+    Birden fazla ücretsiz modeli sırasıyla dener.
+    Biri yanıt verdiğinde döner, hiçbiri vermezse None döner.
 
     Args:
         prompt:      YZ'ye gönderilecek metin.
@@ -245,35 +424,82 @@ def _try_huggingface(prompt: str, temperature: float, max_tokens: int) -> Option
     Returns:
         YZ yanıtı string veya None.
     """
+    api_key: str = os.environ.get("OPENROUTER_API_KEY", "")
+    if not api_key:
+        log("ℹ️ OPENROUTER_API_KEY bulunamadı, OpenRouter atlanıyor", "INFO")
+        return None
+
+    log(f"🔄 OpenRouter: {len(OPENROUTER_FREE_MODELS)} ücretsiz model denenecek", "INFO")
+
+    for model in OPENROUTER_FREE_MODELS:
+        result = _try_openrouter_single(prompt, temperature, max_tokens, model, api_key)
+        if result:
+            return result
+        # Modeller arası kısa bekleme
+        time.sleep(1)
+
+    log("⚠️ OpenRouter: Tüm ücretsiz modeller başarısız", "WARNING")
+    return None
+
+
+def _try_huggingface(prompt: str, temperature: float, max_tokens: int) -> Optional[str]:
+    """
+    HuggingFace Inference API ile metin üretir (yedek sağlayıcı 3).
+    Birden fazla model dener.
+    """
     api_key: str = os.environ.get("HF_API_KEY", "")
     if not api_key:
         log("ℹ️ HF_API_KEY bulunamadı, HuggingFace atlanıyor", "INFO")
         return None
+
+    # Denenecek modeller (sırasıyla)
+    hf_models: list[str] = [
+        "mistralai/Mistral-7B-Instruct-v0.3",
+        "microsoft/Phi-3-mini-4k-instruct",
+        "HuggingFaceH4/zephyr-7b-beta",
+    ]
 
     try:
         from huggingface_hub import InferenceClient
 
         client = InferenceClient(token=api_key)
 
-        response = client.chat_completion(
-            messages=[
-                {
-                    "role": "user",
-                    "content": prompt,
-                }
-            ],
-            model="mistralai/Mixtral-8x7B-Instruct-v0.1",
-            max_tokens=max_tokens,
-            temperature=temperature,
-        )
+        for model in hf_models:
+            try:
+                log(f"  🤖 HuggingFace deneniyor: {model}", "INFO")
 
-        if response and response.choices:
-            text: str = response.choices[0].message.content
-            if text:
-                log("✅ HuggingFace yanıt verdi", "INFO")
-                return text.strip()
+                response = client.chat_completion(
+                    messages=[
+                        {
+                            "role": "user",
+                            "content": prompt,
+                        }
+                    ],
+                    model=model,
+                    max_tokens=max_tokens,
+                    temperature=temperature,
+                )
 
-        log("⚠️ HuggingFace boş yanıt döndü", "WARNING")
+                if response and response.choices:
+                    text: str = response.choices[0].message.content
+                    if text:
+                        log(f"  ✅ HuggingFace ({model}) yanıt verdi", "INFO")
+                        return text.strip()
+
+                log(f"  ⚠️ HuggingFace ({model}) boş yanıt", "WARNING")
+
+            except Exception as model_err:
+                err_str = str(model_err)
+                if "401" in err_str or "Unauthorized" in err_str:
+                    log(f"  ❌ HuggingFace API KEY GEÇERSİZ! Token'ını yenile: https://huggingface.co/settings/tokens", "ERROR")
+                    return None  # Tüm modellerde aynı key kullanılacağı için diğerlerini denemenin anlamı yok
+                elif "429" in err_str or "rate" in err_str.lower():
+                    log(f"  ⚠️ HuggingFace ({model}) rate limit, sonraki model...", "WARNING")
+                else:
+                    log(f"  ⚠️ HuggingFace ({model}) hatası: {err_str[:150]}", "WARNING")
+                continue
+
+        log("⚠️ HuggingFace: Tüm modeller başarısız", "WARNING")
         return None
 
     except ImportError:
@@ -293,7 +519,7 @@ def ask_ai(prompt: str) -> str:
     """
     YZ'ye prompt gönderir ve yanıt alır.
 
-    Sağlayıcıları sırayla dener: Gemini → Groq → HuggingFace.
+    Sağlayıcıları sırayla dener: Gemini → Groq → OpenRouter → HuggingFace.
     İlk başarılı yanıtı döndürür.
 
     Args:
@@ -324,8 +550,14 @@ def ask_ai(prompt: str) -> str:
     if result:
         return result
 
-    # ── Sağlayıcı 3: HuggingFace ──
-    log("🔄 Groq başarısız, HuggingFace deneniyor...", "INFO")
+    # ── Sağlayıcı 3: OpenRouter ──
+    log("🔄 Groq başarısız, OpenRouter deneniyor...", "INFO")
+    result = _try_openrouter(prompt, temperature, max_tokens)
+    if result:
+        return result
+
+    # ── Sağlayıcı 4: HuggingFace ──
+    log("🔄 OpenRouter başarısız, HuggingFace deneniyor...", "INFO")
     result = _try_huggingface(prompt, temperature, max_tokens)
     if result:
         return result
@@ -351,10 +583,6 @@ def _fix_truncated_json_array(text: str) -> Optional[str]:
       5. JSON olarak parse et
       6. Parse başarısızsa bir önceki '}' ile tekrar dene (max 20 deneme)
 
-    Örnek:
-      Girdi:  [{"sira":1,"puan":85},{"sira":2,"puan":72},{"sira":3,"pu
-      Çıktı:  [{"sira":1,"puan":85},{"sira":2,"puan":72}]
-
     Args:
         text: '[' ile başlayan ama ']' ile bitmeyen JSON string.
 
@@ -366,15 +594,13 @@ def _fix_truncated_json_array(text: str) -> Optional[str]:
     if not text.startswith("["):
         return None
 
-    # Zaten tam ve geçerli JSON ise dokunma
     if text.endswith("]"):
         try:
             json.loads(text)
             return text
         except json.JSONDecodeError:
-            pass  # ] var ama JSON hatalı, düzeltmeyi dene
+            pass
 
-    # Son tam }'den geriye doğru dene
     search_end: int = len(text)
 
     for _attempt in range(20):
@@ -384,7 +610,6 @@ def _fix_truncated_json_array(text: str) -> Optional[str]:
 
         candidate: str = text[: close_pos + 1].rstrip()
 
-        # Trailing virgül temizle
         if candidate.endswith(","):
             candidate = candidate[:-1].rstrip()
 
@@ -441,11 +666,9 @@ def parse_ai_json(text: str) -> Optional[Union[list, dict]]:
         try:
             return json.loads(block_content)
         except json.JSONDecodeError:
-            # Code block içeriğiyle devam et (sonraki denemelerde kullanılır)
             cleaned = block_content
 
     # ── Deneme 3: Trailing comma temizle ──
-    # YZ bazen geçersiz trailing comma bırakır: [{"a":1},{"b":2},]
     fixed: str = re.sub(r",\s*([}\]])", r"\1", cleaned)
     if fixed != cleaned:
         try:
@@ -462,8 +685,6 @@ def parse_ai_json(text: str) -> Optional[Union[list, dict]]:
             pass
 
     # ── Deneme 5: Kesik JSON kurtarma ──
-    # Token limiti dolunca JSON yarım kalıyor: [{"a":1},{"b":2},{"c":
-    # Bu durumda son tam element'e kadar kes ve ] ekle
     bracket_pos: int = cleaned.find("[")
     if bracket_pos >= 0:
         partial: str = cleaned[bracket_pos:]
@@ -481,7 +702,6 @@ def parse_ai_json(text: str) -> Optional[Union[list, dict]]:
                 pass
 
     # ── Deneme 6: Tek { ... } object bul ──
-    # Nested olmayan en dıştaki object
     object_match = re.search(r"\{[^{}]*\}", cleaned)
     if object_match:
         try:
