@@ -1,14 +1,5 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v10.1 — DENEME MODU: SADECE METİN)
-
-v10.1 Değişiklik:
-  🧪 DENEME MODU: Görsel paylaşımı KAPATILDI
-     → publish() fonksiyonunda has_image = False ZORLANIR
-     → Bot her zaman SADECE METİN paylaşır
-     → Amacı: Postun feed'de mi yoksa başka yerde mi göründüğünü test etmek
-
-  ⚠️ TEST BİTTİĞİNDE: Bu dosyada "🧪 DENEME MODU" yazan satırı SİL
-     ve eski halini geri koy (YZ'ye sor)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v11.0 — Görselli Paylaşım)
 
 Ortam değişkenleri (GitHub Secrets):
   - FB_PAGE_ID       → Facebook sayfa ID
@@ -75,6 +66,70 @@ def _mask_id(post_id: str) -> str:
     if len(parts) == 2:
         return f"***_{parts[1]}"
     return post_id
+
+
+# ──────────────────────────────────────────────
+# Görselli Paylaşım
+# ──────────────────────────────────────────────
+
+def post_with_image(message: str, image_path: str) -> Optional[dict]:
+    """Facebook sayfasına görselli post paylaşır."""
+    page_id, access_token = _get_fb_credentials()
+
+    if not page_id or not access_token:
+        log("❌ Facebook kimlik bilgileri eksik", "ERROR")
+        return None
+
+    url: str = f"{_FB_BASE_URL}/{page_id}/photos"
+
+    log("📤 Görselli paylaşım gönderiliyor", "INFO")
+    log(f"📝 Metin: {len(message)} karakter", "INFO")
+    log(f"🖼️ Görsel: {image_path}", "INFO")
+
+    try:
+        with open(image_path, "rb") as img_file:
+            response = requests.post(
+                url,
+                data={
+                    "message": message,
+                    "access_token": access_token,
+                },
+                files={
+                    "source": img_file,
+                },
+                timeout=_REQUEST_TIMEOUT,
+            )
+        result: dict = response.json()
+
+        if "error" in result:
+            err = result["error"]
+            log(
+                f"❌ Facebook API hatası: [{err.get('code', 0)}] "
+                f"{err.get('type', '')} — {err.get('message', '')}",
+                "ERROR",
+            )
+            return None
+
+        post_id = _extract_post_id(result)
+        if post_id:
+            log(
+                f"✅ Görselli paylaşım başarılı: ID={_mask_id(post_id)}",
+                "INFO",
+            )
+            return result
+
+        log(f"⚠️ Beklenmeyen yanıt: {result}", "WARNING")
+        return None
+
+    except requests.exceptions.Timeout:
+        log(f"❌ Zaman aşımı ({_REQUEST_TIMEOUT}sn)", "ERROR")
+        return None
+    except requests.exceptions.RequestException as e:
+        log(f"❌ HTTP istek hatası: {e}", "ERROR")
+        return None
+    except Exception as e:
+        log(f"❌ Beklenmeyen hata: {e}", "ERROR")
+        return None
 
 
 # ──────────────────────────────────────────────
@@ -198,9 +253,9 @@ def publish(
     """
     ANA FONKSİYON — Haberi Facebook sayfasında paylaşır.
 
-    🧪 DENEME MODU: Görsel paylaşımı KAPATILDI.
-       Sadece metin paylaşımı yapılır.
-       Test bitince YZ'ye "görseli geri aç" de.
+    Görsel varsa → görselli paylaşım (photos API)
+    Görsel yoksa → sadece metin paylaşım (feed API)
+    İlk deneme başarısız olursa → 1 kez daha dener.
     """
     title: str = article.get("title", "Başlık yok")
     separator: str = "=" * 60
@@ -209,16 +264,15 @@ def publish(
     log(f"📣 Facebook'a paylaşılıyor: {title}", "INFO")
     log(separator, "INFO")
 
-    # ══════════════════════════════════════════════
-    # 🧪 DENEME MODU — GÖRSEL ZORLA KAPATILDI
-    # ══════════════════════════════════════════════
-    # Test bitince bu bloğu SİL ve eski halini geri koy
-    has_image = False
-    image_source = "none"
-    log("🧪 DENEME MODU: Görsel paylaşımı KAPATILDI — sadece metin gönderiliyor", "INFO")
-    if image_path and os.path.exists(image_path):
-        log(f"🧪 Görsel hazırdı ama KULLANILMAYACAK: {image_path}", "INFO")
-    # ══════════════════════════════════════════════
+    # ── Görsel durumunu belirle ──
+    has_image: bool = bool(image_path and os.path.exists(image_path))
+    image_source: str = "none"
+
+    if has_image:
+        image_source = article.get("image_source", "rss_image")
+        log(f"🖼️ Görsel mevcut: {image_path} (kaynak: {image_source})", "INFO")
+    else:
+        log("📝 Görsel yok — sadece metin paylaşılacak", "INFO")
 
     # ── Post metnini logla ──
     text_preview: str = (
@@ -229,8 +283,19 @@ def publish(
     # ── İlk deneme ──
     fb_response: Optional[dict] = None
 
-    log("📤 Deneme 1/2: Metin paylaşımı...", "INFO")
-    fb_response = post_text_only(post_text)
+    if has_image:
+        log("📤 Deneme 1/2: Görselli paylaşım...", "INFO")
+        fb_response = post_with_image(post_text, image_path)
+
+        # Görselli başarısız → metin olarak dene
+        if fb_response is None:
+            log("⚠️ Görselli paylaşım başarısız, sadece metin deneniyor...", "WARNING")
+            fb_response = post_text_only(post_text)
+            if fb_response:
+                image_source = "fallback_text"
+    else:
+        log("📤 Deneme 1/2: Metin paylaşımı...", "INFO")
+        fb_response = post_text_only(post_text)
 
     # ── İlk deneme başarısız → tekrar dene ──
     if fb_response is None:
@@ -243,6 +308,8 @@ def publish(
 
         log("📤 Deneme 2/2: Metin paylaşımı (tekrar)...", "INFO")
         fb_response = post_text_only(post_text)
+        if fb_response:
+            image_source = "retry_text"
 
     # ── Sonuç kontrolü ──
     if fb_response is None:
