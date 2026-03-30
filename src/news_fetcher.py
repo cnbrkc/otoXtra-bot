@@ -1,40 +1,40 @@
 """
-src/news_fetcher.py — Haber Çekme Modülü (v5.2 — Test Modu Tam Bypass)
+src/news_fetcher.py — Haber Çekme Modülü (v5.3 — Gelişmiş Görsel Çıkarma)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan modül.
 
+v5.3 Değişiklikler:
+•   _extract_image_from_entry() güçlendirildi:
+    - content:encoded alanı da taranıyor
+    - <figure> tag'i içindeki görseller çıkarılıyor
+    - data-src, data-lazy-src attribute'ları da kontrol ediliyor
+    - Daha fazla fallback yöntemi eklendi
+•   ShiftDelete gibi görseli farklı alanlarda veren kaynaklar destekleniyor
+
 v5.2 Değişiklikler:
-  - TEST MODUNDA zaman filtresi max_article_age_hours kullanır
+•   TEST MODUNDA zaman filtresi max_article_age_hours kullanır
     (akıllı last_check_time filtresi ATLANIR)
-  - TEST MODUNDA tekrar kontrolü ATLANIR
-  - Canlı modda her şey eskisi gibi çalışır
-
-v5.1 Değişiklikler:
-  - TEST MODU aktifken "daha önce paylaşılanları çıkar" adımı ATLANIR
-
-v5 Değişiklikler:
-  - Zaman filtresi basitleştirildi: TÜM kaynaklar için 12 saat
-  - settings.json'daki max_article_age_hours = 12 kullanılır
-  - Kaynak bazlı özel zaman filtresi kaldırıldı
+•   TEST MODUNDA tekrar kontrolü ATLANIR
+•   Canlı modda her şey eskisi gibi çalışır
 
 Çalışma sırası (fetch_and_filter_news):
-  1. Tüm RSS feed'leri çek           → fetch_all_feeds()
-  2. Google News URL'lerini çöz       → resolve_google_news_url()
-  3. Keyword filtresi uygula          → apply_keyword_filter()
-  4. Zaman filtresi uygula            → apply_time_filter()
+  1. Tüm RSS feed'leri çek → fetch_all_feeds()
+  2. Google News URL'lerini çöz → resolve_google_news_url()
+  3. Keyword filtresi uygula → apply_keyword_filter()
+  4. Zaman filtresi uygula → apply_time_filter()
      ⚠️ TEST MODUNDA: Akıllı filtre devre dışı, sadece max saat kullanılır
-  5. Daha önce paylaşılanları çıkar   → remove_already_posted()
+  5. Daha önce paylaşılanları çıkar → remove_already_posted()
      ⚠️ TEST MODUNDA BU ADIM ATLANIR
-  6. Benzer haberleri tekil yap       → remove_duplicates()
+  6. Benzer haberleri tekil yap → remove_duplicates()
 
 Kullandığı config dosyaları:
-  - config/sources.json   → RSS feed listesi
-  - config/keywords.json  → include_keywords / exclude_keywords
-  - config/settings.json  → max_article_age_hours (12 saat)
+•   config/sources.json  → RSS feed listesi
+•   config/keywords.json → include_keywords / exclude_keywords
+•   config/settings.json → max_article_age_hours (12 saat)
 
 Diğer modüller bu dosyayı şöyle import eder:
-    from news_fetcher import fetch_and_filter_news
+  from news_fetcher import fetch_and_filter_news
 """
 
 import os
@@ -58,7 +58,9 @@ from utils import (
     get_last_check_time,
 )
 
+
 # ── Sabit Değerler ──────────────────────────────────────────
+
 _USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
     "AppleWebKit/537.36 (KHTML, like Gecko) "
@@ -90,15 +92,21 @@ def _turkish_lower(text: str) -> str:
 def _extract_image_from_entry(entry) -> str:
     """RSS entry'sinden görsel URL'sini çıkarır.
 
+    v5.3 ile güçlendirildi — artık şu kaynakları da dener:
+      5. content:encoded alanındaki <img> tag'i
+      6. <figure> tag'i içindeki görseller
+      7. data-src, data-lazy-src gibi lazy-load attribute'ları
+
     Sırasıyla şu kaynakları dener:
       1. media:content → url attribute
       2. media:thumbnail → url attribute
       3. enclosure (type=image) → href/url
-      4. entry içindeki <img> tag'i (summary/content HTML'inde)
+      4. entry içindeki <img> tag'i (summary/description/content HTML'inde)
 
     Returns:
         str: Görsel URL'si. Bulunamazsa boş string.
     """
+
     # ── Yöntem 1: media:content ──
     media_content = entry.get("media_content", [])
     if media_content:
@@ -125,27 +133,114 @@ def _extract_image_from_entry(entry) -> str:
             if enc_url and "image" in enc_type:
                 return enc_url
 
-    # ── Yöntem 4: summary/content içindeki <img> tag'i ──
-    html_content = (
-        entry.get("summary", "")
-        or entry.get("description", "")
-        or ""
-    )
+    # ── Yöntem 3b: enclosure type olmadan da dene (v5.3) ──
+    #    Bazı feed'ler enclosure'da type vermez ama URL .jpg/.png ile biter
+    if enclosures:
+        for enc in enclosures:
+            enc_url = enc.get("href", "") or enc.get("url", "")
+            if enc_url:
+                lower_url = enc_url.lower()
+                if any(ext in lower_url for ext in [".jpg", ".jpeg", ".png", ".webp"]):
+                    return enc_url
+
+    # ── Yöntem 4: summary/description/content içindeki <img> tag'i ──
+    #    (v5.3: content:encoded da eklendi, lazy-load desteklendi)
+    html_content = ""
+
+    # summary ve description
+    html_content += entry.get("summary", "") or ""
+    html_content += entry.get("description", "") or ""
+
+    # content listesi (content:encoded dahil)
     content_list = entry.get("content", [])
     if content_list:
         for content_item in content_list:
-            html_content += content_item.get("value", "")
+            html_content += content_item.get("value", "") or ""
 
-    if html_content and "<img" in html_content:
+    # Bazı feed'ler content_encoded olarak da verebilir
+    content_encoded = entry.get("content_encoded", "")
+    if content_encoded:
+        html_content += content_encoded
+
+    if html_content and ("<img" in html_content or "<figure" in html_content):
         try:
             soup = BeautifulSoup(html_content, "html.parser")
-            img_tag = soup.find("img")
-            if img_tag:
+
+            # Önce tüm img tag'lerini topla
+            img_tags = soup.find_all("img")
+
+            for img_tag in img_tags:
+                # Standart src
                 img_src = img_tag.get("src", "")
+
+                # Lazy-load attribute'ları (v5.3)
+                if not img_src or not img_src.startswith("http"):
+                    img_src = img_tag.get("data-src", "")
+                if not img_src or not img_src.startswith("http"):
+                    img_src = img_tag.get("data-lazy-src", "")
+                if not img_src or not img_src.startswith("http"):
+                    img_src = img_tag.get("data-original", "")
+                if not img_src or not img_src.startswith("http"):
+                    img_src = img_tag.get("data-full-url", "")
+
                 if img_src and img_src.startswith("http"):
+                    # Çok küçük görselleri atla (ikonlar, spacer gif'ler)
+                    width_attr = img_tag.get("width", "")
+                    height_attr = img_tag.get("height", "")
+                    try:
+                        if width_attr and int(width_attr) < 50:
+                            continue
+                        if height_attr and int(height_attr) < 50:
+                            continue
+                    except (ValueError, TypeError):
+                        pass
+
+                    # Bilinen ikon/tracker URL'lerini atla
+                    skip_patterns = [
+                        "gravatar.com",
+                        "pixel.",
+                        "tracking.",
+                        "analytics.",
+                        "facebook.com/tr",
+                        "1x1.",
+                        "spacer.",
+                        "blank.",
+                        ".gif",  # Çoğu gif spacer
+                        "emoji",
+                        "icon",
+                        "badge",
+                        "avatar",
+                    ]
+                    should_skip = False
+                    lower_src = img_src.lower()
+                    for pattern in skip_patterns:
+                        if pattern in lower_src:
+                            should_skip = True
+                            break
+                    if should_skip:
+                        continue
+
                     return img_src
+
         except Exception:
             pass
+
+    # ── Yöntem 5: image alanı (bazı feed'ler direkt verir) (v5.3) ──
+    image_field = entry.get("image", {})
+    if isinstance(image_field, dict):
+        img_href = image_field.get("href", "") or image_field.get("url", "")
+        if img_href and img_href.startswith("http"):
+            return img_href
+    elif isinstance(image_field, str) and image_field.startswith("http"):
+        return image_field
+
+    # ── Yöntem 6: links alanında image type (v5.3) ──
+    links = entry.get("links", [])
+    for link_item in links:
+        link_type = link_item.get("type", "")
+        link_href = link_item.get("href", "")
+        if "image" in link_type and link_href:
+            return link_href
 
     return ""
 
@@ -196,6 +291,7 @@ def fetch_all_feeds() -> list[dict]:
                 continue
 
             entry_count = 0
+            image_count = 0
             for entry in parsed_feed.entries:
                 title_raw = entry.get("title", "")
                 if not title_raw:
@@ -223,6 +319,7 @@ def fetch_all_feeds() -> list[dict]:
 
                 image_url = _extract_image_from_entry(entry)
                 if image_url:
+                    image_count += 1
                     log(f"    🖼️ RSS görsel bulundu: {image_url[:80]}...", "INFO")
 
                 article = {
@@ -239,7 +336,8 @@ def fetch_all_feeds() -> list[dict]:
                 all_articles.append(article)
                 entry_count += 1
 
-            log(f"  ✓  {feed_name} — {entry_count} haber çekildi")
+            # v5.3: Görsel istatistiği de göster
+            log(f"  ✓  {feed_name} — {entry_count} haber çekildi ({image_count} görselli)")
 
         except Exception as exc:
             log(f"  ✗  {feed_name} — feed çekme hatası: {exc}", "ERROR")
@@ -647,7 +745,9 @@ def scrape_full_article(url: str) -> str:
 
         soup = BeautifulSoup(resp.text, "html.parser")
 
-        for unwanted in soup.find_all(["script", "style", "nav", "footer", "aside", "iframe"]):
+        for unwanted in soup.find_all(
+            ["script", "style", "nav", "footer", "aside", "iframe"]
+        ):
             unwanted.decompose()
 
         full_text = ""
@@ -668,14 +768,21 @@ def scrape_full_article(url: str) -> str:
                     paragraphs = content_div.find_all("p")
                     if paragraphs:
                         full_text = " ".join(
-                            p.get_text(strip=True) for p in paragraphs
+                            p.get_text(strip=True)
+                            for p in paragraphs
                             if len(p.get_text(strip=True)) > 10
                         )
                     else:
-                        full_text = content_div.get_text(separator=" ", strip=True)
+                        full_text = content_div.get_text(
+                            separator=" ", strip=True
+                        )
 
                     if full_text and len(full_text) > 50:
-                        log(f"  ✅ Donanımhaber özel selector ile metin çekildi ({len(full_text)} karakter)", "INFO")
+                        log(
+                            f"  ✅ Donanımhaber özel selector ile metin "
+                            f"çekildi ({len(full_text)} karakter)",
+                            "INFO",
+                        )
                         break
 
         # ── Yöntem 2: Genel <article> tag'i ──
@@ -685,7 +792,8 @@ def scrape_full_article(url: str) -> str:
                 paragraphs = article_tag.find_all("p")
                 if paragraphs:
                     full_text = " ".join(
-                        p.get_text(strip=True) for p in paragraphs
+                        p.get_text(strip=True)
+                        for p in paragraphs
                         if len(p.get_text(strip=True)) > 10
                     )
 
@@ -705,9 +813,15 @@ def scrape_full_article(url: str) -> str:
             full_text = full_text[:5000].rsplit(" ", 1)[0] + "..."
 
         if full_text:
-            log(f"  📄 Tam metin çekildi: {len(full_text)} karakter", "INFO")
+            log(
+                f"  📄 Tam metin çekildi: {len(full_text)} karakter",
+                "INFO",
+            )
         else:
-            log(f"  ⚠️ Tam metin çekilemedi: {url[:60]}", "WARNING")
+            log(
+                f"  ⚠️ Tam metin çekilemedi: {url[:60]}",
+                "WARNING",
+            )
 
         return full_text
 
@@ -715,10 +829,16 @@ def scrape_full_article(url: str) -> str:
         log(f"⚠️ Tam metin çekme zaman aşımı: {url}", "WARNING")
         return ""
     except requests.exceptions.RequestException as exc:
-        log(f"⚠️ Tam metin çekme HTTP hatası ({url}): {exc}", "WARNING")
+        log(
+            f"⚠️ Tam metin çekme HTTP hatası ({url}): {exc}",
+            "WARNING",
+        )
         return ""
     except Exception as exc:
-        log(f"⚠️ Tam metin çekme genel hata ({url}): {exc}", "ERROR")
+        log(
+            f"⚠️ Tam metin çekme genel hata ({url}): {exc}",
+            "ERROR",
+        )
         return ""
 
 
@@ -748,7 +868,10 @@ def fetch_and_filter_news() -> list[dict]:
     log("=" * 55)
     log("HABER ÇEKME VE FİLTRELEME BAŞLIYOR")
     if test_mode:
-        log("🧪 TEST MODU: Zaman filtresi GEVŞETİLDİ + Tekrar filtresi DEVRE DIŞI")
+        log(
+            "🧪 TEST MODU: Zaman filtresi GEVŞETİLDİ + "
+            "Tekrar filtresi DEVRE DIŞI"
+        )
     log("=" * 55)
 
     # ── ADIM 1: Tüm feed'leri çek ──
@@ -827,11 +950,14 @@ if __name__ == "__main__":
 
     if result:
         log(f"\n{'─' * 50}")
-        log(f"İLK 5 ADAY HABER:")
+        log("İLK 5 ADAY HABER:")
         log(f"{'─' * 50}")
         for i, article in enumerate(result[:5], 1):
             log(f"\n  {i}. {article['title']}")
-            log(f"     Kaynak   : {article['source_name']} ({article['source_priority']})")
+            log(
+                f"     Kaynak   : {article['source_name']} "
+                f"({article['source_priority']})"
+            )
             log(f"     Tarih    : {article['published']}")
             log(f"     URL      : {article['link'][:80]}...")
             log(f"     Görsel   : {article.get('image_url', 'YOK')[:80]}")

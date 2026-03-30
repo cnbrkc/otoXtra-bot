@@ -9,6 +9,46 @@
       "language": "tr",
       "can_scrape_image": true,
       "enabled": true
+    },
+    {
+      "name": "Log",
+      "url": "https://www.log.com.tr/feed",
+      "category": "genel",
+      "quality": "high",
+      "priority": "medium",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
+    },
+    {
+      "name": "Motor1 TR",
+      "url": "https://tr.motor1.com/rss/news/all/",
+      "category": "otomobil",
+      "quality": "high",
+      "priority": "high",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
+    },
+    {
+      "name": "ShiftDelete Otomobil",
+      "url": "https://shiftdelete.net/otomobil/feed/",
+      "category": "otomobil",
+      "quality": "high",
+      "priority": "medium",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
+    },
+    {
+      "name": "OtoAjanda",
+      "url": "https://www.otoajanda.com/feed/",
+      "category": "otomobil",
+      "quality": "medium",
+      "priority": "medium",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
     }
   ]
 }
