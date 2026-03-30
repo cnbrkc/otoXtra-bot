@@ -1,19 +1,28 @@
 """
-main.py — Ana Orkestrasyon Modülü (v2 — Viral Sıralama)
+main.py — Ana Orkestrasyon Modülü (v3 — Tek Değerlendirme)
 
 Bu dosya otoXtra botunun ana kontrolcüsüdür.
 GitHub Actions tarafından "python src/main.py" komutuyla çalıştırılır.
 
-v2 Değişiklikler:
-  - Her taramada sadece 1 post paylaşılır (max_posts_per_run = 1)
-  - Haberler viral puan sırasına göre sıralanır (en yüksek puan önce)
-  - filter_and_score() artık TÜM geçen haberleri döner (tek haber değil)
-  - En yüksek puanlı haber seçilip paylaşılır
+v3 Değişiklikler:
+  - Çift değerlendirme (ADIM 4.5) KALDIRILDI
+  - content_filter.py seçimi yapar → main.py doğrudan kullanır
+  - Akış: ön filtre → YZ puanlama → detay çek → metin üret → paylaş
+
+Akış:
+  1. RSS'den haberler çekilir (news_fetcher)
+  2. Keyword filtresi (include/exclude) — YZ YOK
+  3. Zaman filtresi (eski haberler) — YZ YOK
+  4. Tekrar filtresi (daha önce paylaşılanlar) — YZ YOK
+  5. Kalan başlıklar YZ'ye toplu gönderilir → puanlanır → en iyisi seçilir
+  6. Seçilen haberin linki açılıp detay çekilir
+  7. Detay YZ'ye verilir → özet metin üretilir
+  8. Fotoğraf çekilir + logo eklenir → Facebook'a paylaşılır
 
 TEST MODU:
   Manuel çalıştırmada (Run workflow butonu) otomatik aktif olur.
-  - Rastgele gecikme ATLANIR (0 saniye bekleme)
-  - Rastgele atlama ATLANIR (her seferinde çalışır)
+  - Rastgele gecikme ATLANIR
+  - Rastgele atlama ATLANIR
   - Minimum aralık kontrolü ATLANIR
 
 Kullandığı modüller:
@@ -55,21 +64,15 @@ def is_test_mode() -> bool:
     """
     Test modunun aktif olup olmadığını kontrol eder.
 
-    TEST_MODE ortam değişkeni "true" ise test modu aktiftir.
-
     Returns:
-        True: Test modu aktif (hızlı çalış).
-        False: Normal mod (anti-bot gecikmeleri uygula).
+        True: Test modu aktif.
+        False: Normal mod.
     """
     return os.environ.get("TEST_MODE", "false").lower() == "true"
 
 
 def _save_check_time() -> None:
-    """Son kontrol zamanını güvenli şekilde kaydeder.
-
-    Her çağrıda dosyadan TAZE veri okur, last_check_time'ı günceller
-    ve dosyaya geri yazar.
-    """
+    """Son kontrol zamanını güvenli şekilde kaydeder."""
     fresh_data: dict = get_posted_news()
     save_last_check_time(fresh_data)
     save_posted_news(fresh_data)
@@ -80,8 +83,8 @@ def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
     Günlük paylaşım limitinin dolup dolmadığını kontrol eder.
 
     Returns:
-        True: Devam edilebilir (limit dolmamış).
-        False: Limit dolmuş, çıkılmalı.
+        True: Devam edilebilir.
+        False: Limit dolmuş.
     """
     today_count: int = get_today_post_count(posted_data)
     max_daily: int = settings.get("posting", {}).get("max_daily_posts", 9)
@@ -101,8 +104,6 @@ def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
 def _check_random_skip(settings: dict) -> bool:
     """
     Anti-bot rastgele atlama kontrolü yapar.
-
-    TEST MODUNDA: Her zaman devam eder (atlamaz).
 
     Returns:
         True: Devam edilebilir.
@@ -138,8 +139,6 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
     """
     Son paylaşımdan yeterli süre geçip geçmediğini kontrol eder.
 
-    TEST MODUNDA: Her zaman devam eder (beklemez).
-
     Returns:
         True: Devam edilebilir.
         False: Henüz erken.
@@ -152,7 +151,6 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         "min_post_interval_hours", 0
     )
 
-    # 0 ise kontrol devre dışı
     if min_interval_hours <= 0:
         log("⏰ Minimum aralık kontrolü devre dışı (0 saat)", "INFO")
         return True
@@ -185,7 +183,7 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
             log(
                 f"⏰ Son paylaşımdan {hours_since_last:.1f} saat geçmiş "
                 f"(minimum: {min_interval_hours} saat). "
-                f"Yaklaşık {remaining_minutes} dk daha beklenecek. Çıkılıyor.",
+                f"Yaklaşık {remaining_minutes} dk daha beklenecek.",
                 "INFO",
             )
             return False
@@ -207,13 +205,14 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
 
 def main() -> None:
     """
-    otoXtra botunun ana fonksiyonu.
+    otoXtra botunun ana fonksiyonu (v3 — Tek Değerlendirme).
 
-    v2 Değişiklikler:
-      - filter_and_score() TÜM geçen haberleri döner
-      - Haberler viral puan sırasına göre sıralanır
-      - En yüksek puanlı 1 haber seçilip paylaşılır
-      - Her taramada sadece 1 post (max_posts_per_run = 1)
+    Akış:
+      1. Başlangıç kontrolleri (limit, atlama, aralık)
+      2. RSS'den haberler çekilir + ön filtre (keyword/zaman/tekrar)
+      3. YZ ile puanlama → en iyi haber seçilir (TEK SEFER)
+      4. Seçilen haberin detayı çekilir → metin üretilir
+      5. Görsel hazırlanır → Facebook'a paylaşılır
     """
     separator: str = "═" * 60
     test_mode: bool = is_test_mode()
@@ -223,7 +222,7 @@ def main() -> None:
         # ADIM 1: BAŞLANGIÇ KONTROLLERİ
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("🚗 otoXtra Bot Başlatılıyor (v2 — Viral Sıralama)", "INFO")
+        log("🚗 otoXtra Bot Başlatılıyor (v3 — Tek Değerlendirme)", "INFO")
         if test_mode:
             log("🧪 ══ TEST MODU AKTİF — Gecikmeler devre dışı ══", "INFO")
         log(separator, "INFO")
@@ -258,10 +257,10 @@ def main() -> None:
             random_delay(max_delay_minutes)
 
         # ══════════════════════════════════════════════
-        # ADIM 2: HABER TARAMA
+        # ADIM 2: HABER TARAMA + ÖN FİLTRE
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("📰 ADIM 2: Haber taramaya başlanıyor...", "INFO")
+        log("📰 ADIM 2: Haber tarama + ön filtre (keyword/zaman/tekrar)...", "INFO")
         log(separator, "INFO")
 
         articles: list[dict] = fetch_and_filter_news()
@@ -275,37 +274,19 @@ def main() -> None:
             log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
-        log(f"📋 {len(articles)} aday haber bulundu", "INFO")
+        log(f"📋 Ön filtreden {len(articles)} haber geçti", "INFO")
 
         # ══════════════════════════════════════════════
-        # ADIM 3-4: KALİTE FİLTRE + PUANLAMA
+        # ADIM 3: YZ PUANLAMA → EN İYİ HABERİ SEÇ
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("🔍 ADIM 3-4: Kalite filtre ve puanlama...", "INFO")
+        log("🔍 ADIM 3: YZ puanlama (tek seferde)...", "INFO")
         log(separator, "INFO")
 
-        # filter_and_score artık liste veya tek dict dönebilir
-        scored_result = filter_and_score(articles)
+        selected: Optional[dict] = filter_and_score(articles)
 
-        # ── Sonucu normalize et ──
-        scored_articles: list[dict] = []
-
-        if scored_result is None:
-            scored_articles = []
-        elif isinstance(scored_result, dict):
-            # Eski davranış: tek dict döndüyse listeye çevir
-            scored_articles = [scored_result]
-        elif isinstance(scored_result, list):
-            scored_articles = scored_result
-        else:
-            scored_articles = []
-
-        if not scored_articles:
-            log(
-                "ℹ️ Kalite eşiğini geçen haber yok. "
-                "Bugün paylaşılacak kaliteli haber bulunamadı.",
-                "INFO",
-            )
+        if not selected:
+            log("ℹ️ Kalite eşiğini geçen haber yok. Çıkılıyor.", "INFO")
             log(separator, "INFO")
             log("🏁 İşlem tamamlandı: Kaliteli haber yok", "INFO")
             log(separator, "INFO")
@@ -313,44 +294,18 @@ def main() -> None:
             log("💾 Son kontrol zamanı kaydedildi", "INFO")
             return
 
-        # ══════════════════════════════════════════════
-        # ADIM 4.5: VİRAL PUAN SIRASINA GÖRE SIRALA
-        # ══════════════════════════════════════════════
-        log(separator, "INFO")
-        log("🏆 ADIM 4.5: Viral puan sıralaması...", "INFO")
-        log(separator, "INFO")
-
-        # En yüksek puandan en düşüğe sırala
-        scored_articles.sort(
-            key=lambda a: a.get("score", 0),
-            reverse=True,
-        )
-
-        # Sıralamayı logla (ilk 5)
-        log(f"📊 Puanlanan {len(scored_articles)} haber (puan sırasıyla):", "INFO")
-        for i, art in enumerate(scored_articles[:5], 1):
-            log(
-                f"  {i}. [PUAN: {art.get('score', 0)}] {art.get('title', '')[:70]}",
-                "INFO",
-            )
-        if len(scored_articles) > 5:
-            log(f"  ... ve {len(scored_articles) - 5} haber daha", "INFO")
-
-        # ── En yüksek puanlı haberi seç ──
-        selected: dict = scored_articles[0]
-
         selected_title: str = selected.get("title", "Başlık yok")
         selected_score: int = selected.get("score", 0)
         log(
-            f"🥇 EN VİRAL HABER SEÇİLDİ: {selected_title} (puan: {selected_score})",
+            f"🥇 Seçilen haber: {selected_title} (puan: {selected_score})",
             "INFO",
         )
 
         # ══════════════════════════════════════════════
-        # ADIM 5: İÇERİK ÜRETİMİ
+        # ADIM 4: DETAY ÇEK + METİN ÜRET
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("✍️ ADIM 5: İçerik üretimi...", "INFO")
+        log("✍️ ADIM 4: Detay çekme + içerik üretimi...", "INFO")
         log(separator, "INFO")
 
         article_link: str = selected.get("link", "")
@@ -383,10 +338,10 @@ def main() -> None:
         log("✅ Facebook post metni hazır", "INFO")
 
         # ══════════════════════════════════════════════
-        # ADIM 6: GÖRSEL TEMİNİ
+        # ADIM 5: GÖRSEL TEMİNİ
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("🖼️ ADIM 6: Görsel temini...", "INFO")
+        log("🖼️ ADIM 5: Görsel temini...", "INFO")
         log(separator, "INFO")
 
         image_path: Optional[str] = prepare_image(selected)
@@ -400,10 +355,10 @@ def main() -> None:
             )
 
         # ══════════════════════════════════════════════
-        # ADIM 7: FACEBOOK'A PAYLAŞ (sadece 1 post)
+        # ADIM 6: FACEBOOK'A PAYLAŞ
         # ══════════════════════════════════════════════
         log(separator, "INFO")
-        log("📣 ADIM 7: Facebook'a paylaşım (bu taramada 1 post)...", "INFO")
+        log("📣 ADIM 6: Facebook'a paylaşım...", "INFO")
         log(separator, "INFO")
 
         success: bool = publish(selected, post_text, image_path)
@@ -415,7 +370,6 @@ def main() -> None:
             log("😞 ═══ İşlem tamamlandı: BAŞARISIZ ═══", "WARNING")
         log(separator, "INFO")
 
-        # Başarılı veya başarısız, tarama yapıldı → zamanı kaydet
         _save_check_time()
         log("💾 Son kontrol zamanı kaydedildi", "INFO")
 

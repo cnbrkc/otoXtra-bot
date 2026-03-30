@@ -1,27 +1,22 @@
 """
-content_filter.py — Viral Puanlama Modülü (v4 — Tek Aşamalı Hızlı Puanlama)
+content_filter.py — Viral Puanlama Modülü (v5 — Tek Aşama, Çift Değerlendirme Yok)
 
-Bu modül haberleri YZ (yapay zeka) ile tek aşamada değerlendirir:
+Bu modül haberleri YZ (yapay zeka) ile TEK AŞAMADA değerlendirir:
 
-  AŞAMA 1 — Viral Puanlama (Viral Scoring):
-    Haberleri 100 üzerinden puanlar.
-    Puanlama kriterleri: ilgi çekicilik, paylaşılabilirlik,
-    güncellik, özgünlük, Facebook etkileşim potansiyeli.
+  Tüm haberlerin başlıkları numaralandırılıp YZ'ye TEK SEFERDE gönderilir.
+  YZ her habere 0-100 puan verir ve en yüksek puanlıyı seçer.
 
 Akış:
-  Ham haberler (Zaten güvenilir kaynaklardan çekilmiş)
-    → Viral Puanlama (her habere 0-100 puan)               [BATCH]
+  Ön filtreden geçmiş haberler (keyword/zaman/tekrar filtresi UYGULANMIŞ)
+    → Viral Puanlama (başlıklar toplu gönderilir, her habere 0-100 puan)
     → Eşik Kontrolü (düşük puanlılar elenir)
-    → En İyi Haber seçilir ve döner
+    → En yüksek puanlı haber döner
 
-v4 Değişiklikler:
-  - "Kalite Kapısı" (Quality Gate) tamamen KILDIRILDI.
-  - Güvenilir kaynaklar kullanıldığı için YZ sorgu sayısı yarıya indirildi.
-  - Haberler doğrudan Viral Puanlamaya girer.
-
-v3 Değişiklikler:
-  - match_ai_results_to_articles() güçlendirildi:
-    Sıra numarası ile eşleşirken başlık ÇAPRAZ DOĞRULAMASI yapılır.
+v5 Değişiklikler:
+  - main.py'deki ADIM 4.5 (tekrar sıralama) KALDIRILDI
+  - filter_and_score() artık TEK SEÇİLMİŞ HABERİ döner (dict)
+  - Çift değerlendirme tamamen ortadan kaldırıldı
+  - Loglama sadeleştirildi
 
 Kullandığı modüller:
   - ai_processor.py  → ask_ai(), parse_ai_json()
@@ -51,19 +46,16 @@ from utils import (
 # ──────────────────────────────────────────────
 
 BATCH_SIZE: int = 20
-"""Her seferinde YZ'ye gönderilecek maksimum haber sayısı.
-20 haber ≈ 1500 output token → 2048 max_tokens limitinin altında kalır."""
+"""Her seferinde YZ'ye gönderilecek maksimum haber sayısı."""
 
 BATCH_DELAY_SECONDS: int = 3
-"""Batch'ler arası bekleme süresi (saniye). Groq rate limit: 30 req/dk."""
+"""Batch'ler arası bekleme süresi (saniye)."""
 
 UNSCORED_DEFAULT: int = 0
-"""YZ'nin puanlayamadığı haberlere verilen varsayılan puan.
-0 = eşiğin altında kalır, paylaşılmaz."""
+"""YZ'nin puanlayamadığı haberlere verilen varsayılan puan."""
 
 CROSS_VALIDATE_THRESHOLD: float = 0.4
-"""Sıra numarası ile eşleşirken başlık çapraz doğrulama eşiği.
-Bu değerin altında benzerlik varsa sıra numarası güvenilmez kabul edilir."""
+"""Sıra numarası ile eşleşirken başlık çapraz doğrulama eşiği."""
 
 
 # ──────────────────────────────────────────────
@@ -78,7 +70,7 @@ def _format_articles_numbered(articles: list[dict]) -> str:
       "1. Başlık: … | Özet: …
        2. Başlık: … | Özet: …"
 
-    Özet 300 karakterden uzunsa kırpılır (YZ token sınırını aşmasın).
+    Özet 300 karakterden uzunsa kırpılır.
     """
     lines: list[str] = []
     for i, article in enumerate(articles, start=1):
@@ -140,7 +132,7 @@ def match_ai_results_to_articles(
                     else:
                         log(
                             f"  ⚠️ ÇAPRAZ DOĞRULAMA: Sıra {sira} ile başlık uyuşmuyor → "
-                            f"sıra atlanıyor, başlık eşleştirmesine düşülüyor | "
+                            f"başlık eşleştirmesine düşülüyor | "
                             f"YZ: '{ai_baslik[:50]}' vs Gerçek: '{article_title[:50]}'",
                             "WARNING",
                         )
@@ -183,7 +175,7 @@ def match_ai_results_to_articles(
             used_indices.add(matched_index)
         else:
             kaybolan: str = ai_result.get("baslik", "(başlık yok)")
-            log(f"⚠️ Eşleştirilemeyen YZ sonucu: {kaybolan}", "WARNING")
+            log(f"  ⚠️ Eşleştirilemeyen YZ sonucu: {kaybolan}", "WARNING")
 
     return matched
 
@@ -226,7 +218,7 @@ def run_viral_scoring(articles: list[dict]) -> list[dict]:
     batch_count: int = len(batches)
 
     log(
-        f"📊 Viral puanlama başlıyor: {total_count} haber, "
+        f"📊 Viral puanlama: {total_count} haber, "
         f"{batch_count} batch ({BATCH_SIZE}'lik gruplar)",
         "INFO",
     )
@@ -297,7 +289,7 @@ def run_viral_scoring(articles: list[dict]) -> list[dict]:
             except (ValueError, TypeError):
                 puan = UNSCORED_DEFAULT
 
-            gerekce: str = ai_result.get("gerekce", "Gerekçe belirtilmedi")
+            gerekce: str = ai_result.get("gerekce", "Gerekçe yok")
             title: str = article.get("title", "Başlık yok")
 
             article["score"] = puan
@@ -305,7 +297,7 @@ def run_viral_scoring(articles: list[dict]) -> list[dict]:
             batch_scored += 1
             total_ai_scored += 1
 
-            log(f"  📊 Puan: {puan:3d}/100 — {title} → {gerekce}", "INFO")
+            log(f"  📊 Puan: {puan:3d}/100 — {title}", "INFO")
 
         # ── YZ'nin puanlamadığı haberlere 0 puan ──
         batch_unscored: int = 0
@@ -318,8 +310,8 @@ def run_viral_scoring(articles: list[dict]) -> list[dict]:
 
         if batch_unscored > 0:
             log(
-                f"  ℹ️ Batch {batch_num}: {batch_unscored} haber YZ tarafından "
-                f"puanlanamadı → {UNSCORED_DEFAULT} puan verildi",
+                f"  ℹ️ Batch {batch_num}: {batch_unscored} haber puanlanamadı → "
+                f"{UNSCORED_DEFAULT} puan verildi",
                 "INFO",
             )
 
@@ -336,22 +328,12 @@ def run_viral_scoring(articles: list[dict]) -> list[dict]:
     # ── Puanı yüksekten düşüğe sırala ──
     all_scored.sort(key=lambda x: x.get("score", 0), reverse=True)
 
-    # ── Genel sonuç özeti ──
+    # ── Sonuç özeti ──
     log(
-        f"📊 Viral puanlama tamamlandı: {total_count} haber → "
-        f"{total_ai_scored} YZ puanladı, {total_unscored} puanlanamadı ({UNSCORED_DEFAULT} verildi)",
+        f"📊 Puanlama tamamlandı: {total_count} haber → "
+        f"{total_ai_scored} puanlandı, {total_unscored} puanlanamadı",
         "INFO",
     )
-
-    # Top 5'i logla
-    top_n: int = min(5, len(all_scored))
-    if top_n > 0:
-        log(f"🏅 En yüksek puanlı {top_n} haber:", "INFO")
-        for i, art in enumerate(all_scored[:top_n], start=1):
-            log(
-                f"  {i}. [{art.get('score', 0):3d}] {art.get('title', 'Başlık yok')}",
-                "INFO",
-            )
 
     return all_scored
 
@@ -381,15 +363,15 @@ def apply_thresholds(scored_articles: list[dict]) -> list[dict]:
     if today_post_count < 2:
         threshold: int = slow_day_score
         log(
-            f"📅 Sakin gün (bugün {today_post_count} post yapılmış). "
-            f"Düşük eşik kullanılıyor: {threshold}",
+            f"📅 Sakin gün ({today_post_count} post). "
+            f"Düşük eşik: {threshold}",
             "INFO",
         )
     else:
         threshold = publish_score
         log(
-            f"📅 Normal gün (bugün {today_post_count} post yapılmış). "
-            f"Standart eşik kullanılıyor: {threshold}",
+            f"📅 Normal gün ({today_post_count} post). "
+            f"Standart eşik: {threshold}",
             "INFO",
         )
 
@@ -406,12 +388,12 @@ def apply_thresholds(scored_articles: list[dict]) -> list[dict]:
             eliminated += 1
             if score > 0:
                 log(
-                    f"📉 {title} — puan {score}, eşik {threshold} → elendi",
+                    f"  📉 Elendi: {title} (puan {score} < eşik {threshold})",
                     "INFO",
                 )
 
     log(
-        f"📊 Eşik kontrolü: {total_count} haber → "
+        f"📊 Eşik: {total_count} haber → "
         f"{len(passed)} geçti, {eliminated} elendi (eşik: {threshold})",
         "INFO",
     )
@@ -420,39 +402,21 @@ def apply_thresholds(scored_articles: list[dict]) -> list[dict]:
 
 
 # ──────────────────────────────────────────────
-# 4) En İyi Haber Seçimi
-# ──────────────────────────────────────────────
-
-def select_best_article(articles: list[dict]) -> Optional[dict]:
-    """
-    En yüksek puanlı 1 haberi seçer.
-    """
-    if not articles:
-        log("ℹ️ Seçilecek haber yok — tüm haberler elendi.", "INFO")
-        return None
-
-    best: dict = max(articles, key=lambda x: x.get("score", 0))
-
-    best_title: str = best.get("title", "Başlık yok")
-    best_score: int = best.get("score", 0)
-
-    log(f"🏆 SEÇİLDİ: {best_title} (puan: {best_score})", "INFO")
-
-    return best
-
-
-# ──────────────────────────────────────────────
-# 5) Ana Fonksiyon — Tüm Adımları Sırayla Çalıştır
+# 4) Ana Fonksiyon — filter_and_score()
 # ──────────────────────────────────────────────
 
 def filter_and_score(articles: list[dict]) -> Optional[dict]:
     """
-    ANA FONKSİYON — Filtreleme (kaldırıldı) ve puanlama adımlarını sırayla çalıştırır.
+    ANA FONKSİYON — Puanlama ve seçim adımlarını sırayla çalıştırır.
 
     Akış:
-      1. Viral Puanlama   → haberleri 100 üzerinden puanlar              [BATCH]
-      2. Eşik Kontrolü    → düşük puanlıları eler
-      3. En İyi Seçim     → en yüksek puanlı haberi döner
+      1. Viral Puanlama → başlıklar toplu YZ'ye, her habere 0-100 puan
+      2. Eşik Kontrolü  → düşük puanlıları eler
+      3. En yüksek puanlı haberi döner
+
+    Returns:
+        dict: Seçilen haber (en yüksek puanlı)
+        None: Uygun haber bulunamadı
     """
     separator: str = "=" * 60
 
@@ -464,44 +428,33 @@ def filter_and_score(articles: list[dict]) -> Optional[dict]:
         log("ℹ️ Puanlanacak haber yok.", "INFO")
         return None
 
-    # ── ADIM 1: Viral Puanlama (Kalite kapısı atlandı) ──
-    log(f"\n📌 ADIM 1: Viral Puanlama ({len(articles)} haber)", "INFO")
+    # ── ADIM 1: Viral Puanlama ──
+    log(f"\n📌 Viral Puanlama ({len(articles)} haber)", "INFO")
     scored: list[dict] = run_viral_scoring(articles)
 
     if not scored:
         log("❌ Puanlanan haber yok.", "INFO")
         return None
 
-    log(f"✅ {len(scored)} haber puanlandı", "INFO")
-
     # ── ADIM 2: Eşik Kontrolü ──
-    log(f"\n📌 ADIM 2: Eşik Kontrolü ({len(scored)} haber)", "INFO")
+    log(f"\n📌 Eşik Kontrolü ({len(scored)} haber)", "INFO")
     above_threshold: list[dict] = apply_thresholds(scored)
 
     if not above_threshold:
-        log(
-            "❌ Eşik üstünde haber yok. "
-            "Bugün kaliteli haber bulunamadı, paylaşım yapılmayacak.",
-            "INFO",
-        )
+        log("❌ Eşik üstünde haber yok. Paylaşım yapılmayacak.", "INFO")
         return None
 
-    log(f"✅ {len(above_threshold)} haber eşik üstünde", "INFO")
+    # ── ADIM 3: En yüksek puanlıyı seç ──
+    # (liste zaten sıralı, ilk eleman en yüksek puanlı)
+    best: dict = above_threshold[0]
+    best_title: str = best.get("title", "Başlık yok")
+    best_score: int = best.get("score", 0)
 
-    # ── ADIM 3: En İyi Haberi Seç ──
-    log(f"\n📌 ADIM 3: En İyi Haber Seçimi", "INFO")
-    best: Optional[dict] = select_best_article(above_threshold)
-
-    # ── Sonuç özeti ──
     log(f"\n{separator}", "INFO")
-    if best:
-        log(
-            f"🎯 SONUÇ: '{best.get('title', 'Başlık yok')}' "
-            f"puanı {best.get('score', 0)} ile seçildi",
-            "INFO",
-        )
-    else:
-        log("🎯 SONUÇ: Paylaşılacak uygun haber bulunamadı", "INFO")
+    log(
+        f"🏆 SEÇİLDİ: {best_title} (puan: {best_score})",
+        "INFO",
+    )
     log(separator, "INFO")
 
     return best
