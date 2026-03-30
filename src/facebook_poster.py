@@ -1,27 +1,29 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v6 — Temporary Upload Fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v7 — attached_media format fix)
 
-v6 Değişiklik:
+v7 Değişiklik:
 
-  ❌ v4 HATASI: published=false ANCAK temporary=true YOK
-     → Fotoğraf "taslak" olarak kaydediliyor, attached_media bağlandığında
-       Fotoğraflar sekmesine de düşüyordu
+  ❌ v6 HATASI: attached_media[0] = json.dumps({"media_fbid": photo_id})
+     → json.dumps ekstra tırnak/escape karakterleri ekliyor
+     → Facebook API bu formatı doğru yorumlayamıyor
+     → requests kütüphanesi data parametresini zaten
+       application/x-www-form-urlencoded formatına çevirir
 
-  ❌ v5 HATASI: photos + published=true (tek çağrı)
-     → Facebook bunu "fotoğraf yüklemesi" sayıyor
-     → Fotoğraflar sekmesine düşüyor (normal davranış)
+  ✅ v7 ÇÖZÜM: attached_media[0] = f'{{"media_fbid":"{photo_id}"}}'
+     → json.dumps KALDIRILDI
+     → Doğrudan düz string olarak gönderiliyor
+     → Facebook API'nin beklediği format: {"media_fbid":"123456789"}
 
-  ✅ v6 ÇÖZÜM: published=false + temporary=true → attached_media
+  ✅ Geri kalan mantık aynı:
      ADIM 1: POST /{page_id}/photos
                source    = <dosya>
                published = false
-               temporary = true   ← BU ANAHTAR PARAMETRE!
+               temporary = true   ← GEÇİCİ dosya (Fotoğraflar'a DÜŞMEZ)
              → photo_id alınır
-             → Fotoğraflar sekmesine EKLENMEZz (geçici dosya)
 
      ADIM 2: POST /{page_id}/feed
                message           = <metin>
-               attached_media[0] = {"media_fbid": photo_id}
+               attached_media[0] = {"media_fbid":"photo_id"}  ← DÜZ STRING
              → FEED'de görselli post oluşturulur
              → Fotoğraflar sekmesine DÜŞMEZ
 
@@ -34,7 +36,6 @@ Ortam değişkenleri (GitHub Secrets):
 
 import os
 import time
-import json
 from typing import Optional
 
 import requests
@@ -187,15 +188,13 @@ def _post_photo_method_a(
 
     ADIM 2: POST /{page_id}/feed
               message           = <metin>
-              attached_media[0] = {"media_fbid": photo_id}
+              attached_media[0] = {"media_fbid":"photo_id"}  ← DÜZ STRING
             → Feed'de görselli post oluşturulur
 
-    NEDEN temporary=true GEREKLİ:
-      - temporary=true olmadan: Fotoğraf "taslak" olarak kaydedilir.
-        attached_media ile bağlandığında Fotoğraflar sekmesine de düşer.
-      - temporary=true ile: Fotoğraf SADECE geçici bir dosya olarak tutulur.
-        Feed postuna bağlandığında Fotoğraflar sekmesine DÜŞMEZ.
-        Post SADECE feed'de görünür.
+    v7 FIX: attached_media değeri json.dumps OLMADAN, doğrudan
+    f-string ile oluşturuluyor. requests kütüphanesi data parametresini
+    zaten application/x-www-form-urlencoded formatına çevirdiği için
+    json.dumps'ın eklediği ekstra escape karakterleri API'yi bozuyordu.
     """
     log("📤 Yöntem A: Geçici yükleme (temporary=true) → Feed postu", "INFO")
 
@@ -250,14 +249,18 @@ def _post_photo_method_a(
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
 
     try:
+        # ✅ v7 FIX: json.dumps KALDIRILDI — düz f-string kullanılıyor
+        # Facebook API, attached_media[0] değerini düz bir JSON string'i
+        # olarak bekliyor. json.dumps ekstra tırnak/escape ekleyerek
+        # API'nin beklediği formatı bozuyordu.
         post_data = {
             "message": message,
-            "attached_media[0]": json.dumps({"media_fbid": str(photo_id)}),
+            "attached_media[0]": f'{{"media_fbid":"{photo_id}"}}',
             "access_token": access_token,
         }
 
         log("📤 Adım 2: Feed'e attached_media ile paylaşılıyor...", "INFO")
-        log(f"  📎 attached_media[0] = media_fbid:{photo_id}", "INFO")
+        log(f"  📎 attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
 
         post_resp = requests.post(
             feed_url, data=post_data, timeout=_REQUEST_TIMEOUT
