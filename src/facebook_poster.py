@@ -44,7 +44,7 @@ from utils import (
 # Sabitler
 # ──────────────────────────────────────────────
 
-_FB_API_VERSION: str = "v21.0"
+_FB_API_VERSION: str = "v19.0"
 _FB_BASE_URL: str = f"https://graph.facebook.com/{_FB_API_VERSION}"
 
 _REQUEST_TIMEOUT: int = 60
