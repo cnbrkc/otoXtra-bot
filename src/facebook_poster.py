@@ -1,18 +1,18 @@
 """
-facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v7 — attached_media format fix)
+facebook_poster.py — Facebook Sayfa Paylaşım Modülü (v8 — multipart/form-data fix)
 
-v7 Değişiklik:
+v8 Değişiklik:
 
-  ❌ v6 HATASI: attached_media[0] = json.dumps({"media_fbid": photo_id})
-     → json.dumps ekstra tırnak/escape karakterleri ekliyor
-     → Facebook API bu formatı doğru yorumlayamıyor
-     → requests kütüphanesi data parametresini zaten
-       application/x-www-form-urlencoded formatına çevirir
+  ❌ v7 HATASI: Adım 2'de requests.post(..., data=post_data) kullanılıyordu
+     → requests, data= parametresini application/x-www-form-urlencoded
+       formatında gönderiyor
+     → Facebook API, attached_media gibi karmaşık parametreleri bu formatta
+       doğru yorumlayamıyor
 
-  ✅ v7 ÇÖZÜM: attached_media[0] = f'{{"media_fbid":"{photo_id}"}}'
-     → json.dumps KALDIRILDI
-     → Doğrudan düz string olarak gönderiliyor
-     → Facebook API'nin beklediği format: {"media_fbid":"123456789"}
+  ✅ v8 ÇÖZÜM: requests.post(..., files=post_files_payload) kullanılıyor
+     → files= parametresi, requests'i multipart/form-data formatına zorlar
+     → İçinde dosya olmasa bile (None, value) tuple formatıyla çalışır
+     → Facebook API, attached_media parametresini bu formatta doğru ayrıştırır
 
   ✅ Geri kalan mantık aynı:
      ADIM 1: POST /{page_id}/photos
@@ -23,7 +23,8 @@ v7 Değişiklik:
 
      ADIM 2: POST /{page_id}/feed
                message           = <metin>
-               attached_media[0] = {"media_fbid":"photo_id"}  ← DÜZ STRING
+               attached_media[0] = {"media_fbid":"photo_id"}
+             → multipart/form-data olarak gönderiliyor (files= parametresi)
              → FEED'de görselli post oluşturulur
              → Fotoğraflar sekmesine DÜŞMEZ
 
@@ -188,13 +189,16 @@ def _post_photo_method_a(
 
     ADIM 2: POST /{page_id}/feed
               message           = <metin>
-              attached_media[0] = {"media_fbid":"photo_id"}  ← DÜZ STRING
+              attached_media[0] = {"media_fbid":"photo_id"}
+            → multipart/form-data olarak gönderiliyor (files= parametresi)
             → Feed'de görselli post oluşturulur
 
-    v7 FIX: attached_media değeri json.dumps OLMADAN, doğrudan
-    f-string ile oluşturuluyor. requests kütüphanesi data parametresini
-    zaten application/x-www-form-urlencoded formatına çevirdiği için
-    json.dumps'ın eklediği ekstra escape karakterleri API'yi bozuyordu.
+    v8 FIX: Adım 2'de data= yerine files= kullanılıyor.
+    requests kütüphanesi files= parametresiyle isteği her zaman
+    multipart/form-data formatında gönderir. Facebook API, attached_media
+    gibi karmaşık parametreleri bu formatta doğru yorumlayabiliyor.
+    data= kullanıldığında application/x-www-form-urlencoded formatı
+    uygulanıyordu ve API parametreyi ayrıştıramıyordu.
     """
     log("📤 Yöntem A: Geçici yükleme (temporary=true) → Feed postu", "INFO")
 
@@ -249,21 +253,39 @@ def _post_photo_method_a(
     feed_url: str = f"{_FB_BASE_URL}/{page_id}/feed"
 
     try:
-        # ✅ v7 FIX: json.dumps KALDIRILDI — düz f-string kullanılıyor
-        # Facebook API, attached_media[0] değerini düz bir JSON string'i
-        # olarak bekliyor. json.dumps ekstra tırnak/escape ekleyerek
-        # API'nin beklediği formatı bozuyordu.
-        post_data = {
-            "message": message,
-            "attached_media[0]": f'{{"media_fbid":"{photo_id}"}}',
-            "access_token": access_token,
+        # ✅ v8 FIX: data= yerine files= kullanarak isteği
+        # multipart/form-data olarak göndermeye zorluyoruz.
+        # (None, value) tuple formatı: None = dosya adı yok, value = değer.
+        # requests, files= parametresindeki değerleri string olsa bile
+        # multipart/form-data formatına uygun şekilde paketler.
+        #
+        # ÖNCEKİ (v7 — ÇALIŞMIYORDU):
+        #   post_data = {
+        #       "message": message,
+        #       "attached_media[0]": f'{{"media_fbid":"{photo_id}"}}',
+        #       "access_token": access_token,
+        #   }
+        #   post_resp = requests.post(feed_url, data=post_data, ...)
+        #   → application/x-www-form-urlencoded formatı gönderiliyordu
+        #   → Facebook API attached_media'yı doğru ayrıştıramıyordu
+        #
+        # YENİ (v8 — FIX):
+        #   files= parametresi kullanılıyor
+        #   → multipart/form-data formatı zorlanıyor
+        #   → Facebook API attached_media'yı doğru ayrıştırabiliyor
+
+        post_files_payload = {
+            "message": (None, message),
+            "attached_media[0]": (None, f'{{"media_fbid":"{photo_id}"}}'),
+            "access_token": (None, access_token),
         }
 
-        log("📤 Adım 2: Feed'e attached_media ile paylaşılıyor...", "INFO")
+        log("📤 Adım 2: Feed'e multipart/form-data ile paylaşılıyor...", "INFO")
         log(f"  📎 attached_media[0] = {{\"media_fbid\":\"{photo_id}\"}}", "INFO")
 
+        # ✅ data= DEĞİL, files= kullanıyoruz!
         post_resp = requests.post(
-            feed_url, data=post_data, timeout=_REQUEST_TIMEOUT
+            feed_url, files=post_files_payload, timeout=_REQUEST_TIMEOUT
         )
 
         post_json = post_resp.json()
