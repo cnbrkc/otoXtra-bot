@@ -842,11 +842,6 @@ def scrape_full_article(url: str) -> str:
         return ""
 
 
-def get_article_full_text(url: str) -> str:
-    """Eski fonksiyon adı ile uyumluluk."""
-    return scrape_full_article(url)
-
-
 # ============================================================
 # 8. ANA FONKSİYON — HABER ÇEK + FİLTRELE
 # ============================================================
