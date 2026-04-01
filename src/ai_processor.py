@@ -4,7 +4,6 @@ ai_processor.py — Yapay Zeka Metin İşleme Modülü (v6 — Güncel Modeller 
 Bu modül tüm YZ (yapay zeka) işlemlerini yönetir:
   - Haber değerlendirme için YZ'ye soru sorma
   - Facebook post metni üretme
-  - Görsel üretim promptu oluşturma
 
 YZ Sağlayıcı Zinciri (fallback):
   1. Google Gemini (ana)     → GEMINI_API_KEY  (2 model dener)
@@ -810,49 +809,3 @@ def generate_post_text(article: dict) -> str:
 
     log(f"✅ Post metni hazır ({len(post_text)} karakter)", "INFO")
     return post_text
-
-
-def generate_image_prompt(title: str, summary: str) -> str:
-    """
-    Haber başlığı ve özetinden İngilizce görsel üretim promptu oluşturur.
-
-    Üretilen prompt otomatik olarak karakter temizlemesinden geçer.
-
-    Args:
-        title:   Haber başlığı (Türkçe).
-        summary: Haber özeti (Türkçe).
-
-    Returns:
-        İngilizce görsel üretim promptu. Üretilemezse fallback prompt döner.
-    """
-    prompts_config: dict = load_config("prompts")
-    image_prompt_template: str = prompts_config.get("image_prompt_generator", "")
-
-    if not image_prompt_template:
-        log("⚠️ image_prompt_generator promptu bulunamadı", "WARNING")
-        return f"Professional automotive photography, {title[:50]}, cinematic lighting, 4k"
-
-    news_text: str = f"Başlık: {title}"
-    if summary:
-        news_text += f"\nÖzet: {summary[:300]}"
-
-    full_prompt: str = f"{image_prompt_template}\n\n{news_text}"
-
-    log("🎨 Görsel promptu üretiliyor...", "INFO")
-
-    image_prompt: str = ask_ai(full_prompt)
-
-    if not image_prompt:
-        log("⚠️ Görsel promptu üretilemedi, varsayılan kullanılıyor", "WARNING")
-        return "Professional automotive photography, modern car, cinematic lighting, 4k"
-
-    image_prompt = image_prompt.strip().strip('"').strip("'")
-
-    # ── Yabancı alfabe temizliği ──
-    image_prompt = _clean_non_turkish_chars(image_prompt)
-
-    if len(image_prompt) > 200:
-        image_prompt = image_prompt[:200]
-
-    log(f"✅ Görsel promptu: {image_prompt[:100]}...", "INFO")
-    return image_prompt

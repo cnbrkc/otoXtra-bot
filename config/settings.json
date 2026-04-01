@@ -2,13 +2,11 @@
   "posting": {
     "max_daily_posts": 9,
     "random_delay_max_minutes": 8,
-    "min_post_interval_hours": 0,
+    "min_post_interval_hours": 1,
     "skip_probability_percent": 10,
     "max_posts_per_run": 1
   },
   "images": {
-    "try_scrape_first": true,
-    "fallback_ai_generate": false,
     "add_logo": true,
     "logo_position": "bottom_right",
     "logo_opacity": 0.7,
