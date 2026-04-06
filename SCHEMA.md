@@ -338,6 +338,10 @@ is_similar_title(t1, t2)           → İki başlık %60+ benzer mi?
 get_last_check_time(data)           → Son kontrol zamanını döner
 get_posted_news()                   → data/posted_news.json okur
 save_posted_news(data)              → data/posted_news.json yazar
+generate_topic_fingerprint(title)    → Başlıktan normalize parmak izi üretir (YENİ)
+is_topic_already_posted(fp, data)    → Konu bazlı tekrar kontrolü (YENİ)
+is_already_posted()                  → URL + başlık + KONU (3 katmanlı, güncellendi)
+save_posted_news()                   → 30 günlük otomatik temizlik (güncellendi)
 ```
 
 **Bağımlılıklar:** core/logger.py, core/config_loader.py
@@ -779,10 +783,13 @@ BİTTİ ✅
 │ Google News URL çözme           │  ✅    │                         │
 │ Keyword filtresi                │  ✅    │                         │
 │ Zaman filtresi                  │  ✅    │ max 12 saat             │
-│ Tekrar kontrolü                 │  ✅    │                         │
+│ Tekrar kontrolü                 │  ✅    │ URL + başlık + KONU     │ ← güncellendi
+│ Konu parmak izi (hafıza)        │  ✅    │ 30 gün, topic_fp        │ ← YENİ
 │ Benzerlik kontrolü              │  ✅    │ %60 eşik                │
+│ Trend dedektörü                 │  ✅    │ 2→+5, 3→+10, 5→+15 puan │ ← YENİ
 │ YZ ile puanlama                 │  ✅    │ 6 kriter                │
 │ YZ yedekleme (4 servis)         │  ✅    │ Gemini→Groq→OR→HF       │
+│ Tazelik bonusu                  │  ✅    │ 0-2s:+7, 2-4s:+3        │
 │ Facebook paylaşımı              │  ✅    │ Graph API v11.0         │
 │ Görsel çekme (og:image)         │  ✅    │                         │
 │ Logo watermark                  │  ✅    │ sağ alt köşe            │
@@ -790,10 +797,10 @@ BİTTİ ✅
 │ Günlük limit                    │  ✅    │ max_daily_posts         │
 │ Sakin gün modu                  │  ✅    │ slow_day_score          │
 │ Rastgele bekleme                │  ✅    │ doğal görünsün diye     │
+│ Geçmiş temizliği                │  ✅    │ 30 günlük otomatik      │ ← YENİ
 │ Instagram paylaşımı             │  ❌    │ Planlanmadı             │
 │ Telegram bildirimi              │  ❌    │ Planlanmadı             │
 │ Twitter/X paylaşımı             │  ❌    │ Planlanmadı             │
-│ Haber özetleme                  │  ❌    │ Planlanmadı             │
 └─────────────────────────────────┴────────┴─────────────────────────┘
 ```
 
