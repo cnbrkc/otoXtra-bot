@@ -1,19 +1,19 @@
 """
-core/orchestrator.py — Ana Dirijан (v3)
+core/orchestrator.py — Ana Dirijан (v3.1 — Kaynak Sağlık Raporu)
 
-otoXtra Facebook Botunun ana kontrolcüsü.
-GitHub Actions tarafından "python core/orchestrator.py" komutuyla çalıştırılır.
-
-Tüm ajanları sırayla çalıştırır. Kendisi hiçbir iş yapmaz,
-sadece yönetir ve koordine eder.
+Değişiklikler v3.1:
+  - _log_source_health()      : fetch sonrası kaynak sağlık raporu loglar (YENİ)
+  - _log_stage_error()        : Başarısız aşamanın hata mesajını loglar (YENİ)
+  - try/finally               : _save_check_time() garantili çalışır (güncellendi)
+  - Başarısız durumda hangi aşamanın neden hata verdiği artık görünür
 
 Akış:
   1. Başlangıç kontrolleri (limit, atlama, aralık)
   2. Pipeline başlat
-  3. agent_fetcher → RSS çek, filtrele
-  4. agent_scorer  → YZ ile puanla, en iyisini seç
-  5. agent_writer  → YZ ile metin yaz
-  6. agent_image   → Görsel hazırla
+  3. agent_fetcher  → RSS çek, filtrele
+  4. agent_scorer   → YZ ile puanla, en iyisini seç
+  5. agent_writer   → YZ ile metin yaz
+  6. agent_image    → Görsel hazırla
   7. agent_publisher → Facebook'a paylaş
 
 TEST MODU:
@@ -32,6 +32,7 @@ Bağımsız çalıştırma:
 import os
 import sys
 import random
+import traceback
 from datetime import datetime, timedelta
 from typing import Optional
 
@@ -65,34 +66,21 @@ def _is_test_mode() -> bool:
 # ============================================================
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
-    """Günlük paylaşım limitinin dolup dolmadığını kontrol eder.
-
-    Returns:
-        bool: Devam edilebilirse True, limit dolmuşsa False.
-    """
+    """Günlük paylaşım limitinin dolup dolmadığını kontrol eder."""
     today_count = get_today_post_count(posted_data)
     max_daily = settings.get("posting", {}).get("max_daily_posts", 9)
 
     log(f"📊 Bugün {today_count}/{max_daily} post yapıldı")
 
     if today_count >= max_daily:
-        log(
-            f"🛑 Günlük limit doldu ({today_count}/{max_daily})",
-            "WARNING",
-        )
+        log(f"🛑 Günlük limit doldu ({today_count}/{max_daily})", "WARNING")
         return False
 
     return True
 
 
 def _check_random_skip(settings: dict, test_mode: bool) -> bool:
-    """Rastgele atlama kontrolü yapar.
-
-    TEST MODUNDA her zaman True döner (atlamaz).
-
-    Returns:
-        bool: Devam edilebilirse True, atlanacaksa False.
-    """
+    """Rastgele atlama kontrolü yapar. TEST MODUNDA her zaman True döner."""
     if test_mode:
         log("🧪 TEST MODU: Rastgele atlama devre dışı")
         return True
@@ -119,11 +107,7 @@ def _check_random_skip(settings: dict, test_mode: bool) -> bool:
 
 def _check_min_interval(settings: dict, posted_data: dict, test_mode: bool) -> bool:
     """Son paylaşımdan yeterli süre geçip geçmediğini kontrol eder.
-
-    TEST MODUNDA her zaman True döner (kontrol yapmaz).
-
-    Returns:
-        bool: Devam edilebilirse True, henüz erkense False.
+    TEST MODUNDA her zaman True döner.
     """
     if test_mode:
         log("🧪 TEST MODU: Minimum aralık kontrolü devre dışı")
@@ -200,7 +184,82 @@ def _random_delay(settings: dict, test_mode: bool) -> None:
 
 
 # ============================================================
-# 2. KAYIT GÜNCELLEME
+# 2. YARDIMCI — HATA VE SAĞLIK RAPORLAMA
+# ============================================================
+
+def _log_stage_error(stage_name: str) -> None:
+    """Başarısız bir aşamanın hata mesajını pipeline'dan okuyup loglar.
+
+    Ajan başarısız olduğunda neden başarısız olduğu görünür olsun diye.
+
+    Args:
+        stage_name: Hata veren aşama adı.
+    """
+    try:
+        stage = get_stage(stage_name)
+        error_msg = stage.get("error", "")
+        if error_msg:
+            log(f"  ↳ Hata nedeni: {error_msg}", "WARNING")
+    except Exception:
+        pass
+
+
+def _log_source_health(stage_name: str = "fetch") -> None:
+    """Fetch aşaması sonrası kaynak sağlık raporunu loglar.
+
+    source_health pipeline'da varsa her kaynağın durumunu özetler.
+    Haber bulunamadığında hangi kaynakların sorunlu olduğunu gösterir.
+
+    Args:
+        stage_name: Sağlık bilgisinin okunacağı aşama (varsayılan: "fetch").
+    """
+    try:
+        stage = get_stage(stage_name)
+        output = stage.get("output") or {}
+        source_health = output.get("source_health", {})
+
+        if not source_health:
+            return
+
+        ok_sources = [
+            name for name, h in source_health.items()
+            if h.get("status") == "ok"
+        ]
+        error_sources = [
+            name for name, h in source_health.items()
+            if h.get("status") == "error"
+        ]
+        empty_sources = [
+            name for name, h in source_health.items()
+            if h.get("status") == "no_entries"
+        ]
+        disabled_sources = [
+            name for name, h in source_health.items()
+            if h.get("status") == "disabled"
+        ]
+
+        log(
+            f"📡 Kaynak raporu: "
+            f"✅ {len(ok_sources)} OK | "
+            f"❌ {len(error_sources)} hata | "
+            f"⚠️ {len(empty_sources)} boş | "
+            f"⏭ {len(disabled_sources)} devre dışı"
+        )
+
+        # Sorunlu kaynakları ayrıca listele
+        for name in error_sources:
+            detail = source_health[name].get("detail", "")
+            log(f"  ❌ {name}: {detail}", "WARNING")
+
+        for name in empty_sources:
+            log(f"  ⚠️ {name}: Feed boş geldi", "WARNING")
+
+    except Exception as exc:
+        log(f"Kaynak raporu okunamadı: {exc}", "WARNING")
+
+
+# ============================================================
+# 3. KAYIT GÜNCELLEME
 # ============================================================
 
 def _save_check_time() -> None:
@@ -215,7 +274,7 @@ def _save_check_time() -> None:
 
 
 # ============================================================
-# 3. AJAN ÇALIŞTIRICI
+# 4. AJAN ÇALIŞTIRICI
 # ============================================================
 
 def _run_agent(agent_name: str, run_func) -> bool:
@@ -240,25 +299,21 @@ def _run_agent(agent_name: str, run_func) -> bool:
 
     except Exception as exc:
         log(f"❌ {agent_name} kritik hata: {exc}", "ERROR")
-
-        import traceback
         log(f"📋 Hata detayı:\n{traceback.format_exc()}", "ERROR")
         return False
 
 
 # ============================================================
-# 4. ANA ORKESTRASYON
+# 5. ANA ORKESTRASYON
 # ============================================================
 
 def main() -> None:
-    """otoXtra botunun ana orkestrasyon fonksiyonu.
-
-    Tüm ajanları sırayla çalıştırır.
-    Bir ajan başarısız olursa durur, sonraki ajanı çalıştırmaz.
-    """
+    """otoXtra botunun ana orkestrasyon fonksiyonu."""
     sep = "═" * 60
     test_mode = _is_test_mode()
 
+    # try/finally: _save_check_time() her senaryoda garantili çalışır
+    # return, exception, KeyboardInterrupt — hangisi olursa olsun
     try:
         # ── Başlık ──
         log(sep)
@@ -280,22 +335,15 @@ def main() -> None:
         # BAŞLANGIÇ KONTROLLERİ
         # ────────────────────────────────────────────
 
-        # Kontrol 1: Günlük limit
         if not _check_daily_limit(settings, posted_data):
-            _save_check_time()
             return
 
-        # Kontrol 2: Rastgele atlama
         if not _check_random_skip(settings, test_mode):
-            _save_check_time()
             return
 
-        # Kontrol 3: Minimum aralık
         if not _check_min_interval(settings, posted_data, test_mode):
-            _save_check_time()
             return
 
-        # Rastgele gecikme
         _random_delay(settings, test_mode)
 
         # ────────────────────────────────────────────
@@ -307,7 +355,7 @@ def main() -> None:
         log(f"🔄 Pipeline başlatıldı: {run_id}")
 
         # ────────────────────────────────────────────
-        # AJAN 1: FETCHER — Haber çek ve filtrele
+        # AJAN 1: FETCHER
         # ────────────────────────────────────────────
         log(sep)
         log("📰 AJAN 1: Haber Çekme (agent_fetcher)")
@@ -315,12 +363,16 @@ def main() -> None:
 
         from agents.agent_fetcher import run as fetcher_run
         if not _run_agent("agent_fetcher", fetcher_run):
+            _log_stage_error("fetch")      # ← YENİ: neden başarısız?
+            _log_source_health("fetch")    # ← YENİ: hangi kaynaklar sorunlu?
             log("Haber çekilemedi — işlem durduruluyor", "WARNING")
-            _save_check_time()
             return
 
+        # Başarılı olsa da kaynak sağlık özetini logla
+        _log_source_health("fetch")        # ← YENİ
+
         # ────────────────────────────────────────────
-        # AJAN 2: SCORER — YZ ile puanla
+        # AJAN 2: SCORER
         # ────────────────────────────────────────────
         log(sep)
         log("🔍 AJAN 2: Puanlama (agent_scorer)")
@@ -328,12 +380,12 @@ def main() -> None:
 
         from agents.agent_scorer import run as scorer_run
         if not _run_agent("agent_scorer", scorer_run):
+            _log_stage_error("score")      # ← YENİ
             log("Puanlama başarısız — işlem durduruluyor", "WARNING")
-            _save_check_time()
             return
 
         # ────────────────────────────────────────────
-        # AJAN 3: WRITER — YZ ile metin yaz
+        # AJAN 3: WRITER
         # ────────────────────────────────────────────
         log(sep)
         log("✍️  AJAN 3: İçerik Yazma (agent_writer)")
@@ -341,12 +393,12 @@ def main() -> None:
 
         from agents.agent_writer import run as writer_run
         if not _run_agent("agent_writer", writer_run):
+            _log_stage_error("write")      # ← YENİ
             log("Metin üretilemedi — işlem durduruluyor", "WARNING")
-            _save_check_time()
             return
 
         # ────────────────────────────────────────────
-        # AJAN 4: IMAGE — Görsel hazırla
+        # AJAN 4: IMAGE
         # ────────────────────────────────────────────
         log(sep)
         log("🖼️  AJAN 4: Görsel Hazırlama (agent_image)")
@@ -354,12 +406,12 @@ def main() -> None:
 
         from agents.agent_image import run as image_run
         if not _run_agent("agent_image", image_run):
+            _log_stage_error("image")      # ← YENİ
             log("Görsel hazırlanamadı — işlem durduruluyor", "WARNING")
-            _save_check_time()
             return
 
         # ────────────────────────────────────────────
-        # AJAN 5: PUBLISHER — Facebook'a paylaş
+        # AJAN 5: PUBLISHER
         # ────────────────────────────────────────────
         log(sep)
         log("📣 AJAN 5: Yayıncı (agent_publisher)")
@@ -382,24 +434,23 @@ def main() -> None:
             else:
                 log(f"🧪 TEST MODU TAMAMLANDI (gerçek paylaşım yapılmadı): {title[:60]}")
         else:
+            _log_stage_error("publish")    # ← YENİ
             log("😞 İşlem tamamlandı: BAŞARISIZ", "WARNING")
         log(sep)
 
-        _save_check_time()
-
     except KeyboardInterrupt:
         log("⚠️ Kullanıcı tarafından durduruldu (Ctrl+C)", "WARNING")
-        _save_check_time()
 
     except Exception as exc:
         log(sep, "ERROR")
         log(f"💥 KRİTİK HATA: {exc}", "ERROR")
-
-        import traceback
         log(f"📋 Hata detayı:\n{traceback.format_exc()}", "ERROR")
         log("ℹ️ Bot bir sonraki çalışmada tekrar deneyecek", "INFO")
         log(sep, "ERROR")
 
+    finally:
+        # Her senaryoda garantili çalışır:
+        # normal bitiş, return, exception, Ctrl+C — fark etmez
         _save_check_time()
 
 
