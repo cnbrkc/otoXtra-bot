@@ -1,1 +1,152 @@
-   {"run_id": null, "status": "idle", "stages": {}}
+{
+  "run_id": "2026-04-06-15:32",
+  "status": "completed",
+  "started_at": "2026-04-06T15:40:21.733035+03:00",
+  "updated_at": "2026-04-06T15:42:58.485875+03:00",
+  "stages": {
+    "fetch": {
+      "status": "done",
+      "output": {
+        "articles": [
+          {
+            "title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor",
+            "link": "https://www.donanimhaber.com/nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek--204100",
+            "published": "2026-04-06T12:03:11+00:00",
+            "summary": "Nvidia’nın yeni nöral sıkıştırma ve doku teknolojileri, VRAM kullanımını 6.5 GB’tan 970 MB’a düşürüyor. Nvidia, yeni dönemde yapay zekayı doğrudan oyun motorlarına entegre edecek.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204100/1400x788nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true
+          },
+          {
+            "title": "Ford: Renault temelli modeller asla \"sıradan\" olmayacak",
+            "link": "https://www.donanimhaber.com/ford-un-avrupa-daki-son-umudu-renault-ortakligi--204087",
+            "published": "2026-04-06T08:50:00+00:00",
+            "summary": "Ford Avrupa’da hızla güç kaybediyor. Pazar payı %2.8’e düşerken BYD ve SAIC Motor hızla yaklaşıyor. Gözler şimdi Renault ortaklığına çevrildi.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204087/1400x788ford-un-avrupa-daki-son-umudu-renault-ortakligi.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true
+          },
+          {
+            "title": "900 tonluk devasa elektrikli ekskavatör küresel pazara çıkıyor",
+            "link": "https://www.donanimhaber.com/900-tonluk-devasa-elektrikli-ekskavator-kuresel-pazara-cikiyor--204088",
+            "published": "2026-04-06T08:27:00+00:00",
+            "summary": "Komatsu, tarihinin en büyük elektrikli ekskavatörü PC9000-12’yi küresel pazara açıyor. PC9000-12, 80 ton taşıma kapasitesi ve 5.300 beygir gücüyle dikkat çekiyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204088/1400x788900-tonluk-devasa-elektrikli-ekskavator-kuresel-pazara-cikiyor.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true
+          },
+          {
+            "title": "Opel, Nisan ayına özel fırsatlarını tanıttı",
+            "link": "https://tr.motor1.com/news/792122/opel-nisan-2026-kampanyalari/",
+            "published": "2026-04-06T09:00:00+00:00",
+            "summary": "Tüm modellerde geçerli fırsatlar sizleri bekliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/RqM0gr/s3/opel-mokka-48v.jpg",
+            "source_name": "Motor1 TR",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true
+          },
+          {
+            "title": "Yeni Toyota RAV4, yılın ikinci yarısında Türkiye'de!",
+            "link": "https://tr.motor1.com/news/792120/yeni-toyota-rav4-satis-tarihi/",
+            "published": "2026-04-06T08:00:00+00:00",
+            "summary": "Geri sayım başladı.",
+            "image_url": "https://cdn.motor1.com/images/mgl/MkV09X/s3/toyota-rav4-gr-sport-2025.jpg",
+            "source_name": "Motor1 TR",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true
+          }
+        ],
+        "count": 5
+      },
+      "error": null,
+      "updated_at": "2026-04-06T15:40:27.494192+03:00"
+    },
+    "score": {
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor",
+          "link": "https://www.donanimhaber.com/nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek--204100",
+          "published": "2026-04-06T12:03:11+00:00",
+          "summary": "Nvidia’nın yeni nöral sıkıştırma ve doku teknolojileri, VRAM kullanımını 6.5 GB’tan 970 MB’a düşürüyor. Nvidia, yeni dönemde yapay zekayı doğrudan oyun motorlarına entegre edecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204100/1400x788nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "score": 83
+        },
+        "score": 83,
+        "title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor"
+      },
+      "error": null,
+      "updated_at": "2026-04-06T15:40:30.615688+03:00"
+    },
+    "write": {
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor",
+          "link": "https://www.donanimhaber.com/nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek--204100",
+          "published": "2026-04-06T12:03:11+00:00",
+          "summary": "Nvidia’nın yeni nöral sıkıştırma ve doku teknolojileri, VRAM kullanımını 6.5 GB’tan 970 MB’a düşürüyor. Nvidia, yeni dönemde yapay zekayı doğrudan oyun motorlarına entegre edecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204100/1400x788nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "score": 83,
+          "full_text": "Bu yaklaşımın merkezinde, klasik veri yapılarını daha küçük ve verimli “nöral temsillere” dönüştürmek yer alıyor. Nvidia’ya göre bu sayede hem GPU üzerindeki yük azalıyor hem de aynı donanım ile daha yüksek kaliteli sahneler mümkün hale geliyor. Daha küçük veri boyutları oyunların kurulum boyutlarının küçülmesi, güncellemelerin hafiflemesi ve indirme bant genişliği ihtiyacının azalması anlamına geliyor. Aynı zamanda geliştiricilere, mevcut donanım sınırları içinde daha yüksek kaliteli varlıklar kullanma imkanı tanıyor. Geleneksel yöntemde çok sayıda kanal üzerinden hesaplanan malzeme özellikleri NM ile küçük bir yapay sinir ağı tarafından çözümlenen “latent” bir temsile indirgeniyor. Bu sayede hem veri miktarı azalıyor hem de işlem süreci hızlanıyor. Paylaşılan bir örnekte, 19 kanallı bir malzeme yapısının 8 kanala indirildiği ve bunun sonucunda 1080p çözünürlükte1.4 kat ile 7.7 kat arasında daha hızlı render sürelerielde edildiği belirtiliyor. Artık hiç şüphe yok ki video oyun endüstrisi tamamıyla “yapay zeka tabanlı” oyunlara doğru ilerliyor. Nvidia’nın tüm gösterimleri şirketin “nöral işleme” olarak adlandırdığı daha geniş bir yol haritasının parçası. DLSS 5 gibi teknolojiler görüntü hattının sonunda devreye girerek nihai kareyi iyileştirirken yeni yaklaşım doğrudan oyun motorunun içine entegre edilen küçük yapay zeka modellerine dayanıyor. Dolayısıyla Nvidia sadece oyunlara “filtre” eklemek istemiyor. Şirket, dokuların çözülmesi, malzeme hesaplamaları ve bellek trafiğinin azaltılması gibi görevleri üstlenen birden fazla küçük ve görev odaklı modeli de kullanmak istiyor. Daha ileri senaryolar düşünüldüğünde, oyun motorundaki modeller ile DLSS’in iletişim kurması ve oluşturulan sahnelerin de çok daha gerçekçi hale gelmesi akıllara geliyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz"
+        },
+        "post_text": "🚀 Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor\n\nNvidia, yeni nöral sıkıştırma ve doku teknolojileri ile VRAM kullanımını 6.5 GB'tan 970 MB'a düşürmeyi başardı. Bu teknoloji, klasik veri yapılarını daha küçük ve verimli \"nöral temsillere\" dönüştürerek GPU üzerindeki yükü azaltıyor ve aynı donanım ile daha yüksek kaliteli sahneler mümkün hale geliyor.\n\nDaha küçük veri boyutları, oyunların kurulum boyutlarının küçülmesi, güncellemelerin hafiflemesi ve indirme bant genişliği ihtiyacının azalması anlamına geliyor. Aynı zamanda geliştiricilere, mevcut donanım sınırları içinde daha yüksek kaliteli varlıklar kullanma imkanı tanıyor.\n\nNvidia, tüm gösterilerini \"nöral işleme\" olarak adlandırdığı daha geniş bir yol haritasının parçası olarak sunuyor. DLSS 5 gibi teknolojiler görüntü hattının sonunda devreye girerek nihai kareyi iyileştirirken, yeni yaklaşım doğrudan oyun motorunun içine entegre edilen küçük yapay zeka modellerine dayanıyor.\n\nSizce bu teknoloji, oyun endüstrisinde nasıl bir değişiklik yaratacak? #Nvidia #YapayZeka #OyunEndüstrisi",
+        "post_text_length": 1075
+      },
+      "error": null,
+      "updated_at": "2026-04-06T15:40:33.421934+03:00"
+    },
+    "image": {
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor",
+          "link": "https://www.donanimhaber.com/nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek--204100",
+          "published": "2026-04-06T12:03:11+00:00",
+          "summary": "Nvidia’nın yeni nöral sıkıştırma ve doku teknolojileri, VRAM kullanımını 6.5 GB’tan 970 MB’a düşürüyor. Nvidia, yeni dönemde yapay zekayı doğrudan oyun motorlarına entegre edecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204100/1400x788nvidia-ekran-kartlarinda-bellek-kullanimi-dusurecek.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "score": 83,
+          "full_text": "Bu yaklaşımın merkezinde, klasik veri yapılarını daha küçük ve verimli “nöral temsillere” dönüştürmek yer alıyor. Nvidia’ya göre bu sayede hem GPU üzerindeki yük azalıyor hem de aynı donanım ile daha yüksek kaliteli sahneler mümkün hale geliyor. Daha küçük veri boyutları oyunların kurulum boyutlarının küçülmesi, güncellemelerin hafiflemesi ve indirme bant genişliği ihtiyacının azalması anlamına geliyor. Aynı zamanda geliştiricilere, mevcut donanım sınırları içinde daha yüksek kaliteli varlıklar kullanma imkanı tanıyor. Geleneksel yöntemde çok sayıda kanal üzerinden hesaplanan malzeme özellikleri NM ile küçük bir yapay sinir ağı tarafından çözümlenen “latent” bir temsile indirgeniyor. Bu sayede hem veri miktarı azalıyor hem de işlem süreci hızlanıyor. Paylaşılan bir örnekte, 19 kanallı bir malzeme yapısının 8 kanala indirildiği ve bunun sonucunda 1080p çözünürlükte1.4 kat ile 7.7 kat arasında daha hızlı render sürelerielde edildiği belirtiliyor. Artık hiç şüphe yok ki video oyun endüstrisi tamamıyla “yapay zeka tabanlı” oyunlara doğru ilerliyor. Nvidia’nın tüm gösterimleri şirketin “nöral işleme” olarak adlandırdığı daha geniş bir yol haritasının parçası. DLSS 5 gibi teknolojiler görüntü hattının sonunda devreye girerek nihai kareyi iyileştirirken yeni yaklaşım doğrudan oyun motorunun içine entegre edilen küçük yapay zeka modellerine dayanıyor. Dolayısıyla Nvidia sadece oyunlara “filtre” eklemek istemiyor. Şirket, dokuların çözülmesi, malzeme hesaplamaları ve bellek trafiğinin azaltılması gibi görevleri üstlenen birden fazla küçük ve görev odaklı modeli de kullanmak istiyor. Daha ileri senaryolar düşünüldüğünde, oyun motorundaki modeller ile DLSS’in iletişim kurması ve oluşturulan sahnelerin de çok daha gerçekçi hale gelmesi akıllara geliyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz",
+          "image_source": "rss_image"
+        },
+        "post_text": "🚀 Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor\n\nNvidia, yeni nöral sıkıştırma ve doku teknolojileri ile VRAM kullanımını 6.5 GB'tan 970 MB'a düşürmeyi başardı. Bu teknoloji, klasik veri yapılarını daha küçük ve verimli \"nöral temsillere\" dönüştürerek GPU üzerindeki yükü azaltıyor ve aynı donanım ile daha yüksek kaliteli sahneler mümkün hale geliyor.\n\nDaha küçük veri boyutları, oyunların kurulum boyutlarının küçülmesi, güncellemelerin hafiflemesi ve indirme bant genişliği ihtiyacının azalması anlamına geliyor. Aynı zamanda geliştiricilere, mevcut donanım sınırları içinde daha yüksek kaliteli varlıklar kullanma imkanı tanıyor.\n\nNvidia, tüm gösterilerini \"nöral işleme\" olarak adlandırdığı daha geniş bir yol haritasının parçası olarak sunuyor. DLSS 5 gibi teknolojiler görüntü hattının sonunda devreye girerek nihai kareyi iyileştirirken, yeni yaklaşım doğrudan oyun motorunun içine entegre edilen küçük yapay zeka modellerine dayanıyor.\n\nSizce bu teknoloji, oyun endüstrisinde nasıl bir değişiklik yaratacak? #Nvidia #YapayZeka #OyunEndüstrisi",
+        "image_path": "/tmp/otoxtra_rss_ijvojbdr.jpg",
+        "image_source": "rss_image"
+      },
+      "error": null,
+      "updated_at": "2026-04-06T15:40:34.592931+03:00"
+    },
+    "publish": {
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122161501142916499",
+        "article_title": "Nvidia, ekran kartlarında bellek kullanımını radikal ölçüde düşürüyor",
+        "image_source": "rss_image",
+        "test_mode": false
+      },
+      "error": null,
+      "updated_at": "2026-04-06T15:42:58.485875+03:00"
+    }
+  }
+}
