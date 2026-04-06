@@ -1,150 +1,56 @@
 {
-  "run_id": "2026-04-06-18:41",
-  "status": "completed",
-  "started_at": "2026-04-06T18:43:28.644914+03:00",
-  "updated_at": "2026-04-06T18:44:31.577475+03:00",
+  "run_id": "2026-04-06-22:49",
+  "status": "error",
+  "started_at": "2026-04-06T22:50:53.003246+03:00",
+  "updated_at": "2026-04-06T22:50:59.195249+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "STM’den Şahid-136 muadili Uzun Menzilli Kamikaze İHA geliyor",
-            "link": "https://www.donanimhaber.com/stm-den-sahid-136-muadili-uzun-menzilli-kamikaze-iha-geliyor--204106",
-            "published": "2026-04-06T15:33:00+00:00",
-            "summary": "STM, uzun menzilli kamikaze İHA’nın ilk test uçuş görüntülerini paylaştı. Sistemin düşük radar izi, uzun menzil ve hassas vuruş kabiliyetiyle ön plana çıkması bekleniyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204106/1400x788stm-den-sahid-136-muadili-uzun-menzilli-kamikaze-iha-geliyor.jpg",
+            "title": "Sovyet döneminin simge otomobili Volga geri döndü",
+            "link": "https://www.donanimhaber.com/sovyet-doneminin-simge-otomobili-volga-geri-dondu--204123",
+            "published": "2026-04-06T19:37:00+00:00",
+            "summary": "Efsane Sovyet markası Volga yeniden sahnede. Ancak K50 ve C50 modelleri tamamen yerli değil; Geely modellerini temel alıyor. Yeni dönem, Çin ortaklığıyla şekilleniyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204123/1400x788sovyet-doneminin-simge-otomobili-volga-geri-dondu.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "136-geliyor-kamikaze-menzilli-muadili-sahid-stm-uzun"
-          },
-          {
-            "title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-            "link": "https://www.log.com.tr/ford-otosan-sirketin-gerceklestirdigi-her-1-tllik-uretim-ekonominin-genelinde-toplam-294-tllik-bir-uretim-hacmini-tetikliyor/",
-            "published": "2026-04-06T14:04:28+00:00",
-            "summary": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.” diyen Ford Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer […] Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-06_17-02-56_siiWQ-660x371.jpg",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ekonominin-ford-genelinde-gerceklestirdigi-hacmini-lik-lik-otosan-sirketin-tetikliyor-toplam-uretim-uretim"
-          },
-          {
-            "title": "Manuel şanzımanı kurtarma görevi BMW'ye düştü",
-            "link": "https://tr.motor1.com/news/792140/bmw-manuel-kurtarma-gorevi/",
-            "published": "2026-04-06T14:00:00+00:00",
-            "summary": "Otomatikler daha fazla gücü kaldırabilse de, manuel şanzımanlar henüz ortadan kalkmıyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/eoOZy8/s3/2025-bmw-m2.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-dustu-gorevi-kurtarma-manuel-sanzimani"
+            "topic_fingerprint": "dondu-doneminin-geri-otomobili-simge-sovyet-volga"
           }
         ],
-        "count": 3
+        "count": 1
       },
       "error": null,
-      "updated_at": "2026-04-06T18:43:32.367024+03:00"
+      "updated_at": "2026-04-06T22:50:56.803077+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-          "link": "https://www.log.com.tr/ford-otosan-sirketin-gerceklestirdigi-her-1-tllik-uretim-ekonominin-genelinde-toplam-294-tllik-bir-uretim-hacmini-tetikliyor/",
-          "published": "2026-04-06T14:04:28+00:00",
-          "summary": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.” diyen Ford Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer […] Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-06_17-02-56_siiWQ-660x371.jpg",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "ekonominin-ford-genelinde-gerceklestirdigi-hacmini-lik-lik-otosan-sirketin-tetikliyor-toplam-uretim-uretim",
-          "score": 90
-        },
-        "score": 90,
-        "title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-        "trend_count": 1,
-        "trend_bonus": 0
-      },
-      "error": null,
-      "updated_at": "2026-04-06T18:43:34.772066+03:00"
+      "status": "error",
+      "output": null,
+      "error": "Eşik üstünde haber yok",
+      "updated_at": "2026-04-06T22:50:59.195249+03:00"
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-          "link": "https://www.log.com.tr/ford-otosan-sirketin-gerceklestirdigi-her-1-tllik-uretim-ekonominin-genelinde-toplam-294-tllik-bir-uretim-hacmini-tetikliyor/",
-          "published": "2026-04-06T14:04:28+00:00",
-          "summary": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.” diyen Ford Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer […] Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-06_17-02-56_siiWQ-660x371.jpg",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "ekonominin-ford-genelinde-gerceklestirdigi-hacmini-lik-lik-otosan-sirketin-tetikliyor-toplam-uretim-uretim",
-          "score": 90,
-          "full_text": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.”diyenFord Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer yaratma kapasitesi. Şirketin GSYH’ye yaptığı her 1 TL’lik doğrudan katkı, ekosistemindeki çarpan etkisiyle Türkiye ekonomisine 6,65 TL olarak geri dönüyor. Bu kaldıraç etkisi, Ford Otosan’ın sanayide verimliliği artıran ve milli geliri besleyen stratejik bir güç olduğunu gösteriyor. İstihdam tarafındaki veriler, Ford Otosan’ın istihdam üzerindeki etkisini de net bir şekilde ortaya koyuyor. Ford Otosan bünyesinde yaratılan her 1 kişilik istihdam, Türkiye genelinde 14,47 kişilik bir iş gücü talebine karşılık geliyor. Tedarik zinciri ve hizmet sektörleri dahil edildiğinde toplamda 277 bin kişilik bir istihdam ağına dokunan şirket, Türkiye’nin en büyük istihdam platformlarından biri konumunda bulunuyor.” ifadelerine yer verdi."
-        },
-        "post_text": "🚗 FORD OTOSAN TÜRKİYE EKONOMİSİNİ HAREKETLENDİRİYOR\n\nFord Otosan, Türkiye ekonomisine önemli katkılar sağlıyor. Şirketin üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olduğu belirtildi. Ford Otosan, Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiriyor ve yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmıyor.\n\nŞirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, birçok farklı sektörde üretimi büyüten bir \"motor\" vazifesi gördüğünü gösteriyor.\n\nFord Otosan’ın ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer yaratma kapasitesi. Şirketin GSYH’ye yaptığı her 1 TL’lik doğrudan katkı, ekosistemindeki çarpan etkisiyle Türkiye ekonomisine 6,65 TL olarak geri dönüyor.\n\nSizce Ford Otosan'ın Türkiye ekonomisine katkısı nasıl değerlendirilmeli? #FordOtosan #TürkiyeEkonomisi #OtomotivSanayi",
-        "post_text_length": 1055
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-06T18:43:36.611620+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-          "link": "https://www.log.com.tr/ford-otosan-sirketin-gerceklestirdigi-her-1-tllik-uretim-ekonominin-genelinde-toplam-294-tllik-bir-uretim-hacmini-tetikliyor/",
-          "published": "2026-04-06T14:04:28+00:00",
-          "summary": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.” diyen Ford Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer […] Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-06_17-02-56_siiWQ-660x371.jpg",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "ekonominin-ford-genelinde-gerceklestirdigi-hacmini-lik-lik-otosan-sirketin-tetikliyor-toplam-uretim-uretim",
-          "score": 90,
-          "full_text": "“Üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olmayı sürdürüyoruz.”diyenFord Otosan, Türkiye ekonomisine katkısına yönelik olarak yaptığı resmi paylaşımında, “Şirket, üretimden ihracata, mühendislikten yan sanayiye uzanan kapsamlı ekosistemiyle Türkiye ekonomisinin en güçlü sanayi oyuncuları arasında yer alıyor. Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiren Ford Otosan’ın yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmayarak tedarik zinciri, hizmet aldığı sektörler, çalışanları ve bayi ağı ve daha niceleri aracılığıyla ekonominin geneline yayılan çok boyutlu bir etki yaratıyor. Sanayideki üretim çarklarını hareketlendiren şirket, tedarik zinciri ve yan sanayi üzerindeki etkisiyle toplam üretimi katlayarak büyütüyor. Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu veri, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, lojistikten metale, yazılımdan enerjiye kadar onlarca farklı sektörde üretimi büyüten bir “motor” vazifesi gördüğünü kanıtlıyor. Şirketin ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer yaratma kapasitesi. Şirketin GSYH’ye yaptığı her 1 TL’lik doğrudan katkı, ekosistemindeki çarpan etkisiyle Türkiye ekonomisine 6,65 TL olarak geri dönüyor. Bu kaldıraç etkisi, Ford Otosan’ın sanayide verimliliği artıran ve milli geliri besleyen stratejik bir güç olduğunu gösteriyor. İstihdam tarafındaki veriler, Ford Otosan’ın istihdam üzerindeki etkisini de net bir şekilde ortaya koyuyor. Ford Otosan bünyesinde yaratılan her 1 kişilik istihdam, Türkiye genelinde 14,47 kişilik bir iş gücü talebine karşılık geliyor. Tedarik zinciri ve hizmet sektörleri dahil edildiğinde toplamda 277 bin kişilik bir istihdam ağına dokunan şirket, Türkiye’nin en büyük istihdam platformlarından biri konumunda bulunuyor.” ifadelerine yer verdi.",
-          "image_source": "rss_image"
-        },
-        "post_text": "🚗 FORD OTOSAN TÜRKİYE EKONOMİSİNİ HAREKETLENDİRİYOR\n\nFord Otosan, Türkiye ekonomisine önemli katkılar sağlıyor. Şirketin üretim kapasitesi, ihracat performansı ve yarattığı dev ekosistemle Türkiye ekonomisinin en stratejik aktörlerinden biri olduğu belirtildi. Ford Otosan, Türkiye otomotiv üretiminin yaklaşık 1/3’ünü gerçekleştiriyor ve yarattığı katma değer, yalnızca kendi faaliyetleriyle sınırlı kalmıyor.\n\nŞirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor. Bu, Ford Otosan’ın üretim gücünün sadece kendi fabrikalarıyla sınırlı kalmadığını, birçok farklı sektörde üretimi büyüten bir \"motor\" vazifesi gördüğünü gösteriyor.\n\nFord Otosan’ın ekonomiye sağladığı en büyük katkılardan biri de yüksek katma değer yaratma kapasitesi. Şirketin GSYH’ye yaptığı her 1 TL’lik doğrudan katkı, ekosistemindeki çarpan etkisiyle Türkiye ekonomisine 6,65 TL olarak geri dönüyor.\n\nSizce Ford Otosan'ın Türkiye ekonomisine katkısı nasıl değerlendirilmeli? #FordOtosan #TürkiyeEkonomisi #OtomotivSanayi",
-        "image_path": "/tmp/otoxtra_rss_dsqas0lk.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-06T18:43:36.750847+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122161521908916499",
-        "article_title": "Ford Otosan: “Şirketin gerçekleştirdiği her 1 TL’lik üretim, ekonominin genelinde toplam 2,94 TL’lik bir üretim hacmini tetikliyor.”",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-06T18:44:31.577475+03:00"
+      "updated_at": null
     }
   }
 }
