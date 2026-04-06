@@ -1,5 +1,5 @@
 """
-agents/agent_fetcher.py — Haber Çekme Ajanı (v5.3)
+agents/agent_fetcher.py — Haber Çekme Ajanı (v5.4 — Google News Kaldırıldı)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan ve sonuçları
@@ -7,12 +7,11 @@ pipeline.json'a yazan bağımsız ajan.
 
 Çalışma sırası:
   1. RSS feed'leri çek        → fetch_all_feeds()
-  2. Google News URL çöz      → resolve_google_news_url()
-  3. Keyword filtresi         → apply_keyword_filter()
-  4. Zaman filtresi           → apply_time_filter()
-  5. Tekrar kontrolü          → remove_already_posted()
-  6. Benzerlik tekilleştirme  → remove_duplicates()
-  7. pipeline.json'a yaz      → state_manager.set_stage()
+  2. Keyword filtresi         → apply_keyword_filter()
+  3. Zaman filtresi           → apply_time_filter()
+  4. Tekrar kontrolü          → remove_already_posted()
+  5. Benzerlik tekilleştirme  → remove_duplicates()
+  6. pipeline.json'a yaz      → state_manager.set_stage()
 
 Bağımsız çalıştırma:
     python agents/agent_fetcher.py
@@ -26,7 +25,6 @@ Diğer modüller bu ajanı şöyle çağırır:
 import os
 import re
 import sys
-import urllib.parse
 from calendar import timegm
 from datetime import datetime, timezone, timedelta
 
@@ -156,7 +154,6 @@ def _extract_image_from_entry(entry) -> str:
             ]
 
             for img_tag in img_tags:
-                # Standart ve lazy-load src attribute'ları
                 img_src = img_tag.get("src", "")
                 if not img_src or not img_src.startswith("http"):
                     img_src = img_tag.get("data-src", "")
@@ -170,7 +167,6 @@ def _extract_image_from_entry(entry) -> str:
                 if not img_src or not img_src.startswith("http"):
                     continue
 
-                # Çok küçük görselleri atla
                 try:
                     if int(img_tag.get("width", 999)) < 50:
                         continue
@@ -179,7 +175,6 @@ def _extract_image_from_entry(entry) -> str:
                 except (ValueError, TypeError):
                     pass
 
-                # Bilinen ikon/tracker URL'lerini atla
                 lower_src = img_src.lower()
                 if any(p in lower_src for p in skip_patterns):
                     continue
@@ -346,52 +341,7 @@ def fetch_all_feeds() -> list:
 
 
 # ============================================================
-# 4. GOOGLE NEWS URL ÇÖZME
-# ============================================================
-
-def resolve_google_news_url(url: str) -> str:
-    """Google News redirect URL'sini gerçek haber URL'sine çevirir."""
-    if not url:
-        return url
-
-    is_google = any(
-        domain in url
-        for domain in ["news.google.com", "google.com/rss", "google.com/news"]
-    )
-    if not is_google:
-        return url
-
-    try:
-        resp = requests.get(
-            url,
-            allow_redirects=True,
-            timeout=10,
-            headers={"User-Agent": _USER_AGENT},
-        )
-        resolved = resp.url
-        if not any(d in resolved for d in ["news.google.com", "google.com"]):
-            return resolved
-    except Exception:
-        pass
-
-    try:
-        parsed = urllib.parse.urlparse(url)
-        query_params = urllib.parse.parse_qs(parsed.query)
-        for param_name in ("url", "q"):
-            values = query_params.get(param_name, [])
-            for val in values:
-                if val.startswith("http") and "google.com" not in val:
-                    return val
-        if parsed.fragment and parsed.fragment.startswith("http"):
-            return parsed.fragment
-    except Exception:
-        pass
-
-    return url
-
-
-# ============================================================
-# 5. KEYWORD FİLTRESİ
+# 4. KEYWORD FİLTRESİ
 # ============================================================
 
 def apply_keyword_filter(articles: list) -> list:
@@ -430,7 +380,6 @@ def apply_keyword_filter(articles: list) -> list:
             f"{article.get('title', '')} {article.get('summary', '')}"
         )
 
-        # Hariç kelime kontrolü
         excluded = False
         for kw in exclude_lower:
             if kw in text:
@@ -441,7 +390,6 @@ def apply_keyword_filter(articles: list) -> list:
         if excluded:
             continue
 
-        # Dahil kelime kontrolü
         if include_lower:
             found = any(kw in text for kw in include_lower)
             if not found:
@@ -458,7 +406,7 @@ def apply_keyword_filter(articles: list) -> list:
 
 
 # ============================================================
-# 6. ZAMAN FİLTRESİ
+# 5. ZAMAN FİLTRESİ
 # ============================================================
 
 def apply_time_filter(articles: list) -> list:
@@ -477,10 +425,7 @@ def apply_time_filter(articles: list) -> list:
     if test_mode:
         cutoff_utc = max_cutoff_utc
         window_hours = max_age_hours
-        log(
-            f"[ZAMAN] 🧪 TEST MODU: son {max_age_hours} saat kullanılıyor",
-            "INFO",
-        )
+        log(f"[ZAMAN] 🧪 TEST MODU: son {max_age_hours} saat kullanılıyor")
     else:
         overlap_minutes = 30
         posted_data = get_posted_news()
@@ -527,7 +472,7 @@ def apply_time_filter(articles: list) -> list:
 
 
 # ============================================================
-# 7. TEKRAR KONTROLÜ
+# 6. TEKRAR KONTROLÜ
 # ============================================================
 
 def remove_already_posted(articles: list) -> list:
@@ -560,7 +505,7 @@ def remove_already_posted(articles: list) -> list:
 
 
 # ============================================================
-# 8. BENZERLİK TEKİLLEŞTİRME
+# 7. BENZERLİK TEKİLLEŞTİRME
 # ============================================================
 
 def remove_duplicates(articles: list) -> list:
@@ -607,7 +552,7 @@ def remove_duplicates(articles: list) -> list:
 
 
 # ============================================================
-# 9. TAM METİN ÇEKİCİ
+# 8. TAM METİN ÇEKİCİ
 # ============================================================
 
 def scrape_full_article(url: str) -> str:
@@ -708,7 +653,7 @@ def scrape_full_article(url: str) -> str:
 
 
 # ============================================================
-# 10. ANA FONKSİYON — HABER ÇEK + FİLTRELE
+# 9. ANA FONKSİYON — HABER ÇEK + FİLTRELE
 # ============================================================
 
 def fetch_and_filter_news() -> list:
@@ -732,43 +677,33 @@ def fetch_and_filter_news() -> list:
         log("Hiç haber çekilemedi", "WARNING")
         return []
 
-    # ADIM 2: Google News URL çöz
-    resolved_count = 0
-    for article in articles:
-        original = article.get("link", "")
-        resolved = resolve_google_news_url(original)
-        if resolved != original:
-            article["link"] = resolved
-            resolved_count += 1
-    log(f"[ADIM 2] {resolved_count} URL çözüldü")
-
-    # ADIM 3: Keyword filtresi
+    # ADIM 2: Keyword filtresi
     articles = apply_keyword_filter(articles)
-    log(f"[ADIM 3] {len(articles)} haber kaldı")
+    log(f"[ADIM 2] {len(articles)} haber kaldı")
     if not articles:
         log("Keyword filtresinden geçen haber yok", "WARNING")
         return []
 
-    # ADIM 4: Zaman filtresi
+    # ADIM 3: Zaman filtresi
     articles = apply_time_filter(articles)
-    log(f"[ADIM 4] {len(articles)} haber kaldı")
+    log(f"[ADIM 3] {len(articles)} haber kaldı")
     if not articles:
         log("Zaman filtresinden geçen haber yok", "WARNING")
         return []
 
-    # ADIM 5: Tekrar kontrolü
+    # ADIM 4: Tekrar kontrolü
     if test_mode:
-        log("[ADIM 5] 🧪 TEST MODU — tekrar kontrolü atlandı")
+        log("[ADIM 4] 🧪 TEST MODU — tekrar kontrolü atlandı")
     else:
         articles = remove_already_posted(articles)
-        log(f"[ADIM 5] {len(articles)} haber kaldı")
+        log(f"[ADIM 4] {len(articles)} haber kaldı")
         if not articles:
             log("Tüm haberler daha önce paylaşılmış", "WARNING")
             return []
 
-    # ADIM 6: Benzerlik tekilleştirme
+    # ADIM 5: Benzerlik tekilleştirme
     articles = remove_duplicates(articles)
-    log(f"[ADIM 6] {len(articles)} tekil haber")
+    log(f"[ADIM 5] {len(articles)} tekil haber")
 
     log("=" * 55)
     log(f"FİLTRELEME TAMAMLANDI — {len(articles)} haber aday")
@@ -778,7 +713,7 @@ def fetch_and_filter_news() -> list:
 
 
 # ============================================================
-# 11. AJAN GİRİŞ NOKTASI
+# 10. AJAN GİRİŞ NOKTASI
 # ============================================================
 
 def run() -> bool:
@@ -791,7 +726,6 @@ def run() -> bool:
     log("agent_fetcher başlıyor")
     log("─" * 55)
 
-    # Aşamayı çalışıyor işaretle
     set_stage("fetch", "running")
 
     try:
@@ -802,7 +736,6 @@ def run() -> bool:
             set_stage("fetch", "error", error="Haber bulunamadı")
             return False
 
-        # Pipeline'a yaz
         output = {
             "articles": articles,
             "count": len(articles),
@@ -825,11 +758,9 @@ def run() -> bool:
 if __name__ == "__main__":
     log("=== agent_fetcher.py modül testi başlıyor ===")
 
-    # Test için pipeline başlat
     from core.state_manager import init_pipeline
     init_pipeline("test-fetcher")
 
-    # Ajanı çalıştır
     success = run()
 
     if success:
