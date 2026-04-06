@@ -15,9 +15,13 @@
     "feed_image_height": 630
   },
   "news": {
-    "max_article_age_hours": 12,
+    "max_article_age_hours": 16,
     "max_articles_per_source": 10,
     "min_summary_length": 30
+  },
+  "duplicate_detection": {
+    "title_similarity_threshold": 0.80,
+    "keyword_overlap_threshold": 0.70
   },
   "ai": {
     "temperature": 0.7,

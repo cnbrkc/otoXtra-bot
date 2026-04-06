@@ -1,9 +1,12 @@
-# otoXtra News Bot — GitHub Actions Workflow (v4)
+# otoXtra News Bot — GitHub Actions Workflow (v5 — Modüler Ajan Sistemi)
 #
 # Günde 10 kez tetiklenir (Türkiye saatine göre 06:00-00:00 arası, 2 saat aralıkla).
 # Her tetiklemede 1 post paylaşılır (en viral haber seçilir).
 #
-# v4: HF_API_KEY secret ismi düzeltildi, OPENROUTER eklendi
+# v5 Değişiklikler:
+#   - python src/main.py → python -m core.orchestrator
+#   - queue/pipeline.json da git'e kaydediliyor
+#   - Test modu seçeneği korundu
 
 name: otoXtra Bot
 
@@ -14,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       test_mode:
-        description: 'Test modu (gecikmeler devre dışı)'
+        description: 'Test modu (gecikmeler ve gerçek paylaşım devre dışı)'
         required: false
         default: 'true'
         type: choice
@@ -29,27 +32,27 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
-    
+
     permissions:
       contents: write
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
-      
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-      
+
       - name: Run bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -59,16 +62,20 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
-        run: python src/main.py
-        
-      - name: Save posted news data
+        run: python -m core.orchestrator
+
+      - name: Save data
         run: |
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
+
           git add data/posted_news.json
+          git add queue/pipeline.json
+
           git diff --staged --quiet && echo "Değişiklik yok, commit atlanıyor" && exit 0
+
           git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
-          
+
           for i in 1 2 3; do
             git push && break
             echo "Push başarısız (deneme $i/3), pull --rebase yapılıyor..."
