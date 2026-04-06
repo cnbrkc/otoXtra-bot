@@ -1,31 +1,11 @@
 """
-agents/agent_fetcher.py — Haber Çekme Ajanı (v5.5 — Gelişmiş Duplicate Detection)
+agents/agent_fetcher.py — Haber Çekme Ajanı (v6.0 — Trend Dedektörü)
 
-otoXtra Facebook Botu için RSS feed'lerden haber çeken,
-ön filtreleme (keyword, zaman, tekrar) yapan ve sonuçları
-pipeline.json'a yazan bağımsız ajan.
-
-Çalışma sırası:
-  1. RSS feed'leri çek        → fetch_all_feeds()
-  2. Keyword filtresi         → apply_keyword_filter()
-  3. Zaman filtresi           → apply_time_filter()
-  4. Tekrar kontrolü          → remove_already_posted()
-  5. Benzerlik tekilleştirme  → remove_duplicates()  ← geliştirildi
-  6. pipeline.json'a yaz      → state_manager.set_stage()
-
-v5.5 Değişiklikler:
-  - remove_duplicates() → is_duplicate_article() kullanıyor
-    (URL eşleşme + başlık benzerliği + anahtar kelime örtüşmesi)
-  - Eşikler settings.json'dan okunuyor (duplicate_detection bölümü)
-  - Google News URL çözme kaldırıldı (v5.4)
-
-Bağımsız çalıştırma:
-    python agents/agent_fetcher.py
-    python agents/agent_fetcher.py --test
-
-Diğer modüller bu ajanı şöyle çağırır:
-    from agents.agent_fetcher import run
-    success = run()
+Değişiklikler v6.0:
+  - _detect_trends()   : Aynı konudan kaç kaynak geldiğini sayar (YENİ)
+  - Her habere "trend_count" ve "trend_bonus" alanları eklenir
+  - remove_duplicates() sonrasına eklendi — trend gruplama DEĞİL, sayma
+  - Grup hafızası: is_already_posted() artık konu parmak izi de kontrol eder
 """
 
 import os
@@ -47,8 +27,9 @@ from core.helpers import (
     get_posted_news,
     get_last_check_time,
     is_already_posted,
-    is_similar_title,
     is_duplicate_article,
+    generate_topic_fingerprint,
+    _fingerprint_similarity,
 )
 from core.state_manager import init_pipeline, set_stage, is_stage_done
 
@@ -64,6 +45,17 @@ _USER_AGENT = (
 )
 
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
+
+# Trend bonus eşikleri
+# Aynı konudan N kaynak geldiyse şu kadar bonus puan ekle
+_TREND_BONUSES = [
+    (5, 15),   # 5+ kaynak → +15 puan
+    (3, 10),   # 3-4 kaynak → +10 puan
+    (2,  5),   # 2 kaynak   → +5 puan
+]
+
+# Parmak izi benzerlik eşiği — trend gruplama için
+_TREND_FINGERPRINT_THRESHOLD = 0.70
 
 
 # ============================================================
@@ -325,6 +317,10 @@ def fetch_all_feeds() -> list:
                     "source_priority": feed_priority,
                     "language": feed_language,
                     "can_scrape_image": feed_can_scrape,
+                    # Trend alanları — _detect_trends() dolduracak
+                    "trend_count": 1,
+                    "trend_bonus": 0,
+                    "topic_fingerprint": generate_topic_fingerprint(title),
                 }
                 all_articles.append(article)
                 entry_count += 1
@@ -468,7 +464,16 @@ def apply_time_filter(articles: list) -> list:
 # ============================================================
 
 def remove_already_posted(articles: list) -> list:
-    """Daha önce paylaşılmış haberleri listeden çıkarır."""
+    """Daha önce paylaşılmış haberleri listeden çıkarır.
+
+    is_already_posted() artık 3 katmanlı kontrol yapıyor:
+      1. URL eşleşme
+      2. Başlık benzerliği
+      3. Konu parmak izi benzerliği  ← YENİ
+
+    Bu sayede "Tesla öldü" haberini A'dan paylaştıktan sonra
+    B ve C'deki aynı konu haberleri de engellenir.
+    """
     posted_data = get_posted_news()
     posts_list = posted_data.get("posts", [])
 
@@ -486,30 +491,30 @@ def remove_already_posted(articles: list) -> list:
             posted_data,
         ):
             duplicate_count += 1
+            log(
+                f"  [TEKRAR] ✗ '{article.get('title', '')[:55]}' "
+                f"— daha önce paylaşıldı (konu/URL/başlık eşleşti)"
+            )
         else:
             passed.append(article)
 
     log(
         f"[TEKRAR] {len(articles)} → {len(passed)} yeni, "
-        f"{duplicate_count} daha önce paylaşılmış"
+        f"{duplicate_count} daha önce paylaşılmış (konu hafızası dahil)"
     )
     return passed
 
 
 # ============================================================
-# 7. BENZERLİK TEKİLLEŞTİRME (GELİŞTİRİLDİ)
+# 7. BENZERLİK TEKİLLEŞTİRME
 # ============================================================
 
 def remove_duplicates(articles: list) -> list:
     """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer.
 
-    v5.5: is_duplicate_article() kullanıyor.
-    3 yöntemle kontrol eder:
-      1. URL eşleşme
-      2. Başlık benzerliği (settings'ten eşik)
-      3. Anahtar kelime örtüşmesi (settings'ten eşik)
-
     Her gruptan priority'si en yüksek kaynak seçilir.
+    Seçilmeyen haberler kaybedilir — trend sayımı için
+    bu fonksiyon ÖNCE çalışır, _detect_trends() SONRA.
     """
     if len(articles) <= 1:
         return articles
@@ -552,7 +557,94 @@ def remove_duplicates(articles: list) -> list:
 
 
 # ============================================================
-# 8. TAM METİN ÇEKİCİ
+# 8. TREND DEDEKTÖRܒ (YENİ)
+# ============================================================
+
+def _detect_trends(articles: list) -> list:
+    """Haberleri konu parmak izine göre gruplar, trend sayısını hesaplar.
+
+    remove_duplicates() SONRASI çalışır. Bu aşamada her haber
+    zaten tekil — yani aynı konudan sadece en iyi kaynak kaldı.
+    Ama biz kaç kaynaktan geldiğini BİLMEK istiyoruz.
+
+    Algoritma:
+      1. Ham haberler (tekilleştirilmeden önce) sayılır
+         → Bu bilgi fetch sırasında "source_count_per_topic" olarak tutulur
+         → Ama bu yapıda ham liste yok, bu yüzden farklı yaklaşım:
+      2. Tekilleştirilmiş liste içinde benzer parmak izli haberleri say
+         (Bu turda kaç haber bu konuyu işliyor)
+      3. "trend_count" = bu turda kaç tekil haberden bu konu geçti
+      4. Bonus puanı belirle
+
+    NOT: Bu fonksiyon kendi listesi içinde sayar.
+    Asıl güç is_already_posted()'ın konu hafızasında —
+    30 gün boyunca aynı konuyu engelliyor.
+
+    Args:
+        articles: remove_duplicates() sonrası tekilleştirilmiş liste.
+
+    Returns:
+        list: "trend_count" ve "trend_bonus" alanları güncellenmiş liste.
+    """
+    if not articles:
+        return articles
+
+    n = len(articles)
+    # Her haberin parmak izini al (zaten fetch'te üretildi ama güvenlik için)
+    fingerprints = []
+    for article in articles:
+        fp = article.get("topic_fingerprint", "")
+        if not fp:
+            fp = generate_topic_fingerprint(article.get("title", ""))
+            article["topic_fingerprint"] = fp
+        fingerprints.append(fp)
+
+    # Her haber için kaç diğer haberle benzer olduğunu say
+    # trend_count = 1 (kendisi) + benzer olanlar
+    trend_counts = [1] * n
+
+    for i in range(n):
+        for j in range(i + 1, n):
+            if not fingerprints[i] or not fingerprints[j]:
+                continue
+            similarity = _fingerprint_similarity(
+                fingerprints[i], fingerprints[j]
+            )
+            if similarity >= _TREND_FINGERPRINT_THRESHOLD:
+                trend_counts[i] += 1
+                trend_counts[j] += 1
+
+    # Bonus hesapla ve logla
+    trend_detected = 0
+    for i, article in enumerate(articles):
+        count = trend_counts[i]
+        article["trend_count"] = count
+
+        bonus = 0
+        for min_count, b in _TREND_BONUSES:
+            if count >= min_count:
+                bonus = b
+                break
+
+        article["trend_bonus"] = bonus
+
+        if count >= 2:
+            trend_detected += 1
+            log(
+                f"  🔥 TREND ({count} kaynak, +{bonus} puan): "
+                f"{article.get('title', '')[:55]}"
+            )
+
+    if trend_detected > 0:
+        log(f"[TREND] {trend_detected} trend konu tespit edildi")
+    else:
+        log("[TREND] Trend konu bulunamadı — tüm haberler tekil")
+
+    return articles
+
+
+# ============================================================
+# 9. TAM METİN ÇEKİCİ
 # ============================================================
 
 def scrape_full_article(url: str) -> str:
@@ -646,7 +738,7 @@ def scrape_full_article(url: str) -> str:
 
 
 # ============================================================
-# 9. ANA FONKSİYON
+# 10. ANA FONKSİYON
 # ============================================================
 
 def fetch_and_filter_news() -> list:
@@ -681,6 +773,9 @@ def fetch_and_filter_news() -> list:
         return []
 
     # ADIM 4: Tekrar kontrolü
+    # ÖNEMLİ: Bu adım artık konu bazlı da kontrol ediyor.
+    # "Tesla öldü" haberini daha önce paylaştıysak,
+    # farklı URL'den gelen "Tesla öldü" haberi burada elenir.
     if test_mode:
         log("[ADIM 4] 🧪 TEST MODU — tekrar kontrolü atlandı")
     else:
@@ -690,9 +785,15 @@ def fetch_and_filter_news() -> list:
             log("Tüm haberler daha önce paylaşılmış", "WARNING")
             return []
 
-    # ADIM 5: Benzerlik tekilleştirme (geliştirildi)
+    # ADIM 5: Benzerlik tekilleştirme
     articles = remove_duplicates(articles)
     log(f"[ADIM 5] {len(articles)} tekil haber")
+
+    # ADIM 6: Trend tespiti (YENİ)
+    # remove_duplicates() sonrası — kalan haberler arasında
+    # kaç tanesinin aynı konuyu işlediğini say
+    articles = _detect_trends(articles)
+    log(f"[ADIM 6] Trend analizi tamamlandı")
 
     log("=" * 55)
     log(f"FİLTRELEME TAMAMLANDI — {len(articles)} haber aday")
@@ -702,7 +803,7 @@ def fetch_and_filter_news() -> list:
 
 
 # ============================================================
-# 10. AJAN GİRİŞ NOKTASI
+# 11. AJAN GİRİŞ NOKTASI
 # ============================================================
 
 def run() -> bool:
@@ -759,10 +860,12 @@ if __name__ == "__main__":
 
         for i, article in enumerate(articles[:5], 1):
             log(f"\n  {i}. {article['title']}")
-            log(f"     Kaynak : {article['source_name']} ({article['source_priority']})")
-            log(f"     Tarih  : {article['published']}")
-            log(f"     URL    : {article['link'][:70]}...")
-            log(f"     Görsel : {article.get('image_url', 'YOK')[:70]}")
+            log(f"     Kaynak      : {article['source_name']} ({article['source_priority']})")
+            log(f"     Tarih       : {article['published']}")
+            log(f"     Trend       : {article.get('trend_count', 1)} kaynak "
+                f"(+{article.get('trend_bonus', 0)} puan)")
+            log(f"     Parmak izi  : {article.get('topic_fingerprint', 'YOK')[:50]}")
+            log(f"     URL         : {article['link'][:70]}...")
     else:
         log("Ajan başarısız oldu", "WARNING")
 
