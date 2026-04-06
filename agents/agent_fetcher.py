@@ -1,5 +1,5 @@
 """
-agents/agent_fetcher.py — Haber Çekme Ajanı (v5.4 — Google News Kaldırıldı)
+agents/agent_fetcher.py — Haber Çekme Ajanı (v5.5 — Gelişmiş Duplicate Detection)
 
 otoXtra Facebook Botu için RSS feed'lerden haber çeken,
 ön filtreleme (keyword, zaman, tekrar) yapan ve sonuçları
@@ -10,12 +10,18 @@ pipeline.json'a yazan bağımsız ajan.
   2. Keyword filtresi         → apply_keyword_filter()
   3. Zaman filtresi           → apply_time_filter()
   4. Tekrar kontrolü          → remove_already_posted()
-  5. Benzerlik tekilleştirme  → remove_duplicates()
+  5. Benzerlik tekilleştirme  → remove_duplicates()  ← geliştirildi
   6. pipeline.json'a yaz      → state_manager.set_stage()
+
+v5.5 Değişiklikler:
+  - remove_duplicates() → is_duplicate_article() kullanıyor
+    (URL eşleşme + başlık benzerliği + anahtar kelime örtüşmesi)
+  - Eşikler settings.json'dan okunuyor (duplicate_detection bölümü)
+  - Google News URL çözme kaldırıldı (v5.4)
 
 Bağımsız çalıştırma:
     python agents/agent_fetcher.py
-    python agents/agent_fetcher.py --test   ← test modu
+    python agents/agent_fetcher.py --test
 
 Diğer modüller bu ajanı şöyle çağırır:
     from agents.agent_fetcher import run
@@ -42,6 +48,7 @@ from core.helpers import (
     get_last_check_time,
     is_already_posted,
     is_similar_title,
+    is_duplicate_article,
 )
 from core.state_manager import init_pipeline, set_stage, is_stage_done
 
@@ -87,13 +94,9 @@ def _turkish_lower(text: str) -> str:
 # ============================================================
 
 def _extract_image_from_entry(entry) -> str:
-    """RSS entry'sinden görsel URL'sini çıkarır. 6 yöntem dener.
+    """RSS entry'sinden görsel URL'sini çıkarır. 6 yöntem dener."""
 
-    Returns:
-        str: Görsel URL'si. Bulunamazsa boş string.
-    """
-
-    # ── Yöntem 1: media:content ──
+    # Yöntem 1: media:content
     media_content = entry.get("media_content", [])
     if media_content:
         for media in media_content:
@@ -102,7 +105,7 @@ def _extract_image_from_entry(entry) -> str:
             if media_url and ("image" in media_type or media_type == ""):
                 return media_url
 
-    # ── Yöntem 2: media:thumbnail ──
+    # Yöntem 2: media:thumbnail
     media_thumbnail = entry.get("media_thumbnail", [])
     if media_thumbnail:
         for thumb in media_thumbnail:
@@ -110,7 +113,7 @@ def _extract_image_from_entry(entry) -> str:
             if thumb_url:
                 return thumb_url
 
-    # ── Yöntem 3: enclosure (type=image) ──
+    # Yöntem 3: enclosure (type=image)
     enclosures = entry.get("enclosures", [])
     if enclosures:
         for enc in enclosures:
@@ -119,7 +122,7 @@ def _extract_image_from_entry(entry) -> str:
             if enc_url and "image" in enc_type:
                 return enc_url
 
-    # ── Yöntem 3b: enclosure type olmadan (URL uzantısına bak) ──
+    # Yöntem 3b: enclosure URL uzantısına bak
     if enclosures:
         for enc in enclosures:
             enc_url = enc.get("href", "") or enc.get("url", "")
@@ -128,7 +131,7 @@ def _extract_image_from_entry(entry) -> str:
                 if any(ext in lower_url for ext in [".jpg", ".jpeg", ".png", ".webp"]):
                     return enc_url
 
-    # ── Yöntem 4: summary/description/content içindeki <img> ──
+    # Yöntem 4: HTML içindeki <img>
     html_content = ""
     html_content += entry.get("summary", "") or ""
     html_content += entry.get("description", "") or ""
@@ -184,7 +187,7 @@ def _extract_image_from_entry(entry) -> str:
         except Exception:
             pass
 
-    # ── Yöntem 5: image alanı (bazı feed'ler direkt verir) ──
+    # Yöntem 5: image alanı
     image_field = entry.get("image", {})
     if isinstance(image_field, dict):
         img_href = image_field.get("href", "") or image_field.get("url", "")
@@ -193,7 +196,7 @@ def _extract_image_from_entry(entry) -> str:
     elif isinstance(image_field, str) and image_field.startswith("http"):
         return image_field
 
-    # ── Yöntem 6: links alanında image type ──
+    # Yöntem 6: links alanında image type
     links = entry.get("links", [])
     for link_item in links:
         link_type = link_item.get("type", "")
@@ -241,11 +244,7 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
 # ============================================================
 
 def fetch_all_feeds() -> list:
-    """sources.json'daki tüm RSS feed'leri çeker.
-
-    Returns:
-        list[dict]: Çekilen haberlerin listesi.
-    """
+    """sources.json'daki tüm RSS feed'leri çeker."""
     sources_cfg = load_config("sources")
     feeds = sources_cfg.get("feeds", [])
 
@@ -366,10 +365,7 @@ def apply_keyword_filter(articles: list) -> list:
     include_lower = [_turkish_lower(kw) for kw in include_keywords]
     exclude_lower = [_turkish_lower(kw) for kw in exclude_keywords]
 
-    log(
-        f"[KEYWORD] {len(include_lower)} dahil, "
-        f"{len(exclude_lower)} hariç kelime"
-    )
+    log(f"[KEYWORD] {len(include_lower)} dahil, {len(exclude_lower)} hariç kelime")
 
     passed = []
     excluded_by_exclude = 0
@@ -410,11 +406,7 @@ def apply_keyword_filter(articles: list) -> list:
 # ============================================================
 
 def apply_time_filter(articles: list) -> list:
-    """Zaman filtresini uygular.
-
-    CANLI MOD : Akıllı zaman filtresi (last_check_time) + max_article_age_hours
-    TEST MODU : Sadece max_article_age_hours kullanılır
-    """
+    """Zaman filtresini uygular."""
     test_mode = _is_test_mode()
     settings = load_config("settings")
     max_age_hours = settings.get("news", {}).get("max_article_age_hours", 12)
@@ -505,11 +497,20 @@ def remove_already_posted(articles: list) -> list:
 
 
 # ============================================================
-# 7. BENZERLİK TEKİLLEŞTİRME
+# 7. BENZERLİK TEKİLLEŞTİRME (GELİŞTİRİLDİ)
 # ============================================================
 
 def remove_duplicates(articles: list) -> list:
-    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer."""
+    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer.
+
+    v5.5: is_duplicate_article() kullanıyor.
+    3 yöntemle kontrol eder:
+      1. URL eşleşme
+      2. Başlık benzerliği (settings'ten eşik)
+      3. Anahtar kelime örtüşmesi (settings'ten eşik)
+
+    Her gruptan priority'si en yüksek kaynak seçilir.
+    """
     if len(articles) <= 1:
         return articles
 
@@ -521,12 +522,11 @@ def remove_duplicates(articles: list) -> list:
             continue
         group = [articles[i]]
         used[i] = True
-        title_i = articles[i].get("title", "")
 
         for j in range(i + 1, len(articles)):
             if used[j]:
                 continue
-            if is_similar_title(title_i, articles[j].get("title", "")):
+            if is_duplicate_article(articles[i], articles[j]):
                 group.append(articles[j])
                 used[j] = True
 
@@ -556,14 +556,7 @@ def remove_duplicates(articles: list) -> list:
 # ============================================================
 
 def scrape_full_article(url: str) -> str:
-    """Haber URL'sine gidip tam metin içeriğini çeker.
-
-    Args:
-        url: Haberin tam URL'si.
-
-    Returns:
-        str: Düz metin içerik (max 5000 karakter). Hata varsa boş string.
-    """
+    """Haber URL'sine gidip tam metin içeriğini çeker."""
     if not url:
         return ""
 
@@ -653,15 +646,11 @@ def scrape_full_article(url: str) -> str:
 
 
 # ============================================================
-# 9. ANA FONKSİYON — HABER ÇEK + FİLTRELE
+# 9. ANA FONKSİYON
 # ============================================================
 
 def fetch_and_filter_news() -> list:
-    """Tüm kaynakları tarar, filtreler, tekil listeyi döner.
-
-    Returns:
-        list[dict]: Filtrelenmiş, tekil, paylaşıma aday haber listesi.
-    """
+    """Tüm kaynakları tarar, filtreler, tekil listeyi döner."""
     test_mode = _is_test_mode()
 
     log("=" * 55)
@@ -701,7 +690,7 @@ def fetch_and_filter_news() -> list:
             log("Tüm haberler daha önce paylaşılmış", "WARNING")
             return []
 
-    # ADIM 5: Benzerlik tekilleştirme
+    # ADIM 5: Benzerlik tekilleştirme (geliştirildi)
     articles = remove_duplicates(articles)
     log(f"[ADIM 5] {len(articles)} tekil haber")
 
@@ -717,11 +706,7 @@ def fetch_and_filter_news() -> list:
 # ============================================================
 
 def run() -> bool:
-    """Ajanı çalıştırır. orchestrator.py tarafından çağrılır.
-
-    Returns:
-        bool: Başarılıysa True, hata varsa False.
-    """
+    """Ajanı çalıştırır. orchestrator.py tarafından çağrılır."""
     log("─" * 55)
     log("agent_fetcher başlıyor")
     log("─" * 55)
@@ -752,7 +737,7 @@ def run() -> bool:
 
 
 # ============================================================
-# MODÜL TESTİ (doğrudan çalıştırılırsa)
+# MODÜL TESTİ
 # ============================================================
 
 if __name__ == "__main__":
