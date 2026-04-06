@@ -1,11 +1,11 @@
 """
-agents/agent_fetcher.py — Haber Çekme Ajanı (v6.0 — Trend Dedektörü)
+agents/agent_fetcher.py — Haber Çekme Ajanı (v7.0 — Kaynak Sağlık Kontrolü)
 
-Değişiklikler v6.0:
-  - _detect_trends()   : Aynı konudan kaç kaynak geldiğini sayar (YENİ)
-  - Her habere "trend_count" ve "trend_bonus" alanları eklenir
-  - remove_duplicates() sonrasına eklendi — trend gruplama DEĞİL, sayma
-  - Grup hafızası: is_already_posted() artık konu parmak izi de kontrol eder
+Değişiklikler v7.0:
+  - fetch_all_feeds() → her kaynak için sağlık kaydı tutar (YENİ)
+  - source_health dict'i pipeline.json output'una eklenir (YENİ)
+  - Hata türleri ayrıştırıldı: timeout / http_error / parse_error / no_entries
+  - run() → source_health özet logunu basar
 """
 
 import os
@@ -46,15 +46,12 @@ _USER_AGENT = (
 
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
 
-# Trend bonus eşikleri
-# Aynı konudan N kaynak geldiyse şu kadar bonus puan ekle
 _TREND_BONUSES = [
-    (5, 15),   # 5+ kaynak → +15 puan
-    (3, 10),   # 3-4 kaynak → +10 puan
-    (2,  5),   # 2 kaynak   → +5 puan
+    (5, 15),
+    (3, 10),
+    (2,  5),
 ]
 
-# Parmak izi benzerlik eşiği — trend gruplama için
 _TREND_FINGERPRINT_THRESHOLD = 0.70
 
 
@@ -63,7 +60,6 @@ _TREND_FINGERPRINT_THRESHOLD = 0.70
 # ============================================================
 
 def _is_test_mode() -> bool:
-    """TEST_MODE ortam değişkenini veya --test argümanını kontrol eder."""
     if os.environ.get("TEST_MODE", "false").lower() == "true":
         return True
     if "--test" in sys.argv:
@@ -76,7 +72,6 @@ def _is_test_mode() -> bool:
 # ============================================================
 
 def _turkish_lower(text: str) -> str:
-    """Türkçe karakterleri doğru küçük harfe çevirir."""
     text = text.replace("İ", "i").replace("I", "ı")
     return text.lower()
 
@@ -232,21 +227,42 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
 
 
 # ============================================================
-# 3. TÜM RSS FEED'LERİ ÇEK
+# 3. TÜM RSS FEED'LERİ ÇEK — SAĞLIK KONTROLÜ EKLENDİ
 # ============================================================
 
-def fetch_all_feeds() -> list:
-    """sources.json'daki tüm RSS feed'leri çeker."""
+def fetch_all_feeds() -> tuple:
+    """sources.json'daki tüm RSS feed'leri çeker.
+
+    v7.0: Her kaynak için sağlık kaydı tutar.
+
+    Returns:
+        tuple: (all_articles: list, source_health: dict)
+
+        source_health formatı:
+        {
+            "Donanımhaber": {
+                "status": "ok",          # "ok" / "error" / "disabled" / "no_entries"
+                "count": 50,             # Çekilen haber sayısı
+                "detail": ""             # Hata detayı (sadece error durumunda)
+            },
+            "Motor1 TR": {
+                "status": "error",
+                "count": 0,
+                "detail": "timeout after 30s"
+            }
+        }
+    """
     sources_cfg = load_config("sources")
     feeds = sources_cfg.get("feeds", [])
 
     if not feeds:
         log("sources.json'da hiç feed tanımlı değil!", "ERROR")
-        return []
+        return [], {}
 
     log(f"Toplam {len(feeds)} RSS kaynağı taranacak")
 
     all_articles = []
+    source_health = {}
     now_iso = get_turkey_now().isoformat()
 
     for feed_info in feeds:
@@ -257,23 +273,52 @@ def fetch_all_feeds() -> list:
         feed_can_scrape = feed_info.get("can_scrape_image", False)
         feed_enabled = feed_info.get("enabled", True)
 
+        # Devre dışı kaynak
         if not feed_enabled:
             log(f"  ⏭  {feed_name} — devre dışı, atlanıyor")
+            source_health[feed_name] = {
+                "status": "disabled",
+                "count": 0,
+                "detail": "Kaynak devre dışı (enabled: false)",
+            }
             continue
 
+        # URL boş
         if not feed_url:
             log(f"  ⚠  {feed_name} — URL boş, atlanıyor", "WARNING")
+            source_health[feed_name] = {
+                "status": "error",
+                "count": 0,
+                "detail": "URL boş",
+            }
             continue
 
+        # RSS çekme denemesi
         try:
             parsed_feed = feedparser.parse(feed_url)
 
+            # Feed parse hatası (bozo = bozuk feed)
             if parsed_feed.bozo and not parsed_feed.entries:
+                bozo_msg = str(parsed_feed.bozo_exception)[:120]
                 log(
-                    f"  ✗  {feed_name} — feed parse hatası: "
-                    f"{parsed_feed.bozo_exception}",
+                    f"  ✗  {feed_name} — feed parse hatası: {bozo_msg}",
                     "WARNING",
                 )
+                source_health[feed_name] = {
+                    "status": "error",
+                    "count": 0,
+                    "detail": f"parse_error: {bozo_msg}",
+                }
+                continue
+
+            # Feed geldi ama hiç entry yok
+            if not parsed_feed.entries:
+                log(f"  ⚠  {feed_name} — feed boş (0 entry)", "WARNING")
+                source_health[feed_name] = {
+                    "status": "no_entries",
+                    "count": 0,
+                    "detail": "Feed geldi ama haber bulunamadı",
+                }
                 continue
 
             entry_count = 0
@@ -317,7 +362,6 @@ def fetch_all_feeds() -> list:
                     "source_priority": feed_priority,
                     "language": feed_language,
                     "can_scrape_image": feed_can_scrape,
-                    # Trend alanları — _detect_trends() dolduracak
                     "trend_count": 1,
                     "trend_bonus": 0,
                     "topic_fingerprint": generate_topic_fingerprint(title),
@@ -327,16 +371,101 @@ def fetch_all_feeds() -> list:
 
             log(f"  ✓  {feed_name} — {entry_count} haber ({image_count} görselli)")
 
+            # Sağlık kaydı — başarılı
+            source_health[feed_name] = {
+                "status": "ok",
+                "count": entry_count,
+                "detail": "",
+            }
+
+        except requests.exceptions.Timeout:
+            msg = "Zaman aşımı (timeout)"
+            log(f"  ✗  {feed_name} — {msg}", "WARNING")
+            source_health[feed_name] = {
+                "status": "error",
+                "count": 0,
+                "detail": f"timeout",
+            }
+            continue
+
+        except requests.exceptions.ConnectionError:
+            msg = "Bağlantı hatası"
+            log(f"  ✗  {feed_name} — {msg}", "WARNING")
+            source_health[feed_name] = {
+                "status": "error",
+                "count": 0,
+                "detail": "connection_error",
+            }
+            continue
+
+        except requests.exceptions.HTTPError as exc:
+            msg = f"HTTP hatası: {exc}"
+            log(f"  ✗  {feed_name} — {msg}", "WARNING")
+            source_health[feed_name] = {
+                "status": "error",
+                "count": 0,
+                "detail": f"http_error: {str(exc)[:80]}",
+            }
+            continue
+
         except Exception as exc:
-            log(f"  ✗  {feed_name} — feed çekme hatası: {exc}", "ERROR")
+            msg = str(exc)[:120]
+            log(f"  ✗  {feed_name} — feed çekme hatası: {msg}", "ERROR")
+            source_health[feed_name] = {
+                "status": "error",
+                "count": 0,
+                "detail": f"unknown_error: {msg}",
+            }
             continue
 
     log(f"Toplam {len(all_articles)} ham haber çekildi")
-    return all_articles
+    return all_articles, source_health
 
 
 # ============================================================
-# 4. KEYWORD FİLTRESİ
+# 4. KAYNAK SAĞLIK ÖZETİ LOGLAMA
+# ============================================================
+
+def _log_source_health_summary(source_health: dict) -> None:
+    """Kaynak sağlık özetini log'a yazar.
+
+    Sadece sorunlu kaynakları vurgular.
+    Tüm kaynaklar sağlıklıysa kısa bir özet yazar.
+
+    Args:
+        source_health: fetch_all_feeds() tarafından döndürülen sağlık dict'i.
+    """
+    if not source_health:
+        return
+
+    total = len(source_health)
+    ok_count = sum(1 for v in source_health.values() if v["status"] == "ok")
+    error_count = sum(1 for v in source_health.values() if v["status"] == "error")
+    disabled_count = sum(1 for v in source_health.values() if v["status"] == "disabled")
+    no_entries_count = sum(1 for v in source_health.values() if v["status"] == "no_entries")
+
+    log(
+        f"[SAĞLIK] {total} kaynak: "
+        f"✅ {ok_count} OK | "
+        f"❌ {error_count} hata | "
+        f"⚠️ {no_entries_count} boş | "
+        f"⏭ {disabled_count} devre dışı"
+    )
+
+    # Sadece sorunluları detaylı logla
+    for name, health in source_health.items():
+        status = health["status"]
+        if status == "error":
+            log(
+                f"  ❌ {name}: {health.get('detail', 'bilinmeyen hata')}",
+                "WARNING",
+            )
+        elif status == "no_entries":
+            log(f"  ⚠️ {name}: Feed boş geldi", "WARNING")
+
+
+# ============================================================
+# 5. KEYWORD FİLTRESİ
 # ============================================================
 
 def apply_keyword_filter(articles: list) -> list:
@@ -398,7 +527,7 @@ def apply_keyword_filter(articles: list) -> list:
 
 
 # ============================================================
-# 5. ZAMAN FİLTRESİ
+# 6. ZAMAN FİLTRESİ
 # ============================================================
 
 def apply_time_filter(articles: list) -> list:
@@ -460,20 +589,11 @@ def apply_time_filter(articles: list) -> list:
 
 
 # ============================================================
-# 6. TEKRAR KONTROLÜ
+# 7. TEKRAR KONTROLÜ
 # ============================================================
 
 def remove_already_posted(articles: list) -> list:
-    """Daha önce paylaşılmış haberleri listeden çıkarır.
-
-    is_already_posted() artık 3 katmanlı kontrol yapıyor:
-      1. URL eşleşme
-      2. Başlık benzerliği
-      3. Konu parmak izi benzerliği  ← YENİ
-
-    Bu sayede "Tesla öldü" haberini A'dan paylaştıktan sonra
-    B ve C'deki aynı konu haberleri de engellenir.
-    """
+    """Daha önce paylaşılmış haberleri listeden çıkarır."""
     posted_data = get_posted_news()
     posts_list = posted_data.get("posts", [])
 
@@ -506,16 +626,11 @@ def remove_already_posted(articles: list) -> list:
 
 
 # ============================================================
-# 7. BENZERLİK TEKİLLEŞTİRME
+# 8. BENZERLİK TEKİLLEŞTİRME
 # ============================================================
 
 def remove_duplicates(articles: list) -> list:
-    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer.
-
-    Her gruptan priority'si en yüksek kaynak seçilir.
-    Seçilmeyen haberler kaybedilir — trend sayımı için
-    bu fonksiyon ÖNCE çalışır, _detect_trends() SONRA.
-    """
+    """Aynı/çok benzer haberleri gruplar, her gruptan en iyisini seçer."""
     if len(articles) <= 1:
         return articles
 
@@ -557,40 +672,15 @@ def remove_duplicates(articles: list) -> list:
 
 
 # ============================================================
-# 8. TREND DEDEKTÖRܒ (YENİ)
+# 9. TREND DEDEKTÖRܒ
 # ============================================================
 
 def _detect_trends(articles: list) -> list:
-    """Haberleri konu parmak izine göre gruplar, trend sayısını hesaplar.
-
-    remove_duplicates() SONRASI çalışır. Bu aşamada her haber
-    zaten tekil — yani aynı konudan sadece en iyi kaynak kaldı.
-    Ama biz kaç kaynaktan geldiğini BİLMEK istiyoruz.
-
-    Algoritma:
-      1. Ham haberler (tekilleştirilmeden önce) sayılır
-         → Bu bilgi fetch sırasında "source_count_per_topic" olarak tutulur
-         → Ama bu yapıda ham liste yok, bu yüzden farklı yaklaşım:
-      2. Tekilleştirilmiş liste içinde benzer parmak izli haberleri say
-         (Bu turda kaç haber bu konuyu işliyor)
-      3. "trend_count" = bu turda kaç tekil haberden bu konu geçti
-      4. Bonus puanı belirle
-
-    NOT: Bu fonksiyon kendi listesi içinde sayar.
-    Asıl güç is_already_posted()'ın konu hafızasında —
-    30 gün boyunca aynı konuyu engelliyor.
-
-    Args:
-        articles: remove_duplicates() sonrası tekilleştirilmiş liste.
-
-    Returns:
-        list: "trend_count" ve "trend_bonus" alanları güncellenmiş liste.
-    """
+    """Haberleri konu parmak izine göre gruplar, trend sayısını hesaplar."""
     if not articles:
         return articles
 
     n = len(articles)
-    # Her haberin parmak izini al (zaten fetch'te üretildi ama güvenlik için)
     fingerprints = []
     for article in articles:
         fp = article.get("topic_fingerprint", "")
@@ -599,8 +689,6 @@ def _detect_trends(articles: list) -> list:
             article["topic_fingerprint"] = fp
         fingerprints.append(fp)
 
-    # Her haber için kaç diğer haberle benzer olduğunu say
-    # trend_count = 1 (kendisi) + benzer olanlar
     trend_counts = [1] * n
 
     for i in range(n):
@@ -614,7 +702,6 @@ def _detect_trends(articles: list) -> list:
                 trend_counts[i] += 1
                 trend_counts[j] += 1
 
-    # Bonus hesapla ve logla
     trend_detected = 0
     for i, article in enumerate(articles):
         count = trend_counts[i]
@@ -644,7 +731,7 @@ def _detect_trends(articles: list) -> list:
 
 
 # ============================================================
-# 9. TAM METİN ÇEKİCİ
+# 10. TAM METİN ÇEKİCİ
 # ============================================================
 
 def scrape_full_article(url: str) -> str:
@@ -672,7 +759,6 @@ def scrape_full_article(url: str) -> str:
 
         full_text = ""
 
-        # Yöntem 1: Donanımhaber özel selector'ları
         if "donanimhaber.com" in url:
             selectors = [
                 {"class_": "article-content"},
@@ -693,7 +779,6 @@ def scrape_full_article(url: str) -> str:
                     if len(full_text) > 50:
                         break
 
-        # Yöntem 2: Genel <article> tag'i
         if not full_text or len(full_text) < 50:
             article_tag = soup.find("article")
             if article_tag:
@@ -705,7 +790,6 @@ def scrape_full_article(url: str) -> str:
                         if len(p.get_text(strip=True)) > 10
                     )
 
-        # Yöntem 3: Tüm anlamlı <p> tag'leri
         if not full_text or len(full_text) < 50:
             all_p = soup.find_all("p")
             full_text = " ".join(
@@ -738,11 +822,15 @@ def scrape_full_article(url: str) -> str:
 
 
 # ============================================================
-# 10. ANA FONKSİYON
+# 11. ANA FONKSİYON
 # ============================================================
 
-def fetch_and_filter_news() -> list:
-    """Tüm kaynakları tarar, filtreler, tekil listeyi döner."""
+def fetch_and_filter_news() -> tuple:
+    """Tüm kaynakları tarar, filtreler, tekil listeyi döner.
+
+    Returns:
+        tuple: (articles: list, source_health: dict)
+    """
     test_mode = _is_test_mode()
 
     log("=" * 55)
@@ -752,30 +840,31 @@ def fetch_and_filter_news() -> list:
     log("=" * 55)
 
     # ADIM 1: Feed çek
-    articles = fetch_all_feeds()
+    articles, source_health = fetch_all_feeds()
     log(f"[ADIM 1] {len(articles)} ham haber")
+
+    # Kaynak sağlık özeti
+    _log_source_health_summary(source_health)
+
     if not articles:
         log("Hiç haber çekilemedi", "WARNING")
-        return []
+        return [], source_health
 
     # ADIM 2: Keyword filtresi
     articles = apply_keyword_filter(articles)
     log(f"[ADIM 2] {len(articles)} haber kaldı")
     if not articles:
         log("Keyword filtresinden geçen haber yok", "WARNING")
-        return []
+        return [], source_health
 
     # ADIM 3: Zaman filtresi
     articles = apply_time_filter(articles)
     log(f"[ADIM 3] {len(articles)} haber kaldı")
     if not articles:
         log("Zaman filtresinden geçen haber yok", "WARNING")
-        return []
+        return [], source_health
 
     # ADIM 4: Tekrar kontrolü
-    # ÖNEMLİ: Bu adım artık konu bazlı da kontrol ediyor.
-    # "Tesla öldü" haberini daha önce paylaştıysak,
-    # farklı URL'den gelen "Tesla öldü" haberi burada elenir.
     if test_mode:
         log("[ADIM 4] 🧪 TEST MODU — tekrar kontrolü atlandı")
     else:
@@ -783,15 +872,13 @@ def fetch_and_filter_news() -> list:
         log(f"[ADIM 4] {len(articles)} haber kaldı")
         if not articles:
             log("Tüm haberler daha önce paylaşılmış", "WARNING")
-            return []
+            return [], source_health
 
     # ADIM 5: Benzerlik tekilleştirme
     articles = remove_duplicates(articles)
     log(f"[ADIM 5] {len(articles)} tekil haber")
 
-    # ADIM 6: Trend tespiti (YENİ)
-    # remove_duplicates() sonrası — kalan haberler arasında
-    # kaç tanesinin aynı konuyu işlediğini say
+    # ADIM 6: Trend tespiti
     articles = _detect_trends(articles)
     log(f"[ADIM 6] Trend analizi tamamlandı")
 
@@ -799,11 +886,11 @@ def fetch_and_filter_news() -> list:
     log(f"FİLTRELEME TAMAMLANDI — {len(articles)} haber aday")
     log("=" * 55)
 
-    return articles
+    return articles, source_health
 
 
 # ============================================================
-# 11. AJAN GİRİŞ NOKTASI
+# 12. AJAN GİRİŞ NOKTASI
 # ============================================================
 
 def run() -> bool:
@@ -815,16 +902,23 @@ def run() -> bool:
     set_stage("fetch", "running")
 
     try:
-        articles = fetch_and_filter_news()
+        articles, source_health = fetch_and_filter_news()
 
         if not articles:
             log("Paylaşıma aday haber bulunamadı", "WARNING")
-            set_stage("fetch", "error", error="Haber bulunamadı")
+            # Haber bulunamasa da source_health'i pipeline'a yaz
+            set_stage(
+                "fetch",
+                "error",
+                error="Haber bulunamadı",
+                output={"articles": [], "count": 0, "source_health": source_health},
+            )
             return False
 
         output = {
             "articles": articles,
             "count": len(articles),
+            "source_health": source_health,   # ← YENİ
         }
         set_stage("fetch", "done", output=output)
 
@@ -852,12 +946,32 @@ if __name__ == "__main__":
     if success:
         from core.state_manager import get_stage
         stage = get_stage("fetch")
-        articles = stage.get("output", {}).get("articles", [])
+        output = stage.get("output", {})
+        articles = output.get("articles", [])
+        source_health = output.get("source_health", {})
 
         log(f"\n{'─' * 50}")
         log(f"SONUÇ: {len(articles)} haber bulundu")
         log(f"{'─' * 50}")
 
+        # Kaynak sağlık özeti
+        log("\n📊 KAYNAK SAĞLIK RAPORU:")
+        for source_name, health in source_health.items():
+            status_icon = {
+                "ok": "✅",
+                "error": "❌",
+                "disabled": "⏭",
+                "no_entries": "⚠️",
+            }.get(health["status"], "❓")
+
+            detail = f" — {health['detail']}" if health.get("detail") else ""
+            log(
+                f"  {status_icon} {source_name}: "
+                f"{health['status']} ({health['count']} haber){detail}"
+            )
+
+        # İlk 5 haber
+        log(f"\n📰 İLK 5 HABER:")
         for i, article in enumerate(articles[:5], 1):
             log(f"\n  {i}. {article['title']}")
             log(f"     Kaynak      : {article['source_name']} ({article['source_priority']})")
