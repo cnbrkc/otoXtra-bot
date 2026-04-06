@@ -1,28 +1,12 @@
 """
-core/helpers.py — Genel Yardımcı Fonksiyonlar
+core/helpers.py — Genel Yardımcı Fonksiyonlar (v2.0 — Trend + Grup Hafızası)
 
-otoXtra Facebook Botu için tüm modüller tarafından kullanılan
-yardımcı fonksiyonları içerir.
-
-İçerdiği fonksiyonlar:
-  - get_turkey_now()        : Türkiye saatini döner
-  - get_today_str()         : Bugünün tarihini string olarak döner
-  - clean_html()            : HTML tag'lerini temizler
-  - is_similar_title()      : Başlık benzerliği kontrol eder (geliştirildi)
-  - is_duplicate_article()  : Çok boyutlu duplicate tespiti (YENİ)
-  - get_posted_news()       : Paylaşılmış haberler kaydını okur
-  - save_posted_news()      : Paylaşılmış haberler kaydını yazar
-  - is_already_posted()     : Haberin daha önce paylaşılıp paylaşılmadığını kontrol eder
-  - get_today_post_count()  : Bugün kaç post yapıldığını döner
-  - get_last_check_time()   : Son kontrol zamanını okur
-  - save_last_check_time()  : Son kontrol zamanını yazar
-  - random_delay()          : Rastgele süre bekler
-
-Kullanım:
-    from core.helpers import get_turkey_now, clean_html, get_posted_news
-
-YANLIŞ kullanım (YAPMA):
-    from src.utils import get_turkey_now
+Değişiklikler v2.0:
+  - generate_topic_fingerprint()  : Başlıktan normalize parmak izi üretir (YENİ)
+  - is_topic_already_posted()     : Konu bazlı tekrar kontrolü (YENİ)
+  - is_already_posted()           : URL + başlık + KONU kontrolü (güncellendi)
+  - save_posted_news()            : 30 günlük temizlik (güncellendi)
+  - Alan adı tutarsızlığı düzeltildi: hep "url" kullanılıyor
 """
 
 import os
@@ -67,7 +51,7 @@ def clean_html(html_text: str) -> str:
 
 
 # ============================================================
-# 3. BAŞLIK BENZERLİĞİ (GELİŞTİRİLDİ)
+# 3. BAŞLIK BENZERLİĞİ
 # ============================================================
 
 def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
@@ -75,14 +59,6 @@ def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
 
     Eşik değeri settings.json'dan okunur.
     Verilmezse settings'e bakar, o da yoksa 0.80 kullanır.
-
-    Args:
-        title1:    Birinci başlık.
-        title2:    İkinci başlık.
-        threshold: Benzerlik eşiği (0.0-1.0). None ise settings'ten okur.
-
-    Returns:
-        bool: Benzerlik oranı >= threshold ise True.
     """
     if not title1 or not title2:
         return False
@@ -104,23 +80,88 @@ def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
 
 
 # ============================================================
-# 4. ÇOK BOYUTLU DUPLICATE TESPİTİ (YENİ)
+# 4. KONU PARMAK İZİ (YENİ)
+# ============================================================
+
+# Türkçe stop word'ler — parmak izinden çıkarılır
+_STOP_WORDS = {
+    "bir", "bu", "şu", "ve", "ile", "için", "ama", "fakat",
+    "ancak", "veya", "ya", "de", "da", "ki", "mı", "mi",
+    "mu", "mü", "den", "dan", "ten", "tan", "nin", "nın",
+    "nun", "nün", "ın", "in", "un", "ün", "deki", "daki",
+    "teki", "taki", "gibi", "kadar", "daha", "çok",
+    "olan", "oldu", "olarak", "üzere", "sonra",
+    "önce", "göre", "karşı", "arasında", "içinde",
+    "yeni", "büyük", "küçük", "ilk", "son", "en",
+    "artık", "sadece", "bile", "her", "hiç", "tüm",
+    "çıktı", "geldi", "oldu", "edildi", "yapıldı",
+    "açıklandı", "duyuruldu", "tanıtıldı", "başladı",
+}
+
+
+def generate_topic_fingerprint(title: str) -> str:
+    """Haber başlığından normalize edilmiş konu parmak izi üretir.
+
+    Algoritma:
+      1. Türkçe karakterleri ASCII'ye çevir
+      2. Küçük harfe çevir
+      3. Sayıları ve harf-dışı karakterleri temizle
+      4. Stop word'leri çıkar
+      5. Min 3 karakter olan kelimeleri al
+      6. Sırala (sıra bağımsız karşılaştırma için)
+      7. "-" ile birleştir
+
+    Örnek:
+      "Tesla Model S ve Model X Türkiye'de sonlandı!"
+      → "model-model-sonlandi-tesla-turkiyede"
+
+    Args:
+        title: Haber başlığı.
+
+    Returns:
+        str: Normalize parmak izi. Başlık boşsa boş string.
+    """
+    if not title:
+        return ""
+
+    # Türkçe → ASCII dönüşüm tablosu
+    tr_map = str.maketrans(
+        "çğıöşüÇĞİÖŞÜ",
+        "cgiosucgiosu"
+    )
+
+    normalized = title.lower()
+    normalized = normalized.translate(tr_map)
+
+    # Sadece harf ve rakam bırak (boşlukları koru)
+    normalized = re.sub(r"[^a-z0-9\s]", " ", normalized)
+
+    # Kelimelere böl, filtrele
+    words = normalized.split()
+    keywords = sorted([
+        w for w in words
+        if len(w) >= 3 and w not in _STOP_WORDS
+    ])
+
+    return "-".join(keywords)
+
+
+def _fingerprint_similarity(fp1: str, fp2: str) -> float:
+    """İki parmak izinin benzerlik oranını döner (0.0-1.0)."""
+    if not fp1 or not fp2:
+        return 0.0
+    return difflib.SequenceMatcher(None, fp1, fp2).ratio()
+
+
+# ============================================================
+# 5. ÇOK BOYUTLU DUPLICATE TESPİTİ
 # ============================================================
 
 def _extract_domain(url: str) -> str:
-    """URL'den domain adını çıkarır.
-
-    Args:
-        url: Tam URL.
-
-    Returns:
-        str: Domain adı. Örnek: "donanimhaber.com"
-             Hata durumunda boş string.
-    """
+    """URL'den domain adını çıkarır."""
     try:
         parsed = urlparse(url)
         domain = parsed.netloc.lower()
-        # www. önekini kaldır
         if domain.startswith("www."):
             domain = domain[4:]
         return domain
@@ -129,35 +170,12 @@ def _extract_domain(url: str) -> str:
 
 
 def _extract_keywords_from_title(title: str, min_len: int = 4) -> set:
-    """Başlıktan anlamlı anahtar kelimeleri çıkarır.
-
-    Türkçe stop word'leri ve kısa kelimeleri filtreler.
-
-    Args:
-        title:   Haber başlığı.
-        min_len: Minimum kelime uzunluğu.
-
-    Returns:
-        set: Anlamlı kelimeler kümesi.
-    """
-    # Türkçe stop word'ler (anlamsız bağlaçlar, edatlar)
-    stop_words = {
-        "bir", "bu", "şu", "ve", "ile", "için", "ama", "fakat",
-        "ancak", "veya", "ya", "de", "da", "ki", "mı", "mi",
-        "mu", "mü", "den", "dan", "ten", "tan", "nin", "nın",
-        "nun", "nün", "ın", "in", "un", "ün", "deki", "daki",
-        "teki", "taki", "gibi", "kadar", "daha", "çok", "çok",
-        "olan", "olan", "oldu", "olarak", "üzere", "sonra",
-        "önce", "göre", "karşı", "arasında", "içinde",
-    }
-
-    # Sadece harf ve rakam bırak, küçük harfe çevir
+    """Başlıktan anlamlı anahtar kelimeleri çıkarır."""
     title_lower = title.replace("İ", "i").replace("I", "ı").lower()
     words = re.findall(r"[a-züğışçöa-z0-9]+", title_lower)
-
     return {
         w for w in words
-        if len(w) >= min_len and w not in stop_words
+        if len(w) >= min_len and w not in _STOP_WORDS
     }
 
 
@@ -165,30 +183,10 @@ def is_duplicate_article(article1: dict, article2: dict) -> bool:
     """İki haberin duplicate olup olmadığını çok boyutlu kontrol eder.
 
     3 yöntem sırayla uygulanır — biri True dönerse duplicate sayılır:
-
-    Yöntem 1 — URL Tam Eşleşme:
-        Aynı URL → kesin duplicate
-
-    Yöntem 2 — Domain + Başlık Benzerliği:
-        Aynı domain + %title_similarity_threshold benzer başlık
-        → muhtemelen aynı haber farklı bölümde
-
-    Yöntem 3 — Anahtar Kelime Örtüşmesi:
-        İki başlıktaki anlamlı kelimelerin %keyword_overlap_threshold'u
-        örtüşüyorsa → aynı konuyu işliyor, duplicate say
-
-    Eşikler settings.json'dan okunur:
-        settings.duplicate_detection.title_similarity_threshold  (varsayılan: 0.80)
-        settings.duplicate_detection.keyword_overlap_threshold   (varsayılan: 0.70)
-
-    Args:
-        article1: Birinci haber dict'i.
-        article2: İkinci haber dict'i.
-
-    Returns:
-        bool: Duplicate ise True.
+      1. URL tam eşleşme
+      2. Başlık benzerliği (settings'ten eşik)
+      3. Anahtar kelime örtüşmesi (settings'ten eşik)
     """
-    # Ayarları oku
     try:
         settings = load_config("settings")
         dup_settings = settings.get("duplicate_detection", {})
@@ -203,24 +201,21 @@ def is_duplicate_article(article1: dict, article2: dict) -> bool:
     title1 = article1.get("title", "")
     title2 = article2.get("title", "")
 
-    # ── Yöntem 1: URL tam eşleşme ──
+    # Yöntem 1: URL tam eşleşme
     if url1 and url2 and url1 == url2:
         return True
 
-    # ── Yöntem 2: Başlık benzerliği ──
+    # Yöntem 2: Başlık benzerliği
     if is_similar_title(title1, title2, threshold=title_threshold):
         return True
 
-    # ── Yöntem 3: Anahtar kelime örtüşmesi ──
+    # Yöntem 3: Anahtar kelime örtüşmesi
     if title1 and title2:
         keywords1 = _extract_keywords_from_title(title1)
         keywords2 = _extract_keywords_from_title(title2)
-
         if keywords1 and keywords2:
-            # Jaccard benzerliği: kesişim / birleşim
             intersection = keywords1 & keywords2
             union = keywords1 | keywords2
-
             if union:
                 overlap_ratio = len(intersection) / len(union)
                 if overlap_ratio >= keyword_threshold:
@@ -230,7 +225,7 @@ def is_duplicate_article(article1: dict, article2: dict) -> bool:
 
 
 # ============================================================
-# 5. PAYLAŞILMIŞ HABERLER KAYDI (OKUMA)
+# 6. PAYLAŞILMIŞ HABERLER KAYDI (OKUMA)
 # ============================================================
 
 def get_posted_news() -> dict:
@@ -251,46 +246,169 @@ def get_posted_news() -> dict:
 
 
 # ============================================================
-# 6. PAYLAŞILMIŞ HABERLER KAYDI (YAZMA)
+# 7. PAYLAŞILMIŞ HABERLER KAYDI (YAZMA) — 30 GÜNLÜK TEMİZLİK
 # ============================================================
 
+# Kaç günlük geçmiş tutulacak
+_HISTORY_DAYS = 30
+
+
 def save_posted_news(data: dict) -> bool:
-    """data/posted_news.json dosyasına yazar. Otomatik temizlik yapar."""
-    if "posts" in data and isinstance(data["posts"], list):
-        post_count = len(data["posts"])
-        if post_count > 500:
-            data["posts"] = data["posts"][-300:]
-            log(f"Eski kayıtlar temizlendi: {post_count} → 300")
+    """data/posted_news.json dosyasına yazar.
+
+    Temizlik kuralları (her kayıtta çalışır):
+      1. 30 günden eski kayıtlar silinir (tarih bazlı)
+      2. Hâlâ 500'den fazla kayıt varsa en eski 200'ü sil (güvenlik)
+      3. daily_counts'tan 30 günden eski tarihler temizlenir
+
+    Bu sayede:
+      - Dosya hiç şişmez
+      - 30 gün içindeki haberler asla yeniden paylaşılmaz
+      - Eski trend kayıtları bellekte yer tutmaz
+    """
+    posts = data.get("posts", [])
+    daily_counts = data.get("daily_counts", {})
+
+    now = get_turkey_now()
+    cutoff = now - timedelta(days=_HISTORY_DAYS)
+    cutoff_str = cutoff.isoformat()
+
+    original_count = len(posts)
+    cleaned_posts = []
+    old_count = 0
+
+    for post in posts:
+        posted_at = post.get("posted_at", "")
+        if not posted_at:
+            # Tarih yoksa tut (güvenli taraf)
+            cleaned_posts.append(post)
+            continue
+
+        try:
+            from dateutil import parser as dateutil_parser
+            post_dt = dateutil_parser.parse(posted_at)
+            if post_dt.tzinfo is None:
+                post_dt = post_dt.replace(tzinfo=timezone(timedelta(hours=3)))
+            if post_dt < cutoff:
+                old_count += 1
+            else:
+                cleaned_posts.append(post)
+        except Exception:
+            # Parse hatası → tut
+            cleaned_posts.append(post)
+
+    # Güvenlik: hâlâ 500+ varsa en eski 200'ü at
+    if len(cleaned_posts) > 500:
+        removed_extra = len(cleaned_posts) - 300
+        cleaned_posts = cleaned_posts[-300:]
+        log(f"⚠️ Güvenlik temizliği: {removed_extra} ek kayıt silindi")
+
+    # daily_counts temizliği: 30 günden eski tarihleri sil
+    cutoff_date_str = cutoff.strftime("%Y-%m-%d")
+    cleaned_daily = {
+        date: count
+        for date, count in daily_counts.items()
+        if date >= cutoff_date_str
+    }
+
+    data["posts"] = cleaned_posts
+    data["daily_counts"] = cleaned_daily
+
+    if old_count > 0:
+        log(
+            f"🧹 Temizlik: {original_count} → {len(cleaned_posts)} kayıt "
+            f"({old_count} adet 30+ günlük kayıt silindi)"
+        )
 
     filepath = os.path.join(get_project_root(), "data", "posted_news.json")
     return save_json(filepath, data)
 
 
 # ============================================================
-# 7. TEKRAR KONTROL
+# 8. TEKRAR KONTROL — URL + BAŞLIK + KONU
 # ============================================================
 
-def is_already_posted(url: str, title: str, posted_data: dict) -> bool:
-    """Haberin daha önce paylaşılıp paylaşılmadığını kontrol eder.
+def is_topic_already_posted(
+    fingerprint: str,
+    posted_data: dict,
+    similarity_threshold: float = 0.75,
+) -> bool:
+    """Konu parmak izine göre daha önce paylaşılıp paylaşılmadığını kontrol eder.
 
-    URL eşleşmesi veya başlık benzerliği (%80+) ile kontrol eder.
+    Parmak izi benzerliği >= similarity_threshold ise "bu konu paylaşıldı" sayar.
+    Bu sayede farklı URL ve başlıkla gelen ama aynı konuyu işleyen haberler
+    engellenir.
+
+    Args:
+        fingerprint:          generate_topic_fingerprint() ile üretilen iz.
+        posted_data:          get_posted_news() çıktısı.
+        similarity_threshold: Benzerlik eşiği (varsayılan 0.75).
+
+    Returns:
+        bool: Konu daha önce paylaşıldıysa True.
     """
+    if not fingerprint:
+        return False
+
     posts = posted_data.get("posts", [])
 
     for post in posts:
-        posted_url = post.get("url", "")
-        if posted_url and url and posted_url == url:
-            return True
+        posted_fp = post.get("topic_fingerprint", "")
+        if not posted_fp:
+            continue
 
-        posted_title = post.get("title", "")
-        if is_similar_title(title, posted_title):
+        similarity = _fingerprint_similarity(fingerprint, posted_fp)
+        if similarity >= similarity_threshold:
             return True
 
     return False
 
 
+def is_already_posted(url: str, title: str, posted_data: dict) -> bool:
+    """Haberin daha önce paylaşılıp paylaşılmadığını kontrol eder.
+
+    3 katmanlı kontrol:
+      1. URL tam eşleşme (url veya original_url alanları)
+      2. Başlık benzerliği (%80+)
+      3. Konu parmak izi benzerliği (%75+)  ← YENİ
+
+    Args:
+        url:         Haberin URL'si.
+        title:       Haberin başlığı.
+        posted_data: get_posted_news() çıktısı.
+
+    Returns:
+        bool: Daha önce paylaşıldıysa True.
+    """
+    posts = posted_data.get("posts", [])
+
+    # Yeni haberin parmak izi
+    fingerprint = generate_topic_fingerprint(title)
+
+    for post in posts:
+        # Katman 1: URL eşleşme
+        # "url" ve "original_url" her ikisini de kontrol et (eski/yeni format)
+        posted_url = post.get("url", "") or post.get("original_url", "")
+        if posted_url and url and posted_url == url:
+            return True
+
+        # Katman 2: Başlık benzerliği
+        posted_title = post.get("title", "")
+        if is_similar_title(title, posted_title):
+            return True
+
+        # Katman 3: Konu parmak izi
+        posted_fp = post.get("topic_fingerprint", "")
+        if posted_fp and fingerprint:
+            similarity = _fingerprint_similarity(fingerprint, posted_fp)
+            if similarity >= 0.75:
+                return True
+
+    return False
+
+
 # ============================================================
-# 8. GÜNLÜK POST SAYISI
+# 9. GÜNLÜK POST SAYISI
 # ============================================================
 
 def get_today_post_count(posted_data: dict) -> int:
@@ -301,7 +419,7 @@ def get_today_post_count(posted_data: dict) -> int:
 
 
 # ============================================================
-# 9. AKILLI ZAMAN FİLTRESİ
+# 10. AKILLI ZAMAN FİLTRESİ
 # ============================================================
 
 def get_last_check_time(posted_data: dict) -> datetime:
@@ -349,7 +467,7 @@ def save_last_check_time(posted_data: dict) -> None:
 
 
 # ============================================================
-# 10. RASTGELE GECİKME
+# 11. RASTGELE GECİKME
 # ============================================================
 
 def random_delay(max_minutes: int) -> None:
@@ -376,7 +494,25 @@ if __name__ == "__main__":
     log(f"Türkiye saati: {now.strftime('%Y-%m-%d %H:%M:%S')}")
     log(f"Bugün: {get_today_str()}")
 
+    # Parmak izi testleri
+    log("\n--- Parmak İzi Testleri ---")
+    titles = [
+        "Tesla Model S ve Model X Türkiye'de sonlandı!",
+        "Tesla'nın Model S ve Model X üretimi resmen durdu",
+        "BMW 5 Serisi yeni model tanıtıldı",
+    ]
+    fps = []
+    for t in titles:
+        fp = generate_topic_fingerprint(t)
+        log(f"  '{t[:50]}'")
+        log(f"  → '{fp}'")
+        fps.append(fp)
+
+    log(f"\nBenzerlik (Tesla1 vs Tesla2): {_fingerprint_similarity(fps[0], fps[1]):.2f}  → ~0.75+ olmalı")
+    log(f"Benzerlik (Tesla1 vs BMW):   {_fingerprint_similarity(fps[0], fps[2]):.2f}  → düşük olmalı")
+
     # Başlık benzerliği testleri
+    log("\n--- Başlık Benzerliği Testleri ---")
     t1 = "Yeni Toyota Corolla Türkiye'de Satışa Sunuldu"
     t2 = "Yeni Toyota Corolla Türkiye'de satışa sunuldu!"
     t3 = "BMW 3 Serisi Makyajlandı"
@@ -384,6 +520,7 @@ if __name__ == "__main__":
     log(f"Benzerlik (t1 vs t3): {is_similar_title(t1, t3)}  → False olmalı")
 
     # Duplicate tespiti testleri
+    log("\n--- Duplicate Tespiti Testleri ---")
     a1 = {
         "title": "Tesla Model 3 Türkiye fiyatı açıklandı",
         "link": "https://donanimhaber.com/tesla-model-3-fiyat",
@@ -396,20 +533,36 @@ if __name__ == "__main__":
         "title": "BMW 5 Serisi yeni model tanıtıldı",
         "link": "https://motor1.com/bmw-5-serisi",
     }
+    log(f"Duplicate (Tesla vs Tesla): {is_duplicate_article(a1, a2)}  → True olmalı")
+    log(f"Duplicate (Tesla vs BMW):   {is_duplicate_article(a1, a3)}  → False olmalı")
 
-    log(f"\nDuplicate testi (Tesla vs Tesla): {is_duplicate_article(a1, a2)}  → True olmalı")
-    log(f"Duplicate testi (Tesla vs BMW):   {is_duplicate_article(a1, a3)}  → False olmalı")
-
-    # Keyword çıkarma testi
-    keywords = _extract_keywords_from_title("Tesla Model 3 Türkiye fiyatı açıklandı")
-    log(f"\nKeyword çıkarma: {keywords}")
-
-    # HTML temizleme
-    html_sample = "<p>Bu bir <b>test</b> metnidir.</p>"
-    log(f"\nHTML temizleme: '{clean_html(html_sample)}'")
+    # Konu bazlı tekrar kontrol
+    log("\n--- Konu Bazlı Tekrar Kontrol ---")
+    fake_posted = {
+        "posts": [
+            {
+                "title": "Tesla Model S ve X üretimi durdu",
+                "url": "https://site-a.com/tesla-s-x",
+                "topic_fingerprint": generate_topic_fingerprint(
+                    "Tesla Model S ve X üretimi durdu"
+                ),
+                "posted_at": now.isoformat(),
+            }
+        ],
+        "daily_counts": {},
+    }
+    new_title = "Bir dönemin sonu: Tesla Model S ve Model X sonlandı"
+    new_fp = generate_topic_fingerprint(new_title)
+    log(f"Yeni haber FP: '{new_fp}'")
+    result = is_already_posted(
+        "https://site-b.com/tesla-farkli-link",
+        new_title,
+        fake_posted,
+    )
+    log(f"Konu daha önce paylaşıldı mı: {result}  → True olmalı")
 
     posted = get_posted_news()
     log(f"\nPaylaşılmış haber: {len(posted.get('posts', []))}")
     log(f"Bugünkü post: {get_today_post_count(posted)}")
 
-    log("=== core/helpers.py modül testi tamamlandı ===")
+    log("\n=== core/helpers.py modül testi tamamlandı ===")
