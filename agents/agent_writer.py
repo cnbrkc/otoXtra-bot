@@ -139,23 +139,20 @@ def _try_gemini(
         log("Gemini API key bulunamadi", "WARNING")
         return None
 
-    # Parametreler disaridan karisik gelebilecegi icin tip guvenli normalize et
     cfg_model = ai_cfg.get("gemini_model", "gemini-2.0-flash")
     cfg_temp = ai_cfg.get("temperature", 0.7)
     cfg_max_tokens = ai_cfg.get("max_output_tokens", 2048)
 
-    # model_name sayi geldiyse aslinda temperature olabilir
+    # Geriye donuk uyumluluk: parametreler karisik gelebilir.
     if isinstance(model_name, (int, float)) and temperature is None:
         temperature = float(model_name)
         model_name = None
 
-    # temperature string model geldiyse model olarak kullan
     if isinstance(temperature, str) and model_name is None:
         model_name = temperature
         temperature = None
 
-    # max_tokens string model geldiyse model olarak kullan
-    if isinstance(max_tokens, str) and model_name is None:
+    if isinstance(max_tokens, str) and model_name is None and not max_tokens.isdigit():
         model_name = max_tokens
         max_tokens = None
 
@@ -166,19 +163,18 @@ def _try_gemini(
     except Exception:
         chosen_temp = 0.7
 
-    try:
-        raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
-if isinstance(raw_max, str):
-    raw_max = raw_max.strip()
-    if raw_max.isdigit():
-        chosen_max_tokens = int(raw_max)
+    raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
+    if isinstance(raw_max, str):
+        raw_max = raw_max.strip()
+        if raw_max.isdigit():
+            chosen_max_tokens = int(raw_max)
+        else:
+            chosen_max_tokens = 2048
     else:
-        chosen_max_tokens = 2048
-else:
-    try:
-        chosen_max_tokens = int(raw_max)
-    except Exception:
-        chosen_max_tokens = 2048
+        try:
+            chosen_max_tokens = int(raw_max)
+        except Exception:
+            chosen_max_tokens = 2048
 
     try:
         import google.generativeai as genai
