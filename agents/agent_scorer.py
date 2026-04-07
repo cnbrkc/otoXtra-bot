@@ -2,7 +2,6 @@
 Viral scoring agent.
 """
 
-import sys
 import time
 from typing import Optional
 from datetime import timedelta
@@ -16,6 +15,7 @@ from core.helpers import (
     get_turkey_now,
 )
 from core.state_manager import get_stage, set_stage, init_pipeline
+from core.ai_client import ask_ai, parse_ai_json
 
 
 BATCH_SIZE: int = 20
@@ -25,60 +25,6 @@ CROSS_VALIDATE_THRESHOLD: float = 0.4
 
 FRESHNESS_TIERS = [(2, 7), (4, 3), (12, 0)]
 FRESHNESS_OLD_MALUS: int = -5
-
-
-def _ask_ai(prompt: str) -> str:
-    try:
-        try:
-            from agents.agent_writer import ask_ai
-
-            return ask_ai(prompt)
-        except ImportError:
-            pass
-        try:
-            sys.path.insert(0, "src")
-            from ai_processor import ask_ai as old_ask_ai
-
-            return old_ask_ai(prompt)
-        except ImportError:
-            pass
-        log("AI module not found", "ERROR")
-        return ""
-    except Exception as exc:
-        log(f"AI call error: {exc}", "ERROR")
-        return ""
-
-
-def _parse_ai_json(response: str):
-    try:
-        try:
-            from agents.agent_writer import parse_ai_json
-
-            return parse_ai_json(response)
-        except ImportError:
-            pass
-        try:
-            sys.path.insert(0, "src")
-            from ai_processor import parse_ai_json as old_parse
-
-            return old_parse(response)
-        except ImportError:
-            pass
-
-        import json
-        import re
-
-        cleaned = response.strip()
-        match = re.search(r"\[[\s\S]*?\]", cleaned)
-        if match:
-            return json.loads(match.group())
-        match = re.search(r"\{[\s\S]*?\}", cleaned)
-        if match:
-            return json.loads(match.group())
-        return None
-    except Exception:
-        return None
-
 
 def _format_articles_numbered(articles: list) -> str:
     lines = []
@@ -170,7 +116,7 @@ def run_viral_scoring(articles: list) -> list:
 
     for batch_num, batch in enumerate(batches, start=1):
         numbered_text = _format_articles_numbered(batch)
-        ai_response = _ask_ai(f"{scorer_prompt}\n\n{numbered_text}")
+        ai_response = ask_ai(f"{scorer_prompt}\n\n{numbered_text}")
         if not ai_response:
             for article in batch:
                 article["score"] = UNSCORED_DEFAULT
@@ -179,7 +125,7 @@ def run_viral_scoring(articles: list) -> list:
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
 
-        ai_results = _parse_ai_json(ai_response)
+        ai_results = parse_ai_json(ai_response)
         if not ai_results or not isinstance(ai_results, list):
             for article in batch:
                 article["score"] = UNSCORED_DEFAULT
