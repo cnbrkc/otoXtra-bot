@@ -68,7 +68,9 @@ otoXtra-bot/
 │   └── logo.png                           → Görsellere eklenen watermark
 │
 └── 📁 .github/workflows/
-    └── bot.yml                            → Zamanlayıcı (2 saatte bir)
+    └── bot.yml                             → Zamanlayıcı (08:00-22:00 arası akıllı cron)
+
+
 ```
 
 ---
@@ -76,7 +78,7 @@ otoXtra-bot/
 ## 🔄 VERİ AKIŞI
 
 ```
-bot.yml (2 saatte bir tetikler)
+bot.yml (gün içinde akıllı zamanlamayla tetikler)
     └─→ core/orchestrator.py başlar
             │
             ├─→ [1] agents/agent_fetcher.py
