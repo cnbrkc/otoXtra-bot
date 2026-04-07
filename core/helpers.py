@@ -124,7 +124,7 @@ def _extract_domain(url: str) -> str:
 
 def _extract_keywords_from_title(title: str, min_len: int = 4) -> set:
     title_lower = title.replace("I", "i").lower()
-    words = re.findall(r"[a-zA-Z0-9çğıöşüÇĞİÖŞÜ]+", title)
+    words = re.findall(r"[a-z0-9]+", title_lower)
     return {w for w in words if len(w) >= min_len and _normalize_token(w) not in _NORMALIZED_STOP_WORDS}
 
 
