@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-04-07-12:04",
-  "status": "error",
-  "started_at": "2026-04-07T12:04:37.104799+03:00",
-  "updated_at": "2026-04-07T12:04:41.953846+03:00",
+  "run_id": "2026-04-07-12:07",
+  "status": "completed",
+  "started_at": "2026-04-07T12:07:14.754016+03:00",
+  "updated_at": "2026-04-07T12:07:24.317355+03:00",
   "stages": {
     "fetch": {
       "status": "done",
@@ -123,31 +123,97 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-07T12:04:41.943314+03:00"
+      "updated_at": "2026-04-07T12:07:18.402795+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold",
-      "updated_at": "2026-04-07T12:04:41.953846+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı",
+          "link": "https://www.log.com.tr/mercedes-benz-tekerleklerin-yerinden-cikma-riski-nedeniyle-bazi-elektrikli-g-class-modellerini-geri-cagirdi/",
+          "published": "2026-04-07T07:29:41+00:00",
+          "summary": "Mercedes-Benz, ABD’de satılan 3.734 adet elektrikli G-Class modelini (tam adıyla Mercedes-Benz G580 with EQ Technology) geri çağırıyor. National Highway Traffic Safety Administration (NHTSA) tarafından duyurulan geri çağırmanın nedeni, elektrikli araçların yüksek ağırlığı ve torkuna uygun hale getirilmemiş tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riskini doğurması olarak açıklanıyor. Bu şaşırtan sorunun yeni üretilen araçlar için giderildiğini belirten marka, son dönemde “kalite” konusunda çok sayıda eleştiriyle gündeme geliyor. Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-07_10-25-02_STcUd-660x371.jpg",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "bazi-benz-cagirdi-cikma-class-elektrikli-geri-mercedes-modellerini-nedeniyle-riski-tekerleklerin-yerinden",
+          "score": 85
+        },
+        "score": 85,
+        "title": "Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı",
+        "trend_count": 1,
+        "trend_bonus": 0
+      },
+      "error": null,
+      "updated_at": "2026-04-07T12:07:21.192159+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı",
+          "link": "https://www.log.com.tr/mercedes-benz-tekerleklerin-yerinden-cikma-riski-nedeniyle-bazi-elektrikli-g-class-modellerini-geri-cagirdi/",
+          "published": "2026-04-07T07:29:41+00:00",
+          "summary": "Mercedes-Benz, ABD’de satılan 3.734 adet elektrikli G-Class modelini (tam adıyla Mercedes-Benz G580 with EQ Technology) geri çağırıyor. National Highway Traffic Safety Administration (NHTSA) tarafından duyurulan geri çağırmanın nedeni, elektrikli araçların yüksek ağırlığı ve torkuna uygun hale getirilmemiş tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riskini doğurması olarak açıklanıyor. Bu şaşırtan sorunun yeni üretilen araçlar için giderildiğini belirten marka, son dönemde “kalite” konusunda çok sayıda eleştiriyle gündeme geliyor. Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-07_10-25-02_STcUd-660x371.jpg",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "bazi-benz-cagirdi-cikma-class-elektrikli-geri-mercedes-modellerini-nedeniyle-riski-tekerleklerin-yerinden",
+          "score": 85,
+          "full_text": "Mercedes-Benz, ABD’de satılan 3.734 adet elektrikli G-Class modelini (tam adıyla Mercedes-Benz G580 with EQ Technology) geriçağırıyor. National Highway Traffic Safety Administration (NHTSA) tarafından duyurulan geri çağırmanın nedeni, elektrikli araçların yüksek ağırlığı ve torkuna uygun hale getirilmemiş tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riskini doğurması olarak açıklanıyor. Bu şaşırtan sorunun yeni üretilen araçlar için giderildiğini belirten marka, son dönemde “kalite” konusunda çok sayıda eleştiriyle gündemegeliyor."
+        },
+        "post_text": "🚨 ELEKTRİKLİ G-CLASS GERİ ÇAĞRILDIYOR!\n\nMercedes-Benz, ABD'de satılan 3.734 adet elektrikli G-Class modelini geri çağırıyor. Sebep, tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riski. Marka, yeni üretilen araçlar için bu sorunun giderildiğini söylüyor.\n\nPeki, bu geri çağırma işlemleri nasıl olacak? Sizce bu sorun nasıl önlenebilir?",
+        "post_text_length": 358
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-07T12:07:24.184516+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı",
+          "link": "https://www.log.com.tr/mercedes-benz-tekerleklerin-yerinden-cikma-riski-nedeniyle-bazi-elektrikli-g-class-modellerini-geri-cagirdi/",
+          "published": "2026-04-07T07:29:41+00:00",
+          "summary": "Mercedes-Benz, ABD’de satılan 3.734 adet elektrikli G-Class modelini (tam adıyla Mercedes-Benz G580 with EQ Technology) geri çağırıyor. National Highway Traffic Safety Administration (NHTSA) tarafından duyurulan geri çağırmanın nedeni, elektrikli araçların yüksek ağırlığı ve torkuna uygun hale getirilmemiş tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riskini doğurması olarak açıklanıyor. Bu şaşırtan sorunun yeni üretilen araçlar için giderildiğini belirten marka, son dönemde “kalite” konusunda çok sayıda eleştiriyle gündeme geliyor. Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-07_10-25-02_STcUd-660x371.jpg",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "bazi-benz-cagirdi-cikma-class-elektrikli-geri-mercedes-modellerini-nedeniyle-riski-tekerleklerin-yerinden",
+          "score": 85,
+          "full_text": "Mercedes-Benz, ABD’de satılan 3.734 adet elektrikli G-Class modelini (tam adıyla Mercedes-Benz G580 with EQ Technology) geriçağırıyor. National Highway Traffic Safety Administration (NHTSA) tarafından duyurulan geri çağırmanın nedeni, elektrikli araçların yüksek ağırlığı ve torkuna uygun hale getirilmemiş tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riskini doğurması olarak açıklanıyor. Bu şaşırtan sorunun yeni üretilen araçlar için giderildiğini belirten marka, son dönemde “kalite” konusunda çok sayıda eleştiriyle gündemegeliyor.",
+          "image_source": "rss_image"
+        },
+        "post_text": "🚨 ELEKTRİKLİ G-CLASS GERİ ÇAĞRILDIYOR!\n\nMercedes-Benz, ABD'de satılan 3.734 adet elektrikli G-Class modelini geri çağırıyor. Sebep, tekerlek bijonlarının zamanla gevşeyerek tekerleklerin yerinden çıkma riski. Marka, yeni üretilen araçlar için bu sorunun giderildiğini söylüyor.\n\nPeki, bu geri çağırma işlemleri nasıl olacak? Sizce bu sorun nasıl önlenebilir?",
+        "image_path": "/tmp/otoxtra_rss_5p283ikk.jpg",
+        "image_source": "rss_image"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-07T12:07:24.311407+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "test_000000000_111111111",
+        "article_title": "Mercedes-Benz, tekerleklerin yerinden çıkma riski nedeniyle bazı elektrikli G-Class modellerini geri çağırdı",
+        "image_source": "rss_image",
+        "test_mode": true
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-07T12:07:24.317355+03:00"
     }
   }
 }
