@@ -123,103 +123,78 @@ def _clean_non_turkish_chars(text: str) -> str:
 
 def _try_gemini(
     prompt: str,
-    temperature: float,
-    max_tokens: int,
-    model_name: str,
-) -> Optional[str]:
-    """Google Gemini API ile metin üretir.
+    model_name: str = None,
+    temperature: float = None,
+    max_tokens: int = None,
+):
+    settings = load_config("settings")
+    ai_cfg = settings.get("ai", {}) if isinstance(settings, dict) else {}
 
-    İlk model başarısızsa gemini-1.5-flash'ı dener.
-    429 hatasında bekleme süresi parse edilerek retry yapılır.
-    """
-    api_key = os.environ.get("GEMINI_API_KEY", "")
-    if not api_key:
-        log("GEMINI_API_KEY bulunamadı, Gemini atlanıyor", "INFO")
+    if not ai_cfg.get("enable_gemini", True):
+        log("Gemini ayarlardan kapali, atlaniyor", "INFO")
         return None
 
-    models_to_try = [model_name]
-    if model_name != "gemini-1.5-flash":
-        models_to_try.append("gemini-1.5-flash")
+    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    if not api_key:
+        log("Gemini API key bulunamadi", "WARNING")
+        return None
+
+    cfg_model = ai_cfg.get("gemini_model", "gemini-2.5-flash-lite")
+    cfg_temp = ai_cfg.get("temperature", 0.7)
+    cfg_max_tokens = ai_cfg.get("max_output_tokens", 2048)
+
+    chosen_model = cfg_model
+    if isinstance(model_name, str) and model_name.strip():
+        chosen_model = model_name.strip()
+
+    # temperature: sadece sayiya donusebiliyorsa kullan, sonra [0.0, 2.0] araligina sabitle
+    raw_temp = temperature if temperature is not None else cfg_temp
+    try:
+        chosen_temp = float(raw_temp)
+    except Exception:
+        chosen_temp = 0.7
+    if chosen_temp < 0.0:
+        chosen_temp = 0.0
+    if chosen_temp > 2.0:
+        chosen_temp = 2.0
+
+    # max tokens: sadece pozitif int kabul et
+    raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
+    try:
+        chosen_max_tokens = int(raw_max)
+    except Exception:
+        chosen_max_tokens = 2048
+    if chosen_max_tokens < 1:
+        chosen_max_tokens = 2048
 
     try:
-        from google import genai
-        from google.genai import types
-
-        client = genai.Client(api_key=api_key)
-
-        for current_model in models_to_try:
-            try:
-                response = client.models.generate_content(
-                    model=current_model,
-                    contents=prompt,
-                    config=types.GenerateContentConfig(
-                        temperature=temperature,
-                        max_output_tokens=max_tokens,
-                    ),
-                )
-                if response and response.text:
-                    log(f"✅ Gemini ({current_model}) yanıt verdi")
-                    return response.text.strip()
-
-                log(f"⚠️ Gemini ({current_model}) boş yanıt", "WARNING")
-
-            except Exception as err:
-                err_str = str(err)
-                if "429" in err_str or "RESOURCE_EXHAUSTED" in err_str:
-                    if "limit: 0" in err_str:
-                        log(
-                            f"⚠️ Gemini ({current_model}) kota dolmuş (limit: 0)",
-                            "WARNING",
-                        )
-                        continue
-
-                    wait_time = 20
-                    retry_match = re.search(r"(\d+\.?\d*)\s*s", err_str)
-                    if retry_match:
-                        wait_time = min(int(float(retry_match.group(1))) + 2, 45)
-
-                    log(
-                        f"⚠️ Gemini ({current_model}) rate limit → "
-                        f"{wait_time}sn bekleniyor...",
-                        "WARNING",
-                    )
-                    time.sleep(wait_time)
-
-                    try:
-                        response = client.models.generate_content(
-                            model=current_model,
-                            contents=prompt,
-                            config=types.GenerateContentConfig(
-                                temperature=temperature,
-                                max_output_tokens=max_tokens,
-                            ),
-                        )
-                        if response and response.text:
-                            log(f"✅ Gemini ({current_model}) 2. denemede yanıt verdi")
-                            return response.text.strip()
-                    except Exception as retry_err:
-                        log(
-                            f"⚠️ Gemini ({current_model}) 2. deneme hatası: "
-                            f"{str(retry_err)[:150]}",
-                            "WARNING",
-                        )
-                else:
-                    log(f"⚠️ Gemini ({current_model}) hatası: {err_str[:150]}", "WARNING")
-
-        log("⚠️ Gemini: Tüm modeller başarısız", "WARNING")
-        return None
-
-    except ImportError:
-        log(
-            "⚠️ google-genai paketi yüklü değil. "
-            "pip install google-genai",
-            "WARNING",
-        )
-        return None
+        import google.generativeai as genai
     except Exception as exc:
-        log(f"⚠️ Gemini genel hata: {exc}", "WARNING")
+        log(f"Gemini import hatasi: {exc}", "WARNING")
         return None
 
+    try:
+        genai.configure(api_key=api_key)
+        model = genai.GenerativeModel(chosen_model)
+        response = model.generate_content(
+            prompt,
+            generation_config={
+                "temperature": chosen_temp,
+                "max_output_tokens": chosen_max_tokens,
+            },
+        )
+
+        text = getattr(response, "text", "") or ""
+        text = text.strip()
+        if not text:
+            log(f"Gemini ({chosen_model}) bos yanit verdi", "WARNING")
+            return None
+
+        log(f"Gemini ({chosen_model}) yanit verdi", "INFO")
+        return text
+    except Exception as exc:
+        log(f"Gemini ({chosen_model}) hatasi: {exc}", "WARNING")
+        return None
 
 def _try_groq(
     prompt: str,
