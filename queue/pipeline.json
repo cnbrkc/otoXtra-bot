@@ -1,14 +1,18 @@
 {
-  "run_id": "2026-04-07-11:34",
+  "run_id": "2026-04-07-11:38",
   "status": "error",
-  "started_at": "2026-04-07T11:34:34.137140+03:00",
-  "updated_at": "2026-04-07T11:34:34.269422+03:00",
+  "started_at": "2026-04-07T11:38:00.959036+03:00",
+  "updated_at": "2026-04-07T11:38:01.083945+03:00",
   "stages": {
     "fetch": {
       "status": "error",
-      "output": null,
-      "error": "'list' object has no attribute 'get'",
-      "updated_at": "2026-04-07T11:34:34.269422+03:00"
+      "output": {
+        "articles": [],
+        "count": 0,
+        "source_health": {}
+      },
+      "error": "No article found",
+      "updated_at": "2026-04-07T11:38:01.083945+03:00"
     },
     "score": {
       "status": "waiting",
