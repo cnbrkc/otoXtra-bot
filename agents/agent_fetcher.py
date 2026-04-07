@@ -5,8 +5,10 @@ News fetch and filter agent.
 import os
 import re
 import sys
+import time
 from calendar import timegm
 from datetime import datetime, timezone, timedelta
+from typing import Any
 
 import feedparser
 import requests
@@ -48,7 +50,56 @@ def _turkish_lower(text: str) -> str:
     return text.replace("I", "i").lower()
 
 
-def _extract_image_from_entry(entry) -> str:
+def _request_with_retry(
+    url: str,
+    timeout: int = 20,
+    attempts: int = 3,
+    base_wait_seconds: float = 1.5,
+) -> requests.Response:
+    """
+    Gecici ag hatalarinda exponential backoff ile tekrar dener.
+    Son denemede hata varsa exception disari firlatilir.
+    """
+    last_exc: Exception | None = None
+    headers = {"User-Agent": _USER_AGENT}
+
+    for attempt in range(1, attempts + 1):
+        try:
+            response = requests.get(
+                url,
+                headers=headers,
+                timeout=timeout,
+                allow_redirects=True,
+            )
+            response.raise_for_status()
+            return response
+        except (
+            requests.exceptions.Timeout,
+            requests.exceptions.ConnectionError,
+            requests.exceptions.HTTPError,
+        ) as exc:
+            last_exc = exc
+            log(
+                f"HTTP deneme hatasi ({attempt}/{attempts}) url={url} -> {exc}",
+                "WARNING" if attempt < attempts else "ERROR",
+            )
+            if attempt < attempts:
+                time.sleep(base_wait_seconds * (2 ** (attempt - 1)))
+        except Exception as exc:
+            last_exc = exc
+            log(
+                f"Beklenmeyen istek hatasi ({attempt}/{attempts}) url={url} -> {exc}",
+                "WARNING" if attempt < attempts else "ERROR",
+            )
+            if attempt < attempts:
+                time.sleep(base_wait_seconds * (2 ** (attempt - 1)))
+
+    if last_exc:
+        raise last_exc
+    raise RuntimeError("HTTP request failed without exception detail")
+
+
+def _extract_image_from_entry(entry: Any) -> str:
     media_content = entry.get("media_content", [])
     for media in media_content:
         media_url = media.get("url", "")
@@ -93,8 +144,8 @@ def _extract_image_from_entry(entry) -> str:
                 )
                 if img_src.startswith("http"):
                     return img_src
-        except Exception:
-            pass
+        except Exception as exc:
+            log(f"Image parse warning: {exc}", "WARNING")
 
     image_field = entry.get("image", {})
     if isinstance(image_field, dict):
@@ -113,7 +164,7 @@ def _extract_image_from_entry(entry) -> str:
     return ""
 
 
-def _extract_published_date(entry, fallback_iso: str) -> str:
+def _extract_published_date(entry: Any, fallback_iso: str) -> str:
     struct = entry.get("published_parsed") or entry.get("updated_parsed")
     if struct:
         try:
@@ -135,15 +186,15 @@ def _extract_published_date(entry, fallback_iso: str) -> str:
     return fallback_iso
 
 
-def fetch_all_feeds() -> tuple:
+def fetch_all_feeds() -> tuple[list[dict], dict]:
     sources_cfg = load_config("sources")
-    feeds = sources_cfg.get("feeds", [])
+    feeds = sources_cfg.get("feeds", []) if isinstance(sources_cfg, dict) else []
     if not feeds:
         log("No feeds found in sources.json", "ERROR")
         return [], {}
 
-    all_articles = []
-    source_health = {}
+    all_articles: list[dict] = []
+    source_health: dict = {}
     now_iso = get_turkey_now().isoformat()
 
     for feed_info in feeds:
@@ -162,13 +213,7 @@ def fetch_all_feeds() -> tuple:
             continue
 
         try:
-            response = requests.get(
-                feed_url,
-                headers={"User-Agent": _USER_AGENT},
-                timeout=20,
-                allow_redirects=True,
-            )
-            response.raise_for_status()
+            response = _request_with_retry(feed_url, timeout=20, attempts=3, base_wait_seconds=1.5)
 
             parsed_feed = feedparser.parse(response.content)
             if parsed_feed.bozo and not parsed_feed.entries:
@@ -239,16 +284,19 @@ def fetch_all_feeds() -> tuple:
     return all_articles, source_health
 
 
-def apply_keyword_filter(articles: list) -> list:
+def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     keywords_cfg = load_config("keywords")
+    if not isinstance(keywords_cfg, dict):
+        return articles
+
     include_keywords = keywords_cfg.get("include_keywords") or keywords_cfg.get("must_match_any") or []
     exclude_keywords = keywords_cfg.get("exclude_keywords") or keywords_cfg.get("must_not_match") or []
 
     if not include_keywords and not exclude_keywords:
         return articles
 
-    include_lower = [_turkish_lower(kw) for kw in include_keywords]
-    exclude_lower = [_turkish_lower(kw) for kw in exclude_keywords]
+    include_lower = [_turkish_lower(str(kw)) for kw in include_keywords if str(kw).strip()]
+    exclude_lower = [_turkish_lower(str(kw)) for kw in exclude_keywords if str(kw).strip()]
 
     passed = []
     for article in articles:
@@ -261,9 +309,10 @@ def apply_keyword_filter(articles: list) -> list:
     return passed
 
 
-def apply_time_filter(articles: list) -> list:
+def apply_time_filter(articles: list[dict]) -> list[dict]:
     settings = load_config("settings")
-    max_age_hours = settings.get("news", {}).get("max_article_age_hours", 12)
+    news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
+    max_age_hours = int(news_cfg.get("max_article_age_hours", 12))
 
     now_utc = datetime.now(timezone.utc)
     max_cutoff_utc = now_utc - timedelta(hours=max_age_hours)
@@ -294,7 +343,7 @@ def apply_time_filter(articles: list) -> list:
     return passed
 
 
-def remove_already_posted(articles: list) -> list:
+def remove_already_posted(articles: list[dict]) -> list[dict]:
     posted_data = get_posted_news()
     if not posted_data.get("posts", []):
         return articles
@@ -306,12 +355,13 @@ def remove_already_posted(articles: list) -> list:
     return passed
 
 
-def remove_duplicates(articles: list) -> list:
+def remove_duplicates(articles: list[dict]) -> list[dict]:
     if len(articles) <= 1:
         return articles
 
     used = [False] * len(articles)
     groups = []
+
     for i in range(len(articles)):
         if used[i]:
             continue
@@ -332,9 +382,10 @@ def remove_duplicates(articles: list) -> list:
     return unique
 
 
-def _detect_trends(articles: list) -> list:
+def _detect_trends(articles: list[dict]) -> list[dict]:
     if not articles:
         return articles
+
     n = len(articles)
     fps = []
     for article in articles:
@@ -360,30 +411,36 @@ def _detect_trends(articles: list) -> list:
                 bonus = b
                 break
         article["trend_bonus"] = bonus
+
     return articles
 
 
 def scrape_full_article(url: str) -> str:
     if not url:
         return ""
+
     try:
-        resp = requests.get(url, headers={"User-Agent": _USER_AGENT}, timeout=15, allow_redirects=True)
-        resp.raise_for_status()
+        resp = _request_with_retry(url, timeout=15, attempts=2, base_wait_seconds=1.0)
         resp.encoding = resp.apparent_encoding or "utf-8"
         soup = BeautifulSoup(resp.text, "html.parser")
+
         for unwanted in soup.find_all(["script", "style", "nav", "footer", "aside", "iframe"]):
             unwanted.decompose()
+
         paragraphs = soup.find_all("p")
         full_text = " ".join(p.get_text(strip=True) for p in paragraphs if len(p.get_text(strip=True)) >= 30)
         full_text = re.sub(r"\s+", " ", full_text).strip()
+
         if len(full_text) > 5000:
             full_text = full_text[:5000].rsplit(" ", 1)[0] + "..."
+
         return full_text
-    except Exception:
+    except Exception as exc:
+        log(f"scrape_full_article warning: {exc}", "WARNING")
         return ""
 
 
-def fetch_and_filter_news() -> tuple:
+def fetch_and_filter_news() -> tuple[list[dict], dict]:
     articles, source_health = fetch_all_feeds()
     if not articles:
         return [], source_health

@@ -1,414 +1,253 @@
 """
-core/state_manager.py — Pipeline Durum Yöneticisi
+core/state_manager.py - Pipeline durum yoneticisi
 
-otoXtra Facebook Botu için ajanlar arası veri taşıma sistemini yönetir.
-Her ajan işini bitirince sonucunu pipeline.json'a yazar.
-Bir sonraki ajan oradan okur. Böylece ajanlar birbirini beklemez,
-biri çökse bile diğerlerinin çıktıları kaybolmaz.
-
-İçerdiği fonksiyonlar:
-  - init_pipeline(run_id)                    : Yeni çalışma başlatır
-  - get_stage(stage_name)                    : Aşama çıktısını döner
-  - set_stage(stage_name, status, output)    : Aşama sonucunu kaydeder
-  - get_status()                             : Genel pipeline durumunu döner
-  - is_stage_done(stage_name)                : Aşama bitti mi?
-  - get_pipeline()                           : pipeline.json'un tamamını döner
-
-Kullanım:
-    from core.state_manager import init_pipeline, get_stage, set_stage
-
-    init_pipeline("2025-01-15-14:00")
-    set_stage("fetch", "done", {"articles": [...]})
-    data = get_stage("fetch")
-
-YANLIŞ kullanım (YAPMA):
-    pipeline.json dosyasını elle düzenleme
-    Bu modülü bypass ederek direkt dosyaya yazma
+Ajanlar arasi veri gecisini queue/pipeline.json ile yonetir.
+- init_pipeline(run_id): Yeni calisma baslatir
+- get_stage(stage_name): Asama verisini dondurur
+- set_stage(stage_name, status, output, error): Asama durumunu gunceller
+- get_status(): Pipeline genel durumunu dondurur
+- is_stage_done(stage_name): Asama done mi kontrol eder
+- get_pipeline(): Tum pipeline verisini dondurur
 """
 
-import os
 import json
-from datetime import datetime, timezone, timedelta
+import os
+from datetime import datetime, timedelta, timezone
+from typing import Any, Dict
+
 from core.logger import log
 
 
-# ============================================================
-# SABİTLER
-# ============================================================
-
-# Geçerli aşama isimleri — sıra önemli
 VALID_STAGES = ["fetch", "score", "write", "image", "publish"]
-
-# Geçerli durum değerleri
 VALID_STATUSES = ["waiting", "running", "done", "error"]
 
-# pipeline.json dosya yolu
-# Bu dosya (state_manager.py) core/ klasöründe
-# Bir üst dizin proje kökü → queue/pipeline.json
 _PIPELINE_PATH = os.path.join(
     os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
     "queue",
-    "pipeline.json"
+    "pipeline.json",
 )
 
 
-# ============================================================
-# YARDIMCI — DOSYA OKUMA / YAZMA
-# ============================================================
-
-def _load_pipeline() -> dict:
-    """pipeline.json dosyasını okur.
-
-    Dosya yoksa veya bozuksa boş yapı döner.
-    Dışarıdan çağrılmaz, sadece bu modül içinde kullanılır.
-
-    Returns:
-        dict: Pipeline içeriği. Hata durumunda boş yapı.
-    """
-    try:
-        with open(_PIPELINE_PATH, "r", encoding="utf-8") as f:
-            return json.load(f)
-    except FileNotFoundError:
-        log(f"pipeline.json bulunamadı: {_PIPELINE_PATH}", "WARNING")
-        return _empty_pipeline()
-    except json.JSONDecodeError as e:
-        log(f"pipeline.json parse hatası: {e}", "ERROR")
-        return _empty_pipeline()
-    except Exception as e:
-        log(f"pipeline.json okuma hatası: {e}", "ERROR")
-        return _empty_pipeline()
+def _get_now_str() -> str:
+    turkey_tz = timezone(timedelta(hours=3))
+    return datetime.now(turkey_tz).isoformat()
 
 
-def _save_pipeline(data: dict) -> bool:
-    """pipeline.json dosyasina atomik olarak yazar."""
-    try:
-        from core.config_loader import save_json
-        return save_json(_PIPELINE_PATH, data)
-    except Exception as e:
-        log(f"pipeline.json write error: {e}", "ERROR")
-        return False
+def _empty_stage() -> Dict[str, Any]:
+    return {
+        "status": "waiting",
+        "output": None,
+        "error": None,
+        "updated_at": None,
+    }
 
 
-def _empty_pipeline() -> dict:
-    """Boş pipeline yapısını döner.
-
-    Tüm ajanlar 'waiting' durumunda başlar.
-
-    Returns:
-        dict: Boş pipeline şablonu.
-    """
+def _empty_pipeline() -> Dict[str, Any]:
     return {
         "run_id": None,
         "status": "idle",
         "started_at": None,
         "updated_at": None,
-        "stages": {
-            stage: {
-                "status": "waiting",
-                "output": None,
-                "error": None,
-                "updated_at": None
-            }
-            for stage in VALID_STAGES
-        }
+        "stages": {stage: _empty_stage() for stage in VALID_STAGES},
     }
 
 
-def _get_now_str() -> str:
-    """Şu anki zamanı ISO formatında döner (UTC+3).
-
-    Returns:
-        str: Örnek → "2025-01-15T14:32:00+03:00"
+def _normalize_pipeline(data: Any) -> Dict[str, Any]:
     """
-    turkey_tz = timezone(timedelta(hours=3))
-    return datetime.now(turkey_tz).isoformat()
+    pipeline.json bozuk/eksikse guvenli ve standart hale getirir.
+    """
+    if not isinstance(data, dict):
+        return _empty_pipeline()
+
+    normalized = _empty_pipeline()
+
+    normalized["run_id"] = data.get("run_id")
+    normalized["started_at"] = data.get("started_at")
+    normalized["updated_at"] = data.get("updated_at")
+    normalized["status"] = data.get("status", "idle")
+
+    incoming_stages = data.get("stages", {})
+    if not isinstance(incoming_stages, dict):
+        incoming_stages = {}
+
+    for stage in VALID_STAGES:
+        raw_stage = incoming_stages.get(stage, {})
+        if not isinstance(raw_stage, dict):
+            raw_stage = {}
+
+        status = raw_stage.get("status", "waiting")
+        if status not in VALID_STATUSES:
+            status = "waiting"
+
+        normalized["stages"][stage] = {
+            "status": status,
+            "output": raw_stage.get("output"),
+            "error": raw_stage.get("error"),
+            "updated_at": raw_stage.get("updated_at"),
+        }
+
+    normalized["status"] = _compute_pipeline_status(normalized)
+    return normalized
 
 
-# ============================================================
-# 1. PIPELINE BAŞLATMA
-# ============================================================
+def _compute_pipeline_status(pipeline: Dict[str, Any]) -> str:
+    """
+    Genel durum hesabi:
+    - Herhangi bir asama error ise: error
+    - Tum asamalar done ise: completed
+    - En az bir asama running/done ise: running
+    - Hicbiri baslamadiysa: idle
+    """
+    stages = pipeline.get("stages", {})
+    if not isinstance(stages, dict):
+        return "idle"
+
+    statuses = [stages.get(s, {}).get("status", "waiting") for s in VALID_STAGES]
+
+    if any(s == "error" for s in statuses):
+        return "error"
+    if all(s == "done" for s in statuses):
+        return "completed"
+    if any(s in ("running", "done") for s in statuses):
+        return "running"
+    return "idle"
+
+
+def _load_pipeline() -> Dict[str, Any]:
+    try:
+        with open(_PIPELINE_PATH, "r", encoding="utf-8") as f:
+            data = json.load(f)
+            return _normalize_pipeline(data)
+    except FileNotFoundError:
+        log(f"pipeline.json bulunamadi: {_PIPELINE_PATH}", "WARNING")
+        return _empty_pipeline()
+    except json.JSONDecodeError as exc:
+        log(f"pipeline.json parse hatasi: {exc}", "ERROR")
+        return _empty_pipeline()
+    except Exception as exc:
+        log(f"pipeline.json okuma hatasi: {exc}", "ERROR")
+        return _empty_pipeline()
+
+
+def _save_pipeline(data: Dict[str, Any]) -> bool:
+    try:
+        from core.config_loader import save_json
+
+        normalized = _normalize_pipeline(data)
+        return save_json(_PIPELINE_PATH, normalized)
+    except Exception as exc:
+        log(f"pipeline.json write error: {exc}", "ERROR")
+        return False
+
 
 def init_pipeline(run_id: str) -> bool:
-    """Yeni bir çalışma başlatır. pipeline.json'u sıfırlar.
+    if not isinstance(run_id, str) or not run_id.strip():
+        log("init_pipeline: run_id bos veya gecersiz", "ERROR")
+        return False
 
-    Her orchestrator.py çalışmasının başında çağrılır.
-    Önceki çalışmanın verilerini temizler, tüm aşamaları
-    'waiting' durumuna getirir.
-
-    Args:
-        run_id: Bu çalışmanın benzersiz kimliği.
-                Örnek: "2025-01-15-14:00"
-                orchestrator.py tarafından üretilir.
-
-    Returns:
-        bool: Başarılıysa True, hata varsa False.
-
-    Örnek:
-        init_pipeline("2025-01-15-14:00")
-    """
     now = _get_now_str()
-
     pipeline = _empty_pipeline()
-    pipeline["run_id"] = run_id
-    pipeline["status"] = "running"
+    pipeline["run_id"] = run_id.strip()
     pipeline["started_at"] = now
     pipeline["updated_at"] = now
+    pipeline["status"] = "running"
 
     success = _save_pipeline(pipeline)
-
     if success:
-        log(f"Pipeline başlatıldı → run_id: {run_id}")
+        log(f"Pipeline baslatildi -> run_id: {pipeline['run_id']}")
     else:
-        log(f"Pipeline başlatılamadı → run_id: {run_id}", "ERROR")
-
+        log(f"Pipeline baslatilamadi -> run_id: {pipeline['run_id']}", "ERROR")
     return success
 
 
-# ============================================================
-# 2. AŞAMA ÇIKTISINI OKUMA
-# ============================================================
-
-def get_stage(stage_name: str) -> dict:
-    """Bir aşamanın tüm verisini döner.
-
-    Args:
-        stage_name: Aşama adı. Geçerli değerler:
-                    "fetch", "score", "write", "image", "publish"
-
-    Returns:
-        dict: Aşama verisi → {
-                "status": "done",
-                "output": {...},
-                "error": None,
-                "updated_at": "2025-01-15T14:32:00+03:00"
-              }
-              Aşama bulunamazsa boş aşama yapısı döner.
-
-    Örnek:
-        stage = get_stage("fetch")
-        articles = stage["output"]
-    """
+def get_stage(stage_name: str) -> Dict[str, Any]:
     if stage_name not in VALID_STAGES:
-        log(f"Geçersiz aşama adı: {stage_name}. Geçerliler: {VALID_STAGES}", "ERROR")
-        return {"status": "error", "output": None, "error": "Geçersiz aşama", "updated_at": None}
+        log(f"Gecersiz asama adi: {stage_name}. Gecerliler: {VALID_STAGES}", "ERROR")
+        return {
+            "status": "error",
+            "output": None,
+            "error": "Gecersiz asama",
+            "updated_at": None,
+        }
 
     pipeline = _load_pipeline()
-    stages = pipeline.get("stages", {})
-
-    if stage_name not in stages:
-        log(f"Aşama pipeline'da bulunamadı: {stage_name}", "WARNING")
-        return {"status": "waiting", "output": None, "error": None, "updated_at": None}
-
-    return stages[stage_name]
+    return pipeline.get("stages", {}).get(stage_name, _empty_stage())
 
 
-# ============================================================
-# 3. AŞAMA SONUCUNU KAYDETME
-# ============================================================
-
-def set_stage(stage_name: str, status: str, output=None, error: str = None) -> bool:
-    """Bir aşamanın sonucunu pipeline.json'a kaydeder.
-
-    Her ajan işini bitirince bu fonksiyonu çağırır.
-
-    Args:
-        stage_name: Aşama adı. Geçerli değerler:
-                    "fetch", "score", "write", "image", "publish"
-        status:     Durum. Geçerli değerler:
-                    "waiting" → henüz başlamadı
-                    "running" → şu an çalışıyor
-                    "done"    → başarıyla tamamlandı
-                    "error"   → hata oluştu
-        output:     Aşamanın çıktı verisi (herhangi bir tip).
-                    "done" durumunda dolu olmalı.
-                    "error" durumunda None olabilir.
-        error:      Hata mesajı (sadece "error" durumunda dolu olur).
-
-    Returns:
-        bool: Başarılıysa True, hata varsa False.
-
-    Örnek — başarılı:
-        set_stage("fetch", "done", output={"articles": [...]})
-
-    Örnek — hatalı:
-        set_stage("fetch", "error", error="RSS bağlantısı kurulamadı")
-
-    Örnek — çalışmaya başladı:
-        set_stage("fetch", "running")
-    """
-    # Geçerlilik kontrolleri
+def set_stage(stage_name: str, status: str, output: Any = None, error: str = None) -> bool:
     if stage_name not in VALID_STAGES:
-        log(f"Geçersiz aşama adı: {stage_name}", "ERROR")
+        log(f"Gecersiz asama adi: {stage_name}", "ERROR")
         return False
 
     if status not in VALID_STATUSES:
-        log(f"Geçersiz durum: {status}. Geçerliler: {VALID_STATUSES}", "ERROR")
+        log(f"Gecersiz durum: {status}. Gecerliler: {VALID_STATUSES}", "ERROR")
         return False
 
-    # Mevcut pipeline'ı oku
     pipeline = _load_pipeline()
-
-    # stages anahtarı yoksa oluştur
-    if "stages" not in pipeline:
-        pipeline["stages"] = {}
-
-    # Aşamayı güncelle
     now = _get_now_str()
-    pipeline["stages"][stage_name] = {
+
+    if "stages" not in pipeline or not isinstance(pipeline["stages"], dict):
+        pipeline["stages"] = {stage: _empty_stage() for stage in VALID_STAGES}
+
+    stage_payload = {
         "status": status,
         "output": output,
         "error": error,
-        "updated_at": now
+        "updated_at": now,
     }
 
-    # Genel pipeline durumunu güncelle
+    # Tutarlilik: error durumunda mesaj bossa otomatik doldur
+    if status == "error" and not stage_payload["error"]:
+        stage_payload["error"] = f"{stage_name} asamasinda hata"
+
+    # waiting/running durumunda eski hatayi tasimayalim
+    if status in ("waiting", "running"):
+        stage_payload["error"] = None
+        if status == "waiting":
+            stage_payload["output"] = None
+
+    pipeline["stages"][stage_name] = stage_payload
     pipeline["updated_at"] = now
+    pipeline["status"] = _compute_pipeline_status(pipeline)
 
-    # Tüm aşamalar bittiyse pipeline'ı kapat
-    all_done = all(
-        pipeline["stages"].get(s, {}).get("status") == "done"
-        for s in VALID_STAGES
-    )
-    if all_done:
-        pipeline["status"] = "completed"
-        log("Pipeline tamamlandı → tüm aşamalar done")
-
-    # Herhangi bir aşama hatalıysa pipeline'ı hatalı işaretle
-    any_error = any(
-        pipeline["stages"].get(s, {}).get("status") == "error"
-        for s in VALID_STAGES
-    )
-    if any_error and pipeline["status"] == "running":
-        pipeline["status"] = "error"
-
-    # Kaydet
     success = _save_pipeline(pipeline)
-
     if success:
-        log(f"Aşama güncellendi → {stage_name}: {status}")
+        log(f"Asama guncellendi -> {stage_name}: {status}")
     else:
-        log(f"Aşama kaydedilemedi → {stage_name}: {status}", "ERROR")
-
+        log(f"Asama kaydedilemedi -> {stage_name}: {status}", "ERROR")
     return success
 
 
-# ============================================================
-# 4. GENEL DURUM
-# ============================================================
-
 def get_status() -> str:
-    """Genel pipeline durumunu döner.
-
-    Returns:
-        str: "idle" / "running" / "completed" / "error"
-             pipeline.json okunamazsa "unknown" döner.
-
-    Örnek:
-        status = get_status()
-        if status == "error":
-            log("Önceki çalışma hatayla bitti", "WARNING")
-    """
     pipeline = _load_pipeline()
-    return pipeline.get("status", "unknown")
+    status = pipeline.get("status", "unknown")
+    if status not in ["idle", "running", "completed", "error", "unknown"]:
+        return "unknown"
+    return status
 
-
-# ============================================================
-# 5. AŞAMA BİTTİ Mİ?
-# ============================================================
 
 def is_stage_done(stage_name: str) -> bool:
-    """Belirtilen aşamanın başarıyla tamamlanıp tamamlanmadığını kontrol eder.
-
-    orchestrator.py'ın bir sonraki ajanı çalıştırmadan önce
-    önceki ajanın bitip bitmediğini kontrol etmesi için kullanılır.
-
-    Args:
-        stage_name: Kontrol edilecek aşama adı.
-
-    Returns:
-        bool: status == "done" ise True, değilse False.
-
-    Örnek:
-        if not is_stage_done("fetch"):
-            log("Fetch tamamlanmadı, scorer çalıştırılamaz", "ERROR")
-            return False
-    """
     stage = get_stage(stage_name)
     return stage.get("status") == "done"
 
 
-# ============================================================
-# 6. PIPELINE TAMAMINI GETIR
-# ============================================================
-
-def get_pipeline() -> dict:
-    """pipeline.json'un tamamını döner.
-
-    Hata ayıklama ve loglama için kullanılır.
-
-    Returns:
-        dict: Pipeline'ın tam içeriği.
-    """
+def get_pipeline() -> Dict[str, Any]:
     return _load_pipeline()
 
 
-# ============================================================
-# MODÜL TESTİ (doğrudan çalıştırılırsa)
-# ============================================================
-
 if __name__ == "__main__":
-    log("=== core/state_manager.py modül testi başlıyor ===")
+    log("=== core/state_manager.py smoke test basladi ===")
 
-    # 1. Pipeline başlat
-    run_id = "test-2025-01-15-14:00"
-    success = init_pipeline(run_id)
-    log(f"Pipeline başlatıldı: {success}")
+    test_run_id = "test-2026-01-01-10:00"
+    log(f"init_pipeline: {init_pipeline(test_run_id)}")
 
-    # 2. Genel durum kontrol
-    status = get_status()
-    log(f"Pipeline durumu: {status}  → 'running' olmalı")
+    log(f"status: {get_status()}")
 
-    # 3. Aşama bitti mi? (henüz bitmedi)
-    done = is_stage_done("fetch")
-    log(f"fetch bitti mi: {done}  → False olmalı")
-
-    # 4. Aşamayı çalışıyor işaretle
     set_stage("fetch", "running")
-    stage = get_stage("fetch")
-    log(f"fetch durumu: {stage['status']}  → 'running' olmalı")
+    set_stage("fetch", "done", output={"articles": [{"title": "Test", "url": "https://example.com"}]})
 
-    # 5. Aşamayı tamamla
-    fake_output = {
-        "articles": [
-            {"title": "Test Haberi 1", "url": "https://test.com/1", "score": 0},
-            {"title": "Test Haberi 2", "url": "https://test.com/2", "score": 0}
-        ],
-        "count": 2
-    }
-    set_stage("fetch", "done", output=fake_output)
+    set_stage("score", "error", error="Model timeout")
+    log(f"score stage: {get_stage('score')}")
 
-    # 6. Aşama bitti mi? (şimdi bitti)
-    done = is_stage_done("fetch")
-    log(f"fetch bitti mi: {done}  → True olmalı")
-
-    # 7. Çıktıyı oku
-    stage = get_stage("fetch")
-    article_count = len(stage.get("output", {}).get("articles", []))
-    log(f"fetch çıktısındaki haber sayısı: {article_count}  → 2 olmalı")
-
-    # 8. Hata senaryosu
-    set_stage("score", "error", error="YZ bağlantısı kurulamadı")
-    stage = get_stage("score")
-    log(f"score durumu: {stage['status']}  → 'error' olmalı")
-    log(f"score hatası: {stage['error']}")
-
-    # 9. Geçersiz aşama adı
-    invalid = get_stage("gecersiz_asama")
-    log(f"Geçersiz aşama sonucu: {invalid['status']}  → 'error' olmalı")
-
-    # 10. Pipeline özeti
-    pipeline = get_pipeline()
-    log(f"Pipeline run_id: {pipeline.get('run_id')}")
-    log(f"Pipeline durumu: {pipeline.get('status')}")
-
-    log("=== core/state_manager.py modül testi tamamlandı ===")
+    log(f"pipeline status: {get_status()}")
+    log("=== core/state_manager.py smoke test bitti ===")
