@@ -121,7 +121,12 @@ def _clean_non_turkish_chars(text: str) -> str:
 # 2. YZ SAĞLAYICILARI
 # ============================================================
 
-def _try_gemini(prompt: str):
+def _try_gemini(
+    prompt: str,
+    model_name: str = None,
+    temperature: float = None,
+    max_tokens: int = None,
+):
     settings = load_config("settings")
     ai_cfg = settings.get("ai", {}) if isinstance(settings, dict) else {}
 
@@ -135,9 +140,10 @@ def _try_gemini(prompt: str):
         log("Gemini API key bulunamadi", "WARNING")
         return None
 
-    model_name = ai_cfg.get("gemini_model", "gemini-2.0-flash")
-    temperature = float(ai_cfg.get("temperature", 0.7))
-    max_tokens = int(ai_cfg.get("max_output_tokens", 2048))
+    # Disaridan parametre geldiyse onu kullan, yoksa config'ten al
+    chosen_model = model_name or ai_cfg.get("gemini_model", "gemini-2.0-flash")
+    chosen_temp = float(temperature if temperature is not None else ai_cfg.get("temperature", 0.7))
+    chosen_max_tokens = int(max_tokens if max_tokens is not None else ai_cfg.get("max_output_tokens", 2048))
 
     try:
         import google.generativeai as genai
@@ -148,26 +154,26 @@ def _try_gemini(prompt: str):
     try:
         genai.configure(api_key=api_key)
 
-        model = genai.GenerativeModel(model_name)
+        model = genai.GenerativeModel(chosen_model)
         response = model.generate_content(
             prompt,
             generation_config={
-                "temperature": temperature,
-                "max_output_tokens": max_tokens,
+                "temperature": chosen_temp,
+                "max_output_tokens": chosen_max_tokens,
             },
         )
 
         text = getattr(response, "text", "") or ""
         text = text.strip()
         if not text:
-            log(f"Gemini ({model_name}) bos yanit verdi", "WARNING")
+            log(f"Gemini ({chosen_model}) bos yanit verdi", "WARNING")
             return None
 
-        log(f"Gemini ({model_name}) yanit verdi", "INFO")
+        log(f"Gemini ({chosen_model}) yanit verdi", "INFO")
         return text
 
     except Exception as exc:
-        log(f"Gemini ({model_name}) hatasi: {exc}", "WARNING")
+        log(f"Gemini ({chosen_model}) hatasi: {exc}", "WARNING")
         return None
 
 
