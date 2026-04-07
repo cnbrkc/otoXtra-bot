@@ -1,13 +1,27 @@
 {
-  "run_id": "2026-04-07-16:10",
+  "run_id": "2026-04-07-17:07",
   "status": "completed",
-  "started_at": "2026-04-07T16:10:41.608445+03:00",
-  "updated_at": "2026-04-07T16:10:54.870352+03:00",
+  "started_at": "2026-04-07T17:07:27.870759+03:00",
+  "updated_at": "2026-04-07T17:07:40.643298+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
+            "link": "https://www.donanimhaber.com/elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir--204141",
+            "published": "2026-04-07T13:52:00+00:00",
+            "summary": "Mercedes-Benz, 2025 model G580 EQ Technology elektrikli SUV’lerinde tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700’den fazla aracı geri çağırıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204141/1400x788elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cagiriyor-cikabilir-elektrikli-geri-lari-mercedes-tekerlekler-wagon-yerinden"
+          },
           {
             "title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
             "link": "https://www.donanimhaber.com/honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok--204126",
@@ -51,18 +65,18 @@
             "topic_fingerprint": "adobe-alanlari-kullanima-notebooklm-ogrenci-platformunu-rakibi-sundu"
           },
           {
-            "title": "Rulo mop teknolojisiyle dikkat çeken Roborock Qrevo Curv 2 Flow, Türkiye’de",
-            "link": "https://www.log.com.tr/rulo-mop-teknolojisiyle-dikkat-ceken-roborock-qrevo-curv-2-flow/",
-            "published": "2026-04-07T12:00:40+00:00",
-            "summary": "Roborock yeni robot süpürgesi Qrevo Curv 2 Flow‘u Türkiye’de satışa sundu. Cihaz, SpiraFlow rulo mop sistemi, 20.000 Pa emiş gücü ve yapay zeka destekli temizlik algoritmalarıyla dikkat çekiyor. Roborock Qrevo Curv 2 Flow modelinin en dikkat çekici özelliği olan SpiraFlow rulo mop sistemi. Bu özellik, dakikada 220 devir (RPM) hızla çalışan motorlu yapısıyla zemine sürekli temas ederek kirleri 75 derece sıcaklıkla aktif biçimde temizliyor. Sistem, temiz suyla sürekli beslenen paspaslama süreci sayesinde kirli suyu anında ayrıştırarak mop yüzeyinin temiz kalmasını sağlar ve yüzeye yeniden kir yayılmasını minimize ediyor. Bu yapı, özellikle yoğun kir ve yapışkan lekelerin bulunduğu alanlarda daha derinlemesine bir temizlik performansı sunuyor. Modelin merkezinde yer alan 20.000 Pa emiş gücü, halı ve sert zeminlerde güçlü ve dengeli bir temizlik performansı sağlıyor. Bu kapasite; halı lifleri arasındaki ince tozları, sert zeminlerde biriken kirleri etkili biçimde temizlemeye yardımcı oluyor. Halılara geçtiğinde mop sistemini 15 mm yukarı kaldırarak yüzeyleri nemden koruyan model, […] Rulo mop teknolojisiyle dikkat çeken Roborock Qrevo Curv 2 Flow, Türkiye’de yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/Roborock-Qrevo-Curv-2-Flow-222-660x371.jpg",
-            "source_name": "Log",
-            "source_priority": "medium",
+            "title": "Dodge: Uygun fiyatlı spor otomobillerin hâlâ potansiyeli var",
+            "link": "https://tr.motor1.com/news/792248/dodge-uygun-spor-potansiyel-var/",
+            "published": "2026-04-07T14:00:00+00:00",
+            "summary": "CEO Matt McAlear, 30.000 $'ın altında bir fiyat hedefliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/pbJzw0/s3/2007-dodge-demon-concept.jpg",
+            "source_name": "Motor1 TR",
+            "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "ceken-curv-dikkat-flow-mop-qrevo-roborock-rulo-teknolojisiyle-turkiye"
+            "topic_fingerprint": "dodge-fiyatli-otomobillerin-potansiyeli-spor-uygun-var"
           },
           {
             "title": "Mazda, ekran ağırlıklı tasarım anlayışını savunuyor",
@@ -79,7 +93,7 @@
             "topic_fingerprint": "agirlikli-anlayisini-ekran-mazda-savunuyor-tasarim"
           }
         ],
-        "count": 5,
+        "count": 6,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -109,97 +123,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-07T16:10:46.305853+03:00"
+      "updated_at": "2026-04-07T17:07:32.227926+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
-          "link": "https://www.donanimhaber.com/honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok--204126",
-          "published": "2026-04-07T06:25:00+00:00",
-          "summary": "Şanghay'daki bir tedarikçi firmasını ziyaret eden Toshihiro Mibe, Çinlilerin üretim hızı karşısında şaşkınlığını gizleyemedi. Mibe, hızlı hareket etmek zorunda olduklarını dile getirdi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204126/1400x788honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok.jpg",
+          "title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
+          "link": "https://www.donanimhaber.com/elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir--204141",
+          "published": "2026-04-07T13:52:00+00:00",
+          "summary": "Mercedes-Benz, 2025 model G580 EQ Technology elektrikli SUV’lerinde tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700’den fazla aracı geri çağırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204141/1400x788elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "baskani-buna-cin-hicbir-honda-sansimiz-sok-yok",
-          "score": 78
+          "trend_bonus": 2,
+          "topic_fingerprint": "cagiriyor-cikabilir-elektrikli-geri-lari-mercedes-tekerlekler-wagon-yerinden",
+          "base_ai_score": 84,
+          "score": 96,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2
         },
-        "score": 78,
-        "title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
+        "score": 96,
+        "title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
         "trend_count": 1,
-        "trend_bonus": 0
+        "trend_bonus": 2,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-07T16:10:49.908976+03:00"
+      "updated_at": "2026-04-07T17:07:36.944866+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
-          "link": "https://www.donanimhaber.com/honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok--204126",
-          "published": "2026-04-07T06:25:00+00:00",
-          "summary": "Şanghay'daki bir tedarikçi firmasını ziyaret eden Toshihiro Mibe, Çinlilerin üretim hızı karşısında şaşkınlığını gizleyemedi. Mibe, hızlı hareket etmek zorunda olduklarını dile getirdi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204126/1400x788honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok.jpg",
+          "title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
+          "link": "https://www.donanimhaber.com/elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir--204141",
+          "published": "2026-04-07T13:52:00+00:00",
+          "summary": "Mercedes-Benz, 2025 model G580 EQ Technology elektrikli SUV’lerinde tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700’den fazla aracı geri çağırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204141/1400x788elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "baskani-buna-cin-hicbir-honda-sansimiz-sok-yok",
-          "score": 78,
-          "full_text": "Otomotiv dünyasının köklü üreticileri, elektrikli araçlarda kârlı bir model oluşturmakta zorlanıyor. Japon üretici Honda da bu kapsamda yeni elektrikli otomobil projelerini iptal ettiğini duyurmuştu. Ancak sorun sadece elektrikli araçlarla sınırlı değil. Çin dönüşünde konuşan Mibe, tedarikçilere “Hızlı hareket etmeliyiz” mesajını verdi. Bu doğrultuda Honda, Ar-Ge yapılanmasını yeniden düzenliyor. Binlerce mühendisin yeni kurulan daha bağımsız bir mühendislik şirketine aktarılması planlanıyor. Bu yapının, son yıllarda merkezileşen karar alma süreçlerine kıyasla daha özgür hareket etmesi hedefleniyor. Çinli üreticilerin küresel yükselişi rakamlara da yansıyor. Avrupa pazarında BYD yüzde 1.8 paya ulaşırken, SAIC Motor yüzde 1.9 ile Nissan seviyesine gelmiş durumda. Honda ise yalnızca yüzde 0.5’lik payla geride kalıyor. Tüm bu gelişmeler, otomotiv sektöründe dengelerin hızla değiştiğini gösteriyor. Çin, hem hız hem maliyet açısından rakiplerinin önüne geçmiş durumda. Geleneksel üreticilerin bu yeni düzene uyum sağlaması, hatta iş birliklerine yönelmesi artık bir tercih değil, zorunluluk haline gelmiş gibi görünüyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0DTYN7ZN7 https://www.amazon.com.tr/dp/B07W343FDL https://app.hb.biz/YbTCqC2Lx9Zp https://www.idefix.com/bianchi-t008-24-vites-v-fren-trekking-sehir-bisikleti-2025-p-15072717"
+          "trend_bonus": 2,
+          "topic_fingerprint": "cagiriyor-cikabilir-elektrikli-geri-lari-mercedes-tekerlekler-wagon-yerinden",
+          "base_ai_score": 84,
+          "score": 96,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Aktarılanlara göre bu risk, aracın elektrikli versiyonunun daha yüksek ağırlığı ve tork yüklerinin, kullanılan mevcut bijon cıvatalar için yeterince hesaplanmamış olmasından kaynaklanıyor. NHTSA verilerine göre, Mercedes-Benz, elektrikli G-Class modeli için mevcut tekerlek montajını ve cıvataları, klasik içten yanmalı motorlu G-Class ile aynı şekilde kullanmıştı. Ancak Eylül 2024 ile Ocak 2025 tarihleri arasında yapılan testler, özellikle yoğun off-road sürüş ve sık tekerlek değişimleri sırasında cıvataların gevşeyebileceğini ortaya koydu. Geri çağırma kapsamında, araç sahipleri yetkili Mercedes-Benz bayilerine başvurarak ücretsiz olarak yeni tasarlanmış cıvataların takılmasını sağlayacak. Araçların orijinal fiyatı yaklaşık 160.000 dolar civarında. Şirket, etkilenen araç sahiplerine Mayıs sonundan itibaren posta yoluyla bildirim göndermeye başlayacak. Mercedes-Benz, bu tür bir geri çağırmayı daha önce de 2021 yılında EQS ve S-Class elektrikli modelleri için gerçekleştirmişti. O dönemde araçların hareket halindeyken gösterge panelinde video oynatılmasına izin verilmesi nedeniyle güvenlik riski ortaya çıkmıştı. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B07W343FDL https://www.amazon.com.tr/dp/B0DCNHBLK5 https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat https://www.migros.com.tr/flormar-creamy-stylo-yogun-renk-veren-yari-parlak-stick-ruj-002-blushy-p-21cfe4f"
         },
-        "post_text": "🤯 HONDA BAŞKANI ŞOKTA: \"Onlara Karşı Hiç Şansımız Yok!\"\n\nŞanghay'da bir tedarikçi firmasını ziyaret eden Honda Başkanı Toshihiro Mibe'nin ağzından dökülenler dikkat çekiciydi. Mibe, Çinli üreticilerin o inanılmaz üretim hızını görünce \"Buna karşı hiçbir şansımız yok\" demekten kendini alamamış. Sanki \"Beyler, biz hala ne bekliyoruz?\" diyor gibi!\n\nGelen bilgilere göre Mibe, bu gözlemlerin ardından hızla hareket etmeleri gerektiğini vurgulamış. Honda da bu duruma sessiz kalmayıp, Ar-Ge yapılanmasını kökünden değiştirmeye karar vermiş. Binlerce mühendisi yeni ve daha bağımsız bir şirket yapısına aktararak karar alma süreçlerini hızlandırmayı hedefliyorlar.\n\nDurum öylesine kritik ki, Avrupa pazarında BYD ve SAIC Motor gibi Çinli markaların payı artarken, Honda gibi geleneksel üreticiler yüzde 0.5'lik payla biraz geride kalmış. Anlaşılan o ki, sektördeki dengeler artık eskisinden çok daha hızlı değişiyor ve Çinli üreticiler hız ve maliyet avantajıyla ön plana çıkıyor.\n\nSizce geleneksel otomobil devleri bu yeni düzene ne kadar hızlı ayak uydurabilir? Yorumlarda düşüncelerinizi bekliyoruz!",
-        "post_text_length": 1098
+        "post_text": "🚨 ELEKTRİKLİ G-WAGON'LAR GERİ ÇAĞRILIYOR! 🚨\n\nMercedes-Benz, 2025 model elektrikli G580 EQ Technology SUV'lerinde bir güvenlik sorunu tespit etti. Tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700'den fazla araç geri çağırılıyor.\n\nBu durumun nedeni, aracın yüksek ağırlığı ve tork yüklerinin, kullanılan bijon cıvataları için yeterince hesaplanmamış olmasından kaynaklanıyor. Yoğun off-road sürüşleri veya sık tekerlek değişimleri sırasında cıvataların gevşeyebileceği testlerle ortaya çıkmış.\n\nEtkilenen araç sahipleri, yetkili Mercedes-Benz bayilerinden ücretsiz olarak yeni tasarlanmış cıvataları taktırabilecekler. Bildirimler Mayıs sonundan itibaren posta yoluyla gönderilmeye başlanacak.\n\nSizce bu tür teknik sorunlar elektrikli araçlarda daha sık mı yaşanıyor?",
+        "post_text_length": 777
       },
       "error": null,
-      "updated_at": "2026-04-07T16:10:53.478851+03:00"
+      "updated_at": "2026-04-07T17:07:39.664949+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
-          "link": "https://www.donanimhaber.com/honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok--204126",
-          "published": "2026-04-07T06:25:00+00:00",
-          "summary": "Şanghay'daki bir tedarikçi firmasını ziyaret eden Toshihiro Mibe, Çinlilerin üretim hızı karşısında şaşkınlığını gizleyemedi. Mibe, hızlı hareket etmek zorunda olduklarını dile getirdi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204126/1400x788honda-baskani-cin-de-sok-oldu-buna-karsi-hicbir-sansimiz-yok.jpg",
+          "title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
+          "link": "https://www.donanimhaber.com/elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir--204141",
+          "published": "2026-04-07T13:52:00+00:00",
+          "summary": "Mercedes-Benz, 2025 model G580 EQ Technology elektrikli SUV’lerinde tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700’den fazla aracı geri çağırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204141/1400x788elektrikli-g-wagon-lar-geri-cagrildi-tekerlekler-cikabilir.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "baskani-buna-cin-hicbir-honda-sansimiz-sok-yok",
-          "score": 78,
-          "full_text": "Otomotiv dünyasının köklü üreticileri, elektrikli araçlarda kârlı bir model oluşturmakta zorlanıyor. Japon üretici Honda da bu kapsamda yeni elektrikli otomobil projelerini iptal ettiğini duyurmuştu. Ancak sorun sadece elektrikli araçlarla sınırlı değil. Çin dönüşünde konuşan Mibe, tedarikçilere “Hızlı hareket etmeliyiz” mesajını verdi. Bu doğrultuda Honda, Ar-Ge yapılanmasını yeniden düzenliyor. Binlerce mühendisin yeni kurulan daha bağımsız bir mühendislik şirketine aktarılması planlanıyor. Bu yapının, son yıllarda merkezileşen karar alma süreçlerine kıyasla daha özgür hareket etmesi hedefleniyor. Çinli üreticilerin küresel yükselişi rakamlara da yansıyor. Avrupa pazarında BYD yüzde 1.8 paya ulaşırken, SAIC Motor yüzde 1.9 ile Nissan seviyesine gelmiş durumda. Honda ise yalnızca yüzde 0.5’lik payla geride kalıyor. Tüm bu gelişmeler, otomotiv sektöründe dengelerin hızla değiştiğini gösteriyor. Çin, hem hız hem maliyet açısından rakiplerinin önüne geçmiş durumda. Geleneksel üreticilerin bu yeni düzene uyum sağlaması, hatta iş birliklerine yönelmesi artık bir tercih değil, zorunluluk haline gelmiş gibi görünüyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0DTYN7ZN7 https://www.amazon.com.tr/dp/B07W343FDL https://app.hb.biz/YbTCqC2Lx9Zp https://www.idefix.com/bianchi-t008-24-vites-v-fren-trekking-sehir-bisikleti-2025-p-15072717",
+          "trend_bonus": 2,
+          "topic_fingerprint": "cagiriyor-cikabilir-elektrikli-geri-lari-mercedes-tekerlekler-wagon-yerinden",
+          "base_ai_score": 84,
+          "score": 96,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Aktarılanlara göre bu risk, aracın elektrikli versiyonunun daha yüksek ağırlığı ve tork yüklerinin, kullanılan mevcut bijon cıvatalar için yeterince hesaplanmamış olmasından kaynaklanıyor. NHTSA verilerine göre, Mercedes-Benz, elektrikli G-Class modeli için mevcut tekerlek montajını ve cıvataları, klasik içten yanmalı motorlu G-Class ile aynı şekilde kullanmıştı. Ancak Eylül 2024 ile Ocak 2025 tarihleri arasında yapılan testler, özellikle yoğun off-road sürüş ve sık tekerlek değişimleri sırasında cıvataların gevşeyebileceğini ortaya koydu. Geri çağırma kapsamında, araç sahipleri yetkili Mercedes-Benz bayilerine başvurarak ücretsiz olarak yeni tasarlanmış cıvataların takılmasını sağlayacak. Araçların orijinal fiyatı yaklaşık 160.000 dolar civarında. Şirket, etkilenen araç sahiplerine Mayıs sonundan itibaren posta yoluyla bildirim göndermeye başlayacak. Mercedes-Benz, bu tür bir geri çağırmayı daha önce de 2021 yılında EQS ve S-Class elektrikli modelleri için gerçekleştirmişti. O dönemde araçların hareket halindeyken gösterge panelinde video oynatılmasına izin verilmesi nedeniyle güvenlik riski ortaya çıkmıştı. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B07W343FDL https://www.amazon.com.tr/dp/B0DCNHBLK5 https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat https://www.migros.com.tr/flormar-creamy-stylo-yogun-renk-veren-yari-parlak-stick-ruj-002-blushy-p-21cfe4f",
           "image_source": "rss_image"
         },
-        "post_text": "🤯 HONDA BAŞKANI ŞOKTA: \"Onlara Karşı Hiç Şansımız Yok!\"\n\nŞanghay'da bir tedarikçi firmasını ziyaret eden Honda Başkanı Toshihiro Mibe'nin ağzından dökülenler dikkat çekiciydi. Mibe, Çinli üreticilerin o inanılmaz üretim hızını görünce \"Buna karşı hiçbir şansımız yok\" demekten kendini alamamış. Sanki \"Beyler, biz hala ne bekliyoruz?\" diyor gibi!\n\nGelen bilgilere göre Mibe, bu gözlemlerin ardından hızla hareket etmeleri gerektiğini vurgulamış. Honda da bu duruma sessiz kalmayıp, Ar-Ge yapılanmasını kökünden değiştirmeye karar vermiş. Binlerce mühendisi yeni ve daha bağımsız bir şirket yapısına aktararak karar alma süreçlerini hızlandırmayı hedefliyorlar.\n\nDurum öylesine kritik ki, Avrupa pazarında BYD ve SAIC Motor gibi Çinli markaların payı artarken, Honda gibi geleneksel üreticiler yüzde 0.5'lik payla biraz geride kalmış. Anlaşılan o ki, sektördeki dengeler artık eskisinden çok daha hızlı değişiyor ve Çinli üreticiler hız ve maliyet avantajıyla ön plana çıkıyor.\n\nSizce geleneksel otomobil devleri bu yeni düzene ne kadar hızlı ayak uydurabilir? Yorumlarda düşüncelerinizi bekliyoruz!",
-        "image_path": "/tmp/otoxtra_rss_lryvj6a4.jpg",
+        "post_text": "🚨 ELEKTRİKLİ G-WAGON'LAR GERİ ÇAĞRILIYOR! 🚨\n\nMercedes-Benz, 2025 model elektrikli G580 EQ Technology SUV'lerinde bir güvenlik sorunu tespit etti. Tekerleklerin gevşeyip araçtan ayrılma riski nedeniyle 3.700'den fazla araç geri çağırılıyor.\n\nBu durumun nedeni, aracın yüksek ağırlığı ve tork yüklerinin, kullanılan bijon cıvataları için yeterince hesaplanmamış olmasından kaynaklanıyor. Yoğun off-road sürüşleri veya sık tekerlek değişimleri sırasında cıvataların gevşeyebileceği testlerle ortaya çıkmış.\n\nEtkilenen araç sahipleri, yetkili Mercedes-Benz bayilerinden ücretsiz olarak yeni tasarlanmış cıvataları taktırabilecekler. Bildirimler Mayıs sonundan itibaren posta yoluyla gönderilmeye başlanacak.\n\nSizce bu tür teknik sorunlar elektrikli araçlarda daha sık mı yaşanıyor?",
+        "image_path": "/tmp/otoxtra_rss_chxp1pm6.jpg",
         "image_source": "rss_image"
       },
       "error": null,
-      "updated_at": "2026-04-07T16:10:54.864170+03:00"
+      "updated_at": "2026-04-07T17:07:40.636788+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
         "post_id": "test_000000000_111111111",
-        "article_title": "Honda Başkanı Çin’de şok oldu: “Buna karşı hiçbir şansımız yok”",
+        "article_title": "Mercedes, elektrikli G-Wagon’ları geri çağırıyor: Tekerlekler yerinden çıkabilir",
         "image_source": "rss_image",
         "test_mode": true
       },
       "error": null,
-      "updated_at": "2026-04-07T16:10:54.870352+03:00"
+      "updated_at": "2026-04-07T17:07:40.643298+03:00"
     }
   }
 }
