@@ -130,7 +130,6 @@ def _try_gemini(
     settings = load_config("settings")
     ai_cfg = settings.get("ai", {}) if isinstance(settings, dict) else {}
 
-    # Ayardan kapatildiysa hic deneme yapma
     if not ai_cfg.get("enable_gemini", True):
         log("Gemini ayarlardan kapali, atlaniyor", "INFO")
         return None
@@ -140,10 +139,38 @@ def _try_gemini(
         log("Gemini API key bulunamadi", "WARNING")
         return None
 
-    # Disaridan parametre geldiyse onu kullan, yoksa config'ten al
-    chosen_model = model_name or ai_cfg.get("gemini_model", "gemini-2.0-flash")
-    chosen_temp = float(temperature if temperature is not None else ai_cfg.get("temperature", 0.7))
-    chosen_max_tokens = int(max_tokens if max_tokens is not None else ai_cfg.get("max_output_tokens", 2048))
+    # Parametreler disaridan karisik gelebilecegi icin tip guvenli normalize et
+    cfg_model = ai_cfg.get("gemini_model", "gemini-2.0-flash")
+    cfg_temp = ai_cfg.get("temperature", 0.7)
+    cfg_max_tokens = ai_cfg.get("max_output_tokens", 2048)
+
+    # model_name sayi geldiyse aslinda temperature olabilir
+    if isinstance(model_name, (int, float)) and temperature is None:
+        temperature = float(model_name)
+        model_name = None
+
+    # temperature string model geldiyse model olarak kullan
+    if isinstance(temperature, str) and model_name is None:
+        model_name = temperature
+        temperature = None
+
+    # max_tokens string model geldiyse model olarak kullan
+    if isinstance(max_tokens, str) and model_name is None:
+        model_name = max_tokens
+        max_tokens = None
+
+    chosen_model = model_name if isinstance(model_name, str) else cfg_model
+
+    try:
+        chosen_temp = float(temperature if temperature is not None else cfg_temp)
+    except Exception:
+        chosen_temp = 0.7
+
+    try:
+        chosen_max_tokens = int(max_tokens if max_tokens is not None else cfg_max_tokens)
+    except Exception:
+        log("max_output_tokens gecersiz, 2048 kullaniliyor", "WARNING")
+        chosen_max_tokens = 2048
 
     try:
         import google.generativeai as genai
@@ -153,7 +180,6 @@ def _try_gemini(
 
     try:
         genai.configure(api_key=api_key)
-
         model = genai.GenerativeModel(chosen_model)
         response = model.generate_content(
             prompt,
@@ -171,11 +197,9 @@ def _try_gemini(
 
         log(f"Gemini ({chosen_model}) yanit verdi", "INFO")
         return text
-
     except Exception as exc:
         log(f"Gemini ({chosen_model}) hatasi: {exc}", "WARNING")
         return None
-
 
 def _try_groq(
     prompt: str,
