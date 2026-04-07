@@ -147,7 +147,6 @@ def _try_gemini(
     if isinstance(model_name, str) and model_name.strip():
         chosen_model = model_name.strip()
 
-    # temperature: sadece sayiya donusebiliyorsa kullan, sonra [0.0, 2.0] araligina sabitle
     raw_temp = temperature if temperature is not None else cfg_temp
     try:
         chosen_temp = float(raw_temp)
@@ -158,7 +157,6 @@ def _try_gemini(
     if chosen_temp > 2.0:
         chosen_temp = 2.0
 
-    # max tokens: sadece pozitif int kabul et
     raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
     try:
         chosen_max_tokens = int(raw_max)
@@ -168,20 +166,21 @@ def _try_gemini(
         chosen_max_tokens = 2048
 
     try:
-        import google.generativeai as genai
+        from google import genai
+        from google.genai import types
     except Exception as exc:
         log(f"Gemini import hatasi: {exc}", "WARNING")
         return None
 
     try:
-        genai.configure(api_key=api_key)
-        model = genai.GenerativeModel(chosen_model)
-        response = model.generate_content(
-            prompt,
-            generation_config={
-                "temperature": chosen_temp,
-                "max_output_tokens": chosen_max_tokens,
-            },
+        client = genai.Client(api_key=api_key)
+        response = client.models.generate_content(
+            model=chosen_model,
+            contents=prompt,
+            config=types.GenerateContentConfig(
+                temperature=chosen_temp,
+                max_output_tokens=chosen_max_tokens,
+            ),
         )
 
         text = getattr(response, "text", "") or ""
@@ -192,6 +191,7 @@ def _try_gemini(
 
         log(f"Gemini ({chosen_model}) yanit verdi", "INFO")
         return text
+
     except Exception as exc:
         log(f"Gemini ({chosen_model}) hatasi: {exc}", "WARNING")
         return None
