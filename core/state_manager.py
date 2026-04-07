@@ -80,27 +80,12 @@ def _load_pipeline() -> dict:
 
 
 def _save_pipeline(data: dict) -> bool:
-    """pipeline.json dosyasına yazar.
-
-    Yazmadan önce queue/ klasörünün var olduğundan emin olur.
-    Dışarıdan çağrılmaz, sadece bu modül içinde kullanılır.
-
-    Args:
-        data: Kaydedilecek pipeline dict'i.
-
-    Returns:
-        bool: Başarılıysa True, hata varsa False.
-    """
+    """pipeline.json dosyasina atomik olarak yazar."""
     try:
-        directory = os.path.dirname(_PIPELINE_PATH)
-        if directory:
-            os.makedirs(directory, exist_ok=True)
-
-        with open(_PIPELINE_PATH, "w", encoding="utf-8") as f:
-            json.dump(data, f, indent=2, ensure_ascii=False)
-        return True
+        from core.config_loader import save_json
+        return save_json(_PIPELINE_PATH, data)
     except Exception as e:
-        log(f"pipeline.json yazma hatası: {e}", "ERROR")
+        log(f"pipeline.json write error: {e}", "ERROR")
         return False
 
 
