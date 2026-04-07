@@ -139,42 +139,33 @@ def _try_gemini(
         log("Gemini API key bulunamadi", "WARNING")
         return None
 
-    cfg_model = ai_cfg.get("gemini_model", "gemini-2.0-flash")
+    cfg_model = ai_cfg.get("gemini_model", "gemini-2.5-flash-lite")
     cfg_temp = ai_cfg.get("temperature", 0.7)
     cfg_max_tokens = ai_cfg.get("max_output_tokens", 2048)
 
-    # Geriye donuk uyumluluk: parametreler karisik gelebilir.
-    if isinstance(model_name, (int, float)) and temperature is None:
-        temperature = float(model_name)
-        model_name = None
+    chosen_model = cfg_model
+    if isinstance(model_name, str) and model_name.strip():
+        chosen_model = model_name.strip()
 
-    if isinstance(temperature, str) and model_name is None:
-        model_name = temperature
-        temperature = None
-
-    if isinstance(max_tokens, str) and model_name is None and not max_tokens.isdigit():
-        model_name = max_tokens
-        max_tokens = None
-
-    chosen_model = model_name if isinstance(model_name, str) else cfg_model
-
+    # temperature: sadece sayiya donusebiliyorsa kullan, sonra [0.0, 2.0] araligina sabitle
+    raw_temp = temperature if temperature is not None else cfg_temp
     try:
-        chosen_temp = float(temperature if temperature is not None else cfg_temp)
+        chosen_temp = float(raw_temp)
     except Exception:
         chosen_temp = 0.7
+    if chosen_temp < 0.0:
+        chosen_temp = 0.0
+    if chosen_temp > 2.0:
+        chosen_temp = 2.0
 
+    # max tokens: sadece pozitif int kabul et
     raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
-    if isinstance(raw_max, str):
-        raw_max = raw_max.strip()
-        if raw_max.isdigit():
-            chosen_max_tokens = int(raw_max)
-        else:
-            chosen_max_tokens = 2048
-    else:
-        try:
-            chosen_max_tokens = int(raw_max)
-        except Exception:
-            chosen_max_tokens = 2048
+    try:
+        chosen_max_tokens = int(raw_max)
+    except Exception:
+        chosen_max_tokens = 2048
+    if chosen_max_tokens < 1:
+        chosen_max_tokens = 2048
 
     try:
         import google.generativeai as genai
