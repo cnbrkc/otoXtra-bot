@@ -16,27 +16,37 @@ def get_project_root() -> str:
 
 
 def _empty_for_config(config_name: str) -> Any:
-    # fetcher tarafinda sources_config.get(...) kullanildigi icin dict donuyoruz
     if config_name == "sources":
-        return {"sources": []}
+        return {"feeds": []}
     return {}
 
 
-def _normalize_config(config_name: str, data: Any) -> Any:
-    # Eski/yeni format uyumlulugu: sources.json list ise dict'e cevir
-    if config_name == "sources":
-        if isinstance(data, list):
-            return {"sources": data}
-        return data
-    return data
+def _normalize_sources(data: Any) -> dict:
+    # 1) sources.json direkt listeyse -> {"feeds": [...]}
+    if isinstance(data, list):
+        return {"feeds": data}
+
+    # 2) dict ise yaygin alan adlarini "feeds"e normalize et
+    if isinstance(data, dict):
+        if isinstance(data.get("feeds"), list):
+            return {"feeds": data.get("feeds", [])}
+        if isinstance(data.get("sources"), list):
+            return {"feeds": data.get("sources", [])}
+        if isinstance(data.get("rss"), list):
+            return {"feeds": data.get("rss", [])}
+        if isinstance(data.get("rss_feeds"), list):
+            return {"feeds": data.get("rss_feeds", [])}
+        if isinstance(data.get("items"), list):
+            return {"feeds": data.get("items", [])}
+
+    # 3) taninmayan format -> bos
+    return {"feeds": []}
 
 
 def _validate_config(config_name: str, data: Any) -> bool:
+    # sources icin sade ve guvenli kontrol
     if config_name == "sources":
-        if not isinstance(data, dict):
-            return False
-        sources = data.get("sources")
-        return isinstance(sources, list)
+        return isinstance(data, dict) and isinstance(data.get("feeds"), list)
 
     if not isinstance(data, dict):
         return False
@@ -80,14 +90,9 @@ def load_json(filepath: str) -> Any:
 
 
 def save_json(filepath: str, data: Any) -> bool:
-    """
-    Atomik JSON yazim:
-    once temp dosyaya yazar, sonra os.replace ile tek hamlede degistirir.
-    """
     directory = os.path.dirname(filepath) or "."
     try:
         os.makedirs(directory, exist_ok=True)
-
         with tempfile.NamedTemporaryFile(
             mode="w",
             encoding="utf-8",
@@ -107,7 +112,9 @@ def save_json(filepath: str, data: Any) -> bool:
 def load_config(config_name: str) -> Any:
     filepath = os.path.join(get_project_root(), "config", f"{config_name}.json")
     data = load_json(filepath)
-    data = _normalize_config(config_name, data)
+
+    if config_name == "sources":
+        data = _normalize_sources(data)
 
     if data in ({}, None):
         log(f"Config could not be loaded: {config_name}.json", "WARNING")
