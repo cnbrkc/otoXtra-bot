@@ -1,0 +1,93 @@
+name: Gemini Diagnose
+
+on:
+  workflow_dispatch:
+
+jobs:
+  diagnose:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check API key exists
+        run: |
+          if [ -z "${{ secrets.GEMINI_API_KEY }}" ]; then
+            echo "GEMINI_API_KEY secret yok."
+            exit 1
+          fi
+          echo "Secret bulundu."
+
+      - name: List models and test generateContent
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          python - << 'PY'
+          import json
+          import os
+          import urllib.request
+          import urllib.error
+
+          key = os.environ["GEMINI_API_KEY"]
+
+          def call(url, payload=None):
+              req = urllib.request.Request(url, method="GET" if payload is None else "POST")
+              req.add_header("Content-Type", "application/json")
+              data = None
+              if payload is not None:
+                  data = json.dumps(payload).encode("utf-8")
+              try:
+                  with urllib.request.urlopen(req, data=data, timeout=30) as r:
+                      return r.getcode(), r.read().decode("utf-8")
+              except urllib.error.HTTPError as e:
+                  return e.code, e.read().decode("utf-8")
+              except Exception as e:
+                  return 0, str(e)
+
+          list_url = f"https://generativelanguage.googleapis.com/v1beta/models?key={key}"
+          code, body = call(list_url)
+
+          print(f"LIST MODELS STATUS: {code}")
+          if code != 200:
+              print(body[:1000])
+              raise SystemExit(1)
+
+          data = json.loads(body)
+          models = data.get("models", [])
+          gen_models = []
+          for m in models:
+              name = m.get("name", "")
+              methods = m.get("supportedGenerationMethods", []) or []
+              if "generateContent" in methods:
+                  short = name.replace("models/", "")
+                  gen_models.append(short)
+
+          print("generateContent destekleyen modeller:")
+          for m in gen_models[:50]:
+              print("-", m)
+
+          candidates = [
+              "gemini-2.5-flash-lite",
+              "gemini-2.5-flash",
+              "gemini-2.0-flash",
+              "gemini-flash-latest",
+          ]
+
+          ok_model = None
+          for model in candidates:
+              url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={key}"
+              payload = {
+                  "contents": [
+                      {"parts": [{"text": "Sadece OK yaz."}]}
+                  ]
+              }
+              c, b = call(url, payload)
+              print(f"TEST {model} -> {c}")
+              if c == 200:
+                  ok_model = model
+                  print("SUCCESS MODEL:", model)
+                  break
+              else:
+                  print(b[:500])
+
+          if not ok_model:
+              print("Hicbir aday model calismadi.")
+              raise SystemExit(1)
+          PY
