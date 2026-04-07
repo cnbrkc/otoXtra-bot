@@ -167,9 +167,17 @@ def _try_gemini(
         chosen_temp = 0.7
 
     try:
-        chosen_max_tokens = int(max_tokens if max_tokens is not None else cfg_max_tokens)
+        raw_max = max_tokens if max_tokens is not None else cfg_max_tokens
+if isinstance(raw_max, str):
+    raw_max = raw_max.strip()
+    if raw_max.isdigit():
+        chosen_max_tokens = int(raw_max)
+    else:
+        chosen_max_tokens = 2048
+else:
+    try:
+        chosen_max_tokens = int(raw_max)
     except Exception:
-        log("max_output_tokens gecersiz, 2048 kullaniliyor", "WARNING")
         chosen_max_tokens = 2048
 
     try:
