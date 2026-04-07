@@ -2,9 +2,23 @@ name: Validate
 
 on:
   push:
-    branches: [ "main", "master" ]
+    paths-ignore:
+      - "README.md"
+      - "SCHEMA.md"
+      - "OPERASYON_REHBERI.md"
   pull_request:
-    branches: [ "main", "master" ]
+    paths-ignore:
+      - "README.md"
+      - "SCHEMA.md"
+      - "OPERASYON_REHBERI.md"
+  workflow_dispatch:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   validate:

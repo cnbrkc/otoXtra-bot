@@ -1,13 +1,5 @@
 """
 core/state_manager.py - Pipeline durum yoneticisi
-
-Ajanlar arasi veri gecisini queue/pipeline.json ile yonetir.
-- init_pipeline(run_id): Yeni calisma baslatir
-- get_stage(stage_name): Asama verisini dondurur
-- set_stage(stage_name, status, output, error): Asama durumunu gunceller
-- get_status(): Pipeline genel durumunu dondurur
-- is_stage_done(stage_name): Asama done mi kontrol eder
-- get_pipeline(): Tum pipeline verisini dondurur
 """
 
 import json
@@ -52,15 +44,32 @@ def _empty_pipeline() -> Dict[str, Any]:
     }
 
 
+def _compute_pipeline_status(pipeline: Dict[str, Any]) -> str:
+    stages = pipeline.get("stages", {})
+    if not isinstance(stages, dict):
+        return "idle"
+
+    statuses = [stages.get(s, {}).get("status", "waiting") for s in VALID_STAGES]
+
+    if any(s == "error" for s in statuses):
+        return "error"
+    if all(s == "done" for s in statuses):
+        return "completed"
+    if any(s in ("running", "done") for s in statuses):
+        return "running"
+
+    # Hepsi waiting ise ama aktif bir run baslatilmissa running kalsin
+    if pipeline.get("run_id") and pipeline.get("started_at") and pipeline.get("status") == "running":
+        return "running"
+
+    return "idle"
+
+
 def _normalize_pipeline(data: Any) -> Dict[str, Any]:
-    """
-    pipeline.json bozuk/eksikse guvenli ve standart hale getirir.
-    """
     if not isinstance(data, dict):
         return _empty_pipeline()
 
     normalized = _empty_pipeline()
-
     normalized["run_id"] = data.get("run_id")
     normalized["started_at"] = data.get("started_at")
     normalized["updated_at"] = data.get("updated_at")
@@ -88,29 +97,6 @@ def _normalize_pipeline(data: Any) -> Dict[str, Any]:
 
     normalized["status"] = _compute_pipeline_status(normalized)
     return normalized
-
-
-def _compute_pipeline_status(pipeline: Dict[str, Any]) -> str:
-    """
-    Genel durum hesabi:
-    - Herhangi bir asama error ise: error
-    - Tum asamalar done ise: completed
-    - En az bir asama running/done ise: running
-    - Hicbiri baslamadiysa: idle
-    """
-    stages = pipeline.get("stages", {})
-    if not isinstance(stages, dict):
-        return "idle"
-
-    statuses = [stages.get(s, {}).get("status", "waiting") for s in VALID_STAGES]
-
-    if any(s == "error" for s in statuses):
-        return "error"
-    if all(s == "done" for s in statuses):
-        return "completed"
-    if any(s in ("running", "done") for s in statuses):
-        return "running"
-    return "idle"
 
 
 def _load_pipeline() -> Dict[str, Any]:
@@ -196,11 +182,9 @@ def set_stage(stage_name: str, status: str, output: Any = None, error: str = Non
         "updated_at": now,
     }
 
-    # Tutarlilik: error durumunda mesaj bossa otomatik doldur
     if status == "error" and not stage_payload["error"]:
         stage_payload["error"] = f"{stage_name} asamasinda hata"
 
-    # waiting/running durumunda eski hatayi tasimayalim
     if status in ("waiting", "running"):
         stage_payload["error"] = None
         if status == "waiting":
@@ -236,18 +220,11 @@ def get_pipeline() -> Dict[str, Any]:
 
 
 if __name__ == "__main__":
-    log("=== core/state_manager.py smoke test basladi ===")
-
-    test_run_id = "test-2026-01-01-10:00"
-    log(f"init_pipeline: {init_pipeline(test_run_id)}")
-
+    log("state_manager smoke test basladi")
+    init_pipeline("test-2026-01-01-10:00")
     log(f"status: {get_status()}")
-
     set_stage("fetch", "running")
-    set_stage("fetch", "done", output={"articles": [{"title": "Test", "url": "https://example.com"}]})
-
+    set_stage("fetch", "done", output={"articles": [{"title": "Test"}]})
     set_stage("score", "error", error="Model timeout")
-    log(f"score stage: {get_stage('score')}")
-
     log(f"pipeline status: {get_status()}")
-    log("=== core/state_manager.py smoke test bitti ===")
+    log("state_manager smoke test bitti")

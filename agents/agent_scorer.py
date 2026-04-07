@@ -2,9 +2,10 @@
 Viral scoring agent.
 """
 
+import os
 import time
-from typing import Optional
 from datetime import timedelta
+from typing import Optional
 
 from core.logger import log
 from core.config_loader import load_config
@@ -23,8 +24,31 @@ BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
 CROSS_VALIDATE_THRESHOLD: float = 0.4
 
-FRESHNESS_TIERS = [(2, 7), (4, 3), (12, 0)]
-FRESHNESS_OLD_MALUS: int = -5
+FRESHNESS_TIERS = [
+    (1, 10),
+    (3, 7),
+    (6, 4),
+    (12, 1),
+]
+FRESHNESS_OLD_MALUS: int = -4
+TREND_BONUS_CAP: int = 18
+
+
+def _is_score_breakdown_enabled() -> bool:
+    value = os.environ.get("DEBUG_SCORE_BREAKDOWN", "false").strip().lower()
+    return value in ("1", "true", "yes", "on")
+
+
+def _safe_int(value, default=0) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
+def _clamp_score(value: int) -> int:
+    return max(0, min(100, value))
+
 
 def _format_articles_numbered(articles: list) -> str:
     lines = []
@@ -109,6 +133,7 @@ def run_viral_scoring(articles: list) -> list:
         log("viral_scorer prompt not found", "WARNING")
         for article in articles:
             article["score"] = UNSCORED_DEFAULT
+            article["score_reason"] = "prompt_missing"
         return articles
 
     batches = _split_into_batches(articles)
@@ -117,9 +142,11 @@ def run_viral_scoring(articles: list) -> list:
     for batch_num, batch in enumerate(batches, start=1):
         numbered_text = _format_articles_numbered(batch)
         ai_response = ask_ai(f"{scorer_prompt}\n\n{numbered_text}")
+
         if not ai_response:
             for article in batch:
                 article["score"] = UNSCORED_DEFAULT
+                article["score_reason"] = "ai_empty"
                 all_scored.append(article)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
@@ -129,6 +156,7 @@ def run_viral_scoring(articles: list) -> list:
         if not ai_results or not isinstance(ai_results, list):
             for article in batch:
                 article["score"] = UNSCORED_DEFAULT
+                article["score_reason"] = "ai_parse_failed"
                 all_scored.append(article)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
@@ -138,16 +166,17 @@ def run_viral_scoring(articles: list) -> list:
         matched_ids = {id(art) for _, art in matched_pairs}
 
         for ai_result, article in matched_pairs:
-            try:
-                puan = max(0, min(100, int(ai_result.get("puan", UNSCORED_DEFAULT))))
-            except (ValueError, TypeError):
-                puan = UNSCORED_DEFAULT
-            article["score"] = puan
+            base_score = _clamp_score(_safe_int(ai_result.get("puan", UNSCORED_DEFAULT), UNSCORED_DEFAULT))
+            article["base_ai_score"] = base_score
+            article["score"] = base_score
+            article["score_reason"] = "ai_scored"
             all_scored.append(article)
 
         for article in batch:
             if id(article) not in matched_ids:
+                article["base_ai_score"] = UNSCORED_DEFAULT
                 article["score"] = UNSCORED_DEFAULT
+                article["score_reason"] = "ai_unmatched"
                 all_scored.append(article)
 
         if batch_num < len(batches):
@@ -160,6 +189,7 @@ def run_viral_scoring(articles: list) -> list:
 def _calculate_freshness_bonus(published_str: str) -> int:
     if not published_str:
         return 0
+
     try:
         from datetime import datetime, timezone
 
@@ -184,6 +214,7 @@ def _calculate_freshness_bonus(published_str: str) -> int:
         for max_hours, bonus in FRESHNESS_TIERS:
             if age_hours < max_hours:
                 return bonus
+
         return FRESHNESS_OLD_MALUS
     except Exception:
         return 0
@@ -192,14 +223,47 @@ def _calculate_freshness_bonus(published_str: str) -> int:
 def apply_freshness_bonus(scored_articles: list) -> list:
     if not scored_articles:
         return []
+
     for article in scored_articles:
         bonus = _calculate_freshness_bonus(article.get("published", ""))
-        if bonus == 0:
-            continue
-        original = int(article.get("score", 0) or 0)
-        article["score"] = max(0, min(100, original + bonus))
+        article["freshness_bonus"] = bonus
+
+        original = _safe_int(article.get("score", 0), 0)
+        article["score"] = _clamp_score(original + bonus)
+
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
+
+
+def _trend_count_bonus(trend_count: int) -> int:
+    if trend_count >= 6:
+        return 12
+    if trend_count >= 5:
+        return 10
+    if trend_count >= 4:
+        return 8
+    if trend_count >= 3:
+        return 6
+    if trend_count >= 2:
+        return 3
+    return 0
+
+
+def _priority_bonus(source_priority: str) -> int:
+    value = (source_priority or "").lower().strip()
+    if value == "high":
+        return 2
+    if value == "medium":
+        return 1
+    return 0
+
+
+def _confidence_multiplier(ai_score: int) -> float:
+    if ai_score < 40:
+        return 0.4
+    if ai_score < 55:
+        return 0.7
+    return 1.0
 
 
 def apply_trend_bonus(scored_articles: list) -> list:
@@ -207,42 +271,72 @@ def apply_trend_bonus(scored_articles: list) -> list:
         return []
 
     for article in scored_articles:
-        try:
-            trend_bonus = int(article.get("trend_bonus", 0) or 0)
-        except (ValueError, TypeError):
-            trend_bonus = 0
+        ai_score = _safe_int(article.get("score", 0), 0)
+        trend_count = _safe_int(article.get("trend_count", 1), 1)
+        incoming_trend_bonus = _safe_int(article.get("trend_bonus", 0), 0)
+        src_priority = article.get("source_priority", "low")
 
-        try:
-            trend_count = int(article.get("trend_count", 1) or 1)
-        except (ValueError, TypeError):
-            trend_count = 1
+        computed_count_bonus = _trend_count_bonus(trend_count)
+        priority_bonus = _priority_bonus(src_priority)
+
+        raw_trend_bonus = max(incoming_trend_bonus, computed_count_bonus) + priority_bonus
+        raw_trend_bonus = min(raw_trend_bonus, TREND_BONUS_CAP)
+
+        effective_bonus = int(round(raw_trend_bonus * _confidence_multiplier(ai_score)))
+
+        summary = (article.get("summary", "") or "").strip()
+        if len(summary) < 25:
+            effective_bonus = max(0, effective_bonus - 2)
 
         article["trend_count"] = trend_count
-        article["trend_bonus"] = trend_bonus
-
-        if trend_bonus <= 0:
-            continue
-
-        original_score = int(article.get("score", 0) or 0)
-        article["score"] = max(0, min(100, original_score + trend_bonus))
+        article["trend_bonus_raw"] = raw_trend_bonus
+        article["trend_bonus"] = effective_bonus
+        article["score"] = _clamp_score(ai_score + effective_bonus)
 
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
+
+
+def _get_active_threshold() -> int:
+    scoring_config = load_config("scoring")
+    thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
+    publish_score = _safe_int(thresholds.get("publish_score", 65), 65)
+    slow_day_score = _safe_int(thresholds.get("slow_day_score", 50), 50)
+
+    today_post_count = get_today_post_count(get_posted_news())
+    return slow_day_score if today_post_count < 2 else publish_score
 
 
 def apply_thresholds(scored_articles: list) -> list:
     if not scored_articles:
         return []
 
-    scoring_config = load_config("scoring")
-    thresholds = scoring_config.get("thresholds", {})
-    publish_score = thresholds.get("publish_score", 65)
-    slow_day_score = thresholds.get("slow_day_score", 50)
-
-    today_post_count = get_today_post_count(get_posted_news())
-    threshold = slow_day_score if today_post_count < 2 else publish_score
-
+    threshold = _get_active_threshold()
     return [a for a in scored_articles if a.get("score", 0) >= threshold]
+
+
+def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
+    if not _is_score_breakdown_enabled():
+        return
+    if not scored_articles:
+        log("Score breakdown: no articles", "INFO")
+        return
+
+    log("=== SCORE BREAKDOWN (TOP 5) ===", "INFO")
+    for idx, article in enumerate(scored_articles[:5], start=1):
+        title = (article.get("title", "") or "")[:90]
+        base_ai = _safe_int(article.get("base_ai_score", article.get("score", 0)), 0)
+        freshness = _safe_int(article.get("freshness_bonus", 0), 0)
+        trend_raw = _safe_int(article.get("trend_bonus_raw", 0), 0)
+        trend_eff = _safe_int(article.get("trend_bonus", 0), 0)
+        final_score = _safe_int(article.get("score", 0), 0)
+        trend_count = _safe_int(article.get("trend_count", 1), 1)
+
+        log(
+            f"{idx}) score={final_score} (base={base_ai} + fresh={freshness} + trend={trend_eff}/{trend_raw}) "
+            f"trend_count={trend_count} threshold={threshold} | {title}",
+            "INFO",
+        )
 
 
 def filter_and_score(articles: list) -> Optional[dict]:
@@ -255,7 +349,11 @@ def filter_and_score(articles: list) -> Optional[dict]:
 
     scored = apply_freshness_bonus(scored)
     scored = apply_trend_bonus(scored)
-    above_threshold = apply_thresholds(scored)
+
+    threshold = _get_active_threshold()
+    _log_score_breakdown(scored, threshold)
+
+    above_threshold = [a for a in scored if a.get("score", 0) >= threshold]
     if not above_threshold:
         return None
 
@@ -287,6 +385,8 @@ def run() -> bool:
             "title": best_article.get("title", ""),
             "trend_count": best_article.get("trend_count", 1),
             "trend_bonus": best_article.get("trend_bonus", 0),
+            "freshness_bonus": best_article.get("freshness_bonus", 0),
+            "score_reason": best_article.get("score_reason", "unknown"),
         }
         set_stage("score", "done", output=output)
         return True
