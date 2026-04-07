@@ -1,28 +1,3 @@
-# otoXtra News Bot — GitHub Actions Workflow (v5.1 — Akıllı Zamanlama)
-#
-# Günde 11 kez tetiklenir (Türkiye saatine göre 08:00-22:00 arası).
-# Sabah 08:00-14:00 arası her saat (yüksek trafik bölgesi).
-# 14:00 sonrası 2 saatte bir.
-# Gece 22:00'de son tetikleme.
-#
-# Türkiye (UTC+3) karşılıkları:
-#   05 UTC → 08 TR  ┐
-#   06 UTC → 09 TR  │
-#   07 UTC → 10 TR  │ Sabah yoğun bölge
-#   08 UTC → 11 TR  │ (her saat)
-#   09 UTC → 12 TR  │
-#   10 UTC → 13 TR  │
-#   11 UTC → 14 TR  ┘
-#   13 UTC → 16 TR  ┐
-#   15 UTC → 18 TR  │ Öğleden sonra
-#   17 UTC → 20 TR  │ (2 saatte bir)
-#   19 UTC → 22 TR  ┘
-#
-# v5.1 Değişiklikler:
-#   - Cron sabah 08-14 arası her saat tetiklenecek şekilde güncellendi
-#   - Gece 00:00 tetiklemesi kaldırıldı
-#   - Toplam: 10 → 11 tetikleme (ama max_daily_posts=9 aşılmaz)
-
 name: otoXtra Bot
 
 on:
@@ -32,13 +7,21 @@ on:
   workflow_dispatch:
     inputs:
       test_mode:
-        description: 'Test modu (gecikmeler ve gerçek paylaşım devre dışı)'
+        description: 'Test modu (gecikmeler ve gercek paylasim devre disi)'
         required: false
         default: 'true'
         type: choice
         options:
           - 'true'
           - 'false'
+      debug_score_breakdown:
+        description: 'Skor dokumu logu acilsin mi?'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
 
 concurrency:
   group: otoxtra-bot
@@ -77,6 +60,7 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
+          DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
         run: python -m core.orchestrator
 
       - name: Save data
@@ -87,13 +71,13 @@ jobs:
           git add data/posted_news.json
           git add queue/pipeline.json
 
-          git diff --staged --quiet && echo "Değişiklik yok, commit atlanıyor" && exit 0
+          git diff --staged --quiet && echo "Degisiklik yok, commit atlanıyor" && exit 0
 
-          git commit -m "📰 Haber paylaşıldı [$(date +'%Y-%m-%d %H:%M')]"
+          git commit -m "Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
 
           for i in 1 2 3; do
             git push && break
-            echo "Push başarısız (deneme $i/3), pull --rebase yapılıyor..."
+            echo "Push basarisiz (deneme $i/3), pull --rebase yapiliyor..."
             git pull --rebase origin $(git branch --show-current)
             sleep 2
           done
