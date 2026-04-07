@@ -22,7 +22,7 @@ jobs:
       - name: Sozdizimi kontrolu (compile)
         run: |
           python -m compileall -q core agents platforms
-          python -m py_compile main.py
+          python -m py_compile core/orchestrator.py
 
       - name: Modul import testi
         run: |
