@@ -122,6 +122,11 @@ def _clean_non_turkish_chars(text: str) -> str:
 # ============================================================
 
 def _try_gemini(
+      settings = load_config("settings")
+    use_gemini = settings.get("ai", {}).get("enable_gemini", True)
+    if not use_gemini:
+        log("Gemini ayarlardan kapali, atlanıyor", "INFO")
+        return None
     prompt: str,
     temperature: float,
     max_tokens: int,
@@ -138,8 +143,6 @@ def _try_gemini(
         return None
 
     models_to_try = [model_name]
-    if model_name != "gemini-1.5-flash":
-        models_to_try.append("gemini-1.5-flash")
 
     try:
         from google import genai
