@@ -16,14 +16,27 @@ def get_project_root() -> str:
 
 
 def _empty_for_config(config_name: str) -> Any:
+    # fetcher tarafinda sources_config.get(...) kullanildigi icin dict donuyoruz
     if config_name == "sources":
-        return []
+        return {"sources": []}
     return {}
+
+
+def _normalize_config(config_name: str, data: Any) -> Any:
+    # Eski/yeni format uyumlulugu: sources.json list ise dict'e cevir
+    if config_name == "sources":
+        if isinstance(data, list):
+            return {"sources": data}
+        return data
+    return data
 
 
 def _validate_config(config_name: str, data: Any) -> bool:
     if config_name == "sources":
-        return isinstance(data, list)
+        if not isinstance(data, dict):
+            return False
+        sources = data.get("sources")
+        return isinstance(sources, list)
 
     if not isinstance(data, dict):
         return False
@@ -94,6 +107,7 @@ def save_json(filepath: str, data: Any) -> bool:
 def load_config(config_name: str) -> Any:
     filepath = os.path.join(get_project_root(), "config", f"{config_name}.json")
     data = load_json(filepath)
+    data = _normalize_config(config_name, data)
 
     if data in ({}, None):
         log(f"Config could not be loaded: {config_name}.json", "WARNING")
