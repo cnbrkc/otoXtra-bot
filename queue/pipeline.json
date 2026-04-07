@@ -1,57 +1,43 @@
 {
-  "run_id": "2026-04-07-20:55",
+  "run_id": "2026-04-07-23:01",
   "status": "completed",
-  "started_at": "2026-04-07T20:55:18.256016+03:00",
-  "updated_at": "2026-04-07T21:01:50.926762+03:00",
+  "started_at": "2026-04-07T23:01:16.300546+03:00",
+  "updated_at": "2026-04-07T23:02:57.158248+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
-            "link": "https://www.donanimhaber.com/avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun--204162",
-            "published": "2026-04-07T17:17:00+00:00",
-            "summary": "Tesla, otonom sürüş yazılımı FSD’nin Avrupa’da onaylanması için artık gün sayıyor. Hollanda’da RDW’nin FSD onayı hakkında kararını 10 Nisan’da vermesi bekleniyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204162/1400x788avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun.jpg",
+            "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+            "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
+            "published": "2026-04-07T19:22:00+00:00",
+            "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "avrupa-fsd-geri-gun-sayim-tesla"
+            "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen"
           },
           {
-            "title": "Tam elektrikli yeni BMW M3, yol testlerinde boy gösteriyor",
-            "link": "https://tr.motor1.com/news/792267/bmw-ev-m3-yol-casus/",
-            "published": "2026-04-07T17:00:00+00:00",
-            "summary": "Casus fotoğraflar, i3'ten daha agresif çizgiler ve 1.000 bg üstü güç vadediyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/8AxgXW/s3/bmw-m3-elettrica-2026-il-render-di-motor1.com.jpg",
-            "source_name": "Motor1 TR",
+            "title": "SUV'lardan sıkılanlara: Yeni Geely Galaxy A7 elektrikli sedan",
+            "link": "https://www.donanimhaber.com/suv-lardan-sikilanlara-yeni-geely-galaxy-a7-elektrikli-sedan--204169",
+            "published": "2026-04-07T19:05:00+00:00",
+            "summary": "Geely, elektrikli otomobil rekabetini kızıştıracak yeni modeli Galaxy A7’yi tanıtmaya hazırlanıyor. Sedan modelde 550 km’ye varan menzil, güçlü motor ve gelişmiş teknolojiler dikkat çekiyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204169/1400x788suv-lardan-sikilanlara-yeni-geely-galaxy-a7-elektrikli-sedan.jpg",
+            "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-boy-elektrikli-gosteriyor-tam-testlerinde-yol"
-          },
-          {
-            "title": "Unutulmuş bir İngiliz spor otomobil üreticisi geri döndü!",
-            "link": "https://tr.motor1.com/news/792266/unutulmus-ingiliz-marka-geri-donuyor/",
-            "published": "2026-04-07T16:00:00+00:00",
-            "summary": "Marcos'un yeni sahibi, küçük spor otomobil üreticisi için büyük planlara sahip.",
-            "image_url": "https://cdn.motor1.com/images/mgl/BXZyW4/s3/marcos-project-mosquito.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "dondu-geri-ngiliz-otomobil-spor-unutulmus-ureticisi"
+            "topic_fingerprint": "elektrikli-galaxy-geely-lardan-sedan-sikilanlara-suv"
           }
         ],
-        "count": 3,
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -81,111 +67,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-07T20:55:22.927589+03:00"
+      "updated_at": "2026-04-07T23:01:23.987149+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
-          "link": "https://www.donanimhaber.com/avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun--204162",
-          "published": "2026-04-07T17:17:00+00:00",
-          "summary": "Tesla, otonom sürüş yazılımı FSD’nin Avrupa’da onaylanması için artık gün sayıyor. Hollanda’da RDW’nin FSD onayı hakkında kararını 10 Nisan’da vermesi bekleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204162/1400x788avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun.jpg",
+          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
+          "published": "2026-04-07T19:22:00+00:00",
+          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-fsd-geri-gun-sayim-tesla",
-          "base_ai_score": 88,
-          "score": 100,
+          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
+          "base_ai_score": 78,
+          "score": 90,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2
         },
-        "score": 100,
-        "title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
+        "score": 90,
+        "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
         "trend_count": 1,
         "trend_bonus": 2,
         "freshness_bonus": 10,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-07T20:55:26.729461+03:00"
+      "updated_at": "2026-04-07T23:01:27.569890+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
-          "link": "https://www.donanimhaber.com/avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun--204162",
-          "published": "2026-04-07T17:17:00+00:00",
-          "summary": "Tesla, otonom sürüş yazılımı FSD’nin Avrupa’da onaylanması için artık gün sayıyor. Hollanda’da RDW’nin FSD onayı hakkında kararını 10 Nisan’da vermesi bekleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204162/1400x788avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun.jpg",
+          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
+          "published": "2026-04-07T19:22:00+00:00",
+          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-fsd-geri-gun-sayim-tesla",
-          "base_ai_score": 88,
-          "score": 100,
+          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
+          "base_ai_score": 78,
+          "score": 90,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Onayın verilmesi halinde sürecin hızla ilerlemesi öngörülüyor. İlk etapta Hollanda’da anında dağıtım yapılması olası. Diğer Avrupa ülkelerinin de Hollanda kararını emsal olarak kabul etmesi ve Avrupa Komisyonu’nun adımlarını takip etmesiyle2026 yazında AB genelindeFSD’nin yaygınlaşması beklenebilir. Bu gelişme, Türkiye gibi Avrupa mevzuatına paralel regülasyonlar uygulayan ülkelerde de sürecin hızlanacağı anlamına geliyor. Öte yandan Tesla bir süredir Avrupa’nın çeşitli ülkelerinde FSD sürüş testleri yürütüyor. Bu testlere randevu alan herkes katılabiliyor. Bununla birlikte onay kararının ilk olarak Şubat ayında açıklanması planlanmıştı. Ancak bu tarih ilk olarak Mart ayında sonra da süreç 10 Nisan’a ertelenmişti. Avrupa’da araç otomasyonu, Birleşmiş Milletler Avrupa Ekonomik Komisyonu (UNECE) tarafından koordine edilen regülasyonlarla yönetiliyor. Türkiye de UNECE üyesi olduğu için yasal düzenlemelerin hızlı bir şekilde yapılması beklenebilir. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.amazon.com.tr/dp/B07W343FDL https://store.steampowered.com/app/2943780/Chamber_Survival https://www.migros.com.tr/maybelline-new-york-lifter-plump-dudak-parlatici-003-pink-sting-p-21cf376"
+          "full_text": "Piyasadakien güvenilir3 silindirli ünitelerden biri olarak kabul edilen bu motorun yerini, kademeli olarak1.5 ve 2.0 litrelik 4 silindirli motorlaralacak. Yapılan planlamaya göre, 150 beygir güce kadar olan modellerde T-Roc'ta şu anda sunulan1.5 eTSImotor kullanılacak. Daha yüksek güç isteyen modellerde ise2.0 TSIturbo benzinli motorlara geçilecek. Dizel cephesinde ise 116 ile 193 beygir arasında güç sunan2.0 TDImotor, markanıntek dizel seçeneğiolarak kalmaya devam edecek. Yeni dönemde 1.0 motorun yerini alacak olan dört silindirli ünitelerin tamamı,elektrik desteklibir altyapıyla (MHEV, PHEV veya tam hibrit) sunulacak. Özellikle tam hibrit teknolojisinin, 2026 yılı içindeT-Rocmodeliyle birlikte devreye girmesi bekleniyor. 2012 yılından bu yana14 yıldıryollarda olan ve grubun giriş seviyesi modellerinde sıkça tercih edilen 1.0 motorun vedası, geniş bir yelpazeyi etkileyecek. BaştaVolkswagen PoloveT-Crossolmak üzere grup bünyesindekiSeatveSkodamarkalarının birçok modeli de bu motor değişiminden payını alacak. Volkswagen geçtiğimiz Eylül ayında efsanevi2.5 litrelik 5 silindirlimotorun da 2027 yılında Avrupa pazarından çekileceğini duyurmuştu. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.n11.com/kampanyalar/tik-hizinda-indirim https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://app.hb.biz/YbTCqC2Lx9Zp https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat"
         },
-        "post_text": "⚡️ AVRUPA'DA TESLA FSD İÇİN GERİ SAYIM BAŞLADI!\n\nTesla'nın otonom sürüş teknolojisi FSD, yakında Avrupa yollarında olabilir.\n\nHollanda'daki RDW'nin kararını 10 Nisan'da açıklaması bekleniyor. Onay gelirse, önce Hollanda'da, ardından da 2026 yazına kadar Avrupa genelinde yaygınlaşması öngörülüyor.\n\nBu durum, Türkiye gibi Avrupa mevzuatına uyum sağlayan ülkeler için de süreci hızlandırabilir.\n\nSizce otonom sürüş teknolojisi hayatımızı ne kadar değiştirecek?",
-        "post_text_length": 459
+        "post_text": "🚗 VOLKSWAGEN'DEN BÜYÜK DEĞİŞİKLİK: 3 SİLİNDİRLİ MOTOR VEDA EDİYOR!\n\nVolkswagen, yeni Euro 7 emisyon standartlarına uyum için önemli bir karar aldı. Uzun yıllardır pek çok modelde kullanılan 3 silindirli 1.0 TSI motorlar üretimden kalkıyor.\n\nYerine ise daha güçlü ve çevreci dört silindirli motorlar geliyor. 1.5 ve 2.0 litrelik TSI motorlar, elektrik destekli hibrit altyapısıyla karşımıza çıkacak. Hatta tam hibrit versiyonları bile yolda!\n\nBu değişiklik, Polo ve T-Cross gibi popüler modellerin yanı sıra Seat ve Skoda'nın da bazı araçlarını etkileyecek.\n\nSizce bu motor değişimi otomobillerimizi nasıl etkileyecek?",
+        "post_text_length": 617
       },
       "error": null,
-      "updated_at": "2026-04-07T20:55:29.165223+03:00"
+      "updated_at": "2026-04-07T23:01:30.071214+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
-          "link": "https://www.donanimhaber.com/avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun--204162",
-          "published": "2026-04-07T17:17:00+00:00",
-          "summary": "Tesla, otonom sürüş yazılımı FSD’nin Avrupa’da onaylanması için artık gün sayıyor. Hollanda’da RDW’nin FSD onayı hakkında kararını 10 Nisan’da vermesi bekleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204162/1400x788avrupa-da-tesla-fsd-icin-geri-sayim-basladi-son-3-gun.jpg",
+          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
+          "published": "2026-04-07T19:22:00+00:00",
+          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-fsd-geri-gun-sayim-tesla",
-          "base_ai_score": 88,
-          "score": 100,
+          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
+          "base_ai_score": 78,
+          "score": 90,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Onayın verilmesi halinde sürecin hızla ilerlemesi öngörülüyor. İlk etapta Hollanda’da anında dağıtım yapılması olası. Diğer Avrupa ülkelerinin de Hollanda kararını emsal olarak kabul etmesi ve Avrupa Komisyonu’nun adımlarını takip etmesiyle2026 yazında AB genelindeFSD’nin yaygınlaşması beklenebilir. Bu gelişme, Türkiye gibi Avrupa mevzuatına paralel regülasyonlar uygulayan ülkelerde de sürecin hızlanacağı anlamına geliyor. Öte yandan Tesla bir süredir Avrupa’nın çeşitli ülkelerinde FSD sürüş testleri yürütüyor. Bu testlere randevu alan herkes katılabiliyor. Bununla birlikte onay kararının ilk olarak Şubat ayında açıklanması planlanmıştı. Ancak bu tarih ilk olarak Mart ayında sonra da süreç 10 Nisan’a ertelenmişti. Avrupa’da araç otomasyonu, Birleşmiş Milletler Avrupa Ekonomik Komisyonu (UNECE) tarafından koordine edilen regülasyonlarla yönetiliyor. Türkiye de UNECE üyesi olduğu için yasal düzenlemelerin hızlı bir şekilde yapılması beklenebilir. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.amazon.com.tr/dp/B07W343FDL https://store.steampowered.com/app/2943780/Chamber_Survival https://www.migros.com.tr/maybelline-new-york-lifter-plump-dudak-parlatici-003-pink-sting-p-21cf376",
+          "full_text": "Piyasadakien güvenilir3 silindirli ünitelerden biri olarak kabul edilen bu motorun yerini, kademeli olarak1.5 ve 2.0 litrelik 4 silindirli motorlaralacak. Yapılan planlamaya göre, 150 beygir güce kadar olan modellerde T-Roc'ta şu anda sunulan1.5 eTSImotor kullanılacak. Daha yüksek güç isteyen modellerde ise2.0 TSIturbo benzinli motorlara geçilecek. Dizel cephesinde ise 116 ile 193 beygir arasında güç sunan2.0 TDImotor, markanıntek dizel seçeneğiolarak kalmaya devam edecek. Yeni dönemde 1.0 motorun yerini alacak olan dört silindirli ünitelerin tamamı,elektrik desteklibir altyapıyla (MHEV, PHEV veya tam hibrit) sunulacak. Özellikle tam hibrit teknolojisinin, 2026 yılı içindeT-Rocmodeliyle birlikte devreye girmesi bekleniyor. 2012 yılından bu yana14 yıldıryollarda olan ve grubun giriş seviyesi modellerinde sıkça tercih edilen 1.0 motorun vedası, geniş bir yelpazeyi etkileyecek. BaştaVolkswagen PoloveT-Crossolmak üzere grup bünyesindekiSeatveSkodamarkalarının birçok modeli de bu motor değişiminden payını alacak. Volkswagen geçtiğimiz Eylül ayında efsanevi2.5 litrelik 5 silindirlimotorun da 2027 yılında Avrupa pazarından çekileceğini duyurmuştu. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.n11.com/kampanyalar/tik-hizinda-indirim https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://app.hb.biz/YbTCqC2Lx9Zp https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat",
           "image_source": "rss_image"
         },
-        "post_text": "⚡️ AVRUPA'DA TESLA FSD İÇİN GERİ SAYIM BAŞLADI!\n\nTesla'nın otonom sürüş teknolojisi FSD, yakında Avrupa yollarında olabilir.\n\nHollanda'daki RDW'nin kararını 10 Nisan'da açıklaması bekleniyor. Onay gelirse, önce Hollanda'da, ardından da 2026 yazına kadar Avrupa genelinde yaygınlaşması öngörülüyor.\n\nBu durum, Türkiye gibi Avrupa mevzuatına uyum sağlayan ülkeler için de süreci hızlandırabilir.\n\nSizce otonom sürüş teknolojisi hayatımızı ne kadar değiştirecek?",
-        "image_path": "/tmp/otoxtra_rss_d0svb24t.jpg",
+        "post_text": "🚗 VOLKSWAGEN'DEN BÜYÜK DEĞİŞİKLİK: 3 SİLİNDİRLİ MOTOR VEDA EDİYOR!\n\nVolkswagen, yeni Euro 7 emisyon standartlarına uyum için önemli bir karar aldı. Uzun yıllardır pek çok modelde kullanılan 3 silindirli 1.0 TSI motorlar üretimden kalkıyor.\n\nYerine ise daha güçlü ve çevreci dört silindirli motorlar geliyor. 1.5 ve 2.0 litrelik TSI motorlar, elektrik destekli hibrit altyapısıyla karşımıza çıkacak. Hatta tam hibrit versiyonları bile yolda!\n\nBu değişiklik, Polo ve T-Cross gibi popüler modellerin yanı sıra Seat ve Skoda'nın da bazı araçlarını etkileyecek.\n\nSizce bu motor değişimi otomobillerimizi nasıl etkileyecek?",
+        "image_path": "/tmp/otoxtra_rss_yl_excgt.jpg",
         "image_source": "rss_image"
       },
       "error": null,
-      "updated_at": "2026-04-07T20:55:30.615772+03:00"
+      "updated_at": "2026-04-07T23:01:33.175860+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122161685750916499",
-        "article_title": "Avrupa’da Tesla FSD için geri sayım başladı: Son 3 Gün!",
+        "post_id": "678053852057751_122161693886916499",
+        "article_title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
         "image_source": "rss_image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-07T21:01:50.926762+03:00"
+      "updated_at": "2026-04-07T23:02:57.158248+03:00"
     }
   }
 }
