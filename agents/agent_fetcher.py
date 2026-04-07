@@ -45,7 +45,8 @@ def _is_test_mode() -> bool:
 
 
 def _turkish_lower(text: str) -> str:
-    return text.replace("I", "i").lower()
+    text = text.replace("İ", "i").replace("I", "ı")
+    return text.lower()
 
 
 def _extract_image_from_entry(entry) -> str:
