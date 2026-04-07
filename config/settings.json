@@ -20,12 +20,12 @@
     "min_summary_length": 30
   },
   "duplicate_detection": {
-    "title_similarity_threshold": 0.80,
-    "keyword_overlap_threshold": 0.70
+    "title_similarity_threshold": 0.8,
+    "keyword_overlap_threshold": 0.7
   },
   "ai": {
-    "temperature": 0.7,
-    "max_output_tokens": 2048,
+    "temperature": 0.65,
+    "max_output_tokens": 1400,
     "enable_gemini": true,
     "gemini_model": "gemini-2.5-flash-lite",
     "groq_model": "llama-3.3-70b-versatile"
