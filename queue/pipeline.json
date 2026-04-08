@@ -1,43 +1,57 @@
 {
-  "run_id": "2026-04-08-19:18",
+  "run_id": "2026-04-08-21:08",
   "status": "completed",
-  "started_at": "2026-04-08T19:18:05.250430+03:00",
-  "updated_at": "2026-04-08T19:19:26.664206+03:00",
+  "started_at": "2026-04-08T21:08:43.896438+03:00",
+  "updated_at": "2026-04-08T21:11:35.114629+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
-            "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
-            "published": "2026-04-08T16:08:00+00:00",
-            "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde"
-          },
-          {
-            "title": "Toyota, avantajlı bakım kampanyalarıyla ilkbahara hazır!",
-            "link": "https://tr.motor1.com/news/792363/toyota-bakim-ilkbahar-kampanya-bulten/",
-            "published": "2026-04-08T15:00:00+00:00",
-            "summary": "16 Mayıs 2026'ya kadar devam edecek.",
-            "image_url": "https://cdn.motor1.com/images/mgl/OoMKPM/s3/toyota-c-hr-gr-sport.jpg",
+            "title": "Citroen konforu \"Sıfır Faiz\" imkanıyla buluştu!",
+            "link": "https://tr.motor1.com/news/792390/citroen-sifir-faiz-nisan-bulten/",
+            "published": "2026-04-08T17:00:00+00:00",
+            "summary": "Hem binek hem ticari araçlarda Nisan ayına özel kampanyalar sunuluyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/0eEwlz/s3/citroen-e-c3.jpg",
             "source_name": "Motor1 TR",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "avantajli-bakim-hazir-ilkbahara-kampanyalariyla-toyota"
+            "topic_fingerprint": "bulustu-citroen-faiz-imkaniyla-konforu-sifir"
+          },
+          {
+            "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
+            "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
+            "published": "2026-04-08T18:00:33+00:00",
+            "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2028-elektrikli-opel-suv-yolda"
+          },
+          {
+            "title": "BYD Türkiye Fabrikasına Ceza!",
+            "link": "https://shiftdelete.net/byd-turkiye-fabrikasina-ceza",
+            "published": "2026-04-08T17:00:32+00:00",
+            "summary": "Çinli otomobil devi BYD, Türkiye’de kurmayı planladığı fabrika için verdiği yatırım sözlerini yerine getirmemekle gündemde. 8 Temmuz 2024 tarihinde Sanayi ve Teknoloji Bakanı Mehmet Fatih Kacır ile BYD Yönetim Kurulu Başkanı arasında imzalanan anlaşmanın üzerinden neredeyse iki yıl geçmesine rağmen, tesis inşası için henüz çivi bile çakılmadı. Manisa civarında kurulması planlanan ve 1 milyar dolar […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "byd-ceza-fabrikasina-turkiye"
           }
         ],
-        "count": 2,
+        "count": 3,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -67,111 +81,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-08T19:18:10.169918+03:00"
+      "updated_at": "2026-04-08T21:08:47.596949+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
-          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
-          "published": "2026-04-08T16:08:00+00:00",
-          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
+          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
+          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
+          "published": "2026-04-08T18:00:33+00:00",
+          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
+          "image_url": "",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
-          "base_ai_score": 85,
-          "score": 97,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
+          "base_ai_score": 76,
+          "score": 87,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
-          "trend_bonus_raw": 2
+          "trend_bonus_raw": 1
         },
-        "score": 97,
-        "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
+        "score": 87,
+        "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
         "trend_count": 1,
-        "trend_bonus": 2,
+        "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-08T19:18:13.347085+03:00"
+      "updated_at": "2026-04-08T21:08:51.344516+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
-          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
-          "published": "2026-04-08T16:08:00+00:00",
-          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
+          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
+          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
+          "published": "2026-04-08T18:00:33+00:00",
+          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
+          "image_url": "",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
-          "base_ai_score": 85,
-          "score": 97,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
+          "base_ai_score": 76,
+          "score": 87,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Tesla,Full Self-Driving(Denetimli) sistemininv14.3sürümünü HW4 (AI4) donanımlı araçlar için dağıtmaya başladı. 2026.2.9.6 yazılım paketiyle gelen güncelleme yüzeyde küçük iyileştirmeler sunsa da asıl büyük değişim altyapıda gerçekleşti. Şirket, yapay zeka derleyicisini ve çalışma zamanını baştan sona yeniden yazarak tepki süresinde yüzde 20’lik bir iyileşme sağladığını açıkladı. Bu sürüm,Model S, Model 3, Model X, ModelYveCybertruck’ın HW4 versiyonlarında kullanılabiliyor. Dikkat çeken bir diğer unsur ise Tesla’nın ilk kez açık şekilde MLIR tabanlı bir altyapıya geçtiğini doğrulaması oldu. Güncellemenin en kritik noktası, Tesla’nın FSD sisteminin arkasındaki yapay zeka derleyicisini tamamen yenilemesi. Şirket, bu dönüşümdeMLIR(Multi-Level Intermediate Representation) altyapısını kullandığını belirtiyor. Bu teknoloji, sinir ağlarının farklı donanımlar üzerinde daha verimli çalışmasını sağlayanmodern bir derleyicimimarisi olarak biliniyor. MLIR, LLVM Foundation çatısı altında geliştiriliyor ve arkasındaki isim, aynı zamanda LLVM, Clang ve Swift’in yaratıcısı olan Chris Lattner. Lattner’ın 2017 yılında kısa bir süre Tesla’nın Autopilot ekibini yönetmiş olması bu geçişi daha da dikkat çekici hale getiriyor. Lattner, güncelleme sonrası yaptığı değerlendirmedeyüzde 20’lik tepki süresikazanımının son derece anlamlı olduğunu vurguladı. Bu iyileşme, araçların çevresel veriyi algıladığı an ile tepki verdiği an arasındaki gecikmeyi azaltıyor. Sonuç olarak araçlardaha erken fren ve daha hızlı manevra yapabiliyor. Ayrıca kritik durumlara daha etkin tepki verebiliyor. Tesla, yalnızca altyapıyı değil, sinir ağı eğitim süreçlerini de güncelledi.Pekiştirmeli öğrenme(Reinforcement learning) aşamasında yapılan geliştirmeler, sistemin farklı sürüş senaryolarında daha tutarlı performans göstermesini sağlıyor. Ayrıca görsel algı tarafında kullanılan görüntü kodlayıcısı da yenilendi. Bu sayede sistemin düşük görüş koşullarında, nadir senaryolarda ve karmaşık trafik yapılarındadaha doğru analiz yapabildiğibelirtiliyor. 3 boyutlu geometri algısı güçlendirilirken, trafik işaretlerinin yorumlanmasında da kapsam genişletildi. Bunlar dışında park performansı da iyileşiyor. Yeni sürümle birlikte araçlar, park alanı seçimi ve manevralarda daha kararlı hareket ediyor. Harita üzerinde görülen yeni “P” simgesi, aracın hedeflediği park noktasını önceden göstererek sürücüye şeffaflık sağlıyor. Ek olarak Tesla, daha önce eleştirilen bazı davranışları da azaltmayı hedefledi. Gereksiz şerit kaymaları ve takip mesafesi ihlalleri minimize edildi. Acil durum araçları, okul servisleri ve öncelik ihlali yapan araçlara karşı verilen tepkiler de geliştirildi. Gelecekte çukurlar algılanacak Bu sürüm, FSD v14 ve v14.2 ile başlayan yeni nesil uçtan uca sinir ağı mimarisinin devamı niteliğinde. Dolayısıyla bu sürüm de HW3 donanımlı eski araçlara gelmeyecek. Tesla, henüz bu sürüme dahil olmayan ancak planlanan bazı geliştirmeleri de paylaştı. Bunlar arasında daha geniş davranışsal akıl yürütme, çukur algılama ve kaçınma ile sürücü izleme sisteminin göz takibi doğruluğunun artırılması yer alıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.amazon.com.tr/dp/B0FP26GZW7 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.worldcard.com.tr/kampanyalar/k/30014550152"
+          "trend_bonus_raw": 1,
+          "full_text": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubuStellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelindeÇinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğüortaya çıktı. Sektördeki kaynaklar, masadaki bu olası ortaklığın her iki taraf için de son derece stratejik bir adım olduğunu belirtiyor. Geliştirilmesi hedeflenen buyeni elektrikli SUV modelinin üretiminde doğrudan Leapmotor’un sahip olduğu teknolojiler kullanılacak. Konuya hakim üç farklı kaynağın aktardığı bilgilere göre, araçlarınüretim merkezi olarak Stellantis’in İspanya’nın Zaragoza kentindeki fabrikasıplanlanıyor. Eğer taraflar arasındaki bu büyük anlaşma resmiyet kazanırsa,Stellantis yeni bir elektrikli araç modeli geliştirmenin getirdiği zaman ve finansal maliyet yükünü çok ciddi oranda azaltmış olacak. Bu tasarruf hamlesi, şirketin rekabetçi piyasada elini güçlendirecek. Üzerinde çalışılan buyeni Opel elektrikli SUV modelinin üretiminin 2028 yılında resmi olarak başlamasıöngörülüyor. Şirketlerin bu model için belirlediği ortak hedef iseyılda 50 bin adetlik araç üretimineulaşmak olarak açıklandı. Otomobil üreticilerinin zaman ve maliyet tasarrufu için teknoloji güçlerini birleştirmesi, sektörün geleceğini şekillendirmeye devam ediyor. Peki, siz markaların bu tarz ortaklıklar kurması hakkındane düşünüyorsunuz, gündelik yaşantınızda elektrikli bir SUV modeli kullanmayı tercih eder miydiniz? Düşüncelerinizi yorumlar kısmında paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
         },
-        "post_text": "🤖 TESLA'DAN SÜRÜŞ GÜVENLİĞİNE DEV ADIM!\n\nTesla'nın FSD v14.3 güncellemesiyle yapay zeka altyapısı baştan aşağı yenilendi. Bu sayede araçların tepki süresi yüzde 20 oranında hızlandı.\n\nKarmaşık trafik durumlarında daha güvenli bir sürüş deneyimi sunmayı hedefleyen bu güncelleme, özellikle HW4 donanımına sahip Model S, Model 3, Model X, Model Y ve Cybertruck'larda kullanılabiliyor.\n\nMLIR tabanlı yeni altyapı, sinir ağlarının daha verimli çalışmasını sağlıyor. Bu da araçların çevresel veriyi algılaması ile tepki vermesi arasındaki süreyi kısaltıyor.\n\nPeki sizce bu tür teknolojik gelişmeler sürüş güvenliğimizi ne kadar etkiliyor?",
-        "post_text_length": 633
+        "post_text": "⚡️ OPEL'DEN YENİ ELEKTRİKLİ SUV GELİYOR!\n\nOtomotiv dünyasında elektrifikasyon hız kesmeden devam ediyor. Reuters'ın haberine göre, Stellantis grubu Opel için yeni bir elektrikli SUV projesine hazırlanıyor.\n\nBu heyecan verici adımda, Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yapıldığı konuşuluyor. Ortaklık gerçekleşirse, Leapmotor'un teknolojileriyle geliştirilecek bu SUV'un üretimi İspanya'daki Stellantis fabrikasında planlanıyor.\n\nHedef ise 2028'de yollarda olması ve yılda 50 bin adet üretilmesi. Bu iş birliği, markaların hem zaman hem de maliyetten tasarruf etmesini sağlayacak.\n\nSizce markaların bu tarz ortaklıklar kurması sektörün geleceği için ne ifade ediyor?",
+        "post_text_length": 701
       },
       "error": null,
-      "updated_at": "2026-04-08T19:18:15.864414+03:00"
+      "updated_at": "2026-04-08T21:08:53.181980+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
-          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
-          "published": "2026-04-08T16:08:00+00:00",
-          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
+          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
+          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
+          "published": "2026-04-08T18:00:33+00:00",
+          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
+          "image_url": "",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
-          "base_ai_score": 85,
-          "score": 97,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
+          "base_ai_score": 76,
+          "score": 87,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Tesla,Full Self-Driving(Denetimli) sistemininv14.3sürümünü HW4 (AI4) donanımlı araçlar için dağıtmaya başladı. 2026.2.9.6 yazılım paketiyle gelen güncelleme yüzeyde küçük iyileştirmeler sunsa da asıl büyük değişim altyapıda gerçekleşti. Şirket, yapay zeka derleyicisini ve çalışma zamanını baştan sona yeniden yazarak tepki süresinde yüzde 20’lik bir iyileşme sağladığını açıkladı. Bu sürüm,Model S, Model 3, Model X, ModelYveCybertruck’ın HW4 versiyonlarında kullanılabiliyor. Dikkat çeken bir diğer unsur ise Tesla’nın ilk kez açık şekilde MLIR tabanlı bir altyapıya geçtiğini doğrulaması oldu. Güncellemenin en kritik noktası, Tesla’nın FSD sisteminin arkasındaki yapay zeka derleyicisini tamamen yenilemesi. Şirket, bu dönüşümdeMLIR(Multi-Level Intermediate Representation) altyapısını kullandığını belirtiyor. Bu teknoloji, sinir ağlarının farklı donanımlar üzerinde daha verimli çalışmasını sağlayanmodern bir derleyicimimarisi olarak biliniyor. MLIR, LLVM Foundation çatısı altında geliştiriliyor ve arkasındaki isim, aynı zamanda LLVM, Clang ve Swift’in yaratıcısı olan Chris Lattner. Lattner’ın 2017 yılında kısa bir süre Tesla’nın Autopilot ekibini yönetmiş olması bu geçişi daha da dikkat çekici hale getiriyor. Lattner, güncelleme sonrası yaptığı değerlendirmedeyüzde 20’lik tepki süresikazanımının son derece anlamlı olduğunu vurguladı. Bu iyileşme, araçların çevresel veriyi algıladığı an ile tepki verdiği an arasındaki gecikmeyi azaltıyor. Sonuç olarak araçlardaha erken fren ve daha hızlı manevra yapabiliyor. Ayrıca kritik durumlara daha etkin tepki verebiliyor. Tesla, yalnızca altyapıyı değil, sinir ağı eğitim süreçlerini de güncelledi.Pekiştirmeli öğrenme(Reinforcement learning) aşamasında yapılan geliştirmeler, sistemin farklı sürüş senaryolarında daha tutarlı performans göstermesini sağlıyor. Ayrıca görsel algı tarafında kullanılan görüntü kodlayıcısı da yenilendi. Bu sayede sistemin düşük görüş koşullarında, nadir senaryolarda ve karmaşık trafik yapılarındadaha doğru analiz yapabildiğibelirtiliyor. 3 boyutlu geometri algısı güçlendirilirken, trafik işaretlerinin yorumlanmasında da kapsam genişletildi. Bunlar dışında park performansı da iyileşiyor. Yeni sürümle birlikte araçlar, park alanı seçimi ve manevralarda daha kararlı hareket ediyor. Harita üzerinde görülen yeni “P” simgesi, aracın hedeflediği park noktasını önceden göstererek sürücüye şeffaflık sağlıyor. Ek olarak Tesla, daha önce eleştirilen bazı davranışları da azaltmayı hedefledi. Gereksiz şerit kaymaları ve takip mesafesi ihlalleri minimize edildi. Acil durum araçları, okul servisleri ve öncelik ihlali yapan araçlara karşı verilen tepkiler de geliştirildi. Gelecekte çukurlar algılanacak Bu sürüm, FSD v14 ve v14.2 ile başlayan yeni nesil uçtan uca sinir ağı mimarisinin devamı niteliğinde. Dolayısıyla bu sürüm de HW3 donanımlı eski araçlara gelmeyecek. Tesla, henüz bu sürüme dahil olmayan ancak planlanan bazı geliştirmeleri de paylaştı. Bunlar arasında daha geniş davranışsal akıl yürütme, çukur algılama ve kaçınma ile sürücü izleme sisteminin göz takibi doğruluğunun artırılması yer alıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.amazon.com.tr/dp/B0FP26GZW7 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.worldcard.com.tr/kampanyalar/k/30014550152",
-          "image_source": "rss_image"
+          "trend_bonus_raw": 1,
+          "full_text": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubuStellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelindeÇinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğüortaya çıktı. Sektördeki kaynaklar, masadaki bu olası ortaklığın her iki taraf için de son derece stratejik bir adım olduğunu belirtiyor. Geliştirilmesi hedeflenen buyeni elektrikli SUV modelinin üretiminde doğrudan Leapmotor’un sahip olduğu teknolojiler kullanılacak. Konuya hakim üç farklı kaynağın aktardığı bilgilere göre, araçlarınüretim merkezi olarak Stellantis’in İspanya’nın Zaragoza kentindeki fabrikasıplanlanıyor. Eğer taraflar arasındaki bu büyük anlaşma resmiyet kazanırsa,Stellantis yeni bir elektrikli araç modeli geliştirmenin getirdiği zaman ve finansal maliyet yükünü çok ciddi oranda azaltmış olacak. Bu tasarruf hamlesi, şirketin rekabetçi piyasada elini güçlendirecek. Üzerinde çalışılan buyeni Opel elektrikli SUV modelinin üretiminin 2028 yılında resmi olarak başlamasıöngörülüyor. Şirketlerin bu model için belirlediği ortak hedef iseyılda 50 bin adetlik araç üretimineulaşmak olarak açıklandı. Otomobil üreticilerinin zaman ve maliyet tasarrufu için teknoloji güçlerini birleştirmesi, sektörün geleceğini şekillendirmeye devam ediyor. Peki, siz markaların bu tarz ortaklıklar kurması hakkındane düşünüyorsunuz, gündelik yaşantınızda elektrikli bir SUV modeli kullanmayı tercih eder miydiniz? Düşüncelerinizi yorumlar kısmında paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "image_source": "og:image"
         },
-        "post_text": "🤖 TESLA'DAN SÜRÜŞ GÜVENLİĞİNE DEV ADIM!\n\nTesla'nın FSD v14.3 güncellemesiyle yapay zeka altyapısı baştan aşağı yenilendi. Bu sayede araçların tepki süresi yüzde 20 oranında hızlandı.\n\nKarmaşık trafik durumlarında daha güvenli bir sürüş deneyimi sunmayı hedefleyen bu güncelleme, özellikle HW4 donanımına sahip Model S, Model 3, Model X, Model Y ve Cybertruck'larda kullanılabiliyor.\n\nMLIR tabanlı yeni altyapı, sinir ağlarının daha verimli çalışmasını sağlıyor. Bu da araçların çevresel veriyi algılaması ile tepki vermesi arasındaki süreyi kısaltıyor.\n\nPeki sizce bu tür teknolojik gelişmeler sürüş güvenliğimizi ne kadar etkiliyor?",
-        "image_path": "/tmp/otoxtra_rss_241sefh2.jpg",
-        "image_source": "rss_image"
+        "post_text": "⚡️ OPEL'DEN YENİ ELEKTRİKLİ SUV GELİYOR!\n\nOtomotiv dünyasında elektrifikasyon hız kesmeden devam ediyor. Reuters'ın haberine göre, Stellantis grubu Opel için yeni bir elektrikli SUV projesine hazırlanıyor.\n\nBu heyecan verici adımda, Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yapıldığı konuşuluyor. Ortaklık gerçekleşirse, Leapmotor'un teknolojileriyle geliştirilecek bu SUV'un üretimi İspanya'daki Stellantis fabrikasında planlanıyor.\n\nHedef ise 2028'de yollarda olması ve yılda 50 bin adet üretilmesi. Bu iş birliği, markaların hem zaman hem de maliyetten tasarruf etmesini sağlayacak.\n\nSizce markaların bu tarz ortaklıklar kurması sektörün geleceği için ne ifade ediyor?",
+        "image_path": "/tmp/otoxtra_rss_1u07obp4.jpg",
+        "image_source": "og:image"
       },
       "error": null,
-      "updated_at": "2026-04-08T19:18:17.255353+03:00"
+      "updated_at": "2026-04-08T21:08:53.801205+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122161791920916499",
-        "article_title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
-        "image_source": "rss_image",
+        "post_id": "678053852057751_122161800554916499",
+        "article_title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
+        "image_source": "og:image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-08T19:19:26.664206+03:00"
+      "updated_at": "2026-04-08T21:11:35.114629+03:00"
     }
   }
 }
