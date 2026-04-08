@@ -1,57 +1,14 @@
 {
-  "run_id": "2026-04-08-21:08",
-  "status": "completed",
-  "started_at": "2026-04-08T21:08:43.896438+03:00",
-  "updated_at": "2026-04-08T21:11:35.114629+03:00",
+  "run_id": "2026-04-08-22:59",
+  "status": "error",
+  "started_at": "2026-04-08T22:59:59.939002+03:00",
+  "updated_at": "2026-04-08T23:00:05.651123+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Citroen konforu \"Sıfır Faiz\" imkanıyla buluştu!",
-            "link": "https://tr.motor1.com/news/792390/citroen-sifir-faiz-nisan-bulten/",
-            "published": "2026-04-08T17:00:00+00:00",
-            "summary": "Hem binek hem ticari araçlarda Nisan ayına özel kampanyalar sunuluyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/0eEwlz/s3/citroen-e-c3.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bulustu-citroen-faiz-imkaniyla-konforu-sifir"
-          },
-          {
-            "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-            "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
-            "published": "2026-04-08T18:00:33+00:00",
-            "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2028-elektrikli-opel-suv-yolda"
-          },
-          {
-            "title": "BYD Türkiye Fabrikasına Ceza!",
-            "link": "https://shiftdelete.net/byd-turkiye-fabrikasina-ceza",
-            "published": "2026-04-08T17:00:32+00:00",
-            "summary": "Çinli otomobil devi BYD, Türkiye’de kurmayı planladığı fabrika için verdiği yatırım sözlerini yerine getirmemekle gündemde. 8 Temmuz 2024 tarihinde Sanayi ve Teknoloji Bakanı Mehmet Fatih Kacır ile BYD Yönetim Kurulu Başkanı arasında imzalanan anlaşmanın üzerinden neredeyse iki yıl geçmesine rağmen, tesis inşası için henüz çivi bile çakılmadı. Manisa civarında kurulması planlanan ve 1 milyar dolar […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-ceza-fabrikasina-turkiye"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -80,112 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-08T21:08:47.596949+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-08T23:00:05.651123+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
-          "published": "2026-04-08T18:00:33+00:00",
-          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
-          "image_url": "",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
-          "base_ai_score": 76,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 87,
-        "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-08T21:08:51.344516+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
-          "published": "2026-04-08T18:00:33+00:00",
-          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
-          "image_url": "",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
-          "base_ai_score": 76,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubuStellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelindeÇinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğüortaya çıktı. Sektördeki kaynaklar, masadaki bu olası ortaklığın her iki taraf için de son derece stratejik bir adım olduğunu belirtiyor. Geliştirilmesi hedeflenen buyeni elektrikli SUV modelinin üretiminde doğrudan Leapmotor’un sahip olduğu teknolojiler kullanılacak. Konuya hakim üç farklı kaynağın aktardığı bilgilere göre, araçlarınüretim merkezi olarak Stellantis’in İspanya’nın Zaragoza kentindeki fabrikasıplanlanıyor. Eğer taraflar arasındaki bu büyük anlaşma resmiyet kazanırsa,Stellantis yeni bir elektrikli araç modeli geliştirmenin getirdiği zaman ve finansal maliyet yükünü çok ciddi oranda azaltmış olacak. Bu tasarruf hamlesi, şirketin rekabetçi piyasada elini güçlendirecek. Üzerinde çalışılan buyeni Opel elektrikli SUV modelinin üretiminin 2028 yılında resmi olarak başlamasıöngörülüyor. Şirketlerin bu model için belirlediği ortak hedef iseyılda 50 bin adetlik araç üretimineulaşmak olarak açıklandı. Otomobil üreticilerinin zaman ve maliyet tasarrufu için teknoloji güçlerini birleştirmesi, sektörün geleceğini şekillendirmeye devam ediyor. Peki, siz markaların bu tarz ortaklıklar kurması hakkındane düşünüyorsunuz, gündelik yaşantınızda elektrikli bir SUV modeli kullanmayı tercih eder miydiniz? Düşüncelerinizi yorumlar kısmında paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
-        },
-        "post_text": "⚡️ OPEL'DEN YENİ ELEKTRİKLİ SUV GELİYOR!\n\nOtomotiv dünyasında elektrifikasyon hız kesmeden devam ediyor. Reuters'ın haberine göre, Stellantis grubu Opel için yeni bir elektrikli SUV projesine hazırlanıyor.\n\nBu heyecan verici adımda, Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yapıldığı konuşuluyor. Ortaklık gerçekleşirse, Leapmotor'un teknolojileriyle geliştirilecek bu SUV'un üretimi İspanya'daki Stellantis fabrikasında planlanıyor.\n\nHedef ise 2028'de yollarda olması ve yılda 50 bin adet üretilmesi. Bu iş birliği, markaların hem zaman hem de maliyetten tasarruf etmesini sağlayacak.\n\nSizce markaların bu tarz ortaklıklar kurması sektörün geleceği için ne ifade ediyor?",
-        "post_text_length": 701
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-08T21:08:53.181980+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-          "link": "https://shiftdelete.net/2028de-yolda-opelden-yeni-elektrikli-suv",
-          "published": "2026-04-08T18:00:33+00:00",
-          "summary": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubu Stellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelinde Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğü ortaya çıktı. Sektördeki kaynaklar, masadaki bu olası […]",
-          "image_url": "",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-elektrikli-opel-suv-yolda",
-          "base_ai_score": 76,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otomotiv sektöründeki elektrifikasyon süreci, markaların yepyeni stratejiler geliştirmesini sağlıyor. Çarşamba günü paylaşılan güncel bir Reuters raporuna göre, dev otomotiv grubuStellantis, Opel markası altında yeni bir elektrikli SUV modeli geliştirmek için kolları sıvadı. Şirketin bu yeni proje özelindeÇinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yürüttüğüortaya çıktı. Sektördeki kaynaklar, masadaki bu olası ortaklığın her iki taraf için de son derece stratejik bir adım olduğunu belirtiyor. Geliştirilmesi hedeflenen buyeni elektrikli SUV modelinin üretiminde doğrudan Leapmotor’un sahip olduğu teknolojiler kullanılacak. Konuya hakim üç farklı kaynağın aktardığı bilgilere göre, araçlarınüretim merkezi olarak Stellantis’in İspanya’nın Zaragoza kentindeki fabrikasıplanlanıyor. Eğer taraflar arasındaki bu büyük anlaşma resmiyet kazanırsa,Stellantis yeni bir elektrikli araç modeli geliştirmenin getirdiği zaman ve finansal maliyet yükünü çok ciddi oranda azaltmış olacak. Bu tasarruf hamlesi, şirketin rekabetçi piyasada elini güçlendirecek. Üzerinde çalışılan buyeni Opel elektrikli SUV modelinin üretiminin 2028 yılında resmi olarak başlamasıöngörülüyor. Şirketlerin bu model için belirlediği ortak hedef iseyılda 50 bin adetlik araç üretimineulaşmak olarak açıklandı. Otomobil üreticilerinin zaman ve maliyet tasarrufu için teknoloji güçlerini birleştirmesi, sektörün geleceğini şekillendirmeye devam ediyor. Peki, siz markaların bu tarz ortaklıklar kurması hakkındane düşünüyorsunuz, gündelik yaşantınızda elektrikli bir SUV modeli kullanmayı tercih eder miydiniz? Düşüncelerinizi yorumlar kısmında paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "image_source": "og:image"
-        },
-        "post_text": "⚡️ OPEL'DEN YENİ ELEKTRİKLİ SUV GELİYOR!\n\nOtomotiv dünyasında elektrifikasyon hız kesmeden devam ediyor. Reuters'ın haberine göre, Stellantis grubu Opel için yeni bir elektrikli SUV projesine hazırlanıyor.\n\nBu heyecan verici adımda, Çinli elektrikli araç üreticisi Leapmotor ile ileri düzeyde görüşmeler yapıldığı konuşuluyor. Ortaklık gerçekleşirse, Leapmotor'un teknolojileriyle geliştirilecek bu SUV'un üretimi İspanya'daki Stellantis fabrikasında planlanıyor.\n\nHedef ise 2028'de yollarda olması ve yılda 50 bin adet üretilmesi. Bu iş birliği, markaların hem zaman hem de maliyetten tasarruf etmesini sağlayacak.\n\nSizce markaların bu tarz ortaklıklar kurması sektörün geleceği için ne ifade ediyor?",
-        "image_path": "/tmp/otoxtra_rss_1u07obp4.jpg",
-        "image_source": "og:image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-08T21:08:53.801205+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122161800554916499",
-        "article_title": "2028’de Yolda: Opel’den Yeni Elektrikli SUV!",
-        "image_source": "og:image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-08T21:11:35.114629+03:00"
+      "updated_at": null
     }
   }
 }
