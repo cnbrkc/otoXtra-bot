@@ -1,43 +1,99 @@
 {
-  "run_id": "2026-04-07-23:01",
+  "run_id": "2026-04-08-13:05",
   "status": "completed",
-  "started_at": "2026-04-07T23:01:16.300546+03:00",
-  "updated_at": "2026-04-07T23:02:57.158248+03:00",
+  "started_at": "2026-04-08T13:05:05.249895+03:00",
+  "updated_at": "2026-04-08T13:08:21.462018+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
-            "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
-            "published": "2026-04-07T19:22:00+00:00",
-            "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
+            "title": "Mazda, otomobillerde dev ekran modasını destekliyor",
+            "link": "https://www.donanimhaber.com/mazda-dan-dev-ekran-karari-tuslar-tarih-oluyor--204175",
+            "published": "2026-04-08T09:24:00+00:00",
+            "summary": "Mazda, otomobil iç mekânlarında büyüyen ekran modasına karşı çıkmak yerine destekliyor. Marka, büyük ekranların sürüş deneyimini iyileştirdiğini savunuyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204175/1400x788mazda-dan-dev-ekran-karari-tuslar-tarih-oluyor.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen"
+            "topic_fingerprint": "destekliyor-dev-ekran-mazda-modasini-otomobillerde"
           },
           {
-            "title": "SUV'lardan sıkılanlara: Yeni Geely Galaxy A7 elektrikli sedan",
-            "link": "https://www.donanimhaber.com/suv-lardan-sikilanlara-yeni-geely-galaxy-a7-elektrikli-sedan--204169",
-            "published": "2026-04-07T19:05:00+00:00",
-            "summary": "Geely, elektrikli otomobil rekabetini kızıştıracak yeni modeli Galaxy A7’yi tanıtmaya hazırlanıyor. Sedan modelde 550 km’ye varan menzil, güçlü motor ve gelişmiş teknolojiler dikkat çekiyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204169/1400x788suv-lardan-sikilanlara-yeni-geely-galaxy-a7-elektrikli-sedan.jpg",
+            "title": "BMW i7'ye Rimac dokunuşu: Daha uzun menzil ve daha hızlı şarj",
+            "link": "https://www.donanimhaber.com/yeni-bmw-i7-de-rimac-imzali-batarya-hamlesi--204174",
+            "published": "2026-04-08T08:39:00+00:00",
+            "summary": "BMW’nin amiral gemisi elektrikli sedanı i7, kapsamlı makyaj operasyonuyla sahneye çıkacak. BMW i7'deki asıl devrim tasarımda değil, kaputun altında gizli.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204174/1400x788yeni-bmw-i7-de-rimac-imzali-batarya-hamlesi.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "elektrikli-galaxy-geely-lardan-sedan-sikilanlara-suv"
+            "topic_fingerprint": "bmw-dokunusu-hizli-menzil-rimac-sarj-uzun"
+          },
+          {
+            "title": "Volkswagen Touareg için sürpriz plan: Elektrikli olarak geri dönebilir",
+            "link": "https://www.donanimhaber.com/volkswagen-touareg-icin-surpriz-plan-geri-donebilir--204173",
+            "published": "2026-04-08T08:17:00+00:00",
+            "summary": "Volkswagen, efsane SUV modeli Touareg’i emekliye ayırıyor. Ancak bu kalıcı bir veda değil çünkü şirket, Touareg'i tamamen elektrikli versiyonla geri getirmeye düşünüyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204173/1400x788volkswagen-touareg-icin-surpriz-plan-geri-donebilir.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "donebilir-elektrikli-geri-plan-surpriz-touareg-volkswagen"
+          },
+          {
+            "title": "Volkswagen, “1.0 litrelik 3 silindirli motoru rafa kaldırdı” iddiasını yalanladı",
+            "link": "https://www.log.com.tr/volkswagen-1-0-litrelik-3-silindirli-motoru-rafa-kaldirdi-iddiasini-yalanladi/",
+            "published": "2026-04-08T08:10:58+00:00",
+            "summary": "İtalya merkezli bir kaynak kısa süre önce Volkswagen’in Euro 7 standartları kapsamında 1.0 litrelik 3 silindirli motoru kullanmayı bırakacağını iddia etti. Şirketin bundan sonra piyasaya süreceği tüm standart araçlarda dört silindirli 1.5 ve 2.0 litrelik ünitelerin (1.5 TFSI, 2.0 TFSI ve 2.0 TDI) kullanılacağı öne sürüldü. Bu konuya cevap veren Volkswagen sözcüsü ise gündeme getirilen iddianın doğru olmadığını söyledi. Şirket, Euro 7’nin ilk taslağı çıktığında 1.0 litrelik motorun geliştirilmesini durdurduğunu, fakat sonrasında AB’nin daha esnek yasaları kabul etmesiyle motorun ömrünün uzadığını belirtti. Motoru Avrupa’daki belirli pazarlarda Polo ya da T-Cross gibi küçük araçlarda sunmaya devam etmek adına incelemeler yapıldığını belirten marka, 3 silindirli 1.0 TFSI motoru uzun yıllardır aktif olarak kullanıyor. Volkswagen, “1.0 litrelik 3 silindirli motoru rafa kaldırdı” iddiasını yalanladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-08_10-26-16_Tr69f-660x371.jpg",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "iddiasini-kaldirdi-litrelik-motoru-rafa-silindirli-volkswagen-yalanladi"
+          },
+          {
+            "title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
+            "link": "https://tr.motor1.com/news/792302/ford-geri-cagirma-silecek/",
+            "published": "2026-04-08T09:00:00+00:00",
+            "summary": "Ön cam silecekleri yerinden ayrılabiliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/YAzqml/s3/ford-expedition-timberline.jpg",
+            "source_name": "Motor1 TR",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "000-420-araci-cagirma-ekliyor-ford-geri-listesine"
+          },
+          {
+            "title": "Benzine Dev Zam! Elektrikli Otomobiller Daha Cazip mi?",
+            "link": "https://shiftdelete.net/benzine-dev-zam-elektrikli-otomobiller-daha-cazip-hale-geldi",
+            "published": "2026-04-08T08:11:55+00:00",
+            "summary": "Araç sahipleri için Nisan ayı oldukça maliyetli başladı. Global piyasalardaki brent petrol dalgalanmaları ve döviz kurundaki hareketlilik, Türkiye’deki akaryakıt tabelalarına rekor bir artış olarak yansıdı. 8 Nisan 2026 tarihi itibarıyla geçerli olmak üzere; motorin fiyatlarına dudak uçuklatan bir artış yapılırken, benzin fiyatlarında da yukarı yönlü güncellemeye gidildi. Gece yarısından itibaren pompaya yansıyan bu rakamlar, özellikle […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "benzine-cazip-dev-elektrikli-otomobiller-zam"
           }
         ],
-        "count": 2,
+        "count": 6,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -67,111 +123,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-07T23:01:23.987149+03:00"
+      "updated_at": "2026-04-08T13:05:08.712390+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
-          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
-          "published": "2026-04-07T19:22:00+00:00",
-          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
-          "source_name": "Donanımhaber",
+          "title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
+          "link": "https://tr.motor1.com/news/792302/ford-geri-cagirma-silecek/",
+          "published": "2026-04-08T09:00:00+00:00",
+          "summary": "Ön cam silecekleri yerinden ayrılabiliyor.",
+          "image_url": "https://cdn.motor1.com/images/mgl/YAzqml/s3/ford-expedition-timberline.jpg",
+          "source_name": "Motor1 TR",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
-          "base_ai_score": 78,
-          "score": 90,
+          "topic_fingerprint": "000-420-araci-cagirma-ekliyor-ford-geri-listesine",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2
         },
-        "score": 90,
-        "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+        "score": 94,
+        "title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
         "trend_count": 1,
         "trend_bonus": 2,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-07T23:01:27.569890+03:00"
+      "updated_at": "2026-04-08T13:05:14.438177+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
-          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
-          "published": "2026-04-07T19:22:00+00:00",
-          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
-          "source_name": "Donanımhaber",
+          "title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
+          "link": "https://tr.motor1.com/news/792302/ford-geri-cagirma-silecek/",
+          "published": "2026-04-08T09:00:00+00:00",
+          "summary": "Ön cam silecekleri yerinden ayrılabiliyor.",
+          "image_url": "https://cdn.motor1.com/images/mgl/YAzqml/s3/ford-expedition-timberline.jpg",
+          "source_name": "Motor1 TR",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
-          "base_ai_score": 78,
-          "score": 90,
+          "topic_fingerprint": "000-420-araci-cagirma-ekliyor-ford-geri-listesine",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2,
-          "full_text": "Piyasadakien güvenilir3 silindirli ünitelerden biri olarak kabul edilen bu motorun yerini, kademeli olarak1.5 ve 2.0 litrelik 4 silindirli motorlaralacak. Yapılan planlamaya göre, 150 beygir güce kadar olan modellerde T-Roc'ta şu anda sunulan1.5 eTSImotor kullanılacak. Daha yüksek güç isteyen modellerde ise2.0 TSIturbo benzinli motorlara geçilecek. Dizel cephesinde ise 116 ile 193 beygir arasında güç sunan2.0 TDImotor, markanıntek dizel seçeneğiolarak kalmaya devam edecek. Yeni dönemde 1.0 motorun yerini alacak olan dört silindirli ünitelerin tamamı,elektrik desteklibir altyapıyla (MHEV, PHEV veya tam hibrit) sunulacak. Özellikle tam hibrit teknolojisinin, 2026 yılı içindeT-Rocmodeliyle birlikte devreye girmesi bekleniyor. 2012 yılından bu yana14 yıldıryollarda olan ve grubun giriş seviyesi modellerinde sıkça tercih edilen 1.0 motorun vedası, geniş bir yelpazeyi etkileyecek. BaştaVolkswagen PoloveT-Crossolmak üzere grup bünyesindekiSeatveSkodamarkalarının birçok modeli de bu motor değişiminden payını alacak. Volkswagen geçtiğimiz Eylül ayında efsanevi2.5 litrelik 5 silindirlimotorun da 2027 yılında Avrupa pazarından çekileceğini duyurmuştu. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.n11.com/kampanyalar/tik-hizinda-indirim https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://app.hb.biz/YbTCqC2Lx9Zp https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat"
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ford,422.613 aracıkapsayan bir geri çağırma duyurdu. Etkilenen modellerde ön cam sileceklerinin düzensiz çalışması, hiç çalışmaması veya bağlantı yerinden ayrılması gibi arızalar görülebiliyor. Geri çağırma;2021-2023Ford Expedition,2022-2023Ford Super Dutyve2021-2023Lincoln Navigatormodellerini kapsıyor. Ford, aynı sorun nedeniyle bu model yıllarının bir kısmı için Nisan 2022’de birgeri çağırmayayımlamıştı; ancak üretici yakın zamanda, önceden belirtilen tarihler dışındaki araçlardan da garanti başvuruları geldiğini tespit etti. Arıza, birden fazla problemin birleşimiyle ilişkili. Geri çağırma raporuna göre tedarikçi Trico, tutma plakaları hatalı şekilde perçinlenmiş silecekler üretti. Hatalı plakalar silecek kollarındaki yivlerin aşınmasına neden olabilir; bu da işlevi azaltarak kötü hava koşullarında görüşle ilgili sorunlara yol açabilir. Ford, olası bir sorundan ilk kezOcak 2026’da haberdar olduğunu belirtiyor. ABD Ulusal Karayolu Trafik Güvenliği İdaresi (NHTSA) ile yapılan ve üreticininüç yıla kadareski geri çağırmaları gözden geçirmesini zorunlu kılan 2024 tarihli uzlaşma emri kapsamında Ford, \"Expedition ve Navigator için artan garanti başvurularını\" inceledi. Ford, Şubat ayı boyunca konuyu inceledi ve yeni kanıtlara dayanarak geri çağırmayı Super Duty’yi de kapsayacak şekilde genişletmeye karar verdi. Üretici, ana nedeni ancak Mart ayında ortaya çıkardı ve bu bilgiyegeri çağırma raporundada yer verildi. Ford,16 Martitibarıyla sorunla ilişkili1.538garanti kaydı,11saha raporu ve3müşteri hizmetleri kaydı bulunduğunu söylüyor. Ancak şu ana kadar herhangi bir kaza veya yaralanma bilgisine ulaşılmadığı belirtiliyor. Kaynak:National Highway Traffic Safety Administration"
         },
-        "post_text": "🚗 VOLKSWAGEN'DEN BÜYÜK DEĞİŞİKLİK: 3 SİLİNDİRLİ MOTOR VEDA EDİYOR!\n\nVolkswagen, yeni Euro 7 emisyon standartlarına uyum için önemli bir karar aldı. Uzun yıllardır pek çok modelde kullanılan 3 silindirli 1.0 TSI motorlar üretimden kalkıyor.\n\nYerine ise daha güçlü ve çevreci dört silindirli motorlar geliyor. 1.5 ve 2.0 litrelik TSI motorlar, elektrik destekli hibrit altyapısıyla karşımıza çıkacak. Hatta tam hibrit versiyonları bile yolda!\n\nBu değişiklik, Polo ve T-Cross gibi popüler modellerin yanı sıra Seat ve Skoda'nın da bazı araçlarını etkileyecek.\n\nSizce bu motor değişimi otomobillerimizi nasıl etkileyecek?",
-        "post_text_length": 617
+        "post_text": "⚙️ FORD'DAN BÜYÜK GERİ ÇAĞIRMA!\n\nFord, şimdilik 420 binden fazla aracını geri çağırıyor.\n\nSorun, ön cam sileceklerinin yerinden çıkabilmesi. Bu durum özellikle kötü hava koşullarında görüşü tehlikeye atabilir.\n\nGeri çağırma; 2021-2023 model Expedition, 2022-2023 model Super Duty ve 2021-2023 model Lincoln Navigator'ları etkiliyor.\n\nDaha önce de benzer bir geri çağırma yapılmıştı ama şimdi sorunun kaynağı daha net anlaşıldı.\n\nSizin de bu modellerden biriniz var mı?",
+        "post_text_length": 468
       },
       "error": null,
-      "updated_at": "2026-04-07T23:01:30.071214+03:00"
+      "updated_at": "2026-04-08T13:05:17.006345+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
-          "link": "https://www.donanimhaber.com/volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor--204168",
-          "published": "2026-04-07T19:22:00+00:00",
-          "summary": "Volkswagen yeni Euro 7 emisyon standartlarına uyum sağlamak amacıyla bir strateji değişikliğine giderek 1.0 litrelik 3 silindirli motorlarını üretimden kaldırmaya hazırlanıyor. Peki yerine ne gelecek?",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204168/1400x788volkswagen-den-onemli-karar-3-silindirli-1-0-tsi-motor-kalkiyor.jpg",
-          "source_name": "Donanımhaber",
+          "title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
+          "link": "https://tr.motor1.com/news/792302/ford-geri-cagirma-silecek/",
+          "published": "2026-04-08T09:00:00+00:00",
+          "summary": "Ön cam silecekleri yerinden ayrılabiliyor.",
+          "image_url": "https://cdn.motor1.com/images/mgl/YAzqml/s3/ford-expedition-timberline.jpg",
+          "source_name": "Motor1 TR",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "kalkiyor-karar-motor-onemli-silindirli-tsi-volkswagen",
-          "base_ai_score": 78,
-          "score": 90,
+          "topic_fingerprint": "000-420-araci-cagirma-ekliyor-ford-geri-listesine",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2,
-          "full_text": "Piyasadakien güvenilir3 silindirli ünitelerden biri olarak kabul edilen bu motorun yerini, kademeli olarak1.5 ve 2.0 litrelik 4 silindirli motorlaralacak. Yapılan planlamaya göre, 150 beygir güce kadar olan modellerde T-Roc'ta şu anda sunulan1.5 eTSImotor kullanılacak. Daha yüksek güç isteyen modellerde ise2.0 TSIturbo benzinli motorlara geçilecek. Dizel cephesinde ise 116 ile 193 beygir arasında güç sunan2.0 TDImotor, markanıntek dizel seçeneğiolarak kalmaya devam edecek. Yeni dönemde 1.0 motorun yerini alacak olan dört silindirli ünitelerin tamamı,elektrik desteklibir altyapıyla (MHEV, PHEV veya tam hibrit) sunulacak. Özellikle tam hibrit teknolojisinin, 2026 yılı içindeT-Rocmodeliyle birlikte devreye girmesi bekleniyor. 2012 yılından bu yana14 yıldıryollarda olan ve grubun giriş seviyesi modellerinde sıkça tercih edilen 1.0 motorun vedası, geniş bir yelpazeyi etkileyecek. BaştaVolkswagen PoloveT-Crossolmak üzere grup bünyesindekiSeatveSkodamarkalarının birçok modeli de bu motor değişiminden payını alacak. Volkswagen geçtiğimiz Eylül ayında efsanevi2.5 litrelik 5 silindirlimotorun da 2027 yılında Avrupa pazarından çekileceğini duyurmuştu. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FQF9XY3L?th=1 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.n11.com/kampanyalar/tik-hizinda-indirim https://www.amazon.com.tr/promotion/psp/A1RV1JAXNBZHBB?ref=psp_aw_cart_collapse https://app.hb.biz/YbTCqC2Lx9Zp https://www.migros.com.tr/stoklari-bitiriyoruz-dt-4?sayfa=1&sirala=once-en-dusuk-fiyat",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ford,422.613 aracıkapsayan bir geri çağırma duyurdu. Etkilenen modellerde ön cam sileceklerinin düzensiz çalışması, hiç çalışmaması veya bağlantı yerinden ayrılması gibi arızalar görülebiliyor. Geri çağırma;2021-2023Ford Expedition,2022-2023Ford Super Dutyve2021-2023Lincoln Navigatormodellerini kapsıyor. Ford, aynı sorun nedeniyle bu model yıllarının bir kısmı için Nisan 2022’de birgeri çağırmayayımlamıştı; ancak üretici yakın zamanda, önceden belirtilen tarihler dışındaki araçlardan da garanti başvuruları geldiğini tespit etti. Arıza, birden fazla problemin birleşimiyle ilişkili. Geri çağırma raporuna göre tedarikçi Trico, tutma plakaları hatalı şekilde perçinlenmiş silecekler üretti. Hatalı plakalar silecek kollarındaki yivlerin aşınmasına neden olabilir; bu da işlevi azaltarak kötü hava koşullarında görüşle ilgili sorunlara yol açabilir. Ford, olası bir sorundan ilk kezOcak 2026’da haberdar olduğunu belirtiyor. ABD Ulusal Karayolu Trafik Güvenliği İdaresi (NHTSA) ile yapılan ve üreticininüç yıla kadareski geri çağırmaları gözden geçirmesini zorunlu kılan 2024 tarihli uzlaşma emri kapsamında Ford, \"Expedition ve Navigator için artan garanti başvurularını\" inceledi. Ford, Şubat ayı boyunca konuyu inceledi ve yeni kanıtlara dayanarak geri çağırmayı Super Duty’yi de kapsayacak şekilde genişletmeye karar verdi. Üretici, ana nedeni ancak Mart ayında ortaya çıkardı ve bu bilgiyegeri çağırma raporundada yer verildi. Ford,16 Martitibarıyla sorunla ilişkili1.538garanti kaydı,11saha raporu ve3müşteri hizmetleri kaydı bulunduğunu söylüyor. Ancak şu ana kadar herhangi bir kaza veya yaralanma bilgisine ulaşılmadığı belirtiliyor. Kaynak:National Highway Traffic Safety Administration",
           "image_source": "rss_image"
         },
-        "post_text": "🚗 VOLKSWAGEN'DEN BÜYÜK DEĞİŞİKLİK: 3 SİLİNDİRLİ MOTOR VEDA EDİYOR!\n\nVolkswagen, yeni Euro 7 emisyon standartlarına uyum için önemli bir karar aldı. Uzun yıllardır pek çok modelde kullanılan 3 silindirli 1.0 TSI motorlar üretimden kalkıyor.\n\nYerine ise daha güçlü ve çevreci dört silindirli motorlar geliyor. 1.5 ve 2.0 litrelik TSI motorlar, elektrik destekli hibrit altyapısıyla karşımıza çıkacak. Hatta tam hibrit versiyonları bile yolda!\n\nBu değişiklik, Polo ve T-Cross gibi popüler modellerin yanı sıra Seat ve Skoda'nın da bazı araçlarını etkileyecek.\n\nSizce bu motor değişimi otomobillerimizi nasıl etkileyecek?",
-        "image_path": "/tmp/otoxtra_rss_yl_excgt.jpg",
+        "post_text": "⚙️ FORD'DAN BÜYÜK GERİ ÇAĞIRMA!\n\nFord, şimdilik 420 binden fazla aracını geri çağırıyor.\n\nSorun, ön cam sileceklerinin yerinden çıkabilmesi. Bu durum özellikle kötü hava koşullarında görüşü tehlikeye atabilir.\n\nGeri çağırma; 2021-2023 model Expedition, 2022-2023 model Super Duty ve 2021-2023 model Lincoln Navigator'ları etkiliyor.\n\nDaha önce de benzer bir geri çağırma yapılmıştı ama şimdi sorunun kaynağı daha net anlaşıldı.\n\nSizin de bu modellerden biriniz var mı?",
+        "image_path": "/tmp/otoxtra_rss_x4awbq8y.jpg",
         "image_source": "rss_image"
       },
       "error": null,
-      "updated_at": "2026-04-07T23:01:33.175860+03:00"
+      "updated_at": "2026-04-08T13:05:17.379698+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122161693886916499",
-        "article_title": "Volkswagen'den önemli karar: 3 silindirli 1.0 TSI motor kalkıyor",
+        "post_id": "678053852057751_122161756718916499",
+        "article_title": "Ford, geri çağırma listesine 420.000 aracı daha ekliyor",
         "image_source": "rss_image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-07T23:02:57.158248+03:00"
+      "updated_at": "2026-04-08T13:08:21.462018+03:00"
     }
   }
 }
