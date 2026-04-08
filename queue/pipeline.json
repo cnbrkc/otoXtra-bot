@@ -1,85 +1,43 @@
 {
-  "run_id": "2026-04-08-17:30",
+  "run_id": "2026-04-08-19:18",
   "status": "completed",
-  "started_at": "2026-04-08T17:30:25.878030+03:00",
-  "updated_at": "2026-04-08T17:34:25.847567+03:00",
+  "started_at": "2026-04-08T19:18:05.250430+03:00",
+  "updated_at": "2026-04-08T19:19:26.664206+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
-            "link": "https://www.donanimhaber.com/turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti--204203",
-            "published": "2026-04-08T14:20:00+00:00",
-            "summary": "Türkiye’de yaklaşık 2.5 GW kurulu güçle atıklardan enerji üretiliyor. Sıfır Atık Projesi sayesinde 270 milyar kWh tasarruf sağlanırken 613 milyon ağacın kesilmesi önlendi.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204203/1400x788turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti.jpg",
+            "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
+            "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
+            "published": "2026-04-08T16:08:00+00:00",
+            "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "atiklardan-enerji-seviyesine-turkiye-ulasti-uretiminde"
+            "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde"
           },
           {
-            "title": "Intel, Elon Musk’ın tarihi TeraFab projesine katılıyor",
-            "link": "https://www.donanimhaber.com/intel-elon-musk-in-tarihi-terafab-projesine-katiliyor--204187",
-            "published": "2026-04-08T12:58:00+00:00",
-            "summary": "Intel, Elon Musk’ın TeraFab projesine ortak olarak kurulacak AI çip fabrikasının tasarım ve inşasında görev alacak. TeraFab, Tesla ve SpaceX için dev hesaplama kapasitesi üretecek.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204187/1400x788intel-elon-musk-in-tarihi-terafab-projesine-katiliyor.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "elon-intel-katiliyor-musk-projesine-tarihi-terafab"
-          },
-          {
-            "title": "BYD’ye “Türkiye” fabrikası üzerinden ceza kesileceği iddia edildi",
-            "link": "https://www.log.com.tr/bydye-turkiye-fabrikasi-uzerinden-ceza-kesilecegi-iddia-edildi/",
-            "published": "2026-04-08T13:56:33+00:00",
-            "summary": "Çinli otomobil devi BYD’ye, henüz inşasına tam olarak başlanmayan Türkiye fabrikası nedeniyle ceza kesileceği iddia edildi. Bu konuda bir yazı kaleme alan Gazeteci Fatih Altaylı, “BYD de Türkiye’de yatırım anlaşması yapınca, bu markaya da “fabrika tamamlanıncaya kadar” ithal edeceği araçlarda vergi indirimi sağlandı. Bunun için de bir kota verildi. Fabrika inşaatı tamamlanıp, üretim başlayıncaya kadar BYD belirlenmiş sayıda aracı Türkiye’ye getirip satabilecekti. 1 yıl içinde de Türkiye’de fabrikayı kurması bekleniyordu. 8 Temmuz 2024’te imzalanan anlaşmaya göre BYD Türkiye’de, muhtemelen Manisa civarında 1 milyar dolar yatırımla yılda 150 bin araç kapasiteli bir üretim tesisi ve AR-GE merkezi kuracaktı. 5.000 kişiyi istihdam edecek yatırımın 1 yıl içinde tamamlanıp üretime geçilmesi öngörülüyordu. Anlaşma BYD Yönetim Kurulu Başkanı ile Sanayi Bakanı Kacır arasında imzalanmıştı. BYD’nin Türkiye’deki satışlarının gerilemesinin nedeni işte bu anlaşma. Çinli marka anlaşma şartlarına uymadı. 1 yıl içinde tesisin hayata geçmesi bir yana, neredeyse 2. yıla gidilirken henüz tesis için çivi bile […] BYD’ye “Türkiye” fabrikası üzerinden ceza kesileceği iddia edildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/byd-sealion-7-charging-01-xl-660x371.jpg",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-ceza-fabrikasi-iddia-kesilecegi-turkiye-uzerinden"
-          },
-          {
-            "title": "Stellantis, iddiaya göre elektrikli bir Opel SUV modeli için Çinli Leapmotor ile görüşüyor",
-            "link": "https://www.log.com.tr/stellantis-iddiaya-gore-elektrikli-bir-opel-suv-modeli-icin-cinli-leapmotor-ile-gorusuyor/",
-            "published": "2026-04-08T12:57:18+00:00",
-            "summary": "Stellantis, bugün gündeme getirilen iddialara göre tamamen elektrikli bir Opel marka SUV modeli için Çinli Leapmotor ile görüşmeler gerçekleştiriyor. Bahse konu aracın Leapmotor’un teknolojilerini temel alacağı ve Stellantis’in İspanya’daki fabrikasında üretileceği aktarılırken, modelin seri üretimine 2028’de başlanacağı öne sürülüyor. Yeni SUV’nin Leapmotor’un B10 modeliyle aynı platformu paylaşacağını aktaran kaynaklar, aracın dış görünüşünü doğrudan Opel’in tasarlayacağını belirtiyor. 2023 yılında 1,5 milyar euro yatırımla Leapmotor’un stratejik hissedarı olan Stellantis, Çinli üreticilerden destek alarak pazara daha ucuza daha gelişmiş araçlar sunmak istiyor. Stellantis, iddiaya göre elektrikli bir Opel SUV modeli için Çinli Leapmotor ile görüşüyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-08_15-53-04_shGF8-660x371.jpg",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cinli-elektrikli-gorusuyor-iddiaya-leapmotor-modeli-opel-stellantis-suv"
-          },
-          {
-            "title": "FIAT Professional’dan nisan ayına özel kredi desteği!",
-            "link": "https://tr.motor1.com/news/792360/fiat-ticari-nisan-kredi-bulten/",
-            "published": "2026-04-08T13:00:00+00:00",
-            "summary": "1 milyon TL'ye varan kredi ve 100.000 TL indirim imkanı sunuluyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/3WYo4X/s3/fiat-doblo.jpg",
+            "title": "Toyota, avantajlı bakım kampanyalarıyla ilkbahara hazır!",
+            "link": "https://tr.motor1.com/news/792363/toyota-bakim-ilkbahar-kampanya-bulten/",
+            "published": "2026-04-08T15:00:00+00:00",
+            "summary": "16 Mayıs 2026'ya kadar devam edecek.",
+            "image_url": "https://cdn.motor1.com/images/mgl/OoMKPM/s3/toyota-c-hr-gr-sport.jpg",
             "source_name": "Motor1 TR",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "ayina-destegi-fiat-kredi-nisan-ozel-professional"
+            "topic_fingerprint": "avantajli-bakim-hazir-ilkbahara-kampanyalariyla-toyota"
           }
         ],
-        "count": 5,
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -109,111 +67,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-08T17:30:30.166706+03:00"
+      "updated_at": "2026-04-08T19:18:10.169918+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
-          "link": "https://www.donanimhaber.com/turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti--204203",
-          "published": "2026-04-08T14:20:00+00:00",
-          "summary": "Türkiye’de yaklaşık 2.5 GW kurulu güçle atıklardan enerji üretiliyor. Sıfır Atık Projesi sayesinde 270 milyar kWh tasarruf sağlanırken 613 milyon ağacın kesilmesi önlendi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204203/1400x788turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti.jpg",
+          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
+          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
+          "published": "2026-04-08T16:08:00+00:00",
+          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "atiklardan-enerji-seviyesine-turkiye-ulasti-uretiminde",
-          "base_ai_score": 80,
-          "score": 92,
+          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
+          "base_ai_score": 85,
+          "score": 97,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2
         },
-        "score": 92,
-        "title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
+        "score": 97,
+        "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
         "trend_count": 1,
         "trend_bonus": 2,
         "freshness_bonus": 10,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-08T17:30:35.856731+03:00"
+      "updated_at": "2026-04-08T19:18:13.347085+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
-          "link": "https://www.donanimhaber.com/turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti--204203",
-          "published": "2026-04-08T14:20:00+00:00",
-          "summary": "Türkiye’de yaklaşık 2.5 GW kurulu güçle atıklardan enerji üretiliyor. Sıfır Atık Projesi sayesinde 270 milyar kWh tasarruf sağlanırken 613 milyon ağacın kesilmesi önlendi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204203/1400x788turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti.jpg",
+          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
+          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
+          "published": "2026-04-08T16:08:00+00:00",
+          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "atiklardan-enerji-seviyesine-turkiye-ulasti-uretiminde",
-          "base_ai_score": 80,
-          "score": 92,
+          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
+          "base_ai_score": 85,
+          "score": 97,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Açıklanan verilere göre2024 yılıiçerisinde yaklaşık5 bin ton atık geri kazanıldı. Aynı süreçte10 milyon 845 bin kilovatsaat enerji tasarrufusağlanırken, 10 bin ton karbondioksit salımı da engellendi. Sıfır Atık uygulamaları çerçevesinde Bakanlığın merkez kampüsünde hayata geçirilen Depozito Yönetim Sistemi ile plastik, cam ve alüminyum ambalajların geri kazanımı hızlandırıldı. “Depozitosu Olan Ambalajlar” (DOA) logolu ürünler, kurulan iade makineleri aracılığıyla doğrudan sisteme kazandırılmaya başlandı. Bakanlığa bağlı kurum ve kuruluşların yürüttüğü çalışmalar kapsamındason 6 yılda26 milyon tonun üzerinde atık bertaraf edilirken,6 milyon 900 bin ton atık geri kazanıldı. Aynı dönemde 1 milyon tondan fazla atık alternatif ham madde olarak değerlendirildi. Aynı süreçte 2 trilyon litre su tasarrufu, 60 milyar litre petrol tasarrufu ve yaklaşık 55 bin futbol sahası büyüklüğünde depolama alanı kazanımı elde edildi. Proje kapsamında geri kazanılan toplam atık miktarı 90 milyon tona ulaşırken, ekonomiye sağlanan katkı 365 milyar lira seviyesine çıktı. Sıfır Atık uygulamalarının çevresel etkileri de dikkat çekici boyutlara ulaştı. Verilere göre, Türkiye’deki orman varlığının yaklaşık yüzde 7’sine denk gelen 613 milyon ağacın kesilmesi önlendi. Ayrıca 180 milyon ton sera gazı salımının önüne geçildi, bu miktarın yaklaşık 36 milyon aracın yıllık emisyonuna eşdeğer olduğu ifade edildi. Sıfır Atık Yönetim Sistemi, bugüne kadar 217 bin bina ve yerleşkede uygulanmaya başlandı. 2017 yılında yüzde 13 seviyesinde olan geri kazanım oranı, kademeli olarak artırılarak 2024’te yüzde 36,08’e, 2025’te ise yüzde 37,53’e yükseltildi. Türkiye’nin hedefi, bu oranı 2035’te yüzde 60’a, 2053’te ise yüzde 70’e çıkarmak. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.n11.com/urun/us-polo-assn-erkek-antrasit-mont-50292895-vr006-antrasit-65938549 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.idefix.com/cybeart-apex-neo-series-vintage-edition-pu-deri-bel-destekli-4d-hafizali-yastik-oyuncu-koltugu-5-yil-garanti-p-9679789"
+          "full_text": "Tesla,Full Self-Driving(Denetimli) sistemininv14.3sürümünü HW4 (AI4) donanımlı araçlar için dağıtmaya başladı. 2026.2.9.6 yazılım paketiyle gelen güncelleme yüzeyde küçük iyileştirmeler sunsa da asıl büyük değişim altyapıda gerçekleşti. Şirket, yapay zeka derleyicisini ve çalışma zamanını baştan sona yeniden yazarak tepki süresinde yüzde 20’lik bir iyileşme sağladığını açıkladı. Bu sürüm,Model S, Model 3, Model X, ModelYveCybertruck’ın HW4 versiyonlarında kullanılabiliyor. Dikkat çeken bir diğer unsur ise Tesla’nın ilk kez açık şekilde MLIR tabanlı bir altyapıya geçtiğini doğrulaması oldu. Güncellemenin en kritik noktası, Tesla’nın FSD sisteminin arkasındaki yapay zeka derleyicisini tamamen yenilemesi. Şirket, bu dönüşümdeMLIR(Multi-Level Intermediate Representation) altyapısını kullandığını belirtiyor. Bu teknoloji, sinir ağlarının farklı donanımlar üzerinde daha verimli çalışmasını sağlayanmodern bir derleyicimimarisi olarak biliniyor. MLIR, LLVM Foundation çatısı altında geliştiriliyor ve arkasındaki isim, aynı zamanda LLVM, Clang ve Swift’in yaratıcısı olan Chris Lattner. Lattner’ın 2017 yılında kısa bir süre Tesla’nın Autopilot ekibini yönetmiş olması bu geçişi daha da dikkat çekici hale getiriyor. Lattner, güncelleme sonrası yaptığı değerlendirmedeyüzde 20’lik tepki süresikazanımının son derece anlamlı olduğunu vurguladı. Bu iyileşme, araçların çevresel veriyi algıladığı an ile tepki verdiği an arasındaki gecikmeyi azaltıyor. Sonuç olarak araçlardaha erken fren ve daha hızlı manevra yapabiliyor. Ayrıca kritik durumlara daha etkin tepki verebiliyor. Tesla, yalnızca altyapıyı değil, sinir ağı eğitim süreçlerini de güncelledi.Pekiştirmeli öğrenme(Reinforcement learning) aşamasında yapılan geliştirmeler, sistemin farklı sürüş senaryolarında daha tutarlı performans göstermesini sağlıyor. Ayrıca görsel algı tarafında kullanılan görüntü kodlayıcısı da yenilendi. Bu sayede sistemin düşük görüş koşullarında, nadir senaryolarda ve karmaşık trafik yapılarındadaha doğru analiz yapabildiğibelirtiliyor. 3 boyutlu geometri algısı güçlendirilirken, trafik işaretlerinin yorumlanmasında da kapsam genişletildi. Bunlar dışında park performansı da iyileşiyor. Yeni sürümle birlikte araçlar, park alanı seçimi ve manevralarda daha kararlı hareket ediyor. Harita üzerinde görülen yeni “P” simgesi, aracın hedeflediği park noktasını önceden göstererek sürücüye şeffaflık sağlıyor. Ek olarak Tesla, daha önce eleştirilen bazı davranışları da azaltmayı hedefledi. Gereksiz şerit kaymaları ve takip mesafesi ihlalleri minimize edildi. Acil durum araçları, okul servisleri ve öncelik ihlali yapan araçlara karşı verilen tepkiler de geliştirildi. Gelecekte çukurlar algılanacak Bu sürüm, FSD v14 ve v14.2 ile başlayan yeni nesil uçtan uca sinir ağı mimarisinin devamı niteliğinde. Dolayısıyla bu sürüm de HW3 donanımlı eski araçlara gelmeyecek. Tesla, henüz bu sürüme dahil olmayan ancak planlanan bazı geliştirmeleri de paylaştı. Bunlar arasında daha geniş davranışsal akıl yürütme, çukur algılama ve kaçınma ile sürücü izleme sisteminin göz takibi doğruluğunun artırılması yer alıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.amazon.com.tr/dp/B0FP26GZW7 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.worldcard.com.tr/kampanyalar/k/30014550152"
         },
-        "post_text": "♻️ ATIKTAN ENERJİDE BÜYÜK BAŞARI\n\nTürkiye, atıklardan enerji üretimi konusunda önemli bir eşiği aştı. Mevcut durumda yaklaşık 2.5 GW kurulu güçle atıklar enerjiye dönüştürülüyor.\n\nSıfır Atık Projesi sayesinde ise tam 270 milyar kWh enerji tasarrufu sağlandı, bu da 613 milyon ağacın kesilmesini engelledi.\n\nSon 6 yılda 26 milyon tondan fazla atık bertaraf edilirken, 6.9 milyon ton atık geri kazanıldı. Bu geri kazanılan atıklar ekonomiye 365 milyar lira katkı sağladı.\n\nSizce de bu rakamlar harika değil mi?",
-        "post_text_length": 508
+        "post_text": "🤖 TESLA'DAN SÜRÜŞ GÜVENLİĞİNE DEV ADIM!\n\nTesla'nın FSD v14.3 güncellemesiyle yapay zeka altyapısı baştan aşağı yenilendi. Bu sayede araçların tepki süresi yüzde 20 oranında hızlandı.\n\nKarmaşık trafik durumlarında daha güvenli bir sürüş deneyimi sunmayı hedefleyen bu güncelleme, özellikle HW4 donanımına sahip Model S, Model 3, Model X, Model Y ve Cybertruck'larda kullanılabiliyor.\n\nMLIR tabanlı yeni altyapı, sinir ağlarının daha verimli çalışmasını sağlıyor. Bu da araçların çevresel veriyi algılaması ile tepki vermesi arasındaki süreyi kısaltıyor.\n\nPeki sizce bu tür teknolojik gelişmeler sürüş güvenliğimizi ne kadar etkiliyor?",
+        "post_text_length": 633
       },
       "error": null,
-      "updated_at": "2026-04-08T17:30:38.081923+03:00"
+      "updated_at": "2026-04-08T19:18:15.864414+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
-          "link": "https://www.donanimhaber.com/turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti--204203",
-          "published": "2026-04-08T14:20:00+00:00",
-          "summary": "Türkiye’de yaklaşık 2.5 GW kurulu güçle atıklardan enerji üretiliyor. Sıfır Atık Projesi sayesinde 270 milyar kWh tasarruf sağlanırken 613 milyon ağacın kesilmesi önlendi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204203/1400x788turkiye-atiklardan-enerji-uretiminde-2-5-gw-seviyesine-ulasti.jpg",
+          "title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
+          "link": "https://www.donanimhaber.com/tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi--204200",
+          "published": "2026-04-08T16:08:00+00:00",
+          "summary": "Tesla, FSD v14.3 güncellemesiyle yapay zeka altyapısını MLIR tabanlı olarak yeniden inşa etti. Yeni sürüm, %20 daha hızlı tepki süresi ve karmaşık senaryolarda daha güvenli sürüş vadediyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204200/1400x788tesla-fsd-v14-3-guncellemesiyle-tepki-suresi-yuzde-20-hizlandi.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "atiklardan-enerji-seviyesine-turkiye-ulasti-uretiminde",
-          "base_ai_score": 80,
-          "score": 92,
+          "topic_fingerprint": "fsd-guncellemesiyle-hizlandi-suresi-tepki-tesla-v14-yuzde",
+          "base_ai_score": 85,
+          "score": 97,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Açıklanan verilere göre2024 yılıiçerisinde yaklaşık5 bin ton atık geri kazanıldı. Aynı süreçte10 milyon 845 bin kilovatsaat enerji tasarrufusağlanırken, 10 bin ton karbondioksit salımı da engellendi. Sıfır Atık uygulamaları çerçevesinde Bakanlığın merkez kampüsünde hayata geçirilen Depozito Yönetim Sistemi ile plastik, cam ve alüminyum ambalajların geri kazanımı hızlandırıldı. “Depozitosu Olan Ambalajlar” (DOA) logolu ürünler, kurulan iade makineleri aracılığıyla doğrudan sisteme kazandırılmaya başlandı. Bakanlığa bağlı kurum ve kuruluşların yürüttüğü çalışmalar kapsamındason 6 yılda26 milyon tonun üzerinde atık bertaraf edilirken,6 milyon 900 bin ton atık geri kazanıldı. Aynı dönemde 1 milyon tondan fazla atık alternatif ham madde olarak değerlendirildi. Aynı süreçte 2 trilyon litre su tasarrufu, 60 milyar litre petrol tasarrufu ve yaklaşık 55 bin futbol sahası büyüklüğünde depolama alanı kazanımı elde edildi. Proje kapsamında geri kazanılan toplam atık miktarı 90 milyon tona ulaşırken, ekonomiye sağlanan katkı 365 milyar lira seviyesine çıktı. Sıfır Atık uygulamalarının çevresel etkileri de dikkat çekici boyutlara ulaştı. Verilere göre, Türkiye’deki orman varlığının yaklaşık yüzde 7’sine denk gelen 613 milyon ağacın kesilmesi önlendi. Ayrıca 180 milyon ton sera gazı salımının önüne geçildi, bu miktarın yaklaşık 36 milyon aracın yıllık emisyonuna eşdeğer olduğu ifade edildi. Sıfır Atık Yönetim Sistemi, bugüne kadar 217 bin bina ve yerleşkede uygulanmaya başlandı. 2017 yılında yüzde 13 seviyesinde olan geri kazanım oranı, kademeli olarak artırılarak 2024’te yüzde 36,08’e, 2025’te ise yüzde 37,53’e yükseltildi. Türkiye’nin hedefi, bu oranı 2035’te yüzde 60’a, 2053’te ise yüzde 70’e çıkarmak. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.n11.com/urun/us-polo-assn-erkek-antrasit-mont-50292895-vr006-antrasit-65938549 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.idefix.com/cybeart-apex-neo-series-vintage-edition-pu-deri-bel-destekli-4d-hafizali-yastik-oyuncu-koltugu-5-yil-garanti-p-9679789",
+          "full_text": "Tesla,Full Self-Driving(Denetimli) sistemininv14.3sürümünü HW4 (AI4) donanımlı araçlar için dağıtmaya başladı. 2026.2.9.6 yazılım paketiyle gelen güncelleme yüzeyde küçük iyileştirmeler sunsa da asıl büyük değişim altyapıda gerçekleşti. Şirket, yapay zeka derleyicisini ve çalışma zamanını baştan sona yeniden yazarak tepki süresinde yüzde 20’lik bir iyileşme sağladığını açıkladı. Bu sürüm,Model S, Model 3, Model X, ModelYveCybertruck’ın HW4 versiyonlarında kullanılabiliyor. Dikkat çeken bir diğer unsur ise Tesla’nın ilk kez açık şekilde MLIR tabanlı bir altyapıya geçtiğini doğrulaması oldu. Güncellemenin en kritik noktası, Tesla’nın FSD sisteminin arkasındaki yapay zeka derleyicisini tamamen yenilemesi. Şirket, bu dönüşümdeMLIR(Multi-Level Intermediate Representation) altyapısını kullandığını belirtiyor. Bu teknoloji, sinir ağlarının farklı donanımlar üzerinde daha verimli çalışmasını sağlayanmodern bir derleyicimimarisi olarak biliniyor. MLIR, LLVM Foundation çatısı altında geliştiriliyor ve arkasındaki isim, aynı zamanda LLVM, Clang ve Swift’in yaratıcısı olan Chris Lattner. Lattner’ın 2017 yılında kısa bir süre Tesla’nın Autopilot ekibini yönetmiş olması bu geçişi daha da dikkat çekici hale getiriyor. Lattner, güncelleme sonrası yaptığı değerlendirmedeyüzde 20’lik tepki süresikazanımının son derece anlamlı olduğunu vurguladı. Bu iyileşme, araçların çevresel veriyi algıladığı an ile tepki verdiği an arasındaki gecikmeyi azaltıyor. Sonuç olarak araçlardaha erken fren ve daha hızlı manevra yapabiliyor. Ayrıca kritik durumlara daha etkin tepki verebiliyor. Tesla, yalnızca altyapıyı değil, sinir ağı eğitim süreçlerini de güncelledi.Pekiştirmeli öğrenme(Reinforcement learning) aşamasında yapılan geliştirmeler, sistemin farklı sürüş senaryolarında daha tutarlı performans göstermesini sağlıyor. Ayrıca görsel algı tarafında kullanılan görüntü kodlayıcısı da yenilendi. Bu sayede sistemin düşük görüş koşullarında, nadir senaryolarda ve karmaşık trafik yapılarındadaha doğru analiz yapabildiğibelirtiliyor. 3 boyutlu geometri algısı güçlendirilirken, trafik işaretlerinin yorumlanmasında da kapsam genişletildi. Bunlar dışında park performansı da iyileşiyor. Yeni sürümle birlikte araçlar, park alanı seçimi ve manevralarda daha kararlı hareket ediyor. Harita üzerinde görülen yeni “P” simgesi, aracın hedeflediği park noktasını önceden göstererek sürücüye şeffaflık sağlıyor. Ek olarak Tesla, daha önce eleştirilen bazı davranışları da azaltmayı hedefledi. Gereksiz şerit kaymaları ve takip mesafesi ihlalleri minimize edildi. Acil durum araçları, okul servisleri ve öncelik ihlali yapan araçlara karşı verilen tepkiler de geliştirildi. Gelecekte çukurlar algılanacak Bu sürüm, FSD v14 ve v14.2 ile başlayan yeni nesil uçtan uca sinir ağı mimarisinin devamı niteliğinde. Dolayısıyla bu sürüm de HW3 donanımlı eski araçlara gelmeyecek. Tesla, henüz bu sürüme dahil olmayan ancak planlanan bazı geliştirmeleri de paylaştı. Bunlar arasında daha geniş davranışsal akıl yürütme, çukur algılama ve kaçınma ile sürücü izleme sisteminin göz takibi doğruluğunun artırılması yer alıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C2DFYDQX https://www.amazon.com.tr/dp/B085X2LKLW https://www.amazon.com.tr/dp/B0FP26GZW7 https://www.amazon.com.tr/dp/B0GSB4SS8Z https://www.worldcard.com.tr/kampanyalar/k/30014550152",
           "image_source": "rss_image"
         },
-        "post_text": "♻️ ATIKTAN ENERJİDE BÜYÜK BAŞARI\n\nTürkiye, atıklardan enerji üretimi konusunda önemli bir eşiği aştı. Mevcut durumda yaklaşık 2.5 GW kurulu güçle atıklar enerjiye dönüştürülüyor.\n\nSıfır Atık Projesi sayesinde ise tam 270 milyar kWh enerji tasarrufu sağlandı, bu da 613 milyon ağacın kesilmesini engelledi.\n\nSon 6 yılda 26 milyon tondan fazla atık bertaraf edilirken, 6.9 milyon ton atık geri kazanıldı. Bu geri kazanılan atıklar ekonomiye 365 milyar lira katkı sağladı.\n\nSizce de bu rakamlar harika değil mi?",
-        "image_path": "/tmp/otoxtra_rss_dl_kkq7y.jpg",
+        "post_text": "🤖 TESLA'DAN SÜRÜŞ GÜVENLİĞİNE DEV ADIM!\n\nTesla'nın FSD v14.3 güncellemesiyle yapay zeka altyapısı baştan aşağı yenilendi. Bu sayede araçların tepki süresi yüzde 20 oranında hızlandı.\n\nKarmaşık trafik durumlarında daha güvenli bir sürüş deneyimi sunmayı hedefleyen bu güncelleme, özellikle HW4 donanımına sahip Model S, Model 3, Model X, Model Y ve Cybertruck'larda kullanılabiliyor.\n\nMLIR tabanlı yeni altyapı, sinir ağlarının daha verimli çalışmasını sağlıyor. Bu da araçların çevresel veriyi algılaması ile tepki vermesi arasındaki süreyi kısaltıyor.\n\nPeki sizce bu tür teknolojik gelişmeler sürüş güvenliğimizi ne kadar etkiliyor?",
+        "image_path": "/tmp/otoxtra_rss_241sefh2.jpg",
         "image_source": "rss_image"
       },
       "error": null,
-      "updated_at": "2026-04-08T17:30:39.085740+03:00"
+      "updated_at": "2026-04-08T19:18:17.255353+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122161781714916499",
-        "article_title": "Türkiye atıklardan enerji üretiminde 2.5 GW seviyesine ulaştı",
+        "post_id": "678053852057751_122161791920916499",
+        "article_title": "Tesla’nın FSD v14.3 güncellemesiyle tepki süresi yüzde 20 hızlandı",
         "image_source": "rss_image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-08T17:34:25.847567+03:00"
+      "updated_at": "2026-04-08T19:19:26.664206+03:00"
     }
   }
 }
