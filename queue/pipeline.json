@@ -1,57 +1,113 @@
 {
-  "run_id": "2026-04-09-14:58",
-  "status": "completed",
-  "started_at": "2026-04-09T14:58:51.929376+03:00",
-  "updated_at": "2026-04-09T15:06:04.517451+03:00",
+  "run_id": "2026-04-09-17:56",
+  "status": "error",
+  "started_at": "2026-04-09T17:56:25.699203+03:00",
+  "updated_at": "2026-04-09T17:56:35.517640+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-            "link": "https://tr.motor1.com/news/792447/omoda-jaecoo-nisan-firsat-bulten/",
-            "published": "2026-04-09T11:00:00+00:00",
-            "summary": "Takas desteği ve sıfır faizli kredi sunuluyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/8A39AB/s3/jaecoo-7.jpg",
+            "title": "Steam'e yapay zeka geliyor: SteamGPT ortaya çıktı",
+            "link": "https://www.donanimhaber.com/steam-e-yapay-zeka-geliyor-steamgpt-ortaya-cikti--204248",
+            "published": "2026-04-09T14:17:00+00:00",
+            "summary": "Valve'ın Steam platformu için yeni bir yapay zeka aracı geliştirdiği ortaya çıktı. \"SteamGPT\" olarak anılan sistem, özellikle destek ve hesap inceleme süreçlerine odaklanıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204248/1400x788steam-e-yapay-zeka-geliyor-steamgpt-ortaya-cikti.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "geliyor-ortaya-steam-steamgpt-yapay-zeka"
+          },
+          {
+            "title": "Xiaomi TV S Mini LED 2026 tanıtıldı: 2000 nit parlaklık, AI ve dahası",
+            "link": "https://www.donanimhaber.com/xiaomi-tv-s-mini-led-2026-tanitildi-iste-ozellikleri-ve-fiyati--204245",
+            "published": "2026-04-09T12:02:00+00:00",
+            "summary": "Xiaomi, TV S Mini LED serisini 2026 modeliyle güncelledi. Yeni seri, daha yüksek parlaklık, 100 inçe kadar ekran ve geliştirilmiş yapay zeka görüntü motoru ile geliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204245/1400x788xiaomi-tv-s-mini-led-2026-tanitildi-iste-ozellikleri-ve-fiyati.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2000-2026-dahasi-led-mini-nit-parlaklik-xiaomi"
+          },
+          {
+            "title": "Kompakt elektrikli Kia EV1, 2027’de görücüye çıkarılacak",
+            "link": "https://www.log.com.tr/kompakt-elektrikli-kia-ev1-2027de-gorucuye-cikarilacak/",
+            "published": "2026-04-09T13:53:37+00:00",
+            "summary": "Kia tarafından yapılan doğrulamaya göre tamamen elektrikli kompakt şehir aracı EV1, resmi olarak 2027’de görücüye çıkarılacak. Özellikle Avrupa pazarına odaklanacak araç, ilk bilgilere göre EV2 ile benzer şekilde 400 voltluk E-GMP platformunu temel alacak ve yüksek ihtimalle iki farklı batarya seçeneğiyle sunulacak. Eğer birebir EV2’nin izinden gidilirse araç 42,2 kWh bataryalı sürümüyle 320 km, 61 kWh bataryalı sürümüyle ise 480 km civarında menzil sunabilir. Çıktığında markanın en ucuz tamamen elektrikli aracı olacak EV1, aralarında Türkiye’nin de olduğu çok sayıda pazarda satılabilir. Kia bugün 2030 yılına kadar piyasaya 14 farklı elektrikli araç modeli sunmayı ve yıllık bir milyon adetlik elektrikli araç satışına ulaşmayı hedeflediğini de aktardı. Şirket aynı zamanda batarya kapasitelerini yüzde 40 büyüten, enerji yoğunluğunu ise yüzde 15 artıran yeni bir elektrikli otomobil platformu üzerinde çalıştığını da aktardı. Kompakt elektrikli Kia EV1, 2027’de görücüye çıkarılacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-09_16-45-55_t9q0q-660x371.jpg",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2027-cikarilacak-elektrikli-ev1-gorucuye-kia-kompakt"
+          },
+          {
+            "title": "Çinli Leapmotor’un teknolojilerini temel alan bir Alfa Romeo modeli de gelebilir",
+            "link": "https://www.log.com.tr/cinli-leapmotorun-teknolojilerini-temel-alan-bir-alfa-romeo-modeli-de-gelebilir/",
+            "published": "2026-04-09T13:44:45+00:00",
+            "summary": "Stellantis, Reuters tarafından gündeme getirilen iddialara göre tamamen elektrikli bir Opel marka SUV modeli için Çin merkezli Leapmotor ile görüşmeler gerçekleştiriyor. Aracın doğrudan Leapmotor’un teknolojilerini temel alacağı ve Stellantis’in İspanya’daki fabrikasında üretileceği aktarılırken, modelin seri üretimine 2028’de başlanacağı öne sürülüyor. Yeni SUV’nin Leapmotor’un B10 modeliyle aynı platformu paylaşacağını aktaran Reuters, pazara Leapmotor’un teknolojilerini temel alan bir Alfa Romeo modelinin çıkarılabileceğini de öne sürüyor. İki şirketin Zaragoza fabrikasındaki kapasiteyi en iyi şekilde değerlendirmek için aynı altyapıyı kullanan bir Alfa Romeo modeli geliştirmek üzere Leapmotor ile ön görüşmelere başladığı belirtiliyor. 2023 yılında 1,5 milyar avro yatırımla Leapmotor’un stratejik hissedarı olan Stellantis, Çinli üreticilerden destek alarak pazara daha ucuza, daha gelişmiş araçlar sunmak istiyor. Çinli Leapmotor’un teknolojilerini temel alan bir Alfa Romeo modeli de gelebilir yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-09_16-42-43_mGsqB-660x371.jpg",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "alan-alfa-cinli-gelebilir-leapmotor-modeli-romeo-teknolojilerini-temel"
+          },
+          {
+            "title": "CONTROL Resonant, Türkçe altyazı desteğiyle geliyor",
+            "link": "https://www.log.com.tr/control-resonant-turkce-altyazi-destegiyle-geliyor/",
+            "published": "2026-04-09T13:33:40+00:00",
+            "summary": "Bugün Remedy Entertainment tarafından yapılan resmi açıklamaya göre CONTROL Resonant oyunu Türkçe altyazı desteğiyle geliyor. Yıl sonuna doğru çıkacak oyun için Steam’de paylaşılan özet açıklama şöyle: “Heyecan verici bu aksiyon macera rol yapma oyununda doğallığın ötesindeki yıkımın eşiğinde olan, çarpıtılmış Manhattan’ı keşfet. Gerçekliği altüst eden kozmik tehdide karşı kendi insanlığını korumak ve hayatta kalmamızı sağlamak için mücadele eden Dylan Faden’ın olağanüstü güçlerini serbest bırak.” We're happy to announce all the available languages for the launch of CONTROL Resonant! Which language will you be playing the game in? CONTROL Resonant launches later in 2026. Wishlist now!#CONTROLResonant pic.twitter.com/Vq0vMHpj0q — CONTROL Resonant 🔻Wishlist Now! (@ControlRemedy) April 9, 2026 CONTROL Resonant, Türkçe altyazı desteğiyle geliyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-09_16-32-34_YWvc2-660x371.jpg",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "altyazi-control-destegiyle-geliyor-resonant-turkce"
+          },
+          {
+            "title": "Hidrojenli yeni BMW iX5, yaklaşık 750 km menzile sahip olacak",
+            "link": "https://www.log.com.tr/hidrojenli-yeni-bmw-ix5-yaklasik-750-km-menzile-sahip-olacak/",
+            "published": "2026-04-09T13:02:19+00:00",
+            "summary": "Bugün şirket tarafından yapılan açıklamaya göre hidrojen-elektrik temelli yeni BMW iX5, “BMW Hydrogen Flat Storage System” isimli yeni sistem sayesinde 750 (WLTP) km civarında menzile sahip olacak. Kıyaslamak adına hidrojen temelli mevcut iX5’in yaklaşık 482 km menzili bulunuyor. Altında birbirine paralel olarak bağlanan ve tek bir ünite olarak görev yapan karbon fiberle güçlendirilmiş yedi adet yüksek basınçlı hidrojen tankı bulunan araç, merkezi bir valf tarafından kontrol edilen altyapı sayesinde birim alanda daha yüksek menzil sunabiliyor. Tanklarının 5 dakikadan kısa sürede doldurulabileceği açıklanan iX5 Hydrogen, aktarıldığı kadarıyla elektrikli, hibrit ve içten yanmalı versiyonlarla aynı üretim hattında üretilebilecek. Yeni nesil “Neue Klasse” tasarım çizgisinin benimseneceği modelin 2028’de üretime alınacağı belirtiyor. Hidrojenli yeni BMW iX5, yaklaşık 750 km menzile sahip olacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-09_15-40-31_0tG3C-660x371.jpg",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "750-bmw-hidrojenli-ix5-menzile-olacak-sahip-yaklasik"
+          },
+          {
+            "title": "Chevrolet Camaro geri dönüyor!",
+            "link": "https://tr.motor1.com/news/792484/camaro-geri-donuyor-rapor/",
+            "published": "2026-04-09T13:00:00+00:00",
+            "summary": "Yeni Camaro'nun, Cadillac CT5 ve bir Buick sedan ile aynı platformu paylaşacağı iddia ediliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/y2pEBG/s3/sixth-generation-chevrolet-camaro-zl1.jpg",
             "source_name": "Motor1 TR",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "ayina-firsatlar-jaecoo-modellerinde-nisan-omoda-ozel"
-          },
-          {
-            "title": "MINI Countryman Ailesi Türkiye’de Satışa Sunuldu",
-            "link": "https://shiftdelete.net/mini-countryman-ailesi-turkiyede-satisa-sunuldu",
-            "published": "2026-04-09T10:21:17+00:00",
-            "summary": "MINI’nin SUV segmentindeki güçlü temsilcisi MINI Countryman, yeni jenerasyonuyla lanse edildiği 2024 yılından bu yana tamamen elektrikli ve benzinli mild hibrit versiyonlarıyla toplam 16 bin 500 adedin üzerinde satış başarısı elde etti. 2026 yılına da hızlı bir giriş yapan MINI Countryman, yılın ilk çeyreğinde ulaştığı 2 bin 964 adetlik satış performansıyla premium segmentte en çok […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ailesi-countryman-mini-satisa-sunuldu-turkiye"
-          },
-          {
-            "title": "Eşel Mobil Olmasaydı Benzin Kaç TL Olacaktı?",
-            "link": "https://shiftdelete.net/esel-mobil-olmasaydi-benzin-kac-tl-olacakti",
-            "published": "2026-04-09T10:02:07+00:00",
-            "summary": "Hazine ve Maliye Bakanı Mehmet Şimşek, küresel enerji piyasalarında yaşanan sert dalgalanmaların Türkiye’de benzin fiyatlarına etkisini değerlendirdi. Katıldığı canlı yayında dikkat çeken açıklamalarda bulunan Şimşek, kamuoyunda sıkça tartışılan “eşel mobil sistemi” ile ilgili çarpıcı veriler paylaştı. Bakan Şimşek’e göre, devletin uyguladığı bu sistem devrede olmasaydı motorin fiyatları bugün çok daha yüksek seviyelerde olacaktı. Şimşek, “Eşel […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "benzin-esel-kac-mobil-olacakti-olmasaydi"
+            "topic_fingerprint": "camaro-chevrolet-donuyor-geri"
           }
         ],
-        "count": 3,
+        "count": 7,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -81,111 +137,31 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-09T14:58:56.676584+03:00"
+      "updated_at": "2026-04-09T17:56:30.025386+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/792447/omoda-jaecoo-nisan-firsat-bulten/",
-          "published": "2026-04-09T11:00:00+00:00",
-          "summary": "Takas desteği ve sıfır faizli kredi sunuluyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/8A39AB/s3/jaecoo-7.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ayina-firsatlar-jaecoo-modellerinde-nisan-omoda-ozel",
-          "base_ai_score": 55,
-          "score": 67,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2
-        },
-        "score": 67,
-        "title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
-      "error": null,
-      "updated_at": "2026-04-09T14:59:00.582193+03:00"
+      "status": "error",
+      "output": null,
+      "error": "No article above threshold",
+      "updated_at": "2026-04-09T17:56:35.517640+03:00"
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/792447/omoda-jaecoo-nisan-firsat-bulten/",
-          "published": "2026-04-09T11:00:00+00:00",
-          "summary": "Takas desteği ve sıfır faizli kredi sunuluyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/8A39AB/s3/jaecoo-7.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ayina-firsatlar-jaecoo-modellerinde-nisan-omoda-ozel",
-          "base_ai_score": 55,
-          "score": 67,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Yenilikçi tasarım anlayışı ve ileri teknolojileriyle öne çıkan OMODA ve JAECOO, nisan ayına özel kampanyalarıyla farklı kullanıcı ihtiyaçlarına hitap eden modellerini daha erişilebilir hale getiriyor. Marka, sunduğu avantajlı finansman olanaklarıyla Türkiye pazarındaki iddiasını güçlendirmeye devam ediyor. Bu kapsamda, premium off-road SUV segmentinde güçlü konumunu sürdüren JAECOO 7 ailesi, nisan ayında da cazip tekliflerle dikkat çekiyor. Ay boyunca 2025 ve 2026 model yılı JAECOO 7 Revive versiyonunda140.000 TL’yevaran takas desteği ve ticari müşterilere özel600.000 TL’yekadar 6 ay vadeli 0 faizli kredi imkânı sunuluyor. Ailenin yeni üyesi olanJAECOO 7 Evolve 4x2versiyonu ise güçlü SUV karakteri, gelişmiş teknolojileri ve şehir içi konforu arazi kabiliyetiyle birleştiren yapısıyla öne çıkıyor. Nisan ayına özel olarak sunulan75.600 TL’yevaran takas desteği sayesinde kullanıcılar, premium SUV deneyimine daha avantajlı koşullarla sahip olabiliyor. Şehir içi sürüşte güvenliği ve akıllı teknolojileriyle öne çıkan OMODA 5 Ultima versiyonu için ticari müşterilere özel600.000 TL’ye6 ay vadeli 0 faizli kredi imkânı sağlanıyor. Gelişmiş sürüş destek sistemleri ve 5 yıldızlı güvenlik standartlarıyla model, kullanıcılarına üst düzey bir sürüş deneyimi sunuyor. Markanın yeni nesil mobilite anlayışını temsil edenOMODA 7ise yenilikçi teknolojileri ve kullanıcı odaklı akıllı çözümleriyle dikkat çekiyor. Neo versiyonunda sunulan ticari müşterilere özel600.000 TL’ye6 ay vadeli 0 faizli kredi avantajı ile model, ileri teknolojiyi cazip finansman seçenekleriyle buluşturuyor. Gelişmiş kayar ekran teknolojisi, premium ses sistemi ve kişiselleştirilebilir akıllı özellikleriyle OMODA 7, araç içi deneyimi yeni bir seviyeye taşıyor. Sınırlı süreyle geçerli olan nisan ayı kampanyaları kapsamında OMODA ve JAECOO, farklı segmentlerdeki güçlü modellerini avantajlı satın alma koşullarıyla sunarak kullanıcılarına esnek ve erişilebilir çözümler sağlamaya devam ediyor. Türkiye lansmanının ardından OMODA & JAECOO, küresel yolculuğunda yeni bir aşamaya geçiyor. Nisan 2026’da düzenlenecek yıllık bayi konferansı vePekin Otomobil Fuarı’ndakigüçlü varlığı ile marka, yeni başarılarını ve gelecek ürün yol haritasını sergileyecek. Aynı zamanda tamamen yeni O4 modeli üretim hattından indirilecek ve ürün gamı daha da genişletilecek.Üç yıl içinde 1 milyon adetlik satışbaşarısının ardından marka, Yeni Milyon Stratejisi’ni devreye alarak “milyondan yıllık milyonlara” geçiş hedefini ortaya koyuyor. Bu strateji, kümülatif başarıdan yıllık ölçekli büyümeye geçişi simgelerken, küresel genişlemeyi hızlandıracak ve markayı yüksek büyümenin bir sonraki aşamasına taşıyacak."
-        },
-        "post_text": "🚗 NİSAN AYINDA OMODA VE JAECCOO'DAN KAÇIRILMAYACAK FIRSATLAR!\n\nOMODA ve JAECOO, nisan ayına özel kampanyalarıyla dikkat çekiyor. Türkiye pazarındaki iddiasını finansman olanaklarıyla güçlendiren markalar, farklı ihtiyaçlara hitap eden modellerini daha erişilebilir kılıyor.\n\nJAECOO 7 ailesi, nisan ayında cazip tekliflerle geliyor. JAECOO 7 Revive versiyonunda 140.000 TL'ye varan takas desteği ve ticari müşterilere özel 600.000 TL'ye kadar 6 ay vadeli 0 faizli kredi imkanı sunuluyor. JAECOO 7 Evolve 4x2 versiyonunda ise 75.600 TL'ye varan takas desteği var.\n\nOMODA 5 Ultima için ticari müşterilere özel 600.000 TL'ye 6 ay vadeli 0 faizli kredi sağlanıyor.\n\nSiz bu fırsatlardan hangisini değerlendirmeyi düşünürsünüz?",
-        "post_text_length": 720
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-09T14:59:02.399076+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/792447/omoda-jaecoo-nisan-firsat-bulten/",
-          "published": "2026-04-09T11:00:00+00:00",
-          "summary": "Takas desteği ve sıfır faizli kredi sunuluyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/8A39AB/s3/jaecoo-7.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ayina-firsatlar-jaecoo-modellerinde-nisan-omoda-ozel",
-          "base_ai_score": 55,
-          "score": 67,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Yenilikçi tasarım anlayışı ve ileri teknolojileriyle öne çıkan OMODA ve JAECOO, nisan ayına özel kampanyalarıyla farklı kullanıcı ihtiyaçlarına hitap eden modellerini daha erişilebilir hale getiriyor. Marka, sunduğu avantajlı finansman olanaklarıyla Türkiye pazarındaki iddiasını güçlendirmeye devam ediyor. Bu kapsamda, premium off-road SUV segmentinde güçlü konumunu sürdüren JAECOO 7 ailesi, nisan ayında da cazip tekliflerle dikkat çekiyor. Ay boyunca 2025 ve 2026 model yılı JAECOO 7 Revive versiyonunda140.000 TL’yevaran takas desteği ve ticari müşterilere özel600.000 TL’yekadar 6 ay vadeli 0 faizli kredi imkânı sunuluyor. Ailenin yeni üyesi olanJAECOO 7 Evolve 4x2versiyonu ise güçlü SUV karakteri, gelişmiş teknolojileri ve şehir içi konforu arazi kabiliyetiyle birleştiren yapısıyla öne çıkıyor. Nisan ayına özel olarak sunulan75.600 TL’yevaran takas desteği sayesinde kullanıcılar, premium SUV deneyimine daha avantajlı koşullarla sahip olabiliyor. Şehir içi sürüşte güvenliği ve akıllı teknolojileriyle öne çıkan OMODA 5 Ultima versiyonu için ticari müşterilere özel600.000 TL’ye6 ay vadeli 0 faizli kredi imkânı sağlanıyor. Gelişmiş sürüş destek sistemleri ve 5 yıldızlı güvenlik standartlarıyla model, kullanıcılarına üst düzey bir sürüş deneyimi sunuyor. Markanın yeni nesil mobilite anlayışını temsil edenOMODA 7ise yenilikçi teknolojileri ve kullanıcı odaklı akıllı çözümleriyle dikkat çekiyor. Neo versiyonunda sunulan ticari müşterilere özel600.000 TL’ye6 ay vadeli 0 faizli kredi avantajı ile model, ileri teknolojiyi cazip finansman seçenekleriyle buluşturuyor. Gelişmiş kayar ekran teknolojisi, premium ses sistemi ve kişiselleştirilebilir akıllı özellikleriyle OMODA 7, araç içi deneyimi yeni bir seviyeye taşıyor. Sınırlı süreyle geçerli olan nisan ayı kampanyaları kapsamında OMODA ve JAECOO, farklı segmentlerdeki güçlü modellerini avantajlı satın alma koşullarıyla sunarak kullanıcılarına esnek ve erişilebilir çözümler sağlamaya devam ediyor. Türkiye lansmanının ardından OMODA & JAECOO, küresel yolculuğunda yeni bir aşamaya geçiyor. Nisan 2026’da düzenlenecek yıllık bayi konferansı vePekin Otomobil Fuarı’ndakigüçlü varlığı ile marka, yeni başarılarını ve gelecek ürün yol haritasını sergileyecek. Aynı zamanda tamamen yeni O4 modeli üretim hattından indirilecek ve ürün gamı daha da genişletilecek.Üç yıl içinde 1 milyon adetlik satışbaşarısının ardından marka, Yeni Milyon Stratejisi’ni devreye alarak “milyondan yıllık milyonlara” geçiş hedefini ortaya koyuyor. Bu strateji, kümülatif başarıdan yıllık ölçekli büyümeye geçişi simgelerken, küresel genişlemeyi hızlandıracak ve markayı yüksek büyümenin bir sonraki aşamasına taşıyacak.",
-          "image_source": "rss_image"
-        },
-        "post_text": "🚗 NİSAN AYINDA OMODA VE JAECCOO'DAN KAÇIRILMAYACAK FIRSATLAR!\n\nOMODA ve JAECOO, nisan ayına özel kampanyalarıyla dikkat çekiyor. Türkiye pazarındaki iddiasını finansman olanaklarıyla güçlendiren markalar, farklı ihtiyaçlara hitap eden modellerini daha erişilebilir kılıyor.\n\nJAECOO 7 ailesi, nisan ayında cazip tekliflerle geliyor. JAECOO 7 Revive versiyonunda 140.000 TL'ye varan takas desteği ve ticari müşterilere özel 600.000 TL'ye kadar 6 ay vadeli 0 faizli kredi imkanı sunuluyor. JAECOO 7 Evolve 4x2 versiyonunda ise 75.600 TL'ye varan takas desteği var.\n\nOMODA 5 Ultima için ticari müşterilere özel 600.000 TL'ye 6 ay vadeli 0 faizli kredi sağlanıyor.\n\nSiz bu fırsatlardan hangisini değerlendirmeyi düşünürsünüz?",
-        "image_path": "/tmp/otoxtra_rss_sse5gbt1.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-09T14:59:02.919734+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122161870334916499",
-        "article_title": "Omoda ve Jaecoo modellerinde Nisan ayına özel fırsatlar!",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-09T15:06:04.517451+03:00"
+      "updated_at": null
     }
   }
 }
