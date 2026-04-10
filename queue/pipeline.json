@@ -1,43 +1,14 @@
 {
-  "run_id": "2026-04-10-20:48",
-  "status": "completed",
-  "started_at": "2026-04-10T20:48:54.932749+03:00",
-  "updated_at": "2026-04-10T20:55:30.289171+03:00",
+  "run_id": "2026-04-10-22:44",
+  "status": "error",
+  "started_at": "2026-04-10T22:44:49.808719+03:00",
+  "updated_at": "2026-04-10T22:44:55.765884+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "OpenAI’dan yeni ChatGPT Pro planı: Aylık 100 dolar",
-            "link": "https://www.donanimhaber.com/openai-dan-yeni-chatgpt-pro-plani-aylik-100-dolar--204300",
-            "published": "2026-04-10T15:45:00+00:00",
-            "summary": "OpenAI, ChatGPT’de 20 ve 200 dolarlık planlar arasına 100 dolarlık yeni Pro seçeneği ekledi. Aynı araçlara erişim sunan yeni plan, biraz daha düşük limitlerle geliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204300/1400x788openai-dan-yeni-chatgpt-pro-plani-aylik-100-dolar.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "100-aylik-chatgpt-dolar-openai-plani-pro"
-          },
-          {
-            "title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-            "link": "https://tr.motor1.com/news/792653/ariel-atom-4rr-en-guclu/",
-            "published": "2026-04-10T17:00:00+00:00",
-            "summary": "Atom 4RR 525 beygir güce sahip ve 2,4 saniyede 62 mil/s hıza ulaşıyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/KbgM7R/s3/ariel-atom-4rr-2026.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ariel-atom-guclu-kadarki-simdiye-tanitti-unu"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -66,112 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-10T20:48:58.876421+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-10T22:44:55.765884+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-          "link": "https://tr.motor1.com/news/792653/ariel-atom-4rr-en-guclu/",
-          "published": "2026-04-10T17:00:00+00:00",
-          "summary": "Atom 4RR 525 beygir güce sahip ve 2,4 saniyede 62 mil/s hıza ulaşıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbgM7R/s3/ariel-atom-4rr-2026.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ariel-atom-guclu-kadarki-simdiye-tanitti-unu",
-          "base_ai_score": 77,
-          "score": 89,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2
-        },
-        "score": 89,
-        "title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T20:49:02.903963+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-          "link": "https://tr.motor1.com/news/792653/ariel-atom-4rr-en-guclu/",
-          "published": "2026-04-10T17:00:00+00:00",
-          "summary": "Atom 4RR 525 beygir güce sahip ve 2,4 saniyede 62 mil/s hıza ulaşıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbgM7R/s3/ariel-atom-4rr-2026.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ariel-atom-guclu-kadarki-simdiye-tanitti-unu",
-          "base_ai_score": 77,
-          "score": 89,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ariel, şimdiye kadarki en hızlı ve en güçlü Atom versiyonunu tanıttı. 4RR adındaki model, 525 beygir güç ile 550 Nm tork üreten, güncellenmiş 2.0 litrelik turboşarjlı 4 silindirli K20C Honda imzalı motorla geliyor. 0-100 km/s hıza yalnızca 2,4 saniyede, 160 km/s hıza ise 5,1 saniyede ulaşabiliyor. Azami hız282 km/s. Bu,Ariel'inbirçok parçayı değiştirdiği, yükselttiği ve yeniden geliştirdiği, kişiye özel ve el yapımı bir motor. Kapalı deck gömlekler, özel dövme pistonlar ve biyellerin yanı sıra revize silindir kapağı ile emme-egzoz port geometrisine sahip. Ariel ayrıca, geliştirilmiş yaylar ve kılavuzlarla birlikte alaşım supap seti ve özel bir eksantrik mili de eklemeyi unutmamış. Motor; yarış seviyesinde bir kapak contası, yüksek debili yağ pompasına sahip yarış spesifikasyonlu (gated) yağlama sistemi ve daha büyük bir turbo ile geliyor. Diğer iyileştirmeler arasında karbon hava girişi ve yeni bir titanyum egzoz yer alıyor. Motor, Quaife üretimi 6 ileri sıralı (sequential) şanzımanla eşleştiriliyor. Atom 4RR, en güçlü haritanın yanı sıra 3 farklı güç haritası daha sunuyor. Harita 1, 400 bg ve 380 Nm üretiyor. Harita 2 ise 500 bg ve 450 Nm sağlıyor. Her motor, kendine özel bir dinamometre grafiğiyle teslim ediliyor. 4RR, ayarlanabilir çift tüplü Öhlins amortisörlerle geliyor. Frenleme gücü,Atom’unjantlarıyla birlikte sığabilecek en büyük ebat olan310 mm(iki parçalı) AP Racing havalandırmalı disklerden sağlanıyor. Sürücünün, kapalı seçeneği de dahil olmak üzere11ABS ayarı var. Otomobil, önde 16 inç ve arkada 17 inç olacak şekilde farklı ölçülerde (staggered) jantlar kullanıyor; Ariel bunları Yokohama A052 lastiklerle kaplıyor. Ariel, 4RR’ın “son derece sınırlı sayıda” üretileceğini söylüyor. Sayı verilmemiş olsa da, sokağa çıkabilen bu Atom’un başlangıç fiyatı208.000 £seviyesinde. Bu model, Atom’un 25. yaşını kutladığı için koleksiyon değeri de taşıyor."
-        },
-        "post_text": "🚀 YENİ ATOM REKOR KIRIYOR!\n\nAriel, şimdiye kadarki en güçlü Atom'unu tanıttı: Atom 4RR! Bu canavar, 525 beygir güç ve 550 Nm torkla geliyor.\n\n2.4 saniyede 100 km/s hıza ulaşan bu araç, adeta bir roket! Honda'nın güncellenmiş K20C motoruyla gelen Atom 4RR, kişiye özel el yapımı parçalarla donatılmış.\n\n4 farklı güç haritası sunan araç, yarış seviyesinde parçalara sahip.\n\nSiz bu yeni Atom'un gücü hakkında ne düşünüyorsunuz?",
-        "post_text_length": 424
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T20:49:05.060213+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-          "link": "https://tr.motor1.com/news/792653/ariel-atom-4rr-en-guclu/",
-          "published": "2026-04-10T17:00:00+00:00",
-          "summary": "Atom 4RR 525 beygir güce sahip ve 2,4 saniyede 62 mil/s hıza ulaşıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbgM7R/s3/ariel-atom-4rr-2026.jpg",
-          "source_name": "Motor1 TR",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "ariel-atom-guclu-kadarki-simdiye-tanitti-unu",
-          "base_ai_score": 77,
-          "score": 89,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ariel, şimdiye kadarki en hızlı ve en güçlü Atom versiyonunu tanıttı. 4RR adındaki model, 525 beygir güç ile 550 Nm tork üreten, güncellenmiş 2.0 litrelik turboşarjlı 4 silindirli K20C Honda imzalı motorla geliyor. 0-100 km/s hıza yalnızca 2,4 saniyede, 160 km/s hıza ise 5,1 saniyede ulaşabiliyor. Azami hız282 km/s. Bu,Ariel'inbirçok parçayı değiştirdiği, yükselttiği ve yeniden geliştirdiği, kişiye özel ve el yapımı bir motor. Kapalı deck gömlekler, özel dövme pistonlar ve biyellerin yanı sıra revize silindir kapağı ile emme-egzoz port geometrisine sahip. Ariel ayrıca, geliştirilmiş yaylar ve kılavuzlarla birlikte alaşım supap seti ve özel bir eksantrik mili de eklemeyi unutmamış. Motor; yarış seviyesinde bir kapak contası, yüksek debili yağ pompasına sahip yarış spesifikasyonlu (gated) yağlama sistemi ve daha büyük bir turbo ile geliyor. Diğer iyileştirmeler arasında karbon hava girişi ve yeni bir titanyum egzoz yer alıyor. Motor, Quaife üretimi 6 ileri sıralı (sequential) şanzımanla eşleştiriliyor. Atom 4RR, en güçlü haritanın yanı sıra 3 farklı güç haritası daha sunuyor. Harita 1, 400 bg ve 380 Nm üretiyor. Harita 2 ise 500 bg ve 450 Nm sağlıyor. Her motor, kendine özel bir dinamometre grafiğiyle teslim ediliyor. 4RR, ayarlanabilir çift tüplü Öhlins amortisörlerle geliyor. Frenleme gücü,Atom’unjantlarıyla birlikte sığabilecek en büyük ebat olan310 mm(iki parçalı) AP Racing havalandırmalı disklerden sağlanıyor. Sürücünün, kapalı seçeneği de dahil olmak üzere11ABS ayarı var. Otomobil, önde 16 inç ve arkada 17 inç olacak şekilde farklı ölçülerde (staggered) jantlar kullanıyor; Ariel bunları Yokohama A052 lastiklerle kaplıyor. Ariel, 4RR’ın “son derece sınırlı sayıda” üretileceğini söylüyor. Sayı verilmemiş olsa da, sokağa çıkabilen bu Atom’un başlangıç fiyatı208.000 £seviyesinde. Bu model, Atom’un 25. yaşını kutladığı için koleksiyon değeri de taşıyor.",
-          "image_source": "rss_image"
-        },
-        "post_text": "🚀 YENİ ATOM REKOR KIRIYOR!\n\nAriel, şimdiye kadarki en güçlü Atom'unu tanıttı: Atom 4RR! Bu canavar, 525 beygir güç ve 550 Nm torkla geliyor.\n\n2.4 saniyede 100 km/s hıza ulaşan bu araç, adeta bir roket! Honda'nın güncellenmiş K20C motoruyla gelen Atom 4RR, kişiye özel el yapımı parçalarla donatılmış.\n\n4 farklı güç haritası sunan araç, yarış seviyesinde parçalara sahip.\n\nSiz bu yeni Atom'un gücü hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_rss_x2fdnuyk.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T20:49:05.372602+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162011466916499",
-        "article_title": "Ariel, şimdiye kadarki en güçlü Atom’unu tanıttı",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T20:55:30.289171+03:00"
+      "updated_at": null
     }
   }
 }
