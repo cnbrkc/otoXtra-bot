@@ -70,6 +70,8 @@ jobs:
           TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
+          ENABLE_RANDOM_SKIP: ${{ github.event_name == 'workflow_dispatch' && 'false' || 'true' }}
         run: python -m core.orchestrator
 
       - name: Save data
