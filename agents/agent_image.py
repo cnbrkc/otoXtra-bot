@@ -1,11 +1,14 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.3)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.4)
 
-Degisiklik:
-- MAX_IMAGES_PER_NEWS env override eklendi.
-- Runtime'da hangi limitin kullanildigi loglanir.
+Degisiklikler:
+- MAX_IMAGES_PER_NEWS env override.
+- Runtime limit logu.
+- Ayni gorselin farkli URL'lerden tekrar secilmesini engellemek icin
+  dosya icerik hash (sha256) tekillemesi.
 """
 
+import hashlib
 import os
 import re
 import sys
@@ -60,6 +63,14 @@ def _read_int_env(name: str) -> Optional[int]:
         return int(raw.strip())
     except Exception:
         return None
+
+
+def _file_sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def _normalize_url(raw_url: str, base_url: str = "") -> str:
@@ -620,6 +631,7 @@ def prepare_images(article: dict) -> list[str]:
     log(f"Toplam aday URL: {len(candidate_urls)}")
 
     tried_keys: set[str] = set()
+    seen_content_hashes: set[str] = set()
     fail_reasons: Counter[str] = Counter()
     tried_count = 0
 
@@ -646,6 +658,17 @@ def prepare_images(article: dict) -> list[str]:
             if should_add_logo:
                 processed = add_logo(processed)
 
+            content_hash = _file_sha256(processed)
+            if content_hash in seen_content_hashes:
+                fail_reasons["duplicate_image_content"] += 1
+                log("Aday elendi: duplicate_image_content", "WARNING")
+                try:
+                    os.unlink(processed)
+                except OSError:
+                    pass
+                continue
+
+            seen_content_hashes.add(content_hash)
             prepared_paths.append(processed)
             used_sources.append("article_or_rss")
             log(f"Aday basarili: {reason} -> kaydedildi ({len(prepared_paths)}/{max_images_per_news})")
