@@ -1,33 +1,31 @@
 """
-agents/agent_image.py — Görsel İşleme Ajanı (v3.1)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.0)
 
-otoXtra Facebook Botu için pipeline'dan seçilen haberi alıp
-görsel hazırlayan ve pipeline.json'a yazan bağımsız ajan.
+otoXtra Facebook Botu icin pipeline'dan secilen haberi alip
+tekli veya coklu gorsel hazirlar ve pipeline.json'a yazar.
 
-Görsel kaynakları (öncelik sırasıyla):
-  1. RSS'den gelen image_url
-  2. Haber sitesinden og:image scraping
-  3. YEDEK GÖRSEL — lacivert arka plan + solid logo
+Gorsel kaynaklari (oncelik sirasi):
+  1. article.image_candidates (fetch asamasinda toplanan adaylar)
+  2. RSS'den gelen image_url / rss_image_url
+  3. Haber sitesinden scraping (og:image + twitter:image + img)
+  4. YEDEK GORSEL - lacivert arka plan + solid logo
 
-Bu ajan ASLA başarısız olmaz — en kötü ihtimalde
-yedek görsel oluşturur ve pipeline'a yazar.
+Bu ajan en kotu ihtimalde yedek gorsel olusturur.
 
-Bağımsız çalıştırma:
+Bagimsiz calistirma:
     python agents/agent_image.py
     python agents/agent_image.py --test
-
-Diğer modüller bu ajanı şöyle çağırır:
-    from agents.agent_image import run
-    success = run()
 """
 
 import os
 import sys
 import tempfile
 from typing import Optional
+from urllib.parse import urljoin, urlparse
 
 import requests
 from PIL import Image, ImageDraw
+from bs4 import BeautifulSoup
 
 from core.logger import log
 from core.config_loader import load_config, get_project_root
@@ -35,7 +33,7 @@ from core.state_manager import get_stage, set_stage, init_pipeline
 
 
 # ============================================================
-# SABİTLER
+# SABITLER
 # ============================================================
 
 _USER_AGENT = (
@@ -46,10 +44,14 @@ _USER_AGENT = (
 
 _REQUEST_TIMEOUT = 15
 _MIN_IMAGE_WIDTH = 400
+_MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024  # 15 MB guvenlik limiti
 
-# Yedek görsel renk ayarları
-_FALLBACK_BG_COLOR = (18, 25, 44)       # #12192c — lacivert
-_FALLBACK_STRIPE_COLOR = (24, 35, 60)   # biraz daha açık lacivert
+# Yedek gorsel renk ayarlari
+_FALLBACK_BG_COLOR = (18, 25, 44)
+_FALLBACK_STRIPE_COLOR = (24, 35, 60)
+
+_IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
+_NOISE_HINTS = ("logo", "icon", "avatar", "sprite", "favicon", "ads", "banner", "pixel")
 
 
 # ============================================================
@@ -57,7 +59,7 @@ _FALLBACK_STRIPE_COLOR = (24, 35, 60)   # biraz daha açık lacivert
 # ============================================================
 
 def _is_test_mode() -> bool:
-    """TEST_MODE ortam değişkenini veya --test argümanını kontrol eder."""
+    """TEST_MODE ortam degiskenini veya --test argumanini kontrol eder."""
     if os.environ.get("TEST_MODE", "false").lower() == "true":
         return True
     if "--test" in sys.argv:
@@ -66,23 +68,91 @@ def _is_test_mode() -> bool:
 
 
 # ============================================================
-# 1. URL'DEN GÖRSEL İNDİRME
+# URL YARDIMCILARI
+# ============================================================
+
+def _normalize_url(raw_url: str, base_url: str = "") -> str:
+    if not raw_url:
+        return ""
+
+    url = raw_url.strip()
+    if not url:
+        return ""
+
+    if url.startswith("//"):
+        url = f"https:{url}"
+
+    if base_url:
+        url = urljoin(base_url, url)
+
+    parsed = urlparse(url)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return ""
+
+    return url
+
+
+def _looks_like_noise(url: str) -> bool:
+    lower = url.lower()
+    return any(hint in lower for hint in _NOISE_HINTS)
+
+
+def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
+    best_url = ""
+    best_score = -1.0
+
+    for item in srcset.split(","):
+        item = item.strip()
+        if not item:
+            continue
+        parts = item.split()
+        candidate = _normalize_url(parts[0], page_url)
+        if not candidate:
+            continue
+
+        score = 1.0
+        if len(parts) > 1:
+            descriptor = parts[1].lower()
+            if descriptor.endswith("w"):
+                try:
+                    score = float(descriptor[:-1])
+                except ValueError:
+                    score = 1.0
+            elif descriptor.endswith("x"):
+                try:
+                    score = float(descriptor[:-1]) * 1000
+                except ValueError:
+                    score = 1.0
+
+        if score > best_score:
+            best_score = score
+            best_url = candidate
+
+    return best_url
+
+
+def _unique_keep_order(items: list[str]) -> list[str]:
+    seen: set[str] = set()
+    unique: list[str] = []
+    for item in items:
+        if not item or item in seen:
+            continue
+        seen.add(item)
+        unique.append(item)
+    return unique
+
+
+# ============================================================
+# 1. URL'DEN GORSEL INDIRME
 # ============================================================
 
 def download_image(image_url: str) -> Optional[str]:
-    """Verilen URL'den görseli indirir, geçici dosyaya kaydeder.
-
-    Args:
-        image_url: İndirilecek görselin URL'si.
-
-    Returns:
-        str: Geçici dosya yolu. Başarısızsa None.
-    """
+    """Verilen URL'den gorseli indirir, gecici dosyaya kaydeder."""
     if not image_url:
         return None
 
     try:
-        log(f"📥 RSS görsel indiriliyor: {image_url[:100]}...")
+        log(f"Gorsel indiriliyor: {image_url[:120]}")
 
         response = requests.get(
             image_url,
@@ -92,24 +162,32 @@ def download_image(image_url: str) -> Optional[str]:
         )
         response.raise_for_status()
 
-        # Content-Type kontrolü
         content_type = response.headers.get("Content-Type", "")
         if content_type and not content_type.startswith("image/"):
-            log(f"ℹ️ İndirilen dosya görsel değil (Content-Type: {content_type})")
+            log(f"Indirilen dosya gorsel degil (Content-Type: {content_type})")
             return None
 
-        # Geçici dosyaya kaydet
         temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_rss_"
+            suffix=".jpg", delete=False, prefix="otoxtra_img_"
         )
         temp_path = temp_file.name
 
+        downloaded = 0
         for chunk in response.iter_content(chunk_size=8192):
-            if chunk:
-                temp_file.write(chunk)
+            if not chunk:
+                continue
+            downloaded += len(chunk)
+            if downloaded > _MAX_DOWNLOAD_BYTES:
+                temp_file.close()
+                try:
+                    os.unlink(temp_path)
+                except OSError:
+                    pass
+                log("Gorsel dosyasi cok buyuk, indirme iptal edildi", "WARNING")
+                return None
+            temp_file.write(chunk)
         temp_file.close()
 
-        # Boyut kontrolü
         try:
             img = Image.open(temp_path)
             img_width, img_height = img.size
@@ -117,7 +195,7 @@ def download_image(image_url: str) -> Optional[str]:
 
             if img_width < _MIN_IMAGE_WIDTH:
                 log(
-                    f"ℹ️ RSS görsel çok küçük ({img_width}x{img_height}), "
+                    f"Gorsel cok kucuk ({img_width}x{img_height}), "
                     f"minimum {_MIN_IMAGE_WIDTH}px gerekli"
                 )
                 try:
@@ -127,46 +205,38 @@ def download_image(image_url: str) -> Optional[str]:
                 return None
 
         except Exception as img_err:
-            log(f"⚠️ Görsel dosyası açılamadı: {img_err}", "WARNING")
+            log(f"Gorsel dosyasi acilamadi: {img_err}", "WARNING")
             try:
                 os.unlink(temp_path)
             except OSError:
                 pass
             return None
 
-        log(f"✅ RSS görsel indirildi: {img_width}x{img_height}")
+        log(f"Gorsel indirildi: {img_width}x{img_height}")
         return temp_path
 
     except requests.exceptions.Timeout:
-        log(f"⚠️ RSS görsel indirme zaman aşımı: {image_url[:80]}", "WARNING")
+        log(f"Gorsel indirme zaman asimi: {image_url[:100]}", "WARNING")
         return None
     except requests.exceptions.RequestException as exc:
-        log(f"⚠️ RSS görsel indirme HTTP hatası: {exc}", "WARNING")
+        log(f"Gorsel indirme HTTP hatasi: {exc}", "WARNING")
         return None
     except Exception as exc:
-        log(f"⚠️ RSS görsel indirme beklenmeyen hata: {exc}", "WARNING")
+        log(f"Gorsel indirme beklenmeyen hata: {exc}", "WARNING")
         return None
 
 
 # ============================================================
-# 2. HABER SİTESİNDEN og:image ÇEKME
+# 2. HABER SAYFASINDAN COKLU GORSEL URL TOPLAMA
 # ============================================================
 
-def scrape_og_image(url: str) -> Optional[str]:
-    """Haber URL'sindeki og:image meta etiketinden görsel indirir.
-
-    Args:
-        url: Haber sayfasının URL'si.
-
-    Returns:
-        str: Geçici dosya yolu. Başarısızsa None.
-    """
+def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
+    """Haber sayfasindan coklu gorsel adayi toplar."""
     if not url:
-        log("⚠️ Görsel çekme: URL boş", "WARNING")
-        return None
+        return []
 
     try:
-        log(f"🔍 og:image aranıyor: {url[:80]}...")
+        log(f"Sayfadan gorsel adaylari aranıyor: {url[:100]}")
 
         response = requests.get(
             url,
@@ -175,57 +245,72 @@ def scrape_og_image(url: str) -> Optional[str]:
         )
         response.raise_for_status()
 
-        from bs4 import BeautifulSoup
-
         soup = BeautifulSoup(response.text, "html.parser")
+        candidates: list[str] = []
 
-        og_tag = soup.find("meta", property="og:image")
-        if not og_tag:
-            og_tag = soup.find("meta", property="og:image:url")
+        meta_selectors = [
+            ('meta[property="og:image"]', "content"),
+            ('meta[property="og:image:url"]', "content"),
+            ('meta[name="twitter:image"]', "content"),
+            ('meta[name="twitter:image:src"]', "content"),
+        ]
+        for selector, attr in meta_selectors:
+            for tag in soup.select(selector):
+                normalized = _normalize_url(tag.get(attr, ""), url)
+                if normalized:
+                    candidates.append(normalized)
 
-        if not og_tag or not og_tag.get("content"):
-            log("ℹ️ og:image etiketi bulunamadı")
-            return None
+        for img in soup.find_all("img"):
+            src_list = [
+                img.get("src", ""),
+                img.get("data-src", ""),
+                img.get("data-lazy-src", ""),
+                img.get("data-original", ""),
+                img.get("data-full-url", ""),
+            ]
 
-        image_url = og_tag["content"].strip()
-        if not image_url.startswith("http"):
-            log(f"ℹ️ og:image URL geçersiz: {image_url[:80]}")
-            return None
+            srcset = img.get("srcset", "") or img.get("data-srcset", "")
+            if srcset:
+                best_srcset = _extract_best_src_from_srcset(srcset, url)
+                if best_srcset:
+                    src_list.append(best_srcset)
 
-        return download_image(image_url)
+            for src in src_list:
+                normalized = _normalize_url(src, url)
+                if normalized:
+                    candidates.append(normalized)
+
+        cleaned: list[str] = []
+        for c in _unique_keep_order(candidates):
+            lower = c.lower()
+            if _looks_like_noise(lower):
+                continue
+            if not any(ext in lower for ext in _IMAGE_EXTENSIONS) and "image" not in lower:
+                continue
+            cleaned.append(c)
+            if len(cleaned) >= max_candidates:
+                break
+
+        log(f"Sayfadan {len(cleaned)} gorsel adayi bulundu")
+        return cleaned
 
     except requests.exceptions.Timeout:
-        log(f"⚠️ og:image zaman aşımı: {url}", "WARNING")
-        return None
+        log(f"Sayfa cekme zaman asimi: {url[:100]}", "WARNING")
+        return []
     except requests.exceptions.RequestException as exc:
-        log(f"⚠️ og:image sayfa çekme hatası: {exc}", "WARNING")
-        return None
+        log(f"Sayfa cekme hatasi: {exc}", "WARNING")
+        return []
     except Exception as exc:
-        log(f"⚠️ og:image beklenmeyen hata: {exc}", "WARNING")
-        return None
+        log(f"Sayfa gorsel toplama hatasi: {exc}", "WARNING")
+        return []
 
 
 # ============================================================
-# 3. YEDEK GÖRSEL OLUŞTURMA (v3.1 — Lacivert + Solid Logo)
+# 3. YEDEK GORSEL OLUSTURMA
 # ============================================================
 
 def _create_fallback_image(width: int, height: int) -> str:
-    """Lacivert arka plan üzerine solid logo ile yedek görsel oluşturur.
-
-    Tasarım:
-      - #12192c lacivert arka plan
-      - İnce dekoratif şeritler (üst ve alt)
-      - Ortada solid logo (%25 genişlik)
-
-    Args:
-        width:  Görsel genişliği.
-        height: Görsel yüksekliği.
-
-    Returns:
-        str: Oluşturulan görselin geçici dosya yolu.
-             Hata durumunda bile bir yol döner (son çare).
-    """
-    # Logo dosyasını bul
+    """Lacivert arka plan uzerine solid logo ile yedek gorsel olusturur."""
     project_root = get_project_root()
     logo_candidates = [
         os.path.join(project_root, "assets", "logo_solid.png"),
@@ -245,16 +330,13 @@ def _create_fallback_image(width: int, height: int) -> str:
         temp_path = temp_file.name
         temp_file.close()
 
-        # Lacivert arka plan
         img = Image.new("RGB", (width, height), _FALLBACK_BG_COLOR)
         draw = ImageDraw.Draw(img)
 
-        # İnce dekoratif şeritler
         stripe_thickness = 2
         stripe_margin = int(height * 0.22)
         stripe_padding_x = int(width * 0.15)
 
-        # Üst şerit
         draw.rectangle(
             [
                 stripe_padding_x,
@@ -264,8 +346,6 @@ def _create_fallback_image(width: int, height: int) -> str:
             ],
             fill=_FALLBACK_STRIPE_COLOR,
         )
-
-        # Alt şerit
         draw.rectangle(
             [
                 stripe_padding_x,
@@ -276,31 +356,25 @@ def _create_fallback_image(width: int, height: int) -> str:
             fill=_FALLBACK_STRIPE_COLOR,
         )
 
-        # Logo ekle
         if logo_path:
             try:
                 logo_img = Image.open(logo_path)
                 if logo_img.mode != "RGBA":
                     logo_img = logo_img.convert("RGBA")
 
-                # Logo boyutu: görselin %25 genişliği
                 logo_max_width = int(width * 0.25)
                 logo_orig_w, logo_orig_h = logo_img.size
                 aspect = logo_orig_h / logo_orig_w
                 logo_new_width = logo_max_width
                 logo_new_height = int(logo_new_width * aspect)
 
-                # Yükseklik sınırı: görselin %30'u
                 max_logo_height = int(height * 0.30)
                 if logo_new_height > max_logo_height:
                     logo_new_height = max_logo_height
                     logo_new_width = int(logo_new_height / aspect)
 
-                logo_img = logo_img.resize(
-                    (logo_new_width, logo_new_height), Image.LANCZOS
-                )
+                logo_img = logo_img.resize((logo_new_width, logo_new_height), Image.LANCZOS)
 
-                # Tam ortaya yerleştir
                 paste_x = (width - logo_new_width) // 2
                 paste_y = (height - logo_new_height) // 2
 
@@ -314,103 +388,60 @@ def _create_fallback_image(width: int, height: int) -> str:
                 overlay.close()
                 img_rgba.close()
 
-                log(
-                    f"✅ Yedek görsel oluşturuldu: {width}x{height}, "
-                    f"logo={os.path.basename(logo_path)} "
-                    f"({logo_new_width}x{logo_new_height})"
-                )
-
             except Exception as logo_err:
-                log(f"⚠️ Yedek görsele logo eklenemedi: {logo_err}", "WARNING")
+                log(f"Yedek gorsele logo eklenemedi: {logo_err}", "WARNING")
         else:
-            log("⚠️ Logo dosyası bulunamadı — sadece lacivert arka plan", "WARNING")
+            log("Logo dosyasi bulunamadi, sadece arka plan olusturuldu", "WARNING")
 
         img.save(temp_path, format="JPEG", quality=95)
         img.close()
-
-        log(f"🔄 Yedek görsel hazır: {width}x{height} → {temp_path}")
+        log(f"Yedek gorsel hazir: {temp_path}")
         return temp_path
 
     except Exception as exc:
-        log(f"❌ Yedek görsel oluşturma hatası: {exc}", "ERROR")
-
-        # Son çare: düz lacivert
-        try:
-            temp_file = tempfile.NamedTemporaryFile(
-                suffix=".jpg", delete=False, prefix="otoxtra_emergency_"
-            )
-            temp_path = temp_file.name
-            temp_file.close()
-            img = Image.new("RGB", (width, height), _FALLBACK_BG_COLOR)
-            img.save(temp_path, format="JPEG", quality=90)
-            img.close()
-            return temp_path
-        except Exception as exc2:
-            log(f"❌ Son çare görsel de oluşturulamadı: {exc2}", "ERROR")
-            temp_file = tempfile.NamedTemporaryFile(
-                suffix=".jpg", delete=False, prefix="otoxtra_empty_"
-            )
-            temp_path = temp_file.name
-            temp_file.close()
-            img = Image.new("RGB", (width, height), (50, 50, 50))
-            img.save(temp_path, format="JPEG", quality=85)
-            img.close()
-            return temp_path
+        log(f"Yedek gorsel olusturma hatasi: {exc}", "ERROR")
+        temp_file = tempfile.NamedTemporaryFile(
+            suffix=".jpg", delete=False, prefix="otoxtra_emergency_"
+        )
+        temp_path = temp_file.name
+        temp_file.close()
+        img = Image.new("RGB", (width, height), (50, 50, 50))
+        img.save(temp_path, format="JPEG", quality=85)
+        img.close()
+        return temp_path
 
 
 # ============================================================
 # 4. BOYUTLANDIRMA VE KIRPMA
 # ============================================================
 
-def resize_and_crop(
-    image_path: str,
-    target_width: int,
-    target_height: int,
-) -> str:
-    """Görseli hedef boyuta getirir (resize + center crop).
-
-    Args:
-        image_path:    İşlenecek görselin dosya yolu.
-        target_width:  Hedef genişlik (piksel).
-        target_height: Hedef yükseklik (piksel).
-
-    Returns:
-        str: İşlenmiş görselin dosya yolu.
-    """
-    log(f"📐 Boyutlandırılıyor: {target_width}x{target_height}")
-
+def resize_and_crop(image_path: str, target_width: int, target_height: int) -> str:
+    """Gorseli hedef boyuta getirir (resize + center crop)."""
     try:
         img = Image.open(image_path)
         img_width, img_height = img.size
-        log(f"📐 Orijinal boyut: {img_width}x{img_height}")
 
         target_ratio = target_width / target_height
         current_ratio = img_width / img_height
 
         if current_ratio > target_ratio:
-            # Genişlik fazla → yüksekliğe göre ölçekle, yatay kırp
             new_height = target_height
             new_width = int(img_width * (target_height / img_height))
             img = img.resize((new_width, new_height), Image.LANCZOS)
             left = (new_width - target_width) // 2
             img = img.crop((left, 0, left + target_width, new_height))
-
         elif current_ratio < target_ratio:
-            # Yükseklik fazla → genişliğe göre ölçekle, dikey kırp
             new_width = target_width
             new_height = int(img_height * (target_width / img_width))
             img = img.resize((new_width, new_height), Image.LANCZOS)
             top = (new_height - target_height) // 2
             img = img.crop((0, top, new_width, top + target_height))
-
         else:
             img = img.resize((target_width, target_height), Image.LANCZOS)
 
-        # Boyut garantisi
         if img.size != (target_width, target_height):
             img = img.resize((target_width, target_height), Image.LANCZOS)
 
-        # RGB'ye çevir
         if img.mode == "RGBA":
             background = Image.new("RGB", img.size, (255, 255, 255))
             background.paste(img, mask=img.split()[3])
@@ -420,12 +451,10 @@ def resize_and_crop(
 
         img.save(image_path, format="JPEG", quality=90)
         img.close()
-
-        log(f"✅ Boyutlandırıldı: {target_width}x{target_height}")
         return image_path
 
     except Exception as exc:
-        log(f"⚠️ Boyutlandırma hatası: {exc}", "WARNING")
+        log(f"Boyutlandirma hatasi: {exc}", "WARNING")
         return image_path
 
 
@@ -434,17 +463,7 @@ def resize_and_crop(
 # ============================================================
 
 def add_logo(image_path: str) -> str:
-    """Ana görsele otoXtra logosunu (transparan watermark) ekler.
-
-    SADECE haber görselleri için çalışır.
-    Yedek görselde logo zaten var, bu fonksiyon çağrılmaz.
-
-    Args:
-        image_path: Logo eklenecek görselin dosya yolu.
-
-    Returns:
-        str: Logo eklenmiş görselin dosya yolu.
-    """
+    """Ana gorsele otoXtra logosunu (transparan watermark) ekler."""
     settings_config = load_config("settings")
     images_settings = settings_config.get("images", {})
 
@@ -454,15 +473,13 @@ def add_logo(image_path: str) -> str:
     padding = 20
 
     logo_path = os.path.join(get_project_root(), "assets", "logo.png")
-
     if not os.path.exists(logo_path):
-        log(f"⚠️ Logo dosyası bulunamadı: {logo_path}", "WARNING")
+        log(f"Logo dosyasi bulunamadi: {logo_path}", "WARNING")
         return image_path
 
     try:
         base_img = Image.open(image_path)
         base_width, base_height = base_img.size
-
         if base_img.mode != "RGBA":
             base_img = base_img.convert("RGBA")
 
@@ -470,34 +487,27 @@ def add_logo(image_path: str) -> str:
         if logo_img.mode != "RGBA":
             logo_img = logo_img.convert("RGBA")
 
-        # Logo boyutu hesapla
         logo_target_width = int(base_width * logo_size_percent / 100)
         logo_orig_w, logo_orig_h = logo_img.size
         aspect = logo_orig_h / logo_orig_w
         logo_target_height = int(logo_target_width * aspect)
+        logo_img = logo_img.resize((logo_target_width, logo_target_height), Image.LANCZOS)
 
-        logo_img = logo_img.resize(
-            (logo_target_width, logo_target_height), Image.LANCZOS
-        )
-        logo_w, logo_h = logo_img.size
-
-        # Opaklık uygula
         r, g, b, alpha = logo_img.split()
         alpha = alpha.point(lambda p: int(p * logo_opacity))
         logo_img = Image.merge("RGBA", (r, g, b, alpha))
 
-        # Pozisyon hesapla
+        logo_w, logo_h = logo_img.size
         position_map = {
             "bottom_right": (base_width - logo_w - padding, base_height - logo_h - padding),
-            "bottom_left":  (padding, base_height - logo_h - padding),
-            "top_right":    (base_width - logo_w - padding, padding),
-            "top_left":     (padding, padding),
+            "bottom_left": (padding, base_height - logo_h - padding),
+            "top_right": (base_width - logo_w - padding, padding),
+            "top_left": (padding, padding),
         }
         pos_x, pos_y = position_map.get(logo_position, position_map["bottom_right"])
         pos_x = max(0, pos_x)
         pos_y = max(0, pos_y)
 
-        # Birleştir
         overlay = Image.new("RGBA", base_img.size, (0, 0, 0, 0))
         overlay.paste(logo_img, (pos_x, pos_y))
         base_img = Image.alpha_composite(base_img, overlay)
@@ -509,168 +519,148 @@ def add_logo(image_path: str) -> str:
         logo_img.close()
         overlay.close()
         final_img.close()
-
-        log(
-            f"✅ Logo eklendi: pozisyon={logo_position}, "
-            f"opaklık={logo_opacity}, boyut=%{logo_size_percent}"
-        )
         return image_path
 
     except Exception as exc:
-        log(f"⚠️ Logo ekleme hatası: {exc}", "WARNING")
+        log(f"Logo ekleme hatasi: {exc}", "WARNING")
         return image_path
 
 
 # ============================================================
-# 6. ANA GÖRSEL HAZIRLAMA FONKSİYONU
+# 6. COKLU GORSEL HAZIRLAMA
 # ============================================================
 
-def prepare_image(article: dict) -> str:
-    """Haber için görsel hazırlar. ASLA None dönmez.
+def _collect_article_candidates(article: dict, max_candidates: int) -> list[str]:
+    candidates: list[str] = []
 
-    Adımlar:
-      1. RSS'den gelen image_url'yi indir
-      2. Başarısızsa haber sitesinden og:image çek
-      3. İkisi de yoksa lacivert + solid logo yedek görsel oluştur
-      4. Görseli Facebook boyutuna getir
-      5. Logo/watermark ekle (SADECE haber görseli için)
+    list_candidates = article.get("image_candidates", [])
+    if isinstance(list_candidates, list):
+        for item in list_candidates:
+            if isinstance(item, str):
+                candidates.append(item)
 
-    Article dict'ine "image_source" alanı eklenir:
-      "rss_image" | "og:image" | "fallback"
+    for key in ("rss_image_url", "image_url"):
+        value = article.get(key, "")
+        if isinstance(value, str) and value.strip():
+            candidates.append(value.strip())
 
-    Args:
-        article: Haber dict'i.
+    normalized = [_normalize_url(c, article.get("link", "")) for c in candidates]
+    normalized = [c for c in normalized if c]
+    normalized = _unique_keep_order(normalized)
+    return normalized[:max_candidates]
 
-    Returns:
-        str: İşlenmiş görselin dosya yolu. Her zaman geçerli.
-    """
-    log("─" * 40)
-    log(f"🖼️ Görsel hazırlama: {article.get('title', '')[:80]}")
 
-    # Ayarları oku
+def prepare_images(article: dict) -> list[str]:
+    """Haber icin bir veya birden fazla gorsel hazirlar."""
     settings_config = load_config("settings")
     images_settings = settings_config.get("images", {})
 
-    should_add_logo = images_settings.get("add_logo", True)
-    feed_image_width = images_settings.get("feed_image_width", 1200)
-    feed_image_height = images_settings.get("feed_image_height", 630)
+    should_add_logo = bool(images_settings.get("add_logo", True))
+    feed_image_width = int(images_settings.get("feed_image_width", 1200))
+    feed_image_height = int(images_settings.get("feed_image_height", 630))
+    max_images_per_news = int(images_settings.get("max_images_per_news", 1))
+    max_candidates_to_try = int(images_settings.get("max_candidates_per_article", 10))
 
-    image_path = None
-    image_source = None
+    if max_images_per_news < 1:
+        max_images_per_news = 1
 
-    # ADIM 1: RSS'den gelen görsel
-    rss_image_url = article.get("image_url", "")
-    if rss_image_url:
-        log("📸 ADIM 1: RSS görseli indiriliyor...")
-        image_path = download_image(rss_image_url)
-        if image_path:
-            image_source = "rss_image"
-            log("✅ Görsel RSS'den alındı")
-        else:
-            log("ℹ️ RSS görseli indirilemedi → og:image denenecek")
-    else:
-        log("ℹ️ RSS'de görsel yok → og:image denenecek")
+    article_title = article.get("title", "")[:120]
+    log("-" * 40)
+    log(f"Gorsel hazirlama basladi: {article_title}")
 
-    # ADIM 2: og:image scraping
-    if image_path is None:
-        can_scrape = article.get("can_scrape_image", True)
-        article_link = article.get("link", "")
-        if can_scrape and article_link:
-            log("📸 ADIM 2: og:image çekiliyor...")
-            image_path = scrape_og_image(article_link)
-            if image_path:
-                image_source = "og:image"
-                log("✅ Görsel og:image'den alındı")
-            else:
-                log("ℹ️ og:image'den de görsel çekilemedi")
-        elif not can_scrape:
-            log("ℹ️ Bu kaynak için görsel çekme devre dışı")
-        else:
-            log("ℹ️ Haber URL'si yok → og:image atlanıyor")
+    prepared_paths: list[str] = []
+    used_sources: list[str] = []
 
-    # ADIM 3: Yedek görsel
-    if image_path is None:
-        log("🔄 ADIM 3: Yedek görsel oluşturuluyor (lacivert + logo)...", "WARNING")
-        image_path = _create_fallback_image(feed_image_width, feed_image_height)
-        image_source = "fallback"
-        log("✅ Yedek görsel hazır")
+    # 1) Fetch asamasindan gelen adaylar + rss fallback adaylari
+    candidate_urls = _collect_article_candidates(article, max_candidates_to_try)
 
-    # ADIM 4: Boyutlandır
-    if image_source != "fallback":
-        log(f"📐 ADIM 4: Boyutlandırma ({feed_image_width}x{feed_image_height})")
-        image_path = resize_and_crop(image_path, feed_image_width, feed_image_height)
-    else:
-        log("📐 ADIM 4: Yedek görsel zaten doğru boyutta — atlanıyor")
+    # 2) Hala aday yoksa sayfadan scrape dene
+    if not candidate_urls and article.get("can_scrape_image", True) and article.get("link", ""):
+        scraped_urls = scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try)
+        candidate_urls.extend(scraped_urls)
+        candidate_urls = _unique_keep_order(candidate_urls)
 
-    # ADIM 5: Watermark
-    if image_source == "fallback":
-        log("🏷️ ADIM 5: Yedek görselde logo var — watermark atlanıyor")
-    elif should_add_logo:
-        log("🏷️ ADIM 5: Logo/watermark ekleniyor...")
-        image_path = add_logo(image_path)
-    else:
-        log("ℹ️ Logo ekleme ayarlarda kapalı — atlanıyor")
+    # 3) Aday URL'leri indir + isle
+    for candidate_url in candidate_urls:
+        if len(prepared_paths) >= max_images_per_news:
+            break
 
-    article["image_source"] = image_source
-    log(f"✅ Görsel hazır: kaynak={image_source} → {image_path}")
-    log("─" * 40)
+        downloaded = download_image(candidate_url)
+        if not downloaded:
+            continue
 
-    return image_path
+        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+        if should_add_logo:
+            processed = add_logo(processed)
+
+        prepared_paths.append(processed)
+        used_sources.append("article_or_rss")
+
+    # 4) Hic gorsel yoksa fallback
+    if not prepared_paths:
+        fallback = _create_fallback_image(feed_image_width, feed_image_height)
+        prepared_paths = [fallback]
+        used_sources = ["fallback"]
+
+    article["image_source"] = used_sources[0] if used_sources else "unknown"
+    article["image_sources"] = used_sources
+    article["prepared_image_count"] = len(prepared_paths)
+
+    log(f"Gorsel hazirlama bitti. Adet={len(prepared_paths)} kaynak={article.get('image_source')}")
+    log("-" * 40)
+    return prepared_paths
+
+
+def prepare_image(article: dict) -> str:
+    """Geriye uyumluluk icin ilk gorseli dondurur."""
+    paths = prepare_images(article)
+    return paths[0]
 
 
 # ============================================================
-# 7. AJAN GİRİŞ NOKTASI
+# 7. AJAN GIRIS NOKTASI
 # ============================================================
 
 def run() -> bool:
-    """Ajanı çalıştırır. orchestrator.py tarafından çağrılır.
+    """Ajani calistirir. orchestrator.py tarafindan cagrilir."""
+    log("-" * 55)
+    log("agent_image basliyor")
+    log("-" * 55)
 
-    Returns:
-        bool: Başarılıysa True, hata varsa False.
-    """
-    log("─" * 55)
-    log("agent_image başlıyor")
-    log("─" * 55)
-
-    # Write aşaması bitti mi?
     write_stage = get_stage("write")
     if write_stage.get("status") != "done":
-        log("write aşaması tamamlanmamış — image çalıştırılamaz", "ERROR")
-        set_stage("image", "error", error="write aşaması tamamlanmamış")
+        log("write asamasi tamamlanmamis, image calistirilamaz", "ERROR")
+        set_stage("image", "error", error="write asamasi tamamlanmamis")
         return False
 
-    # Write çıktısından haberi ve metni al
     write_output = write_stage.get("output", {})
     article = write_output.get("article", {})
     post_text = write_output.get("post_text", "")
 
     if not article:
-        log("Write çıktısında haber yok", "WARNING")
-        set_stage("image", "error", error="Write çıktısında haber yok")
+        log("Write ciktisinda haber yok", "WARNING")
+        set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
 
-    log(f"İşlenecek haber: {article.get('title', '')[:60]}")
-
-    # Aşamayı çalışıyor işaretle
     set_stage("image", "running")
 
     try:
-        # Görseli hazırla (ASLA None dönmez)
-        image_path = prepare_image(article)
+        image_paths = prepare_images(article)
+        first_image_path = image_paths[0] if image_paths else ""
 
-        # Pipeline'a yaz
         output = {
             "article": article,
             "post_text": post_text,
-            "image_path": image_path,
+            "image_path": first_image_path,   # eski yapiyla uyumlu
+            "image_paths": image_paths,       # yeni coklu gorsel alani
             "image_source": article.get("image_source", "unknown"),
+            "image_count": len(image_paths),
         }
         set_stage("image", "done", output=output)
 
         log(
-            f"agent_image tamamlandı → "
-            f"görsel={article.get('image_source', '?')} "
-            f"→ {image_path}"
+            f"agent_image tamamlandi -> kaynak={article.get('image_source', '?')} "
+            f"adet={len(image_paths)}"
         )
         return True
 
@@ -681,29 +671,29 @@ def run() -> bool:
 
 
 # ============================================================
-# MODÜL TESTİ (doğrudan çalıştırılırsa)
+# MODUL TESTI (dogrudan calistirilirsa)
 # ============================================================
 
 if __name__ == "__main__":
-    log("=== agent_image.py modül testi başlıyor ===")
+    log("=== agent_image.py modul testi basliyor ===")
 
-    # Test için pipeline başlat
     init_pipeline("test-image")
 
-    # Sahte write verisi oluştur
     fake_article = {
-        "title": "Test: Yeni Elektrikli SUV Türkiye'de Satışa Çıktı",
+        "title": "Test: Yeni Elektrikli SUV Turkiye'de Satisa Cikti",
         "link": "https://www.ntv.com.tr/",
-        "summary": "Test özet metni.",
+        "summary": "Test ozet metni.",
         "image_url": "",
+        "rss_image_url": "",
+        "image_candidates": [],
         "source_name": "Test Kaynak",
         "source_priority": "high",
         "can_scrape_image": True,
         "score": 78,
     }
     fake_post_text = (
-        "🚗 Yeni elektrikli SUV Türkiye'de!\n\n"
-        "Test post metni burada yer alıyor.\n\n"
+        "Yeni elektrikli SUV Turkiye'de.\n\n"
+        "Test post metni burada yer aliyor.\n\n"
         "#elektrikli #SUV #otomotiv"
     )
 
@@ -719,32 +709,33 @@ if __name__ == "__main__":
         "post_text_length": len(fake_post_text),
     })
 
-    # Ajanı çalıştır
-    log("\nagent_image çalıştırılıyor...")
     success = run()
 
     if success:
         image_stage = get_stage("image")
         output = image_stage.get("output", {})
 
-        log(f"\n{'─' * 50}")
-        log("SONUÇ:")
-        log(f"  Haber      : {output.get('article', {}).get('title', 'YOK')[:60]}")
-        log(f"  Görsel     : {output.get('image_path', 'YOK')}")
-        log(f"  Kaynak     : {output.get('image_source', 'YOK')}")
-        log(f"  Post metni : {len(output.get('post_text', ''))} karakter")
+        log("-" * 50)
+        log("SONUC:")
+        log(f"Haber      : {output.get('article', {}).get('title', 'YOK')[:60]}")
+        log(f"Ilk gorsel : {output.get('image_path', 'YOK')}")
+        log(f"Gorsel adet: {output.get('image_count', 0)}")
+        log(f"Kaynak     : {output.get('image_source', 'YOK')}")
+        log(f"Post metni : {len(output.get('post_text', ''))} karakter")
 
-        # Görsel var mı kontrol et
-        image_path = output.get("image_path", "")
-        if image_path and os.path.exists(image_path):
-            size_kb = os.path.getsize(image_path) // 1024
-            log(f"  Dosya boyutu: {size_kb} KB")
-            log(f"  ✅ Görsel dosyası mevcut")
+        image_paths = output.get("image_paths", [])
+        if image_paths:
+            for idx, path in enumerate(image_paths, start=1):
+                if path and os.path.exists(path):
+                    size_kb = os.path.getsize(path) // 1024
+                    log(f"Gorsel {idx}: {path} ({size_kb} KB)")
+                else:
+                    log(f"Gorsel {idx}: dosya bulunamadi -> {path}", "WARNING")
         else:
-            log(f"  ❌ Görsel dosyası bulunamadı: {image_path}", "WARNING")
+            log("Hazirlanan gorsel yok", "WARNING")
 
-        log(f"{'─' * 50}")
+        log("-" * 50)
     else:
-        log("Ajan başarısız oldu", "WARNING")
+        log("Ajan basarisiz oldu", "WARNING")
 
-    log("=== agent_image.py modül testi tamamlandı ===")
+    log("=== agent_image.py modul testi tamamlandi ===")
