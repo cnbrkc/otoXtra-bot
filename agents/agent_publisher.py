@@ -1,10 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.1 - Multi Image + Dry Run)
+agents/agent_publisher.py - Yayinci Ajani (v3.2 - Multi Image + Dry Run + Env Override)
 
-v3.1:
-  - posting.dry_run destegi eklendi
-  - dry_run=true ise Facebook'a hic post atmaz, sadece simule eder
-  - image_paths ile coklu gorsel akisi korunur
+v3.2:
+  - DRY_RUN env override eklendi
+  - ENABLE_RANDOM_DELAY env override publisher icinde de gecerli
+  - ENABLE_RANDOM_SKIP env override eklendi
 """
 
 import os
@@ -39,11 +39,42 @@ def _is_test_mode() -> bool:
     return False
 
 
+def _get_env_bool(name: str) -> Optional[bool]:
+    raw = os.environ.get(name)
+    if raw is None:
+        return None
+    value = raw.strip().lower()
+    if value in {"true", "1", "yes", "on"}:
+        return True
+    if value in {"false", "0", "no", "off"}:
+        return False
+    return None
+
+
 def _is_dry_run(settings: dict, test_mode: bool) -> bool:
     if test_mode:
         return True
+
+    env_override = _get_env_bool("DRY_RUN")
+    if env_override is not None:
+        return env_override
+
     posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
     return bool(posting_cfg.get("dry_run", False))
+
+
+def _is_random_delay_enabled() -> bool:
+    env_override = _get_env_bool("ENABLE_RANDOM_DELAY")
+    if env_override is not None:
+        return env_override
+    return True
+
+
+def _is_random_skip_enabled() -> bool:
+    env_override = _get_env_bool("ENABLE_RANDOM_SKIP")
+    if env_override is not None:
+        return env_override
+    return True
 
 
 def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
@@ -234,7 +265,10 @@ def run() -> bool:
         max_daily_posts = int(posting_settings.get("max_daily_posts", 9))
         skip_probability = int(posting_settings.get("skip_probability_percent", 10))
         random_delay_max = int(posting_settings.get("random_delay_max_minutes", 8))
+
         dry_run = _is_dry_run(settings, test_mode)
+        random_delay_enabled = _is_random_delay_enabled()
+        random_skip_enabled = _is_random_skip_enabled()
 
         posted_data = get_posted_news()
 
@@ -242,9 +276,12 @@ def run() -> bool:
             set_stage("publish", "error", error="Gunluk limit doldu")
             return False
 
-        if not dry_run and not _check_skip_probability(skip_probability):
-            set_stage("publish", "error", error="Rastgele atlama")
-            return False
+        if not dry_run and random_skip_enabled:
+            if not _check_skip_probability(skip_probability):
+                set_stage("publish", "error", error="Rastgele atlama")
+                return False
+        elif not dry_run and not random_skip_enabled:
+            log("Rastgele atlama devre disi (ENABLE_RANDOM_SKIP=false)")
 
         if dry_run:
             log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
@@ -262,10 +299,12 @@ def run() -> bool:
             log("DRY RUN tamamlandi")
             return True
 
-        if random_delay_max > 0:
+        if random_delay_enabled and random_delay_max > 0:
             delay_seconds = random.randint(0, random_delay_max * 60)
             log(f"Rastgele bekleme: {delay_seconds} sn")
             time.sleep(delay_seconds)
+        elif not random_delay_enabled:
+            log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
 
         post_id = _publish_to_facebook(article, post_text_content, image_paths)
 
