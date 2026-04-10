@@ -1,15 +1,14 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.2 - Multi Image + Dry Run + Env Override)
+agents/agent_publisher.py - Yayinci Ajani (v3.3)
 
-v3.2:
-  - DRY_RUN env override eklendi
-  - ENABLE_RANDOM_DELAY env override publisher icinde de gecerli
-  - ENABLE_RANDOM_SKIP env override eklendi
+v3.3:
+  - test_mode bagimliligi kaldirildi
+  - DRY_RUN / ENABLE_RANDOM_DELAY / ENABLE_RANDOM_SKIP env secenekleri korundu
+  - PERSIST_STATE=false iken posted kaydi yazmaz
 """
 
 import os
 import random
-import sys
 import time
 from typing import Optional
 
@@ -31,50 +30,37 @@ from platforms import facebook as fb_platform
 _RETRY_DELAY = 5
 
 
-def _is_test_mode() -> bool:
-    if os.environ.get("TEST_MODE", "false").lower() == "true":
-        return True
-    if "--test" in sys.argv:
-        return True
-    return False
-
-
-def _get_env_bool(name: str) -> Optional[bool]:
+def _get_env_bool(name: str, default: bool) -> bool:
     raw = os.environ.get(name)
     if raw is None:
-        return None
+        return default
     value = raw.strip().lower()
     if value in {"true", "1", "yes", "on"}:
         return True
     if value in {"false", "0", "no", "off"}:
         return False
-    return None
+    return default
 
 
-def _is_dry_run(settings: dict, test_mode: bool) -> bool:
-    if test_mode:
-        return True
-
-    env_override = _get_env_bool("DRY_RUN")
+def _is_dry_run(settings: dict) -> bool:
+    env_override = os.environ.get("DRY_RUN")
     if env_override is not None:
-        return env_override
+        return _get_env_bool("DRY_RUN", False)
 
     posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
     return bool(posting_cfg.get("dry_run", False))
 
 
 def _is_random_delay_enabled() -> bool:
-    env_override = _get_env_bool("ENABLE_RANDOM_DELAY")
-    if env_override is not None:
-        return env_override
-    return True
+    return _get_env_bool("ENABLE_RANDOM_DELAY", True)
 
 
 def _is_random_skip_enabled() -> bool:
-    env_override = _get_env_bool("ENABLE_RANDOM_SKIP")
-    if env_override is not None:
-        return env_override
-    return True
+    return _get_env_bool("ENABLE_RANDOM_SKIP", True)
+
+
+def _is_persist_state_enabled() -> bool:
+    return _get_env_bool("PERSIST_STATE", True)
 
 
 def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
@@ -98,6 +84,10 @@ def _check_skip_probability(skip_percent: int) -> bool:
 
 
 def _record_posted(article: dict, post_id: str, image_source: str, image_count: int) -> None:
+    if not _is_persist_state_enabled():
+        log("State persistence kapali (PERSIST_STATE=false), posted kaydi yazilmadi")
+        return
+
     try:
         posted_data = get_posted_news()
         posts_list = posted_data.get("posts", [])
@@ -233,8 +223,6 @@ def run() -> bool:
     log("agent_publisher basliyor")
     log("-" * 55)
 
-    test_mode = _is_test_mode()
-
     image_stage = get_stage("image")
     if image_stage.get("status") != "done":
         log("image asamasi tamamlanmamis", "ERROR")
@@ -266,7 +254,7 @@ def run() -> bool:
         skip_probability = int(posting_settings.get("skip_probability_percent", 10))
         random_delay_max = int(posting_settings.get("random_delay_max_minutes", 8))
 
-        dry_run = _is_dry_run(settings, test_mode)
+        dry_run = _is_dry_run(settings)
         random_delay_enabled = _is_random_delay_enabled()
         random_skip_enabled = _is_random_skip_enabled()
 
@@ -292,7 +280,6 @@ def run() -> bool:
                 "article_title": article.get("title", ""),
                 "image_source": image_source,
                 "image_count": len(image_paths),
-                "test_mode": test_mode,
                 "dry_run": True,
             }
             set_stage("publish", "done", output=output)
@@ -336,7 +323,6 @@ def run() -> bool:
             "article_title": article.get("title", ""),
             "image_source": final_image_source,
             "image_count": final_image_count,
-            "test_mode": False,
             "dry_run": False,
         }
         set_stage("publish", "done", output=output)
