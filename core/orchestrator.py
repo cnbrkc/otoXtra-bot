@@ -25,6 +25,10 @@ def _is_test_mode() -> bool:
     return "--test" in sys.argv
 
 
+def _is_random_delay_enabled() -> bool:
+    return os.environ.get("ENABLE_RANDOM_DELAY", "true").lower() == "true"
+
+
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
     today_count = get_today_post_count(posted_data)
     max_daily = settings.get("posting", {}).get("max_daily_posts", 9)
@@ -68,8 +72,12 @@ def _check_min_interval(settings: dict, posted_data: dict, test_mode: bool) -> b
         return True
 
 
-def _random_delay(settings: dict, test_mode: bool) -> None:
+def _random_delay(settings: dict, test_mode: bool, enable_random_delay: bool) -> None:
     if test_mode:
+        return
+
+    if not enable_random_delay:
+        log("Random delay devre disi (ENABLE_RANDOM_DELAY=false)")
         return
 
     import time
@@ -78,7 +86,9 @@ def _random_delay(settings: dict, test_mode: bool) -> None:
     if max_delay_minutes <= 0:
         return
 
-    time.sleep(random.randint(0, max_delay_minutes * 60))
+    delay_seconds = random.randint(0, max_delay_minutes * 60)
+    log(f"Random delay uygulanacak: {delay_seconds} sn")
+    time.sleep(delay_seconds)
 
 
 def _log_stage_error(stage_name: str) -> None:
@@ -158,6 +168,7 @@ def _run_agent(agent_name: str, run_func) -> bool:
 
 def main() -> None:
     test_mode = _is_test_mode()
+    enable_random_delay = _is_random_delay_enabled()
 
     try:
         settings = load_config("settings")
@@ -170,7 +181,7 @@ def main() -> None:
         if not _check_min_interval(settings, posted_data, test_mode):
             return
 
-        _random_delay(settings, test_mode)
+        _random_delay(settings, test_mode, enable_random_delay)
 
         run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
         if not init_pipeline(run_id):
