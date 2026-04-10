@@ -52,6 +52,14 @@ _IMAGE_NOISE_HINTS = (
     "banner",
     "favicon",
 )
+_IMAGE_HINT_PATHS = (
+    "/wp-content/uploads/",
+    "/uploads/",
+    "/images/",
+    "/image/",
+    "/img/",
+    "/media/",
+)
 _TRACKING_QUERY_KEYS = {
     "utm_source",
     "utm_medium",
@@ -61,6 +69,7 @@ _TRACKING_QUERY_KEYS = {
     "gclid",
     "fbclid",
 }
+_RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
 
 
 def _is_test_mode() -> bool:
@@ -241,6 +250,61 @@ def _looks_like_noise_image(url: str) -> bool:
     return any(hint in lower_url for hint in _IMAGE_NOISE_HINTS)
 
 
+def _is_probable_image_url(url: str) -> bool:
+    lower = url.lower()
+    if any(ext in lower for ext in _IMAGE_EXTENSIONS):
+        return True
+    if "image" in lower:
+        return True
+    if any(p in lower for p in _IMAGE_HINT_PATHS):
+        return True
+    return False
+
+
+def _thumbnail_to_original_variants(url: str) -> list[str]:
+    """
+    Kucuk thumbnail URL'lerinden daha buyuk/orijinal varyantlar ureterek
+    daha kaliteli gorsel yakalama sansini arttirir.
+    """
+    variants: list[str] = [url]
+    parsed = urlparse(url)
+    path = parsed.path or ""
+    query_items = parse_qsl(parsed.query, keep_blank_values=True)
+
+    # Ornek: image-660x371.jpg -> image.jpg
+    wp_thumb_pattern = re.compile(
+        r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$",
+        re.IGNORECASE,
+    )
+    if wp_thumb_pattern.search(path):
+        original_path = wp_thumb_pattern.sub(r"\3", path)
+        variants.append(urlunparse(parsed._replace(path=original_path)))
+
+    # Query resize parametrelerini cikararak olasi daha buyuk hal
+    if query_items:
+        filtered_query = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
+        if len(filtered_query) != len(query_items):
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_query))))
+
+    # filename icindeki yaygin "small/thumbnail" ifadelerini temizleyerek varyant uret
+    filename_cleaned_path = re.sub(
+        r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
+        "",
+        path,
+    )
+    if filename_cleaned_path != path:
+        variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
+
+    # Sirayi koruyarak unique
+    unique: list[str] = []
+    seen: set[str] = set()
+    for item in variants:
+        if item and item not in seen:
+            seen.add(item)
+            unique.append(item)
+    return unique
+
+
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
     best_url = ""
     best_score = -1.0
@@ -318,6 +382,7 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
 
         raw_candidates: list[str] = []
 
+        # 1) Meta etiketleri
         meta_selectors = [
             ('meta[property="og:image"]', "content"),
             ('meta[property="og:image:url"]', "content"),
@@ -328,18 +393,23 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
             for tag in soup.select(selector):
                 normalized = _normalize_image_url(tag.get(attr, ""), url)
                 if normalized:
-                    raw_candidates.append(normalized)
+                    raw_candidates.extend(_thumbnail_to_original_variants(normalized))
 
+        # 2) JSON-LD image alanlari
         for script in soup.select('script[type="application/ld+json"]'):
             text = (script.string or script.get_text() or "").strip()
             if not text:
                 continue
             try:
                 parsed = json.loads(text)
-                _collect_jsonld_images(parsed, url, raw_candidates)
+                tmp: list[str] = []
+                _collect_jsonld_images(parsed, url, tmp)
+                for item in tmp:
+                    raw_candidates.extend(_thumbnail_to_original_variants(item))
             except Exception:
                 continue
 
+        # 3) img taglari
         for img in soup.find_all("img"):
             width_attr = img.get("width")
             height_attr = img.get("height")
@@ -366,7 +436,7 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
             for src in src_candidates:
                 normalized = _normalize_image_url(src, url)
                 if normalized:
-                    raw_candidates.append(normalized)
+                    raw_candidates.extend(_thumbnail_to_original_variants(normalized))
 
         unique_candidates: list[str] = []
         seen: set[str] = set()
@@ -376,14 +446,16 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
                 continue
             if _looks_like_noise_image(lower_candidate):
                 continue
-            if not any(ext in lower_candidate for ext in _IMAGE_EXTENSIONS) and "image" not in lower_candidate:
+            if not _is_probable_image_url(lower_candidate):
                 continue
+
             seen.add(candidate)
             unique_candidates.append(candidate)
             if len(unique_candidates) >= max_candidates:
                 break
 
         return unique_candidates
+
     except Exception as exc:
         log(f"extract_images_from_article warning: {exc}", "WARNING")
         return []
@@ -445,6 +517,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
             entry_count = 0
             scraped_in_feed = 0
+
             for entry in parsed_feed.entries:
                 title = clean_html(entry.get("title", "")).strip()
                 link = entry.get("link", "")
@@ -460,6 +533,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                 normalized_rss_image = _normalize_image_url(rss_image_url, link) if rss_image_url else ""
 
                 article_image_candidates: list[str] = []
+
                 if (
                     feed_can_scrape
                     and enable_article_image_scrape
@@ -471,8 +545,25 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                     )
                     scraped_in_feed += 1
 
-                if normalized_rss_image and normalized_rss_image not in article_image_candidates:
-                    article_image_candidates.insert(0, normalized_rss_image)
+                # RSS gorseli mutlaka adaylara eklenir (varsa)
+                if normalized_rss_image:
+                    rss_variants = _thumbnail_to_original_variants(normalized_rss_image)
+                    for rss_item in reversed(rss_variants):
+                        if rss_item in article_image_candidates:
+                            article_image_candidates.remove(rss_item)
+                    article_image_candidates = rss_variants + article_image_candidates
+
+                # unique + limit
+                deduped_candidates: list[str] = []
+                seen_candidates: set[str] = set()
+                for c in article_image_candidates:
+                    if not c or c in seen_candidates:
+                        continue
+                    seen_candidates.add(c)
+                    deduped_candidates.append(c)
+                    if len(deduped_candidates) >= max_candidates_per_article:
+                        break
+                article_image_candidates = deduped_candidates
 
                 primary_image = (
                     article_image_candidates[0]
