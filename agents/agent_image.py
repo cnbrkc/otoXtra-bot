@@ -1,27 +1,16 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.0)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.1)
 
 otoXtra Facebook Botu icin pipeline'dan secilen haberi alip
 tekli veya coklu gorsel hazirlar ve pipeline.json'a yazar.
-
-Gorsel kaynaklari (oncelik sirasi):
-  1. article.image_candidates (fetch asamasinda toplanan adaylar)
-  2. RSS'den gelen image_url / rss_image_url
-  3. Haber sitesinden scraping (og:image + twitter:image + img)
-  4. YEDEK GORSEL - lacivert arka plan + solid logo
-
-Bu ajan en kotu ihtimalde yedek gorsel olusturur.
-
-Bagimsiz calistirma:
-    python agents/agent_image.py
-    python agents/agent_image.py --test
 """
 
 import os
+import re
 import sys
 import tempfile
 from typing import Optional
-from urllib.parse import urljoin, urlparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
 import requests
 from PIL import Image, ImageDraw
@@ -44,14 +33,17 @@ _USER_AGENT = (
 
 _REQUEST_TIMEOUT = 15
 _MIN_IMAGE_WIDTH = 400
-_MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024  # 15 MB guvenlik limiti
+_MIN_IMAGE_HEIGHT = 220
+_MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024
 
-# Yedek gorsel renk ayarlari
 _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
 
 _IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
 _NOISE_HINTS = ("logo", "icon", "avatar", "sprite", "favicon", "ads", "banner", "pixel")
+_IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/", "/img/", "/media/")
+_TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
+_RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
 
 
 # ============================================================
@@ -59,7 +51,6 @@ _NOISE_HINTS = ("logo", "icon", "avatar", "sprite", "favicon", "ads", "banner", 
 # ============================================================
 
 def _is_test_mode() -> bool:
-    """TEST_MODE ortam degiskenini veya --test argumanini kontrol eder."""
     if os.environ.get("TEST_MODE", "false").lower() == "true":
         return True
     if "--test" in sys.argv:
@@ -89,12 +80,78 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return ""
 
-    return url
+    filtered_qs = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in _TRACKING_QUERY_KEYS]
+    cleaned = parsed._replace(query=urlencode(filtered_qs), fragment="")
+    return urlunparse(cleaned)
 
 
 def _looks_like_noise(url: str) -> bool:
     lower = url.lower()
     return any(hint in lower for hint in _NOISE_HINTS)
+
+
+def _is_probable_image_url(url: str) -> bool:
+    lower = url.lower()
+    if any(ext in lower for ext in _IMAGE_EXTENSIONS):
+        return True
+    if "image" in lower:
+        return True
+    if any(p in lower for p in _IMAGE_HINT_PATHS):
+        return True
+    return False
+
+
+def _thumbnail_to_original_variants(url: str) -> list[str]:
+    variants: list[str] = [url]
+    parsed = urlparse(url)
+    path = parsed.path or ""
+    query_items = parse_qsl(parsed.query, keep_blank_values=True)
+
+    wp_thumb_pattern = re.compile(
+        r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$",
+        re.IGNORECASE,
+    )
+    if wp_thumb_pattern.search(path):
+        original_path = wp_thumb_pattern.sub(r"\3", path)
+        variants.append(urlunparse(parsed._replace(path=original_path)))
+
+    if query_items:
+        filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
+        if len(filtered_qs) != len(query_items):
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
+
+    filename_cleaned_path = re.sub(
+        r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
+        "",
+        path,
+    )
+    if filename_cleaned_path != path:
+        variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
+
+    seen: set[str] = set()
+    unique: list[str] = []
+    for item in variants:
+        if item and item not in seen:
+            seen.add(item)
+            unique.append(item)
+    return unique
+
+
+def _candidate_key(url: str) -> str:
+    """
+    URL varyasyonlarini tek anahtarda birlestirmek icin kullanilir.
+    Boylece ayni gorselin farkli boyut/query URL'leri tekrar denenmez.
+    """
+    parsed = urlparse(url)
+    path = parsed.path or ""
+    path = re.sub(
+        r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$",
+        r"\3",
+        path,
+        flags=re.IGNORECASE,
+    )
+    filtered_qs = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in _RESIZE_QUERY_KEYS]
+    return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
 
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
@@ -135,9 +192,12 @@ def _unique_keep_order(items: list[str]) -> list[str]:
     seen: set[str] = set()
     unique: list[str] = []
     for item in items:
-        if not item or item in seen:
+        if not item:
             continue
-        seen.add(item)
+        key = _candidate_key(item)
+        if key in seen:
+            continue
+        seen.add(key)
         unique.append(item)
     return unique
 
@@ -147,7 +207,6 @@ def _unique_keep_order(items: list[str]) -> list[str]:
 # ============================================================
 
 def download_image(image_url: str) -> Optional[str]:
-    """Verilen URL'den gorseli indirir, gecici dosyaya kaydeder."""
     if not image_url:
         return None
 
@@ -193,10 +252,10 @@ def download_image(image_url: str) -> Optional[str]:
             img_width, img_height = img.size
             img.close()
 
-            if img_width < _MIN_IMAGE_WIDTH:
+            if img_width < _MIN_IMAGE_WIDTH or img_height < _MIN_IMAGE_HEIGHT:
                 log(
                     f"Gorsel cok kucuk ({img_width}x{img_height}), "
-                    f"minimum {_MIN_IMAGE_WIDTH}px gerekli"
+                    f"min {_MIN_IMAGE_WIDTH}x{_MIN_IMAGE_HEIGHT} gerekli"
                 )
                 try:
                     os.unlink(temp_path)
@@ -231,12 +290,11 @@ def download_image(image_url: str) -> Optional[str]:
 # ============================================================
 
 def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
-    """Haber sayfasindan coklu gorsel adayi toplar."""
     if not url:
         return []
 
     try:
-        log(f"Sayfadan gorsel adaylari aranıyor: {url[:100]}")
+        log(f"Sayfadan gorsel adaylari araniyor: {url[:100]}")
 
         response = requests.get(
             url,
@@ -258,7 +316,7 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
             for tag in soup.select(selector):
                 normalized = _normalize_url(tag.get(attr, ""), url)
                 if normalized:
-                    candidates.append(normalized)
+                    candidates.extend(_thumbnail_to_original_variants(normalized))
 
         for img in soup.find_all("img"):
             src_list = [
@@ -278,14 +336,14 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
             for src in src_list:
                 normalized = _normalize_url(src, url)
                 if normalized:
-                    candidates.append(normalized)
+                    candidates.extend(_thumbnail_to_original_variants(normalized))
 
         cleaned: list[str] = []
         for c in _unique_keep_order(candidates):
             lower = c.lower()
             if _looks_like_noise(lower):
                 continue
-            if not any(ext in lower for ext in _IMAGE_EXTENSIONS) and "image" not in lower:
+            if not _is_probable_image_url(lower):
                 continue
             cleaned.append(c)
             if len(cleaned) >= max_candidates:
@@ -310,7 +368,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
 # ============================================================
 
 def _create_fallback_image(width: int, height: int) -> str:
-    """Lacivert arka plan uzerine solid logo ile yedek gorsel olusturur."""
     project_root = get_project_root()
     logo_candidates = [
         os.path.join(project_root, "assets", "logo_solid.png"),
@@ -338,21 +395,11 @@ def _create_fallback_image(width: int, height: int) -> str:
         stripe_padding_x = int(width * 0.15)
 
         draw.rectangle(
-            [
-                stripe_padding_x,
-                stripe_margin,
-                width - stripe_padding_x,
-                stripe_margin + stripe_thickness,
-            ],
+            [stripe_padding_x, stripe_margin, width - stripe_padding_x, stripe_margin + stripe_thickness],
             fill=_FALLBACK_STRIPE_COLOR,
         )
         draw.rectangle(
-            [
-                stripe_padding_x,
-                height - stripe_margin - stripe_thickness,
-                width - stripe_padding_x,
-                height - stripe_margin,
-            ],
+            [stripe_padding_x, height - stripe_margin - stripe_thickness, width - stripe_padding_x, height - stripe_margin],
             fill=_FALLBACK_STRIPE_COLOR,
         )
 
@@ -416,7 +463,6 @@ def _create_fallback_image(width: int, height: int) -> str:
 # ============================================================
 
 def resize_and_crop(image_path: str, target_width: int, target_height: int) -> str:
-    """Gorseli hedef boyuta getirir (resize + center crop)."""
     try:
         img = Image.open(image_path)
         img_width, img_height = img.size
@@ -463,7 +509,6 @@ def resize_and_crop(image_path: str, target_width: int, target_height: int) -> s
 # ============================================================
 
 def add_logo(image_path: str) -> str:
-    """Ana gorsele otoXtra logosunu (transparan watermark) ekler."""
     settings_config = load_config("settings")
     images_settings = settings_config.get("images", {})
 
@@ -537,21 +582,22 @@ def _collect_article_candidates(article: dict, max_candidates: int) -> list[str]
     if isinstance(list_candidates, list):
         for item in list_candidates:
             if isinstance(item, str):
-                candidates.append(item)
+                normalized = _normalize_url(item, article.get("link", ""))
+                if normalized:
+                    candidates.extend(_thumbnail_to_original_variants(normalized))
 
     for key in ("rss_image_url", "image_url"):
         value = article.get(key, "")
         if isinstance(value, str) and value.strip():
-            candidates.append(value.strip())
+            normalized = _normalize_url(value.strip(), article.get("link", ""))
+            if normalized:
+                candidates.extend(_thumbnail_to_original_variants(normalized))
 
-    normalized = [_normalize_url(c, article.get("link", "")) for c in candidates]
-    normalized = [c for c in normalized if c]
-    normalized = _unique_keep_order(normalized)
-    return normalized[:max_candidates]
+    candidates = _unique_keep_order(candidates)
+    return candidates[:max_candidates]
 
 
 def prepare_images(article: dict) -> list[str]:
-    """Haber icin bir veya birden fazla gorsel hazirlar."""
     settings_config = load_config("settings")
     images_settings = settings_config.get("images", {})
 
@@ -571,19 +617,29 @@ def prepare_images(article: dict) -> list[str]:
     prepared_paths: list[str] = []
     used_sources: list[str] = []
 
-    # 1) Fetch asamasindan gelen adaylar + rss fallback adaylari
+    # 1) Fetch asamasindan gelen adaylar
     candidate_urls = _collect_article_candidates(article, max_candidates_to_try)
 
-    # 2) Hala aday yoksa sayfadan scrape dene
-    if not candidate_urls and article.get("can_scrape_image", True) and article.get("link", ""):
-        scraped_urls = scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try)
-        candidate_urls.extend(scraped_urls)
-        candidate_urls = _unique_keep_order(candidate_urls)
+    # 2) Aday azsa sayfadan ek scrape dene
+    if article.get("can_scrape_image", True) and article.get("link", ""):
+        needs_more = len(candidate_urls) < max_images_per_news
+        if needs_more:
+            scraped_urls = scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try)
+            candidate_urls.extend(scraped_urls)
+            candidate_urls = _unique_keep_order(candidate_urls)[:max_candidates_to_try]
+
+    log(f"Toplam aday URL: {len(candidate_urls)}")
 
     # 3) Aday URL'leri indir + isle
+    tried_keys: set[str] = set()
     for candidate_url in candidate_urls:
         if len(prepared_paths) >= max_images_per_news:
             break
+
+        key = _candidate_key(candidate_url)
+        if key in tried_keys:
+            continue
+        tried_keys.add(key)
 
         downloaded = download_image(candidate_url)
         if not downloaded:
@@ -612,7 +668,6 @@ def prepare_images(article: dict) -> list[str]:
 
 
 def prepare_image(article: dict) -> str:
-    """Geriye uyumluluk icin ilk gorseli dondurur."""
     paths = prepare_images(article)
     return paths[0]
 
@@ -622,7 +677,6 @@ def prepare_image(article: dict) -> str:
 # ============================================================
 
 def run() -> bool:
-    """Ajani calistirir. orchestrator.py tarafindan cagrilir."""
     log("-" * 55)
     log("agent_image basliyor")
     log("-" * 55)
@@ -651,8 +705,8 @@ def run() -> bool:
         output = {
             "article": article,
             "post_text": post_text,
-            "image_path": first_image_path,   # eski yapiyla uyumlu
-            "image_paths": image_paths,       # yeni coklu gorsel alani
+            "image_path": first_image_path,
+            "image_paths": image_paths,
             "image_source": article.get("image_source", "unknown"),
             "image_count": len(image_paths),
         }
@@ -671,7 +725,7 @@ def run() -> bool:
 
 
 # ============================================================
-# MODUL TESTI (dogrudan calistirilirsa)
+# MODUL TESTI
 # ============================================================
 
 if __name__ == "__main__":
@@ -698,16 +752,24 @@ if __name__ == "__main__":
     )
 
     set_stage("fetch", "done", output={"articles": [fake_article], "count": 1})
-    set_stage("score", "done", output={
-        "selected_article": fake_article,
-        "score": 78,
-        "title": fake_article["title"],
-    })
-    set_stage("write", "done", output={
-        "article": fake_article,
-        "post_text": fake_post_text,
-        "post_text_length": len(fake_post_text),
-    })
+    set_stage(
+        "score",
+        "done",
+        output={
+            "selected_article": fake_article,
+            "score": 78,
+            "title": fake_article["title"],
+        },
+    )
+    set_stage(
+        "write",
+        "done",
+        output={
+            "article": fake_article,
+            "post_text": fake_post_text,
+            "post_text_length": len(fake_post_text),
+        },
+    )
 
     success = run()
 
