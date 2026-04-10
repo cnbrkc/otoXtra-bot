@@ -72,6 +72,7 @@ jobs:
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && 'true' || 'false' }}
           ENABLE_RANDOM_SKIP: ${{ github.event_name == 'workflow_dispatch' && 'false' || 'true' }}
+          MAX_IMAGES_PER_NEWS: '4'
         run: python -m core.orchestrator
 
       - name: Save data
