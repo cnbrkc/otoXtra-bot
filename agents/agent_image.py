@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.1)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.2)
 
 otoXtra Facebook Botu icin pipeline'dan secilen haberi alip
 tekli veya coklu gorsel hazirlar ve pipeline.json'a yazar.
@@ -9,6 +9,7 @@ import os
 import re
 import sys
 import tempfile
+from collections import Counter
 from typing import Optional
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
@@ -20,10 +21,6 @@ from core.logger import log
 from core.config_loader import load_config, get_project_root
 from core.state_manager import get_stage, set_stage, init_pipeline
 
-
-# ============================================================
-# SABITLER
-# ============================================================
 
 _USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -46,10 +43,6 @@ _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", 
 _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
 
 
-# ============================================================
-# TEST MODU
-# ============================================================
-
 def _is_test_mode() -> bool:
     if os.environ.get("TEST_MODE", "false").lower() == "true":
         return True
@@ -57,10 +50,6 @@ def _is_test_mode() -> bool:
         return True
     return False
 
-
-# ============================================================
-# URL YARDIMCILARI
-# ============================================================
 
 def _normalize_url(raw_url: str, base_url: str = "") -> str:
     if not raw_url:
@@ -138,10 +127,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
 
 
 def _candidate_key(url: str) -> str:
-    """
-    URL varyasyonlarini tek anahtarda birlestirmek icin kullanilir.
-    Boylece ayni gorselin farkli boyut/query URL'leri tekrar denenmez.
-    """
     parsed = urlparse(url)
     path = parsed.path or ""
     path = re.sub(
@@ -202,17 +187,11 @@ def _unique_keep_order(items: list[str]) -> list[str]:
     return unique
 
 
-# ============================================================
-# 1. URL'DEN GORSEL INDIRME
-# ============================================================
-
-def download_image(image_url: str) -> Optional[str]:
+def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
     if not image_url:
-        return None
+        return None, "empty_url"
 
     try:
-        log(f"Gorsel indiriliyor: {image_url[:120]}")
-
         response = requests.get(
             image_url,
             headers={"User-Agent": _USER_AGENT},
@@ -223,8 +202,7 @@ def download_image(image_url: str) -> Optional[str]:
 
         content_type = response.headers.get("Content-Type", "")
         if content_type and not content_type.startswith("image/"):
-            log(f"Indirilen dosya gorsel degil (Content-Type: {content_type})")
-            return None
+            return None, f"not_image_content_type:{content_type}"
 
         temp_file = tempfile.NamedTemporaryFile(
             suffix=".jpg", delete=False, prefix="otoxtra_img_"
@@ -242,8 +220,7 @@ def download_image(image_url: str) -> Optional[str]:
                     os.unlink(temp_path)
                 except OSError:
                     pass
-                log("Gorsel dosyasi cok buyuk, indirme iptal edildi", "WARNING")
-                return None
+                return None, "download_too_large"
             temp_file.write(chunk)
         temp_file.close()
 
@@ -253,41 +230,38 @@ def download_image(image_url: str) -> Optional[str]:
             img.close()
 
             if img_width < _MIN_IMAGE_WIDTH or img_height < _MIN_IMAGE_HEIGHT:
-                log(
-                    f"Gorsel cok kucuk ({img_width}x{img_height}), "
-                    f"min {_MIN_IMAGE_WIDTH}x{_MIN_IMAGE_HEIGHT} gerekli"
-                )
                 try:
                     os.unlink(temp_path)
                 except OSError:
                     pass
-                return None
+                return None, f"too_small:{img_width}x{img_height}"
 
-        except Exception as img_err:
-            log(f"Gorsel dosyasi acilamadi: {img_err}", "WARNING")
+        except Exception:
             try:
                 os.unlink(temp_path)
             except OSError:
                 pass
-            return None
+            return None, "invalid_image_file"
 
-        log(f"Gorsel indirildi: {img_width}x{img_height}")
-        return temp_path
+        return temp_path, f"ok:{img_width}x{img_height}"
 
     except requests.exceptions.Timeout:
-        log(f"Gorsel indirme zaman asimi: {image_url[:100]}", "WARNING")
-        return None
+        return None, "timeout"
     except requests.exceptions.RequestException as exc:
-        log(f"Gorsel indirme HTTP hatasi: {exc}", "WARNING")
-        return None
+        return None, f"http_error:{exc}"
     except Exception as exc:
-        log(f"Gorsel indirme beklenmeyen hata: {exc}", "WARNING")
-        return None
+        return None, f"unexpected_error:{exc}"
 
 
-# ============================================================
-# 2. HABER SAYFASINDAN COKLU GORSEL URL TOPLAMA
-# ============================================================
+def download_image(image_url: str) -> Optional[str]:
+    image_path, reason = _download_image_with_reason(image_url)
+    if image_path:
+        dims = reason.replace("ok:", "")
+        log(f"Gorsel indirildi: {dims}")
+        return image_path
+    log(f"Gorsel indirilemedi: {reason}", "WARNING")
+    return None
+
 
 def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
     if not url:
@@ -362,10 +336,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
         log(f"Sayfa gorsel toplama hatasi: {exc}", "WARNING")
         return []
 
-
-# ============================================================
-# 3. YEDEK GORSEL OLUSTURMA
-# ============================================================
 
 def _create_fallback_image(width: int, height: int) -> str:
     project_root = get_project_root()
@@ -458,10 +428,6 @@ def _create_fallback_image(width: int, height: int) -> str:
         return temp_path
 
 
-# ============================================================
-# 4. BOYUTLANDIRMA VE KIRPMA
-# ============================================================
-
 def resize_and_crop(image_path: str, target_width: int, target_height: int) -> str:
     try:
         img = Image.open(image_path)
@@ -503,10 +469,6 @@ def resize_and_crop(image_path: str, target_width: int, target_height: int) -> s
         log(f"Boyutlandirma hatasi: {exc}", "WARNING")
         return image_path
 
-
-# ============================================================
-# 5. LOGO / WATERMARK EKLEME
-# ============================================================
 
 def add_logo(image_path: str) -> str:
     settings_config = load_config("settings")
@@ -571,10 +533,6 @@ def add_logo(image_path: str) -> str:
         return image_path
 
 
-# ============================================================
-# 6. COKLU GORSEL HAZIRLAMA
-# ============================================================
-
 def _collect_article_candidates(article: dict, max_candidates: int) -> list[str]:
     candidates: list[str] = []
 
@@ -617,10 +575,8 @@ def prepare_images(article: dict) -> list[str]:
     prepared_paths: list[str] = []
     used_sources: list[str] = []
 
-    # 1) Fetch asamasindan gelen adaylar
     candidate_urls = _collect_article_candidates(article, max_candidates_to_try)
 
-    # 2) Aday azsa sayfadan ek scrape dene
     if article.get("can_scrape_image", True) and article.get("link", ""):
         needs_more = len(candidate_urls) < max_images_per_news
         if needs_more:
@@ -630,29 +586,44 @@ def prepare_images(article: dict) -> list[str]:
 
     log(f"Toplam aday URL: {len(candidate_urls)}")
 
-    # 3) Aday URL'leri indir + isle
     tried_keys: set[str] = set()
-    for candidate_url in candidate_urls:
+    fail_reasons: Counter[str] = Counter()
+    tried_count = 0
+
+    for idx, candidate_url in enumerate(candidate_urls, start=1):
         if len(prepared_paths) >= max_images_per_news:
             break
 
         key = _candidate_key(candidate_url)
         if key in tried_keys:
+            fail_reasons["duplicate_candidate_key"] += 1
             continue
         tried_keys.add(key)
+        tried_count += 1
 
-        downloaded = download_image(candidate_url)
+        log(f"Aday deneniyor ({idx}/{len(candidate_urls)}): {candidate_url[:140]}")
+        downloaded, reason = _download_image_with_reason(candidate_url)
         if not downloaded:
+            fail_reasons[reason] += 1
+            log(f"Aday elendi: {reason}", "WARNING")
             continue
 
-        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
-        if should_add_logo:
-            processed = add_logo(processed)
+        try:
+            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+            if should_add_logo:
+                processed = add_logo(processed)
 
-        prepared_paths.append(processed)
-        used_sources.append("article_or_rss")
+            prepared_paths.append(processed)
+            used_sources.append("article_or_rss")
+            log(f"Aday basarili: {reason} -> kaydedildi ({len(prepared_paths)}/{max_images_per_news})")
+        except Exception as exc:
+            fail_reasons[f"processing_error:{exc}"] += 1
+            log(f"Aday islenemedi: {exc}", "WARNING")
+            try:
+                os.unlink(downloaded)
+            except OSError:
+                pass
 
-    # 4) Hic gorsel yoksa fallback
     if not prepared_paths:
         fallback = _create_fallback_image(feed_image_width, feed_image_height)
         prepared_paths = [fallback]
@@ -661,6 +632,15 @@ def prepare_images(article: dict) -> list[str]:
     article["image_source"] = used_sources[0] if used_sources else "unknown"
     article["image_sources"] = used_sources
     article["prepared_image_count"] = len(prepared_paths)
+
+    if fail_reasons:
+        fail_summary = ", ".join([f"{k}={v}" for k, v in fail_reasons.items()])
+        log(
+            f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=({fail_summary})",
+            "INFO",
+        )
+    else:
+        log(f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=(yok)")
 
     log(f"Gorsel hazirlama bitti. Adet={len(prepared_paths)} kaynak={article.get('image_source')}")
     log("-" * 40)
@@ -671,10 +651,6 @@ def prepare_image(article: dict) -> str:
     paths = prepare_images(article)
     return paths[0]
 
-
-# ============================================================
-# 7. AJAN GIRIS NOKTASI
-# ============================================================
 
 def run() -> bool:
     log("-" * 55)
@@ -723,10 +699,6 @@ def run() -> bool:
         set_stage("image", "error", error=str(exc))
         return False
 
-
-# ============================================================
-# MODUL TESTI
-# ============================================================
 
 if __name__ == "__main__":
     log("=== agent_image.py modul testi basliyor ===")
