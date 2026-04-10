@@ -6,14 +6,6 @@ on:
 
   workflow_dispatch:
     inputs:
-      test_mode:
-        description: 'Test modu (gecikmeler ve gercek paylasim devre disi)'
-        required: false
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
       debug_score_breakdown:
         description: 'Skor dokumu logu acilsin mi?'
         required: false
@@ -22,6 +14,7 @@ on:
         options:
           - 'false'
           - 'true'
+
       enable_random_delay:
         description: 'Random bekleme aktif olsun mu?'
         required: false
@@ -30,6 +23,7 @@ on:
         options:
           - 'true'
           - 'false'
+
       enable_random_skip:
         description: 'Random skip (rastgele atlama) aktif olsun mu?'
         required: false
@@ -38,8 +32,27 @@ on:
         options:
           - 'true'
           - 'false'
+
       dry_run:
         description: 'Dry run (gercek Facebook paylasimi kapali)'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+      ignore_min_post_interval:
+        description: 'Min post interval kontrolunu atla?'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
+      persist_state:
+        description: 'posted_news/pipeline kayitlari kalici yazilsin mi?'
         required: false
         default: 'true'
         type: choice
@@ -84,16 +97,18 @@ jobs:
           FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
 
-          TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
           ENABLE_RANDOM_SKIP: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_skip || 'true' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
+          IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'false' }}
+          PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
           MAX_IMAGES_PER_NEWS: '4'
         run: python -m core.orchestrator
 
       - name: Save data
+        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.persist_state == 'true' }}
         run: |
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
