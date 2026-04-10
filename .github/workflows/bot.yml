@@ -22,6 +22,14 @@ on:
         options:
           - 'false'
           - 'true'
+      enable_random_delay:
+        description: 'Random bekleme aktif olsun mu?'
+        required: false
+        default: 'true'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
 
 concurrency:
   group: otoxtra-bot
@@ -61,6 +69,7 @@ jobs:
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
+          ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
         run: python -m core.orchestrator
 
       - name: Save data
@@ -71,7 +80,7 @@ jobs:
           git add data/posted_news.json
           git add queue/pipeline.json
 
-          git diff --staged --quiet && echo "Degisiklik yok, commit atlanıyor" && exit 0
+          git diff --staged --quiet && echo "Degisiklik yok, commit atlaniyor" && exit 0
 
           git commit -m "Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
 
