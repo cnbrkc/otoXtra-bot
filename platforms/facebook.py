@@ -135,7 +135,7 @@ def _post_with_retry(
             log(f"{context} request error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
         except Exception as exc:
             last_error = f"unexpected_error: {exc}"
-            log(f"{context} unexpected error (attempt {attempt}/{_TRY_ATTEMPTS}): {exc}", "WARNING")
+            log(f"{context} unexpected error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
 
         if attempt < _RETRY_ATTEMPTS:
             wait_seconds = _RETRY_BASE_WAIT_SECONDS * (2 ** (attempt - 1))
