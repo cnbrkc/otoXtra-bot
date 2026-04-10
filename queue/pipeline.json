@@ -1,14 +1,35 @@
 {
-  "run_id": "2026-04-10-15:18",
-  "status": "error",
-  "started_at": "2026-04-10T15:18:47.440401+03:00",
-  "updated_at": "2026-04-10T15:19:13.453575+03:00",
+  "run_id": "2026-04-10-15:28",
+  "status": "completed",
+  "started_at": "2026-04-10T15:28:06.508954+03:00",
+  "updated_at": "2026-04-10T15:29:44.555036+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+            "link": "https://www.log.com.tr/esel-ahsap-kadroya-sahip-bir-elektrikli-bisiklet-hazirladi/",
+            "published": "2026-04-10T12:24:34+00:00",
+            "summary": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyi başardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor. Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ahsap-bisiklet-elektrikli-esel-hazirladi-kadroya-sahip"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -37,32 +58,139 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-10T15:19:13.453575+03:00"
+      "error": null,
+      "updated_at": "2026-04-10T15:28:28.219968+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+          "link": "https://www.log.com.tr/esel-ahsap-kadroya-sahip-bir-elektrikli-bisiklet-hazirladi/",
+          "published": "2026-04-10T12:24:34+00:00",
+          "summary": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyi başardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor. Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ahsap-bisiklet-elektrikli-esel-hazirladi-kadroya-sahip",
+          "base_ai_score": 70,
+          "score": 81,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-10T15:28:32.492540+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+          "link": "https://www.log.com.tr/esel-ahsap-kadroya-sahip-bir-elektrikli-bisiklet-hazirladi/",
+          "published": "2026-04-10T12:24:34+00:00",
+          "summary": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyi başardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor. Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ahsap-bisiklet-elektrikli-esel-hazirladi-kadroya-sahip",
+          "base_ai_score": 70,
+          "score": 81,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyibaşardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor."
+        },
+        "post_text": "🌳 DOĞAL VE ELEKTRİKLİ: ESEL'DEN AHŞAP KADROLU BİSİKLET!\n\nAvusturyalı Esel firması, ahşap kadrolu yeni elektrikli bisikleti eUrban ile karşımızda. Dişbudak ağacından yapılan kadro sayesinde hem daha çevre dostu hem de sürüşü daha konforlu hale getiren bir tasarım sunuyorlar.\n\nBisiklette 42 Nm torklu bir elektrik motoru ve 350 Wh batarya bulunuyor. GPS de entegre edilmiş.\n\n\"Basic\" modelinde Shimano Deore vites ve alüminyum jantlar var. Daha üst seviye \"Performance\" modelinde ise Shimano Deore XT vites ve karbon jantlar yer alıyor.\n\nSizce ahşap kadrolu bu bisikletler günlük kullanım için nasıl bir deneyim sunar?",
+        "post_text_length": 616
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-10T15:28:35.338096+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+          "link": "https://www.log.com.tr/esel-ahsap-kadroya-sahip-bir-elektrikli-bisiklet-hazirladi/",
+          "published": "2026-04-10T12:24:34+00:00",
+          "summary": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyi başardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor. Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss-660x371.jpg",
+            "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-10_15-21-25_7Fnss.jpg"
+          ],
+          "image_source": "article_or_rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ahsap-bisiklet-elektrikli-esel-hazirladi-kadroya-sahip",
+          "base_ai_score": 70,
+          "score": 81,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Avusturyalı bisiklet üreticisi Esel, ahşap kadrolu (dişbudak) elektrikli bisiklet modeli eUrban ile dikkat çekmeyibaşardı. Ahşap tercih edildiği için hem daha çevreci olan hem de kadronun doğal titreşim sönümleme özelliğiyle daha akıcı bir sürüş sunduğu aktarılan bisiklet, 42 Nm torka sahip bir elektrik motoru taşıyor ve 350 Wh’lik batarya ile geliyor. GPS’in entegre edildiği model için iki farklı versiyon sunuluyor. Shimano Deore RD-T6000 vites sistemi ve alüminyum jantla donatılan 18,5 kg’lık “Basic” modelin 3.990 avro, Shimano Deore XT RD-M8000 vites sistemi ve karbon jantla donatılan 16,5 kg’lık “Performance” modelinin ise 4.990 avro fiyatla satışa sunulduğu açıklanıyor. Her iki bisiklette de karbon ön çatal, Schwalbe G-ONE 45-662 lastikler ve Shimano MT410 çift pistonlu hidrolik disk frenlere yer veriliyor.",
+          "image_sources": [
+            "article_or_rss"
+          ],
+          "prepared_image_count": 1
+        },
+        "post_text": "🌳 DOĞAL VE ELEKTRİKLİ: ESEL'DEN AHŞAP KADROLU BİSİKLET!\n\nAvusturyalı Esel firması, ahşap kadrolu yeni elektrikli bisikleti eUrban ile karşımızda. Dişbudak ağacından yapılan kadro sayesinde hem daha çevre dostu hem de sürüşü daha konforlu hale getiren bir tasarım sunuyorlar.\n\nBisiklette 42 Nm torklu bir elektrik motoru ve 350 Wh batarya bulunuyor. GPS de entegre edilmiş.\n\n\"Basic\" modelinde Shimano Deore vites ve alüminyum jantlar var. Daha üst seviye \"Performance\" modelinde ise Shimano Deore XT vites ve karbon jantlar yer alıyor.\n\nSizce ahşap kadrolu bu bisikletler günlük kullanım için nasıl bir deneyim sunar?",
+        "image_path": "/tmp/otoxtra_img_rcopmovf.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_rcopmovf.jpg"
+        ],
+        "image_source": "article_or_rss",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-10T15:28:36.211238+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122161981028916499",
+        "article_title": "Esel, ahşap kadroya sahip bir elektrikli bisiklet hazırladı",
+        "image_source": "article_or_rss",
+        "image_count": 1,
+        "test_mode": false,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-10T15:29:44.555036+03:00"
     }
   }
 }
