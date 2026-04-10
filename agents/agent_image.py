@@ -1,8 +1,9 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.2)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.3)
 
-otoXtra Facebook Botu icin pipeline'dan secilen haberi alip
-tekli veya coklu gorsel hazirlar ve pipeline.json'a yazar.
+Degisiklik:
+- MAX_IMAGES_PER_NEWS env override eklendi.
+- Runtime'da hangi limitin kullanildigi loglanir.
 """
 
 import os
@@ -51,6 +52,16 @@ def _is_test_mode() -> bool:
     return False
 
 
+def _read_int_env(name: str) -> Optional[int]:
+    raw = os.environ.get(name)
+    if raw is None:
+        return None
+    try:
+        return int(raw.strip())
+    except Exception:
+        return None
+
+
 def _normalize_url(raw_url: str, base_url: str = "") -> str:
     if not raw_url:
         return ""
@@ -69,7 +80,11 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     if parsed.scheme not in {"http", "https"} or not parsed.netloc:
         return ""
 
-    filtered_qs = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in _TRACKING_QUERY_KEYS]
+    filtered_qs = [
+        (k, v)
+        for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+        if k.lower() not in _TRACKING_QUERY_KEYS
+    ]
     cleaned = parsed._replace(query=urlencode(filtered_qs), fragment="")
     return urlunparse(cleaned)
 
@@ -135,7 +150,11 @@ def _candidate_key(url: str) -> str:
         path,
         flags=re.IGNORECASE,
     )
-    filtered_qs = [(k, v) for k, v in parse_qsl(parsed.query, keep_blank_values=True) if k.lower() not in _RESIZE_QUERY_KEYS]
+    filtered_qs = [
+        (k, v)
+        for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+        if k.lower() not in _RESIZE_QUERY_KEYS
+    ]
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
 
@@ -562,8 +581,15 @@ def prepare_images(article: dict) -> list[str]:
     should_add_logo = bool(images_settings.get("add_logo", True))
     feed_image_width = int(images_settings.get("feed_image_width", 1200))
     feed_image_height = int(images_settings.get("feed_image_height", 630))
-    max_images_per_news = int(images_settings.get("max_images_per_news", 1))
     max_candidates_to_try = int(images_settings.get("max_candidates_per_article", 10))
+
+    env_max_images = _read_int_env("MAX_IMAGES_PER_NEWS")
+    if env_max_images is not None and env_max_images > 0:
+        max_images_per_news = env_max_images
+        source = "env"
+    else:
+        max_images_per_news = int(images_settings.get("max_images_per_news", 1))
+        source = "settings"
 
     if max_images_per_news < 1:
         max_images_per_news = 1
@@ -571,6 +597,10 @@ def prepare_images(article: dict) -> list[str]:
     article_title = article.get("title", "")[:120]
     log("-" * 40)
     log(f"Gorsel hazirlama basladi: {article_title}")
+    log(
+        f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
+        f"max_candidates_to_try={max_candidates_to_try}"
+    )
 
     prepared_paths: list[str] = []
     used_sources: list[str] = []
@@ -580,7 +610,10 @@ def prepare_images(article: dict) -> list[str]:
     if article.get("can_scrape_image", True) and article.get("link", ""):
         needs_more = len(candidate_urls) < max_images_per_news
         if needs_more:
-            scraped_urls = scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try)
+            scraped_urls = scrape_article_image_urls(
+                article.get("link", ""),
+                max_candidates=max_candidates_to_try,
+            )
             candidate_urls.extend(scraped_urls)
             candidate_urls = _unique_keep_order(candidate_urls)[:max_candidates_to_try]
 
@@ -635,10 +668,7 @@ def prepare_images(article: dict) -> list[str]:
 
     if fail_reasons:
         fail_summary = ", ".join([f"{k}={v}" for k, v in fail_reasons.items()])
-        log(
-            f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=({fail_summary})",
-            "INFO",
-        )
+        log(f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=({fail_summary})")
     else:
         log(f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=(yok)")
 
