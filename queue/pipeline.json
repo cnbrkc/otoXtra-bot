@@ -1,64 +1,14 @@
 {
-  "run_id": "2026-04-10-14:34",
+  "run_id": "2026-04-10-14:36",
   "status": "error",
-  "started_at": "2026-04-10T14:34:15.274206+03:00",
-  "updated_at": "2026-04-10T14:34:42.640601+03:00",
+  "started_at": "2026-04-10T14:36:43.361020+03:00",
+  "updated_at": "2026-04-10T14:37:04.407916+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Cupra, en küçük ve en ucuz elektrikli otomobili Raval'i tanıttı",
-            "link": "https://www.donanimhaber.com/yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri--204280",
-            "published": "2026-04-10T10:18:00+00:00",
-            "summary": "Cupra’nın yeni elektriklisi Raval; motor, batarya ve menzil seçenekleriyle netleşti. 300-450 km arası menzil sunan Cupra Raval fiyatı ve tüm özellikleri haberimizde.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204280/src_340x1912xyeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204280/1400x1400yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204280/1400x1050yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-              "https://www.donanimhaber.com/images/images/editor/a0fcf2547f9640049937ccaaf1d5fce6.jpg",
-              "https://www.donanimhaber.com/Content/img/ince.svg",
-              "https://www.donanimhaber.com/Content/img/view-liste.svg",
-              "https://www.donanimhaber.com/Content/img/doseme.svg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cupra-elektrikli-otomobili-raval-tanitti-ucuz"
-          },
-          {
-            "title": "Akaryakıt Fiyatları - 10 Nisan 2026",
-            "link": "https://tr.motor1.com/news/792596/akaryakit-fiyatlari-10-nisan-2026/",
-            "published": "2026-04-10T11:00:00+00:00",
-            "summary": "Motorine 13 liraya yakın indirim geldi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/6Z8exr/s3/akaryakit-10-nisan.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8exr/s3/akaryakit-10-nisan.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/6Z8exr/s3/akaryakit-10-nisan.jpg",
-              "https://cdn.motor1.com/images/mgl/6Z8exr/s1/akaryakit-10-nisan.jpg",
-              "https://cdn.motor1.com/images/mgl/6Z8exr/s1/akaryakit-10-nisan.webp",
-              "https://cdn.motor1.com/images/mgl/6Z8exr/200:0:1200:900/akaryakit-10-nisan.webp",
-              "https://cdn.motor1.com/images/mgl/6Z8exr/350:0:900:900/akaryakit-10-nisan.webp"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-akaryakit-fiyatlari-nisan"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -87,149 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-10T14:34:35.232107+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-10T14:37:04.407916+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Cupra, en küçük ve en ucuz elektrikli otomobili Raval'i tanıttı",
-          "link": "https://www.donanimhaber.com/yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri--204280",
-          "published": "2026-04-10T10:18:00+00:00",
-          "summary": "Cupra’nın yeni elektriklisi Raval; motor, batarya ve menzil seçenekleriyle netleşti. 300-450 km arası menzil sunan Cupra Raval fiyatı ve tüm özellikleri haberimizde.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/src_340x1912xyeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1400yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1050yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/editor/a0fcf2547f9640049937ccaaf1d5fce6.jpg",
-            "https://www.donanimhaber.com/Content/img/ince.svg",
-            "https://www.donanimhaber.com/Content/img/view-liste.svg",
-            "https://www.donanimhaber.com/Content/img/doseme.svg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "cupra-elektrikli-otomobili-raval-tanitti-ucuz",
-          "base_ai_score": 82,
-          "score": 91,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2
-        },
-        "score": 91,
-        "title": "Cupra, en küçük ve en ucuz elektrikli otomobili Raval'i tanıttı",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 7,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T14:34:39.216802+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Cupra, en küçük ve en ucuz elektrikli otomobili Raval'i tanıttı",
-          "link": "https://www.donanimhaber.com/yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri--204280",
-          "published": "2026-04-10T10:18:00+00:00",
-          "summary": "Cupra’nın yeni elektriklisi Raval; motor, batarya ve menzil seçenekleriyle netleşti. 300-450 km arası menzil sunan Cupra Raval fiyatı ve tüm özellikleri haberimizde.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/src_340x1912xyeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1400yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1050yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/editor/a0fcf2547f9640049937ccaaf1d5fce6.jpg",
-            "https://www.donanimhaber.com/Content/img/ince.svg",
-            "https://www.donanimhaber.com/Content/img/view-liste.svg",
-            "https://www.donanimhaber.com/Content/img/doseme.svg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "cupra-elektrikli-otomobili-raval-tanitti-ucuz",
-          "base_ai_score": 82,
-          "score": 91,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Cupra, yeni nesil küçük elektrikli otomobiliCupra Raval'i tanıttı. Volkswagen Grubu’nun uygun fiyatlı elektrikli otomobil stratejisinin merkezinde yer alan Raval,26 bin eurodanbaşlayan fiyatıyla Renault 5 gibi rakiplerle boy ölçüşecek. Raval, rakibi Renault 5’ten biraz daha büyük bir gövdeye sahip. Sportif karakterini vurgulamak için süspansiyon sistemi standart MEB Plus kurulumuna göre15 mm daha alçakayarlanmış. Kompakt boyutlarına rağmen 430 litre gibi iddialı bir bagaj hacmi sunuyor. Bu değer, daha büyük olan Cupra Born’dan bile fazla. Aynı bataryayla99 kW'lık(135 hp) motor kombine edildiğinde ise DC şarj gücü 88 kW'a çıkıyor. Böylece %10-80 dolum yaklaşık 23 dakika sürüyor.155 kW(211 hp) motor ve 52 kWsa NMC batarya kombinasyonu tercih edildiğinde ise menzil hedefi 450 km'ye kadar çıkarken, 105 kW DC hızlı şarj desteğiyle %10-80 dolum 24 dakika sürüyor. VZ versiyonu ayrıca geliştirilmiş ön süspansiyon geometrisi, daha yüksek yol tutuş için negatif kamber açısı ve Volkswagen Grubu’nun adaptif süspansiyon sistemi DCC Sport ile geliyor. Raval, Cupra’nın bugüne kadarki en küçük ve en uygun fiyatlı modeli olacak. Marka içinde büyük beklentiler yaratan modelin, 2028 yılına kadar Cupra Formentor modelini geride bırakarak en çok satan Cupra olması hedefleniyor. 2026 Cupra Raval Görselleri(29)Aç Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FYGYD3YH https://www.amazon.com.tr/dp/B0CTQG1G1L https://www.n11.com/urun/tukenmeyen-sticker-kitabim-100-tekrar-tekrar-kullanilabilen-sticker-41620368?magaza=coskun-avm https://www.amazon.com.tr/dp/B0GSB6CR7R https://app.hb.biz/CkxnCQ7iZZZ8 https://www.idefix.com/home-plus-mobilya-4lu-tekerlekli-zigon-sehpa-gumus-ayak-beyaz-18-mm-mdf-p-15434643"
-        },
-        "post_text": "⚡️ CUPRA'NIN YENİ UYGUN FİYATLI ELEKTRİKLİSİ RAVAL GELDİ!\n\nVolkswagen Grubu'nun uygun fiyatlı elektrikli otomobil stratejisinin önemli bir parçası olan Cupra Raval, 26 bin eurodan başlayan fiyatıyla dikkat çekiyor. Kompakt boyutlarına rağmen 430 litrelik iddialı bir bagaj hacmi sunan Raval, 300 ila 450 km arasında menzil seçenekleri sunuyor.\n\nDC şarj ile %10-80 dolumun yaklaşık 23-24 dakika sürmesi de cabası. Cupra'nın bugüne kadarki en küçük ve en uygun fiyatlı modeli olacak Raval'in, 2028'e kadar en çok satan Cupra olması hedefleniyor.\n\nSizce Cupra Raval, elektrikli otomobil pazarında iddialı bir oyuncu olabilir mi?",
-        "post_text_length": 625
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T14:34:41.766230+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Cupra, en küçük ve en ucuz elektrikli otomobili Raval'i tanıttı",
-          "link": "https://www.donanimhaber.com/yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri--204280",
-          "published": "2026-04-10T10:18:00+00:00",
-          "summary": "Cupra’nın yeni elektriklisi Raval; motor, batarya ve menzil seçenekleriyle netleşti. 300-450 km arası menzil sunan Cupra Raval fiyatı ve tüm özellikleri haberimizde.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x788yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/src_340x1912xyeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1400yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204280/1400x1050yeni-cupra-raval-tanitildi-iste-fiyati-ve-ozellikleri.jpg",
-            "https://www.donanimhaber.com/images/images/editor/a0fcf2547f9640049937ccaaf1d5fce6.jpg",
-            "https://www.donanimhaber.com/Content/img/ince.svg",
-            "https://www.donanimhaber.com/Content/img/view-liste.svg",
-            "https://www.donanimhaber.com/Content/img/doseme.svg"
-          ],
-          "image_source": "article_or_rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "cupra-elektrikli-otomobili-raval-tanitti-ucuz",
-          "base_ai_score": 82,
-          "score": 91,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Cupra, yeni nesil küçük elektrikli otomobiliCupra Raval'i tanıttı. Volkswagen Grubu’nun uygun fiyatlı elektrikli otomobil stratejisinin merkezinde yer alan Raval,26 bin eurodanbaşlayan fiyatıyla Renault 5 gibi rakiplerle boy ölçüşecek. Raval, rakibi Renault 5’ten biraz daha büyük bir gövdeye sahip. Sportif karakterini vurgulamak için süspansiyon sistemi standart MEB Plus kurulumuna göre15 mm daha alçakayarlanmış. Kompakt boyutlarına rağmen 430 litre gibi iddialı bir bagaj hacmi sunuyor. Bu değer, daha büyük olan Cupra Born’dan bile fazla. Aynı bataryayla99 kW'lık(135 hp) motor kombine edildiğinde ise DC şarj gücü 88 kW'a çıkıyor. Böylece %10-80 dolum yaklaşık 23 dakika sürüyor.155 kW(211 hp) motor ve 52 kWsa NMC batarya kombinasyonu tercih edildiğinde ise menzil hedefi 450 km'ye kadar çıkarken, 105 kW DC hızlı şarj desteğiyle %10-80 dolum 24 dakika sürüyor. VZ versiyonu ayrıca geliştirilmiş ön süspansiyon geometrisi, daha yüksek yol tutuş için negatif kamber açısı ve Volkswagen Grubu’nun adaptif süspansiyon sistemi DCC Sport ile geliyor. Raval, Cupra’nın bugüne kadarki en küçük ve en uygun fiyatlı modeli olacak. Marka içinde büyük beklentiler yaratan modelin, 2028 yılına kadar Cupra Formentor modelini geride bırakarak en çok satan Cupra olması hedefleniyor. 2026 Cupra Raval Görselleri(29)Aç Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0FYGYD3YH https://www.amazon.com.tr/dp/B0CTQG1G1L https://www.n11.com/urun/tukenmeyen-sticker-kitabim-100-tekrar-tekrar-kullanilabilen-sticker-41620368?magaza=coskun-avm https://www.amazon.com.tr/dp/B0GSB6CR7R https://app.hb.biz/CkxnCQ7iZZZ8 https://www.idefix.com/home-plus-mobilya-4lu-tekerlekli-zigon-sehpa-gumus-ayak-beyaz-18-mm-mdf-p-15434643",
-          "image_sources": [
-            "article_or_rss"
-          ],
-          "prepared_image_count": 1
-        },
-        "post_text": "⚡️ CUPRA'NIN YENİ UYGUN FİYATLI ELEKTRİKLİSİ RAVAL GELDİ!\n\nVolkswagen Grubu'nun uygun fiyatlı elektrikli otomobil stratejisinin önemli bir parçası olan Cupra Raval, 26 bin eurodan başlayan fiyatıyla dikkat çekiyor. Kompakt boyutlarına rağmen 430 litrelik iddialı bir bagaj hacmi sunan Raval, 300 ila 450 km arasında menzil seçenekleri sunuyor.\n\nDC şarj ile %10-80 dolumun yaklaşık 23-24 dakika sürmesi de cabası. Cupra'nın bugüne kadarki en küçük ve en uygun fiyatlı modeli olacak Raval'in, 2028'e kadar en çok satan Cupra olması hedefleniyor.\n\nSizce Cupra Raval, elektrikli otomobil pazarında iddialı bir oyuncu olabilir mi?",
-        "image_path": "/tmp/otoxtra_img__y83q76t.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img__y83q76t.jpg"
-        ],
-        "image_source": "article_or_rss",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-10T14:34:42.633367+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "error",
+      "status": "waiting",
       "output": null,
-      "error": "Rastgele atlama",
-      "updated_at": "2026-04-10T14:34:42.640601+03:00"
+      "error": null,
+      "updated_at": null
     }
   }
 }
