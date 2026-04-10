@@ -71,11 +71,13 @@ def _check_min_interval(settings: dict, posted_data: dict, test_mode: bool) -> b
 def _random_delay(settings: dict, test_mode: bool) -> None:
     if test_mode:
         return
+
     import time
 
     max_delay_minutes = settings.get("posting", {}).get("random_delay_max_minutes", 8)
     if max_delay_minutes <= 0:
         return
+
     time.sleep(random.randint(0, max_delay_minutes * 60))
 
 
@@ -96,12 +98,38 @@ def _log_source_health() -> None:
         source_health = output.get("source_health", {})
         if not source_health:
             return
+
         ok_count = sum(1 for v in source_health.values() if v.get("status") == "ok")
         err_count = sum(1 for v in source_health.values() if v.get("status") == "error")
         empty_count = sum(1 for v in source_health.values() if v.get("status") == "no_entries")
         disabled_count = sum(1 for v in source_health.values() if v.get("status") == "disabled")
         log(
-            f"Source health: ok={ok_count}, error={err_count}, empty={empty_count}, disabled={disabled_count}"
+            f"Source health: ok={ok_count}, error={err_count}, "
+            f"empty={empty_count}, disabled={disabled_count}"
+        )
+    except Exception:
+        pass
+
+
+def _log_image_summary() -> None:
+    """Image asamasinin tekli/coklu ciktisini ozetler."""
+    try:
+        stage = get_stage("image")
+        if stage.get("status") != "done":
+            return
+
+        output = stage.get("output") or {}
+        image_source = output.get("image_source", "unknown")
+        image_path = output.get("image_path", "")
+        image_paths = output.get("image_paths", [])
+        image_count = output.get("image_count", 0)
+
+        if not image_count and isinstance(image_paths, list):
+            image_count = len(image_paths)
+
+        log(
+            f"Image summary: source={image_source}, "
+            f"count={image_count}, primary={image_path}"
         )
     except Exception:
         pass
@@ -130,6 +158,7 @@ def _run_agent(agent_name: str, run_func) -> bool:
 
 def main() -> None:
     test_mode = _is_test_mode()
+
     try:
         settings = load_config("settings")
         posted_data = get_posted_news()
@@ -173,6 +202,7 @@ def main() -> None:
         if not _run_agent("agent_image", image_run):
             _log_stage_error("image")
             return
+        _log_image_summary()
 
         from agents.agent_publisher import run as publisher_run
 
