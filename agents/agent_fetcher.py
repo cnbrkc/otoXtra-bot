@@ -2,6 +2,7 @@
 News fetch and filter agent.
 """
 
+import json
 import os
 import re
 import sys
@@ -9,6 +10,7 @@ import time
 from calendar import timegm
 from datetime import datetime, timezone, timedelta
 from typing import Any
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
 
 import feedparser
 import requests
@@ -38,6 +40,27 @@ _USER_AGENT = (
 _PRIORITY_ORDER = {"high": 3, "medium": 2, "low": 1}
 _TREND_BONUSES = [(5, 15), (3, 10), (2, 5)]
 _TREND_FINGERPRINT_THRESHOLD = 0.70
+
+_IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
+_IMAGE_NOISE_HINTS = (
+    "logo",
+    "icon",
+    "avatar",
+    "sprite",
+    "pixel",
+    "ads",
+    "banner",
+    "favicon",
+)
+_TRACKING_QUERY_KEYS = {
+    "utm_source",
+    "utm_medium",
+    "utm_campaign",
+    "utm_term",
+    "utm_content",
+    "gclid",
+    "fbclid",
+}
 
 
 def _is_test_mode() -> bool:
@@ -186,6 +209,186 @@ def _extract_published_date(entry: Any, fallback_iso: str) -> str:
     return fallback_iso
 
 
+def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
+    if not raw_url:
+        return ""
+
+    candidate = raw_url.strip()
+    if not candidate:
+        return ""
+
+    if candidate.startswith("//"):
+        candidate = f"https:{candidate}"
+
+    if page_url:
+        candidate = urljoin(page_url, candidate)
+
+    parsed = urlparse(candidate)
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
+        return ""
+
+    query_items = [
+        (k, v)
+        for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+        if k not in _TRACKING_QUERY_KEYS
+    ]
+    cleaned = parsed._replace(query=urlencode(query_items), fragment="")
+    return urlunparse(cleaned)
+
+
+def _looks_like_noise_image(url: str) -> bool:
+    lower_url = url.lower()
+    return any(hint in lower_url for hint in _IMAGE_NOISE_HINTS)
+
+
+def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
+    best_url = ""
+    best_score = -1.0
+
+    for item in srcset.split(","):
+        item = item.strip()
+        if not item:
+            continue
+        parts = item.split()
+        url_part = _normalize_image_url(parts[0], page_url)
+        if not url_part:
+            continue
+
+        score = 1.0
+        if len(parts) > 1:
+            descriptor = parts[1].lower()
+            if descriptor.endswith("w"):
+                try:
+                    score = float(descriptor[:-1])
+                except ValueError:
+                    score = 1.0
+            elif descriptor.endswith("x"):
+                try:
+                    score = float(descriptor[:-1]) * 1000
+                except ValueError:
+                    score = 1.0
+
+        if score > best_score:
+            best_score = score
+            best_url = url_part
+
+    return best_url
+
+
+def _collect_jsonld_images(node: Any, page_url: str, collector: list[str]) -> None:
+    if isinstance(node, dict):
+        image_value = node.get("image")
+        if isinstance(image_value, str):
+            normalized = _normalize_image_url(image_value, page_url)
+            if normalized:
+                collector.append(normalized)
+        elif isinstance(image_value, list):
+            for item in image_value:
+                if isinstance(item, str):
+                    normalized = _normalize_image_url(item, page_url)
+                    if normalized:
+                        collector.append(normalized)
+                elif isinstance(item, dict):
+                    candidate = item.get("url") or item.get("contentUrl")
+                    normalized = _normalize_image_url(candidate or "", page_url)
+                    if normalized:
+                        collector.append(normalized)
+        elif isinstance(image_value, dict):
+            candidate = image_value.get("url") or image_value.get("contentUrl")
+            normalized = _normalize_image_url(candidate or "", page_url)
+            if normalized:
+                collector.append(normalized)
+
+        for value in node.values():
+            _collect_jsonld_images(value, page_url, collector)
+
+    elif isinstance(node, list):
+        for item in node:
+            _collect_jsonld_images(item, page_url, collector)
+
+
+def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
+    if not url:
+        return []
+
+    try:
+        response = _request_with_retry(url, timeout=15, attempts=2, base_wait_seconds=1.0)
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        raw_candidates: list[str] = []
+
+        meta_selectors = [
+            ('meta[property="og:image"]', "content"),
+            ('meta[property="og:image:url"]', "content"),
+            ('meta[name="twitter:image"]', "content"),
+            ('meta[name="twitter:image:src"]', "content"),
+        ]
+        for selector, attr in meta_selectors:
+            for tag in soup.select(selector):
+                normalized = _normalize_image_url(tag.get(attr, ""), url)
+                if normalized:
+                    raw_candidates.append(normalized)
+
+        for script in soup.select('script[type="application/ld+json"]'):
+            text = (script.string or script.get_text() or "").strip()
+            if not text:
+                continue
+            try:
+                parsed = json.loads(text)
+                _collect_jsonld_images(parsed, url, raw_candidates)
+            except Exception:
+                continue
+
+        for img in soup.find_all("img"):
+            width_attr = img.get("width")
+            height_attr = img.get("height")
+            try:
+                if width_attr and height_attr and int(width_attr) < 200 and int(height_attr) < 200:
+                    continue
+            except Exception:
+                pass
+
+            src_candidates = [
+                img.get("src", ""),
+                img.get("data-src", ""),
+                img.get("data-lazy-src", ""),
+                img.get("data-original", ""),
+                img.get("data-full-url", ""),
+            ]
+
+            srcset = img.get("srcset", "") or img.get("data-srcset", "")
+            if srcset:
+                best_srcset = _extract_best_src_from_srcset(srcset, url)
+                if best_srcset:
+                    src_candidates.append(best_srcset)
+
+            for src in src_candidates:
+                normalized = _normalize_image_url(src, url)
+                if normalized:
+                    raw_candidates.append(normalized)
+
+        unique_candidates: list[str] = []
+        seen: set[str] = set()
+        for candidate in raw_candidates:
+            lower_candidate = candidate.lower()
+            if candidate in seen:
+                continue
+            if _looks_like_noise_image(lower_candidate):
+                continue
+            if not any(ext in lower_candidate for ext in _IMAGE_EXTENSIONS) and "image" not in lower_candidate:
+                continue
+            seen.add(candidate)
+            unique_candidates.append(candidate)
+            if len(unique_candidates) >= max_candidates:
+                break
+
+        return unique_candidates
+    except Exception as exc:
+        log(f"extract_images_from_article warning: {exc}", "WARNING")
+        return []
+
+
 def fetch_all_feeds() -> tuple[list[dict], dict]:
     sources_cfg = load_config("sources")
     feeds = sources_cfg.get("feeds", []) if isinstance(sources_cfg, dict) else []
@@ -196,6 +399,13 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     all_articles: list[dict] = []
     source_health: dict = {}
     now_iso = get_turkey_now().isoformat()
+
+    settings_cfg = load_config("settings")
+    images_cfg = settings_cfg.get("images", {}) if isinstance(settings_cfg, dict) else {}
+
+    enable_article_image_scrape = bool(images_cfg.get("enable_article_image_scrape", True))
+    max_candidates_per_article = int(images_cfg.get("max_candidates_per_article", 8))
+    max_article_scrapes_per_feed = int(images_cfg.get("max_article_scrapes_per_feed", 6))
 
     for feed_info in feeds:
         feed_url = feed_info.get("url", "")
@@ -234,6 +444,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                 continue
 
             entry_count = 0
+            scraped_in_feed = 0
             for entry in parsed_feed.entries:
                 title = clean_html(entry.get("title", "")).strip()
                 link = entry.get("link", "")
@@ -245,12 +456,44 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                 if len(summary) < 10:
                     summary = ""
 
+                rss_image_url = _extract_image_from_entry(entry)
+                normalized_rss_image = _normalize_image_url(rss_image_url, link) if rss_image_url else ""
+
+                article_image_candidates: list[str] = []
+                if (
+                    feed_can_scrape
+                    and enable_article_image_scrape
+                    and scraped_in_feed < max_article_scrapes_per_feed
+                ):
+                    article_image_candidates = extract_images_from_article(
+                        link,
+                        max_candidates=max_candidates_per_article,
+                    )
+                    scraped_in_feed += 1
+
+                if normalized_rss_image and normalized_rss_image not in article_image_candidates:
+                    article_image_candidates.insert(0, normalized_rss_image)
+
+                primary_image = (
+                    article_image_candidates[0]
+                    if article_image_candidates
+                    else (normalized_rss_image or rss_image_url)
+                )
+
                 article = {
                     "title": title,
                     "link": link,
                     "published": _extract_published_date(entry, now_iso),
                     "summary": summary,
-                    "image_url": _extract_image_from_entry(entry),
+                    "image_url": primary_image or "",
+                    "rss_image_url": normalized_rss_image or rss_image_url or "",
+                    "image_candidates": article_image_candidates,
+                    "image_source": (
+                        "article"
+                        if article_image_candidates
+                        and (not normalized_rss_image or article_image_candidates[0] != normalized_rss_image)
+                        else ("rss" if primary_image else "none")
+                    ),
                     "source_name": feed_name,
                     "source_priority": feed_priority,
                     "language": feed_language,
