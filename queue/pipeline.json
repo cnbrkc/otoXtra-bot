@@ -1,14 +1,43 @@
 {
-  "run_id": "2026-04-10-22:44",
-  "status": "error",
-  "started_at": "2026-04-10T22:44:49.808719+03:00",
-  "updated_at": "2026-04-10T22:44:55.765884+03:00",
+  "run_id": "2026-04-11-09:00",
+  "status": "completed",
+  "started_at": "2026-04-11T09:00:43.414791+03:00",
+  "updated_at": "2026-04-11T09:03:00.778849+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+            "link": "https://www.donanimhaber.com/tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi--204329",
+            "published": "2026-04-10T23:05:00+00:00",
+            "summary": "Tesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204329/1400x788tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aldi-avrupa-fsd-gelir-onayini-tesla-turkiye-zaman"
+          },
+          {
+            "title": "Tesla FSD, Hollanda’da resmen kullanıma açıldı!",
+            "link": "https://shiftdelete.net/tesla-fsd-hollandada-resmen-kullanima-acildi",
+            "published": "2026-04-10T21:48:50+00:00",
+            "summary": "Otomotiv dünyası, 10 Nisan 2026 tarihi itibarıyla dijital dönüşümün ve yapay zeka entegrasyonunun en kritik dönemeçlerinden birini resmen geride bırakıyor. Tesla’nın uzun süredir beklenen “Full Self-Driving (Denetimli)” teknolojisinin Avrupa topraklarındaki ilk resmi onayını Hollanda’dan alması, kıtanın ulaşım paradigmasında köklü bir değişimi haber veriyor. Hollanda Araç Otoritesi (RDW) tarafından verilen bu onay, “Tesla FSD” olarak bilinen […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "acildi-fsd-hollanda-kullanima-resmen-tesla"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -37,32 +66,112 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-10T22:44:55.765884+03:00"
+      "error": null,
+      "updated_at": "2026-04-11T09:00:47.542253+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+          "link": "https://www.donanimhaber.com/tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi--204329",
+          "published": "2026-04-10T23:05:00+00:00",
+          "summary": "Tesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204329/1400x788tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "aldi-avrupa-fsd-gelir-onayini-tesla-turkiye-zaman",
+          "base_ai_score": 80,
+          "score": 83,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 2
+        },
+        "score": 83,
+        "title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+        "trend_count": 1,
+        "trend_bonus": 2,
+        "freshness_bonus": 1,
+        "score_reason": "ai_scored"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-11T09:00:50.468145+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+          "link": "https://www.donanimhaber.com/tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi--204329",
+          "published": "2026-04-10T23:05:00+00:00",
+          "summary": "Tesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204329/1400x788tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "aldi-avrupa-fsd-gelir-onayini-tesla-turkiye-zaman",
+          "base_ai_score": 80,
+          "score": 83,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 2,
+          "full_text": "Tesla’nın sosyal medya üzerinden yaptığı açıklamaya göre, sistem kısa süre içinde Hollanda’da kullanıma sunulacak. Bu gelişmenin, diğer Avrupa ülkelerinde de benzer onay süreçlerinin önünü açabileceği değerlendiriliyor. Halihazırda Tesla’nın sitesine göre FSD, Hollanda’daaylık 99 euroveya 7.5000 euro’luk tek seferlik ödemekarşılığında satın alınabiliyor. Almanya (KBA), Fransa ve İtalya'nın muhtemelen 4-8 hafta içinde harekete geçen ilk ülkeler arasında olması bekleniyor. Hollanda araç otoritesi RDW tarafından yapılan detaylı açıklama, sistemin sınırlarını net şekilde ortaya koyuyor. FSD Supervised veya FSD Denetimli, tam otonom bir sürüş sistemi değil, gelişmiş bir sürüş destek teknolojisi olarak tanımlanıyor. Bu kapsamda araç, birçok sürüş görevini üstlenebiliyor ancak direksiyon başındaki kişinin sorumluluğu tamamen ortadan kalkmıyor. Sistem aktifken sürücünün dikkat seviyesi sürekli olarak izleniyor. Araç içindeki sensörler, sürücünün gözlerini yolda tutup tutmadığını ve gerektiğinde direksiyonu devralmaya hazır olup olmadığını kontrol ediyor. Sürücünün ellerinin direksiyon üzerinde olması zorunlu değil ancak her an müdahale edebilecek durumda olması gerekiyor. Dikkat eksikliği tespit edildiğinde ise çeşitli uyarılar devreye giriyor ve sürücüden aktif katılım bekleniyor. Sürekli ihlal durumunda sistem geçici olarak devre dışı bırakılabiliyor. Bu nedenle, sistem açıkken sürücünün dikkatini dağıtacak aktivitelerde bulunması mümkün değil. RDW, özellikle araç içinde gazete okumak gibi davranışların hem yasak hem de teknik olarak engellendiğini vurguluyor. FSD Denetimli yazılımı, Hollanda’da onay almadan önce bir buçuk yıldan uzun süren kapsamlı testlerden geçti. Bu testler hem özel test pistlerinde hem de gerçek trafik koşullarında gerçekleştirildi. RDW, güvenliğin öncelikli kriter olduğunu belirtirken sistemin doğru kullanıldığında trafik güvenliğine olumlu katkı sağlayabileceğini ifade ediyor. Tesla’nın bu sistemi ABD’de halihazırda kullanılabiliyor olsa da Avrupa’daki versiyonunbirebir aynı olmadığıözellikle vurgulanıyor. RDW’ye göre bunun temel nedeni, iki bölge arasındaki düzenleyici yaklaşım farkı. ABD’de araçlar genellikle üretici beyanına dayalı olarak yollara çıkarken Avrupa’da önceden alınması gereken tip onayı zorunlu. Üstelik Avrupa Birliği, güvenlik ve çevre standartları konusunda daha katı kurallar uyguluyor. Bu nedenle Tesla’nın Avrupa’daki yazılım versiyonu, ABD’deki sürümle aynı özellikleri taşımayabiliyor ve doğrudan karşılaştırılamıyor. Şu an için verilen onay yalnızca Hollanda ile sınırlı. Ancak süreç burada sona ermiyor. RDW’ninAvrupa Komisyonu’na başvuru yapmasıve üye ülkelerin oylamasıyla birlikte sistemintüm Avrupa Birliği’nde geçerli hale gelmesi mümkün. Bu aşamada üye ülkelerin çoğunluğunun onayı gerekiyor. Eğer süreç olumlu sonuçlanırsa Tesla’nın sürüş destek sistemi Avrupa genelinde kullanılabilir hale gelecek. Hollanda’nın (RDW) Tesla’nın “Full Self-Driving Supervised” yazılımına onay vermesi, Avrupa ve dolaylı olarak Türkiye için “buzkıran” etkisi taşıyan bir adım. Türkiye, Avrupa Birliği üyesi olmasa da otomotiv mevzuatındaAB ve Birleşmiş Milletler Avrupa Ekonomik Komisyonu(UN/ECE) regülasyonlarını (başta MARTOY - Motorlu Araçlar ve Römorkları Tip Onayı Yönetmeliği) doğrudan takip ediyor. Hollanda’nın bu onayı vermesini sağlayan asıl gelişme, UN/ECE bünyesinde kabul edilenUN R171(DCAS - Driver Control Assistance Systems) regülasyonu. Bu regülasyon, \"eller direksiyonda olmasa bile sürücünün gözünün yolda olduğu\" gelişmiş destek sistemlerine kapı açıyor. Bu regülasyon Türkiye’de yürürlüğe girdiğinde (veya uyumlaştırıldığında) Tesla Türkiye’nin yapacağı başvuru içinyasal zemin oluşmuş olacak. Ek olarak Hollanda'nın verdiği onay şu an için ulusal/geçici nitelikte. RDW metninde belirtildiği gibi, sistemin tüm AB'de geçerli olması içinAvrupa Komisyonu'nun oylaması gerekiyor. Eğer Avrupa Komisyonu bu sistemi \"AB Tip Onayı\" kapsamına alırsa Türkiye, Avrupa'daki sertifikasyonu baz alarak sistemiTürkiye’de çok daha hızlı onaylayabilir. Dolayısıyla Tesla FSD Türkiye’ye ne zaman gelecek? Sorusuna kesin bir cevap vermek şimdilik imkansız ancak artık bunun çok uzakta olmadığını söylemek mümkün. Tesla, 2026 yazında Avrupa genelinde daha geniş bir yayılımı hedefliyor. Bu da FSD'nin Türkiye yolculuğunun 2026 içinde olabileceğine işaret ediyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B07C1SBHTF https://www.amazon.com.tr/dp/B0CYSSG6LL https://www.n11.com/urun/merrell-hydro-runner-siyah-erkek-outdoor-ayakkabi-27256204?numara=46&magaza=spx https://www.amazon.com.tr/dp/B07YNBNB7V?th=1 https://store.steampowered.com/app/3027490/LivingForest https://www.migros.com.tr/hamidiye-kaynak-suyu-pet-5-l-p-7a8047"
+        },
+        "post_text": "🚗 TESLA FSD AVRUPA’DA İLK ONAYINI ALDI\n\nTesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.\n\nTesla’nın sosyal medya üzerinden yaptığı açıklamaya göre, sistem kısa süre içinde Hollanda’da kullanıma sunulacak. Bu gelişmenin, diğer Avrupa ülkelerinde de benzer onay süreçlerinin önünü açabileceği değerlendiriliyor.\n\nFSD, Hollanda’da aylık 99 euro veya 7.500 euro’luk tek seferlik ödeme karşılığında satın alınabiliyor. Almanya, Fransa ve İtalya'nın muhtemelen 4-8 hafta içinde harekete geçen ilk ülkeler arasında olması bekleniyor.\n\nFSD Supervised veya FSD Denetimli, tam otonom bir sürüş sistemi değil, gelişmiş bir sürüş destek teknolojisi olarak tanımlanıyor. Araç, birçok sürüş görevini üstlenebiliyor ancak direksiyon başındaki kişinin sorumluluğu tamamen ortadan kalkmıyor.\n\nSürücünün dikkat seviyesi sürekli olarak izleniyor. Araç içindeki sensörler, sürücünün gözlerini yolda tutup tutmadığını ve gerektiğinde direksiyonu devralmaya hazır olup olmadığını kontrol ediyor.\n\nFSD sistemi Türkiye’ye ne zaman gelebilir?",
+        "post_text_length": 1155
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-11T09:00:52.920791+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+          "link": "https://www.donanimhaber.com/tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi--204329",
+          "published": "2026-04-10T23:05:00+00:00",
+          "summary": "Tesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204329/1400x788tesla-fsd-avrupa-daki-ilk-onayini-resmen-hollanda-da-aldi.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "aldi-avrupa-fsd-gelir-onayini-tesla-turkiye-zaman",
+          "base_ai_score": 80,
+          "score": 83,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 2,
+          "full_text": "Tesla’nın sosyal medya üzerinden yaptığı açıklamaya göre, sistem kısa süre içinde Hollanda’da kullanıma sunulacak. Bu gelişmenin, diğer Avrupa ülkelerinde de benzer onay süreçlerinin önünü açabileceği değerlendiriliyor. Halihazırda Tesla’nın sitesine göre FSD, Hollanda’daaylık 99 euroveya 7.5000 euro’luk tek seferlik ödemekarşılığında satın alınabiliyor. Almanya (KBA), Fransa ve İtalya'nın muhtemelen 4-8 hafta içinde harekete geçen ilk ülkeler arasında olması bekleniyor. Hollanda araç otoritesi RDW tarafından yapılan detaylı açıklama, sistemin sınırlarını net şekilde ortaya koyuyor. FSD Supervised veya FSD Denetimli, tam otonom bir sürüş sistemi değil, gelişmiş bir sürüş destek teknolojisi olarak tanımlanıyor. Bu kapsamda araç, birçok sürüş görevini üstlenebiliyor ancak direksiyon başındaki kişinin sorumluluğu tamamen ortadan kalkmıyor. Sistem aktifken sürücünün dikkat seviyesi sürekli olarak izleniyor. Araç içindeki sensörler, sürücünün gözlerini yolda tutup tutmadığını ve gerektiğinde direksiyonu devralmaya hazır olup olmadığını kontrol ediyor. Sürücünün ellerinin direksiyon üzerinde olması zorunlu değil ancak her an müdahale edebilecek durumda olması gerekiyor. Dikkat eksikliği tespit edildiğinde ise çeşitli uyarılar devreye giriyor ve sürücüden aktif katılım bekleniyor. Sürekli ihlal durumunda sistem geçici olarak devre dışı bırakılabiliyor. Bu nedenle, sistem açıkken sürücünün dikkatini dağıtacak aktivitelerde bulunması mümkün değil. RDW, özellikle araç içinde gazete okumak gibi davranışların hem yasak hem de teknik olarak engellendiğini vurguluyor. FSD Denetimli yazılımı, Hollanda’da onay almadan önce bir buçuk yıldan uzun süren kapsamlı testlerden geçti. Bu testler hem özel test pistlerinde hem de gerçek trafik koşullarında gerçekleştirildi. RDW, güvenliğin öncelikli kriter olduğunu belirtirken sistemin doğru kullanıldığında trafik güvenliğine olumlu katkı sağlayabileceğini ifade ediyor. Tesla’nın bu sistemi ABD’de halihazırda kullanılabiliyor olsa da Avrupa’daki versiyonunbirebir aynı olmadığıözellikle vurgulanıyor. RDW’ye göre bunun temel nedeni, iki bölge arasındaki düzenleyici yaklaşım farkı. ABD’de araçlar genellikle üretici beyanına dayalı olarak yollara çıkarken Avrupa’da önceden alınması gereken tip onayı zorunlu. Üstelik Avrupa Birliği, güvenlik ve çevre standartları konusunda daha katı kurallar uyguluyor. Bu nedenle Tesla’nın Avrupa’daki yazılım versiyonu, ABD’deki sürümle aynı özellikleri taşımayabiliyor ve doğrudan karşılaştırılamıyor. Şu an için verilen onay yalnızca Hollanda ile sınırlı. Ancak süreç burada sona ermiyor. RDW’ninAvrupa Komisyonu’na başvuru yapmasıve üye ülkelerin oylamasıyla birlikte sistemintüm Avrupa Birliği’nde geçerli hale gelmesi mümkün. Bu aşamada üye ülkelerin çoğunluğunun onayı gerekiyor. Eğer süreç olumlu sonuçlanırsa Tesla’nın sürüş destek sistemi Avrupa genelinde kullanılabilir hale gelecek. Hollanda’nın (RDW) Tesla’nın “Full Self-Driving Supervised” yazılımına onay vermesi, Avrupa ve dolaylı olarak Türkiye için “buzkıran” etkisi taşıyan bir adım. Türkiye, Avrupa Birliği üyesi olmasa da otomotiv mevzuatındaAB ve Birleşmiş Milletler Avrupa Ekonomik Komisyonu(UN/ECE) regülasyonlarını (başta MARTOY - Motorlu Araçlar ve Römorkları Tip Onayı Yönetmeliği) doğrudan takip ediyor. Hollanda’nın bu onayı vermesini sağlayan asıl gelişme, UN/ECE bünyesinde kabul edilenUN R171(DCAS - Driver Control Assistance Systems) regülasyonu. Bu regülasyon, \"eller direksiyonda olmasa bile sürücünün gözünün yolda olduğu\" gelişmiş destek sistemlerine kapı açıyor. Bu regülasyon Türkiye’de yürürlüğe girdiğinde (veya uyumlaştırıldığında) Tesla Türkiye’nin yapacağı başvuru içinyasal zemin oluşmuş olacak. Ek olarak Hollanda'nın verdiği onay şu an için ulusal/geçici nitelikte. RDW metninde belirtildiği gibi, sistemin tüm AB'de geçerli olması içinAvrupa Komisyonu'nun oylaması gerekiyor. Eğer Avrupa Komisyonu bu sistemi \"AB Tip Onayı\" kapsamına alırsa Türkiye, Avrupa'daki sertifikasyonu baz alarak sistemiTürkiye’de çok daha hızlı onaylayabilir. Dolayısıyla Tesla FSD Türkiye’ye ne zaman gelecek? Sorusuna kesin bir cevap vermek şimdilik imkansız ancak artık bunun çok uzakta olmadığını söylemek mümkün. Tesla, 2026 yazında Avrupa genelinde daha geniş bir yayılımı hedefliyor. Bu da FSD'nin Türkiye yolculuğunun 2026 içinde olabileceğine işaret ediyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B07C1SBHTF https://www.amazon.com.tr/dp/B0CYSSG6LL https://www.n11.com/urun/merrell-hydro-runner-siyah-erkek-outdoor-ayakkabi-27256204?numara=46&magaza=spx https://www.amazon.com.tr/dp/B07YNBNB7V?th=1 https://store.steampowered.com/app/3027490/LivingForest https://www.migros.com.tr/hamidiye-kaynak-suyu-pet-5-l-p-7a8047",
+          "image_source": "rss_image"
+        },
+        "post_text": "🚗 TESLA FSD AVRUPA’DA İLK ONAYINI ALDI\n\nTesla’nın FSD sistemi Hollanda’da onay alarak Avrupa’da bir ilke imza attı. Avrupa’daki ilk onayı kıta geneline yayılması hedeflenirken FSD’nin Türkiye ayağının da hızlanması bekleniyor.\n\nTesla’nın sosyal medya üzerinden yaptığı açıklamaya göre, sistem kısa süre içinde Hollanda’da kullanıma sunulacak. Bu gelişmenin, diğer Avrupa ülkelerinde de benzer onay süreçlerinin önünü açabileceği değerlendiriliyor.\n\nFSD, Hollanda’da aylık 99 euro veya 7.500 euro’luk tek seferlik ödeme karşılığında satın alınabiliyor. Almanya, Fransa ve İtalya'nın muhtemelen 4-8 hafta içinde harekete geçen ilk ülkeler arasında olması bekleniyor.\n\nFSD Supervised veya FSD Denetimli, tam otonom bir sürüş sistemi değil, gelişmiş bir sürüş destek teknolojisi olarak tanımlanıyor. Araç, birçok sürüş görevini üstlenebiliyor ancak direksiyon başındaki kişinin sorumluluğu tamamen ortadan kalkmıyor.\n\nSürücünün dikkat seviyesi sürekli olarak izleniyor. Araç içindeki sensörler, sürücünün gözlerini yolda tutup tutmadığını ve gerektiğinde direksiyonu devralmaya hazır olup olmadığını kontrol ediyor.\n\nFSD sistemi Türkiye’ye ne zaman gelebilir?",
+        "image_path": "/tmp/otoxtra_rss_x6fz892m.jpg",
+        "image_source": "rss_image"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-11T09:00:54.123999+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122162056460916499",
+        "article_title": "Tesla FSD, Avrupa’daki ilk onayını aldı: Türkiye'ye ne zaman gelir?",
+        "image_source": "rss_image",
+        "test_mode": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-11T09:03:00.778849+03:00"
     }
   }
 }
