@@ -1,43 +1,14 @@
 {
-  "run_id": "2026-04-11-16:56",
+  "run_id": "2026-04-11-18:32",
   "status": "error",
-  "started_at": "2026-04-11T16:56:04.857874+03:00",
-  "updated_at": "2026-04-11T16:56:20.046210+03:00",
+  "started_at": "2026-04-11T18:32:54.635755+03:00",
+  "updated_at": "2026-04-11T18:32:58.405927+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Nissan'ın yeni elektrikli SUV modeli ortalığı karıştırdı: 30 dakikada 8.500 sipariş",
-            "link": "https://www.donanimhaber.com/nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi--204324",
-            "published": "2026-04-11T12:30:00+00:00",
-            "summary": "Nissan'ın yeni tanıttığı elektrikli SUV modeli piyasaya fırtına gibi bir giriş yaptı. Çin'de ön siparişe açılan NX8, ilk yarım saat içinde yaklaşık 8.500 adet sipariş toplayarak rekor kırdı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204324/1400x788nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "500-dakikada-elektrikli-karistirdi-modeli-nissan-ortaligi-siparis-suv"
-          },
-          {
-            "title": "Makyajlı BMW M5 Nürburgring'de görüntülendi",
-            "link": "https://tr.motor1.com/news/792695/makyajli-m5-ring-casus/",
-            "published": "2026-04-11T13:00:00+00:00",
-            "summary": "Yeni 3 Serisi’ne benzer bir tasarım dili sergiliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/nAqAvx/s3/bmw-m5-restyling-2027-il-render-di-motor1.com.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-goruntulendi-makyajli-nurburgring"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -66,106 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-11T16:56:09.762406+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-11T18:32:58.405927+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Nissan'ın yeni elektrikli SUV modeli ortalığı karıştırdı: 30 dakikada 8.500 sipariş",
-          "link": "https://www.donanimhaber.com/nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi--204324",
-          "published": "2026-04-11T12:30:00+00:00",
-          "summary": "Nissan'ın yeni tanıttığı elektrikli SUV modeli piyasaya fırtına gibi bir giriş yaptı. Çin'de ön siparişe açılan NX8, ilk yarım saat içinde yaklaşık 8.500 adet sipariş toplayarak rekor kırdı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204324/1400x788nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "500-dakikada-elektrikli-karistirdi-modeli-nissan-ortaligi-siparis-suv",
-          "base_ai_score": 83,
-          "score": 92,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2
-        },
-        "score": 92,
-        "title": "Nissan'ın yeni elektrikli SUV modeli ortalığı karıştırdı: 30 dakikada 8.500 sipariş",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 7,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T16:56:14.079185+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Nissan'ın yeni elektrikli SUV modeli ortalığı karıştırdı: 30 dakikada 8.500 sipariş",
-          "link": "https://www.donanimhaber.com/nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi--204324",
-          "published": "2026-04-11T12:30:00+00:00",
-          "summary": "Nissan'ın yeni tanıttığı elektrikli SUV modeli piyasaya fırtına gibi bir giriş yaptı. Çin'de ön siparişe açılan NX8, ilk yarım saat içinde yaklaşık 8.500 adet sipariş toplayarak rekor kırdı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204324/1400x788nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "500-dakikada-elektrikli-karistirdi-modeli-nissan-ortaligi-siparis-suv",
-          "base_ai_score": 83,
-          "score": 92,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "NX8, boyutlarıyla Nissan'ın popüler SUV modelleri Rogue ve Ariya'yı geride bırakıyor.4.870 mmuzunluğa ve2.917 mmaks mesafesine sahip olan araç, markanın şimdiye kadarkien teknolojikmodellerinden biri olarak sunuldu. Dongfeng'in platformu üzerine inşa edilen bu yeni SUV, gelişmiş araç kontrol üniteleri ve akıllı sistemlerle donatılmış durumda. 800V'luk \"Tianyan Architecture 2.0\" platformu üzerinde yükselen NX8, 5C ultra hızlı şarj desteği sayesinde%10'dan %80 doluluğa sadece 12 dakikadaulaşabilmekte. Araç iki farklı versiyonla satışa sunuluyor. Tamamen elektrikli versiyon81 kWhkapasiteli LFP bataryasıyla CLTC standartlarına göre650 km'ye kadar menzil sunarken,288 ve 335 beygirgücünde iki farklı seçenekle geliyor. Aracın iç tasarımı oldukça fütüristik detaylar barındırıyor. Kabinde62 inçlikdevasa artırılmış gerçeklik (AR) baş üstü göstergesi (HUD),15.6 inçlikçift bilgi-eğlence ekranı ve10.25 inçdijital gösterge paneli mevcut. Güvenlik tarafında ise tavana monte edilmişLiDARve toplam 29 sensör ile donatılan araç, şehir içi ve otoyol kullanımındanavigasyon destekli otopilot(NOA) ve akıllı park asistanı gibi özellikler sunuyor. Nissan NX8'ten sipariş rekoru Görselleri(41)Aç Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C662D7FV https://www.amazon.com.tr/dp/B07C1SBHTF https://www.amazon.com.tr/dp/B07YNBNB7V?th=1 https://www.amazon.com.tr/dp/B09KY5L37D?th=1 https://www.idefix.com/timberland-greenstride-motion-6-mid-lace-up-hiking-erkek-kahverengi-bot-tb0a6cwnen31-p-13286888 https://store.steampowered.com/app/1987400/Death_Relives"
-        },
-        "post_text": "⚡️ NİSSAN'DAN ELEKTRİKLİ SUV İLE BÜYÜK SÜRPRİZ!\n\nNissan'ın yeni elektrikli SUV modeli NX8, Çin'de ön siparişe açılır açılmaz büyük ilgi gördü.\n\nİlk yarım saatte tam 8.500 sipariş alarak adeta yok sattı!\n\nBu yeni model, Nissan'ın popüler SUV'larını geride bırakan boyutlarıyla dikkat çekiyor.\n\nEn teknolojik modellerinden biri olarak tanıtılan NX8, 5C ultra hızlı şarj özelliğiyle sadece 12 dakikada %80 doluluğa ulaşıyor.\n\nİç tasarımı da oldukça fütüristik; devasa ekranlar ve akıllı sistemlerle dolu.\n\nŞehir içi ve otoyol kullanımı için gelişmiş otopilot ve park asistanı gibi özellikler de cabası.\n\nSizce bu kadar kısa sürede bu kadar sipariş alması, aracın ne kadar iddialı olduğunun bir göstergesi mi?",
-        "post_text_length": 705
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T16:56:18.821203+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Nissan'ın yeni elektrikli SUV modeli ortalığı karıştırdı: 30 dakikada 8.500 sipariş",
-          "link": "https://www.donanimhaber.com/nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi--204324",
-          "published": "2026-04-11T12:30:00+00:00",
-          "summary": "Nissan'ın yeni tanıttığı elektrikli SUV modeli piyasaya fırtına gibi bir giriş yaptı. Çin'de ön siparişe açılan NX8, ilk yarım saat içinde yaklaşık 8.500 adet sipariş toplayarak rekor kırdı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204324/1400x788nissan-in-yeni-elektrikli-suv-si-yarim-saatte-8-500-siparis-aldi.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "500-dakikada-elektrikli-karistirdi-modeli-nissan-ortaligi-siparis-suv",
-          "base_ai_score": 83,
-          "score": 92,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "NX8, boyutlarıyla Nissan'ın popüler SUV modelleri Rogue ve Ariya'yı geride bırakıyor.4.870 mmuzunluğa ve2.917 mmaks mesafesine sahip olan araç, markanın şimdiye kadarkien teknolojikmodellerinden biri olarak sunuldu. Dongfeng'in platformu üzerine inşa edilen bu yeni SUV, gelişmiş araç kontrol üniteleri ve akıllı sistemlerle donatılmış durumda. 800V'luk \"Tianyan Architecture 2.0\" platformu üzerinde yükselen NX8, 5C ultra hızlı şarj desteği sayesinde%10'dan %80 doluluğa sadece 12 dakikadaulaşabilmekte. Araç iki farklı versiyonla satışa sunuluyor. Tamamen elektrikli versiyon81 kWhkapasiteli LFP bataryasıyla CLTC standartlarına göre650 km'ye kadar menzil sunarken,288 ve 335 beygirgücünde iki farklı seçenekle geliyor. Aracın iç tasarımı oldukça fütüristik detaylar barındırıyor. Kabinde62 inçlikdevasa artırılmış gerçeklik (AR) baş üstü göstergesi (HUD),15.6 inçlikçift bilgi-eğlence ekranı ve10.25 inçdijital gösterge paneli mevcut. Güvenlik tarafında ise tavana monte edilmişLiDARve toplam 29 sensör ile donatılan araç, şehir içi ve otoyol kullanımındanavigasyon destekli otopilot(NOA) ve akıllı park asistanı gibi özellikler sunuyor. Nissan NX8'ten sipariş rekoru Görselleri(41)Aç Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C662D7FV https://www.amazon.com.tr/dp/B07C1SBHTF https://www.amazon.com.tr/dp/B07YNBNB7V?th=1 https://www.amazon.com.tr/dp/B09KY5L37D?th=1 https://www.idefix.com/timberland-greenstride-motion-6-mid-lace-up-hiking-erkek-kahverengi-bot-tb0a6cwnen31-p-13286888 https://store.steampowered.com/app/1987400/Death_Relives",
-          "image_source": "rss_image"
-        },
-        "post_text": "⚡️ NİSSAN'DAN ELEKTRİKLİ SUV İLE BÜYÜK SÜRPRİZ!\n\nNissan'ın yeni elektrikli SUV modeli NX8, Çin'de ön siparişe açılır açılmaz büyük ilgi gördü.\n\nİlk yarım saatte tam 8.500 sipariş alarak adeta yok sattı!\n\nBu yeni model, Nissan'ın popüler SUV'larını geride bırakan boyutlarıyla dikkat çekiyor.\n\nEn teknolojik modellerinden biri olarak tanıtılan NX8, 5C ultra hızlı şarj özelliğiyle sadece 12 dakikada %80 doluluğa ulaşıyor.\n\nİç tasarımı da oldukça fütüristik; devasa ekranlar ve akıllı sistemlerle dolu.\n\nŞehir içi ve otoyol kullanımı için gelişmiş otopilot ve park asistanı gibi özellikler de cabası.\n\nSizce bu kadar kısa sürede bu kadar sipariş alması, aracın ne kadar iddialı olduğunun bir göstergesi mi?",
-        "image_path": "/tmp/otoxtra_rss__4gp1x2h.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T16:56:20.040035+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "error",
+      "status": "waiting",
       "output": null,
-      "error": "Rastgele atlama",
-      "updated_at": "2026-04-11T16:56:20.046210+03:00"
+      "error": null,
+      "updated_at": null
     }
   }
 }
