@@ -1,57 +1,14 @@
 {
-  "run_id": "2026-04-11-12:37",
-  "status": "completed",
-  "started_at": "2026-04-11T12:37:06.415309+03:00",
-  "updated_at": "2026-04-11T12:38:21.195744+03:00",
+  "run_id": "2026-04-11-14:32",
+  "status": "error",
+  "started_at": "2026-04-11T14:32:34.062695+03:00",
+  "updated_at": "2026-04-11T14:32:37.776572+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-            "link": "https://www.donanimhaber.com/video-oynatabilen-ekranlara-21-bin-tl-ceza--204333",
-            "published": "2026-04-11T09:00:40+00:00",
-            "summary": "Bu videoda Türkiye’de otomobil dünyasını etkileyen en güncel gelişmeleri inceliyoruz. Araç içi ekran cezası ve yeni trafik yönetmeliği 2026 ile gelen değişiklikler sürücüleri doğrudan etkiliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204333/1400x788video-oynatabilen-ekranlara-21-bin-tl-ceza.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bin-byd-ceza-ceza-dolar-ekranlara-geliyor-milyar-oynatabilen-video"
-          },
-          {
-            "title": "Ford Trucks, Eskişehir’de hayata geçirilmesi planlanan Kamyon Yeşil Dönüşüm Projesi’ni duyurdu",
-            "link": "https://www.log.com.tr/ford-trucks-eskisehirde-hayata-gecirilmesi-planlanan-kamyon-yesil-donusum-projesini-duyurdu/",
-            "published": "2026-04-11T09:02:15+00:00",
-            "summary": "Ford Otosan’ın global ağır ticari araç markası Ford Trucks, Eskişehir’de hayata geçirilmesi planlanan Kamyon Yeşil Dönüşüm Projesi’ni duyurdu. Bu konuda yapılan resmi açıklamada, “Kamyon Yeşil Dönüşüm Projesi ile mevcut üretim ve mühendislik altyapısının; elektrikli, hidrojenli ve yeni nesil içten yanmalı teknolojileri kapsayacak şekilde kademeli olarak geliştirilmesi hedefleniyor. Proje ile farklı güç aktarma teknolojilerini aynı tesis içinde geliştirebilen ve üretebilen esnek ve güçlü bir yapı oluşturulması amaçlanıyor. Dönüşüm kapsamında; elektrikli kamyonlar, hidrojen bazlı güç sistemleri, Euro-7 uyumlu yeni nesil motorlar ve yeni kabin mimarileri birlikte ele alınıyor. Bu yapı, farklı teknolojilerin tek bir hatta toplanmasından ziyade, aynı üretim ve mühendislik altyapısı içinde esnek şekilde geliştirilebildiği ve ölçeklenebildiği bir model sunuyor.” ifadelerine yer verildi. Türkiye’de ağır ticari araçlar için hem motor hem şanzıman geliştiren ve üreten tek üretici olduğunu belirten Ford Otosan, proje hakkında ek olarak şu bilgileri verdi: “Bu kapsamda, Euro-7 emisyon standartlarına uyum, sıfır emisyonlu araç üretimi ve Avrupa Birliği […] Ford Trucks, Eskişehir’de hayata geçirilmesi planlanan Kamyon Yeşil Dönüşüm Projesi’ni duyurdu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-11_12-01-20_4XWQq-660x371.jpg",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "donusum-duyurdu-eskisehir-ford-gecirilmesi-hayata-kamyon-planlanan-projesi-trucks-yesil"
-          },
-          {
-            "title": "Ferrari, Luce'yi geliştirmek için NASA'nın yardımına başvurmuş",
-            "link": "https://tr.motor1.com/news/792689/ferrari-cok-hizli-nasa-yardim/",
-            "published": "2026-04-11T09:00:00+00:00",
-            "summary": "Yolcuların hızlanma anında rahatsız olmaması için çalıştılar.",
-            "image_url": "https://cdn.motor1.com/images/mgl/KbMpeb/s3/ferrari-luce-cambio.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "basvurmus-ferrari-gelistirmek-luce-nasa-yardimina"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -80,112 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-11T12:37:11.563109+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-11T14:32:37.776572+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-          "link": "https://www.donanimhaber.com/video-oynatabilen-ekranlara-21-bin-tl-ceza--204333",
-          "published": "2026-04-11T09:00:40+00:00",
-          "summary": "Bu videoda Türkiye’de otomobil dünyasını etkileyen en güncel gelişmeleri inceliyoruz. Araç içi ekran cezası ve yeni trafik yönetmeliği 2026 ile gelen değişiklikler sürücüleri doğrudan etkiliyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204333/1400x788video-oynatabilen-ekranlara-21-bin-tl-ceza.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "bin-byd-ceza-ceza-dolar-ekranlara-geliyor-milyar-oynatabilen-video",
-          "base_ai_score": 85,
-          "score": 97,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2
-        },
-        "score": 97,
-        "title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T12:37:15.508322+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-          "link": "https://www.donanimhaber.com/video-oynatabilen-ekranlara-21-bin-tl-ceza--204333",
-          "published": "2026-04-11T09:00:40+00:00",
-          "summary": "Bu videoda Türkiye’de otomobil dünyasını etkileyen en güncel gelişmeleri inceliyoruz. Araç içi ekran cezası ve yeni trafik yönetmeliği 2026 ile gelen değişiklikler sürücüleri doğrudan etkiliyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204333/1400x788video-oynatabilen-ekranlara-21-bin-tl-ceza.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "bin-byd-ceza-ceza-dolar-ekranlara-geliyor-milyar-oynatabilen-video",
-          "base_ai_score": 85,
-          "score": 97,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Bu videoda Türkiye’de otomobil dünyasını yakından ilgilendiren en güncel gelişmeleri ele alıyoruz. Özellikle yeniaraç içi ekran cezasıveyeni trafik yönetmeliği 2026kapsamında gelen düzenlemeler sürücüleri ciddi şekilde etkileyebilir. Araç içi multimedya kullanımı artık daha sıkı denetlenirken, yüksek cezalar gündemde. Ayrıca elektrikli otomobil tarafında da büyük yenilikler var.Elektrikli araç batarya değişimiteknolojisi sayesinde artık şarj bekleme derdi ortadan kalkabilir. Bunun yanındaGeely hızlı şarjteknolojisi ile saniyeler içinde menzil kazanmak mümkün hale geliyor. Gündemdeki bir diğer önemli konu iseBYD ceza Türkiyeiddiaları. Çinli otomotiv devine kesilebileceği konuşulan yüksek cezalar sektörde büyük yankı uyandırdı. Bunun yanı sıra uygun fiyatlı SUV modeliyle dikkat çeken Chery’nin yeni hamlesini de inceliyoruz. Tüm bu gelişmeler ışığında otomotiv dünyasında nelerin değiştiğini, sürücüleri nelerin beklediğini ve bu yeniliklerin gerçekten ne anlama geldiğini detaylı şekilde anlatıyoruz. Siz bu yeni düzenlemeler ve teknolojiler hakkında ne düşünüyorsunuz? Yorumlarda mutlaka paylaşın! 02:50- Multimedya ve ses sistemi yasağının detayları 13:52- BYD'ye 1 milyar dolar ceza mı geliyor? 28:15- 99 saniyede batarya değiştirebilen elektrikli otomobil 38:09- Çinli Geely'den sadece 8,5 dakikada %10-97 şarj 44:35- Yeni Chery Tiggo 7L Çin'de satışa çıktı"
-        },
-        "post_text": "📺 YENİ DÜZENLEMELER OTOMOBİL DÜNYASINI SARSTI!\n\nTürkiye'de otomobil dünyasını yakından ilgilendiren güncel gelişmeler var. Araç içi ekran kullanımına getirilen cezalar ve 2026 trafik yönetmeliği sürücüleri doğrudan etkileyecek.\n\nMultimedya sistemlerinin kullanımı daha sıkı denetlenirken, yüksek cezalar gündemde. Elektrikli araç teknolojisinde de şarj bekleme derdini ortadan kaldıracak batarya değişim sistemleri ve saniyeler içinde menzil kazandıran hızlı şarj teknolojileri geliyor.\n\nAyrıca, BYD'ye kesilebileceği konuşulan yüksek cezalar sektörde yankı uyandırdı. Chery'nin uygun fiyatlı SUV modeliyle ilgili yeni hamlesi de merak konusu.\n\nBu yenilikler otomotiv dünyasında neleri değiştirecek? Sürücüleri neler bekliyor?\n\nSiz bu yeni düzenlemeler ve teknolojiler hakkında ne düşünüyorsunuz?",
-        "post_text_length": 796
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T12:37:18.298951+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-          "link": "https://www.donanimhaber.com/video-oynatabilen-ekranlara-21-bin-tl-ceza--204333",
-          "published": "2026-04-11T09:00:40+00:00",
-          "summary": "Bu videoda Türkiye’de otomobil dünyasını etkileyen en güncel gelişmeleri inceliyoruz. Araç içi ekran cezası ve yeni trafik yönetmeliği 2026 ile gelen değişiklikler sürücüleri doğrudan etkiliyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204333/1400x788video-oynatabilen-ekranlara-21-bin-tl-ceza.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "bin-byd-ceza-ceza-dolar-ekranlara-geliyor-milyar-oynatabilen-video",
-          "base_ai_score": 85,
-          "score": 97,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Bu videoda Türkiye’de otomobil dünyasını yakından ilgilendiren en güncel gelişmeleri ele alıyoruz. Özellikle yeniaraç içi ekran cezasıveyeni trafik yönetmeliği 2026kapsamında gelen düzenlemeler sürücüleri ciddi şekilde etkileyebilir. Araç içi multimedya kullanımı artık daha sıkı denetlenirken, yüksek cezalar gündemde. Ayrıca elektrikli otomobil tarafında da büyük yenilikler var.Elektrikli araç batarya değişimiteknolojisi sayesinde artık şarj bekleme derdi ortadan kalkabilir. Bunun yanındaGeely hızlı şarjteknolojisi ile saniyeler içinde menzil kazanmak mümkün hale geliyor. Gündemdeki bir diğer önemli konu iseBYD ceza Türkiyeiddiaları. Çinli otomotiv devine kesilebileceği konuşulan yüksek cezalar sektörde büyük yankı uyandırdı. Bunun yanı sıra uygun fiyatlı SUV modeliyle dikkat çeken Chery’nin yeni hamlesini de inceliyoruz. Tüm bu gelişmeler ışığında otomotiv dünyasında nelerin değiştiğini, sürücüleri nelerin beklediğini ve bu yeniliklerin gerçekten ne anlama geldiğini detaylı şekilde anlatıyoruz. Siz bu yeni düzenlemeler ve teknolojiler hakkında ne düşünüyorsunuz? Yorumlarda mutlaka paylaşın! 02:50- Multimedya ve ses sistemi yasağının detayları 13:52- BYD'ye 1 milyar dolar ceza mı geliyor? 28:15- 99 saniyede batarya değiştirebilen elektrikli otomobil 38:09- Çinli Geely'den sadece 8,5 dakikada %10-97 şarj 44:35- Yeni Chery Tiggo 7L Çin'de satışa çıktı",
-          "image_source": "rss_image"
-        },
-        "post_text": "📺 YENİ DÜZENLEMELER OTOMOBİL DÜNYASINI SARSTI!\n\nTürkiye'de otomobil dünyasını yakından ilgilendiren güncel gelişmeler var. Araç içi ekran kullanımına getirilen cezalar ve 2026 trafik yönetmeliği sürücüleri doğrudan etkileyecek.\n\nMultimedya sistemlerinin kullanımı daha sıkı denetlenirken, yüksek cezalar gündemde. Elektrikli araç teknolojisinde de şarj bekleme derdini ortadan kaldıracak batarya değişim sistemleri ve saniyeler içinde menzil kazandıran hızlı şarj teknolojileri geliyor.\n\nAyrıca, BYD'ye kesilebileceği konuşulan yüksek cezalar sektörde yankı uyandırdı. Chery'nin uygun fiyatlı SUV modeliyle ilgili yeni hamlesi de merak konusu.\n\nBu yenilikler otomotiv dünyasında neleri değiştirecek? Sürücüleri neler bekliyor?\n\nSiz bu yeni düzenlemeler ve teknolojiler hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_rss_5u1ywvls.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T12:37:19.741602+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162078072916499",
-        "article_title": "Video oynatabilen ekranlara 21 bin TL ceza! BYD'ye 1 milyar dolar ceza mı geliyor?",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-11T12:38:21.195744+03:00"
+      "updated_at": null
     }
   }
 }
