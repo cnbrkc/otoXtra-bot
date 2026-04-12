@@ -1,29 +1,43 @@
 {
-  "run_id": "2026-04-12-09:30",
+  "run_id": "2026-04-12-11:03",
   "status": "completed",
-  "started_at": "2026-04-12T09:30:03.397385+03:00",
-  "updated_at": "2026-04-12T09:32:23.732968+03:00",
+  "started_at": "2026-04-12T11:03:06.815444+03:00",
+  "updated_at": "2026-04-12T11:06:52.897493+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
-            "link": "https://www.donanimhaber.com/cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak--204346",
-            "published": "2026-04-11T20:01:09+00:00",
-            "summary": "Çinli uzman Ouyang Minggao’ya göre şarj edilebilir hibritler düşüşe geçti. 2040’a kadar verimlilik avantajı dönüşümü hızlandıracak ve saf elektrikli araçlar pazara hakim olacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204346/1400x788cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak.jpg",
+            "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
+            "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
+            "published": "2026-04-12T08:00:00+00:00",
+            "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "2040-araclar-cin-elektrikli-ulasacak-zirveye"
+            "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super"
+          },
+          {
+            "title": "Otomobillerde yeni trend: Sürücü destek sistemleri abonelik modeline geçiyor",
+            "link": "https://www.donanimhaber.com/otomobillerde-ucretli-surus-asistani-ozellikleri-yayginlasiyor--204336",
+            "published": "2026-04-12T07:00:00+00:00",
+            "summary": "Otomotiv sektöründe abonelik temelli özellikler, üreticiler için önemli bir gelir kapısına dönüşüyor. Şirketler özellikle sürüş destek sistemlerini abonelikle sunarak gelirlerini artırmayı hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204336/1400x788otomobillerde-ucretli-surus-asistani-ozellikleri-yayginlasiyor.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "abonelik-destek-geciyor-modeline-otomobillerde-sistemleri-surucu-trend"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -53,111 +67,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-12T09:30:06.930936+03:00"
+      "updated_at": "2026-04-12T11:03:10.953958+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
-          "link": "https://www.donanimhaber.com/cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak--204346",
-          "published": "2026-04-11T20:01:09+00:00",
-          "summary": "Çinli uzman Ouyang Minggao’ya göre şarj edilebilir hibritler düşüşe geçti. 2040’a kadar verimlilik avantajı dönüşümü hızlandıracak ve saf elektrikli araçlar pazara hakim olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204346/1400x788cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak.jpg",
+          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
+          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
+          "published": "2026-04-12T08:00:00+00:00",
+          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "2040-araclar-cin-elektrikli-ulasacak-zirveye",
+          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
           "base_ai_score": 78,
-          "score": 81,
+          "score": 90,
           "score_reason": "ai_scored",
-          "freshness_bonus": 1,
+          "freshness_bonus": 10,
           "trend_bonus_raw": 2
         },
-        "score": 81,
-        "title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
+        "score": 90,
+        "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
         "trend_count": 1,
         "trend_bonus": 2,
-        "freshness_bonus": 1,
+        "freshness_bonus": 10,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-12T09:30:08.918400+03:00"
+      "updated_at": "2026-04-12T11:03:13.905187+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
-          "link": "https://www.donanimhaber.com/cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak--204346",
-          "published": "2026-04-11T20:01:09+00:00",
-          "summary": "Çinli uzman Ouyang Minggao’ya göre şarj edilebilir hibritler düşüşe geçti. 2040’a kadar verimlilik avantajı dönüşümü hızlandıracak ve saf elektrikli araçlar pazara hakim olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204346/1400x788cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak.jpg",
+          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
+          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
+          "published": "2026-04-12T08:00:00+00:00",
+          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "2040-araclar-cin-elektrikli-ulasacak-zirveye",
+          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
           "base_ai_score": 78,
-          "score": 81,
+          "score": 90,
           "score_reason": "ai_scored",
-          "freshness_bonus": 1,
+          "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Pekin'de düzenlenen Intelligent Electric Vehicle Development Forum kapsamında konuşan Ouyang Minggao, otomotiv sektörünün geleceğine dair çarpıcı açıklamalarda bulundu. Tsinghua Üniversitesi'nde profesör olan Ouyang, şarj edilebilir hibrit ve menzil uzatıcı elektrikli araçların düşüşe geçtiğini belirterek,2040 yılına kadar saf elektrikli araçların Çin pazarında mutlak hakimiyet kuracağınıbelirtti. Ouyang, sektörün geleceğine dair dikkat çekici pazar öngörülerini de paylaştı. 2030 yılında yeni enerjili binek araçların pazar payının yüzde 70’i aşması beklenirken, saf elektrikli ve şarj edilebilir hibrit oranının 7’ye 3 olacağı öngörülüyor. 2035’te bu oran yüzde 80’in üzerine çıkarken dağılımın 8’e 2’ye ulaşacağı tahmin ediliyor. 2040 yılına gelindiğinde ise pazar payı yine yüzde 80’in üzerinde kalacak, ancak saf elektrikli araçlar 9’a 1 oranıyla baskın konuma geçecek. Katı hal bataryalara yönelik artan ilgi konusunda ise temkinli olunması gerektiğini belirten Ouyang, bu teknolojinin hâlâ önemli bilimsel zorluklar barındırdığını ifade etti. Arayüzey yan reaksiyonları, kimyasal ve termal kararlılık gibi sorunların henüz tam anlamıyla çözülemediğini vurgulayan uzman isim, 300 Wh/kg enerji yoğunluğuna sahip katı hal bataryaların 2030’a doğru ortaya çıkabileceğini ancak şirketlerin bu teknolojiyi pazarlama aracı olarak kullanmaktan kaçınması gerektiğini söyledi. Çin otomotiv sektöründeki dönüşüme de değinen Ouyang, beş temel iş modelinin öne çıktığını belirtti. Bunlar arasındadikey entegrasyon, içten yanmalı ve elektrikli araçların birlikte yürütüldüğüçift odaklı strateji,internet tabanlı yeni üretici yaklaşımı, yatay entegrasyon ve kamu şirketlerinde reform yer alıyor. Bu modellerin, sektörün rekabet gücünü artırarak küresel ölçekte daha güçlü bir yapı oluşturacağını ifade etti. 1958 doğumlu olan Ouyang Minggao, Çin Bilimler Akademisi üyesi ve eTransportation dergisinin baş editörü olarak görev yapıyor. Aynı zamanda Tsinghua University bünyesinde ileri güç aktarma sistemleri üzerine çalışmalar yürütüyor ve lityum iyon batarya güvenliği, hidrojen sistemleri ve akıllı enerji çözümleri alanlarında araştırmalarını sürdürüyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C9798TRP https://www.amazon.com.tr/b?node=216759786031 https://www.n11.com/urun/yadea-elite-prime-elektrikli-scooter-gri-67376075 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.migros.com.tr/marmarabirlik-mega-zeytin-500-g-201-230-adkg-p-f44ca2 https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion"
+          "full_text": "Super-N, Japonya’da satılan N-One E modelinin daha performans odaklı bir versiyonu. Ancak Japonya’da “Super-One” adıyla anılırken, İngiltere’de bu isim başka bir organizasyon tarafından kullanıldığı için farklı bir ad tercih edilmiş. Honda’nın hafif N-Series platformu üzerine inşa edilen araç, normalde63 beygir (47 kW)güç sunuyor. Yeni eklenen “Boost Mode” ise gücü93 beygire (70 kW)kadar çıkarabiliyor. Sadece 3.395 mm uzunluğundaki Super-N, Renault Twingo E-Tech’ten bile daha kompakt boyutlara sahip. Yaklaşık 1.300 kg ağırlığıyla segmentinin en hafif modellerinden biri olarak öne çıkıyor. Batarya detayları henüz açıklanmasa da, WLTP ölçümüne göre yaklaşık206 km menzilsunması bekleniyor. Şehir içi kullanımda ise bu değer 320 km'ye kadar çıkabiliyor. PiyasadaKia EV2,Renault TwingoveVolkswagen ID.1gibi rakipler bulunurken, Super-N’in özellikle kompakt boyutları ve uygun fiyatıyla öne çıkması bekleniyor. Honda, Japonya’da ön siparişleri 16 Nisan’da açacak. Modelin Birleşik Krallık’ta iseTemmuzayında satışa çıkması planlanıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/b?node=216759786031 https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_title_dt_b_fed_asin_title_0_0 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.amazon.com.tr/dp/B0B3WH3HKR https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion"
         },
-        "post_text": "⚡️ ÇİN'DE ELEKTRİKLİ ARAÇLAR BÜYÜYOR\n\nÇinli uzman Ouyang Minggao'dan otomotiv sektörü için önemli öngörüler geldi.\n\nŞarj edilebilir hibritlerin popülerliğinin azalacağı, saf elektrikli araçların ise hızla yükseleceği belirtiliyor.\n\n2040 yılına gelindiğinde Çin pazarında elektrikli araçların hakimiyeti tamamen ele geçirmesi bekleniyor.\n\nBu dönüşümde verimlilik artışı kilit rol oynayacak.\n\nPeki sizce bu hızlı geçiş süreci ülkemiz için ne ifade ediyor?",
-        "post_text_length": 453
+        "post_text": "⚡️ HONDA'NIN YENİ ELEKTRİKLİ MİNİSİ AVRUPA'DA!\n\nHonda'nın sevimli elektrikli otomobili Super-N, sonunda Avrupa yollarına çıkıyor! Retro tasarımıyla dikkat çeken bu mini araç, özellikle Birleşik Krallık'ta satışa sunulacak.\n\nJaponya'daki N-One E modelinin biraz daha güçlü hali olan Super-N, \"Boost Mode\" ile 93 beygire kadar güç üretebiliyor. Boyutları ise tam bir şehir otomobili için ideal, hatta Renault Twingo'dan bile daha kompakt!\n\nWLTP'ye göre yaklaşık 206 km menzil sunması beklenen aracın, şehir içinde 320 km'ye kadar çıkabileceği söyleniyor. Fiyatı da 27.000 doların altında olacak.\n\nSizce bu sevimli elektrikli şehir otomobili Türkiye'de de ilgi görür mü?",
+        "post_text_length": 667
       },
       "error": null,
-      "updated_at": "2026-04-12T09:30:11.328178+03:00"
+      "updated_at": "2026-04-12T11:03:16.381078+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
-          "link": "https://www.donanimhaber.com/cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak--204346",
-          "published": "2026-04-11T20:01:09+00:00",
-          "summary": "Çinli uzman Ouyang Minggao’ya göre şarj edilebilir hibritler düşüşe geçti. 2040’a kadar verimlilik avantajı dönüşümü hızlandıracak ve saf elektrikli araçlar pazara hakim olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204346/1400x788cin-de-elektrikli-araclar-2040-ta-zirveye-ulasacak.jpg",
+          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
+          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
+          "published": "2026-04-12T08:00:00+00:00",
+          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
           "source_name": "Donanımhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 2,
-          "topic_fingerprint": "2040-araclar-cin-elektrikli-ulasacak-zirveye",
+          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
           "base_ai_score": 78,
-          "score": 81,
+          "score": 90,
           "score_reason": "ai_scored",
-          "freshness_bonus": 1,
+          "freshness_bonus": 10,
           "trend_bonus_raw": 2,
-          "full_text": "Pekin'de düzenlenen Intelligent Electric Vehicle Development Forum kapsamında konuşan Ouyang Minggao, otomotiv sektörünün geleceğine dair çarpıcı açıklamalarda bulundu. Tsinghua Üniversitesi'nde profesör olan Ouyang, şarj edilebilir hibrit ve menzil uzatıcı elektrikli araçların düşüşe geçtiğini belirterek,2040 yılına kadar saf elektrikli araçların Çin pazarında mutlak hakimiyet kuracağınıbelirtti. Ouyang, sektörün geleceğine dair dikkat çekici pazar öngörülerini de paylaştı. 2030 yılında yeni enerjili binek araçların pazar payının yüzde 70’i aşması beklenirken, saf elektrikli ve şarj edilebilir hibrit oranının 7’ye 3 olacağı öngörülüyor. 2035’te bu oran yüzde 80’in üzerine çıkarken dağılımın 8’e 2’ye ulaşacağı tahmin ediliyor. 2040 yılına gelindiğinde ise pazar payı yine yüzde 80’in üzerinde kalacak, ancak saf elektrikli araçlar 9’a 1 oranıyla baskın konuma geçecek. Katı hal bataryalara yönelik artan ilgi konusunda ise temkinli olunması gerektiğini belirten Ouyang, bu teknolojinin hâlâ önemli bilimsel zorluklar barındırdığını ifade etti. Arayüzey yan reaksiyonları, kimyasal ve termal kararlılık gibi sorunların henüz tam anlamıyla çözülemediğini vurgulayan uzman isim, 300 Wh/kg enerji yoğunluğuna sahip katı hal bataryaların 2030’a doğru ortaya çıkabileceğini ancak şirketlerin bu teknolojiyi pazarlama aracı olarak kullanmaktan kaçınması gerektiğini söyledi. Çin otomotiv sektöründeki dönüşüme de değinen Ouyang, beş temel iş modelinin öne çıktığını belirtti. Bunlar arasındadikey entegrasyon, içten yanmalı ve elektrikli araçların birlikte yürütüldüğüçift odaklı strateji,internet tabanlı yeni üretici yaklaşımı, yatay entegrasyon ve kamu şirketlerinde reform yer alıyor. Bu modellerin, sektörün rekabet gücünü artırarak küresel ölçekte daha güçlü bir yapı oluşturacağını ifade etti. 1958 doğumlu olan Ouyang Minggao, Çin Bilimler Akademisi üyesi ve eTransportation dergisinin baş editörü olarak görev yapıyor. Aynı zamanda Tsinghua University bünyesinde ileri güç aktarma sistemleri üzerine çalışmalar yürütüyor ve lityum iyon batarya güvenliği, hidrojen sistemleri ve akıllı enerji çözümleri alanlarında araştırmalarını sürdürüyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C9798TRP https://www.amazon.com.tr/b?node=216759786031 https://www.n11.com/urun/yadea-elite-prime-elektrikli-scooter-gri-67376075 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.migros.com.tr/marmarabirlik-mega-zeytin-500-g-201-230-adkg-p-f44ca2 https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion",
+          "full_text": "Super-N, Japonya’da satılan N-One E modelinin daha performans odaklı bir versiyonu. Ancak Japonya’da “Super-One” adıyla anılırken, İngiltere’de bu isim başka bir organizasyon tarafından kullanıldığı için farklı bir ad tercih edilmiş. Honda’nın hafif N-Series platformu üzerine inşa edilen araç, normalde63 beygir (47 kW)güç sunuyor. Yeni eklenen “Boost Mode” ise gücü93 beygire (70 kW)kadar çıkarabiliyor. Sadece 3.395 mm uzunluğundaki Super-N, Renault Twingo E-Tech’ten bile daha kompakt boyutlara sahip. Yaklaşık 1.300 kg ağırlığıyla segmentinin en hafif modellerinden biri olarak öne çıkıyor. Batarya detayları henüz açıklanmasa da, WLTP ölçümüne göre yaklaşık206 km menzilsunması bekleniyor. Şehir içi kullanımda ise bu değer 320 km'ye kadar çıkabiliyor. PiyasadaKia EV2,Renault TwingoveVolkswagen ID.1gibi rakipler bulunurken, Super-N’in özellikle kompakt boyutları ve uygun fiyatıyla öne çıkması bekleniyor. Honda, Japonya’da ön siparişleri 16 Nisan’da açacak. Modelin Birleşik Krallık’ta iseTemmuzayında satışa çıkması planlanıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/b?node=216759786031 https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_title_dt_b_fed_asin_title_0_0 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.amazon.com.tr/dp/B0B3WH3HKR https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion",
           "image_source": "rss_image"
         },
-        "post_text": "⚡️ ÇİN'DE ELEKTRİKLİ ARAÇLAR BÜYÜYOR\n\nÇinli uzman Ouyang Minggao'dan otomotiv sektörü için önemli öngörüler geldi.\n\nŞarj edilebilir hibritlerin popülerliğinin azalacağı, saf elektrikli araçların ise hızla yükseleceği belirtiliyor.\n\n2040 yılına gelindiğinde Çin pazarında elektrikli araçların hakimiyeti tamamen ele geçirmesi bekleniyor.\n\nBu dönüşümde verimlilik artışı kilit rol oynayacak.\n\nPeki sizce bu hızlı geçiş süreci ülkemiz için ne ifade ediyor?",
-        "image_path": "/tmp/otoxtra_rss_xg3vd0_o.jpg",
+        "post_text": "⚡️ HONDA'NIN YENİ ELEKTRİKLİ MİNİSİ AVRUPA'DA!\n\nHonda'nın sevimli elektrikli otomobili Super-N, sonunda Avrupa yollarına çıkıyor! Retro tasarımıyla dikkat çeken bu mini araç, özellikle Birleşik Krallık'ta satışa sunulacak.\n\nJaponya'daki N-One E modelinin biraz daha güçlü hali olan Super-N, \"Boost Mode\" ile 93 beygire kadar güç üretebiliyor. Boyutları ise tam bir şehir otomobili için ideal, hatta Renault Twingo'dan bile daha kompakt!\n\nWLTP'ye göre yaklaşık 206 km menzil sunması beklenen aracın, şehir içinde 320 km'ye kadar çıkabileceği söyleniyor. Fiyatı da 27.000 doların altında olacak.\n\nSizce bu sevimli elektrikli şehir otomobili Türkiye'de de ilgi görür mü?",
+        "image_path": "/tmp/otoxtra_rss_yjk4eecf.jpg",
         "image_source": "rss_image"
       },
       "error": null,
-      "updated_at": "2026-04-12T09:30:12.335873+03:00"
+      "updated_at": "2026-04-12T11:03:17.458089+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122162174420916499",
-        "article_title": "Çin'de elektrikli araçlar 2040'ta zirveye ulaşacak",
+        "post_id": "678053852057751_122162182304916499",
+        "article_title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
         "image_source": "rss_image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-12T09:32:23.732968+03:00"
+      "updated_at": "2026-04-12T11:06:52.897493+03:00"
     }
   }
 }
