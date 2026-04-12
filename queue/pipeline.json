@@ -1,14 +1,43 @@
 {
-  "run_id": "2026-04-12-16:59",
+  "run_id": "2026-04-12-18:36",
   "status": "error",
-  "started_at": "2026-04-12T16:59:15.770133+03:00",
-  "updated_at": "2026-04-12T16:59:19.383072+03:00",
+  "started_at": "2026-04-12T18:36:05.350616+03:00",
+  "updated_at": "2026-04-12T18:36:13.199802+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Otonom Sürüş için Aylık Abonelik Sistemi Başlıyor!",
+            "link": "https://shiftdelete.net/otonom-surus-icin-aylik-abonelik-sistemi-basliyor",
+            "published": "2026-04-12T15:30:58+00:00",
+            "summary": "Otomobil üreticileri, sürücü asistanı ve otonom sürüş özellikleri için aylık abonelik sistemlerini hızla yaygınlaştırmaya devam ediyor. Tesla, Tam Otonom Sürüş (FSD) yazılımı için kullanıcılardan aylık 99 dolar talep ederken, bu yıl içinde tamamen otonom çalışacak Cybercab robotaksi modelini üretmeyi planlıyor. Ancak şirketin bu yeni yazılım ve gelir modeline odaklanması, standart donanımlı bir Tesla’nın en ucuz […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "abonelik-aylik-basliyor-otonom-sistemi-surus"
+          },
+          {
+            "title": "Renault Twingo’ya Honda’dan Rakip!",
+            "link": "https://shiftdelete.net/renault-twingoya-hondadan-rakip",
+            "published": "2026-04-12T14:30:57+00:00",
+            "summary": "Japon otomobil devi Honda, retro tasarım çizgilerini modern teknolojiyle birleştiren yeni elektrikli modeli Super-N ile dikkatleri üzerine çekiyor. Şirketin “eğlenceli ve sevimli” olarak tanımladığı bu yeni elektrikli hot hatch, Birleşik Krallık pazarında 20.000 sterlinin (yaklaşık 27.000 dolar) altında bir başlangıç fiyatıyla satışa sunulacak. Japonya’da halihazırda satışta olan N-One E modelinin daha güçlü bir versiyonu olan […]",
+            "image_url": "",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "honda-rakip-renault-twingo"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -37,14 +66,14 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-12T16:59:19.383072+03:00"
+      "error": null,
+      "updated_at": "2026-04-12T18:36:09.560948+03:00"
     },
     "score": {
-      "status": "waiting",
+      "status": "error",
       "output": null,
-      "error": null,
-      "updated_at": null
+      "error": "No article above threshold",
+      "updated_at": "2026-04-12T18:36:13.199802+03:00"
     },
     "write": {
       "status": "waiting",
