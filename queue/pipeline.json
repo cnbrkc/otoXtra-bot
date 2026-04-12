@@ -1,29 +1,43 @@
 {
-  "run_id": "2026-04-12-20:31",
-  "status": "error",
-  "started_at": "2026-04-12T20:31:52.548422+03:00",
-  "updated_at": "2026-04-12T20:31:58.639123+03:00",
+  "run_id": "2026-04-12-22:43",
+  "status": "completed",
+  "started_at": "2026-04-12T22:43:22.896276+03:00",
+  "updated_at": "2026-04-12T22:43:43.332100+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Otonom Sürüş için Aylık Abonelik Sistemi Başlıyor!",
-            "link": "https://shiftdelete.net/otonom-surus-icin-aylik-abonelik-sistemi-basliyor",
-            "published": "2026-04-12T15:30:58+00:00",
-            "summary": "Otomobil üreticileri, sürücü asistanı ve otonom sürüş özellikleri için aylık abonelik sistemlerini hızla yaygınlaştırmaya devam ediyor. Tesla, Tam Otonom Sürüş (FSD) yazılımı için kullanıcılardan aylık 99 dolar talep ederken, bu yıl içinde tamamen otonom çalışacak Cybercab robotaksi modelini üretmeyi planlıyor. Ancak şirketin bu yeni yazılım ve gelir modeline odaklanması, standart donanımlı bir Tesla’nın en ucuz […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
+            "title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+            "link": "https://www.donanimhaber.com/volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir--204369",
+            "published": "2026-04-12T18:12:54+00:00",
+            "summary": "Stanford’da geliştirilen volkanik kaya tabanlı yeni çimento, kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204369/1400x788volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "abonelik-aylik-basliyor-otonom-sistemi-surus"
+            "topic_fingerprint": "azaltabilir-cimento-emisyonlari-kayadan-volkanik-yapilan-yuzde"
+          },
+          {
+            "title": "Ağırlıksız batarya teknolojisi menzili %70 artırıyor",
+            "link": "https://www.donanimhaber.com/agirliksiz-batarya-teknolojisi-menzili-yuzde-70-artiriyor--204368",
+            "published": "2026-04-12T18:00:00+00:00",
+            "summary": "Batarya bir elektrikli aracın en ağır parçası ancak geliştirilen yeni teknoloji ile aracın kendisi bir batarya olabilir. Ağırlığın düşürülmesiyle menzil artışı elde ediliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204368/1400x788agirliksiz-batarya-teknolojisi-menzili-yuzde-70-artiriyor.jpg",
+            "source_name": "Donanımhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "agirliksiz-artiriyor-batarya-menzili-teknolojisi"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -53,31 +67,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-12T20:31:56.092886+03:00"
+      "updated_at": "2026-04-12T22:43:26.717338+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold",
-      "updated_at": "2026-04-12T20:31:58.639123+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+          "link": "https://www.donanimhaber.com/volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir--204369",
+          "published": "2026-04-12T18:12:54+00:00",
+          "summary": "Stanford’da geliştirilen volkanik kaya tabanlı yeni çimento, kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204369/1400x788volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "azaltabilir-cimento-emisyonlari-kayadan-volkanik-yapilan-yuzde",
+          "base_ai_score": 80,
+          "score": 89,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 2
+        },
+        "score": 89,
+        "title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+        "trend_count": 1,
+        "trend_bonus": 2,
+        "freshness_bonus": 7,
+        "score_reason": "ai_scored"
+      },
+      "error": null,
+      "updated_at": "2026-04-12T22:43:29.540388+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+          "link": "https://www.donanimhaber.com/volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir--204369",
+          "published": "2026-04-12T18:12:54+00:00",
+          "summary": "Stanford’da geliştirilen volkanik kaya tabanlı yeni çimento, kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204369/1400x788volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "azaltabilir-cimento-emisyonlari-kayadan-volkanik-yapilan-yuzde",
+          "base_ai_score": 80,
+          "score": 89,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 2,
+          "full_text": "Stanford Üniversitesi’nden jeofizikçi Tiziana Vanoriotarafından geliştirilen yeni bir çimento formülü, bu alandaki dengeleri değiştirebilecek potansiyele sahip. “Phlego” adı verilen bu yeni malzeme, geleneksel çimentoda kullanılankireçtaşı yerine volkanik kayaçları temel alıyorve üretim sürecinde karbon emisyonlarını %67’ye kadar azaltabiliyor. Üstelik bu yaklaşım tamamen yeni bir fikirden ziyade, geçmişten ilham alıyor.Antik Roma betonunun binlerce yıl ayakta kalabilmesini sağlayanvolkanik kül (pozzolan) ve İtalya’nın Pozzuoli bölgesindeki doğal kaya oluşumları, bu çalışmanın temel referans noktalarını oluşturuyor. Günümüzde kullanılan çimentonun en sorunlu kısmı, kireçtaşının yüksek sıcaklıklarda yakılarak “klinker” adı verilen ara ürüne dönüştürülmesi. Bu süreçte hem fosil yakıt kullanımı nedeniyle ciddi bir karbon salımı gerçekleşiyor hem de kimyasal reaksiyon sonucu doğrudan karbondioksit açığa çıkıyor. Dahası,işlenen kireçtaşının neredeyse yarısı gaz formunda atmosfere karışarak tamamen kaybediliyor. Vanorio’nun geliştirdiği yöntem ise bu sürecin en kirletici aşamasını ortadan kaldırmayı hedefliyor. Phlego’nun arkasındaki fikir, doğanın milyonlarca yıl içinde zaten “hazırladığı” kayaçları kullanmak. Araştırma ekibi, yer altındaki yüksek sıcaklık ve basınç koşullarında doğal olarak karbonunu kaybetmiş magmatik kayaçları inceleyerek bu süreci laboratuvar ortamına taşımayı başardı.Ortaya çıkan malzeme ısıtıldığında karbondioksit salımı yapmıyor; bunun yerine, İtalya’nın yer kabuğunda gözlemlenen lifsi ve çatlamaya dayanıklı mikro yapıları taklit eden yüksek performanslı bir yapı malzemesine dönüşüyor. Bu da hem daha dayanıklı hem de çok daha temiz bir üretim süreci anlamına geliyor. Stanford Sustainability Accelerator desteğiyle geliştirilenproje şu anda ölçek büyütme aşamasında.Araştırma ekibi kendi endüstriyel fırınını satın almış durumda ve Phlego’yu küresel pazara taşıyacak girişimciler arıyor. Eğer bu süreç başarıyla tamamlanırsa, antik Roma betonundan ilham alan bu fikir, geleceğin sürdürülebilir şehirlerinin temel yapı taşı hâline gelebilir. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C9798TRP https://www.amazon.com.tr/b?node=216759786031 https://www.n11.com/urun/alp-siyah-31-metal-basamakli-katlanabilir-merdiven-31-115003258 https://www.amazon.com.tr/deals https://www.migros.com.tr/fanta-what-the-fanta-mavi-karisik-aromali-gazoz-1-l-p-7a873d https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion"
+        },
+        "post_text": "🌋 YENİ ÇİMENTO TEKNOLOJİSİ ÇEVREYE NEFES ALDIRACAK!\n\nStanford Üniversitesi’nde geliştirilen yeni bir çimento formülü, inşaat sektöründe devrim yaratabilir. Volkanik kaya bazlı bu malzeme, geleneksel çimentodaki kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.\n\nBu yenilikçi yöntem, antik Roma betonundan ilham alıyor. Kireçtaşının yüksek sıcaklıklarda yakılmasıyla ortaya çıkan ciddi karbon salımının önüne geçilmesi amaçlanıyor.\n\nDoğanın kendi hazırladığı kayaçları kullanarak daha temiz bir üretim süreci hedefleniyor.\n\nSizce bu yeni teknoloji inşaat sektörünü nasıl etkiler?",
+        "post_text_length": 641
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-12T22:43:31.652193+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+          "link": "https://www.donanimhaber.com/volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir--204369",
+          "published": "2026-04-12T18:12:54+00:00",
+          "summary": "Stanford’da geliştirilen volkanik kaya tabanlı yeni çimento, kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204369/1400x788volkanik-kayadan-yapilan-yeni-cimento-emisyonlari-azaltabilir.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "azaltabilir-cimento-emisyonlari-kayadan-volkanik-yapilan-yuzde",
+          "base_ai_score": 80,
+          "score": 89,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 2,
+          "full_text": "Stanford Üniversitesi’nden jeofizikçi Tiziana Vanoriotarafından geliştirilen yeni bir çimento formülü, bu alandaki dengeleri değiştirebilecek potansiyele sahip. “Phlego” adı verilen bu yeni malzeme, geleneksel çimentoda kullanılankireçtaşı yerine volkanik kayaçları temel alıyorve üretim sürecinde karbon emisyonlarını %67’ye kadar azaltabiliyor. Üstelik bu yaklaşım tamamen yeni bir fikirden ziyade, geçmişten ilham alıyor.Antik Roma betonunun binlerce yıl ayakta kalabilmesini sağlayanvolkanik kül (pozzolan) ve İtalya’nın Pozzuoli bölgesindeki doğal kaya oluşumları, bu çalışmanın temel referans noktalarını oluşturuyor. Günümüzde kullanılan çimentonun en sorunlu kısmı, kireçtaşının yüksek sıcaklıklarda yakılarak “klinker” adı verilen ara ürüne dönüştürülmesi. Bu süreçte hem fosil yakıt kullanımı nedeniyle ciddi bir karbon salımı gerçekleşiyor hem de kimyasal reaksiyon sonucu doğrudan karbondioksit açığa çıkıyor. Dahası,işlenen kireçtaşının neredeyse yarısı gaz formunda atmosfere karışarak tamamen kaybediliyor. Vanorio’nun geliştirdiği yöntem ise bu sürecin en kirletici aşamasını ortadan kaldırmayı hedefliyor. Phlego’nun arkasındaki fikir, doğanın milyonlarca yıl içinde zaten “hazırladığı” kayaçları kullanmak. Araştırma ekibi, yer altındaki yüksek sıcaklık ve basınç koşullarında doğal olarak karbonunu kaybetmiş magmatik kayaçları inceleyerek bu süreci laboratuvar ortamına taşımayı başardı.Ortaya çıkan malzeme ısıtıldığında karbondioksit salımı yapmıyor; bunun yerine, İtalya’nın yer kabuğunda gözlemlenen lifsi ve çatlamaya dayanıklı mikro yapıları taklit eden yüksek performanslı bir yapı malzemesine dönüşüyor. Bu da hem daha dayanıklı hem de çok daha temiz bir üretim süreci anlamına geliyor. Stanford Sustainability Accelerator desteğiyle geliştirilenproje şu anda ölçek büyütme aşamasında.Araştırma ekibi kendi endüstriyel fırınını satın almış durumda ve Phlego’yu küresel pazara taşıyacak girişimciler arıyor. Eğer bu süreç başarıyla tamamlanırsa, antik Roma betonundan ilham alan bu fikir, geleceğin sürdürülebilir şehirlerinin temel yapı taşı hâline gelebilir. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/dp/B0C9798TRP https://www.amazon.com.tr/b?node=216759786031 https://www.n11.com/urun/alp-siyah-31-metal-basamakli-katlanabilir-merdiven-31-115003258 https://www.amazon.com.tr/deals https://www.migros.com.tr/fanta-what-the-fanta-mavi-karisik-aromali-gazoz-1-l-p-7a873d https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion",
+          "image_source": "rss_image"
+        },
+        "post_text": "🌋 YENİ ÇİMENTO TEKNOLOJİSİ ÇEVREYE NEFES ALDIRACAK!\n\nStanford Üniversitesi’nde geliştirilen yeni bir çimento formülü, inşaat sektöründe devrim yaratabilir. Volkanik kaya bazlı bu malzeme, geleneksel çimentodaki kireçtaşını devre dışı bırakarak üretim sürecindeki karbon emisyonlarını yüzde 67’ye kadar azaltmayı hedefliyor.\n\nBu yenilikçi yöntem, antik Roma betonundan ilham alıyor. Kireçtaşının yüksek sıcaklıklarda yakılmasıyla ortaya çıkan ciddi karbon salımının önüne geçilmesi amaçlanıyor.\n\nDoğanın kendi hazırladığı kayaçları kullanarak daha temiz bir üretim süreci hedefleniyor.\n\nSizce bu yeni teknoloji inşaat sektörünü nasıl etkiler?",
+        "image_path": "/tmp/otoxtra_rss_f_pk3929.jpg",
+        "image_source": "rss_image"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-12T22:43:32.970502+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122162239382916499",
+        "article_title": "Volkanik kayadan yapılan yeni çimento, emisyonları yüzde 67 azaltabilir",
+        "image_source": "rss_image",
+        "test_mode": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-12T22:43:43.332100+03:00"
     }
   }
 }
