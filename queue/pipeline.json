@@ -1,43 +1,14 @@
 {
-  "run_id": "2026-04-12-11:03",
-  "status": "completed",
-  "started_at": "2026-04-12T11:03:06.815444+03:00",
-  "updated_at": "2026-04-12T11:06:52.897493+03:00",
+  "run_id": "2026-04-12-13:39",
+  "status": "error",
+  "started_at": "2026-04-12T13:39:53.288286+03:00",
+  "updated_at": "2026-04-12T13:39:58.340143+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-            "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
-            "published": "2026-04-12T08:00:00+00:00",
-            "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super"
-          },
-          {
-            "title": "Otomobillerde yeni trend: Sürücü destek sistemleri abonelik modeline geçiyor",
-            "link": "https://www.donanimhaber.com/otomobillerde-ucretli-surus-asistani-ozellikleri-yayginlasiyor--204336",
-            "published": "2026-04-12T07:00:00+00:00",
-            "summary": "Otomotiv sektöründe abonelik temelli özellikler, üreticiler için önemli bir gelir kapısına dönüşüyor. Şirketler özellikle sürüş destek sistemlerini abonelikle sunarak gelirlerini artırmayı hedefliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204336/1400x788otomobillerde-ucretli-surus-asistani-ozellikleri-yayginlasiyor.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "abonelik-destek-geciyor-modeline-otomobillerde-sistemleri-surucu-trend"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -66,112 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-12T11:03:10.953958+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-12T13:39:58.340143+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
-          "published": "2026-04-12T08:00:00+00:00",
-          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
-          "base_ai_score": 78,
-          "score": 90,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2
-        },
-        "score": 90,
-        "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-12T11:03:13.905187+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
-          "published": "2026-04-12T08:00:00+00:00",
-          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
-          "base_ai_score": 78,
-          "score": 90,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Super-N, Japonya’da satılan N-One E modelinin daha performans odaklı bir versiyonu. Ancak Japonya’da “Super-One” adıyla anılırken, İngiltere’de bu isim başka bir organizasyon tarafından kullanıldığı için farklı bir ad tercih edilmiş. Honda’nın hafif N-Series platformu üzerine inşa edilen araç, normalde63 beygir (47 kW)güç sunuyor. Yeni eklenen “Boost Mode” ise gücü93 beygire (70 kW)kadar çıkarabiliyor. Sadece 3.395 mm uzunluğundaki Super-N, Renault Twingo E-Tech’ten bile daha kompakt boyutlara sahip. Yaklaşık 1.300 kg ağırlığıyla segmentinin en hafif modellerinden biri olarak öne çıkıyor. Batarya detayları henüz açıklanmasa da, WLTP ölçümüne göre yaklaşık206 km menzilsunması bekleniyor. Şehir içi kullanımda ise bu değer 320 km'ye kadar çıkabiliyor. PiyasadaKia EV2,Renault TwingoveVolkswagen ID.1gibi rakipler bulunurken, Super-N’in özellikle kompakt boyutları ve uygun fiyatıyla öne çıkması bekleniyor. Honda, Japonya’da ön siparişleri 16 Nisan’da açacak. Modelin Birleşik Krallık’ta iseTemmuzayında satışa çıkması planlanıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/b?node=216759786031 https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_title_dt_b_fed_asin_title_0_0 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.amazon.com.tr/dp/B0B3WH3HKR https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion"
-        },
-        "post_text": "⚡️ HONDA'NIN YENİ ELEKTRİKLİ MİNİSİ AVRUPA'DA!\n\nHonda'nın sevimli elektrikli otomobili Super-N, sonunda Avrupa yollarına çıkıyor! Retro tasarımıyla dikkat çeken bu mini araç, özellikle Birleşik Krallık'ta satışa sunulacak.\n\nJaponya'daki N-One E modelinin biraz daha güçlü hali olan Super-N, \"Boost Mode\" ile 93 beygire kadar güç üretebiliyor. Boyutları ise tam bir şehir otomobili için ideal, hatta Renault Twingo'dan bile daha kompakt!\n\nWLTP'ye göre yaklaşık 206 km menzil sunması beklenen aracın, şehir içinde 320 km'ye kadar çıkabileceği söyleniyor. Fiyatı da 27.000 doların altında olacak.\n\nSizce bu sevimli elektrikli şehir otomobili Türkiye'de de ilgi görür mü?",
-        "post_text_length": 667
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-12T11:03:16.381078+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-          "link": "https://www.donanimhaber.com/honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor--204337",
-          "published": "2026-04-12T08:00:00+00:00",
-          "summary": "Honda, retro tasarımlı elektrikli mini otomobili Super-N’i Avrupa'ya getiriyor. İlk olarak Birleşik Krallık'ta satışa sunulacak olan araç, 27.000 doların altında fiyattan satışa sunulacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204337/1400x788honda-nin-elektrikli-super-minisi-avrupa-da-satisa-cikiyor.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "avrupa-cikiyor-elektrikli-fiyati-honda-minisi-ozellikleri-satisa-ste-super",
-          "base_ai_score": 78,
-          "score": 90,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Super-N, Japonya’da satılan N-One E modelinin daha performans odaklı bir versiyonu. Ancak Japonya’da “Super-One” adıyla anılırken, İngiltere’de bu isim başka bir organizasyon tarafından kullanıldığı için farklı bir ad tercih edilmiş. Honda’nın hafif N-Series platformu üzerine inşa edilen araç, normalde63 beygir (47 kW)güç sunuyor. Yeni eklenen “Boost Mode” ise gücü93 beygire (70 kW)kadar çıkarabiliyor. Sadece 3.395 mm uzunluğundaki Super-N, Renault Twingo E-Tech’ten bile daha kompakt boyutlara sahip. Yaklaşık 1.300 kg ağırlığıyla segmentinin en hafif modellerinden biri olarak öne çıkıyor. Batarya detayları henüz açıklanmasa da, WLTP ölçümüne göre yaklaşık206 km menzilsunması bekleniyor. Şehir içi kullanımda ise bu değer 320 km'ye kadar çıkabiliyor. PiyasadaKia EV2,Renault TwingoveVolkswagen ID.1gibi rakipler bulunurken, Super-N’in özellikle kompakt boyutları ve uygun fiyatıyla öne çıkması bekleniyor. Honda, Japonya’da ön siparişleri 16 Nisan’da açacak. Modelin Birleşik Krallık’ta iseTemmuzayında satışa çıkması planlanıyor. Kendi kendini dengeleyen elektrikli motosiklet üretimde Pentagona gönderin askeri amaçlı kullansın hemen biz kontrolün bizde olmasını isteriz burda tutmaz https://www.amazon.com.tr/b?node=216759786031 https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_title_dt_b_fed_asin_title_0_0 https://www.amazon.com.tr/dp/B0F13B3BKZ https://www.amazon.com.tr/dp/B0B3WH3HKR https://www.carrefoursa.com/search/?text=30113512+30165980+30078251&has-promotion",
-          "image_source": "rss_image"
-        },
-        "post_text": "⚡️ HONDA'NIN YENİ ELEKTRİKLİ MİNİSİ AVRUPA'DA!\n\nHonda'nın sevimli elektrikli otomobili Super-N, sonunda Avrupa yollarına çıkıyor! Retro tasarımıyla dikkat çeken bu mini araç, özellikle Birleşik Krallık'ta satışa sunulacak.\n\nJaponya'daki N-One E modelinin biraz daha güçlü hali olan Super-N, \"Boost Mode\" ile 93 beygire kadar güç üretebiliyor. Boyutları ise tam bir şehir otomobili için ideal, hatta Renault Twingo'dan bile daha kompakt!\n\nWLTP'ye göre yaklaşık 206 km menzil sunması beklenen aracın, şehir içinde 320 km'ye kadar çıkabileceği söyleniyor. Fiyatı da 27.000 doların altında olacak.\n\nSizce bu sevimli elektrikli şehir otomobili Türkiye'de de ilgi görür mü?",
-        "image_path": "/tmp/otoxtra_rss_yjk4eecf.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-12T11:03:17.458089+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162182304916499",
-        "article_title": "Honda'nın elektrikli süper minisi Avrupa'da satışa çıkıyor: İşte özellikleri ve fiyatı",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-12T11:06:52.897493+03:00"
+      "updated_at": null
     }
   }
 }
