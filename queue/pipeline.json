@@ -1,46 +1,32 @@
 {
-  "run_id": "2026-04-13-17:33",
+  "run_id": "2026-04-13-19:10",
   "status": "completed",
-  "started_at": "2026-04-13T17:33:57.666240+03:00",
-  "updated_at": "2026-04-13T17:41:19.827515+03:00",
+  "started_at": "2026-04-13T19:10:05.054604+03:00",
+  "updated_at": "2026-04-13T19:14:53.541668+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Çinli Changan’ın yeni SUV’u Q06 ilk kez görüntülendi",
-            "link": "https://www.donanimhaber.com/cinli-changan-in-yeni-suv-u-q06-ilk-kez-goruntulendi--204370",
-            "published": "2026-04-13T14:02:00+00:00",
-            "summary": "Changan’ın Nevo markasına ait yeni SUV modeli Q06, Çin’de ortaya çıktı. Elektrikli ve menzil uzatıcı versiyonlarla gelecek model, 800V mimari ve yüksek performans vadediyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204370/1400x788cinli-changan-in-yeni-suv-u-q06-ilk-kez-goruntulendi.jpg",
-            "source_name": "Donanımhaber",
+            "title": "Fiat Fastback, yol testlerinde açığa çıkıyor",
+            "link": "https://tr.motor1.com/news/792807/fiat-fastback-aciga-cikiyor/",
+            "published": "2026-04-13T16:00:00+00:00",
+            "summary": "Grande Panda'nın kuzeni 2026 Paris Otomobil Fuarı’nda görücüye çıkacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/lE3GQw/s3/fiat-fastback-2026-il-render-di-motor1.com.jpg",
+            "source_name": "Motor1 TR",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "changan-cinli-goruntulendi-kez-q06-suv"
+            "topic_fingerprint": "aciga-cikiyor-fastback-fiat-testlerinde-yol"
           },
           {
-            "title": "Xiaomi SU7 rekorla başladı: Satış rakamları paylaşıldı",
-            "link": "https://www.donanimhaber.com/xiaomi-su7-rekorla-basladi-satis-rakamlari-paylasildi--204382",
-            "published": "2026-04-13T13:18:00+00:00",
-            "summary": "Xiaomi'nin elektrikli sedan modeli SU7, yüksek sipariş rakamlarına ek olarak satış performansıyla da dikkat çekmeye devam ediyor. Siparişler patladı, satışlar hızlandı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204382/1400x788xiaomi-su7-rekorla-basladi-satis-rakamlari-paylasildi.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "paylasildi-rakamlari-rekorla-satis-su7-xiaomi"
-          },
-          {
-            "title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
-            "link": "https://shiftdelete.net/jeff-bezos-destekli-slate-auto-650-milyon-dolar-yatirim-aldi",
-            "published": "2026-04-13T14:25:40+00:00",
-            "summary": "Jeff Bezos destekli Slate Auto, 650 milyon dolar yatırım alarak 2026 sonu için uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.",
+            "title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
+            "link": "https://shiftdelete.net/tesla-otonom-surus-avrupaya-geliyor",
+            "published": "2026-04-13T15:17:13+00:00",
+            "summary": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay almak istediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. Tesla’nın Sürüş Asistanı Avrupa Yollarında RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, bir sürücü destek yazılımı olduğunu vurguladı. […]",
             "image_url": "",
             "source_name": "ShiftDelete Otomobil",
             "source_priority": "medium",
@@ -48,10 +34,10 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "650-aldi-auto-bezos-destekli-dolar-jeff-milyon-slate-yatirim"
+            "topic_fingerprint": "avrupa-geliyor-otonom-surus-tesla"
           }
         ],
-        "count": 3,
+        "count": 2,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -81,16 +67,16 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-13T17:34:20.362303+03:00"
+      "updated_at": "2026-04-13T19:10:09.835044+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
-          "link": "https://shiftdelete.net/jeff-bezos-destekli-slate-auto-650-milyon-dolar-yatirim-aldi",
-          "published": "2026-04-13T14:25:40+00:00",
-          "summary": "Jeff Bezos destekli Slate Auto, 650 milyon dolar yatırım alarak 2026 sonu için uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.",
+          "title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
+          "link": "https://shiftdelete.net/tesla-otonom-surus-avrupaya-geliyor",
+          "published": "2026-04-13T15:17:13+00:00",
+          "summary": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay almak istediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. Tesla’nın Sürüş Asistanı Avrupa Yollarında RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, bir sürücü destek yazılımı olduğunu vurguladı. […]",
           "image_url": "",
           "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
@@ -98,31 +84,31 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "650-aldi-auto-bezos-destekli-dolar-jeff-milyon-slate-yatirim",
-          "base_ai_score": 80,
-          "score": 91,
+          "topic_fingerprint": "avrupa-geliyor-otonom-surus-tesla",
+          "base_ai_score": 85,
+          "score": 96,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 91,
-        "title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
+        "score": 96,
+        "title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_reason": "ai_scored"
       },
       "error": null,
-      "updated_at": "2026-04-13T17:34:24.431047+03:00"
+      "updated_at": "2026-04-13T19:10:14.450535+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
-          "link": "https://shiftdelete.net/jeff-bezos-destekli-slate-auto-650-milyon-dolar-yatirim-aldi",
-          "published": "2026-04-13T14:25:40+00:00",
-          "summary": "Jeff Bezos destekli Slate Auto, 650 milyon dolar yatırım alarak 2026 sonu için uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.",
+          "title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
+          "link": "https://shiftdelete.net/tesla-otonom-surus-avrupaya-geliyor",
+          "published": "2026-04-13T15:17:13+00:00",
+          "summary": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay almak istediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. Tesla’nın Sürüş Asistanı Avrupa Yollarında RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, bir sürücü destek yazılımı olduğunu vurguladı. […]",
           "image_url": "",
           "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
@@ -130,28 +116,28 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "650-aldi-auto-bezos-destekli-dolar-jeff-milyon-slate-yatirim",
-          "base_ai_score": 80,
-          "score": 91,
+          "topic_fingerprint": "avrupa-geliyor-otonom-surus-tesla",
+          "base_ai_score": 85,
+          "score": 96,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Jeff Bezos tarafından desteklenen elektrikli araç girişimi Slate Auto, uygun fiyatlı kamyonet üretim planlarını hızlandırmak amacıyla 650 milyon dolarlık yeni bir yatırım turunu başarıyla tamamladı. TWG Global liderliğinde gerçekleştirilen bu Seri C finansman turu, şirketin bugüne kadar topladığı toplam sermayeyi yaklaşık 1,4 milyar dolara ulaştırdı. Slate Auto, 2026 yılı sonuna kadar ilk ekonomik elektrikli kamyonetlerini banttan indirmeyi hedefliyor. Amazon’un eski Tüketici CEO’su Jeff Wilke tarafından kurulan ve bünyesinde pek çok eski Amazon yöneticisini barındıran girişim, ABD elektrikli araç pazarındaki zorlu rekabet koşullarına rağmen hedeflerinden şaşmıyor. Slate Auto, 2022 yılındaki kuruluşundan bu yana rakiplerinden farklı bir yol izleyerek piyasanın en alt segmentine odaklanıyor. Şirket, başlangıç fiyatı 20 bin dolar civarında olabilecek temel bir elektrikli kamyonet tasarlıyor. Müşteriler, araçlarını ek paketler ve SUV dönüştürme kitleri gibi seçeneklerle kişiselleştirebiliyor.Slate Auto, 160 binden fazla ön siparişi gerçeğe dönüştürmek için üretim hazırlıklarını hızlandırıyor. Girişimin yönetim yapısı, yoğun bir Amazon kültürüyle şekillenmiş durumda. Şirketin mobilite, kullanıcı deneyimi, e-ticaret ve filo satış departmanlarının başında eski Amazon çalışanları yer alıyor. Yakın zamanda CEO koltuğuna getirilen Peter Faricy, şirketin ön siparişleri satışa dönüştürme stratejisini yönetecek. Eski CEO Chris Barman ise araç geliştirme süreçlerinden sorumlu olarak yeni bir göreve getirildi. ABD elektrikli araç pazarındaki federal vergi teşviklerinin azalması ve satışların yavaşlaması gibi zorlu piyasa koşullarına rağmen Slate Auto, Indiana’daki eski bir baskı fabrikasını üretim tesisine dönüştürmek için yüz milyonlarca dolarlık yatırım yapıyor. Şirket, nihai fiyatlandırmayı haziran ayında açıklamayı planlıyor. Piyasadaki durgunluğa rağmen 160 bin kişilik rezervasyon talebi güçlü bir potansiyele işaret ediyor. Sizce uygun fiyatlı elektrikli kamyonetler ABD pazarındaki dengeleri değiştirebilir mi? Slate Auto’nun bu iddialı hedefi hakkındaki düşüncelerinizi yorumlarda bizimle paylaşın. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+          "full_text": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı içinAvrupa Birliği çapında onay almakistediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, birsürücü destek yazılımıolduğunu vurguladı. Bu gelişmiş teknoloji, direksiyon, fren ve gaz kontrolünü insan gözetiminde,eller direksiyonda olmadansağlayabiliyor. Hollanda pazarında bu teknolojinin güvenle kullanılabileceğine inanan yetkililer, özellikleAmsterdam gibi dar sokaklarave yoğun bisiklet trafiğine sahip bölgelerde bile sistemin başarılı olacağını düşünüyor. Cuma günü Hollanda’da onaylanan bu sistem,Avrupa’da bir ilk olmaözelliği taşıyor. RDW yetkilileri, Hollanda yolları için yeterince güvenli olan bir sistemintüm Avrupa için de uygun olacağınıbelirtiyor. Resmi başvuru takvimi henüz netleşmese de, bu onay süreci Avrupa Komisyonu komitesininçoğunluk onayınıgerektirecek. Avrupa Birliği çapında onay süreci beklenirken, diğer Avrupa ülkeleri Hollanda’nın kararını referans alarakkendi bağımsız onaylarınıverebilecek. Bu teknoloji, halihazırda ABD’deki sürücülere bir abonelik sistemiyle sunulmaya devam ediyor. Tesla, Amerika Birleşik Devletleri’nde çeşitli kazalar ve trafik ihlalleri nedeniyletüketici davaları ve federal soruşturmalarlakarşı karşıya bulunuyor. Bu nedenle yazılımın Avrupa versiyonu, ABD’deki sürümdenönemli ölçüde farklıolacak. Avrupa sürümünde sürücülerin yola dikkat edip etmediğiçok daha sıkı bir şekildedenetlenecek. Ayrıca yazılıma gelecek her türlü güncelleme, kullanıcılara sunulmadan önceRDW tarafından öncedenkontrol edilecek. Hollanda’da halihazırda bu yazılımı kullanmaya uygun yaklaşık100.000 adet Tesla Model 3 ve Model Ybulunuyor. Peki, otomotiv teknolojilerindeki bu hızlı gelişim hakkında siz ne düşünüyorsunuz? Aracınızdaeller serbest bir sürüş asistanıkullanacak olsanız, direksiyonu tamamen bu teknolojiye bırakır mıydınız? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
         },
-        "post_text": "🚗 SLATE AUTO'DAN BÜYÜK HAMLE: 650 MİLYON DOLAR YATIRIM!\n\nJeff Bezos'un da desteklediği elektrikli araç girişimi Slate Auto, yepyeni bir yatırım turuyla 650 milyon dolar daha topladı.\n\nBu önemli finansmanla birlikte şirket, 2026 sonuna kadar uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.\n\nHedefleri 20 bin dolar civarında bir başlangıç fiyatıyla piyasaya girmek.\n\nSizce bu uygun fiyatlı elektrikli kamyonetler pazarında nasıl bir etki yaratır?",
-        "post_text_length": 454
+        "post_text": "🚗 TESLA OTONOM SÜRÜŞ AVRUPA YOLARINDA!\n\nHollanda araç otoritesi RDW, Tesla'nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay başvurusunu resmen duyurdu.\n\nBu önemli gelişme, yasal süreçlerin başlaması için Avrupa Komisyonu'na bildirildi. Sistem, adının aksine tam otonom değil, sürücü destek yazılımı olarak tanımlanıyor.\n\nEller direksiyonda olmasa bile direksiyon, fren ve gaz kontrolünü insan gözetiminde yapabilen bu teknoloji, Hollanda'nın dar sokakları ve yoğun trafiğinde bile başarılı olacağı öngörülüyor.\n\nBu sistemin Avrupa'da bir ilk olması ve Hollanda'da onaylanması, diğer ülkeler için de bir referans olacak.\n\nSizce bu teknoloji Avrupa'da yaygınlaşır mı?",
+        "post_text_length": 685
       },
       "error": null,
-      "updated_at": "2026-04-13T17:34:26.310400+03:00"
+      "updated_at": "2026-04-13T19:10:20.612515+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
-          "link": "https://shiftdelete.net/jeff-bezos-destekli-slate-auto-650-milyon-dolar-yatirim-aldi",
-          "published": "2026-04-13T14:25:40+00:00",
-          "summary": "Jeff Bezos destekli Slate Auto, 650 milyon dolar yatırım alarak 2026 sonu için uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.",
+          "title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
+          "link": "https://shiftdelete.net/tesla-otonom-surus-avrupaya-geliyor",
+          "published": "2026-04-13T15:17:13+00:00",
+          "summary": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay almak istediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. Tesla’nın Sürüş Asistanı Avrupa Yollarında RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, bir sürücü destek yazılımı olduğunu vurguladı. […]",
           "image_url": "",
           "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
@@ -159,33 +145,33 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "650-aldi-auto-bezos-destekli-dolar-jeff-milyon-slate-yatirim",
-          "base_ai_score": 80,
-          "score": 91,
+          "topic_fingerprint": "avrupa-geliyor-otonom-surus-tesla",
+          "base_ai_score": 85,
+          "score": 96,
           "score_reason": "ai_scored",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Jeff Bezos tarafından desteklenen elektrikli araç girişimi Slate Auto, uygun fiyatlı kamyonet üretim planlarını hızlandırmak amacıyla 650 milyon dolarlık yeni bir yatırım turunu başarıyla tamamladı. TWG Global liderliğinde gerçekleştirilen bu Seri C finansman turu, şirketin bugüne kadar topladığı toplam sermayeyi yaklaşık 1,4 milyar dolara ulaştırdı. Slate Auto, 2026 yılı sonuna kadar ilk ekonomik elektrikli kamyonetlerini banttan indirmeyi hedefliyor. Amazon’un eski Tüketici CEO’su Jeff Wilke tarafından kurulan ve bünyesinde pek çok eski Amazon yöneticisini barındıran girişim, ABD elektrikli araç pazarındaki zorlu rekabet koşullarına rağmen hedeflerinden şaşmıyor. Slate Auto, 2022 yılındaki kuruluşundan bu yana rakiplerinden farklı bir yol izleyerek piyasanın en alt segmentine odaklanıyor. Şirket, başlangıç fiyatı 20 bin dolar civarında olabilecek temel bir elektrikli kamyonet tasarlıyor. Müşteriler, araçlarını ek paketler ve SUV dönüştürme kitleri gibi seçeneklerle kişiselleştirebiliyor.Slate Auto, 160 binden fazla ön siparişi gerçeğe dönüştürmek için üretim hazırlıklarını hızlandırıyor. Girişimin yönetim yapısı, yoğun bir Amazon kültürüyle şekillenmiş durumda. Şirketin mobilite, kullanıcı deneyimi, e-ticaret ve filo satış departmanlarının başında eski Amazon çalışanları yer alıyor. Yakın zamanda CEO koltuğuna getirilen Peter Faricy, şirketin ön siparişleri satışa dönüştürme stratejisini yönetecek. Eski CEO Chris Barman ise araç geliştirme süreçlerinden sorumlu olarak yeni bir göreve getirildi. ABD elektrikli araç pazarındaki federal vergi teşviklerinin azalması ve satışların yavaşlaması gibi zorlu piyasa koşullarına rağmen Slate Auto, Indiana’daki eski bir baskı fabrikasını üretim tesisine dönüştürmek için yüz milyonlarca dolarlık yatırım yapıyor. Şirket, nihai fiyatlandırmayı haziran ayında açıklamayı planlıyor. Piyasadaki durgunluğa rağmen 160 bin kişilik rezervasyon talebi güçlü bir potansiyele işaret ediyor. Sizce uygun fiyatlı elektrikli kamyonetler ABD pazarındaki dengeleri değiştirebilir mi? Slate Auto’nun bu iddialı hedefi hakkındaki düşüncelerinizi yorumlarda bizimle paylaşın. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "full_text": "Hollanda araç otoritesi RDW, Tesla’nın Tam Otonom Sürüş (FSD) yazılımı içinAvrupa Birliği çapında onay almakistediğini duyurdu. Bu kritik adım, gerekli yasal süreçlerin başlatılması için Avrupa Komisyonu’na resmi olarak bildirildi. RDW yetkilisi Bernd van Nieuwenhoven, sistemin adının aksine tam otonom bir araç değil, birsürücü destek yazılımıolduğunu vurguladı. Bu gelişmiş teknoloji, direksiyon, fren ve gaz kontrolünü insan gözetiminde,eller direksiyonda olmadansağlayabiliyor. Hollanda pazarında bu teknolojinin güvenle kullanılabileceğine inanan yetkililer, özellikleAmsterdam gibi dar sokaklarave yoğun bisiklet trafiğine sahip bölgelerde bile sistemin başarılı olacağını düşünüyor. Cuma günü Hollanda’da onaylanan bu sistem,Avrupa’da bir ilk olmaözelliği taşıyor. RDW yetkilileri, Hollanda yolları için yeterince güvenli olan bir sistemintüm Avrupa için de uygun olacağınıbelirtiyor. Resmi başvuru takvimi henüz netleşmese de, bu onay süreci Avrupa Komisyonu komitesininçoğunluk onayınıgerektirecek. Avrupa Birliği çapında onay süreci beklenirken, diğer Avrupa ülkeleri Hollanda’nın kararını referans alarakkendi bağımsız onaylarınıverebilecek. Bu teknoloji, halihazırda ABD’deki sürücülere bir abonelik sistemiyle sunulmaya devam ediyor. Tesla, Amerika Birleşik Devletleri’nde çeşitli kazalar ve trafik ihlalleri nedeniyletüketici davaları ve federal soruşturmalarlakarşı karşıya bulunuyor. Bu nedenle yazılımın Avrupa versiyonu, ABD’deki sürümdenönemli ölçüde farklıolacak. Avrupa sürümünde sürücülerin yola dikkat edip etmediğiçok daha sıkı bir şekildedenetlenecek. Ayrıca yazılıma gelecek her türlü güncelleme, kullanıcılara sunulmadan önceRDW tarafından öncedenkontrol edilecek. Hollanda’da halihazırda bu yazılımı kullanmaya uygun yaklaşık100.000 adet Tesla Model 3 ve Model Ybulunuyor. Peki, otomotiv teknolojilerindeki bu hızlı gelişim hakkında siz ne düşünüyorsunuz? Aracınızdaeller serbest bir sürüş asistanıkullanacak olsanız, direksiyonu tamamen bu teknolojiye bırakır mıydınız? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
           "image_source": "og:image"
         },
-        "post_text": "🚗 SLATE AUTO'DAN BÜYÜK HAMLE: 650 MİLYON DOLAR YATIRIM!\n\nJeff Bezos'un da desteklediği elektrikli araç girişimi Slate Auto, yepyeni bir yatırım turuyla 650 milyon dolar daha topladı.\n\nBu önemli finansmanla birlikte şirket, 2026 sonuna kadar uygun fiyatlı elektrikli kamyonet üretimine hazırlanıyor.\n\nHedefleri 20 bin dolar civarında bir başlangıç fiyatıyla piyasaya girmek.\n\nSizce bu uygun fiyatlı elektrikli kamyonetler pazarında nasıl bir etki yaratır?",
-        "image_path": "/tmp/otoxtra_rss_2s593gfg.jpg",
+        "post_text": "🚗 TESLA OTONOM SÜRÜŞ AVRUPA YOLARINDA!\n\nHollanda araç otoritesi RDW, Tesla'nın Tam Otonom Sürüş (FSD) yazılımı için Avrupa Birliği çapında onay başvurusunu resmen duyurdu.\n\nBu önemli gelişme, yasal süreçlerin başlaması için Avrupa Komisyonu'na bildirildi. Sistem, adının aksine tam otonom değil, sürücü destek yazılımı olarak tanımlanıyor.\n\nEller direksiyonda olmasa bile direksiyon, fren ve gaz kontrolünü insan gözetiminde yapabilen bu teknoloji, Hollanda'nın dar sokakları ve yoğun trafiğinde bile başarılı olacağı öngörülüyor.\n\nBu sistemin Avrupa'da bir ilk olması ve Hollanda'da onaylanması, diğer ülkeler için de bir referans olacak.\n\nSizce bu teknoloji Avrupa'da yaygınlaşır mı?",
+        "image_path": "/tmp/otoxtra_rss_9_0eawhw.jpg",
         "image_source": "og:image"
       },
       "error": null,
-      "updated_at": "2026-04-13T17:34:27.886804+03:00"
+      "updated_at": "2026-04-13T19:10:22.062721+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122162335502916499",
-        "article_title": "Jeff Bezos Destekli Slate Auto 650 Milyon Dolar Yatırım Aldı",
+        "post_id": "678053852057751_122162343152916499",
+        "article_title": "Tesla Otonom Sürüş Avrupa’ya Geliyor!",
         "image_source": "og:image",
         "test_mode": false
       },
       "error": null,
-      "updated_at": "2026-04-13T17:41:19.827515+03:00"
+      "updated_at": "2026-04-13T19:14:53.541668+03:00"
     }
   }
 }
