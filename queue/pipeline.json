@@ -1,71 +1,14 @@
 {
-  "run_id": "2026-04-14-19:07",
-  "status": "completed",
-  "started_at": "2026-04-14T19:07:35.841197+03:00",
-  "updated_at": "2026-04-14T19:13:18.873239+03:00",
+  "run_id": "2026-04-14-23:05",
+  "status": "error",
+  "started_at": "2026-04-14T23:05:37.473020+03:00",
+  "updated_at": "2026-04-14T23:05:41.674900+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-            "link": "https://www.donanimhaber.com/yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri--204451",
-            "published": "2026-04-14T15:10:00+00:00",
-            "summary": "Yeni Opel Mokka GSE, 281 beygirlik gücünün yanı sıra performans, direksiyon ve süspansiyon sisteminde yapılan iyileştirmelerle de dikkat çekiyor. Opel Mokka GSE fiyatı ne kadar? İşte detaylar:",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204451/1400x788yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "281-beygirlik-fiyati-gse-mokka-opel-ozellikleri-ste-turkiye"
-          },
-          {
-            "title": "Yeni Nissan Xterra, kaslı yüzünü ilk kez gösterdi",
-            "link": "https://www.donanimhaber.com/nissan-in-efsane-modeli-geri-donuyor-yuzunu-ilk-kez-gosterdi--204414",
-            "published": "2026-04-14T14:30:00+00:00",
-            "summary": "Nissan, efsane SUV modeli Nissan Xterra’yı geri getiriyor. 2028’de yollara çıkması beklenen model, güçlü tasarımı ve V6 motor seçenekleriyle dikkat çekiyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204414/1400x788nissan-in-efsane-modeli-geri-donuyor-yuzunu-ilk-kez-gosterdi.jpg",
-            "source_name": "Donanımhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "gosterdi-kasli-kez-nissan-xterra-yuzunu"
-          },
-          {
-            "title": "Porsche 911 GT3 S/C: Sürüş zevkinin zirvesi!",
-            "link": "https://tr.motor1.com/news/792960/porsche-911-gt3-sc/",
-            "published": "2026-04-14T16:00:00+00:00",
-            "summary": "Yalnızca manuel şanzıman ile sunuluyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/2N442E/s3/porsche-911-gt3-s-c.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "911-gt3-porsche-surus-zevkinin-zirvesi"
-          },
-          {
-            "title": "Rainwoll RW10 Macaron İnceleme – KM’de 31 Kuruş Yakan Araba",
-            "link": "https://shiftdelete.net/rainwoll-rw10-macaron-inceleme-kmde-31-kurus-yakan-araba",
-            "published": "2026-04-14T15:00:14+00:00",
-            "summary": "Kompakt elektrikli araçlar son dönemde şehir içi ulaşım için en çok merak edilen kategorilerin başında geliyor. Bu videoda, B1 sınıfı ehliyetle de kullanılabilen ve dört tekerlekli motorlu araçlar sınıfında yer alan Rainwoll RW10 Macaron modelini tüm detaylarıyla inceledik. Aracı rakiplerinden ayıran en önemli özelliklerden biri, isteğe bağlı olarak kasko ve trafik sigortası yaptırılabiliyor olması. Fiyat […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "araba-kurus-macaron-nceleme-rainwoll-rw10-yakan"
-          }
-        ],
-        "count": 4,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -94,112 +37,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-14T19:07:40.715970+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-14T23:05:41.674900+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-          "link": "https://www.donanimhaber.com/yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri--204451",
-          "published": "2026-04-14T15:10:00+00:00",
-          "summary": "Yeni Opel Mokka GSE, 281 beygirlik gücünün yanı sıra performans, direksiyon ve süspansiyon sisteminde yapılan iyileştirmelerle de dikkat çekiyor. Opel Mokka GSE fiyatı ne kadar? İşte detaylar:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204451/1400x788yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "281-beygirlik-fiyati-gse-mokka-opel-ozellikleri-ste-turkiye",
-          "base_ai_score": 82,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2
-        },
-        "score": 94,
-        "title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-14T19:07:46.179876+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-          "link": "https://www.donanimhaber.com/yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri--204451",
-          "published": "2026-04-14T15:10:00+00:00",
-          "summary": "Yeni Opel Mokka GSE, 281 beygirlik gücünün yanı sıra performans, direksiyon ve süspansiyon sisteminde yapılan iyileştirmelerle de dikkat çekiyor. Opel Mokka GSE fiyatı ne kadar? İşte detaylar:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204451/1400x788yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "281-beygirlik-fiyati-gse-mokka-opel-ozellikleri-ste-turkiye",
-          "base_ai_score": 82,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Geçen yıl temmuz ayında resmi olarak tanıtılan yeniOpel Mokka GSETürkiye'de satışa sunuldu. Tamamen elektrikli GSE serisinin ilk üyesi olan Mokka GSE, dış tasarımda fazla radikal değişiklikler barındırmasa da önemli teknik iyileştirmeler içeriyor. Yeni Opel Mokka GSE'nin ön aksına yerleştirilen elektrik motoru207 kW(281 hp) güç ve345 Nmtork üretiyor. Bu gücün tamamı yalnızca Sport modunda kullanıma sunuluyor. 0’dan 100 km/s hıza5.9 saniyedeçıkan Mokka GSE,200 km/smaksimum hıza ulaşabiliyor. Aracın54 kWsa(50.8 kWsa net) kapasiteli NMC bataryası, maksimum336 kilometre menzilsunuyor. Bu rakam, standart modelde 407 km’ye kadar çıkabiliyor. Mokka GSE'nin birleşik tüketimi 18,5 kWsa/100 km olarak açıklandı. Şarj tarafında ise 11 kW AC, 100 kW'a kadar da maksimum DC şarj kapasitesi sunuluyor. Direksiyon sistemi de keskinleştirilen araçta özel akslar, spor süspansiyon (çift hidrolik amortisörlü), geliştirilmiş frenler ve sarı renkli GSE kaliperleri dikkat çekiyor. 20 inçlik özel jantların çevresinde Michelin Pilot Sport EV lastikler standart olarak sunuluyor. Opel Mokka GSE Görselleri(6)Aç Usain Bolt'un hızına yaklaşan insansı robot Haberdeki destek güzel bir başlangıç farklı fırsatlarda var. Mobil oyun ve uygulama sektörü için Türkiye'nin 2026'da yürürlüğe koyduğu 10962 sayılı karar, E-TURQUALITY Programı kapsamında yıllık 500 milyon TL'ye kadar destek sunuyor. Yurt dışı pazarlama, lokalizasyon, UA reklam giderleri — hepsi %50-70 oranında geri ödemesiz. Haberde bahsedilen KOSGEB destekleri + e-Turquality + Yatırım Teşvik Belgesi birlikte kullanılabildiğinde önemli bir kaldıraç oluşuyor. Proteşvik olarak bu süreçleri yöneten bir firmayız; konu hakkında daha fazla bilgi isteyen olursa web sitesinden blog yazılarımızı okuyabilir. https://www.amazon.com.tr/promotion/psp/A14S7J17Q66J4P https://www.amazon.com.tr/dp/B0CM872LS3 https://www.n11.com/urun/kisiye-ozel-ahsap-kapi-isimligi-cicekli-10x20-cm-mdf-dekoratif-kapi-tabelasi-10x20-cm-118808411 https://app.hb.biz/OFlJsHaq92Bh https://proteinocean.com/protein-bar-lansman-2"
-        },
-        "post_text": "⚡️ YENİ OPEL MOKKA GSE TÜRKİYE'DE!\n\nGeçtiğimiz temmuz ayında tanıtılan tam elektrikli Opel Mokka GSE nihayet Türkiye'de satışa çıktı. Dış tasarımda büyük değişiklikler olmasa da, kaputun altında ciddi iyileştirmeler var.\n\nÖn akstaki elektrik motoru 281 beygir güç ve 345 Nm tork üretiyor. Bu güçle 0'dan 100 km/s hıza sadece 5.9 saniyede ulaşıyor, maksimum hızı ise 200 km/s.\n\nBataryası 54 kWsa kapasiteli ve 336 kilometre menzil sunuyor. Tabii bu rakam standart modele göre biraz daha düşük.\n\nDireksiyonu daha keskin, süspansiyonları spor, frenleri geliştirilmiş. Üzerinde 20 inçlik özel jantlar ve Michelin Pilot Sport EV lastikler standart olarak geliyor.\n\nSizce bu yeni elektrikli Mokka'nın performansı nasıl olur?",
-        "post_text_length": 718
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-14T19:07:49.648915+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-          "link": "https://www.donanimhaber.com/yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri--204451",
-          "published": "2026-04-14T15:10:00+00:00",
-          "summary": "Yeni Opel Mokka GSE, 281 beygirlik gücünün yanı sıra performans, direksiyon ve süspansiyon sisteminde yapılan iyileştirmelerle de dikkat çekiyor. Opel Mokka GSE fiyatı ne kadar? İşte detaylar:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204451/1400x788yeni-opel-mokka-gse-turkiye-de-iste-fiyati-ve-ozellikleri.jpg",
-          "source_name": "Donanımhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "281-beygirlik-fiyati-gse-mokka-opel-ozellikleri-ste-turkiye",
-          "base_ai_score": 82,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 2,
-          "full_text": "Geçen yıl temmuz ayında resmi olarak tanıtılan yeniOpel Mokka GSETürkiye'de satışa sunuldu. Tamamen elektrikli GSE serisinin ilk üyesi olan Mokka GSE, dış tasarımda fazla radikal değişiklikler barındırmasa da önemli teknik iyileştirmeler içeriyor. Yeni Opel Mokka GSE'nin ön aksına yerleştirilen elektrik motoru207 kW(281 hp) güç ve345 Nmtork üretiyor. Bu gücün tamamı yalnızca Sport modunda kullanıma sunuluyor. 0’dan 100 km/s hıza5.9 saniyedeçıkan Mokka GSE,200 km/smaksimum hıza ulaşabiliyor. Aracın54 kWsa(50.8 kWsa net) kapasiteli NMC bataryası, maksimum336 kilometre menzilsunuyor. Bu rakam, standart modelde 407 km’ye kadar çıkabiliyor. Mokka GSE'nin birleşik tüketimi 18,5 kWsa/100 km olarak açıklandı. Şarj tarafında ise 11 kW AC, 100 kW'a kadar da maksimum DC şarj kapasitesi sunuluyor. Direksiyon sistemi de keskinleştirilen araçta özel akslar, spor süspansiyon (çift hidrolik amortisörlü), geliştirilmiş frenler ve sarı renkli GSE kaliperleri dikkat çekiyor. 20 inçlik özel jantların çevresinde Michelin Pilot Sport EV lastikler standart olarak sunuluyor. Opel Mokka GSE Görselleri(6)Aç Usain Bolt'un hızına yaklaşan insansı robot Haberdeki destek güzel bir başlangıç farklı fırsatlarda var. Mobil oyun ve uygulama sektörü için Türkiye'nin 2026'da yürürlüğe koyduğu 10962 sayılı karar, E-TURQUALITY Programı kapsamında yıllık 500 milyon TL'ye kadar destek sunuyor. Yurt dışı pazarlama, lokalizasyon, UA reklam giderleri — hepsi %50-70 oranında geri ödemesiz. Haberde bahsedilen KOSGEB destekleri + e-Turquality + Yatırım Teşvik Belgesi birlikte kullanılabildiğinde önemli bir kaldıraç oluşuyor. Proteşvik olarak bu süreçleri yöneten bir firmayız; konu hakkında daha fazla bilgi isteyen olursa web sitesinden blog yazılarımızı okuyabilir. https://www.amazon.com.tr/promotion/psp/A14S7J17Q66J4P https://www.amazon.com.tr/dp/B0CM872LS3 https://www.n11.com/urun/kisiye-ozel-ahsap-kapi-isimligi-cicekli-10x20-cm-mdf-dekoratif-kapi-tabelasi-10x20-cm-118808411 https://app.hb.biz/OFlJsHaq92Bh https://proteinocean.com/protein-bar-lansman-2",
-          "image_source": "rss_image"
-        },
-        "post_text": "⚡️ YENİ OPEL MOKKA GSE TÜRKİYE'DE!\n\nGeçtiğimiz temmuz ayında tanıtılan tam elektrikli Opel Mokka GSE nihayet Türkiye'de satışa çıktı. Dış tasarımda büyük değişiklikler olmasa da, kaputun altında ciddi iyileştirmeler var.\n\nÖn akstaki elektrik motoru 281 beygir güç ve 345 Nm tork üretiyor. Bu güçle 0'dan 100 km/s hıza sadece 5.9 saniyede ulaşıyor, maksimum hızı ise 200 km/s.\n\nBataryası 54 kWsa kapasiteli ve 336 kilometre menzil sunuyor. Tabii bu rakam standart modele göre biraz daha düşük.\n\nDireksiyonu daha keskin, süspansiyonları spor, frenleri geliştirilmiş. Üzerinde 20 inçlik özel jantlar ve Michelin Pilot Sport EV lastikler standart olarak geliyor.\n\nSizce bu yeni elektrikli Mokka'nın performansı nasıl olur?",
-        "image_path": "/tmp/otoxtra_rss_aeep7ire.jpg",
-        "image_source": "rss_image"
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-14T19:07:50.894290+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162460272916499",
-        "article_title": "281 beygirlik Opel Mokka GSE Türkiye'de: İşte fiyatı ve özellikleri",
-        "image_source": "rss_image",
-        "test_mode": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-14T19:13:18.873239+03:00"
+      "updated_at": null
     }
   }
 }
