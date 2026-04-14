@@ -1,57 +1,29 @@
 {
-  "run_id": "2026-04-14-13:17",
-  "status": "error",
-  "started_at": "2026-04-14T13:17:23.359545+03:00",
-  "updated_at": "2026-04-14T13:17:31.618536+03:00",
+  "run_id": "2026-04-14-14:56",
+  "status": "completed",
+  "started_at": "2026-04-14T14:56:19.830188+03:00",
+  "updated_at": "2026-04-14T14:59:01.709142+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Tamamen elektrikli yeni Nissan Juke tanıtıldı",
-            "link": "https://www.donanimhaber.com/tamamen-elektrikli-yeni-nissan-juke-tanitildi--204418",
-            "published": "2026-04-14T08:17:00+00:00",
-            "summary": "Nissan, tamamen elektrikli yeni Nissan Juke modelini tanıttı. 2027’de satışa çıkacak model, cesur gövde tasarımını elektrikli araç dünyasına taşıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204418/1400x788tamamen-elektrikli-yeni-nissan-juke-tanitildi.jpg",
+            "title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+            "link": "https://www.donanimhaber.com/leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu--204416",
+            "published": "2026-04-14T11:38:00+00:00",
+            "summary": "Stellantis, Leapmotor T03’ü elektrikli hafif ticariye dönüştürdü. Kompakt yapısı ve uygun fiyatıyla şehir içi teslimatlara odaklanan model Avrupa’da satışa çıkıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204416/1400x788leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu.jpg",
             "source_name": "Donanımhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "elektrikli-juke-nissan-tamamen"
-          },
-          {
-            "title": "Mart ayında ikinci el sektörü yavaşladı!",
-            "link": "https://tr.motor1.com/news/792884/2026-mart-arabam-com-degerlendirmesi/",
-            "published": "2026-04-14T09:00:00+00:00",
-            "summary": "Arabam.com'dan Mart ayı değerlendirmesi geldi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/NGgANy/s3/arabam.com-gorsel.jpg",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ayinda-ikinci-mart-sektoru-yavasladi"
-          },
-          {
-            "title": "Yeni Mercedes EQS 926 KM Menzil ile Tanıtıldı",
-            "link": "https://shiftdelete.net/yeni-mercedes-eqs-926-km-menzil-ile-tanitildi",
-            "published": "2026-04-14T08:21:31+00:00",
-            "summary": "Alman otomotiv devi Mercedes, elektrikli otomobil dünyasındaki dengeleri değiştirecek hamlesini yaptı. Markanın lüks segmentteki elektrikli temsilcisi EQS, 2027 model yılı için geçirdiği kapsamlı yenilenme süreciyle sahneye çıktı. Tasarımdan ziyade teknik altyapısındaki devrimsel geliştirmelerle dikkat çeken yeni Mercedes EQS, “menzil kaygısını” tarihe gömmeye hazırlanıyor. 800V Mimari ve Işık Hızında Şarj Performansı Yeni EQS’in en büyük yeniliği, […]",
-            "image_url": "",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "926-eqs-menzil-mercedes"
+            "topic_fingerprint": "avrupa-cikiyor-leapmotor-satisa-t03-ticari-versiyonu"
           }
         ],
-        "count": 3,
+        "count": 1,
         "source_health": {
           "Donanımhaber": {
             "status": "ok",
@@ -81,31 +53,111 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-14T13:17:27.670822+03:00"
+      "updated_at": "2026-04-14T14:56:24.612234+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold",
-      "updated_at": "2026-04-14T13:17:31.618536+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+          "link": "https://www.donanimhaber.com/leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu--204416",
+          "published": "2026-04-14T11:38:00+00:00",
+          "summary": "Stellantis, Leapmotor T03’ü elektrikli hafif ticariye dönüştürdü. Kompakt yapısı ve uygun fiyatıyla şehir içi teslimatlara odaklanan model Avrupa’da satışa çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204416/1400x788leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "avrupa-cikiyor-leapmotor-satisa-t03-ticari-versiyonu",
+          "base_ai_score": 78,
+          "score": 90,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2
+        },
+        "score": 90,
+        "title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+        "trend_count": 1,
+        "trend_bonus": 2,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored"
+      },
+      "error": null,
+      "updated_at": "2026-04-14T14:56:27.383899+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+          "link": "https://www.donanimhaber.com/leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu--204416",
+          "published": "2026-04-14T11:38:00+00:00",
+          "summary": "Stellantis, Leapmotor T03’ü elektrikli hafif ticariye dönüştürdü. Kompakt yapısı ve uygun fiyatıyla şehir içi teslimatlara odaklanan model Avrupa’da satışa çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204416/1400x788leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "avrupa-cikiyor-leapmotor-satisa-t03-ticari-versiyonu",
+          "base_ai_score": 78,
+          "score": 90,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Stellantis, Leapmotor ile olan ortaklığı kapsamında küçük Leapmotor T03 modelini minik bir ticari araca dönüştürdü. Şehir içindeki teslimatlar için geliştirilen model, Avrupa şehirlerinin dar sokaklarına uygun kompakt yapısı, sıfır emisyonlu güç ünitesi ve filo müşterilerini hedefleyen fiyatlandırmasıyla dikkat çekiyor. Leapmotor T03'ün taşıma kapasitesi ise sınırlı. Modelin maksimum taşıma kapasitesi220 kgolarak açıklanıyor. Bu da ağır yüklerden ziyade paket teslimatı ve şehir içi dağıtım gibi hafif işler için uygun olduğunu gösteriyor. Dış tasarımda standart Leapmotor T03 modeline büyük ölçüde sadık kalınmış. 3.620 mm uzunluğundaki araç, siyah renkte 15 inç çelik jantlarla binek versiyondan ayrışıyor. İç mekânda ise beklentilerin üzerinde bir donanım seviyesi sunuluyor. Araçta 8 inç dijital gösterge paneli, 10.1 inç multimedya ekranı ve kapsamlı sürüş destek sistemleri yer alıyor. Stellantis, Avrupa pazarına yönelik üretim süreçlerinin İtalya’daki Mirafiori fabrikasında tamamlanacağını belirtiyor. Ancak Leapmotor T03’ün ana üretimi Çin’in Jinhua kentinde devam ediyor. Model için siparişler bu ay içerisinde Avrupa’nın bazı pazarlarında açılacak. İlk teslimatların yaz aylarında yapılması bekleniyor. Başlangıç fiyatı 17 bin euro civarında olan araç, Avrupa’daki en uygun fiyatlı hafif ticari elektrikli modellerden biri olmaya aday. Leapmotor T03 LCV Görselleri(10)Aç Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B0CM872LS3 https://www.n11.com/urun/kisiye-ozel-ahsap-kapi-isimligi-cicekli-10x20-cm-mdf-dekoratif-kapi-tabelasi-10x20-cm-118808411 https://www.amazon.com.tr/dp/B0DXDHYWKK https://www.bim.com.tr/aktuel-urunler/tuslu-cep-telefonu-e2101p-10-4/aktuel.aspx"
+        },
+        "post_text": "⚡️ AVRUPA'DA YENİ BİR ELEKTRİKLİ TİCARİ ARAÇ GELİYOR!\n\nStellantis, Leapmotor T03'ü elektrikli hafif ticari araca dönüştürdü.\n\nŞehir içi teslimatlar için tasarlanan bu kompakt model, dar sokaklara uygunluğuyla öne çıkıyor. Sıfır emisyonlu ve filo müşterilerine yönelik fiyatlandırmasıyla dikkat çekecek.\n\nTaşıma kapasitesi 220 kg civarında, yani daha çok paket teslimatı gibi işler için ideal. İçinde ise 8 inç dijital ekran ve 10.1 inç multimedya ekranı gibi modern özellikler bulunuyor.\n\nİtalya'da üretilecek ve siparişler bu ay Avrupa'da açılacak. Fiyatı ise yaklaşık 17 bin euro'dan başlayacak.\n\nSizce bu araç şehir içi dağıtım işleri için uygun olur mu?",
+        "post_text_length": 657
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-14T14:56:30.051699+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+          "link": "https://www.donanimhaber.com/leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu--204416",
+          "published": "2026-04-14T11:38:00+00:00",
+          "summary": "Stellantis, Leapmotor T03’ü elektrikli hafif ticariye dönüştürdü. Kompakt yapısı ve uygun fiyatıyla şehir içi teslimatlara odaklanan model Avrupa’da satışa çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204416/1400x788leapmotor-t03-avrupa-nin-en-ucuz-ticari-araclarindan-biri-oldu.jpg",
+          "source_name": "Donanımhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "avrupa-cikiyor-leapmotor-satisa-t03-ticari-versiyonu",
+          "base_ai_score": 78,
+          "score": 90,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Stellantis, Leapmotor ile olan ortaklığı kapsamında küçük Leapmotor T03 modelini minik bir ticari araca dönüştürdü. Şehir içindeki teslimatlar için geliştirilen model, Avrupa şehirlerinin dar sokaklarına uygun kompakt yapısı, sıfır emisyonlu güç ünitesi ve filo müşterilerini hedefleyen fiyatlandırmasıyla dikkat çekiyor. Leapmotor T03'ün taşıma kapasitesi ise sınırlı. Modelin maksimum taşıma kapasitesi220 kgolarak açıklanıyor. Bu da ağır yüklerden ziyade paket teslimatı ve şehir içi dağıtım gibi hafif işler için uygun olduğunu gösteriyor. Dış tasarımda standart Leapmotor T03 modeline büyük ölçüde sadık kalınmış. 3.620 mm uzunluğundaki araç, siyah renkte 15 inç çelik jantlarla binek versiyondan ayrışıyor. İç mekânda ise beklentilerin üzerinde bir donanım seviyesi sunuluyor. Araçta 8 inç dijital gösterge paneli, 10.1 inç multimedya ekranı ve kapsamlı sürüş destek sistemleri yer alıyor. Stellantis, Avrupa pazarına yönelik üretim süreçlerinin İtalya’daki Mirafiori fabrikasında tamamlanacağını belirtiyor. Ancak Leapmotor T03’ün ana üretimi Çin’in Jinhua kentinde devam ediyor. Model için siparişler bu ay içerisinde Avrupa’nın bazı pazarlarında açılacak. İlk teslimatların yaz aylarında yapılması bekleniyor. Başlangıç fiyatı 17 bin euro civarında olan araç, Avrupa’daki en uygun fiyatlı hafif ticari elektrikli modellerden biri olmaya aday. Leapmotor T03 LCV Görselleri(10)Aç Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B0CM872LS3 https://www.n11.com/urun/kisiye-ozel-ahsap-kapi-isimligi-cicekli-10x20-cm-mdf-dekoratif-kapi-tabelasi-10x20-cm-118808411 https://www.amazon.com.tr/dp/B0DXDHYWKK https://www.bim.com.tr/aktuel-urunler/tuslu-cep-telefonu-e2101p-10-4/aktuel.aspx",
+          "image_source": "rss_image"
+        },
+        "post_text": "⚡️ AVRUPA'DA YENİ BİR ELEKTRİKLİ TİCARİ ARAÇ GELİYOR!\n\nStellantis, Leapmotor T03'ü elektrikli hafif ticari araca dönüştürdü.\n\nŞehir içi teslimatlar için tasarlanan bu kompakt model, dar sokaklara uygunluğuyla öne çıkıyor. Sıfır emisyonlu ve filo müşterilerine yönelik fiyatlandırmasıyla dikkat çekecek.\n\nTaşıma kapasitesi 220 kg civarında, yani daha çok paket teslimatı gibi işler için ideal. İçinde ise 8 inç dijital ekran ve 10.1 inç multimedya ekranı gibi modern özellikler bulunuyor.\n\nİtalya'da üretilecek ve siparişler bu ay Avrupa'da açılacak. Fiyatı ise yaklaşık 17 bin euro'dan başlayacak.\n\nSizce bu araç şehir içi dağıtım işleri için uygun olur mu?",
+        "image_path": "/tmp/otoxtra_rss_kvrvyezn.jpg",
+        "image_source": "rss_image"
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-14T14:56:31.529075+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122162433536916499",
+        "article_title": "Leapmotor T03'ün ticari versiyonu Avrupa'da satışa çıkıyor",
+        "image_source": "rss_image",
+        "test_mode": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-14T14:59:01.709142+03:00"
     }
   }
 }
