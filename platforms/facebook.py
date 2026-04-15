@@ -4,11 +4,12 @@ platforms/facebook.py - Facebook Graph API katmani
 Sadece Facebook API cagrisi yapar.
 Karar vermez, durum tutmaz.
 
-v3.1:
+v3.2:
   - post_photos(image_paths, message) eklendi (coklu gorsel)
   - Coklu gorsel icin unpublished upload + attached_media akisi eklendi
   - Upload oncesi dosya hash ile son dedupe guvenlik kati eklendi
   - attached_media alanlari loglanir
+  - HTTP cevaplari icin detayli retry / status / body preview loglari eklendi
 """
 
 import json
@@ -36,6 +37,13 @@ def _file_sha256(path: str) -> str:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
             h.update(chunk)
     return h.hexdigest()
+
+
+def _safe_body_preview(text: str, limit: int = 400) -> str:
+    if not text:
+        return ""
+    value = text.replace("\n", " ").replace("\r", " ").strip()
+    return value[:limit]
 
 
 def _get_credentials() -> tuple[str, str]:
@@ -116,22 +124,46 @@ def _post_with_retry(
 
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
         try:
+            started = time.time()
             response = requests.post(
                 url,
                 data=data,
                 files=files,
                 timeout=_REQUEST_TIMEOUT,
             )
+            elapsed_ms = int((time.time() - started) * 1000)
+
             result = _parse_json_safe(response)
+            body_preview = _safe_body_preview(response.text)
+
+            log(
+                f"{context} attempt={attempt}/{_RETRY_ATTEMPTS} "
+                f"status={response.status_code} elapsed_ms={elapsed_ms}",
+                "INFO",
+            )
 
             if response.status_code >= 500:
                 last_error = f"http_{response.status_code}"
+                log(
+                    f"{context} server_error status={response.status_code} body={body_preview}",
+                    "WARNING",
+                )
+
             elif "error" in result:
                 _handle_api_error(result, f"{context} attempt={attempt}")
                 if _should_retry_response(result):
                     last_error = "retryable_api_error"
                 else:
                     return result
+
+            elif response.status_code >= 400:
+                last_error = f"http_{response.status_code}"
+                log(
+                    f"{context} client_error_non_json status={response.status_code} body={body_preview}",
+                    "WARNING",
+                )
+                return {}
+
             else:
                 return result
 
@@ -150,6 +182,7 @@ def _post_with_retry(
 
         if attempt < _RETRY_ATTEMPTS:
             wait_seconds = _RETRY_BASE_WAIT_SECONDS * (2 ** (attempt - 1))
+            log(f"{context} retry_wait={wait_seconds:.1f}s", "INFO")
             time.sleep(wait_seconds)
 
     log(f"{context} tum denemeler basarisiz. son_hata={last_error}", "ERROR")
@@ -279,11 +312,10 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         log("post_photos: dedupe sonrasi gecerli gorsel kalmadi", "WARNING")
         return None
 
-    # Tek gorselse normal akis daha stabil
     if len(valid_paths) == 1:
+        log("post_photos: dedupe sonrasi tek gorsel kaldi, post_photo akisina geciliyor")
         return post_photo(valid_paths[0], message)
 
-    # Facebook icin guvenli ust limit
     if len(valid_paths) > _MAX_MULTI_PHOTOS:
         log(f"post_photos: gorsel sayisi {_MAX_MULTI_PHOTOS} ile sinirlandi")
         valid_paths = valid_paths[:_MAX_MULTI_PHOTOS]
@@ -292,12 +324,40 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
 
     media_ids: list[str] = []
     for idx, path in enumerate(valid_paths, start=1):
-        log(f"Gorsel yukleniyor ({idx}/{len(valid_paths)}): {path}")
+        try:
+            size_kb = os.path.getsize(path) // 1024
+        except Exception:
+            size_kb = -1
+
+        short_hash = "unknown"
+        try:
+            short_hash = _file_sha256(path)[:12]
+        except Exception:
+            pass
+
+        log(
+            f"post_photos upload_start idx={idx}/{len(valid_paths)} "
+            f"size_kb={size_kb} sha12={short_hash} path={path}"
+        )
+
+        up_started = time.time()
         media_id = _upload_unpublished_photo(path, access_token, page_id)
+        up_elapsed_ms = int((time.time() - up_started) * 1000)
+
         if not media_id:
+            log(
+                f"post_photos upload_fail idx={idx} elapsed_ms={up_elapsed_ms}",
+                "WARNING",
+            )
             log("Coklu gorsel akisi: upload basarisiz, islem durduruldu", "WARNING")
             return None
+
+        log(
+            f"post_photos upload_ok idx={idx} elapsed_ms={up_elapsed_ms} media_id={_mask_id(media_id)}"
+        )
         media_ids.append(media_id)
+
+    log("post_photos media_ids=" + ", ".join(_mask_id(m) for m in media_ids))
 
     feed_url = f"{_FB_BASE_URL}/{page_id}/feed"
     payload: dict[str, str] = {
