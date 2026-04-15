@@ -1,12 +1,13 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.5)
+agents/agent_publisher.py - Yayinci Ajani (v3.6)
 
-v3.5:
+v3.6:
   - test_mode bagimliligi kaldirildi
   - DRY_RUN / ENABLE_RANDOM_DELAY / ENABLE_RANDOM_SKIP env secenekleri korundu
   - PERSIST_STATE=false iken posted kaydi yazmaz
   - image_paths toplarken path bazli tekillestirme guclendirildi
   - Multi photo akisinda detayli debug loglari eklendi
+  - Facebook paylasimi basarili olunca Telegram bildirimi eklendi
 """
 
 import os
@@ -27,6 +28,7 @@ from core.helpers import (
 )
 from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
+from platforms import telegram as tg_platform
 
 
 _RETRY_DELAY = 5
@@ -248,6 +250,22 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     return None
 
 
+def _send_telegram_notification(article: dict, post_id: str) -> bool:
+    title = (article.get("title", "") or "").strip()
+    link = (article.get("link", "") or "").strip()
+    score = article.get("score", 0)
+
+    message = (
+        "Yeni Facebook paylasimi yapildi.\n\n"
+        f"Baslik: {title or 'Bilinmiyor'}\n"
+        f"Link: {link or '-'}\n"
+        f"Skor: {score}\n"
+        f"Post ID: {post_id}"
+    )
+
+    return tg_platform.send_message(message)
+
+
 def run() -> bool:
     log("-" * 55)
     log("agent_publisher basliyor")
@@ -348,6 +366,10 @@ def run() -> bool:
         final_image_count = len(image_paths) if final_image_source != "fallback_text" else 0
         _record_posted(article, post_id, final_image_source, final_image_count)
 
+        telegram_ok = _send_telegram_notification(article, post_id)
+        if not telegram_ok:
+            log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
+
         output = {
             "success": True,
             "post_id": post_id,
@@ -368,6 +390,7 @@ def run() -> bool:
 
 if __name__ == "__main__":
     from core.state_manager import init_pipeline
+
     log("=== agent_publisher.py modul testi basliyor ===")
 
     init_pipeline("test-publisher")
@@ -379,14 +402,18 @@ if __name__ == "__main__":
     }
     fake_post_text = "Test post"
 
-    set_stage("image", "done", output={
-        "article": fake_article,
-        "post_text": fake_post_text,
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "article_or_rss",
-        "image_count": 0,
-    })
+    set_stage(
+        "image",
+        "done",
+        output={
+            "article": fake_article,
+            "post_text": fake_post_text,
+            "image_path": "",
+            "image_paths": [],
+            "image_source": "article_or_rss",
+            "image_count": 0,
+        },
+    )
 
     run()
     log("=== agent_publisher.py modul testi tamamlandi ===")
