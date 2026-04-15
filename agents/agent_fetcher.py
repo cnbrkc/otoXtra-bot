@@ -42,6 +42,7 @@ _TREND_BONUSES = [(5, 15), (3, 10), (2, 5)]
 _TREND_FINGERPRINT_THRESHOLD = 0.70
 
 _IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
+_DISALLOWED_IMAGE_EXTENSIONS = (".svg", ".ico")
 _IMAGE_NOISE_HINTS = (
     "logo",
     "icon",
@@ -245,6 +246,23 @@ def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
     return urlunparse(cleaned)
 
 
+def _candidate_key(url: str) -> str:
+    parsed = urlparse(url)
+    path = parsed.path or ""
+    path = re.sub(
+        r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$",
+        r"\3",
+        path,
+        flags=re.IGNORECASE,
+    )
+    filtered_qs = [
+        (k, v)
+        for k, v in parse_qsl(parsed.query, keep_blank_values=True)
+        if k.lower() not in _RESIZE_QUERY_KEYS
+    ]
+    return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
+
+
 def _looks_like_noise_image(url: str) -> bool:
     lower_url = url.lower()
     return any(hint in lower_url for hint in _IMAGE_NOISE_HINTS)
@@ -252,6 +270,9 @@ def _looks_like_noise_image(url: str) -> bool:
 
 def _is_probable_image_url(url: str) -> bool:
     lower = url.lower()
+    parsed = urlparse(lower)
+    if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
+        return False
     if any(ext in lower for ext in _IMAGE_EXTENSIONS):
         return True
     if "image" in lower:
@@ -438,22 +459,28 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
                 if normalized:
                     raw_candidates.extend(_thumbnail_to_original_variants(normalized))
 
+        raw_count = len(raw_candidates)
         unique_candidates: list[str] = []
-        seen: set[str] = set()
+        seen_keys: set[str] = set()
         for candidate in raw_candidates:
             lower_candidate = candidate.lower()
-            if candidate in seen:
+            key = _candidate_key(candidate)
+
+            if not candidate or key in seen_keys:
                 continue
             if _looks_like_noise_image(lower_candidate):
                 continue
             if not _is_probable_image_url(lower_candidate):
                 continue
 
-            seen.add(candidate)
+            seen_keys.add(key)
             unique_candidates.append(candidate)
             if len(unique_candidates) >= max_candidates:
                 break
 
+        log(
+            f"extract_images_from_article: raw={raw_count}, canonical={len(unique_candidates)}, url={url[:120]}"
+        )
         return unique_candidates
 
     except Exception as exc:
@@ -553,17 +580,26 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                             article_image_candidates.remove(rss_item)
                     article_image_candidates = rss_variants + article_image_candidates
 
-                # unique + limit
+                # unique + limit (canonical key ile)
+                raw_candidate_count = len(article_image_candidates)
                 deduped_candidates: list[str] = []
-                seen_candidates: set[str] = set()
+                seen_candidate_keys: set[str] = set()
                 for c in article_image_candidates:
-                    if not c or c in seen_candidates:
+                    if not c:
                         continue
-                    seen_candidates.add(c)
+                    c_key = _candidate_key(c)
+                    if c_key in seen_candidate_keys:
+                        continue
+                    seen_candidate_keys.add(c_key)
                     deduped_candidates.append(c)
                     if len(deduped_candidates) >= max_candidates_per_article:
                         break
                 article_image_candidates = deduped_candidates
+
+                if raw_candidate_count != len(article_image_candidates):
+                    log(
+                        f"{feed_name}: image candidates raw={raw_candidate_count}, canonical={len(article_image_candidates)}"
+                    )
 
                 primary_image = (
                     article_image_candidates[0]
