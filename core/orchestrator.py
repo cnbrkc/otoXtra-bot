@@ -3,8 +3,6 @@ Main orchestrator for otoXtra bot.
 """
 
 import os
-import sys
-import random
 import traceback
 
 from core.logger import log
@@ -19,10 +17,24 @@ from core.helpers import (
 from core.state_manager import init_pipeline, get_stage
 
 
-def _is_test_mode() -> bool:
-    if os.environ.get("TEST_MODE", "false").lower() == "true":
+def _get_env_bool(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    value = raw.strip().lower()
+    if value in {"true", "1", "yes", "on"}:
         return True
-    return "--test" in sys.argv
+    if value in {"false", "0", "no", "off"}:
+        return False
+    return default
+
+
+def _is_persist_state_enabled() -> bool:
+    return _get_env_bool("PERSIST_STATE", True)
+
+
+def _ignore_min_post_interval() -> bool:
+    return _get_env_bool("IGNORE_MIN_POST_INTERVAL", False)
 
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
@@ -32,18 +44,9 @@ def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
     return today_count < max_daily
 
 
-def _check_random_skip(settings: dict, test_mode: bool) -> bool:
-    if test_mode:
-        return True
-    skip_probability = settings.get("posting", {}).get("skip_probability_percent", 10)
-    if skip_probability <= 0:
-        return True
-    roll = random.randint(1, 100)
-    return roll > skip_probability
-
-
-def _check_min_interval(settings: dict, posted_data: dict, test_mode: bool) -> bool:
-    if test_mode:
+def _check_min_interval(settings: dict, posted_data: dict) -> bool:
+    if _ignore_min_post_interval():
+        log("Min post interval kontrolu atlandi (IGNORE_MIN_POST_INTERVAL=true)")
         return True
 
     min_interval_hours = settings.get("posting", {}).get("min_post_interval_hours", 0)
@@ -68,17 +71,6 @@ def _check_min_interval(settings: dict, posted_data: dict, test_mode: bool) -> b
         return True
 
 
-def _random_delay(settings: dict, test_mode: bool) -> None:
-    if test_mode:
-        return
-    import time
-
-    max_delay_minutes = settings.get("posting", {}).get("random_delay_max_minutes", 8)
-    if max_delay_minutes <= 0:
-        return
-    time.sleep(random.randint(0, max_delay_minutes * 60))
-
-
 def _log_stage_error(stage_name: str) -> None:
     try:
         stage = get_stage(stage_name)
@@ -96,18 +88,44 @@ def _log_source_health() -> None:
         source_health = output.get("source_health", {})
         if not source_health:
             return
+
         ok_count = sum(1 for v in source_health.values() if v.get("status") == "ok")
         err_count = sum(1 for v in source_health.values() if v.get("status") == "error")
         empty_count = sum(1 for v in source_health.values() if v.get("status") == "no_entries")
         disabled_count = sum(1 for v in source_health.values() if v.get("status") == "disabled")
         log(
-            f"Source health: ok={ok_count}, error={err_count}, empty={empty_count}, disabled={disabled_count}"
+            f"Source health: ok={ok_count}, error={err_count}, "
+            f"empty={empty_count}, disabled={disabled_count}"
         )
     except Exception:
         pass
 
 
+def _log_image_summary() -> None:
+    try:
+        stage = get_stage("image")
+        if stage.get("status") != "done":
+            return
+
+        output = stage.get("output") or {}
+        image_source = output.get("image_source", "unknown")
+        image_path = output.get("image_path", "")
+        image_paths = output.get("image_paths", [])
+        image_count = output.get("image_count", 0)
+
+        if not image_count and isinstance(image_paths, list):
+            image_count = len(image_paths)
+
+        log(f"Image summary: source={image_source}, count={image_count}, primary={image_path}")
+    except Exception:
+        pass
+
+
 def _save_check_time() -> None:
+    if not _is_persist_state_enabled():
+        log("State persistence kapali (PERSIST_STATE=false), last_check_time kaydedilmeyecek")
+        return
+
     try:
         fresh_data = get_posted_news()
         save_last_check_time(fresh_data)
@@ -129,19 +147,14 @@ def _run_agent(agent_name: str, run_func) -> bool:
 
 
 def main() -> None:
-    test_mode = _is_test_mode()
     try:
         settings = load_config("settings")
         posted_data = get_posted_news()
 
         if not _check_daily_limit(settings, posted_data):
             return
-        if not _check_random_skip(settings, test_mode):
+        if not _check_min_interval(settings, posted_data):
             return
-        if not _check_min_interval(settings, posted_data, test_mode):
-            return
-
-        _random_delay(settings, test_mode)
 
         run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
         if not init_pipeline(run_id):
@@ -149,7 +162,6 @@ def main() -> None:
             return
 
         from agents.agent_fetcher import run as fetcher_run
-
         if not _run_agent("agent_fetcher", fetcher_run):
             _log_stage_error("fetch")
             _log_source_health()
@@ -157,25 +169,22 @@ def main() -> None:
         _log_source_health()
 
         from agents.agent_scorer import run as scorer_run
-
         if not _run_agent("agent_scorer", scorer_run):
             _log_stage_error("score")
             return
 
         from agents.agent_writer import run as writer_run
-
         if not _run_agent("agent_writer", writer_run):
             _log_stage_error("write")
             return
 
         from agents.agent_image import run as image_run
-
         if not _run_agent("agent_image", image_run):
             _log_stage_error("image")
             return
+        _log_image_summary()
 
         from agents.agent_publisher import run as publisher_run
-
         if not _run_agent("agent_publisher", publisher_run):
             _log_stage_error("publish")
             return

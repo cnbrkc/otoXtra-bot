@@ -148,6 +148,7 @@ def _sanitize_settings(data: Any) -> dict:
             "min_post_interval_hours": _as_int(posting.get("min_post_interval_hours"), 1, 0, 24),
             "skip_probability_percent": _as_int(posting.get("skip_probability_percent"), 10, 0, 100),
             "max_posts_per_run": _as_int(posting.get("max_posts_per_run"), 1, 1, 10),
+            "dry_run": _as_bool(posting.get("dry_run"), False),
         },
         "images": {
             "add_logo": _as_bool(images.get("add_logo"), True),
@@ -156,6 +157,13 @@ def _sanitize_settings(data: Any) -> dict:
             "logo_size_percent": _as_int(images.get("logo_size_percent"), 15, 1, 100),
             "feed_image_width": _as_int(images.get("feed_image_width"), 1200, 300, 4000),
             "feed_image_height": _as_int(images.get("feed_image_height"), 630, 300, 4000),
+
+            # Yeni akista aktif kullandigin ayarlar
+            "enable_article_image_scrape": _as_bool(images.get("enable_article_image_scrape"), True),
+            "max_candidates_per_article": _as_int(images.get("max_candidates_per_article"), 8, 1, 50),
+            "max_article_scrapes_per_feed": _as_int(images.get("max_article_scrapes_per_feed"), 6, 0, 50),
+            "max_images_per_news": _as_int(images.get("max_images_per_news"), 1, 1, 10),
+            "perceptual_hash_threshold": _as_int(images.get("perceptual_hash_threshold"), 6, 0, 64),
         },
         "news": {
             "max_article_age_hours": _as_int(news.get("max_article_age_hours"), 16, 1, 168),
