@@ -7,16 +7,16 @@ import time
 from datetime import timedelta
 from typing import Optional
 
-from core.logger import log
+from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
 from core.helpers import (
     get_posted_news,
     get_today_post_count,
-    is_similar_title,
     get_turkey_now,
+    is_similar_title,
 )
-from core.state_manager import get_stage, set_stage, init_pipeline
-from core.ai_client import ask_ai, parse_ai_json
+from core.logger import log
+from core.state_manager import get_stage, set_stage
 
 
 BATCH_SIZE: int = 20
@@ -70,6 +70,9 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     used_indices = set()
 
     for ai_result in ai_results:
+        if not isinstance(ai_result, dict):
+            continue
+
         matched_article = None
         matched_index = None
 
@@ -153,6 +156,11 @@ def run_viral_scoring(articles: list) -> list:
             continue
 
         ai_results = parse_ai_json(ai_response)
+
+        # ai_client dict dondurebilir; tek kaydi listeye cevir.
+        if isinstance(ai_results, dict):
+            ai_results = [ai_results]
+
         if not ai_results or not isinstance(ai_results, list):
             for article in batch:
                 article["score"] = UNSCORED_DEFAULT
@@ -396,5 +404,7 @@ def run() -> bool:
 
 
 if __name__ == "__main__":
+    from core.state_manager import init_pipeline
+
     init_pipeline("test-scorer")
     run()
