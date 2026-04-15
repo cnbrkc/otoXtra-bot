@@ -1,10 +1,11 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.3)
+agents/agent_publisher.py - Yayinci Ajani (v3.4)
 
-v3.3:
+v3.4:
   - test_mode bagimliligi kaldirildi
   - DRY_RUN / ENABLE_RANDOM_DELAY / ENABLE_RANDOM_SKIP env secenekleri korundu
   - PERSIST_STATE=false iken posted kaydi yazmaz
+  - image_paths toplarken path bazli tekillestirme guclendirildi
 """
 
 import os
@@ -133,17 +134,24 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
 
 def _collect_valid_image_paths(image_output: dict) -> list[str]:
     collected: list[str] = []
+    seen_keys: set[str] = set()
+
+    def add_path_if_unique(path: str) -> None:
+        key = os.path.normcase(os.path.realpath(path))
+        if key in seen_keys:
+            return
+        seen_keys.add(key)
+        collected.append(path)
 
     multi_paths = image_output.get("image_paths", [])
     if isinstance(multi_paths, list):
         for item in multi_paths:
             if isinstance(item, str) and item and os.path.exists(item):
-                collected.append(item)
+                add_path_if_unique(item)
 
     single_path = image_output.get("image_path", "")
     if isinstance(single_path, str) and single_path and os.path.exists(single_path):
-        if single_path not in collected:
-            collected.append(single_path)
+        add_path_if_unique(single_path)
 
     return collected
 
