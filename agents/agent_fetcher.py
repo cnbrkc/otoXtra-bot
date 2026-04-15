@@ -82,6 +82,12 @@ def _is_test_mode() -> bool:
         return True
     return "--test" in sys.argv
 
+def _safe_int(value: Any, default: int) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
 
 def _turkish_lower(text: str) -> str:
     return text.replace("I", "i").lower()
@@ -520,6 +526,10 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
     settings_cfg = load_config("settings")
     images_cfg = settings_cfg.get("images", {}) if isinstance(settings_cfg, dict) else {}
+        news_cfg = settings_cfg.get("news", {}) if isinstance(settings_cfg, dict) else {}
+    max_articles_per_source = _safe_int(news_cfg.get("max_articles_per_source", 25), 25)
+    if max_articles_per_source < 1:
+        max_articles_per_source = 25
 
     enable_article_image_scrape = bool(images_cfg.get("enable_article_image_scrape", True))
     max_candidates_per_article = int(images_cfg.get("max_candidates_per_article", 8))
@@ -571,6 +581,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             scraped_in_feed = 0
 
             for entry in parsed_feed.entries:
+                 if entry_count >= max_articles_per_source:
+                    break
                 title = clean_html(entry.get("title", "")).strip()
                 link = entry.get("link", "")
                 if not title or not link:
