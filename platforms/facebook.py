@@ -4,14 +4,17 @@ platforms/facebook.py - Facebook Graph API katmani
 Sadece Facebook API cagrisi yapar.
 Karar vermez, durum tutmaz.
 
-v3.0:
+v3.1:
   - post_photos(image_paths, message) eklendi (coklu gorsel)
   - Coklu gorsel icin unpublished upload + attached_media akisi eklendi
+  - Upload oncesi dosya hash ile son dedupe guvenlik kati eklendi
+  - attached_media alanlari loglanir
 """
 
 import json
 import os
 import time
+import hashlib
 from typing import Optional
 
 import requests
@@ -25,6 +28,14 @@ _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT_SECONDS = 2.0
 _MAX_MULTI_PHOTOS = 10
+
+
+def _file_sha256(path: str) -> str:
+    h = hashlib.sha256()
+    with open(path, "rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            h.update(chunk)
+    return h.hexdigest()
 
 
 def _get_credentials() -> tuple[str, str]:
@@ -249,6 +260,25 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         log("post_photos: gecerli gorsel yolu yok", "WARNING")
         return None
 
+    deduped_paths: list[str] = []
+    seen_hashes: set[str] = set()
+    for path in valid_paths:
+        try:
+            file_hash = _file_sha256(path)
+        except Exception as exc:
+            log(f"post_photos: hash alinamadi, dosya atlandi ({path}): {exc}", "WARNING")
+            continue
+        if file_hash in seen_hashes:
+            log(f"post_photos: duplicate dosya elendi ({path})")
+            continue
+        seen_hashes.add(file_hash)
+        deduped_paths.append(path)
+
+    valid_paths = deduped_paths
+    if not valid_paths:
+        log("post_photos: dedupe sonrasi gecerli gorsel kalmadi", "WARNING")
+        return None
+
     # Tek gorselse normal akis daha stabil
     if len(valid_paths) == 1:
         return post_photo(valid_paths[0], message)
@@ -275,8 +305,13 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         "access_token": access_token,
     }
 
+    attached_keys: list[str] = []
     for idx, media_id in enumerate(media_ids):
-        payload[f"attached_media[{idx}]"] = json.dumps({"media_fbid": media_id})
+        key = f"attached_media[{idx}]"
+        payload[key] = json.dumps({"media_fbid": media_id})
+        attached_keys.append(key)
+
+    log(f"post_photos: attached_media keys -> {', '.join(attached_keys)}")
 
     result = _post_with_retry(
         url=feed_url,
