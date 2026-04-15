@@ -82,6 +82,7 @@ def _is_test_mode() -> bool:
         return True
     return "--test" in sys.argv
 
+
 def _safe_int(value: Any, default: int) -> int:
     try:
         return int(value)
@@ -526,7 +527,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
     settings_cfg = load_config("settings")
     images_cfg = settings_cfg.get("images", {}) if isinstance(settings_cfg, dict) else {}
-        news_cfg = settings_cfg.get("news", {}) if isinstance(settings_cfg, dict) else {}
+    news_cfg = settings_cfg.get("news", {}) if isinstance(settings_cfg, dict) else {}
+
     max_articles_per_source = _safe_int(news_cfg.get("max_articles_per_source", 25), 25)
     if max_articles_per_source < 1:
         max_articles_per_source = 25
@@ -538,7 +540,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     log(
         f"fetch image config: enable_article_image_scrape={enable_article_image_scrape}, "
         f"max_candidates_per_article={max_candidates_per_article}, "
-        f"max_article_scrapes_per_feed={max_article_scrapes_per_feed}"
+        f"max_article_scrapes_per_feed={max_article_scrapes_per_feed}, "
+        f"max_articles_per_source={max_articles_per_source}"
     )
 
     for feed_info in feeds:
@@ -581,8 +584,9 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             scraped_in_feed = 0
 
             for entry in parsed_feed.entries:
-                 if entry_count >= max_articles_per_source:
+                if entry_count >= max_articles_per_source:
                     break
+
                 title = clean_html(entry.get("title", "")).strip()
                 link = entry.get("link", "")
                 if not title or not link:
