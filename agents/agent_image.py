@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.5)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.6)
 
 Degisiklikler:
 - MAX_IMAGES_PER_NEWS env override.
@@ -7,6 +7,8 @@ Degisiklikler:
 - Ayni gorselin farkli URL'lerden tekrar secilmesini engellemek icin
   dosya icerik hash (sha256) tekillemesi.
 - Near-duplicate gorselleri azaltmak icin perceptual hash (dHash) kontrolu.
+- Prefix boyut varyantlarini canonical key'de normalize etme.
+- editor/author/profile gibi alakasiz gorselleri daha sert eleme.
 """
 
 import hashlib
@@ -43,7 +45,20 @@ _FALLBACK_STRIPE_COLOR = (24, 35, 60)
 
 _IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
 _DISALLOWED_IMAGE_EXTENSIONS = (".svg", ".ico")
-_NOISE_HINTS = ("logo", "icon", "avatar", "sprite", "favicon", "ads", "banner", "pixel")
+_NOISE_HINTS = (
+    "logo",
+    "icon",
+    "avatar",
+    "sprite",
+    "favicon",
+    "ads",
+    "banner",
+    "pixel",
+    "editor",
+    "author",
+    "profile",
+    "yazar",
+)
 _IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/", "/img/", "/media/")
 _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
 _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
@@ -104,6 +119,22 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     return urlunparse(cleaned)
 
 
+def _normalize_path_for_candidate_key(path: str) -> str:
+    if not path:
+        return path
+
+    dir_part, _, filename = path.rpartition("/")
+    name, dot, ext = filename.partition(".")
+    lower_name = name.lower()
+
+    # src_340x1912xslug..., 1400x788slug... gibi prefix boyutlari temizle
+    lower_name = re.sub(r"^src_\d{2,4}x\d{2,4}x", "", lower_name, flags=re.IGNORECASE)
+    lower_name = re.sub(r"^\d{2,4}x\d{2,4}", "", lower_name, flags=re.IGNORECASE)
+
+    normalized_filename = f"{lower_name}{dot}{ext}" if dot else lower_name
+    return f"{dir_part}/{normalized_filename}" if dir_part else normalized_filename
+
+
 def _looks_like_noise(url: str) -> bool:
     lower = url.lower()
     return any(hint in lower for hint in _NOISE_HINTS)
@@ -112,8 +143,15 @@ def _looks_like_noise(url: str) -> bool:
 def _is_probable_image_url(url: str) -> bool:
     lower = url.lower()
     parsed = urlparse(lower)
+
     if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
         return False
+
+    if "/images/editor/" in lower or "/images/images/editor/" in lower:
+        return False
+    if any(x in lower for x in ("/author/", "/profile/", "/avatar/")):
+        return False
+
     if any(ext in lower for ext in _IMAGE_EXTENSIONS):
         return True
     if "image" in lower:
@@ -161,7 +199,7 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
 
 def _candidate_key(url: str) -> str:
     parsed = urlparse(url)
-    path = parsed.path or ""
+    path = _normalize_path_for_candidate_key(parsed.path or "")
     path = re.sub(
         r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$",
         r"\3",
