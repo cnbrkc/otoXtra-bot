@@ -1,11 +1,12 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.4)
+agents/agent_publisher.py - Yayinci Ajani (v3.5)
 
-v3.4:
+v3.5:
   - test_mode bagimliligi kaldirildi
   - DRY_RUN / ENABLE_RANDOM_DELAY / ENABLE_RANDOM_SKIP env secenekleri korundu
   - PERSIST_STATE=false iken posted kaydi yazmaz
   - image_paths toplarken path bazli tekillestirme guclendirildi
+  - Multi photo akisinda detayli debug loglari eklendi
 """
 
 import os
@@ -139,6 +140,7 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
     def add_path_if_unique(path: str) -> None:
         key = os.path.normcase(os.path.realpath(path))
         if key in seen_keys:
+            log(f"Image path skip (duplicate path key): {path}", "INFO")
             return
         seen_keys.add(key)
         collected.append(path)
@@ -148,10 +150,14 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
         for item in multi_paths:
             if isinstance(item, str) and item and os.path.exists(item):
                 add_path_if_unique(item)
+            elif isinstance(item, str) and item:
+                log(f"Image path skip (not found): {item}", "WARNING")
 
     single_path = image_output.get("image_path", "")
     if isinstance(single_path, str) and single_path and os.path.exists(single_path):
         add_path_if_unique(single_path)
+    elif isinstance(single_path, str) and single_path:
+        log(f"Primary image path not found: {single_path}", "WARNING")
 
     return collected
 
@@ -165,7 +171,9 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
                 log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
                 result = fn(image_paths, post_text_content)
                 if result:
+                    log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
                     return result
+                log(f"Coklu gorsel fonksiyonu sonuc vermedi: facebook.{fn_name}()", "WARNING")
             except Exception as exc:
                 log(f"facebook.{fn_name} hata: {exc}", "WARNING")
     return None
@@ -180,6 +188,16 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     log("=" * 55)
     log(f"Gorsel adedi: {image_count} (kaynak: {image_source})")
 
+    if image_paths:
+        for idx, p in enumerate(image_paths, start=1):
+            try:
+                size_kb = os.path.getsize(p) // 1024
+            except Exception:
+                size_kb = -1
+            log(f"Final image[{idx}] path={p} size_kb={size_kb}")
+    else:
+        log("Final image listesi bos", "WARNING")
+
     preview = post_text_content[:220]
     if len(post_text_content) > 220:
         preview += "..."
@@ -192,6 +210,7 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
         result_id = _try_post_multi_photos(image_paths, post_text_content)
         if result_id:
             article["image_source"] = "multi_image"
+            log("Publish path: multi_success")
             return result_id
         log("Coklu paylasim basarisiz, tek gorsele dusulecek", "WARNING")
 
@@ -209,6 +228,7 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             if result_id:
                 if image_count >= 2:
                     article["image_source"] = "single_fallback_from_multi"
+                log("Publish path: single_success")
                 return result_id
 
     post_text_fn = getattr(fb_platform, "post_text", None)
@@ -221,8 +241,10 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             result_id = None
         if result_id:
             article["image_source"] = "fallback_text"
+            log("Publish path: text_success")
             return result_id
 
+    log("Publish path: all_failed", "ERROR")
     return None
 
 
@@ -313,6 +335,7 @@ def run() -> bool:
                     post_id = post_text_fn(post_text_content)
                     if post_id:
                         article["image_source"] = "retry_text"
+                        log("Publish path: retry_text_success")
                 except Exception as exc:
                     log(f"Retry post_text hata: {exc}", "WARNING")
                     post_id = None
