@@ -25,7 +25,7 @@ from core.helpers import (
     save_last_check_time,
     generate_topic_fingerprint,
 )
-from core.state_manager import get_stage, set_stage, init_pipeline
+from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
 
 
@@ -367,6 +367,7 @@ def run() -> bool:
 
 
 if __name__ == "__main__":
+    from core.state_manager import init_pipeline
     log("=== agent_publisher.py modul testi basliyor ===")
 
     init_pipeline("test-publisher")
