@@ -4,7 +4,6 @@ Basit Telegram mesaj gonderim katmani.
 """
 
 import os
-from typing import Optional
 
 import requests
 
