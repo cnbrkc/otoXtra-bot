@@ -1,11 +1,12 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.4)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.5)
 
 Degisiklikler:
 - MAX_IMAGES_PER_NEWS env override.
 - Runtime limit logu.
 - Ayni gorselin farkli URL'lerden tekrar secilmesini engellemek icin
   dosya icerik hash (sha256) tekillemesi.
+- Near-duplicate gorselleri azaltmak icin perceptual hash (dHash) kontrolu.
 """
 
 import hashlib
@@ -41,10 +42,13 @@ _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
 
 _IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
+_DISALLOWED_IMAGE_EXTENSIONS = (".svg", ".ico")
 _NOISE_HINTS = ("logo", "icon", "avatar", "sprite", "favicon", "ads", "banner", "pixel")
 _IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/", "/img/", "/media/")
 _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
 _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
+
+_DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
 
 
 def _is_test_mode() -> bool:
@@ -107,6 +111,9 @@ def _looks_like_noise(url: str) -> bool:
 
 def _is_probable_image_url(url: str) -> bool:
     lower = url.lower()
+    parsed = urlparse(lower)
+    if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
+        return False
     if any(ext in lower for ext in _IMAGE_EXTENSIONS):
         return True
     if "image" in lower:
@@ -167,6 +174,23 @@ def _candidate_key(url: str) -> str:
         if k.lower() not in _RESIZE_QUERY_KEYS
     ]
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
+
+
+def _dhash(path: str) -> int:
+    with Image.open(path) as img:
+        gray = img.convert("L").resize((9, 8), Image.LANCZOS)
+        pixels = list(gray.getdata())
+
+    bits = 0
+    for y in range(8):
+        row = pixels[y * 9:(y + 1) * 9]
+        for x in range(8):
+            bits = (bits << 1) | (1 if row[x] > row[x + 1] else 0)
+    return bits
+
+
+def _hamming(a: int, b: int) -> int:
+    return (a ^ b).bit_count()
 
 
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
@@ -593,6 +617,9 @@ def prepare_images(article: dict) -> list[str]:
     feed_image_width = int(images_settings.get("feed_image_width", 1200))
     feed_image_height = int(images_settings.get("feed_image_height", 630))
     max_candidates_to_try = int(images_settings.get("max_candidates_per_article", 10))
+    perceptual_threshold = int(
+        images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD)
+    )
 
     env_max_images = _read_int_env("MAX_IMAGES_PER_NEWS")
     if env_max_images is not None and env_max_images > 0:
@@ -610,7 +637,7 @@ def prepare_images(article: dict) -> list[str]:
     log(f"Gorsel hazirlama basladi: {article_title}")
     log(
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
-        f"max_candidates_to_try={max_candidates_to_try}"
+        f"max_candidates_to_try={max_candidates_to_try}, perceptual_threshold={perceptual_threshold}"
     )
 
     prepared_paths: list[str] = []
@@ -628,10 +655,11 @@ def prepare_images(article: dict) -> list[str]:
             candidate_urls.extend(scraped_urls)
             candidate_urls = _unique_keep_order(candidate_urls)[:max_candidates_to_try]
 
-    log(f"Toplam aday URL: {len(candidate_urls)}")
+    log(f"Toplam aday URL (canonical): {len(candidate_urls)}")
 
     tried_keys: set[str] = set()
     seen_content_hashes: set[str] = set()
+    seen_perceptual_hashes: list[int] = []
     fail_reasons: Counter[str] = Counter()
     tried_count = 0
 
@@ -669,6 +697,22 @@ def prepare_images(article: dict) -> list[str]:
                 continue
 
             seen_content_hashes.add(content_hash)
+
+            try:
+                perceptual_hash = _dhash(processed)
+                if any(_hamming(perceptual_hash, prev) <= perceptual_threshold for prev in seen_perceptual_hashes):
+                    fail_reasons["near_duplicate_perceptual"] += 1
+                    log("Aday elendi: near_duplicate_perceptual", "WARNING")
+                    try:
+                        os.unlink(processed)
+                    except OSError:
+                        pass
+                    continue
+                seen_perceptual_hashes.append(perceptual_hash)
+            except Exception as ph_exc:
+                fail_reasons["perceptual_hash_error"] += 1
+                log(f"Perceptual hash atlandi: {ph_exc}", "WARNING")
+
             prepared_paths.append(processed)
             used_sources.append("article_or_rss")
             log(f"Aday basarili: {reason} -> kaydedildi ({len(prepared_paths)}/{max_images_per_news})")
