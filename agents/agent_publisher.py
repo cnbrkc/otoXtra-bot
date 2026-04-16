@@ -328,6 +328,9 @@ def run() -> bool:
 
     log(f"Paylasilacak haber: {article.get('title', '')[:80]}")
     log(f"Image source: {image_source}, image count: {len(image_paths)}")
+    manual_priority = bool(article.get("manual_priority", False))
+    if manual_priority:
+        log("Manual priority aktif: telegram icerigi once paylasilacak")
 
     set_stage("publish", "running")
 
@@ -343,15 +346,20 @@ def run() -> bool:
         random_skip_enabled = _is_random_skip_enabled()
 
         posted_data = get_posted_news()
-        if not _check_daily_limit(posted_data, max_daily_posts):
-            set_stage("publish", "error", error="Gunluk limit doldu")
-            return False
+        if not manual_priority:
+            if not _check_daily_limit(posted_data, max_daily_posts):
+                set_stage("publish", "error", error="Gunluk limit doldu")
+                return False
+        else:
+            log("Gunluk limit kontrolu atlandi (manual_priority=true)")
 
-        if not dry_run and random_skip_enabled and not _check_skip_probability(skip_probability):
+        if not dry_run and (not manual_priority) and random_skip_enabled and not _check_skip_probability(skip_probability):
             set_stage("publish", "error", error="Rastgele atlama")
             return False
-        if not dry_run and not random_skip_enabled:
+        if not dry_run and not manual_priority and not random_skip_enabled:
             log("Rastgele atlama devre disi (ENABLE_RANDOM_SKIP=false)")
+        if not dry_run and manual_priority:
+            log("Rastgele atlama atlandi (manual_priority=true)")
 
         if dry_run:
             log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
@@ -366,7 +374,9 @@ def run() -> bool:
             log("DRY RUN tamamlandi")
             return True
 
-        if random_delay_enabled and random_delay_max > 0:
+        if manual_priority:
+            log("Rastgele bekleme atlandi (manual_priority=true)")
+        elif random_delay_enabled and random_delay_max > 0:
             delay_seconds = random.randint(0, random_delay_max * 60)
             log(f"Rastgele bekleme: {delay_seconds} sn")
             time.sleep(delay_seconds)
