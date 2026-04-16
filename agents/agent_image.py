@@ -75,6 +75,12 @@ _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "qua
 
 _DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
 
+# Resize only when image is too large for social platform safety limits
+_DEFAULT_PLATFORM_MAX_IMAGE_WIDTH = 4096
+_DEFAULT_PLATFORM_MAX_IMAGE_HEIGHT = 4096
+_DEFAULT_PLATFORM_MAX_IMAGE_AREA = 16_000_000
+_DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024  # 20 MB
+
 # Source priority: smaller is better
 _SOURCE_PRIORITY = {
     "meta_og": 0,
@@ -166,6 +172,48 @@ def _build_relaxed_limits(limits: dict) -> dict:
         relaxed["max_aspect"] = 2.35
 
     return relaxed
+
+
+def _get_platform_resize_limits() -> dict:
+    max_width = _read_int_env("IMAGE_PLATFORM_MAX_WIDTH")
+    max_height = _read_int_env("IMAGE_PLATFORM_MAX_HEIGHT")
+    max_area = _read_int_env("IMAGE_PLATFORM_MAX_AREA")
+    max_bytes = _read_int_env("IMAGE_PLATFORM_MAX_BYTES")
+
+    return {
+        "max_width": max_width if max_width and max_width > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_WIDTH,
+        "max_height": max_height if max_height and max_height > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_HEIGHT,
+        "max_area": max_area if max_area and max_area > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_AREA,
+        "max_bytes": max_bytes if max_bytes and max_bytes > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_BYTES,
+    }
+
+
+def _should_resize_for_platform(image_path: str, limits: dict) -> tuple[bool, str]:
+    try:
+        with Image.open(image_path) as img:
+            width, height = img.size
+        area = width * height
+        file_bytes = os.path.getsize(image_path)
+
+        reasons: list[str] = []
+
+        if width > int(limits["max_width"]):
+            reasons.append(f"width>{limits['max_width']}")
+        if height > int(limits["max_height"]):
+            reasons.append(f"height>{limits['max_height']}")
+        if area > int(limits["max_area"]):
+            reasons.append(f"area>{limits['max_area']}")
+        if file_bytes > int(limits["max_bytes"]):
+            reasons.append(f"bytes>{limits['max_bytes']}")
+
+        if reasons:
+            return True, ",".join(reasons)
+
+        return False, f"within_limits:{width}x{height}:{file_bytes // 1024}KB"
+
+    except Exception as exc:
+        # If metadata cannot be read safely, keep old behavior and resize.
+        return True, f"meta_read_error:{exc}"
 
 
 def _file_sha256(path: str) -> str:
@@ -319,7 +367,7 @@ def _dhash(path: str) -> int:
 
     bits = 0
     for y in range(8):
-        row = pixels[y * 9:(y + 1) * 9]
+        row = pixels[y * 9 : (y + 1) * 9]
         for x in range(8):
             bits = (bits << 1) | (1 if row[x] > row[x + 1] else 0)
     return bits
@@ -692,7 +740,7 @@ def add_logo(image_path: str) -> str:
 
     logo_position = images_settings.get("logo_position", "bottom_right")
     logo_opacity = images_settings.get("logo_opacity", 0.7)
-    logo_size_percent = images_settings.get("logo_size_percent", 15)
+    logo_size_percent = images_settings.get("logo_size_percent", 12)
     padding = 20
 
     logo_path = os.path.join(get_project_root(), "assets", "logo.png")
@@ -850,6 +898,7 @@ def prepare_images(article: dict) -> list[str]:
         images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD)
     )
     limits = _get_image_validation_limits()
+    resize_limits = _get_platform_resize_limits()
     target_ratio = feed_image_width / feed_image_height
 
     env_max_images = _read_int_env("MAX_IMAGES_PER_NEWS")
@@ -874,6 +923,11 @@ def prepare_images(article: dict) -> list[str]:
         "Validation limits: "
         f"min_width={limits['min_width']}, min_height={limits['min_height']}, "
         f"min_area={limits['min_area']}, ratio={limits['min_aspect']:.2f}-{limits['max_aspect']:.2f}"
+    )
+    log(
+        "Resize limits: "
+        f"max_width={resize_limits['max_width']}, max_height={resize_limits['max_height']}, "
+        f"max_area={resize_limits['max_area']}, max_bytes={resize_limits['max_bytes']}"
     )
 
     prepared_paths: list[str] = []
@@ -955,7 +1009,15 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"Perceptual hash atlandi: {ph_exc}", "WARNING")
                 current_phash = None
 
-            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+            processed = downloaded
+            needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+
+            if needs_resize:
+                log(f"Resize uygulanacak: {resize_reason}")
+                processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+            else:
+                log(f"Resize atlandi: {resize_reason}")
+
             if should_add_logo:
                 processed = add_logo(processed)
 
@@ -1046,7 +1108,15 @@ def prepare_images(article: dict) -> list[str]:
                 except Exception:
                     current_phash = None
 
-                processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                processed = downloaded
+                needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+
+                if needs_resize:
+                    log(f"Resize uygulanacak (relaxed): {resize_reason}")
+                    processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                else:
+                    log(f"Resize atlandi (relaxed): {resize_reason}")
+
                 if should_add_logo:
                     processed = add_logo(processed)
 
