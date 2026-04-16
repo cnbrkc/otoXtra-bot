@@ -1,14 +1,13 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.6)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.7)
 
 Degisiklikler:
-- MAX_IMAGES_PER_NEWS env override.
-- Runtime limit logu.
-- Ayni gorselin farkli URL'lerden tekrar secilmesini engellemek icin
-  dosya icerik hash (sha256) tekillemesi.
-- Near-duplicate gorselleri azaltmak icin perceptual hash (dHash) kontrolu.
-- Prefix boyut varyantlarini canonical key'de normalize etme.
-- editor/author/profile gibi alakasiz gorselleri daha sert eleme.
+- Boyut filtresi sertlestirildi (default: min 900x500 + min area 450000).
+- En-boy oran filtresi eklendi (default: 0.8 <= ratio <= 2.1).
+- Bu filtreler env ile override edilebilir:
+  IMAGE_MIN_WIDTH, IMAGE_MIN_HEIGHT, IMAGE_MIN_AREA,
+  IMAGE_MIN_ASPECT_RATIO, IMAGE_MAX_ASPECT_RATIO
+- Runtime loguna aktif validasyon limitleri eklendi.
 """
 
 import hashlib
@@ -36,9 +35,14 @@ _USER_AGENT = (
 )
 
 _REQUEST_TIMEOUT = 15
-_MIN_IMAGE_WIDTH = 400
-_MIN_IMAGE_HEIGHT = 220
 _MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024
+
+# Default image validation rules (adim-1)
+_DEFAULT_MIN_IMAGE_WIDTH = 900
+_DEFAULT_MIN_IMAGE_HEIGHT = 500
+_DEFAULT_MIN_IMAGE_AREA = 450000
+_DEFAULT_MIN_ASPECT_RATIO = 0.8
+_DEFAULT_MAX_ASPECT_RATIO = 2.1
 
 _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
@@ -82,6 +86,39 @@ def _read_int_env(name: str) -> Optional[int]:
         return int(raw.strip())
     except Exception:
         return None
+
+
+def _read_float_env(name: str) -> Optional[float]:
+    raw = os.environ.get(name)
+    if raw is None:
+        return None
+    try:
+        return float(raw.strip())
+    except Exception:
+        return None
+
+
+def _get_image_validation_limits() -> dict:
+    min_width = _read_int_env("IMAGE_MIN_WIDTH")
+    min_height = _read_int_env("IMAGE_MIN_HEIGHT")
+    min_area = _read_int_env("IMAGE_MIN_AREA")
+    min_aspect = _read_float_env("IMAGE_MIN_ASPECT_RATIO")
+    max_aspect = _read_float_env("IMAGE_MAX_ASPECT_RATIO")
+
+    limits = {
+        "min_width": min_width if min_width and min_width > 0 else _DEFAULT_MIN_IMAGE_WIDTH,
+        "min_height": min_height if min_height and min_height > 0 else _DEFAULT_MIN_IMAGE_HEIGHT,
+        "min_area": min_area if min_area and min_area > 0 else _DEFAULT_MIN_IMAGE_AREA,
+        "min_aspect": min_aspect if min_aspect and min_aspect > 0 else _DEFAULT_MIN_ASPECT_RATIO,
+        "max_aspect": max_aspect if max_aspect and max_aspect > 0 else _DEFAULT_MAX_ASPECT_RATIO,
+    }
+
+    # guardrail: invalid ratio config olursa defaultlere don
+    if limits["min_aspect"] >= limits["max_aspect"]:
+        limits["min_aspect"] = _DEFAULT_MIN_ASPECT_RATIO
+        limits["max_aspect"] = _DEFAULT_MAX_ASPECT_RATIO
+
+    return limits
 
 
 def _file_sha256(path: str) -> str:
@@ -279,9 +316,15 @@ def _unique_keep_order(items: list[str]) -> list[str]:
     return unique
 
 
-def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
+def _download_image_with_reason(image_url: str, limits: dict) -> tuple[Optional[str], str]:
     if not image_url:
         return None, "empty_url"
+
+    min_width = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
+    min_height = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
+    min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
+    min_aspect = float(limits.get("min_aspect", _DEFAULT_MIN_ASPECT_RATIO))
+    max_aspect = float(limits.get("max_aspect", _DEFAULT_MAX_ASPECT_RATIO))
 
     try:
         response = requests.get(
@@ -321,12 +364,21 @@ def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
             img_width, img_height = img.size
             img.close()
 
-            if img_width < _MIN_IMAGE_WIDTH or img_height < _MIN_IMAGE_HEIGHT:
+            area = img_width * img_height
+            if img_width < min_width or img_height < min_height or area < min_area:
                 try:
                     os.unlink(temp_path)
                 except OSError:
                     pass
-                return None, f"too_small:{img_width}x{img_height}"
+                return None, f"too_small:{img_width}x{img_height}:area={area}"
+
+            ratio = img_width / img_height if img_height else 0.0
+            if ratio < min_aspect or ratio > max_aspect:
+                try:
+                    os.unlink(temp_path)
+                except OSError:
+                    pass
+                return None, f"bad_aspect:{img_width}x{img_height}:ratio={ratio:.3f}"
 
         except Exception:
             try:
@@ -346,7 +398,8 @@ def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
 
 
 def download_image(image_url: str) -> Optional[str]:
-    image_path, reason = _download_image_with_reason(image_url)
+    limits = _get_image_validation_limits()
+    image_path, reason = _download_image_with_reason(image_url, limits)
     if image_path:
         dims = reason.replace("ok:", "")
         log(f"Gorsel indirildi: {dims}")
@@ -658,6 +711,7 @@ def prepare_images(article: dict) -> list[str]:
     perceptual_threshold = int(
         images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD)
     )
+    limits = _get_image_validation_limits()
 
     env_max_images = _read_int_env("MAX_IMAGES_PER_NEWS")
     if env_max_images is not None and env_max_images > 0:
@@ -676,6 +730,11 @@ def prepare_images(article: dict) -> list[str]:
     log(
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
         f"max_candidates_to_try={max_candidates_to_try}, perceptual_threshold={perceptual_threshold}"
+    )
+    log(
+        "Validation limits: "
+        f"min_width={limits['min_width']}, min_height={limits['min_height']}, "
+        f"min_area={limits['min_area']}, ratio={limits['min_aspect']:.2f}-{limits['max_aspect']:.2f}"
     )
 
     prepared_paths: list[str] = []
@@ -713,7 +772,7 @@ def prepare_images(article: dict) -> list[str]:
         tried_count += 1
 
         log(f"Aday deneniyor ({idx}/{len(candidate_urls)}): {candidate_url[:140]}")
-        downloaded, reason = _download_image_with_reason(candidate_url)
+        downloaded, reason = _download_image_with_reason(candidate_url, limits)
         if not downloaded:
             fail_reasons[reason] += 1
             log(f"Aday elendi: {reason}", "WARNING")
