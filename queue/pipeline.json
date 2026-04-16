@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-04-16-20:15",
+  "run_id": "2026-04-16-21:56",
   "status": "completed",
-  "started_at": "2026-04-16T20:15:14.959916+03:00",
-  "updated_at": "2026-04-16T20:15:14.968289+03:00",
+  "started_at": "2026-04-16T21:56:35.751764+03:00",
+  "updated_at": "2026-04-16T21:56:46.148774+03:00",
   "stages": {
     "fetch": {
       "status": "done",
@@ -11,7 +11,7 @@
         "articles": []
       },
       "error": null,
-      "updated_at": "2026-04-16T20:15:14.960235+03:00"
+      "updated_at": "2026-04-16T21:56:35.752182+03:00"
     },
     "score": {
       "status": "done",
@@ -29,7 +29,7 @@
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-04-16T20:15:14.960508+03:00"
+      "updated_at": "2026-04-16T21:56:35.752556+03:00"
     },
     "write": {
       "status": "done",
@@ -48,7 +48,7 @@
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-04-16T20:15:14.960844+03:00"
+      "updated_at": "2026-04-16T21:56:35.752940+03:00"
     },
     "image": {
       "status": "done",
@@ -72,20 +72,20 @@
         "telegram_update_id": 279976266
       },
       "error": null,
-      "updated_at": "2026-04-16T20:15:14.961157+03:00"
+      "updated_at": "2026-04-16T21:56:35.753346+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "dryrun_000000000_111111111",
+        "post_id": "678053852057751_122162708324916499",
         "article_title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
-        "image_source": "telegram",
+        "image_source": "multi_image",
         "image_count": 2,
-        "dry_run": true
+        "dry_run": false
       },
       "error": null,
-      "updated_at": "2026-04-16T20:15:14.968289+03:00"
+      "updated_at": "2026-04-16T21:56:46.148774+03:00"
     }
   }
 }
