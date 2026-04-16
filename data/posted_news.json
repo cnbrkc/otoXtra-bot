@@ -698,5 +698,22 @@
     "2026-04-10": 4,
     "2026-04-15": 4
   },
-  "last_check_time": "2026-04-15T16:56:24.906771+03:00"
+  "last_check_time": "2026-04-16T10:59:17.569375+03:00",
+  "stats": {
+    "daily_actions": {
+      "2026-04-16": 1
+    },
+    "weekly": {
+      "2026-W16": {
+        "actions": 1,
+        "shares": 0,
+        "error_total": 1,
+        "errors": {
+          "SCORER_FAILED: No article above threshold": 1
+        },
+        "report_sent": false,
+        "report_sent_at": null
+      }
+    }
+  }
 }
