@@ -20,6 +20,7 @@ from core.helpers import (
     mark_weekly_report_sent,
     get_token_remaining_days,
     record_weekly_error,
+    record_weekly_skip,
 )
 from core.state_manager import init_pipeline, get_stage
 from platforms import telegram as tg_platform
@@ -173,6 +174,17 @@ def _record_error_stat(error_code: str, error_name: str) -> None:
         log(f"Error stat kaydedilemedi: {exc}", "WARNING")
 
 
+def _record_skip_stat(skip_reason: str) -> None:
+    if not _is_persist_state_enabled():
+        return
+    try:
+        data = get_posted_news()
+        record_weekly_skip(data, skip_reason)
+        save_posted_news(data)
+    except Exception as exc:
+        log(f"Skip stat kaydedilemedi: {exc}", "WARNING")
+
+
 def _send_weekly_report_if_needed(posted_data: dict) -> None:
     now = get_turkey_now()
 
@@ -200,14 +212,22 @@ def _send_weekly_report_if_needed(posted_data: dict) -> None:
     else:
         error_lines = "Yok"
 
+    skips = stats.get("skips", {})
+    if skips:
+        skip_lines = "\n".join([f"{name}: {count}" for name, count in skips.items()])
+    else:
+        skip_lines = "Yok"
+
     message = (
         "Haftalik Rapor\n\n"
         f"Hafta: {previous_week_key}\n"
         f"Toplam tetiklenme: {stats.get('actions', 0)}\n"
         f"Toplam otomatik paylasim: {stats.get('shares', 0)}\n"
+        f"Toplam kalite nedeniyle pas gecme: {stats.get('skip_total', 0)}\n"
         f"Token kalan sure: {token_line}\n"
         f"Toplam hata: {stats.get('error_total', 0)}\n"
-        f"Hata dagilimi:\n{error_lines}"
+        f"Hata dagilimi:\n{error_lines}\n\n"
+        f"Skip dagilimi:\n{skip_lines}"
     )
 
     sent = tg_platform.send_message(message)
@@ -273,10 +293,9 @@ def main() -> None:
 
         skipped, skip_reason = _is_score_skipped()
         if skipped:
-            msg = "Score skip: esik ustu haber yok"
-            if skip_reason:
-                msg = f"Score skip: {skip_reason}"
-            log(msg, "INFO")
+            reason = skip_reason or "No article above threshold"
+            log(f"Score skip: {reason}", "INFO")
+            _record_skip_stat(reason)
             return
 
         from agents.agent_writer import run as writer_run
