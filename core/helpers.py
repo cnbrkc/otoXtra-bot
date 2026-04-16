@@ -199,6 +199,8 @@ def _ensure_weekly_bucket(data: dict, week_key: str) -> dict:
             "shares": 0,
             "error_total": 0,
             "errors": {},
+            "skip_total": 0,
+            "skips": {},
             "report_sent": False,
             "report_sent_at": None,
         }
@@ -213,6 +215,10 @@ def _ensure_weekly_bucket(data: dict, week_key: str) -> dict:
         bucket["error_total"] = 0
     if "errors" not in bucket or not isinstance(bucket.get("errors"), dict):
         bucket["errors"] = {}
+    if "skip_total" not in bucket:
+        bucket["skip_total"] = 0
+    if "skips" not in bucket or not isinstance(bucket.get("skips"), dict):
+        bucket["skips"] = {}
     if "report_sent" not in bucket:
         bucket["report_sent"] = False
     if "report_sent_at" not in bucket:
@@ -264,6 +270,20 @@ def record_weekly_error(posted_data: dict, error_code: str, error_name: str = ""
     week_bucket["errors"] = errors
 
 
+def record_weekly_skip(posted_data: dict, skip_reason: str = "") -> None:
+    week_key = _get_week_key()
+    week_bucket = _ensure_weekly_bucket(posted_data, week_key)
+
+    reason = (skip_reason or "UNKNOWN_SKIP").strip()
+    if not reason:
+        reason = "UNKNOWN_SKIP"
+
+    week_bucket["skip_total"] = int(week_bucket.get("skip_total", 0)) + 1
+    skips = week_bucket.get("skips", {})
+    skips[reason[:160]] = int(skips.get(reason[:160], 0)) + 1
+    week_bucket["skips"] = skips
+
+
 def get_weekly_stats(posted_data: dict, week_key: str) -> dict:
     bucket = _ensure_weekly_bucket(posted_data, week_key)
     return {
@@ -271,6 +291,8 @@ def get_weekly_stats(posted_data: dict, week_key: str) -> dict:
         "shares": int(bucket.get("shares", 0)),
         "error_total": int(bucket.get("error_total", 0)),
         "errors": dict(bucket.get("errors", {})),
+        "skip_total": int(bucket.get("skip_total", 0)),
+        "skips": dict(bucket.get("skips", {})),
         "report_sent": bool(bucket.get("report_sent", False)),
         "report_sent_at": bucket.get("report_sent_at"),
     }
