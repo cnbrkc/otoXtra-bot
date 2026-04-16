@@ -1,20 +1,25 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.6)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.9)
 
 Degisiklikler:
-- MAX_IMAGES_PER_NEWS env override.
-- Runtime limit logu.
-- Ayni gorselin farkli URL'lerden tekrar secilmesini engellemek icin
-  dosya icerik hash (sha256) tekillemesi.
-- Near-duplicate gorselleri azaltmak icin perceptual hash (dHash) kontrolu.
-- Prefix boyut varyantlarini canonical key'de normalize etme.
-- editor/author/profile gibi alakasiz gorselleri daha sert eleme.
+- Boyut filtresi sertlestirildi (default: min 900x500 + min area 450000).
+- En-boy oran filtresi eklendi (default: 0.8 <= ratio <= 2.1).
+- Kaynak onceliklendirme eklendi:
+  og/twitter meta > article img > article/rss field.
+- Gorsel kalite puanlama eklendi:
+  cozumurluk + oran uygunlugu + dosya boyutu + kaynak bonusu.
+- Dinamik duplicate esigi eklendi:
+  ayni seri varyantlarinda perceptual duplicate daha agresif.
+- Multi-image dengesini korumak icin 2 asamali secim eklendi:
+  strict pass + gerekirse relaxed pass.
+- Env override:
+  IMAGE_MIN_WIDTH, IMAGE_MIN_HEIGHT, IMAGE_MIN_AREA,
+  IMAGE_MIN_ASPECT_RATIO, IMAGE_MAX_ASPECT_RATIO
 """
 
 import hashlib
 import os
 import re
-import sys
 import tempfile
 from collections import Counter
 from typing import Optional
@@ -24,9 +29,9 @@ import requests
 from PIL import Image, ImageDraw
 from bs4 import BeautifulSoup
 
+from core.config_loader import get_project_root, load_config
 from core.logger import log
-from core.config_loader import load_config, get_project_root
-from core.state_manager import get_stage, set_stage, init_pipeline
+from core.state_manager import get_stage, init_pipeline, set_stage
 
 
 _USER_AGENT = (
@@ -36,9 +41,14 @@ _USER_AGENT = (
 )
 
 _REQUEST_TIMEOUT = 15
-_MIN_IMAGE_WIDTH = 400
-_MIN_IMAGE_HEIGHT = 220
 _MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024
+
+# Default image validation rules
+_DEFAULT_MIN_IMAGE_WIDTH = 900
+_DEFAULT_MIN_IMAGE_HEIGHT = 500
+_DEFAULT_MIN_IMAGE_AREA = 450000
+_DEFAULT_MIN_ASPECT_RATIO = 0.8
+_DEFAULT_MAX_ASPECT_RATIO = 2.1
 
 _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
@@ -65,13 +75,32 @@ _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "qua
 
 _DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
 
+# Resize only when image is too large for social platform safety limits
+_DEFAULT_PLATFORM_MAX_IMAGE_WIDTH = 4096
+_DEFAULT_PLATFORM_MAX_IMAGE_HEIGHT = 4096
+_DEFAULT_PLATFORM_MAX_IMAGE_AREA = 16_000_000
+_DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024  # 20 MB
 
-def _is_test_mode() -> bool:
-    if os.environ.get("TEST_MODE", "false").lower() == "true":
-        return True
-    if "--test" in sys.argv:
-        return True
-    return False
+# Source priority: smaller is better
+_SOURCE_PRIORITY = {
+    "meta_og": 0,
+    "meta_twitter": 0,
+    "article_img": 1,
+    "article_field": 2,
+    "rss_field": 2,
+    "article_candidates_field": 2,
+    "unknown": 3,
+}
+
+_SOURCE_SCORE_BONUS = {
+    "meta_og": 12.0,
+    "meta_twitter": 10.0,
+    "article_img": 7.0,
+    "article_field": 4.0,
+    "rss_field": 3.0,
+    "article_candidates_field": 3.0,
+    "unknown": 0.0,
+}
 
 
 def _read_int_env(name: str) -> Optional[int]:
@@ -82,6 +111,109 @@ def _read_int_env(name: str) -> Optional[int]:
         return int(raw.strip())
     except Exception:
         return None
+
+
+def _read_float_env(name: str) -> Optional[float]:
+    raw = os.environ.get(name)
+    if raw is None:
+        return None
+    try:
+        return float(raw.strip())
+    except Exception:
+        return None
+
+
+def _safe_unlink(path: str) -> None:
+    try:
+        os.unlink(path)
+    except OSError:
+        pass
+
+
+def _get_image_validation_limits() -> dict:
+    min_width = _read_int_env("IMAGE_MIN_WIDTH")
+    min_height = _read_int_env("IMAGE_MIN_HEIGHT")
+    min_area = _read_int_env("IMAGE_MIN_AREA")
+    min_aspect = _read_float_env("IMAGE_MIN_ASPECT_RATIO")
+    max_aspect = _read_float_env("IMAGE_MAX_ASPECT_RATIO")
+
+    limits = {
+        "min_width": min_width if min_width and min_width > 0 else _DEFAULT_MIN_IMAGE_WIDTH,
+        "min_height": min_height if min_height and min_height > 0 else _DEFAULT_MIN_IMAGE_HEIGHT,
+        "min_area": min_area if min_area and min_area > 0 else _DEFAULT_MIN_IMAGE_AREA,
+        "min_aspect": min_aspect if min_aspect and min_aspect > 0 else _DEFAULT_MIN_ASPECT_RATIO,
+        "max_aspect": max_aspect if max_aspect and max_aspect > 0 else _DEFAULT_MAX_ASPECT_RATIO,
+    }
+
+    if limits["min_aspect"] >= limits["max_aspect"]:
+        limits["min_aspect"] = _DEFAULT_MIN_ASPECT_RATIO
+        limits["max_aspect"] = _DEFAULT_MAX_ASPECT_RATIO
+
+    return limits
+
+
+def _build_relaxed_limits(limits: dict) -> dict:
+    min_w = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
+    min_h = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
+    min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
+    min_aspect = float(limits.get("min_aspect", _DEFAULT_MIN_ASPECT_RATIO))
+    max_aspect = float(limits.get("max_aspect", _DEFAULT_MAX_ASPECT_RATIO))
+
+    relaxed = {
+        "min_width": max(700, int(min_w * 0.82)),
+        "min_height": max(390, int(min_h * 0.80)),
+        "min_area": max(320000, int(min_area * 0.75)),
+        "min_aspect": max(0.70, min_aspect - 0.12),
+        "max_aspect": min(2.35, max_aspect + 0.18),
+    }
+
+    if relaxed["min_aspect"] >= relaxed["max_aspect"]:
+        relaxed["min_aspect"] = 0.70
+        relaxed["max_aspect"] = 2.35
+
+    return relaxed
+
+
+def _get_platform_resize_limits() -> dict:
+    max_width = _read_int_env("IMAGE_PLATFORM_MAX_WIDTH")
+    max_height = _read_int_env("IMAGE_PLATFORM_MAX_HEIGHT")
+    max_area = _read_int_env("IMAGE_PLATFORM_MAX_AREA")
+    max_bytes = _read_int_env("IMAGE_PLATFORM_MAX_BYTES")
+
+    return {
+        "max_width": max_width if max_width and max_width > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_WIDTH,
+        "max_height": max_height if max_height and max_height > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_HEIGHT,
+        "max_area": max_area if max_area and max_area > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_AREA,
+        "max_bytes": max_bytes if max_bytes and max_bytes > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_BYTES,
+    }
+
+
+def _should_resize_for_platform(image_path: str, limits: dict) -> tuple[bool, str]:
+    try:
+        with Image.open(image_path) as img:
+            width, height = img.size
+        area = width * height
+        file_bytes = os.path.getsize(image_path)
+
+        reasons: list[str] = []
+
+        if width > int(limits["max_width"]):
+            reasons.append(f"width>{limits['max_width']}")
+        if height > int(limits["max_height"]):
+            reasons.append(f"height>{limits['max_height']}")
+        if area > int(limits["max_area"]):
+            reasons.append(f"area>{limits['max_area']}")
+        if file_bytes > int(limits["max_bytes"]):
+            reasons.append(f"bytes>{limits['max_bytes']}")
+
+        if reasons:
+            return True, ",".join(reasons)
+
+        return False, f"within_limits:{width}x{height}:{file_bytes // 1024}KB"
+
+    except Exception as exc:
+        # If metadata cannot be read safely, keep old behavior and resize.
+        return True, f"meta_read_error:{exc}"
 
 
 def _file_sha256(path: str) -> str:
@@ -127,7 +259,6 @@ def _normalize_path_for_candidate_key(path: str) -> str:
     name, dot, ext = filename.partition(".")
     lower_name = name.lower()
 
-    # src_340x1912xslug..., 1400x788slug... gibi prefix boyutlari temizle
     lower_name = re.sub(r"^src_\d{2,4}x\d{2,4}x", "", lower_name, flags=re.IGNORECASE)
     lower_name = re.sub(r"^\d{2,4}x\d{2,4}", "", lower_name, flags=re.IGNORECASE)
 
@@ -214,6 +345,21 @@ def _candidate_key(url: str) -> str:
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
 
+def _visual_signature(url: str) -> str:
+    parsed = urlparse(url.lower())
+    path = parsed.path or ""
+    filename = path.rsplit("/", 1)[-1]
+    stem = filename.rsplit(".", 1)[0]
+
+    stem = re.sub(r"(^|[-_/])s\d+($|[-_])", r"\1sX\2", stem)
+    stem = re.sub(r"[-_](small|thumb|thumbnail|medium|preview)$", "", stem)
+    stem = re.sub(r"\d{2,4}x\d{2,4}", "", stem)
+    stem = re.sub(r"[^a-z0-9]+", "-", stem).strip("-")
+
+    host = parsed.netloc.replace("www.", "")
+    return f"{host}:{stem}"
+
+
 def _dhash(path: str) -> int:
     with Image.open(path) as img:
         gray = img.convert("L").resize((9, 8), Image.LANCZOS)
@@ -221,7 +367,7 @@ def _dhash(path: str) -> int:
 
     bits = 0
     for y in range(8):
-        row = pixels[y * 9:(y + 1) * 9]
+        row = pixels[y * 9 : (y + 1) * 9]
         for x in range(8):
             bits = (bits << 1) | (1 if row[x] > row[x + 1] else 0)
     return bits
@@ -265,23 +411,83 @@ def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
     return best_url
 
 
-def _unique_keep_order(items: list[str]) -> list[str]:
-    seen: set[str] = set()
-    unique: list[str] = []
-    for item in items:
-        if not item:
+def _upsert_candidate(pool: list[dict], candidate: dict) -> None:
+    key = candidate.get("key", "")
+    if not key:
+        return
+
+    for idx, existing in enumerate(pool):
+        if existing.get("key") != key:
             continue
-        key = _candidate_key(item)
-        if key in seen:
-            continue
-        seen.add(key)
-        unique.append(item)
-    return unique
+
+        old_prio = int(existing.get("priority", 99))
+        new_prio = int(candidate.get("priority", 99))
+        if new_prio < old_prio:
+            pool[idx] = candidate
+        return
+
+    pool.append(candidate)
 
 
-def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
+def _append_field_candidates(
+    pool: list[dict],
+    value: str,
+    base_url: str,
+    source_type: str,
+) -> None:
+    if not isinstance(value, str) or not value.strip():
+        return
+    normalized = _normalize_url(value.strip(), base_url)
+    if not normalized:
+        return
+    for variant in _thumbnail_to_original_variants(normalized):
+        _upsert_candidate(
+            pool,
+            {
+                "url": variant,
+                "key": _candidate_key(variant),
+                "source_type": source_type,
+                "priority": _SOURCE_PRIORITY.get(source_type, 99),
+            },
+        )
+
+
+def _add_scrape_candidate(
+    pool: list[dict],
+    raw_url: str,
+    page_url: str,
+    source_type: str,
+) -> None:
+    normalized = _normalize_url(raw_url, page_url)
+    if not normalized:
+        return
+
+    for variant in _thumbnail_to_original_variants(normalized):
+        lower = variant.lower()
+        if _looks_like_noise(lower):
+            continue
+        if not _is_probable_image_url(lower):
+            continue
+        _upsert_candidate(
+            pool,
+            {
+                "url": variant,
+                "key": _candidate_key(variant),
+                "source_type": source_type,
+                "priority": _SOURCE_PRIORITY.get(source_type, 99),
+            },
+        )
+
+
+def _download_image_with_reason(image_url: str, limits: dict) -> tuple[Optional[str], str]:
     if not image_url:
         return None, "empty_url"
+
+    min_width = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
+    min_height = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
+    min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
+    min_aspect = float(limits.get("min_aspect", _DEFAULT_MIN_ASPECT_RATIO))
+    max_aspect = float(limits.get("max_aspect", _DEFAULT_MAX_ASPECT_RATIO))
 
     try:
         response = requests.get(
@@ -297,7 +503,9 @@ def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
             return None, f"not_image_content_type:{content_type}"
 
         temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_img_"
+            suffix=".jpg",
+            delete=False,
+            prefix="otoxtra_img_",
         )
         temp_path = temp_file.name
 
@@ -308,31 +516,27 @@ def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
             downloaded += len(chunk)
             if downloaded > _MAX_DOWNLOAD_BYTES:
                 temp_file.close()
-                try:
-                    os.unlink(temp_path)
-                except OSError:
-                    pass
+                _safe_unlink(temp_path)
                 return None, "download_too_large"
             temp_file.write(chunk)
         temp_file.close()
 
         try:
-            img = Image.open(temp_path)
-            img_width, img_height = img.size
-            img.close()
+            with Image.open(temp_path) as img:
+                img_width, img_height = img.size
 
-            if img_width < _MIN_IMAGE_WIDTH or img_height < _MIN_IMAGE_HEIGHT:
-                try:
-                    os.unlink(temp_path)
-                except OSError:
-                    pass
-                return None, f"too_small:{img_width}x{img_height}"
+            area = img_width * img_height
+            if img_width < min_width or img_height < min_height or area < min_area:
+                _safe_unlink(temp_path)
+                return None, f"too_small:{img_width}x{img_height}:area={area}"
+
+            ratio = img_width / img_height if img_height else 0.0
+            if ratio < min_aspect or ratio > max_aspect:
+                _safe_unlink(temp_path)
+                return None, f"bad_aspect:{img_width}x{img_height}:ratio={ratio:.3f}"
 
         except Exception:
-            try:
-                os.unlink(temp_path)
-            except OSError:
-                pass
+            _safe_unlink(temp_path)
             return None, "invalid_image_file"
 
         return temp_path, f"ok:{img_width}x{img_height}"
@@ -345,88 +549,53 @@ def _download_image_with_reason(image_url: str) -> tuple[Optional[str], str]:
         return None, f"unexpected_error:{exc}"
 
 
-def download_image(image_url: str) -> Optional[str]:
-    image_path, reason = _download_image_with_reason(image_url)
-    if image_path:
-        dims = reason.replace("ok:", "")
-        log(f"Gorsel indirildi: {dims}")
-        return image_path
-    log(f"Gorsel indirilemedi: {reason}", "WARNING")
-    return None
+def _read_image_meta(path: str) -> tuple[int, int, int]:
+    with Image.open(path) as img:
+        width, height = img.size
+    size_kb = max(1, os.path.getsize(path) // 1024)
+    return width, height, size_kb
 
 
-def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[str]:
-    if not url:
-        return []
+def _score_image_quality(
+    width: int,
+    height: int,
+    size_kb: int,
+    source_type: str,
+    target_ratio: float,
+) -> tuple[float, str]:
+    area = width * height
+    ratio = width / height if height else 0.0
 
-    try:
-        log(f"Sayfadan gorsel adaylari araniyor: {url[:100]}")
+    resolution_score = min(25.0, (area / 1_200_000.0) * 25.0)
+    ratio_diff = abs(ratio - target_ratio)
+    aspect_score = max(0.0, 20.0 * (1.0 - min(ratio_diff / 1.2, 1.0)))
 
-        response = requests.get(
-            url,
-            headers={"User-Agent": _USER_AGENT},
-            timeout=_REQUEST_TIMEOUT,
-        )
-        response.raise_for_status()
+    if size_kb < 80:
+        size_score = max(0.0, size_kb / 80.0 * 8.0)
+    elif size_kb <= 900:
+        size_score = 8.0
+    else:
+        size_score = max(0.0, 8.0 - min((size_kb - 900) / 600.0 * 8.0, 8.0))
 
-        soup = BeautifulSoup(response.text, "html.parser")
-        candidates: list[str] = []
+    source_bonus = _SOURCE_SCORE_BONUS.get(source_type, 0.0)
 
-        meta_selectors = [
-            ('meta[property="og:image"]', "content"),
-            ('meta[property="og:image:url"]', "content"),
-            ('meta[name="twitter:image"]', "content"),
-            ('meta[name="twitter:image:src"]', "content"),
-        ]
-        for selector, attr in meta_selectors:
-            for tag in soup.select(selector):
-                normalized = _normalize_url(tag.get(attr, ""), url)
-                if normalized:
-                    candidates.extend(_thumbnail_to_original_variants(normalized))
+    total = 45.0 + resolution_score + aspect_score + size_score + source_bonus
+    detail = (
+        f"res={resolution_score:.1f}, aspect={aspect_score:.1f}, "
+        f"size={size_score:.1f}, src_bonus={source_bonus:.1f}, "
+        f"ratio={ratio:.3f}, size_kb={size_kb}"
+    )
+    return total, detail
 
-        for img in soup.find_all("img"):
-            src_list = [
-                img.get("src", ""),
-                img.get("data-src", ""),
-                img.get("data-lazy-src", ""),
-                img.get("data-original", ""),
-                img.get("data-full-url", ""),
-            ]
 
-            srcset = img.get("srcset", "") or img.get("data-srcset", "")
-            if srcset:
-                best_srcset = _extract_best_src_from_srcset(srcset, url)
-                if best_srcset:
-                    src_list.append(best_srcset)
-
-            for src in src_list:
-                normalized = _normalize_url(src, url)
-                if normalized:
-                    candidates.extend(_thumbnail_to_original_variants(normalized))
-
-        cleaned: list[str] = []
-        for c in _unique_keep_order(candidates):
-            lower = c.lower()
-            if _looks_like_noise(lower):
-                continue
-            if not _is_probable_image_url(lower):
-                continue
-            cleaned.append(c)
-            if len(cleaned) >= max_candidates:
-                break
-
-        log(f"Sayfadan {len(cleaned)} gorsel adayi bulundu")
-        return cleaned
-
-    except requests.exceptions.Timeout:
-        log(f"Sayfa cekme zaman asimi: {url[:100]}", "WARNING")
-        return []
-    except requests.exceptions.RequestException as exc:
-        log(f"Sayfa cekme hatasi: {exc}", "WARNING")
-        return []
-    except Exception as exc:
-        log(f"Sayfa gorsel toplama hatasi: {exc}", "WARNING")
-        return []
+def _adaptive_perceptual_threshold(
+    base_threshold: int,
+    current_signature: str,
+    previous_signature: str,
+) -> int:
+    if current_signature and previous_signature and current_signature == previous_signature:
+        return base_threshold + 3
+    return base_threshold
 
 
 def _create_fallback_image(width: int, height: int) -> str:
@@ -436,15 +605,13 @@ def _create_fallback_image(width: int, height: int) -> str:
         os.path.join(project_root, "assets", "logo_solid.jpg"),
         os.path.join(project_root, "assets", "logo.png"),
     ]
-    logo_path = None
-    for candidate in logo_candidates:
-        if os.path.exists(candidate):
-            logo_path = candidate
-            break
+    logo_path = next((c for c in logo_candidates if os.path.exists(c)), None)
 
     try:
         temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_fallback_"
+            suffix=".jpg",
+            delete=False,
+            prefix="otoxtra_fallback_",
         )
         temp_path = temp_file.name
         temp_file.close()
@@ -461,17 +628,20 @@ def _create_fallback_image(width: int, height: int) -> str:
             fill=_FALLBACK_STRIPE_COLOR,
         )
         draw.rectangle(
-            [stripe_padding_x, height - stripe_margin - stripe_thickness, width - stripe_padding_x, height - stripe_margin],
+            [
+                stripe_padding_x,
+                height - stripe_margin - stripe_thickness,
+                width - stripe_padding_x,
+                height - stripe_margin,
+            ],
             fill=_FALLBACK_STRIPE_COLOR,
         )
 
         if logo_path:
             try:
-                logo_img = Image.open(logo_path)
-                if logo_img.mode != "RGBA":
-                    logo_img = logo_img.convert("RGBA")
-
+                logo_img = Image.open(logo_path).convert("RGBA")
                 logo_max_width = int(width * 0.25)
+
                 logo_orig_w, logo_orig_h = logo_img.size
                 aspect = logo_orig_h / logo_orig_w
                 logo_new_width = logo_max_width
@@ -510,7 +680,9 @@ def _create_fallback_image(width: int, height: int) -> str:
     except Exception as exc:
         log(f"Yedek gorsel olusturma hatasi: {exc}", "ERROR")
         temp_file = tempfile.NamedTemporaryFile(
-            suffix=".jpg", delete=False, prefix="otoxtra_emergency_"
+            suffix=".jpg",
+            delete=False,
+            prefix="otoxtra_emergency_",
         )
         temp_path = temp_file.name
         temp_file.close()
@@ -568,7 +740,7 @@ def add_logo(image_path: str) -> str:
 
     logo_position = images_settings.get("logo_position", "bottom_right")
     logo_opacity = images_settings.get("logo_opacity", 0.7)
-    logo_size_percent = images_settings.get("logo_size_percent", 15)
+    logo_size_percent = images_settings.get("logo_size_percent", 12)
     padding = 20
 
     logo_path = os.path.join(get_project_root(), "assets", "logo.png")
@@ -625,26 +797,93 @@ def add_logo(image_path: str) -> str:
         return image_path
 
 
-def _collect_article_candidates(article: dict, max_candidates: int) -> list[str]:
-    candidates: list[str] = []
+def download_image(image_url: str) -> Optional[str]:
+    limits = _get_image_validation_limits()
+    image_path, reason = _download_image_with_reason(image_url, limits)
+    if image_path:
+        dims = reason.replace("ok:", "")
+        log(f"Gorsel indirildi: {dims}")
+        return image_path
+    log(f"Gorsel indirilemedi: {reason}", "WARNING")
+    return None
+
+
+def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
+    if not url:
+        return []
+
+    try:
+        log(f"Sayfadan gorsel adaylari araniyor: {url[:100]}")
+
+        response = requests.get(
+            url,
+            headers={"User-Agent": _USER_AGENT},
+            timeout=_REQUEST_TIMEOUT,
+        )
+        response.raise_for_status()
+
+        soup = BeautifulSoup(response.text, "html.parser")
+        pool: list[dict] = []
+
+        meta_selectors = [
+            ('meta[property="og:image"]', "content", "meta_og"),
+            ('meta[property="og:image:url"]', "content", "meta_og"),
+            ('meta[name="twitter:image"]', "content", "meta_twitter"),
+            ('meta[name="twitter:image:src"]', "content", "meta_twitter"),
+        ]
+        for selector, attr, source_type in meta_selectors:
+            for tag in soup.select(selector):
+                _add_scrape_candidate(pool, tag.get(attr, ""), url, source_type)
+
+        for img in soup.find_all("img"):
+            src_list = [
+                img.get("src", ""),
+                img.get("data-src", ""),
+                img.get("data-lazy-src", ""),
+                img.get("data-original", ""),
+                img.get("data-full-url", ""),
+            ]
+
+            srcset = img.get("srcset", "") or img.get("data-srcset", "")
+            if srcset:
+                best_srcset = _extract_best_src_from_srcset(srcset, url)
+                if best_srcset:
+                    src_list.append(best_srcset)
+
+            for src in src_list:
+                _add_scrape_candidate(pool, src, url, "article_img")
+
+        ordered = sorted(pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
+        cleaned = ordered[:max_candidates]
+
+        log(f"Sayfadan {len(cleaned)} gorsel adayi bulundu")
+        return cleaned
+
+    except requests.exceptions.Timeout:
+        log(f"Sayfa cekme zaman asimi: {url[:100]}", "WARNING")
+        return []
+    except requests.exceptions.RequestException as exc:
+        log(f"Sayfa cekme hatasi: {exc}", "WARNING")
+        return []
+    except Exception as exc:
+        log(f"Sayfa gorsel toplama hatasi: {exc}", "WARNING")
+        return []
+
+
+def _collect_article_candidates(article: dict, max_candidates: int) -> list[dict]:
+    pool: list[dict] = []
+    base_url = article.get("link", "")
 
     list_candidates = article.get("image_candidates", [])
     if isinstance(list_candidates, list):
         for item in list_candidates:
-            if isinstance(item, str):
-                normalized = _normalize_url(item, article.get("link", ""))
-                if normalized:
-                    candidates.extend(_thumbnail_to_original_variants(normalized))
+            _append_field_candidates(pool, item, base_url, "article_candidates_field")
 
-    for key in ("rss_image_url", "image_url"):
-        value = article.get(key, "")
-        if isinstance(value, str) and value.strip():
-            normalized = _normalize_url(value.strip(), article.get("link", ""))
-            if normalized:
-                candidates.extend(_thumbnail_to_original_variants(normalized))
+    _append_field_candidates(pool, article.get("image_url", ""), base_url, "article_field")
+    _append_field_candidates(pool, article.get("rss_image_url", ""), base_url, "rss_field")
 
-    candidates = _unique_keep_order(candidates)
-    return candidates[:max_candidates]
+    ordered = sorted(pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
+    return ordered[:max_candidates]
 
 
 def prepare_images(article: dict) -> list[str]:
@@ -658,6 +897,9 @@ def prepare_images(article: dict) -> list[str]:
     perceptual_threshold = int(
         images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD)
     )
+    limits = _get_image_validation_limits()
+    resize_limits = _get_platform_resize_limits()
+    target_ratio = feed_image_width / feed_image_height
 
     env_max_images = _read_int_env("MAX_IMAGES_PER_NEWS")
     if env_max_images is not None and env_max_images > 0:
@@ -677,90 +919,257 @@ def prepare_images(article: dict) -> list[str]:
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
         f"max_candidates_to_try={max_candidates_to_try}, perceptual_threshold={perceptual_threshold}"
     )
+    log(
+        "Validation limits: "
+        f"min_width={limits['min_width']}, min_height={limits['min_height']}, "
+        f"min_area={limits['min_area']}, ratio={limits['min_aspect']:.2f}-{limits['max_aspect']:.2f}"
+    )
+    log(
+        "Resize limits: "
+        f"max_width={resize_limits['max_width']}, max_height={resize_limits['max_height']}, "
+        f"max_area={resize_limits['max_area']}, max_bytes={resize_limits['max_bytes']}"
+    )
 
     prepared_paths: list[str] = []
     used_sources: list[str] = []
 
-    candidate_urls = _collect_article_candidates(article, max_candidates_to_try)
-
+    candidate_pool = _collect_article_candidates(article, max_candidates_to_try)
     if article.get("can_scrape_image", True) and article.get("link", ""):
-        needs_more = len(candidate_urls) < max_images_per_news
-        if needs_more:
-            scraped_urls = scrape_article_image_urls(
-                article.get("link", ""),
-                max_candidates=max_candidates_to_try,
-            )
-            candidate_urls.extend(scraped_urls)
-            candidate_urls = _unique_keep_order(candidate_urls)[:max_candidates_to_try]
+        for c in scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try):
+            _upsert_candidate(candidate_pool, c)
 
-    log(f"Toplam aday URL (canonical): {len(candidate_urls)}")
+    candidate_pool = sorted(candidate_pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
+    candidate_pool = candidate_pool[:max_candidates_to_try]
+    log(f"Toplam aday URL (canonical): {len(candidate_pool)}")
 
     tried_keys: set[str] = set()
     seen_content_hashes: set[str] = set()
-    seen_perceptual_hashes: list[int] = []
+    seen_perceptual_records: list[tuple[int, str]] = []
     fail_reasons: Counter[str] = Counter()
     tried_count = 0
 
-    for idx, candidate_url in enumerate(candidate_urls, start=1):
-        if len(prepared_paths) >= max_images_per_news:
-            break
+    accepted: list[dict] = []
+    retry_relaxed_pool: list[dict] = []
 
-        key = _candidate_key(candidate_url)
+    # Pass-1: strict
+    for idx, candidate in enumerate(candidate_pool, start=1):
+        candidate_url = candidate.get("url", "")
+        source_type = candidate.get("source_type", "unknown")
+        key = candidate.get("key", "") or _candidate_key(candidate_url)
+
+        if not candidate_url:
+            continue
         if key in tried_keys:
             fail_reasons["duplicate_candidate_key"] += 1
             continue
+
         tried_keys.add(key)
         tried_count += 1
 
-        log(f"Aday deneniyor ({idx}/{len(candidate_urls)}): {candidate_url[:140]}")
-        downloaded, reason = _download_image_with_reason(candidate_url)
+        log(f"Aday deneniyor ({idx}/{len(candidate_pool)}): {candidate_url[:120]} | source={source_type}")
+
+        downloaded, reason = _download_image_with_reason(candidate_url, limits)
         if not downloaded:
             fail_reasons[reason] += 1
             log(f"Aday elendi: {reason}", "WARNING")
+            if reason.startswith("too_small:") or reason.startswith("bad_aspect:"):
+                retry_relaxed_pool.append(candidate)
             continue
 
         try:
-            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
-            if should_add_logo:
-                processed = add_logo(processed)
+            width, height, size_kb = _read_image_meta(downloaded)
+            content_hash = _file_sha256(downloaded)
 
-            content_hash = _file_sha256(processed)
             if content_hash in seen_content_hashes:
                 fail_reasons["duplicate_image_content"] += 1
                 log("Aday elendi: duplicate_image_content", "WARNING")
-                try:
-                    os.unlink(processed)
-                except OSError:
-                    pass
+                _safe_unlink(downloaded)
                 continue
 
-            seen_content_hashes.add(content_hash)
+            current_signature = _visual_signature(candidate_url)
 
             try:
-                perceptual_hash = _dhash(processed)
-                if any(_hamming(perceptual_hash, prev) <= perceptual_threshold for prev in seen_perceptual_hashes):
+                current_phash = _dhash(downloaded)
+                is_near_dup = False
+                for prev_phash, prev_signature in seen_perceptual_records:
+                    dynamic_threshold = _adaptive_perceptual_threshold(
+                        perceptual_threshold, current_signature, prev_signature
+                    )
+                    if _hamming(current_phash, prev_phash) <= dynamic_threshold:
+                        is_near_dup = True
+                        break
+
+                if is_near_dup:
                     fail_reasons["near_duplicate_perceptual"] += 1
                     log("Aday elendi: near_duplicate_perceptual", "WARNING")
-                    try:
-                        os.unlink(processed)
-                    except OSError:
-                        pass
+                    _safe_unlink(downloaded)
                     continue
-                seen_perceptual_hashes.append(perceptual_hash)
             except Exception as ph_exc:
                 fail_reasons["perceptual_hash_error"] += 1
                 log(f"Perceptual hash atlandi: {ph_exc}", "WARNING")
+                current_phash = None
 
-            prepared_paths.append(processed)
-            used_sources.append("article_or_rss")
-            log(f"Aday basarili: {reason} -> kaydedildi ({len(prepared_paths)}/{max_images_per_news})")
+            processed = downloaded
+            needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+
+            if needs_resize:
+                log(f"Resize uygulanacak: {resize_reason}")
+                processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+            else:
+                log(f"Resize atlandi: {resize_reason}")
+
+            if should_add_logo:
+                processed = add_logo(processed)
+
+            score, score_detail = _score_image_quality(
+                width=width,
+                height=height,
+                size_kb=size_kb,
+                source_type=source_type,
+                target_ratio=target_ratio,
+            )
+
+            accepted.append(
+                {
+                    "path": processed,
+                    "url": candidate_url,
+                    "source_type": source_type,
+                    "score": score,
+                    "score_detail": score_detail,
+                    "phash": current_phash,
+                    "signature": current_signature,
+                    "content_hash": content_hash,
+                }
+            )
+
+            seen_content_hashes.add(content_hash)
+            if current_phash is not None:
+                seen_perceptual_records.append((current_phash, current_signature))
+
+            log(f"Aday basarili: {reason} -> quality={score:.1f} ({score_detail})")
+
         except Exception as exc:
             fail_reasons[f"processing_error:{exc}"] += 1
             log(f"Aday islenemedi: {exc}", "WARNING")
+            _safe_unlink(downloaded)
+
+    # Pass-2: strict yetmediyse controlled relaxed
+    if len(accepted) < max_images_per_news and retry_relaxed_pool:
+        relaxed_limits = _build_relaxed_limits(limits)
+        relaxed_threshold = max(2, perceptual_threshold - 2)
+
+        log(
+            "Relaxed pass devrede: "
+            f"need={max_images_per_news - len(accepted)}, retry_candidates={len(retry_relaxed_pool)}, "
+            f"ratio={relaxed_limits['min_aspect']:.2f}-{relaxed_limits['max_aspect']:.2f}, "
+            f"min={relaxed_limits['min_width']}x{relaxed_limits['min_height']}, "
+            f"area={relaxed_limits['min_area']}"
+        )
+
+        for candidate in retry_relaxed_pool:
+            if len(accepted) >= max_images_per_news:
+                break
+
+            candidate_url = candidate.get("url", "")
+            source_type = candidate.get("source_type", "unknown")
+            if not candidate_url:
+                continue
+
+            downloaded, reason = _download_image_with_reason(candidate_url, relaxed_limits)
+            if not downloaded:
+                fail_reasons[f"relaxed_{reason}"] += 1
+                continue
+
             try:
-                os.unlink(downloaded)
-            except OSError:
-                pass
+                width, height, size_kb = _read_image_meta(downloaded)
+                content_hash = _file_sha256(downloaded)
+
+                if content_hash in seen_content_hashes:
+                    fail_reasons["relaxed_duplicate_image_content"] += 1
+                    _safe_unlink(downloaded)
+                    continue
+
+                current_signature = _visual_signature(candidate_url)
+
+                try:
+                    current_phash = _dhash(downloaded)
+                    is_near_dup = False
+                    for prev_phash, prev_signature in seen_perceptual_records:
+                        dynamic_threshold = _adaptive_perceptual_threshold(
+                            relaxed_threshold, current_signature, prev_signature
+                        )
+                        if _hamming(current_phash, prev_phash) <= dynamic_threshold:
+                            is_near_dup = True
+                            break
+                    if is_near_dup:
+                        fail_reasons["relaxed_near_duplicate_perceptual"] += 1
+                        _safe_unlink(downloaded)
+                        continue
+                except Exception:
+                    current_phash = None
+
+                processed = downloaded
+                needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+
+                if needs_resize:
+                    log(f"Resize uygulanacak (relaxed): {resize_reason}")
+                    processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                else:
+                    log(f"Resize atlandi (relaxed): {resize_reason}")
+
+                if should_add_logo:
+                    processed = add_logo(processed)
+
+                score, score_detail = _score_image_quality(
+                    width=width,
+                    height=height,
+                    size_kb=size_kb,
+                    source_type=source_type,
+                    target_ratio=target_ratio,
+                )
+                score = max(0.0, score - 7.0)  # relaxed pass penalty
+
+                accepted.append(
+                    {
+                        "path": processed,
+                        "url": candidate_url,
+                        "source_type": source_type,
+                        "score": score,
+                        "score_detail": f"{score_detail}, relaxed_penalty=7.0",
+                        "phash": current_phash,
+                        "signature": current_signature,
+                        "content_hash": content_hash,
+                    }
+                )
+
+                seen_content_hashes.add(content_hash)
+                if current_phash is not None:
+                    seen_perceptual_records.append((current_phash, current_signature))
+
+                log(f"Relaxed aday basarili: {reason} -> quality={score:.1f}")
+
+            except Exception as exc:
+                fail_reasons[f"relaxed_processing_error:{exc}"] += 1
+                _safe_unlink(downloaded)
+
+    if accepted:
+        accepted_sorted = sorted(accepted, key=lambda x: x.get("score", 0.0), reverse=True)
+        selected = accepted_sorted[:max_images_per_news]
+        discarded = accepted_sorted[max_images_per_news:]
+
+        for item in selected:
+            prepared_paths.append(item["path"])
+            used_sources.append(item.get("source_type", "unknown"))
+            log(
+                f"Secilen gorsel: score={item.get('score', 0.0):.1f} "
+                f"source={item.get('source_type', 'unknown')} "
+                f"url={item.get('url', '')[:110]}"
+            )
+
+        for item in discarded:
+            path = item.get("path", "")
+            if path and os.path.exists(path):
+                _safe_unlink(path)
 
     if not prepared_paths:
         fallback = _create_fallback_image(feed_image_width, feed_image_height)
