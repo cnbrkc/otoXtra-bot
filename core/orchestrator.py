@@ -13,8 +13,16 @@ from core.helpers import (
     get_today_post_count,
     get_turkey_now,
     save_last_check_time,
+    increment_action_trigger,
+    get_previous_week_key,
+    get_weekly_stats,
+    is_weekly_report_sent,
+    mark_weekly_report_sent,
+    get_token_remaining_days,
+    record_weekly_error,
 )
 from core.state_manager import init_pipeline, get_stage
+from platforms import telegram as tg_platform
 
 
 def _get_env_bool(name: str, default: bool) -> bool:
@@ -71,14 +79,16 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         return True
 
 
-def _log_stage_error(stage_name: str) -> None:
+def _log_stage_error(stage_name: str) -> str:
     try:
         stage = get_stage(stage_name)
         error_msg = stage.get("error", "")
         if error_msg:
             log(f"{stage_name} error: {error_msg}", "WARNING")
+            return error_msg
     except Exception:
         pass
+    return ""
 
 
 def _log_source_health() -> None:
@@ -146,10 +156,81 @@ def _run_agent(agent_name: str, run_func) -> bool:
         return False
 
 
+def _save_posted_data_if_enabled(data: dict) -> None:
+    if not _is_persist_state_enabled():
+        return
+    save_posted_news(data)
+
+
+def _record_error_stat(error_code: str, error_name: str) -> None:
+    if not _is_persist_state_enabled():
+        return
+    try:
+        data = get_posted_news()
+        record_weekly_error(data, error_code, error_name)
+        save_posted_news(data)
+    except Exception as exc:
+        log(f"Error stat kaydedilemedi: {exc}", "WARNING")
+
+
+def _send_weekly_report_if_needed(posted_data: dict) -> None:
+    now = get_turkey_now()
+
+    # Sadece pazartesi calisir
+    if now.weekday() != 0:
+        return
+
+    previous_week_key = get_previous_week_key(now)
+    if is_weekly_report_sent(posted_data, previous_week_key):
+        return
+
+    stats = get_weekly_stats(posted_data, previous_week_key)
+    token_days = get_token_remaining_days()
+
+    if token_days is None:
+        token_line = "Bilinmiyor"
+    elif token_days < 0:
+        token_line = f"Token suresi dolmus ({abs(token_days)} gun gecmis)"
+    else:
+        token_line = f"{token_days} gun"
+
+    errors = stats.get("errors", {})
+    if errors:
+        error_lines = "\n".join([f"{name}: {count}" for name, count in errors.items()])
+    else:
+        error_lines = "Yok"
+
+    message = (
+        "Haftalik Rapor\n\n"
+        f"Hafta: {previous_week_key}\n"
+        f"Toplam tetiklenme: {stats.get('actions', 0)}\n"
+        f"Toplam otomatik paylasim: {stats.get('shares', 0)}\n"
+        f"Token kalan sure: {token_line}\n"
+        f"Toplam hata: {stats.get('error_total', 0)}\n"
+        f"Hata dagilimi:\n{error_lines}"
+    )
+
+    sent = tg_platform.send_message(message)
+    if sent:
+        mark_weekly_report_sent(posted_data, previous_week_key)
+        _save_posted_data_if_enabled(posted_data)
+        log(f"Haftalik rapor gonderildi: {previous_week_key}")
+    else:
+        log(f"Haftalik rapor gonderilemedi: {previous_week_key}", "WARNING")
+
+
 def main() -> None:
     try:
         settings = load_config("settings")
         posted_data = get_posted_news()
+
+        # Her orchestrator calismasi bir "action/tetiklenme" olarak sayilir.
+        action_no = increment_action_trigger(posted_data)
+        _save_posted_data_if_enabled(posted_data)
+        log(f"Action tetiklendi: A{action_no}")
+
+        # Pazartesi ilk calismada (onceki hafta icin) haftalik rapor.
+        _send_weekly_report_if_needed(posted_data)
 
         if not _check_daily_limit(settings, posted_data):
             return
@@ -159,41 +240,49 @@ def main() -> None:
         run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
         if not init_pipeline(run_id):
             log("Pipeline init failed", "ERROR")
+            _record_error_stat("PIPELINE_INIT_FAILED", "Pipeline init failed")
             return
 
         from agents.agent_fetcher import run as fetcher_run
         if not _run_agent("agent_fetcher", fetcher_run):
-            _log_stage_error("fetch")
+            err = _log_stage_error("fetch")
             _log_source_health()
+            _record_error_stat("FETCH_FAILED", err or "agent_fetcher failed")
             return
         _log_source_health()
 
         from agents.agent_scorer import run as scorer_run
         if not _run_agent("agent_scorer", scorer_run):
-            _log_stage_error("score")
+            err = _log_stage_error("score")
+            _record_error_stat("SCORER_FAILED", err or "agent_scorer failed")
             return
 
         from agents.agent_writer import run as writer_run
         if not _run_agent("agent_writer", writer_run):
-            _log_stage_error("write")
+            err = _log_stage_error("write")
+            _record_error_stat("WRITER_FAILED", err or "agent_writer failed")
             return
 
         from agents.agent_image import run as image_run
         if not _run_agent("agent_image", image_run):
-            _log_stage_error("image")
+            err = _log_stage_error("image")
+            _record_error_stat("IMAGE_FAILED", err or "agent_image failed")
             return
         _log_image_summary()
 
         from agents.agent_publisher import run as publisher_run
         if not _run_agent("agent_publisher", publisher_run):
-            _log_stage_error("publish")
+            err = _log_stage_error("publish")
+            _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed")
             return
 
     except KeyboardInterrupt:
         log("Interrupted by user", "WARNING")
+        _record_error_stat("INTERRUPTED", "Interrupted by user")
     except Exception as exc:
         log(f"Critical orchestrator error: {exc}", "ERROR")
         log(traceback.format_exc(), "ERROR")
+        _record_error_stat("ORCHESTRATOR_CRITICAL", str(exc))
     finally:
         _save_check_time()
 
