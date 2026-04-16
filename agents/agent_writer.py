@@ -222,6 +222,19 @@ def run() -> bool:
         return False
 
     score_output = score_stage.get("output", {})
+    if bool(score_output.get("skipped", False)):
+        skip_reason = (score_output.get("skip_reason", "") or "score skipped").strip()
+        output = {
+            "article": None,
+            "post_text": "",
+            "post_text_length": 0,
+            "skipped": True,
+            "skip_reason": skip_reason,
+        }
+        set_stage("write", "done", output=output)
+        log(f"writer skipped: {skip_reason}", "INFO")
+        return True
+
     article = score_output.get("selected_article", {})
 
     if not article:
@@ -253,6 +266,7 @@ def run() -> bool:
             "article": article,
             "post_text": post_text,
             "post_text_length": len(post_text),
+            "skipped": False,
         }
         set_stage("write", "done", output=output)
         log(f"agent_writer tamamlandi -> {len(post_text)} karakter")
