@@ -13,19 +13,19 @@ import random
 import time
 from typing import Optional
 
-from core.logger import log
 from core.config_loader import load_config
 from core.helpers import (
-    get_posted_news,
-    save_posted_news,
-    get_today_str,
-    get_today_post_count,
-    get_today_action_count,
-    get_turkey_now,
-    save_last_check_time,
     generate_topic_fingerprint,
+    get_posted_news,
+    get_today_action_count,
+    get_today_post_count,
+    get_today_str,
+    get_turkey_now,
     increment_weekly_share,
+    save_last_check_time,
+    save_posted_news,
 )
+from core.logger import log
 from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
 from platforms import telegram as tg_platform
@@ -47,10 +47,8 @@ def _get_env_bool(name: str, default: bool) -> bool:
 
 
 def _is_dry_run(settings: dict) -> bool:
-    env_override = os.environ.get("DRY_RUN")
-    if env_override is not None:
+    if os.environ.get("DRY_RUN") is not None:
         return _get_env_bool("DRY_RUN", False)
-
     posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
     return bool(posting_cfg.get("dry_run", False))
 
@@ -87,6 +85,22 @@ def _check_skip_probability(skip_percent: int) -> bool:
     return True
 
 
+def _build_new_post_record(article: dict, post_id: str, image_source: str, image_count: int) -> dict:
+    fingerprint = article.get("topic_fingerprint", "") or generate_topic_fingerprint(article.get("title", ""))
+    return {
+        "title": article.get("title", "Baslik yok"),
+        "url": article.get("link", ""),
+        "topic_fingerprint": fingerprint,
+        "source": article.get("source_name", "Bilinmeyen"),
+        "score": article.get("score", 0),
+        "trend_count": article.get("trend_count", 1),
+        "posted_at": get_turkey_now().isoformat(),
+        "fb_post_id": post_id,
+        "image_source": image_source,
+        "image_count": image_count,
+    }
+
+
 def _record_posted(article: dict, post_id: str, image_source: str, image_count: int) -> None:
     if not _is_persist_state_enabled():
         log("State persistence kapali (PERSIST_STATE=false), posted kaydi yazilmadi")
@@ -94,38 +108,18 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
 
     try:
         posted_data = get_posted_news()
+        today_str = get_today_str()
+
         posts_list = posted_data.get("posts", [])
         daily_counts = posted_data.get("daily_counts", {})
 
-        turkey_now = get_turkey_now()
-        today_str = get_today_str()
-
-        fingerprint = article.get("topic_fingerprint", "")
-        if not fingerprint:
-            fingerprint = generate_topic_fingerprint(article.get("title", ""))
-
-        new_record = {
-            "title": article.get("title", "Baslik yok"),
-            "url": article.get("link", ""),
-            "topic_fingerprint": fingerprint,
-            "source": article.get("source_name", "Bilinmeyen"),
-            "score": article.get("score", 0),
-            "trend_count": article.get("trend_count", 1),
-            "posted_at": turkey_now.isoformat(),
-            "fb_post_id": post_id,
-            "image_source": image_source,
-            "image_count": image_count,
-        }
-
-        posts_list.append(new_record)
+        posts_list.append(_build_new_post_record(article, post_id, image_source, image_count))
         daily_counts[today_str] = daily_counts.get(today_str, 0) + 1
 
         posted_data["posts"] = posts_list
         posted_data["daily_counts"] = daily_counts
 
-        # Haftalik otomatik paylasim sayisi
         increment_weekly_share(posted_data)
-
         save_last_check_time(posted_data)
         save_posted_news(posted_data)
 
@@ -133,7 +127,6 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
             f"Kayit guncellendi: {article.get('title', '')[:60]} "
             f"(bugun toplam: {daily_counts[today_str]}, gorsel: {image_count})"
         )
-
     except Exception as exc:
         log(f"Kayit guncellenirken hata: {exc}", "WARNING")
 
@@ -142,49 +135,52 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
     collected: list[str] = []
     seen_keys: set[str] = set()
 
-    def add_path_if_unique(path: str) -> None:
+    def _add_if_valid(path: str) -> None:
+        if not isinstance(path, str) or not path:
+            return
+        if not os.path.exists(path):
+            log(f"Image path skip (not found): {path}", "WARNING")
+            return
+
         key = os.path.normcase(os.path.realpath(path))
         if key in seen_keys:
             log(f"Image path skip (duplicate path key): {path}", "INFO")
             return
+
         seen_keys.add(key)
         collected.append(path)
 
-    multi_paths = image_output.get("image_paths", [])
-    if isinstance(multi_paths, list):
-        for item in multi_paths:
-            if isinstance(item, str) and item and os.path.exists(item):
-                add_path_if_unique(item)
-            elif isinstance(item, str) and item:
-                log(f"Image path skip (not found): {item}", "WARNING")
+    for item in image_output.get("image_paths", []) if isinstance(image_output.get("image_paths", []), list) else []:
+        _add_if_valid(item)
 
-    single_path = image_output.get("image_path", "")
-    if isinstance(single_path, str) and single_path and os.path.exists(single_path):
-        add_path_if_unique(single_path)
-    elif isinstance(single_path, str) and single_path:
-        log(f"Primary image path not found: {single_path}", "WARNING")
+    primary_path = image_output.get("image_path", "")
+    if isinstance(primary_path, str) and primary_path and not os.path.exists(primary_path):
+        log(f"Primary image path not found: {primary_path}", "WARNING")
+    _add_if_valid(primary_path)
 
     return collected
 
 
 def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Optional[str]:
-    candidate_names = ["post_photos", "post_multi_photo", "post_album"]
-    for fn_name in candidate_names:
+    for fn_name in ("post_photos", "post_multi_photo", "post_album"):
         fn = getattr(fb_platform, fn_name, None)
-        if callable(fn):
-            try:
-                log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
-                result = fn(image_paths, post_text_content)
-                if result:
-                    log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
-                    return result
-                log(f"Coklu gorsel fonksiyonu sonuc vermedi: facebook.{fn_name}()", "WARNING")
-            except Exception as exc:
-                log(f"facebook.{fn_name} hata: {exc}", "WARNING")
+        if not callable(fn):
+            continue
+
+        try:
+            log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
+            result = fn(image_paths, post_text_content)
+            if result:
+                log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
+                return result
+            log(f"Coklu gorsel fonksiyonu sonuc vermedi: facebook.{fn_name}()", "WARNING")
+        except Exception as exc:
+            log(f"facebook.{fn_name} hata: {exc}", "WARNING")
+
     return None
 
 
-def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
+def _log_publish_preview(article: dict, post_text_content: str, image_paths: list[str]) -> None:
     image_source = article.get("image_source", "unknown")
     image_count = len(image_paths)
 
@@ -194,21 +190,23 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     log(f"Gorsel adedi: {image_count} (kaynak: {image_source})")
 
     if image_paths:
-        for idx, p in enumerate(image_paths, start=1):
+        for idx, path in enumerate(image_paths, start=1):
             try:
-                size_kb = os.path.getsize(p) // 1024
+                size_kb = os.path.getsize(path) // 1024
             except Exception:
                 size_kb = -1
-            log(f"Final image[{idx}] path={p} size_kb={size_kb}")
+            log(f"Final image[{idx}] path={path} size_kb={size_kb}")
     else:
         log("Final image listesi bos", "WARNING")
 
-    preview = post_text_content[:220]
-    if len(post_text_content) > 220:
-        preview += "..."
+    preview = post_text_content[:220] + ("..." if len(post_text_content) > 220 else "")
     log(f"Post onizleme:\n{preview}")
 
-    result_id = None
+
+def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
+    _log_publish_preview(article, post_text_content, image_paths)
+
+    image_count = len(image_paths)
 
     if image_count >= 2:
         log("Deneme 1/3: Coklu gorsel paylasimi...")
@@ -220,12 +218,11 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
         log("Coklu paylasim basarisiz, tek gorsele dusulecek", "WARNING")
 
     if image_count >= 1:
-        first_image = image_paths[0]
         post_photo_fn = getattr(fb_platform, "post_photo", None)
         if callable(post_photo_fn):
             log("Deneme 2/3: Tek gorsel paylasimi...")
             try:
-                result_id = post_photo_fn(first_image, post_text_content)
+                result_id = post_photo_fn(image_paths[0], post_text_content)
             except Exception as exc:
                 log(f"post_photo hata: {exc}", "WARNING")
                 result_id = None
@@ -244,6 +241,7 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
         except Exception as exc:
             log(f"post_text hata: {exc}", "WARNING")
             result_id = None
+
         if result_id:
             article["image_source"] = "fallback_text"
             log("Publish path: text_success")
@@ -253,9 +251,20 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     return None
 
 
+def _retry_text_publish(post_text_content: str) -> Optional[str]:
+    post_text_fn = getattr(fb_platform, "post_text", None)
+    if not callable(post_text_fn):
+        return None
+
+    try:
+        return post_text_fn(post_text_content)
+    except Exception as exc:
+        log(f"Retry post_text hata: {exc}", "WARNING")
+        return None
+
+
 def _build_health_report() -> str:
-    stage_names = ["fetch", "score", "write", "image"]
-    for stage_name in stage_names:
+    for stage_name in ("fetch", "score", "write", "image"):
         try:
             stage_data = get_stage(stage_name)
             if stage_data.get("status") == "error":
@@ -267,12 +276,7 @@ def _build_health_report() -> str:
     return "Saglikli"
 
 
-def _send_telegram_notification(
-    article: dict,
-    action_count: int,
-    share_count: int,
-    health_report: str,
-) -> bool:
+def _send_telegram_notification(article: dict, action_count: int, share_count: int, health_report: str) -> bool:
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
@@ -284,8 +288,18 @@ def _send_telegram_notification(
         f"Durum: A{action_count}-P{share_count}\n"
         f"Saglik: {health_report}"
     )
-
     return tg_platform.send_message(message)
+
+
+def _build_publish_output(article: dict, post_id: str, image_source: str, image_count: int, dry_run: bool) -> dict:
+    return {
+        "success": True,
+        "post_id": post_id,
+        "article_title": article.get("title", ""),
+        "image_source": image_source,
+        "image_count": image_count,
+        "dry_run": dry_run,
+    }
 
 
 def run() -> bool:
@@ -329,29 +343,25 @@ def run() -> bool:
         random_skip_enabled = _is_random_skip_enabled()
 
         posted_data = get_posted_news()
-
         if not _check_daily_limit(posted_data, max_daily_posts):
             set_stage("publish", "error", error="Gunluk limit doldu")
             return False
 
-        if not dry_run and random_skip_enabled:
-            if not _check_skip_probability(skip_probability):
-                set_stage("publish", "error", error="Rastgele atlama")
-                return False
-        elif not dry_run and not random_skip_enabled:
+        if not dry_run and random_skip_enabled and not _check_skip_probability(skip_probability):
+            set_stage("publish", "error", error="Rastgele atlama")
+            return False
+        if not dry_run and not random_skip_enabled:
             log("Rastgele atlama devre disi (ENABLE_RANDOM_SKIP=false)")
 
         if dry_run:
             log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
-            fake_post_id = "dryrun_000000000_111111111"
-            output = {
-                "success": True,
-                "post_id": fake_post_id,
-                "article_title": article.get("title", ""),
-                "image_source": image_source,
-                "image_count": len(image_paths),
-                "dry_run": True,
-            }
+            output = _build_publish_output(
+                article=article,
+                post_id="dryrun_000000000_111111111",
+                image_source=image_source,
+                image_count=len(image_paths),
+                dry_run=True,
+            )
             set_stage("publish", "done", output=output)
             log("DRY RUN tamamlandi")
             return True
@@ -364,21 +374,13 @@ def run() -> bool:
             log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
 
         post_id = _publish_to_facebook(article, post_text_content, image_paths)
-
         if post_id is None:
             log(f"Ilk tur basarisiz, {_RETRY_DELAY} sn sonra metin retry", "WARNING")
             time.sleep(_RETRY_DELAY)
-
-            post_text_fn = getattr(fb_platform, "post_text", None)
-            if callable(post_text_fn):
-                try:
-                    post_id = post_text_fn(post_text_content)
-                    if post_id:
-                        article["image_source"] = "retry_text"
-                        log("Publish path: retry_text_success")
-                except Exception as exc:
-                    log(f"Retry post_text hata: {exc}", "WARNING")
-                    post_id = None
+            post_id = _retry_text_publish(post_text_content)
+            if post_id:
+                article["image_source"] = "retry_text"
+                log("Publish path: retry_text_success")
 
         if post_id is None:
             set_stage("publish", "error", error="Facebook paylasimi basarisiz")
@@ -393,23 +395,17 @@ def run() -> bool:
         share_count = get_today_post_count(fresh_data)
         health_report = _build_health_report()
 
-        telegram_ok = _send_telegram_notification(
-            article=article,
-            action_count=action_count,
-            share_count=share_count,
-            health_report=health_report,
-        )
+        telegram_ok = _send_telegram_notification(article, action_count, share_count, health_report)
         if not telegram_ok:
             log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
 
-        output = {
-            "success": True,
-            "post_id": post_id,
-            "article_title": article.get("title", ""),
-            "image_source": final_image_source,
-            "image_count": final_image_count,
-            "dry_run": False,
-        }
+        output = _build_publish_output(
+            article=article,
+            post_id=post_id,
+            image_source=final_image_source,
+            image_count=final_image_count,
+            dry_run=False,
+        )
         set_stage("publish", "done", output=output)
         log("BASARIYLA PAYLASILDI")
         return True
