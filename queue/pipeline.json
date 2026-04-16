@@ -1,34 +1,70 @@
 {
-  "run_id": "2026-04-16-11:01",
+  "run_id": "2026-04-16-14:01",
   "status": "completed",
-  "started_at": "2026-04-16T11:01:15.786968+03:00",
-  "updated_at": "2026-04-16T11:01:33.603248+03:00",
+  "started_at": "2026-04-16T14:01:56.893201+03:00",
+  "updated_at": "2026-04-16T14:02:36.489509+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
-            "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
-            "published": "2026-04-16T08:00:00+00:00",
-            "summary": "911'e lastik dopingi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+            "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
+            "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
+            "published": "2026-04-16T08:18:00+00:00",
+            "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+              "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "high",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo"
+            "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo"
+          },
+          {
+            "title": "Makyajlı Toyota Yaris Cross resmi olarak görücüye çıkarıldı",
+            "link": "https://www.log.com.tr/makyajli-toyota-yaris-cross-resmi-olarak-gorucuye-cikarildi/",
+            "published": "2026-04-16T09:20:11+00:00",
+            "summary": "Makyajlı Toyota Yaris Cross görücüye çıkarıldı. Makyaj kapsamında en çok dikkat çeken yenilik, petek formundaki ızgara oldu. 16 Nisan itibarıyla Türkiye’de 2,2 milyon TL’den başlayan aracın yeni versiyonu, tanıdık bir yaşam alanıyla karşımızda yer alıyor. 12,3 inç ve 10,5 inç boyutlarında iki farklı ekranın bir araya getirildiği Yaris Cross, artık alt paketlerde daha fazla ADAS özelliği sunuyor ve yine hibrit ünitelerle geliyor. Aracın Hybrid 115 versiyonu 114 beygir güç ve 141 Nm tork, Hybrid 130 ise 128 beygir güç ve 185 Nm tork sunuyor. Modelin sportif sürüş için özelleştirilen süspansiyon sistemiyle donatılan “GR Sport” versiyonunu tek olarak Hybrid 130 ile sunan Toyota, makyajlı Yaris Cross’un belirli pazarlarda sonbahar döneminde yollara çıkarılacağını duyurdu. Makyajlı Toyota Yaris Cross resmi olarak görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cikarildi-cross-gorucuye-makyajli-resmi-toyota-yaris"
+          },
+          {
+            "title": "Togg Trugo Şarj İstasyonlarında AutoCharge Dönemini Başlattı",
+            "link": "https://shiftdelete.net/togg-trugo-sarj-istasyonlarinda-autocharge-donemini-baslatti",
+            "published": "2026-04-16T10:30:20+00:00",
+            "summary": "Togg, Trugo şarj ağında AutoCharge dönemini başlattı. T10X ve T10F modellerinde temassız şarj imkanı sunan yeni özellik ile ilgili tüm detaylar haberimizde.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "autocharge-baslatti-donemini-sarj-stasyonlarinda-togg-trugo"
           }
         ],
-        "count": 1,
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -58,136 +94,137 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-16T11:01:21.176759+03:00"
+      "updated_at": "2026-04-16T14:02:01.854855+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
-          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
-          "published": "2026-04-16T08:00:00+00:00",
-          "summary": "911'e lastik dopingi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
+          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
+          "published": "2026-04-16T08:18:00+00:00",
+          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
-          "base_ai_score": 78,
-          "score": 88,
+          "trend_bonus": 2,
+          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2
         },
-        "score": 88,
-        "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+        "score": 94,
+        "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
         "trend_count": 1,
-        "trend_bonus": 0,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored"
+        "trend_bonus": 2,
+        "freshness_bonus": 7,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 50
       },
       "error": null,
-      "updated_at": "2026-04-16T11:01:23.455266+03:00"
+      "updated_at": "2026-04-16T14:02:05.768029+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
-          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
-          "published": "2026-04-16T08:00:00+00:00",
-          "summary": "911'e lastik dopingi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
+          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
+          "published": "2026-04-16T08:18:00+00:00",
+          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
-          "base_ai_score": 78,
-          "score": 88,
+          "trend_bonus": 2,
+          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Pirelli, 60 yılı aşkın 911 tarihinin şimdiye kadarki en güçlü versiyonu olan Porsche 911 Turbo S için özel olarak yeni bir P Zero R lastik geliştirdi. Spor otomobillerde günlük kullanım için tasarlanan bu ultra yüksek performanslı lastik, Pirelli’nin motor sporlarındaki deneyiminden doğrudan türetilmiş bir hamura sahip. Ürünün teknolojik kökeni, prestij segmentinde halihazırda beğeni kazanan Pirelli yarış çözümleriyle aynı DNA’yı paylaşıyor ve en yüksek performanslı araçlar için üstün dinamik tepki sağlıyor. 911 Turbo Siçin geliştirilen P Zero R, motorun ürettiği 523 kW (711 hp) gücü yola etkin şekilde aktaracak biçimde tasarlandı. Özel yapısı sayesinde 800 Nm torku karşılayabilen lastik, yeni modelin hem dinamik kabiliyetlerini hem de sürüş keyfini artırıyor. Kuru zeminde optimum yol tutuş sunmasının yanı sıra, farklı yüzeylerde ve geniş bir hava koşulu aralığında tutarlı çekiş sağlıyor; özellikle ıslak zeminlerde güvenlik ve kontrol konusuna özel önem veriliyor. Sırt deseni, konforu artırmak amacıyla gürültüyü minimize edecek şekilde geliştirilirken, optimize edilmiş dönme direnci aracın genel verimliliğine katkıda bulunuyor. Pirelli“Mükemmel Uyum” yaklaşımı doğrultusunda her lastik, hedef aracın teknik özelliklerine tam uyum sağlayacak şekilde tasarlanıyor. Pirelli ile Porsche arasındaki bu köklü iş birliği, daha önce 911 serisinin diğer modelleri için de özel P Zero R versiyonlarının geliştirilmesini sağladı; bunlar arasında hibrit güç aktarma sistemine sahip ilk model olan Porsche 911 GTS de bulunuyor. Yeni 911 Turbo S için geliştirilen P Zero R lastiklerin yanak kısmında, her 911 versiyonuna en uygun uyumu sağlamak üzere ortak geliştirmeyi simgeleyen “N” işareti yer alıyor. Yeni aracın temas yüzeyini ve çekişini optimize etmek amacıyla arka aksta, önceki nesle kıyasla 10 milimetre daha geniş olan 325/30 ZR 21 ebatında lastikler kullanılıyor. Ön aksta ise 255/35 ZR 20 ebadı korunarak, segmentinde referans kabul edilen bu spor otomobilin ihtiyaç duyduğu dinamik denge sağlanıyor."
+          "full_text": "Söz konusu değer, standart versiyona kıyasla yaklaşık 100 kilometrelik bir artış anlamına geliyor. Gelişimin temelinde ise yeni nesil elektrik motorları, daha yüksek kapasiteli batarya ve iyileştirilmiş aerodinamik tasarım yatıyor. Yeni FH Aero Electric Extended Range, tamamen yeniden geliştirilen elektrikli arka aks ile geliyor. Bu sistem; iki elektrik motoru, güç elektroniği bileşenleri ve 13 tonluk geleneksel aksı tek bir yapıda birleştiriyor. Konfigürasyona bağlı olarak sistem gücü 570 beygir (420 kW) veya 625 beygir (460 kW) seviyesinde sunuluyor. Yeni uzun menzilli model, MCS (Megawatt Charging System) şarj altyapısını destekliyor ve700 kW’a kadar şarj gücüalabiliyor. Uygun bir megavat seviyesindeki DC hızlı şarj istasyonunda batarya%20’den %80’e yaklaşık 50 dakikadadolabiliyor. 350 kW gücündeki CCS hızlı şarj cihazı kullanıldığında ise aynı işlem yaklaşık 85 dakika sürüyor. Volvo Trucks verilerine göre yeni modelin toplam yüklü ağırlığı 48 tona kadar çıkabiliyor. Taşıma kapasitesi ise 28 tona kadar ulaşıyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B07M85913F https://www.amazon.com.tr/gp/browse.html?node=12466553031 https://www.amazon.com.tr/dp/B00NCS8WFC https://www.amazon.com.tr/dp/B0C4Q47L14 https://www.idefix.com/aku-trekker-pro-ii-gore-tex-bot-a852108-p-17024889 https://www.migros.com.tr/persembe-yildizi-l-bbc9e57"
         },
-        "post_text": "🏎️ PİRELLİ'DEN 911 TURBO S'E ÖZEL LASTİK GELDİ!\n\nPirelli, Porsche'nin en güçlü 911'i olan 911 Turbo S için yepyeni bir P Zero R lastik geliştirdi. Bu ultra yüksek performanslı lastik, Pirelli'nin motor sporları deneyiminden geliyor.\n\nSpor otomobillerde günlük kullanıma uygun olarak tasarlanan bu lastik, Porsche 911 Turbo S'in 711 beygir gücünü yola en iyi şekilde aktarmak için özel olarak üretildi.\n\nHem ıslak hem de kuru zeminde üstün yol tutuşu sağlayan lastik, sürüş keyfini de artırıyor.\n\nSiz bu özel lastik hakkında ne düşünüyorsunuz?",
-        "post_text_length": 542
+        "post_text": "⚡️ VOLVO'DAN AĞIR TAŞIMACILIĞA YENİ SOLUK!\n\nVolvo Trucks, FH Aero Electric modelinin yeni versiyonuyla karşımızda. Bu sefer menzil tam 700 kilometreye çıkmış!\n\nYeni nesil motorlar, daha büyük batarya ve geliştirilmiş aerodinamik sayesinde bu başarı elde edilmiş. Ağır yük taşımacılığında yeni standartlar belirlenecek gibi duruyor.\n\nHızlı şarj özelliği de cabası; 700 kW'a kadar destekleyen MCS altyapısıyla batarya %20'den %80'e yaklaşık 50 dakikada dolabiliyor.\n\nSizce bu menzil, elektrikli kamyonların geleceği için ne kadar önemli?",
+        "post_text_length": 535,
+        "skipped": false
       },
       "error": null,
-      "updated_at": "2026-04-16T11:01:24.677990+03:00"
+      "updated_at": "2026-04-16T14:02:09.599851+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
-          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
-          "published": "2026-04-16T08:00:00+00:00",
-          "summary": "911'e lastik dopingi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
+          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
+          "published": "2026-04-16T08:18:00+00:00",
+          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
           ],
-          "image_source": "article_or_rss",
-          "source_name": "Motor1 TR",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "high",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
-          "base_ai_score": 78,
-          "score": 88,
+          "trend_bonus": 2,
+          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
+          "base_ai_score": 85,
+          "score": 94,
           "score_reason": "ai_scored",
-          "freshness_bonus": 10,
+          "freshness_bonus": 7,
           "trend_bonus_raw": 2,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Pirelli, 60 yılı aşkın 911 tarihinin şimdiye kadarki en güçlü versiyonu olan Porsche 911 Turbo S için özel olarak yeni bir P Zero R lastik geliştirdi. Spor otomobillerde günlük kullanım için tasarlanan bu ultra yüksek performanslı lastik, Pirelli’nin motor sporlarındaki deneyiminden doğrudan türetilmiş bir hamura sahip. Ürünün teknolojik kökeni, prestij segmentinde halihazırda beğeni kazanan Pirelli yarış çözümleriyle aynı DNA’yı paylaşıyor ve en yüksek performanslı araçlar için üstün dinamik tepki sağlıyor. 911 Turbo Siçin geliştirilen P Zero R, motorun ürettiği 523 kW (711 hp) gücü yola etkin şekilde aktaracak biçimde tasarlandı. Özel yapısı sayesinde 800 Nm torku karşılayabilen lastik, yeni modelin hem dinamik kabiliyetlerini hem de sürüş keyfini artırıyor. Kuru zeminde optimum yol tutuş sunmasının yanı sıra, farklı yüzeylerde ve geniş bir hava koşulu aralığında tutarlı çekiş sağlıyor; özellikle ıslak zeminlerde güvenlik ve kontrol konusuna özel önem veriliyor. Sırt deseni, konforu artırmak amacıyla gürültüyü minimize edecek şekilde geliştirilirken, optimize edilmiş dönme direnci aracın genel verimliliğine katkıda bulunuyor. Pirelli“Mükemmel Uyum” yaklaşımı doğrultusunda her lastik, hedef aracın teknik özelliklerine tam uyum sağlayacak şekilde tasarlanıyor. Pirelli ile Porsche arasındaki bu köklü iş birliği, daha önce 911 serisinin diğer modelleri için de özel P Zero R versiyonlarının geliştirilmesini sağladı; bunlar arasında hibrit güç aktarma sistemine sahip ilk model olan Porsche 911 GTS de bulunuyor. Yeni 911 Turbo S için geliştirilen P Zero R lastiklerin yanak kısmında, her 911 versiyonuna en uygun uyumu sağlamak üzere ortak geliştirmeyi simgeleyen “N” işareti yer alıyor. Yeni aracın temas yüzeyini ve çekişini optimize etmek amacıyla arka aksta, önceki nesle kıyasla 10 milimetre daha geniş olan 325/30 ZR 21 ebatında lastikler kullanılıyor. Ön aksta ise 255/35 ZR 20 ebadı korunarak, segmentinde referans kabul edilen bu spor otomobilin ihtiyaç duyduğu dinamik denge sağlanıyor.",
+          "full_text": "Söz konusu değer, standart versiyona kıyasla yaklaşık 100 kilometrelik bir artış anlamına geliyor. Gelişimin temelinde ise yeni nesil elektrik motorları, daha yüksek kapasiteli batarya ve iyileştirilmiş aerodinamik tasarım yatıyor. Yeni FH Aero Electric Extended Range, tamamen yeniden geliştirilen elektrikli arka aks ile geliyor. Bu sistem; iki elektrik motoru, güç elektroniği bileşenleri ve 13 tonluk geleneksel aksı tek bir yapıda birleştiriyor. Konfigürasyona bağlı olarak sistem gücü 570 beygir (420 kW) veya 625 beygir (460 kW) seviyesinde sunuluyor. Yeni uzun menzilli model, MCS (Megawatt Charging System) şarj altyapısını destekliyor ve700 kW’a kadar şarj gücüalabiliyor. Uygun bir megavat seviyesindeki DC hızlı şarj istasyonunda batarya%20’den %80’e yaklaşık 50 dakikadadolabiliyor. 350 kW gücündeki CCS hızlı şarj cihazı kullanıldığında ise aynı işlem yaklaşık 85 dakika sürüyor. Volvo Trucks verilerine göre yeni modelin toplam yüklü ağırlığı 48 tona kadar çıkabiliyor. Taşıma kapasitesi ise 28 tona kadar ulaşıyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B07M85913F https://www.amazon.com.tr/gp/browse.html?node=12466553031 https://www.amazon.com.tr/dp/B00NCS8WFC https://www.amazon.com.tr/dp/B0C4Q47L14 https://www.idefix.com/aku-trekker-pro-ii-gore-tex-bot-a852108-p-17024889 https://www.migros.com.tr/persembe-yildizi-l-bbc9e57",
           "image_sources": [
-            "article_or_rss",
-            "article_or_rss"
+            "meta_og"
           ],
-          "prepared_image_count": 2
+          "prepared_image_count": 1
         },
-        "post_text": "🏎️ PİRELLİ'DEN 911 TURBO S'E ÖZEL LASTİK GELDİ!\n\nPirelli, Porsche'nin en güçlü 911'i olan 911 Turbo S için yepyeni bir P Zero R lastik geliştirdi. Bu ultra yüksek performanslı lastik, Pirelli'nin motor sporları deneyiminden geliyor.\n\nSpor otomobillerde günlük kullanıma uygun olarak tasarlanan bu lastik, Porsche 911 Turbo S'in 711 beygir gücünü yola en iyi şekilde aktarmak için özel olarak üretildi.\n\nHem ıslak hem de kuru zeminde üstün yol tutuşu sağlayan lastik, sürüş keyfini de artırıyor.\n\nSiz bu özel lastik hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_3s9qm0_n.jpg",
+        "post_text": "⚡️ VOLVO'DAN AĞIR TAŞIMACILIĞA YENİ SOLUK!\n\nVolvo Trucks, FH Aero Electric modelinin yeni versiyonuyla karşımızda. Bu sefer menzil tam 700 kilometreye çıkmış!\n\nYeni nesil motorlar, daha büyük batarya ve geliştirilmiş aerodinamik sayesinde bu başarı elde edilmiş. Ağır yük taşımacılığında yeni standartlar belirlenecek gibi duruyor.\n\nHızlı şarj özelliği de cabası; 700 kW'a kadar destekleyen MCS altyapısıyla batarya %20'den %80'e yaklaşık 50 dakikada dolabiliyor.\n\nSizce bu menzil, elektrikli kamyonların geleceği için ne kadar önemli?",
+        "image_path": "/tmp/otoxtra_img_gjxj4897.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_3s9qm0_n.jpg",
-          "/tmp/otoxtra_img_zns_k4al.jpg"
+          "/tmp/otoxtra_img_gjxj4897.jpg"
         ],
-        "image_source": "article_or_rss",
-        "image_count": 2
+        "image_source": "meta_og",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-04-16T11:01:26.367254+03:00"
+      "updated_at": "2026-04-16T14:02:31.298288+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122162637548916499",
-        "article_title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
-        "image_source": "multi_image",
-        "image_count": 2,
+        "post_id": "678053852057751_122162655782916499",
+        "article_title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
+        "image_source": "meta_og",
+        "image_count": 1,
         "dry_run": false
       },
       "error": null,
-      "updated_at": "2026-04-16T11:01:33.603248+03:00"
+      "updated_at": "2026-04-16T14:02:36.489509+03:00"
     }
   }
 }
