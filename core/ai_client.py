@@ -17,6 +17,10 @@ import requests
 from core.logger import log
 
 
+_DEFAULT_PROVIDER_ORDER = ["gemini", "groq", "openrouter", "huggingface"]
+_BOOL_TRUE_VALUES = ("1", "true", "yes", "on")
+
+
 def _safe_int(value: Any, default: int) -> int:
     try:
         return int(value)
@@ -29,6 +33,10 @@ def _safe_float(value: Any, default: float) -> float:
         return float(value)
     except Exception:
         return default
+
+
+def _get_env_str(name: str) -> str:
+    return (os.getenv(name, "") or "").strip()
 
 
 def _load_ai_config() -> Dict[str, Any]:
@@ -65,7 +73,7 @@ def _provider_order() -> list[str]:
         cleaned = [str(x).strip().lower() for x in order if str(x).strip()]
         if cleaned:
             return cleaned
-    return ["gemini", "groq", "openrouter", "huggingface"]
+    return list(_DEFAULT_PROVIDER_ORDER)
 
 
 def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
@@ -73,15 +81,27 @@ def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
     if isinstance(value, bool):
         return value
     if isinstance(value, str):
-        return value.strip().lower() in ("1", "true", "yes", "on")
+        return value.strip().lower() in _BOOL_TRUE_VALUES
     return bool(value)
+
+
+def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional[dict]:
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=timeout)
+        if response.status_code >= 400:
+            log(f"HTTP {response.status_code}: {response.text[:300]}", "WARNING")
+            return None
+        return response.json()
+    except Exception as exc:
+        log(f"HTTP request hatasi: {exc}", "WARNING")
+        return None
 
 
 def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_gemini", True):
         return None
 
-    api_key = os.getenv("GEMINI_API_KEY", "").strip()
+    api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
         return None
 
@@ -121,7 +141,7 @@ def _try_groq(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_groq", True):
         return None
 
-    api_key = os.getenv("GROQ_API_KEY", "").strip()
+    api_key = _get_env_str("GROQ_API_KEY")
     if not api_key:
         return None
 
@@ -156,7 +176,7 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_openrouter", True):
         return None
 
-    api_key = os.getenv("OPENROUTER_API_KEY", "").strip()
+    api_key = _get_env_str("OPENROUTER_API_KEY")
     if not api_key:
         return None
 
@@ -175,34 +195,29 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         "max_tokens": max_tokens,
     }
 
-    try:
-        response = requests.post(
-            "https://openrouter.ai/api/v1/chat/completions",
-            headers=headers,
-            json=payload,
-            timeout=45,
-        )
-        if response.status_code >= 400:
-            log(f"OpenRouter HTTP {response.status_code}: {response.text[:300]}", "WARNING")
-            return None
-
-        data = response.json()
-        choices = data.get("choices", [])
-        if not choices:
-            return None
-        message = choices[0].get("message", {})
-        text = (message.get("content", "") or "").strip()
-        return text or None
-    except Exception as exc:
-        log(f"OpenRouter hatasi: {exc}", "WARNING")
+    data = _post_json(
+        "https://openrouter.ai/api/v1/chat/completions",
+        headers=headers,
+        payload=payload,
+        timeout=45,
+    )
+    if not data:
         return None
+
+    choices = data.get("choices", [])
+    if not choices:
+        return None
+
+    message = choices[0].get("message", {})
+    text = (message.get("content", "") or "").strip()
+    return text or None
 
 
 def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_huggingface", True):
         return None
 
-    api_key = os.getenv("HF_API_KEY", "").strip()
+    api_key = _get_env_str("HF_API_KEY")
     if not api_key:
         return None
 
@@ -221,25 +236,19 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         },
     }
 
-    try:
-        response = requests.post(
-            f"https://api-inference.huggingface.co/models/{model_name}",
-            headers=headers,
-            json=payload,
-            timeout=60,
-        )
-        if response.status_code >= 400:
-            log(f"HuggingFace HTTP {response.status_code}: {response.text[:300]}", "WARNING")
-            return None
+    data = _post_json(
+        f"https://api-inference.huggingface.co/models/{model_name}",
+        headers=headers,
+        payload=payload,
+        timeout=60,
+    )
+    if not data:
+        return None
 
-        data = response.json()
-        if isinstance(data, list) and data:
-            text = (data[0].get("generated_text", "") or "").strip()
-            return text or None
-        return None
-    except Exception as exc:
-        log(f"HuggingFace hatasi: {exc}", "WARNING")
-        return None
+    if isinstance(data, list) and data:
+        text = (data[0].get("generated_text", "") or "").strip()
+        return text or None
+    return None
 
 
 def ask_ai(prompt: str) -> str:
@@ -291,7 +300,6 @@ def _strip_code_fences(text: str) -> str:
     if not cleaned:
         return ""
 
-    # ```json ... ``` veya ``` ... ```
     fenced = re.findall(r"```(?:json)?\s*([\s\S]*?)```", cleaned, flags=re.IGNORECASE)
     if fenced:
         return "\n".join([x.strip() for x in fenced if x.strip()]).strip()
@@ -321,13 +329,10 @@ def _extract_balanced_json_candidates(text: str) -> list[str]:
                         candidates.append(snippet)
                     start_idx = None
             else:
-                # Bozuk nesting durumunda reset
                 stack = []
                 start_idx = None
 
-    # Uzun/snippet once denensin
-    candidates = sorted(set(candidates), key=len, reverse=True)
-    return candidates
+    return sorted(set(candidates), key=len, reverse=True)
 
 
 def _try_raw_decode_stream(text: str):
@@ -341,7 +346,7 @@ def _try_raw_decode_stream(text: str):
         if idx >= length:
             break
         try:
-            obj, end_idx = decoder.raw_decode(text, idx)
+            obj, _end_idx = decoder.raw_decode(text, idx)
             return obj
         except Exception:
             idx += 1
@@ -360,13 +365,11 @@ def parse_ai_json(response: str) -> Any:
     if not cleaned:
         return None
 
-    # 1) Direkt
     try:
         return json.loads(cleaned)
     except Exception:
         pass
 
-    # 2) Fence temizligi
     no_fence = _strip_code_fences(cleaned)
     if no_fence and no_fence != cleaned:
         try:
@@ -374,7 +377,6 @@ def parse_ai_json(response: str) -> Any:
         except Exception:
             pass
 
-    # 3) Balanced candidate parse
     source_for_scan = no_fence if no_fence else cleaned
     candidates = _extract_balanced_json_candidates(source_for_scan)
     for candidate in candidates:
@@ -383,7 +385,6 @@ def parse_ai_json(response: str) -> Any:
         except Exception:
             continue
 
-    # 4) raw_decode stream fallback
     try:
         parsed = _try_raw_decode_stream(source_for_scan)
         if parsed is not None:
