@@ -67,9 +67,7 @@ def _state_file_path() -> str:
 
 def _load_state() -> dict:
     path = _state_file_path()
-    data = load_json(path)
-    if not data:
-        data = {"last_update_id": 0}
+    data = load_json(path, default={"last_update_id": 0})
     if not isinstance(data, dict):
         return {"last_update_id": 0}
     last_update_id = data.get("last_update_id", 0)
