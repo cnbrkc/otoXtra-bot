@@ -286,31 +286,110 @@ def ask_ai(prompt: str) -> str:
     return ""
 
 
+def _strip_code_fences(text: str) -> str:
+    cleaned = (text or "").strip()
+    if not cleaned:
+        return ""
+
+    # ```json ... ``` veya ``` ... ```
+    fenced = re.findall(r"```(?:json)?\s*([\s\S]*?)```", cleaned, flags=re.IGNORECASE)
+    if fenced:
+        return "\n".join([x.strip() for x in fenced if x.strip()]).strip()
+
+    return cleaned
+
+
+def _extract_balanced_json_candidates(text: str) -> list[str]:
+    candidates: list[str] = []
+    stack: list[str] = []
+    start_idx = None
+
+    for idx, ch in enumerate(text):
+        if ch in "{[":
+            if start_idx is None:
+                start_idx = idx
+            stack.append(ch)
+        elif ch in "}]":
+            if not stack:
+                continue
+            opener = stack[-1]
+            if (opener == "{" and ch == "}") or (opener == "[" and ch == "]"):
+                stack.pop()
+                if not stack and start_idx is not None:
+                    snippet = text[start_idx : idx + 1].strip()
+                    if snippet:
+                        candidates.append(snippet)
+                    start_idx = None
+            else:
+                # Bozuk nesting durumunda reset
+                stack = []
+                start_idx = None
+
+    # Uzun/snippet once denensin
+    candidates = sorted(set(candidates), key=len, reverse=True)
+    return candidates
+
+
+def _try_raw_decode_stream(text: str):
+    decoder = json.JSONDecoder()
+    idx = 0
+    length = len(text)
+
+    while idx < length:
+        while idx < length and text[idx].isspace():
+            idx += 1
+        if idx >= length:
+            break
+        try:
+            obj, end_idx = decoder.raw_decode(text, idx)
+            return obj
+        except Exception:
+            idx += 1
+    return None
+
+
 def parse_ai_json(response: str) -> Any:
     """
     AI yanitini JSON'a cevirir.
     1) Direkt json.loads
-    2) Regex ile [] veya {} blok ayiklayip json.loads
+    2) Code-fence temizleyip tekrar dener
+    3) Dengeli {} / [] bloklarini ayiklayip tek tek dener
+    4) raw_decode stream fallback
     """
     cleaned = (response or "").strip()
     if not cleaned:
         return None
 
+    # 1) Direkt
     try:
         return json.loads(cleaned)
     except Exception:
         pass
 
+    # 2) Fence temizligi
+    no_fence = _strip_code_fences(cleaned)
+    if no_fence and no_fence != cleaned:
+        try:
+            return json.loads(no_fence)
+        except Exception:
+            pass
+
+    # 3) Balanced candidate parse
+    source_for_scan = no_fence if no_fence else cleaned
+    candidates = _extract_balanced_json_candidates(source_for_scan)
+    for candidate in candidates:
+        try:
+            return json.loads(candidate)
+        except Exception:
+            continue
+
+    # 4) raw_decode stream fallback
     try:
-        array_match = re.search(r"\[[\s\S]*\]", cleaned)
-        if array_match:
-            return json.loads(array_match.group())
-
-        object_match = re.search(r"\{[\s\S]*\}", cleaned)
-        if object_match:
-            return json.loads(object_match.group())
-
-        return None
+        parsed = _try_raw_decode_stream(source_for_scan)
+        if parsed is not None:
+            return parsed
     except Exception as exc:
-        log(f"ai_client.parse_ai_json fallback error: {exc}", "WARNING")
-        return None
+        log(f"ai_client.parse_ai_json raw_decode error: {exc}", "WARNING")
+
+    log("ai_client.parse_ai_json fallback: parse edilemedi", "WARNING")
+    return None
