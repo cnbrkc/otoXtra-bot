@@ -1,117 +1,22 @@
 {
-  "run_id": "2026-04-16-10:59",
-  "status": "error",
-  "started_at": "2026-04-16T10:59:08.698062+03:00",
-  "updated_at": "2026-04-16T10:59:17.560583+03:00",
+  "run_id": "2026-04-16-11:01",
+  "status": "completed",
+  "started_at": "2026-04-16T11:01:15.786968+03:00",
+  "updated_at": "2026-04-16T11:01:33.603248+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Mercedes-Benz VLE Almanya’da siparişe açıldı: 700 km menzil ve 300 kW hızlı şarj",
-            "link": "https://www.donanimhaber.com/mercedes-benz-vle-almanya-da-siparise-acildi-iste-fiyati--204514",
-            "published": "2026-04-16T05:56:10+00:00",
-            "summary": "Mercedes-Benz’in yeni elektrikli VLE modeli Almanya’da satışa sunuldu. Model; 700 km’ye varan menzil, 800V mimari ve 15 dakikada 355 km şarj kapasitesiyle dikkat çekiyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204514/1400x788mercedes-benz-vle-almanya-da-siparise-acildi-iste-fiyati.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204514/1400x788mercedes-benz-vle-almanya-da-siparise-acildi-iste-fiyati.jpg",
+            "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+            "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
+            "published": "2026-04-16T08:00:00+00:00",
+            "summary": "911'e lastik dopingi.",
+            "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/204514/1400x788mercedes-benz-vle-almanya-da-siparise-acildi-iste-fiyati.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "300-700-acildi-almanya-benz-hizli-menzil-mercedes-sarj-siparise-vle"
-          },
-          {
-            "title": "Nissan GT-R R36, tamamen elektrikli bir model olmayacak",
-            "link": "https://www.log.com.tr/nissan-gt-r-r36-tamamen-elektrikli-bir-model-olmayacak/",
-            "published": "2026-04-16T07:05:06+00:00",
-            "summary": "Nissan’ın küresel ürün stratejisi başkanı Richard Candler, merakla beklenen GT-R R36’nın tamamen elektrikli bir model olmayacağını söyledi. Buna karşın elektrik desteğine sahip olacak, yani hibrit altyapıyı benimseyecek GT-R R36; Nissan Kuzey Amerika Kıdemli Başkan Yardımcısı ve Planlama Direktörü Ponz Pandikuthira’ya göre çift turbolu hibrit V6 üniteyle karşımıza çıkarılabilir. Richard Candler, açıklamasında markanın spor otomobil odağıyla ilgili önemli değerlendirmelerde de bulundu. “Spor otomobil kategorisini yeniden kapsamlı bir şekilde inceliyoruz.” diyen Candler, “Dikkat çekici ve heyecan verici yeni modeller üretmek istiyoruz. Benim satın aldığım ilk araba bir Silvia idi, bu yüzden o rozeti geri getirmeyi çok isterim. Bunun gerçekten değerli olduğunu düşünüyorum… Silvia için halen yer olduğuna inanıyorum ve bunun için doğru çözümü bulmamız gerekiyor.” ifadelerini kullandı. Dün Japonya’da konuşan Nissan CEO’su Ivan Espinosa ise şirketin uygun fiyatlı bir spor otomobil üretmek istemesi durumunda, “Modifiye edilmiş bir Sentra yapmak yerine muhtemelen Silvia gibi gerçek ve uygun fiyatlı bir spor otomobil yapmayı tercih […] Nissan GT-R R36, tamamen elektrikli bir model olmayacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-57-44_J1A7T-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-57-44_J1A7T-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-57-44_J1A7T-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "elektrikli-model-nissan-olmayacak-r36-tamamen"
-          },
-          {
-            "title": "Elektrikli kamyon Volvo FH Aero Electric’in daha uzun menzilli yeni versiyonu tanıtıldı",
-            "link": "https://www.log.com.tr/elektrikli-kamyon-volvo-fh-aero-electricin-daha-uzun-menzilli-yeni-versiyonu-tanitildi/",
-            "published": "2026-04-16T06:55:24+00:00",
-            "summary": "Elektrikli kamyon modeli Volvo FH Aero Electric’in daha uzun menzilli (Extended Range) yeni versiyonu tanıtıldı. 700 km menziliyle standart versiyondan yaklaşık 100 km daha uzun yol yapabilen kamyon, yapılan açıklamaya göre iki farklı elektrik motorunu ve altı vitesli şanzımanı bir araya getiren yeni tasarlanmış bir elektrikli arka aksla geliyor. Bu sistem, seçilen yapılandırmaya göre 570 beygir veya 625 beygir güç sunabiliyor. Standart FH Aero Electric’te toplam 540 kWh, Extended Range modelinde ise 725 kWh batarya kapasitesi bulunurken, MCS bağlantısıyla gelen yeni versiyon uygun istasyonlarda 700 kW’a kadar şarj alabiliyor. Extended Range’in megavat gücündeki bir DC hızlı şarj ünitesiyle yaklaşık 50 dakikada yüzde 20’den yüzde 80 doluluğa ulaşabildiği; 350 kW’lık bir CCS hızlı şarj ünitesi kullanıldığında ise bu sürenin yaklaşık 85 dakikaya çıktığı belirtiliyor. Elektrikli kamyon Volvo FH Aero Electric’in daha uzun menzilli yeni versiyonu tanıtıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-53-31_1oDDB-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-53-31_1oDDB-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-53-31_1oDDB-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aero-electric-elektrikli-kamyon-menzilli-uzun-versiyonu-volvo"
-          },
-          {
-            "title": "Togg, Trugo’da “AutoCharge” dönemini başlattı",
-            "link": "https://www.log.com.tr/togg-trugoda-autocharge-donemini-baslatti/",
-            "published": "2026-04-16T06:32:06+00:00",
-            "summary": "Yerli elektrikli otomobil üreticisi Togg, kurduğu şarj ağı Trugo’da araç sahiplerini çok memnun edecek “AutoCharge” dönemini başlattı. Otomatik tanıma ile temassız şarj sunan bu özellik, aktarıldığı kadarıyla 1.7.2 yazılıma sahip olan Togg T10X ve 2.0 yazılımına sahip olan Togg T10F modellerinde kullanılabiliyor. Bu altyapı sayesinde Trugo istasyonlarında kart, uygulama veya QR kod kullanmadan hızlı bir şekilde şarj başlatılabiliyor. 🔋 Trugo’dan büyük kolaylık: AutoCharge dönemi başladı! Türkiye’nin elektrikli araç ekosisteminde önemli bir adım daha atıldı. Trugo şarj istasyonlarında AutoCharge (otomatik tanıma ile temassız şarj) özelliği devreye alındı. 🚗 Bu özellikle birlikte:🔹️Togg T10X 1.7.2… pic.twitter.com/0BvV73Afb9 — Togg Team Türkiye (@TOGG_Team) April 15, 2026 Togg, Trugo’da “AutoCharge” dönemini başlattı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "autocharge-baslatti-donemini-togg-trugo"
-          },
-          {
-            "title": "AC ve DC ünitelerde güce göre farklı fiyat uygulanmasına son verildi",
-            "link": "https://www.log.com.tr/ac-ve-dc-unitelerde-guce-gore-farkli-fiyat-uygulanmasina-son-verildi/",
-            "published": "2026-04-16T06:27:39+00:00",
-            "summary": "Enerji Piyasası Düzenleme Kurumu (EPDK) Enerji Dönüşüm Dairesi Başkanı Dr. İbrahim Öz, şubat ayında yaptığı açıklamada Şarj Hizmeti Yönetmeliği’nde gerçekleştirilen yeni değişiklikler hakkında önemli bilgiler vermişti. Fiyatlama tarafında önemli bir esneklik getirdiklerini kaydeden Öz, “Şirketler artık belirli saatlerde veya belirli lokasyonlarda indirim uygulayabilecek. Bu düzenleme, özellikle talebin düşük olduğu zaman dilimlerinde daha avantajlı fiyatların oluşmasına imkan tanıyacak ve rekabeti güçlendirecek. Bununla birlikte fiyat yapısını sadeleştirdik. AC ve DC ünitelerde güce göre farklı fiyat uygulanmasına son verildi. İşletmeciler AC üniteler için tek fiyat, DC üniteler için tek fiyat belirlemekle yükümlü olacak. Böylece kullanıcılar karmaşık tarife yapıları yerine daha net, karşılaştırılabilir ve öngörülebilir bir ücret yapısıyla karşılaşacak. Böylelikle şeffaflığı daha da artacağını düşünüyoruz.” ifadelerini kullanmıştı. Aktarıldığı kadarıyla bu konuda resmi adımlar atıldı ve Türkiye’deki şarj şirketleri AC ve DC ünitelerde güce göre farklı fiyat uygulanmasını kaldırmaya başladı. Örneğin Trugo şarj istasyonlarında artık 120 kW ve 240 kW hızlı şarj cihazlarında tek tarife […] AC ve DC ünitelerde güce göre farklı fiyat uygulanmasına son verildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-25-42_7SvR9-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-25-42_7SvR9-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_09-25-42_7SvR9-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "farkli-fiyat-guce-unitelerde-uygulanmasina-verildi"
-          },
-          {
-            "title": "Yeni Ford F-150, 2029 yılında gelecek!",
-            "link": "https://tr.motor1.com/news/793120/yeni-ford-f150-tarihi-dogrulandi/",
-            "published": "2026-04-16T07:00:00+00:00",
-            "summary": "Yeni Super Duty serisi de aynı tarihte piyasada olacak.",
-            "image_url": "https://cdn.motor1.com/images/mgl/40m34K/s3/2024-f-150-lightning-platinum-black-exterior-front-three-quarter-view.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/40m34K/s3/2024-f-150-lightning-platinum-black-exterior-front-three-quarter-view.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/40m34K/s3/2024-f-150-lightning-platinum-black-exterior-front-three-quarter-view.jpg"
+              "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -120,67 +25,10 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "150-2029-ford-gelecek-yilinda"
-          },
-          {
-            "title": "Tesla, Model S ve Model X'i \"Signature Series\" ile uğurluyor",
-            "link": "https://tr.motor1.com/news/793091/tesla-model-sx-signature/",
-            "published": "2026-04-15T20:00:00+00:00",
-            "summary": "Sınırlı sayıda üretilen her bir araç, altın rozetler ve Signature logoları ile süsleniyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/MkggR6/s3/2027-tesla-model-s.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/MkggR6/s3/2027-tesla-model-s.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/MkggR6/s3/2027-tesla-model-s.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "model-model-series-signature-tesla-ugurluyor"
-          },
-          {
-            "title": "Pagani Zonda 760 Unica Roadster, 12 milyon € karşılığında yeni sahibini arıyor",
-            "link": "https://tr.motor1.com/news/793067/pagani-zonda-760unica-muzayede-12milyon/",
-            "published": "2026-04-15T17:00:00+00:00",
-            "summary": "760 bg gücünde V12 AMG motorlu ve manuel şanzımanlı şaheser, Concorso d’Eleganza Villa d’Este 2026’da açık artırmaya çıkıyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/0egg03/s3/pagani-zonda-760-unica-roadster-2018.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/0egg03/s3/pagani-zonda-760-unica-roadster-2018.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/0egg03/s3/pagani-zonda-760-unica-roadster-2018.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "760-ariyor-karsiliginda-milyon-pagani-roadster-sahibini-unica-zonda"
-          },
-          {
-            "title": "BMW, \"marka ruhunu şekillendiren\" yeni bir halo otomobil planlıyor",
-            "link": "https://tr.motor1.com/news/793057/bmw-halo-planliyor-uzak-gelecek/",
-            "published": "2026-04-15T16:00:00+00:00",
-            "summary": "Özel modeller geliştiriliyor, ancak yakın zamanda gelmeyecekler.",
-            "image_url": "https://cdn.motor1.com/images/mgl/ZnvP9r/s3/bmw-vision-m-next-concept.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/ZnvP9r/s3/bmw-vision-m-next-concept.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/ZnvP9r/s3/bmw-vision-m-next-concept.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-halo-marka-otomobil-planliyor-ruhunu-sekillendiren"
+            "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo"
           }
         ],
-        "count": 9,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -210,31 +58,136 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-16T10:59:12.423707+03:00"
+      "updated_at": "2026-04-16T11:01:21.176759+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold",
-      "updated_at": "2026-04-16T10:59:17.560583+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
+          "published": "2026-04-16T08:00:00+00:00",
+          "summary": "911'e lastik dopingi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
+          "base_ai_score": 78,
+          "score": 88,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2
+        },
+        "score": 88,
+        "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+        "trend_count": 1,
+        "trend_bonus": 0,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored"
+      },
+      "error": null,
+      "updated_at": "2026-04-16T11:01:23.455266+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
+          "published": "2026-04-16T08:00:00+00:00",
+          "summary": "911'e lastik dopingi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
+          "base_ai_score": 78,
+          "score": 88,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Pirelli, 60 yılı aşkın 911 tarihinin şimdiye kadarki en güçlü versiyonu olan Porsche 911 Turbo S için özel olarak yeni bir P Zero R lastik geliştirdi. Spor otomobillerde günlük kullanım için tasarlanan bu ultra yüksek performanslı lastik, Pirelli’nin motor sporlarındaki deneyiminden doğrudan türetilmiş bir hamura sahip. Ürünün teknolojik kökeni, prestij segmentinde halihazırda beğeni kazanan Pirelli yarış çözümleriyle aynı DNA’yı paylaşıyor ve en yüksek performanslı araçlar için üstün dinamik tepki sağlıyor. 911 Turbo Siçin geliştirilen P Zero R, motorun ürettiği 523 kW (711 hp) gücü yola etkin şekilde aktaracak biçimde tasarlandı. Özel yapısı sayesinde 800 Nm torku karşılayabilen lastik, yeni modelin hem dinamik kabiliyetlerini hem de sürüş keyfini artırıyor. Kuru zeminde optimum yol tutuş sunmasının yanı sıra, farklı yüzeylerde ve geniş bir hava koşulu aralığında tutarlı çekiş sağlıyor; özellikle ıslak zeminlerde güvenlik ve kontrol konusuna özel önem veriliyor. Sırt deseni, konforu artırmak amacıyla gürültüyü minimize edecek şekilde geliştirilirken, optimize edilmiş dönme direnci aracın genel verimliliğine katkıda bulunuyor. Pirelli“Mükemmel Uyum” yaklaşımı doğrultusunda her lastik, hedef aracın teknik özelliklerine tam uyum sağlayacak şekilde tasarlanıyor. Pirelli ile Porsche arasındaki bu köklü iş birliği, daha önce 911 serisinin diğer modelleri için de özel P Zero R versiyonlarının geliştirilmesini sağladı; bunlar arasında hibrit güç aktarma sistemine sahip ilk model olan Porsche 911 GTS de bulunuyor. Yeni 911 Turbo S için geliştirilen P Zero R lastiklerin yanak kısmında, her 911 versiyonuna en uygun uyumu sağlamak üzere ortak geliştirmeyi simgeleyen “N” işareti yer alıyor. Yeni aracın temas yüzeyini ve çekişini optimize etmek amacıyla arka aksta, önceki nesle kıyasla 10 milimetre daha geniş olan 325/30 ZR 21 ebatında lastikler kullanılıyor. Ön aksta ise 255/35 ZR 20 ebadı korunarak, segmentinde referans kabul edilen bu spor otomobilin ihtiyaç duyduğu dinamik denge sağlanıyor."
+        },
+        "post_text": "🏎️ PİRELLİ'DEN 911 TURBO S'E ÖZEL LASTİK GELDİ!\n\nPirelli, Porsche'nin en güçlü 911'i olan 911 Turbo S için yepyeni bir P Zero R lastik geliştirdi. Bu ultra yüksek performanslı lastik, Pirelli'nin motor sporları deneyiminden geliyor.\n\nSpor otomobillerde günlük kullanıma uygun olarak tasarlanan bu lastik, Porsche 911 Turbo S'in 711 beygir gücünü yola en iyi şekilde aktarmak için özel olarak üretildi.\n\nHem ıslak hem de kuru zeminde üstün yol tutuşu sağlayan lastik, sürüş keyfini de artırıyor.\n\nSiz bu özel lastik hakkında ne düşünüyorsunuz?",
+        "post_text_length": 542
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-16T11:01:24.677990+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+          "link": "https://tr.motor1.com/news/793121/pirelli-911-turbo-s-ozel/",
+          "published": "2026-04-16T08:00:00+00:00",
+          "summary": "911'e lastik dopingi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/wl88NQ/s3/pirelli-911-cover-2.jpg"
+          ],
+          "image_source": "article_or_rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 0,
+          "topic_fingerprint": "911-lastik-ozel-pirelli-porsche-turbo",
+          "base_ai_score": 78,
+          "score": 88,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Pirelli, 60 yılı aşkın 911 tarihinin şimdiye kadarki en güçlü versiyonu olan Porsche 911 Turbo S için özel olarak yeni bir P Zero R lastik geliştirdi. Spor otomobillerde günlük kullanım için tasarlanan bu ultra yüksek performanslı lastik, Pirelli’nin motor sporlarındaki deneyiminden doğrudan türetilmiş bir hamura sahip. Ürünün teknolojik kökeni, prestij segmentinde halihazırda beğeni kazanan Pirelli yarış çözümleriyle aynı DNA’yı paylaşıyor ve en yüksek performanslı araçlar için üstün dinamik tepki sağlıyor. 911 Turbo Siçin geliştirilen P Zero R, motorun ürettiği 523 kW (711 hp) gücü yola etkin şekilde aktaracak biçimde tasarlandı. Özel yapısı sayesinde 800 Nm torku karşılayabilen lastik, yeni modelin hem dinamik kabiliyetlerini hem de sürüş keyfini artırıyor. Kuru zeminde optimum yol tutuş sunmasının yanı sıra, farklı yüzeylerde ve geniş bir hava koşulu aralığında tutarlı çekiş sağlıyor; özellikle ıslak zeminlerde güvenlik ve kontrol konusuna özel önem veriliyor. Sırt deseni, konforu artırmak amacıyla gürültüyü minimize edecek şekilde geliştirilirken, optimize edilmiş dönme direnci aracın genel verimliliğine katkıda bulunuyor. Pirelli“Mükemmel Uyum” yaklaşımı doğrultusunda her lastik, hedef aracın teknik özelliklerine tam uyum sağlayacak şekilde tasarlanıyor. Pirelli ile Porsche arasındaki bu köklü iş birliği, daha önce 911 serisinin diğer modelleri için de özel P Zero R versiyonlarının geliştirilmesini sağladı; bunlar arasında hibrit güç aktarma sistemine sahip ilk model olan Porsche 911 GTS de bulunuyor. Yeni 911 Turbo S için geliştirilen P Zero R lastiklerin yanak kısmında, her 911 versiyonuna en uygun uyumu sağlamak üzere ortak geliştirmeyi simgeleyen “N” işareti yer alıyor. Yeni aracın temas yüzeyini ve çekişini optimize etmek amacıyla arka aksta, önceki nesle kıyasla 10 milimetre daha geniş olan 325/30 ZR 21 ebatında lastikler kullanılıyor. Ön aksta ise 255/35 ZR 20 ebadı korunarak, segmentinde referans kabul edilen bu spor otomobilin ihtiyaç duyduğu dinamik denge sağlanıyor.",
+          "image_sources": [
+            "article_or_rss",
+            "article_or_rss"
+          ],
+          "prepared_image_count": 2
+        },
+        "post_text": "🏎️ PİRELLİ'DEN 911 TURBO S'E ÖZEL LASTİK GELDİ!\n\nPirelli, Porsche'nin en güçlü 911'i olan 911 Turbo S için yepyeni bir P Zero R lastik geliştirdi. Bu ultra yüksek performanslı lastik, Pirelli'nin motor sporları deneyiminden geliyor.\n\nSpor otomobillerde günlük kullanıma uygun olarak tasarlanan bu lastik, Porsche 911 Turbo S'in 711 beygir gücünü yola en iyi şekilde aktarmak için özel olarak üretildi.\n\nHem ıslak hem de kuru zeminde üstün yol tutuşu sağlayan lastik, sürüş keyfini de artırıyor.\n\nSiz bu özel lastik hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_3s9qm0_n.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_3s9qm0_n.jpg",
+          "/tmp/otoxtra_img_zns_k4al.jpg"
+        ],
+        "image_source": "article_or_rss",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-16T11:01:26.367254+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122162637548916499",
+        "article_title": "Pirelli'den Porsche 911 Turbo S'e özel lastik!",
+        "image_source": "multi_image",
+        "image_count": 2,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-16T11:01:33.603248+03:00"
     }
   }
 }
