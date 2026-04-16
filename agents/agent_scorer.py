@@ -40,7 +40,6 @@ def _is_score_breakdown_enabled() -> bool:
 
 
 def _allow_skip_as_success() -> bool:
-    # Default false: mevcut davranis korunur.
     value = os.environ.get("SCORE_SKIP_AS_SUCCESS", "false").strip().lower()
     return value in ("1", "true", "yes", "on")
 
@@ -86,6 +85,54 @@ def _normalize_ai_results(parsed: object) -> Optional[list]:
     return None
 
 
+def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    sira = ai_result.get("sira")
+    if sira is None:
+        return None, None
+
+    try:
+        index = int(sira) - 1
+    except (ValueError, TypeError):
+        return None, None
+
+    if not (0 <= index < len(articles)) or index in used_indices:
+        return None, None
+
+    ai_title = ai_result.get("baslik", "").strip()
+    article_title = articles[index].get("title", "").strip()
+    if not ai_title or is_similar_title(ai_title, article_title, threshold=CROSS_VALIDATE_THRESHOLD):
+        return articles[index], index
+
+    return None, None
+
+
+def _match_by_exact_title(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    ai_title = ai_result.get("baslik", "").strip()
+    if not ai_title:
+        return None, None
+
+    ai_lower = ai_title.lower()
+    for i, article in enumerate(articles):
+        if i in used_indices:
+            continue
+        if ai_lower == article.get("title", "").strip().lower():
+            return article, i
+    return None, None
+
+
+def _match_by_fuzzy_title(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    ai_title = ai_result.get("baslik", "").strip()
+    if not ai_title:
+        return None, None
+
+    for i, article in enumerate(articles):
+        if i in used_indices:
+            continue
+        if is_similar_title(ai_title, article.get("title", "").strip(), threshold=0.6):
+            return article, i
+    return None, None
+
+
 def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     matched = []
     used_indices = set()
@@ -94,50 +141,11 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
         if not isinstance(ai_result, dict):
             continue
 
-        matched_article = None
-        matched_index = None
-
-        sira = ai_result.get("sira")
-        if sira is not None:
-            try:
-                index = int(sira) - 1
-                if 0 <= index < len(articles) and index not in used_indices:
-                    ai_title = ai_result.get("baslik", "").strip()
-                    article_title = articles[index].get("title", "").strip()
-                    if not ai_title or is_similar_title(
-                        ai_title, article_title, threshold=CROSS_VALIDATE_THRESHOLD
-                    ):
-                        matched_article = articles[index]
-                        matched_index = index
-            except (ValueError, TypeError):
-                pass
-
+        matched_article, matched_index = _match_by_order(ai_result, articles, used_indices)
         if matched_article is None:
-            ai_title_str = ai_result.get("baslik", "").strip()
-            if ai_title_str:
-                ai_lower = ai_title_str.lower()
-                for i, article in enumerate(articles):
-                    if i in used_indices:
-                        continue
-                    if ai_lower == article.get("title", "").strip().lower():
-                        matched_article = article
-                        matched_index = i
-                        break
-
+            matched_article, matched_index = _match_by_exact_title(ai_result, articles, used_indices)
         if matched_article is None:
-            ai_title_fuzzy = ai_result.get("baslik", "").strip()
-            if ai_title_fuzzy:
-                for i, article in enumerate(articles):
-                    if i in used_indices:
-                        continue
-                    if is_similar_title(
-                        ai_title_fuzzy,
-                        article.get("title", "").strip(),
-                        threshold=0.6,
-                    ):
-                        matched_article = article
-                        matched_index = i
-                        break
+            matched_article, matched_index = _match_by_fuzzy_title(ai_result, articles, used_indices)
 
         if matched_article is not None and matched_index is not None:
             matched.append((ai_result, matched_article))
@@ -151,8 +159,7 @@ def run_viral_scoring(articles: list) -> list:
         log("No articles for scoring", "INFO")
         return []
 
-    prompts_config = load_config("prompts")
-    scorer_prompt = prompts_config.get("viral_scorer", "")
+    scorer_prompt = load_config("prompts").get("viral_scorer", "")
     if not scorer_prompt:
         log("viral_scorer prompt not found", "WARNING")
         _mark_unscored_batch(articles, "prompt_missing", articles)
@@ -162,9 +169,7 @@ def run_viral_scoring(articles: list) -> list:
     all_scored = []
 
     for batch_num, batch in enumerate(batches, start=1):
-        numbered_text = _format_articles_numbered(batch)
-        ai_response = ask_ai(f"{scorer_prompt}\n\n{numbered_text}")
-
+        ai_response = ask_ai(f"{scorer_prompt}\n\n{_format_articles_numbered(batch)}")
         if not ai_response:
             _mark_unscored_batch(batch, "ai_empty", all_scored)
             if batch_num < len(batches):
@@ -189,11 +194,12 @@ def run_viral_scoring(articles: list) -> list:
             all_scored.append(article)
 
         for article in batch:
-            if id(article) not in matched_ids:
-                article["base_ai_score"] = UNSCORED_DEFAULT
-                article["score"] = UNSCORED_DEFAULT
-                article["score_reason"] = "ai_unmatched"
-                all_scored.append(article)
+            if id(article) in matched_ids:
+                continue
+            article["base_ai_score"] = UNSCORED_DEFAULT
+            article["score"] = UNSCORED_DEFAULT
+            article["score_reason"] = "ai_unmatched"
+            all_scored.append(article)
 
         if batch_num < len(batches):
             time.sleep(BATCH_DELAY_SECONDS)
@@ -222,8 +228,7 @@ def _calculate_freshness_bonus(published_str: str) -> int:
         if pub_dt.tzinfo is None:
             pub_dt = pub_dt.replace(tzinfo=timezone(timedelta(hours=3)))
 
-        now = get_turkey_now()
-        age_hours = (now - pub_dt).total_seconds() / 3600
+        age_hours = (get_turkey_now() - pub_dt).total_seconds() / 3600
         if age_hours < 0:
             return 0
 
@@ -243,9 +248,7 @@ def apply_freshness_bonus(scored_articles: list) -> list:
     for article in scored_articles:
         bonus = _calculate_freshness_bonus(article.get("published", ""))
         article["freshness_bonus"] = bonus
-
-        original = _safe_int(article.get("score", 0), 0)
-        article["score"] = _clamp_score(original + bonus)
+        article["score"] = _clamp_score(_safe_int(article.get("score", 0), 0) + bonus)
 
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
@@ -293,13 +296,10 @@ def apply_trend_bonus(scored_articles: list) -> list:
         src_priority = article.get("source_priority", "low")
 
         computed_count_bonus = _trend_count_bonus(trend_count)
-        priority_bonus = _priority_bonus(src_priority)
-
-        raw_trend_bonus = max(incoming_trend_bonus, computed_count_bonus) + priority_bonus
+        raw_trend_bonus = max(incoming_trend_bonus, computed_count_bonus) + _priority_bonus(src_priority)
         raw_trend_bonus = min(raw_trend_bonus, TREND_BONUS_CAP)
 
         effective_bonus = int(round(raw_trend_bonus * _confidence_multiplier(ai_score)))
-
         summary = (article.get("summary", "") or "").strip()
         if len(summary) < 25:
             effective_bonus = max(0, effective_bonus - 2)
@@ -316,10 +316,11 @@ def apply_trend_bonus(scored_articles: list) -> list:
 def _get_active_threshold() -> int:
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
+
     publish_score = _safe_int(thresholds.get("publish_score", 65), 65)
     slow_day_score = _safe_int(thresholds.get("slow_day_score", 50), 50)
-
     today_post_count = get_today_post_count(get_posted_news())
+
     return slow_day_score if today_post_count < 2 else publish_score
 
 
@@ -384,11 +385,7 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
 
 
 def _build_skip_output(meta: dict) -> dict:
-    skip_reason = meta.get("skip_reason", "No article above threshold")
     threshold = _safe_int(meta.get("threshold", _get_active_threshold()), _get_active_threshold())
-    top_score = _safe_int(meta.get("top_score", 0), 0)
-    top_title = meta.get("top_title", "")
-
     return {
         "selected_article": None,
         "score": 0,
@@ -398,10 +395,24 @@ def _build_skip_output(meta: dict) -> dict:
         "freshness_bonus": 0,
         "score_reason": "skipped",
         "skipped": True,
-        "skip_reason": skip_reason,
+        "skip_reason": meta.get("skip_reason", "No article above threshold"),
         "threshold": threshold,
-        "top_score": top_score,
-        "top_title": top_title,
+        "top_score": _safe_int(meta.get("top_score", 0), 0),
+        "top_title": meta.get("top_title", ""),
+    }
+
+
+def _build_success_output(best_article: dict, meta: dict) -> dict:
+    return {
+        "selected_article": best_article,
+        "score": best_article.get("score", 0),
+        "title": best_article.get("title", ""),
+        "trend_count": best_article.get("trend_count", 1),
+        "trend_bonus": best_article.get("trend_bonus", 0),
+        "freshness_bonus": best_article.get("freshness_bonus", 0),
+        "score_reason": best_article.get("score_reason", "unknown"),
+        "skipped": False,
+        "threshold": _safe_int(meta.get("threshold", 0), 0),
     }
 
 
@@ -411,8 +422,7 @@ def run() -> bool:
         set_stage("score", "error", error="fetch stage not done")
         return False
 
-    fetch_output = fetch_stage.get("output", {})
-    articles = fetch_output.get("articles", [])
+    articles = (fetch_stage.get("output", {}) or {}).get("articles", [])
     if not articles:
         set_stage("score", "error", error="No articles in fetch output")
         return False
@@ -420,9 +430,9 @@ def run() -> bool:
     set_stage("score", "running")
     try:
         best_article, meta = filter_and_score(articles)
+
         if best_article is None:
             skip_output = _build_skip_output(meta)
-
             if _allow_skip_as_success():
                 set_stage("score", "done", output=skip_output)
                 log(
@@ -443,19 +453,9 @@ def run() -> bool:
             )
             return False
 
-        output = {
-            "selected_article": best_article,
-            "score": best_article.get("score", 0),
-            "title": best_article.get("title", ""),
-            "trend_count": best_article.get("trend_count", 1),
-            "trend_bonus": best_article.get("trend_bonus", 0),
-            "freshness_bonus": best_article.get("freshness_bonus", 0),
-            "score_reason": best_article.get("score_reason", "unknown"),
-            "skipped": False,
-            "threshold": _safe_int(meta.get("threshold", 0), 0),
-        }
-        set_stage("score", "done", output=output)
+        set_stage("score", "done", output=_build_success_output(best_article, meta))
         return True
+
     except Exception as exc:
         set_stage("score", "error", error=str(exc))
         return False
