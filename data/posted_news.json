@@ -723,18 +723,19 @@
     "2026-04-15": 4,
     "2026-04-16": 2
   },
-  "last_check_time": "2026-04-16T14:04:45.964549+03:00",
+  "last_check_time": "2026-04-16T14:57:13.328609+03:00",
   "stats": {
     "daily_actions": {
-      "2026-04-16": 4
+      "2026-04-16": 5
     },
     "weekly": {
       "2026-W16": {
-        "actions": 4,
+        "actions": 5,
         "shares": 2,
-        "error_total": 1,
+        "error_total": 2,
         "errors": {
-          "SCORER_FAILED: No article above threshold": 1
+          "SCORER_FAILED: No article above threshold": 1,
+          "ORCHESTRATOR_CRITICAL: load_json() got an unexpected keyword argument 'default'": 1
         },
         "report_sent": false,
         "report_sent_at": null,
