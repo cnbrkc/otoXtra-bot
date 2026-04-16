@@ -1,13 +1,11 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.6)
+agents/agent_publisher.py - Yayinci Ajani (v3.7)
 
-v3.6:
-  - test_mode bagimliligi kaldirildi
-  - DRY_RUN / ENABLE_RANDOM_DELAY / ENABLE_RANDOM_SKIP env secenekleri korundu
-  - PERSIST_STATE=false iken posted kaydi yazmaz
-  - image_paths toplarken path bazli tekillestirme guclendirildi
-  - Multi photo akisinda detayli debug loglari eklendi
-  - Facebook paylasimi basarili olunca Telegram bildirimi eklendi
+v3.7:
+  - Telegram bildirim metni sadeletirildi (intro + post id kaldirildi)
+  - Bildirime A{aksiyon}-P{paylasim} eklendi
+  - Bildirime saglik raporu eklendi (Saglikli / Hata)
+  - Haftalik paylasim sayaci icin istatistik guncellemesi eklendi
 """
 
 import os
@@ -22,9 +20,11 @@ from core.helpers import (
     save_posted_news,
     get_today_str,
     get_today_post_count,
+    get_today_action_count,
     get_turkey_now,
     save_last_check_time,
     generate_topic_fingerprint,
+    increment_weekly_share,
 )
 from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
@@ -122,6 +122,9 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
 
         posted_data["posts"] = posts_list
         posted_data["daily_counts"] = daily_counts
+
+        # Haftalik otomatik paylasim sayisi
+        increment_weekly_share(posted_data)
 
         save_last_check_time(posted_data)
         save_posted_news(posted_data)
@@ -250,17 +253,36 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     return None
 
 
-def _send_telegram_notification(article: dict, post_id: str) -> bool:
+def _build_health_report() -> str:
+    stage_names = ["fetch", "score", "write", "image"]
+    for stage_name in stage_names:
+        try:
+            stage_data = get_stage(stage_name)
+            if stage_data.get("status") == "error":
+                error_text = (stage_data.get("error", "") or "unknown error").strip()
+                code = f"{stage_name.upper()}_ERROR"
+                return f"Hata: {stage_name} ({code}) - {error_text}"
+        except Exception:
+            continue
+    return "Saglikli"
+
+
+def _send_telegram_notification(
+    article: dict,
+    action_count: int,
+    share_count: int,
+    health_report: str,
+) -> bool:
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
 
     message = (
-        "Yeni Facebook paylasimi yapildi.\n\n"
         f"Baslik: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
         f"Skor: {score}\n"
-        f"Post ID: {post_id}"
+        f"Durum: A{action_count}-P{share_count}\n"
+        f"Saglik: {health_report}"
     )
 
     return tg_platform.send_message(message)
@@ -366,7 +388,17 @@ def run() -> bool:
         final_image_count = len(image_paths) if final_image_source != "fallback_text" else 0
         _record_posted(article, post_id, final_image_source, final_image_count)
 
-        telegram_ok = _send_telegram_notification(article, post_id)
+        fresh_data = get_posted_news()
+        action_count = get_today_action_count(fresh_data)
+        share_count = get_today_post_count(fresh_data)
+        health_report = _build_health_report()
+
+        telegram_ok = _send_telegram_notification(
+            article=article,
+            action_count=action_count,
+            share_count=share_count,
+            health_report=health_report,
+        )
         if not telegram_ok:
             log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
 
