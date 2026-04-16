@@ -163,12 +163,208 @@ def is_duplicate_article(article1: dict, article2: dict) -> bool:
     return False
 
 
+def _get_week_key(dt: datetime = None) -> str:
+    current = dt or get_turkey_now()
+    iso = current.isocalendar()
+    return f"{iso.year}-W{iso.week:02d}"
+
+
+def get_previous_week_key(reference_dt: datetime = None) -> str:
+    current = reference_dt or get_turkey_now()
+    prev_week_dt = current - timedelta(days=7)
+    return _get_week_key(prev_week_dt)
+
+
+def _ensure_stats_schema(data: dict) -> None:
+    if "stats" not in data or not isinstance(data.get("stats"), dict):
+        data["stats"] = {}
+
+    stats = data["stats"]
+
+    if "daily_actions" not in stats or not isinstance(stats.get("daily_actions"), dict):
+        stats["daily_actions"] = {}
+
+    if "weekly" not in stats or not isinstance(stats.get("weekly"), dict):
+        stats["weekly"] = {}
+
+
+def _ensure_weekly_bucket(data: dict, week_key: str) -> dict:
+    _ensure_stats_schema(data)
+    weekly = data["stats"]["weekly"]
+
+    bucket = weekly.get(week_key)
+    if not isinstance(bucket, dict):
+        bucket = {
+            "actions": 0,
+            "shares": 0,
+            "error_total": 0,
+            "errors": {},
+            "report_sent": False,
+            "report_sent_at": None,
+        }
+        weekly[week_key] = bucket
+        return bucket
+
+    if "actions" not in bucket:
+        bucket["actions"] = 0
+    if "shares" not in bucket:
+        bucket["shares"] = 0
+    if "error_total" not in bucket:
+        bucket["error_total"] = 0
+    if "errors" not in bucket or not isinstance(bucket.get("errors"), dict):
+        bucket["errors"] = {}
+    if "report_sent" not in bucket:
+        bucket["report_sent"] = False
+    if "report_sent_at" not in bucket:
+        bucket["report_sent_at"] = None
+
+    return bucket
+
+
+def increment_action_trigger(posted_data: dict) -> int:
+    _ensure_stats_schema(posted_data)
+
+    today = get_today_str()
+    daily_actions = posted_data["stats"]["daily_actions"]
+    daily_actions[today] = int(daily_actions.get(today, 0)) + 1
+
+    week_key = _get_week_key()
+    week_bucket = _ensure_weekly_bucket(posted_data, week_key)
+    week_bucket["actions"] = int(week_bucket.get("actions", 0)) + 1
+
+    return daily_actions[today]
+
+
+def get_today_action_count(posted_data: dict) -> int:
+    _ensure_stats_schema(posted_data)
+    today = get_today_str()
+    return int(posted_data["stats"]["daily_actions"].get(today, 0))
+
+
+def increment_weekly_share(posted_data: dict) -> None:
+    week_key = _get_week_key()
+    week_bucket = _ensure_weekly_bucket(posted_data, week_key)
+    week_bucket["shares"] = int(week_bucket.get("shares", 0)) + 1
+
+
+def record_weekly_error(posted_data: dict, error_code: str, error_name: str = "") -> None:
+    week_key = _get_week_key()
+    week_bucket = _ensure_weekly_bucket(posted_data, week_key)
+
+    clean_code = (error_code or "UNKNOWN").strip().upper()
+    clean_name = (error_name or "").strip()
+    if clean_name:
+        key = f"{clean_code}: {clean_name[:140]}"
+    else:
+        key = clean_code
+
+    week_bucket["error_total"] = int(week_bucket.get("error_total", 0)) + 1
+    errors = week_bucket.get("errors", {})
+    errors[key] = int(errors.get(key, 0)) + 1
+    week_bucket["errors"] = errors
+
+
+def get_weekly_stats(posted_data: dict, week_key: str) -> dict:
+    bucket = _ensure_weekly_bucket(posted_data, week_key)
+    return {
+        "actions": int(bucket.get("actions", 0)),
+        "shares": int(bucket.get("shares", 0)),
+        "error_total": int(bucket.get("error_total", 0)),
+        "errors": dict(bucket.get("errors", {})),
+        "report_sent": bool(bucket.get("report_sent", False)),
+        "report_sent_at": bucket.get("report_sent_at"),
+    }
+
+
+def is_weekly_report_sent(posted_data: dict, week_key: str) -> bool:
+    bucket = _ensure_weekly_bucket(posted_data, week_key)
+    return bool(bucket.get("report_sent", False))
+
+
+def mark_weekly_report_sent(posted_data: dict, week_key: str) -> None:
+    bucket = _ensure_weekly_bucket(posted_data, week_key)
+    bucket["report_sent"] = True
+    bucket["report_sent_at"] = get_turkey_now().isoformat()
+
+
+def _parse_expiry_datetime(raw_value: str):
+    if not raw_value:
+        return None
+
+    raw = raw_value.strip()
+    if not raw:
+        return None
+
+    try:
+        # Unix timestamp (seconds or milliseconds)
+        if raw.isdigit():
+            ts = int(raw)
+            if ts > 10_000_000_000:
+                ts = ts / 1000
+            return datetime.fromtimestamp(ts, tz=timezone.utc).astimezone(
+                timezone(timedelta(hours=3))
+            )
+    except Exception:
+        pass
+
+    # ISO format
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone(timedelta(hours=3)))
+        return parsed
+    except Exception:
+        pass
+
+    # YYYY-MM-DD
+    try:
+        parsed = datetime.strptime(raw, "%Y-%m-%d")
+        return parsed.replace(tzinfo=timezone(timedelta(hours=3)))
+    except Exception:
+        pass
+
+    # dateutil fallback
+    try:
+        from dateutil import parser as dateutil_parser
+
+        parsed = dateutil_parser.parse(raw)
+        if parsed.tzinfo is None:
+            parsed = parsed.replace(tzinfo=timezone(timedelta(hours=3)))
+        return parsed
+    except Exception:
+        return None
+
+
+def get_token_remaining_days():
+    env_keys = [
+        "FACEBOOK_TOKEN_EXPIRES_AT",
+        "FB_TOKEN_EXPIRES_AT",
+        "TOKEN_EXPIRES_AT",
+    ]
+    raw_value = ""
+    for key in env_keys:
+        candidate = (os.environ.get(key, "") or "").strip()
+        if candidate:
+            raw_value = candidate
+            break
+
+    if not raw_value:
+        return None
+
+    expires_at = _parse_expiry_datetime(raw_value)
+    if not expires_at:
+        return None
+
+    delta_seconds = (expires_at - get_turkey_now()).total_seconds()
+    return int(delta_seconds // 86400)
+
+
 def get_posted_news() -> dict:
     filepath = os.path.join(get_project_root(), "data", "posted_news.json")
     data = load_json(filepath)
 
     if not data or not isinstance(data, dict):
-        return {"posts": [], "daily_counts": {}, "last_check_time": None}
+        data = {"posts": [], "daily_counts": {}, "last_check_time": None, "stats": {}}
 
     if "posts" not in data or not isinstance(data.get("posts"), list):
         data["posts"] = []
@@ -177,6 +373,7 @@ def get_posted_news() -> dict:
     if "last_check_time" not in data:
         data["last_check_time"] = None
 
+    _ensure_stats_schema(data)
     return data
 
 
@@ -235,6 +432,21 @@ def save_posted_news(data: dict) -> bool:
 
     data["posts"] = cleaned_posts
     data["daily_counts"] = cleaned_daily
+
+    # stats cleanup
+    _ensure_stats_schema(data)
+    stats = data["stats"]
+
+    daily_actions = stats.get("daily_actions", {})
+    stats["daily_actions"] = {
+        date: count for date, count in daily_actions.items() if date >= cutoff_date_str
+    }
+
+    weekly = stats.get("weekly", {})
+    if isinstance(weekly, dict) and len(weekly) > 20:
+        sorted_keys = sorted(weekly.keys())
+        keep_keys = set(sorted_keys[-16:])
+        stats["weekly"] = {k: v for k, v in weekly.items() if k in keep_keys}
 
     if old_count > 0:
         log(f"Cleanup removed {old_count} records older than {_HISTORY_DAYS} days")
