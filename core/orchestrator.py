@@ -5,24 +5,24 @@ Main orchestrator for otoXtra bot.
 import os
 import traceback
 
-from core.logger import log
 from core.config_loader import load_config
 from core.helpers import (
     get_posted_news,
-    save_posted_news,
-    get_today_post_count,
-    get_turkey_now,
-    save_last_check_time,
-    increment_action_trigger,
     get_previous_week_key,
+    get_today_post_count,
+    get_token_remaining_days,
+    get_turkey_now,
     get_weekly_stats,
+    increment_action_trigger,
     is_weekly_report_sent,
     mark_weekly_report_sent,
-    get_token_remaining_days,
     record_weekly_error,
     record_weekly_skip,
+    save_last_check_time,
+    save_posted_news,
 )
-from core.state_manager import init_pipeline, get_stage
+from core.logger import log
+from core.state_manager import get_stage, init_pipeline
 from platforms import telegram as tg_platform
 
 
@@ -44,6 +44,11 @@ def _is_persist_state_enabled() -> bool:
 
 def _ignore_min_post_interval() -> bool:
     return _get_env_bool("IGNORE_MIN_POST_INTERVAL", False)
+
+
+def _save_posted_data_if_enabled(data: dict) -> None:
+    if _is_persist_state_enabled():
+        save_posted_news(data)
 
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
@@ -104,6 +109,7 @@ def _log_source_health() -> None:
         err_count = sum(1 for v in source_health.values() if v.get("status") == "error")
         empty_count = sum(1 for v in source_health.values() if v.get("status") == "no_entries")
         disabled_count = sum(1 for v in source_health.values() if v.get("status") == "disabled")
+
         log(
             f"Source health: ok={ok_count}, error={err_count}, "
             f"empty={empty_count}, disabled={disabled_count}"
@@ -157,12 +163,6 @@ def _run_agent(agent_name: str, run_func) -> bool:
         return False
 
 
-def _save_posted_data_if_enabled(data: dict) -> None:
-    if not _is_persist_state_enabled():
-        return
-    save_posted_news(data)
-
-
 def _record_error_stat(error_code: str, error_name: str) -> None:
     if not _is_persist_state_enabled():
         return
@@ -185,10 +185,22 @@ def _record_skip_stat(skip_reason: str) -> None:
         log(f"Skip stat kaydedilemedi: {exc}", "WARNING")
 
 
+def _token_line(token_days) -> str:
+    if token_days is None:
+        return "Bilinmiyor"
+    if token_days < 0:
+        return f"Token suresi dolmus ({abs(token_days)} gun gecmis)"
+    return f"{token_days} gun"
+
+
+def _dict_to_lines(values: dict) -> str:
+    if not values:
+        return "Yok"
+    return "\n".join([f"{name}: {count}" for name, count in values.items()])
+
+
 def _send_weekly_report_if_needed(posted_data: dict) -> None:
     now = get_turkey_now()
-
-    # Sadece pazartesi calisir
     if now.weekday() != 0:
         return
 
@@ -197,26 +209,9 @@ def _send_weekly_report_if_needed(posted_data: dict) -> None:
         return
 
     stats = get_weekly_stats(posted_data, previous_week_key)
-    token_days = get_token_remaining_days()
-
-    if token_days is None:
-        token_line = "Bilinmiyor"
-    elif token_days < 0:
-        token_line = f"Token suresi dolmus ({abs(token_days)} gun gecmis)"
-    else:
-        token_line = f"{token_days} gun"
-
-    errors = stats.get("errors", {})
-    if errors:
-        error_lines = "\n".join([f"{name}: {count}" for name, count in errors.items()])
-    else:
-        error_lines = "Yok"
-
-    skips = stats.get("skips", {})
-    if skips:
-        skip_lines = "\n".join([f"{name}: {count}" for name, count in skips.items()])
-    else:
-        skip_lines = "Yok"
+    token_line = _token_line(get_token_remaining_days())
+    error_lines = _dict_to_lines(stats.get("errors", {}))
+    skip_lines = _dict_to_lines(stats.get("skips", {}))
 
     message = (
         "Haftalik Rapor\n\n"
@@ -246,8 +241,7 @@ def _is_score_skipped() -> tuple[bool, str]:
             return False, ""
         output = score_stage.get("output") or {}
         if bool(output.get("skipped", False)):
-            reason = (output.get("skip_reason", "") or "").strip()
-            return True, reason
+            return True, (output.get("skip_reason", "") or "").strip()
     except Exception:
         pass
     return False, ""
@@ -258,12 +252,10 @@ def main() -> None:
         settings = load_config("settings")
         posted_data = get_posted_news()
 
-        # Her orchestrator calismasi bir "action/tetiklenme" olarak sayilir.
         action_no = increment_action_trigger(posted_data)
         _save_posted_data_if_enabled(posted_data)
         log(f"Action tetiklendi: A{action_no}")
 
-        # Pazartesi ilk calismada (onceki hafta icin) haftalik rapor.
         _send_weekly_report_if_needed(posted_data)
 
         if not _check_daily_limit(settings, posted_data):
