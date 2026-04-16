@@ -219,6 +219,20 @@ def _send_weekly_report_if_needed(posted_data: dict) -> None:
         log(f"Haftalik rapor gonderilemedi: {previous_week_key}", "WARNING")
 
 
+def _is_score_skipped() -> tuple[bool, str]:
+    try:
+        score_stage = get_stage("score")
+        if score_stage.get("status") != "done":
+            return False, ""
+        output = score_stage.get("output") or {}
+        if bool(output.get("skipped", False)):
+            reason = (output.get("skip_reason", "") or "").strip()
+            return True, reason
+    except Exception:
+        pass
+    return False, ""
+
+
 def main() -> None:
     try:
         settings = load_config("settings")
@@ -255,6 +269,14 @@ def main() -> None:
         if not _run_agent("agent_scorer", scorer_run):
             err = _log_stage_error("score")
             _record_error_stat("SCORER_FAILED", err or "agent_scorer failed")
+            return
+
+        skipped, skip_reason = _is_score_skipped()
+        if skipped:
+            msg = "Score skip: esik ustu haber yok"
+            if skip_reason:
+                msg = f"Score skip: {skip_reason}"
+            log(msg, "INFO")
             return
 
         from agents.agent_writer import run as writer_run
