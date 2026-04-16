@@ -1,230 +1,91 @@
 {
-  "run_id": "2026-04-16-14:01",
+  "run_id": "2026-04-16-15:12",
   "status": "completed",
-  "started_at": "2026-04-16T14:01:56.893201+03:00",
-  "updated_at": "2026-04-16T14:02:36.489509+03:00",
+  "started_at": "2026-04-16T15:12:26.335492+03:00",
+  "updated_at": "2026-04-16T15:12:33.096007+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
-        "articles": [
-          {
-            "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-            "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
-            "published": "2026-04-16T08:18:00+00:00",
-            "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo"
-          },
-          {
-            "title": "Makyajlı Toyota Yaris Cross resmi olarak görücüye çıkarıldı",
-            "link": "https://www.log.com.tr/makyajli-toyota-yaris-cross-resmi-olarak-gorucuye-cikarildi/",
-            "published": "2026-04-16T09:20:11+00:00",
-            "summary": "Makyajlı Toyota Yaris Cross görücüye çıkarıldı. Makyaj kapsamında en çok dikkat çeken yenilik, petek formundaki ızgara oldu. 16 Nisan itibarıyla Türkiye’de 2,2 milyon TL’den başlayan aracın yeni versiyonu, tanıdık bir yaşam alanıyla karşımızda yer alıyor. 12,3 inç ve 10,5 inç boyutlarında iki farklı ekranın bir araya getirildiği Yaris Cross, artık alt paketlerde daha fazla ADAS özelliği sunuyor ve yine hibrit ünitelerle geliyor. Aracın Hybrid 115 versiyonu 114 beygir güç ve 141 Nm tork, Hybrid 130 ise 128 beygir güç ve 185 Nm tork sunuyor. Modelin sportif sürüş için özelleştirilen süspansiyon sistemiyle donatılan “GR Sport” versiyonunu tek olarak Hybrid 130 ile sunan Toyota, makyajlı Yaris Cross’un belirli pazarlarda sonbahar döneminde yollara çıkarılacağını duyurdu. Makyajlı Toyota Yaris Cross resmi olarak görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/04/2026-04-16_12-19-04_NfXkq-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cikarildi-cross-gorucuye-makyajli-resmi-toyota-yaris"
-          },
-          {
-            "title": "Togg Trugo Şarj İstasyonlarında AutoCharge Dönemini Başlattı",
-            "link": "https://shiftdelete.net/togg-trugo-sarj-istasyonlarinda-autocharge-donemini-baslatti",
-            "published": "2026-04-16T10:30:20+00:00",
-            "summary": "Togg, Trugo şarj ağında AutoCharge dönemini başlattı. T10X ve T10F modellerinde temassız şarj imkanı sunan yeni özellik ile ilgili tüm detaylar haberimizde.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "autocharge-baslatti-donemini-sarj-stasyonlarinda-togg-trugo"
-          }
-        ],
-        "count": 3,
-        "source_health": {
-          "Donanimhaber": {
-            "status": "ok",
-            "count": 10,
-            "detail": ""
-          },
-          "Log": {
-            "status": "ok",
-            "count": 10,
-            "detail": ""
-          },
-          "Motor1 TR": {
-            "status": "ok",
-            "count": 10,
-            "detail": ""
-          },
-          "ShiftDelete Otomobil": {
-            "status": "ok",
-            "count": 10,
-            "detail": ""
-          },
-          "OtoAjanda": {
-            "status": "ok",
-            "count": 10,
-            "detail": ""
-          }
-        }
+        "telegram_priority": true,
+        "articles": []
       },
       "error": null,
-      "updated_at": "2026-04-16T14:02:01.854855+03:00"
+      "updated_at": "2026-04-16T15:12:26.335926+03:00"
     },
     "score": {
       "status": "done",
       "output": {
+        "telegram_priority": true,
         "selected_article": {
-          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
-          "published": "2026-04-16T08:18:00+00:00",
-          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
-          "base_ai_score": 85,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2
+          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
+          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
+          "link": "",
+          "source_name": "Telegram",
+          "topic_fingerprint": "",
+          "manual_priority": true
         },
-        "score": 94,
-        "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 7,
-        "score_reason": "ai_scored",
-        "skipped": false,
-        "threshold": 50
+        "score": 100,
+        "skipped": false
       },
       "error": null,
-      "updated_at": "2026-04-16T14:02:05.768029+03:00"
+      "updated_at": "2026-04-16T15:12:26.336322+03:00"
     },
     "write": {
       "status": "done",
       "output": {
+        "telegram_priority": true,
         "article": {
-          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
-          "published": "2026-04-16T08:18:00+00:00",
-          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
-          "base_ai_score": 85,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Söz konusu değer, standart versiyona kıyasla yaklaşık 100 kilometrelik bir artış anlamına geliyor. Gelişimin temelinde ise yeni nesil elektrik motorları, daha yüksek kapasiteli batarya ve iyileştirilmiş aerodinamik tasarım yatıyor. Yeni FH Aero Electric Extended Range, tamamen yeniden geliştirilen elektrikli arka aks ile geliyor. Bu sistem; iki elektrik motoru, güç elektroniği bileşenleri ve 13 tonluk geleneksel aksı tek bir yapıda birleştiriyor. Konfigürasyona bağlı olarak sistem gücü 570 beygir (420 kW) veya 625 beygir (460 kW) seviyesinde sunuluyor. Yeni uzun menzilli model, MCS (Megawatt Charging System) şarj altyapısını destekliyor ve700 kW’a kadar şarj gücüalabiliyor. Uygun bir megavat seviyesindeki DC hızlı şarj istasyonunda batarya%20’den %80’e yaklaşık 50 dakikadadolabiliyor. 350 kW gücündeki CCS hızlı şarj cihazı kullanıldığında ise aynı işlem yaklaşık 85 dakika sürüyor. Volvo Trucks verilerine göre yeni modelin toplam yüklü ağırlığı 48 tona kadar çıkabiliyor. Taşıma kapasitesi ise 28 tona kadar ulaşıyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B07M85913F https://www.amazon.com.tr/gp/browse.html?node=12466553031 https://www.amazon.com.tr/dp/B00NCS8WFC https://www.amazon.com.tr/dp/B0C4Q47L14 https://www.idefix.com/aku-trekker-pro-ii-gore-tex-bot-a852108-p-17024889 https://www.migros.com.tr/persembe-yildizi-l-bbc9e57"
+          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
+          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
+          "link": "",
+          "source_name": "Telegram",
+          "topic_fingerprint": "",
+          "manual_priority": true
         },
-        "post_text": "⚡️ VOLVO'DAN AĞIR TAŞIMACILIĞA YENİ SOLUK!\n\nVolvo Trucks, FH Aero Electric modelinin yeni versiyonuyla karşımızda. Bu sefer menzil tam 700 kilometreye çıkmış!\n\nYeni nesil motorlar, daha büyük batarya ve geliştirilmiş aerodinamik sayesinde bu başarı elde edilmiş. Ağır yük taşımacılığında yeni standartlar belirlenecek gibi duruyor.\n\nHızlı şarj özelliği de cabası; 700 kW'a kadar destekleyen MCS altyapısıyla batarya %20'den %80'e yaklaşık 50 dakikada dolabiliyor.\n\nSizce bu menzil, elektrikli kamyonların geleceği için ne kadar önemli?",
-        "post_text_length": 535,
+        "post_text": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
+        "post_text_length": 526,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-04-16T14:02:09.599851+03:00"
+      "updated_at": "2026-04-16T15:12:26.336749+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-          "link": "https://www.donanimhaber.com/volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor--204516",
-          "published": "2026-04-16T08:18:00+00:00",
-          "summary": "Volvo Trucks, FH Aero Electric modelinin yeni uzun menzilli versiyonunu tanıttı. 700 km menzil, 725 kWsa batarya ve 700 kW hızlı şarj desteğiyle ağır taşımacılıkta yeni standart hedefleniyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204516/1400x788volvo-nun-elektrikli-cekicisi-artik-700-km-menzil-sunuyor.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "700-cekicisi-elektrikli-menzil-sunuyor-volvo",
-          "base_ai_score": 85,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Söz konusu değer, standart versiyona kıyasla yaklaşık 100 kilometrelik bir artış anlamına geliyor. Gelişimin temelinde ise yeni nesil elektrik motorları, daha yüksek kapasiteli batarya ve iyileştirilmiş aerodinamik tasarım yatıyor. Yeni FH Aero Electric Extended Range, tamamen yeniden geliştirilen elektrikli arka aks ile geliyor. Bu sistem; iki elektrik motoru, güç elektroniği bileşenleri ve 13 tonluk geleneksel aksı tek bir yapıda birleştiriyor. Konfigürasyona bağlı olarak sistem gücü 570 beygir (420 kW) veya 625 beygir (460 kW) seviyesinde sunuluyor. Yeni uzun menzilli model, MCS (Megawatt Charging System) şarj altyapısını destekliyor ve700 kW’a kadar şarj gücüalabiliyor. Uygun bir megavat seviyesindeki DC hızlı şarj istasyonunda batarya%20’den %80’e yaklaşık 50 dakikadadolabiliyor. 350 kW gücündeki CCS hızlı şarj cihazı kullanıldığında ise aynı işlem yaklaşık 85 dakika sürüyor. Volvo Trucks verilerine göre yeni modelin toplam yüklü ağırlığı 48 tona kadar çıkabiliyor. Taşıma kapasitesi ise 28 tona kadar ulaşıyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B07M85913F https://www.amazon.com.tr/gp/browse.html?node=12466553031 https://www.amazon.com.tr/dp/B00NCS8WFC https://www.amazon.com.tr/dp/B0C4Q47L14 https://www.idefix.com/aku-trekker-pro-ii-gore-tex-bot-a852108-p-17024889 https://www.migros.com.tr/persembe-yildizi-l-bbc9e57",
-          "image_sources": [
-            "meta_og"
-          ],
-          "prepared_image_count": 1
+          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
+          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
+          "link": "",
+          "source_name": "Telegram",
+          "topic_fingerprint": "",
+          "manual_priority": true
         },
-        "post_text": "⚡️ VOLVO'DAN AĞIR TAŞIMACILIĞA YENİ SOLUK!\n\nVolvo Trucks, FH Aero Electric modelinin yeni versiyonuyla karşımızda. Bu sefer menzil tam 700 kilometreye çıkmış!\n\nYeni nesil motorlar, daha büyük batarya ve geliştirilmiş aerodinamik sayesinde bu başarı elde edilmiş. Ağır yük taşımacılığında yeni standartlar belirlenecek gibi duruyor.\n\nHızlı şarj özelliği de cabası; 700 kW'a kadar destekleyen MCS altyapısıyla batarya %20'den %80'e yaklaşık 50 dakikada dolabiliyor.\n\nSizce bu menzil, elektrikli kamyonların geleceği için ne kadar önemli?",
-        "image_path": "/tmp/otoxtra_img_gjxj4897.jpg",
+        "post_text": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
+        "image_path": "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976265_13.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_gjxj4897.jpg"
+          "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976265_13.jpg",
+          "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976266_14.jpg"
         ],
-        "image_source": "meta_og",
-        "image_count": 1
+        "image_source": "telegram",
+        "image_count": 2,
+        "telegram_update_id": 279976266
       },
       "error": null,
-      "updated_at": "2026-04-16T14:02:31.298288+03:00"
+      "updated_at": "2026-04-16T15:12:26.337194+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122162655782916499",
-        "article_title": "Volvo'nun elektrikli çekicisi artık 700 km menzil sunuyor",
-        "image_source": "meta_og",
-        "image_count": 1,
+        "post_id": "678053852057751_122162662238916499",
+        "article_title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
+        "image_source": "multi_image",
+        "image_count": 2,
         "dry_run": false
       },
       "error": null,
-      "updated_at": "2026-04-16T14:02:36.489509+03:00"
+      "updated_at": "2026-04-16T15:12:33.096007+03:00"
     }
   }
 }
