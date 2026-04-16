@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.8)
+agents/agent_image.py - Gorsel Isleme Ajani (v4.9)
 
 Degisiklikler:
 - Boyut filtresi sertlestirildi (default: min 900x500 + min area 450000).
@@ -10,6 +10,8 @@ Degisiklikler:
   cozumurluk + oran uygunlugu + dosya boyutu + kaynak bonusu.
 - Dinamik duplicate esigi eklendi:
   ayni seri varyantlarinda perceptual duplicate daha agresif.
+- Multi-image dengesini korumak icin 2 asamali secim eklendi:
+  strict pass + gerekirse relaxed pass.
 - Env override:
   IMAGE_MIN_WIDTH, IMAGE_MIN_HEIGHT, IMAGE_MIN_AREA,
   IMAGE_MIN_ASPECT_RATIO, IMAGE_MAX_ASPECT_RATIO
@@ -144,6 +146,29 @@ def _get_image_validation_limits() -> dict:
         limits["max_aspect"] = _DEFAULT_MAX_ASPECT_RATIO
 
     return limits
+
+
+def _build_relaxed_limits(limits: dict) -> dict:
+    # Multi-image dengesini korumak icin ikinci turda kontrollu gevsetme
+    min_w = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
+    min_h = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
+    min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
+    min_aspect = float(limits.get("min_aspect", _DEFAULT_MIN_ASPECT_RATIO))
+    max_aspect = float(limits.get("max_aspect", _DEFAULT_MAX_ASPECT_RATIO))
+
+    relaxed = {
+        "min_width": max(700, int(min_w * 0.82)),
+        "min_height": max(390, int(min_h * 0.80)),
+        "min_area": max(320000, int(min_area * 0.75)),
+        "min_aspect": max(0.70, min_aspect - 0.12),
+        "max_aspect": min(2.35, max_aspect + 0.18),
+    }
+
+    if relaxed["min_aspect"] >= relaxed["max_aspect"]:
+        relaxed["min_aspect"] = 0.70
+        relaxed["max_aspect"] = 2.35
+
+    return relaxed
 
 
 def _file_sha256(path: str) -> str:
@@ -476,11 +501,11 @@ def _score_image_quality(
     # Resolution score (0..25)
     resolution_score = min(25.0, (area / 1_200_000.0) * 25.0)
 
-    # Aspect score (0..20) -> target ratioya ne kadar yakin
+    # Aspect score (0..20)
     ratio_diff = abs(ratio - target_ratio)
     aspect_score = max(0.0, 20.0 * (1.0 - min(ratio_diff / 1.2, 1.0)))
 
-    # Size score (0..8): cok kucuk/cok buyuk olmayan dosyalari odullendir
+    # Size score (0..8)
     if size_kb < 80:
         size_score = max(0.0, size_kb / 80.0 * 8.0)
     elif size_kb <= 900:
@@ -527,7 +552,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
         soup = BeautifulSoup(response.text, "html.parser")
         pool: list[dict] = []
 
-        # 1) Meta kaynaklari (en yuksek oncelik)
         meta_selectors = [
             ('meta[property="og:image"]', "content", "meta_og"),
             ('meta[property="og:image:url"]', "content", "meta_og"),
@@ -555,7 +579,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                     }
                     _upsert_candidate(pool, candidate)
 
-        # 2) Sayfa img taglari
         for img in soup.find_all("img"):
             src_list = [
                 img.get("src", ""),
@@ -907,7 +930,6 @@ def prepare_images(article: dict) -> list[str]:
     prepared_paths: list[str] = []
     used_sources: list[str] = []
 
-    # Candidate pool with source priority
     candidate_pool = _collect_article_candidates(article, max_candidates_to_try)
 
     if article.get("can_scrape_image", True) and article.get("link", ""):
@@ -930,7 +952,9 @@ def prepare_images(article: dict) -> list[str]:
     tried_count = 0
 
     accepted: list[dict] = []
+    retry_relaxed_pool: list[dict] = []
 
+    # Pass-1: strict
     for idx, candidate in enumerate(candidate_pool, start=1):
         candidate_url = candidate.get("url", "")
         source_type = candidate.get("source_type", "unknown")
@@ -954,6 +978,8 @@ def prepare_images(article: dict) -> list[str]:
         if not downloaded:
             fail_reasons[reason] += 1
             log(f"Aday elendi: {reason}", "WARNING")
+            if reason.startswith("too_small:") or reason.startswith("bad_aspect:"):
+                retry_relaxed_pool.append(candidate)
             continue
 
         try:
@@ -1038,7 +1064,111 @@ def prepare_images(article: dict) -> list[str]:
             except OSError:
                 pass
 
-    # Kaliteye gore secim
+    # Pass-2: strict yetmediyse controlled relaxed
+    if len(accepted) < max_images_per_news and retry_relaxed_pool:
+        relaxed_limits = _build_relaxed_limits(limits)
+        relaxed_threshold = max(2, perceptual_threshold - 2)
+
+        log(
+            "Relaxed pass devrede: "
+            f"need={max_images_per_news - len(accepted)}, retry_candidates={len(retry_relaxed_pool)}, "
+            f"ratio={relaxed_limits['min_aspect']:.2f}-{relaxed_limits['max_aspect']:.2f}, "
+            f"min={relaxed_limits['min_width']}x{relaxed_limits['min_height']}, "
+            f"area={relaxed_limits['min_area']}"
+        )
+
+        for candidate in retry_relaxed_pool:
+            if len(accepted) >= max_images_per_news:
+                break
+
+            candidate_url = candidate.get("url", "")
+            source_type = candidate.get("source_type", "unknown")
+            if not candidate_url:
+                continue
+
+            downloaded, reason = _download_image_with_reason(candidate_url, relaxed_limits)
+            if not downloaded:
+                fail_reasons[f"relaxed_{reason}"] += 1
+                continue
+
+            try:
+                width, height, size_kb = _read_image_meta(downloaded)
+
+                content_hash = _file_sha256(downloaded)
+                if content_hash in seen_content_hashes:
+                    fail_reasons["relaxed_duplicate_image_content"] += 1
+                    try:
+                        os.unlink(downloaded)
+                    except OSError:
+                        pass
+                    continue
+
+                current_signature = _visual_signature(candidate_url)
+
+                try:
+                    current_phash = _dhash(downloaded)
+                    is_near_dup = False
+                    for prev_phash, prev_signature in seen_perceptual_records:
+                        dynamic_threshold = _adaptive_perceptual_threshold(
+                            relaxed_threshold,
+                            current_signature,
+                            prev_signature,
+                        )
+                        if _hamming(current_phash, prev_phash) <= dynamic_threshold:
+                            is_near_dup = True
+                            break
+                    if is_near_dup:
+                        fail_reasons["relaxed_near_duplicate_perceptual"] += 1
+                        try:
+                            os.unlink(downloaded)
+                        except OSError:
+                            pass
+                        continue
+                except Exception:
+                    current_phash = None
+
+                processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                if should_add_logo:
+                    processed = add_logo(processed)
+
+                score, score_detail = _score_image_quality(
+                    width=width,
+                    height=height,
+                    size_kb=size_kb,
+                    source_type=source_type,
+                    target_ratio=target_ratio,
+                )
+                score = max(0.0, score - 7.0)  # relaxed pass penalty
+
+                accepted.append(
+                    {
+                        "path": processed,
+                        "url": candidate_url,
+                        "source_type": source_type,
+                        "score": score,
+                        "score_detail": f"{score_detail}, relaxed_penalty=7.0",
+                        "phash": current_phash,
+                        "signature": current_signature,
+                        "content_hash": content_hash,
+                    }
+                )
+
+                seen_content_hashes.add(content_hash)
+                if current_phash is not None:
+                    seen_perceptual_records.append((current_phash, current_signature))
+
+                log(
+                    f"Relaxed aday basarili: {reason} -> quality={score:.1f}"
+                )
+
+            except Exception as exc:
+                fail_reasons[f"relaxed_processing_error:{exc}"] += 1
+                try:
+                    os.unlink(downloaded)
+                except OSError:
+                    pass
+
+    # Quality ranking
     if accepted:
         accepted_sorted = sorted(accepted, key=lambda x: x.get("score", 0.0), reverse=True)
         selected = accepted_sorted[:max_images_per_news]
@@ -1053,7 +1183,7 @@ def prepare_images(article: dict) -> list[str]:
                 f"url={item.get('url', '')[:110]}"
             )
 
-        # Seçilmeyenleri diskten temizle
+        # Secilmeyenleri diskten temizle
         for item in discarded:
             path = item.get("path", "")
             if path and os.path.exists(path):
