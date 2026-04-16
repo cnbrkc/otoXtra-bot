@@ -5,7 +5,7 @@ Viral scoring agent.
 import os
 import time
 from datetime import timedelta
-from typing import Optional
+from typing import Optional, Tuple
 
 from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
@@ -36,6 +36,12 @@ TREND_BONUS_CAP: int = 18
 
 def _is_score_breakdown_enabled() -> bool:
     value = os.environ.get("DEBUG_SCORE_BREAKDOWN", "false").strip().lower()
+    return value in ("1", "true", "yes", "on")
+
+
+def _allow_skip_as_success() -> bool:
+    # Default false: mevcut davranis korunur.
+    value = os.environ.get("SCORE_SKIP_AS_SUCCESS", "false").strip().lower()
     return value in ("1", "true", "yes", "on")
 
 
@@ -157,7 +163,6 @@ def run_viral_scoring(articles: list) -> list:
 
         ai_results = parse_ai_json(ai_response)
 
-        # ai_client dict dondurebilir; tek kaydi listeye cevir.
         if isinstance(ai_results, dict):
             ai_results = [ai_results]
 
@@ -347,13 +352,13 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
         )
 
 
-def filter_and_score(articles: list) -> Optional[dict]:
+def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
     if not articles:
-        return None
+        return None, {"skipped": True, "skip_reason": "no_articles"}
 
     scored = run_viral_scoring(articles)
     if not scored:
-        return None
+        return None, {"skipped": True, "skip_reason": "no_scored_articles"}
 
     scored = apply_freshness_bonus(scored)
     scored = apply_trend_bonus(scored)
@@ -363,9 +368,19 @@ def filter_and_score(articles: list) -> Optional[dict]:
 
     above_threshold = [a for a in scored if a.get("score", 0) >= threshold]
     if not above_threshold:
-        return None
+        top = scored[0] if scored else {}
+        return None, {
+            "skipped": True,
+            "skip_reason": "No article above threshold",
+            "threshold": threshold,
+            "top_score": _safe_int(top.get("score", 0), 0),
+            "top_title": top.get("title", ""),
+        }
 
-    return above_threshold[0]
+    return above_threshold[0], {
+        "skipped": False,
+        "threshold": threshold,
+    }
 
 
 def run() -> bool:
@@ -382,9 +397,36 @@ def run() -> bool:
 
     set_stage("score", "running")
     try:
-        best_article = filter_and_score(articles)
+        best_article, meta = filter_and_score(articles)
         if best_article is None:
-            set_stage("score", "error", error="No article above threshold")
+            skip_reason = meta.get("skip_reason", "No article above threshold")
+            threshold = _safe_int(meta.get("threshold", _get_active_threshold()), _get_active_threshold())
+            top_score = _safe_int(meta.get("top_score", 0), 0)
+            top_title = meta.get("top_title", "")
+
+            if _allow_skip_as_success():
+                output = {
+                    "selected_article": None,
+                    "score": 0,
+                    "title": "",
+                    "trend_count": 0,
+                    "trend_bonus": 0,
+                    "freshness_bonus": 0,
+                    "score_reason": "skipped",
+                    "skipped": True,
+                    "skip_reason": skip_reason,
+                    "threshold": threshold,
+                    "top_score": top_score,
+                    "top_title": top_title,
+                }
+                set_stage("score", "done", output=output)
+                log(
+                    f"score skipped: {skip_reason} (threshold={threshold}, top_score={top_score})",
+                    "INFO",
+                )
+                return True
+
+            set_stage("score", "error", error=f"{skip_reason} (threshold={threshold}, top_score={top_score})")
             return False
 
         output = {
@@ -395,6 +437,8 @@ def run() -> bool:
             "trend_bonus": best_article.get("trend_bonus", 0),
             "freshness_bonus": best_article.get("freshness_bonus", 0),
             "score_reason": best_article.get("score_reason", "unknown"),
+            "skipped": False,
+            "threshold": _safe_int(meta.get("threshold", 0), 0),
         }
         set_stage("score", "done", output=output)
         return True
