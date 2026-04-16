@@ -22,7 +22,7 @@ from core.helpers import (
     save_posted_news,
 )
 from core.logger import log
-from core.state_manager import get_stage, init_pipeline
+from core.state_manager import get_stage, init_pipeline, set_stage
 from platforms import telegram as tg_platform
 
 
@@ -247,6 +247,60 @@ def _is_score_skipped() -> tuple[bool, str]:
     return False, ""
 
 
+def _run_telegram_priority_share() -> bool:
+    """
+    Telegram sohbetinden gelen oncelikli (gorsel + aciklama) icerigi
+    varsa dogrudan publish asamasina tasir.
+    Donus:
+      - True  -> Telegram icerigi paylasildi ya da denendi (normal akis durur)
+      - False -> Telegram icerigi yok, normal haber akisi devam eder
+    """
+    telegram_payload = tg_platform.consume_pending_shareable_content()
+    if not telegram_payload:
+        return False
+
+    log("Telegram oncelikli icerik bulundu, anlik paylasim akisina geciliyor")
+
+    run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
+    if not init_pipeline(run_id):
+        log("Pipeline init failed (telegram priority)", "ERROR")
+        _record_error_stat("PIPELINE_INIT_FAILED", "Pipeline init failed (telegram priority)")
+        return True
+
+    # Normal pipeline'i bozmadan publish'e gecmek icin onceki asamalari tamamlandi isaretle.
+    set_stage("fetch", "done", output={"telegram_priority": True, "articles": []})
+    set_stage(
+        "score",
+        "done",
+        output={
+            "telegram_priority": True,
+            "selected_article": telegram_payload.get("article", {}),
+            "score": 100,
+            "skipped": False,
+        },
+    )
+    set_stage(
+        "write",
+        "done",
+        output={
+            "telegram_priority": True,
+            "article": telegram_payload.get("article", {}),
+            "post_text": telegram_payload.get("post_text", ""),
+            "post_text_length": len(telegram_payload.get("post_text", "")),
+            "skipped": False,
+        },
+    )
+    set_stage("image", "done", output=telegram_payload)
+    _log_image_summary()
+
+    from agents.agent_publisher import run as publisher_run
+    if not _run_agent("agent_publisher", publisher_run):
+        err = _log_stage_error("publish")
+        _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed (telegram priority)")
+
+    return True
+
+
 def main() -> None:
     try:
         settings = load_config("settings")
@@ -257,6 +311,9 @@ def main() -> None:
         log(f"Action tetiklendi: A{action_no}")
 
         _send_weekly_report_if_needed(posted_data)
+
+        if _run_telegram_priority_share():
+            return
 
         if not _check_daily_limit(settings, posted_data):
             return
