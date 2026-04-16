@@ -71,6 +71,21 @@ def _split_into_batches(articles: list) -> list:
     return [articles[i : i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
 
 
+def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
+    for article in batch:
+        article["score"] = UNSCORED_DEFAULT
+        article["score_reason"] = reason
+        all_scored.append(article)
+
+
+def _normalize_ai_results(parsed: object) -> Optional[list]:
+    if isinstance(parsed, dict):
+        return [parsed]
+    if isinstance(parsed, list):
+        return parsed
+    return None
+
+
 def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     matched = []
     used_indices = set()
@@ -140,9 +155,7 @@ def run_viral_scoring(articles: list) -> list:
     scorer_prompt = prompts_config.get("viral_scorer", "")
     if not scorer_prompt:
         log("viral_scorer prompt not found", "WARNING")
-        for article in articles:
-            article["score"] = UNSCORED_DEFAULT
-            article["score_reason"] = "prompt_missing"
+        _mark_unscored_batch(articles, "prompt_missing", articles)
         return articles
 
     batches = _split_into_batches(articles)
@@ -153,24 +166,14 @@ def run_viral_scoring(articles: list) -> list:
         ai_response = ask_ai(f"{scorer_prompt}\n\n{numbered_text}")
 
         if not ai_response:
-            for article in batch:
-                article["score"] = UNSCORED_DEFAULT
-                article["score_reason"] = "ai_empty"
-                all_scored.append(article)
+            _mark_unscored_batch(batch, "ai_empty", all_scored)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
 
-        ai_results = parse_ai_json(ai_response)
-
-        if isinstance(ai_results, dict):
-            ai_results = [ai_results]
-
-        if not ai_results or not isinstance(ai_results, list):
-            for article in batch:
-                article["score"] = UNSCORED_DEFAULT
-                article["score_reason"] = "ai_parse_failed"
-                all_scored.append(article)
+        ai_results = _normalize_ai_results(parse_ai_json(ai_response))
+        if not ai_results:
+            _mark_unscored_batch(batch, "ai_parse_failed", all_scored)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
@@ -377,9 +380,28 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
             "top_title": top.get("title", ""),
         }
 
-    return above_threshold[0], {
-        "skipped": False,
+    return above_threshold[0], {"skipped": False, "threshold": threshold}
+
+
+def _build_skip_output(meta: dict) -> dict:
+    skip_reason = meta.get("skip_reason", "No article above threshold")
+    threshold = _safe_int(meta.get("threshold", _get_active_threshold()), _get_active_threshold())
+    top_score = _safe_int(meta.get("top_score", 0), 0)
+    top_title = meta.get("top_title", "")
+
+    return {
+        "selected_article": None,
+        "score": 0,
+        "title": "",
+        "trend_count": 0,
+        "trend_bonus": 0,
+        "freshness_bonus": 0,
+        "score_reason": "skipped",
+        "skipped": True,
+        "skip_reason": skip_reason,
         "threshold": threshold,
+        "top_score": top_score,
+        "top_title": top_title,
     }
 
 
@@ -399,34 +421,26 @@ def run() -> bool:
     try:
         best_article, meta = filter_and_score(articles)
         if best_article is None:
-            skip_reason = meta.get("skip_reason", "No article above threshold")
-            threshold = _safe_int(meta.get("threshold", _get_active_threshold()), _get_active_threshold())
-            top_score = _safe_int(meta.get("top_score", 0), 0)
-            top_title = meta.get("top_title", "")
+            skip_output = _build_skip_output(meta)
 
             if _allow_skip_as_success():
-                output = {
-                    "selected_article": None,
-                    "score": 0,
-                    "title": "",
-                    "trend_count": 0,
-                    "trend_bonus": 0,
-                    "freshness_bonus": 0,
-                    "score_reason": "skipped",
-                    "skipped": True,
-                    "skip_reason": skip_reason,
-                    "threshold": threshold,
-                    "top_score": top_score,
-                    "top_title": top_title,
-                }
-                set_stage("score", "done", output=output)
+                set_stage("score", "done", output=skip_output)
                 log(
-                    f"score skipped: {skip_reason} (threshold={threshold}, top_score={top_score})",
+                    "score skipped: "
+                    f"{skip_output['skip_reason']} "
+                    f"(threshold={skip_output['threshold']}, top_score={skip_output['top_score']})",
                     "INFO",
                 )
                 return True
 
-            set_stage("score", "error", error=f"{skip_reason} (threshold={threshold}, top_score={top_score})")
+            set_stage(
+                "score",
+                "error",
+                error=(
+                    f"{skip_output['skip_reason']} "
+                    f"(threshold={skip_output['threshold']}, top_score={skip_output['top_score']})"
+                ),
+            )
             return False
 
         output = {
