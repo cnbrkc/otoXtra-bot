@@ -416,6 +416,10 @@ def run() -> bool:
             image_count=final_image_count,
             dry_run=False,
         )
+
+        if manual_priority and image_source == "telegram":
+            tg_platform.finalize_consumed_shareable_content(image_output)
+
         set_stage("publish", "done", output=output)
         log("BASARIYLA PAYLASILDI")
         return True
