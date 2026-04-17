@@ -1,11 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.7)
+agents/agent_publisher.py - Yayinci Ajani (v3.8)
 
-v3.7:
-  - Telegram bildirim metni sadeletirildi (intro + post id kaldirildi)
-  - Bildirime A{aksiyon}-P{paylasim} eklendi
-  - Bildirime saglik raporu eklendi (Saglikli / Hata)
-  - Haftalik paylasim sayaci icin istatistik guncellemesi eklendi
+v3.8:
+  - Coklu gorsel paylasiminda farkli fonksiyon imzalari icin dayaniklilik arttirildi.
+  - Gercek paylasim yoluna gore image_count kaydi duzeltildi.
+  - Telegram bildirimine gorsel kaynak/adet bilgisi eklendi.
 """
 
 import os
@@ -161,6 +160,35 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
     return collected
 
 
+def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Optional[str]:
+    """
+    Farkli platform implementasyonlarinda fonksiyon imzasi degisebilir.
+    Sirayla birkac yaygin imzayi dener.
+    """
+    call_patterns = [
+        lambda: fn(image_paths, post_text_content),
+        lambda: fn(post_text_content, image_paths),
+        lambda: fn(image_paths=image_paths, message=post_text_content),
+        lambda: fn(paths=image_paths, message=post_text_content),
+        lambda: fn(photo_paths=image_paths, message=post_text_content),
+        lambda: fn(images=image_paths, message=post_text_content),
+    ]
+
+    for call_idx, call in enumerate(call_patterns, start=1):
+        try:
+            result = call()
+            if result:
+                log(f"Coklu gorsel cagri basarili (pattern={call_idx})")
+                return result
+        except TypeError:
+            # Imza uymadiysa bir sonraki deneme
+            continue
+        except Exception as exc:
+            log(f"Coklu gorsel cagri hatasi (pattern={call_idx}): {exc}", "WARNING")
+
+    return None
+
+
 def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Optional[str]:
     for fn_name in ("post_photos", "post_multi_photo", "post_album"):
         fn = getattr(fb_platform, fn_name, None)
@@ -169,7 +197,7 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
 
         try:
             log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
-            result = fn(image_paths, post_text_content)
+            result = _try_call_multi_fn(fn, image_paths, post_text_content)
             if result:
                 log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
                 return result
@@ -230,6 +258,8 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             if result_id:
                 if image_count >= 2:
                     article["image_source"] = "single_fallback_from_multi"
+                else:
+                    article["image_source"] = "single_image"
                 log("Publish path: single_success")
                 return result_id
 
@@ -276,7 +306,14 @@ def _build_health_report() -> str:
     return "Saglikli"
 
 
-def _send_telegram_notification(article: dict, action_count: int, share_count: int, health_report: str) -> bool:
+def _send_telegram_notification(
+    article: dict,
+    action_count: int,
+    share_count: int,
+    health_report: str,
+    image_source: str,
+    image_count: int,
+) -> bool:
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
@@ -286,6 +323,7 @@ def _send_telegram_notification(article: dict, action_count: int, share_count: i
         f"Link: {link or '-'}\n"
         f"Skor: {score}\n"
         f"Durum: A{action_count}-P{share_count}\n"
+        f"Gorsel: {image_source} ({image_count})\n"
         f"Saglik: {health_report}"
     )
     return tg_platform.send_message(message)
@@ -300,6 +338,16 @@ def _build_publish_output(article: dict, post_id: str, image_source: str, image_
         "image_count": image_count,
         "dry_run": dry_run,
     }
+
+
+def _resolve_final_image_count(final_image_source: str, image_paths: list[str]) -> int:
+    if final_image_source == "multi_image":
+        return len(image_paths)
+    if final_image_source in {"single_image", "single_fallback_from_multi"}:
+        return 1 if image_paths else 0
+    if final_image_source in {"fallback_text", "retry_text"}:
+        return 0
+    return len(image_paths)
 
 
 def run() -> bool:
@@ -397,7 +445,8 @@ def run() -> bool:
             return False
 
         final_image_source = article.get("image_source", image_source)
-        final_image_count = len(image_paths) if final_image_source != "fallback_text" else 0
+        final_image_count = _resolve_final_image_count(final_image_source, image_paths)
+
         _record_posted(article, post_id, final_image_source, final_image_count)
 
         fresh_data = get_posted_news()
@@ -405,7 +454,14 @@ def run() -> bool:
         share_count = get_today_post_count(fresh_data)
         health_report = _build_health_report()
 
-        telegram_ok = _send_telegram_notification(article, action_count, share_count, health_report)
+        telegram_ok = _send_telegram_notification(
+            article=article,
+            action_count=action_count,
+            share_count=share_count,
+            health_report=health_report,
+            image_source=final_image_source,
+            image_count=final_image_count,
+        )
         if not telegram_ok:
             log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
 
