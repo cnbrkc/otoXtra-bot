@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-04-17-09:17",
-  "status": "error",
-  "started_at": "2026-04-17T09:17:42.544336+03:00",
-  "updated_at": "2026-04-17T09:17:57.014678+03:00",
+  "run_id": "2026-04-17-09:29",
+  "status": "completed",
+  "started_at": "2026-04-17T09:29:40.334477+03:00",
+  "updated_at": "2026-04-17T09:30:14.307268+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+            "link": "https://www.donanimhaber.com/amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi--204564",
+            "published": "2026-04-17T06:23:44+00:00",
+            "summary": "AMD, Arm ve Qualcomm, otonom sürüş girişimi Wayve’e yatırım yaptı. Donanımdan bağımsız yapay zeka sistemiyle dikkat çeken şirket, otomotiv dünyasında hızla büyüyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "amd-arm-ceken-dikkat-otonom-qualcomm-surus-yatirimi"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,32 +97,138 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-17T09:17:57.014678+03:00"
+      "error": null,
+      "updated_at": "2026-04-17T09:29:47.551693+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+          "link": "https://www.donanimhaber.com/amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi--204564",
+          "published": "2026-04-17T06:23:44+00:00",
+          "summary": "AMD, Arm ve Qualcomm, otonom sürüş girişimi Wayve’e yatırım yaptı. Donanımdan bağımsız yapay zeka sistemiyle dikkat çeken şirket, otomotiv dünyasında hızla büyüyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "amd-arm-ceken-dikkat-otonom-qualcomm-surus-yatirimi",
+          "base_ai_score": 82,
+          "score": 94,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2
+        },
+        "score": 94,
+        "title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+        "trend_count": 1,
+        "trend_bonus": 2,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 50
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-17T09:29:49.686675+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+          "link": "https://www.donanimhaber.com/amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi--204564",
+          "published": "2026-04-17T06:23:44+00:00",
+          "summary": "AMD, Arm ve Qualcomm, otonom sürüş girişimi Wayve’e yatırım yaptı. Donanımdan bağımsız yapay zeka sistemiyle dikkat çeken şirket, otomotiv dünyasında hızla büyüyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "amd-arm-ceken-dikkat-otonom-qualcomm-surus-yatirimi",
+          "base_ai_score": 82,
+          "score": 94,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Wayve’in yatırım turu, otomotiv ve teknoloji dünyasının önde gelen isimlerini bir araya getirmiş durumda.Mercedes-Benz, NissanveStellantisgibi otomotiv devlerinin yanı sıra daha önce yatırım yapanNvidia, Microsoft ve Uberda şirkete desteğini sürdürdü. Öte yandanUber, Wayve ile olan iş birliğini daha da ileri taşımayı planlıyor. Şirket, Londra’da Wayve teknolojisiyle donatılmışrobotaksi filosunundevreye alınması şartına bağlı olarak 300 milyon dolarlık ek yatırım taahhüdünde bulundu. Wayve’i rakiplerinden ayıran en önemli unsur, geliştirdiği otonom sürüş sisteminin belirlidonanımlara bağımlı olmaması. Şirketin çözümü, sensör türü, çip seti veya yüksek çözünürlüklü haritalara bağlı kalmadan çalışanuçtan uca sinir ağı modeliüzerine kurulu. Bu sistem, araç üzerindeki mevcut sensörlerden elde edilen verileri kullanarak sürüş davranışını öğreniyor ve yönlendiriyor. Ayrıca Wayve yazılımı, otomobil üreticilerinin hali hazırda kullandığı donanımlar üzerinde çalışabilecek şekilde tasarlandı. Bu da üreticilere ek donanım maliyetinden kaçınma ve daha esnek entegrasyon imkanı sunuyor. Wayve’in teknolojisi, otomotiv üreticilerine ve teknoloji şirketlerine sunulan iki temel ürünle ticarileştiriliyor. Bunlardan ilki, sürücünün dikkatini yolda tutmasını gerektiren “eyes on” destekli sürüş sistemi. Bu çözümde sürücü, gerektiğinde müdahale etmek zorunda kalıyor. İkinci ürün ise belirli koşullar altında tamamen otonom sürüş sağlayan “eyes off” sistemi. Bu teknoloji, robotaksi uygulamalarında veya bireysel araçlarda tam otomatik sürüş deneyimi sunabilecek şekilde geliştiriliyor. Wayve’in müşteri portföyü de hızla genişliyor.Nissan, şirketin teknolojisini2027 yılından itibarenaraçlarındaki gelişmiş sürücü destek sistemlerine (ADAS) entegre edeceğini duyurdu.Mercedes-Benz ve Stellantisde gelecekteki modellerindeWayve çözümlerini kullanmayı planlıyor. Yeni yatırımın, Wayve’in farklı otomotiv bilgi işlem platformlarıyla entegrasyonunu hızlandırması ve “Wayve AI Driver” sisteminin seri üretim araçlarda daha geniş ölçekte kullanılmasını sağlaması bekleniyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B077911PBJ https://www.amazon.com.tr/Logitech-MK220-Kablosuz-Klavye-920-003163/dp/B007795T3A https://www.amazon.com.tr/dp/B0GHL3RM29 https://www.n11.com/urun/maisonart-royal-50x90-70x140-cm-2li-banyo-havlu-seti-100-pamuklu-havlu-takimi-antrasit-44666085 https://www.migros.com.tr/kiri-labne-tam-yagli-taze-peynir-3-x-150-g-p-9ec09b https://store.steampowered.com/app/3534240/Uncanny_Tales_Cold_Road"
+        },
+        "post_text": "🚗 OTOMOTİV DEVLERİNDEN BÜYÜK YATIRIM!\n\nAMD, Arm ve Qualcomm gibi teknoloji devleri, otonom sürüş alanında faaliyet gösteren Wayve şirketine yatırım yaptı.\n\nWayve'in en dikkat çekici özelliği, donanımdan bağımsız yapay zeka sistemi. Yani, özel sensörlere veya pahalı donanımlara ihtiyaç duymadan çalışabiliyor.\n\nMercedes-Benz, Nissan, Stellantis gibi otomotiv devlerinin yanı sıra Nvidia, Microsoft ve Uber da Wayve'e destek veriyor. Hatta Uber, Wayve'in teknolojisiyle donatılmış robotaksiler için 300 milyon dolarlık ek yatırım sözü verdi.\n\nBu teknoloji, sürücüsüz araçların geleceği için önemli bir adım olarak görülüyor.\n\nPeki siz otonom sürüş teknolojileri hakkında ne düşünüyorsunuz?",
+        "post_text_length": 688,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-17T09:29:51.988159+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+          "link": "https://www.donanimhaber.com/amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi--204564",
+          "published": "2026-04-17T06:23:44+00:00",
+          "summary": "AMD, Arm ve Qualcomm, otonom sürüş girişimi Wayve’e yatırım yaptı. Donanımdan bağımsız yapay zeka sistemiyle dikkat çeken şirket, otomotiv dünyasında hızla büyüyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204564/1400x788amd-arm-ve-qualcomm-dan-dikkat-ceken-otonom-surus-yatirimi.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "high",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 2,
+          "topic_fingerprint": "amd-arm-ceken-dikkat-otonom-qualcomm-surus-yatirimi",
+          "base_ai_score": 82,
+          "score": 94,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 2,
+          "full_text": "Wayve’in yatırım turu, otomotiv ve teknoloji dünyasının önde gelen isimlerini bir araya getirmiş durumda.Mercedes-Benz, NissanveStellantisgibi otomotiv devlerinin yanı sıra daha önce yatırım yapanNvidia, Microsoft ve Uberda şirkete desteğini sürdürdü. Öte yandanUber, Wayve ile olan iş birliğini daha da ileri taşımayı planlıyor. Şirket, Londra’da Wayve teknolojisiyle donatılmışrobotaksi filosunundevreye alınması şartına bağlı olarak 300 milyon dolarlık ek yatırım taahhüdünde bulundu. Wayve’i rakiplerinden ayıran en önemli unsur, geliştirdiği otonom sürüş sisteminin belirlidonanımlara bağımlı olmaması. Şirketin çözümü, sensör türü, çip seti veya yüksek çözünürlüklü haritalara bağlı kalmadan çalışanuçtan uca sinir ağı modeliüzerine kurulu. Bu sistem, araç üzerindeki mevcut sensörlerden elde edilen verileri kullanarak sürüş davranışını öğreniyor ve yönlendiriyor. Ayrıca Wayve yazılımı, otomobil üreticilerinin hali hazırda kullandığı donanımlar üzerinde çalışabilecek şekilde tasarlandı. Bu da üreticilere ek donanım maliyetinden kaçınma ve daha esnek entegrasyon imkanı sunuyor. Wayve’in teknolojisi, otomotiv üreticilerine ve teknoloji şirketlerine sunulan iki temel ürünle ticarileştiriliyor. Bunlardan ilki, sürücünün dikkatini yolda tutmasını gerektiren “eyes on” destekli sürüş sistemi. Bu çözümde sürücü, gerektiğinde müdahale etmek zorunda kalıyor. İkinci ürün ise belirli koşullar altında tamamen otonom sürüş sağlayan “eyes off” sistemi. Bu teknoloji, robotaksi uygulamalarında veya bireysel araçlarda tam otomatik sürüş deneyimi sunabilecek şekilde geliştiriliyor. Wayve’in müşteri portföyü de hızla genişliyor.Nissan, şirketin teknolojisini2027 yılından itibarenaraçlarındaki gelişmiş sürücü destek sistemlerine (ADAS) entegre edeceğini duyurdu.Mercedes-Benz ve Stellantisde gelecekteki modellerindeWayve çözümlerini kullanmayı planlıyor. Yeni yatırımın, Wayve’in farklı otomotiv bilgi işlem platformlarıyla entegrasyonunu hızlandırması ve “Wayve AI Driver” sisteminin seri üretim araçlarda daha geniş ölçekte kullanılmasını sağlaması bekleniyor. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B077911PBJ https://www.amazon.com.tr/Logitech-MK220-Kablosuz-Klavye-920-003163/dp/B007795T3A https://www.amazon.com.tr/dp/B0GHL3RM29 https://www.n11.com/urun/maisonart-royal-50x90-70x140-cm-2li-banyo-havlu-seti-100-pamuklu-havlu-takimi-antrasit-44666085 https://www.migros.com.tr/kiri-labne-tam-yagli-taze-peynir-3-x-150-g-p-9ec09b https://store.steampowered.com/app/3534240/Uncanny_Tales_Cold_Road",
+          "image_sources": [
+            "meta_og"
+          ],
+          "prepared_image_count": 1
+        },
+        "post_text": "🚗 OTOMOTİV DEVLERİNDEN BÜYÜK YATIRIM!\n\nAMD, Arm ve Qualcomm gibi teknoloji devleri, otonom sürüş alanında faaliyet gösteren Wayve şirketine yatırım yaptı.\n\nWayve'in en dikkat çekici özelliği, donanımdan bağımsız yapay zeka sistemi. Yani, özel sensörlere veya pahalı donanımlara ihtiyaç duymadan çalışabiliyor.\n\nMercedes-Benz, Nissan, Stellantis gibi otomotiv devlerinin yanı sıra Nvidia, Microsoft ve Uber da Wayve'e destek veriyor. Hatta Uber, Wayve'in teknolojisiyle donatılmış robotaksiler için 300 milyon dolarlık ek yatırım sözü verdi.\n\nBu teknoloji, sürücüsüz araçların geleceği için önemli bir adım olarak görülüyor.\n\nPeki siz otonom sürüş teknolojileri hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_xhhax9qp.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_xhhax9qp.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-17T09:30:09.426840+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122162757098916499",
+        "article_title": "AMD, Arm ve Qualcomm’dan dikkat çeken otonom sürüş yatırımı",
+        "image_source": "meta_og",
+        "image_count": 1,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-17T09:30:14.307268+03:00"
     }
   }
 }
