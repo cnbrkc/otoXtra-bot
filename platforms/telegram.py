@@ -244,6 +244,129 @@ def _merge_pending_groups(existing: list[dict], incoming: list[dict]) -> list[di
     return merged
 
 
+def _build_queue_info(pending_groups: list[dict]) -> dict:
+    total_groups = 0
+    ready_groups = 0
+    no_caption_groups = 0
+    total_images = 0
+    previews: list[str] = []
+
+    for group in pending_groups if isinstance(pending_groups, list) else []:
+        if not isinstance(group, dict):
+            continue
+
+        total_groups += 1
+        caption = str(group.get("caption", "") or "").strip()
+        items = group.get("items", [])
+        if not isinstance(items, list):
+            items = []
+
+        unique_file_ids: set[str] = set()
+        for item in items:
+            if not isinstance(item, dict):
+                continue
+            file_id = str(item.get("file_id", "") or "").strip()
+            if file_id:
+                unique_file_ids.add(file_id)
+
+        image_count = len(unique_file_ids)
+        total_images += image_count
+
+        if caption and image_count > 0:
+            ready_groups += 1
+            title = caption.split("\n")[0].strip()[:70] or "Baslik yok"
+            previews.append(f"- ({image_count} gorsel) {title}")
+        else:
+            no_caption_groups += 1
+
+    has_pending = ready_groups > 0
+    return {
+        "total_groups": total_groups,
+        "ready_count": ready_groups,
+        "no_caption_count": no_caption_groups,
+        "total_images": total_images,
+        "has_pending": has_pending,
+        "previews": previews,
+    }
+
+
+def get_pending_shareable_queue_info() -> dict:
+    """
+    Kaydedilmis Telegram bekleyen manuel paylasim kuyrugu ozeti.
+    Bu fonksiyon sadece state'i okur, kuyruğu tuketmez.
+    """
+    state = _load_state()
+    pending_groups = state.get("pending_groups", [])
+    info = _build_queue_info(pending_groups)
+    info["last_update_id"] = int(state.get("last_update_id", 0))
+    return info
+
+
+def get_pending_shareable_queue_text(max_items: int = 5) -> str:
+    info = get_pending_shareable_queue_info()
+    previews = info.get("previews", [])
+    if not isinstance(previews, list):
+        previews = []
+
+    lines = [
+        "Telegram Manuel Kuyruk",
+        f"Toplam grup: {int(info.get('total_groups', 0))}",
+        f"Paylasima hazir: {int(info.get('ready_count', 0))}",
+        f"Aciklama bekleyen: {int(info.get('no_caption_count', 0))}",
+        f"Toplam gorsel: {int(info.get('total_images', 0))}",
+    ]
+
+    if previews:
+        lines.append("Ilk bekleyenler:")
+        for row in previews[:max(1, max_items)]:
+            lines.append(str(row))
+        if len(previews) > max_items:
+            lines.append(f"... +{len(previews) - max_items} grup daha")
+    else:
+        lines.append("Bekleyen manuel paylasim yok.")
+
+    return "\n".join(lines)
+
+
+def _extract_message_text(update: dict, expected_chat_id: str) -> str:
+    message = update.get("message", {})
+    if not isinstance(message, dict):
+        return ""
+    message_chat_id = str(((message.get("chat") or {}).get("id", ""))).strip()
+    if message_chat_id != expected_chat_id:
+        return ""
+    text = str(message.get("text", "") or "").strip()
+    return text
+
+
+def _normalize_command(text: str) -> str:
+    if not text:
+        return ""
+    first = text.split()[0].strip().lower()
+    if "@" in first:
+        first = first.split("@", 1)[0]
+    return first
+
+
+def _handle_queue_commands(updates: list, chat_id: str) -> None:
+    if not isinstance(updates, list) or not updates:
+        return
+
+    queue_cmds = {"/kuyruk", "/queue", "/bekleyen", "/manualqueue"}
+    for update in updates:
+        if not isinstance(update, dict):
+            continue
+        text = _extract_message_text(update, chat_id)
+        if not text:
+            continue
+        cmd = _normalize_command(text)
+        if cmd in queue_cmds:
+            report = get_pending_shareable_queue_text(max_items=5)
+            ok = send_message(report)
+            if ok:
+                log("telegram queue command yanitlandi", "INFO")
+
+
 def _download_telegram_file(file_id: str, update_id: int, message_id: int) -> str:
     bot_token = _get_env("TELEGRAM_BOT_TOKEN")
     if not bot_token or not file_id:
@@ -308,10 +431,13 @@ def consume_pending_shareable_content() -> Optional[dict]:
         },
         timeout=25,
     )
+
     newest_id = last_update_id
+    incoming_updates: list = []
     if updates_result:
         updates = updates_result.get("result", [])
         if isinstance(updates, list) and updates:
+            incoming_updates = updates
             for update in updates:
                 if not isinstance(update, dict):
                     continue
@@ -320,7 +446,7 @@ def consume_pending_shareable_content() -> Optional[dict]:
             incoming_groups = _build_grouped_candidates(updates, chat_id)
             if incoming_groups:
                 pending_groups = _merge_pending_groups(pending_groups, incoming_groups)
-                _save_state(newest_id, pending_groups)
+            _save_state(newest_id, pending_groups)
 
     if not state_exists and newest_id > 0:
         log(
@@ -329,6 +455,10 @@ def consume_pending_shareable_content() -> Optional[dict]:
         )
         _save_state(newest_id, [])
         return None
+
+    # Kuyruk komutu yaniti (bot calistiginda islenir)
+    if incoming_updates:
+        _handle_queue_commands(incoming_updates, chat_id)
 
     if not pending_groups:
         if newest_id != last_update_id:
