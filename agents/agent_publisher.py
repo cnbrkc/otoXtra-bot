@@ -1,10 +1,9 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.8)
+agents/agent_publisher.py - Yayinci Ajani (v3.9)
 
-v3.8:
-  - Coklu gorsel paylasiminda farkli fonksiyon imzalari icin dayaniklilik arttirildi.
-  - Gercek paylasim yoluna gore image_count kaydi duzeltildi.
-  - Telegram bildirimine gorsel kaynak/adet bilgisi eklendi.
+v3.9:
+  - Telegram bildiriminde paylasim tipi basa eklendi (MANUEL/OTOMATIK).
+  - Telegram bildiriminin sonuna manuel kuyruk durumu eklendi.
 """
 
 import os
@@ -160,35 +159,6 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
     return collected
 
 
-def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Optional[str]:
-    """
-    Farkli platform implementasyonlarinda fonksiyon imzasi degisebilir.
-    Sirayla birkac yaygin imzayi dener.
-    """
-    call_patterns = [
-        lambda: fn(image_paths, post_text_content),
-        lambda: fn(post_text_content, image_paths),
-        lambda: fn(image_paths=image_paths, message=post_text_content),
-        lambda: fn(paths=image_paths, message=post_text_content),
-        lambda: fn(photo_paths=image_paths, message=post_text_content),
-        lambda: fn(images=image_paths, message=post_text_content),
-    ]
-
-    for call_idx, call in enumerate(call_patterns, start=1):
-        try:
-            result = call()
-            if result:
-                log(f"Coklu gorsel cagri basarili (pattern={call_idx})")
-                return result
-        except TypeError:
-            # Imza uymadiysa bir sonraki deneme
-            continue
-        except Exception as exc:
-            log(f"Coklu gorsel cagri hatasi (pattern={call_idx}): {exc}", "WARNING")
-
-    return None
-
-
 def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Optional[str]:
     for fn_name in ("post_photos", "post_multi_photo", "post_album"):
         fn = getattr(fb_platform, fn_name, None)
@@ -197,7 +167,7 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
 
         try:
             log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
-            result = _try_call_multi_fn(fn, image_paths, post_text_content)
+            result = fn(image_paths, post_text_content)
             if result:
                 log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
                 return result
@@ -306,6 +276,25 @@ def _build_health_report() -> str:
     return "Saglikli"
 
 
+def _resolve_publish_mode(article: dict, image_source: str) -> str:
+    if bool(article.get("manual_priority", False)) or image_source == "telegram":
+        return "MANUEL"
+    return "OTOMATIK"
+
+
+def _queue_status_text() -> str:
+    try:
+        info = tg_platform.get_pending_shareable_queue_info()
+        ready = int(info.get("ready_count", 0))
+        total = int(info.get("total_groups", 0))
+        if ready > 0:
+            return f"Var ({ready} hazir / {total} toplam grup)"
+        return f"Yok ({total} toplam grup)"
+    except Exception as exc:
+        log(f"Kuyruk durumu okunamadi: {exc}", "WARNING")
+        return "Bilinmiyor"
+
+
 def _send_telegram_notification(
     article: dict,
     action_count: int,
@@ -318,13 +307,18 @@ def _send_telegram_notification(
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
 
+    publish_mode = _resolve_publish_mode(article, image_source)
+    queue_state = _queue_status_text()
+
     message = (
+        f"Paylasim Tipi: {publish_mode}\n"
         f"Baslik: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
         f"Skor: {score}\n"
         f"Durum: A{action_count}-P{share_count}\n"
         f"Gorsel: {image_source} ({image_count})\n"
-        f"Saglik: {health_report}"
+        f"Saglik: {health_report}\n"
+        f"Kuyruk Durumu: {queue_state}"
     )
     return tg_platform.send_message(message)
 
@@ -364,7 +358,7 @@ def run() -> bool:
     image_output = image_stage.get("output", {})
     article = image_output.get("article", {})
     post_text_content = image_output.get("post_text", "")
-    image_source = image_output.get("image_source", "unknown")
+    image = image_output.get("image_source", "unknown")
     image_paths = _collect_valid_image_paths(image_output)
 
     if not article:
