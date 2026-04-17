@@ -1,96 +1,108 @@
 {
-  "run_id": "2026-04-17-08:57",
-  "status": "completed",
-  "started_at": "2026-04-17T08:57:51.709298+03:00",
-  "updated_at": "2026-04-17T08:58:03.724697+03:00",
+  "run_id": "2026-04-17-09:17",
+  "status": "error",
+  "started_at": "2026-04-17T09:17:42.544336+03:00",
+  "updated_at": "2026-04-17T09:17:57.014678+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "telegram_priority": true,
-        "articles": []
+        "articles": [],
+        "count": 0,
+        "source_health": {
+          "Donanimhaber": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Log": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Motor1 TR": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "ShiftDelete Otomobil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "OtoAjanda": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Emre Ozpeynirci": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Dolu Batarya": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Ahmet Celik": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Otomobilcom": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "TaylanOzgurDil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "HakanDOgu": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "MuratTosun": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Sekizsilindir": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          }
+        }
       },
-      "error": null,
-      "updated_at": "2026-04-17T08:57:51.709693+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-17T09:17:57.014678+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "telegram_priority": true,
-        "selected_article": {
-          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
-          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "score": 100,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-17T08:57:51.710046+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "telegram_priority": true,
-        "article": {
-          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
-          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "post_text": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
-        "post_text_length": 526,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-17T08:57:51.710430+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
-          "summary": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "post_text": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan daha az etkileniyor? 🤔\nLPG’nin fiyat istikrarı tesadüf değil; köken farkından lojistik avantajlara kadar arkasında güçlü bir ekonomik strateji yatıyor. Otoxtra olarak, cebinizi yakından ilgilendiren bu \"sabit fiyat\" sırrını 4 temel maddede inceledik. 📈\n📌 Ekonomik sürüş planlayan dostlarınızın görmesi için bu bilgiyi kaydetmeyi ve paylaşmayı unutmayın!\n#Otoxtra #LPG #Otogaz #Ekonomi #Akaryakıt #OtomobilHaberleri #SürüşMaliyeti #Analiz",
-        "image_path": "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976265_13.jpg",
-        "image_paths": [
-          "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976265_13.jpg",
-          "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976266_14.jpg"
-        ],
-        "image_source": "telegram",
-        "image_count": 2,
-        "telegram_update_id": 279976266,
-        "telegram_group_key": "14210720659205604",
-        "telegram_message_ids": [
-          13,
-          14
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-17T08:57:51.710833+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162754230916499",
-        "article_title": "Akaryakıt piyasasındaki hareketlilik herkesin malumu, peki neden LPG bu dalgalanmalardan d",
-        "image_source": "multi_image",
-        "image_count": 2,
-        "dry_run": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-17T08:58:03.724697+03:00"
+      "updated_at": null
     }
   }
 }
