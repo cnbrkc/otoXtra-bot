@@ -67,6 +67,7 @@ def _state_file_path() -> str:
 
 def _load_state() -> dict:
     path = _state_file_path()
+    state_exists = os.path.exists(path)
     data = load_json(path)
     if not isinstance(data, dict):
         data = {}
@@ -120,6 +121,7 @@ def _load_state() -> dict:
     return {
         "last_update_id": max(0, last_update_id),
         "pending_groups": safe_pending,
+        "state_exists": state_exists,
     }
 
 
@@ -293,6 +295,7 @@ def consume_pending_shareable_content() -> Optional[dict]:
     state = _load_state()
     last_update_id = int(state.get("last_update_id", 0))
     pending_groups = state.get("pending_groups", [])
+    state_exists = bool(state.get("state_exists", False))
     if not isinstance(pending_groups, list):
         pending_groups = []
 
@@ -318,6 +321,14 @@ def consume_pending_shareable_content() -> Optional[dict]:
             if incoming_groups:
                 pending_groups = _merge_pending_groups(pending_groups, incoming_groups)
                 _save_state(newest_id, pending_groups)
+
+    if not state_exists and newest_id > 0:
+        log(
+            "telegram state bulunamadi, kuyruktaki eski guncellemeler temizlenip yalnizca yeni mesajlar beklenecek",
+            "INFO",
+        )
+        _save_state(newest_id, [])
+        return None
 
     if not pending_groups:
         if newest_id != last_update_id:
