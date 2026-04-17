@@ -56,6 +56,12 @@ _IMAGE_NOISE_HINTS = (
     "author",
     "profile",
     "yazar",
+    "cookie",
+    "uygulama-indir",
+    "dh-oneriyor",
+    "dh-cookie",
+    "instagram-big",
+    "populer-",
 )
 _IMAGE_HINT_PATHS = (
     "/wp-content/uploads/",
@@ -88,6 +94,18 @@ def _safe_int(value: Any, default: int) -> int:
         return int(value)
     except Exception:
         return default
+
+
+def _read_bool_env(name: str, default: bool) -> bool:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    val = str(raw).strip().lower()
+    if val in {"1", "true", "yes", "on"}:
+        return True
+    if val in {"0", "false", "no", "off"}:
+        return False
+    return default
 
 
 def _turkish_lower(text: str) -> str:
@@ -251,7 +269,7 @@ def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
     query_items = [
         (k, v)
         for k, v in parse_qsl(parsed.query, keep_blank_values=True)
-        if k not in _TRACKING_QUERY_KEYS
+        if k.lower() not in _TRACKING_QUERY_KEYS
     ]
     cleaned = parsed._replace(query=urlencode(query_items), fragment="")
     return urlunparse(cleaned)
@@ -292,7 +310,13 @@ def _candidate_key(url: str) -> str:
 
 def _looks_like_noise_image(url: str) -> bool:
     lower_url = url.lower()
-    return any(hint in lower_url for hint in _IMAGE_NOISE_HINTS)
+    parsed = urlparse(lower_url)
+    path = parsed.path or ""
+    if any(hint in lower_url for hint in _IMAGE_NOISE_HINTS):
+        return True
+    if "/content/img/" in path:
+        return True
+    return False
 
 
 def _is_probable_image_url(url: str) -> bool:
@@ -315,6 +339,49 @@ def _is_probable_image_url(url: str) -> bool:
     if any(p in lower for p in _IMAGE_HINT_PATHS):
         return True
     return False
+
+
+def _donanimhaber_variants(url: str) -> list[str]:
+    variants: list[str] = [url]
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    path = parsed.path or ""
+
+    if "donanimhaber.com" not in host:
+        return variants
+
+    # /src_340x1912x... -> /src/...
+    upgraded_path = re.sub(r"/src_\d{2,4}x\d{2,4}x", "/src/", path, flags=re.IGNORECASE)
+    if upgraded_path != path:
+        variants.append(urlunparse(parsed._replace(path=upgraded_path)))
+
+    # ...204564_0.jpg -> _1.._5
+    m_idx = re.search(r"(\d{4,7})_(\d+)(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
+    if m_idx:
+        base_id = m_idx.group(1)
+        ext = m_idx.group(3)
+        prefix = path[: m_idx.start()]
+        for i in range(0, 6):
+            p = f"{prefix}{base_id}_{i}{ext}"
+            variants.append(urlunparse(parsed._replace(path=p)))
+
+    # ...204564.jpg -> _0.._5
+    m_plain = re.search(r"(\d{4,7})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
+    if m_plain:
+        base_id = m_plain.group(1)
+        ext = m_plain.group(2)
+        prefix = path[: m_plain.start()]
+        for i in range(0, 6):
+            p = f"{prefix}{base_id}_{i}{ext}"
+            variants.append(urlunparse(parsed._replace(path=p)))
+
+    seen: set[str] = set()
+    unique: list[str] = []
+    for item in variants:
+        if item and item not in seen:
+            seen.add(item)
+            unique.append(item)
+    return unique
 
 
 def _thumbnail_to_original_variants(url: str) -> list[str]:
@@ -347,6 +414,10 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     )
     if filename_cleaned_path != path:
         variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
+
+    # Domain specific expansions
+    for item in list(variants):
+        variants.extend(_donanimhaber_variants(item))
 
     unique: list[str] = []
     seen: set[str] = set()
@@ -423,6 +494,56 @@ def _collect_jsonld_images(node: Any, page_url: str, collector: list[str]) -> No
             _collect_jsonld_images(item, page_url, collector)
 
 
+def _walk_json_for_image_urls(node: Any, collector: list[str], page_url: str) -> None:
+    if isinstance(node, dict):
+        for key, value in node.items():
+            lk = str(key).lower()
+            if lk in {"image", "imageurl", "thumbnailurl", "contenturl", "url"}:
+                if isinstance(value, str):
+                    normalized = _normalize_image_url(value, page_url)
+                    if normalized:
+                        collector.append(normalized)
+                elif isinstance(value, list):
+                    for item in value:
+                        _walk_json_for_image_urls(item, collector, page_url)
+                elif isinstance(value, dict):
+                    _walk_json_for_image_urls(value, collector, page_url)
+            else:
+                _walk_json_for_image_urls(value, collector, page_url)
+    elif isinstance(node, list):
+        for item in node:
+            _walk_json_for_image_urls(item, collector, page_url)
+    elif isinstance(node, str):
+        normalized = _normalize_image_url(node, page_url)
+        if normalized and _is_probable_image_url(normalized.lower()):
+            collector.append(normalized)
+
+
+def _extract_script_image_urls(script_text: str, page_url: str) -> list[str]:
+    out: list[str] = []
+    if not script_text or not script_text.strip():
+        return out
+
+    text = script_text.strip()
+    try:
+        parsed = json.loads(text)
+        _walk_json_for_image_urls(parsed, out, page_url)
+    except Exception:
+        pass
+
+    # Regex fallback
+    for m in re.finditer(
+        r'https?://[^\s"\'<>]+?\.(?:jpg|jpeg|png|webp|gif|bmp|avif)',
+        text,
+        flags=re.IGNORECASE,
+    ):
+        normalized = _normalize_image_url(m.group(0), page_url)
+        if normalized:
+            out.append(normalized)
+
+    return out
+
+
 def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
     if not url:
         return []
@@ -433,6 +554,7 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
         soup = BeautifulSoup(response.text, "html.parser")
 
         raw_candidates: list[str] = []
+        collect_limit = max(max_candidates * 3, 18)
 
         meta_selectors = [
             ('meta[property="og:image"]', "content"),
@@ -458,6 +580,14 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
                     raw_candidates.extend(_thumbnail_to_original_variants(item))
             except Exception:
                 continue
+
+        # generic script tarama
+        for script in soup.find_all("script"):
+            script_text = (script.string or script.get_text() or "").strip()
+            if not script_text:
+                continue
+            for item in _extract_script_image_urls(script_text, url):
+                raw_candidates.extend(_thumbnail_to_original_variants(item))
 
         for img in soup.find_all("img"):
             width_attr = img.get("width")
@@ -487,6 +617,13 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
                 if normalized:
                     raw_candidates.extend(_thumbnail_to_original_variants(normalized))
 
+        for source in soup.find_all("source"):
+            srcset = source.get("srcset", "") or source.get("data-srcset", "")
+            if srcset:
+                best_srcset = _extract_best_src_from_srcset(srcset, url)
+                if best_srcset:
+                    raw_candidates.extend(_thumbnail_to_original_variants(best_srcset))
+
         raw_count = len(raw_candidates)
         unique_candidates: list[str] = []
         seen_keys: set[str] = set()
@@ -503,8 +640,11 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
 
             seen_keys.add(key)
             unique_candidates.append(candidate)
-            if len(unique_candidates) >= max_candidates:
+            if len(unique_candidates) >= collect_limit:
                 break
+
+        # final output max_candidates ile sinirli
+        unique_candidates = unique_candidates[:max_candidates]
 
         log(f"extract_images_from_article: raw={raw_count}, canonical={len(unique_candidates)}, url={url[:120]}")
         return unique_candidates
@@ -534,6 +674,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
         max_articles_per_source = 25
 
     enable_article_image_scrape = bool(images_cfg.get("enable_article_image_scrape", True))
+    enable_article_image_scrape = _read_bool_env("ENABLE_ARTICLE_IMAGE_SCRAPE", enable_article_image_scrape)
+
     max_candidates_per_article = int(images_cfg.get("max_candidates_per_article", 8))
     max_article_scrapes_per_feed = int(images_cfg.get("max_article_scrapes_per_feed", 6))
 
@@ -549,7 +691,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
         feed_name = feed_info.get("name", "Unknown")
         feed_priority = feed_info.get("priority", "medium")
         feed_language = feed_info.get("language", "tr")
-        feed_can_scrape = feed_info.get("can_scrape_image", False)
+        feed_can_scrape = feed_info.get("can_scrape_image", True)
         feed_enabled = feed_info.get("enabled", True)
 
         if not feed_enabled:

@@ -1,23 +1,17 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v4.9)
+agents/agent_image.py - Gorsel Isleme Ajani (v5.0)
 
-Degisiklikler:
-- Boyut filtresi sertlestirildi (default: min 900x500 + min area 450000).
-- En-boy oran filtresi eklendi (default: 0.8 <= ratio <= 2.1).
-- Kaynak onceliklendirme eklendi:
-  og/twitter meta > article img > article/rss field.
-- Gorsel kalite puanlama eklendi:
-  cozumurluk + oran uygunlugu + dosya boyutu + kaynak bonusu.
-- Dinamik duplicate esigi eklendi:
-  ayni seri varyantlarinda perceptual duplicate daha agresif.
-- Multi-image dengesini korumak icin 2 asamali secim eklendi:
-  strict pass + gerekirse relaxed pass.
-- Env override:
-  IMAGE_MIN_WIDTH, IMAGE_MIN_HEIGHT, IMAGE_MIN_AREA,
-  IMAGE_MIN_ASPECT_RATIO, IMAGE_MAX_ASPECT_RATIO
+Degisiklikler (v5.0):
+- DonanimHaber gibi sitelerde script/json icinden gorsel URL toplama eklendi.
+- Domain-ozel URL varyant uretimi eklendi (ozellikle /src_... -> /src/ ve _0,_1,_2 ... seri denemeleri).
+- Gurultu (cookie/logo/app-banner vb.) gorseller icin daha erken ve daha net eleme eklendi.
+- picture/source[srcset] tagleri de taramaya dahil edildi.
+- Aday deneme limiti multi-image senaryoda dinamik arttirildi.
+- Kaynak tipi olarak article_script eklendi.
 """
 
 import hashlib
+import json
 import os
 import re
 import tempfile
@@ -68,6 +62,12 @@ _NOISE_HINTS = (
     "author",
     "profile",
     "yazar",
+    "cookie",
+    "uygulama-indir",
+    "dh-oneriyor",
+    "dh-cookie",
+    "instagram-big",
+    "populer-",
 )
 _IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/", "/img/", "/media/")
 _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
@@ -85,6 +85,7 @@ _DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024  # 20 MB
 _SOURCE_PRIORITY = {
     "meta_og": 0,
     "meta_twitter": 0,
+    "article_script": 1,
     "article_img": 1,
     "article_field": 2,
     "rss_field": 2,
@@ -95,6 +96,7 @@ _SOURCE_PRIORITY = {
 _SOURCE_SCORE_BONUS = {
     "meta_og": 12.0,
     "meta_twitter": 10.0,
+    "article_script": 8.0,
     "article_img": 7.0,
     "article_field": 4.0,
     "rss_field": 3.0,
@@ -268,7 +270,17 @@ def _normalize_path_for_candidate_key(path: str) -> str:
 
 def _looks_like_noise(url: str) -> bool:
     lower = url.lower()
-    return any(hint in lower for hint in _NOISE_HINTS)
+    parsed = urlparse(lower)
+    path = parsed.path or ""
+
+    if any(hint in lower for hint in _NOISE_HINTS):
+        return True
+
+    # Site-specific static asset folders that are almost never article photos
+    if "/content/img/" in path:
+        return True
+
+    return False
 
 
 def _is_probable_image_url(url: str) -> bool:
@@ -290,6 +302,49 @@ def _is_probable_image_url(url: str) -> bool:
     if any(p in lower for p in _IMAGE_HINT_PATHS):
         return True
     return False
+
+
+def _donanimhaber_variants(url: str) -> list[str]:
+    variants: list[str] = [url]
+    parsed = urlparse(url)
+    host = parsed.netloc.lower()
+    path = parsed.path or ""
+
+    if "donanimhaber.com" not in host:
+        return variants
+
+    # src_340x1912x... gibi kaliplari /src/... formuna cevir
+    upgraded_path = re.sub(r"/src_\d{2,4}x\d{2,4}x", "/src/", path, flags=re.IGNORECASE)
+    if upgraded_path != path:
+        variants.append(urlunparse(parsed._replace(path=upgraded_path)))
+
+    # 204564_0.jpg -> 204564_1.jpg ... 204564_5.jpg
+    m_idx = re.search(r"(\d{4,7})_(\d+)(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
+    if m_idx:
+        base_id = m_idx.group(1)
+        ext = m_idx.group(3)
+        prefix = path[: m_idx.start()]
+        for i in range(0, 6):
+            p = f"{prefix}{base_id}_{i}{ext}"
+            variants.append(urlunparse(parsed._replace(path=p)))
+
+    # 204564.jpg -> 204564_0.jpg ... 204564_5.jpg
+    m_plain = re.search(r"(\d{4,7})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
+    if m_plain:
+        base_id = m_plain.group(1)
+        ext = m_plain.group(2)
+        prefix = path[: m_plain.start()]
+        for i in range(0, 6):
+            p = f"{prefix}{base_id}_{i}{ext}"
+            variants.append(urlunparse(parsed._replace(path=p)))
+
+    seen: set[str] = set()
+    unique: list[str] = []
+    for item in variants:
+        if item and item not in seen:
+            seen.add(item)
+            unique.append(item)
+    return unique
 
 
 def _thumbnail_to_original_variants(url: str) -> list[str]:
@@ -318,6 +373,11 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     )
     if filename_cleaned_path != path:
         variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
+
+    # Domain specific expansions
+    for v in list(variants):
+        for dv in _donanimhaber_variants(v):
+            variants.append(dv)
 
     seen: set[str] = set()
     unique: list[str] = []
@@ -409,6 +469,47 @@ def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
             best_url = candidate
 
     return best_url
+
+
+def _walk_json_for_image_urls(node, out: list[str]) -> None:
+    if isinstance(node, dict):
+        for key, value in node.items():
+            lk = str(key).lower()
+            if lk in {"image", "imageurl", "thumbnailurl", "contenturl", "url"}:
+                if isinstance(value, str):
+                    out.append(value)
+                elif isinstance(value, list):
+                    for item in value:
+                        if isinstance(item, str):
+                            out.append(item)
+                        elif isinstance(item, dict):
+                            _walk_json_for_image_urls(item, out)
+                elif isinstance(value, dict):
+                    _walk_json_for_image_urls(value, out)
+            else:
+                _walk_json_for_image_urls(value, out)
+    elif isinstance(node, list):
+        for item in node:
+            _walk_json_for_image_urls(item, out)
+
+
+def _extract_json_image_urls(script_text: str) -> list[str]:
+    if not script_text or not script_text.strip():
+        return []
+    text = script_text.strip()
+    urls: list[str] = []
+
+    try:
+        data = json.loads(text)
+        _walk_json_for_image_urls(data, urls)
+        return urls
+    except Exception:
+        pass
+
+    # JSON tam parse edilemezse bile URL regex fallback
+    for m in re.finditer(r'https?://[^\s"\'<>]+?\.(?:jpg|jpeg|png|webp|gif|bmp|avif)', text, re.IGNORECASE):
+        urls.append(m.group(0))
+    return urls
 
 
 def _upsert_candidate(pool: list[dict], candidate: dict) -> None:
@@ -835,6 +936,7 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
             for tag in soup.select(selector):
                 _add_scrape_candidate(pool, tag.get(attr, ""), url, source_type)
 
+        # img tagleri
         for img in soup.find_all("img"):
             src_list = [
                 img.get("src", ""),
@@ -852,6 +954,22 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
 
             for src in src_list:
                 _add_scrape_candidate(pool, src, url, "article_img")
+
+        # picture/source srcset
+        for source in soup.find_all("source"):
+            srcset = source.get("srcset", "") or source.get("data-srcset", "")
+            if srcset:
+                best_srcset = _extract_best_src_from_srcset(srcset, url)
+                if best_srcset:
+                    _add_scrape_candidate(pool, best_srcset, url, "article_img")
+
+        # script JSON + regex fallback
+        for script in soup.find_all("script"):
+            script_text = script.string or script.get_text() or ""
+            if not script_text.strip():
+                continue
+            for script_url in _extract_json_image_urls(script_text):
+                _add_scrape_candidate(pool, script_url, url, "article_script")
 
         ordered = sorted(pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
         cleaned = ordered[:max_candidates]
@@ -912,12 +1030,18 @@ def prepare_images(article: dict) -> list[str]:
     if max_images_per_news < 1:
         max_images_per_news = 1
 
+    # Multi-image durumunda deneme limiti otomatik artsin.
+    effective_try_limit = max_candidates_to_try * max(1, min(max_images_per_news, 4))
+    effective_try_limit = max(effective_try_limit, max_candidates_to_try)
+    effective_try_limit = min(effective_try_limit, 60)
+
     article_title = article.get("title", "")[:120]
     log("-" * 40)
     log(f"Gorsel hazirlama basladi: {article_title}")
     log(
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
-        f"max_candidates_to_try={max_candidates_to_try}, perceptual_threshold={perceptual_threshold}"
+        f"max_candidates_to_try={max_candidates_to_try}, effective_try_limit={effective_try_limit}, "
+        f"perceptual_threshold={perceptual_threshold}"
     )
     log(
         "Validation limits: "
@@ -933,13 +1057,13 @@ def prepare_images(article: dict) -> list[str]:
     prepared_paths: list[str] = []
     used_sources: list[str] = []
 
-    candidate_pool = _collect_article_candidates(article, max_candidates_to_try)
+    candidate_pool = _collect_article_candidates(article, effective_try_limit)
     if article.get("can_scrape_image", True) and article.get("link", ""):
-        for c in scrape_article_image_urls(article.get("link", ""), max_candidates=max_candidates_to_try):
+        for c in scrape_article_image_urls(article.get("link", ""), max_candidates=effective_try_limit):
             _upsert_candidate(candidate_pool, c)
 
     candidate_pool = sorted(candidate_pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
-    candidate_pool = candidate_pool[:max_candidates_to_try]
+    candidate_pool = candidate_pool[:effective_try_limit]
     log(f"Toplam aday URL (canonical): {len(candidate_pool)}")
 
     tried_keys: set[str] = set()
