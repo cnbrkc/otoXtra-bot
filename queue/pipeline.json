@@ -1,88 +1,14 @@
 {
-  "run_id": "2026-04-18-16:08",
-  "status": "completed",
-  "started_at": "2026-04-18T16:08:39.337841+03:00",
-  "updated_at": "2026-04-18T16:12:35.648492+03:00",
+  "run_id": "2026-04-18-17:42",
+  "status": "error",
+  "started_at": "2026-04-18T17:42:39.111277+03:00",
+  "updated_at": "2026-04-18T17:44:08.973802+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-            "link": "https://www.donanimhaber.com/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak--204629",
-            "published": "2026-04-18T11:05:00+00:00",
-            "summary": "Avrupa Uzay Ajansı’nın Rosalind Franklin adlı Mars aracı, 2028’de SpaceX Falcon Heavy ile Kızıl Gezegen’e fırlatılacak. Araç, 2 metre derinlikten örnek alarak olası yaşam izlerini arayacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-              "https://www.donanimhaber.com/ImageObject",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_3.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_4.jpg",
-              "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_5.jpg",
-              "https://www.donanimhaber.com/images/images/videostartimage/videoid13440_220x391.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/Zr1uR4NEKZsRNqUkRFOA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/9AbaGjqrTkCS9Qqzujs9Pw.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/gTrDj47uZUudAbfW5yh2w.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/d2uzhLR53U65p3BqkS7aA.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2028-araci-avrupa-firlatilacak-mars-surdu-tarihi-yil-yilinda"
-          },
-          {
-            "title": "Opel Mokka GSe resmen Türkiye'de!",
-            "link": "https://tr.motor1.com/news/793355/opel-mokka-gse-turkiyede/",
-            "published": "2026-04-18T11:26:51+00:00",
-            "summary": "Lansmana özel 3.250.000 TL fiyat ile bayilerde.",
-            "image_url": "https://cdn.motor1.com/images/mgl/NGKQrj/s3/2025-opel-mokka-gse.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/NGKQrj/s3/2025-opel-mokka-gse.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/NGKQrj/s3/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/NGKQrj/s1/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/NGKQrj/s1/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/NGKQrj/239:0:1439:1080/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/NGKQrj/0:0:1080:1080/2025-opel-mokka-gse.webp",
-              "https://tr.motor1.com/news/793355/opel-mokka-gse-turkiyede/ImageObject",
-              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
-              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
-              "https://cdn.motor1.com/images/mgl/P3AYOL/s3/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/P3AYOL/s3/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/Ak4xvL/s6/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/Ak4xvL/s6/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/9meOqG/s6/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/9meOqG/s6/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/BXy8jm/s6/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/BXy8jm/s6/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/7Z37nW/s6/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/7Z37nW/s6/2025-opel-mokka-gse.jpg",
-              "https://cdn.motor1.com/images/mgl/ko4wvM/s6/2025-opel-mokka-gse.webp",
-              "https://cdn.motor1.com/images/mgl/ko4wvM/s6/2025-opel-mokka-gse.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "high",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "gse-mokka-opel-resmen-turkiye"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -151,192 +77,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-04-18T16:10:15.844664+03:00"
+      "error": "No article found",
+      "updated_at": "2026-04-18T17:44:08.973802+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-          "link": "https://www.donanimhaber.com/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak--204629",
-          "published": "2026-04-18T11:05:00+00:00",
-          "summary": "Avrupa Uzay Ajansı’nın Rosalind Franklin adlı Mars aracı, 2028’de SpaceX Falcon Heavy ile Kızıl Gezegen’e fırlatılacak. Araç, 2 metre derinlikten örnek alarak olası yaşam izlerini arayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13440_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/Zr1uR4NEKZsRNqUkRFOA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/9AbaGjqrTkCS9Qqzujs9Pw.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/gTrDj47uZUudAbfW5yh2w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/d2uzhLR53U65p3BqkS7aA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "2028-araci-avrupa-firlatilacak-mars-surdu-tarihi-yil-yilinda",
-          "base_ai_score": 78,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2
-        },
-        "score": 87,
-        "title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-        "trend_count": 1,
-        "trend_bonus": 2,
-        "freshness_bonus": 7,
-        "score_reason": "ai_scored",
-        "skipped": false,
-        "threshold": 65
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-18T16:10:19.237265+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-          "link": "https://www.donanimhaber.com/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak--204629",
-          "published": "2026-04-18T11:05:00+00:00",
-          "summary": "Avrupa Uzay Ajansı’nın Rosalind Franklin adlı Mars aracı, 2028’de SpaceX Falcon Heavy ile Kızıl Gezegen’e fırlatılacak. Araç, 2 metre derinlikten örnek alarak olası yaşam izlerini arayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13440_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/Zr1uR4NEKZsRNqUkRFOA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/9AbaGjqrTkCS9Qqzujs9Pw.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/gTrDj47uZUudAbfW5yh2w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/d2uzhLR53U65p3BqkS7aA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "2028-araci-avrupa-firlatilacak-mars-surdu-tarihi-yil-yilinda",
-          "base_ai_score": 78,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Rosalind Franklin projesinin temeli NASA’nın 1997’de Mars’a ilk yüzey aracını indirmesinin ardından ESA’nın kendi Mars aracı geliştirme fikrine dayanıyor. BaşlangıçtaAurora programıkapsamında şekillenen proje, 2000’li yılların başında 2009’da fırlatılması planlanan bir görev olarak tasarlanmıştı. İlk planlara göre araçRusya’nınSoyuz roketiyle Mars’a gönderilecekti. Ancak proje, zaman içinde hem finansal hem de teknik nedenlerle kapsamlı değişikliklere uğradı. 2010’lu yılların başında proje,ExoMarsadıyla Avrupa ve ABD’nin ortak girişimine dönüştü. 2009’da imzalanan anlaşma, NASA ve ESA’nın Mars keşif çalışmalarını birlikte yürütmesini öngörüyordu. Plan, hem Avrupa hem ABD üretimi iki yüzey aracının 2018’de Mars’a birlikte gönderilmesini içeriyordu. İş birliğinin en önemli çıktılarından biri2016yılında Proton roketiyle fırlatılanTrace Gas Orbiteroldu. Bu araç bugün halen Mars yörüngesinde aktif şekilde görev yapıyor, bilimsel veri sağlıyor ve NASA’nın yüzey görevleriyle iletişim kurulmasına yardımcı oluyor. Aynı görev kapsamında taşınan küçük bir teknoloji demonstrasyon aracı ise Mars’a iniş sırasında başarısız olmuştu. Yüzey aracının fırlatılması ise2018’den 2020’ye,ardından 2022’ye ertelendi. Parşüt sistemindeki test sorunları ve COVID-19 pandemisi bu gecikmelerde etkili oldu. Ancak asıl kırılma2022’de Rusya’nın Ukrayna’yı işgaletmesiyle yaşandı. ESA, Rusya ile yürütülen ExoMars iş birliğini sonlandırdı. Bu karar, fırlatma roketi ve iniş sistemi dahil birçok hazır bileşenin kullanılmadan kalmasına yol açtı. 2024yılındaNASA ile ESAarasında yeni bir anlaşma imzalandı. Bu anlaşmaya göre ABD, yüzey aracının fırlatma sistemi, iniş sırasında frenleme sağlayacak itki teknolojileri ve Mars gecelerinde elektronik sistemleri sıcak tutacak nükleer ısıtıcılar dahil olmak üzere kritik katkılar sağlıyor. NASA’nın onayıyla birlikte Rosalind Franklin Support and Augmentation (ROSA) programı devreye alındı ve fırlatma görevi SpaceX’e verildi. Böylece Falcon Heavy, Avrupa’nın Mars’a göndereceği ilk yüzey aracı için resmi fırlatma aracı oldu. Bu görev aynı zamandaSpaceX için Mars’a yönelik ilk fırlatmaoperasyonu olacak. ESA bugüne kadar Mars’a başarılı bir iniş gerçekleştiremedi. Bu nedenle görev, yalnızca bilimsel değil aynı zamanda tarihsel bir eşik olarak değerlendiriliyor. Fırlatmanın2028 sonundagerçekleşmesi halinde roverın (yüzey aracı)2030 yılında Mars’a ulaşması bekleniyor.Uçuş rotası, gezegenin yoğun toz fırtınası sezonundan kaçınacak şekilde planlanıyor. Görevin en kritik bilimsel hedefi, Mars yüzeyinin yaklaşık2 metre derinliğine kadar sondajyapılabilmesi. Bu derinlikte elde edilecek örneklerin, milyarlarca yıl boyunca radyasyondan korunmuş organik moleküller içerebileceği değerlendiriliyor. Bilim insanlarına göre bu tür derin katmanlar, yüzeye kıyasla yaşam izlerinin korunması açısından çok daha elverişli bir ortam sunuyor. Rover (yüzey aracı), yalnızca sondaj yeteneğiyle değil, aynı zamandagelişmiş hareket kabiliyetiylede öne çıkıyor. Altı tekerlekli yönlendirme sistemi ve “wheel walking” adı verilen özel hareket mekanizması, aracın Mars yüzeyinde daha esnek ve bağımsız şekilde ilerlemesini sağlayacak. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B0DHCD36RM?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0DNYR7D14 https://www.amazon.com.tr/dp/B0D1RHS6WS https://www.amazon.com.tr/dp/B0CBZ2S8R2 https://app.hb.biz/MfgXk4NXHzYe https://www.amazon.com.tr/b?ie=UTF8&node=207906207031"
-        },
-        "post_text": "🚀 25 YIL SONRA MARS'A YOLCULUK BAŞLIYOR!\n\nAvrupa Uzay Ajansı'nın (ESA) 25 yıldır üzerinde çalıştığı Rosalind Franklin adlı Mars aracı, sonunda 2028 yılında fırlatılacak!\n\nSpaceX'in Falcon Heavy roketiyle Kızıl Gezegen'e gidecek araç, 2 metre derinlikten örnekler alarak orada yaşam izi olup olmadığını araştıracak.\n\nProje, 1997'de başlayan ilk Mars araçlarından ilham alarak şekillenmiş. Finansal ve teknik zorluklar, pandeminin etkileri ve bazı uluslararası iş birliklerinin sona ermesi derken bu tarihi fırlatma bugüne nasip oldu.\n\nSizce Mars'ta gerçekten bir yaşam izine rastlayabilecek miyiz?",
-        "post_text_length": 596,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-18T16:10:22.307947+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-          "link": "https://www.donanimhaber.com/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak--204629",
-          "published": "2026-04-18T11:05:00+00:00",
-          "summary": "Avrupa Uzay Ajansı’nın Rosalind Franklin adlı Mars aracı, 2028’de SpaceX Falcon Heavy ile Kızıl Gezegen’e fırlatılacak. Araç, 2 metre derinlikten örnek alarak olası yaşam izlerini arayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/204629/1400x788avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/204629/src/avrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13440_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/Zr1uR4NEKZsRNqUkRFOA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/9AbaGjqrTkCS9Qqzujs9Pw.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/gTrDj47uZUudAbfW5yh2w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/d2uzhLR53U65p3BqkS7aA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_0.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_1.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260418100633&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204629%2Favrupa-nin-tarihi-mars-araci-2028-yilinda-firlatilacak204629_2.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "high",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 2,
-          "topic_fingerprint": "2028-araci-avrupa-firlatilacak-mars-surdu-tarihi-yil-yilinda",
-          "base_ai_score": 78,
-          "score": 87,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 2,
-          "full_text": "Rosalind Franklin projesinin temeli NASA’nın 1997’de Mars’a ilk yüzey aracını indirmesinin ardından ESA’nın kendi Mars aracı geliştirme fikrine dayanıyor. BaşlangıçtaAurora programıkapsamında şekillenen proje, 2000’li yılların başında 2009’da fırlatılması planlanan bir görev olarak tasarlanmıştı. İlk planlara göre araçRusya’nınSoyuz roketiyle Mars’a gönderilecekti. Ancak proje, zaman içinde hem finansal hem de teknik nedenlerle kapsamlı değişikliklere uğradı. 2010’lu yılların başında proje,ExoMarsadıyla Avrupa ve ABD’nin ortak girişimine dönüştü. 2009’da imzalanan anlaşma, NASA ve ESA’nın Mars keşif çalışmalarını birlikte yürütmesini öngörüyordu. Plan, hem Avrupa hem ABD üretimi iki yüzey aracının 2018’de Mars’a birlikte gönderilmesini içeriyordu. İş birliğinin en önemli çıktılarından biri2016yılında Proton roketiyle fırlatılanTrace Gas Orbiteroldu. Bu araç bugün halen Mars yörüngesinde aktif şekilde görev yapıyor, bilimsel veri sağlıyor ve NASA’nın yüzey görevleriyle iletişim kurulmasına yardımcı oluyor. Aynı görev kapsamında taşınan küçük bir teknoloji demonstrasyon aracı ise Mars’a iniş sırasında başarısız olmuştu. Yüzey aracının fırlatılması ise2018’den 2020’ye,ardından 2022’ye ertelendi. Parşüt sistemindeki test sorunları ve COVID-19 pandemisi bu gecikmelerde etkili oldu. Ancak asıl kırılma2022’de Rusya’nın Ukrayna’yı işgaletmesiyle yaşandı. ESA, Rusya ile yürütülen ExoMars iş birliğini sonlandırdı. Bu karar, fırlatma roketi ve iniş sistemi dahil birçok hazır bileşenin kullanılmadan kalmasına yol açtı. 2024yılındaNASA ile ESAarasında yeni bir anlaşma imzalandı. Bu anlaşmaya göre ABD, yüzey aracının fırlatma sistemi, iniş sırasında frenleme sağlayacak itki teknolojileri ve Mars gecelerinde elektronik sistemleri sıcak tutacak nükleer ısıtıcılar dahil olmak üzere kritik katkılar sağlıyor. NASA’nın onayıyla birlikte Rosalind Franklin Support and Augmentation (ROSA) programı devreye alındı ve fırlatma görevi SpaceX’e verildi. Böylece Falcon Heavy, Avrupa’nın Mars’a göndereceği ilk yüzey aracı için resmi fırlatma aracı oldu. Bu görev aynı zamandaSpaceX için Mars’a yönelik ilk fırlatmaoperasyonu olacak. ESA bugüne kadar Mars’a başarılı bir iniş gerçekleştiremedi. Bu nedenle görev, yalnızca bilimsel değil aynı zamanda tarihsel bir eşik olarak değerlendiriliyor. Fırlatmanın2028 sonundagerçekleşmesi halinde roverın (yüzey aracı)2030 yılında Mars’a ulaşması bekleniyor.Uçuş rotası, gezegenin yoğun toz fırtınası sezonundan kaçınacak şekilde planlanıyor. Görevin en kritik bilimsel hedefi, Mars yüzeyinin yaklaşık2 metre derinliğine kadar sondajyapılabilmesi. Bu derinlikte elde edilecek örneklerin, milyarlarca yıl boyunca radyasyondan korunmuş organik moleküller içerebileceği değerlendiriliyor. Bilim insanlarına göre bu tür derin katmanlar, yüzeye kıyasla yaşam izlerinin korunması açısından çok daha elverişli bir ortam sunuyor. Rover (yüzey aracı), yalnızca sondaj yeteneğiyle değil, aynı zamandagelişmiş hareket kabiliyetiylede öne çıkıyor. Altı tekerlekli yönlendirme sistemi ve “wheel walking” adı verilen özel hareket mekanizması, aracın Mars yüzeyinde daha esnek ve bağımsız şekilde ilerlemesini sağlayacak. Usain Bolt'un hızına yaklaşan insansı robot https://www.amazon.com.tr/dp/B0DHCD36RM?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0DNYR7D14 https://www.amazon.com.tr/dp/B0D1RHS6WS https://www.amazon.com.tr/dp/B0CBZ2S8R2 https://app.hb.biz/MfgXk4NXHzYe https://www.amazon.com.tr/b?ie=UTF8&node=207906207031",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4
-        },
-        "post_text": "🚀 25 YIL SONRA MARS'A YOLCULUK BAŞLIYOR!\n\nAvrupa Uzay Ajansı'nın (ESA) 25 yıldır üzerinde çalıştığı Rosalind Franklin adlı Mars aracı, sonunda 2028 yılında fırlatılacak!\n\nSpaceX'in Falcon Heavy roketiyle Kızıl Gezegen'e gidecek araç, 2 metre derinlikten örnekler alarak orada yaşam izi olup olmadığını araştıracak.\n\nProje, 1997'de başlayan ilk Mars araçlarından ilham alarak şekillenmiş. Finansal ve teknik zorluklar, pandeminin etkileri ve bazı uluslararası iş birliklerinin sona ermesi derken bu tarihi fırlatma bugüne nasip oldu.\n\nSizce Mars'ta gerçekten bir yaşam izine rastlayabilecek miyiz?",
-        "image_path": "/tmp/otoxtra_img_7661okug.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_7661okug.jpg",
-          "/tmp/otoxtra_img_3noarhzc.jpg",
-          "/tmp/otoxtra_img_nidbm3b_.jpg",
-          "/tmp/otoxtra_img_akngixep.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-18T16:10:49.070765+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122162916200916499",
-        "article_title": "25 yıl sürdü! Avrupa’nın tarihi Mars aracı 2028 yılında fırlatılacak",
-        "image_source": "multi_image",
-        "image_count": 4,
-        "dry_run": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-18T16:12:35.648492+03:00"
+      "updated_at": null
     }
   }
 }
