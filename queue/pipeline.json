@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-04-19-09:48",
+  "run_id": "2026-04-19-11:06",
   "status": "error",
-  "started_at": "2026-04-19T09:48:05.292464+03:00",
-  "updated_at": "2026-04-19T09:49:08.138870+03:00",
+  "started_at": "2026-04-19T11:06:52.581819+03:00",
+  "updated_at": "2026-04-19T11:08:05.741982+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "DACIA CEO'SU TÜRKİYE'DE! GÖZLER STRIKER'DA!\nOYAK RENAULT FABRİKASI'NDA DACIA STRIKER GÖREVE HAZIRLANIYOR!\n.\nYepyeni Striker için Dacia CEO'su ve Renault Grubu Liderlik Ekibi üyesi Katrin Adt Oyak Renault Fabrikası'na geldi. Bu ziyaret sırasında Dacia markasını Türkiye'de daha güçlü bir konuma taşıyacak görüşmeler de gerçekleştirildi.\n.\nKatrin Adt yaptığı açıklamalarda şunları söyledi: \"Türkiye hızlı hareket eden, dayanıklı ve son derece stratejik bir pazardır. Aynı zamanda Striker'ın doğduğu yerdir. Bu ziyaret piyasayı derinlemesine anlamak ve hem karşılaştığımız zorlukların hem de Türkiye'deki Dacia markasının güçlü potansiyelinin tam farkında olmak için yapıldı.\"\nŞahane gelişme, hayırlı olsun.",
+            "link": "https://nitter.net/murattosunMSE/status/2045772681887224134#m",
+            "published": "2026-04-19T07:53:10+00:00",
+            "summary": "DACIA CEO'SU TÜRKİYE'DE! GÖZLER STRIKER'DA! OYAK RENAULT FABRİKASI'NDA DACIA STRIKER GÖREVE HAZIRLANIYOR! . Yepyeni Striker için Dacia CEO'su ve Renault Grubu Liderlik Ekibi üyesi Katrin Adt Oyak Renault Fabrikası'na geldi. Bu ziyaret sırasında Dacia markasını Türkiye'de daha güçlü bir konuma taşıyacak görüşmeler de gerçekleştirildi. . Katrin Adt yaptığı açıklamalarda şunları söyledi: \"Türkiye hızlı hareket eden, dayanıklı ve son derece stratejik bir pazardır. Aynı zamanda Striker'ın doğduğu yerdir. Bu ziyaret piyasayı derinlemesine anlamak ve hem karşılaştığımız zorlukların hem de Türkiye'deki Dacia markasının güçlü potansiyelinin tam farkında olmak için yapıldı.\" Şahane gelişme, hayırlı olsun.",
+            "image_url": "https://nitter.net/pic/media%2FHGQLVgOXwAAZetn.jpg",
+            "rss_image_url": "https://nitter.net/pic/media%2FHGQLVgOXwAAZetn.jpg",
+            "image_candidates": [
+              "https://nitter.net/pic/media%2FHGQLVgOXwAAZetn.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "MuratTosun",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aciklamalarda-adt-adt-anlamak-ayni-ceo-ceo-dacia-dacia-dacia-dacia-dacia-dayanikli-derece-derinlemesine-dogdugu-eden-ekibi-fabri-fabrikasi-farkinda-gelisme-gerceklestirildi-goreve-gorusmeler-gozler-grubu-guclu-guclu-hareket-hayirli-hazirlaniyor-hem-hem-hizli-karsilastigimiz-kasi-katrin-katrin-konuma-liderlik-markasini-markasinin-nda-olmak-olsun-oyak-oyak-pazardir-piyasayi-potansiyelinin-renault-renault-renault-sahane-sirasinda-soyledi-stratejik-striker-striker-striker-striker-sunlari-tam-tasiyacak-turki-turkiye-turkiye-turkiye-uyesi-yaptigi-yepyeni-yerdir-zamanda-ziyaret-ziyaret-zorluklarin"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,14 +97,14 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-19T09:49:08.138870+03:00"
+      "error": null,
+      "updated_at": "2026-04-19T11:08:03.017410+03:00"
     },
     "score": {
-      "status": "waiting",
+      "status": "error",
       "output": null,
-      "error": null,
-      "updated_at": null
+      "error": "No article above threshold (threshold=50, top_score=10)",
+      "updated_at": "2026-04-19T11:08:05.741982+03:00"
     },
     "write": {
       "status": "waiting",
