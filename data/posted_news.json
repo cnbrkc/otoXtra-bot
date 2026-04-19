@@ -978,23 +978,23 @@
     "2026-04-18": 6,
     "2026-04-19": 2
   },
-  "last_check_time": "2026-04-19T16:13:28.231400+03:00",
+  "last_check_time": "2026-04-19T17:44:49.395338+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
       "2026-04-17": 10,
       "2026-04-18": 10,
-      "2026-04-19": 4
+      "2026-04-19": 5
     },
     "weekly": {
       "2026-W16": {
-        "actions": 39,
+        "actions": 40,
         "shares": 23,
-        "error_total": 8,
+        "error_total": 9,
         "errors": {
           "SCORER_FAILED: No article above threshold": 1,
           "ORCHESTRATOR_CRITICAL: load_json() got an unexpected keyword argument 'default'": 2,
-          "FETCH_FAILED: No article found": 4,
+          "FETCH_FAILED: No article found": 5,
           "SCORER_FAILED: No article above threshold (threshold=50, top_score=10)": 1
         },
         "report_sent": false,
