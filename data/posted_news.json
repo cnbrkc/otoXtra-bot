@@ -1002,13 +1002,14 @@
     "2026-04-18": 6,
     "2026-04-19": 4
   },
-  "last_check_time": "2026-04-19T22:42:48.368296+03:00",
+  "last_check_time": "2026-04-20T10:19:23.245052+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
       "2026-04-17": 10,
       "2026-04-18": 10,
-      "2026-04-19": 9
+      "2026-04-19": 9,
+      "2026-04-20": 1
     },
     "weekly": {
       "2026-W16": {
@@ -1021,10 +1022,22 @@
           "FETCH_FAILED: No article found": 5,
           "SCORER_FAILED: No article above threshold (threshold=50, top_score=10)": 1
         },
-        "report_sent": false,
-        "report_sent_at": null,
+        "report_sent": true,
+        "report_sent_at": "2026-04-20T10:17:59.917120+03:00",
         "skip_total": 0,
         "skips": {}
+      },
+      "2026-W17": {
+        "actions": 1,
+        "shares": 0,
+        "error_total": 1,
+        "errors": {
+          "SCORER_FAILED: No article above threshold (threshold=50, top_score=11)": 1
+        },
+        "skip_total": 0,
+        "skips": {},
+        "report_sent": false,
+        "report_sent_at": null
       }
     }
   }
