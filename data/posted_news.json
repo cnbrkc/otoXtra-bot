@@ -1148,7 +1148,7 @@
     "2026-04-20": 6,
     "2026-04-21": 6
   },
-  "last_check_time": "2026-04-21T20:11:53.662854+03:00",
+  "last_check_time": "2026-04-21T22:19:28.367916+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -1156,7 +1156,7 @@
       "2026-04-18": 10,
       "2026-04-19": 9,
       "2026-04-20": 7,
-      "2026-04-21": 6
+      "2026-04-21": 7
     },
     "weekly": {
       "2026-W16": {
@@ -1175,11 +1175,12 @@
         "skips": {}
       },
       "2026-W17": {
-        "actions": 13,
+        "actions": 14,
         "shares": 12,
-        "error_total": 1,
+        "error_total": 2,
         "errors": {
-          "SCORER_FAILED: No article above threshold (threshold=50, top_score=11)": 1
+          "SCORER_FAILED: No article above threshold (threshold=50, top_score=11)": 1,
+          "SCORER_FAILED: No article above threshold (threshold=65, top_score=11)": 1
         },
         "skip_total": 0,
         "skips": {},
