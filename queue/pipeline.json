@@ -1,94 +1,147 @@
 {
-  "run_id": "2026-04-25-13:48",
-  "status": "completed",
-  "started_at": "2026-04-25T13:48:03.729204+03:00",
-  "updated_at": "2026-04-25T13:48:09.072611+03:00",
+  "run_id": "2026-04-25-16:11",
+  "status": "error",
+  "started_at": "2026-04-25T16:11:23.458953+03:00",
+  "updated_at": "2026-04-25T16:12:57.873019+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
-        "telegram_priority": true,
-        "articles": []
+        "articles": [
+          {
+            "title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+            "link": "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/",
+            "published": "2026-04-25T13:00:00+00:00",
+            "summary": "Standı Motor1 ekibi de gezdi.",
+            "image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+              "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.jpg",
+              "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.webp",
+              "https://cdn.motor1.com/images/mgl/xq3GAq/263:0:496:373/byd-formula.webp",
+              "https://cdn.motor1.com/images/mgl/xq3GAq/325:0:373:373/byd-formula.webp",
+              "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/ImageObject",
+              "https://cdn.motor1.com/images/custom/thumbnail/denza-z-1.jpg",
+              "https://cdn.motor1.com/images/custom/thumbnail/ocean-v-1.jpg",
+              "https://cdn.motor1.com/images/custom/thumbnail/fcb-formula-3.png",
+              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
+              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
+              "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.webp",
+              "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.jpg",
+              "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.webp",
+              "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.jpg",
+              "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.webp",
+              "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.jpg",
+              "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.webp",
+              "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.jpg",
+              "https://cdn.motor1.com/images/mgl/Rqkbjx/s5/porsche-911-gt3-rs-with-manthey-kit-nurburgring-lap-time.webp"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "byd-cikartma-fuari-nda-otomobil-pekin-yapti"
+          }
+        ],
+        "count": 1,
+        "source_health": {
+          "Donanimhaber": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Log": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Motor1 TR": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "ShiftDelete Otomobil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "OtoAjanda": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Emre Ozpeynirci": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Dolu Batarya": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Ahmet Celik": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Otomobilcom": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "TaylanOzgurDil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "HakanDOgu": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "MuratTosun": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Sekizsilindir": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          }
+        }
       },
       "error": null,
-      "updated_at": "2026-04-25T13:48:03.729662+03:00"
+      "updated_at": "2026-04-25T16:12:55.184694+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "telegram_priority": true,
-        "selected_article": {
-          "title": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇",
-          "summary": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇\nÇeyrek deponun altına düşmek sadece bir risk değil, aynı zamanda yakıt pompanıza gönderilen bir davetiyedir. Pompanızın sağlığını korumak ve cebinizi beklenmedik masraflardan kurtarmak için deponuzu zamanında tazeleyin.\nPeki siz hangi taraftasınız?\nA) Işık yanmadan hayatta rahat etmem.\nB) Depo yarımın altına düştüğü an istasyona girerim.\nCevapları yorumlarda bekliyoruz! 👇\n#Otoxtra #YakıtTasarrufu #AraçBakımı #Otomobil #Bilgi #SürüşKeyfi",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "score": 100,
-        "skipped": false
-      },
-      "error": null,
-      "updated_at": "2026-04-25T13:48:03.730021+03:00"
+      "status": "error",
+      "output": null,
+      "error": "No article above threshold (threshold=65, top_score=56)",
+      "updated_at": "2026-04-25T16:12:57.873019+03:00"
     },
     "write": {
-      "status": "done",
-      "output": {
-        "telegram_priority": true,
-        "article": {
-          "title": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇",
-          "summary": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇\nÇeyrek deponun altına düşmek sadece bir risk değil, aynı zamanda yakıt pompanıza gönderilen bir davetiyedir. Pompanızın sağlığını korumak ve cebinizi beklenmedik masraflardan kurtarmak için deponuzu zamanında tazeleyin.\nPeki siz hangi taraftasınız?\nA) Işık yanmadan hayatta rahat etmem.\nB) Depo yarımın altına düştüğü an istasyona girerim.\nCevapları yorumlarda bekliyoruz! 👇\n#Otoxtra #YakıtTasarrufu #AraçBakımı #Otomobil #Bilgi #SürüşKeyfi",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "post_text": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇\nÇeyrek deponun altına düşmek sadece bir risk değil, aynı zamanda yakıt pompanıza gönderilen bir davetiyedir. Pompanızın sağlığını korumak ve cebinizi beklenmedik masraflardan kurtarmak için deponuzu zamanında tazeleyin.\nPeki siz hangi taraftasınız?\nA) Işık yanmadan hayatta rahat etmem.\nB) Depo yarımın altına düştüğü an istasyona girerim.\nCevapları yorumlarda bekliyoruz! 👇\n#Otoxtra #YakıtTasarrufu #AraçBakımı #Otomobil #Bilgi #SürüşKeyfi",
-        "post_text_length": 529,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-25T13:48:03.730449+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇",
-          "summary": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇\nÇeyrek deponun altına düşmek sadece bir risk değil, aynı zamanda yakıt pompanıza gönderilen bir davetiyedir. Pompanızın sağlığını korumak ve cebinizi beklenmedik masraflardan kurtarmak için deponuzu zamanında tazeleyin.\nPeki siz hangi taraftasınız?\nA) Işık yanmadan hayatta rahat etmem.\nB) Depo yarımın altına düştüğü an istasyona girerim.\nCevapları yorumlarda bekliyoruz! 👇\n#Otoxtra #YakıtTasarrufu #AraçBakımı #Otomobil #Bilgi #SürüşKeyfi",
-          "link": "",
-          "source_name": "Telegram",
-          "topic_fingerprint": "",
-          "manual_priority": true
-        },
-        "post_text": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇\nÇeyrek deponun altına düşmek sadece bir risk değil, aynı zamanda yakıt pompanıza gönderilen bir davetiyedir. Pompanızın sağlığını korumak ve cebinizi beklenmedik masraflardan kurtarmak için deponuzu zamanında tazeleyin.\nPeki siz hangi taraftasınız?\nA) Işık yanmadan hayatta rahat etmem.\nB) Depo yarımın altına düştüğü an istasyona girerim.\nCevapları yorumlarda bekliyoruz! 👇\n#Otoxtra #YakıtTasarrufu #AraçBakımı #Otomobil #Bilgi #SürüşKeyfi",
-        "image_path": "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976276_81.jpg",
-        "image_paths": [
-          "/home/runner/work/otoXtra-bot/otoXtra-bot/data/telegram_media/tg_279976276_81.jpg"
-        ],
-        "image_source": "telegram",
-        "image_count": 1,
-        "telegram_update_id": 279976276,
-        "telegram_group_key": "single:279976276",
-        "telegram_message_ids": [
-          81
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-25T13:48:03.730898+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122163700154916499",
-        "article_title": "Işık yanınca 'daha 50 kilometre gider bu' diyen o arkadaşını etiketleme postu geldi! ⛽️👇",
-        "image_source": "single_image",
-        "image_count": 1,
-        "dry_run": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-04-25T13:48:09.072611+03:00"
+      "updated_at": null
     }
   }
 }
