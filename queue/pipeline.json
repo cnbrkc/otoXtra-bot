@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-04-25-16:11",
-  "status": "error",
-  "started_at": "2026-04-25T16:11:23.458953+03:00",
-  "updated_at": "2026-04-25T16:12:57.873019+03:00",
+  "run_id": "2026-04-25-17:45",
+  "status": "completed",
+  "started_at": "2026-04-25T17:45:15.603177+03:00",
+  "updated_at": "2026-04-25T17:49:35.338718+03:00",
   "stages": {
     "fetch": {
       "status": "done",
@@ -45,9 +45,28 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "byd-cikartma-fuari-nda-otomobil-pekin-yapti"
+          },
+          {
+            "title": "Bir Alfa almak için tek bir nedenim olabilir. O da Busso'dur arkadaşlar. Temiz bir Busso'lu Alfa için ciddi bir tercih değişikliği yapabilirim. Gerek görüntüsü, gerek performansı ve gerekse de sesi ile dünyalara bedel bir motor yapmış adamlar.",
+            "link": "https://nitter.net/sekizsilindir/status/2048039371463348542#m",
+            "published": "2026-04-25T14:00:11+00:00",
+            "summary": "Bir Alfa almak için tek bir nedenim olabilir. O da Busso'dur arkadaşlar. Temiz bir Busso'lu Alfa için ciddi bir tercih değişikliği yapabilirim. Gerek görüntüsü, gerek performansı ve gerekse de sesi ile dünyalara bedel bir motor yapmış adamlar. UNICARNS (@realUNICARNS) Italian tuxedo on wheels — https://nitter.net/realUNICARNS/status/2047714958108983710#m",
+            "image_url": "https://nitter.net/pic/media%2FHGrxsiCWUAA5DSv.jpg",
+            "rss_image_url": "https://nitter.net/pic/media%2FHGrxsiCWUAA5DSv.jpg",
+            "image_candidates": [
+              "https://nitter.net/pic/media%2FHGrxsiCWUAA5DSv.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Sekizsilindir",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "adamlar-alfa-alfa-almak-arkadaslar-bedel-busso-busso-ciddi-degisikligi-dunyalara-dur-gerek-gerek-gerekse-goruntusu-motor-nedenim-olabilir-performansi-sesi-tek-temiz-tercih-yapabilirim-yapmis"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -117,31 +136,200 @@
         }
       },
       "error": null,
-      "updated_at": "2026-04-25T16:12:55.184694+03:00"
+      "updated_at": "2026-04-25T17:46:36.927227+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold (threshold=65, top_score=56)",
-      "updated_at": "2026-04-25T16:12:57.873019+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+          "link": "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/",
+          "published": "2026-04-25T13:00:00+00:00",
+          "summary": "Standı Motor1 ekibi de gezdi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/263:0:496:373/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/325:0:373:373/byd-formula.webp",
+            "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/ImageObject",
+            "https://cdn.motor1.com/images/custom/thumbnail/denza-z-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/ocean-v-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/fcb-formula-3.png",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.webp",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.jpg",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.webp",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.webp",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.jpg",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.webp",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.jpg",
+            "https://cdn.motor1.com/images/mgl/Rqkbjx/s5/porsche-911-gt3-rs-with-manthey-kit-nurburgring-lap-time.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "byd-cikartma-fuari-nda-otomobil-pekin-yapti",
+          "base_ai_score": 63,
+          "score": 71,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 71,
+        "title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 65
+      },
+      "error": null,
+      "updated_at": "2026-04-25T17:46:40.086589+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+          "link": "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/",
+          "published": "2026-04-25T13:00:00+00:00",
+          "summary": "Standı Motor1 ekibi de gezdi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/263:0:496:373/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/325:0:373:373/byd-formula.webp",
+            "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/ImageObject",
+            "https://cdn.motor1.com/images/custom/thumbnail/denza-z-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/ocean-v-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/fcb-formula-3.png",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.webp",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.jpg",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.webp",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.webp",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.jpg",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.webp",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.jpg",
+            "https://cdn.motor1.com/images/mgl/Rqkbjx/s5/porsche-911-gt3-rs-with-manthey-kit-nurburgring-lap-time.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "byd-cikartma-fuari-nda-otomobil-pekin-yapti",
+          "base_ai_score": 63,
+          "score": 71,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BYD, Pekin Otomobil Fuarı’nda sergilediği yeni model ve konseptlerle mobilitenin geleceğine yön veren teknolojilerini bir kez daha gözler önüne serdi. Süper spor otomobillerden aile odaklı mobilite çözümlerine uzanan geniş ürün yelpazesi ile markanın Ar-Ge gücünü ve inovasyon vizyonunu ortaya koydu. BYD, premium ve ileri teknoloji odaklı markaları DENZA, YANGWANG ve FANGCHENGBAO’ya ait modelleri de fuarda sergileyerek; elektrikli mobilitede performans, güvenlik, konfor ve kullanıcı deneyimini yeniden tanımlayan çözümler sunuyor. Pekin Otomobil Fuarı’nda tanıtılan modeller, BYD’nin çok katmanlı ürün stratejisini somut biçimde ortaya koydu. Markanın premium segmentte konumlanan teknoloji odaklı markası DENZA’nın yeni modeli DENZA Z, 1000 beygir gücünü aşan performansıyla elektrikli süper otomobil kategorisine güçlü bir giriş yaparken; YANGWANG markasının U9 Xtreme modeli ise kırdığı hız rekorlarıyla ileri mühendisliğin ulaştığı noktayı gözler önüne serdi. YANGWANG tarafında yalnızca performans odaklı U9 Xtreme değil, aynı zamanda ultra lüks SUV segmentinde konumlanan YANGWANG U8L de dikkat çeken modeller arasında yer aldı. Özellikle dört koltuklu “Dingzang Edition” versiyonuyla tanıtılan U8L, markanın dört motorlu e4 platformu, gelişmiş gövde kontrol sistemleri ve yeni nesil batarya teknolojileriyle donatıldı. BYD’nin geleceğe yönelik vizyonunu yansıtan OCEAN-V konsepti ise mobiliteyi yalnızca bir ulaşım çözümü olmaktan çıkarıp çok işlevli bir yaşam alanına dönüştüren yaklaşımıyla dikkati çekti. Kişiselleştirme odaklı FANGCHENGBAO markası altında geliştirilen spor konsept otomobili FORMULA X ile, yeni sedan serileri FORMULA S ve FORMULA SL, Pekin Otomobil Fuarı’nda dikkat çekici bir çıkış yaptı. Formula S serisi, “tek araç, çoklu form” yaklaşımıyla kişiselleştirilebilir sedan segmentinde yeni bir kategori tanımlıyor. YANGWANG’ın U9 Xtreme hiper otomobili, 496,22 km/sa’lik hızıyla “dünyanın en hızlı elektrikli seri üretim otomobili” unvanını elde ederek global ölçekte dikkatleri üzerine çekmişti. Pekin’de “The Dawn (Şafak)” versiyonuyla sergilenen model, hız rekorunun kırıldığı sabahın ışıklarından ilham alan tasarım detaylarıyla markanın mühendislik ve tasarım yaklaşımını bir araya getiriyor. Fuarda öne çıkan en kritik başlıklar, BYD’nin geliştirdiği FLASH Şarj (ultra hızlı şarj teknolojisi) ve 2. NesilBlade Bataryaoldu. Bu iki teknoloji, elektrikli araç kullanımındaki en büyük bariyerlerden biri olan şarj süresi ve menzil endişesini minimize etmeyi hedefliyor. BYD’nin yeni nesil modellerinde sunulan bu teknoloji, ultra hızlı dolum kapasitesi sayesinde batarya seviyesini yüzde 10’dan yüzde 70’e yalnızca beş dakikada, yüzde 10’dan yüzde 97’ye ise sadece dokuz dakikada ulaştırıyor. Elektrikli araçlar için en zorlu koşullardan biri olan -30°C gibi düşük sıcaklıklarda dahi FLASH Şarj ünitesi, Blade Batarya 2.0’ı yüzde 20’den yüzde 97 doluluğa yalnızca 12 dakikada çıkarabiliyor. Altı yıllık yoğun araştırma ve geliştirme çalışmaları sonucunda, 2. Nesil Blade Batarya, içten yanmalı araçların yakıt ikmal hızına eşdeğer bir şarj deneyimi sunuyor. Yeni nesil batarya teknolojisi; güvenlik, dayanıklılık ve enerji yoğunluğu alanlarında sektörde referans noktası oluştururken, FLASH Şarj ile araçların dakikalar içinde yüksek batarya doluluğuna ulaşması mümkün hale geliyor. Bu yaklaşım, BYD’nin sadece araç üreticisi değil, aynı zamanda teknoloji geliştirici kimliğini güçlendiriyor."
+        },
+        "post_text": "🚗 BYD PEKİN'DE MÜTHİŞ BİR GÖVDE GÖSTERİSİ YAPTI!\n\nBYD, Pekin Otomobil Fuarı'nda geleceğin mobilite çözümlerini sergiledi. Süper spor otomobillerden aile araçlarına kadar geniş bir yelpazede teknoloji ve inovasyon gücünü ortaya koydu.\n\nDENZA, YANGWANG ve FANGCHENGBAO gibi markaların yeni modelleri de fuardaydı. Özellikle DENZA Z'nin 1000 beygir gücünü aşan performansı ve YANGWANG U9 Xtreme'in hız rekorları dikkat çekti. Lüks SUV YANGWANG U8L de yeni teknolojileriyle göz doldurdu.\n\nSizce bu modellerden hangisi otomotiv dünyasında en çok ses getirecek?",
+        "post_text_length": 555,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-25T17:46:41.505627+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+          "link": "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/",
+          "published": "2026-04-25T13:00:00+00:00",
+          "summary": "Standı Motor1 ekibi de gezdi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s3/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/s1/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/263:0:496:373/byd-formula.webp",
+            "https://cdn.motor1.com/images/mgl/xq3GAq/325:0:373:373/byd-formula.webp",
+            "https://tr.motor1.com/news/794058/byd-pekin-otomobil-fuari-2026/ImageObject",
+            "https://cdn.motor1.com/images/custom/thumbnail/denza-z-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/ocean-v-1.jpg",
+            "https://cdn.motor1.com/images/custom/thumbnail/fcb-formula-3.png",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
+            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.webp",
+            "https://cdn.motor1.com/images/mgl/Oo9y2Y/s4/opel-vivaro.jpg",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.webp",
+            "https://cdn.motor1.com/images/mgl/mM2N9q/s4/bugatti-hypercar.jpg",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.webp",
+            "https://cdn.motor1.com/images/mgl/xq3Owp/s6/opel-grandland-awd.jpg",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.webp",
+            "https://cdn.motor1.com/images/mgl/8A30bv/s5/2026-alfa-romeo-tonale.jpg",
+            "https://cdn.motor1.com/images/mgl/Rqkbjx/s5/porsche-911-gt3-rs-with-manthey-kit-nurburgring-lap-time.webp"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "byd-cikartma-fuari-nda-otomobil-pekin-yapti",
+          "base_ai_score": 63,
+          "score": 71,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BYD, Pekin Otomobil Fuarı’nda sergilediği yeni model ve konseptlerle mobilitenin geleceğine yön veren teknolojilerini bir kez daha gözler önüne serdi. Süper spor otomobillerden aile odaklı mobilite çözümlerine uzanan geniş ürün yelpazesi ile markanın Ar-Ge gücünü ve inovasyon vizyonunu ortaya koydu. BYD, premium ve ileri teknoloji odaklı markaları DENZA, YANGWANG ve FANGCHENGBAO’ya ait modelleri de fuarda sergileyerek; elektrikli mobilitede performans, güvenlik, konfor ve kullanıcı deneyimini yeniden tanımlayan çözümler sunuyor. Pekin Otomobil Fuarı’nda tanıtılan modeller, BYD’nin çok katmanlı ürün stratejisini somut biçimde ortaya koydu. Markanın premium segmentte konumlanan teknoloji odaklı markası DENZA’nın yeni modeli DENZA Z, 1000 beygir gücünü aşan performansıyla elektrikli süper otomobil kategorisine güçlü bir giriş yaparken; YANGWANG markasının U9 Xtreme modeli ise kırdığı hız rekorlarıyla ileri mühendisliğin ulaştığı noktayı gözler önüne serdi. YANGWANG tarafında yalnızca performans odaklı U9 Xtreme değil, aynı zamanda ultra lüks SUV segmentinde konumlanan YANGWANG U8L de dikkat çeken modeller arasında yer aldı. Özellikle dört koltuklu “Dingzang Edition” versiyonuyla tanıtılan U8L, markanın dört motorlu e4 platformu, gelişmiş gövde kontrol sistemleri ve yeni nesil batarya teknolojileriyle donatıldı. BYD’nin geleceğe yönelik vizyonunu yansıtan OCEAN-V konsepti ise mobiliteyi yalnızca bir ulaşım çözümü olmaktan çıkarıp çok işlevli bir yaşam alanına dönüştüren yaklaşımıyla dikkati çekti. Kişiselleştirme odaklı FANGCHENGBAO markası altında geliştirilen spor konsept otomobili FORMULA X ile, yeni sedan serileri FORMULA S ve FORMULA SL, Pekin Otomobil Fuarı’nda dikkat çekici bir çıkış yaptı. Formula S serisi, “tek araç, çoklu form” yaklaşımıyla kişiselleştirilebilir sedan segmentinde yeni bir kategori tanımlıyor. YANGWANG’ın U9 Xtreme hiper otomobili, 496,22 km/sa’lik hızıyla “dünyanın en hızlı elektrikli seri üretim otomobili” unvanını elde ederek global ölçekte dikkatleri üzerine çekmişti. Pekin’de “The Dawn (Şafak)” versiyonuyla sergilenen model, hız rekorunun kırıldığı sabahın ışıklarından ilham alan tasarım detaylarıyla markanın mühendislik ve tasarım yaklaşımını bir araya getiriyor. Fuarda öne çıkan en kritik başlıklar, BYD’nin geliştirdiği FLASH Şarj (ultra hızlı şarj teknolojisi) ve 2. NesilBlade Bataryaoldu. Bu iki teknoloji, elektrikli araç kullanımındaki en büyük bariyerlerden biri olan şarj süresi ve menzil endişesini minimize etmeyi hedefliyor. BYD’nin yeni nesil modellerinde sunulan bu teknoloji, ultra hızlı dolum kapasitesi sayesinde batarya seviyesini yüzde 10’dan yüzde 70’e yalnızca beş dakikada, yüzde 10’dan yüzde 97’ye ise sadece dokuz dakikada ulaştırıyor. Elektrikli araçlar için en zorlu koşullardan biri olan -30°C gibi düşük sıcaklıklarda dahi FLASH Şarj ünitesi, Blade Batarya 2.0’ı yüzde 20’den yüzde 97 doluluğa yalnızca 12 dakikada çıkarabiliyor. Altı yıllık yoğun araştırma ve geliştirme çalışmaları sonucunda, 2. Nesil Blade Batarya, içten yanmalı araçların yakıt ikmal hızına eşdeğer bir şarj deneyimi sunuyor. Yeni nesil batarya teknolojisi; güvenlik, dayanıklılık ve enerji yoğunluğu alanlarında sektörde referans noktası oluştururken, FLASH Şarj ile araçların dakikalar içinde yüksek batarya doluluğuna ulaşması mümkün hale geliyor. Bu yaklaşım, BYD’nin sadece araç üreticisi değil, aynı zamanda teknoloji geliştirici kimliğini güçlendiriyor.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4
+        },
+        "post_text": "🚗 BYD PEKİN'DE MÜTHİŞ BİR GÖVDE GÖSTERİSİ YAPTI!\n\nBYD, Pekin Otomobil Fuarı'nda geleceğin mobilite çözümlerini sergiledi. Süper spor otomobillerden aile araçlarına kadar geniş bir yelpazede teknoloji ve inovasyon gücünü ortaya koydu.\n\nDENZA, YANGWANG ve FANGCHENGBAO gibi markaların yeni modelleri de fuardaydı. Özellikle DENZA Z'nin 1000 beygir gücünü aşan performansı ve YANGWANG U9 Xtreme'in hız rekorları dikkat çekti. Lüks SUV YANGWANG U8L de yeni teknolojileriyle göz doldurdu.\n\nSizce bu modellerden hangisi otomotiv dünyasında en çok ses getirecek?",
+        "image_path": "/tmp/otoxtra_img_0nplye57.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_0nplye57.jpg",
+          "/tmp/otoxtra_img_zsl6giub.jpg",
+          "/tmp/otoxtra_img_6c8ulr9t.jpg",
+          "/tmp/otoxtra_img_1kpmd4z_.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-25T17:46:44.730504+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122163716678916499",
+        "article_title": "BYD, Pekin Otomobil Fuarı'nda çıkartma yaptı!",
+        "image_source": "multi_image",
+        "image_count": 4,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-25T17:49:35.338718+03:00"
     }
   }
 }
