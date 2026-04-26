@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-04-26-17:48",
-  "status": "error",
-  "started_at": "2026-04-26T17:48:52.281294+03:00",
-  "updated_at": "2026-04-26T17:50:25.735758+03:00",
+  "run_id": "2026-04-26-19:50",
+  "status": "completed",
+  "started_at": "2026-04-26T19:50:06.670952+03:00",
+  "updated_at": "2026-04-26T19:56:28.471067+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+            "link": "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/",
+            "published": "2026-04-26T15:00:00+00:00",
+            "summary": "Benzersiz örnek, Anantara Concorso Roma’da sergilendi.",
+            "image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/4x3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/1x1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/ImageObject",
+              "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.webp",
+              "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.jpg",
+              "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+              "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+              "https://cdn.motor1.com/images/mgl/Znzlpe/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bastan-lamborghini-miura-ozel-sona-yeniledi"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,32 +116,201 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-26T17:50:25.735758+03:00"
+      "error": null,
+      "updated_at": "2026-04-26T19:52:05.459161+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+          "link": "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/",
+          "published": "2026-04-26T15:00:00+00:00",
+          "summary": "Benzersiz örnek, Anantara Concorso Roma’da sergilendi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/4x3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/1x1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/ImageObject",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.webp",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Znzlpe/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bastan-lamborghini-miura-ozel-sona-yeniledi",
+          "base_ai_score": 78,
+          "score": 86,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 86,
+        "title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 65
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T19:52:07.730539+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+          "link": "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/",
+          "published": "2026-04-26T15:00:00+00:00",
+          "summary": "Benzersiz örnek, Anantara Concorso Roma’da sergilendi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/4x3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/1x1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/ImageObject",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.webp",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Znzlpe/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bastan-lamborghini-miura-ozel-sona-yeniledi",
+          "base_ai_score": 78,
+          "score": 86,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Anantara Concorso Roma'nın -La Dolce Vita delle Automobili- ilk edisyonu, Roma’nın zamana meydan okuyan mimarisi eşliğinde, 16–19 Nisan tarihleri arasında düzenlendi. Etkinlik, kentin çeşitli tarihî noktalarını birer fon olarak kullanırken; klasik otomobil koleksiyonerlerini, restorasyon uzmanlarını ve üreticileri aynı çatı altında buluşturdu. Bu kapsamda Lamborghini, klasik departmanında tamamlanan güncel bir restorasyon çalışmasını sergiledi. Efsanevi spor otomobil, bu yıl60. yaşınıkutluyor.Lamborghini,1972yılında üretilen özellikle dikkat çekici bir model ile sahneye heyecan kazandırmayı başarmış. Sergilenen araç, Lamborghini Polo Storico tarafından3 yıllıkbir süreçte elden geçirilen birMiura SVörneği. Hedef, otomobili ilk günki orijinal koşullarına geri döndürmekti. Çalışmanın temelini kapsamlı arşiv araştırmaları, özellikle de orijinal üretim veri formu oluşturdu. Araçtaki özgünlük en sonunda sertifikayla belgelendi. Miura SV’nin restorasyonu, katı biçimde dokümantasyona dayalı bir yaklaşımla yürütüldü. Araç, 2023’ün sonlarında Sant’Agata Bolognese’yeorijinaline uygun olmayanbir durumda ulaşmıştı. Çalışmalar kapsamında ilgili tüm bileşenler analiz edildi ve gerekli görülen değişiklikler ile zamanda yolculuk yaparcasına tüm parçalar 1972'deki hâline dönüştürüldü. Buna; hava girişleri, havalandırma ızgaraları ve modele özgü dış parçalar gibi gövde detayları da dahildi. Egzoz sistemi gibi teknik unsurlar da tarihî spesifikasyonlara uygun şekilde revize edildi. Anantara Concorso Roma’daki Lamborghini Miura SV (1972) Kabinde de dönemsel konfigürasyonlar temel alınarak yeniden yapılandırma gerçekleştirildi. Buna klima hazırlığının yeniden oluşturulması, kumanda elemanlarında düzenlemeler ve orijinal renk düzenine dönüş de dahil edildi. \"Luci del Bosco\" (kelime anlamıyla: \"Orman Işıkları\"; aynı isimli bir renk 1970’lerin sonlarındaAlfa Romeotarafından da sunuluyordu) gövde rengi ile \"Senat\" tonundaki iç mekân döşemesi, üretim yılları boyunca değişiklik gösterdiği için tarihî referanslara dayanılarak belirlendi. Bu sergi aracının yanı sıra, markanın 3 tarihî otomobili daha Concours’a katıldı. Bunlar arasında 2 adetLamborghini Countach 25th Anniversaryile birLamborghini Miura P400yer aldı. Miura P400 iseThe Italian Jobfilmiyle bağlantısı nedeniyle özellikle dikkat çekti. Araç kendi sınıfında ödül kazanırken, ayrıca film tarihine atıfta bulunan özel bir ödüle daha ismini yazdırdı. \"The Italian Job\" filmindeki Lamborghini Miura P400 (1969) Film bağlamıyla öne çıkan Miura P400’ün kendine özgü bir geçmişi bulunuyor. Çekimler için araçta bazı detay değişiklikleri yapılmış olsa da otomobil kalıcı biçimde değiştirilmedi ve düzgün şartlarda korundu. Yaygın kanaatin aksine, orijinal araç hasarsız durumda kaldı ve orijinalliği Polo Storico tarafından doğrulandı. Filmin yıl dönümü kapsamında2019yılında restorasyon ve sertifikasyon işlemleri gerçekleştirildi."
+        },
+        "post_text": "🚗 LAMBORGHINI EFSANESİ YENİDEN DOĞDU!\n\nLamborghini, klasik departmanı Polo Storico ile bir Miura SV'yi hayata döndürdü! Tam 3 yıl süren titiz bir çalışmayla, 1972 model bu eşsiz otomobil ilk günkü orijinal haline getirildi.\n\nRoma'da düzenlenen Anantara Concorso Roma'da sergilenen bu güzellik, adeta zamanda bir yolculuk gibiydi. Lamborghini'nin bu restorasyon başarısı gerçekten takdire şayan.\n\nSizce de bu klasik güzellikler korunmaya değer değil mi?",
+        "post_text_length": 452,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T19:52:09.662252+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+          "link": "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/",
+          "published": "2026-04-26T15:00:00+00:00",
+          "summary": "Benzersiz örnek, Anantara Concorso Roma’da sergilendi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/4x3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s1/1x1/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://tr.motor1.com/news/794089/lamborghini-miurasv-restore-roma/ImageObject",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.webp",
+            "https://cdn.motor1.com/images/atr/qop1/s3/eren-efe-kandemir.jpg",
+            "https://cdn.motor1.com/images/mgl/Qe7GpB/s3/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/YAzbpj/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/6Z8OyG/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/E6NXjo/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/zxJ0WL/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp",
+            "https://cdn.motor1.com/images/mgl/vx87kv/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.jpg",
+            "https://cdn.motor1.com/images/mgl/Znzlpe/s6/lamborghini-miura-sv-1972-auf-dem-anantara-concorso-roma.webp"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bastan-lamborghini-miura-ozel-sona-yeniledi",
+          "base_ai_score": 78,
+          "score": 86,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Anantara Concorso Roma'nın -La Dolce Vita delle Automobili- ilk edisyonu, Roma’nın zamana meydan okuyan mimarisi eşliğinde, 16–19 Nisan tarihleri arasında düzenlendi. Etkinlik, kentin çeşitli tarihî noktalarını birer fon olarak kullanırken; klasik otomobil koleksiyonerlerini, restorasyon uzmanlarını ve üreticileri aynı çatı altında buluşturdu. Bu kapsamda Lamborghini, klasik departmanında tamamlanan güncel bir restorasyon çalışmasını sergiledi. Efsanevi spor otomobil, bu yıl60. yaşınıkutluyor.Lamborghini,1972yılında üretilen özellikle dikkat çekici bir model ile sahneye heyecan kazandırmayı başarmış. Sergilenen araç, Lamborghini Polo Storico tarafından3 yıllıkbir süreçte elden geçirilen birMiura SVörneği. Hedef, otomobili ilk günki orijinal koşullarına geri döndürmekti. Çalışmanın temelini kapsamlı arşiv araştırmaları, özellikle de orijinal üretim veri formu oluşturdu. Araçtaki özgünlük en sonunda sertifikayla belgelendi. Miura SV’nin restorasyonu, katı biçimde dokümantasyona dayalı bir yaklaşımla yürütüldü. Araç, 2023’ün sonlarında Sant’Agata Bolognese’yeorijinaline uygun olmayanbir durumda ulaşmıştı. Çalışmalar kapsamında ilgili tüm bileşenler analiz edildi ve gerekli görülen değişiklikler ile zamanda yolculuk yaparcasına tüm parçalar 1972'deki hâline dönüştürüldü. Buna; hava girişleri, havalandırma ızgaraları ve modele özgü dış parçalar gibi gövde detayları da dahildi. Egzoz sistemi gibi teknik unsurlar da tarihî spesifikasyonlara uygun şekilde revize edildi. Anantara Concorso Roma’daki Lamborghini Miura SV (1972) Kabinde de dönemsel konfigürasyonlar temel alınarak yeniden yapılandırma gerçekleştirildi. Buna klima hazırlığının yeniden oluşturulması, kumanda elemanlarında düzenlemeler ve orijinal renk düzenine dönüş de dahil edildi. \"Luci del Bosco\" (kelime anlamıyla: \"Orman Işıkları\"; aynı isimli bir renk 1970’lerin sonlarındaAlfa Romeotarafından da sunuluyordu) gövde rengi ile \"Senat\" tonundaki iç mekân döşemesi, üretim yılları boyunca değişiklik gösterdiği için tarihî referanslara dayanılarak belirlendi. Bu sergi aracının yanı sıra, markanın 3 tarihî otomobili daha Concours’a katıldı. Bunlar arasında 2 adetLamborghini Countach 25th Anniversaryile birLamborghini Miura P400yer aldı. Miura P400 iseThe Italian Jobfilmiyle bağlantısı nedeniyle özellikle dikkat çekti. Araç kendi sınıfında ödül kazanırken, ayrıca film tarihine atıfta bulunan özel bir ödüle daha ismini yazdırdı. \"The Italian Job\" filmindeki Lamborghini Miura P400 (1969) Film bağlamıyla öne çıkan Miura P400’ün kendine özgü bir geçmişi bulunuyor. Çekimler için araçta bazı detay değişiklikleri yapılmış olsa da otomobil kalıcı biçimde değiştirilmedi ve düzgün şartlarda korundu. Yaygın kanaatin aksine, orijinal araç hasarsız durumda kaldı ve orijinalliği Polo Storico tarafından doğrulandı. Filmin yıl dönümü kapsamında2019yılında restorasyon ve sertifikasyon işlemleri gerçekleştirildi.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4
+        },
+        "post_text": "🚗 LAMBORGHINI EFSANESİ YENİDEN DOĞDU!\n\nLamborghini, klasik departmanı Polo Storico ile bir Miura SV'yi hayata döndürdü! Tam 3 yıl süren titiz bir çalışmayla, 1972 model bu eşsiz otomobil ilk günkü orijinal haline getirildi.\n\nRoma'da düzenlenen Anantara Concorso Roma'da sergilenen bu güzellik, adeta zamanda bir yolculuk gibiydi. Lamborghini'nin bu restorasyon başarısı gerçekten takdire şayan.\n\nSizce de bu klasik güzellikler korunmaya değer değil mi?",
+        "image_path": "/tmp/otoxtra_img_djrs85tz.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_djrs85tz.jpg",
+          "/tmp/otoxtra_img_oba8hwxf.jpg",
+          "/tmp/otoxtra_img_c0o2irbk.jpg",
+          "/tmp/otoxtra_img_pnel6sab.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T19:52:20.129055+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122163829646916499",
+        "article_title": "Lamborghini, özel bir Miura SV'yi baştan sona yeniledi!",
+        "image_source": "multi_image",
+        "image_count": 4,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T19:56:28.471067+03:00"
     }
   }
 }
