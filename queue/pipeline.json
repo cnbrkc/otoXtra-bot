@@ -1,14 +1,49 @@
 {
-  "run_id": "2026-04-26-09:59",
-  "status": "error",
-  "started_at": "2026-04-26T09:59:45.104722+03:00",
-  "updated_at": "2026-04-26T10:01:06.147722+03:00",
+  "run_id": "2026-04-26-11:19",
+  "status": "completed",
+  "started_at": "2026-04-26T11:19:02.975971+03:00",
+  "updated_at": "2026-04-26T11:23:24.824792+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+            "link": "https://www.donanimhaber.com/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti--204925",
+            "published": "2026-04-26T08:00:00+00:00",
+            "summary": "Çinli otomotiv devi Geely, Çin'in ilk yerli robotaksisi olan Eva Cab prototipini tanıttı. Güçlü donanımı ve yapay zeka altyapısıyla insan benzeri kararlar alabilen aracın özellikleri neler?",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+              "https://www.donanimhaber.com/ImageObject",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_2.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_3.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_4.jpg",
+              "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_5.jpg",
+              "https://www.donanimhaber.com/images/images/videostartimage/videoid13448_220x391.jpg",
+              "https://www.donanimhaber.com/images/images/recommendations/xm5zBIudXUKuyGkw7q8FeQ.jpg",
+              "https://www.donanimhaber.com/images/images/recommendations/KQVeY6vTkSzVCNBy8IeA.jpg",
+              "https://www.donanimhaber.com/images/images/recommendations/YzJRJKGR00yxzFfnaBPyAw.jpg",
+              "https://www.donanimhaber.com/images/images/recommendations/kmnAPY1RckBUvlZWnMQ7w.jpg",
+              "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+              "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "benzeri-cin-dusunebiliyor-geely-nsan-robotaksisini-tanitti"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,32 +112,185 @@
           }
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-04-26T10:01:06.147722+03:00"
+      "error": null,
+      "updated_at": "2026-04-26T11:20:36.766146+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+          "link": "https://www.donanimhaber.com/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti--204925",
+          "published": "2026-04-26T08:00:00+00:00",
+          "summary": "Çinli otomotiv devi Geely, Çin'in ilk yerli robotaksisi olan Eva Cab prototipini tanıttı. Güçlü donanımı ve yapay zeka altyapısıyla insan benzeri kararlar alabilen aracın özellikleri neler?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/ImageObject",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_3.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_4.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_5.jpg",
+            "https://www.donanimhaber.com/images/images/videostartimage/videoid13448_220x391.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/xm5zBIudXUKuyGkw7q8FeQ.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/KQVeY6vTkSzVCNBy8IeA.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/YzJRJKGR00yxzFfnaBPyAw.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/kmnAPY1RckBUvlZWnMQ7w.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "benzeri-cin-dusunebiliyor-geely-nsan-robotaksisini-tanitti",
+          "base_ai_score": 82,
+          "score": 93,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 93,
+        "title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 50
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T11:20:38.875258+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+          "link": "https://www.donanimhaber.com/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti--204925",
+          "published": "2026-04-26T08:00:00+00:00",
+          "summary": "Çinli otomotiv devi Geely, Çin'in ilk yerli robotaksisi olan Eva Cab prototipini tanıttı. Güçlü donanımı ve yapay zeka altyapısıyla insan benzeri kararlar alabilen aracın özellikleri neler?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/ImageObject",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_3.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_4.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_5.jpg",
+            "https://www.donanimhaber.com/images/images/videostartimage/videoid13448_220x391.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/xm5zBIudXUKuyGkw7q8FeQ.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/KQVeY6vTkSzVCNBy8IeA.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/YzJRJKGR00yxzFfnaBPyAw.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/kmnAPY1RckBUvlZWnMQ7w.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "benzeri-cin-dusunebiliyor-geely-nsan-robotaksisini-tanitti",
+          "base_ai_score": 82,
+          "score": 93,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Eva Cab,196 milyar parametreli Step 3.5 modeliile şirketinH9üst düzey otonom sürüş sisteminden güç alıyor. Sistem,1.400 TOPS’a kadar işlem gücü sunarak verileri anlık olarak işleyebiliyor ve hızlı kararlar alabiliyor. Geely’ye göre araç,saniyede 350 TPS'lik çıkarım hızına ulaşabiliyor ve birinsan sürücüye kıyasla üç kata kadar daha hızlı tepki verebiliyor.Ayrıca manuel gişeler veya işaretsiz kırsal yollar gibi öngörülmesi zor durumlar dahil olmak üzeregünlük sürüş senaryolarının %99’unu yönetebildiğibelirtiliyor. Bu sistemin temelinde, Geely’ninWorld Action Model(WAM) adı verdiği yapı bulunuyor. Bu model, klasik “algıla-karar ver” yaklaşımını sürekli çalışan kapalı bir döngüye dönüştürüyor. Hem genel rota planlamasını hem de anlık karar süreçlerini birleştirerekaracın çevresine daha insansı bir şekilde tepki vermesini sağlıyor.Özellikle karmaşık trafik durumlarında veya kuralsız yollarda deneyimli bir sürücü gibi davranabildiği ifade ediliyor. Araç ayrıca,4 milisaniyelik tepki hızınasahip Geely'ninyapay zeka destekli dijital şasiteknolojisini de bünyesinde barındırıyor. Bu sistem, özellikle zorlu sürüş koşullarında otomatik riskten kaçınma sağlayarak aracın kontrolünü korumasına yardımcı oluyor. Amaç, güvenliği sadece pasif bir koruma olmaktan çıkarıp aktif bir müdahale sistemine dönüştürmek. Şirket, bu teknolojiyi Caocao Mobility ile iş birliği içinde geliştirerek2027 yılında seri üretime geçirmeyi ve ticari robotaksi hizmetini başlatmayı planlıyor.Bu süreçte test aşamasından gerçek dünyada tamamen sürücüsüz kullanıma kademeli bir geçiş hedefleniyor. İzmit'te üretilecek Hyundai IONIQ 3 tanıtıldı https://www.amazon.com.tr/dp/B0FH1ZSNLR https://www.amazon.com.tr/dp/B0CF2TK7NK?ref=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13&ref_=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13&social_share=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13 https://www.n11.com/giris-yap?donusurl=%2Fhesabim%2Fkuponlarim https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_image_dt_b_fed_asin_title_0_0 https://www.migros.com.tr/doritos-storm-avantaj-paketi-346-g-p-4d84f0 https://www.amazon.com.tr/dp/B0GLPNKXKB?ref=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8&ref_=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8&social_share=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8"
+        },
+        "post_text": "🚗 GEELY'DEN ÇİN'İN İLK ROBOTAKSİSİ: EVA CAB GELDİ!\n\nÇinli dev Geely, ülkelerinin ilk robotaksisi Eva Cab'ı tanıttı. Yapay zeka ve güçlü donanımıyla dikkat çeken bu araç, insan gibi düşünebiliyor ve karar verebiliyor.\n\n196 milyar parametreli yapay zeka modeliyle çalışan Eva Cab, saniyede 350 işlem yapabiliyor. Bu da onu insan sürücülerden üç kat daha hızlı tepki verebilir hale getiriyor. Karmaşık trafik veya kuralsız yollar gibi zorlu durumları bile deneyimli bir sürücü gibi yönetebildiği söyleniyor.\n\nGeely, bu teknolojiyi 2027'de seri üretime geçirmeyi hedefliyor.\n\nSizce bu teknoloji trafikte neleri değiştirecek?",
+        "post_text_length": 620,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T11:20:41.937384+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+          "link": "https://www.donanimhaber.com/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti--204925",
+          "published": "2026-04-26T08:00:00+00:00",
+          "summary": "Çinli otomotiv devi Geely, Çin'in ilk yerli robotaksisi olan Eva Cab prototipini tanıttı. Güçlü donanımı ve yapay zeka altyapısıyla insan benzeri kararlar alabilen aracın özellikleri neler?",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/204925/1400x788geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti.jpg",
+            "https://www.donanimhaber.com/ImageObject",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_3.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_4.jpg",
+            "https://www.donanimhaber.com/images/images/haber/204925/src/geely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_5.jpg",
+            "https://www.donanimhaber.com/images/images/videostartimage/videoid13448_220x391.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/xm5zBIudXUKuyGkw7q8FeQ.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/KQVeY6vTkSzVCNBy8IeA.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/YzJRJKGR00yxzFfnaBPyAw.jpg",
+            "https://www.donanimhaber.com/images/images/recommendations/kmnAPY1RckBUvlZWnMQ7w.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_0.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260425144131&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F204925%2Fgeely-insan-benzeri-dusunebilen-cin-in-ilk-robotaksisini-tanitti204925_1.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "benzeri-cin-dusunebiliyor-geely-nsan-robotaksisini-tanitti",
+          "base_ai_score": 82,
+          "score": 93,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Eva Cab,196 milyar parametreli Step 3.5 modeliile şirketinH9üst düzey otonom sürüş sisteminden güç alıyor. Sistem,1.400 TOPS’a kadar işlem gücü sunarak verileri anlık olarak işleyebiliyor ve hızlı kararlar alabiliyor. Geely’ye göre araç,saniyede 350 TPS'lik çıkarım hızına ulaşabiliyor ve birinsan sürücüye kıyasla üç kata kadar daha hızlı tepki verebiliyor.Ayrıca manuel gişeler veya işaretsiz kırsal yollar gibi öngörülmesi zor durumlar dahil olmak üzeregünlük sürüş senaryolarının %99’unu yönetebildiğibelirtiliyor. Bu sistemin temelinde, Geely’ninWorld Action Model(WAM) adı verdiği yapı bulunuyor. Bu model, klasik “algıla-karar ver” yaklaşımını sürekli çalışan kapalı bir döngüye dönüştürüyor. Hem genel rota planlamasını hem de anlık karar süreçlerini birleştirerekaracın çevresine daha insansı bir şekilde tepki vermesini sağlıyor.Özellikle karmaşık trafik durumlarında veya kuralsız yollarda deneyimli bir sürücü gibi davranabildiği ifade ediliyor. Araç ayrıca,4 milisaniyelik tepki hızınasahip Geely'ninyapay zeka destekli dijital şasiteknolojisini de bünyesinde barındırıyor. Bu sistem, özellikle zorlu sürüş koşullarında otomatik riskten kaçınma sağlayarak aracın kontrolünü korumasına yardımcı oluyor. Amaç, güvenliği sadece pasif bir koruma olmaktan çıkarıp aktif bir müdahale sistemine dönüştürmek. Şirket, bu teknolojiyi Caocao Mobility ile iş birliği içinde geliştirerek2027 yılında seri üretime geçirmeyi ve ticari robotaksi hizmetini başlatmayı planlıyor.Bu süreçte test aşamasından gerçek dünyada tamamen sürücüsüz kullanıma kademeli bir geçiş hedefleniyor. İzmit'te üretilecek Hyundai IONIQ 3 tanıtıldı https://www.amazon.com.tr/dp/B0FH1ZSNLR https://www.amazon.com.tr/dp/B0CF2TK7NK?ref=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13&ref_=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13&social_share=cm_sw_r_cso_cp_apan_dp_MN541F4WJKY4EWW87H13 https://www.n11.com/giris-yap?donusurl=%2Fhesabim%2Fkuponlarim https://www.amazon.com.tr/dp/B08GQ8D8QD?ref_=ppx_hzod_image_dt_b_fed_asin_title_0_0 https://www.migros.com.tr/doritos-storm-avantaj-paketi-346-g-p-4d84f0 https://www.amazon.com.tr/dp/B0GLPNKXKB?ref=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8&ref_=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8&social_share=cm_sw_r_cso_cp_apan_dp_47R9YF8XN830BRBJPFQ8",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2
+        },
+        "post_text": "🚗 GEELY'DEN ÇİN'İN İLK ROBOTAKSİSİ: EVA CAB GELDİ!\n\nÇinli dev Geely, ülkelerinin ilk robotaksisi Eva Cab'ı tanıttı. Yapay zeka ve güçlü donanımıyla dikkat çeken bu araç, insan gibi düşünebiliyor ve karar verebiliyor.\n\n196 milyar parametreli yapay zeka modeliyle çalışan Eva Cab, saniyede 350 işlem yapabiliyor. Bu da onu insan sürücülerden üç kat daha hızlı tepki verebilir hale getiriyor. Karmaşık trafik veya kuralsız yollar gibi zorlu durumları bile deneyimli bir sürücü gibi yönetebildiği söyleniyor.\n\nGeely, bu teknolojiyi 2027'de seri üretime geçirmeyi hedefliyor.\n\nSizce bu teknoloji trafikte neleri değiştirecek?",
+        "image_path": "/tmp/otoxtra_img_hf18g0qi.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_hf18g0qi.jpg",
+          "/tmp/otoxtra_img_fzakl1mo.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T11:21:07.837576+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122163786950916499",
+        "article_title": "Geely, Çin'in ilk robotaksisini tanıttı: İnsan benzeri düşünebiliyor",
+        "image_source": "multi_image",
+        "image_count": 2,
+        "dry_run": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-04-26T11:23:24.824792+03:00"
     }
   }
 }
