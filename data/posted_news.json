@@ -1501,7 +1501,7 @@
     "2026-04-25": 6,
     "2026-04-26": 4
   },
-  "last_check_time": "2026-04-26T22:50:36.231768+03:00",
+  "last_check_time": "2026-04-27T10:36:45.683877+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -1514,7 +1514,8 @@
       "2026-04-23": 7,
       "2026-04-24": 9,
       "2026-04-25": 9,
-      "2026-04-26": 9
+      "2026-04-26": 9,
+      "2026-04-27": 1
     },
     "weekly": {
       "2026-W16": {
@@ -1543,6 +1544,18 @@
           "SCORER_FAILED: No article above threshold (threshold=65, top_score=10)": 1,
           "SCORER_FAILED: No article above threshold (threshold=65, top_score=56)": 1,
           "FETCH_FAILED: No article found": 2
+        },
+        "skip_total": 0,
+        "skips": {},
+        "report_sent": true,
+        "report_sent_at": "2026-04-27T10:35:25.916567+03:00"
+      },
+      "2026-W18": {
+        "actions": 1,
+        "shares": 0,
+        "error_total": 1,
+        "errors": {
+          "SCORER_FAILED: No article above threshold (threshold=50, top_score=10)": 1
         },
         "skip_total": 0,
         "skips": {},
