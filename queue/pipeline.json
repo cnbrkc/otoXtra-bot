@@ -1,90 +1,14 @@
 {
-  "run_id": "2026-05-03-17:52",
-  "status": "completed",
-  "started_at": "2026-05-03T17:52:15.533580+03:00",
-  "updated_at": "2026-05-03T17:57:51.622102+03:00",
+  "run_id": "2026-05-03-19:55",
+  "status": "error",
+  "started_at": "2026-05-03T19:55:17.521678+03:00",
+  "updated_at": "2026-05-03T19:56:30.860749+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Araştırma: Kullanıcı duygularını önemseyen yapay zekalar daha çok hata yapıyor",
-            "link": "https://www.donanimhaber.com/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor--205181",
-            "published": "2026-05-03T14:00:00+00:00",
-            "summary": "Oxford Üniversitesi'nin yaptığı bir çalışmaya göre, “daha sıcak” yani daha empatik ve nazik olacak şekilde eğitilen büyük dil modelleri daha fazla hata yapıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/205181/1400x788kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205181/1400x788kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/205181/1400x788kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor.jpg",
-              "https://www.donanimhaber.com/ImageObject",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_0.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_1.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_2.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_3.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_4.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205181/src/kullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_5.jpg",
-              "https://www.donanimhaber.com/images/images/videostartimage/videoid13456_220x391.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/R1mnnHXIqk2BjAI0qiLKA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/oEMD9774LU21wA4lZC36w.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/d2uzhLR53U65p3BqkS7aA.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260502181549&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205181%2Fkullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_0.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260502181549&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205181%2Fkullanici-duygularini-onemseyen-yapay-zeka-daha-cok-hata-yapiyor205181_1.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arastirma-duygularini-hata-kullanici-onemseyen-yapay-yapiyor-zekalar"
-          },
-          {
-            "title": "Tesla’nın Denetimsiz Robotaksileri Artıyor",
-            "link": "https://shiftdelete.net/teslanin-denetimsiz-robotaksileri-artiyor",
-            "published": "2026-05-03T13:00:00+00:00",
-            "summary": "Tesla'nın denetimsiz Robotaxi filosu, Teksas'ta 25 araca ulaşarak uzun süreli durgunluğun ardından ilk büyüme sinyallerini verdi.",
-            "image_url": "https://ares.shiftdelete.net/2026/05/teslanin-denetimsiz-robotaksileri-artiyor.webp",
-            "rss_image_url": "",
-            "image_candidates": [
-              "https://ares.shiftdelete.net/2026/05/teslanin-denetimsiz-robotaksileri-artiyor.webp",
-              "https://shiftdelete.net/ImageObject",
-              "https://ares.shiftdelete.net/2026/05/teslanin-denetimsiz-robotaksileri-artiyor-2.webp",
-              "https://ares.shiftdelete.net/2026/05/teslanin-denetimsiz-robotaksileri-artiyor-3.webp"
-            ],
-            "image_source": "article",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "artiyor-denetimsiz-robotaksileri-tesla"
-          },
-          {
-            "title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-            "link": "https://nitter.net/sekizsilindir/status/2050922054858203451#m",
-            "published": "2026-05-03T12:54:56+00:00",
-            "summary": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). Açıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. Tahminleriniz? 🤔",
-            "image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-            "rss_image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Sekizsilindir",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "108-110km-120km-30km-7kwh-84kwh-84kwh-acikcasi-arkadaslar-bmw-bmw-bugun-capraz-hedef-hiz-ise-ix3-ix3-konusunda-long-model-model-motora-oldukca-oncekinden-pile-pile-pile-range-ruzgar-saganak-sahip-sahip-sahip-sicaklik-surduk-surekli-tahminleriniz-tesla-umutlu-verimli-verimlilik-yagis-yan-yana"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -153,136 +77,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-05-03T17:53:52.104468+03:00"
+      "error": "No article found",
+      "updated_at": "2026-05-03T19:56:30.860749+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-          "link": "https://nitter.net/sekizsilindir/status/2050922054858203451#m",
-          "published": "2026-05-03T12:54:56+00:00",
-          "summary": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). Açıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. Tahminleriniz? 🤔",
-          "image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "rss_image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Sekizsilindir",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "108-110km-120km-30km-7kwh-84kwh-84kwh-acikcasi-arkadaslar-bmw-bmw-bugun-capraz-hedef-hiz-ise-ix3-ix3-konusunda-long-model-model-motora-oldukca-oncekinden-pile-pile-pile-range-ruzgar-saganak-sahip-sahip-sahip-sicaklik-surduk-surekli-tahminleriniz-tesla-umutlu-verimli-verimlilik-yagis-yan-yana",
-          "base_ai_score": 80,
-          "score": 88,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 88,
-        "title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_reason": "ai_scored",
-        "skipped": false,
-        "threshold": 65
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T17:53:55.450865+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-          "link": "https://nitter.net/sekizsilindir/status/2050922054858203451#m",
-          "published": "2026-05-03T12:54:56+00:00",
-          "summary": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). Açıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. Tahminleriniz? 🤔",
-          "image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "rss_image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Sekizsilindir",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "108-110km-120km-30km-7kwh-84kwh-84kwh-acikcasi-arkadaslar-bmw-bmw-bugun-capraz-hedef-hiz-ise-ix3-ix3-konusunda-long-model-model-motora-oldukca-oncekinden-pile-pile-pile-range-ruzgar-saganak-sahip-sahip-sahip-sicaklik-surduk-surekli-tahminleriniz-tesla-umutlu-verimli-verimlilik-yagis-yan-yana",
-          "base_ai_score": 80,
-          "score": 88,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "⚡️ İKİ ELEKTRİKLİ DEV KARŞI KARŞIYA!\n\nBugün BMW iX3 ve Tesla Model Y Long Range'i yan yana test ettik. Hava şartları biraz zorluydu; 9 derece sıcaklık, sürekli yağmur ve rüzgar vardı.\n\nHedef hızımız 110 km/saat'ti. BMW iX3'ün 108.7 kWh'lik piliyle, Tesla Model Y'nin 84 kWh'lik piliyle neler yapacağını merak ettik. BMW, iX3'ün verimliliğine güveniyor. Model Y ise daha büyük pil ve yeni motoruyla dikkat çekiyor.\n\nPeki sizce bu zorlu koşullarda hangisi daha iyi performans gösterdi? 🤔",
-        "post_text_length": 485,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T17:53:57.414648+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-          "link": "https://nitter.net/sekizsilindir/status/2050922054858203451#m",
-          "published": "2026-05-03T12:54:56+00:00",
-          "summary": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). Açıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. Tahminleriniz? 🤔",
-          "image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "rss_image_url": "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/media%2FHHZWvH3XkAAmZTR.jpg"
-          ],
-          "image_source": "article_candidates_field",
-          "source_name": "Sekizsilindir",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "108-110km-120km-30km-7kwh-84kwh-84kwh-acikcasi-arkadaslar-bmw-bmw-bugun-capraz-hedef-hiz-ise-ix3-ix3-konusunda-long-model-model-motora-oldukca-oncekinden-pile-pile-pile-range-ruzgar-saganak-sahip-sahip-sahip-sicaklik-surduk-surekli-tahminleriniz-tesla-umutlu-verimli-verimlilik-yagis-yan-yana",
-          "base_ai_score": 80,
-          "score": 88,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "image_sources": [
-            "article_candidates_field"
-          ],
-          "prepared_image_count": 1
-        },
-        "post_text": "⚡️ İKİ ELEKTRİKLİ DEV KARŞI KARŞIYA!\n\nBugün BMW iX3 ve Tesla Model Y Long Range'i yan yana test ettik. Hava şartları biraz zorluydu; 9 derece sıcaklık, sürekli yağmur ve rüzgar vardı.\n\nHedef hızımız 110 km/saat'ti. BMW iX3'ün 108.7 kWh'lik piliyle, Tesla Model Y'nin 84 kWh'lik piliyle neler yapacağını merak ettik. BMW, iX3'ün verimliliğine güveniyor. Model Y ise daha büyük pil ve yeni motoruyla dikkat çekiyor.\n\nPeki sizce bu zorlu koşullarda hangisi daha iyi performans gösterdi? 🤔",
-        "image_path": "/tmp/otoxtra_img_41ubj68b.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_41ubj68b.jpg"
-        ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T17:53:59.058902+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122164527050916499",
-        "article_title": "108.7kWh pile sahip yeni BMW iX3 ile 84kWh pile sahip Tesla Model Y Long Range'i bugün yan yana 120km sürdük arkadaşlar. (110km/h hedef hız, 9C sıcaklık, 30km/h karşı çapraz rüzgar ve sürekli sağanak yağış). \n\nAçıkçası verimlilik konusunda iX3'ten oldukça umutlu BMW. 84kWh Model Y LR ise; öncekinden daha büyük pile ve daha yeni ve verimli bir motora sahip. \n\nTahminleriniz? 🤔",
-        "image_source": "single_image",
-        "image_count": 1,
-        "dry_run": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T17:57:51.622102+03:00"
+      "updated_at": null
     }
   }
 }

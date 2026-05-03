@@ -1597,7 +1597,7 @@
     "2026-05-02": 6,
     "2026-05-03": 4
   },
-  "last_check_time": "2026-05-03T17:57:51.623475+03:00",
+  "last_check_time": "2026-05-03T19:56:30.881581+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -1617,7 +1617,7 @@
       "2026-04-30": 5,
       "2026-05-01": 8,
       "2026-05-02": 8,
-      "2026-05-03": 5
+      "2026-05-03": 6
     },
     "weekly": {
       "2026-W16": {
@@ -1653,14 +1653,14 @@
         "report_sent_at": "2026-04-27T10:35:25.916567+03:00"
       },
       "2026-W18": {
-        "actions": 42,
+        "actions": 43,
         "shares": 34,
-        "error_total": 6,
+        "error_total": 7,
         "errors": {
           "SCORER_FAILED: No article above threshold (threshold=50, top_score=10)": 2,
           "SCORER_FAILED: No article above threshold (threshold=65, top_score=10)": 1,
           "PUBLISH_FAILED: Rastgele atlama": 2,
-          "FETCH_FAILED: No article found": 1
+          "FETCH_FAILED: No article found": 2
         },
         "skip_total": 0,
         "skips": {},
