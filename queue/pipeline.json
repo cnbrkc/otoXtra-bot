@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-05-03-12:23",
-  "status": "completed",
-  "started_at": "2026-05-03T12:23:36.245418+03:00",
-  "updated_at": "2026-05-03T12:26:18.327188+03:00",
+  "run_id": "2026-05-03-13:56",
+  "status": "error",
+  "started_at": "2026-05-03T13:56:37.218367+03:00",
+  "updated_at": "2026-05-03T13:57:42.504461+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-            "link": "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/",
-            "published": "2026-05-03T09:00:00+00:00",
-            "summary": "Yeni bir çağ başlıyor",
-            "image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/1Z2pkM/239:0:1439:1080/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/1Z2pkM/790:0:1080:1080/volvo-xc90-black-edition-2025.webp",
-              "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/ImageObject",
-              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
-              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
-              "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.jpg",
-              "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.webp",
-              "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cars-deneyimi-gemini-google-ici-otomobil-tanimliyor-volvo-yeniden"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -116,201 +77,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-05-03T12:25:08.108653+03:00"
+      "error": "No article found",
+      "updated_at": "2026-05-03T13:57:42.504461+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-          "link": "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/",
-          "published": "2026-05-03T09:00:00+00:00",
-          "summary": "Yeni bir çağ başlıyor",
-          "image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/239:0:1439:1080/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/790:0:1080:1080/volvo-xc90-black-edition-2025.webp",
-            "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/ImageObject",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "cars-deneyimi-gemini-google-ici-otomobil-tanimliyor-volvo-yeniden",
-          "base_ai_score": 75,
-          "score": 85,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-        "trend_count": 1,
-        "trend_bonus": 0,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored",
-        "skipped": false,
-        "threshold": 50
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T12:25:10.585596+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-          "link": "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/",
-          "published": "2026-05-03T09:00:00+00:00",
-          "summary": "Yeni bir çağ başlıyor",
-          "image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/239:0:1439:1080/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/790:0:1080:1080/volvo-xc90-black-edition-2025.webp",
-            "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/ImageObject",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "cars-deneyimi-gemini-google-ici-otomobil-tanimliyor-volvo-yeniden",
-          "base_ai_score": 75,
-          "score": 85,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Volvo Cars ve Google, Google Gemini'nin Volvo otomobillerinde sunulmaya başlanmasıyla birlikte, sürücülerin otomobilleriyle etkileşim biçiminde yeni bir dönemin kapılarını aralıyor. Sabit sesli komutların ötesine geçen yeni nesil yapay zekâ asistanı Gemini; otomobilin doğal konuşmaları, bağlamı ve sürücünün ihtiyaçlarını anlayabildiği sezgisel bir deneyim sunuyor. Bu sayede yolculuklar daha konforlu ve keyifli hale geliyor. Yeni nesil yapay zekâ asistanı, ilk olarak Amerika Birleşik Devletleri'ndeki kullanıcılarla buluşacak ve önümüzdeki haftalarda ülke geneline, ardından da diğer pazarlara kademeli olarak sunulacak. 2020 model yılından itibaren Google entegrasyonuna sahip Volvo kullanıcıları, Google'ın yeni nesil yapay zekâ asistanını deneyimleyen ilk kişiler arasında yer alacak. Google, 2025 itibarıyla yeni nesil araç içi teknolojilerin geliştirilmesindeVolvoCars’ı stratejik geliştirme ortaklarından biri olarak seçti. Bu iş birliği,Google Geminigibi ileri teknolojilerin gerçek sürüş deneyimiyle uyumlu şekilde geliştirilmesinde Volvo Cars’a aktif bir rol kazandırıyor. Volvo Cars, uzaktan (over-the-air) güncellemeler sayesinde halihazırda yolda olan otomobillere yeni yazılım deneyimleri kazandırmaya devam ediyor. Mart 2026 itibarıyla Volvo Cars, bugüne kadar bir otomobil üreticisi tarafından sunulan en kapsamlı bilgi-eğlence güncellemelerinden birini hayata geçirdi ve daha sezgisel bir kullanıcı deneyimi olan Volvo Car UX’i dünya genelinde milyonlarca kullanıcıya sunmaya başladı."
-        },
-        "post_text": "🚗 VOLVO VE GOOGLE'DAN SÜRÜCÜLERE YENİ DÖNEM! 🚗\n\nVolvo Cars, Google Gemini ile otomobillerdeki deneyimi bambaşka bir boyuta taşıyor. Artık sadece komut vermekle kalmayacak, aracınızla sohbet eder gibi etkileşim kurabileceksiniz.\n\nGemini, sizin ne demek istediğinizi anlayacak, yolculuklarınızı çok daha keyifli hale getirecek.\n\nBu yenilik ilk olarak Amerika'da kullanıcılara sunulacak, ardından tüm dünyaya yayılacak. 2020 model ve sonrası Google entegrasyonlu Volvo'lar bu deneyimi ilk yaşayanlardan olacak.\n\nSizce bu teknoloji sürüş deneyimini nasıl değiştirecek?",
-        "post_text_length": 564,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T12:25:12.352651+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-          "link": "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/",
-          "published": "2026-05-03T09:00:00+00:00",
-          "summary": "Yeni bir çağ başlıyor",
-          "image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/s1/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/239:0:1439:1080/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/1Z2pkM/790:0:1080:1080/volvo-xc90-black-edition-2025.webp",
-            "https://tr.motor1.com/news/794698/volvo-google-gemini-entegrasyonu/ImageObject",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
-            "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/RqMnJe/s3/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/VzBXOK/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/404ZLq/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/MkM384/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/bgGzYv/s6/volvo-xc90-black-edition-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.webp",
-            "https://cdn.motor1.com/images/mgl/lElKmW/s6/volvo-xc90-black-edition-2025.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "cars-deneyimi-gemini-google-ici-otomobil-tanimliyor-volvo-yeniden",
-          "base_ai_score": 75,
-          "score": 85,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Volvo Cars ve Google, Google Gemini'nin Volvo otomobillerinde sunulmaya başlanmasıyla birlikte, sürücülerin otomobilleriyle etkileşim biçiminde yeni bir dönemin kapılarını aralıyor. Sabit sesli komutların ötesine geçen yeni nesil yapay zekâ asistanı Gemini; otomobilin doğal konuşmaları, bağlamı ve sürücünün ihtiyaçlarını anlayabildiği sezgisel bir deneyim sunuyor. Bu sayede yolculuklar daha konforlu ve keyifli hale geliyor. Yeni nesil yapay zekâ asistanı, ilk olarak Amerika Birleşik Devletleri'ndeki kullanıcılarla buluşacak ve önümüzdeki haftalarda ülke geneline, ardından da diğer pazarlara kademeli olarak sunulacak. 2020 model yılından itibaren Google entegrasyonuna sahip Volvo kullanıcıları, Google'ın yeni nesil yapay zekâ asistanını deneyimleyen ilk kişiler arasında yer alacak. Google, 2025 itibarıyla yeni nesil araç içi teknolojilerin geliştirilmesindeVolvoCars’ı stratejik geliştirme ortaklarından biri olarak seçti. Bu iş birliği,Google Geminigibi ileri teknolojilerin gerçek sürüş deneyimiyle uyumlu şekilde geliştirilmesinde Volvo Cars’a aktif bir rol kazandırıyor. Volvo Cars, uzaktan (over-the-air) güncellemeler sayesinde halihazırda yolda olan otomobillere yeni yazılım deneyimleri kazandırmaya devam ediyor. Mart 2026 itibarıyla Volvo Cars, bugüne kadar bir otomobil üreticisi tarafından sunulan en kapsamlı bilgi-eğlence güncellemelerinden birini hayata geçirdi ve daha sezgisel bir kullanıcı deneyimi olan Volvo Car UX’i dünya genelinde milyonlarca kullanıcıya sunmaya başladı.",
-          "image_sources": [
-            "meta_og",
-            "article_script",
-            "article_img",
-            "article_script"
-          ],
-          "prepared_image_count": 4
-        },
-        "post_text": "🚗 VOLVO VE GOOGLE'DAN SÜRÜCÜLERE YENİ DÖNEM! 🚗\n\nVolvo Cars, Google Gemini ile otomobillerdeki deneyimi bambaşka bir boyuta taşıyor. Artık sadece komut vermekle kalmayacak, aracınızla sohbet eder gibi etkileşim kurabileceksiniz.\n\nGemini, sizin ne demek istediğinizi anlayacak, yolculuklarınızı çok daha keyifli hale getirecek.\n\nBu yenilik ilk olarak Amerika'da kullanıcılara sunulacak, ardından tüm dünyaya yayılacak. 2020 model ve sonrası Google entegrasyonlu Volvo'lar bu deneyimi ilk yaşayanlardan olacak.\n\nSizce bu teknoloji sürüş deneyimini nasıl değiştirecek?",
-        "image_path": "/tmp/otoxtra_img_t1o9y8yy.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_t1o9y8yy.jpg",
-          "/tmp/otoxtra_img_kvwmia90.jpg",
-          "/tmp/otoxtra_img_6qxzllla.jpg",
-          "/tmp/otoxtra_img_6gxl1xbi.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T12:25:24.696886+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122164496066916499",
-        "article_title": "Volvo Cars, Google Gemini ile otomobil içi deneyimi yeniden tanımlıyor",
-        "image_source": "multi_image",
-        "image_count": 4,
-        "dry_run": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-03T12:26:18.327188+03:00"
+      "updated_at": null
     }
   }
 }

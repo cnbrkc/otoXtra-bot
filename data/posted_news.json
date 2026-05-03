@@ -1,15 +1,6 @@
 {
   "posts": [
     {
-      "title": "Stellantis, Çinli elektrikli araçları Kanada'da üretebilir",
-      "original_url": "https://www.donanimhaber.com/stellantis-cinli-elektrikli-araclari-kanada-da-uretebilir--203997",
-      "source": "Donanımhaber",
-      "score": 82,
-      "posted_at": "2026-04-03T12:47:13.820912+03:00",
-      "fb_post_id": "678053852057751_122161133180916499",
-      "image_source": "rss_image"
-    },
-    {
       "title": "Tesla: FSD, yağmurda kızaklama riskini azaltıyor",
       "original_url": "https://www.donanimhaber.com/tesla-fsd-yagmurda-kizaklama-riskini-azaltiyor--204004",
       "source": "Donanımhaber",
@@ -1591,7 +1582,7 @@
     "2026-05-02": 6,
     "2026-05-03": 2
   },
-  "last_check_time": "2026-05-03T12:26:18.328918+03:00",
+  "last_check_time": "2026-05-03T13:57:42.525250+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -1611,7 +1602,7 @@
       "2026-04-30": 5,
       "2026-05-01": 8,
       "2026-05-02": 8,
-      "2026-05-03": 2
+      "2026-05-03": 3
     },
     "weekly": {
       "2026-W16": {
@@ -1647,13 +1638,14 @@
         "report_sent_at": "2026-04-27T10:35:25.916567+03:00"
       },
       "2026-W18": {
-        "actions": 39,
+        "actions": 40,
         "shares": 32,
-        "error_total": 5,
+        "error_total": 6,
         "errors": {
           "SCORER_FAILED: No article above threshold (threshold=50, top_score=10)": 2,
           "SCORER_FAILED: No article above threshold (threshold=65, top_score=10)": 1,
-          "PUBLISH_FAILED: Rastgele atlama": 2
+          "PUBLISH_FAILED: Rastgele atlama": 2,
+          "FETCH_FAILED: No article found": 1
         },
         "skip_total": 0,
         "skips": {},
