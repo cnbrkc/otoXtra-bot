@@ -1,38 +1,286 @@
 {
-  "run_id": "2026-05-04-16:08",
-  "status": "running",
-  "started_at": "2026-05-04T16:08:04.193177+03:00",
-  "updated_at": "2026-05-04T16:08:04.193177+03:00",
+  "run_id": "2026-05-04-16:22",
+  "status": "completed",
+  "started_at": "2026-05-04T16:22:04.660093+03:00",
+  "updated_at": "2026-05-04T16:24:05.566987+03:00",
   "stages": {
     "fetch": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "articles": [
+          {
+            "title": "Volkswagen'de çanlar çalıyor: \"İş modelimizi acilen değiştirmeliyiz\"",
+            "link": "https://tr.motor1.com/news/794777/vw-yeni-kemer-sikma-plani/",
+            "published": "2026-05-04T13:00:00+00:00",
+            "summary": "Kemer bir çentik daha sıkılacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+              "https://tr.motor1.com/news/794777/vw-yeni-kemer-sikma-plani/ImageObject",
+              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.webp",
+              "https://cdn.motor1.com/images/atr/L3ZG/s3/mert-gokhan.jpg",
+              "https://cdn.motor1.com/images/mgl/W8omZq/s4/byd-seal-u.webp",
+              "https://cdn.motor1.com/images/mgl/W8omZq/s4/byd-seal-u.jpg",
+              "https://cdn.motor1.com/images/mgl/koK7xY/s4/akaryakit-fiyatlari-4-mayis.webp",
+              "https://cdn.motor1.com/images/mgl/koK7xY/s4/akaryakit-fiyatlari-4-mayis.jpg",
+              "https://cdn.motor1.com/images/mgl/P3BkqG/s6/mercedes-cla220-neden-almali.webp",
+              "https://cdn.motor1.com/images/mgl/P3BkqG/s6/mercedes-cla220-neden-almali.jpg",
+              "https://cdn.motor1.com/images/mgl/Znz872/s5/volkswagen-id.-polo-2026.webp",
+              "https://cdn.motor1.com/images/mgl/Znz872/s5/volkswagen-id.-polo-2026.jpg",
+              "https://cdn.motor1.com/images/mgl/2N2pKM/s5/fiat-grande-panda-a-benzina.webp",
+              "https://cdn.motor1.com/images/mgl/2N2pKM/s5/fiat-grande-panda-a-benzina.jpg",
+              "https://cdn.motor1.com/images/mgl/nAl0gj/s5/peugeot-concept-6-ve-8.webp",
+              "https://cdn.motor1.com/images/mgl/nAl0gj/s5/peugeot-concept-6-ve-8.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "high",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "acilen-caliyor-canlar-degistirmeliyiz-modelimizi-volkswagen"
+          },
+          {
+            "title": "Artık mesele otomobil değil...\n\nKim daha hızlı geliştiriyor,\nkim daha ucuza üretiyor,\nkim teknolojiyi oyuna daha erken sokuyor…\n\nCevap netleşiyor ve bu cevap, alıştığımız yerden gelmiyor\n\nhttps://www.youtube.com/watch?v=_gk6NUaALhw",
+            "link": "https://nitter.net/eozpeynirci/status/2051286800023363680#m",
+            "published": "2026-05-04T13:04:18+00:00",
+            "summary": "Artık mesele otomobil değil... Kim daha hızlı geliştiriyor, kim daha ucuza üretiyor, kim teknolojiyi oyuna daha erken sokuyor… Cevap netleşiyor ve bu cevap, alıştığımız yerden gelmiyor piped.video/watch?v=_gk6NUaA…",
+            "image_url": "https://nitter.net/pic/card_img%2F2051275349401432065%2F_FcIQv9C%3Fformat%3Djpg%26name%3D800x320_1",
+            "rss_image_url": "https://nitter.net/pic/card_img%2F2051275349401432065%2F_FcIQv9C%3Fformat%3Djpg%26name%3D800x320_1",
+            "image_candidates": [
+              "https://nitter.net/pic/card_img%2F2051275349401432065%2F_FcIQv9C%3Fformat%3Djpg%26name%3D800x320_1"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "alistigimiz-cevap-cevap-com-degil-erken-gelistiriyor-gelmiyor-gk6nuaalhw-hizli-https-kim-kim-kim-mesele-netlesiyor-otomobil-oyuna-sokuyor-teknolojiyi-ucuza-uretiyor-watch-www-yerden-youtube"
+          },
+          {
+            "title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+            "link": "https://nitter.net/DoluBatarya/status/2051289579659968813#m",
+            "published": "2026-05-04T13:15:21+00:00",
+            "summary": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. Dünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış. Video",
+            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+            "image_candidates": [
+              "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Dolu Batarya",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "800-araclarda-artiran-auto-baslamis-cin-defa-degistirmenizi-dunyada-elektrik-entegre-gelismis-guvenligini-krikosuz-kullaniliyor-lastik-livis-mimarisine-opsiyon-otomobilde-saglayan-segment-sistemi-sunulmaya-surus-suspansiyon-suspansiyonlar-tutusu-volt-yol"
+          }
+        ],
+        "count": 3,
+        "source_health": {
+          "Donanimhaber": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Log": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Motor1 TR": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "ShiftDelete Otomobil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "OtoAjanda": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Emre Ozpeynirci": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Dolu Batarya": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Ahmet Celik": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Otomobilcom": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "TaylanOzgurDil": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "HakanDOgu": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "MuratTosun": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          },
+          "Sekizsilindir": {
+            "status": "ok",
+            "count": 10,
+            "detail": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-05-04T16:23:34.854597+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+          "link": "https://nitter.net/DoluBatarya/status/2051289579659968813#m",
+          "published": "2026-05-04T13:15:21+00:00",
+          "summary": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. Dünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış. Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "800-araclarda-artiran-auto-baslamis-cin-defa-degistirmenizi-dunyada-elektrik-entegre-gelismis-guvenligini-krikosuz-kullaniliyor-lastik-livis-mimarisine-opsiyon-otomobilde-saglayan-segment-sistemi-sunulmaya-surus-suspansiyon-suspansiyonlar-tutusu-volt-yol",
+          "base_ai_score": 87,
+          "score": 98,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 98,
+        "title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_reason": "ai_scored",
+        "skipped": false,
+        "threshold": 50
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-05-04T16:23:48.045671+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+          "link": "https://nitter.net/DoluBatarya/status/2051289579659968813#m",
+          "published": "2026-05-04T13:15:21+00:00",
+          "summary": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. Dünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış. Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "800-araclarda-artiran-auto-baslamis-cin-defa-degistirmenizi-dunyada-elektrik-entegre-gelismis-guvenligini-krikosuz-kullaniliyor-lastik-livis-mimarisine-opsiyon-otomobilde-saglayan-segment-sistemi-sunulmaya-surus-suspansiyon-suspansiyonlar-tutusu-volt-yol",
+          "base_ai_score": 87,
+          "score": 98,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🚗 Lİ AUTO L9 LIVIS: LASTİK DEĞİŞİMİ ARTIK ÇOK KOLAY!\n\nLi Auto'nun L9 Livis modeliyle lastik değiştirmek artık krikoya gerek kalmadan yapılabiliyor. Bu yenilikçi teknoloji, otomobillerde ilk kez 800 volt elektrik mimarisine entegre edilmiş bir süspansiyon sistemi kullanıyor.\n\nBu gelişmiş süspansiyonlar, yol tutuşunu ve sürüş güvenliğini önemli ölçüde artırıyor. Hatta Çin'de B segmenti araçlarda bile opsiyonel olarak sunulmaya başlanmış durumda.\n\nSiz bu teknoloji hakkında ne düşünüyorsunuz?",
+        "post_text_length": 493,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-05-04T16:23:58.295828+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+          "link": "https://nitter.net/DoluBatarya/status/2051289579659968813#m",
+          "published": "2026-05-04T13:15:21+00:00",
+          "summary": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. Dünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış. Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2051288575258288128%2Fimg%2FtVgEZlfhZLxxw7FE.jpg"
+          ],
+          "image_source": "fallback",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "800-araclarda-artiran-auto-baslamis-cin-defa-degistirmenizi-dunyada-elektrik-entegre-gelismis-guvenligini-krikosuz-kullaniliyor-lastik-livis-mimarisine-opsiyon-otomobilde-saglayan-segment-sistemi-sunulmaya-surus-suspansiyon-suspansiyonlar-tutusu-volt-yol",
+          "base_ai_score": 87,
+          "score": 98,
+          "score_reason": "ai_scored",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "image_sources": [
+            "fallback"
+          ],
+          "prepared_image_count": 1
+        },
+        "post_text": "🚗 Lİ AUTO L9 LIVIS: LASTİK DEĞİŞİMİ ARTIK ÇOK KOLAY!\n\nLi Auto'nun L9 Livis modeliyle lastik değiştirmek artık krikoya gerek kalmadan yapılabiliyor. Bu yenilikçi teknoloji, otomobillerde ilk kez 800 volt elektrik mimarisine entegre edilmiş bir süspansiyon sistemi kullanıyor.\n\nBu gelişmiş süspansiyonlar, yol tutuşunu ve sürüş güvenliğini önemli ölçüde artırıyor. Hatta Çin'de B segmenti araçlarda bile opsiyonel olarak sunulmaya başlanmış durumda.\n\nSiz bu teknoloji hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_fallback_5p3_wecj.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_fallback_5p3_wecj.jpg"
+        ],
+        "image_source": "fallback",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-05-04T16:24:00.108654+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122164646510916499",
+        "article_title": "Krikosuz lastik değiştirmenizi sağlayan Li Auto L9 Livis. \n\nDünyada ilk defa bir otomobilde 800 volt elektrik mimarisine entegre süspansiyon sistemi kullanılıyor. Yol tutuşu ve sürüş güvenliğini artıran gelişmiş süspansiyonlar Çin'de B segment araçlarda bile opsiyon olarak sunulmaya başlamış.",
+        "image_source": "single_image",
+        "image_count": 1,
+        "dry_run": false,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-05-04T16:24:05.566987+03:00"
     }
   }
 }
