@@ -1,5 +1,11 @@
 """
-Main orchestrator for otoXtra bot.
+Main orchestrator for otoXtra bot. (v4.0)
+
+v4.0:
+  - Hata/skip ayrimi guclendirildi (no article, threshold, random skip).
+  - Publish stage skip durumu merkezi olarak yakalaniyor.
+  - Gunluk limit ve min-interval durumlari skip olarak kaydediliyor.
+  - Sayisal config okumalarinda guvenli parse eklendi.
 """
 
 import os
@@ -38,6 +44,13 @@ def _get_env_bool(name: str, default: bool) -> bool:
     return default
 
 
+def _safe_int(value, default: int) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
 def _is_persist_state_enabled() -> bool:
     return _get_env_bool("PERSIST_STATE", True)
 
@@ -53,7 +66,7 @@ def _save_posted_data_if_enabled(data: dict) -> None:
 
 def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
     today_count = get_today_post_count(posted_data)
-    max_daily = settings.get("posting", {}).get("max_daily_posts", 9)
+    max_daily = _safe_int(settings.get("posting", {}).get("max_daily_posts", 9), 9)
     log(f"Today posts: {today_count}/{max_daily}")
     return today_count < max_daily
 
@@ -63,7 +76,7 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         log("Min post interval kontrolu atlandi (IGNORE_MIN_POST_INTERVAL=true)")
         return True
 
-    min_interval_hours = settings.get("posting", {}).get("min_post_interval_hours", 0)
+    min_interval_hours = _safe_int(settings.get("posting", {}).get("min_post_interval_hours", 0), 0)
     if min_interval_hours <= 0:
         return True
 
@@ -247,6 +260,34 @@ def _is_score_skipped() -> tuple[bool, str]:
     return False, ""
 
 
+def _is_publish_skipped() -> tuple[bool, str]:
+    try:
+        publish_stage = get_stage("publish")
+        if publish_stage.get("status") != "done":
+            return False, ""
+        output = publish_stage.get("output") or {}
+        if bool(output.get("skipped", False)):
+            reason = (output.get("skip_reason", "") or "").strip() or "publish_skipped"
+            return True, reason
+    except Exception:
+        pass
+    return False, ""
+
+
+def _is_soft_skip_error(error_text: str) -> tuple[bool, str]:
+    text = (error_text or "").strip()
+    low = text.lower()
+
+    if "no article found" in low:
+        return True, "no_article_found"
+    if "no article above threshold" in low:
+        return True, "no_article_above_threshold"
+    if "rastgele atlama" in low:
+        return True, "random_skip"
+
+    return False, ""
+
+
 def _run_telegram_priority_share() -> bool:
     """
     Telegram sohbetinden gelen oncelikli (gorsel + aciklama) icerigi
@@ -267,7 +308,6 @@ def _run_telegram_priority_share() -> bool:
         _record_error_stat("PIPELINE_INIT_FAILED", "Pipeline init failed (telegram priority)")
         return True
 
-    # Normal pipeline'i bozmadan publish'e gecmek icin onceki asamalari tamamlandi isaretle.
     set_stage("fetch", "done", output={"telegram_priority": True, "articles": []})
     set_stage(
         "score",
@@ -294,9 +334,16 @@ def _run_telegram_priority_share() -> bool:
     _log_image_summary()
 
     from agents.agent_publisher import run as publisher_run
+
     if not _run_agent("agent_publisher", publisher_run):
         err = _log_stage_error("publish")
         _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed (telegram priority)")
+        return True
+
+    skipped, reason = _is_publish_skipped()
+    if skipped:
+        _record_skip_stat(reason)
+        log(f"Telegram priority publish skip: {reason}", "INFO")
 
     return True
 
@@ -316,8 +363,11 @@ def main() -> None:
             return
 
         if not _check_daily_limit(settings, posted_data):
+            _record_skip_stat("daily_limit_reached")
             return
+
         if not _check_min_interval(settings, posted_data):
+            _record_skip_stat("min_post_interval_not_reached")
             return
 
         run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
@@ -327,17 +377,29 @@ def main() -> None:
             return
 
         from agents.agent_fetcher import run as fetcher_run
+
         if not _run_agent("agent_fetcher", fetcher_run):
             err = _log_stage_error("fetch")
             _log_source_health()
-            _record_error_stat("FETCH_FAILED", err or "agent_fetcher failed")
+
+            is_skip, skip_reason = _is_soft_skip_error(err)
+            if is_skip:
+                _record_skip_stat(skip_reason)
+            else:
+                _record_error_stat("FETCH_FAILED", err or "agent_fetcher failed")
             return
         _log_source_health()
 
         from agents.agent_scorer import run as scorer_run
+
         if not _run_agent("agent_scorer", scorer_run):
             err = _log_stage_error("score")
-            _record_error_stat("SCORER_FAILED", err or "agent_scorer failed")
+
+            is_skip, skip_reason = _is_soft_skip_error(err)
+            if is_skip:
+                _record_skip_stat(skip_reason)
+            else:
+                _record_error_stat("SCORER_FAILED", err or "agent_scorer failed")
             return
 
         skipped, skip_reason = _is_score_skipped()
@@ -348,12 +410,14 @@ def main() -> None:
             return
 
         from agents.agent_writer import run as writer_run
+
         if not _run_agent("agent_writer", writer_run):
             err = _log_stage_error("write")
             _record_error_stat("WRITER_FAILED", err or "agent_writer failed")
             return
 
         from agents.agent_image import run as image_run
+
         if not _run_agent("agent_image", image_run):
             err = _log_stage_error("image")
             _record_error_stat("IMAGE_FAILED", err or "agent_image failed")
@@ -361,9 +425,21 @@ def main() -> None:
         _log_image_summary()
 
         from agents.agent_publisher import run as publisher_run
+
         if not _run_agent("agent_publisher", publisher_run):
             err = _log_stage_error("publish")
-            _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed")
+
+            is_skip, skip_reason = _is_soft_skip_error(err)
+            if is_skip:
+                _record_skip_stat(skip_reason)
+            else:
+                _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed")
+            return
+
+        publish_skipped, publish_skip_reason = _is_publish_skipped()
+        if publish_skipped:
+            _record_skip_stat(publish_skip_reason)
+            log(f"Publish skip: {publish_skip_reason}", "INFO")
             return
 
     except KeyboardInterrupt:

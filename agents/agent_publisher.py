@@ -1,10 +1,12 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v3.8)
+agents/agent_publisher.py - Yayinci Ajani (v4.0)
 
-v3.8:
-  - Coklu gorsel paylasiminda farkli fonksiyon imzalari icin dayaniklilik arttirildi.
-  - Gercek paylasim yoluna gore image_count kaydi duzeltildi.
-  - Telegram bildirimine gorsel kaynak/adet bilgisi eklendi.
+v4.0:
+  - image_source isim hatasi giderildi (NameError fix).
+  - Random skip artik hata degil, "done + skipped" olarak isleniyor.
+  - Coklu gorsel fonksiyon cagrisinda farkli imzalara dayaniklilik eklendi.
+  - Numeric config okumalarinda guvenli parse eklendi.
+  - Dry-run ve normal akis ciktilari daha tutarli hale getirildi.
 """
 
 import os
@@ -43,6 +45,13 @@ def _get_env_bool(name: str, default: bool) -> bool:
     if value in {"false", "0", "no", "off"}:
         return False
     return default
+
+
+def _safe_int(value, default: int) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
 
 
 def _is_dry_run(settings: dict) -> bool:
@@ -149,8 +158,10 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
         seen_keys.add(key)
         collected.append(path)
 
-    for item in image_output.get("image_paths", []) if isinstance(image_output.get("image_paths", []), list) else []:
-        _add_if_valid(item)
+    raw_paths = image_output.get("image_paths", [])
+    if isinstance(raw_paths, list):
+        for item in raw_paths:
+            _add_if_valid(item)
 
     primary_path = image_output.get("image_path", "")
     if isinstance(primary_path, str) and primary_path and not os.path.exists(primary_path):
@@ -161,10 +172,6 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Optional[str]:
-    """
-    Farkli platform implementasyonlarinda fonksiyon imzasi degisebilir.
-    Sirayla birkac yaygin imzayi dener.
-    """
     call_patterns = [
         lambda: fn(image_paths, post_text_content),
         lambda: fn(post_text_content, image_paths),
@@ -181,7 +188,6 @@ def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Op
                 log(f"Coklu gorsel cagri basarili (pattern={call_idx})")
                 return result
         except TypeError:
-            # Imza uymadiysa bir sonraki deneme
             continue
         except Exception as exc:
             log(f"Coklu gorsel cagri hatasi (pattern={call_idx}): {exc}", "WARNING")
@@ -306,6 +312,25 @@ def _build_health_report() -> str:
     return "Saglikli"
 
 
+def _resolve_publish_mode(article: dict, image_source: str) -> str:
+    if bool(article.get("manual_priority", False)) or image_source == "telegram":
+        return "MANUEL"
+    return "OTOMATIK"
+
+
+def _queue_status_text() -> str:
+    try:
+        info = tg_platform.get_pending_shareable_queue_info()
+        ready = int(info.get("ready_count", 0))
+        total = int(info.get("total_groups", 0))
+        if ready > 0:
+            return f"Var ({ready} hazir / {total} toplam grup)"
+        return f"Yok ({total} toplam grup)"
+    except Exception as exc:
+        log(f"Kuyruk durumu okunamadi: {exc}", "WARNING")
+        return "Bilinmiyor"
+
+
 def _send_telegram_notification(
     article: dict,
     action_count: int,
@@ -318,26 +343,43 @@ def _send_telegram_notification(
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
 
+    publish_mode = _resolve_publish_mode(article, image_source)
+    queue_state = _queue_status_text()
+
     message = (
+        f"Paylasim Tipi: {publish_mode}\n"
         f"Baslik: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
         f"Skor: {score}\n"
         f"Durum: A{action_count}-P{share_count}\n"
         f"Gorsel: {image_source} ({image_count})\n"
-        f"Saglik: {health_report}"
+        f"Saglik: {health_report}\n"
+        f"Kuyruk Durumu: {queue_state}"
     )
     return tg_platform.send_message(message)
 
 
-def _build_publish_output(article: dict, post_id: str, image_source: str, image_count: int, dry_run: bool) -> dict:
-    return {
-        "success": True,
+def _build_publish_output(
+    article: dict,
+    post_id: str,
+    image_source: str,
+    image_count: int,
+    dry_run: bool,
+    skipped: bool = False,
+    skip_reason: str = "",
+) -> dict:
+    output = {
+        "success": not skipped,
         "post_id": post_id,
         "article_title": article.get("title", ""),
         "image_source": image_source,
         "image_count": image_count,
         "dry_run": dry_run,
+        "skipped": skipped,
     }
+    if skip_reason:
+        output["skip_reason"] = skip_reason
+    return output
 
 
 def _resolve_final_image_count(final_image_source: str, image_paths: list[str]) -> int:
@@ -376,6 +418,7 @@ def run() -> bool:
 
     log(f"Paylasilacak haber: {article.get('title', '')[:80]}")
     log(f"Image source: {image_source}, image count: {len(image_paths)}")
+
     manual_priority = bool(article.get("manual_priority", False))
     if manual_priority:
         log("Manual priority aktif: telegram icerigi once paylasilacak")
@@ -385,9 +428,12 @@ def run() -> bool:
     try:
         settings = load_config("settings")
         posting_settings = settings.get("posting", {})
-        max_daily_posts = int(posting_settings.get("max_daily_posts", 9))
-        skip_probability = int(posting_settings.get("skip_probability_percent", 10))
-        random_delay_max = int(posting_settings.get("random_delay_max_minutes", 8))
+        max_daily_posts = _safe_int(posting_settings.get("max_daily_posts", 9), 9)
+        skip_probability = _safe_int(posting_settings.get("skip_probability_percent", 10), 10)
+        random_delay_max = _safe_int(posting_settings.get("random_delay_max_minutes", 8), 8)
+
+        skip_probability = max(0, min(skip_probability, 100))
+        random_delay_max = max(0, random_delay_max)
 
         dry_run = _is_dry_run(settings)
         random_delay_enabled = _is_random_delay_enabled()
@@ -402,8 +448,19 @@ def run() -> bool:
             log("Gunluk limit kontrolu atlandi (manual_priority=true)")
 
         if not dry_run and (not manual_priority) and random_skip_enabled and not _check_skip_probability(skip_probability):
-            set_stage("publish", "error", error="Rastgele atlama")
-            return False
+            output = _build_publish_output(
+                article=article,
+                post_id="skipped_random",
+                image_source=image_source,
+                image_count=len(image_paths),
+                dry_run=False,
+                skipped=True,
+                skip_reason="random_skip",
+            )
+            set_stage("publish", "done", output=output)
+            log("Rastgele atlama nedeniyle bu tur publish skip edildi")
+            return True
+
         if not dry_run and not manual_priority and not random_skip_enabled:
             log("Rastgele atlama devre disi (ENABLE_RANDOM_SKIP=false)")
         if not dry_run and manual_priority:
