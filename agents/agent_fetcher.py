@@ -828,6 +828,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             }
 
     return all_articles, source_health
+  
     def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     keywords_cfg = load_config("keywords")
     if not isinstance(keywords_cfg, dict):
@@ -853,7 +854,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     return passed
 
 
-def _apply_time_filter_with_hours(
+    def _apply_time_filter_with_hours(
     articles: list[dict],
     max_age_hours: int,
     use_smart_cutoff: bool,
