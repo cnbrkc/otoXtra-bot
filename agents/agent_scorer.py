@@ -1,5 +1,11 @@
 """
-Viral scoring agent.
+Viral scoring agent. (v4.0)
+
+v4.0:
+  - Prompt eksik senaryosunda listeye kendini append etme bug'i giderildi.
+  - AI skorunun 10'luk/100'lük olcek farki otomatik normalize edildi.
+  - AI skor anahtari icin puan/score/skor fallback eklendi.
+  - Unscored kayitlarina base_ai_score ve daha tutarli reason yazimi eklendi.
 """
 
 import os
@@ -51,8 +57,38 @@ def _safe_int(value, default=0) -> int:
         return default
 
 
+def _safe_score_number(value, default=0) -> int:
+    try:
+        if isinstance(value, str):
+            cleaned = value.strip().replace(",", ".")
+            if cleaned == "":
+                return default
+            return int(round(float(cleaned)))
+        if isinstance(value, (int, float)):
+            return int(round(float(value)))
+    except Exception:
+        pass
+    return default
+
+
 def _clamp_score(value: int) -> int:
     return max(0, min(100, value))
+
+
+def _normalize_ai_score(ai_result: dict) -> int:
+    raw = None
+    for key in ("puan", "score", "skor"):
+        if key in ai_result:
+            raw = ai_result.get(key)
+            break
+
+    numeric = _safe_score_number(raw, UNSCORED_DEFAULT)
+
+    # Bazi modeller 0-10 skala dondurebiliyor. Otomatik 0-100'a cevir.
+    if 0 < numeric <= 10:
+        numeric *= 10
+
+    return _clamp_score(numeric)
 
 
 def _format_articles_numbered(articles: list) -> str:
@@ -72,6 +108,7 @@ def _split_into_batches(articles: list) -> list:
 
 def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
     for article in batch:
+        article["base_ai_score"] = UNSCORED_DEFAULT
         article["score"] = UNSCORED_DEFAULT
         article["score_reason"] = reason
         all_scored.append(article)
@@ -162,7 +199,11 @@ def run_viral_scoring(articles: list) -> list:
     scorer_prompt = load_config("prompts").get("viral_scorer", "")
     if not scorer_prompt:
         log("viral_scorer prompt not found", "WARNING")
-        _mark_unscored_batch(articles, "prompt_missing", articles)
+        # Onemli: burada list'e ayni listeyi append etmek sonsuz buyumeye yol aciyordu.
+        for article in articles:
+            article["base_ai_score"] = UNSCORED_DEFAULT
+            article["score"] = UNSCORED_DEFAULT
+            article["score_reason"] = "prompt_missing"
         return articles
 
     batches = _split_into_batches(articles)
@@ -187,7 +228,7 @@ def run_viral_scoring(articles: list) -> list:
         matched_ids = {id(art) for _, art in matched_pairs}
 
         for ai_result, article in matched_pairs:
-            base_score = _clamp_score(_safe_int(ai_result.get("puan", UNSCORED_DEFAULT), UNSCORED_DEFAULT))
+            base_score = _normalize_ai_score(ai_result)
             article["base_ai_score"] = base_score
             article["score"] = base_score
             article["score_reason"] = "ai_scored"
@@ -385,7 +426,8 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
 
 
 def _build_skip_output(meta: dict) -> dict:
-    threshold = _safe_int(meta.get("threshold", _get_active_threshold()), _get_active_threshold())
+    active_threshold = _get_active_threshold()
+    threshold = _safe_int(meta.get("threshold", active_threshold), active_threshold)
     return {
         "selected_article": None,
         "score": 0,
