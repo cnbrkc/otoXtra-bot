@@ -1,11 +1,10 @@
 """
-Main orchestrator for otoXtra bot. (v4.0)
+Main orchestrator for otoXtra bot. (v4.1)
 
-v4.0:
-  - Hata/skip ayrimi guclendirildi (no article, threshold, random skip).
+v4.1:
+  - Hata/skip ayrimi guclendirildi.
+  - ai_invalid_scale_10 skip sinifina eklendi.
   - Publish stage skip durumu merkezi olarak yakalaniyor.
-  - Gunluk limit ve min-interval durumlari skip olarak kaydediliyor.
-  - Sayisal config okumalarinda guvenli parse eklendi.
 """
 
 import os
@@ -284,6 +283,8 @@ def _is_soft_skip_error(error_text: str) -> tuple[bool, str]:
         return True, "no_article_above_threshold"
     if "rastgele atlama" in low:
         return True, "random_skip"
+    if "invalid 10-scale" in low or "invalid_scale_10" in low:
+        return True, "ai_invalid_scale_10"
 
     return False, ""
 
