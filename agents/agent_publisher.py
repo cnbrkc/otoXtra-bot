@@ -1,12 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.0)
+agents/agent_publisher.py - Yayinci Ajani (v4.1)
 
-v4.0:
-  - image_source isim hatasi giderildi (NameError fix).
-  - Random skip artik hata degil, "done + skipped" olarak isleniyor.
-  - Coklu gorsel fonksiyon cagrisinda farkli imzalara dayaniklilik eklendi.
-  - Numeric config okumalarinda guvenli parse eklendi.
-  - Dry-run ve normal akis ciktilari daha tutarli hale getirildi.
+v4.1:
+  - Random skip done+skipped akisi korunur.
+  - fallback/logo gorsel geldiğinde text-only paylasima gecilir.
+  - image_source NameError ve cagrı uyumlulugu duzeltmeleri korunur.
 """
 
 import os
@@ -171,6 +169,15 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
     return collected
 
 
+def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
+    # Foto/video yoksa logo/fallback görseli basmak yerine sadece metin paylaş.
+    if (image_source or "").strip().lower() == "fallback":
+        if image_paths:
+            log("Fallback gorsel tespit edildi, text-only paylasima geciliyor", "INFO")
+        return []
+    return image_paths
+
+
 def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Optional[str]:
     call_patterns = [
         lambda: fn(image_paths, post_text_content),
@@ -231,7 +238,7 @@ def _log_publish_preview(article: dict, post_text_content: str, image_paths: lis
                 size_kb = -1
             log(f"Final image[{idx}] path={path} size_kb={size_kb}")
     else:
-        log("Final image listesi bos", "WARNING")
+        log("Final image listesi bos -> text-only olasiligi", "INFO")
 
     preview = post_text_content[:220] + ("..." if len(post_text_content) > 220 else "")
     log(f"Post onizleme:\n{preview}")
@@ -408,6 +415,7 @@ def run() -> bool:
     post_text_content = image_output.get("post_text", "")
     image_source = image_output.get("image_source", "unknown")
     image_paths = _collect_valid_image_paths(image_output)
+    image_paths = _prefer_text_only_on_fallback(image_source, image_paths)
 
     if not article:
         set_stage("publish", "error", error="Image ciktisinda haber yok")
