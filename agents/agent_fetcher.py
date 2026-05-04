@@ -1,5 +1,11 @@
 """
-News fetch and filter agent.
+News fetch and filter agent. (v4.0)
+
+v4.0:
+  - Bool/int config okumalari guvenli hale getirildi.
+  - Time filter icin kontrollu relaxed fallback eklendi.
+  - Filtre adimlarina sayisal log eklendi.
+  - String/bozuk config degerlerinde crash riski azaltildi.
 """
 
 import json
@@ -17,18 +23,18 @@ import requests
 from bs4 import BeautifulSoup
 from dateutil import parser as dateutil_parser
 
-from core.logger import log
 from core.config_loader import load_config
 from core.helpers import (
+    _fingerprint_similarity,
     clean_html,
-    get_turkey_now,
-    get_posted_news,
+    generate_topic_fingerprint,
     get_last_check_time,
+    get_posted_news,
+    get_turkey_now,
     is_already_posted,
     is_duplicate_article,
-    generate_topic_fingerprint,
-    _fingerprint_similarity,
 )
+from core.logger import log
 from core.state_manager import set_stage
 
 
@@ -96,16 +102,29 @@ def _safe_int(value: Any, default: int) -> int:
         return default
 
 
+def _safe_int_min(value: Any, default: int, minimum: int) -> int:
+    parsed = _safe_int(value, default)
+    return parsed if parsed >= minimum else minimum
+
+
+def _coerce_bool(value: Any, default: bool = False) -> bool:
+    if isinstance(value, bool):
+        return value
+    if value is None:
+        return default
+    s = str(value).strip().lower()
+    if s in {"1", "true", "yes", "on"}:
+        return True
+    if s in {"0", "false", "no", "off"}:
+        return False
+    return default
+
+
 def _read_bool_env(name: str, default: bool) -> bool:
     raw = os.environ.get(name)
     if raw is None:
         return default
-    val = str(raw).strip().lower()
-    if val in {"1", "true", "yes", "on"}:
-        return True
-    if val in {"0", "false", "no", "off"}:
-        return False
-    return default
+    return _coerce_bool(raw, default)
 
 
 def _turkish_lower(text: str) -> str:
@@ -283,7 +302,6 @@ def _normalize_path_for_candidate_key(path: str) -> str:
     name, dot, ext = filename.partition(".")
     lower_name = name.lower()
 
-    # src_340x1912xslug..., 1400x788slug... gibi prefix boyutlari temizle
     lower_name = re.sub(r"^src_\d{2,4}x\d{2,4}x", "", lower_name, flags=re.IGNORECASE)
     lower_name = re.sub(r"^\d{2,4}x\d{2,4}", "", lower_name, flags=re.IGNORECASE)
 
@@ -326,7 +344,6 @@ def _is_probable_image_url(url: str) -> bool:
     if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
         return False
 
-    # Haberle ilgisiz editor/profil gorsellerini ele
     if "/images/editor/" in lower or "/images/images/editor/" in lower:
         return False
     if any(x in lower for x in ("/author/", "/profile/", "/avatar/")):
@@ -350,12 +367,10 @@ def _donanimhaber_variants(url: str) -> list[str]:
     if "donanimhaber.com" not in host:
         return variants
 
-    # /src_340x1912x... -> /src/...
     upgraded_path = re.sub(r"/src_\d{2,4}x\d{2,4}x", "/src/", path, flags=re.IGNORECASE)
     if upgraded_path != path:
         variants.append(urlunparse(parsed._replace(path=upgraded_path)))
 
-    # ...204564_0.jpg -> _1.._5
     m_idx = re.search(r"(\d{4,7})_(\d+)(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
     if m_idx:
         base_id = m_idx.group(1)
@@ -365,7 +380,6 @@ def _donanimhaber_variants(url: str) -> list[str]:
             p = f"{prefix}{base_id}_{i}{ext}"
             variants.append(urlunparse(parsed._replace(path=p)))
 
-    # ...204564.jpg -> _0.._5
     m_plain = re.search(r"(\d{4,7})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
     if m_plain:
         base_id = m_plain.group(1)
@@ -385,10 +399,6 @@ def _donanimhaber_variants(url: str) -> list[str]:
 
 
 def _thumbnail_to_original_variants(url: str) -> list[str]:
-    """
-    Kucuk thumbnail URL'lerinden daha buyuk/orijinal varyantlar ureterek
-    daha kaliteli gorsel yakalama sansini arttirir.
-    """
     variants: list[str] = [url]
     parsed = urlparse(url)
     path = parsed.path or ""
@@ -415,7 +425,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if filename_cleaned_path != path:
         variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
 
-    # Domain specific expansions
     for item in list(variants):
         variants.extend(_donanimhaber_variants(item))
 
@@ -531,7 +540,6 @@ def _extract_script_image_urls(script_text: str, page_url: str) -> list[str]:
     except Exception:
         pass
 
-    # Regex fallback
     for m in re.finditer(
         r'https?://[^\s"\'<>]+?\.(?:jpg|jpeg|png|webp|gif|bmp|avif)',
         text,
@@ -547,6 +555,8 @@ def _extract_script_image_urls(script_text: str, page_url: str) -> list[str]:
 def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
     if not url:
         return []
+
+    max_candidates = _safe_int_min(max_candidates, 8, 1)
 
     try:
         response = _request_with_retry(url, timeout=15, attempts=2, base_wait_seconds=1.0)
@@ -581,7 +591,6 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
             except Exception:
                 continue
 
-        # generic script tarama
         for script in soup.find_all("script"):
             script_text = (script.string or script.get_text() or "").strip()
             if not script_text:
@@ -643,9 +652,7 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
             if len(unique_candidates) >= collect_limit:
                 break
 
-        # final output max_candidates ile sinirli
         unique_candidates = unique_candidates[:max_candidates]
-
         log(f"extract_images_from_article: raw={raw_count}, canonical={len(unique_candidates)}, url={url[:120]}")
         return unique_candidates
 
@@ -669,15 +676,13 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     images_cfg = settings_cfg.get("images", {}) if isinstance(settings_cfg, dict) else {}
     news_cfg = settings_cfg.get("news", {}) if isinstance(settings_cfg, dict) else {}
 
-    max_articles_per_source = _safe_int(news_cfg.get("max_articles_per_source", 25), 25)
-    if max_articles_per_source < 1:
-        max_articles_per_source = 25
+    max_articles_per_source = _safe_int_min(news_cfg.get("max_articles_per_source", 25), 25, 1)
 
-    enable_article_image_scrape = bool(images_cfg.get("enable_article_image_scrape", True))
+    enable_article_image_scrape = _coerce_bool(images_cfg.get("enable_article_image_scrape", True), True)
     enable_article_image_scrape = _read_bool_env("ENABLE_ARTICLE_IMAGE_SCRAPE", enable_article_image_scrape)
 
-    max_candidates_per_article = int(images_cfg.get("max_candidates_per_article", 8))
-    max_article_scrapes_per_feed = int(images_cfg.get("max_article_scrapes_per_feed", 6))
+    max_candidates_per_article = _safe_int_min(images_cfg.get("max_candidates_per_article", 8), 8, 1)
+    max_article_scrapes_per_feed = _safe_int_min(images_cfg.get("max_article_scrapes_per_feed", 6), 6, 0)
 
     log(
         f"fetch image config: enable_article_image_scrape={enable_article_image_scrape}, "
@@ -687,12 +692,12 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     )
 
     for feed_info in feeds:
-        feed_url = feed_info.get("url", "")
-        feed_name = feed_info.get("name", "Unknown")
-        feed_priority = feed_info.get("priority", "medium")
-        feed_language = feed_info.get("language", "tr")
-        feed_can_scrape = feed_info.get("can_scrape_image", True)
-        feed_enabled = feed_info.get("enabled", True)
+        feed_url = str(feed_info.get("url", "") or "").strip()
+        feed_name = str(feed_info.get("name", "Unknown") or "Unknown").strip()
+        feed_priority = str(feed_info.get("priority", "medium") or "medium").strip().lower()
+        feed_language = str(feed_info.get("language", "tr") or "tr").strip().lower()
+        feed_can_scrape = _coerce_bool(feed_info.get("can_scrape_image", True), True)
+        feed_enabled = _coerce_bool(feed_info.get("enabled", True), True)
 
         if not feed_enabled:
             source_health[feed_name] = {"status": "disabled", "count": 0, "detail": "disabled"}
@@ -744,11 +749,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
                 article_image_candidates: list[str] = []
 
-                if (
-                    feed_can_scrape
-                    and enable_article_image_scrape
-                    and scraped_in_feed < max_article_scrapes_per_feed
-                ):
+                if feed_can_scrape and enable_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
                     article_image_candidates = extract_images_from_article(
                         link,
                         max_candidates=max_candidates_per_article,
@@ -780,11 +781,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                 if raw_candidate_count != len(article_image_candidates):
                     log(f"{feed_name}: image candidates raw={raw_candidate_count}, canonical={len(article_image_candidates)}")
 
-                primary_image = (
-                    article_image_candidates[0]
-                    if article_image_candidates
-                    else (normalized_rss_image or rss_image_url)
-                )
+                primary_image = article_image_candidates[0] if article_image_candidates else (normalized_rss_image or rss_image_url)
 
                 article = {
                     "title": title,
@@ -831,9 +828,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             }
 
     return all_articles, source_health
-
-
-def apply_keyword_filter(articles: list[dict]) -> list[dict]:
+    def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     keywords_cfg = load_config("keywords")
     if not isinstance(keywords_cfg, dict):
         return articles
@@ -858,15 +853,17 @@ def apply_keyword_filter(articles: list[dict]) -> list[dict]:
     return passed
 
 
-def apply_time_filter(articles: list[dict]) -> list[dict]:
-    settings = load_config("settings")
-    news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-    max_age_hours = int(news_cfg.get("max_article_age_hours", 12))
+def _apply_time_filter_with_hours(
+    articles: list[dict],
+    max_age_hours: int,
+    use_smart_cutoff: bool,
+) -> tuple[list[dict], datetime]:
+    max_age_hours = max(1, _safe_int(max_age_hours, 12))
 
     now_utc = datetime.now(timezone.utc)
     max_cutoff_utc = now_utc - timedelta(hours=max_age_hours)
 
-    if _is_test_mode():
+    if _is_test_mode() or not use_smart_cutoff:
         cutoff_utc = max_cutoff_utc
     else:
         posted_data = get_posted_news()
@@ -887,8 +884,24 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
             if pub_dt < cutoff_utc:
                 continue
         except Exception:
-            pass
+            passed.append(article)
+            continue
         passed.append(article)
+
+    return passed, cutoff_utc
+
+
+def apply_time_filter(articles: list[dict]) -> list[dict]:
+    settings = load_config("settings")
+    news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
+    max_age_hours = _safe_int(news_cfg.get("max_article_age_hours", 12), 12)
+
+    passed, cutoff_utc = _apply_time_filter_with_hours(
+        articles=articles,
+        max_age_hours=max_age_hours,
+        use_smart_cutoff=True,
+    )
+    log(f"time_filter: in={len(articles)} out={len(passed)} cutoff={cutoff_utc.isoformat()}")
     return passed
 
 
@@ -993,21 +1006,50 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
     articles, source_health = fetch_all_feeds()
     if not articles:
         return [], source_health
+    log(f"pipeline.fetch: {len(articles)}")
 
     articles = apply_keyword_filter(articles)
     if not articles:
+        log("pipeline.keyword: 0")
         return [], source_health
+    log(f"pipeline.keyword: {len(articles)}")
 
+    original_after_keyword = list(articles)
     articles = apply_time_filter(articles)
     if not articles:
-        return [], source_health
+        settings = load_config("settings")
+        news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
+        base_hours = _safe_int(news_cfg.get("max_article_age_hours", 12), 12)
+        relaxed_hours = max(base_hours, 36)
+
+        relaxed, relaxed_cutoff = _apply_time_filter_with_hours(
+            articles=original_after_keyword,
+            max_age_hours=relaxed_hours,
+            use_smart_cutoff=False,
+        )
+        if relaxed:
+            log(
+                f"time_filter fallback aktif: {len(original_after_keyword)} -> {len(relaxed)} "
+                f"(hours={relaxed_hours}, cutoff={relaxed_cutoff.isoformat()})",
+                "WARNING",
+            )
+            articles = relaxed
+        else:
+            log("pipeline.time: 0 (fallback da bos)")
+            return [], source_health
+    log(f"pipeline.time: {len(articles)}")
 
     if not _is_test_mode():
+        before_posted = len(articles)
         articles = remove_already_posted(articles)
+        log(f"pipeline.posted: {before_posted} -> {len(articles)}")
         if not articles:
             return [], source_health
 
+    before_dup = len(articles)
     articles = remove_duplicates(articles)
+    log(f"pipeline.duplicate: {before_dup} -> {len(articles)}")
+
     articles = _detect_trends(articles)
     return articles, source_health
 
