@@ -110,6 +110,7 @@ jobs:
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'false' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
+          SCORE_SKIP_AS_SUCCESS: 'true'
           MAX_IMAGES_PER_NEWS: '4'
         run: python -m core.orchestrator
 

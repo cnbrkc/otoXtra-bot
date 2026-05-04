@@ -1,11 +1,10 @@
 """
-Viral scoring agent. (v4.0)
+Viral scoring agent. (v4.1)
 
-v4.0:
-  - Prompt eksik senaryosunda listeye kendini append etme bug'i giderildi.
-  - AI skorunun 10'luk/100'lük olcek farki otomatik normalize edildi.
-  - AI skor anahtari icin puan/score/skor fallback eklendi.
-  - Unscored kayitlarina base_ai_score ve daha tutarli reason yazimi eklendi.
+v4.1:
+  - 10'luk skorlar artik otomatik 100'e cevrilmiyor.
+  - 10'luk skala suphesinde batch strict prompt ile yeniden deneniyor.
+  - Hala 10'luk donuyorsa batch ai_invalid_scale_10 olarak gecersiz sayiliyor.
 """
 
 import os
@@ -38,6 +37,14 @@ FRESHNESS_TIERS = [
 ]
 FRESHNESS_OLD_MALUS: int = -4
 TREND_BONUS_CAP: int = 18
+
+_STRICT_SCALE_APPEND = (
+    "\n\nKRITIK EK KURAL:\n"
+    "- puan alani SADECE 0-100 arasi TAM SAYI olmali.\n"
+    "- 1-10 olcegi KESINLIKLE kullanma.\n"
+    "- Ondalik puan kullanma.\n"
+    "- Bu kurala uymazsan cevap gecersiz sayilacak.\n"
+)
 
 
 def _is_score_breakdown_enabled() -> bool:
@@ -75,20 +82,25 @@ def _clamp_score(value: int) -> int:
     return max(0, min(100, value))
 
 
-def _normalize_ai_score(ai_result: dict) -> int:
+def _extract_raw_ai_score(ai_result: dict) -> int:
     raw = None
     for key in ("puan", "score", "skor"):
         if key in ai_result:
             raw = ai_result.get(key)
             break
+    return _safe_score_number(raw, UNSCORED_DEFAULT)
 
-    numeric = _safe_score_number(raw, UNSCORED_DEFAULT)
 
-    # Bazi modeller 0-10 skala dondurebiliyor. Otomatik 0-100'a cevir.
-    if 0 < numeric <= 10:
-        numeric *= 10
-
+def _normalize_ai_score(ai_result: dict) -> int:
+    numeric = _extract_raw_ai_score(ai_result)
     return _clamp_score(numeric)
+
+
+def _is_probably_ten_scale(scores: list[int]) -> bool:
+    positives = [s for s in scores if s > 0]
+    if not positives:
+        return False
+    return max(positives) <= 10
 
 
 def _format_articles_numbered(articles: list) -> str:
@@ -103,7 +115,7 @@ def _format_articles_numbered(articles: list) -> str:
 
 
 def _split_into_batches(articles: list) -> list:
-    return [articles[i : i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
+    return [articles[i: i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
 
 
 def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
@@ -191,6 +203,19 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     return matched
 
 
+def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
+    ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}")
+    if not ai_response:
+        return None, "ai_empty"
+
+    ai_results = _normalize_ai_results(parse_ai_json(ai_response))
+    if not ai_results:
+        return None, "ai_parse_failed"
+
+    matched_pairs = _match_ai_results_to_articles(ai_results, batch)
+    return matched_pairs, ""
+
+
 def run_viral_scoring(articles: list) -> list:
     if not articles:
         log("No articles for scoring", "INFO")
@@ -199,7 +224,6 @@ def run_viral_scoring(articles: list) -> list:
     scorer_prompt = load_config("prompts").get("viral_scorer", "")
     if not scorer_prompt:
         log("viral_scorer prompt not found", "WARNING")
-        # Onemli: burada list'e ayni listeyi append etmek sonsuz buyumeye yol aciyordu.
         for article in articles:
             article["base_ai_score"] = UNSCORED_DEFAULT
             article["score"] = UNSCORED_DEFAULT
@@ -210,21 +234,32 @@ def run_viral_scoring(articles: list) -> list:
     all_scored = []
 
     for batch_num, batch in enumerate(batches, start=1):
-        ai_response = ask_ai(f"{scorer_prompt}\n\n{_format_articles_numbered(batch)}")
-        if not ai_response:
-            _mark_unscored_batch(batch, "ai_empty", all_scored)
+        matched_pairs, fail_reason = _score_batch(batch, scorer_prompt)
+        if fail_reason:
+            _mark_unscored_batch(batch, fail_reason, all_scored)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
 
-        ai_results = _normalize_ai_results(parse_ai_json(ai_response))
-        if not ai_results:
-            _mark_unscored_batch(batch, "ai_parse_failed", all_scored)
-            if batch_num < len(batches):
-                time.sleep(BATCH_DELAY_SECONDS)
-            continue
+        raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs]
+        if _is_probably_ten_scale(raw_scores):
+            log("Scorer 10'luk olcek supheleri tespit edildi, strict retry deneniyor", "WARNING")
+            matched_pairs_retry, retry_reason = _score_batch(batch, scorer_prompt + _STRICT_SCALE_APPEND)
+            if retry_reason:
+                _mark_unscored_batch(batch, retry_reason, all_scored)
+                if batch_num < len(batches):
+                    time.sleep(BATCH_DELAY_SECONDS)
+                continue
 
-        matched_pairs = _match_ai_results_to_articles(ai_results, batch)
+            retry_raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs_retry]
+            if _is_probably_ten_scale(retry_raw_scores):
+                _mark_unscored_batch(batch, "ai_invalid_scale_10", all_scored)
+                if batch_num < len(batches):
+                    time.sleep(BATCH_DELAY_SECONDS)
+                continue
+
+            matched_pairs = matched_pairs_retry
+
         matched_ids = {id(art) for _, art in matched_pairs}
 
         for ai_result, article in matched_pairs:
@@ -397,6 +432,27 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
         )
 
 
+def _derive_skip_reason_from_scores(scored: list) -> str:
+    if not scored:
+        return "no_scored_articles"
+
+    reasons = {}
+    for a in scored:
+        r = (a.get("score_reason", "") or "").strip()
+        if r:
+            reasons[r] = reasons.get(r, 0) + 1
+
+    if not reasons:
+        return "No article above threshold"
+
+    top_reason = max(reasons, key=reasons.get)
+    if top_reason == "ai_invalid_scale_10":
+        return "AI returned invalid 10-scale scores"
+    if top_reason in {"ai_empty", "ai_parse_failed", "ai_unmatched"}:
+        return f"Scoring failed ({top_reason})"
+    return "No article above threshold"
+
+
 def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
     if not articles:
         return None, {"skipped": True, "skip_reason": "no_articles"}
@@ -416,7 +472,7 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
         top = scored[0] if scored else {}
         return None, {
             "skipped": True,
-            "skip_reason": "No article above threshold",
+            "skip_reason": _derive_skip_reason_from_scores(scored),
             "threshold": threshold,
             "top_score": _safe_int(top.get("score", 0), 0),
             "top_title": top.get("title", ""),
