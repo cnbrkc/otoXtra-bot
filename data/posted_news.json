@@ -1,15 +1,6 @@
 {
   "posts": [
     {
-      "title": "CarPlay’e Google Meet Desteği Geldi!",
-      "original_url": "https://shiftdelete.net/carplaye-google-meet-destegi-geldi",
-      "source": "ShiftDelete Otomobil",
-      "score": 83,
-      "posted_at": "2026-04-04T16:50:44.842932+03:00",
-      "fb_post_id": "678053852057751_122161284602916499",
-      "image_source": "og:image"
-    },
-    {
       "title": "İşte Fiat’tan Yeni Araç: Koala!",
       "original_url": "https://shiftdelete.net/iste-fiattan-yeni-arac-koala",
       "source": "ShiftDelete Otomobil",
@@ -468,12 +459,12 @@
     "2026-04-17": 2,
     "2026-05-04": 1
   },
-  "last_check_time": "2026-05-04T16:24:05.568259+03:00",
+  "last_check_time": "2026-05-04T17:08:29.566058+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
       "2026-04-17": 3,
-      "2026-05-04": 2
+      "2026-05-04": 3
     },
     "weekly": {
       "2026-W16": {
@@ -491,14 +482,16 @@
         "skips": {}
       },
       "2026-W19": {
-        "actions": 2,
+        "actions": 3,
         "shares": 1,
         "error_total": 1,
         "errors": {
           "ORCHESTRATOR_CRITICAL: expected an indented block after function definition on line 831 (agent_fetcher.py, line 832)": 1
         },
-        "skip_total": 0,
-        "skips": {},
+        "skip_total": 1,
+        "skips": {
+          "min_post_interval_not_reached": 1
+        },
         "report_sent": false,
         "report_sent_at": null
       },
