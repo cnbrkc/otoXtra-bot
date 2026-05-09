@@ -526,7 +526,7 @@
     "2026-05-08": 5,
     "2026-05-09": 4
   },
-  "last_check_time": "2026-05-09T20:02:02.805411+03:00",
+  "last_check_time": "2026-05-09T20:53:34.450873+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -536,7 +536,7 @@
       "2026-05-06": 5,
       "2026-05-07": 5,
       "2026-05-08": 7,
-      "2026-05-09": 6
+      "2026-05-09": 7
     },
     "weekly": {
       "2026-W16": {
@@ -554,15 +554,15 @@
         "skips": {}
       },
       "2026-W19": {
-        "actions": 33,
+        "actions": 34,
         "shares": 24,
         "error_total": 1,
         "errors": {
           "ORCHESTRATOR_CRITICAL: expected an indented block after function definition on line 831 (agent_fetcher.py, line 832)": 1
         },
-        "skip_total": 8,
+        "skip_total": 9,
         "skips": {
-          "min_post_interval_not_reached": 1,
+          "min_post_interval_not_reached": 2,
           "random_skip": 3,
           "Scoring failed (ai_unmatched)": 3,
           "no_article_found": 1
