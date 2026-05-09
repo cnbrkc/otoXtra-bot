@@ -1,103 +1,14 @@
 {
-  "run_id": "2026-05-09-16:23",
-  "status": "completed",
-  "started_at": "2026-05-09T16:23:32.219158+03:00",
-  "updated_at": "2026-05-09T16:25:51.192957+03:00",
+  "run_id": "2026-05-09-17:54",
+  "status": "error",
+  "started_at": "2026-05-09T17:54:29.754922+03:00",
+  "updated_at": "2026-05-09T17:56:03.173449+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-            "link": "https://www.donanimhaber.com/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi--205440",
-            "published": "2026-05-09T13:00:00+00:00",
-            "summary": "Porsche, Almanya'nın meşhur Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir tur rekoruna imza attı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-              "https://www.donanimhaber.com/ImageObject",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_1.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_2.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_3.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_4.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_5.jpg",
-              "https://www.donanimhaber.com/images/images/videostartimage/videoid13465_220x391.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/pCOaBbGy2Ei8Sgm6qXKIyA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/SaeRCRc9SEyYRxUHOpa5w.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/FRpTsik18U2lm9DIXNAGwA.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260508201454&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205440%2Fporsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-beygirlik-birakti-byd-geride-nurburgring-porsche-rekorunu-taycan-turbo-yineledi"
-          },
-          {
-            "title": "Çinli elektrikli otomobillerde paslanma krizi: MG ve BYD gündemde",
-            "link": "https://www.donanimhaber.com/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde--205458",
-            "published": "2026-05-09T12:30:00+00:00",
-            "summary": "MG ve BYD gibi yükselen Çinli markaların araçları paslanma sorunlarıyla gündeme geldi. Yaşananlar, hızlı büyüme sürecinde üretim kalitesinin ne kadar kritik bir faktör olduğunu gösteriyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/205458/1400x788cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205458/1400x788cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/205458/1400x788cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde.jpg",
-              "https://www.donanimhaber.com/ImageObject",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_0.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_1.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_2.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_3.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_4.jpg",
-              "https://www.donanimhaber.com/images/images/haber/205458/src/cinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_5.jpg",
-              "https://www.donanimhaber.com/images/images/videostartimage/videoid13465_220x391.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/FDllUsJySUyXnKxMwiLmg.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/yxFHKz5stkuBws4wLAk0w.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-              "https://www.donanimhaber.com/images/images/recommendations/FRpTsik18U2lm9DIXNAGwA.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_0.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_1.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_5.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_2.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_3.jpg",
-              "https://www.donanimhaber.com/cache-v2/?t=20260509132959&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205458%2Fcinli-elektrikli-otomobillerde-paslanma-krizi-mg-ve-byd-gundemde205458_4.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-cinli-elektrikli-gundemde-krizi-otomobillerde-paslanma"
-          },
-          {
-            "title": "Adam geldi 15 kWh doldurdu gitti.\nKral hareket.",
-            "link": "https://nitter.net/murattosunMSE/status/2053096356118499526#m",
-            "published": "2026-05-09T12:54:50+00:00",
-            "summary": "Adam geldi 15 kWh doldurdu gitti. Kral hareket.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adam-doldurdu-gitti-hareket-kral-kwh"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -166,183 +77,32 @@
           }
         }
       },
-      "error": null,
-      "updated_at": "2026-05-09T16:24:40.940958+03:00"
+      "error": "No article found",
+      "updated_at": "2026-05-09T17:56:03.173449+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-          "link": "https://www.donanimhaber.com/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi--205440",
-          "published": "2026-05-09T13:00:00+00:00",
-          "summary": "Porsche, Almanya'nın meşhur Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir tur rekoruna imza attı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13465_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/pCOaBbGy2Ei8Sgm6qXKIyA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/SaeRCRc9SEyYRxUHOpa5w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/FRpTsik18U2lm9DIXNAGwA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260508201454&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205440%2Fporsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-beygirlik-birakti-byd-geride-nurburgring-porsche-rekorunu-taycan-turbo-yineledi",
-          "base_ai_score": 83,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 94,
-        "title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_reason": "ai_scored",
-        "skipped": false,
-        "threshold": 65
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-09T16:24:46.950485+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-          "link": "https://www.donanimhaber.com/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi--205440",
-          "published": "2026-05-09T13:00:00+00:00",
-          "summary": "Porsche, Almanya'nın meşhur Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir tur rekoruna imza attı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13465_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/pCOaBbGy2Ei8Sgm6qXKIyA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/SaeRCRc9SEyYRxUHOpa5w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/FRpTsik18U2lm9DIXNAGwA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260508201454&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205440%2Fporsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-beygirlik-birakti-byd-geride-nurburgring-porsche-rekorunu-taycan-turbo-yineledi",
-          "base_ai_score": 83,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu derece, Kern’in 2023’te standart Taycan Turbo GT ile elde ettiği önceki rekorundan yaklaşık12 saniye daha hızlı. Aynı zamanda “Elektrikli Lüks Otomobiller” kategorisindeki önceki önceki rekorun da9 saniyeden fazla üzerinde. Manthey Racing tarafından geliştirilenManthey Kit, bir elektrikli Porsche için sunulan ilk kapsamlı performans yükseltme paketi olma özelliğini taşıyor. Paket yalnızca aerodinamiğe değil; güç aktarımı, süspansiyon, frenler, jantlar ve lastiklere kadar geniş bir alanda değişiklikler içeriyor. Aerodinamik tarafta en dikkat çekici gelişme, downforce seviyesinin ciddi şekilde artırılması oldu. Standart versiyonda928 N olan downforce, 3.037 N seviyesine çıkarıldı.Araç 309 km/s maksimum hıza ulaşırken toplam downforce7.257 N'a kadar yükseliyor.Yeni arka kanat, ön difüzör ve karbon aero disklerbu artışın temelini oluşturuyor. Manthey ayrıca Taycan’ın güç aktarma sistemine de müdahale etti. Yüksek voltaj sistemi ve kontrol ünitelerindeki optimizasyonlarla maksimum akım 1.100 amperden 1.300 ampere çıkarıldı. Bu sayede, standart güç777 beygirden 804 beygireçıkarken, Atak Modu'nda938 beygirden 978 beygireyükseldi. Kalkış Kontrol'deki1.019 beygirlikgüç ise korundu. Buna ek olarakdaha hafif 21 inç dövme jantlar, titanyum bijonlarve genişletilmişPirelli P Zero Trofeo RS lastiklerkullanıldı. Fren sisteminde ise daha büyük440 mm ön disklerve geliştirilmiş balatalar yer aldı. Taycan Turbo GT, elektrikli hiper otomobiller arasındaki rekabette de dikkat çekici bir konuma yerleşti. ÖrneğinBYD'nin 3.000 beygir gücündeki Yangwang U9 Xtreme modelinin 6:59.157'lik tur derecesini 3.6 saniye geride bırakmayı başardı.Xiaomi SU7 Ultra’nın üretim versiyonu ise 7:04.957 derece elde etmişti. Yalnızca SU7 Ultra’nın prototip versiyonu 6:46.874 ile daha hızlı bir zaman elde etmiş durumda. Porsche, Manthey Kit’in fiyatı ve tam satış takvimini henüz açıklamadı. Paketin doğrudan fabrika üzerinden sunulacak olması ise Manthey iş birliği açısından bir ilk olarak öne çıkıyor. Türkiye'nin insansız sualtı aracı: TENGİZ https://www.amazon.com.tr/dp/B0GHFZW3JG https://www.amazon.com.tr/dp/B0DN6V27BD https://www.amazon.com.tr/dp/B0DY7VNY4N https://www.n11.com/urun/freecamp-survive-sisme-mat-lacivert-25489136?magaza=outdoordunyasi https://www.ing.com.tr/tr/sizin-icin/kampanyalar/duzenli-gelirini-getir-mayis-oft"
-        },
-        "post_text": "⚡️ PORSCHE TAYCAN TURBO GT, NÜRBURGRİNG'DE YİNE DESTAN YAZDI!\n\nPorsche, Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir rekor kırdı.\n\nBu yeni derece, önceki Taycan Turbo GT rekorundan tam 12 saniye daha hızlı. Hatta \"Elektrikli Lüks Otomobiller\" kategorisindeki eski rekoru da 9 saniyeden fazla geride bıraktı.\n\nManthey Racing tarafından geliştirilen özel performans paketi sayesinde Taycan'ın aerodinamiği, güç aktarımı ve süspansiyonunda ciddi iyileştirmeler yapılmış. Özellikle downforce seviyesi inanılmaz artırılmış.\n\nGüç konusunda da önemli artışlar var. Standart 777 beygirden 804 beygire, Atak Modu'nda ise 938 beygirden 978 beygire çıkmış.\n\nDaha hafif jantlar, özel lastikler ve geliştirilmiş fren sistemiyle araç adeta uçuyor.\n\nSizce bu Taycan'ın performansı hakkında ne düşünüyorsunuz?",
-        "post_text_length": 840,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-09T16:24:50.571939+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-          "link": "https://www.donanimhaber.com/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi--205440",
-          "published": "2026-05-09T13:00:00+00:00",
-          "summary": "Porsche, Almanya'nın meşhur Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir tur rekoruna imza attı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/205440/1400x788porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi.jpg",
-            "https://www.donanimhaber.com/ImageObject",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/205440/src/porsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_5.jpg",
-            "https://www.donanimhaber.com/images/images/videostartimage/videoid13465_220x391.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/pCOaBbGy2Ei8Sgm6qXKIyA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/SaeRCRc9SEyYRxUHOpa5w.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/6vHX0u5EkiOLmB6kzehA.jpg",
-            "https://www.donanimhaber.com/images/images/recommendations/FRpTsik18U2lm9DIXNAGwA.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260508201454&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F205440%2Fporsche-taycan-turbo-gt-nurburgring-rekorunu-yeniden-kirdi205440_0.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-beygirlik-birakti-byd-geride-nurburgring-porsche-rekorunu-taycan-turbo-yineledi",
-          "base_ai_score": 83,
-          "score": 94,
-          "score_reason": "ai_scored",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu derece, Kern’in 2023’te standart Taycan Turbo GT ile elde ettiği önceki rekorundan yaklaşık12 saniye daha hızlı. Aynı zamanda “Elektrikli Lüks Otomobiller” kategorisindeki önceki önceki rekorun da9 saniyeden fazla üzerinde. Manthey Racing tarafından geliştirilenManthey Kit, bir elektrikli Porsche için sunulan ilk kapsamlı performans yükseltme paketi olma özelliğini taşıyor. Paket yalnızca aerodinamiğe değil; güç aktarımı, süspansiyon, frenler, jantlar ve lastiklere kadar geniş bir alanda değişiklikler içeriyor. Aerodinamik tarafta en dikkat çekici gelişme, downforce seviyesinin ciddi şekilde artırılması oldu. Standart versiyonda928 N olan downforce, 3.037 N seviyesine çıkarıldı.Araç 309 km/s maksimum hıza ulaşırken toplam downforce7.257 N'a kadar yükseliyor.Yeni arka kanat, ön difüzör ve karbon aero disklerbu artışın temelini oluşturuyor. Manthey ayrıca Taycan’ın güç aktarma sistemine de müdahale etti. Yüksek voltaj sistemi ve kontrol ünitelerindeki optimizasyonlarla maksimum akım 1.100 amperden 1.300 ampere çıkarıldı. Bu sayede, standart güç777 beygirden 804 beygireçıkarken, Atak Modu'nda938 beygirden 978 beygireyükseldi. Kalkış Kontrol'deki1.019 beygirlikgüç ise korundu. Buna ek olarakdaha hafif 21 inç dövme jantlar, titanyum bijonlarve genişletilmişPirelli P Zero Trofeo RS lastiklerkullanıldı. Fren sisteminde ise daha büyük440 mm ön disklerve geliştirilmiş balatalar yer aldı. Taycan Turbo GT, elektrikli hiper otomobiller arasındaki rekabette de dikkat çekici bir konuma yerleşti. ÖrneğinBYD'nin 3.000 beygir gücündeki Yangwang U9 Xtreme modelinin 6:59.157'lik tur derecesini 3.6 saniye geride bırakmayı başardı.Xiaomi SU7 Ultra’nın üretim versiyonu ise 7:04.957 derece elde etmişti. Yalnızca SU7 Ultra’nın prototip versiyonu 6:46.874 ile daha hızlı bir zaman elde etmiş durumda. Porsche, Manthey Kit’in fiyatı ve tam satış takvimini henüz açıklamadı. Paketin doğrudan fabrika üzerinden sunulacak olması ise Manthey iş birliği açısından bir ilk olarak öne çıkıyor. Türkiye'nin insansız sualtı aracı: TENGİZ https://www.amazon.com.tr/dp/B0GHFZW3JG https://www.amazon.com.tr/dp/B0DN6V27BD https://www.amazon.com.tr/dp/B0DY7VNY4N https://www.n11.com/urun/freecamp-survive-sisme-mat-lacivert-25489136?magaza=outdoordunyasi https://www.ing.com.tr/tr/sizin-icin/kampanyalar/duzenli-gelirini-getir-mayis-oft",
-          "image_sources": [
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 2
-        },
-        "post_text": "⚡️ PORSCHE TAYCAN TURBO GT, NÜRBURGRİNG'DE YİNE DESTAN YAZDI!\n\nPorsche, Nürburgring Nordschleife pistinde elektrikli seri üretim otomobiller kategorisinde yeni bir rekor kırdı.\n\nBu yeni derece, önceki Taycan Turbo GT rekorundan tam 12 saniye daha hızlı. Hatta \"Elektrikli Lüks Otomobiller\" kategorisindeki eski rekoru da 9 saniyeden fazla geride bıraktı.\n\nManthey Racing tarafından geliştirilen özel performans paketi sayesinde Taycan'ın aerodinamiği, güç aktarımı ve süspansiyonunda ciddi iyileştirmeler yapılmış. Özellikle downforce seviyesi inanılmaz artırılmış.\n\nGüç konusunda da önemli artışlar var. Standart 777 beygirden 804 beygire, Atak Modu'nda ise 938 beygirden 978 beygire çıkmış.\n\nDaha hafif jantlar, özel lastikler ve geliştirilmiş fren sistemiyle araç adeta uçuyor.\n\nSizce bu Taycan'ın performansı hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_tz4u45pm.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tz4u45pm.jpg",
-          "/tmp/otoxtra_img_r_ja8qw4.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 2
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-09T16:25:12.279057+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122165196176916499",
-        "article_title": "Porsche Taycan Turbo GT, Nürburgring rekorunu yineledi: 3.000 beygirlik BYD'yi geride bıraktı",
-        "image_source": "multi_image",
-        "image_count": 2,
-        "dry_run": false,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-05-09T16:25:51.192957+03:00"
+      "updated_at": null
     }
   }
 }
