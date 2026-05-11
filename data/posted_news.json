@@ -542,7 +542,6 @@
     }
   ],
   "daily_counts": {
-    "2026-04-10": 4,
     "2026-04-15": 4,
     "2026-04-16": 8,
     "2026-04-17": 2,
@@ -554,7 +553,7 @@
     "2026-05-09": 5,
     "2026-05-10": 7
   },
-  "last_check_time": "2026-05-10T22:11:51.250220+03:00",
+  "last_check_time": "2026-05-11T11:26:41.991745+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-16": 15,
@@ -565,7 +564,8 @@
       "2026-05-07": 5,
       "2026-05-08": 7,
       "2026-05-09": 8,
-      "2026-05-10": 8
+      "2026-05-10": 8,
+      "2026-05-11": 1
     },
     "weekly": {
       "2026-W16": {
@@ -596,8 +596,8 @@
           "Scoring failed (ai_unmatched)": 3,
           "no_article_found": 1
         },
-        "report_sent": false,
-        "report_sent_at": null
+        "report_sent": true,
+        "report_sent_at": "2026-05-11T11:25:17.108117+03:00"
       },
       "2026-W18": {
         "actions": 0,
@@ -608,6 +608,18 @@
         "skips": {},
         "report_sent": true,
         "report_sent_at": "2026-05-04T16:08:03.729701+03:00"
+      },
+      "2026-W20": {
+        "actions": 1,
+        "shares": 0,
+        "error_total": 0,
+        "errors": {},
+        "skip_total": 1,
+        "skips": {
+          "Scoring failed (ai_unmatched)": 1
+        },
+        "report_sent": false,
+        "report_sent_at": null
       }
     }
   }
