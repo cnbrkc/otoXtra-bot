@@ -750,7 +750,7 @@
     "2026-05-16": 6,
     "2026-05-17": 6
   },
-  "last_check_time": "2026-05-17T20:07:52.874140+03:00",
+  "last_check_time": "2026-05-17T21:03:15.678529+03:00",
   "stats": {
     "daily_actions": {
       "2026-04-17": 3,
@@ -767,7 +767,7 @@
       "2026-05-14": 5,
       "2026-05-15": 5,
       "2026-05-16": 8,
-      "2026-05-17": 6
+      "2026-05-17": 7
     },
     "weekly": {
       "2026-W16": {
@@ -812,14 +812,15 @@
         "report_sent_at": "2026-05-04T16:08:03.729701+03:00"
       },
       "2026-W20": {
-        "actions": 39,
+        "actions": 40,
         "shares": 29,
         "error_total": 0,
         "errors": {},
-        "skip_total": 10,
+        "skip_total": 11,
         "skips": {
           "Scoring failed (ai_unmatched)": 7,
-          "random_skip": 3
+          "random_skip": 3,
+          "min_post_interval_not_reached": 1
         },
         "report_sent": false,
         "report_sent_at": null
