@@ -822,7 +822,7 @@
     "2026-05-17": 7,
     "2026-05-18": 5
   },
-  "last_check_time": "2026-05-19T11:32:27.663395+03:00",
+  "last_check_time": "2026-05-19T15:43:05.878084+03:00",
   "stats": {
     "daily_actions": {
       "2026-05-04": 5,
@@ -840,7 +840,7 @@
       "2026-05-16": 8,
       "2026-05-17": 8,
       "2026-05-18": 5,
-      "2026-05-19": 1
+      "2026-05-19": 2
     },
     "weekly": {
       "2026-W16": {
@@ -899,13 +899,14 @@
         "report_sent_at": "2026-05-18T11:46:41.348398+03:00"
       },
       "2026-W21": {
-        "actions": 6,
+        "actions": 7,
         "shares": 5,
         "error_total": 0,
         "errors": {},
-        "skip_total": 1,
+        "skip_total": 2,
         "skips": {
-          "random_skip": 1
+          "random_skip": 1,
+          "Scoring failed (ai_unmatched)": 1
         },
         "report_sent": false,
         "report_sent_at": null
