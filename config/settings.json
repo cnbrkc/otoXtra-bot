@@ -23,6 +23,8 @@
   },
   "news": {
     "max_article_age_hours": 24,
+    "relaxed_max_article_age_hours": 72,
+    "min_candidates_after_time_filter": 3,
     "max_articles_per_source": 10,
     "min_summary_length": 30,
     "shared_variant_cooldown_hours": 3
@@ -32,7 +34,9 @@
     "keyword_overlap_threshold": 0.7,
     "topic_cooldown_hours": 24,
     "topic_similarity_threshold": 0.72,
-    "topic_min_overlap_keywords": 2
+    "topic_min_overlap_keywords": 2,
+    "posted_similarity_window_hours": 24,
+    "posted_similarity_threshold": 0.82
   },
   "ai": {
     "temperature": 0.65,
