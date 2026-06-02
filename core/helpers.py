@@ -81,6 +81,13 @@ def _normalize_token(text: str) -> str:
 _NORMALIZED_STOP_WORDS = {_normalize_token(w) for w in _RAW_STOP_WORDS if w}
 
 
+def _safe_float(value, default: float) -> float:
+    try:
+        return float(value)
+    except Exception:
+        return default
+
+
 def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
     if not title1 or not title2:
         return False
@@ -118,6 +125,12 @@ def _fingerprint_similarity(fp1: str, fp2: str) -> float:
     if not fp1 or not fp2:
         return 0.0
     return difflib.SequenceMatcher(None, fp1, fp2).ratio()
+
+
+def _fingerprint_tokens(fp: str) -> set[str]:
+    if not fp:
+        return set()
+    return {t for t in fp.split("-") if t and len(t) >= 3}
 
 
 def _extract_domain(url: str) -> str:
@@ -287,7 +300,6 @@ def _parse_expiry_datetime(raw_value: str):
     if not raw:
         return None
 
-    # Unix timestamp (seconds or milliseconds)
     try:
         if raw.isdigit():
             ts = int(raw)
@@ -297,7 +309,6 @@ def _parse_expiry_datetime(raw_value: str):
     except Exception:
         pass
 
-    # ISO format
     try:
         parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
         if parsed.tzinfo is None:
@@ -306,13 +317,11 @@ def _parse_expiry_datetime(raw_value: str):
     except Exception:
         pass
 
-    # YYYY-MM-DD
     try:
         return datetime.strptime(raw, "%Y-%m-%d").replace(tzinfo=_TR_TZ)
     except Exception:
         pass
 
-    # dateutil fallback
     try:
         from dateutil import parser as dateutil_parser
 
@@ -439,7 +448,6 @@ def save_posted_news(data: dict) -> bool:
     return save_json(filepath, data)
 
 
-
 def _cooldown_key(url: str, title: str) -> str:
     fingerprint = generate_topic_fingerprint(title)
     if fingerprint:
@@ -454,11 +462,6 @@ def record_shared_variant_cooldown(
     variant_article: dict,
     reason: str = "shared_variant",
 ) -> None:
-    """Temporarily suppress a non-posted variant of a successfully shared article.
-
-    This cooldown is intentionally tied to successful sharing. It is not used for
-    valuable selected articles that failed later in the pipeline.
-    """
     key = _cooldown_key(variant_article.get("link", ""), variant_article.get("title", ""))
     if not key:
         return
@@ -526,6 +529,7 @@ def cleanup_shared_variant_cooldowns(posted_data: dict, keep_hours: int) -> None
             continue
     posted_data["shared_variant_cooldowns"] = cleaned
 
+
 def is_topic_already_posted(
     fingerprint: str,
     posted_data: dict,
@@ -539,6 +543,81 @@ def is_topic_already_posted(
         if posted_fp and _fingerprint_similarity(fingerprint, posted_fp) >= similarity_threshold:
             return True
     return False
+
+
+def is_topic_recently_posted(
+    article: dict,
+    posted_data: dict,
+    within_hours: int = None,
+    similarity_threshold: float = None,
+    min_overlap_keywords: int = None,
+) -> tuple[bool, dict]:
+    try:
+        settings = load_config("settings")
+        dup_cfg = settings.get("duplicate_detection", {})
+    except Exception:
+        dup_cfg = {}
+
+    if within_hours is None:
+        within_hours = int(dup_cfg.get("topic_cooldown_hours", 24))
+    if similarity_threshold is None:
+        similarity_threshold = _safe_float(dup_cfg.get("topic_similarity_threshold", 0.72), 0.72)
+    if min_overlap_keywords is None:
+        min_overlap_keywords = int(dup_cfg.get("topic_min_overlap_keywords", 2))
+
+    if within_hours <= 0:
+        return False, {}
+
+    title = article.get("title", "")
+    candidate_fp = article.get("topic_fingerprint", "") or generate_topic_fingerprint(title)
+    if not candidate_fp:
+        return False, {}
+
+    now = get_turkey_now()
+    candidate_tokens = _fingerprint_tokens(candidate_fp)
+    best_match = {}
+
+    for post in posted_data.get("posts", []):
+        posted_at = _parse_dt_safe(post.get("posted_at", ""))
+        if posted_at is None:
+            continue
+
+        age = now - posted_at
+        if age > timedelta(hours=within_hours):
+            continue
+
+        posted_fp = post.get("topic_fingerprint", "") or generate_topic_fingerprint(post.get("title", ""))
+        if not posted_fp:
+            continue
+
+        sim = _fingerprint_similarity(candidate_fp, posted_fp)
+        posted_tokens = _fingerprint_tokens(posted_fp)
+        overlap = len(candidate_tokens & posted_tokens)
+
+        if not best_match or sim > _safe_float(best_match.get("similarity", 0.0), 0.0):
+            best_match = {
+                "matched_title": post.get("title", ""),
+                "matched_url": post.get("url", ""),
+                "matched_posted_at": post.get("posted_at", ""),
+                "similarity": round(sim, 4),
+                "overlap": overlap,
+                "window_hours": within_hours,
+            }
+
+        overlap_ok = overlap >= min_overlap_keywords if min_overlap_keywords > 0 else True
+        strong_similarity_override = sim >= 0.90
+
+        if sim >= similarity_threshold and (overlap_ok or strong_similarity_override):
+            return True, {
+                "matched_title": post.get("title", ""),
+                "matched_url": post.get("url", ""),
+                "matched_posted_at": post.get("posted_at", ""),
+                "similarity": round(sim, 4),
+                "overlap": overlap,
+                "window_hours": within_hours,
+            }
+
+    return False, best_match
 
 
 def is_already_posted(url: str, title: str, posted_data: dict) -> bool:
