@@ -3,10 +3,11 @@ name: otoXtra Bot
 on:
   schedule:
     # GitHub cron UTC calisir.
-    # TR (UTC+3) hedef saatler: 08,09,10,11,13,15,17,19,20,21,22
-    # UTC karsiliklari:         05,06,07,08,10,12,14,16,17,18,19
+    # TR (UTC+3) hedef saatler: 06,07,08,09,11,13,15,17,19,20
+    # UTC karsiliklari:         03,04,05,06,08,10,12,14,16,17
+    # GitHub schedule gecikmesini telafi etmek icin ilk slot 2 saat erkene cekildi.
     # Dakika 03 secildi (:00 yogunlugundan kacmak icin).
-    - cron: '3 3,4,5,6,8,10,12,14,15,16,17 * * *'
+    - cron: '3 3,4,5,6,8,10,12,14,16,17 * * *'
 
   workflow_dispatch:
     inputs:
@@ -71,6 +72,7 @@ concurrency:
 jobs:
   run-bot:
     runs-on: ubuntu-latest
+    timeout-minutes: 55
 
     permissions:
       contents: write
@@ -109,10 +111,46 @@ jobs:
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'false' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
+          NEWS_MAX_AGE_HOURS: '24'
+          SHARED_VARIANT_COOLDOWN_HOURS: '3'
+          ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE: 'false'
 
           SCORE_SKIP_AS_SUCCESS: 'true'
           MAX_IMAGES_PER_NEWS: '4'
-        run: python -m core.orchestrator
+        run: |
+          set +e
+          export WORKFLOW_STARTED_AT_UTC="$(date -u +'%Y-%m-%d %H:%M:%S')"
+          export WORKFLOW_STARTED_AT_TR="$(TZ=Europe/Istanbul date +'%Y-%m-%d %H:%M:%S')"
+          echo "WORKFLOW_STARTED_AT_UTC=$WORKFLOW_STARTED_AT_UTC" >> "$GITHUB_ENV"
+          echo "WORKFLOW_STARTED_AT_TR=$WORKFLOW_STARTED_AT_TR" >> "$GITHUB_ENV"
+          echo "Workflow runner start UTC=$WORKFLOW_STARTED_AT_UTC TR=$WORKFLOW_STARTED_AT_TR"
+          timeout 50m python -m core.orchestrator
+          status=$?
+          if [ "$status" -eq 124 ]; then
+            echo "BOT_RUN_STATUS=timeout" >> "$GITHUB_ENV"
+            exit 124
+          fi
+          exit "$status"
+
+      - name: Notify bot failure
+        if: ${{ failure() }}
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          BOT_RUN_STATUS: ${{ env.BOT_RUN_STATUS }}
+        run: |
+          if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
+            echo "Telegram secrets eksik; failure bildirimi atlandi"
+            exit 0
+          fi
+          reason="${BOT_RUN_STATUS:-workflow_failure}"
+          started_tr="${WORKFLOW_STARTED_AT_TR:-bilinmiyor}"
+          started_utc="${WORKFLOW_STARTED_AT_UTC:-bilinmiyor}"
+          text="Paylaşım yapılmadı.%0A%0ASebep:%0A${reason}%0A%0AWorkflow başlangıcı: ${started_tr} TR (${started_utc} UTC)%0AWorkflow: ${GITHUB_RUN_URL:-https://github.com/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}}"
+          curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            -d "chat_id=${TELEGRAM_CHAT_ID}" \
+            -d "disable_web_page_preview=true" \
+            -d "text=${text}"
 
       - name: Save data
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.persist_state == 'true' }}

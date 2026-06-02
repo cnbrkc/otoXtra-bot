@@ -439,6 +439,93 @@ def save_posted_news(data: dict) -> bool:
     return save_json(filepath, data)
 
 
+
+def _cooldown_key(url: str, title: str) -> str:
+    fingerprint = generate_topic_fingerprint(title)
+    if fingerprint:
+        return f"fp:{fingerprint}"
+    normalized_url = (url or "").strip().lower()
+    return f"url:{normalized_url}" if normalized_url else ""
+
+
+def record_shared_variant_cooldown(
+    posted_data: dict,
+    posted_article: dict,
+    variant_article: dict,
+    reason: str = "shared_variant",
+) -> None:
+    """Temporarily suppress a non-posted variant of a successfully shared article.
+
+    This cooldown is intentionally tied to successful sharing. It is not used for
+    valuable selected articles that failed later in the pipeline.
+    """
+    key = _cooldown_key(variant_article.get("link", ""), variant_article.get("title", ""))
+    if not key:
+        return
+
+    cooldowns = posted_data.get("shared_variant_cooldowns", {})
+    if not isinstance(cooldowns, dict):
+        cooldowns = {}
+
+    cooldowns[key] = {
+        "title": variant_article.get("title", ""),
+        "url": variant_article.get("link", ""),
+        "score": variant_article.get("score", 0),
+        "reason": (reason or "shared_variant").strip()[:160],
+        "matched_post_title": posted_article.get("title", ""),
+        "matched_post_url": posted_article.get("link", "") or posted_article.get("url", ""),
+        "cooldown_at": get_turkey_now().isoformat(),
+    }
+    posted_data["shared_variant_cooldowns"] = cooldowns
+
+
+def is_shared_variant_in_cooldown(url: str, title: str, posted_data: dict, cooldown_hours: int) -> bool:
+    if cooldown_hours <= 0:
+        return False
+
+    key = _cooldown_key(url, title)
+    if not key:
+        return False
+
+    cooldowns = posted_data.get("shared_variant_cooldowns", {})
+    if not isinstance(cooldowns, dict):
+        return False
+
+    record = cooldowns.get(key)
+    if not isinstance(record, dict):
+        return False
+
+    raw = record.get("cooldown_at", "")
+    try:
+        cooldown_at = datetime.fromisoformat(raw)
+        if cooldown_at.tzinfo is None:
+            cooldown_at = cooldown_at.replace(tzinfo=_TR_TZ)
+        return get_turkey_now() - cooldown_at < timedelta(hours=cooldown_hours)
+    except Exception:
+        return False
+
+
+def cleanup_shared_variant_cooldowns(posted_data: dict, keep_hours: int) -> None:
+    cooldowns = posted_data.get("shared_variant_cooldowns", {})
+    if not isinstance(cooldowns, dict) or keep_hours <= 0:
+        posted_data["shared_variant_cooldowns"] = {}
+        return
+
+    cutoff = get_turkey_now() - timedelta(hours=keep_hours)
+    cleaned = {}
+    for key, record in cooldowns.items():
+        if not isinstance(record, dict):
+            continue
+        try:
+            cooldown_at = datetime.fromisoformat(record.get("cooldown_at", ""))
+            if cooldown_at.tzinfo is None:
+                cooldown_at = cooldown_at.replace(tzinfo=_TR_TZ)
+            if cooldown_at >= cutoff:
+                cleaned[key] = record
+        except Exception:
+            continue
+    posted_data["shared_variant_cooldowns"] = cleaned
+
 def is_topic_already_posted(
     fingerprint: str,
     posted_data: dict,

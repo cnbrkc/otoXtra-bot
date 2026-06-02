@@ -125,6 +125,18 @@ def _read_float_env(name: str) -> Optional[float]:
         return None
 
 
+def _read_bool_env(name: str) -> Optional[bool]:
+    raw = os.environ.get(name)
+    if raw is None:
+        return None
+    value = raw.strip().lower()
+    if value in {"1", "true", "yes", "on"}:
+        return True
+    if value in {"0", "false", "no", "off"}:
+        return False
+    return None
+
+
 def _safe_unlink(path: str) -> None:
     try:
         os.unlink(path)
@@ -1012,6 +1024,10 @@ def prepare_images(article: dict) -> list[str]:
     feed_image_width = int(images_settings.get("feed_image_width", 1200))
     feed_image_height = int(images_settings.get("feed_image_height", 630))
     max_candidates_to_try = int(images_settings.get("max_candidates_per_article", 10))
+    enable_selected_article_scrape = bool(images_settings.get("enable_article_image_scrape", True))
+    env_selected_article_scrape = _read_bool_env("ENABLE_ARTICLE_IMAGE_SCRAPE")
+    if env_selected_article_scrape is not None:
+        enable_selected_article_scrape = env_selected_article_scrape
     perceptual_threshold = int(
         images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD)
     )
@@ -1041,7 +1057,8 @@ def prepare_images(article: dict) -> list[str]:
     log(
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
         f"max_candidates_to_try={max_candidates_to_try}, effective_try_limit={effective_try_limit}, "
-        f"perceptual_threshold={perceptual_threshold}"
+        f"perceptual_threshold={perceptual_threshold}, "
+        f"selected_article_scrape={enable_selected_article_scrape}"
     )
     log(
         "Validation limits: "
@@ -1058,9 +1075,12 @@ def prepare_images(article: dict) -> list[str]:
     used_sources: list[str] = []
 
     candidate_pool = _collect_article_candidates(article, effective_try_limit)
-    if article.get("can_scrape_image", True) and article.get("link", ""):
+    if enable_selected_article_scrape and article.get("can_scrape_image", True) and article.get("link", ""):
+        log("Secilen haber icin sayfa gorsel scrape aktif")
         for c in scrape_article_image_urls(article.get("link", ""), max_candidates=effective_try_limit):
             _upsert_candidate(candidate_pool, c)
+    elif not enable_selected_article_scrape:
+        log("Secilen haber sayfa gorsel scrape kapali (ENABLE_ARTICLE_IMAGE_SCRAPE=false)", "INFO")
 
     candidate_pool = sorted(candidate_pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
     candidate_pool = candidate_pool[:effective_try_limit]

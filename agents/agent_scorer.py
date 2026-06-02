@@ -122,6 +122,7 @@ def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
     for article in batch:
         article["base_ai_score"] = UNSCORED_DEFAULT
         article["score"] = UNSCORED_DEFAULT
+        article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
         article["score_reason"] = reason
         all_scored.append(article)
 
@@ -216,6 +217,79 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
     return matched_pairs, ""
 
 
+_SCORE_COMPONENTS = {
+    "guncellik": 20,
+    "etkilesim_potansiyeli": 25,
+    "benzersizlik": 20,
+    "gundem_gucu": 20,
+    "paylasilabilirlik": 15,
+}
+
+_LEGACY_DETAIL_MAP = {
+    "guncel": "guncellik",
+    "paylasim": "paylasilabilirlik",
+    "ozgunluk": "benzersizlik",
+    "etki": "gundem_gucu",
+    "duygu": "etkilesim_potansiyeli",
+}
+
+
+def _clamp_component(value: int, maximum: int) -> int:
+    return max(0, min(maximum, value))
+
+
+def _normalize_detail_key(raw_key: str) -> str:
+    key = (raw_key or "").strip().lower()
+    replacements = {"ı": "i", "ğ": "g", "ü": "u", "ş": "s", "ö": "o", "ç": "c"}
+    for src, dst in replacements.items():
+        key = key.replace(src, dst)
+    key = key.replace(" ", "_").replace("-", "_")
+    return _LEGACY_DETAIL_MAP.get(key, key)
+
+
+def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
+    detail = ai_result.get("detay") or ai_result.get("alt_skorlar") or ai_result.get("breakdown") or {}
+    normalized: dict[str, int] = {}
+
+    if isinstance(detail, dict):
+        for raw_key, raw_value in detail.items():
+            key = _normalize_detail_key(str(raw_key))
+            if key not in _SCORE_COMPONENTS:
+                continue
+            normalized[key] = _clamp_component(_safe_score_number(raw_value, 0), _SCORE_COMPONENTS[key])
+
+    if normalized:
+        for key, maximum in _SCORE_COMPONENTS.items():
+            normalized.setdefault(key, 0)
+        return normalized
+
+    # Backward-compatible fallback: keep the current AI score but expose it as weighted criteria.
+    weighted = {}
+    remaining = _clamp_score(base_score)
+    for idx, (key, maximum) in enumerate(_SCORE_COMPONENTS.items()):
+        if idx == len(_SCORE_COMPONENTS) - 1:
+            value = min(maximum, remaining)
+        else:
+            value = int(round(base_score * (maximum / 100)))
+            value = min(maximum, value, remaining)
+        weighted[key] = value
+        remaining -= value
+    return weighted
+
+
+def _breakdown_total(breakdown: dict) -> int:
+    return _clamp_score(sum(_safe_int(breakdown.get(k, 0), 0) for k in _SCORE_COMPONENTS))
+
+
+def _apply_component_delta(article: dict, key: str, delta: int) -> None:
+    breakdown = article.get("score_breakdown")
+    if not isinstance(breakdown, dict) or key not in _SCORE_COMPONENTS:
+        return
+    breakdown[key] = _clamp_component(_safe_int(breakdown.get(key, 0), 0) + delta, _SCORE_COMPONENTS[key])
+    article["score_breakdown"] = breakdown
+    article["score"] = _breakdown_total(breakdown)
+
+
 def run_viral_scoring(articles: list) -> list:
     if not articles:
         log("No articles for scoring", "INFO")
@@ -264,9 +338,12 @@ def run_viral_scoring(articles: list) -> list:
 
         for ai_result, article in matched_pairs:
             base_score = _normalize_ai_score(ai_result)
+            breakdown = _extract_score_breakdown(ai_result, base_score)
             article["base_ai_score"] = base_score
-            article["score"] = base_score
+            article["score_breakdown"] = breakdown
+            article["score"] = _breakdown_total(breakdown)
             article["score_reason"] = "ai_scored"
+            article["score_explanation"] = (ai_result.get("gerekce", "") or "").strip()
             all_scored.append(article)
 
         for article in batch:
@@ -274,6 +351,7 @@ def run_viral_scoring(articles: list) -> list:
                 continue
             article["base_ai_score"] = UNSCORED_DEFAULT
             article["score"] = UNSCORED_DEFAULT
+            article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
             article["score_reason"] = "ai_unmatched"
             all_scored.append(article)
 
@@ -324,7 +402,9 @@ def apply_freshness_bonus(scored_articles: list) -> list:
     for article in scored_articles:
         bonus = _calculate_freshness_bonus(article.get("published", ""))
         article["freshness_bonus"] = bonus
-        article["score"] = _clamp_score(_safe_int(article.get("score", 0), 0) + bonus)
+        _apply_component_delta(article, "guncellik", bonus)
+        if not isinstance(article.get("score_breakdown"), dict):
+            article["score"] = _clamp_score(_safe_int(article.get("score", 0), 0) + bonus)
 
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
@@ -383,7 +463,9 @@ def apply_trend_bonus(scored_articles: list) -> list:
         article["trend_count"] = trend_count
         article["trend_bonus_raw"] = raw_trend_bonus
         article["trend_bonus"] = effective_bonus
-        article["score"] = _clamp_score(ai_score + effective_bonus)
+        _apply_component_delta(article, "gundem_gucu", effective_bonus)
+        if not isinstance(article.get("score_breakdown"), dict):
+            article["score"] = _clamp_score(ai_score + effective_bonus)
 
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
@@ -432,6 +514,27 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
         )
 
 
+def _build_cooldown_candidates(scored: list, selected_article: Optional[dict] = None, limit: int = 50) -> list[dict]:
+    selected_id = id(selected_article) if selected_article is not None else None
+    candidates: list[dict] = []
+    for article in scored:
+        if selected_id is not None and id(article) == selected_id:
+            continue
+        candidates.append(
+            {
+                "title": article.get("title", ""),
+                "link": article.get("link", ""),
+                "score": _safe_int(article.get("score", 0), 0),
+                "score_reason": article.get("score_reason", ""),
+                "source_name": article.get("source_name", ""),
+                "topic_fingerprint": article.get("topic_fingerprint", ""),
+            }
+        )
+        if len(candidates) >= limit:
+            break
+    return candidates
+
+
 def _derive_skip_reason_from_scores(scored: list) -> str:
     if not scored:
         return "no_scored_articles"
@@ -467,6 +570,16 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
     threshold = _get_active_threshold()
     _log_score_breakdown(scored, threshold)
 
+    top_articles = scored[:3]
+    top_summary = [
+        {
+            "title": a.get("title", ""),
+            "score": _safe_int(a.get("score", 0), 0),
+            "score_breakdown": a.get("score_breakdown", {}),
+        }
+        for a in top_articles
+    ]
+
     above_threshold = [a for a in scored if a.get("score", 0) >= threshold]
     if not above_threshold:
         top = scored[0] if scored else {}
@@ -476,9 +589,19 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
             "threshold": threshold,
             "top_score": _safe_int(top.get("score", 0), 0),
             "top_title": top.get("title", ""),
+            "top_articles": top_summary,
+            "scored_count": len(scored),
+            "cooldown_candidates": _build_cooldown_candidates(scored),
         }
 
-    return above_threshold[0], {"skipped": False, "threshold": threshold}
+    selected = above_threshold[0]
+    return selected, {
+        "skipped": False,
+        "threshold": threshold,
+        "top_articles": top_summary,
+        "scored_count": len(scored),
+        "cooldown_candidates": _build_cooldown_candidates(scored, selected),
+    }
 
 
 def _build_skip_output(meta: dict) -> dict:
@@ -497,6 +620,9 @@ def _build_skip_output(meta: dict) -> dict:
         "threshold": threshold,
         "top_score": _safe_int(meta.get("top_score", 0), 0),
         "top_title": meta.get("top_title", ""),
+        "top_articles": meta.get("top_articles", []),
+        "scored_count": _safe_int(meta.get("scored_count", 0), 0),
+        "cooldown_candidates": meta.get("cooldown_candidates", []),
     }
 
 
@@ -508,9 +634,14 @@ def _build_success_output(best_article: dict, meta: dict) -> dict:
         "trend_count": best_article.get("trend_count", 1),
         "trend_bonus": best_article.get("trend_bonus", 0),
         "freshness_bonus": best_article.get("freshness_bonus", 0),
+        "score_breakdown": best_article.get("score_breakdown", {}),
         "score_reason": best_article.get("score_reason", "unknown"),
+        "score_explanation": best_article.get("score_explanation", ""),
         "skipped": False,
         "threshold": _safe_int(meta.get("threshold", 0), 0),
+        "top_articles": meta.get("top_articles", []),
+        "scored_count": _safe_int(meta.get("scored_count", 0), 0),
+        "cooldown_candidates": meta.get("cooldown_candidates", []),
     }
 
 

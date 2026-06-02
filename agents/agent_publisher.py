@@ -14,6 +14,7 @@ from typing import Optional
 
 from core.config_loader import load_config
 from core.helpers import (
+    cleanup_shared_variant_cooldowns,
     generate_topic_fingerprint,
     get_posted_news,
     get_today_action_count,
@@ -21,6 +22,8 @@ from core.helpers import (
     get_today_str,
     get_turkey_now,
     increment_weekly_share,
+    is_duplicate_article,
+    record_shared_variant_cooldown,
     save_last_check_time,
     save_posted_news,
 )
@@ -80,15 +83,36 @@ def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
     return True
 
 
-def _check_skip_probability(skip_percent: int) -> bool:
-    if skip_percent <= 0:
-        return True
+def _score_based_skip_percent(score: int, fallback_percent: int) -> int:
+    if score >= 95:
+        return 0
+    if score >= 90:
+        return 2
+    if score >= 85:
+        return 5
+    if score >= 80:
+        return 10
+    if score < 80:
+        return 100
+    return fallback_percent
+
+
+def _check_skip_probability(skip_percent: int, score: int = 0) -> tuple[bool, str]:
+    effective_percent = _score_based_skip_percent(score, skip_percent)
+    if effective_percent >= 100:
+        reason = f"score_below_publish_skip(score={score})"
+        log(f"Skora bagli atlama: {reason}", "INFO")
+        return False, reason
+    if effective_percent <= 0:
+        log(f"Skora bagli atlama: score={score}, esik=0 -> devam")
+        return True, ""
     roll = random.randint(1, 100)
-    if roll <= skip_percent:
-        log(f"Rastgele atlama: zar={roll}, esik={skip_percent} -> atlaniyor", "INFO")
-        return False
-    log(f"Rastgele atlama: zar={roll}, esik={skip_percent} -> devam")
-    return True
+    if roll <= effective_percent:
+        reason = f"score_based_skip(score={score}, roll={roll}, threshold={effective_percent})"
+        log(f"Skora bagli atlama: {reason} -> atlaniyor", "INFO")
+        return False, reason
+    log(f"Skora bagli atlama: score={score}, zar={roll}, esik={effective_percent} -> devam")
+    return True, ""
 
 
 def _build_new_post_record(article: dict, post_id: str, image_source: str, image_count: int) -> dict:
@@ -338,6 +362,73 @@ def _queue_status_text() -> str:
         return "Bilinmiyor"
 
 
+def _format_score_breakdown(breakdown: dict) -> str:
+    if not isinstance(breakdown, dict) or not breakdown:
+        return "Yok"
+    labels = {
+        "guncellik": "Güncellik",
+        "etkilesim_potansiyeli": "Etkileşim Potansiyeli",
+        "benzersizlik": "Benzersizlik",
+        "gundem_gucu": "Gündem Gücü",
+        "paylasilabilirlik": "Paylaşılabilirlik",
+    }
+    return "\n".join(f"- {labels.get(k, k)}: {v}" for k, v in breakdown.items())
+
+
+def _format_top_articles() -> str:
+    try:
+        score_output = (get_stage("score").get("output", {}) or {})
+        top_articles = score_output.get("top_articles", [])
+        if not isinstance(top_articles, list) or not top_articles:
+            return "Yok"
+        lines = []
+        for idx, item in enumerate(top_articles[:3], start=1):
+            lines.append(f"#{idx} {item.get('title', 'Bilinmiyor')[:90]}\nSkor: {item.get('score', 0)}")
+        return "\n\n".join(lines)
+    except Exception:
+        return "Yok"
+
+
+def _workflow_timing_line() -> str:
+    started_tr = (os.environ.get("WORKFLOW_STARTED_AT_TR", "") or "").strip()
+    started_utc = (os.environ.get("WORKFLOW_STARTED_AT_UTC", "") or "").strip()
+    if started_tr and started_utc:
+        return f"Workflow baslangici: {started_tr} TR ({started_utc} UTC)"
+    if started_tr:
+        return f"Workflow baslangici: {started_tr} TR"
+    if started_utc:
+        return f"Workflow baslangici: {started_utc} UTC"
+    return "Workflow baslangici: bilinmiyor"
+
+
+def _record_shared_variant_cooldowns(article: dict) -> None:
+    if not _is_persist_state_enabled():
+        return
+
+    try:
+        score_output = (get_stage("score").get("output", {}) or {})
+        candidates = score_output.get("cooldown_candidates", [])
+        if not isinstance(candidates, list) or not candidates:
+            return
+
+        posted_data = get_posted_news()
+        recorded = 0
+        for candidate in candidates:
+            if not isinstance(candidate, dict) or not candidate.get("title"):
+                continue
+            if not is_duplicate_article(article, candidate):
+                continue
+            record_shared_variant_cooldown(posted_data, article, candidate)
+            recorded += 1
+
+        if recorded:
+            cleanup_shared_variant_cooldowns(posted_data, 72)
+            save_posted_news(posted_data)
+            log(f"Paylasilan haber varyasyon cooldown kaydi: count={recorded}")
+    except Exception as exc:
+        log(f"Paylasilan haber varyasyon cooldown kaydi yazilamadi: {exc}", "WARNING")
+
+
 def _send_telegram_notification(
     article: dict,
     action_count: int,
@@ -354,13 +445,19 @@ def _send_telegram_notification(
     queue_state = _queue_status_text()
 
     message = (
-        f"Paylasim Tipi: {publish_mode}\n"
-        f"Baslik: {title or 'Bilinmiyor'}\n"
+        f"Paylaşım yapıldı.\n\n"
+        f"Günün {action_count}. tetiklemesi\n"
+        f"Günün {share_count}. paylaşımı\n"
+        f"{_workflow_timing_line()}\n\n"
+        f"Paylaşım Tipi: {publish_mode}\n"
+        f"Seçilen haber:\n"
+        f"Başlık: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
-        f"Skor: {score}\n"
-        f"Durum: A{action_count}-P{share_count}\n"
-        f"Gorsel: {image_source} ({image_count})\n"
-        f"Saglik: {health_report}\n"
+        f"Toplam Skor: {score}\n\n"
+        f"Alt skorlar:\n{_format_score_breakdown(article.get('score_breakdown', {}))}\n\n"
+        f"İlk 3 haber:\n{_format_top_articles()}\n\n"
+        f"Görsel: {image_source} ({image_count})\n"
+        f"Sağlık: {health_report}\n"
         f"Kuyruk Durumu: {queue_state}"
     )
     return tg_platform.send_message(message)
@@ -455,18 +552,23 @@ def run() -> bool:
         else:
             log("Gunluk limit kontrolu atlandi (manual_priority=true)")
 
-        if not dry_run and (not manual_priority) and random_skip_enabled and not _check_skip_probability(skip_probability):
+        skip_allowed, skip_reason = True, ""
+        if not dry_run and (not manual_priority) and random_skip_enabled:
+            skip_allowed, skip_reason = _check_skip_probability(
+                skip_probability, _safe_int(article.get("score", 0), 0)
+            )
+        if not dry_run and (not manual_priority) and random_skip_enabled and not skip_allowed:
             output = _build_publish_output(
                 article=article,
-                post_id="skipped_random",
+                post_id="skipped_score_based",
                 image_source=image_source,
                 image_count=len(image_paths),
                 dry_run=False,
                 skipped=True,
-                skip_reason="random_skip",
+                skip_reason=skip_reason or "score_based_skip",
             )
             set_stage("publish", "done", output=output)
-            log("Rastgele atlama nedeniyle bu tur publish skip edildi")
+            log("Skora bagli atlama nedeniyle bu tur publish skip edildi")
             return True
 
         if not dry_run and not manual_priority and not random_skip_enabled:
@@ -513,6 +615,7 @@ def run() -> bool:
         final_image_count = _resolve_final_image_count(final_image_source, image_paths)
 
         _record_posted(article, post_id, final_image_source, final_image_count)
+        _record_shared_variant_cooldowns(article)
 
         fresh_data = get_posted_news()
         action_count = get_today_action_count(fresh_data)

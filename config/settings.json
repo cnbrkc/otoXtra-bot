@@ -18,12 +18,14 @@
     "max_candidates_per_article": 20,
     "max_article_scrapes_per_feed": 10,
     "max_images_per_news": 4,
-    "perceptual_hash_threshold": 8
+    "perceptual_hash_threshold": 8,
+    "enable_fetch_article_image_scrape": false
   },
   "news": {
-    "max_article_age_hours": 16,
+    "max_article_age_hours": 24,
     "max_articles_per_source": 10,
-    "min_summary_length": 30
+    "min_summary_length": 30,
+    "shared_variant_cooldown_hours": 3
   },
   "duplicate_detection": {
     "title_similarity_threshold": 0.8,
