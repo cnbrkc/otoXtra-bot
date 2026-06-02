@@ -29,7 +29,10 @@
   },
   "duplicate_detection": {
     "title_similarity_threshold": 0.8,
-    "keyword_overlap_threshold": 0.7
+    "keyword_overlap_threshold": 0.7,
+    "topic_cooldown_hours": 24,
+    "topic_similarity_threshold": 0.72,
+    "topic_min_overlap_keywords": 2
   },
   "ai": {
     "temperature": 0.65,
