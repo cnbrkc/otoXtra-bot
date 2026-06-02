@@ -33,6 +33,7 @@ from core.helpers import (
     get_turkey_now,
     is_already_posted,
     is_duplicate_article,
+    is_shared_variant_in_cooldown,
 )
 from core.logger import log
 from core.state_manager import set_stage
@@ -125,6 +126,13 @@ def _read_bool_env(name: str, default: bool) -> bool:
     if raw is None:
         return default
     return _coerce_bool(raw, default)
+
+
+def _read_int_env(name: str, default: int) -> int:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return _safe_int(raw, default)
 
 
 def _turkish_lower(text: str) -> str:
@@ -678,14 +686,20 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
     max_articles_per_source = _safe_int_min(news_cfg.get("max_articles_per_source", 25), 25, 1)
 
-    enable_article_image_scrape = _coerce_bool(images_cfg.get("enable_article_image_scrape", True), True)
-    enable_article_image_scrape = _read_bool_env("ENABLE_ARTICLE_IMAGE_SCRAPE", enable_article_image_scrape)
+    # Article page image scraping is intentionally deferred to agent_image for the selected article only.
+    enable_fetch_article_image_scrape = _coerce_bool(
+        images_cfg.get("enable_fetch_article_image_scrape", False), False
+    )
+    enable_fetch_article_image_scrape = _read_bool_env(
+        "ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE", enable_fetch_article_image_scrape
+    )
 
     max_candidates_per_article = _safe_int_min(images_cfg.get("max_candidates_per_article", 8), 8, 1)
     max_article_scrapes_per_feed = _safe_int_min(images_cfg.get("max_article_scrapes_per_feed", 6), 6, 0)
 
     log(
-        f"fetch image config: enable_article_image_scrape={enable_article_image_scrape}, "
+        f"fetch image config: deferred_selected_article_scrape={not enable_fetch_article_image_scrape}, "
+        f"enable_fetch_article_image_scrape={enable_fetch_article_image_scrape}, "
         f"max_candidates_per_article={max_candidates_per_article}, "
         f"max_article_scrapes_per_feed={max_article_scrapes_per_feed}, "
         f"max_articles_per_source={max_articles_per_source}"
@@ -749,7 +763,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
                 article_image_candidates: list[str] = []
 
-                if feed_can_scrape and enable_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
+                if feed_can_scrape and enable_fetch_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
                     article_image_candidates = extract_images_from_article(
                         link,
                         max_candidates=max_candidates_per_article,
@@ -896,7 +910,10 @@ def _apply_time_filter_with_hours(
 def apply_time_filter(articles: list[dict]) -> list[dict]:
     settings = load_config("settings")
     news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-    max_age_hours = _safe_int(news_cfg.get("max_article_age_hours", 12), 12)
+    max_age_hours = _read_int_env(
+        "NEWS_MAX_AGE_HOURS",
+        _safe_int(news_cfg.get("max_article_age_hours", 24), 24),
+    )
 
     passed, cutoff_utc = _apply_time_filter_with_hours(
         articles=articles,
@@ -916,6 +933,28 @@ def remove_already_posted(articles: list[dict]) -> list[dict]:
     for article in articles:
         if not is_already_posted(article.get("link", ""), article.get("title", ""), posted_data):
             passed.append(article)
+    return passed
+
+
+def apply_shared_variant_cooldown_filter(articles: list[dict]) -> list[dict]:
+    settings = load_config("settings")
+    news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
+    cooldown_hours = _read_int_env(
+        "SHARED_VARIANT_COOLDOWN_HOURS",
+        _safe_int(news_cfg.get("shared_variant_cooldown_hours", 3), 3),
+    )
+    if cooldown_hours <= 0:
+        return articles
+
+    posted_data = get_posted_news()
+    passed = [
+        article
+        for article in articles
+        if not is_shared_variant_in_cooldown(
+            article.get("link", ""), article.get("title", ""), posted_data, cooldown_hours
+        )
+    ]
+    log(f"pipeline.shared_variant_cooldown: {len(articles)} -> {len(passed)} (hours={cooldown_hours})")
     return passed
 
 
@@ -1006,13 +1045,17 @@ def scrape_full_article(url: str) -> str:
 
 def fetch_and_filter_news() -> tuple[list[dict], dict]:
     articles, source_health = fetch_all_feeds()
+    metrics = {"found": len(articles), "after_keyword": 0, "after_time": 0, "after_posted": 0, "after_duplicate": 0}
     if not articles:
+        source_health["_metrics"] = metrics
         return [], source_health
     log(f"pipeline.fetch: {len(articles)}")
 
     articles = apply_keyword_filter(articles)
+    metrics["after_keyword"] = len(articles)
     if not articles:
         log("pipeline.keyword: 0")
+        source_health["_metrics"] = metrics
         return [], source_health
     log(f"pipeline.keyword: {len(articles)}")
 
@@ -1021,7 +1064,10 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
     if not articles:
         settings = load_config("settings")
         news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-        base_hours = _safe_int(news_cfg.get("max_article_age_hours", 12), 12)
+        base_hours = _read_int_env(
+            "NEWS_MAX_AGE_HOURS",
+            _safe_int(news_cfg.get("max_article_age_hours", 24), 24),
+        )
         relaxed_hours = max(base_hours, 36)
 
         relaxed, relaxed_cutoff = _apply_time_filter_with_hours(
@@ -1038,21 +1084,31 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
             articles = relaxed
         else:
             log("pipeline.time: 0 (fallback da bos)")
+            source_health["_metrics"] = metrics
             return [], source_health
+    metrics["after_time"] = len(articles)
     log(f"pipeline.time: {len(articles)}")
 
     if not _is_test_mode():
         before_posted = len(articles)
         articles = remove_already_posted(articles)
         log(f"pipeline.posted: {before_posted} -> {len(articles)}")
+        before_cooldown = len(articles)
+        articles = apply_shared_variant_cooldown_filter(articles)
+        metrics["after_posted"] = len(articles)
+        metrics["after_shared_variant_cooldown"] = len(articles)
         if not articles:
+            source_health["_metrics"] = metrics
+            log(f"pipeline.shared_variant_cooldown exhausted candidates: {before_cooldown} -> 0")
             return [], source_health
 
     before_dup = len(articles)
     articles = remove_duplicates(articles)
+    metrics["after_duplicate"] = len(articles)
     log(f"pipeline.duplicate: {before_dup} -> {len(articles)}")
 
     articles = _detect_trends(articles)
+    source_health["_metrics"] = metrics
     return articles, source_health
 
 
@@ -1064,7 +1120,12 @@ def run() -> bool:
             set_stage(
                 "fetch",
                 "error",
-                output={"articles": [], "count": 0, "source_health": source_health},
+                output={
+                    "articles": [],
+                    "count": 0,
+                    "source_health": source_health,
+                    "metrics": source_health.get("_metrics", {}),
+                },
                 error="No article found",
             )
             return False
@@ -1072,7 +1133,12 @@ def run() -> bool:
         set_stage(
             "fetch",
             "done",
-            output={"articles": articles, "count": len(articles), "source_health": source_health},
+            output={
+                "articles": articles,
+                "count": len(articles),
+                "source_health": source_health,
+                "metrics": source_health.get("_metrics", {}),
+            },
         )
         return True
     except Exception as exc:

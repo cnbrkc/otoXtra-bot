@@ -289,6 +289,78 @@ def _is_soft_skip_error(error_text: str) -> tuple[bool, str]:
     return False, ""
 
 
+
+def _stage_output(stage_name: str) -> dict:
+    try:
+        stage = get_stage(stage_name)
+        return stage.get("output", {}) or {}
+    except Exception:
+        return {}
+
+
+def _format_breakdown(breakdown: dict) -> str:
+    if not isinstance(breakdown, dict) or not breakdown:
+        return "Yok"
+    labels = {
+        "guncellik": "Güncellik",
+        "etkilesim_potansiyeli": "Etkileşim Potansiyeli",
+        "benzersizlik": "Benzersizlik",
+        "gundem_gucu": "Gündem Gücü",
+        "paylasilabilirlik": "Paylaşılabilirlik",
+    }
+    return "\n".join(f"- {labels.get(k, k)}: {v}" for k, v in breakdown.items())
+
+
+def _format_top3(top_articles: list) -> str:
+    if not isinstance(top_articles, list) or not top_articles:
+        return "Yok"
+    lines = []
+    for idx, item in enumerate(top_articles[:3], start=1):
+        lines.append(f"#{idx} {item.get('title', 'Bilinmiyor')[:90]}\nSkor: {item.get('score', 0)}")
+    return "\n\n".join(lines)
+
+
+def _send_no_share_report(reason: str, action_no: int = 0) -> None:
+    fetch_output = _stage_output("fetch")
+    score_output = _stage_output("score")
+    metrics = fetch_output.get("metrics", {}) or {}
+    top_articles = score_output.get("top_articles", [])
+    top_score = score_output.get("top_score", 0) or (top_articles[0].get("score", 0) if top_articles else 0)
+    share_count = get_today_post_count(get_posted_news())
+
+    message = (
+        "Paylaşım yapılmadı.\n\n"
+        f"Sebep:\n{reason}\n\n"
+        f"Günün {action_no or 'bilinmeyen'}. tetiklemesi\n"
+        f"Günün {share_count}. paylaşımı\n"
+        f"{_workflow_timing_line()}\n"
+        f"Bulunan haber sayısı: {metrics.get('found', fetch_output.get('count', 0))}\n"
+        f"Filtre sonrası kalan haber sayısı: {metrics.get('after_duplicate', fetch_output.get('count', 0))}\n"
+        f"AI değerlendirmesine giren haber sayısı: {score_output.get('scored_count', 0)}\n"
+        f"En yüksek skor: {top_score}\n"
+        "Paylaşım durumu: Yapılmadı\n\n"
+        f"İlk 3 haber:\n{_format_top3(top_articles)}"
+    )
+    if not tg_platform.send_message(message):
+        log("Telegram no-share bildirimi gonderilemedi", "WARNING")
+
+
+def _workflow_timing_line() -> str:
+    started_tr = (os.environ.get("WORKFLOW_STARTED_AT_TR", "") or "").strip()
+    started_utc = (os.environ.get("WORKFLOW_STARTED_AT_UTC", "") or "").strip()
+    if started_tr and started_utc:
+        return f"Workflow baslangici: {started_tr} TR ({started_utc} UTC)"
+    if started_tr:
+        return f"Workflow baslangici: {started_tr} TR"
+    if started_utc:
+        return f"Workflow baslangici: {started_utc} UTC"
+    return "Workflow baslangici: bilinmiyor"
+
+
+def _log_workflow_start_context() -> None:
+    log(_workflow_timing_line())
+
+
 def _run_telegram_priority_share() -> bool:
     """
     Telegram sohbetinden gelen oncelikli (gorsel + aciklama) icerigi
@@ -356,7 +428,8 @@ def main() -> None:
 
         action_no = increment_action_trigger(posted_data)
         _save_posted_data_if_enabled(posted_data)
-        log(f"Action tetiklendi: A{action_no}")
+        log(f"Cron başladı: Action tetiklendi A{action_no}")
+        _log_workflow_start_context()
 
         _send_weekly_report_if_needed(posted_data)
 
@@ -364,17 +437,22 @@ def main() -> None:
             return
 
         if not _check_daily_limit(settings, posted_data):
-            _record_skip_stat("daily_limit_reached")
+            reason = "daily_limit_reached"
+            _record_skip_stat(reason)
+            _send_no_share_report(reason, action_no)
             return
 
         if not _check_min_interval(settings, posted_data):
-            _record_skip_stat("min_post_interval_not_reached")
+            reason = "min_post_interval_not_reached"
+            _record_skip_stat(reason)
+            _send_no_share_report(reason, action_no)
             return
 
         run_id = get_turkey_now().strftime("%Y-%m-%d-%H:%M")
         if not init_pipeline(run_id):
             log("Pipeline init failed", "ERROR")
             _record_error_stat("PIPELINE_INIT_FAILED", "Pipeline init failed")
+            _send_no_share_report("Pipeline init failed", action_no)
             return
 
         from agents.agent_fetcher import run as fetcher_run
@@ -388,7 +466,9 @@ def main() -> None:
                 _record_skip_stat(skip_reason)
             else:
                 _record_error_stat("FETCH_FAILED", err or "agent_fetcher failed")
+            _send_no_share_report(skip_reason or err or "agent_fetcher failed", action_no)
             return
+        log("Haberler çekildi")
         _log_source_health()
 
         from agents.agent_scorer import run as scorer_run
@@ -401,13 +481,16 @@ def main() -> None:
                 _record_skip_stat(skip_reason)
             else:
                 _record_error_stat("SCORER_FAILED", err or "agent_scorer failed")
+            _send_no_share_report(skip_reason or err or "agent_scorer failed", action_no)
             return
+        log("AI puanlama tamamlandı")
 
         skipped, skip_reason = _is_score_skipped()
         if skipped:
             reason = skip_reason or "No article above threshold"
             log(f"Score skip: {reason}", "INFO")
             _record_skip_stat(reason)
+            _send_no_share_report(reason, action_no)
             return
 
         from agents.agent_writer import run as writer_run
@@ -415,6 +498,7 @@ def main() -> None:
         if not _run_agent("agent_writer", writer_run):
             err = _log_stage_error("write")
             _record_error_stat("WRITER_FAILED", err or "agent_writer failed")
+            _send_no_share_report(err or "agent_writer failed", action_no)
             return
 
         from agents.agent_image import run as image_run
@@ -422,7 +506,9 @@ def main() -> None:
         if not _run_agent("agent_image", image_run):
             err = _log_stage_error("image")
             _record_error_stat("IMAGE_FAILED", err or "agent_image failed")
+            _send_no_share_report(err or "agent_image failed", action_no)
             return
+        log("Görseller puanlandı")
         _log_image_summary()
 
         from agents.agent_publisher import run as publisher_run
@@ -435,13 +521,17 @@ def main() -> None:
                 _record_skip_stat(skip_reason)
             else:
                 _record_error_stat("PUBLISH_FAILED", err or "agent_publisher failed")
+            _send_no_share_report(skip_reason or err or "agent_publisher failed", action_no)
             return
 
         publish_skipped, publish_skip_reason = _is_publish_skipped()
         if publish_skipped:
             _record_skip_stat(publish_skip_reason)
             log(f"Publish skip: {publish_skip_reason}", "INFO")
+            _send_no_share_report(publish_skip_reason, action_no)
             return
+
+        log("Paylaşım yapıldı")
 
     except KeyboardInterrupt:
         log("Interrupted by user", "WARNING")
@@ -450,6 +540,10 @@ def main() -> None:
         log(f"Critical orchestrator error: {exc}", "ERROR")
         log(traceback.format_exc(), "ERROR")
         _record_error_stat("ORCHESTRATOR_CRITICAL", str(exc))
+        try:
+            _send_no_share_report(f"Exception oluştu: {exc}", locals().get("action_no", 0))
+        except Exception:
+            pass
     finally:
         _save_check_time()
 

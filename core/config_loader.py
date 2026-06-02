@@ -160,6 +160,9 @@ def _sanitize_settings(data: Any) -> dict:
 
             # Yeni akista aktif kullandigin ayarlar
             "enable_article_image_scrape": _as_bool(images.get("enable_article_image_scrape"), True),
+            "enable_fetch_article_image_scrape": _as_bool(
+                images.get("enable_fetch_article_image_scrape"), False
+            ),
             "max_candidates_per_article": _as_int(images.get("max_candidates_per_article"), 8, 1, 50),
             "max_article_scrapes_per_feed": _as_int(images.get("max_article_scrapes_per_feed"), 6, 0, 50),
             "max_images_per_news": _as_int(images.get("max_images_per_news"), 1, 1, 10),
@@ -169,6 +172,9 @@ def _sanitize_settings(data: Any) -> dict:
             "max_article_age_hours": _as_int(news.get("max_article_age_hours"), 16, 1, 168),
             "max_articles_per_source": _as_int(news.get("max_articles_per_source"), 10, 1, 100),
             "min_summary_length": _as_int(news.get("min_summary_length"), 30, 0, 1000),
+            "shared_variant_cooldown_hours": _as_int(
+                news.get("shared_variant_cooldown_hours"), 3, 0, 168
+            ),
         },
         "duplicate_detection": {
             "title_similarity_threshold": _as_float(
