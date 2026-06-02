@@ -19,6 +19,7 @@ from core.helpers import (
     get_today_post_count,
     get_turkey_now,
     is_similar_title,
+    is_topic_recently_posted,
 )
 from core.logger import log
 from core.state_manager import get_stage, set_stage
@@ -263,7 +264,6 @@ def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
             normalized.setdefault(key, 0)
         return normalized
 
-    # Backward-compatible fallback: keep the current AI score but expose it as weighted criteria.
     weighted = {}
     remaining = _clamp_score(base_score)
     for idx, (key, maximum) in enumerate(_SCORE_COMPONENTS.items()):
@@ -556,6 +556,31 @@ def _derive_skip_reason_from_scores(scored: list) -> str:
     return "No article above threshold"
 
 
+def _select_first_non_duplicate_topic(above_threshold: list[dict]) -> tuple[Optional[dict], list[dict]]:
+    posted_data = get_posted_news()
+    rejected: list[dict] = []
+
+    for article in above_threshold:
+        is_dup, match_info = is_topic_recently_posted(article, posted_data)
+        if is_dup:
+            rejected.append(
+                {
+                    "title": article.get("title", ""),
+                    "score": _safe_int(article.get("score", 0), 0),
+                    "matched_title": match_info.get("matched_title", ""),
+                    "matched_url": match_info.get("matched_url", ""),
+                    "matched_posted_at": match_info.get("matched_posted_at", ""),
+                    "similarity": match_info.get("similarity", 0.0),
+                    "overlap": _safe_int(match_info.get("overlap", 0), 0),
+                    "window_hours": _safe_int(match_info.get("window_hours", 24), 24),
+                }
+            )
+            continue
+        return article, rejected
+
+    return None, rejected
+
+
 def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
     if not articles:
         return None, {"skipped": True, "skip_reason": "no_articles"}
@@ -592,15 +617,35 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
             "top_articles": top_summary,
             "scored_count": len(scored),
             "cooldown_candidates": _build_cooldown_candidates(scored),
+            "duplicate_topic_filtered": 0,
+            "duplicate_topic_examples": [],
         }
 
-    selected = above_threshold[0]
+    selected, duplicate_rejections = _select_first_non_duplicate_topic(above_threshold)
+
+    if selected is None:
+        top = above_threshold[0] if above_threshold else {}
+        return None, {
+            "skipped": True,
+            "skip_reason": "All threshold-passing candidates are duplicates in last 24h",
+            "threshold": threshold,
+            "top_score": _safe_int(top.get("score", 0), 0),
+            "top_title": top.get("title", ""),
+            "top_articles": top_summary,
+            "scored_count": len(scored),
+            "cooldown_candidates": _build_cooldown_candidates(scored),
+            "duplicate_topic_filtered": len(duplicate_rejections),
+            "duplicate_topic_examples": duplicate_rejections[:5],
+        }
+
     return selected, {
         "skipped": False,
         "threshold": threshold,
         "top_articles": top_summary,
         "scored_count": len(scored),
         "cooldown_candidates": _build_cooldown_candidates(scored, selected),
+        "duplicate_topic_filtered": len(duplicate_rejections),
+        "duplicate_topic_examples": duplicate_rejections[:5],
     }
 
 
@@ -623,6 +668,8 @@ def _build_skip_output(meta: dict) -> dict:
         "top_articles": meta.get("top_articles", []),
         "scored_count": _safe_int(meta.get("scored_count", 0), 0),
         "cooldown_candidates": meta.get("cooldown_candidates", []),
+        "duplicate_topic_filtered": _safe_int(meta.get("duplicate_topic_filtered", 0), 0),
+        "duplicate_topic_examples": meta.get("duplicate_topic_examples", []),
     }
 
 
@@ -642,6 +689,8 @@ def _build_success_output(best_article: dict, meta: dict) -> dict:
         "top_articles": meta.get("top_articles", []),
         "scored_count": _safe_int(meta.get("scored_count", 0), 0),
         "cooldown_candidates": meta.get("cooldown_candidates", []),
+        "duplicate_topic_filtered": _safe_int(meta.get("duplicate_topic_filtered", 0), 0),
+        "duplicate_topic_examples": meta.get("duplicate_topic_examples", []),
     }
 
 
@@ -662,7 +711,10 @@ def run() -> bool:
 
         if best_article is None:
             skip_output = _build_skip_output(meta)
-            if _allow_skip_as_success():
+            skip_reason_lower = (skip_output.get("skip_reason", "") or "").lower()
+            force_soft_skip = "duplicates in last 24h" in skip_reason_lower
+
+            if _allow_skip_as_success() or force_soft_skip:
                 set_stage("score", "done", output=skip_output)
                 log(
                     "score skipped: "
