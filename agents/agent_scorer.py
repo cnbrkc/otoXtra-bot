@@ -1,10 +1,11 @@
 """
-Viral scoring agent. (v4.1)
+Viral scoring agent. (v4.2)
 
-v4.1:
-  - 10'luk skorlar artik otomatik 100'e cevrilmiyor.
-  - 10'luk skala suphesinde batch strict prompt ile yeniden deneniyor.
-  - Hala 10'luk donuyorsa batch ai_invalid_scale_10 olarak gecersiz sayiliyor.
+v4.2:
+  - AI sonucunu haberlere esleme katmani guclendirildi.
+  - Dict icindeki liste cevaplari (results/items/data...) destekleniyor.
+  - Eslesme orani dusukse relaxed eslesme + zip fallback devreye giriyor.
+  - 24 saat duplicate topic kontrolu ile siradaki adaya gecis korunuyor.
 """
 
 import os
@@ -29,6 +30,7 @@ BATCH_SIZE: int = 20
 BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
 CROSS_VALIDATE_THRESHOLD: float = 0.4
+MATCH_MIN_COVERAGE: float = 0.60
 
 FRESHNESS_TIERS = [
     (1, 10),
@@ -45,6 +47,15 @@ _STRICT_SCALE_APPEND = (
     "- 1-10 olcegi KESINLIKLE kullanma.\n"
     "- Ondalik puan kullanma.\n"
     "- Bu kurala uymazsan cevap gecersiz sayilacak.\n"
+)
+
+_RESULT_LIST_KEYS = (
+    "results",
+    "sonuclar",
+    "haberler",
+    "items",
+    "data",
+    "list",
 )
 
 
@@ -128,15 +139,32 @@ def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
         all_scored.append(article)
 
 
-def _normalize_ai_results(parsed: object) -> Optional[list]:
-    if isinstance(parsed, dict):
-        return [parsed]
+def _extract_ai_result_list(parsed: object) -> Optional[list]:
     if isinstance(parsed, list):
         return parsed
+
+    if isinstance(parsed, dict):
+        for key in _RESULT_LIST_KEYS:
+            value = parsed.get(key)
+            if isinstance(value, list):
+                return value
+        # Tek sonuc dict ise listeye sar
+        if any(k in parsed for k in ("sira", "baslik", "puan", "score", "skor")):
+            return [parsed]
+
     return None
 
 
-def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+def _normalize_ai_results(parsed: object) -> Optional[list]:
+    return _extract_ai_result_list(parsed)
+
+
+def _match_by_order(
+    ai_result: dict,
+    articles: list,
+    used_indices: set,
+    trust_order: bool = False,
+) -> tuple[Optional[dict], Optional[int]]:
     sira = ai_result.get("sira")
     if sira is None:
         return None, None
@@ -148,6 +176,9 @@ def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple
 
     if not (0 <= index < len(articles)) or index in used_indices:
         return None, None
+
+    if trust_order:
+        return articles[index], index
 
     ai_title = ai_result.get("baslik", "").strip()
     article_title = articles[index].get("title", "").strip()
@@ -184,7 +215,7 @@ def _match_by_fuzzy_title(ai_result: dict, articles: list, used_indices: set) ->
     return None, None
 
 
-def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
+def _match_ai_results_to_articles(ai_results: list, articles: list, relaxed: bool = False) -> list:
     matched = []
     used_indices = set()
 
@@ -192,10 +223,15 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
         if not isinstance(ai_result, dict):
             continue
 
-        matched_article, matched_index = _match_by_order(ai_result, articles, used_indices)
-        if matched_article is None:
+        matched_article, matched_index = _match_by_order(
+            ai_result,
+            articles,
+            used_indices,
+            trust_order=relaxed,
+        )
+        if matched_article is None and not relaxed:
             matched_article, matched_index = _match_by_exact_title(ai_result, articles, used_indices)
-        if matched_article is None:
+        if matched_article is None and not relaxed:
             matched_article, matched_index = _match_by_fuzzy_title(ai_result, articles, used_indices)
 
         if matched_article is not None and matched_index is not None:
@@ -205,16 +241,62 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     return matched
 
 
+def _zip_fallback_pairs(ai_results: list, batch: list, already_matched: list) -> list:
+    matched_article_ids = {id(article) for _, article in already_matched}
+    remaining_articles = [a for a in batch if id(a) not in matched_article_ids]
+    if not remaining_articles:
+        return []
+
+    def _sort_key(item: dict):
+        sira = _safe_int(item.get("sira"), 10_000)
+        return sira
+
+    ai_candidates = [r for r in ai_results if isinstance(r, dict)]
+    ai_candidates.sort(key=_sort_key)
+
+    pairs = []
+    used_ai = set()
+    for article in remaining_articles:
+        pick = None
+        for idx, ai_item in enumerate(ai_candidates):
+            if idx in used_ai:
+                continue
+            score = _extract_raw_ai_score(ai_item)
+            if score > 0:
+                pick = (idx, ai_item)
+                break
+        if pick is None:
+            break
+        used_ai.add(pick[0])
+        pairs.append((pick[1], article))
+
+    return pairs
+
+
 def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
     ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}")
     if not ai_response:
         return None, "ai_empty"
 
-    ai_results = _normalize_ai_results(parse_ai_json(ai_response))
+    parsed = parse_ai_json(ai_response)
+    ai_results = _normalize_ai_results(parsed)
     if not ai_results:
         return None, "ai_parse_failed"
 
-    matched_pairs = _match_ai_results_to_articles(ai_results, batch)
+    matched_pairs = _match_ai_results_to_articles(ai_results, batch, relaxed=False)
+
+    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    if coverage < MATCH_MIN_COVERAGE:
+        relaxed_pairs = _match_ai_results_to_articles(ai_results, batch, relaxed=True)
+        if len(relaxed_pairs) > len(matched_pairs):
+            matched_pairs = relaxed_pairs
+
+    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    if coverage < MATCH_MIN_COVERAGE:
+        extra = _zip_fallback_pairs(ai_results, batch, matched_pairs)
+        if extra:
+            matched_pairs.extend(extra)
+
     return matched_pairs, ""
 
 
@@ -260,7 +342,7 @@ def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
             normalized[key] = _clamp_component(_safe_score_number(raw_value, 0), _SCORE_COMPONENTS[key])
 
     if normalized:
-        for key, maximum in _SCORE_COMPONENTS.items():
+        for key in _SCORE_COMPONENTS:
             normalized.setdefault(key, 0)
         return normalized
 
@@ -354,6 +436,12 @@ def run_viral_scoring(articles: list) -> list:
             article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
             article["score_reason"] = "ai_unmatched"
             all_scored.append(article)
+
+        coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+        log(
+            f"scorer batch {batch_num}/{len(batches)} match coverage: "
+            f"{len(matched_pairs)}/{len(batch)} ({coverage:.2f})"
+        )
 
         if batch_num < len(batches):
             time.sleep(BATCH_DELAY_SECONDS)
@@ -480,14 +568,6 @@ def _get_active_threshold() -> int:
     today_post_count = get_today_post_count(get_posted_news())
 
     return slow_day_score if today_post_count < 2 else publish_score
-
-
-def apply_thresholds(scored_articles: list) -> list:
-    if not scored_articles:
-        return []
-
-    threshold = _get_active_threshold()
-    return [a for a in scored_articles if a.get("score", 0) >= threshold]
 
 
 def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
