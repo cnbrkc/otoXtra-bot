@@ -88,6 +88,13 @@ def _safe_float(value, default: float) -> float:
         return default
 
 
+def _safe_int(value, default: int) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+
 def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
     if not title1 or not title2:
         return False
@@ -621,19 +628,42 @@ def is_topic_recently_posted(
 
 
 def is_already_posted(url: str, title: str, posted_data: dict) -> bool:
+    """
+    URL birebir ayniysa her zaman duplicate.
+    Baslik/fingerprint benzerligi ise sadece son N saat penceresinde duplicate.
+    """
+    try:
+        settings = load_config("settings")
+        dup_cfg = settings.get("duplicate_detection", {})
+        recent_hours = _safe_int(dup_cfg.get("posted_similarity_window_hours", 24), 24)
+        fp_threshold = _safe_float(dup_cfg.get("posted_similarity_threshold", 0.82), 0.82)
+    except Exception:
+        recent_hours = 24
+        fp_threshold = 0.82
+
     fingerprint = generate_topic_fingerprint(title)
+    now = get_turkey_now()
 
     for post in posted_data.get("posts", []):
         posted_url = post.get("url", "") or post.get("original_url", "")
         if posted_url and url and posted_url == url:
             return True
 
+        if recent_hours <= 0:
+            continue
+
+        posted_at = _parse_dt_safe(post.get("posted_at", ""))
+        if posted_at is None:
+            continue
+        if now - posted_at > timedelta(hours=recent_hours):
+            continue
+
         posted_title = post.get("title", "")
         if is_similar_title(title, posted_title):
             return True
 
         posted_fp = post.get("topic_fingerprint", "")
-        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= 0.75:
+        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= fp_threshold:
             return True
 
     return False
