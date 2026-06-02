@@ -1,11 +1,10 @@
 """
-News fetch and filter agent. (v4.0)
+News fetch and filter agent. (v4.1)
 
-v4.0:
-  - Bool/int config okumalari guvenli hale getirildi.
-  - Time filter icin kontrollu relaxed fallback eklendi.
-  - Filtre adimlarina sayisal log eklendi.
-  - String/bozuk config degerlerinde crash riski azaltildi.
+v4.1:
+  - Haber havuzu daraldiginda kontrolu fallback eklendi.
+  - posted filtresi tum adaylari elediginde url-only acil durum yolu eklendi.
+  - Filtre metrik loglari genisletildi.
 """
 
 import json
@@ -686,7 +685,6 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
     max_articles_per_source = _safe_int_min(news_cfg.get("max_articles_per_source", 25), 25, 1)
 
-    # Article page image scraping is intentionally deferred to agent_image for the selected article only.
     enable_fetch_article_image_scrape = _coerce_bool(
         images_cfg.get("enable_fetch_article_image_scrape", False), False
     )
@@ -722,8 +720,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
         try:
             response = _request_with_retry(feed_url, timeout=20, attempts=3, base_wait_seconds=1.5)
-
             parsed_feed = feedparser.parse(response.content)
+
             if parsed_feed.bozo and not parsed_feed.entries:
                 bozo_msg = str(getattr(parsed_feed, "bozo_exception", "parse error"))[:120]
                 source_health[feed_name] = {
@@ -924,16 +922,60 @@ def apply_time_filter(articles: list[dict]) -> list[dict]:
     return passed
 
 
+def _dedupe_articles_by_link_title(articles: list[dict]) -> list[dict]:
+    seen = set()
+    out = []
+    for article in articles:
+        link = (article.get("link", "") or "").strip().lower()
+        title = (article.get("title", "") or "").strip().lower()
+        key = (link, title)
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(article)
+    return out
+
+
 def remove_already_posted(articles: list[dict]) -> list[dict]:
     posted_data = get_posted_news()
-    if not posted_data.get("posts", []):
+    posts = posted_data.get("posts", [])
+    if not posts:
         return articles
 
-    passed = []
+    strict_passed = []
     for article in articles:
         if not is_already_posted(article.get("link", ""), article.get("title", ""), posted_data):
-            passed.append(article)
-    return passed
+            strict_passed.append(article)
+
+    if strict_passed:
+        log(f"remove_already_posted strict: {len(articles)} -> {len(strict_passed)}")
+        return strict_passed
+
+    posted_urls = {
+        ((p.get("url", "") or p.get("original_url", "") or "").strip().lower())
+        for p in posts
+        if isinstance(p, dict)
+    }
+
+    url_only_passed = []
+    for article in articles:
+        link = (article.get("link", "") or "").strip().lower()
+        if not link:
+            url_only_passed.append(article)
+            continue
+        if link not in posted_urls:
+            url_only_passed.append(article)
+
+    if url_only_passed:
+        log(
+            "remove_already_posted fallback(url-only) devrede: "
+            f"{len(articles)} -> {len(url_only_passed)}",
+            "WARNING",
+        )
+        return url_only_passed
+
+    log("remove_already_posted: tum adaylar elendi (strict + url-only)", "WARNING")
+    return []
 
 
 def apply_shared_variant_cooldown_filter(articles: list[dict]) -> list[dict]:
@@ -1045,7 +1087,14 @@ def scrape_full_article(url: str) -> str:
 
 def fetch_and_filter_news() -> tuple[list[dict], dict]:
     articles, source_health = fetch_all_feeds()
-    metrics = {"found": len(articles), "after_keyword": 0, "after_time": 0, "after_posted": 0, "after_duplicate": 0}
+    metrics = {
+        "found": len(articles),
+        "after_keyword": 0,
+        "after_time": 0,
+        "after_posted": 0,
+        "after_duplicate": 0,
+    }
+
     if not articles:
         source_health["_metrics"] = metrics
         return [], source_health
@@ -1059,33 +1108,47 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
         return [], source_health
     log(f"pipeline.keyword: {len(articles)}")
 
+    settings = load_config("settings")
+    news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
+
     original_after_keyword = list(articles)
     articles = apply_time_filter(articles)
-    if not articles:
-        settings = load_config("settings")
-        news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-        base_hours = _read_int_env(
-            "NEWS_MAX_AGE_HOURS",
-            _safe_int(news_cfg.get("max_article_age_hours", 24), 24),
-        )
-        relaxed_hours = max(base_hours, 36)
 
+    base_hours = _read_int_env(
+        "NEWS_MAX_AGE_HOURS",
+        _safe_int(news_cfg.get("max_article_age_hours", 24), 24),
+    )
+    relaxed_hours = _read_int_env(
+        "NEWS_RELAXED_MAX_AGE_HOURS",
+        _safe_int(news_cfg.get("relaxed_max_article_age_hours", max(base_hours, 48)), max(base_hours, 48)),
+    )
+    min_after_time = _read_int_env(
+        "NEWS_MIN_CANDIDATES_AFTER_TIME",
+        _safe_int(news_cfg.get("min_candidates_after_time_filter", 3), 3),
+    )
+
+    if len(articles) < min_after_time and original_after_keyword:
         relaxed, relaxed_cutoff = _apply_time_filter_with_hours(
             articles=original_after_keyword,
             max_age_hours=relaxed_hours,
             use_smart_cutoff=False,
         )
         if relaxed:
-            log(
-                f"time_filter fallback aktif: {len(original_after_keyword)} -> {len(relaxed)} "
-                f"(hours={relaxed_hours}, cutoff={relaxed_cutoff.isoformat()})",
-                "WARNING",
-            )
-            articles = relaxed
-        else:
-            log("pipeline.time: 0 (fallback da bos)")
-            source_health["_metrics"] = metrics
-            return [], source_health
+            merged = _dedupe_articles_by_link_title(articles + relaxed)
+            if len(merged) > len(articles):
+                log(
+                    "time_filter fallback(genis pencere) aktif: "
+                    f"{len(articles)} -> {len(merged)} "
+                    f"(relaxed_hours={relaxed_hours}, cutoff={relaxed_cutoff.isoformat()})",
+                    "WARNING",
+                )
+                articles = merged
+
+    if not articles:
+        log("pipeline.time: 0")
+        source_health["_metrics"] = metrics
+        return [], source_health
+
     metrics["after_time"] = len(articles)
     log(f"pipeline.time: {len(articles)}")
 
@@ -1093,10 +1156,42 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
         before_posted = len(articles)
         articles = remove_already_posted(articles)
         log(f"pipeline.posted: {before_posted} -> {len(articles)}")
+
+        if not articles and original_after_keyword:
+            relaxed_pool, _ = _apply_time_filter_with_hours(
+                articles=original_after_keyword,
+                max_age_hours=relaxed_hours,
+                use_smart_cutoff=False,
+            )
+
+            posted_data = get_posted_news()
+            posted_urls = {
+                ((p.get("url", "") or p.get("original_url", "") or "").strip().lower())
+                for p in posted_data.get("posts", [])
+                if isinstance(p, dict)
+            }
+
+            url_only_pool = []
+            for a in relaxed_pool:
+                link = (a.get("link", "") or "").strip().lower()
+                if not link or link not in posted_urls:
+                    url_only_pool.append(a)
+
+            url_only_pool = _dedupe_articles_by_link_title(url_only_pool)
+
+            if url_only_pool:
+                log(
+                    "posted fallback havuzu aktif (url-only): "
+                    f"0 -> {len(url_only_pool)}",
+                    "WARNING",
+                )
+                articles = url_only_pool
+
         before_cooldown = len(articles)
         articles = apply_shared_variant_cooldown_filter(articles)
         metrics["after_posted"] = len(articles)
         metrics["after_shared_variant_cooldown"] = len(articles)
+
         if not articles:
             source_health["_metrics"] = metrics
             log(f"pipeline.shared_variant_cooldown exhausted candidates: {before_cooldown} -> 0")
