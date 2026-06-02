@@ -1,11 +1,11 @@
 """
-Viral scoring agent. (v4.2)
+Viral scoring agent. (v4.3)
 
-v4.2:
-  - AI sonucunu haberlere esleme katmani guclendirildi.
-  - Dict icindeki liste cevaplari (results/items/data...) destekleniyor.
-  - Eslesme orani dusukse relaxed eslesme + zip fallback devreye giriyor.
-  - 24 saat duplicate topic kontrolu ile siradaki adaya gecis korunuyor.
+v4.3:
+  - AI-haber eslesmesi guclendirildi.
+  - Dusuk coverage durumunda "tum haberleri zorunlu puanla" retry eklendi.
+  - Hala eslesmeyenler icin sinirli tekli rescue scoring eklendi.
+  - 24 saat duplicate topic elemesi korunuyor.
 """
 
 import os
@@ -32,6 +32,8 @@ UNSCORED_DEFAULT: int = 0
 CROSS_VALIDATE_THRESHOLD: float = 0.4
 MATCH_MIN_COVERAGE: float = 0.60
 
+SINGLE_RESCUE_LIMIT_DEFAULT: int = 8
+
 FRESHNESS_TIERS = [
     (1, 10),
     (3, 7),
@@ -49,14 +51,15 @@ _STRICT_SCALE_APPEND = (
     "- Bu kurala uymazsan cevap gecersiz sayilacak.\n"
 )
 
-_RESULT_LIST_KEYS = (
-    "results",
-    "sonuclar",
-    "haberler",
-    "items",
-    "data",
-    "list",
+_FORCE_FULL_COVERAGE_APPEND = (
+    "\n\nEK ZORUNLU KURAL:\n"
+    "- Listede kac haber varsa O KADAR sonuc don.\n"
+    "- Her madde icin ayri sonuc yaz.\n"
+    "- Hicbir maddeyi atlama.\n"
+    "- Cevap JSON listesi olmali.\n"
 )
+
+_RESULT_LIST_KEYS = ("results", "sonuclar", "haberler", "items", "data", "list")
 
 
 def _is_score_breakdown_enabled() -> bool:
@@ -148,7 +151,6 @@ def _extract_ai_result_list(parsed: object) -> Optional[list]:
             value = parsed.get(key)
             if isinstance(value, list):
                 return value
-        # Tek sonuc dict ise listeye sar
         if any(k in parsed for k in ("sira", "baslik", "puan", "score", "skor")):
             return [parsed]
 
@@ -273,31 +275,107 @@ def _zip_fallback_pairs(ai_results: list, batch: list, already_matched: list) ->
     return pairs
 
 
-def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
+def _ask_and_parse_batch(batch: list, prompt: str) -> tuple[Optional[list], Optional[list], str]:
     ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}")
     if not ai_response:
-        return None, "ai_empty"
+        return None, None, "ai_empty"
 
     parsed = parse_ai_json(ai_response)
     ai_results = _normalize_ai_results(parsed)
     if not ai_results:
-        return None, "ai_parse_failed"
+        return None, None, "ai_parse_failed"
 
     matched_pairs = _match_ai_results_to_articles(ai_results, batch, relaxed=False)
+    return matched_pairs, ai_results, ""
+
+
+def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
+    matched_pairs, ai_results, fail_reason = _ask_and_parse_batch(batch, prompt)
+    if fail_reason:
+        return None, fail_reason
 
     coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+
     if coverage < MATCH_MIN_COVERAGE:
+        matched_pairs_retry, ai_results_retry, retry_reason = _ask_and_parse_batch(
+            batch,
+            prompt + _FORCE_FULL_COVERAGE_APPEND,
+        )
+        if not retry_reason and matched_pairs_retry is not None:
+            if len(matched_pairs_retry) > len(matched_pairs):
+                matched_pairs = matched_pairs_retry
+                ai_results = ai_results_retry
+
+    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    if coverage < MATCH_MIN_COVERAGE and ai_results:
         relaxed_pairs = _match_ai_results_to_articles(ai_results, batch, relaxed=True)
         if len(relaxed_pairs) > len(matched_pairs):
             matched_pairs = relaxed_pairs
 
     coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
-    if coverage < MATCH_MIN_COVERAGE:
+    if coverage < MATCH_MIN_COVERAGE and ai_results:
         extra = _zip_fallback_pairs(ai_results, batch, matched_pairs)
         if extra:
             matched_pairs.extend(extra)
 
     return matched_pairs, ""
+
+
+def _extract_first_result_dict(parsed: object) -> Optional[dict]:
+    if isinstance(parsed, dict):
+        nested = _extract_ai_result_list(parsed)
+        if nested and isinstance(nested, list):
+            for item in nested:
+                if isinstance(item, dict):
+                    return item
+        if any(k in parsed for k in ("puan", "score", "skor", "baslik", "sira")):
+            return parsed
+    elif isinstance(parsed, list):
+        for item in parsed:
+            if isinstance(item, dict):
+                return item
+    return None
+
+
+def _single_article_prompt(base_prompt: str, article: dict) -> str:
+    title = (article.get("title", "") or "").strip()
+    summary = (article.get("summary", "") or "").strip()
+    if len(summary) > 300:
+        summary = summary[:297] + "..."
+
+    return (
+        f"{base_prompt}\n\n"
+        "TEK HABER DEGERLENDIRMESI:\n"
+        "Asagidaki tek haberi 0-100 arasi puanla ve JSON don.\n"
+        "JSON alani: baslik, puan, gerekce, detay\n"
+        f"Baslik: {title}\n"
+        f"Ozet: {summary}\n"
+    )
+
+
+def _score_single_article(article: dict, prompt: str) -> Optional[dict]:
+    response = ask_ai(_single_article_prompt(prompt, article))
+    if not response:
+        return None
+
+    parsed = parse_ai_json(response)
+    return _extract_first_result_dict(parsed)
+
+
+def _rescue_unmatched_articles(unmatched: list, prompt: str, limit: int) -> list:
+    rescued = []
+    if limit <= 0 or not unmatched:
+        return rescued
+
+    target = unmatched[:limit]
+    for article in target:
+        ai_result = _score_single_article(article, prompt)
+        if not isinstance(ai_result, dict):
+            continue
+        if _extract_raw_ai_score(ai_result) <= 0:
+            continue
+        rescued.append((ai_result, article))
+    return rescued
 
 
 _SCORE_COMPONENTS = {
@@ -386,6 +464,12 @@ def run_viral_scoring(articles: list) -> list:
             article["score_reason"] = "prompt_missing"
         return articles
 
+    rescue_limit = _safe_int(
+        os.environ.get("SCORER_SINGLE_RESCUE_LIMIT", str(SINGLE_RESCUE_LIMIT_DEFAULT)),
+        SINGLE_RESCUE_LIMIT_DEFAULT,
+    )
+    rescue_limit = max(0, rescue_limit)
+
     batches = _split_into_batches(articles)
     all_scored = []
 
@@ -417,6 +501,14 @@ def run_viral_scoring(articles: list) -> list:
             matched_pairs = matched_pairs_retry
 
         matched_ids = {id(art) for _, art in matched_pairs}
+        unmatched = [article for article in batch if id(article) not in matched_ids]
+
+        rescued_pairs = _rescue_unmatched_articles(unmatched, scorer_prompt, rescue_limit)
+        if rescued_pairs:
+            log(f"scorer rescue: {len(rescued_pairs)}/{len(unmatched)} unmatched article scored", "INFO")
+            matched_pairs.extend(rescued_pairs)
+            for _, rescued_article in rescued_pairs:
+                matched_ids.add(id(rescued_article))
 
         for ai_result, article in matched_pairs:
             base_score = _normalize_ai_score(ai_result)
@@ -424,7 +516,11 @@ def run_viral_scoring(articles: list) -> list:
             article["base_ai_score"] = base_score
             article["score_breakdown"] = breakdown
             article["score"] = _breakdown_total(breakdown)
-            article["score_reason"] = "ai_scored"
+            prev_reason = article.get("score_reason", "")
+            if prev_reason == "ai_unmatched":
+                article["score_reason"] = "ai_scored_rescue"
+            else:
+                article["score_reason"] = "ai_scored"
             article["score_explanation"] = (ai_result.get("gerekce", "") or "").strip()
             all_scored.append(article)
 
@@ -437,10 +533,10 @@ def run_viral_scoring(articles: list) -> list:
             article["score_reason"] = "ai_unmatched"
             all_scored.append(article)
 
-        coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+        coverage = (len(matched_ids) / len(batch)) if batch else 0.0
         log(
             f"scorer batch {batch_num}/{len(batches)} match coverage: "
-            f"{len(matched_pairs)}/{len(batch)} ({coverage:.2f})"
+            f"{len(matched_ids)}/{len(batch)} ({coverage:.2f})"
         )
 
         if batch_num < len(batches):
