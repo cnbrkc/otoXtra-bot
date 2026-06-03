@@ -7,7 +7,7 @@ on:
     # UTC karsiliklari:         03,04,05,06,08,10,12,14,16,17
     # GitHub schedule gecikmesini telafi etmek icin ilk slot 2 saat erkene cekildi.
     # Dakika 03 secildi (:00 yogunlugundan kacmak icin).
-    - cron: '3 3,4,5,6,8,10,12,14,16,17,21 * * *'
+    - cron: '3 2,3,4,5,6,8,10,12,14,16,17,18 * * *'
 
   workflow_dispatch:
     inputs:
