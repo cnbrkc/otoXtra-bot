@@ -1,5 +1,10 @@
 """
-Viral scoring agent. (v4.1)
+Viral scoring agent. (v4.2)
+
+v4.2:
+  - ai_unmatched makaleler için fallback puan sistemi eklendi
+  - Confidence multiplier threshold'u düşürüldü (0.4 → 0.6)
+  - Matching başarısızlığında detaylı log eklendi
 
 v4.1:
   - 10'luk skorlar artik otomatik 100'e cevrilmiyor.
@@ -214,6 +219,15 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
         return None, "ai_parse_failed"
 
     matched_pairs = _match_ai_results_to_articles(ai_results, batch)
+    
+    # FIX v4.2: Matching başarısız oldu, detaylı log ekle
+    if not matched_pairs and ai_results:
+        log(
+            f"AI matching hatası: {len(ai_results)} AI sonucu {len(batch)} makaleye eşleştirilemedi. "
+            f"Fallback puan sistemi kullanılacak.",
+            "WARNING"
+        )
+    
     return matched_pairs, ""
 
 
@@ -346,13 +360,33 @@ def run_viral_scoring(articles: list) -> list:
             article["score_explanation"] = (ai_result.get("gerekce", "") or "").strip()
             all_scored.append(article)
 
+        # FIX v4.2: ai_unmatched makaleler için fallback puan sistemi
         for article in batch:
             if id(article) in matched_ids:
                 continue
-            article["base_ai_score"] = UNSCORED_DEFAULT
-            article["score"] = UNSCORED_DEFAULT
-            article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
-            article["score_reason"] = "ai_unmatched"
+            
+            summary = (article.get("summary", "") or "").strip()
+            # Özet uzunluğuna göre fallback puan belirle
+            if len(summary) > 100:
+                fallback_base = 25
+            elif len(summary) > 50:
+                fallback_base = 20
+            else:
+                fallback_base = 15
+            
+            # Fallback breakdown: tüm bileşenlere eşit dağıt
+            fallback_breakdown = {
+                "guncellik": 5,
+                "etkilesim_potansiyeli": 5,
+                "benzersizlik": 5,
+                "gundem_gucu": 5,
+                "paylasilabilirlik": 0,
+            }
+            
+            article["base_ai_score"] = fallback_base
+            article["score"] = fallback_base
+            article["score_breakdown"] = fallback_breakdown
+            article["score_reason"] = "ai_unmatched_fallback"
             all_scored.append(article)
 
         if batch_num < len(batches):
@@ -433,11 +467,12 @@ def _priority_bonus(source_priority: str) -> int:
     return 0
 
 
+# FIX v4.2: Confidence multiplier threshold'unu düşür
 def _confidence_multiplier(ai_score: int) -> float:
-    if ai_score < 40:
-        return 0.4
+    if ai_score < 20:
+        return 0.6  # 0.4'ten 0.6'ya yükselt
     if ai_score < 55:
-        return 0.7
+        return 0.85  # 0.7'den 0.85'e yükselt
     return 1.0
 
 
@@ -475,8 +510,8 @@ def _get_active_threshold() -> int:
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
 
-    publish_score = _safe_int(thresholds.get("publish_score", 65), 65)
-    slow_day_score = _safe_int(thresholds.get("slow_day_score", 50), 50)
+    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)  # Default 40'a düşürüldü
+    slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)  # Default 30'a düşürüldü
     today_post_count = get_today_post_count(get_posted_news())
 
     return slow_day_score if today_post_count < 2 else publish_score
@@ -551,7 +586,7 @@ def _derive_skip_reason_from_scores(scored: list) -> str:
     top_reason = max(reasons, key=reasons.get)
     if top_reason == "ai_invalid_scale_10":
         return "AI returned invalid 10-scale scores"
-    if top_reason in {"ai_empty", "ai_parse_failed", "ai_unmatched"}:
+    if top_reason in {"ai_empty", "ai_parse_failed", "ai_unmatched", "ai_unmatched_fallback"}:
         return f"Scoring failed ({top_reason})"
     return "No article above threshold"
 
