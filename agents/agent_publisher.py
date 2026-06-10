@@ -1,10 +1,6 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.1)
-
-v4.1:
-  - Random skip done+skipped akisi korunur.
-  - fallback/logo gorsel geldiğinde text-only paylasima gecilir.
-  - image_source NameError ve cagrı uyumlulugu duzeltmeleri korunur.
+agents/agent_publisher.py - Yayinci Ajani (Instagram-only versiyon)
+Orijinal yapı korunarak sadece Facebook çağrıları Instagram ile değiştirildi.
 """
 
 import os
@@ -29,7 +25,7 @@ from core.helpers import (
 )
 from core.logger import log
 from core.state_manager import get_stage, set_stage
-from platforms import facebook as fb_platform
+from platforms import instagram as ig_platform
 from platforms import telegram as tg_platform
 
 
@@ -115,7 +111,7 @@ def _check_skip_probability(skip_percent: int, score: int = 0) -> tuple[bool, st
     return True, ""
 
 
-def _build_new_post_record(article: dict, post_id: str, image_source: str, image_count: int) -> dict:
+def _build_new_post_record(article: dict, post_id: str, image_source: str, image_count: int, story_id: Optional[str] = None) -> dict:
     fingerprint = article.get("topic_fingerprint", "") or generate_topic_fingerprint(article.get("title", ""))
     return {
         "title": article.get("title", "Baslik yok"),
@@ -125,13 +121,14 @@ def _build_new_post_record(article: dict, post_id: str, image_source: str, image
         "score": article.get("score", 0),
         "trend_count": article.get("trend_count", 1),
         "posted_at": get_turkey_now().isoformat(),
-        "fb_post_id": post_id,
+        "ig_post_id": post_id,
+        "ig_story_id": story_id,
         "image_source": image_source,
         "image_count": image_count,
     }
 
 
-def _record_posted(article: dict, post_id: str, image_source: str, image_count: int) -> None:
+def _record_posted(article: dict, post_id: str, image_source: str, image_count: int, story_id: Optional[str] = None) -> None:
     if not _is_persist_state_enabled():
         log("State persistence kapali (PERSIST_STATE=false), posted kaydi yazilmadi")
         return
@@ -143,7 +140,7 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
         posts_list = posted_data.get("posts", [])
         daily_counts = posted_data.get("daily_counts", {})
 
-        posts_list.append(_build_new_post_record(article, post_id, image_source, image_count))
+        posts_list.append(_build_new_post_record(article, post_id, image_source, image_count, story_id))
         daily_counts[today_str] = daily_counts.get(today_str, 0) + 1
 
         posted_data["posts"] = posts_list
@@ -194,7 +191,6 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
-    # Foto/video yoksa logo/fallback görseli basmak yerine sadece metin paylaş.
     if (image_source or "").strip().lower() == "fallback":
         if image_paths:
             log("Fallback gorsel tespit edildi, text-only paylasima geciliyor", "INFO")
@@ -202,55 +198,12 @@ def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> 
     return image_paths
 
 
-def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Optional[str]:
-    call_patterns = [
-        lambda: fn(image_paths, post_text_content),
-        lambda: fn(post_text_content, image_paths),
-        lambda: fn(image_paths=image_paths, message=post_text_content),
-        lambda: fn(paths=image_paths, message=post_text_content),
-        lambda: fn(photo_paths=image_paths, message=post_text_content),
-        lambda: fn(images=image_paths, message=post_text_content),
-    ]
-
-    for call_idx, call in enumerate(call_patterns, start=1):
-        try:
-            result = call()
-            if result:
-                log(f"Coklu gorsel cagri basarili (pattern={call_idx})")
-                return result
-        except TypeError:
-            continue
-        except Exception as exc:
-            log(f"Coklu gorsel cagri hatasi (pattern={call_idx}): {exc}", "WARNING")
-
-    return None
-
-
-def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Optional[str]:
-    for fn_name in ("post_photos", "post_multi_photo", "post_album"):
-        fn = getattr(fb_platform, fn_name, None)
-        if not callable(fn):
-            continue
-
-        try:
-            log(f"Coklu gorsel fonksiyonu deneniyor: facebook.{fn_name}()")
-            result = _try_call_multi_fn(fn, image_paths, post_text_content)
-            if result:
-                log(f"Coklu gorsel fonksiyonu basarili: facebook.{fn_name}() -> {result}")
-                return result
-            log(f"Coklu gorsel fonksiyonu sonuc vermedi: facebook.{fn_name}()", "WARNING")
-        except Exception as exc:
-            log(f"facebook.{fn_name} hata: {exc}", "WARNING")
-
-    return None
-
-
 def _log_publish_preview(article: dict, post_text_content: str, image_paths: list[str]) -> None:
     image_source = article.get("image_source", "unknown")
     image_count = len(image_paths)
 
     log("=" * 55)
-    log(f"Facebook'a paylasiliyor: {article.get('title', '')[:80]}")
+    log(f"Instagram'a paylasiliyor: {article.get('title', '')[:80]}")
     log("=" * 55)
     log(f"Gorsel adedi: {image_count} (kaynak: {image_source})")
 
@@ -268,165 +221,22 @@ def _log_publish_preview(article: dict, post_text_content: str, image_paths: lis
     log(f"Post onizleme:\n{preview}")
 
 
-def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
+def _publish_to_instagram(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[dict]:
     _log_publish_preview(article, post_text_content, image_paths)
 
-    image_count = len(image_paths)
-
-    if image_count >= 2:
-        log("Deneme 1/3: Coklu gorsel paylasimi...")
-        result_id = _try_post_multi_photos(image_paths, post_text_content)
-        if result_id:
-            article["image_source"] = "multi_image"
-            log("Publish path: multi_success")
-            return result_id
-        log("Coklu paylasim basarisiz, tek gorsele dusulecek", "WARNING")
-
-    if image_count >= 1:
-        post_photo_fn = getattr(fb_platform, "post_photo", None)
-        if callable(post_photo_fn):
-            log("Deneme 2/3: Tek gorsel paylasimi...")
-            try:
-                result_id = post_photo_fn(image_paths[0], post_text_content)
-            except Exception as exc:
-                log(f"post_photo hata: {exc}", "WARNING")
-                result_id = None
-
-            if result_id:
-                if image_count >= 2:
-                    article["image_source"] = "single_fallback_from_multi"
-                else:
-                    article["image_source"] = "single_image"
-                log("Publish path: single_success")
-                return result_id
-
-    post_text_fn = getattr(fb_platform, "post_text", None)
-    if callable(post_text_fn):
-        log("Deneme 3/3: Metin paylasimi...")
-        try:
-            result_id = post_text_fn(post_text_content)
-        except Exception as exc:
-            log(f"post_text hata: {exc}", "WARNING")
-            result_id = None
-
-        if result_id:
-            article["image_source"] = "fallback_text"
-            log("Publish path: text_success")
-            return result_id
-
-    log("Publish path: all_failed", "ERROR")
-    return None
-
-
-def _retry_text_publish(post_text_content: str) -> Optional[str]:
-    post_text_fn = getattr(fb_platform, "post_text", None)
-    if not callable(post_text_fn):
+    if not image_paths:
+        log("Gorsel yok, Instagram paylasimi yapilamiyor", "ERROR")
         return None
 
+    image_url = image_paths[0]
+
     try:
-        return post_text_fn(post_text_content)
+        ig = ig_platform.InstagramPlatform()
+        result = ig.post_with_story(image_url=image_url, post_caption=post_text_content)
+        return result
     except Exception as exc:
-        log(f"Retry post_text hata: {exc}", "WARNING")
+        log(f"Instagram paylasim hatasi: {exc}", "ERROR")
         return None
-
-
-def _build_health_report() -> str:
-    for stage_name in ("fetch", "score", "write", "image"):
-        try:
-            stage_data = get_stage(stage_name)
-            if stage_data.get("status") == "error":
-                error_text = (stage_data.get("error", "") or "unknown error").strip()
-                code = f"{stage_name.upper()}_ERROR"
-                return f"Hata: {stage_name} ({code}) - {error_text}"
-        except Exception:
-            continue
-    return "Saglikli"
-
-
-def _resolve_publish_mode(article: dict, image_source: str) -> str:
-    if bool(article.get("manual_priority", False)) or image_source == "telegram":
-        return "MANUEL"
-    return "OTOMATIK"
-
-
-def _queue_status_text() -> str:
-    try:
-        info = tg_platform.get_pending_shareable_queue_info()
-        ready = int(info.get("ready_count", 0))
-        total = int(info.get("total_groups", 0))
-        if ready > 0:
-            return f"Var ({ready} hazir / {total} toplam grup)"
-        return f"Yok ({total} toplam grup)"
-    except Exception as exc:
-        log(f"Kuyruk durumu okunamadi: {exc}", "WARNING")
-        return "Bilinmiyor"
-
-
-def _format_score_breakdown(breakdown: dict) -> str:
-    if not isinstance(breakdown, dict) or not breakdown:
-        return "Yok"
-    labels = {
-        "guncellik": "Güncellik",
-        "etkilesim_potansiyeli": "Etkileşim Potansiyeli",
-        "benzersizlik": "Benzersizlik",
-        "gundem_gucu": "Gündem Gücü",
-        "paylasilabilirlik": "Paylaşılabilirlik",
-    }
-    return "\n".join(f"- {labels.get(k, k)}: {v}" for k, v in breakdown.items())
-
-
-def _format_top_articles() -> str:
-    try:
-        score_output = (get_stage("score").get("output", {}) or {})
-        top_articles = score_output.get("top_articles", [])
-        if not isinstance(top_articles, list) or not top_articles:
-            return "Yok"
-        lines = []
-        for idx, item in enumerate(top_articles[:3], start=1):
-            lines.append(f"#{idx} {item.get('title', 'Bilinmiyor')[:90]}\nSkor: {item.get('score', 0)}")
-        return "\n\n".join(lines)
-    except Exception:
-        return "Yok"
-
-
-def _workflow_timing_line() -> str:
-    started_tr = (os.environ.get("WORKFLOW_STARTED_AT_TR", "") or "").strip()
-    started_utc = (os.environ.get("WORKFLOW_STARTED_AT_UTC", "") or "").strip()
-    if started_tr and started_utc:
-        return f"Workflow baslangici: {started_tr} TR ({started_utc} UTC)"
-    if started_tr:
-        return f"Workflow baslangici: {started_tr} TR"
-    if started_utc:
-        return f"Workflow baslangici: {started_utc} UTC"
-    return "Workflow baslangici: bilinmiyor"
-
-
-def _record_shared_variant_cooldowns(article: dict) -> None:
-    if not _is_persist_state_enabled():
-        return
-
-    try:
-        score_output = (get_stage("score").get("output", {}) or {})
-        candidates = score_output.get("cooldown_candidates", [])
-        if not isinstance(candidates, list) or not candidates:
-            return
-
-        posted_data = get_posted_news()
-        recorded = 0
-        for candidate in candidates:
-            if not isinstance(candidate, dict) or not candidate.get("title"):
-                continue
-            if not is_duplicate_article(article, candidate):
-                continue
-            record_shared_variant_cooldown(posted_data, article, candidate)
-            recorded += 1
-
-        if recorded:
-            cleanup_shared_variant_cooldowns(posted_data, 72)
-            save_posted_news(posted_data)
-            log(f"Paylasilan haber varyasyon cooldown kaydi: count={recorded}")
-    except Exception as exc:
-        log(f"Paylasilan haber varyasyon cooldown kaydi yazilamadi: {exc}", "WARNING")
 
 
 def _send_telegram_notification(
@@ -436,29 +246,29 @@ def _send_telegram_notification(
     health_report: str,
     image_source: str,
     image_count: int,
+    post_id: str,
+    story_id: Optional[str] = None,
 ) -> bool:
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
 
-    publish_mode = _resolve_publish_mode(article, image_source)
-    queue_state = _queue_status_text()
+    story_status = f"Story ID: {story_id}" if story_id else "Story: BASARISIZ veya ATLANDI"
 
     message = (
-        f"Paylaşım yapıldı.\n\n"
-        f"Günün {action_count}. tetiklemesi\n"
-        f"Günün {share_count}. paylaşımı\n"
-        f"{_workflow_timing_line()}\n\n"
-        f"Paylaşım Tipi: {publish_mode}\n"
-        f"Seçilen haber:\n"
-        f"Başlık: {title or 'Bilinmiyor'}\n"
+        f"Paylasim yapildi (Instagram).\n\n"
+        f"Gunün {action_count}. tetiklemesi\n"
+        f"Gunün {share_count}. paylasimi\n"
+        f"\n"
+        f"Paylasim Tipi: Instagram Post + Story\n"
+        f"Secilen haber:\n"
+        f"Baslik: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
         f"Toplam Skor: {score}\n\n"
-        f"Alt skorlar:\n{_format_score_breakdown(article.get('score_breakdown', {}))}\n\n"
-        f"İlk 3 haber:\n{_format_top_articles()}\n\n"
-        f"Görsel: {image_source} ({image_count})\n"
-        f"Sağlık: {health_report}\n"
-        f"Kuyruk Durumu: {queue_state}"
+        f"Instagram Post ID: {post_id}\n"
+        f"{story_status}\n"
+        f"Gorsel: {image_source} ({image_count})\n"
+        f"Saglik: {health_report}"
     )
     return tg_platform.send_message(message)
 
@@ -471,10 +281,12 @@ def _build_publish_output(
     dry_run: bool,
     skipped: bool = False,
     skip_reason: str = "",
+    story_id: Optional[str] = None,
 ) -> dict:
     output = {
         "success": not skipped,
         "post_id": post_id,
+        "story_id": story_id,
         "article_title": article.get("title", ""),
         "image_source": image_source,
         "image_count": image_count,
@@ -498,7 +310,7 @@ def _resolve_final_image_count(final_image_source: str, image_paths: list[str]) 
 
 def run() -> bool:
     log("-" * 55)
-    log("agent_publisher basliyor")
+    log("agent_publisher basliyor (Instagram-only)")
     log("-" * 55)
 
     image_stage = get_stage("image")
@@ -577,7 +389,7 @@ def run() -> bool:
             log("Rastgele atlama atlandi (manual_priority=true)")
 
         if dry_run:
-            log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
+            log("DRY RUN: Gercek Instagram paylasimi yapilmayacak")
             output = _build_publish_output(
                 article=article,
                 post_id="dryrun_000000000_111111111",
@@ -598,23 +410,18 @@ def run() -> bool:
         elif not random_delay_enabled:
             log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
 
-        post_id = _publish_to_facebook(article, post_text_content, image_paths)
-        if post_id is None:
-            log(f"Ilk tur basarisiz, {_RETRY_DELAY} sn sonra metin retry", "WARNING")
-            time.sleep(_RETRY_DELAY)
-            post_id = _retry_text_publish(post_text_content)
-            if post_id:
-                article["image_source"] = "retry_text"
-                log("Publish path: retry_text_success")
-
-        if post_id is None:
-            set_stage("publish", "error", error="Facebook paylasimi basarisiz")
+        # === INSTAGRAM PAYLAŞIMI ===
+        publish_result = _publish_to_instagram(article, post_text_content, image_paths)
+        if not publish_result or not publish_result.get("post_id"):
+            set_stage("publish", "error", error="Instagram paylasimi basarisiz")
             return False
 
+        post_id = publish_result.get("post_id")
+        story_id = publish_result.get("story_id")
         final_image_source = article.get("image_source", image_source)
         final_image_count = _resolve_final_image_count(final_image_source, image_paths)
 
-        _record_posted(article, post_id, final_image_source, final_image_count)
+        _record_posted(article, post_id, final_image_source, final_image_count, story_id)
         _record_shared_variant_cooldowns(article)
 
         fresh_data = get_posted_news()
@@ -629,6 +436,8 @@ def run() -> bool:
             health_report=health_report,
             image_source=final_image_source,
             image_count=final_image_count,
+            post_id=post_id,
+            story_id=story_id,
         )
         if not telegram_ok:
             log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
@@ -639,13 +448,14 @@ def run() -> bool:
             image_source=final_image_source,
             image_count=final_image_count,
             dry_run=False,
+            story_id=story_id,
         )
 
         if manual_priority and image_source == "telegram":
             tg_platform.finalize_consumed_shareable_content(image_output)
 
         set_stage("publish", "done", output=output)
-        log("BASARIYLA PAYLASILDI")
+        log("BASARIYLA INSTAGRAM'A PAYLASILDI (Post + Story)")
         return True
 
     except Exception as exc:
