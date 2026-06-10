@@ -349,7 +349,7 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
     if fail_reason:
         return None, fail_reason
 
-    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
+    coverage = (len(matched_pairs) / len(batch)) if auto_batch else 0.0
 
     if coverage < MATCH_MIN_COVERAGE:
         matched_pairs_retry, ai_results_retry, retry_reason = _ask_and_parse_batch(
@@ -361,13 +361,13 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
                 matched_pairs = matched_pairs_retry
                 ai_results = ai_results_retry
 
-    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
+    coverage = (len(matched_pairs) / len(batch)) if auto_batch else 0.0
     if coverage < MATCH_MIN_COVERAGE and ai_results:
         relaxed_pairs = _match_ai_results_to_articles(ai_results, auto_batch, relaxed=True)
         if len(relaxed_pairs) > len(matched_pairs):
             matched_pairs = relaxed_pairs
 
-    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
+    coverage = (len(matched_pairs) / len(batch)) if auto_batch else 0.0
     if coverage < MATCH_MIN_COVERAGE and ai_results:
         extra = _zip_fallback_pairs(ai_results, auto_batch, matched_pairs)
         if extra:
