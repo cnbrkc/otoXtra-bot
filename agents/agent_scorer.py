@@ -129,6 +129,61 @@ def _format_articles_numbered(articles: list) -> str:
     return "\n".join(lines)
 
 
+
+def _verify_automotive_relevance(articles: list) -> set:
+    """AI ile otomotiv konusu kontrolu. Otomotiv disi olanlarin index'lerini dondurur."""
+    if not articles:
+        return set()
+    
+    verify_prompt = (
+        "Sen bir icerik siniflandirma uzmanisin. "
+        "Sana verilen haber basliklarinin otomotiv/arac/motorlu tasit sektoruyle ilgili olup olmadigini degerlendir.\n\n"
+        "OTOMOTIV KAPSAMI: Otomobil, motosiklet, kamyon, otobus, traktor, elektrikli arac, "
+        "hibrit, otonom surus, arac teknolojileri, otomotiv endustrisi, yedek parca, "
+        "lastik, akaryakit/sarj, arac testleri, trafik duzenlemeleri, otomotiv fuarlari, "
+        "arac tasarimi, motorsporlari.\n\n"
+        "OTOMOTIV DEGIL (0 puan): Market/indirim katalogu (Bim, A101, Sok, Migros vb.), "
+        "elektronik, bilgisayar, telefon, beyaz esya, mobilya, gida, emlak, tatil, "
+        "genel saglik, genel egitim, spor (motor sporu haric), finans, kripto, "
+        "alisveris, kampanya, brosur.\n\n"
+        "Her haber icin JSON don: [{\"sira\": 1, \"otomotiv\": true/false}]\n"
+        "SADECE JSON DONDUR."
+    )
+    
+    verify_batches = [articles[i:i + 30] for i in range(0, len(articles), 30)]
+    non_auto_indices: set[int] = set()
+    global_offset = 0
+    
+    for batch in verify_batches:
+        ai_response = ask_ai(f"{verify_prompt}\n\n{_format_articles_numbered(batch)}")
+        if not ai_response:
+            log("Automotive verification AI call failed, batch passes through", "WARNING")
+            global_offset += len(batch)
+            continue
+        
+        parsed = parse_ai_json(ai_response)
+        results = _normalize_ai_results(parsed)
+        if not results:
+            global_offset += len(batch)
+            continue
+        
+        for result in results:
+            if not isinstance(result, dict):
+                continue
+            sira = result.get("sira")
+            is_auto = result.get("otomotiv", True)
+            if sira is not None and not is_auto:
+                try:
+                    index = global_offset + int(sira) - 1
+                    if 0 <= index < len(articles):
+                        non_auto_indices.add(index)
+                except (ValueError, TypeError):
+                    pass
+        
+        global_offset += len(batch)
+    
+    return non_auto_indices
+
 def _split_into_batches(articles: list) -> list:
     return [articles[i: i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
 
@@ -294,7 +349,7 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
     if fail_reason:
         return None, fail_reason
 
-    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
 
     if coverage < MATCH_MIN_COVERAGE:
         matched_pairs_retry, ai_results_retry, retry_reason = _ask_and_parse_batch(
@@ -306,15 +361,15 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
                 matched_pairs = matched_pairs_retry
                 ai_results = ai_results_retry
 
-    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
     if coverage < MATCH_MIN_COVERAGE and ai_results:
-        relaxed_pairs = _match_ai_results_to_articles(ai_results, batch, relaxed=True)
+        relaxed_pairs = _match_ai_results_to_articles(ai_results, auto_batch, relaxed=True)
         if len(relaxed_pairs) > len(matched_pairs):
             matched_pairs = relaxed_pairs
 
-    coverage = (len(matched_pairs) / len(batch)) if batch else 0.0
+    coverage = (len(matched_pairs) / len(auto_batch)) if auto_batch else 0.0
     if coverage < MATCH_MIN_COVERAGE and ai_results:
-        extra = _zip_fallback_pairs(ai_results, batch, matched_pairs)
+        extra = _zip_fallback_pairs(ai_results, auto_batch, matched_pairs)
         if extra:
             matched_pairs.extend(extra)
 
@@ -473,9 +528,43 @@ def run_viral_scoring(articles: list) -> list:
     batches = _split_into_batches(articles)
     all_scored = []
 
+    # --- YENI: Otomotiv konu dogrulamasi ---
+    non_auto_indices = _verify_automotive_relevance(articles)
+    if non_auto_indices:
+        log(
+            f"Automotive verification: {len(non_auto_indices)}/{len(articles)} "
+            f"non-automotive articles filtered to score 0",
+            "INFO",
+        )
+    # ----------------------------------------
+
     for batch_num, batch in enumerate(batches, start=1):
-        matched_pairs, fail_reason = _score_batch(batch, scorer_prompt)
+        # --- YENI: Non-automotive artikelleri ayir, skor 0 yap ---
+        auto_batch = []
+        for article in batch:
+            # Find global index
+            global_idx = None
+            for gi, ga in enumerate(articles):
+                if id(ga) == id(article):
+                    global_idx = gi
+                    break
+            if global_idx is not None and global_idx in non_auto_indices:
+                article["base_ai_score"] = UNSCORED_DEFAULT
+                article["score"] = UNSCORED_DEFAULT
+                article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
+                article["score_reason"] = "non_automotive"
+                all_scored.append(article)
+            else:
+                auto_batch.append(article)
+        
+        if not auto_batch:
+            if batch_num < len(batches):
+                time.sleep(BATCH_DELAY_SECONDS)
+            continue
+        
+        matched_pairs, fail_reason = _score_batch(auto_batch, scorer_prompt)
         if fail_reason:
+            _mark_unscored_batch(auto_batch, fail_reason, all_scored)
             _mark_unscored_batch(batch, fail_reason, all_scored)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
@@ -484,16 +573,16 @@ def run_viral_scoring(articles: list) -> list:
         raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs]
         if _is_probably_ten_scale(raw_scores):
             log("Scorer 10'luk olcek supheleri tespit edildi, strict retry deneniyor", "WARNING")
-            matched_pairs_retry, retry_reason = _score_batch(batch, scorer_prompt + _STRICT_SCALE_APPEND)
+            matched_pairs_retry, retry_reason = _score_batch(auto_batch, scorer_prompt + _STRICT_SCALE_APPEND)
             if retry_reason:
-                _mark_unscored_batch(batch, retry_reason, all_scored)
+                _mark_unscored_batch(auto_batch, retry_reason, all_scored)
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
                 continue
 
             retry_raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs_retry]
             if _is_probably_ten_scale(retry_raw_scores):
-                _mark_unscored_batch(batch, "ai_invalid_scale_10", all_scored)
+                _mark_unscored_batch(auto_batch, "ai_invalid_scale_10", all_scored)
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
                 continue
@@ -501,7 +590,7 @@ def run_viral_scoring(articles: list) -> list:
             matched_pairs = matched_pairs_retry
 
         matched_ids = {id(art) for _, art in matched_pairs}
-        unmatched = [article for article in batch if id(article) not in matched_ids]
+        unmatched = [article for article in auto_batch if id(article) not in matched_ids]
 
         rescued_pairs = _rescue_unmatched_articles(unmatched, scorer_prompt, rescue_limit)
         if rescued_pairs:
