@@ -1,51 +1,13 @@
 {
-  "run_id": "2026-06-10-14:39",
+  "run_id": "2026-06-10-15:32",
   "status": "error",
-  "started_at": "2026-06-10T14:39:23.882014+03:00",
-  "updated_at": "2026-06-10T14:39:49.057747+03:00",
+  "started_at": "2026-06-10T15:32:26.222739+03:00",
+  "updated_at": "2026-06-10T15:32:39.190340+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
-          {
-            "title": "Meksika’nın ilk yerli elektrikli aracı tanıtıldı: 6 kişilik Olinia Uno 8.600 dolar",
-            "link": "https://www.donanimhaber.com/meksika-nin-ilk-yerli-elektrikli-araci-tanitildi--206648",
-            "published": "2026-06-10T09:28:00+00:00",
-            "summary": "Meksika’nın ilk yerli elektrikli otomobili Olinia Uno sahneye çıktı. Altı kişilik şehir içi ulaşım aracı, düşük işletme maliyeti ve 8.600 dolarlık fiyatıyla dikkat çekiyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/206648/1400x788meksika-nin-ilk-yerli-elektrikli-araci-tanitildi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/206648/1400x788meksika-nin-ilk-yerli-elektrikli-araci-tanitildi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/206648/1400x788meksika-nin-ilk-yerli-elektrikli-araci-tanitildi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "600-araci-dolar-elektrikli-kisilik-meksika-olinia-uno-yerli"
-          },
-          {
-            "title": "Elektrikli Mitsubishi Eclipse Sportback görücüye çıkarıldı",
-            "link": "https://www.log.com.tr/elektrikli-mitsubishi-eclipse-sportback-gorucuye-cikarildi/",
-            "published": "2026-06-10T06:42:34+00:00",
-            "summary": "Tamamen elektrikli Mitsubishi Eclipse Sportback, doğrudan yeni nesil Nissan Leaf’i temel alıyor. Bu açıdan genel gövde yapısı oldukça tanıdık olan model, henüz teknik açıdan detaylandırılmıyor. Temel alınan Leaf için 52 kWh ve 75 kWh olmak üzere iki farklı batarya seçeneği sunuluyor. Alt versiyonda 174 beygir, üst versiyonda ise 214 beygir güç üreten tek bir elektrik motoruyla gelen Leaf, ideal şartlarda 488 km kadar yol yapabiliyor. Yıl sonunda belirli pazarlarda satışa çıkarılacağı açıklanan yeni Eclipse Sportback’in yaşam alanı henüz gösterilmiyor. Elektrikli Mitsubishi Eclipse Sportback görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/06/2026-06-10_09-41-41_Q7Mlt-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/06/2026-06-10_09-41-41_Q7Mlt-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/06/2026-06-10_09-41-41_Q7Mlt-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cikarildi-eclipse-elektrikli-gorucuye-mitsubishi-sportback"
-          },
           {
             "title": "Skoda, Epiq üretimine başladı!",
             "link": "https://tr.motor1.com/news/798289/skoda-epiq-uretimine-basladi/",
@@ -66,133 +28,21 @@
             "topic_fingerprint": "epiq-skoda-uretimine"
           },
           {
-            "title": "Volkswagen Taigo, 2030'a kadar yaşayacak",
-            "link": "https://tr.motor1.com/news/798297/vw-taigo-yeni-yol-plani/",
-            "published": "2026-06-10T09:00:00+00:00",
-            "summary": "Volkswagen'in içten yanmalı stratejisi belli oldu.",
-            "image_url": "https://cdn.motor1.com/images/mgl/KbBVgl/s3/volkswagen-taigo.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/KbBVgl/s3/volkswagen-taigo.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/KbBVgl/s3/volkswagen-taigo.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2030-taigo-volkswagen-yasayacak"
-          },
-          {
-            "title": "BYD, Türkiye yatırımından vazgeçti!",
-            "link": "https://tr.motor1.com/news/798299/byd-turkiye-yatirimindan-vazge%C3%A7ti/",
-            "published": "2026-06-10T07:44:00+00:00",
-            "summary": "Stella Li'den resmi açıklama geldi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/ZnzPL2/s3/byd-cover.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/ZnzPL2/s3/byd-cover.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/ZnzPL2/s3/byd-cover.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-turkiye-vazgecti-yatirimindan"
-          },
-          {
-            "title": "BYD Türkiye Fabrika Yatırımını Askıya Aldı",
-            "link": "https://shiftdelete.net/byd-turkiye-fabrika-yatirimini-askiya-aldi",
-            "published": "2026-06-10T07:05:31+00:00",
-            "summary": "BYD, Türkiye'de kurmayı planladığı 1 milyar dolarlık fabrika yatırımını askıya aldı. Şirket, Avrupa stratejisini Macaristan üzerinden yürütme kararı verdi.",
+            "title": "BMW x SipaBoards e-SUP Türkiye’de Satışa Sunuldu",
+            "link": "https://www.otomobil.com.tr/bmw-x-sipaboards-e-sup/",
+            "published": "2026-06-10T12:09:01+00:00",
+            "summary": "BMW, SipaBoards ile birlikte geliştirdiği elektrik destekli stand up paddleboard (e-SUP) modelini Türkiye’de satışa sundu. Kendi kendine şişebilen ve elektrik motoruyla desteklenen BMW x SipaBoards e-SUP, 4.000 Euro + KDV fiyat etiketiyle Borusan Otomotiv Yetkili Satıcıları ve Servisleri’nde satışa çıktı. SipaBoards, 2015 yılında elektrik destekli stand up paddleboard geliştirme hedefiyle kurulan ve daha sonra Boscarol […] Sonrası BMW x SipaBoards e-SUP Türkiye’de Satışa Sunuldu Otomobil ilk ortaya çıktı.",
             "image_url": "",
             "rss_image_url": "",
             "image_candidates": [],
             "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "source_name": "Otomobilcom",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "aldi-askiya-byd-fabrika-turkiye-yatirimini"
-          },
-          {
-            "title": "Çok yazık....",
-            "link": "https://nitter.net/eozpeynirci/status/2064594594298245585#m",
-            "published": "2026-06-10T06:24:44+00:00",
-            "summary": "Çok yazık.... CNBC-e (@cnbceofficial) SON DAKİKA: 1 milyar dolarlık Türkiye yatırımı resmen askıda: Çinli otomobil devi önceliği başka ülkeye verdi cnbce.com/otomotiv/1-milyar-… — https://nitter.net/cnbceofficial/status/2064574335633752331#m",
-            "image_url": "https://nitter.net/pic/card_img%2F2064574207338373120%2FFmMOMyyj%3Fformat%3Djpg%26name%3D800x419",
-            "rss_image_url": "https://nitter.net/pic/card_img%2F2064574207338373120%2FFmMOMyyj%3Fformat%3Djpg%26name%3D800x419",
-            "image_candidates": [
-              "https://nitter.net/pic/card_img%2F2064574207338373120%2FFmMOMyyj%3Fformat%3Djpg%26name%3D800x419"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "yazik"
-          },
-          {
-            "title": "⛔BYD Türkiye fabrika yatırımını askıya aldığını açıkladı!\n\nNeredeyse iki yıl önce Türkiye'de fabrika kuracağını açıklayan, teşvikler sayesinde 50 binden fazla aracı gümrük vergisiz satan BYD, yatırımın askıya alındığını açıkladı.\n\nReuters'a konuşan BYD yöneticisi Stella Li, Macaristan fabrikasında seri üretimin 2026 dördüncü çeyreğinde başlayacağını, Türkiye fabrikasında ise çalışmaların durduğunu doğruladı. Ülkemizde üretim için bir planları olmadığını söyleyen Li, Avrupa'da ikinci bir fabrika için çalışmalarının devam ettiğini ekledi.\n\nYatırım vaadiyle elektrikli araç satışına izin verilen BYD, bundan sonraki süreçte bir cezai yaptırımla karşılaşır mı yoksa Macaristan'da üretime geçilmesiyle işlerine hiçbir şey olmamış gibi devam mı eder merak konusu.",
-            "link": "https://nitter.net/DoluBatarya/status/2064591630703734809#m",
-            "published": "2026-06-10T06:12:57+00:00",
-            "summary": "⛔BYD Türkiye fabrika yatırımını askıya aldığını açıkladı! Neredeyse iki yıl önce Türkiye'de fabrika kuracağını açıklayan, teşvikler sayesinde 50 binden fazla aracı gümrük vergisiz satan BYD, yatırımın askıya alındığını açıkladı. Reuters'a konuşan BYD yöneticisi Stella Li, Macaristan fabrikasında seri üretimin 2026 dördüncü çeyreğinde başlayacağını, Türkiye fabrikasında ise çalışmaların durduğunu doğruladı. Ülkemizde üretim için bir planları olmadığını söyleyen Li, Avrupa'da ikinci bir fabrika için çalışmalarının devam ettiğini ekledi. Yatırım vaadiyle elektrikli araç satışına izin verilen BYD, bundan sonraki süreçte bir cezai yaptırımla karşılaşır mı yoksa Macaristan'da üretime geçilmesiyle işlerine hiçbir şey olmamış gibi devam mı eder merak konusu.",
-            "image_url": "https://nitter.net/pic/media%2FHKbnJRYX0AAjNaX.jpg",
-            "rss_image_url": "https://nitter.net/pic/media%2FHKbnJRYX0AAjNaX.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/media%2FHKbnJRYX0AAjNaX.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-acikladi-acikladi-aciklayan-aldigini-alindigini-arac-araci-askiya-askiya-avrupa-baslayacagini-binden-bundan-byd-byd-byd-byd-calismalarin-calismalarinin-ceyreginde-cezai-devam-devam-dogruladi-dorduncu-durdugunu-eder-ekledi-elektrikli-ettigini-fabrika-fabrika-fabrika-fabrikasinda-fabrikasinda-fazla-gecilmesiyle-gumruk-hicbir-iki-ikinci-ise-islerine-izin-karsilasir-konusan-konusu-kuracagini-macaristan-macaristan-merak-neredeyse-olmadigini-olmamis-planlari-reuters-satan-satisina-sayesinde-seri-sey-sonraki-soyleyen-stella-surecte-tesvikler-turkiye-turkiye-turkiye-ulkemizde-uretim-uretime-uretimin-vaadiyle-vergisiz-verilen-yaptirimla-yatirim-yatirimin-yatirimini-yil-yoksa-yoneticisi"
-          },
-          {
-            "title": "R to @ahmetcelik2016: Hem BYD düşmanlarına, hem TOGG hayranlarına gün doğmuş oldu! Volkswagen de bu ülkede yatırım yapacakken direkten dönmüştü. Belki de Türkiye'nin otomotivdeki kaderi bu. Ama ortada soygun falan yok. Her şey devletin, yetkililerin  kontrolü ve izni dahilinde. Yani görünen o. 45 bini aşkın BYD kullanıcılarının mağdur olacağı bir konu da ortada yok. Bu sahte panik neden anlamış değilim.",
-            "link": "https://nitter.net/ahmetcelik2016/status/2064629437782544569#m",
-            "published": "2026-06-10T08:43:11+00:00",
-            "summary": "Hem BYD düşmanlarına, hem TOGG hayranlarına gün doğmuş oldu! Volkswagen de bu ülkede yatırım yapacakken direkten dönmüştü. Belki de Türkiye'nin otomotivdeki kaderi bu. Ama ortada soygun falan yok. Her şey devletin, yetkililerin  kontrolü ve izni dahilinde. Yani görünen o. 45 bini aşkın BYD kullanıcılarının mağdur olacağı bir konu da ortada yok. Bu sahte panik neden anlamış değilim.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Ahmet Celik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ahmetcelik2016-anlamis-askin-belki-bini-byd-byd-dahilinde-degilim-devletin-direkten-dogmus-donmustu-dusmanlarina-falan-gorunen-gun-hayranlarina-hem-hem-izni-kaderi-kontrolu-konu-kullanicilarinin-magdur-neden-olacagi-ortada-ortada-otomotivdeki-panik-sahte-sey-soygun-togg-turkiye-ulkede-volkswagen-yani-yapacakken-yatirim-yetkililerin-yok-yok"
-          },
-          {
-            "title": "BYD Türkiye yatırımını askıya aldı; Önceliğimiz Macaristan!.. https://otomobilgazetesi.com/haber/byd-turkiye-yatirimini-askiya-aldi-onceligimiz-macaristan-h15545.html",
-            "link": "https://nitter.net/ahmetcelik2016/status/2064597701866451442#m",
-            "published": "2026-06-10T06:37:05+00:00",
-            "summary": "BYD Türkiye yatırımını askıya aldı; Önceliğimiz Macaristan!.. otomobilgazetesi.com/haber/b…",
-            "image_url": "https://nitter.net/pic/card_img%2F2064597707449090048%2F_vjneogx%3Fformat%3Djpg%26name%3D800x419",
-            "rss_image_url": "https://nitter.net/pic/card_img%2F2064597707449090048%2F_vjneogx%3Fformat%3Djpg%26name%3D800x419",
-            "image_candidates": [
-              "https://nitter.net/pic/card_img%2F2064597707449090048%2F_vjneogx%3Fformat%3Djpg%26name%3D800x419"
-            ],
-            "image_source": "rss",
-            "source_name": "Ahmet Celik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aldi-aldi-askiya-askiya-byd-byd-com-h15545-haber-html-https-macaristan-macaristan-onceligimiz-onceligimiz-otomobilgazetesi-turkiye-turkiye-yatirimini-yatirimini"
+            "topic_fingerprint": "bmw-satisa-sipaboards-sunuldu-sup-turkiye"
           },
           {
             "title": "Manisa Sanayi Bölgesi'nin kara talihi.⚫️ \n\nBugün BYD'ye tahsis edilen o arazi, daha önce VW'ye de tahsis edilmişti ve 2019 ikici yarısında olay sızdı, büyük tepki oldu.\n\nVW 1 Temmuz 2020'de yatırımdan vazgeçtiğini açıkladı.\n\nAynı arazi, aynı film. O gün de tepki vardı, belki BYD'den daha sert. \n\nSonra ne oldu? Türkiye'de VW Grubu satışları rekor üstüne rekor kırdı. Sanayi Bakanlığı dışında tek bir devlet kurumu, tek bir yetkili tepki gösterip bu grubun araçlarından almamazlık etmedi.\n\nDolayısıyla BYD hiç endişe etmesin (muhtemelen bu olaya da bakmışlardır): olay yatışınca, ithal araçlarla gelip yine satış rekorları kıracaklar. \n\nBuradaki kızgın mesajlara bakmayın.",
@@ -212,83 +62,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "2019-2020-acikladi-almamazlik-araclarindan-araclarla-arazi-arazi-ayni-ayni-bakanligi-bakmayin-bakmislardir-belki-bolgesi-bugun-buradaki-byd-byd-byd-devlet-disinda-dolayisiyla-edilen-edilmisti-endise-etmedi-etmesin-film-gelip-gosterip-grubu-grubun-gun-ikici-ithal-kara-kiracaklar-kirdi-kizgin-kurumu-manisa-mesajlara-muhtemelen-olay-olay-olaya-rekor-rekor-rekorlari-sanayi-sanayi-satis-satislari-sert-sizdi-tahsis-tahsis-talihi-tek-tek-temmuz-tepki-tepki-tepki-turkiye-ustune-vardi-vazgectigini-yarisinda-yatirimdan-yatisinca-yetkili-yine"
-          },
-          {
-            "title": "1 Milyar $ ceza kesebilir mi?\n\nBelki ama Çin hükümeti devreye girer, masa altı sıkı sertleşmeler olur. Siyasi krize dönüşebilir.\n\nHesapta olmayan başta Togg ve diğer araç üreticileri de haksız pazara payı alması nedeniyle davalar açabilir ve rakam büyüyebilir.\n\nYa milyonlarca $ yatırım yapan bayiler? Onlara ne olacak? Onların zararı nasıl karşılanacak.\n\nParça ve servis sıkıntısı çekilirse, araç sahipleri dava açarsa ne olur?\n\nOlay sanayi bakanlığının görev kapsamının ötesinde.\n\nEn muhtemel senaryo:\n\"Yatırım yapmayacağını zaten uzun zamandır biliyorlardı, bu işin yan etkilerini anlatmışlardır ve BYD'de kabul edip bu açıklamayı yapmıştır.\"",
-            "link": "https://nitter.net/HakanDOGU/status/2064627735679439115#m",
-            "published": "2026-06-10T08:36:25+00:00",
-            "summary": "1 Milyar $ ceza kesebilir mi? Belki ama Çin hükümeti devreye girer, masa altı sıkı sertleşmeler olur. Siyasi krize dönüşebilir. Hesapta olmayan başta Togg ve diğer araç üreticileri de haksız pazara payı alması nedeniyle davalar açabilir ve rakam büyüyebilir. Ya milyonlarca $ yatırım yapan bayiler? Onlara ne olacak? Onların zararı nasıl karşılanacak. Parça ve servis sıkıntısı çekilirse, araç sahipleri dava açarsa ne olur? Olay sanayi bakanlığının görev kapsamının ötesinde. En muhtemel senaryo: \"Yatırım yapmayacağını zaten uzun zamandır biliyorlardı, bu işin yan etkilerini anlatmışlardır ve BYD'de kabul edip bu açıklamayı yapmıştır.\" Finansal Özgürüm (@finansalozgur94) Türkiye'den BYD'ye Tarihi Ceza Yolda... Sanayi ve Teknoloji Bakanı Mehmet Fatih Kacır Şubat ayında yaptığı açıklamada BYD'nin Türkiye yatırımının öngörülen sürede tamamlanmaması durumunda yaptırım uygulanacağını söylemişti. Gazeteci Fatih Altaylı ise BYD sözünü tutmaması halinde fabrika yatırımı için belirlenen tutar (1 milyar dolar) ceza kesileceğini açıklamıştı. BYD'nin yaptığı son açıklamalar üzerine yatırımın durmasıyla Türkiyenin bu cezayı uygulamaya alması an meselesi. Yani BYD'ye 1 milyar dolar, belki de daha yüksek bir para cezası kesilebilir. Devletimizin gereken neyse yapacağına emin olun. Devlet yarına bırakır da yanına bırakmaz. — https://nitter.net/finansalozgur94/status/2064606978584760761#m",
-            "image_url": "https://nitter.net/pic/media%2FHKb0_oPWIAA9uvs.jpg",
-            "rss_image_url": "https://nitter.net/pic/media%2FHKb0_oPWIAA9uvs.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/media%2FHKb0_oPWIAA9uvs.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "HakanDOgu",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acabilir-acarsa-aciklamayi-almasi-alti-anlatmislardir-arac-arac-bakanliginin-basta-bayiler-belki-biliyorlardi-buyuyebilir-byd-cekilirse-ceza-cin-dava-davalar-devreye-diger-donusebilir-edip-etkilerini-girer-gorev-haksiz-hesapta-hukumeti-isin-kabul-kapsaminin-karsilanacak-kesebilir-krize-masa-milyar-milyonlarca-muhtemel-nasil-nedeniyle-olacak-olay-olmayan-olur-olur-onlara-onlarin-otesinde-parca-payi-pazara-rakam-sahipleri-sanayi-senaryo-sertlesmeler-servis-siki-sikintisi-siyasi-togg-ureticileri-uzun-yan-yapan-yapmayacagini-yapmistir-yatirim-yatirim-zamandir-zarari-zaten"
-          },
-          {
-            "title": "R to @HakanDOGU: Tüm şasi içine pil + yazılım + motor + yürüme aksamları entegre.\nGeriye üstüne kabin yapıp, koltuk, ekran va koymak kalıyor. Katma değer düşük.",
-            "link": "https://nitter.net/HakanDOGU/status/2064599111425265762#m",
-            "published": "2026-06-10T06:42:41+00:00",
-            "summary": "Tüm şasi içine pil + yazılım + motor + yürüme aksamları entegre. Geriye üstüne kabin yapıp, koltuk, ekran va koymak kalıyor. Katma değer düşük.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "HakanDOgu",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aksamlari-deger-dusuk-ekran-entegre-geriye-hakandogu-icine-kabin-kaliyor-katma-koltuk-koymak-motor-pil-sasi-ustune-yapip-yazilim-yurume"
-          },
-          {
-            "title": "BYD, TÜRKİYE FABRİKASINI ASKIYA ALDIK DEDİ!\n.\nBu açıklamaya otomotiv devi Türkiye'min vereceği cevap bakalım nasıl olacak? Bildiğiniz gibi Türkiye'de BYD satışları son aylarda çakılmış, mayıs ayında 152 adetle dibe vurmuştu.\n.\nBYD Başkan Yardımcısı Stella Li, \"Türkiye’deki fabrika kurulum süreci durduruldu. Üretime geçiş için belirlenmiş bir takvim bulunmuyor\" demiş.",
-            "link": "https://nitter.net/murattosunMSE/status/2064629460079366252#m",
-            "published": "2026-06-10T08:43:16+00:00",
-            "summary": "BYD, TÜRKİYE FABRİKASINI ASKIYA ALDIK DEDİ! . Bu açıklamaya otomotiv devi Türkiye'min vereceği cevap bakalım nasıl olacak? Bildiğiniz gibi Türkiye'de BYD satışları son aylarda çakılmış, mayıs ayında 152 adetle dibe vurmuştu. . BYD Başkan Yardımcısı Stella Li, \"Türkiye’deki fabrika kurulum süreci durduruldu. Üretime geçiş için belirlenmiş bir takvim bulunmuyor\" demiş.",
-            "image_url": "https://nitter.net/pic/media%2FHKcJgdaWMAAOdld.jpg",
-            "rss_image_url": "https://nitter.net/pic/media%2FHKcJgdaWMAAOdld.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/media%2FHKcJgdaWMAAOdld.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "152-aciklamaya-adetle-aldik-askiya-ayinda-aylarda-bakalim-baskan-belirlenmis-bildiginiz-bulunmuyor-byd-byd-byd-cakilmis-cevap-dedi-demis-devi-dibe-durduruldu-fabri-fabrika-gecis-kasini-kurulum-mayis-min-nasil-olacak-otomotiv-satislari-stella-sureci-takvim-turki-turkiye-turkiye-turkiye-uretime-verecegi-vurmustu-yardimcisi"
-          },
-          {
-            "title": "Markayı menzil testlerimize almama nedenimiz maalesef karşılık buldu. Peki şimdi soruyorum; vergi avantajını kullanarak yerine göre daha uygun fiyat vererek satış yapan ve diğer markaların satışını etkileyen BYD için, diğer markaların adım atması gerekmez mi?",
-            "link": "https://nitter.net/sekizsilindir/status/2064592268716056686#m",
-            "published": "2026-06-10T06:15:29+00:00",
-            "summary": "Markayı menzil testlerimize almama nedenimiz maalesef karşılık buldu. Peki şimdi soruyorum; vergi avantajını kullanarak yerine göre daha uygun fiyat vererek satış yapan ve diğer markaların satışını etkileyen BYD için, diğer markaların adım atması gerekmez mi? Taylan Özgür Dil (@taylandil) 🚨 BYD Türkiye yatırımını askıya aldı BYD Başkan Yardımcısı Stella Li, Londra’da Reuters’a verdiği röportajda, Türkiye’deki fabrika kurulum sürecinin durdurulduğunu ve üretime geçiş için belirlenmiş somut bir takvim bulunmadığını ifade etti. 🗣️Şirket içi operasyonlarda öncelik sıralamasının değiştiğini vurgulayan Li, şu açıklamalarda bulundu: \"Şu anda şirket olarak birinci önceliğimiz Macaristan pazarındaki yatırımlarımız. İkinci odak noktamız ise Avrupa genelinde üretim yapabileceğimiz ikinci bir tesis için uygun lokasyonu bulmak olacak.\" Çok talihsiz açıklama. Bakalım Türkiye hangi adımı atacak❓ — https://nitter.net/taylandil/status/2064588215118381351#m",
-            "image_url": "https://nitter.net/pic/media%2FHKbj6IfX0AAYrGq.jpg",
-            "rss_image_url": "https://nitter.net/pic/media%2FHKbj6IfX0AAYrGq.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/media%2FHKbj6IfX0AAYrGq.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Sekizsilindir",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adim-almama-atmasi-avantajini-buldu-byd-diger-diger-etkileyen-fiyat-gerekmez-karsilik-kullanarak-maalesef-markalarin-markalarin-markayi-menzil-nedenimiz-peki-satis-satisini-simdi-soruyorum-testlerimize-uygun-vererek-vergi-yapan-yerine"
           }
         ],
-        "count": 15,
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -357,30 +133,30 @@
           },
           "_metrics": {
             "found": 130,
-            "after_keyword": 72,
-            "after_time": 16,
-            "after_posted": 16,
-            "after_duplicate": 15,
-            "after_shared_variant_cooldown": 16
+            "after_keyword": 71,
+            "after_time": 3,
+            "after_posted": 3,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 130,
-          "after_keyword": 72,
-          "after_time": 16,
-          "after_posted": 16,
-          "after_duplicate": 15,
-          "after_shared_variant_cooldown": 16
+          "after_keyword": 71,
+          "after_time": 3,
+          "after_posted": 3,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-06-10T14:39:39.054157+03:00"
+      "updated_at": "2026-06-10T15:32:33.998916+03:00"
     },
     "score": {
       "status": "error",
       "output": null,
       "error": "name 'auto_batch' is not defined",
-      "updated_at": "2026-06-10T14:39:49.057747+03:00"
+      "updated_at": "2026-06-10T15:32:39.190340+03:00"
     },
     "write": {
       "status": "waiting",
