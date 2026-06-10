@@ -998,7 +998,7 @@
     "2026-06-01": 2,
     "2026-06-02": 2
   },
-  "last_check_time": "2026-06-10T23:16:58.551074+03:00",
+  "last_check_time": "2026-06-10T23:41:10.551018+03:00",
   "stats": {
     "daily_actions": {
       "2026-05-11": 5,
@@ -1024,7 +1024,7 @@
       "2026-05-31": 5,
       "2026-06-01": 3,
       "2026-06-02": 2,
-      "2026-06-10": 1
+      "2026-06-10": 2
     },
     "weekly": {
       "2026-W16": {
@@ -1124,10 +1124,12 @@
         "report_sent_at": null
       },
       "2026-W24": {
-        "actions": 1,
+        "actions": 2,
         "shares": 0,
-        "error_total": 0,
-        "errors": {},
+        "error_total": 1,
+        "errors": {
+          "PUBLISH_FAILED: Facebook paylasimi basarisiz": 1
+        },
         "skip_total": 1,
         "skips": {
           "Scoring failed (ai_unmatched)": 1
