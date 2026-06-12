@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "title": "Lotus’tan büyük geri dönüş: V8 motorlu yeni süper otomobil yolda",
-      "url": "https://www.donanimhaber.com/lotus-tan-buyuk-geri-donus-v8-motorlu-yeni-super-otomobil-yolda--205590",
-      "topic_fingerprint": "donus-geri-lotus-motorlu-otomobil-super-yolda",
-      "source": "Donanimhaber",
-      "score": 93,
-      "trend_count": 1,
-      "posted_at": "2026-05-12T23:08:43.285474+03:00",
-      "fb_post_id": "678053852057751_122165510978916499",
-      "image_source": "multi_image",
-      "image_count": 2
-    },
-    {
       "title": "Seri üretim ASELSAN GÜRZ ilk kez sergilendi: Hava savunmaya “gırtlak dolu” çözüm",
       "url": "https://www.donanimhaber.com/seri-uretim-aselsan-gurz-ilk-kez-sergilendi--205552",
       "topic_fingerprint": "aselsan-cozum-dolu-girtlak-gurz-hava-kez-savunmaya-sergilendi-seri-uretim",
@@ -974,7 +962,6 @@
     }
   ],
   "daily_counts": {
-    "2026-05-12": 4,
     "2026-05-13": 3,
     "2026-05-14": 3,
     "2026-05-15": 4,
@@ -999,10 +986,9 @@
     "2026-06-10": 1,
     "2026-06-11": 3
   },
-  "last_check_time": "2026-06-11T20:44:41.630032+03:00",
+  "last_check_time": "2026-06-12T10:25:32.805737+03:00",
   "stats": {
     "daily_actions": {
-      "2026-05-12": 5,
       "2026-05-13": 5,
       "2026-05-14": 5,
       "2026-05-15": 5,
@@ -1025,7 +1011,8 @@
       "2026-06-01": 3,
       "2026-06-02": 2,
       "2026-06-10": 3,
-      "2026-06-11": 3
+      "2026-06-11": 3,
+      "2026-06-12": 1
     },
     "weekly": {
       "2026-W16": {
@@ -1125,15 +1112,16 @@
         "report_sent_at": null
       },
       "2026-W24": {
-        "actions": 6,
+        "actions": 7,
         "shares": 4,
         "error_total": 1,
         "errors": {
           "PUBLISH_FAILED: Facebook paylasimi basarisiz": 1
         },
-        "skip_total": 1,
+        "skip_total": 2,
         "skips": {
-          "Scoring failed (ai_unmatched)": 1
+          "Scoring failed (ai_unmatched)": 1,
+          "score_below_publish_skip(score=78)": 1
         },
         "report_sent": false,
         "report_sent_at": null
