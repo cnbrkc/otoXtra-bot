@@ -950,7 +950,7 @@
     "2026-06-11": 3,
     "2026-06-12": 2
   },
-  "last_check_time": "2026-06-13T13:30:04.572858+03:00",
+  "last_check_time": "2026-06-13T17:01:34.585292+03:00",
   "stats": {
     "daily_actions": {
       "2026-05-14": 5,
@@ -976,7 +976,7 @@
       "2026-06-10": 3,
       "2026-06-11": 3,
       "2026-06-12": 4,
-      "2026-06-13": 2
+      "2026-06-13": 3
     },
     "weekly": {
       "2026-W16": {
@@ -1076,18 +1076,19 @@
         "report_sent_at": null
       },
       "2026-W24": {
-        "actions": 12,
+        "actions": 13,
         "shares": 6,
         "error_total": 1,
         "errors": {
           "PUBLISH_FAILED: Facebook paylasimi basarisiz": 1
         },
-        "skip_total": 5,
+        "skip_total": 6,
         "skips": {
           "Scoring failed (ai_unmatched)": 1,
           "score_below_publish_skip(score=78)": 2,
           "score_based_skip(score=86, roll=2, threshold=5)": 1,
-          "Scoring failed (ai_unmatched_fallback)": 1
+          "Scoring failed (ai_unmatched_fallback)": 1,
+          "score_below_publish_skip(score=73)": 1
         },
         "report_sent": false,
         "report_sent_at": null
