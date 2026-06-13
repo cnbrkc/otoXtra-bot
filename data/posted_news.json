@@ -1,30 +1,6 @@
 {
   "posts": [
     {
-      "title": "Çin’de elektrikli araç devrimi sürüyor: Pazar payı yüzde 60'ı aştı!",
-      "url": "https://www.donanimhaber.com/cin-de-elektrikli-arac-devrimi-pazar-payi-yuzde-60-i-asti--205629",
-      "topic_fingerprint": "arac-asti-cin-devrimi-elektrikli-payi-pazar-suruyor-yuzde",
-      "source": "Donanimhaber",
-      "score": 97,
-      "trend_count": 1,
-      "posted_at": "2026-05-14T10:48:57.053590+03:00",
-      "fb_post_id": "678053852057751_122165647136916499",
-      "image_source": "multi_image",
-      "image_count": 2
-    },
-    {
-      "title": "Figure, insansı robotunu çalışırken gösteren büyük bir canlı yayın gerçekleştirdi [Video]",
-      "url": "https://www.log.com.tr/figure-insansi-robotunu-calisirken-gosteren-buyuk-bir-canli-yayin-gerceklestirdi-video/",
-      "topic_fingerprint": "calisirken-canli-figure-gerceklestirdi-gosteren-insansi-robotunu-video-yayin",
-      "source": "Log",
-      "score": 90,
-      "trend_count": 1,
-      "posted_at": "2026-05-14T13:25:21.023682+03:00",
-      "fb_post_id": "678053852057751_122165661416916499",
-      "image_source": "fallback_text",
-      "image_count": 0
-    },
-    {
       "title": "Honda’nın Yeni Stratejisi: Hibrit Modeller Öne Çıkıyor",
       "url": "https://shiftdelete.net/hondanin-yeni-stratejisi-hibrit-modeller-one-cikiyor",
       "topic_fingerprint": "cikiyor-hibrit-honda-modeller-one-stratejisi",
@@ -974,7 +950,7 @@
     "2026-06-11": 3,
     "2026-06-12": 2
   },
-  "last_check_time": "2026-06-13T10:00:05.383497+03:00",
+  "last_check_time": "2026-06-13T13:30:04.572858+03:00",
   "stats": {
     "daily_actions": {
       "2026-05-14": 5,
@@ -1000,7 +976,7 @@
       "2026-06-10": 3,
       "2026-06-11": 3,
       "2026-06-12": 4,
-      "2026-06-13": 1
+      "2026-06-13": 2
     },
     "weekly": {
       "2026-W16": {
@@ -1100,17 +1076,18 @@
         "report_sent_at": null
       },
       "2026-W24": {
-        "actions": 11,
+        "actions": 12,
         "shares": 6,
         "error_total": 1,
         "errors": {
           "PUBLISH_FAILED: Facebook paylasimi basarisiz": 1
         },
-        "skip_total": 4,
+        "skip_total": 5,
         "skips": {
           "Scoring failed (ai_unmatched)": 1,
           "score_below_publish_skip(score=78)": 2,
-          "score_based_skip(score=86, roll=2, threshold=5)": 1
+          "score_based_skip(score=86, roll=2, threshold=5)": 1,
+          "Scoring failed (ai_unmatched_fallback)": 1
         },
         "report_sent": false,
         "report_sent_at": null
