@@ -1,5 +1,11 @@
 """
-Viral scoring agent. (v4.2)
+Viral scoring agent. (v4.3)
+
+v4.3:
+  - ai_parse_failed durumunda onarmali ikinci AI denemesi eklendi.
+  - ai_unmatched durumunda onarmali ikinci AI denemesi eklendi.
+  - CROSS_VALIDATE_THRESHOLD kalici olarak 0.6 yapildi.
+  - SCORE_SKIP_AS_SUCCESS etkisi scorer tarafinda kapatildi (skip gizlenmez).
 
 v4.2:
   - ai_unmatched makaleler için fallback puan sistemi eklendi
@@ -32,7 +38,7 @@ from core.state_manager import get_stage, set_stage
 BATCH_SIZE: int = 20
 BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
-CROSS_VALIDATE_THRESHOLD: float = 0.4
+CROSS_VALIDATE_THRESHOLD: float = 0.6
 
 FRESHNESS_TIERS = [
     (1, 10),
@@ -51,6 +57,15 @@ _STRICT_SCALE_APPEND = (
     "- Bu kurala uymazsan cevap gecersiz sayilacak.\n"
 )
 
+_JSON_REPAIR_APPEND = (
+    "\n\nKRITIK CEVAP FORMATI:\n"
+    "- SADECE GECERLI JSON don.\n"
+    "- Markdown, aciklama, kod blogu kullanma.\n"
+    "- Cikti yalnizca JSON dizi olmali.\n"
+    "- Her ogede: sira, baslik, puan, gerekce, detay alanlari olmali.\n"
+    "- detay icinde su anahtarlar olmali: guncellik, etkilesim_potansiyeli, benzersizlik, gundem_gucu, paylasilabilirlik.\n"
+)
+
 
 def _is_score_breakdown_enabled() -> bool:
     value = os.environ.get("DEBUG_SCORE_BREAKDOWN", "false").strip().lower()
@@ -58,8 +73,8 @@ def _is_score_breakdown_enabled() -> bool:
 
 
 def _allow_skip_as_success() -> bool:
-    value = os.environ.get("SCORE_SKIP_AS_SUCCESS", "false").strip().lower()
-    return value in ("1", "true", "yes", "on")
+    # Skip durumlari artik scorer tarafinda "success" gibi gizlenmez.
+    return False
 
 
 def _safe_int(value, default=0) -> int:
@@ -209,26 +224,45 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     return matched
 
 
-def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
+def _score_batch_once(batch: list, prompt: str) -> tuple[Optional[list], str]:
     ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}")
     if not ai_response:
         return None, "ai_empty"
 
-    ai_results = _normalize_ai_results(parse_ai_json(ai_response))
+    parsed = parse_ai_json(ai_response)
+    ai_results = _normalize_ai_results(parsed)
     if not ai_results:
         return None, "ai_parse_failed"
 
     matched_pairs = _match_ai_results_to_articles(ai_results, batch)
-    
-    # FIX v4.2: Matching başarısız oldu, detaylı log ekle
     if not matched_pairs and ai_results:
         log(
-            f"AI matching hatası: {len(ai_results)} AI sonucu {len(batch)} makaleye eşleştirilemedi. "
-            f"Fallback puan sistemi kullanılacak.",
-            "WARNING"
+            f"AI matching hatasi: {len(ai_results)} AI sonucu {len(batch)} makaleye eslestirilemedi.",
+            "WARNING",
         )
-    
+
     return matched_pairs, ""
+
+
+def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
+    matched_pairs, fail_reason = _score_batch_once(batch, prompt)
+    if not fail_reason and matched_pairs is not None:
+        if matched_pairs:
+            return matched_pairs, ""
+        # Parse var ama eslesme yoksa onarmali ikinci deneme.
+        retry_pairs, retry_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
+        if not retry_reason and retry_pairs:
+            log("AI unmatched icin onarmali ikinci deneme basarili", "INFO")
+            return retry_pairs, ""
+        return matched_pairs, ""
+
+    # Parse/empty hatasinda onarmali ikinci deneme.
+    repaired_pairs, repaired_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
+    if not repaired_reason and repaired_pairs is not None:
+        log(f"AI parse/empty onarma denemesi basarili (ilk_hata={fail_reason})", "INFO")
+        return repaired_pairs, ""
+
+    return None, repaired_reason or fail_reason
 
 
 _SCORE_COMPONENTS = {
@@ -277,7 +311,6 @@ def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
             normalized.setdefault(key, 0)
         return normalized
 
-    # Backward-compatible fallback: keep the current AI score but expose it as weighted criteria.
     weighted = {}
     remaining = _clamp_score(base_score)
     for idx, (key, maximum) in enumerate(_SCORE_COMPONENTS.items()):
@@ -360,21 +393,18 @@ def run_viral_scoring(articles: list) -> list:
             article["score_explanation"] = (ai_result.get("gerekce", "") or "").strip()
             all_scored.append(article)
 
-        # FIX v4.2: ai_unmatched makaleler için fallback puan sistemi
         for article in batch:
             if id(article) in matched_ids:
                 continue
-            
+
             summary = (article.get("summary", "") or "").strip()
-            # Özet uzunluğuna göre fallback puan belirle
             if len(summary) > 100:
                 fallback_base = 25
             elif len(summary) > 50:
                 fallback_base = 20
             else:
                 fallback_base = 15
-            
-            # Fallback breakdown: tüm bileşenlere eşit dağıt
+
             fallback_breakdown = {
                 "guncellik": 5,
                 "etkilesim_potansiyeli": 5,
@@ -382,7 +412,7 @@ def run_viral_scoring(articles: list) -> list:
                 "gundem_gucu": 5,
                 "paylasilabilirlik": 0,
             }
-            
+
             article["base_ai_score"] = fallback_base
             article["score"] = fallback_base
             article["score_breakdown"] = fallback_breakdown
@@ -467,12 +497,11 @@ def _priority_bonus(source_priority: str) -> int:
     return 0
 
 
-# FIX v4.2: Confidence multiplier threshold'unu düşür
 def _confidence_multiplier(ai_score: int) -> float:
     if ai_score < 20:
-        return 0.6  # 0.4'ten 0.6'ya yükselt
+        return 0.6
     if ai_score < 55:
-        return 0.85  # 0.7'den 0.85'e yükselt
+        return 0.85
     return 1.0
 
 
@@ -510,8 +539,8 @@ def _get_active_threshold() -> int:
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
 
-    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)  # Default 40'a düşürüldü
-    slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)  # Default 30'a düşürüldü
+    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)
+    slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)
     today_post_count = get_today_post_count(get_posted_news())
 
     return slow_day_score if today_post_count < 2 else publish_score
@@ -586,8 +615,10 @@ def _derive_skip_reason_from_scores(scored: list) -> str:
     top_reason = max(reasons, key=reasons.get)
     if top_reason == "ai_invalid_scale_10":
         return "AI returned invalid 10-scale scores"
-    if top_reason in {"ai_empty", "ai_parse_failed", "ai_unmatched", "ai_unmatched_fallback"}:
-        return f"Scoring failed ({top_reason})"
+    if top_reason in {"ai_empty", "ai_parse_failed"}:
+        return f"Scoring parse failed ({top_reason})"
+    if top_reason in {"ai_unmatched", "ai_unmatched_fallback"}:
+        return f"Scoring unmatched ({top_reason})"
     return "No article above threshold"
 
 

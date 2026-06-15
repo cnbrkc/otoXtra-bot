@@ -1,7 +1,8 @@
 """
-Main orchestrator for otoXtra bot. (v4.1)
+Main orchestrator for otoXtra bot. (v4.2)
 
-v4.1:
+v4.2:
+  - Min post interval kontrolu saat + dakika destekler hale getirildi.
   - Hata/skip ayrimi guclendirildi.
   - ai_invalid_scale_10 skip sinifina eklendi.
   - Publish stage skip durumu merkezi olarak yakalaniyor.
@@ -70,13 +71,20 @@ def _check_daily_limit(settings: dict, posted_data: dict) -> bool:
     return today_count < max_daily
 
 
+def _resolve_min_interval_minutes(settings: dict) -> int:
+    posting = settings.get("posting", {}) if isinstance(settings, dict) else {}
+    hours = max(0, _safe_int(posting.get("min_post_interval_hours", 0), 0))
+    minutes = max(0, _safe_int(posting.get("min_post_interval_minutes", 0), 0))
+    return (hours * 60) + minutes
+
+
 def _check_min_interval(settings: dict, posted_data: dict) -> bool:
     if _ignore_min_post_interval():
         log("Min post interval kontrolu atlandi (IGNORE_MIN_POST_INTERVAL=true)")
         return True
 
-    min_interval_hours = _safe_int(settings.get("posting", {}).get("min_post_interval_hours", 0), 0)
-    if min_interval_hours <= 0:
+    min_interval_minutes = _resolve_min_interval_minutes(settings)
+    if min_interval_minutes <= 0:
         return True
 
     posts = posted_data.get("posts", [])
@@ -91,8 +99,13 @@ def _check_min_interval(settings: dict, posted_data: dict) -> bool:
         from dateutil import parser as date_parser
 
         last_posted_at = date_parser.isoparse(last_posted_at_str)
-        hours_since = (get_turkey_now() - last_posted_at).total_seconds() / 3600
-        return hours_since >= min_interval_hours
+        minutes_since = (get_turkey_now() - last_posted_at).total_seconds() / 60.0
+        ok = minutes_since >= float(min_interval_minutes)
+        log(
+            f"Min interval kontrolu: gecen={minutes_since:.1f}dk, "
+            f"gereken={min_interval_minutes}dk, sonuc={'devam' if ok else 'bekle'}"
+        )
+        return ok
     except Exception:
         return True
 
@@ -281,13 +294,10 @@ def _is_soft_skip_error(error_text: str) -> tuple[bool, str]:
         return True, "no_article_found"
     if "no article above threshold" in low:
         return True, "no_article_above_threshold"
-    if "rastgele atlama" in low:
-        return True, "random_skip"
     if "invalid 10-scale" in low or "invalid_scale_10" in low:
         return True, "ai_invalid_scale_10"
 
     return False, ""
-
 
 
 def _stage_output(stage_name: str) -> dict:

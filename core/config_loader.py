@@ -146,6 +146,7 @@ def _sanitize_settings(data: Any) -> dict:
             "max_daily_posts": _as_int(posting.get("max_daily_posts"), 9, 1, 50),
             "random_delay_max_minutes": _as_int(posting.get("random_delay_max_minutes"), 8, 0, 60),
             "min_post_interval_hours": _as_int(posting.get("min_post_interval_hours"), 1, 0, 24),
+            "min_post_interval_minutes": _as_int(posting.get("min_post_interval_minutes"), 0, 0, 59),
             "skip_probability_percent": _as_int(posting.get("skip_probability_percent"), 10, 0, 100),
             "max_posts_per_run": _as_int(posting.get("max_posts_per_run"), 1, 1, 10),
             "dry_run": _as_bool(posting.get("dry_run"), False),
@@ -157,8 +158,6 @@ def _sanitize_settings(data: Any) -> dict:
             "logo_size_percent": _as_int(images.get("logo_size_percent"), 15, 1, 100),
             "feed_image_width": _as_int(images.get("feed_image_width"), 1200, 300, 4000),
             "feed_image_height": _as_int(images.get("feed_image_height"), 630, 300, 4000),
-
-            # Yeni akista aktif kullandigin ayarlar
             "enable_article_image_scrape": _as_bool(images.get("enable_article_image_scrape"), True),
             "enable_fetch_article_image_scrape": _as_bool(
                 images.get("enable_fetch_article_image_scrape"), False
