@@ -1,10 +1,15 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.1)
+agents/agent_publisher.py - Yayinci Ajani (v4.2)
 
-v4.1:
-  - Random skip done+skipped akisi korunur.
+v4.2:
+  - Score tabanli skip politikasi sabitlendi:
+      <80 => %100 skip
+      80-84 => %3 skip
+      85-89 => %2 skip
+      diger => %0 skip
+  - ENABLE_RANDOM_SKIP akisi kaldirildi (boşa dusen kontrol temizlendi).
   - fallback/logo gorsel geldiğinde text-only paylasima gecilir.
-  - image_source NameError ve cagrı uyumlulugu duzeltmeleri korunur.
+  - image_source NameError ve cagri uyumlulugu duzeltmeleri korunur.
 """
 
 import os
@@ -66,10 +71,6 @@ def _is_random_delay_enabled() -> bool:
     return _get_env_bool("ENABLE_RANDOM_DELAY", True)
 
 
-def _is_random_skip_enabled() -> bool:
-    return _get_env_bool("ENABLE_RANDOM_SKIP", True)
-
-
 def _is_persist_state_enabled() -> bool:
     return _get_env_bool("PERSIST_STATE", True)
 
@@ -83,24 +84,20 @@ def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
     return True
 
 
-def _score_based_skip_percent(score: int, fallback_percent: int) -> int:
-    if score >= 95:
-        return 0
-    if score >= 90:
-        return 2
-    if score >= 85:
-        return 5
-    if score >= 80:
-        return 10
+def _score_based_skip_percent(score: int) -> int:
     if score < 80:
         return 100
-    return fallback_percent
+    if 85 <= score <= 89:
+        return 2
+    if 80 <= score <= 84:
+        return 3
+    return 0
 
 
-def _check_skip_probability(skip_percent: int, score: int = 0) -> tuple[bool, str]:
-    effective_percent = _score_based_skip_percent(score, skip_percent)
+def _check_skip_probability(score: int = 0) -> tuple[bool, str]:
+    effective_percent = _score_based_skip_percent(score)
     if effective_percent >= 100:
-        reason = f"score_below_publish_skip(score={score})"
+        reason = f"score_below_80_skip(score={score})"
         log(f"Skora bagli atlama: {reason}", "INFO")
         return False, reason
     if effective_percent <= 0:
@@ -534,15 +531,12 @@ def run() -> bool:
         settings = load_config("settings")
         posting_settings = settings.get("posting", {})
         max_daily_posts = _safe_int(posting_settings.get("max_daily_posts", 9), 9)
-        skip_probability = _safe_int(posting_settings.get("skip_probability_percent", 10), 10)
         random_delay_max = _safe_int(posting_settings.get("random_delay_max_minutes", 8), 8)
 
-        skip_probability = max(0, min(skip_probability, 100))
         random_delay_max = max(0, random_delay_max)
 
         dry_run = _is_dry_run(settings)
         random_delay_enabled = _is_random_delay_enabled()
-        random_skip_enabled = _is_random_skip_enabled()
 
         posted_data = get_posted_news()
         if not manual_priority:
@@ -552,29 +546,23 @@ def run() -> bool:
         else:
             log("Gunluk limit kontrolu atlandi (manual_priority=true)")
 
-        skip_allowed, skip_reason = True, ""
-        if not dry_run and (not manual_priority) and random_skip_enabled:
+        if not dry_run and (not manual_priority):
             skip_allowed, skip_reason = _check_skip_probability(
-                skip_probability, _safe_int(article.get("score", 0), 0)
+                _safe_int(article.get("score", 0), 0)
             )
-        if not dry_run and (not manual_priority) and random_skip_enabled and not skip_allowed:
-            output = _build_publish_output(
-                article=article,
-                post_id="skipped_score_based",
-                image_source=image_source,
-                image_count=len(image_paths),
-                dry_run=False,
-                skipped=True,
-                skip_reason=skip_reason or "score_based_skip",
-            )
-            set_stage("publish", "done", output=output)
-            log("Skora bagli atlama nedeniyle bu tur publish skip edildi")
-            return True
-
-        if not dry_run and not manual_priority and not random_skip_enabled:
-            log("Rastgele atlama devre disi (ENABLE_RANDOM_SKIP=false)")
-        if not dry_run and manual_priority:
-            log("Rastgele atlama atlandi (manual_priority=true)")
+            if not skip_allowed:
+                output = _build_publish_output(
+                    article=article,
+                    post_id="skipped_score_based",
+                    image_source=image_source,
+                    image_count=len(image_paths),
+                    dry_run=False,
+                    skipped=True,
+                    skip_reason=skip_reason or "score_based_skip",
+                )
+                set_stage("publish", "done", output=output)
+                log("Skora bagli atlama nedeniyle bu tur publish skip edildi")
+                return True
 
         if dry_run:
             log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
