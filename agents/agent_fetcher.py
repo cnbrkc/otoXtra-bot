@@ -116,7 +116,7 @@ def _safe_int_min(value: Any, default: int, minimum: int) -> int:
     return parsed if parsed >= minimum else minimum
 
 
-def _safe_float_min(value: Any, default: float, minimum: float) -> float:
+def _safe_float_min(value: Any, default: float, minimum: float = 0.0) -> float:
     parsed = _safe_float(value, default)
     return parsed if parsed >= minimum else minimum
 
