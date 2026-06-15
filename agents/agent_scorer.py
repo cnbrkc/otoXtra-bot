@@ -1,21 +1,16 @@
 """
-Viral scoring agent. (v4.3)
+Viral scoring agent. (v4.4)
+
+v4.4:
+  - Islevsiz _allow_skip_as_success katmani kaldirildi.
+  - Kullanilmayan apply_thresholds() fonksiyonu kaldirildi.
+  - Davranis degistirilmeden kod sadelelestirildi.
 
 v4.3:
   - ai_parse_failed durumunda onarmali ikinci AI denemesi eklendi.
   - ai_unmatched durumunda onarmali ikinci AI denemesi eklendi.
   - CROSS_VALIDATE_THRESHOLD kalici olarak 0.6 yapildi.
   - SCORE_SKIP_AS_SUCCESS etkisi scorer tarafinda kapatildi (skip gizlenmez).
-
-v4.2:
-  - ai_unmatched makaleler için fallback puan sistemi eklendi
-  - Confidence multiplier threshold'u düşürüldü (0.4 → 0.6)
-  - Matching başarısızlığında detaylı log eklendi
-
-v4.1:
-  - 10'luk skorlar artik otomatik 100'e cevrilmiyor.
-  - 10'luk skala suphesinde batch strict prompt ile yeniden deneniyor.
-  - Hala 10'luk donuyorsa batch ai_invalid_scale_10 olarak gecersiz sayiliyor.
 """
 
 import os
@@ -70,11 +65,6 @@ _JSON_REPAIR_APPEND = (
 def _is_score_breakdown_enabled() -> bool:
     value = os.environ.get("DEBUG_SCORE_BREAKDOWN", "false").strip().lower()
     return value in ("1", "true", "yes", "on")
-
-
-def _allow_skip_as_success() -> bool:
-    # Skip durumlari artik scorer tarafinda "success" gibi gizlenmez.
-    return False
 
 
 def _safe_int(value, default=0) -> int:
@@ -249,14 +239,13 @@ def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
     if not fail_reason and matched_pairs is not None:
         if matched_pairs:
             return matched_pairs, ""
-        # Parse var ama eslesme yoksa onarmali ikinci deneme.
+
         retry_pairs, retry_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
         if not retry_reason and retry_pairs:
             log("AI unmatched icin onarmali ikinci deneme basarili", "INFO")
             return retry_pairs, ""
         return matched_pairs, ""
 
-    # Parse/empty hatasinda onarmali ikinci deneme.
     repaired_pairs, repaired_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
     if not repaired_reason and repaired_pairs is not None:
         log(f"AI parse/empty onarma denemesi basarili (ilk_hata={fail_reason})", "INFO")
@@ -307,7 +296,7 @@ def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
             normalized[key] = _clamp_component(_safe_score_number(raw_value, 0), _SCORE_COMPONENTS[key])
 
     if normalized:
-        for key, maximum in _SCORE_COMPONENTS.items():
+        for key in _SCORE_COMPONENTS:
             normalized.setdefault(key, 0)
         return normalized
 
@@ -546,14 +535,6 @@ def _get_active_threshold() -> int:
     return slow_day_score if today_post_count < 2 else publish_score
 
 
-def apply_thresholds(scored_articles: list) -> list:
-    if not scored_articles:
-        return []
-
-    threshold = _get_active_threshold()
-    return [a for a in scored_articles if a.get("score", 0) >= threshold]
-
-
 def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
     if not _is_score_breakdown_enabled():
         return
@@ -728,16 +709,6 @@ def run() -> bool:
 
         if best_article is None:
             skip_output = _build_skip_output(meta)
-            if _allow_skip_as_success():
-                set_stage("score", "done", output=skip_output)
-                log(
-                    "score skipped: "
-                    f"{skip_output['skip_reason']} "
-                    f"(threshold={skip_output['threshold']}, top_score={skip_output['top_score']})",
-                    "INFO",
-                )
-                return True
-
             set_stage(
                 "score",
                 "error",
