@@ -6,7 +6,17 @@
     "min_post_interval_minutes": 30,
     "skip_probability_percent": 0,
     "max_posts_per_run": 1,
-    "dry_run": false
+    "dry_run": false,
+    "feed_fetch_delay_seconds": 0.35,
+    "feed_fetch_delay_jitter_seconds": 0.4,
+    "feed_fetch_attempts": 1,
+    "feed_http_attempts": 3,
+    "feed_http_base_wait_seconds": 1.5,
+    "feed_http_timeout_seconds": 20,
+    "nitter_feed_fetch_attempts": 3,
+    "nitter_http_attempts": 3,
+    "nitter_http_base_wait_seconds": 1.8,
+    "nitter_http_timeout_seconds": 22
   },
   "images": {
     "add_logo": true,
