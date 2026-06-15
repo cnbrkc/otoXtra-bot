@@ -1,5 +1,9 @@
 """
-Main orchestrator for otoXtra bot. (v4.2)
+Main orchestrator for otoXtra bot. (v4.3)
+
+v4.3:
+  - Kullanilmayan _format_breakdown() fonksiyonu kaldirildi.
+  - Davranis degistirilmeden kod sadelelestirildi.
 
 v4.2:
   - Min post interval kontrolu saat + dakika destekler hale getirildi.
@@ -306,19 +310,6 @@ def _stage_output(stage_name: str) -> dict:
         return stage.get("output", {}) or {}
     except Exception:
         return {}
-
-
-def _format_breakdown(breakdown: dict) -> str:
-    if not isinstance(breakdown, dict) or not breakdown:
-        return "Yok"
-    labels = {
-        "guncellik": "Güncellik",
-        "etkilesim_potansiyeli": "Etkileşim Potansiyeli",
-        "benzersizlik": "Benzersizlik",
-        "gundem_gucu": "Gündem Gücü",
-        "paylasilabilirlik": "Paylaşılabilirlik",
-    }
-    return "\n".join(f"- {labels.get(k, k)}: {v}" for k, v in breakdown.items())
 
 
 def _format_top3(top_articles: list) -> str:
