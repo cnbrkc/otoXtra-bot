@@ -1,15 +1,16 @@
 """
-News fetch and filter agent. (v4.0)
+News fetch and filter agent. (v4.1)
 
-v4.0:
-  - Bool/int config okumalari guvenli hale getirildi.
-  - Time filter icin kontrollu relaxed fallback eklendi.
-  - Filtre adimlarina sayisal log eklendi.
-  - String/bozuk config degerlerinde crash riski azaltildi.
+v4.1:
+  - Feed bazli tekrar denemesi guclendirildi (ozellikle nitter kaynaklari icin).
+  - Feedler arasi kontrollu bekleme + jitter eklendi.
+  - no_entries/parse_error durumlarinda tekrar deneme eklendi.
+  - Kaynak saglik loglari attempts ve son hata detayi ile genisletildi.
 """
 
 import json
 import os
+import random
 import re
 import sys
 import time
@@ -103,8 +104,20 @@ def _safe_int(value: Any, default: int) -> int:
         return default
 
 
+def _safe_float(value: Any, default: float) -> float:
+    try:
+        return float(value)
+    except Exception:
+        return default
+
+
 def _safe_int_min(value: Any, default: int, minimum: int) -> int:
     parsed = _safe_int(value, default)
+    return parsed if parsed >= minimum else minimum
+
+
+def _safe_float_min(value: Any, default: float, minimum: float) -> float:
+    parsed = _safe_float(value, default)
     return parsed if parsed >= minimum else minimum
 
 
@@ -135,8 +148,20 @@ def _read_int_env(name: str, default: int) -> int:
     return _safe_int(raw, default)
 
 
+def _read_float_env(name: str, default: float) -> float:
+    raw = os.environ.get(name)
+    if raw is None:
+        return default
+    return _safe_float(raw, default)
+
+
 def _turkish_lower(text: str) -> str:
     return text.replace("I", "i").lower()
+
+
+def _is_nitter_feed(url: str) -> bool:
+    host = (urlparse(url).netloc or "").lower()
+    return "nitter." in host or host.startswith("nitter")
 
 
 def _request_with_retry(
@@ -669,6 +694,81 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
         return []
 
 
+def _feed_delay_config() -> tuple[float, float]:
+    settings_cfg = load_config("settings")
+    posting_cfg = settings_cfg.get("posting", {}) if isinstance(settings_cfg, dict) else {}
+
+    base_delay = _safe_float_min(
+        _read_float_env("FEED_FETCH_DELAY_SECONDS", _safe_float(posting_cfg.get("feed_fetch_delay_seconds", 0.35), 0.35)),
+        0.0,
+    )
+    jitter = _safe_float_min(
+        _read_float_env("FEED_FETCH_DELAY_JITTER_SECONDS", _safe_float(posting_cfg.get("feed_fetch_delay_jitter_seconds", 0.4), 0.4)),
+        0.0,
+    )
+    return base_delay, jitter
+
+
+def _feed_attempt_config(feed_url: str) -> tuple[int, int, float, int]:
+    settings_cfg = load_config("settings")
+    posting_cfg = settings_cfg.get("posting", {}) if isinstance(settings_cfg, dict) else {}
+
+    is_nitter = _is_nitter_feed(feed_url)
+
+    if is_nitter:
+        fetch_attempts = _safe_int_min(
+            _read_int_env("NITTER_FEED_FETCH_ATTEMPTS", _safe_int(posting_cfg.get("nitter_feed_fetch_attempts", 3), 3)),
+            1,
+            1,
+        )
+        http_attempts = _safe_int_min(
+            _read_int_env("NITTER_HTTP_ATTEMPTS", _safe_int(posting_cfg.get("nitter_http_attempts", 3), 3)),
+            1,
+            1,
+        )
+        base_wait = _safe_float_min(
+            _read_float_env("NITTER_HTTP_BASE_WAIT_SECONDS", _safe_float(posting_cfg.get("nitter_http_base_wait_seconds", 1.8), 1.8)),
+            0.1,
+        )
+        timeout = _safe_int_min(
+            _read_int_env("NITTER_HTTP_TIMEOUT_SECONDS", _safe_int(posting_cfg.get("nitter_http_timeout_seconds", 22), 22)),
+            5,
+            1,
+        )
+        return fetch_attempts, http_attempts, base_wait, timeout
+
+    fetch_attempts = _safe_int_min(
+        _read_int_env("FEED_FETCH_ATTEMPTS", _safe_int(posting_cfg.get("feed_fetch_attempts", 1), 1)),
+        1,
+        1,
+    )
+    http_attempts = _safe_int_min(
+        _read_int_env("FEED_HTTP_ATTEMPTS", _safe_int(posting_cfg.get("feed_http_attempts", 3), 3)),
+        1,
+        1,
+    )
+    base_wait = _safe_float_min(
+        _read_float_env("FEED_HTTP_BASE_WAIT_SECONDS", _safe_float(posting_cfg.get("feed_http_base_wait_seconds", 1.5), 1.5)),
+        0.1,
+    )
+    timeout = _safe_int_min(
+        _read_int_env("FEED_HTTP_TIMEOUT_SECONDS", _safe_int(posting_cfg.get("feed_http_timeout_seconds", 20), 20)),
+        5,
+        1,
+    )
+    return fetch_attempts, http_attempts, base_wait, timeout
+
+
+def _sleep_between_feeds(feed_name: str, base_delay: float, jitter: float) -> None:
+    if _is_test_mode():
+        return
+    total_sleep = base_delay + (random.uniform(0, jitter) if jitter > 0 else 0.0)
+    if total_sleep <= 0:
+        return
+    log(f"Feed delay: {feed_name} icin {total_sleep:.2f}s bekleniyor")
+    time.sleep(total_sleep)
+
+
 def fetch_all_feeds() -> tuple[list[dict], dict]:
     sources_cfg = load_config("sources")
     feeds = sources_cfg.get("feeds", []) if isinstance(sources_cfg, dict) else []
@@ -686,7 +786,6 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
     max_articles_per_source = _safe_int_min(news_cfg.get("max_articles_per_source", 25), 25, 1)
 
-    # Article page image scraping is intentionally deferred to agent_image for the selected article only.
     enable_fetch_article_image_scrape = _coerce_bool(
         images_cfg.get("enable_fetch_article_image_scrape", False), False
     )
@@ -697,6 +796,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
     max_candidates_per_article = _safe_int_min(images_cfg.get("max_candidates_per_article", 8), 8, 1)
     max_article_scrapes_per_feed = _safe_int_min(images_cfg.get("max_article_scrapes_per_feed", 6), 6, 0)
 
+    delay_base, delay_jitter = _feed_delay_config()
+
     log(
         f"fetch image config: deferred_selected_article_scrape={not enable_fetch_article_image_scrape}, "
         f"enable_fetch_article_image_scrape={enable_fetch_article_image_scrape}, "
@@ -705,7 +806,7 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
         f"max_articles_per_source={max_articles_per_source}"
     )
 
-    for feed_info in feeds:
+    for feed_idx, feed_info in enumerate(feeds):
         feed_url = str(feed_info.get("url", "") or "").strip()
         feed_name = str(feed_info.get("name", "Unknown") or "Unknown").strip()
         feed_priority = str(feed_info.get("priority", "medium") or "medium").strip().lower()
@@ -714,131 +815,173 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
         feed_enabled = _coerce_bool(feed_info.get("enabled", True), True)
 
         if not feed_enabled:
-            source_health[feed_name] = {"status": "disabled", "count": 0, "detail": "disabled"}
+            source_health[feed_name] = {"status": "disabled", "count": 0, "detail": "disabled", "attempts": 0}
             continue
         if not feed_url:
-            source_health[feed_name] = {"status": "error", "count": 0, "detail": "empty_url"}
+            source_health[feed_name] = {"status": "error", "count": 0, "detail": "empty_url", "attempts": 0}
             continue
 
-        try:
-            response = _request_with_retry(feed_url, timeout=20, attempts=3, base_wait_seconds=1.5)
+        fetch_attempts, http_attempts, http_base_wait, timeout = _feed_attempt_config(feed_url)
 
-            parsed_feed = feedparser.parse(response.content)
-            if parsed_feed.bozo and not parsed_feed.entries:
-                bozo_msg = str(getattr(parsed_feed, "bozo_exception", "parse error"))[:120]
-                source_health[feed_name] = {
-                    "status": "error",
-                    "count": 0,
-                    "detail": f"parse_error: {bozo_msg}",
-                }
-                continue
+        if feed_idx > 0:
+            _sleep_between_feeds(feed_name, delay_base, delay_jitter)
 
-            if not parsed_feed.entries:
-                source_health[feed_name] = {
-                    "status": "no_entries",
-                    "count": 0,
-                    "detail": "Feed has no entries",
-                }
-                continue
+        last_error_detail = ""
+        final_entry_count = 0
+        success = False
+        attempt_used = 0
 
-            entry_count = 0
-            scraped_in_feed = 0
+        for feed_attempt in range(1, fetch_attempts + 1):
+            attempt_used = feed_attempt
+            try:
+                response = _request_with_retry(
+                    feed_url,
+                    timeout=timeout,
+                    attempts=http_attempts,
+                    base_wait_seconds=http_base_wait,
+                )
 
-            for entry in parsed_feed.entries:
-                if entry_count >= max_articles_per_source:
+                parsed_feed = feedparser.parse(response.content)
+                if parsed_feed.bozo and not parsed_feed.entries:
+                    bozo_msg = str(getattr(parsed_feed, "bozo_exception", "parse error"))[:120]
+                    last_error_detail = f"parse_error: {bozo_msg}"
+                    log(
+                        f"{feed_name}: parse bozuk ({feed_attempt}/{fetch_attempts}) -> {bozo_msg}",
+                        "WARNING",
+                    )
+                    if feed_attempt < fetch_attempts:
+                        time.sleep(min(2.5, 0.8 * feed_attempt))
+                        continue
                     break
 
-                title = clean_html(entry.get("title", "")).strip()
-                link = entry.get("link", "")
-                if not title or not link:
-                    continue
-
-                summary_raw = entry.get("summary", "") or entry.get("description", "") or ""
-                summary = clean_html(summary_raw).strip()
-                if len(summary) < 10:
-                    summary = ""
-
-                rss_image_url = _extract_image_from_entry(entry)
-                normalized_rss_image = _normalize_image_url(rss_image_url, link) if rss_image_url else ""
-
-                article_image_candidates: list[str] = []
-
-                if feed_can_scrape and enable_fetch_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
-                    article_image_candidates = extract_images_from_article(
-                        link,
-                        max_candidates=max_candidates_per_article,
+                if not parsed_feed.entries:
+                    last_error_detail = "no_entries"
+                    log(
+                        f"{feed_name}: no_entries ({feed_attempt}/{fetch_attempts})",
+                        "WARNING" if feed_attempt < fetch_attempts else "INFO",
                     )
-                    scraped_in_feed += 1
-
-                if normalized_rss_image:
-                    rss_variants = _thumbnail_to_original_variants(normalized_rss_image)
-                    for rss_item in reversed(rss_variants):
-                        if rss_item in article_image_candidates:
-                            article_image_candidates.remove(rss_item)
-                    article_image_candidates = rss_variants + article_image_candidates
-
-                raw_candidate_count = len(article_image_candidates)
-                deduped_candidates: list[str] = []
-                seen_candidate_keys: set[str] = set()
-                for c in article_image_candidates:
-                    if not c:
+                    if feed_attempt < fetch_attempts:
+                        time.sleep(min(2.0, 0.6 * feed_attempt))
                         continue
-                    c_key = _candidate_key(c)
-                    if c_key in seen_candidate_keys:
-                        continue
-                    seen_candidate_keys.add(c_key)
-                    deduped_candidates.append(c)
-                    if len(deduped_candidates) >= max_candidates_per_article:
+                    break
+
+                entry_count = 0
+                scraped_in_feed = 0
+
+                for entry in parsed_feed.entries:
+                    if entry_count >= max_articles_per_source:
                         break
-                article_image_candidates = deduped_candidates
 
-                if raw_candidate_count != len(article_image_candidates):
-                    log(f"{feed_name}: image candidates raw={raw_candidate_count}, canonical={len(article_image_candidates)}")
+                    title = clean_html(entry.get("title", "")).strip()
+                    link = entry.get("link", "")
+                    if not title or not link:
+                        continue
 
-                primary_image = article_image_candidates[0] if article_image_candidates else (normalized_rss_image or rss_image_url)
+                    summary_raw = entry.get("summary", "") or entry.get("description", "") or ""
+                    summary = clean_html(summary_raw).strip()
+                    if len(summary) < 10:
+                        summary = ""
 
-                article = {
-                    "title": title,
-                    "link": link,
-                    "published": _extract_published_date(entry, now_iso),
-                    "summary": summary,
-                    "image_url": primary_image or "",
-                    "rss_image_url": normalized_rss_image or rss_image_url or "",
-                    "image_candidates": article_image_candidates,
-                    "image_source": (
-                        "article"
-                        if article_image_candidates
-                        and (not normalized_rss_image or article_image_candidates[0] != normalized_rss_image)
-                        else ("rss" if primary_image else "none")
-                    ),
-                    "source_name": feed_name,
-                    "source_priority": feed_priority,
-                    "language": feed_language,
-                    "can_scrape_image": feed_can_scrape,
-                    "trend_count": 1,
-                    "trend_bonus": 0,
-                    "topic_fingerprint": generate_topic_fingerprint(title),
-                }
-                all_articles.append(article)
-                entry_count += 1
+                    rss_image_url = _extract_image_from_entry(entry)
+                    normalized_rss_image = _normalize_image_url(rss_image_url, link) if rss_image_url else ""
 
-            source_health[feed_name] = {"status": "ok", "count": entry_count, "detail": ""}
+                    article_image_candidates: list[str] = []
 
-        except requests.exceptions.Timeout:
-            source_health[feed_name] = {"status": "error", "count": 0, "detail": "timeout"}
-        except requests.exceptions.ConnectionError:
-            source_health[feed_name] = {"status": "error", "count": 0, "detail": "connection_error"}
-        except requests.exceptions.HTTPError as exc:
+                    if feed_can_scrape and enable_fetch_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
+                        article_image_candidates = extract_images_from_article(
+                            link,
+                            max_candidates=max_candidates_per_article,
+                        )
+                        scraped_in_feed += 1
+
+                    if normalized_rss_image:
+                        rss_variants = _thumbnail_to_original_variants(normalized_rss_image)
+                        for rss_item in reversed(rss_variants):
+                            if rss_item in article_image_candidates:
+                                article_image_candidates.remove(rss_item)
+                        article_image_candidates = rss_variants + article_image_candidates
+
+                    raw_candidate_count = len(article_image_candidates)
+                    deduped_candidates: list[str] = []
+                    seen_candidate_keys: set[str] = set()
+                    for c in article_image_candidates:
+                        if not c:
+                            continue
+                        c_key = _candidate_key(c)
+                        if c_key in seen_candidate_keys:
+                            continue
+                        seen_candidate_keys.add(c_key)
+                        deduped_candidates.append(c)
+                        if len(deduped_candidates) >= max_candidates_per_article:
+                            break
+                    article_image_candidates = deduped_candidates
+
+                    if raw_candidate_count != len(article_image_candidates):
+                        log(f"{feed_name}: image candidates raw={raw_candidate_count}, canonical={len(article_image_candidates)}")
+
+                    primary_image = article_image_candidates[0] if article_image_candidates else (normalized_rss_image or rss_image_url)
+
+                    article = {
+                        "title": title,
+                        "link": link,
+                        "published": _extract_published_date(entry, now_iso),
+                        "summary": summary,
+                        "image_url": primary_image or "",
+                        "rss_image_url": normalized_rss_image or rss_image_url or "",
+                        "image_candidates": article_image_candidates,
+                        "image_source": (
+                            "article"
+                            if article_image_candidates
+                            and (not normalized_rss_image or article_image_candidates[0] != normalized_rss_image)
+                            else ("rss" if primary_image else "none")
+                        ),
+                        "source_name": feed_name,
+                        "source_priority": feed_priority,
+                        "language": feed_language,
+                        "can_scrape_image": feed_can_scrape,
+                        "trend_count": 1,
+                        "trend_bonus": 0,
+                        "topic_fingerprint": generate_topic_fingerprint(title),
+                    }
+                    all_articles.append(article)
+                    entry_count += 1
+
+                final_entry_count = entry_count
+                success = True
+                break
+
+            except requests.exceptions.Timeout:
+                last_error_detail = "timeout"
+                log(f"{feed_name}: timeout ({feed_attempt}/{fetch_attempts})", "WARNING")
+            except requests.exceptions.ConnectionError:
+                last_error_detail = "connection_error"
+                log(f"{feed_name}: connection_error ({feed_attempt}/{fetch_attempts})", "WARNING")
+            except requests.exceptions.HTTPError as exc:
+                last_error_detail = f"http_error: {str(exc)[:80]}"
+                log(f"{feed_name}: http_error ({feed_attempt}/{fetch_attempts}) -> {exc}", "WARNING")
+            except Exception as exc:
+                last_error_detail = f"unknown_error: {str(exc)[:120]}"
+                log(f"{feed_name}: unknown_error ({feed_attempt}/{fetch_attempts}) -> {exc}", "WARNING")
+
+            if feed_attempt < fetch_attempts:
+                pause = min(3.5, 0.9 * feed_attempt)
+                time.sleep(pause)
+
+        if success:
             source_health[feed_name] = {
-                "status": "error",
-                "count": 0,
-                "detail": f"http_error: {str(exc)[:80]}",
+                "status": "ok",
+                "count": final_entry_count,
+                "detail": "",
+                "attempts": attempt_used,
             }
-        except Exception as exc:
+        else:
+            detail = "Feed has no entries" if last_error_detail == "no_entries" else (last_error_detail or "fetch_failed")
+            status = "no_entries" if last_error_detail == "no_entries" else "error"
             source_health[feed_name] = {
-                "status": "error",
+                "status": status,
                 "count": 0,
-                "detail": f"unknown_error: {str(exc)[:120]}",
+                "detail": detail,
+                "attempts": attempt_used,
             }
 
     return all_articles, source_health
