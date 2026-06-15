@@ -29,15 +29,6 @@ on:
           - 'true'
           - 'false'
 
-      enable_random_skip:
-        description: 'Random skip (rastgele atlama) aktif olsun mu?'
-        required: false
-        default: 'true'
-        type: choice
-        options:
-          - 'true'
-          - 'false'
-
       dry_run:
         description: 'Dry run (gercek Facebook paylasimi kapali)'
         required: false
@@ -107,16 +98,26 @@ jobs:
 
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
-          ENABLE_RANDOM_SKIP: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_skip || 'true' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'false' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
+
           NEWS_MAX_AGE_HOURS: '24'
           SHARED_VARIANT_COOLDOWN_HOURS: '3'
           ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE: 'false'
-
-          SCORE_SKIP_AS_SUCCESS: 'true'
           MAX_IMAGES_PER_NEWS: '4'
+
+          # Feed/Nitter fetch dayanıklılık ayarları
+          FEED_FETCH_DELAY_SECONDS: '0.35'
+          FEED_FETCH_DELAY_JITTER_SECONDS: '0.40'
+          FEED_FETCH_ATTEMPTS: '1'
+          FEED_HTTP_ATTEMPTS: '3'
+          FEED_HTTP_BASE_WAIT_SECONDS: '1.5'
+          FEED_HTTP_TIMEOUT_SECONDS: '20'
+          NITTER_FEED_FETCH_ATTEMPTS: '3'
+          NITTER_HTTP_ATTEMPTS: '3'
+          NITTER_HTTP_BASE_WAIT_SECONDS: '1.8'
+          NITTER_HTTP_TIMEOUT_SECONDS: '22'
         run: |
           set +e
           export WORKFLOW_STARTED_AT_UTC="$(date -u +'%Y-%m-%d %H:%M:%S')"
@@ -161,7 +162,7 @@ jobs:
           git add data/posted_news.json
           git add queue/pipeline.json
           git add data/telegram_updates_state.json
-          
+
           git diff --staged --quiet && echo "Degisiklik yok, commit atlaniyor" && exit 0
 
           git commit -m "Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
