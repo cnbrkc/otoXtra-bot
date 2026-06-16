@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "title": "Gazeteci Ufuk Sandık'la Mercedes GLC ile Karanlık Kanyon'dan geçtik!. \nhttps://www.youtube.com/watch?v=mbkyCr7MXmw&t=11s\n@MercedesTurkiye",
-      "url": "https://nitter.net/ahmetcelik2016/status/2055734860665253931#m",
-      "topic_fingerprint": "11s-com-gazeteci-gectik-glc-https-kanyon-karanlik-mbkycr7mxmw-mercedes-mercedesturkiye-sandik-ufuk-watch-www-youtube",
-      "source": "Ahmet Celik",
-      "score": 60,
-      "trend_count": 1,
-      "posted_at": "2026-05-17T10:36:07.575632+03:00",
-      "fb_post_id": "678053852057751_122165953016916499",
-      "image_source": "single_image",
-      "image_count": 1
-    },
-    {
       "title": "OMODA & JAECOO, Nisan ayında rekor kırdı!",
       "url": "https://tr.motor1.com/news/796084/omoda-jaecoo-nisan-2026-verileri/",
       "topic_fingerprint": "ayinda-jaecoo-kirdi-nisan-omoda-rekor",
@@ -890,7 +878,6 @@
     }
   ],
   "daily_counts": {
-    "2026-05-16": 6,
     "2026-05-17": 7,
     "2026-05-18": 5,
     "2026-05-19": 2,
@@ -915,10 +902,9 @@
     "2026-06-14": 3,
     "2026-06-15": 3
   },
-  "last_check_time": "2026-06-15T22:53:50.972769+03:00",
+  "last_check_time": "2026-06-16T11:48:40.065862+03:00",
   "stats": {
     "daily_actions": {
-      "2026-05-16": 8,
       "2026-05-17": 8,
       "2026-05-18": 5,
       "2026-05-19": 5,
@@ -941,7 +927,8 @@
       "2026-06-12": 4,
       "2026-06-13": 5,
       "2026-06-14": 4,
-      "2026-06-15": 3
+      "2026-06-15": 3,
+      "2026-06-16": 1
     },
     "weekly": {
       "2026-W16": {
@@ -1060,12 +1047,14 @@
         "report_sent_at": "2026-06-15T12:24:03.875157+03:00"
       },
       "2026-W25": {
-        "actions": 3,
+        "actions": 4,
         "shares": 3,
         "error_total": 0,
         "errors": {},
-        "skip_total": 0,
-        "skips": {},
+        "skip_total": 1,
+        "skips": {
+          "score_below_80_skip(score=71)": 1
+        },
         "report_sent": false,
         "report_sent_at": null
       }
