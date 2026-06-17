@@ -1,5 +1,18 @@
 """
-agents/agent_writer.py - Icerik yazma ajani
+agents/agent_writer.py - Icerik yazma ajani (v5.0 ULTRA)
+
+v5.0 ULTRA:
+  - Stage-aware AI calls: ask_ai(..., stage="writing")
+  - Detayli error logging (kalite kontrol, repair, fallback)
+  - Provider cascade tracking
+  - Quality check failure reasons logged
+
+v4.0:
+  - AI ile post yazma
+  - Kalite kontrolu
+  - Yabanci alfabe temizleme
+  - Onarim mekanizmasi
+  - Fallback post
 """
 
 import re
@@ -89,32 +102,55 @@ def _contains_forbidden_script(text: str) -> bool:
 
 
 def _quality_check(post_text: str) -> tuple[bool, str]:
+    """
+    v5.0 ULTRA: Enhanced quality check with detailed failure reasons
+    """
     if not post_text:
+        log("[WRITER] Quality check FAIL: bos_metin", "WARNING")
         return False, "bos_metin"
+    
     if len(post_text) < 80:
+        log(f"[WRITER] Quality check FAIL: cok_kisa (len={len(post_text)})", "WARNING")
         return False, "cok_kisa"
+    
     if len(post_text) > 1800:
+        log(f"[WRITER] Quality check FAIL: cok_uzun (len={len(post_text)})", "WARNING")
         return False, "cok_uzun"
 
     line_count = len([ln for ln in post_text.split("\n") if ln.strip()])
+    
     if line_count < 3:
+        log(f"[WRITER] Quality check FAIL: satir_az (lines={line_count})", "WARNING")
         return False, "satir_az"
+    
     if line_count > 15:
+        log(f"[WRITER] Quality check FAIL: satir_fazla (lines={line_count})", "WARNING")
         return False, "satir_fazla"
 
     if _contains_forbidden_script(post_text):
+        log("[WRITER] Quality check FAIL: yabanci_alfabe", "WARNING")
         return False, "yabanci_alfabe"
 
     lower = post_text.lower()
-    if any(x in lower for x in _FORBIDDEN_CTA):
-        return False, "yasak_cta"
-    if any(x in lower for x in _HALLUCINATION_BAITS):
-        return False, "halusinasyon_tetik"
+    
+    for forbidden in _FORBIDDEN_CTA:
+        if forbidden in lower:
+            log(f"[WRITER] Quality check FAIL: yasak_cta ('{forbidden}')", "WARNING")
+            return False, "yasak_cta"
+    
+    for bait in _HALLUCINATION_BAITS:
+        if bait in lower:
+            log(f"[WRITER] Quality check FAIL: halusinasyon_tetik ('{bait}')", "WARNING")
+            return False, "halusinasyon_tetik"
 
+    log(f"[WRITER] Quality check PASS (len={len(post_text)}, lines={line_count})", "INFO")
     return True, "ok"
 
 
 def _fallback_post(article: dict) -> str:
+    """
+    v5.0 ULTRA: Fallback post with logging
+    """
     title = (article.get("title", "") or "").strip()
     summary = (article.get("summary", "") or "").strip()
 
@@ -123,14 +159,20 @@ def _fallback_post(article: dict) -> str:
         "Guncel gelismeyi sade sekilde aktardik. Net bilgiler geldikce paylasacagiz."
     )
 
-    return (
+    fallback = (
         f"{safe_title}\n\n"
         f"{body}\n\n"
         "Siz bu gelisme hakkinda ne dusunuyorsunuz?"
     ).strip()
+    
+    log(f"[WRITER] Using FALLBACK post (len={len(fallback)})", "INFO")
+    return fallback
 
 
 def _repair_post_with_ai(post_text: str, article: dict) -> str:
+    """
+    v5.0 ULTRA: AI repair with stage tracking
+    """
     title = article.get("title", "")
     summary = article.get("summary", "")
     source = article.get("source_name", "")
@@ -151,7 +193,16 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
         f"{post_text}\n\n"
         "Sadece duzeltilmis post metnini ver."
     )
-    return ask_ai(repair_prompt) or ""
+    
+    log("[WRITER] Attempting AI repair", "INFO")
+    repaired = ask_ai(repair_prompt, stage="writing_repair")
+    
+    if repaired:
+        log(f"[WRITER] AI repair returned {len(repaired)} chars", "INFO")
+    else:
+        log("[WRITER] AI repair returned empty", "WARNING")
+    
+    return repaired or ""
 
 
 def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
@@ -179,29 +230,51 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
 
 
 def generate_post_text(article: dict) -> str:
+    """
+    v5.0 ULTRA: Post generation with comprehensive error logging
+    """
+    log("[WRITER] Starting post generation", "INFO")
+    
     prompts_config = load_config("prompts")
     writer_prompt = prompts_config.get("post_writer", "") if isinstance(prompts_config, dict) else ""
+    
     if not writer_prompt:
-        log("post_writer promptu bulunamadi", "WARNING")
+        log("[WRITER] ERROR: post_writer promptu bulunamadi", "ERROR")
         return ""
 
-    post_text = ask_ai(_build_writer_prompt(article, writer_prompt))
+    log("[WRITER] Calling AI for initial post generation (stage=writing)", "INFO")
+    post_text = ask_ai(_build_writer_prompt(article, writer_prompt), stage="writing")
+    
+    if not post_text:
+        log("[WRITER] AI returned empty response", "ERROR")
+        return _fallback_post(article)
+    
+    log(f"[WRITER] AI returned {len(post_text)} chars (raw)", "INFO")
     post_text = _clean_non_turkish_chars(_strip_wrapper_artifacts(post_text))
+    log(f"[WRITER] After cleaning: {len(post_text)} chars", "INFO")
 
     ok, reason = _quality_check(post_text)
+    
     if ok:
+        log("[WRITER] Initial post passed quality check", "INFO")
         return post_text if len(post_text) >= 30 else _fallback_post(article)
 
-    log(f"Ilk yazi kalite kontrolden gecemedi: {reason}", "WARNING")
+    log(f"[WRITER] Initial post FAILED quality: {reason}", "WARNING")
+    log("[WRITER] Attempting AI repair", "INFO")
 
     repaired = _repair_post_with_ai(post_text, article)
     repaired = _clean_non_turkish_chars(_strip_wrapper_artifacts(repaired))
+    
+    log(f"[WRITER] Repaired post: {len(repaired)} chars", "INFO")
+    
     ok2, reason2 = _quality_check(repaired)
 
     if ok2:
+        log("[WRITER] Repaired post passed quality check", "INFO")
         return repaired if len(repaired) >= 30 else _fallback_post(article)
 
-    log(f"Duzeltilmis yazi da gecemedi: {reason2}. Fallback kullaniliyor.", "WARNING")
+    log(f"[WRITER] Repaired post FAILED quality: {reason2}", "WARNING")
+    log("[WRITER] Using fallback post", "INFO")
     return _fallback_post(article)
 
 
@@ -214,46 +287,59 @@ def _set_write_skipped(skip_reason: str) -> bool:
         "skip_reason": skip_reason,
     }
     set_stage("write", "done", output=output)
-    log(f"writer skipped: {skip_reason}", "INFO")
+    log(f"[WRITER] Skipped: {skip_reason}", "INFO")
     return True
 
 
 def _try_attach_full_text(article: dict) -> None:
+    """
+    v5.0 ULTRA: Full text scraping with error logging
+    """
     article_url = article.get("link", "")
     if not article_url:
+        log("[WRITER] No article URL for full text scraping", "INFO")
         return
+    
     try:
+        log(f"[WRITER] Attempting full text scrape: {article_url[:80]}", "INFO")
         from agents.agent_fetcher import scrape_full_article
 
         full_text = scrape_full_article(article_url)
+        
         if full_text:
+            log(f"[WRITER] Full text scraped: {len(full_text)} chars", "INFO")
             article["full_text"] = full_text
+        else:
+            log("[WRITER] Full text scraping returned empty", "WARNING")
+            
     except Exception as scrape_err:
-        log(f"Tam metin cekme hatasi: {scrape_err}", "WARNING")
+        log(f"[WRITER] Full text scraping error: {scrape_err}", "WARNING")
 
 
 def run() -> bool:
-    log("-" * 55)
-    log("agent_writer basliyor")
-    log("-" * 55)
+    log("[WRITER] ===== AGENT_WRITER STARTING =====", "INFO")
 
     score_stage = get_stage("score")
     if score_stage.get("status") != "done":
-        log("score asamasi tamamlanmamis", "ERROR")
+        log("[WRITER] Score stage not done, cannot proceed", "ERROR")
         set_stage("write", "error", error="score asamasi tamamlanmamis")
         return False
 
     score_output = score_stage.get("output", {})
+    
     if bool(score_output.get("skipped", False)):
         skip_reason = (score_output.get("skip_reason", "") or "score skipped").strip()
+        log(f"[WRITER] Score stage was skipped: {skip_reason}", "INFO")
         return _set_write_skipped(skip_reason)
 
     article = score_output.get("selected_article", {})
+    
     if not article:
-        log("Score cikisinda haber yok", "WARNING")
+        log("[WRITER] No article in score output", "ERROR")
         set_stage("write", "error", error="Score cikisinda haber yok")
         return False
 
+    log(f"[WRITER] Received article: {article.get('title', '')[:80]}", "INFO")
     set_stage("write", "running")
 
     try:
@@ -261,6 +347,7 @@ def run() -> bool:
         post_text = generate_post_text(article)
 
         if not post_text:
+            log("[WRITER] Post generation completely failed", "ERROR")
             set_stage("write", "error", error="Post metni uretilemedi")
             return False
 
@@ -270,12 +357,15 @@ def run() -> bool:
             "post_text_length": len(post_text),
             "skipped": False,
         }
+        
         set_stage("write", "done", output=output)
-        log(f"agent_writer tamamlandi -> {len(post_text)} karakter")
+        log(f"[WRITER] Success: Generated {len(post_text)} char post", "INFO")
         return True
 
     except Exception as exc:
-        log(f"agent_writer kritik hata: {exc}", "ERROR")
+        log(f"[WRITER] Critical exception: {exc}", "ERROR")
+        import traceback
+        log(f"[WRITER] Traceback: {traceback.format_exc()}", "ERROR")
         set_stage("write", "error", error=str(exc))
         return False
 

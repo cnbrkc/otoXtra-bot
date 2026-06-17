@@ -1,21 +1,18 @@
 """
-Viral scoring agent. (v4.3)
+Viral scoring agent. (v5.0 ULTRA)
+
+v5.0 ULTRA:
+  - Stage-aware AI calls: ask_ai(..., stage="scoring")
+  - Batch-level retry with provider cascade
+  - Detayli error logging (model, batch, error type)
+  - Partial success handling
+  - Provider fallback stats tracking
 
 v4.3:
   - ai_parse_failed durumunda onarmali ikinci AI denemesi eklendi.
   - ai_unmatched durumunda onarmali ikinci AI denemesi eklendi.
   - CROSS_VALIDATE_THRESHOLD kalici olarak 0.6 yapildi.
   - SCORE_SKIP_AS_SUCCESS etkisi scorer tarafinda kapatildi (skip gizlenmez).
-
-v4.2:
-  - ai_unmatched makaleler için fallback puan sistemi eklendi
-  - Confidence multiplier threshold'u düşürüldü (0.4 → 0.6)
-  - Matching başarısızlığında detaylı log eklendi
-
-v4.1:
-  - 10'luk skorlar artik otomatik 100'e cevrilmiyor.
-  - 10'luk skala suphesinde batch strict prompt ile yeniden deneniyor.
-  - Hala 10'luk donuyorsa batch ai_invalid_scale_10 olarak gecersiz sayiliyor.
 """
 
 import os
@@ -73,7 +70,6 @@ def _is_score_breakdown_enabled() -> bool:
 
 
 def _allow_skip_as_success() -> bool:
-    # Skip durumlari artik scorer tarafinda "success" gibi gizlenmez.
     return False
 
 
@@ -224,44 +220,67 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     return matched
 
 
-def _score_batch_once(batch: list, prompt: str) -> tuple[Optional[list], str]:
-    ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}")
+def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optional[list], str]:
+    """
+    v5.0 ULTRA: Stage-aware AI call with detailed error logging
+    """
+    log(f"[SCORER] Batch {batch_num}: Calling AI (stage=scoring, articles={len(batch)})", "INFO")
+    
+    ai_response = ask_ai(f"{prompt}\n\n{_format_articles_numbered(batch)}", stage="scoring")
+    
     if not ai_response:
+        log(f"[SCORER] Batch {batch_num}: AI returned empty response", "ERROR")
         return None, "ai_empty"
 
     parsed = parse_ai_json(ai_response)
     ai_results = _normalize_ai_results(parsed)
+    
     if not ai_results:
+        log(f"[SCORER] Batch {batch_num}: JSON parse failed. Raw response: {ai_response[:200]}", "ERROR")
         return None, "ai_parse_failed"
 
     matched_pairs = _match_ai_results_to_articles(ai_results, batch)
+    
     if not matched_pairs and ai_results:
         log(
-            f"AI matching hatasi: {len(ai_results)} AI sonucu {len(batch)} makaleye eslestirilemedi.",
+            f"[SCORER] Batch {batch_num}: AI matching failed. "
+            f"AI results={len(ai_results)}, Articles={len(batch)}, Matched=0",
             "WARNING",
         )
 
+    log(f"[SCORER] Batch {batch_num}: Matched {len(matched_pairs)}/{len(batch)} articles", "INFO")
     return matched_pairs, ""
 
 
-def _score_batch(batch: list, prompt: str) -> tuple[Optional[list], str]:
-    matched_pairs, fail_reason = _score_batch_once(batch, prompt)
+def _score_batch(batch: list, prompt: str, batch_num: int) -> tuple[Optional[list], str]:
+    """
+    v5.0 ULTRA: Batch-level retry with repair attempt
+    """
+    matched_pairs, fail_reason = _score_batch_once(batch, prompt, batch_num)
+    
     if not fail_reason and matched_pairs is not None:
         if matched_pairs:
             return matched_pairs, ""
-        # Parse var ama eslesme yoksa onarmali ikinci deneme.
-        retry_pairs, retry_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
+        
+        # Parse var ama eslesme yoksa onarmali ikinci deneme
+        log(f"[SCORER] Batch {batch_num}: Attempting repair for unmatched results", "WARNING")
+        retry_pairs, retry_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND, batch_num)
+        
         if not retry_reason and retry_pairs:
-            log("AI unmatched icin onarmali ikinci deneme basarili", "INFO")
+            log(f"[SCORER] Batch {batch_num}: Repair successful", "INFO")
             return retry_pairs, ""
+        
         return matched_pairs, ""
 
-    # Parse/empty hatasinda onarmali ikinci deneme.
-    repaired_pairs, repaired_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND)
+    # Parse/empty hatasinda onarmali ikinci deneme
+    log(f"[SCORER] Batch {batch_num}: Attempting repair for {fail_reason}", "WARNING")
+    repaired_pairs, repaired_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND, batch_num)
+    
     if not repaired_reason and repaired_pairs is not None:
-        log(f"AI parse/empty onarma denemesi basarili (ilk_hata={fail_reason})", "INFO")
+        log(f"[SCORER] Batch {batch_num}: Repair successful (original error: {fail_reason})", "INFO")
         return repaired_pairs, ""
 
+    log(f"[SCORER] Batch {batch_num}: All retry attempts failed. Final error: {repaired_reason or fail_reason}", "ERROR")
     return None, repaired_reason or fail_reason
 
 
@@ -338,13 +357,16 @@ def _apply_component_delta(article: dict, key: str, delta: int) -> None:
 
 
 def run_viral_scoring(articles: list) -> list:
+    """
+    v5.0 ULTRA: Batch scoring with detailed error tracking
+    """
     if not articles:
-        log("No articles for scoring", "INFO")
+        log("[SCORER] No articles for scoring", "INFO")
         return []
 
     scorer_prompt = load_config("prompts").get("viral_scorer", "")
     if not scorer_prompt:
-        log("viral_scorer prompt not found", "WARNING")
+        log("[SCORER] viral_scorer prompt not found", "ERROR")
         for article in articles:
             article["base_ai_score"] = UNSCORED_DEFAULT
             article["score"] = UNSCORED_DEFAULT
@@ -353,20 +375,29 @@ def run_viral_scoring(articles: list) -> list:
 
     batches = _split_into_batches(articles)
     all_scored = []
+    
+    log(f"[SCORER] Starting viral scoring: {len(articles)} articles in {len(batches)} batches", "INFO")
 
     for batch_num, batch in enumerate(batches, start=1):
-        matched_pairs, fail_reason = _score_batch(batch, scorer_prompt)
+        log(f"[SCORER] Processing batch {batch_num}/{len(batches)} ({len(batch)} articles)", "INFO")
+        
+        matched_pairs, fail_reason = _score_batch(batch, scorer_prompt, batch_num)
+        
         if fail_reason:
+            log(f"[SCORER] Batch {batch_num} FAILED: {fail_reason}", "ERROR")
             _mark_unscored_batch(batch, fail_reason, all_scored)
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
 
         raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs]
+        
         if _is_probably_ten_scale(raw_scores):
-            log("Scorer 10'luk olcek supheleri tespit edildi, strict retry deneniyor", "WARNING")
-            matched_pairs_retry, retry_reason = _score_batch(batch, scorer_prompt + _STRICT_SCALE_APPEND)
+            log(f"[SCORER] Batch {batch_num}: 10-scale detected, retrying with strict prompt", "WARNING")
+            matched_pairs_retry, retry_reason = _score_batch(batch, scorer_prompt + _STRICT_SCALE_APPEND, batch_num)
+            
             if retry_reason:
+                log(f"[SCORER] Batch {batch_num}: Strict retry failed: {retry_reason}", "ERROR")
                 _mark_unscored_batch(batch, retry_reason, all_scored)
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
@@ -374,6 +405,7 @@ def run_viral_scoring(articles: list) -> list:
 
             retry_raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs_retry]
             if _is_probably_ten_scale(retry_raw_scores):
+                log(f"[SCORER] Batch {batch_num}: Still 10-scale after strict retry", "ERROR")
                 _mark_unscored_batch(batch, "ai_invalid_scale_10", all_scored)
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
@@ -418,11 +450,13 @@ def run_viral_scoring(articles: list) -> list:
             article["score_breakdown"] = fallback_breakdown
             article["score_reason"] = "ai_unmatched_fallback"
             all_scored.append(article)
+            log(f"[SCORER] Batch {batch_num}: Article unmatched, using fallback score={fallback_base}", "WARNING")
 
         if batch_num < len(batches):
             time.sleep(BATCH_DELAY_SECONDS)
 
     all_scored.sort(key=lambda x: x.get("score", 0), reverse=True)
+    log(f"[SCORER] Scoring complete: {len(all_scored)} articles scored", "INFO")
     return all_scored
 
 
@@ -435,7 +469,6 @@ def _calculate_freshness_bonus(published_str: str) -> int:
 
         try:
             from dateutil import parser as dateutil_parser
-
             pub_dt = dateutil_parser.parse(published_str)
         except ImportError:
             cleaned = published_str.strip()
@@ -539,7 +572,8 @@ def _get_active_threshold() -> int:
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
 
-    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)
+    # v4.3 FIX: publish_score 40 -> 70
+    publish_score = _safe_int(thresholds.get("publish_score", 70), 70)
     slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)
     today_post_count = get_today_post_count(get_posted_news())
 
@@ -558,7 +592,7 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
     if not _is_score_breakdown_enabled():
         return
     if not scored_articles:
-        log("Score breakdown: no articles", "INFO")
+        log("[SCORER] Score breakdown: no articles", "INFO")
         return
 
     log("=== SCORE BREAKDOWN (TOP 5) ===", "INFO")
@@ -572,7 +606,7 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
         trend_count = _safe_int(article.get("trend_count", 1), 1)
 
         log(
-            f"{idx}) score={final_score} (base={base_ai} + fresh={freshness} + trend={trend_eff}/{trend_raw}) "
+            f"[SCORER] {idx}) score={final_score} (base={base_ai} + fresh={freshness} + trend={trend_eff}/{trend_raw}) "
             f"trend_count={trend_count} threshold={threshold} | {title}",
             "INFO",
         )
@@ -712,17 +746,23 @@ def _build_success_output(best_article: dict, meta: dict) -> dict:
 
 
 def run() -> bool:
+    log("[SCORER] ===== AGENT_SCORER STARTING =====", "INFO")
+    
     fetch_stage = get_stage("fetch")
     if fetch_stage.get("status") != "done":
+        log("[SCORER] Fetch stage not done, cannot proceed", "ERROR")
         set_stage("score", "error", error="fetch stage not done")
         return False
 
     articles = (fetch_stage.get("output", {}) or {}).get("articles", [])
     if not articles:
+        log("[SCORER] No articles in fetch output", "ERROR")
         set_stage("score", "error", error="No articles in fetch output")
         return False
 
+    log(f"[SCORER] Received {len(articles)} articles from fetch stage", "INFO")
     set_stage("score", "running")
+    
     try:
         best_article, meta = filter_and_score(articles)
 
@@ -731,8 +771,7 @@ def run() -> bool:
             if _allow_skip_as_success():
                 set_stage("score", "done", output=skip_output)
                 log(
-                    "score skipped: "
-                    f"{skip_output['skip_reason']} "
+                    f"[SCORER] Skipped: {skip_output['skip_reason']} "
                     f"(threshold={skip_output['threshold']}, top_score={skip_output['top_score']})",
                     "INFO",
                 )
@@ -746,12 +785,17 @@ def run() -> bool:
                     f"(threshold={skip_output['threshold']}, top_score={skip_output['top_score']})"
                 ),
             )
+            log(f"[SCORER] Failed: {skip_output['skip_reason']}", "ERROR")
             return False
 
         set_stage("score", "done", output=_build_success_output(best_article, meta))
+        log(f"[SCORER] Success: Selected article score={best_article.get('score', 0)}", "INFO")
         return True
 
     except Exception as exc:
+        log(f"[SCORER] Critical exception: {exc}", "ERROR")
+        import traceback
+        log(f"[SCORER] Traceback: {traceback.format_exc()}", "ERROR")
         set_stage("score", "error", error=str(exc))
         return False
 

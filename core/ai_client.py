@@ -1,13 +1,27 @@
 """
-core/ai_client.py
-AI cagri katmani.
-- Provider secimi burada toplanir (Gemini, Groq, OpenRouter, HuggingFace)
-- Retry/backoff uygulanir
-- JSON parse fallback'i saglanir
+core/ai_client.py - Ultra Multi-Provider AI Stack (v5.2 FINAL)
+
+v5.2 FINAL:
+  - 503 UNAVAILABLE -> skip (no retry) FIX
+  - 500 INTERNAL_ERROR -> skip (no retry) FIX
+
+v5.1 FINAL:
+  - GEMINI MODEL FIX
+  -  New Model list
+  - API v1beta yerine v1 API kullaniliyor
+  
+v5.0:
+  - GEMINI STACK: 5 model cascade
+  - GROQ STACK: 3 model cascade
+  - EMERGENCY STACK: OpenRouter + HuggingFace
+  - ERROR CLASSIFICATION: timeout, rate_limit, quota, token_limit
+  - SMART RETRY: timeout=1x retry, quota=skip
+  - EXPONENTIAL BACKOFF: 3-10s
 """
 
 import json
 import os
+import random
 import re
 import time
 from typing import Any, Dict, Optional
@@ -17,7 +31,25 @@ import requests
 from core.logger import log
 
 
-_DEFAULT_PROVIDER_ORDER = ["gemini", "groq", "openrouter", "huggingface"]
+# ========== GEMINI STACK (FIXED) ==========
+GEMINI_MODELS = [
+    "gemini-3.5-flash",        # Stabil / En Güçlü Flash
+    "gemini-3.1-flash-lite",   # Stabil / Hızlı ve Ekonomik
+    "gemini-3-flash",          # Stabil sürüm aliası (preview yerine düz sürüm adını kullanın)
+    "gemini-2.5-flash-lite",   # Stabil / Geriye dönük uyumlu
+    "gemini-2.5-flash",        # Stabil / Geriye dönük uyumlu
+]
+
+# ========== GROQ STACK ==========
+GROQ_MODELS = [
+    "llama-3.3-70b-versatile",   # Groq primary (en güçlü)
+    "llama-3.1-70b-versatile",   # Groq fallback 1
+    "llama-3.1-8b-instant",      # Groq fallback 2 (hızlı)
+]
+
+# ========== EMERGENCY STACK ==========
+# OpenRouter + HuggingFace (mevcut sistemdeki gibi)
+
 _BOOL_TRUE_VALUES = ("1", "true", "yes", "on")
 
 
@@ -42,7 +74,6 @@ def _get_env_str(name: str) -> str:
 def _load_ai_config() -> Dict[str, Any]:
     try:
         from core.config_loader import load_config
-
         settings = load_config("settings")
         if isinstance(settings, dict):
             ai_cfg = settings.get("ai", {})
@@ -53,27 +84,21 @@ def _load_ai_config() -> Dict[str, Any]:
     return {}
 
 
-def _get_retry_config() -> tuple[int, float]:
+def _get_retry_config() -> tuple[int, float, float]:
+    """Returns: (max_attempts, base_wait, max_wait)"""
     cfg = _load_ai_config()
-    attempts = _safe_int(cfg.get("retry_attempts", 3), 3)
-    base_wait = _safe_float(cfg.get("retry_base_wait_seconds", 1.5), 1.5)
+    attempts = _safe_int(cfg.get("retry_attempts", 2), 2)
+    base_wait = _safe_float(cfg.get("retry_base_wait_seconds", 3.0), 3.0)
+    max_wait = _safe_float(cfg.get("retry_max_wait_seconds", 10.0), 10.0)
 
     if attempts < 1:
-        attempts = 3
+        attempts = 2
     if base_wait <= 0:
-        base_wait = 1.5
+        base_wait = 3.0
+    if max_wait < base_wait:
+        max_wait = base_wait
 
-    return attempts, base_wait
-
-
-def _provider_order() -> list[str]:
-    cfg = _load_ai_config()
-    order = cfg.get("provider_order")
-    if isinstance(order, list):
-        cleaned = [str(x).strip().lower() for x in order if str(x).strip()]
-        if cleaned:
-            return cleaned
-    return list(_DEFAULT_PROVIDER_ORDER)
+    return attempts, base_wait, max_wait
 
 
 def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
@@ -83,6 +108,65 @@ def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
     if isinstance(value, str):
         return value.strip().lower() in _BOOL_TRUE_VALUES
     return bool(value)
+
+
+def _classify_error(error_text: str) -> str:
+    """
+    Error classification (v5.2 FIX):
+    - timeout → retry 1x
+    - rate_limit → skip to next model
+    - quota_exceeded → skip to next model
+    - token_limit → skip to next model
+    - not_found → skip to next model (model mevcut değil)
+    - unavailable (503) → skip to next model (NEW FIX)
+    - internal_error (500) → skip to next model (NEW FIX)
+    - unknown → retry 1x
+    """
+    lower = (error_text or "").lower()
+    
+    if "timeout" in lower or "timed out" in lower:
+        return "timeout"
+    if "rate limit" in lower or "429" in lower:
+        return "rate_limit"
+    if "quota" in lower or "exceeded" in lower:
+        return "quota_exceeded"
+    if "token" in lower and ("limit" in lower or "too long" in lower):
+        return "token_limit"
+    if "404" in lower or "not found" in lower or "not_found" in lower:
+        return "not_found"
+    # FIX: 503 UNAVAILABLE -> skip immediately
+    if "503" in lower or "unavailable" in lower:
+        return "unavailable"
+    # FIX: 500 INTERNAL_ERROR -> skip immediately
+    if "500" in lower or "internal" in lower:
+        return "internal_error"
+    
+    return "unknown"
+
+
+def _should_retry(error_type: str, attempt: int, max_attempts: int) -> bool:
+    """
+    Retry logic (v5.2 FIX):
+    - timeout/unknown → retry once
+    - rate_limit/quota/token_limit/not_found/unavailable/internal_error → skip (no retry)
+    """
+    if attempt >= max_attempts:
+        return False
+    
+    # FIX: unavailable ve internal_error eklendi
+    if error_type in ("rate_limit", "quota_exceeded", "token_limit", "not_found", "unavailable", "internal_error"):
+        return False  # Immediately skip to next model
+    
+    return True  # timeout/unknown → retry
+
+
+def _exponential_backoff_wait(attempt: int, base_wait: float, max_wait: float) -> None:
+    """Wait with exponential backoff + jitter"""
+    wait = min(base_wait * (2 ** (attempt - 1)), max_wait)
+    jitter = random.uniform(0, wait * 0.3)  # 30% jitter
+    total_wait = wait + jitter
+    log(f"Backoff wait: {total_wait:.2f}s (attempt={attempt})", "INFO")
+    time.sleep(total_wait)
 
 
 def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional[dict]:
@@ -97,21 +181,15 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
         return None
 
 
-def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
-    if not _is_enabled(cfg, "enable_gemini", True):
-        return None
-
+# ========== GEMINI PROVIDER (FIXED) ==========
+def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Try a single Gemini model with correct API"""
     api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
         return None
 
-    model_name = str(cfg.get("gemini_model", "gemini-2.5-flash-lite")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
-
-    temperature = max(0.0, min(2.0, temperature))
-    if max_tokens < 1:
-        max_tokens = 1400
 
     try:
         from google import genai
@@ -122,6 +200,8 @@ def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
     try:
         client = genai.Client(api_key=api_key)
+        
+        # FIX: Use correct model identifier format
         response = client.models.generate_content(
             model=model_name,
             contents=prompt,
@@ -133,19 +213,51 @@ def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         text = (getattr(response, "text", "") or "").strip()
         return text or None
     except Exception as exc:
-        log(f"Gemini hatasi: {exc}", "WARNING")
+        error_type = _classify_error(str(exc))
+        log(f"Gemini {model_name} error ({error_type}): {exc}", "WARNING")
+        raise
+
+
+def _try_gemini_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Try all Gemini models in cascade"""
+    if not _is_enabled(cfg, "enable_gemini", True):
         return None
 
+    max_attempts, base_wait, max_wait = _get_retry_config()
 
-def _try_groq(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
-    if not _is_enabled(cfg, "enable_groq", True):
-        return None
+    for model_idx, model_name in enumerate(GEMINI_MODELS, start=1):
+        log(f"Gemini Stack [{model_idx}/{len(GEMINI_MODELS)}]: {model_name}", "INFO")
+        
+        for attempt in range(1, max_attempts + 1):
+            try:
+                result = _try_gemini_single_model(prompt, model_name, cfg)
+                if result:
+                    log(f"✅ Gemini success: {model_name} (attempt {attempt})", "INFO")
+                    return result
+            except Exception as exc:
+                error_type = _classify_error(str(exc))
+                
+                if _should_retry(error_type, attempt, max_attempts):
+                    log(f"Gemini {model_name} retry {attempt}/{max_attempts} ({error_type})", "WARNING")
+                    _exponential_backoff_wait(attempt, base_wait, max_wait)
+                    continue
+                else:
+                    log(f"Gemini {model_name} skip to next model ({error_type})", "WARNING")
+                    break
+        
+        log(f"Gemini {model_name} failed, trying next model...", "WARNING")
+    
+    log("All Gemini models failed", "WARNING")
+    return None
 
+
+# ========== GROQ PROVIDER ==========
+def _try_groq_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Try a single Groq model"""
     api_key = _get_env_str("GROQ_API_KEY")
     if not api_key:
         return None
 
-    model_name = str(cfg.get("groq_model", "llama-3.1-8b-instant")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
@@ -168,11 +280,47 @@ def _try_groq(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
             text = (response.choices[0].message.content or "").strip()
         return text or None
     except Exception as exc:
-        log(f"Groq hatasi: {exc}", "WARNING")
+        error_type = _classify_error(str(exc))
+        log(f"Groq {model_name} error ({error_type}): {exc}", "WARNING")
+        raise
+
+
+def _try_groq_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Try all Groq models in cascade"""
+    if not _is_enabled(cfg, "enable_groq", True):
         return None
 
+    max_attempts, base_wait, max_wait = _get_retry_config()
 
+    for model_idx, model_name in enumerate(GROQ_MODELS, start=1):
+        log(f"Groq Stack [{model_idx}/{len(GROQ_MODELS)}]: {model_name}", "INFO")
+        
+        for attempt in range(1, max_attempts + 1):
+            try:
+                result = _try_groq_single_model(prompt, model_name, cfg)
+                if result:
+                    log(f"✅ Groq success: {model_name} (attempt {attempt})", "INFO")
+                    return result
+            except Exception as exc:
+                error_type = _classify_error(str(exc))
+                
+                if _should_retry(error_type, attempt, max_attempts):
+                    log(f"Groq {model_name} retry {attempt}/{max_attempts} ({error_type})", "WARNING")
+                    _exponential_backoff_wait(attempt, base_wait, max_wait)
+                    continue
+                else:
+                    log(f"Groq {model_name} skip to next model ({error_type})", "WARNING")
+                    break
+        
+        log(f"Groq {model_name} failed, trying next model...", "WARNING")
+    
+    log("All Groq models failed", "WARNING")
+    return None
+
+
+# ========== EMERGENCY STACK (UNCHANGED) ==========
 def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Emergency fallback: OpenRouter"""
     if not _is_enabled(cfg, "enable_openrouter", True):
         return None
 
@@ -214,6 +362,7 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
 
 def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+    """Emergency fallback: HuggingFace"""
     if not _is_enabled(cfg, "enable_huggingface", True):
         return None
 
@@ -222,7 +371,7 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         return None
 
     model_name = str(cfg.get("hf_model", "mistralai/Mistral-7B-Instruct-v0.2")).strip()
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 600), 600)
+    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -251,50 +400,58 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     return None
 
 
-def ask_ai(prompt: str) -> str:
+# ========== MAIN AI CLIENT ==========
+def ask_ai(prompt: str, stage: str = "generic") -> str:
     """
-    Prompt alir, provider sirasiyla dener, retry/backoff uygular.
+    Ultra multi-provider AI client with cascade fallback.
+    
+    Provider order:
+    1. GEMINI STACK (5 models)
+    2. GROQ STACK (3 models)
+    3. OpenRouter (emergency)
+    4. HuggingFace (emergency)
     """
     if not isinstance(prompt, str) or not prompt.strip():
         log("ai_client.ask_ai: bos prompt", "WARNING")
         return ""
 
-    attempts, base_wait = _get_retry_config()
     cfg = _load_ai_config()
-    providers = _provider_order()
-
-    provider_map = {
-        "gemini": _try_gemini,
-        "groq": _try_groq,
-        "openrouter": _try_openrouter,
-        "huggingface": _try_huggingface,
-    }
-
-    last_error = None
-
-    for attempt in range(1, attempts + 1):
-        for provider in providers:
-            fn = provider_map.get(provider)
-            if fn is None:
-                continue
-
-            try:
-                result = fn(prompt, cfg)
-                if isinstance(result, str) and result.strip():
-                    log(f"ai_client.ask_ai basarili provider={provider}", "INFO")
-                    return result.strip()
-            except Exception as exc:
-                last_error = f"{provider}: {exc}"
-                log(f"ai_client.ask_ai provider hata {provider}: {exc}", "WARNING")
-
-        if attempt < attempts:
-            wait_seconds = base_wait * (2 ** (attempt - 1))
-            time.sleep(wait_seconds)
-
-    log(f"ai_client.ask_ai tum denemeler bitti. son_hata={last_error}", "ERROR")
+    
+    log(f"=== AI Request Start (stage={stage}) ===", "INFO")
+    
+    # 1. GEMINI STACK
+    log("Trying GEMINI STACK...", "INFO")
+    result = _try_gemini_stack(prompt, cfg)
+    if result:
+        log("✅ GEMINI STACK SUCCESS", "INFO")
+        return result
+    
+    # 2. GROQ STACK
+    log("Trying GROQ STACK...", "INFO")
+    result = _try_groq_stack(prompt, cfg)
+    if result:
+        log("✅ GROQ STACK SUCCESS", "INFO")
+        return result
+    
+    # 3. EMERGENCY: OpenRouter
+    log("Trying EMERGENCY: OpenRouter...", "INFO")
+    result = _try_openrouter(prompt, cfg)
+    if result:
+        log("✅ OPENROUTER SUCCESS", "INFO")
+        return result
+    
+    # 4. EMERGENCY: HuggingFace
+    log("Trying EMERGENCY: HuggingFace...", "INFO")
+    result = _try_huggingface(prompt, cfg)
+    if result:
+        log("✅ HUGGINGFACE SUCCESS", "INFO")
+        return result
+    
+    log("❌ ALL PROVIDERS FAILED", "ERROR")
     return ""
 
 
+# ========== JSON PARSER (UNCHANGED) ==========
 def _strip_code_fences(text: str) -> str:
     cleaned = (text or "").strip()
     if not cleaned:

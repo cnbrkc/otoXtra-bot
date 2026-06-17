@@ -46,7 +46,15 @@
     "temperature": 0.65,
     "max_output_tokens": 1400,
     "enable_gemini": true,
-    "gemini_model": "gemini-2.5-flash-lite",
-    "groq_model": "llama-3.3-70b-versatile"
+    "enable_groq": true,
+    "enable_openrouter": true,
+    "enable_huggingface": true,
+    "retry_attempts": 2,
+    "retry_base_wait_seconds": 3.0,
+    "retry_max_wait_seconds": 10.0,
+    "gemini_model": "gemini-exp-1206",
+    "groq_model": "llama-3.3-70b-versatile",
+    "openrouter_model": "openai/gpt-4o-mini",
+    "hf_model": "mistralai/Mistral-7B-Instruct-v0.2"
   }
 }
