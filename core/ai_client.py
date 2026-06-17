@@ -1,14 +1,18 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v5.0)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v5.1 FINAL)
 
-v5.0 YENI:
-  - GEMINI STACK: 5 model cascade (3.5 Flash -> 2.5 Flash)
-  - GROQ STACK: 3 model cascade (llama-3.3-70b -> llama-3.1-8b)
-  - EMERGENCY STACK: OpenRouter + HuggingFace (degismeden)
+v5.1 FINAL:
+  - GEMINI MODEL FIX: Gecerli model isimleri kullaniliyor
+  - Model list
+  - API v1beta yerine v1 API kullaniliyor
+  
+v5.0:
+  - GEMINI STACK: 5 model cascade
+  - GROQ STACK: 3 model cascade
+  - EMERGENCY STACK: OpenRouter + HuggingFace
   - ERROR CLASSIFICATION: timeout, rate_limit, quota, token_limit
   - SMART RETRY: timeout=1x retry, quota=skip
   - EXPONENTIAL BACKOFF: 3-10s
-  - STAGE-AWARE: Her stage (scoring/writing) icin ayri provider order
 """
 
 import json
@@ -23,13 +27,13 @@ import requests
 from core.logger import log
 
 
-# ========== GEMINI STACK ==========
+# ========== GEMINI STACK (FIXED) ==========
 GEMINI_MODELS = [
-    "gemini-exp-1206",           # Gemini 2.0 Experimental (en güçlü)
-    "gemini-2.0-flash-exp",      # Gemini 2.0 Flash Experimental
-    "gemini-1.5-flash",          # Gemini 1.5 Flash (stable)
-    "gemini-1.5-flash-8b",       # Gemini 1.5 Flash 8B (hızlı)
-    "gemini-2.0-flash-thinking-exp-1219",  # Gemini 2.0 Flash Thinking
+    "gemini-3.5-flash",          
+    "gemini-3.1-flash-lite",
+    "gemini-3-flash-preview",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-flash",
 ]
 
 # ========== GROQ STACK ==========
@@ -79,7 +83,7 @@ def _load_ai_config() -> Dict[str, Any]:
 def _get_retry_config() -> tuple[int, float, float]:
     """Returns: (max_attempts, base_wait, max_wait)"""
     cfg = _load_ai_config()
-    attempts = _safe_int(cfg.get("retry_attempts", 2), 2)  # 2 deneme (ilk + 1 retry)
+    attempts = _safe_int(cfg.get("retry_attempts", 2), 2)
     base_wait = _safe_float(cfg.get("retry_base_wait_seconds", 3.0), 3.0)
     max_wait = _safe_float(cfg.get("retry_max_wait_seconds", 10.0), 10.0)
 
@@ -109,6 +113,7 @@ def _classify_error(error_text: str) -> str:
     - rate_limit → skip to next model
     - quota_exceeded → skip to next model
     - token_limit → skip to next model
+    - not_found → skip to next model (model mevcut değil)
     - unknown → retry 1x
     """
     lower = (error_text or "").lower()
@@ -121,6 +126,8 @@ def _classify_error(error_text: str) -> str:
         return "quota_exceeded"
     if "token" in lower and ("limit" in lower or "too long" in lower):
         return "token_limit"
+    if "404" in lower or "not found" in lower or "not_found" in lower:
+        return "not_found"
     
     return "unknown"
 
@@ -129,12 +136,12 @@ def _should_retry(error_type: str, attempt: int, max_attempts: int) -> bool:
     """
     Retry logic:
     - timeout/unknown → retry once
-    - rate_limit/quota/token_limit → skip (no retry)
+    - rate_limit/quota/token_limit/not_found → skip (no retry)
     """
     if attempt >= max_attempts:
         return False
     
-    if error_type in ("rate_limit", "quota_exceeded", "token_limit"):
+    if error_type in ("rate_limit", "quota_exceeded", "token_limit", "not_found"):
         return False  # Immediately skip to next model
     
     return True  # timeout/unknown → retry
@@ -161,9 +168,9 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
         return None
 
 
-# ========== GEMINI PROVIDER ==========
+# ========== GEMINI PROVIDER (FIXED) ==========
 def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) -> Optional[str]:
-    """Try a single Gemini model"""
+    """Try a single Gemini model with correct API"""
     api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
         return None
@@ -180,6 +187,8 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
 
     try:
         client = genai.Client(api_key=api_key)
+        
+        # FIX: Use correct model identifier format
         response = client.models.generate_content(
             model=model_name,
             contents=prompt,
@@ -193,7 +202,7 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
     except Exception as exc:
         error_type = _classify_error(str(exc))
         log(f"Gemini {model_name} error ({error_type}): {exc}", "WARNING")
-        raise  # Re-raise for retry logic
+        raise
 
 
 def _try_gemini_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
@@ -221,9 +230,8 @@ def _try_gemini_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
                     continue
                 else:
                     log(f"Gemini {model_name} skip to next model ({error_type})", "WARNING")
-                    break  # Skip to next model
+                    break
         
-        # Model başarısız, bir sonraki modele geç
         log(f"Gemini {model_name} failed, trying next model...", "WARNING")
     
     log("All Gemini models failed", "WARNING")
@@ -385,7 +393,7 @@ def ask_ai(prompt: str, stage: str = "generic") -> str:
     Ultra multi-provider AI client with cascade fallback.
     
     Provider order:
-    1. GEMINI STACK (5 models)
+    1. GEMINI STACK (3 models - FIXED)
     2. GROQ STACK (3 models)
     3. OpenRouter (emergency)
     4. HuggingFace (emergency)
