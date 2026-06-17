@@ -2,8 +2,8 @@
 core/ai_client.py - Ultra Multi-Provider AI Stack (v5.1 FINAL)
 
 v5.1 FINAL:
-  - GEMINI MODEL FIX: Gecerli model isimleri kullaniliyor
-  - Model list
+  - GEMINI MODEL FIX
+  -  New Model list
   - API v1beta yerine v1 API kullaniliyor
   
 v5.0:
