@@ -1,5 +1,13 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.2)
+agents/agent_publisher.py - Yayinci Ajani (v4.3)
+
+v4.3:
+  - Score tabanli skip politikasi yeniden duzenlendi (scorer ile uyumlu):
+      <70 => %100 skip
+      70-79 => %2 skip
+      80-89 => %1 skip
+      >=90 => %0 skip
+  - publish_score threshold scorer ile senkronize edildi (70).
 
 v4.2:
   - Score tabanli skip politikasi sabitlendi:
@@ -85,19 +93,26 @@ def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
 
 
 def _score_based_skip_percent(score: int) -> int:
-    if score < 80:
+    """
+    DÜZELTME v4.3: Scorer ile uyumlu hale getirildi.
+    - Score < 70 → %100 skip
+    - Score 70-79 → %2 skip
+    - Score 80-89 → %1 skip
+    - Score >= 90 → %0 skip
+    """
+    if score < 70:
         return 100
-    if 85 <= score <= 89:
+    if 70 <= score <= 79:
         return 2
-    if 80 <= score <= 84:
-        return 3
+    if 80 <= score <= 89:
+        return 1
     return 0
 
 
 def _check_skip_probability(score: int = 0) -> tuple[bool, str]:
     effective_percent = _score_based_skip_percent(score)
     if effective_percent >= 100:
-        reason = f"score_below_80_skip(score={score})"
+        reason = f"score_below_70_skip(score={score})"
         log(f"Skora bagli atlama: {reason}", "INFO")
         return False, reason
     if effective_percent <= 0:
