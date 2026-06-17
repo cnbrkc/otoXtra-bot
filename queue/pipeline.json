@@ -38,7 +38,7 @@
               "https://cdn.motor1.com/images/mgl/NGP9NY/s3/volvo-gemini.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Log",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
@@ -483,7 +483,8 @@
         "image_source": "fallback_text",
         "image_count": 0,
         "dry_run": false,
-        "skipped": false
+        "skipped": true,
+        "skip_reason": "score_below_80_skip(score=73)"
       },
       "error": null,
       "updated_at": "2026-06-17T16:34:29.016810+03:00"
