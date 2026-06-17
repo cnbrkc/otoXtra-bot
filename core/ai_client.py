@@ -29,11 +29,11 @@ from core.logger import log
 
 # ========== GEMINI STACK (FIXED) ==========
 GEMINI_MODELS = [
-    "gemini-3.5-flash",          
-    "gemini-3.1-flash-lite",
-    "gemini-3-flash-preview",
-    "gemini-2.5-flash-lite",
-    "gemini-2.5-flash",
+    "gemini-3.5-flash",        # Stabil / En Güçlü Flash
+    "gemini-3.1-flash-lite",   # Stabil / Hızlı ve Ekonomik
+    "gemini-3-flash",          # Stabil sürüm aliası (preview yerine düz sürüm adını kullanın)
+    "gemini-2.5-flash-lite",   # Stabil / Geriye dönük uyumlu
+    "gemini-2.5-flash",        # Stabil / Geriye dönük uyumlu
 ]
 
 # ========== GROQ STACK ==========
