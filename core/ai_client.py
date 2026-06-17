@@ -1,5 +1,9 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v5.1 FINAL)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v5.2 FINAL)
+
+v5.2 FINAL:
+  - 503 UNAVAILABLE -> skip (no retry) FIX
+  - 500 INTERNAL_ERROR -> skip (no retry) FIX
 
 v5.1 FINAL:
   - GEMINI MODEL FIX
@@ -108,12 +112,14 @@ def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
 
 def _classify_error(error_text: str) -> str:
     """
-    Error classification:
+    Error classification (v5.2 FIX):
     - timeout → retry 1x
     - rate_limit → skip to next model
     - quota_exceeded → skip to next model
     - token_limit → skip to next model
     - not_found → skip to next model (model mevcut değil)
+    - unavailable (503) → skip to next model (NEW FIX)
+    - internal_error (500) → skip to next model (NEW FIX)
     - unknown → retry 1x
     """
     lower = (error_text or "").lower()
@@ -128,20 +134,27 @@ def _classify_error(error_text: str) -> str:
         return "token_limit"
     if "404" in lower or "not found" in lower or "not_found" in lower:
         return "not_found"
+    # FIX: 503 UNAVAILABLE -> skip immediately
+    if "503" in lower or "unavailable" in lower:
+        return "unavailable"
+    # FIX: 500 INTERNAL_ERROR -> skip immediately
+    if "500" in lower or "internal" in lower:
+        return "internal_error"
     
     return "unknown"
 
 
 def _should_retry(error_type: str, attempt: int, max_attempts: int) -> bool:
     """
-    Retry logic:
+    Retry logic (v5.2 FIX):
     - timeout/unknown → retry once
-    - rate_limit/quota/token_limit/not_found → skip (no retry)
+    - rate_limit/quota/token_limit/not_found/unavailable/internal_error → skip (no retry)
     """
     if attempt >= max_attempts:
         return False
     
-    if error_type in ("rate_limit", "quota_exceeded", "token_limit", "not_found"):
+    # FIX: unavailable ve internal_error eklendi
+    if error_type in ("rate_limit", "quota_exceeded", "token_limit", "not_found", "unavailable", "internal_error"):
         return False  # Immediately skip to next model
     
     return True  # timeout/unknown → retry
@@ -393,7 +406,7 @@ def ask_ai(prompt: str, stage: str = "generic") -> str:
     Ultra multi-provider AI client with cascade fallback.
     
     Provider order:
-    1. GEMINI STACK (3 models - FIXED)
+    1. GEMINI STACK (5 models)
     2. GROQ STACK (3 models)
     3. OpenRouter (emergency)
     4. HuggingFace (emergency)
