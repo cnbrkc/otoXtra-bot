@@ -539,7 +539,8 @@ def _get_active_threshold() -> int:
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
 
-    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)
+    # DÜZELTME: publish_score 40 -> 70 (publisher ile uyumlu hale getirildi)
+    publish_score = _safe_int(thresholds.get("publish_score", 70), 70)
     slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)
     today_post_count = get_today_post_count(get_posted_news())
 
