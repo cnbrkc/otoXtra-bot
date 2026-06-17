@@ -14,7 +14,7 @@ on:
   workflow_dispatch:
 
 concurrency:
-  group: validate-${{ github.ref }}
+  group: validate-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 permissions:
@@ -23,25 +23,65 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      PYTHONUNBUFFERED: "1"
+      PIP_DISABLE_PIP_VERSION_CHECK: "1"
 
     steps:
       - name: Kodu cek
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
 
       - name: Python kur
         uses: actions/setup-python@v5
         with:
           python-version: "3.11"
+          cache: "pip"
+          cache-dependency-path: requirements.txt
+
+      - name: Python ortam bilgisi
+        run: |
+          set -e
+          set -o pipefail
+          python --version
+          pip --version
 
       - name: Pip guncelle
-        run: python -m pip install --upgrade pip
+        run: |
+          set -e
+          set -o pipefail
+          python -m pip install --upgrade pip setuptools wheel
 
       - name: Bagimliliklari kur
         run: |
-          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          set -e
+          set -o pipefail
+          if [ -f requirements.txt ]; then
+            pip install -r requirements.txt
+          else
+            echo "[ERROR] requirements.txt bulunamadi"
+            exit 1
+          fi
 
       - name: Syntax kontrol (compileall)
-        run: python -m compileall -q .
+        run: |
+          set -e
+          set -o pipefail
+          python -m compileall -q .
 
       - name: Unit testleri calistir
-        run: python -m unittest discover -s tests -p "test_*.py" -v
+        run: |
+          set -e
+          set -o pipefail
+          if [ ! -d tests ]; then
+            echo "[ERROR] tests klasoru bulunamadi"
+            exit 1
+          fi
+          python -m unittest discover -s tests -p "test_*.py" -v
