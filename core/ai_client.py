@@ -5,44 +5,30 @@ AI cagri katmani.
 - Retry/backoff uygulanir
 - JSON parse fallback'i saglanir
 """
-
 import json
 import os
 import re
 import time
 from typing import Any, Dict, Optional
-
 import requests
-
 from core.logger import log
-
-
 _DEFAULT_PROVIDER_ORDER = ["gemini", "groq", "openrouter", "huggingface"]
 _BOOL_TRUE_VALUES = ("1", "true", "yes", "on")
-
-
 def _safe_int(value: Any, default: int) -> int:
     try:
         return int(value)
     except Exception:
         return default
-
-
 def _safe_float(value: Any, default: float) -> float:
     try:
         return float(value)
     except Exception:
         return default
-
-
 def _get_env_str(name: str) -> str:
     return (os.getenv(name, "") or "").strip()
-
-
 def _load_ai_config() -> Dict[str, Any]:
     try:
         from core.config_loader import load_config
-
         settings = load_config("settings")
         if isinstance(settings, dict):
             ai_cfg = settings.get("ai", {})
@@ -51,21 +37,15 @@ def _load_ai_config() -> Dict[str, Any]:
     except Exception as exc:
         log(f"ai_client._load_ai_config fallback: {exc}", "WARNING")
     return {}
-
-
 def _get_retry_config() -> tuple[int, float]:
     cfg = _load_ai_config()
     attempts = _safe_int(cfg.get("retry_attempts", 3), 3)
     base_wait = _safe_float(cfg.get("retry_base_wait_seconds", 1.5), 1.5)
-
     if attempts < 1:
         attempts = 3
     if base_wait <= 0:
         base_wait = 1.5
-
     return attempts, base_wait
-
-
 def _provider_order() -> list[str]:
     cfg = _load_ai_config()
     order = cfg.get("provider_order")
@@ -74,8 +54,6 @@ def _provider_order() -> list[str]:
         if cleaned:
             return cleaned
     return list(_DEFAULT_PROVIDER_ORDER)
-
-
 def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
     value = cfg.get(key, default)
     if isinstance(value, bool):
@@ -83,8 +61,6 @@ def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
     if isinstance(value, str):
         return value.strip().lower() in _BOOL_TRUE_VALUES
     return bool(value)
-
-
 def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional[dict]:
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=timeout)
@@ -95,31 +71,24 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
     except Exception as exc:
         log(f"HTTP request hatasi: {exc}", "WARNING")
         return None
-
-
 def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_gemini", True):
         return None
-
     api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
         return None
-
     model_name = str(cfg.get("gemini_model", "gemini-2.5-flash-lite")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
-
     temperature = max(0.0, min(2.0, temperature))
     if max_tokens < 1:
         max_tokens = 1400
-
     try:
         from google import genai
         from google.genai import types
     except Exception as exc:
         log(f"Gemini import hatasi: {exc}", "WARNING")
         return None
-
     try:
         client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
@@ -135,26 +104,20 @@ def _try_gemini(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     except Exception as exc:
         log(f"Gemini hatasi: {exc}", "WARNING")
         return None
-
-
 def _try_groq(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_groq", True):
         return None
-
     api_key = _get_env_str("GROQ_API_KEY")
     if not api_key:
         return None
-
     model_name = str(cfg.get("groq_model", "llama-3.1-8b-instant")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
-
     try:
         from groq import Groq
     except Exception as exc:
         log(f"Groq import hatasi: {exc}", "WARNING")
         return None
-
     try:
         client = Groq(api_key=api_key)
         response = client.chat.completions.create(
@@ -170,20 +133,15 @@ def _try_groq(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     except Exception as exc:
         log(f"Groq hatasi: {exc}", "WARNING")
         return None
-
-
 def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_openrouter", True):
         return None
-
     api_key = _get_env_str("OPENROUTER_API_KEY")
     if not api_key:
         return None
-
     model_name = str(cfg.get("openrouter_model", "openai/gpt-4o-mini")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
-
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -194,7 +152,6 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         "temperature": temperature,
         "max_tokens": max_tokens,
     }
-
     data = _post_json(
         "https://openrouter.ai/api/v1/chat/completions",
         headers=headers,
@@ -203,27 +160,22 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     )
     if not data:
         return None
-
     choices = data.get("choices", [])
     if not choices:
         return None
-
     message = choices[0].get("message", {})
     text = (message.get("content", "") or "").strip()
     return text or None
-
-
 def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     if not _is_enabled(cfg, "enable_huggingface", True):
         return None
-
     api_key = _get_env_str("HF_API_KEY")
     if not api_key:
         return None
-
     model_name = str(cfg.get("hf_model", "mistralai/Mistral-7B-Instruct-v0.2")).strip()
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 600), 600)
-
+    
+    # DÜZELTME: Hardcode 600 kaldırıldı, config'den 1400 okunuyor
+    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
     headers = {
         "Authorization": f"Bearer {api_key}",
         "Content-Type": "application/json",
@@ -235,7 +187,6 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
             "return_full_text": False,
         },
     }
-
     data = _post_json(
         f"https://api-inference.huggingface.co/models/{model_name}",
         headers=headers,
@@ -244,13 +195,10 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     )
     if not data:
         return None
-
     if isinstance(data, list) and data:
         text = (data[0].get("generated_text", "") or "").strip()
         return text or None
     return None
-
-
 def ask_ai(prompt: str) -> str:
     """
     Prompt alir, provider sirasiyla dener, retry/backoff uygular.
@@ -258,26 +206,21 @@ def ask_ai(prompt: str) -> str:
     if not isinstance(prompt, str) or not prompt.strip():
         log("ai_client.ask_ai: bos prompt", "WARNING")
         return ""
-
     attempts, base_wait = _get_retry_config()
     cfg = _load_ai_config()
     providers = _provider_order()
-
     provider_map = {
         "gemini": _try_gemini,
         "groq": _try_groq,
         "openrouter": _try_openrouter,
         "huggingface": _try_huggingface,
     }
-
     last_error = None
-
     for attempt in range(1, attempts + 1):
         for provider in providers:
             fn = provider_map.get(provider)
             if fn is None:
                 continue
-
             try:
                 result = fn(prompt, cfg)
                 if isinstance(result, str) and result.strip():
@@ -286,32 +229,23 @@ def ask_ai(prompt: str) -> str:
             except Exception as exc:
                 last_error = f"{provider}: {exc}"
                 log(f"ai_client.ask_ai provider hata {provider}: {exc}", "WARNING")
-
         if attempt < attempts:
             wait_seconds = base_wait * (2 ** (attempt - 1))
             time.sleep(wait_seconds)
-
     log(f"ai_client.ask_ai tum denemeler bitti. son_hata={last_error}", "ERROR")
     return ""
-
-
 def _strip_code_fences(text: str) -> str:
     cleaned = (text or "").strip()
     if not cleaned:
         return ""
-
     fenced = re.findall(r"```(?:json)?\s*([\s\S]*?)```", cleaned, flags=re.IGNORECASE)
     if fenced:
         return "\n".join([x.strip() for x in fenced if x.strip()]).strip()
-
     return cleaned
-
-
 def _extract_balanced_json_candidates(text: str) -> list[str]:
     candidates: list[str] = []
     stack: list[str] = []
     start_idx = None
-
     for idx, ch in enumerate(text):
         if ch in "{[":
             if start_idx is None:
@@ -331,15 +265,11 @@ def _extract_balanced_json_candidates(text: str) -> list[str]:
             else:
                 stack = []
                 start_idx = None
-
     return sorted(set(candidates), key=len, reverse=True)
-
-
 def _try_raw_decode_stream(text: str):
     decoder = json.JSONDecoder()
     idx = 0
     length = len(text)
-
     while idx < length:
         while idx < length and text[idx].isspace():
             idx += 1
@@ -351,8 +281,6 @@ def _try_raw_decode_stream(text: str):
         except Exception:
             idx += 1
     return None
-
-
 def parse_ai_json(response: str) -> Any:
     """
     AI yanitini JSON'a cevirir.
@@ -364,19 +292,16 @@ def parse_ai_json(response: str) -> Any:
     cleaned = (response or "").strip()
     if not cleaned:
         return None
-
     try:
         return json.loads(cleaned)
     except Exception:
         pass
-
     no_fence = _strip_code_fences(cleaned)
     if no_fence and no_fence != cleaned:
         try:
             return json.loads(no_fence)
         except Exception:
             pass
-
     source_for_scan = no_fence if no_fence else cleaned
     candidates = _extract_balanced_json_candidates(source_for_scan)
     for candidate in candidates:
@@ -384,13 +309,11 @@ def parse_ai_json(response: str) -> Any:
             return json.loads(candidate)
         except Exception:
             continue
-
     try:
         parsed = _try_raw_decode_stream(source_for_scan)
         if parsed is not None:
             return parsed
     except Exception as exc:
         log(f"ai_client.parse_ai_json raw_decode error: {exc}", "WARNING")
-
     log("ai_client.parse_ai_json fallback: parse edilemedi", "WARNING")
     return None
