@@ -53,7 +53,7 @@ on:
 
 concurrency:
   group: otoxtra-bot
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run-bot:
@@ -77,6 +77,8 @@ jobs:
 
       - name: Install dependencies
         run: |
+          set -e
+          set -o pipefail
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
@@ -102,7 +104,6 @@ jobs:
           ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE: 'false'
           MAX_IMAGES_PER_NEWS: '4'
 
-          # Feed/Nitter fetch dayanıklılık ayarları
           FEED_FETCH_DELAY_SECONDS: '0.35'
           FEED_FETCH_DELAY_JITTER_SECONDS: '0.40'
           FEED_FETCH_ATTEMPTS: '1'
@@ -116,31 +117,28 @@ jobs:
         run: |
           set -e
           set -o pipefail
-          
+
           export WORKFLOW_STARTED_AT_UTC="$(date -u +'%Y-%m-%d %H:%M:%S')"
           export WORKFLOW_STARTED_AT_TR="$(TZ=Europe/Istanbul date +'%Y-%m-%d %H:%M:%S')"
           echo "WORKFLOW_STARTED_AT_UTC=$WORKFLOW_STARTED_AT_UTC" >> "$GITHUB_ENV"
           echo "WORKFLOW_STARTED_AT_TR=$WORKFLOW_STARTED_AT_TR" >> "$GITHUB_ENV"
-          echo "[$(date -u +'%Y-%m-%d %H:%M:%S UTC')] Workflow başlatılıyor..."
+          echo "[$(date -u +'%Y-%m-%d %H:%M:%S UTC')] Workflow baslatiliyor..."
           echo "Workflow runner start UTC=$WORKFLOW_STARTED_AT_UTC TR=$WORKFLOW_STARTED_AT_TR"
-          
-          # Bot çalıştır ve timeout'u yakala
-          BOT_RUN_STATUS="success"
-          if ! timeout 50m python -m core.orchestrator; then
+
+          if timeout 50m python -m core.orchestrator; then
+            echo "BOT_RUN_STATUS=success" >> "$GITHUB_ENV"
+            echo "[SUCCESS] Bot basariyla tamamlandi"
+          else
             BOT_EXIT_CODE=$?
             if [ "$BOT_EXIT_CODE" -eq 124 ]; then
-              BOT_RUN_STATUS="timeout"
-              echo "[ERROR] Bot timeout'a uğradı (50 dakika aşıldı)"
+              echo "BOT_RUN_STATUS=timeout" >> "$GITHUB_ENV"
+              echo "[ERROR] Bot timeout oldu (50 dakika asildi)"
             else
-              BOT_RUN_STATUS="failure"
-              echo "[ERROR] Bot hata kodu ile çıktı: $BOT_EXIT_CODE"
+              echo "BOT_RUN_STATUS=failure" >> "$GITHUB_ENV"
+              echo "[ERROR] Bot hata kodu ile cikti: $BOT_EXIT_CODE"
             fi
-            echo "BOT_RUN_STATUS=$BOT_RUN_STATUS" >> "$GITHUB_ENV"
             exit "$BOT_EXIT_CODE"
           fi
-          
-          echo "BOT_RUN_STATUS=$BOT_RUN_STATUS" >> "$GITHUB_ENV"
-          echo "[SUCCESS] Bot başarıyla tamamlandı"
 
       - name: Notify bot failure or timeout
         if: ${{ failure() }}
@@ -149,134 +147,142 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           BOT_RUN_STATUS: ${{ env.BOT_RUN_STATUS }}
         run: |
-          set +e
-          
+          set -e
+          set -o pipefail
+
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "[WARNING] Telegram secrets eksik; failure bildirimi atlandi"
             exit 0
           fi
-          
+
           reason="${BOT_RUN_STATUS:-unknown_failure}"
           started_tr="${WORKFLOW_STARTED_AT_TR:-bilinmiyor}"
           started_utc="${WORKFLOW_STARTED_AT_UTC:-bilinmiyor}"
           run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          
+
           case "$reason" in
             "timeout")
-              emoji="⏱️"
-              reason_text="Timeout - Bot 50 dakika içinde tamamlanamadı"
+              reason_text="Timeout - Bot 50 dakika icinde tamamlanamadi"
               ;;
             "failure")
-              emoji="❌"
-              reason_text="Hata - Bot bir hata ile çıktı"
+              reason_text="Hata - Bot hata kodu ile cikti"
               ;;
             *)
-              emoji="❓"
-              reason_text="Bilinmeyen Hata"
+              reason_text="Bilinmeyen hata"
               ;;
           esac
-          
-          text="${emoji} PAYLAŞIM BAŞARISIZ%0A%0ASebep:%0A${reason_text}%0A%0AWorkflow başlangıcı:%0A${started_tr} (TR)%0A${started_utc} (UTC)%0A%0AWorkflow: ${run_url}"
-          
-          echo "[INFO] Telegram bildirimi gönderiliyor: $emoji $reason_text"
-          
-          if ! curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            -d "disable_web_page_preview=true" \
-            -d "text=${text}"; then
-            echo "[ERROR] Telegram bildirimi gönderilemedi"
-            exit 1
-          fi
-          
-          echo "[SUCCESS] Telegram bildirimi gönderildi"
+
+          message="$(cat <<EOF
+PAYLASIM BASARISIZ
+
+Sebep:
+$reason_text
+
+Workflow baslangici:
+$started_tr (TR)
+$started_utc (UTC)
+
+Workflow:
+$run_url
+EOF
+)"
+
+          echo "[INFO] Telegram failure bildirimi gonderiliyor"
+          curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "disable_web_page_preview=true" \
+            --data-urlencode "text=${message}"
+
+          echo "[SUCCESS] Telegram failure bildirimi gonderildi"
 
       - name: Save data with safety checks
-        if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.persist_state == 'true' }}
+        if: ${{ success() && (github.event_name != 'workflow_dispatch' || github.event.inputs.persist_state == 'true') }}
         env:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
           set -e
           set -o pipefail
-          
-          echo "[INFO] Data kaydetme işlemi başlatılıyor..."
-          
-          # Git konfigürasyonu
+
+          echo "[INFO] Data kaydetme islemi baslatiliyor..."
+
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
-          
-          # Dosya varlığını kontrol et
-          echo "[INFO] Dosya varlığı kontrol ediliyor..."
+
+          echo "[INFO] Dosya varligi kontrol ediliyor..."
           if [ ! -f "data/posted_news.json" ]; then
-            echo "[WARNING] data/posted_news.json bulunamadı"
+            echo "[WARNING] data/posted_news.json bulunamadi"
           fi
           if [ ! -f "queue/pipeline.json" ]; then
-            echo "[WARNING] queue/pipeline.json bulunamadı"
+            echo "[WARNING] queue/pipeline.json bulunamadi"
           fi
           if [ ! -f "data/telegram_updates_state.json" ]; then
-            echo "[WARNING] data/telegram_updates_state.json bulunamadı"
+            echo "[WARNING] data/telegram_updates_state.json bulunamadi"
           fi
-          
-          # Stage dosyaları
+
           git add data/posted_news.json || true
           git add queue/pipeline.json || true
           git add data/telegram_updates_state.json || true
-          
-          # Değişiklik kontrolü
+
           if git diff --staged --quiet; then
-            echo "[INFO] Değişiklik yok, commit atlaniyor"
+            echo "[INFO] Degisiklik yok, commit atlaniyor"
             exit 0
           fi
-          
-          # Commit yap
+
           COMMIT_MSG="Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
-          echo "[INFO] Commit yapılıyor: $COMMIT_MSG"
+          echo "[INFO] Commit yapiliyor: $COMMIT_MSG"
           git commit -m "$COMMIT_MSG"
-          
-          # Push işlemi - 3 deneme ile retry
+
           PUSH_SUCCESS=false
-          for i in 1 2 3; do
-            echo "[INFO] Push deneme $i/3..."
+          CURRENT_BRANCH="$(git branch --show-current)"
+
+          for attempt in 1 2 3; do
+            echo "[INFO] Push deneme $attempt/3..."
             if git push; then
-              echo "[SUCCESS] Push başarılı"
+              echo "[SUCCESS] Push basarili"
               PUSH_SUCCESS=true
               break
-            else
-              PUSH_EXIT_CODE=$?
-              echo "[WARNING] Push başarısız oldu (exit code: $PUSH_EXIT_CODE)"
-              
-              if [ $i -lt 3 ]; then
-                # Merge konflikt kontrolü
-                if git status | grep -q "Unmerged paths"; then
-                  echo "[ERROR] Git merge konflikt algılandı, rebase iptal ediliyor..."
-                  git rebase --abort 2>/dev/null || true
-                else
-                  echo "[INFO] Rebase yapılıyor..."
-                  if ! git pull --rebase origin "$(git branch --show-current)"; then
-                    echo "[ERROR] Rebase başarısız oldu"
-                    git rebase --abort 2>/dev/null || true
-                  fi
+            fi
+
+            PUSH_EXIT_CODE=$?
+            echo "[WARNING] Push basarisiz (exit: $PUSH_EXIT_CODE)"
+
+            if [ "$attempt" -lt 3 ]; then
+              echo "[INFO] Rebase ile remote degisiklikler alinmaya calisiliyor..."
+              if ! git pull --rebase origin "$CURRENT_BRANCH"; then
+                echo "[ERROR] Rebase basarisiz oldu"
+                git rebase --abort 2>/dev/null || true
+
+                if git diff --name-only --diff-filter=U | grep -q .; then
+                  echo "[ERROR] Merge conflict algilandi, otomatik cozum yok"
+                  break
                 fi
-                
-                sleep 2
               fi
+              sleep $((attempt * 2))
             fi
           done
-          
-          if [ "$PUSH_SUCCESS" = false ]; then
-            echo "[ERROR] Push 3 deneme sonunda başarısız oldu!"
-            
-            # Telegram bildirimi gönder
+
+          if [ "$PUSH_SUCCESS" != "true" ]; then
+            echo "[ERROR] Push 3 deneme sonunda basarisiz oldu"
+
             if [ -n "$TELEGRAM_BOT_TOKEN" ] && [ -n "$TELEGRAM_CHAT_ID" ]; then
               run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-              text="⚠️ DATA KAYDETME HATASI%0A%0ABot çalıştı ama veriler kaydedilemedi%0AGit push 3 deneme sonunda başarısız%0A%0AWorkflow: ${run_url}"
-              
+              push_fail_message="$(cat <<EOF
+DATA KAYDETME HATASI
+
+Bot calisti ama veriler kaydedilemedi.
+Git push 3 deneme sonunda basarisiz oldu.
+
+Workflow:
+$run_url
+EOF
+)"
               curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-                -d "chat_id=${TELEGRAM_CHAT_ID}" \
-                -d "disable_web_page_preview=true" \
-                -d "text=${text}" || echo "[ERROR] Push failure notification gönderilemedi"
+                --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+                --data-urlencode "disable_web_page_preview=true" \
+                --data-urlencode "text=${push_fail_message}" || echo "[ERROR] Push failure bildirimi gonderilemedi"
             fi
-            
+
             exit 1
           fi
 
@@ -286,28 +292,44 @@ jobs:
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: |
-          set +e
-          
+          set -e
+          set -o pipefail
+
           if [ -z "$TELEGRAM_BOT_TOKEN" ] || [ -z "$TELEGRAM_CHAT_ID" ]; then
             echo "[INFO] Telegram success notification atlandi (secrets eksik)"
             exit 0
           fi
-          
+
           started_tr="${WORKFLOW_STARTED_AT_TR:-bilinmiyor}"
           started_utc="${WORKFLOW_STARTED_AT_UTC:-bilinmiyor}"
           completed_tr="$(TZ=Europe/Istanbul date +'%Y-%m-%d %H:%M:%S')"
           completed_utc="$(date -u +'%Y-%m-%d %H:%M:%S')"
           run_url="${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
-          
-          text="✅ PAYLAŞIM BAŞARILI%0A%0AHaber başarıyla paylaşıldı!%0A%0AWorkflow Başlangıç:%0A${started_tr} (TR)%0A${started_utc} (UTC)%0A%0AWorkflow Bitiş:%0A${completed_tr} (TR)%0A${completed_utc} (UTC)%0A%0AWorkflow: ${run_url}"
-          
-          echo "[INFO] Success bildirimi gönderiliyor"
-          
+
+          success_message="$(cat <<EOF
+PAYLASIM BASARILI
+
+Haber basariyla paylasildi.
+
+Workflow baslangic:
+$started_tr (TR)
+$started_utc (UTC)
+
+Workflow bitis:
+$completed_tr (TR)
+$completed_utc (UTC)
+
+Workflow:
+$run_url
+EOF
+)"
+
+          echo "[INFO] Success bildirimi gonderiliyor"
           if ! curl -sS --fail -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
-            -d "chat_id=${TELEGRAM_CHAT_ID}" \
-            -d "disable_web_page_preview=true" \
-            -d "text=${text}"; then
-            echo "[ERROR] Success bildirimi gönderilemedi (ama bot başarılı çalıştı)"
+            --data-urlencode "chat_id=${TELEGRAM_CHAT_ID}" \
+            --data-urlencode "disable_web_page_preview=true" \
+            --data-urlencode "text=${success_message}"; then
+            echo "[ERROR] Success bildirimi gonderilemedi (bot calismasi basarili)"
           else
-            echo "[SUCCESS] Success bildirimi gönderildi"
+            echo "[SUCCESS] Success bildirimi gonderildi"
           fi
