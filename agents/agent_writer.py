@@ -1,5 +1,11 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.0 ULTRA)
+agents/agent_writer.py - Icerik yazma ajani (v5.1 ULTRA FIXED)
+
+v5.1 ULTRA FIXED:
+  - CRITICAL FIX: English text detection added (_detect_english_injection)
+  - CRITICAL FIX: Prompt instruction filtering (wait, let's, format, etc.)
+  - CRITICAL FIX: Turkish/English ratio validation (>20% English = reject)
+  - Enhanced quality check with detailed failure logging
 
 v5.0 ULTRA:
   - Stage-aware AI calls: ask_ai(..., stage="writing")
@@ -75,6 +81,34 @@ _HALLUCINATION_BAITS = [
     "detaylar su sekilde",
 ]
 
+# CRITICAL FIX: English prompt instruction keywords
+_ENGLISH_PROMPT_INSTRUCTIONS = [
+    "wait",
+    "let's",
+    "format",
+    "paragraph",
+    "please",
+    "rewrite",
+    "body",
+    "short",
+    "natural",
+    "look like",
+    "gonna",
+    "wanna",
+    "should be",
+    "make it",
+    "write it",
+]
+
+# CRITICAL FIX: Common English words for ratio detection
+_COMMON_ENGLISH_WORDS = {
+    "the", "and", "for", "are", "but", "not", "you", "all", "can", "her", "was", "one",
+    "our", "out", "day", "get", "has", "him", "his", "how", "man", "new", "now", "old",
+    "see", "two", "way", "who", "boy", "did", "its", "let", "put", "say", "she", "too",
+    "use", "wait", "please", "format", "paragraph", "rewrite", "body", "short", "natural",
+    "look", "like", "gonna", "wanna", "should", "make", "write", "text", "post", "going",
+}
+
 
 def _clean_non_turkish_chars(text: str) -> str:
     if not text:
@@ -101,9 +135,55 @@ def _contains_forbidden_script(text: str) -> bool:
     return any(re.search(pattern, text) for pattern in _FORBIDDEN_SCRIPT_PATTERNS)
 
 
+def _detect_english_injection(post_text: str) -> tuple[bool, str]:
+    """
+    CRITICAL FIX v5.1: Detect English prompt instructions and excessive English text.
+    
+    Returns:
+        (is_valid, reason) - (False, reason) if English detected, (True, "") if clean
+    """
+    if not post_text:
+        return True, ""
+    
+    lower_text = post_text.lower()
+    
+    # Check 1: Prompt instruction keywords (exact phrase match)
+    for instruction in _ENGLISH_PROMPT_INSTRUCTIONS:
+        # Look for instruction as whole word (not part of Turkish word)
+        pattern = r'\b' + re.escape(instruction) + r'\b'
+        if re.search(pattern, lower_text):
+            log(f"[WRITER] ENGLISH INJECTION: Found prompt instruction '{instruction}'", "WARNING")
+            return False, f"english_prompt_instruction:{instruction}"
+    
+    # Check 2: English word ratio (count common English words)
+    words = re.findall(r'\b[a-z]+\b', lower_text)
+    if not words:
+        return True, ""
+    
+    english_word_count = sum(1 for word in words if word in _COMMON_ENGLISH_WORDS)
+    total_words = len(words)
+    english_ratio = english_word_count / total_words if total_words > 0 else 0
+    
+    # If more than 20% English words, reject
+    if english_ratio > 0.20:
+        log(
+            f"[WRITER] ENGLISH INJECTION: {english_word_count}/{total_words} words "
+            f"({english_ratio*100:.1f}%) are English",
+            "WARNING"
+        )
+        return False, f"english_ratio_high:{english_ratio*100:.0f}%"
+    
+    # Check 3: Parenthetical meta-commentary (e.g., "(Wait, let's format...)")
+    if re.search(r'\([^)]*\b(wait|let|format|rewrite|paragraph)\b[^)]*\)', lower_text, re.IGNORECASE):
+        log("[WRITER] ENGLISH INJECTION: Found meta-commentary in parentheses", "WARNING")
+        return False, "english_meta_commentary"
+    
+    return True, ""
+
+
 def _quality_check(post_text: str) -> tuple[bool, str]:
     """
-    v5.0 ULTRA: Enhanced quality check with detailed failure reasons
+    v5.1 ULTRA FIXED: Enhanced quality check with English detection
     """
     if not post_text:
         log("[WRITER] Quality check FAIL: bos_metin", "WARNING")
@@ -130,6 +210,12 @@ def _quality_check(post_text: str) -> tuple[bool, str]:
     if _contains_forbidden_script(post_text):
         log("[WRITER] Quality check FAIL: yabanci_alfabe", "WARNING")
         return False, "yabanci_alfabe"
+
+    # CRITICAL FIX: English injection check
+    is_turkish_only, english_reason = _detect_english_injection(post_text)
+    if not is_turkish_only:
+        log(f"[WRITER] Quality check FAIL: {english_reason}", "WARNING")
+        return False, english_reason
 
     lower = post_text.lower()
     
@@ -171,7 +257,7 @@ def _fallback_post(article: dict) -> str:
 
 def _repair_post_with_ai(post_text: str, article: dict) -> str:
     """
-    v5.0 ULTRA: AI repair with stage tracking
+    v5.1 ULTRA FIXED: AI repair with stricter Turkish-only enforcement
     """
     title = article.get("title", "")
     summary = article.get("summary", "")
@@ -179,9 +265,11 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
 
     repair_prompt = (
         "Asagidaki Facebook postunu duzelt.\n"
-        "Kurallar:\n"
-        "- Tamamen Turkce yaz.\n"
-        "- Bilgi uydurma.\n"
+        "KRITIK KURALLAR:\n"
+        "- MUTLAKA TAMAMEN TURKCE YAZ. Hic bir Ingilizce kelime kullanma.\n"
+        "- Parantez icinde aciklama/yorum yapma.\n"
+        "- Meta-instruction verme ('format it like', 'rewrite as' gibi).\n"
+        "- Bilgi uydurma, sadece verilen bilgileri kullan.\n"
         "- 15 satiri gecme.\n"
         "- Clickbait asiriligina kacma.\n"
         "- Son satirda dogal bir soru/cagri olsun.\n"
@@ -191,7 +279,7 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
         f"Ozet: {summary[:500]}\n\n"
         "Duzeltilecek metin:\n"
         f"{post_text}\n\n"
-        "Sadece duzeltilmis post metnini ver."
+        "SADECE duzeltilmis Turkce post metnini ver. Baska hicbir sey ekleme."
     )
     
     log("[WRITER] Attempting AI repair", "INFO")
@@ -221,17 +309,20 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
 
     return (
         f"{writer_prompt}\n\n"
-        "Cikti sinirlari:\n"
+        "KRITIK CIKTI KURALLARI:\n"
+        "- SADECE Turkce post metni don. Ingilizce kelime kullanma.\n"
+        "- Parantez icinde meta-aciklama yapma.\n"
+        "- 'Wait', 'let's', 'format', 'rewrite' gibi instruction verme.\n"
         "- Maksimum 15 satir\n"
         "- Bos satirlar dahil duzenli format\n"
-        "- Sadece post metnini dondur\n\n"
+        "- SADECE post metnini dondur, baska hicbir sey ekleme\n\n"
         + "\n".join(input_parts)
     )
 
 
 def generate_post_text(article: dict) -> str:
     """
-    v5.0 ULTRA: Post generation with comprehensive error logging
+    v5.1 ULTRA FIXED: Post generation with English injection prevention
     """
     log("[WRITER] Starting post generation", "INFO")
     
@@ -260,6 +351,12 @@ def generate_post_text(article: dict) -> str:
         return post_text if len(post_text) >= 30 else _fallback_post(article)
 
     log(f"[WRITER] Initial post FAILED quality: {reason}", "WARNING")
+    
+    # If English injection detected, skip repair and use fallback immediately
+    if "english" in reason.lower():
+        log("[WRITER] English injection detected, skipping repair, using fallback", "WARNING")
+        return _fallback_post(article)
+    
     log("[WRITER] Attempting AI repair", "INFO")
 
     repaired = _repair_post_with_ai(post_text, article)
