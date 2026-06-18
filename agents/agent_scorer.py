@@ -1,25 +1,27 @@
 """
-Viral scoring agent. (v5.0 ULTRA)
-
+Viral scoring agent. (v5.1 ULTRA FIXED)
+v5.1 ULTRA FIXED:
+  - CRITICAL FIX: Fallback score increased (25 → 35) for unmatched articles
+  - CRITICAL FIX: publish_score threshold synced with config (70 → 40)
+  - CRITICAL FIX: Better title matching (fuzzy threshold 0.6 → 0.5)
+  - CRITICAL FIX: Enhanced AI response logging for debugging
+  - Improved matching algorithm with partial title support
 v5.0 ULTRA:
   - Stage-aware AI calls: ask_ai(..., stage="scoring")
   - Batch-level retry with provider cascade
   - Detayli error logging (model, batch, error type)
   - Partial success handling
   - Provider fallback stats tracking
-
 v4.3:
   - ai_parse_failed durumunda onarmali ikinci AI denemesi eklendi.
   - ai_unmatched durumunda onarmali ikinci AI denemesi eklendi.
   - CROSS_VALIDATE_THRESHOLD kalici olarak 0.6 yapildi.
   - SCORE_SKIP_AS_SUCCESS etkisi scorer tarafinda kapatildi (skip gizlenmez).
 """
-
 import os
 import time
 from datetime import timedelta
 from typing import Optional, Tuple
-
 from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
 from core.helpers import (
@@ -30,13 +32,14 @@ from core.helpers import (
 )
 from core.logger import log
 from core.state_manager import get_stage, set_stage
-
-
 BATCH_SIZE: int = 20
 BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
 CROSS_VALIDATE_THRESHOLD: float = 0.6
-
+# CRITICAL FIX: Increased fallback scores for unmatched articles
+FALLBACK_SCORE_HIGH: int = 35  # Was 25
+FALLBACK_SCORE_MEDIUM: int = 30  # Was 20
+FALLBACK_SCORE_LOW: int = 25  # Was 15
 FRESHNESS_TIERS = [
     (1, 10),
     (3, 7),
@@ -45,7 +48,6 @@ FRESHNESS_TIERS = [
 ]
 FRESHNESS_OLD_MALUS: int = -4
 TREND_BONUS_CAP: int = 18
-
 _STRICT_SCALE_APPEND = (
     "\n\nKRITIK EK KURAL:\n"
     "- puan alani SADECE 0-100 arasi TAM SAYI olmali.\n"
@@ -53,7 +55,6 @@ _STRICT_SCALE_APPEND = (
     "- Ondalik puan kullanma.\n"
     "- Bu kurala uymazsan cevap gecersiz sayilacak.\n"
 )
-
 _JSON_REPAIR_APPEND = (
     "\n\nKRITIK CEVAP FORMATI:\n"
     "- SADECE GECERLI JSON don.\n"
@@ -62,24 +63,16 @@ _JSON_REPAIR_APPEND = (
     "- Her ogede: sira, baslik, puan, gerekce, detay alanlari olmali.\n"
     "- detay icinde su anahtarlar olmali: guncellik, etkilesim_potansiyeli, benzersizlik, gundem_gucu, paylasilabilirlik.\n"
 )
-
-
 def _is_score_breakdown_enabled() -> bool:
     value = os.environ.get("DEBUG_SCORE_BREAKDOWN", "false").strip().lower()
     return value in ("1", "true", "yes", "on")
-
-
 def _allow_skip_as_success() -> bool:
     return False
-
-
 def _safe_int(value, default=0) -> int:
     try:
         return int(value)
     except Exception:
         return default
-
-
 def _safe_score_number(value, default=0) -> int:
     try:
         if isinstance(value, str):
@@ -92,12 +85,8 @@ def _safe_score_number(value, default=0) -> int:
     except Exception:
         pass
     return default
-
-
 def _clamp_score(value: int) -> int:
     return max(0, min(100, value))
-
-
 def _extract_raw_ai_score(ai_result: dict) -> int:
     raw = None
     for key in ("puan", "score", "skor"):
@@ -105,20 +94,14 @@ def _extract_raw_ai_score(ai_result: dict) -> int:
             raw = ai_result.get(key)
             break
     return _safe_score_number(raw, UNSCORED_DEFAULT)
-
-
 def _normalize_ai_score(ai_result: dict) -> int:
     numeric = _extract_raw_ai_score(ai_result)
     return _clamp_score(numeric)
-
-
 def _is_probably_ten_scale(scores: list[int]) -> bool:
     positives = [s for s in scores if s > 0]
     if not positives:
         return False
     return max(positives) <= 10
-
-
 def _format_articles_numbered(articles: list) -> str:
     lines = []
     for i, article in enumerate(articles, start=1):
@@ -128,12 +111,8 @@ def _format_articles_numbered(articles: list) -> str:
             summary = summary[:297] + "..."
         lines.append(f"{i}. Baslik: {title} | Ozet: {summary}")
     return "\n".join(lines)
-
-
 def _split_into_batches(articles: list) -> list:
     return [articles[i: i + BATCH_SIZE] for i in range(0, len(articles), BATCH_SIZE)]
-
-
 def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
     for article in batch:
         article["base_ai_score"] = UNSCORED_DEFAULT
@@ -141,88 +120,152 @@ def _mark_unscored_batch(batch: list, reason: str, all_scored: list) -> None:
         article["score_breakdown"] = {key: 0 for key in _SCORE_COMPONENTS}
         article["score_reason"] = reason
         all_scored.append(article)
-
-
 def _normalize_ai_results(parsed: object) -> Optional[list]:
     if isinstance(parsed, dict):
         return [parsed]
     if isinstance(parsed, list):
         return parsed
     return None
-
-
 def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    """
+    CRITICAL FIX v5.1: Enhanced order-based matching with better validation
+    """
     sira = ai_result.get("sira")
     if sira is None:
         return None, None
-
     try:
         index = int(sira) - 1
     except (ValueError, TypeError):
+        log(f"[SCORER] Invalid sira value: {sira}", "WARNING")
         return None, None
-
     if not (0 <= index < len(articles)) or index in used_indices:
         return None, None
-
     ai_title = ai_result.get("baslik", "").strip()
     article_title = articles[index].get("title", "").strip()
-    if not ai_title or is_similar_title(ai_title, article_title, threshold=CROSS_VALIDATE_THRESHOLD):
+    
+    # If no AI title, accept the order match
+    if not ai_title:
+        log(f"[SCORER] Order match (no AI title): sira={sira} -> {article_title[:60]}", "INFO")
         return articles[index], index
-
+    
+    # Cross-validate with title similarity
+    if is_similar_title(ai_title, article_title, threshold=CROSS_VALIDATE_THRESHOLD):
+        log(f"[SCORER] Order match validated: sira={sira}, similarity confirmed", "INFO")
+        return articles[index], index
+    
+    # CRITICAL FIX: Log mismatch for debugging
+    log(
+        f"[SCORER] Order match REJECTED: sira={sira}, "
+        f"AI='{ai_title[:40]}' vs Article='{article_title[:40]}'",
+        "WARNING"
+    )
     return None, None
-
-
 def _match_by_exact_title(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    """
+    CRITICAL FIX v5.1: Enhanced exact title matching
+    """
     ai_title = ai_result.get("baslik", "").strip()
     if not ai_title:
         return None, None
-
     ai_lower = ai_title.lower()
     for i, article in enumerate(articles):
         if i in used_indices:
             continue
-        if ai_lower == article.get("title", "").strip().lower():
+        article_lower = article.get("title", "").strip().lower()
+        if ai_lower == article_lower:
+            log(f"[SCORER] Exact title match: '{ai_title[:40]}'", "INFO")
             return article, i
     return None, None
-
-
 def _match_by_fuzzy_title(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
+    """
+    CRITICAL FIX v5.1: Improved fuzzy matching with lower threshold
+    """
     ai_title = ai_result.get("baslik", "").strip()
     if not ai_title:
         return None, None
-
+    # CRITICAL FIX: Lowered threshold from 0.6 to 0.5 for better matching
+    FUZZY_THRESHOLD = 0.5
+    
+    best_match = None
+    best_index = None
+    best_similarity = 0.0
+    
     for i, article in enumerate(articles):
         if i in used_indices:
             continue
-        if is_similar_title(ai_title, article.get("title", "").strip(), threshold=0.6):
-            return article, i
+        
+        article_title = article.get("title", "").strip()
+        if is_similar_title(ai_title, article_title, threshold=FUZZY_THRESHOLD):
+            # Find the best match if multiple candidates
+            similarity = _calculate_title_similarity(ai_title, article_title)
+            if similarity > best_similarity:
+                best_similarity = similarity
+                best_match = article
+                best_index = i
+    
+    if best_match:
+        log(
+            f"[SCORER] Fuzzy match: similarity={best_similarity:.2f}, "
+            f"AI='{ai_title[:40]}' -> Article='{best_match.get('title', '')[:40]}'",
+            "INFO"
+        )
+        return best_match, best_index
+    
     return None, None
-
-
+def _calculate_title_similarity(title1: str, title2: str) -> float:
+    """
+    CRITICAL FIX v5.1: Calculate similarity score for better matching
+    """
+    if not title1 or not title2:
+        return 0.0
+    
+    # Simple word overlap calculation
+    words1 = set(title1.lower().split())
+    words2 = set(title2.lower().split())
+    
+    if not words1 or not words2:
+        return 0.0
+    
+    intersection = words1.intersection(words2)
+    union = words1.union(words2)
+    
+    return len(intersection) / len(union) if union else 0.0
 def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
+    """
+    CRITICAL FIX v5.1: Enhanced matching with detailed logging
+    """
     matched = []
     used_indices = set()
-
-    for ai_result in ai_results:
+    log(f"[SCORER] Matching AI results: {len(ai_results)} results to {len(articles)} articles", "INFO")
+    for idx, ai_result in enumerate(ai_results, start=1):
         if not isinstance(ai_result, dict):
+            log(f"[SCORER] Skipping non-dict AI result #{idx}", "WARNING")
             continue
-
+        # Try matching in order of priority
         matched_article, matched_index = _match_by_order(ai_result, articles, used_indices)
+        
         if matched_article is None:
             matched_article, matched_index = _match_by_exact_title(ai_result, articles, used_indices)
+        
         if matched_article is None:
             matched_article, matched_index = _match_by_fuzzy_title(ai_result, articles, used_indices)
-
         if matched_article is not None and matched_index is not None:
             matched.append((ai_result, matched_article))
             used_indices.add(matched_index)
-
+        else:
+            ai_title = ai_result.get("baslik", "")[:60]
+            ai_sira = ai_result.get("sira", "?")
+            log(
+                f"[SCORER] UNMATCHED AI result #{idx}: sira={ai_sira}, title='{ai_title}'",
+                "WARNING"
+            )
+    match_rate = (len(matched) / len(ai_results) * 100) if ai_results else 0
+    log(f"[SCORER] Match rate: {len(matched)}/{len(ai_results)} ({match_rate:.1f}%)", "INFO")
+    
     return matched
-
-
 def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optional[list], str]:
     """
-    v5.0 ULTRA: Stage-aware AI call with detailed error logging
+    v5.1 ULTRA FIXED: Stage-aware AI call with enhanced logging
     """
     log(f"[SCORER] Batch {batch_num}: Calling AI (stage=scoring, articles={len(batch)})", "INFO")
     
@@ -231,14 +274,23 @@ def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optiona
     if not ai_response:
         log(f"[SCORER] Batch {batch_num}: AI returned empty response", "ERROR")
         return None, "ai_empty"
-
+    # CRITICAL FIX: Log raw AI response for debugging
+    log(f"[SCORER] Batch {batch_num}: AI response preview: {ai_response[:300]}", "INFO")
     parsed = parse_ai_json(ai_response)
     ai_results = _normalize_ai_results(parsed)
     
     if not ai_results:
-        log(f"[SCORER] Batch {batch_num}: JSON parse failed. Raw response: {ai_response[:200]}", "ERROR")
+        log(f"[SCORER] Batch {batch_num}: JSON parse failed. Raw response: {ai_response[:500]}", "ERROR")
         return None, "ai_parse_failed"
-
+    log(f"[SCORER] Batch {batch_num}: Parsed {len(ai_results)} AI results", "INFO")
+    
+    # CRITICAL FIX: Log AI result structure for debugging
+    if ai_results and len(ai_results) > 0:
+        sample = ai_results[0]
+        log(
+            f"[SCORER] Batch {batch_num}: Sample AI result keys: {list(sample.keys())}",
+            "INFO"
+        )
     matched_pairs = _match_ai_results_to_articles(ai_results, batch)
     
     if not matched_pairs and ai_results:
@@ -247,11 +299,8 @@ def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optiona
             f"AI results={len(ai_results)}, Articles={len(batch)}, Matched=0",
             "WARNING",
         )
-
     log(f"[SCORER] Batch {batch_num}: Matched {len(matched_pairs)}/{len(batch)} articles", "INFO")
     return matched_pairs, ""
-
-
 def _score_batch(batch: list, prompt: str, batch_num: int) -> tuple[Optional[list], str]:
     """
     v5.0 ULTRA: Batch-level retry with repair attempt
@@ -271,7 +320,6 @@ def _score_batch(batch: list, prompt: str, batch_num: int) -> tuple[Optional[lis
             return retry_pairs, ""
         
         return matched_pairs, ""
-
     # Parse/empty hatasinda onarmali ikinci deneme
     log(f"[SCORER] Batch {batch_num}: Attempting repair for {fail_reason}", "WARNING")
     repaired_pairs, repaired_reason = _score_batch_once(batch, prompt + _JSON_REPAIR_APPEND, batch_num)
@@ -279,11 +327,8 @@ def _score_batch(batch: list, prompt: str, batch_num: int) -> tuple[Optional[lis
     if not repaired_reason and repaired_pairs is not None:
         log(f"[SCORER] Batch {batch_num}: Repair successful (original error: {fail_reason})", "INFO")
         return repaired_pairs, ""
-
     log(f"[SCORER] Batch {batch_num}: All retry attempts failed. Final error: {repaired_reason or fail_reason}", "ERROR")
     return None, repaired_reason or fail_reason
-
-
 _SCORE_COMPONENTS = {
     "guncellik": 20,
     "etkilesim_potansiyeli": 25,
@@ -291,7 +336,6 @@ _SCORE_COMPONENTS = {
     "gundem_gucu": 20,
     "paylasilabilirlik": 15,
 }
-
 _LEGACY_DETAIL_MAP = {
     "guncel": "guncellik",
     "paylasim": "paylasilabilirlik",
@@ -299,12 +343,8 @@ _LEGACY_DETAIL_MAP = {
     "etki": "gundem_gucu",
     "duygu": "etkilesim_potansiyeli",
 }
-
-
 def _clamp_component(value: int, maximum: int) -> int:
     return max(0, min(maximum, value))
-
-
 def _normalize_detail_key(raw_key: str) -> str:
     key = (raw_key or "").strip().lower()
     replacements = {"ı": "i", "ğ": "g", "ü": "u", "ş": "s", "ö": "o", "ç": "c"}
@@ -312,24 +352,19 @@ def _normalize_detail_key(raw_key: str) -> str:
         key = key.replace(src, dst)
     key = key.replace(" ", "_").replace("-", "_")
     return _LEGACY_DETAIL_MAP.get(key, key)
-
-
 def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
     detail = ai_result.get("detay") or ai_result.get("alt_skorlar") or ai_result.get("breakdown") or {}
     normalized: dict[str, int] = {}
-
     if isinstance(detail, dict):
         for raw_key, raw_value in detail.items():
             key = _normalize_detail_key(str(raw_key))
             if key not in _SCORE_COMPONENTS:
                 continue
             normalized[key] = _clamp_component(_safe_score_number(raw_value, 0), _SCORE_COMPONENTS[key])
-
     if normalized:
         for key, maximum in _SCORE_COMPONENTS.items():
             normalized.setdefault(key, 0)
         return normalized
-
     weighted = {}
     remaining = _clamp_score(base_score)
     for idx, (key, maximum) in enumerate(_SCORE_COMPONENTS.items()):
@@ -341,12 +376,8 @@ def _extract_score_breakdown(ai_result: dict, base_score: int) -> dict:
         weighted[key] = value
         remaining -= value
     return weighted
-
-
 def _breakdown_total(breakdown: dict) -> int:
     return _clamp_score(sum(_safe_int(breakdown.get(k, 0), 0) for k in _SCORE_COMPONENTS))
-
-
 def _apply_component_delta(article: dict, key: str, delta: int) -> None:
     breakdown = article.get("score_breakdown")
     if not isinstance(breakdown, dict) or key not in _SCORE_COMPONENTS:
@@ -354,16 +385,13 @@ def _apply_component_delta(article: dict, key: str, delta: int) -> None:
     breakdown[key] = _clamp_component(_safe_int(breakdown.get(key, 0), 0) + delta, _SCORE_COMPONENTS[key])
     article["score_breakdown"] = breakdown
     article["score"] = _breakdown_total(breakdown)
-
-
 def run_viral_scoring(articles: list) -> list:
     """
-    v5.0 ULTRA: Batch scoring with detailed error tracking
+    v5.1 ULTRA FIXED: Batch scoring with improved fallback scores
     """
     if not articles:
         log("[SCORER] No articles for scoring", "INFO")
         return []
-
     scorer_prompt = load_config("prompts").get("viral_scorer", "")
     if not scorer_prompt:
         log("[SCORER] viral_scorer prompt not found", "ERROR")
@@ -372,12 +400,10 @@ def run_viral_scoring(articles: list) -> list:
             article["score"] = UNSCORED_DEFAULT
             article["score_reason"] = "prompt_missing"
         return articles
-
     batches = _split_into_batches(articles)
     all_scored = []
     
     log(f"[SCORER] Starting viral scoring: {len(articles)} articles in {len(batches)} batches", "INFO")
-
     for batch_num, batch in enumerate(batches, start=1):
         log(f"[SCORER] Processing batch {batch_num}/{len(batches)} ({len(batch)} articles)", "INFO")
         
@@ -389,7 +415,6 @@ def run_viral_scoring(articles: list) -> list:
             if batch_num < len(batches):
                 time.sleep(BATCH_DELAY_SECONDS)
             continue
-
         raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs]
         
         if _is_probably_ten_scale(raw_scores):
@@ -402,7 +427,6 @@ def run_viral_scoring(articles: list) -> list:
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
                 continue
-
             retry_raw_scores = [_extract_raw_ai_score(ai_result) for ai_result, _ in matched_pairs_retry]
             if _is_probably_ten_scale(retry_raw_scores):
                 log(f"[SCORER] Batch {batch_num}: Still 10-scale after strict retry", "ERROR")
@@ -410,11 +434,8 @@ def run_viral_scoring(articles: list) -> list:
                 if batch_num < len(batches):
                     time.sleep(BATCH_DELAY_SECONDS)
                 continue
-
             matched_pairs = matched_pairs_retry
-
         matched_ids = {id(art) for _, art in matched_pairs}
-
         for ai_result, article in matched_pairs:
             base_score = _normalize_ai_score(ai_result)
             breakdown = _extract_score_breakdown(ai_result, base_score)
@@ -424,49 +445,56 @@ def run_viral_scoring(articles: list) -> list:
             article["score_reason"] = "ai_scored"
             article["score_explanation"] = (ai_result.get("gerekce", "") or "").strip()
             all_scored.append(article)
-
+        # CRITICAL FIX: Improved fallback scores for unmatched articles
         for article in batch:
             if id(article) in matched_ids:
                 continue
-
             summary = (article.get("summary", "") or "").strip()
+            
+            # CRITICAL FIX: Higher fallback scores based on summary quality
             if len(summary) > 100:
-                fallback_base = 25
+                fallback_base = FALLBACK_SCORE_HIGH  # 35 (was 25)
+                fallback_breakdown = {
+                    "guncellik": 7,
+                    "etkilesim_potansiyeli": 8,
+                    "benzersizlik": 7,
+                    "gundem_gucu": 8,
+                    "paylasilabilirlik": 5,
+                }
             elif len(summary) > 50:
-                fallback_base = 20
+                fallback_base = FALLBACK_SCORE_MEDIUM  # 30 (was 20)
+                fallback_breakdown = {
+                    "guncellik": 6,
+                    "etkilesim_potansiyeli": 7,
+                    "benzersizlik": 6,
+                    "gundem_gucu": 6,
+                    "paylasilabilirlik": 5,
+                }
             else:
-                fallback_base = 15
-
-            fallback_breakdown = {
-                "guncellik": 5,
-                "etkilesim_potansiyeli": 5,
-                "benzersizlik": 5,
-                "gundem_gucu": 5,
-                "paylasilabilirlik": 0,
-            }
-
+                fallback_base = FALLBACK_SCORE_LOW  # 25 (was 15)
+                fallback_breakdown = {
+                    "guncellik": 5,
+                    "etkilesim_potansiyeli": 5,
+                    "benzersizlik": 5,
+                    "gundem_gucu": 5,
+                    "paylasilabilirlik": 5,
+                }
             article["base_ai_score"] = fallback_base
             article["score"] = fallback_base
             article["score_breakdown"] = fallback_breakdown
             article["score_reason"] = "ai_unmatched_fallback"
             all_scored.append(article)
             log(f"[SCORER] Batch {batch_num}: Article unmatched, using fallback score={fallback_base}", "WARNING")
-
         if batch_num < len(batches):
             time.sleep(BATCH_DELAY_SECONDS)
-
     all_scored.sort(key=lambda x: x.get("score", 0), reverse=True)
     log(f"[SCORER] Scoring complete: {len(all_scored)} articles scored", "INFO")
     return all_scored
-
-
 def _calculate_freshness_bonus(published_str: str) -> int:
     if not published_str:
         return 0
-
     try:
         from datetime import datetime, timezone
-
         try:
             from dateutil import parser as dateutil_parser
             pub_dt = dateutil_parser.parse(published_str)
@@ -475,38 +503,28 @@ def _calculate_freshness_bonus(published_str: str) -> int:
             if cleaned.endswith("Z"):
                 cleaned = cleaned[:-1] + "+00:00"
             pub_dt = datetime.fromisoformat(cleaned)
-
         if pub_dt.tzinfo is None:
             pub_dt = pub_dt.replace(tzinfo=timezone(timedelta(hours=3)))
-
         age_hours = (get_turkey_now() - pub_dt).total_seconds() / 3600
         if age_hours < 0:
             return 0
-
         for max_hours, bonus in FRESHNESS_TIERS:
             if age_hours < max_hours:
                 return bonus
-
         return FRESHNESS_OLD_MALUS
     except Exception:
         return 0
-
-
 def apply_freshness_bonus(scored_articles: list) -> list:
     if not scored_articles:
         return []
-
     for article in scored_articles:
         bonus = _calculate_freshness_bonus(article.get("published", ""))
         article["freshness_bonus"] = bonus
         _apply_component_delta(article, "guncellik", bonus)
         if not isinstance(article.get("score_breakdown"), dict):
             article["score"] = _clamp_score(_safe_int(article.get("score", 0), 0) + bonus)
-
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
-
-
 def _trend_count_bonus(trend_count: int) -> int:
     if trend_count >= 6:
         return 12
@@ -519,8 +537,6 @@ def _trend_count_bonus(trend_count: int) -> int:
     if trend_count >= 2:
         return 3
     return 0
-
-
 def _priority_bonus(source_priority: str) -> int:
     value = (source_priority or "").lower().strip()
     if value == "high":
@@ -528,73 +544,57 @@ def _priority_bonus(source_priority: str) -> int:
     if value == "medium":
         return 1
     return 0
-
-
 def _confidence_multiplier(ai_score: int) -> float:
     if ai_score < 20:
         return 0.6
     if ai_score < 55:
         return 0.85
     return 1.0
-
-
 def apply_trend_bonus(scored_articles: list) -> list:
     if not scored_articles:
         return []
-
     for article in scored_articles:
         ai_score = _safe_int(article.get("score", 0), 0)
         trend_count = _safe_int(article.get("trend_count", 1), 1)
         incoming_trend_bonus = _safe_int(article.get("trend_bonus", 0), 0)
         src_priority = article.get("source_priority", "low")
-
         computed_count_bonus = _trend_count_bonus(trend_count)
         raw_trend_bonus = max(incoming_trend_bonus, computed_count_bonus) + _priority_bonus(src_priority)
         raw_trend_bonus = min(raw_trend_bonus, TREND_BONUS_CAP)
-
         effective_bonus = int(round(raw_trend_bonus * _confidence_multiplier(ai_score)))
         summary = (article.get("summary", "") or "").strip()
         if len(summary) < 25:
             effective_bonus = max(0, effective_bonus - 2)
-
         article["trend_count"] = trend_count
         article["trend_bonus_raw"] = raw_trend_bonus
         article["trend_bonus"] = effective_bonus
         _apply_component_delta(article, "gundem_gucu", effective_bonus)
         if not isinstance(article.get("score_breakdown"), dict):
             article["score"] = _clamp_score(ai_score + effective_bonus)
-
     scored_articles.sort(key=lambda x: x.get("score", 0), reverse=True)
     return scored_articles
-
-
 def _get_active_threshold() -> int:
+    """
+    CRITICAL FIX v5.1: Synced with config/scoring.json (publish_score: 40)
+    """
     scoring_config = load_config("scoring")
     thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
-
-    # v4.3 FIX: publish_score 40 -> 70
-    publish_score = _safe_int(thresholds.get("publish_score", 70), 70)
+    # CRITICAL FIX: Default changed from 70 to 40 to match config
+    publish_score = _safe_int(thresholds.get("publish_score", 40), 40)
     slow_day_score = _safe_int(thresholds.get("slow_day_score", 30), 30)
     today_post_count = get_today_post_count(get_posted_news())
-
     return slow_day_score if today_post_count < 2 else publish_score
-
-
 def apply_thresholds(scored_articles: list) -> list:
     if not scored_articles:
         return []
-
     threshold = _get_active_threshold()
     return [a for a in scored_articles if a.get("score", 0) >= threshold]
-
-
 def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
     if not _is_score_breakdown_enabled():
         return
     if not scored_articles:
         log("[SCORER] Score breakdown: no articles", "INFO")
         return
-
     log("=== SCORE BREAKDOWN (TOP 5) ===", "INFO")
     for idx, article in enumerate(scored_articles[:5], start=1):
         title = (article.get("title", "") or "")[:90]
@@ -604,14 +604,11 @@ def _log_score_breakdown(scored_articles: list, threshold: int) -> None:
         trend_eff = _safe_int(article.get("trend_bonus", 0), 0)
         final_score = _safe_int(article.get("score", 0), 0)
         trend_count = _safe_int(article.get("trend_count", 1), 1)
-
         log(
             f"[SCORER] {idx}) score={final_score} (base={base_ai} + fresh={freshness} + trend={trend_eff}/{trend_raw}) "
             f"trend_count={trend_count} threshold={threshold} | {title}",
             "INFO",
         )
-
-
 def _build_cooldown_candidates(scored: list, selected_article: Optional[dict] = None, limit: int = 50) -> list[dict]:
     selected_id = id(selected_article) if selected_article is not None else None
     candidates: list[dict] = []
@@ -631,21 +628,16 @@ def _build_cooldown_candidates(scored: list, selected_article: Optional[dict] = 
         if len(candidates) >= limit:
             break
     return candidates
-
-
 def _derive_skip_reason_from_scores(scored: list) -> str:
     if not scored:
         return "no_scored_articles"
-
     reasons = {}
     for a in scored:
         r = (a.get("score_reason", "") or "").strip()
         if r:
             reasons[r] = reasons.get(r, 0) + 1
-
     if not reasons:
         return "No article above threshold"
-
     top_reason = max(reasons, key=reasons.get)
     if top_reason == "ai_invalid_scale_10":
         return "AI returned invalid 10-scale scores"
@@ -654,22 +646,16 @@ def _derive_skip_reason_from_scores(scored: list) -> str:
     if top_reason in {"ai_unmatched", "ai_unmatched_fallback"}:
         return f"Scoring unmatched ({top_reason})"
     return "No article above threshold"
-
-
 def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
     if not articles:
         return None, {"skipped": True, "skip_reason": "no_articles"}
-
     scored = run_viral_scoring(articles)
     if not scored:
         return None, {"skipped": True, "skip_reason": "no_scored_articles"}
-
     scored = apply_freshness_bonus(scored)
     scored = apply_trend_bonus(scored)
-
     threshold = _get_active_threshold()
     _log_score_breakdown(scored, threshold)
-
     top_articles = scored[:3]
     top_summary = [
         {
@@ -679,7 +665,6 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
         }
         for a in top_articles
     ]
-
     above_threshold = [a for a in scored if a.get("score", 0) >= threshold]
     if not above_threshold:
         top = scored[0] if scored else {}
@@ -693,7 +678,6 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
             "scored_count": len(scored),
             "cooldown_candidates": _build_cooldown_candidates(scored),
         }
-
     selected = above_threshold[0]
     return selected, {
         "skipped": False,
@@ -702,8 +686,6 @@ def filter_and_score(articles: list) -> Tuple[Optional[dict], dict]:
         "scored_count": len(scored),
         "cooldown_candidates": _build_cooldown_candidates(scored, selected),
     }
-
-
 def _build_skip_output(meta: dict) -> dict:
     active_threshold = _get_active_threshold()
     threshold = _safe_int(meta.get("threshold", active_threshold), active_threshold)
@@ -724,8 +706,6 @@ def _build_skip_output(meta: dict) -> dict:
         "scored_count": _safe_int(meta.get("scored_count", 0), 0),
         "cooldown_candidates": meta.get("cooldown_candidates", []),
     }
-
-
 def _build_success_output(best_article: dict, meta: dict) -> dict:
     return {
         "selected_article": best_article,
@@ -743,8 +723,6 @@ def _build_success_output(best_article: dict, meta: dict) -> dict:
         "scored_count": _safe_int(meta.get("scored_count", 0), 0),
         "cooldown_candidates": meta.get("cooldown_candidates", []),
     }
-
-
 def run() -> bool:
     log("[SCORER] ===== AGENT_SCORER STARTING =====", "INFO")
     
@@ -753,19 +731,16 @@ def run() -> bool:
         log("[SCORER] Fetch stage not done, cannot proceed", "ERROR")
         set_stage("score", "error", error="fetch stage not done")
         return False
-
     articles = (fetch_stage.get("output", {}) or {}).get("articles", [])
     if not articles:
         log("[SCORER] No articles in fetch output", "ERROR")
         set_stage("score", "error", error="No articles in fetch output")
         return False
-
     log(f"[SCORER] Received {len(articles)} articles from fetch stage", "INFO")
     set_stage("score", "running")
     
     try:
         best_article, meta = filter_and_score(articles)
-
         if best_article is None:
             skip_output = _build_skip_output(meta)
             if _allow_skip_as_success():
@@ -776,7 +751,6 @@ def run() -> bool:
                     "INFO",
                 )
                 return True
-
             set_stage(
                 "score",
                 "error",
@@ -787,21 +761,16 @@ def run() -> bool:
             )
             log(f"[SCORER] Failed: {skip_output['skip_reason']}", "ERROR")
             return False
-
         set_stage("score", "done", output=_build_success_output(best_article, meta))
         log(f"[SCORER] Success: Selected article score={best_article.get('score', 0)}", "INFO")
         return True
-
     except Exception as exc:
         log(f"[SCORER] Critical exception: {exc}", "ERROR")
         import traceback
         log(f"[SCORER] Traceback: {traceback.format_exc()}", "ERROR")
         set_stage("score", "error", error=str(exc))
         return False
-
-
 if __name__ == "__main__":
     from core.state_manager import init_pipeline
-
     init_pipeline("test-scorer")
     run()
