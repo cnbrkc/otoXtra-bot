@@ -1,4 +1,5 @@
 name: otoXtra Bot
+
 on:
   schedule:
     # GitHub cron UTC calisir.
@@ -7,6 +8,7 @@ on:
     # GitHub schedule gecikmesini telafi etmek icin ilk slot 2 saat erkene cekildi.
     # Dakika 03 secildi (:00 yogunlugundan kacmak icin).
     - cron: '3 3,4,5,6,8,10,12,14,16,17 * * *'
+
   workflow_dispatch:
     inputs:
       debug_score_breakdown:
@@ -17,6 +19,7 @@ on:
         options:
           - 'false'
           - 'true'
+
       enable_random_delay:
         description: 'Random bekleme aktif olsun mu?'
         required: false
@@ -25,6 +28,7 @@ on:
         options:
           - 'true'
           - 'false'
+
       dry_run:
         description: 'Dry run (gercek Facebook paylasimi kapali)'
         required: false
@@ -33,6 +37,7 @@ on:
         options:
           - 'true'
           - 'false'
+
       ignore_min_post_interval:
         description: 'Min post interval kontrolunu atla?'
         required: false
@@ -41,6 +46,7 @@ on:
         options:
           - 'false'
           - 'true'
+
       persist_state:
         description: 'posted_news/pipeline kayitlari kalici yazilsin mi?'
         required: false
@@ -49,29 +55,36 @@ on:
         options:
           - 'true'
           - 'false'
+
 concurrency:
-  group: otoxtra-bot
+  group: otoxtra-bot-${{ github.run_id }}
   cancel-in-progress: false
+
 jobs:
   run-bot:
     runs-on: ubuntu-latest
     timeout-minutes: 55
+
     permissions:
       contents: write
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           fetch-depth: 0
+
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
+
       - name: Run bot
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
@@ -82,15 +95,18 @@ jobs:
           FB_ACCESS_TOKEN: ${{ secrets.FB_ACCESS_TOKEN }}
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'true' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
+
           NEWS_MAX_AGE_HOURS: '24'
           SHARED_VARIANT_COOLDOWN_HOURS: '3'
           ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE: 'false'
           MAX_IMAGES_PER_NEWS: '4'
+
           # Feed/Nitter fetch dayanıklılık ayarları
           FEED_FETCH_DELAY_SECONDS: '0.35'
           FEED_FETCH_DELAY_JITTER_SECONDS: '0.40'
@@ -116,6 +132,7 @@ jobs:
             exit 124
           fi
           exit "$status"
+
       - name: Notify bot failure
         if: ${{ failure() }}
         env:
@@ -135,16 +152,21 @@ jobs:
             -d "chat_id=${TELEGRAM_CHAT_ID}" \
             -d "disable_web_page_preview=true" \
             -d "text=${text}"
+
       - name: Save data
         if: ${{ github.event_name != 'workflow_dispatch' || github.event.inputs.persist_state == 'true' }}
         run: |
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
+
           git add data/posted_news.json
           git add queue/pipeline.json
           git add data/telegram_updates_state.json
+
           git diff --staged --quiet && echo "Degisiklik yok, commit atlaniyor" && exit 0
+
           git commit -m "Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
+
           for i in 1 2 3; do
             git push && break
             echo "Push basarisiz (deneme $i/3), pull --rebase yapiliyor..."
