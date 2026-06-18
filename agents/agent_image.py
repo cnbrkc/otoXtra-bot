@@ -1,5 +1,10 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v5.0)
+agents/agent_image.py - Gorsel Isleme Ajani (v5.1 FIXED)
+
+v5.1 FIXED:
+  - CRITICAL FIX: Minimum image size lowered (900x500 → 738x400)
+  - CRITICAL FIX: Aspect ratio relaxed (0.8-2.1 → 0.7-2.3)
+  - Better RSS feed compatibility (most feeds use 600-800px images)
 
 Degisiklikler (v5.0):
 - DonanimHaber gibi sitelerde script/json icinden gorsel URL toplama eklendi.
@@ -37,12 +42,12 @@ _USER_AGENT = (
 _REQUEST_TIMEOUT = 15
 _MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024
 
-# Default image validation rules
-_DEFAULT_MIN_IMAGE_WIDTH = 900
-_DEFAULT_MIN_IMAGE_HEIGHT = 500
-_DEFAULT_MIN_IMAGE_AREA = 450000
-_DEFAULT_MIN_ASPECT_RATIO = 0.8
-_DEFAULT_MAX_ASPECT_RATIO = 2.1
+# CRITICAL FIX v5.1: Default image validation rules (lowered for RSS feed compatibility)
+_DEFAULT_MIN_IMAGE_WIDTH = 738    # Was 900 (too strict for most RSS feeds)
+_DEFAULT_MIN_IMAGE_HEIGHT = 400    # Was 500 (too strict for most RSS feeds)
+_DEFAULT_MIN_IMAGE_AREA = 337500   # Was 450000 (738×400 minimum, relaxed to 337,500)
+_DEFAULT_MIN_ASPECT_RATIO = 0.7    # Was 0.8 (more flexible for various aspect ratios)
+_DEFAULT_MAX_ASPECT_RATIO = 2.3    # Was 2.1 (more flexible for various aspect ratios)
 
 _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
