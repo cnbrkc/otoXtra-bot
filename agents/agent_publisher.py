@@ -1,30 +1,23 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.4 ULTRA FIXED)
+agents/agent_publisher.py - Yayinci Ajani (v4.5 FIXED)
+
+v4.5 FIXED:
+  - CRITICAL FIX: _score_based_skip_percent() scoring.json ile senkronize edildi.
+    Eski: score < 70 -> %100 skip (hardcoded)
+    Yeni: scoring.json'daki publish_score esigi okunuyor (varsayilan 35)
+    Artik scoring.json degisirse publisher da otomatik guncelleniyor.
+  - CRITICAL FIX: _get_publish_threshold() fonksiyonu eklendi (scorer ile ayni logic)
 
 v4.4 ULTRA FIXED:
   - CRITICAL FIX: Complete fallback chain implemented
-      Multi-image → Single-image → Text-only → Retry text
+      Multi-image -> Single-image -> Text-only -> Retry text
   - CRITICAL FIX: Text-only fallback guaranteed (no silent failures)
   - CRITICAL FIX: Better error handling at each step
   - Enhanced logging for troubleshooting
 
 v4.3:
-  - Score tabanli skip politikasi yeniden duzenlendi (scorer ile uyumlu):
-      <70 => %100 skip
-      70-79 => %2 skip
-      80-89 => %1 skip
-      >=90 => %0 skip
-  - publish_score threshold scorer ile senkronize edildi (70).
-
-v4.2:
-  - Score tabanli skip politikasi sabitlendi:
-      <80 => %100 skip
-      80-84 => %3 skip
-      85-89 => %2 skip
-      diger => %0 skip
-  - ENABLE_RANDOM_SKIP akisi kaldirildi (boşa dusen kontrol temizlendi).
-  - fallback/logo gorsel geldiğinde text-only paylasima gecilir.
-  - image_source NameError ve cagri uyumlulugu duzeltmeleri korunur.
+  - Score tabanli skip politikasi yeniden duzenlendi (scorer ile uyumlu).
+  - publish_score threshold scorer ile senkronize edildi.
 """
 
 import os
@@ -54,7 +47,7 @@ from platforms import telegram as tg_platform
 
 
 _RETRY_DELAY = 5
-_MAX_PUBLISH_ATTEMPTS = 3  # CRITICAL FIX: Max attempts for each method
+_MAX_PUBLISH_ATTEMPTS = 3
 
 
 def _get_env_bool(name: str, default: bool) -> bool:
@@ -100,37 +93,72 @@ def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
     return True
 
 
+def _get_publish_threshold() -> int:
+    """
+    v4.5 FIX: scoring.json'dan esigi oku, scorer ile tam uyumlu.
+    Ayni logic agent_scorer._get_active_threshold() ile identik.
+    """
+    try:
+        scoring_config = load_config("scoring")
+        thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
+        publish_score = _safe_int(thresholds.get("publish_score", 35), 35)
+        slow_day_score = _safe_int(thresholds.get("slow_day_score", 25), 25)
+        posted_data = get_posted_news()
+        today_post_count = get_today_post_count(posted_data)
+        threshold = slow_day_score if today_post_count < 2 else publish_score
+        log(f"Publish threshold: {threshold} (publish_score={publish_score}, slow_day={slow_day_score}, today_posts={today_post_count})", "INFO")
+        return threshold
+    except Exception as exc:
+        log(f"Publish threshold okunamadi, varsayilan 35: {exc}", "WARNING")
+        return 35
+
+
 def _score_based_skip_percent(score: int) -> int:
     """
-    DÜZELTME v4.3: Scorer ile uyumlu hale getirildi.
-    - Score < 70 → %100 skip
-    - Score 70-79 → %2 skip
-    - Score 80-89 → %1 skip
-    - Score >= 90 → %0 skip
+    v4.5 FIX: Hardcoded 70 kaldirildi, scoring.json'dan okunan esik kullaniliyor.
+
+    Eski (HATALI):
+      score < 70 -> %100 skip  (scoring.json'da 35 olsa bile 70 ile karsilastiriliyordu)
+
+    Yeni (DOGRU):
+      score < publish_threshold -> %100 skip
+      score >= publish_threshold+30 -> %0 skip (rahatlikla gecti)
+      arada -> kucuk olasiliksal skip
     """
-    if score < 70:
-        return 100
-    if 70 <= score <= 79:
-        return 2
-    if 80 <= score <= 89:
-        return 1
-    return 0
+    threshold = _get_publish_threshold()
+
+    if score < threshold:
+        return 100  # Esik altinda -> kesinlikle yayinlama
+
+    # Esigi gecti ama biraz uzerindeyse kucuk sansi var
+    margin = score - threshold
+    if margin < 10:
+        return 2   # Esigi yeni gecti -> %2 skip
+    if margin < 20:
+        return 1   # Rahatca gecti -> %1 skip
+
+    return 0  # Cok iyi skor -> hic skip yok
 
 
 def _check_skip_probability(score: int = 0) -> tuple[bool, str]:
     effective_percent = _score_based_skip_percent(score)
+    threshold = _get_publish_threshold()
+
     if effective_percent >= 100:
-        reason = f"score_below_70_skip(score={score})"
+        reason = f"score_below_threshold_skip(score={score}, threshold={threshold})"
         log(f"Skora bagli atlama: {reason}", "INFO")
         return False, reason
+
     if effective_percent <= 0:
-        log(f"Skora bagli atlama: score={score}, esik=0 -> devam")
+        log(f"Skora bagli atlama: score={score} threshold={threshold}, skip=0 -> devam")
         return True, ""
+
     roll = random.randint(1, 100)
     if roll <= effective_percent:
         reason = f"score_based_skip(score={score}, roll={roll}, threshold={effective_percent})"
         log(f"Skora bagli atlama: {reason} -> atlaniyor", "INFO")
         return False, reason
+
     log(f"Skora bagli atlama: score={score}, zar={roll}, esik={effective_percent} -> devam")
     return True, ""
 
@@ -191,12 +219,10 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
         if not os.path.exists(path):
             log(f"Image path skip (not found): {path}", "WARNING")
             return
-
         key = os.path.normcase(os.path.realpath(path))
         if key in seen_keys:
             log(f"Image path skip (duplicate path key): {path}", "INFO")
             return
-
         seen_keys.add(key)
         collected.append(path)
 
@@ -214,7 +240,6 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
-    # Foto/video yoksa logo/fallback görseli basmak yerine sadece metin paylaş.
     if (image_source or "").strip().lower() == "fallback":
         if image_paths:
             log("Fallback gorsel tespit edildi, text-only paylasima geciliyor", "INFO")
@@ -247,20 +272,16 @@ def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Op
 
 
 def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Optional[str]:
-    """
-    CRITICAL FIX v4.4: Enhanced multi-photo publishing with better error handling
-    """
     for fn_name in ("post_photos", "post_multi_photo", "post_album"):
         fn = getattr(fb_platform, fn_name, None)
         if not callable(fn):
-            log(f"Multi-photo function not found: facebook.{fn_name}()", "INFO")
             continue
 
         try:
             log(f"[PUBLISH] Attempting multi-photo: facebook.{fn_name}()", "INFO")
             result = _try_call_multi_fn(fn, image_paths, post_text_content)
             if result:
-                log(f"[PUBLISH] ✅ Multi-photo SUCCESS: facebook.{fn_name}() -> {result}", "INFO")
+                log(f"[PUBLISH] Multi-photo SUCCESS: facebook.{fn_name}() -> {result}", "INFO")
                 return result
             log(f"[PUBLISH] Multi-photo returned None: facebook.{fn_name}()", "WARNING")
         except Exception as exc:
@@ -271,9 +292,6 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
 
 
 def _try_post_single_photo(image_path: str, post_text_content: str) -> Optional[str]:
-    """
-    CRITICAL FIX v4.4: Enhanced single-photo publishing
-    """
     post_photo_fn = getattr(fb_platform, "post_photo", None)
     if not callable(post_photo_fn):
         log("[PUBLISH] post_photo function not available", "WARNING")
@@ -283,7 +301,7 @@ def _try_post_single_photo(image_path: str, post_text_content: str) -> Optional[
         log(f"[PUBLISH] Attempting single-photo: {image_path}", "INFO")
         result = post_photo_fn(image_path, post_text_content)
         if result:
-            log(f"[PUBLISH] ✅ Single-photo SUCCESS -> {result}", "INFO")
+            log(f"[PUBLISH] Single-photo SUCCESS -> {result}", "INFO")
             return result
         log("[PUBLISH] post_photo returned None", "WARNING")
     except Exception as exc:
@@ -293,9 +311,6 @@ def _try_post_single_photo(image_path: str, post_text_content: str) -> Optional[
 
 
 def _try_post_text_only(post_text_content: str) -> Optional[str]:
-    """
-    CRITICAL FIX v4.4: Enhanced text-only publishing (GUARANTEED FALLBACK)
-    """
     post_text_fn = getattr(fb_platform, "post_text", None)
     if not callable(post_text_fn):
         log("[PUBLISH] post_text function not available", "ERROR")
@@ -305,7 +320,7 @@ def _try_post_text_only(post_text_content: str) -> Optional[str]:
         log("[PUBLISH] Attempting text-only publish", "INFO")
         result = post_text_fn(post_text_content)
         if result:
-            log(f"[PUBLISH] ✅ Text-only SUCCESS -> {result}", "INFO")
+            log(f"[PUBLISH] Text-only SUCCESS -> {result}", "INFO")
             return result
         log("[PUBLISH] post_text returned None", "WARNING")
     except Exception as exc:
@@ -338,68 +353,43 @@ def _log_publish_preview(article: dict, post_text_content: str, image_paths: lis
 
 
 def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
-    """
-    CRITICAL FIX v4.4: Complete fallback chain with guaranteed text-only fallback
-    
-    Fallback chain:
-    1. Multi-image (if >= 2 images)
-    2. Single-image (if >= 1 image)
-    3. Text-only (GUARANTEED - always attempted)
-    4. Retry text-only (with delay)
-    
-    Returns: post_id or None
-    """
     _log_publish_preview(article, post_text_content, image_paths)
 
     image_count = len(image_paths)
     post_id = None
 
-    # STEP 1: Try multi-image (if applicable)
     if image_count >= 2:
         log("[PUBLISH] STEP 1/4: Attempting multi-image publish", "INFO")
         post_id = _try_post_multi_photos(image_paths, post_text_content)
         if post_id:
             article["image_source"] = "multi_image"
-            log("[PUBLISH] ✅ SUCCESS via multi-image", "INFO")
             return post_id
         log("[PUBLISH] Multi-image failed, falling back to single-image", "WARNING")
 
-    # STEP 2: Try single-image (if applicable)
     if image_count >= 1:
         log("[PUBLISH] STEP 2/4: Attempting single-image publish", "INFO")
         post_id = _try_post_single_photo(image_paths[0], post_text_content)
         if post_id:
-            if image_count >= 2:
-                article["image_source"] = "single_fallback_from_multi"
-                log("[PUBLISH] ✅ SUCCESS via single-image (degraded from multi)", "INFO")
-            else:
-                article["image_source"] = "single_image"
-                log("[PUBLISH] ✅ SUCCESS via single-image", "INFO")
+            article["image_source"] = "single_image" if image_count == 1 else "single_fallback_from_multi"
             return post_id
         log("[PUBLISH] Single-image failed, falling back to text-only", "WARNING")
 
-    # STEP 3: Try text-only (GUARANTEED FALLBACK)
     log("[PUBLISH] STEP 3/4: Attempting text-only publish", "INFO")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_fallback"
-        log("[PUBLISH] ✅ SUCCESS via text-only fallback", "INFO")
         return post_id
-    
+
     log(f"[PUBLISH] Text-only failed, waiting {_RETRY_DELAY}s before retry", "WARNING")
     time.sleep(_RETRY_DELAY)
 
-    # STEP 4: Retry text-only (LAST RESORT)
     log("[PUBLISH] STEP 4/4: Retrying text-only publish (LAST RESORT)", "WARNING")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_retry"
-        log("[PUBLISH] ✅ SUCCESS via text-only RETRY", "INFO")
         return post_id
 
-    # CRITICAL: All attempts failed
-    log("[PUBLISH] ❌ ALL PUBLISH ATTEMPTS FAILED", "ERROR")
-    log("[PUBLISH] Tried: multi-image, single-image, text-only, text-only retry", "ERROR")
+    log("[PUBLISH] ALL PUBLISH ATTEMPTS FAILED", "ERROR")
     return None
 
 
@@ -608,7 +598,6 @@ def run() -> bool:
         posting_settings = settings.get("posting", {})
         max_daily_posts = _safe_int(posting_settings.get("max_daily_posts", 9), 9)
         random_delay_max = _safe_int(posting_settings.get("random_delay_max_minutes", 8), 8)
-
         random_delay_max = max(0, random_delay_max)
 
         dry_run = _is_dry_run(settings)
@@ -662,12 +651,11 @@ def run() -> bool:
         elif not random_delay_enabled:
             log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
 
-        # CRITICAL FIX: Complete fallback chain
         post_id = _publish_to_facebook(article, post_text_content, image_paths)
-        
+
         if post_id is None:
-            log("[PUBLISH] ❌ CRITICAL: All publish methods failed", "ERROR")
-            set_stage("publish", "error", error="Facebook paylasimi tamamen basarisiz (tum yontemler denendi)")
+            log("[PUBLISH] CRITICAL: All publish methods failed", "ERROR")
+            set_stage("publish", "error", error="Facebook paylasimi tamamen basarisiz")
             return False
 
         final_image_source = article.get("image_source", image_source)
@@ -719,7 +707,6 @@ if __name__ == "__main__":
     from core.state_manager import init_pipeline
 
     log("=== agent_publisher.py modul testi basliyor ===")
-
     init_pipeline("test-publisher")
     fake_article = {
         "title": "Test Haber",
@@ -727,20 +714,17 @@ if __name__ == "__main__":
         "topic_fingerprint": "test-haber",
         "image_source": "article_or_rss",
     }
-    fake_post_text = "Test post"
-
     set_stage(
         "image",
         "done",
         output={
             "article": fake_article,
-            "post_text": fake_post_text,
+            "post_text": "Test post",
             "image_path": "",
             "image_paths": [],
             "image_source": "article_or_rss",
             "image_count": 0,
         },
     )
-
     run()
     log("=== agent_publisher.py modul testi tamamlandi ===")
