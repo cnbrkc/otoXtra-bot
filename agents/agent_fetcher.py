@@ -1,5 +1,14 @@
 """
-News fetch and filter agent. (v4.1)
+News fetch and filter agent. (v4.2 - Nitter Image Fix)
+
+v4.2:
+  - FIX: _is_probable_image_url() Nitter /pic/orig/media... URL'lerini taniyor.
+  - FIX: _looks_like_noise_image() Nitter URL'lerini yanlisl filtreden koruyor.
+  - FIX: _extract_image_from_entry() Nitter RSS summary HTML'inden gorsel cekiyor.
+  - FIX: Nitter feed'leri icin enable_fetch_article_image_scrape otomatik True.
+  - YENI: _is_nitter_url() ve _resolve_nitter_image_url() yardimci fonksiyonlari.
+  - YENI: _extract_nitter_images_from_tweet_page() Nitter tweet sayfasindan
+          orijinal Twitter CDN URL'lerini dogrudan cekmek icin eklendi.
 
 v4.1:
   - Feed bazli tekrar denemesi guclendirildi (ozellikle nitter kaynaklari icin).
@@ -17,7 +26,7 @@ import time
 from calendar import timegm
 from datetime import datetime, timezone, timedelta
 from typing import Any
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse, unquote
 
 import feedparser
 import requests
@@ -89,6 +98,15 @@ _TRACKING_QUERY_KEYS = {
     "fbclid",
 }
 _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
+
+# Nitter gorsel URL kaliplari
+# Ornek: /pic/orig/media%2FABCdef123.jpg
+# Ornek: /pic/media%2FABCdef123.jpg
+_NITTER_PIC_PATTERN = re.compile(
+    r"^/pic/(?:orig/)?(?:media%2F|media/)([A-Za-z0-9_\-]+\.[a-zA-Z]{3,4})",
+    re.IGNORECASE,
+)
+_TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
 
 
 def _is_test_mode() -> bool:
@@ -164,6 +182,136 @@ def _is_nitter_feed(url: str) -> bool:
     return "nitter." in host or host.startswith("nitter")
 
 
+def _is_nitter_url(url: str) -> bool:
+    """Verilen URL bir Nitter instance'ina mi ait?"""
+    host = (urlparse(url).netloc or "").lower()
+    return "nitter." in host or host.startswith("nitter")
+
+
+def _resolve_nitter_image_url(raw_url: str, nitter_base: str) -> str:
+    """
+    Nitter'dan gelen gorsel URL'ini orijinal Twitter CDN URL'ine cevirir.
+
+    Desteklenen formatlar:
+      /pic/orig/media%2FABCdef.jpg  ->  https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=orig
+      /pic/media%2FABCdef.jpg       ->  https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=large
+      https://nitter.net/pic/...    ->  ayni donusum, tam URL olarak
+
+    Eger zaten pbs.twimg.com ise degistirmeden dondurur.
+    """
+    if not raw_url:
+        return ""
+
+    # Zaten Twitter CDN'deyse dokunma
+    parsed_raw = urlparse(raw_url)
+    if parsed_raw.netloc in _TWITTER_CDN_HOSTS:
+        return raw_url
+
+    # Tam URL ise path'i al
+    path = parsed_raw.path if parsed_raw.scheme else raw_url
+
+    # /pic/orig/media%2F... veya /pic/media%2F... formatini yakala
+    m = _NITTER_PIC_PATTERN.match(path)
+    if m:
+        filename = m.group(1)  # "ABCdef123.jpg"
+        # URL-encoded olabilir, decode et
+        filename = unquote(filename)
+        name_part, _, ext_part = filename.rpartition(".")
+        ext_part = ext_part.lower()
+
+        # "orig" ge�en path daha yuksek kalite
+        quality = "orig" if "/orig/" in path else "large"
+
+        return (
+            f"https://pbs.twimg.com/media/{filename}"
+            f"?format={ext_part}&name={quality}"
+        )
+
+    # Nitter host'u ile tam URL geldi ama /pic/ formati taninamadi
+    # Ornegin: https://nitter.net/pic/enc/... gibi nadir formatlar
+    if _is_nitter_url(raw_url) and "/pic/" in raw_url:
+        # Orijinal haliyle dene, belki direkt indirilir
+        return raw_url
+
+    return ""
+
+
+def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) -> list[str]:
+    """
+    Nitter tweet sayfasini ac, icerisindeki tum gorsel URL'lerini topla.
+    Oncelik sirasi: still-image > card-image > attachment gorsel
+
+    Dondurduğu liste: orijinal Twitter CDN URL'leri (pbs.twimg.com)
+    """
+    if not tweet_url or not _is_nitter_url(tweet_url):
+        return []
+
+    parsed = urlparse(tweet_url)
+    nitter_base = f"{parsed.scheme}://{parsed.netloc}"
+
+    try:
+        response = _request_with_retry(tweet_url, timeout=timeout, attempts=3, base_wait_seconds=1.8)
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+    except Exception as exc:
+        log(f"Nitter tweet sayfasi alinamadi: {tweet_url[:80]} -> {exc}", "WARNING")
+        return []
+
+    results: list[str] = []
+    seen: set[str] = set()
+
+    def _add(url: str) -> None:
+        if url and url not in seen:
+            seen.add(url)
+            results.append(url)
+
+    # 1. <a class="still-image"> href="/pic/orig/media%2F..."
+    for a_tag in soup.find_all("a", class_="still-image"):
+        href = a_tag.get("href", "")
+        resolved = _resolve_nitter_image_url(href, nitter_base)
+        if resolved:
+            _add(resolved)
+        # <img> icindeyse onu da al
+        img = a_tag.find("img")
+        if img:
+            src = img.get("src", "")
+            resolved_src = _resolve_nitter_image_url(src, nitter_base)
+            if resolved_src:
+                _add(resolved_src)
+
+    # 2. <div class="attachment image"> veya <div class="card-image">
+    for div in soup.find_all("div", class_=lambda c: c and ("attachment" in c or "card-image" in c)):
+        for img in div.find_all("img"):
+            src = img.get("src", "")
+            resolved = _resolve_nitter_image_url(src, nitter_base)
+            if resolved:
+                _add(resolved)
+        for a_tag in div.find_all("a"):
+            href = a_tag.get("href", "")
+            resolved = _resolve_nitter_image_url(href, nitter_base)
+            if resolved:
+                _add(resolved)
+
+    # 3. Tum <img> tagleri - /pic/ ile baslayan src'leri yakala
+    for img in soup.find_all("img"):
+        src = img.get("src", "")
+        if "/pic/" in src:
+            resolved = _resolve_nitter_image_url(src, nitter_base)
+            if resolved:
+                _add(resolved)
+
+    # 4. Tum <a> href'leri - /pic/orig/ ile baslayanlari yakala
+    for a_tag in soup.find_all("a", href=True):
+        href = a_tag.get("href", "")
+        if "/pic/" in href:
+            resolved = _resolve_nitter_image_url(href, nitter_base)
+            if resolved:
+                _add(resolved)
+
+    log(f"Nitter tweet sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
+    return results
+
+
 def _request_with_retry(
     url: str,
     timeout: int = 20,
@@ -214,6 +362,10 @@ def _request_with_retry(
 
 
 def _extract_image_from_entry(entry: Any) -> str:
+    """
+    RSS entry'den gorsel URL'i cikar.
+    v4.2: Nitter RSS summary HTML'i icindeki /pic/orig/... URL'leri de tanir.
+    """
     media_content = entry.get("media_content", [])
     for media in media_content:
         media_url = media.get("url", "")
@@ -256,8 +408,26 @@ def _extract_image_from_entry(entry: Any) -> str:
                     or img_tag.get("data-original", "")
                     or img_tag.get("data-full-url", "")
                 )
+                if not img_src:
+                    continue
+
+                # v4.2: Nitter /pic/ URL'lerini orijinal CDN'e cevir
+                if "/pic/" in img_src:
+                    resolved = _resolve_nitter_image_url(img_src, "")
+                    if resolved:
+                        return resolved
+
                 if img_src.startswith("http"):
                     return img_src
+
+            # v4.2: <a href="/pic/orig/..."> linkleri de dene (Nitter RSS'te gorulur)
+            for a_tag in soup.find_all("a", href=True):
+                href = a_tag.get("href", "")
+                if "/pic/" in href:
+                    resolved = _resolve_nitter_image_url(href, "")
+                    if resolved:
+                        return resolved
+
         except Exception as exc:
             log(f"Image parse warning: {exc}", "WARNING")
 
@@ -307,6 +477,12 @@ def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
     candidate = raw_url.strip()
     if not candidate:
         return ""
+
+    # v4.2: Nitter /pic/ URL'lerini burada da coz
+    if "/pic/" in candidate:
+        resolved = _resolve_nitter_image_url(candidate, page_url)
+        if resolved:
+            return resolved
 
     if candidate.startswith("//"):
         candidate = f"https:{candidate}"
@@ -360,9 +536,21 @@ def _candidate_key(url: str) -> str:
 
 
 def _looks_like_noise_image(url: str) -> bool:
+    """
+    v4.2: pbs.twimg.com/media/ URL'leri asla gurultu degil.
+    Nitter /pic/ URL'leri de gercek gorsel.
+    """
     lower_url = url.lower()
     parsed = urlparse(lower_url)
     path = parsed.path or ""
+    host = parsed.netloc or ""
+
+    # Twitter CDN ve Nitter gorsel URL'leri hic gurultu degil
+    if host in _TWITTER_CDN_HOSTS:
+        return False
+    if _is_nitter_url(lower_url) and "/pic/" in lower_url:
+        return False
+
     if any(hint in lower_url for hint in _IMAGE_NOISE_HINTS):
         return True
     if "/content/img/" in path:
@@ -371,8 +559,20 @@ def _looks_like_noise_image(url: str) -> bool:
 
 
 def _is_probable_image_url(url: str) -> bool:
+    """
+    v4.2: Nitter /pic/ ve pbs.twimg.com/media/ URL'leri taniyor.
+    """
     lower = url.lower()
     parsed = urlparse(lower)
+    host = parsed.netloc or ""
+
+    # Twitter CDN her zaman gorsel
+    if host in _TWITTER_CDN_HOSTS:
+        return True
+
+    # Nitter /pic/ her zaman gorsel
+    if _is_nitter_url(lower) and "/pic/" in lower:
+        return True
 
     if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
         return False
@@ -586,10 +786,19 @@ def _extract_script_image_urls(script_text: str, page_url: str) -> list[str]:
 
 
 def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
+    """
+    v4.2: Nitter tweet URL'i gelirse _extract_nitter_images_from_tweet_page()
+    cagrilir, normal siteler icin eski davranis korunur.
+    """
     if not url:
         return []
 
     max_candidates = _safe_int_min(max_candidates, 8, 1)
+
+    # v4.2: Nitter URL'si ise ozel fonksiyon kullan
+    if _is_nitter_url(url):
+        nitter_imgs = _extract_nitter_images_from_tweet_page(url)
+        return nitter_imgs[:max_candidates]
 
     try:
         response = _request_with_retry(url, timeout=15, attempts=2, base_wait_seconds=1.0)
@@ -823,6 +1032,12 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
         fetch_attempts, http_attempts, http_base_wait, timeout = _feed_attempt_config(feed_url)
 
+        # v4.2: Nitter feed'leri icin makale scrape her zaman aktif
+        is_nitter_source = _is_nitter_feed(feed_url)
+        effective_scrape = enable_fetch_article_image_scrape or is_nitter_source
+        if is_nitter_source and not enable_fetch_article_image_scrape:
+            log(f"{feed_name}: Nitter kaynak, gorsel scrape otomatik aktif")
+
         if feed_idx > 0:
             _sleep_between_feeds(feed_name, delay_base, delay_jitter)
 
@@ -887,7 +1102,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
                     article_image_candidates: list[str] = []
 
-                    if feed_can_scrape and enable_fetch_article_image_scrape and scraped_in_feed < max_article_scrapes_per_feed:
+                    # v4.2: effective_scrape Nitter icin her zaman True
+                    if feed_can_scrape and effective_scrape and scraped_in_feed < max_article_scrapes_per_feed:
                         article_image_candidates = extract_images_from_article(
                             link,
                             max_candidates=max_candidates_per_article,

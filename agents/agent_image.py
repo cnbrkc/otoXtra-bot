@@ -1,18 +1,25 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v5.1 FIXED)
+agents/agent_image.py - Gorsel Isleme Ajani (v5.2 - Nitter Image Fix)
+
+v5.2:
+  - FIX: _is_probable_image_url() Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
+  - FIX: _looks_like_noise() Twitter CDN ve Nitter gorsel URL'lerini koruyuyor.
+  - FIX: scrape_article_image_urls() Nitter tweet sayfalarindan gorsel cekiyor.
+  - YENI: _is_nitter_url(), _resolve_nitter_image_url(),
+          _extract_nitter_images_from_page() fonksiyonlari eklendi.
 
 v5.1 FIXED:
-  - CRITICAL FIX: Minimum image size lowered (900x500 → 738x400)
-  - CRITICAL FIX: Aspect ratio relaxed (0.8-2.1 → 0.7-2.3)
+  - CRITICAL FIX: Minimum image size lowered (900x500 -> 738x400)
+  - CRITICAL FIX: Aspect ratio relaxed (0.8-2.1 -> 0.7-2.3)
   - Better RSS feed compatibility (most feeds use 600-800px images)
 
-Degisiklikler (v5.0):
-- DonanimHaber gibi sitelerde script/json icinden gorsel URL toplama eklendi.
-- Domain-ozel URL varyant uretimi eklendi (ozellikle /src_... -> /src/ ve _0,_1,_2 ... seri denemeleri).
-- Gurultu (cookie/logo/app-banner vb.) gorseller icin daha erken ve daha net eleme eklendi.
-- picture/source[srcset] tagleri de taramaya dahil edildi.
-- Aday deneme limiti multi-image senaryoda dinamik arttirildi.
-- Kaynak tipi olarak article_script eklendi.
+v5.0:
+  - DonanimHaber gibi sitelerde script/json icinden gorsel URL toplama.
+  - Domain-ozel URL varyant uretimi.
+  - Gurultu gorseller icin daha erken eleme.
+  - picture/source[srcset] tagleri taramaya dahil edildi.
+  - Aday deneme limiti multi-image senaryoda dinamik artirildi.
+  - article_script kaynak tipi eklendi.
 """
 
 import hashlib
@@ -22,7 +29,7 @@ import re
 import tempfile
 from collections import Counter
 from typing import Optional
-from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse
+from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse, unquote
 
 import requests
 from PIL import Image, ImageDraw
@@ -42,12 +49,11 @@ _USER_AGENT = (
 _REQUEST_TIMEOUT = 15
 _MAX_DOWNLOAD_BYTES = 15 * 1024 * 1024
 
-# CRITICAL FIX v5.1: Default image validation rules (lowered for RSS feed compatibility)
-_DEFAULT_MIN_IMAGE_WIDTH = 738    # Was 900 (too strict for most RSS feeds)
-_DEFAULT_MIN_IMAGE_HEIGHT = 400    # Was 500 (too strict for most RSS feeds)
-_DEFAULT_MIN_IMAGE_AREA = 337500   # Was 450000 (738×400 minimum, relaxed to 337,500)
-_DEFAULT_MIN_ASPECT_RATIO = 0.7    # Was 0.8 (more flexible for various aspect ratios)
-_DEFAULT_MAX_ASPECT_RATIO = 2.3    # Was 2.1 (more flexible for various aspect ratios)
+_DEFAULT_MIN_IMAGE_WIDTH = 738
+_DEFAULT_MIN_IMAGE_HEIGHT = 400
+_DEFAULT_MIN_IMAGE_AREA = 337500
+_DEFAULT_MIN_ASPECT_RATIO = 0.7
+_DEFAULT_MAX_ASPECT_RATIO = 2.3
 
 _FALLBACK_BG_COLOR = (18, 25, 44)
 _FALLBACK_STRIPE_COLOR = (24, 35, 60)
@@ -80,16 +86,16 @@ _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "qua
 
 _DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
 
-# Resize only when image is too large for social platform safety limits
 _DEFAULT_PLATFORM_MAX_IMAGE_WIDTH = 4096
 _DEFAULT_PLATFORM_MAX_IMAGE_HEIGHT = 4096
 _DEFAULT_PLATFORM_MAX_IMAGE_AREA = 16_000_000
-_DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024  # 20 MB
+_DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024
 
-# Source priority: smaller is better
 _SOURCE_PRIORITY = {
     "meta_og": 0,
     "meta_twitter": 0,
+    "nitter_still": 0,       # v5.2: Nitter still-image en yuksek oncelik
+    "nitter_card": 1,        # v5.2: Nitter card image
     "article_script": 1,
     "article_img": 1,
     "article_field": 2,
@@ -101,6 +107,8 @@ _SOURCE_PRIORITY = {
 _SOURCE_SCORE_BONUS = {
     "meta_og": 12.0,
     "meta_twitter": 10.0,
+    "nitter_still": 14.0,    # v5.2: Tweet'in ana gorseli en yuksek bonus
+    "nitter_card": 10.0,     # v5.2: Tweet card gorseli
     "article_script": 8.0,
     "article_img": 7.0,
     "article_field": 4.0,
@@ -108,6 +116,13 @@ _SOURCE_SCORE_BONUS = {
     "article_candidates_field": 3.0,
     "unknown": 0.0,
 }
+
+# v5.2: Nitter sabitleri
+_NITTER_PIC_PATTERN = re.compile(
+    r"^/pic/(?:orig/)?(?:media%2F|media/)([A-Za-z0-9_\-]+\.[a-zA-Z]{3,4})",
+    re.IGNORECASE,
+)
+_TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
 
 
 def _read_int_env(name: str) -> Optional[int]:
@@ -147,6 +162,121 @@ def _safe_unlink(path: str) -> None:
         os.unlink(path)
     except OSError:
         pass
+
+
+# ── v5.2: Nitter yardimci fonksiyonlari ──────────────────────────────────────
+
+def _is_nitter_url(url: str) -> bool:
+    host = (urlparse(url).netloc or "").lower()
+    return "nitter." in host or host.startswith("nitter")
+
+
+def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
+    """
+    Nitter /pic/orig/media%2FABCdef.jpg  ->
+    https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=orig
+    """
+    if not raw_url:
+        return ""
+
+    parsed_raw = urlparse(raw_url)
+    if parsed_raw.netloc in _TWITTER_CDN_HOSTS:
+        return raw_url  # Zaten Twitter CDN
+
+    path = parsed_raw.path if parsed_raw.scheme else raw_url
+
+    m = _NITTER_PIC_PATTERN.match(path)
+    if m:
+        filename = unquote(m.group(1))
+        name_part, _, ext_part = filename.rpartition(".")
+        ext_part = ext_part.lower()
+        quality = "orig" if "/orig/" in path else "large"
+        return f"https://pbs.twimg.com/media/{filename}?format={ext_part}&name={quality}"
+
+    if _is_nitter_url(raw_url) and "/pic/" in raw_url:
+        return raw_url  # Taninamayan Nitter formati, olduğu gibi dene
+
+    return ""
+
+
+def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
+    """
+    Nitter tweet sayfasindan gorsel URL'lerini toplar.
+    Her gorsel icin {"url": ..., "source_type": "nitter_still"|"nitter_card"} dict'i doner.
+    """
+    if not tweet_url or not _is_nitter_url(tweet_url):
+        return []
+
+    parsed = urlparse(tweet_url)
+    nitter_base = f"{parsed.scheme}://{parsed.netloc}"
+
+    try:
+        response = requests.get(
+            tweet_url,
+            headers={"User-Agent": _USER_AGENT},
+            timeout=_REQUEST_TIMEOUT,
+        )
+        response.raise_for_status()
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+    except Exception as exc:
+        log(f"Nitter tweet sayfasi alinamadi: {tweet_url[:80]} -> {exc}", "WARNING")
+        return []
+
+    results: list[dict] = []
+    seen: set[str] = set()
+
+    def _add(url: str, stype: str) -> None:
+        if url and url not in seen:
+            seen.add(url)
+            results.append({"url": url, "source_type": stype})
+
+    # 1. <a class="still-image"> - tweet'in ana gorselleri
+    for a_tag in soup.find_all("a", class_="still-image"):
+        href = a_tag.get("href", "")
+        resolved = _resolve_nitter_image_url(href, nitter_base)
+        if resolved:
+            _add(resolved, "nitter_still")
+        img = a_tag.find("img")
+        if img:
+            src = img.get("src", "")
+            resolved_src = _resolve_nitter_image_url(src, nitter_base)
+            if resolved_src:
+                _add(resolved_src, "nitter_still")
+
+    # 2. card-image div'leri
+    for div in soup.find_all("div", class_=lambda c: c and ("card-image" in c or "attachment" in c)):
+        for img in div.find_all("img"):
+            src = img.get("src", "")
+            resolved = _resolve_nitter_image_url(src, nitter_base)
+            if resolved:
+                _add(resolved, "nitter_card")
+        for a_tag in div.find_all("a"):
+            href = a_tag.get("href", "")
+            resolved = _resolve_nitter_image_url(href, nitter_base)
+            if resolved:
+                _add(resolved, "nitter_card")
+
+    # 3. Tum <img> src="/pic/..."
+    for img in soup.find_all("img"):
+        src = img.get("src", "")
+        if "/pic/" in src:
+            resolved = _resolve_nitter_image_url(src, nitter_base)
+            if resolved:
+                _add(resolved, "nitter_card")
+
+    # 4. Tum <a href="/pic/...">
+    for a_tag in soup.find_all("a", href=True):
+        href = a_tag.get("href", "")
+        if "/pic/" in href:
+            resolved = _resolve_nitter_image_url(href, nitter_base)
+            if resolved:
+                _add(resolved, "nitter_card")
+
+    log(f"Nitter sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
+    return results
+
+# ─────────────────────────────────────────────────────────────────────────────
 
 
 def _get_image_validation_limits() -> dict:
@@ -231,7 +361,6 @@ def _should_resize_for_platform(image_path: str, limits: dict) -> tuple[bool, st
         return False, f"within_limits:{width}x{height}:{file_bytes // 1024}KB"
 
     except Exception as exc:
-        # If metadata cannot be read safely, keep old behavior and resize.
         return True, f"meta_read_error:{exc}"
 
 
@@ -250,6 +379,12 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     url = raw_url.strip()
     if not url:
         return ""
+
+    # v5.2: Nitter /pic/ URL'lerini coz
+    if "/pic/" in url:
+        resolved = _resolve_nitter_image_url(url, base_url)
+        if resolved:
+            return resolved
 
     if url.startswith("//"):
         url = f"https:{url}"
@@ -286,14 +421,22 @@ def _normalize_path_for_candidate_key(path: str) -> str:
 
 
 def _looks_like_noise(url: str) -> bool:
+    """
+    v5.2: pbs.twimg.com/media/ ve Nitter /pic/ URL'leri asla gurultu degil.
+    """
     lower = url.lower()
     parsed = urlparse(lower)
     path = parsed.path or ""
+    host = parsed.netloc or ""
+
+    # Twitter CDN ve Nitter gorsel URL'leri hic gurultu degil
+    if host in _TWITTER_CDN_HOSTS:
+        return False
+    if _is_nitter_url(lower) and "/pic/" in lower:
+        return False
 
     if any(hint in lower for hint in _NOISE_HINTS):
         return True
-
-    # Site-specific static asset folders that are almost never article photos
     if "/content/img/" in path:
         return True
 
@@ -301,8 +444,20 @@ def _looks_like_noise(url: str) -> bool:
 
 
 def _is_probable_image_url(url: str) -> bool:
+    """
+    v5.2: Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
+    """
     lower = url.lower()
     parsed = urlparse(lower)
+    host = parsed.netloc or ""
+
+    # Twitter CDN her zaman gorsel
+    if host in _TWITTER_CDN_HOSTS:
+        return True
+
+    # Nitter /pic/ her zaman gorsel
+    if _is_nitter_url(lower) and "/pic/" in lower:
+        return True
 
     if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
         return False
@@ -330,12 +485,10 @@ def _donanimhaber_variants(url: str) -> list[str]:
     if "donanimhaber.com" not in host:
         return variants
 
-    # src_340x1912x... gibi kaliplari /src/... formuna cevir
     upgraded_path = re.sub(r"/src_\d{2,4}x\d{2,4}x", "/src/", path, flags=re.IGNORECASE)
     if upgraded_path != path:
         variants.append(urlunparse(parsed._replace(path=upgraded_path)))
 
-    # 204564_0.jpg -> 204564_1.jpg ... 204564_5.jpg
     m_idx = re.search(r"(\d{4,7})_(\d+)(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
     if m_idx:
         base_id = m_idx.group(1)
@@ -345,7 +498,6 @@ def _donanimhaber_variants(url: str) -> list[str]:
             p = f"{prefix}{base_id}_{i}{ext}"
             variants.append(urlunparse(parsed._replace(path=p)))
 
-    # 204564.jpg -> 204564_0.jpg ... 204564_5.jpg
     m_plain = re.search(r"(\d{4,7})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", path, re.IGNORECASE)
     if m_plain:
         base_id = m_plain.group(1)
@@ -365,6 +517,11 @@ def _donanimhaber_variants(url: str) -> list[str]:
 
 
 def _thumbnail_to_original_variants(url: str) -> list[str]:
+    # Twitter CDN URL'leri icin variant uretme - zaten orijinal
+    parsed_check = urlparse(url)
+    if parsed_check.netloc in _TWITTER_CDN_HOSTS:
+        return [url]
+
     variants: list[str] = [url]
     parsed = urlparse(url)
     path = parsed.path or ""
@@ -391,7 +548,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if filename_cleaned_path != path:
         variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
 
-    # Domain specific expansions
     for v in list(variants):
         for dv in _donanimhaber_variants(v):
             variants.append(dv)
@@ -523,7 +679,6 @@ def _extract_json_image_urls(script_text: str) -> list[str]:
     except Exception:
         pass
 
-    # JSON tam parse edilemezse bile URL regex fallback
     for m in re.finditer(r'https?://[^\s"\'<>]+?\.(?:jpg|jpeg|png|webp|gif|bmp|avif)', text, re.IGNORECASE):
         urls.append(m.group(0))
     return urls
@@ -927,8 +1082,31 @@ def download_image(image_url: str) -> Optional[str]:
 
 
 def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
+    """
+    v5.2: Nitter URL'si gelirse _extract_nitter_images_from_page() kullanilir.
+    Normal siteler icin eski BeautifulSoup logici korunur.
+    """
     if not url:
         return []
+
+    # v5.2: Nitter URL'si ise ozel fonksiyon
+    if _is_nitter_url(url):
+        nitter_results = _extract_nitter_images_from_page(url)
+        pool: list[dict] = []
+        for item in nitter_results[:max_candidates]:
+            candidate_url = item.get("url", "")
+            stype = item.get("source_type", "nitter_still")
+            if candidate_url:
+                _upsert_candidate(
+                    pool,
+                    {
+                        "url": candidate_url,
+                        "key": _candidate_key(candidate_url),
+                        "source_type": stype,
+                        "priority": _SOURCE_PRIORITY.get(stype, 0),
+                    },
+                )
+        return pool
 
     try:
         log(f"Sayfadan gorsel adaylari araniyor: {url[:100]}")
@@ -941,7 +1119,7 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
         response.raise_for_status()
 
         soup = BeautifulSoup(response.text, "html.parser")
-        pool: list[dict] = []
+        pool_normal: list[dict] = []
 
         meta_selectors = [
             ('meta[property="og:image"]', "content", "meta_og"),
@@ -951,9 +1129,8 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
         ]
         for selector, attr, source_type in meta_selectors:
             for tag in soup.select(selector):
-                _add_scrape_candidate(pool, tag.get(attr, ""), url, source_type)
+                _add_scrape_candidate(pool_normal, tag.get(attr, ""), url, source_type)
 
-        # img tagleri
         for img in soup.find_all("img"):
             src_list = [
                 img.get("src", ""),
@@ -970,25 +1147,23 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                     src_list.append(best_srcset)
 
             for src in src_list:
-                _add_scrape_candidate(pool, src, url, "article_img")
+                _add_scrape_candidate(pool_normal, src, url, "article_img")
 
-        # picture/source srcset
         for source in soup.find_all("source"):
             srcset = source.get("srcset", "") or source.get("data-srcset", "")
             if srcset:
                 best_srcset = _extract_best_src_from_srcset(srcset, url)
                 if best_srcset:
-                    _add_scrape_candidate(pool, best_srcset, url, "article_img")
+                    _add_scrape_candidate(pool_normal, best_srcset, url, "article_img")
 
-        # script JSON + regex fallback
         for script in soup.find_all("script"):
             script_text = script.string or script.get_text() or ""
             if not script_text.strip():
                 continue
             for script_url in _extract_json_image_urls(script_text):
-                _add_scrape_candidate(pool, script_url, url, "article_script")
+                _add_scrape_candidate(pool_normal, script_url, url, "article_script")
 
-        ordered = sorted(pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
+        ordered = sorted(pool_normal, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
         cleaned = ordered[:max_candidates]
 
         log(f"Sayfadan {len(cleaned)} gorsel adayi bulundu")
@@ -1051,19 +1226,24 @@ def prepare_images(article: dict) -> list[str]:
     if max_images_per_news < 1:
         max_images_per_news = 1
 
-    # Multi-image durumunda deneme limiti otomatik artsin.
     effective_try_limit = max_candidates_to_try * max(1, min(max_images_per_news, 4))
     effective_try_limit = max(effective_try_limit, max_candidates_to_try)
     effective_try_limit = min(effective_try_limit, 60)
 
     article_title = article.get("title", "")[:120]
+    article_link = article.get("link", "")
+
+    # v5.2: Nitter kaynagi ise scrape her zaman aktif
+    is_nitter_article = _is_nitter_url(article_link)
+    effective_scrape = enable_selected_article_scrape or is_nitter_article
+
     log("-" * 40)
     log(f"Gorsel hazirlama basladi: {article_title}")
     log(
         f"Image limits: max_images_per_news={max_images_per_news} ({source}), "
         f"max_candidates_to_try={max_candidates_to_try}, effective_try_limit={effective_try_limit}, "
         f"perceptual_threshold={perceptual_threshold}, "
-        f"selected_article_scrape={enable_selected_article_scrape}"
+        f"selected_article_scrape={effective_scrape} (nitter={is_nitter_article})"
     )
     log(
         "Validation limits: "
@@ -1080,12 +1260,12 @@ def prepare_images(article: dict) -> list[str]:
     used_sources: list[str] = []
 
     candidate_pool = _collect_article_candidates(article, effective_try_limit)
-    if enable_selected_article_scrape and article.get("can_scrape_image", True) and article.get("link", ""):
-        log("Secilen haber icin sayfa gorsel scrape aktif")
-        for c in scrape_article_image_urls(article.get("link", ""), max_candidates=effective_try_limit):
+    if effective_scrape and article.get("can_scrape_image", True) and article_link:
+        log(f"Secilen haber icin sayfa gorsel scrape aktif (nitter={is_nitter_article})")
+        for c in scrape_article_image_urls(article_link, max_candidates=effective_try_limit):
             _upsert_candidate(candidate_pool, c)
-    elif not enable_selected_article_scrape:
-        log("Secilen haber sayfa gorsel scrape kapali (ENABLE_ARTICLE_IMAGE_SCRAPE=false)", "INFO")
+    elif not effective_scrape:
+        log("Secilen haber sayfa gorsel scrape kapali", "INFO")
 
     candidate_pool = sorted(candidate_pool, key=lambda x: (int(x.get("priority", 99)), x.get("url", "")))
     candidate_pool = candidate_pool[:effective_try_limit]
@@ -1100,7 +1280,6 @@ def prepare_images(article: dict) -> list[str]:
     accepted: list[dict] = []
     retry_relaxed_pool: list[dict] = []
 
-    # Pass-1: strict
     for idx, candidate in enumerate(candidate_pool, start=1):
         candidate_url = candidate.get("url", "")
         source_type = candidate.get("source_type", "unknown")
@@ -1202,7 +1381,6 @@ def prepare_images(article: dict) -> list[str]:
             log(f"Aday islenemedi: {exc}", "WARNING")
             _safe_unlink(downloaded)
 
-    # Pass-2: strict yetmediyse controlled relaxed
     if len(accepted) < max_images_per_news and retry_relaxed_pool:
         relaxed_limits = _build_relaxed_limits(limits)
         relaxed_threshold = max(2, perceptual_threshold - 2)
@@ -1276,7 +1454,7 @@ def prepare_images(article: dict) -> list[str]:
                     source_type=source_type,
                     target_ratio=target_ratio,
                 )
-                score = max(0.0, score - 7.0)  # relaxed pass penalty
+                score = max(0.0, score - 7.0)
 
                 accepted.append(
                     {
@@ -1400,13 +1578,13 @@ if __name__ == "__main__":
 
     fake_article = {
         "title": "Test: Yeni Elektrikli SUV Turkiye'de Satisa Cikti",
-        "link": "https://www.ntv.com.tr/",
+        "link": "https://nitter.net/murattosunMSE/status/1234567890",
         "summary": "Test ozet metni.",
         "image_url": "",
         "rss_image_url": "",
         "image_candidates": [],
-        "source_name": "Test Kaynak",
-        "source_priority": "high",
+        "source_name": "MuratTosun",
+        "source_priority": "medium",
         "can_scrape_image": True,
         "score": 78,
     }
@@ -1449,18 +1627,6 @@ if __name__ == "__main__":
         log(f"Gorsel adet: {output.get('image_count', 0)}")
         log(f"Kaynak     : {output.get('image_source', 'YOK')}")
         log(f"Post metni : {len(output.get('post_text', ''))} karakter")
-
-        image_paths = output.get("image_paths", [])
-        if image_paths:
-            for idx, path in enumerate(image_paths, start=1):
-                if path and os.path.exists(path):
-                    size_kb = os.path.getsize(path) // 1024
-                    log(f"Gorsel {idx}: {path} ({size_kb} KB)")
-                else:
-                    log(f"Gorsel {idx}: dosya bulunamadi -> {path}", "WARNING")
-        else:
-            log("Hazirlanan gorsel yok", "WARNING")
-
         log("-" * 50)
     else:
         log("Ajan basarisiz oldu", "WARNING")
