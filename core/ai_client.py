@@ -503,42 +503,56 @@ def _try_raw_decode_stream(text: str):
 
 def _extract_json_after_thinking(text: str) -> Optional[str]:
     """
-    v5.3 FIX: Gemini thinking/reasoning modellerinde metin + JSON karisik gelir.
+    v5.4 FIX (Codex P2): Gemini thinking/reasoning modellerinde metin + JSON
+    karisik gelir. Onceki surum rfind() ile en son '[' ve en son '{' pozisyonunu
+    karsilastirip max() aliyordu. Bu, su senaryoda bozuluyordu:
+
+      "...thinking [some list] ... [{"sira":1,...},{"sira":2,...}]"
+
+    Thinking metnindeki '[' ve array icindeki son '{' konumu karsilasinca
+    max() array basindaki '[' yerine son objenin '{' karakterini seciyordu.
+    Sonuc: tum array yerine sadece son obje cekiliyordu, geri kalan haberler
+    fallback skoruyla isleniyordu.
+
+    Yeni strateji - sondan geriye tara:
+      1. Metni sondan basina dogru tara.
+      2. Ilk karsilasilan '}' veya ']' kapanisini bul.
+      3. O kapanisin eslestigi acilis karakterine ('{' veya '[') kadar geri git.
+      4. Bulunan tam blogu dondur — boylece array disindaki thinking metni
+         ve array icindeki ara '{' karakterleri secimleri bozmaz.
+
     Ornek:
-      "... guncellik`: 14 (max 15)\n    *   Sum: 94...\n\n[\n  {\"sira\": 1, ...}\n]"
-
-    Bu fonksiyon son JSON blogunu bulur - thinking metni oncesindeki kirli
-    kismi atar, JSON'u dondurur.
-
-    Strateji:
-      1. En son '[' veya '{' karakterinden baslayan blogu bul
-      2. Balanced bracket check ile gecerli JSON'u ayikla
+      "...thinking metni... [{"sira":1},{"sira":2}]"
+                            ^--- bu '[' secilir, tum array doner
     """
     if not text:
         return None
 
-    # Son JSON array [ veya object { baslangicini bul
-    # Oncelik: array (scorer her zaman array dondurur)
-    last_array_start = text.rfind("[")
-    last_obj_start = text.rfind("{")
+    # Sondan geriye tara: ilk gecerli kapanisi bul
+    closer_pos = -1
+    closer_char = None
+    for i in range(len(text) - 1, -1, -1):
+        if text[i] in ("]", "}"):
+            closer_pos = i
+            closer_char = text[i]
+            break
 
-    start = max(last_array_start, last_obj_start)
-    if start == -1:
+    if closer_pos == -1:
         return None
 
-    # Bu noktadan sona kadar dengeyi kontrol et
-    snippet = text[start:]
-    depth = 0
-    opener_char = snippet[0]
-    closer_char = "]" if opener_char == "[" else "}"
+    opener_char = "[" if closer_char == "]" else "{"
 
-    for i, ch in enumerate(snippet):
-        if ch == opener_char:
+    # Bu kapanisten geriye giderek eslesen acilanı bul
+    depth = 0
+    for i in range(closer_pos, -1, -1):
+        ch = text[i]
+        if ch == closer_char:
             depth += 1
-        elif ch == closer_char:
+        elif ch == opener_char:
             depth -= 1
             if depth == 0:
-                return snippet[: i + 1].strip()
+                snippet = text[i: closer_pos + 1].strip()
+                return snippet if snippet else None
 
     return None
 
