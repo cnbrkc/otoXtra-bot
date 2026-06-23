@@ -1,22 +1,41 @@
 {
-  "run_id": "2026-06-23-14:17",
+  "run_id": "2026-06-23-17:49",
   "status": "completed",
-  "started_at": "2026-06-23T14:17:32.014053+03:00",
-  "updated_at": "2026-06-23T14:18:45.402157+03:00",
+  "started_at": "2026-06-23T17:49:47.234834+03:00",
+  "updated_at": "2026-06-23T17:51:34.925505+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "BMW: Elektrikli M3 için öncelik sürüş tecrübesi",
-            "link": "https://tr.motor1.com/news/799521/bmw-elektrikli-m3-surus-tecrubesi/",
-            "published": "2026-06-23T08:00:00+00:00",
-            "summary": "Seneye gelecek model için \"hype\" çalışmaları başladı",
-            "image_url": "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg",
+            "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
+            "link": "https://www.donanimhaber.com/avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi--207193",
+            "published": "2026-06-23T11:49:00+00:00",
+            "summary": "Avrupa otomotiv pazarında elektrikli araçların yükselişi sürerken Çinli üreticiler satışlarını katladı. Leapmotor, BYD ve Chery güçlü büyüme yakalarken benzinli ve dizel araçların payı geriledi.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg"
+              "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "avrupa-cin-kirdi-otomotiv-pazarinda-rekor-ruzgari-satislar"
+          },
+          {
+            "title": "Jeep'in yeni dayanıklı SUV'sine ilk bakış geldi!",
+            "link": "https://tr.motor1.com/news/799566/jeep-cherokee-trailhawk-teaser-2026/",
+            "published": "2026-06-23T14:00:00+00:00",
+            "summary": "Jeep Cherokee Trailhawk, yükseltilmiş bir süspansiyon ve alt koruma plakaları gibi arazi odaklı yükseltmeler içerecek.",
+            "image_url": "https://cdn.motor1.com/images/mgl/6Z8Pg7/s3/2027-jeep-cherokee-trailhawk.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8Pg7/s3/2027-jeep-cherokee-trailhawk.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/6Z8Pg7/s3/2027-jeep-cherokee-trailhawk.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -25,17 +44,17 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-elektrikli-oncelik-surus-tecrubesi"
+            "topic_fingerprint": "bakis-dayanikli-jeep-sine-suv"
           },
           {
-            "title": "Ford Mustang Mach-E'nin sonu mu geliyor?",
-            "link": "https://tr.motor1.com/news/799517/mustang-mache-uretimden-kalkiyor-mu/",
-            "published": "2026-06-23T07:00:00+00:00",
-            "summary": "Değişim süreci başladı.",
-            "image_url": "https://cdn.motor1.com/images/mgl/zxqkVK/s3/2025-ford-mustang-mach-e-with-sport-appearance-package.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/zxqkVK/s3/2025-ford-mustang-mach-e-with-sport-appearance-package.jpg",
+            "title": "Toyota'dan Proace City'e özel finansman fırsatları!",
+            "link": "https://tr.motor1.com/news/799540/toyota-proace-city-finansman-firsatlari/",
+            "published": "2026-06-23T11:30:00+00:00",
+            "summary": "10.000 TL peşinata Proace City sahibi olma fırsatı.",
+            "image_url": "https://cdn.motor1.com/images/mgl/RqkZzA/s3/toyota-proace-city.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/RqkZzA/s3/toyota-proace-city.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/zxqkVK/s3/2025-ford-mustang-mach-e-with-sport-appearance-package.jpg"
+              "https://cdn.motor1.com/images/mgl/RqkZzA/s3/toyota-proace-city.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -44,13 +63,32 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "ford-geliyor-mach-mustang-sonu"
+            "topic_fingerprint": "city-finansman-firsatlari-ozel-proace-toyota"
           },
           {
-            "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-            "link": "https://nitter.net/eozpeynirci/status/2069375199355498512#m",
-            "published": "2026-06-23T11:01:09+00:00",
-            "summary": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
+            "title": "Haftanın değerlendirmesi‼️ Haziranda otomotivde yeni rekor mu geliyor? 📌 Satışları artıran gerçek sebep ne? 📌 7 Temmuz öncesi kimlerin elinde stok var? 📌 Rekabet fiyatları aşağı çekerken tüketici ne yapmalı? 📌 Avrupa’da elektrikli araçlar hızlanırken, içten yanmalı modeller Türkiye’ye akmaya devam eder mi? 📌 Yeni yatırım gelmiyorsa mevcut üreticileri daha güçlü desteklemek gerekmez mi? 📌 2. elde fiyatlar da satışlar da neden düşüyor? Pazarda görünen hareketlilik aslında çok daha büyük bir dönüşümün işareti. Hepsi ve daha fazlası haftanın değerlendirmesinde 👇 @GazeteOksijen @CastrolTurkiye https://youtu.be/J3Vcoj-hjCU?si=gib2SmavZyHZIpR8",
+            "link": "https://nitter.net/eozpeynirci/status/2069423106788032692#m",
+            "published": "2026-06-23T14:11:31+00:00",
+            "summary": "Haftanın değerlendirmesi‼️ Haziranda otomotivde yeni rekor mu geliyor? 📌 Satışları artıran gerçek sebep ne? 📌 7 Temmuz öncesi kimlerin elinde stok var? 📌 Rekabet fiyatları aşağı çekerken tüketici ne yapmalı? 📌 Avrupa’da elektrikli araçlar hızlanırken, içten yanmalı modeller Türkiye’ye akmaya devam eder mi? 📌 Yeni yatırım gelmiyorsa mevcut üreticileri daha güçlü desteklemek gerekmez mi? 📌 2. elde fiyatlar da satışlar da neden düşüyor? Pazarda görünen hareketlilik aslında çok daha büyük bir dönüşümün işareti. Hepsi ve daha fazlası haftanın değerlendirmesinde 👇 @GazeteOksijen @CastrolTurkiye piped.video/J3Vcoj-hjCU?si=gib2… Video",
+            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2069423025137610752%2Fimg%2F3tm-FPxIhiUg_E28.jpg",
+            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2069423025137610752%2Fimg%2F3tm-FPxIhiUg_E28.jpg",
+            "image_candidates": [
+              "https://nitter.net/pic/amplify_video_thumb%2F2069423025137610752%2Fimg%2F3tm-FPxIhiUg_E28.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "akmaya-araclar-artiran-asagi-aslinda-avrupa-castrolturkiye-cekerken-degerlendirmesi-degerlendirmesinde-desteklemek-devam-donusumun-dusuyor-eder-elde-elektrikli-elinde-fazlasi-fiyatlar-fiyatlari-gazeteoksijen-geliyor-gelmiyorsa-gercek-gerekmez-gib2smavzyhzipr8-gorunen-guclu-haftanin-haftanin-hareketlilik-haziranda-hepsi-hizlanirken-hjcu-https-icten-isareti-j3vcoj-kimlerin-mevcut-modeller-neden-oncesi-otomotivde-pazarda-rekabet-rekor-satislar-satislari-sebep-stok-temmuz-tuketici-turkiye-ureticileri-var-yanmali-yapmali-yatirim-youtu"
+          },
+          {
+            "title": "Avrupa'da Tesla ve Çinli etkisi... Mayısta Avrupa'da hem pazarın hem elektrikli otomobil satışlarının büyümesine en büyük katkıyı Tesla ve Çinli markalardan geldi. Tesla'nın Avrupa'daki satışları mayısta %107,9 artarken, Çinli markalar Avrupa pazarında ilk kez %10,7 pazar payına ulaştı. * Leapmotor: +%465,1 * Chery: +%244,1 * BYD: +%136,6 * Geely: +%12,6 * SAIC (MG): +%13,9 Çinli markalar artık yalnızca elektrikli otomobillerle değil, hibrit ve şarj edilebilir hibrit modellerle de büyüyor. Avrupa markaları ise zorlanıyor. Elektrikli pazar büyüse de geleneksel Avrupalı üreticiler aynı hızda büyüyemedi. Mayısta Renault, Volkswagen Grubu ve Stellantis gibi büyük üreticilerin satışları yaklaşık %1-3 arasında geriledi.",
+            "link": "https://nitter.net/eozpeynirci/status/2069387674662719862#m",
+            "published": "2026-06-23T11:50:43+00:00",
+            "summary": "Avrupa'da Tesla ve Çinli etkisi... Mayısta Avrupa'da hem pazarın hem elektrikli otomobil satışlarının büyümesine en büyük katkıyı Tesla ve Çinli markalardan geldi. Tesla'nın Avrupa'daki satışları mayısta %107,9 artarken, Çinli markalar Avrupa pazarında ilk kez %10,7 pazar payına ulaştı. * Leapmotor: +%465,1 * Chery: +%244,1 * BYD: +%136,6 * Geely: +%12,6 * SAIC (MG): +%13,9 Çinli markalar artık yalnızca elektrikli otomobillerle değil, hibrit ve şarj edilebilir hibrit modellerle de büyüyor. Avrupa markaları ise zorlanıyor. Elektrikli pazar büyüse de geleneksel Avrupalı üreticiler aynı hızda büyüyemedi. Mayısta Renault, Volkswagen Grubu ve Stellantis gibi büyük üreticilerin satışları yaklaşık %1-3 arasında geriledi. Emre Özpeynirci (@eozpeynirci) Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs — https://nitter.net/eozpeynirci/status/2069375199355498512#m",
             "image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
             "rss_image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
             "image_candidates": [
@@ -63,26 +101,45 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "araclardan-araclarin-artis-artti-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayi-ayinda-ayinda-basti-belirleniyor-benzinlinin-bunun-buyudu-buyumenin-buyurken-cikiyor-dahil-degil-dizelin-donusumun-durumda-durumda-dusuk-dusuk-dusuk-dusuk-duzeni-ebs-edildiginde-edilebilir-eklendiginde-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-elektrikliler-emisyon-emisyonlu-emisyonlu-emisyonlu-emisyonlu-erolsahin-farkli-frene-gaza-gelmis-geriledi-geriledi-gosteriyor-gunu-hale-hedefleri-hibrit-hibrit-hibrit-hibritler-incilige-inmis-ise-ise-ise-ise-ise-ise-ise-ise-kaldi-kaydiriyor-mayis-mayista-mayista-mayista-mayista-modellere-nedeniyle-neredeyse-oldugunu-ona-otomobil-otomobil-otomobil-otomobil-otomobilden-otomobilin-pay-payi-payi-payi-payi-payi-pazar-pazar-pazar-pazari-pazarinda-regulasyonlarin-sarj-satilan-satilan-satislari-satislari-satislari-satislarini-sifir-sifir-sifir-sikilastikca-siradayiz-sonucu-sonunda-sonunda-tablo-tablo-tam-tamami-tercih-tesvikler-turkiye-turkiye-turkiye-ulasti-ulke-unculuga-unculukten-unculukten-ureticiler-verdigi-yaklasik-yalnizca-yilin-yilin-yon-yukseldi"
+            "topic_fingerprint": "107-136-244-465-artarken-avrupa-avrupa-avrupa-avrupa-avrupa-avrupali-ayni-buyumesine-buyuse-buyuyemedi-buyuyor-byd-chery-cinli-cinli-cinli-cinli-degil-edilebilir-elektrikli-elektrikli-elektrikli-etkisi-geely-geleneksel-geriledi-grubu-hem-hem-hibrit-hibrit-hizda-ise-katkiyi-kez-leapmotor-markalar-markalar-markalardan-markalari-mayista-mayista-mayista-modellerle-otomobil-otomobillerle-payina-pazar-pazar-pazarin-pazarinda-renault-saic-sarj-satislari-satislari-satislarinin-stellantis-tesla-tesla-tesla-ulasti-ureticiler-ureticilerin-volkswagen-yaklasik-yalnizca-zorlaniyor"
           },
           {
-            "title": "BYD'nin 900 km menzil ve 9 dakikada şarj imkanı sunacak yeni elektrikli sedanı haftaya satışa çıkıyor. 2 Temmuz'da önce Çin'de siparişe açılacak Seal 08, 5,15 metrelik uzunluğu, 92,1 kWh ikinci nesil Blade bataryası, 5 dakika şarjla 400 km menzile imkan tanıyan şarj performansı ve yeni Ocean Aesthetics 2.0 dizayn anlayışının bir ürünü olan iç ve dış tasarımı dikkat çekiyor. 76,7 kWh bataryalı giriş seviye versiyonu yaklaşık 36 bin dolar seviyesinden alıcı bulacak BYD Seal 08, ayrıca DiSus-A gelişmiş akıllı süspansiyon sistemi, sürüş performansını artıracak arka tekerden dönüş fonksiyonu ve 45,4 kWh bataryalı prizli hibrit opsiyonuyla gelecek.",
-            "link": "https://nitter.net/DoluBatarya/status/2069343548441231816#m",
-            "published": "2026-06-23T08:55:23+00:00",
-            "summary": "BYD'nin 900 km menzil ve 9 dakikada şarj imkanı sunacak yeni elektrikli sedanı haftaya satışa çıkıyor. 2 Temmuz'da önce Çin'de siparişe açılacak Seal 08, 5,15 metrelik uzunluğu, 92,1 kWh ikinci nesil Blade bataryası, 5 dakika şarjla 400 km menzile imkan tanıyan şarj performansı ve yeni Ocean Aesthetics 2.0 dizayn anlayışının bir ürünü olan iç ve dış tasarımı dikkat çekiyor. 76,7 kWh bataryalı giriş seviye versiyonu yaklaşık 36 bin dolar seviyesinden alıcı bulacak BYD Seal 08, ayrıca DiSus-A gelişmiş akıllı süspansiyon sistemi, sürüş performansını artıracak arka tekerden dönüş fonksiyonu ve 45,4 kWh bataryalı prizli hibrit opsiyonuyla gelecek.",
-            "image_url": "https://pbs.twimg.com/media/HLfHUxSbMAA4UbF.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HLfHUxSbMAA4UbF.jpg?format=jpg&name=large",
+            "title": "Türkiye'de 5 ayda her 1000 kişiden sadece 4'ü yeni otomobil alabilmiş... Avrupa'da ilk 6'dayız ama kişi başına satışta sonlardayız‼️ Avrupa'da otomobil satışları yılın ilk 5 ayında %4,5 büyürken, Türkiye'de pazar %10'a yakın daraldı. Buna rağmen Türkiye, 356 bin adetlik satışla Avrupa'nın en büyük 6. otomobil pazarı olmayı sürdürdü. Ancak 2025'te bazı aylarda geride bıraktığımız İspanya ile aradaki fark hızla açılıyor. Asıl dikkat çekici tablo ise kişi başına satışta ortaya çıkıyor. 86 milyon nüfusa rağmen, ilk 5 ayda Türkiye'de 1000 kişiye sadece 4,13 otomobil satıldı. Bu oranla Avrupa'da 32 ülke arasında 30. sıradayız. Bizden daha düşük seviyede kalan sadece ikinci el ithalatının serbest olduğu Bulgaristan ve Romanya. Yani Türkiye, toplam satış adedinde Avrupa'nın büyük pazarlarından biri olsa da, kişi başına otomobil satışında hala Avrupa'nın en zayıf pazarları arasında yer alıyor. Bu da pazarın uzun vadede önemli bir büyüme potansiyeli taşıdığını, ancak bunun gerçekleşmesinin gelir seviyesi, krediye erişim ve vergi politikalarına bağlı olduğunu gösteriyor. @erolsahin_ebs",
+            "link": "https://nitter.net/eozpeynirci/status/2069380506844553565#m",
+            "published": "2026-06-23T11:22:14+00:00",
+            "summary": "Türkiye'de 5 ayda her 1000 kişiden sadece 4'ü yeni otomobil alabilmiş... Avrupa'da ilk 6'dayız ama kişi başına satışta  sonlardayız‼️ Avrupa'da otomobil satışları yılın ilk 5 ayında %4,5 büyürken, Türkiye'de pazar %10'a yakın daraldı. Buna rağmen Türkiye, 356 bin adetlik satışla Avrupa'nın en büyük 6. otomobil pazarı olmayı sürdürdü. Ancak 2025'te bazı aylarda geride bıraktığımız İspanya ile aradaki fark hızla açılıyor. Asıl dikkat çekici tablo ise kişi başına satışta ortaya çıkıyor. 86 milyon nüfusa rağmen, ilk 5 ayda Türkiye'de 1000 kişiye sadece 4,13 otomobil satıldı. Bu oranla Avrupa'da 32 ülke arasında 30. sıradayız. Bizden daha düşük seviyede kalan sadece ikinci el ithalatının serbest olduğu Bulgaristan ve Romanya. Yani Türkiye, toplam satış adedinde Avrupa'nın büyük pazarlarından biri olsa da, kişi başına otomobil satışında hala Avrupa'nın en zayıf pazarları arasında yer alıyor. Bu da pazarın uzun vadede önemli bir büyüme potansiyeli taşıdığını, ancak bunun gerçekleşmesinin gelir seviyesi, krediye erişim ve vergi politikalarına bağlı olduğunu gösteriyor. @erolsahin_ebs",
+            "image_url": "https://pbs.twimg.com/media/HLfqb-qXIAA-ba1.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HLfqb-qXIAA-ba1.jpg?format=jpg&name=large",
             "image_candidates": [
-              "https://pbs.twimg.com/media/HLfHUxSbMAA4UbF.jpg?format=jpg&name=large"
+              "https://pbs.twimg.com/media/HLfqb-qXIAA-ba1.jpg?format=jpg&name=large"
             ],
             "image_source": "rss",
-            "source_name": "Dolu Batarya",
+            "source_name": "Emre Ozpeynirci",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "400-900-acilacak-aesthetics-akilli-alici-anlayisinin-arka-artiracak-ayrica-bataryali-bataryali-bataryasi-bin-blade-bulacak-byd-byd-cekiyor-cikiyor-cin-dakika-dakikada-dikkat-dis-disus-dizayn-dolar-donus-elektrikli-fonksiyonu-gelecek-gelismis-giris-haftaya-hibrit-ikinci-imkan-imkani-kwh-kwh-kwh-menzil-menzile-metrelik-nesil-ocean-opsiyonuyla-performansi-performansini-prizli-sarj-sarj-sarjla-satisa-seal-seal-sedani-seviye-seviyesinden-siparise-sistemi-sunacak-surus-suspansiyon-taniyan-tasarimi-tekerden-temmuz-urunu-uzunlugu-versiyonu-yaklasik"
+            "topic_fingerprint": "1000-1000-2025-356-aciliyor-adedinde-adetlik-alabilmis-aliyor-aradaki-asil-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayinda-aylarda-bagli-basina-basina-basina-bazi-bin-biraktigimiz-biri-bizden-bulgaristan-buna-bunun-buyume-buyurken-cekici-cikiyor-daraldi-dayiz-dikkat-dusuk-ebs-erisim-erolsahin-fark-gelir-gerceklesmesinin-geride-gosteriyor-hala-hizla-ikinci-ise-ithalatinin-kalan-kisi-kisi-kisi-kisiden-kisiye-krediye-milyon-nufusa-oldugu-oldugunu-olmayi-olsa-onemli-oranla-ortaya-otomobil-otomobil-otomobil-otomobil-otomobil-pazar-pazari-pazarin-pazarlari-pazarlarindan-politikalarina-potansiyeli-ragmen-ragmen-romanya-satildi-satis-satisinda-satisla-satislari-satista-satista-serbest-seviyede-seviyesi-siradayiz-sonlardayiz-spanya-surdurdu-tablo-tasidigini-toplam-turkiye-turkiye-turkiye-turkiye-turkiye-ulke-uzun-vadede-vergi-yakin-yani-yer-yilin-zayif"
+          },
+          {
+            "title": "2. el otomobil pazarı son iki yılın en düşük adetlerini gördü 🚗⤵️ 🚘 Mayıs ayında 2. el otomobil pazarı %22.1 daralarak 503 bin adede geriledi ve son 23 ayın en düşük seviyesini gördü. 🚘 Bu sert düşüşte uzun tatil dönemiyle işlem günlerinin azalması ve sıfır km araçlardaki agresif kampanyalar belirleyici oldu. Buna karşılık yılın ilk 5 ayında; 356 bin sıfır km otomobile karşılık ➡️ 2. el otomobil satışları 2.8 milyon adedin üzerine çıktı. 📉 Gidişat sıfır km otomobillerde stok baskısıyla kampanyaların yıla yayılacağını ve 2. elde fiyatların enflasyonun altında kalmaya devam edeceğini gösteriyor.",
+            "link": "https://nitter.net/taylandil/status/2069405210728894612#m",
+            "published": "2026-06-23T13:00:24+00:00",
+            "summary": "2. el otomobil pazarı son iki yılın en düşük adetlerini gördü 🚗⤵️ 🚘 Mayıs ayında 2. el otomobil pazarı %22.1 daralarak 503 bin adede geriledi ve son 23 ayın en düşük seviyesini gördü. 🚘 Bu sert düşüşte uzun tatil dönemiyle işlem günlerinin azalması ve sıfır km araçlardaki agresif kampanyalar belirleyici oldu. Buna karşılık yılın ilk 5 ayında; 356 bin sıfır km otomobile karşılık ➡️ 2. el otomobil satışları 2.8 milyon adedin üzerine çıktı. 📉 Gidişat sıfır km otomobillerde stok baskısıyla kampanyaların yıla yayılacağını ve 2. elde fiyatların enflasyonun altında kalmaya devam edeceğini gösteriyor.",
+            "image_url": "https://pbs.twimg.com/media/HLgA6j7XMAAPWk1.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HLgA6j7XMAAPWk1.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HLgA6j7XMAAPWk1.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "TaylanOzgurDil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "356-503-adede-adedin-adetlerini-agresif-altinda-araclardaki-ayin-ayinda-ayinda-azalmasi-baskisiyla-belirleyici-bin-bin-buna-daralarak-devam-donemiyle-dusuk-dusuk-dususte-edecegini-elde-enflasyonun-fiyatlarin-geriledi-gidisat-gordu-gordu-gosteriyor-gunlerinin-iki-islem-kalmaya-kampanyalar-kampanyalarin-karsilik-karsilik-mayis-milyon-otomobil-otomobil-otomobil-otomobile-otomobillerde-pazari-pazari-satislari-sert-seviyesini-sifir-sifir-sifir-stok-tatil-uzerine-uzun-yayilacagini-yila-yilin-yilin"
           },
           {
             "title": "AB’den Çinli araçlara ‘Türkiye’ tarifesi geliyor Elektrikliden sonra sıra PHEV’lerde 🔌 🇪🇺 Avrupa Komisyonu, Çinli markaların elektrikli araçlara getirilen ek vergileri şarj edilebilir hibrit (PHEV) modellerle aşmasını engellemek için bu araçlara da ek vergi getirmeyi değerlendiriyor. 🇨🇳 Çünkü satışlar çok hızlı büyüyor. Mayıs itibarıyla Avrupa’nın en çok satan PHEV modeli BYD Seal U. Çinli markaların Avrupa’da elektrikli satışları %105, PHEV satışları %200’ün üzerinde arttı. ➡️ Türkiye Eylül 2024’te AB ve STA ülkeleri dışından gelen elektrikli araçlara uygulanan zorlayıcı şartlar PHEV’leri de kapsayacak şekilde genişletmişti. Böylece Çin’den benzinli/dizel ve klasik hibrit dışındaki araçları Türkiye’ye getirmek imkânsız hale geldi. BYD’nin yol ayrımı 🚘 Bu karardan en çok etkilenecek marka BYD olacak. Bu yüzden BYD’nin Avrupa üretimini hızlandırmasını ve Türkiye fabrikasını takvimsiz şekilde askıya almasını yalnızca tek başına okumamak gerekiyor. Avrupa’da PHEV kapısı da daralırsa, BYD için yerel üretim artık tercih değil zorunluluk haline gelecek.",
@@ -102,45 +159,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "105-200-2024-almasini-araclara-araclara-araclara-araclara-araclari-artti-askiya-asmasini-avrupa-avrupa-avrupa-avrupa-avrupa-ayrimi-basina-benzinli-boylece-buyuyor-byd-byd-byd-byd-byd-cin-cinli-cinli-cinli-cunku-daralirsa-degerlendiriyor-degil-disindaki-disindan-dizel-edilebilir-elektrikli-elektrikli-elektrikli-elektrikliden-engellemek-etkilenecek-eylul-fabrikasini-gelecek-gelen-geliyor-genisletmisti-gerekiyor-getirilen-getirmek-getirmeyi-hale-haline-hibrit-hibrit-hizlandirmasini-hizli-imk-itibariyla-kapisi-kapsayacak-karardan-klasik-komisyonu-lerde-leri-marka-markalarin-markalarin-mayis-modeli-modellerle-nsiz-okumamak-olacak-phev-phev-phev-phev-phev-phev-sarj-sartlar-satan-satislar-satislari-satislari-seal-sekilde-sekilde-sira-sta-takvimsiz-tarifesi-tek-tercih-turkiye-turkiye-turkiye-turkiye-ulkeleri-uretim-uretimini-uygulanan-uzerinde-vergi-vergileri-yalnizca-yerel-yol-yuzden-zorlayici-zorunluluk"
-          },
-          {
-            "title": "ÇİNLİLER GELİYOR! SATIŞLARI UÇTU! Bazı Avrupalı markalar DÜŞÜŞTE! Satışını %465 artıran ÇİNLİ var! Avrupa'da satışı düşen markaların stoktaki otomobillerine bilin bakalım ne olacak? ;) 0 km otomobil pazarında değişim tam gaz sürüyor! https://www.arabahabercisi.com/avrupa-0-km-otomobil-satislari-2026-0-km/",
-            "link": "https://nitter.net/murattosunMSE/status/2069351213062090982#m",
-            "published": "2026-06-23T09:25:50+00:00",
-            "summary": "ÇİNLİLER GELİYOR! SATIŞLARI UÇTU! Bazı Avrupalı markalar DÜŞÜŞTE! Satışını %465 artıran ÇİNLİ var! Avrupa'da satışı düşen markaların stoktaki otomobillerine bilin bakalım ne olacak? ;) 0 km otomobil pazarında değişim tam gaz sürüyor! arabahabercisi.com/avrupa-0-… Link Avrupa 0 km otomobil satışları 2026. 0 km otomobil 2026. Avrupa 0 km otomobil satışları 2026. 0 km otomobil Avrupa Satışları 2026. Markaların satış rakamları otomotiv. arabahabercisi.com",
-            "image_url": "https://nitter.net/pic/card_img%2F2069351013190877184%2FW1PtTnQ_%3Fformat%3Djpg%26name%3D600x314",
-            "rss_image_url": "https://nitter.net/pic/card_img%2F2069351013190877184%2FW1PtTnQ_%3Fformat%3Djpg%26name%3D600x314",
-            "image_candidates": [
-              "https://nitter.net/pic/card_img%2F2069351013190877184%2FW1PtTnQ_%3Fformat%3Djpg%26name%3D600x314"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-465-arabahabercisi-artiran-avrupa-avrupa-avrupali-bakalim-bazi-bilin-com-degisim-dusen-dususte-gaz-geli-https-ler-markalar-markalarin-nli-nli-olacak-otomobil-otomobil-otomobillerine-pazarinda-satisi-satisini-satislari-satislari-stoktaki-suruyor-tam-uctu-var-www-yor"
-          },
-          {
-            "title": "En iyi FİYAT/PERFORMANS arabası hangisi?",
-            "link": "https://nitter.net/murattosunMSE/status/2069325938060357903#m",
-            "published": "2026-06-23T07:45:24+00:00",
-            "summary": "En iyi FİYAT/PERFORMANS arabası hangisi?",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arabasi-hangisi-iyi-performans-yat"
           }
         ],
-        "count": 7,
+        "count": 8,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -228,271 +249,287 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 75,
-            "after_time": 7,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "after_keyword": 78,
+            "after_time": 9,
+            "after_posted": 8,
+            "after_duplicate": 8,
+            "after_shared_variant_cooldown": 8
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 75,
-          "after_time": 7,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "after_keyword": 78,
+          "after_time": 9,
+          "after_posted": 8,
+          "after_duplicate": 8,
+          "after_shared_variant_cooldown": 8
         }
       },
       "error": null,
-      "updated_at": "2026-06-23T14:18:15.841219+03:00"
+      "updated_at": "2026-06-23T17:50:37.191946+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "link": "https://nitter.net/eozpeynirci/status/2069375199355498512#m",
-          "published": "2026-06-23T11:01:09+00:00",
-          "summary": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
+          "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
+          "link": "https://www.donanimhaber.com/avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi--207193",
+          "published": "2026-06-23T11:49:00+00:00",
+          "summary": "Avrupa otomotiv pazarında elektrikli araçların yükselişi sürerken Çinli üreticiler satışlarını katladı. Leapmotor, BYD ve Chery güçlü büyüme yakalarken benzinli ve dizel araçların payı geriledi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclardan-araclarin-artis-artti-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayi-ayinda-ayinda-basti-belirleniyor-benzinlinin-bunun-buyudu-buyumenin-buyurken-cikiyor-dahil-degil-dizelin-donusumun-durumda-durumda-dusuk-dusuk-dusuk-dusuk-duzeni-ebs-edildiginde-edilebilir-eklendiginde-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-elektrikliler-emisyon-emisyonlu-emisyonlu-emisyonlu-emisyonlu-erolsahin-farkli-frene-gaza-gelmis-geriledi-geriledi-gosteriyor-gunu-hale-hedefleri-hibrit-hibrit-hibrit-hibritler-incilige-inmis-ise-ise-ise-ise-ise-ise-ise-ise-kaldi-kaydiriyor-mayis-mayista-mayista-mayista-mayista-modellere-nedeniyle-neredeyse-oldugunu-ona-otomobil-otomobil-otomobil-otomobil-otomobilden-otomobilin-pay-payi-payi-payi-payi-payi-pazar-pazar-pazar-pazari-pazarinda-regulasyonlarin-sarj-satilan-satilan-satislari-satislari-satislari-satislarini-sifir-sifir-sifir-sikilastikca-siradayiz-sonucu-sonunda-sonunda-tablo-tablo-tam-tamami-tercih-tesvikler-turkiye-turkiye-turkiye-ulasti-ulke-unculuga-unculukten-unculukten-ureticiler-verdigi-yaklasik-yalnizca-yilin-yilin-yon-yukseldi",
-          "base_ai_score": 90,
+          "topic_fingerprint": "avrupa-cin-kirdi-otomotiv-pazarinda-rekor-ruzgari-satislar",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 91,
+          "score": 89,
           "score_reason": "ai_scored",
-          "score_explanation": "Karşılaştırmalı veri sunması, güncel pazar trendlerini net bir şekilde ortaya koyması ve Türkiye ile Avrupa arasındaki farkı vurgulaması, haberi oldukça ilgi çekici ve paylaşılabilir kılıyor. Detaylı istatistikler, güvenilirliğini artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "Avrupa'da elektrikli araçların yükselişi ve Çinli üreticilerin satışlarının artması dikkat çekici",
+          "freshness_bonus": 4,
           "trend_bonus_raw": 1
         },
-        "score": 91,
-        "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
+        "score": 89,
+        "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 4,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 18,
-          "gundem_gucu": 18,
-          "paylasilabilirlik": 10
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 19,
+          "paylasilabilirlik": 12
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Karşılaştırmalı veri sunması, güncel pazar trendlerini net bir şekilde ortaya koyması ve Türkiye ile Avrupa arasındaki farkı vurgulaması, haberi oldukça ilgi çekici ve paylaşılabilir kılıyor. Detaylı istatistikler, güvenilirliğini artırıyor.",
+        "score_explanation": "Avrupa'da elektrikli araçların yükselişi ve Çinli üreticilerin satışlarının artması dikkat çekici",
         "skipped": false,
-        "threshold": 25,
+        "threshold": 35,
         "top_articles": [
           {
-            "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-            "score": 91,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 18,
-              "gundem_gucu": 18,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "AB’den Çinli araçlara ‘Türkiye’ tarifesi geliyor Elektrikliden sonra sıra PHEV’lerde 🔌 🇪🇺 Avrupa Komisyonu, Çinli markaların elektrikli araçlara getirilen ek vergileri şarj edilebilir hibrit (PHEV) modellerle aşmasını engellemek için bu araçlara da ek vergi getirmeyi değerlendiriyor. 🇨🇳 Çünkü satışlar çok hızlı büyüyor. Mayıs itibarıyla Avrupa’nın en çok satan PHEV modeli BYD Seal U. Çinli markaların Avrupa’da elektrikli satışları %105, PHEV satışları %200’ün üzerinde arttı. ➡️ Türkiye Eylül 2024’te AB ve STA ülkeleri dışından gelen elektrikli araçlara uygulanan zorlayıcı şartlar PHEV’leri de kapsayacak şekilde genişletmişti. Böylece Çin’den benzinli/dizel ve klasik hibrit dışındaki araçları Türkiye’ye getirmek imkânsız hale geldi. BYD’nin yol ayrımı 🚘 Bu karardan en çok etkilenecek marka BYD olacak. Bu yüzden BYD’nin Avrupa üretimini hızlandırmasını ve Türkiye fabrikasını takvimsiz şekilde askıya almasını yalnızca tek başına okumamak gerekiyor. Avrupa’da PHEV kapısı da daralırsa, BYD için yerel üretim artık tercih değil zorunluluk haline gelecek.",
+            "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
             "score": 89,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 24,
-              "benzersizlik": 19,
-              "gundem_gucu": 18,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 19,
+              "paylasilabilirlik": 12
+            }
+          },
+          {
+            "title": "Jeep'in yeni dayanıklı SUV'sine ilk bakış geldi!",
+            "score": 62,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 10,
+              "gundem_gucu": 9,
               "paylasilabilirlik": 8
             }
           },
           {
-            "title": "BYD'nin 900 km menzil ve 9 dakikada şarj imkanı sunacak yeni elektrikli sedanı haftaya satışa çıkıyor. 2 Temmuz'da önce Çin'de siparişe açılacak Seal 08, 5,15 metrelik uzunluğu, 92,1 kWh ikinci nesil Blade bataryası, 5 dakika şarjla 400 km menzile imkan tanıyan şarj performansı ve yeni Ocean Aesthetics 2.0 dizayn anlayışının bir ürünü olan iç ve dış tasarımı dikkat çekiyor. 76,7 kWh bataryalı giriş seviye versiyonu yaklaşık 36 bin dolar seviyesinden alıcı bulacak BYD Seal 08, ayrıca DiSus-A gelişmiş akıllı süspansiyon sistemi, sürüş performansını artıracak arka tekerden dönüş fonksiyonu ve 45,4 kWh bataryalı prizli hibrit opsiyonuyla gelecek.",
-            "score": 87,
+            "title": "Haftanın değerlendirmesi‼️ Haziranda otomotivde yeni rekor mu geliyor? 📌 Satışları artıran gerçek sebep ne? 📌 7 Temmuz öncesi kimlerin elinde stok var? 📌 Rekabet fiyatları aşağı çekerken tüketici ne yapmalı? 📌 Avrupa’da elektrikli araçlar hızlanırken, içten yanmalı modeller Türkiye’ye akmaya devam eder mi? 📌 Yeni yatırım gelmiyorsa mevcut üreticileri daha güçlü desteklemek gerekmez mi? 📌 2. elde fiyatlar da satışlar da neden düşüyor? Pazarda görünen hareketlilik aslında çok daha büyük bir dönüşümün işareti. Hepsi ve daha fazlası haftanın değerlendirmesinde 👇 @GazeteOksijen @CastrolTurkiye https://youtu.be/J3Vcoj-hjCU?si=gib2SmavZyHZIpR8",
+            "score": 46,
             "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 17,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 11
+              "guncellik": 17,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 7,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 5
             }
           }
         ],
-        "scored_count": 7,
+        "scored_count": 8,
         "cooldown_candidates": [
+          {
+            "title": "Jeep'in yeni dayanıklı SUV'sine ilk bakış geldi!",
+            "link": "https://tr.motor1.com/news/799566/jeep-cherokee-trailhawk-teaser-2026/",
+            "score": 62,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "bakis-dayanikli-jeep-sine-suv"
+          },
+          {
+            "title": "Haftanın değerlendirmesi‼️ Haziranda otomotivde yeni rekor mu geliyor? 📌 Satışları artıran gerçek sebep ne? 📌 7 Temmuz öncesi kimlerin elinde stok var? 📌 Rekabet fiyatları aşağı çekerken tüketici ne yapmalı? 📌 Avrupa’da elektrikli araçlar hızlanırken, içten yanmalı modeller Türkiye’ye akmaya devam eder mi? 📌 Yeni yatırım gelmiyorsa mevcut üreticileri daha güçlü desteklemek gerekmez mi? 📌 2. elde fiyatlar da satışlar da neden düşüyor? Pazarda görünen hareketlilik aslında çok daha büyük bir dönüşümün işareti. Hepsi ve daha fazlası haftanın değerlendirmesinde 👇 @GazeteOksijen @CastrolTurkiye https://youtu.be/J3Vcoj-hjCU?si=gib2SmavZyHZIpR8",
+            "link": "https://nitter.net/eozpeynirci/status/2069423106788032692#m",
+            "score": 46,
+            "score_reason": "ai_unmatched_fallback",
+            "source_name": "Emre Ozpeynirci",
+            "topic_fingerprint": "akmaya-araclar-artiran-asagi-aslinda-avrupa-castrolturkiye-cekerken-degerlendirmesi-degerlendirmesinde-desteklemek-devam-donusumun-dusuyor-eder-elde-elektrikli-elinde-fazlasi-fiyatlar-fiyatlari-gazeteoksijen-geliyor-gelmiyorsa-gercek-gerekmez-gib2smavzyhzipr8-gorunen-guclu-haftanin-haftanin-hareketlilik-haziranda-hepsi-hizlanirken-hjcu-https-icten-isareti-j3vcoj-kimlerin-mevcut-modeller-neden-oncesi-otomotivde-pazarda-rekabet-rekor-satislar-satislari-sebep-stok-temmuz-tuketici-turkiye-ureticileri-var-yanmali-yapmali-yatirim-youtu"
+          },
+          {
+            "title": "2. el otomobil pazarı son iki yılın en düşük adetlerini gördü 🚗⤵️ 🚘 Mayıs ayında 2. el otomobil pazarı %22.1 daralarak 503 bin adede geriledi ve son 23 ayın en düşük seviyesini gördü. 🚘 Bu sert düşüşte uzun tatil dönemiyle işlem günlerinin azalması ve sıfır km araçlardaki agresif kampanyalar belirleyici oldu. Buna karşılık yılın ilk 5 ayında; 356 bin sıfır km otomobile karşılık ➡️ 2. el otomobil satışları 2.8 milyon adedin üzerine çıktı. 📉 Gidişat sıfır km otomobillerde stok baskısıyla kampanyaların yıla yayılacağını ve 2. elde fiyatların enflasyonun altında kalmaya devam edeceğini gösteriyor.",
+            "link": "https://nitter.net/taylandil/status/2069405210728894612#m",
+            "score": 43,
+            "score_reason": "ai_unmatched_fallback",
+            "source_name": "TaylanOzgurDil",
+            "topic_fingerprint": "356-503-adede-adedin-adetlerini-agresif-altinda-araclardaki-ayin-ayinda-ayinda-azalmasi-baskisiyla-belirleyici-bin-bin-buna-daralarak-devam-donemiyle-dusuk-dusuk-dususte-edecegini-elde-enflasyonun-fiyatlarin-geriledi-gidisat-gordu-gordu-gosteriyor-gunlerinin-iki-islem-kalmaya-kampanyalar-kampanyalarin-karsilik-karsilik-mayis-milyon-otomobil-otomobil-otomobil-otomobile-otomobillerde-pazari-pazari-satislari-sert-seviyesini-sifir-sifir-sifir-stok-tatil-uzerine-uzun-yayilacagini-yila-yilin-yilin"
+          },
+          {
+            "title": "Toyota'dan Proace City'e özel finansman fırsatları!",
+            "link": "https://tr.motor1.com/news/799540/toyota-proace-city-finansman-firsatlari/",
+            "score": 41,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "city-finansman-firsatlari-ozel-proace-toyota"
+          },
+          {
+            "title": "Avrupa'da Tesla ve Çinli etkisi... Mayısta Avrupa'da hem pazarın hem elektrikli otomobil satışlarının büyümesine en büyük katkıyı Tesla ve Çinli markalardan geldi. Tesla'nın Avrupa'daki satışları mayısta %107,9 artarken, Çinli markalar Avrupa pazarında ilk kez %10,7 pazar payına ulaştı. * Leapmotor: +%465,1 * Chery: +%244,1 * BYD: +%136,6 * Geely: +%12,6 * SAIC (MG): +%13,9 Çinli markalar artık yalnızca elektrikli otomobillerle değil, hibrit ve şarj edilebilir hibrit modellerle de büyüyor. Avrupa markaları ise zorlanıyor. Elektrikli pazar büyüse de geleneksel Avrupalı üreticiler aynı hızda büyüyemedi. Mayısta Renault, Volkswagen Grubu ve Stellantis gibi büyük üreticilerin satışları yaklaşık %1-3 arasında geriledi.",
+            "link": "https://nitter.net/eozpeynirci/status/2069387674662719862#m",
+            "score": 40,
+            "score_reason": "ai_unmatched_fallback",
+            "source_name": "Emre Ozpeynirci",
+            "topic_fingerprint": "107-136-244-465-artarken-avrupa-avrupa-avrupa-avrupa-avrupa-avrupali-ayni-buyumesine-buyuse-buyuyemedi-buyuyor-byd-chery-cinli-cinli-cinli-cinli-degil-edilebilir-elektrikli-elektrikli-elektrikli-etkisi-geely-geleneksel-geriledi-grubu-hem-hem-hibrit-hibrit-hizda-ise-katkiyi-kez-leapmotor-markalar-markalar-markalardan-markalari-mayista-mayista-mayista-modellerle-otomobil-otomobillerle-payina-pazar-pazar-pazarin-pazarinda-renault-saic-sarj-satislari-satislari-satislarinin-stellantis-tesla-tesla-tesla-ulasti-ureticiler-ureticilerin-volkswagen-yaklasik-yalnizca-zorlaniyor"
+          },
+          {
+            "title": "Türkiye'de 5 ayda her 1000 kişiden sadece 4'ü yeni otomobil alabilmiş... Avrupa'da ilk 6'dayız ama kişi başına satışta sonlardayız‼️ Avrupa'da otomobil satışları yılın ilk 5 ayında %4,5 büyürken, Türkiye'de pazar %10'a yakın daraldı. Buna rağmen Türkiye, 356 bin adetlik satışla Avrupa'nın en büyük 6. otomobil pazarı olmayı sürdürdü. Ancak 2025'te bazı aylarda geride bıraktığımız İspanya ile aradaki fark hızla açılıyor. Asıl dikkat çekici tablo ise kişi başına satışta ortaya çıkıyor. 86 milyon nüfusa rağmen, ilk 5 ayda Türkiye'de 1000 kişiye sadece 4,13 otomobil satıldı. Bu oranla Avrupa'da 32 ülke arasında 30. sıradayız. Bizden daha düşük seviyede kalan sadece ikinci el ithalatının serbest olduğu Bulgaristan ve Romanya. Yani Türkiye, toplam satış adedinde Avrupa'nın büyük pazarlarından biri olsa da, kişi başına otomobil satışında hala Avrupa'nın en zayıf pazarları arasında yer alıyor. Bu da pazarın uzun vadede önemli bir büyüme potansiyeli taşıdığını, ancak bunun gerçekleşmesinin gelir seviyesi, krediye erişim ve vergi politikalarına bağlı olduğunu gösteriyor. @erolsahin_ebs",
+            "link": "https://nitter.net/eozpeynirci/status/2069380506844553565#m",
+            "score": 40,
+            "score_reason": "ai_unmatched_fallback",
+            "source_name": "Emre Ozpeynirci",
+            "topic_fingerprint": "1000-1000-2025-356-aciliyor-adedinde-adetlik-alabilmis-aliyor-aradaki-asil-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayinda-aylarda-bagli-basina-basina-basina-bazi-bin-biraktigimiz-biri-bizden-bulgaristan-buna-bunun-buyume-buyurken-cekici-cikiyor-daraldi-dayiz-dikkat-dusuk-ebs-erisim-erolsahin-fark-gelir-gerceklesmesinin-geride-gosteriyor-hala-hizla-ikinci-ise-ithalatinin-kalan-kisi-kisi-kisi-kisiden-kisiye-krediye-milyon-nufusa-oldugu-oldugunu-olmayi-olsa-onemli-oranla-ortaya-otomobil-otomobil-otomobil-otomobil-otomobil-pazar-pazari-pazarin-pazarlari-pazarlarindan-politikalarina-potansiyeli-ragmen-ragmen-romanya-satildi-satis-satisinda-satisla-satislari-satista-satista-serbest-seviyede-seviyesi-siradayiz-sonlardayiz-spanya-surdurdu-tablo-tasidigini-toplam-turkiye-turkiye-turkiye-turkiye-turkiye-ulke-uzun-vadede-vergi-yakin-yani-yer-yilin-zayif"
+          },
           {
             "title": "AB’den Çinli araçlara ‘Türkiye’ tarifesi geliyor Elektrikliden sonra sıra PHEV’lerde 🔌 🇪🇺 Avrupa Komisyonu, Çinli markaların elektrikli araçlara getirilen ek vergileri şarj edilebilir hibrit (PHEV) modellerle aşmasını engellemek için bu araçlara da ek vergi getirmeyi değerlendiriyor. 🇨🇳 Çünkü satışlar çok hızlı büyüyor. Mayıs itibarıyla Avrupa’nın en çok satan PHEV modeli BYD Seal U. Çinli markaların Avrupa’da elektrikli satışları %105, PHEV satışları %200’ün üzerinde arttı. ➡️ Türkiye Eylül 2024’te AB ve STA ülkeleri dışından gelen elektrikli araçlara uygulanan zorlayıcı şartlar PHEV’leri de kapsayacak şekilde genişletmişti. Böylece Çin’den benzinli/dizel ve klasik hibrit dışındaki araçları Türkiye’ye getirmek imkânsız hale geldi. BYD’nin yol ayrımı 🚘 Bu karardan en çok etkilenecek marka BYD olacak. Bu yüzden BYD’nin Avrupa üretimini hızlandırmasını ve Türkiye fabrikasını takvimsiz şekilde askıya almasını yalnızca tek başına okumamak gerekiyor. Avrupa’da PHEV kapısı da daralırsa, BYD için yerel üretim artık tercih değil zorunluluk haline gelecek.",
             "link": "https://nitter.net/taylandil/status/2069375396735222024#m",
-            "score": 89,
-            "score_reason": "ai_scored",
+            "score": 40,
+            "score_reason": "ai_unmatched_fallback",
             "source_name": "TaylanOzgurDil",
             "topic_fingerprint": "105-200-2024-almasini-araclara-araclara-araclara-araclara-araclari-artti-askiya-asmasini-avrupa-avrupa-avrupa-avrupa-avrupa-ayrimi-basina-benzinli-boylece-buyuyor-byd-byd-byd-byd-byd-cin-cinli-cinli-cinli-cunku-daralirsa-degerlendiriyor-degil-disindaki-disindan-dizel-edilebilir-elektrikli-elektrikli-elektrikli-elektrikliden-engellemek-etkilenecek-eylul-fabrikasini-gelecek-gelen-geliyor-genisletmisti-gerekiyor-getirilen-getirmek-getirmeyi-hale-haline-hibrit-hibrit-hizlandirmasini-hizli-imk-itibariyla-kapisi-kapsayacak-karardan-klasik-komisyonu-lerde-leri-marka-markalarin-markalarin-mayis-modeli-modellerle-nsiz-okumamak-olacak-phev-phev-phev-phev-phev-phev-sarj-sartlar-satan-satislar-satislari-satislari-seal-sekilde-sekilde-sira-sta-takvimsiz-tarifesi-tek-tercih-turkiye-turkiye-turkiye-turkiye-ulkeleri-uretim-uretimini-uygulanan-uzerinde-vergi-vergileri-yalnizca-yerel-yol-yuzden-zorlayici-zorunluluk"
-          },
-          {
-            "title": "BYD'nin 900 km menzil ve 9 dakikada şarj imkanı sunacak yeni elektrikli sedanı haftaya satışa çıkıyor. 2 Temmuz'da önce Çin'de siparişe açılacak Seal 08, 5,15 metrelik uzunluğu, 92,1 kWh ikinci nesil Blade bataryası, 5 dakika şarjla 400 km menzile imkan tanıyan şarj performansı ve yeni Ocean Aesthetics 2.0 dizayn anlayışının bir ürünü olan iç ve dış tasarımı dikkat çekiyor. 76,7 kWh bataryalı giriş seviye versiyonu yaklaşık 36 bin dolar seviyesinden alıcı bulacak BYD Seal 08, ayrıca DiSus-A gelişmiş akıllı süspansiyon sistemi, sürüş performansını artıracak arka tekerden dönüş fonksiyonu ve 45,4 kWh bataryalı prizli hibrit opsiyonuyla gelecek.",
-            "link": "https://nitter.net/DoluBatarya/status/2069343548441231816#m",
-            "score": 87,
-            "score_reason": "ai_scored",
-            "source_name": "Dolu Batarya",
-            "topic_fingerprint": "400-900-acilacak-aesthetics-akilli-alici-anlayisinin-arka-artiracak-ayrica-bataryali-bataryali-bataryasi-bin-blade-bulacak-byd-byd-cekiyor-cikiyor-cin-dakika-dakikada-dikkat-dis-disus-dizayn-dolar-donus-elektrikli-fonksiyonu-gelecek-gelismis-giris-haftaya-hibrit-ikinci-imkan-imkani-kwh-kwh-kwh-menzil-menzile-metrelik-nesil-ocean-opsiyonuyla-performansi-performansini-prizli-sarj-sarj-sarjla-satisa-seal-seal-sedani-seviye-seviyesinden-siparise-sistemi-sunacak-surus-suspansiyon-taniyan-tasarimi-tekerden-temmuz-urunu-uzunlugu-versiyonu-yaklasik"
-          },
-          {
-            "title": "ÇİNLİLER GELİYOR! SATIŞLARI UÇTU! Bazı Avrupalı markalar DÜŞÜŞTE! Satışını %465 artıran ÇİNLİ var! Avrupa'da satışı düşen markaların stoktaki otomobillerine bilin bakalım ne olacak? ;) 0 km otomobil pazarında değişim tam gaz sürüyor! https://www.arabahabercisi.com/avrupa-0-km-otomobil-satislari-2026-0-km/",
-            "link": "https://nitter.net/murattosunMSE/status/2069351213062090982#m",
-            "score": 78,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "2026-465-arabahabercisi-artiran-avrupa-avrupa-avrupali-bakalim-bazi-bilin-com-degisim-dusen-dususte-gaz-geli-https-ler-markalar-markalarin-nli-nli-olacak-otomobil-otomobil-otomobillerine-pazarinda-satisi-satisini-satislari-satislari-stoktaki-suruyor-tam-uctu-var-www-yor"
-          },
-          {
-            "title": "Ford Mustang Mach-E'nin sonu mu geliyor?",
-            "link": "https://tr.motor1.com/news/799517/mustang-mache-uretimden-kalkiyor-mu/",
-            "score": 73,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "ford-geliyor-mach-mustang-sonu"
-          },
-          {
-            "title": "BMW: Elektrikli M3 için öncelik sürüş tecrübesi",
-            "link": "https://tr.motor1.com/news/799521/bmw-elektrikli-m3-surus-tecrubesi/",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "bmw-elektrikli-oncelik-surus-tecrubesi"
-          },
-          {
-            "title": "En iyi FİYAT/PERFORMANS arabası hangisi?",
-            "link": "https://nitter.net/murattosunMSE/status/2069325938060357903#m",
-            "score": 60,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "arabasi-hangisi-iyi-performans-yat"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-06-23T14:18:33.611626+03:00"
+      "updated_at": "2026-06-23T17:50:51.836824+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "link": "https://nitter.net/eozpeynirci/status/2069375199355498512#m",
-          "published": "2026-06-23T11:01:09+00:00",
-          "summary": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
+          "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
+          "link": "https://www.donanimhaber.com/avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi--207193",
+          "published": "2026-06-23T11:49:00+00:00",
+          "summary": "Avrupa otomotiv pazarında elektrikli araçların yükselişi sürerken Çinli üreticiler satışlarını katladı. Leapmotor, BYD ve Chery güçlü büyüme yakalarken benzinli ve dizel araçların payı geriledi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclardan-araclarin-artis-artti-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayi-ayinda-ayinda-basti-belirleniyor-benzinlinin-bunun-buyudu-buyumenin-buyurken-cikiyor-dahil-degil-dizelin-donusumun-durumda-durumda-dusuk-dusuk-dusuk-dusuk-duzeni-ebs-edildiginde-edilebilir-eklendiginde-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-elektrikliler-emisyon-emisyonlu-emisyonlu-emisyonlu-emisyonlu-erolsahin-farkli-frene-gaza-gelmis-geriledi-geriledi-gosteriyor-gunu-hale-hedefleri-hibrit-hibrit-hibrit-hibritler-incilige-inmis-ise-ise-ise-ise-ise-ise-ise-ise-kaldi-kaydiriyor-mayis-mayista-mayista-mayista-mayista-modellere-nedeniyle-neredeyse-oldugunu-ona-otomobil-otomobil-otomobil-otomobil-otomobilden-otomobilin-pay-payi-payi-payi-payi-payi-pazar-pazar-pazar-pazari-pazarinda-regulasyonlarin-sarj-satilan-satilan-satislari-satislari-satislari-satislarini-sifir-sifir-sifir-sikilastikca-siradayiz-sonucu-sonunda-sonunda-tablo-tablo-tam-tamami-tercih-tesvikler-turkiye-turkiye-turkiye-ulasti-ulke-unculuga-unculukten-unculukten-ureticiler-verdigi-yaklasik-yalnizca-yilin-yilin-yon-yukseldi",
-          "base_ai_score": 90,
+          "topic_fingerprint": "avrupa-cin-kirdi-otomotiv-pazarinda-rekor-ruzgari-satislar",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 91,
+          "score": 89,
           "score_reason": "ai_scored",
-          "score_explanation": "Karşılaştırmalı veri sunması, güncel pazar trendlerini net bir şekilde ortaya koyması ve Türkiye ile Avrupa arasındaki farkı vurgulaması, haberi oldukça ilgi çekici ve paylaşılabilir kılıyor. Detaylı istatistikler, güvenilirliğini artırıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
+          "score_explanation": "Avrupa'da elektrikli araçların yükselişi ve Çinli üreticilerin satışlarının artması dikkat çekici",
+          "freshness_bonus": 4,
+          "trend_bonus_raw": 1,
+          "full_text": "Mayıs ayında Avrupa Birliği, Birleşik Krallık ve Avrupa Serbest Ticaret Birliği (EFTA) ülkelerindeyeni otomobil tescillerigeçen yılın aynı dönemine göre yüzde 3,6 artarak1 milyon 152 bin 523 adedeulaştı. Avrupa Birliği özelinde ise yılın ilk beş ayında yeni otomobil kayıtlarıyüzde 4 artışgösterdi. Pazardaki büyüme büyük ölçüde elektrik destekli modellerden geliyor.Mayısayında bataryalıelektrikli otomobil(BEV) satışlarıyüzde 39,1, şarj edilebilir hibritler (PHEV)yüzde 13,2ve hibrit modeller yüzde 8,2 yükseldi. Böylece bu üç güç aktarma sistemi, ay boyunca gerçekleşen yeni otomobil kayıtlarının üçte ikisinden fazlasını oluşturdu. Elektrikli otomobil satışları özellikle büyük pazarlarda dikkat çekti. İlk beş ayda İtalya'da satışlar yüzde 75,7, Fransa'da yüzde 55,4 ve Almanya'da yüzde 40,9 arttı. Aynı dönemde Avrupa Birliği genelinde 950 bin 521 adet tamamen elektrikli otomobil satıldı. Buna karşılık Çinli markalar dikkat çekici bir performans sergiledi.Leapmotor'un satışlarıyüzde 465,1artarkenChery yüzde 244,1veBYD yüzde 136,6 büyüdü.GeelyveSAICde sırasıylayüzde 12,6veyüzde 13,9artış kaydetti. Öte yandanTesla, Avrupa'daki toparlanmasını sürdürdü. Şirketin mayıs ayındaki yeni araç kayıtlarıyüzde 107,9 artarak 28 bin 610 adedeulaştı ve markadört ay üst üste büyümekaydetti. Elektrikli araçların yükselişiyle birlikte içten yanmalı motorlu otomobillerin pazar payı daralmaya devam ediyor. Avrupa Birliği'nde yılın ilk beş ayında benzinli otomobil kayıtları yüzde 18,2, dizel otomobil kayıtları ise yüzde 16,6 geriledi. Benzinli otomobillerin pazar payı yüzde 28,5'ten yüzde 22,4'e, dizel modellerin payı ise yüzde 9,5'ten yüzde 7,6'ya düştü. Böylece benzinli ve dizel otomobillerin toplam pazar payı yüzde 38'den yüzde 30,1'e geriledi. Dünyanın ilk Linux akıllı gözlüğü https://www.amazon.com.tr/dp/B0GZKQ6B4Q https://www.amazon.com.tr/dp/B0DPXLVZ26 https://www.amazon.com.tr/gp/product/B0CG5ZCCWR https://www.amazon.com.tr/dp/B0C7164NCB https://www.amazon.com.tr/dp/B0BLCLD25K?_encoding=UTF8&psc=1&ref=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG&ref_=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG&social_share=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG https://www.vodafone.com.tr/Is-Ortagim/RedKurumsal/redbusiness-big-chefs.php"
         },
-        "post_text": "🚗 AVRUPA'ELEKTRIKLIDE GAZA, TURKIYE'YE FRENE BASTI\n\nAvrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu. Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi.\n\nTam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı.\n\nTürkiye'de ise tablo farklı. Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi.\n\nSizce Türkiye'nin elektrikli otomobil pazarında gerileme yaşandı?",
-        "post_text_length": 836,
+        "post_text": "⚡ AVRUPA OTOMOTIV PAZARINDA CIN FIRTINASI ESTI\n\nAvrupa'da elektrikli araclarin yukselisi surerken Cinli ureticiler adeta patlama yapti. Leapmotor, BYD ve Chery gibi markalar satislarini katladi.\n\nBenzinli ve dizel araclarin payi ise gerilemeye devam ediyor. Tesla da buyumesini surduruyor.\n\nSizce Cinli markalarin bu yukselisi nereye kadar gider?",
+        "post_text_length": 346,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-06-23T14:18:39.074384+03:00"
+      "updated_at": "2026-06-23T17:50:54.235792+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "link": "https://nitter.net/eozpeynirci/status/2069375199355498512#m",
-          "published": "2026-06-23T11:01:09+00:00",
-          "summary": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-          "image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large",
+          "title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
+          "link": "https://www.donanimhaber.com/avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi--207193",
+          "published": "2026-06-23T11:49:00+00:00",
+          "summary": "Avrupa otomotiv pazarında elektrikli araçların yükselişi sürerken Çinli üreticiler satışlarını katladı. Leapmotor, BYD ve Chery güçlü büyüme yakalarken benzinli ve dizel araçların payı geriledi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HLfkG60XcAAUffU.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/207193/1200x675avrupa-otomotiv-pazarinda-cin-ruzgari-satislar-rekor-kirdi.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "Emre Ozpeynirci",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclardan-araclarin-artis-artti-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-ayda-ayi-ayinda-ayinda-basti-belirleniyor-benzinlinin-bunun-buyudu-buyumenin-buyurken-cikiyor-dahil-degil-dizelin-donusumun-durumda-durumda-dusuk-dusuk-dusuk-dusuk-duzeni-ebs-edildiginde-edilebilir-eklendiginde-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-elektrikliler-emisyon-emisyonlu-emisyonlu-emisyonlu-emisyonlu-erolsahin-farkli-frene-gaza-gelmis-geriledi-geriledi-gosteriyor-gunu-hale-hedefleri-hibrit-hibrit-hibrit-hibritler-incilige-inmis-ise-ise-ise-ise-ise-ise-ise-ise-kaldi-kaydiriyor-mayis-mayista-mayista-mayista-mayista-modellere-nedeniyle-neredeyse-oldugunu-ona-otomobil-otomobil-otomobil-otomobil-otomobilden-otomobilin-pay-payi-payi-payi-payi-payi-pazar-pazar-pazar-pazari-pazarinda-regulasyonlarin-sarj-satilan-satilan-satislari-satislari-satislari-satislarini-sifir-sifir-sifir-sikilastikca-siradayiz-sonucu-sonunda-sonunda-tablo-tablo-tam-tamami-tercih-tesvikler-turkiye-turkiye-turkiye-ulasti-ulke-unculuga-unculukten-unculukten-ureticiler-verdigi-yaklasik-yalnizca-yilin-yilin-yon-yukseldi",
-          "base_ai_score": 90,
+          "topic_fingerprint": "avrupa-cin-kirdi-otomotiv-pazarinda-rekor-ruzgari-satislar",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 91,
+          "score": 89,
           "score_reason": "ai_scored",
-          "score_explanation": "Karşılaştırmalı veri sunması, güncel pazar trendlerini net bir şekilde ortaya koyması ve Türkiye ile Avrupa arasındaki farkı vurgulaması, haberi oldukça ilgi çekici ve paylaşılabilir kılıyor. Detaylı istatistikler, güvenilirliğini artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "Avrupa'da elektrikli araçların yükselişi ve Çinli üreticilerin satışlarının artması dikkat çekici",
+          "freshness_bonus": 4,
           "trend_bonus_raw": 1,
+          "full_text": "Mayıs ayında Avrupa Birliği, Birleşik Krallık ve Avrupa Serbest Ticaret Birliği (EFTA) ülkelerindeyeni otomobil tescillerigeçen yılın aynı dönemine göre yüzde 3,6 artarak1 milyon 152 bin 523 adedeulaştı. Avrupa Birliği özelinde ise yılın ilk beş ayında yeni otomobil kayıtlarıyüzde 4 artışgösterdi. Pazardaki büyüme büyük ölçüde elektrik destekli modellerden geliyor.Mayısayında bataryalıelektrikli otomobil(BEV) satışlarıyüzde 39,1, şarj edilebilir hibritler (PHEV)yüzde 13,2ve hibrit modeller yüzde 8,2 yükseldi. Böylece bu üç güç aktarma sistemi, ay boyunca gerçekleşen yeni otomobil kayıtlarının üçte ikisinden fazlasını oluşturdu. Elektrikli otomobil satışları özellikle büyük pazarlarda dikkat çekti. İlk beş ayda İtalya'da satışlar yüzde 75,7, Fransa'da yüzde 55,4 ve Almanya'da yüzde 40,9 arttı. Aynı dönemde Avrupa Birliği genelinde 950 bin 521 adet tamamen elektrikli otomobil satıldı. Buna karşılık Çinli markalar dikkat çekici bir performans sergiledi.Leapmotor'un satışlarıyüzde 465,1artarkenChery yüzde 244,1veBYD yüzde 136,6 büyüdü.GeelyveSAICde sırasıylayüzde 12,6veyüzde 13,9artış kaydetti. Öte yandanTesla, Avrupa'daki toparlanmasını sürdürdü. Şirketin mayıs ayındaki yeni araç kayıtlarıyüzde 107,9 artarak 28 bin 610 adedeulaştı ve markadört ay üst üste büyümekaydetti. Elektrikli araçların yükselişiyle birlikte içten yanmalı motorlu otomobillerin pazar payı daralmaya devam ediyor. Avrupa Birliği'nde yılın ilk beş ayında benzinli otomobil kayıtları yüzde 18,2, dizel otomobil kayıtları ise yüzde 16,6 geriledi. Benzinli otomobillerin pazar payı yüzde 28,5'ten yüzde 22,4'e, dizel modellerin payı ise yüzde 9,5'ten yüzde 7,6'ya düştü. Böylece benzinli ve dizel otomobillerin toplam pazar payı yüzde 38'den yüzde 30,1'e geriledi. Dünyanın ilk Linux akıllı gözlüğü https://www.amazon.com.tr/dp/B0GZKQ6B4Q https://www.amazon.com.tr/dp/B0DPXLVZ26 https://www.amazon.com.tr/gp/product/B0CG5ZCCWR https://www.amazon.com.tr/dp/B0C7164NCB https://www.amazon.com.tr/dp/B0BLCLD25K?_encoding=UTF8&psc=1&ref=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG&ref_=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG&social_share=cm_sw_r_cp_ud_dp_NZEEF2C6VK10867Z0VCG https://www.vodafone.com.tr/Is-Ortagim/RedKurumsal/redbusiness-big-chefs.php",
           "image_sources": [
-            "article_candidates_field"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1
+          "prepared_image_count": 4
         },
-        "post_text": "🚗 AVRUPA'ELEKTRIKLIDE GAZA, TURKIYE'YE FRENE BASTI\n\nAvrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu. Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi.\n\nTam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı.\n\nTürkiye'de ise tablo farklı. Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi.\n\nSizce Türkiye'nin elektrikli otomobil pazarında gerileme yaşandı?",
-        "image_path": "/tmp/otoxtra_img_vwg6p3f8.jpg",
+        "post_text": "⚡ AVRUPA OTOMOTIV PAZARINDA CIN FIRTINASI ESTI\n\nAvrupa'da elektrikli araclarin yukselisi surerken Cinli ureticiler adeta patlama yapti. Leapmotor, BYD ve Chery gibi markalar satislarini katladi.\n\nBenzinli ve dizel araclarin payi ise gerilemeye devam ediyor. Tesla da buyumesini surduruyor.\n\nSizce Cinli markalarin bu yukselisi nereye kadar gider?",
+        "image_path": "/tmp/otoxtra_img_qwkjko8d.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_vwg6p3f8.jpg"
+          "/tmp/otoxtra_img_qwkjko8d.jpg",
+          "/tmp/otoxtra_img_szntnqvj.jpg",
+          "/tmp/otoxtra_img_lii8atqx.jpg",
+          "/tmp/otoxtra_img_77z096d6.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-06-23T14:18:39.758522+03:00"
+      "updated_at": "2026-06-23T17:51:08.517043+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122169986054916499",
-        "article_title": "Avrupa elektriklide gaza, Türkiye frene bastı... Avrupa'da artık satılan her 10 otomobilden 7'si düşük veya sıfır emisyonlu‼️ Mayıs ayında Avrupa otomobil pazarı %3,6, yılın ilk 5 ayında ise %5 büyüdü. Ancak büyümenin neredeyse tamamı düşük ve sıfır emisyonlu araçlardan geldi. 💢Tam elektrikli otomobil satışları mayısta %39,1, ilk 5 ayda ise %31,2 arttı. Pazar payı %21,4'e yükseldi. 💢Hibrit satışları mayısta %8,2, ilk 5 ayda %11,1 büyürken, pazar payı %37,5'e ulaştı. 💢Şarj edilebilir hibritler de eklendiğinde düşük emisyonlu hibrit araçların payı %47,7'ye çıkıyor. 💢Elektrikliler de dahil edildiğinde ise Avrupa'da satılan her 10 otomobilin yaklaşık 7'si (%70) düşük veya sıfır emisyonlu hale gelmiş durumda. (Dizelin payı %6,61’e, benzinlinin payı ise %22’ye kadar inmiş durumda.) Bu tablo, Avrupa'da dönüşümün artık tercih değil, regülasyonların yön verdiği yeni pazar düzeni olduğunu gösteriyor. Emisyon hedefleri sıkılaştıkça, üreticiler de satışlarını elektrikli ve hibrit modellere kaydırıyor, teşvikler ona göre belirleniyor. Türkiye'de ise tablo farklı... Mayısta elektrikli otomobil satışları, 15 iş günü nedeniyle %32,5 geriledi. İlk 5 ay sonunda ise artış yalnızca %11'de kaldı. Bunun sonucu olarak Türkiye, Avrupa elektrikli otomobil pazarında mayısta 4'üncülükten 10'unculuğa, yılın ilk 5 ayı sonunda ise 4'üncülükten 5'inciliğe geriledi. Pay olarak ise %18,52 ile 32 ülke arasında 17.sıradayız @erolsahin_ebs",
-        "image_source": "single_image",
-        "image_count": 1,
+        "post_id": "678053852057751_122170011542916499",
+        "article_title": "Avrupa otomotiv pazarında Çin rüzgarı: Satışlar rekor kırdı",
+        "image_source": "multi_image",
+        "image_count": 4,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-06-23T14:18:45.402157+03:00"
+      "updated_at": "2026-06-23T17:51:34.925505+03:00"
     }
   }
 }
