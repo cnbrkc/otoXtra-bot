@@ -1,144 +1,34 @@
 {
-  "run_id": "2026-06-28-16:47",
+  "run_id": "2026-06-28-18:18",
   "status": "completed",
-  "started_at": "2026-06-28T16:47:04.545223+03:00",
-  "updated_at": "2026-06-28T16:48:37.043823+03:00",
+  "started_at": "2026-06-28T18:18:10.798185+03:00",
+  "updated_at": "2026-06-28T18:19:24.908730+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Yeni Dacia Striker'ın LPG'li versiyonu ortaya çıktı: İşte görüntüler",
-            "link": "https://www.donanimhaber.com/yeni-dacia-striker-in-lpg-li-versiyonu-ortaya-cikti-iste-goruntu--207390",
-            "published": "2026-06-28T11:30:00+00:00",
-            "summary": "Dacia Striker'ın LPG'li versiyonu, bir otogaz istasyonunda kamuflajsız olarak görüntülendi. Modern tasarımıyla dikkat çeken aracın hibrit motor seçenekleri ve 4x4 çekiş sistemiyle sunulması bekleniyor",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/207390/1200x675yeni-dacia-striker-in-lpg-li-versiyonu-ortaya-cikti-iste-goruntu.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207390/1200x675yeni-dacia-striker-in-lpg-li-versiyonu-ortaya-cikti-iste-goruntu.jpg",
+            "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+            "link": "https://tr.motor1.com/news/800002/dogan-trend-mazda-gecis/",
+            "published": "2026-06-28T15:00:00+00:00",
+            "summary": "Türkiye'deki satış sonrası hizmetler artık Doğan Trend'in sorumluluğunda.",
+            "image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/207390/1200x675yeni-dacia-striker-in-lpg-li-versiyonu-ortaya-cikti-iste-goruntu.jpg"
+              "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Donanimhaber",
+            "source_name": "Motor1 TR",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "dacia-goruntuler-lpg-ortaya-ste-striker-versiyonu"
-          },
-          {
-            "title": "Yeni elektrikli Porsche Cayenne, Türkiye’de satışa sunuldu",
-            "link": "https://www.log.com.tr/yeni-elektrikli-porsche-cayenne-turkiyede-satisa-sunuldu/",
-            "published": "2026-06-28T12:24:08+00:00",
-            "summary": "Yeni tamamen elektrikli Porsche Cayenne, Türkiye’de 11,8 milyon TL’lik başlangıç fiyatıyla satışa sunuldu. Teknik olarak bakarsak Cayenne Electric normal sürüşte 402 beygir (300 kW) güç sunuyor. Gücü “Launch Control” sistemiyle 435 beygire (324 kW) taşınan araç, 834 Nm tork ile 0’dan 100 km/s hıza 4,5 saniyede çıkıyor ve maksimumda 230 km/s kadar hıza ulaşabiliyor. Frenleme sırasında 600 kW’a kadar enerji üretebilen Cayenne Electric ailesinde, 113 kWh kapasiteli bir batarya yer alıyor. 800V temelli araç, şirketin resmi verilerine göre yaklaşık 640 km menzil sunuyor. 400 kW’a kadar hızlı şarj desteğinin bulunduğu elektrikli Cayenne, yüzde 10 ile 80 arasını uygun şartlar altında 16 dakikada tamamlayabiliyor. Konsolunda merkezdeki kavisli ekran olmak üzere üç farklı ekran bulunan tamamen elektrikli Cayenne, ayrı olarak sunulan özel bir ünite aracılığıyla kablosuz olarak da şarj edilebiliyor. Yeni elektrikli Porsche Cayenne, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/06/2026-Porsche-Cayenne-Electric-00002-1000x562dsasda-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/06/2026-Porsche-Cayenne-Electric-00002-1000x562dsasda-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/06/2026-Porsche-Cayenne-Electric-00002-1000x562dsasda-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cayenne-elektrikli-porsche-satisa-sunuldu-turkiye"
-          },
-          {
-            "title": "Araç İçi Aksesuarlar ve Ses Sistemleri için Yeni Düzenleme",
-            "link": "https://shiftdelete.net/arac-ici-aksesuarlar-ve-ses-sistemleri-icin-yeni-duzenleme",
-            "published": "2026-06-28T12:53:00+00:00",
-            "summary": "Karayolları Trafik Yönetmeliği'ndeki yeni düzenlemelerle telefon tutucular, araç kameraları ve ses sistemleri için yasal standartlar belirlendi.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aksesuarlar-arac-duzenleme-ses-sistemleri"
-          },
-          {
-            "title": "Roma gitti, Amalfi geldi‼️ Yine zenginleri ilgilendiren bir haber... 640 beygirlik çift turbo V8 motora sahip Ferrari Amalfi, Türkiye'de ilk sahiplerine teslim edilmeye başlandı. Fiyatı açıklanmadı ama tahminim 45 milyon TL'ye yakındır... Not: Bu arada Ferrari'nin büyük tartışma yaratan ilk elektrikli modeli Luce'nin Çin için ayrılan ilk 88 araçlık kotası birkaç saat içinde tükenmiş.",
-            "link": "https://nitter.net/eozpeynirci/status/2071183228174578108#m",
-            "published": "2026-06-28T10:45:36+00:00",
-            "summary": "Roma gitti, Amalfi geldi‼️ Yine zenginleri ilgilendiren bir haber... 640 beygirlik çift turbo V8 motora sahip Ferrari Amalfi, Türkiye'de ilk sahiplerine teslim edilmeye başlandı. Fiyatı açıklanmadı ama tahminim 45 milyon TL'ye yakındır... Not: Bu arada Ferrari'nin büyük tartışma yaratan ilk elektrikli modeli Luce'nin Çin için ayrılan ilk 88 araçlık kotası birkaç saat içinde tükenmiş.",
-            "image_url": "https://pbs.twimg.com/media/HL5RqtaWIAAGOM3.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HL5RqtaWIAAGOM3.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HL5RqtaWIAAGOM3.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "640-aciklanmadi-amalfi-amalfi-araclik-arada-ayrilan-baslandi-beygirlik-birkac-cift-cin-edilmeye-elektrikli-ferrari-ferrari-fiyati-gitti-haber-ilgilendiren-kotasi-luce-milyon-modeli-motora-not-roma-saat-sahip-sahiplerine-tahminim-tartisma-teslim-tukenmis-turbo-turkiye-yakindir-yaratan-yine-zenginleri"
-          },
-          {
-            "title": "R to @eozpeynirci: Elektrikli Cayenne için şu ana kadar 500-600 ön talep gelmiş. Önemli olan talebe karşı araç verecekler mi? Bu arada Coupe gövde tipi de haftaya geliyormuş...",
-            "link": "https://nitter.net/eozpeynirci/status/2071176020279828975#m",
-            "published": "2026-06-28T10:16:58+00:00",
-            "summary": "Elektrikli Cayenne için şu ana kadar 500-600 ön talep gelmiş. Önemli olan talebe karşı araç verecekler mi? Bu arada Coupe gövde tipi de haftaya geliyormuş...",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "500-600-ana-arac-arada-cayenne-coupe-elektrikli-eozpeynirci-geliyormus-gelmis-govde-haftaya-onemli-talebe-talep-tipi-verecekler"
-          },
-          {
-            "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-            "link": "https://nitter.net/taylandil/status/2071209314702815646#m",
-            "published": "2026-06-28T12:29:16+00:00",
-            "summary": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-            "image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TaylanOzgurDil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "125-160-430-alinabilen-anlasilan-arac-aracin-avrupa-ayinda-beraber-biliniyor-cikaran-dogru-dogru-dusuk-elektrikli-farkli-fiyatlarla-geciyor-geliyor-getirmeye-girebilecek-guc-hareketlendirmeyi-hazirlaniyor-hedefliyor-kwh-kwh-lfp-makyajlanacagi-malum-megane-mevcut-milyon-nedenle-nisan-olmayabilir-orneklemek-otv-otv-ozellikleri-pile-pile-renault-renault-renault-renault-sahip-satin-satisa-satislarini-scenic-scenic-scenic-scenic-simdi-sonuna-soyle-tech-turkiye-uygun-uzerinden-versiyon-versiyonu-versiyonunu-versiyonunun-versiyonuyla-yil"
-          },
-          {
-            "title": "TEMMUZ KONUSU: BOL STOK! . PERŞEMBE GÜNÜ SONUÇLAR BELLİ OLUYOR! 0 km otomobil pazarında Haziran sonuçları açıklanıyor! Temmuz ayında stoklar bol olacak gibi görünüyor. https://www.arabahabercisi.com/0-km-otomobil-haziran-2026-satislari-araba/",
-            "link": "https://nitter.net/murattosunMSE/status/2071176118334361743#m",
-            "published": "2026-06-28T10:17:21+00:00",
-            "summary": "TEMMUZ KONUSU: BOL STOK! . PERŞEMBE GÜNÜ SONUÇLAR BELLİ OLUYOR! 0 km otomobil pazarında Haziran sonuçları açıklanıyor! Temmuz ayında stoklar bol olacak gibi görünüyor. arabahabercisi.com/0-km-otom… Link 0 km otomobil Haziran 2026 satışları. Haziran satışları 2026. 0 km otomobil Haziran 2026 satışları. Haziran 0 km otomobil satışları 2026. 0 km araba Temmuz 2026. Yeni Araba Modelleri 2026. arabahabercisi.com Murat Tosun (@murattosunMSE) 7 TEMMUZ’A KADAR ÇILGIN KAMPANYALAR! Böyle bir şey 0 km otomobil modellerinde gerçekten olur mu? arabahabercisi.com/7-temmuz-… Link 7 Temmuz 2026 GSR. Otomobil Kampanyaları 7 Temmuz 0 km 26. 7 Temmuz 2026 GSR. Otomobil Kampanyaları 7 Temmuz. Araba Kampanyaları 7 Temmuz. Yeni Araba Kampanyaları 2026 Temmuz. arabahabercisi.com — https://nitter.net/murattosunMSE/status/2071168692038033647#m",
-            "image_url": "https://nitter.net/pic/card_img%2F2071176134494912512%2FFHXKMryn%3Fformat%3Djpg%26name%3D600x314",
-            "rss_image_url": "https://nitter.net/pic/card_img%2F2071176134494912512%2FFHXKMryn%3Fformat%3Djpg%26name%3D600x314",
-            "image_candidates": [
-              "https://nitter.net/pic/card_img%2F2071176134494912512%2FFHXKMryn%3Fformat%3Djpg%26name%3D600x314"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-aciklaniyor-araba-arabahabercisi-ayinda-belli-bol-bol-com-gorunuyor-gunu-haziran-haziran-https-konusu-olacak-oluyor-otomobil-otomobil-pazarinda-persembe-satislari-sonuclar-sonuclari-stok-stoklar-temmuz-temmuz-www"
+            "topic_fingerprint": "basariyla-bunyesine-dogan-gecisi-mazda-tamamlandi-trend"
           }
         ],
-        "count": 7,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -226,271 +116,208 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 90,
-            "after_time": 8,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "after_keyword": 92,
+            "after_time": 1,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 90,
-          "after_time": 8,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "after_keyword": 92,
+          "after_time": 1,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-06-28T16:48:11.400803+03:00"
+      "updated_at": "2026-06-28T18:18:56.013232+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "link": "https://nitter.net/taylandil/status/2071209314702815646#m",
-          "published": "2026-06-28T12:29:16+00:00",
-          "summary": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
+          "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+          "link": "https://tr.motor1.com/news/800002/dogan-trend-mazda-gecis/",
+          "published": "2026-06-28T15:00:00+00:00",
+          "summary": "Türkiye'deki satış sonrası hizmetler artık Doğan Trend'in sorumluluğunda.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg"
           ],
           "image_source": "rss",
-          "source_name": "TaylanOzgurDil",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "125-160-430-alinabilen-anlasilan-arac-aracin-avrupa-ayinda-beraber-biliniyor-cikaran-dogru-dogru-dusuk-elektrikli-farkli-fiyatlarla-geciyor-geliyor-getirmeye-girebilecek-guc-hareketlendirmeyi-hazirlaniyor-hedefliyor-kwh-kwh-lfp-makyajlanacagi-malum-megane-mevcut-milyon-nedenle-nisan-olmayabilir-orneklemek-otv-otv-ozellikleri-pile-pile-renault-renault-renault-renault-sahip-satin-satisa-satislarini-scenic-scenic-scenic-scenic-simdi-sonuna-soyle-tech-turkiye-uygun-uzerinden-versiyon-versiyonu-versiyonunu-versiyonunun-versiyonuyla-yil",
-          "base_ai_score": 88,
+          "topic_fingerprint": "basariyla-bunyesine-dogan-gecisi-mazda-tamamlandi-trend",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 5
           },
-          "score": 90,
+          "score": 72,
           "score_reason": "ai_scored",
-          "score_explanation": "Düşük ÖTV'li elektrikli araç haberi her zaman büyük ilgi çeker. Renault gibi yaygın bir markanın uygun fiyatlı elektrikli modeli, geniş bir kitlenin alım gücünü etkileyeceği için viral potansiyeli çok yüksek. Fiyat ve vergi avantajı odaklı olması kritik.",
-          "freshness_bonus": 7,
+          "score_explanation": "Mazda gibi köklü bir markanın Türkiye'deki distribütör değişikliği önemli bir haber. Marka sahiplerini ve potansiyel alıcıları doğrudan etkileyecek bir gelişme. Özellikle satış sonrası hizmetler konusu tüketiciler için hassas ve merak uyandırıcı.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 90,
-        "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
+        "score": 72,
+        "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 7,
+        "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 18,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 10
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 15,
+          "gundem_gucu": 10,
+          "paylasilabilirlik": 5
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Düşük ÖTV'li elektrikli araç haberi her zaman büyük ilgi çeker. Renault gibi yaygın bir markanın uygun fiyatlı elektrikli modeli, geniş bir kitlenin alım gücünü etkileyeceği için viral potansiyeli çok yüksek. Fiyat ve vergi avantajı odaklı olması kritik.",
+        "score_explanation": "Mazda gibi köklü bir markanın Türkiye'deki distribütör değişikliği önemli bir haber. Marka sahiplerini ve potansiyel alıcıları doğrudan etkileyecek bir gelişme. Özellikle satış sonrası hizmetler konusu tüketiciler için hassas ve merak uyandırıcı.",
         "skipped": false,
         "threshold": 35,
         "top_articles": [
           {
-            "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-            "score": 90,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 18,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Roma gitti, Amalfi geldi‼️ Yine zenginleri ilgilendiren bir haber... 640 beygirlik çift turbo V8 motora sahip Ferrari Amalfi, Türkiye'de ilk sahiplerine teslim edilmeye başlandı. Fiyatı açıklanmadı ama tahminim 45 milyon TL'ye yakındır... Not: Bu arada Ferrari'nin büyük tartışma yaratan ilk elektrikli modeli Luce'nin Çin için ayrılan ilk 88 araçlık kotası birkaç saat içinde tükenmiş.",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 24,
-              "benzersizlik": 17,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Yeni Dacia Striker'ın LPG'li versiyonu ortaya çıktı: İşte görüntüler",
-            "score": 81,
+            "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+            "score": 72,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 22,
               "benzersizlik": 15,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 10
+              "gundem_gucu": 10,
+              "paylasilabilirlik": 5
             }
           }
         ],
-        "scored_count": 7,
-        "cooldown_candidates": [
-          {
-            "title": "Roma gitti, Amalfi geldi‼️ Yine zenginleri ilgilendiren bir haber... 640 beygirlik çift turbo V8 motora sahip Ferrari Amalfi, Türkiye'de ilk sahiplerine teslim edilmeye başlandı. Fiyatı açıklanmadı ama tahminim 45 milyon TL'ye yakındır... Not: Bu arada Ferrari'nin büyük tartışma yaratan ilk elektrikli modeli Luce'nin Çin için ayrılan ilk 88 araçlık kotası birkaç saat içinde tükenmiş.",
-            "link": "https://nitter.net/eozpeynirci/status/2071183228174578108#m",
-            "score": 87,
-            "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "640-aciklanmadi-amalfi-amalfi-araclik-arada-ayrilan-baslandi-beygirlik-birkac-cift-cin-edilmeye-elektrikli-ferrari-ferrari-fiyati-gitti-haber-ilgilendiren-kotasi-luce-milyon-modeli-motora-not-roma-saat-sahip-sahiplerine-tahminim-tartisma-teslim-tukenmis-turbo-turkiye-yakindir-yaratan-yine-zenginleri"
-          },
-          {
-            "title": "Yeni Dacia Striker'ın LPG'li versiyonu ortaya çıktı: İşte görüntüler",
-            "link": "https://www.donanimhaber.com/yeni-dacia-striker-in-lpg-li-versiyonu-ortaya-cikti-iste-goruntu--207390",
-            "score": 81,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "dacia-goruntuler-lpg-ortaya-ste-striker-versiyonu"
-          },
-          {
-            "title": "R to @eozpeynirci: Elektrikli Cayenne için şu ana kadar 500-600 ön talep gelmiş. Önemli olan talebe karşı araç verecekler mi? Bu arada Coupe gövde tipi de haftaya geliyormuş...",
-            "link": "https://nitter.net/eozpeynirci/status/2071176020279828975#m",
-            "score": 78,
-            "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "500-600-ana-arac-arada-cayenne-coupe-elektrikli-eozpeynirci-geliyormus-gelmis-govde-haftaya-onemli-talebe-talep-tipi-verecekler"
-          },
-          {
-            "title": "TEMMUZ KONUSU: BOL STOK! . PERŞEMBE GÜNÜ SONUÇLAR BELLİ OLUYOR! 0 km otomobil pazarında Haziran sonuçları açıklanıyor! Temmuz ayında stoklar bol olacak gibi görünüyor. https://www.arabahabercisi.com/0-km-otomobil-haziran-2026-satislari-araba/",
-            "link": "https://nitter.net/murattosunMSE/status/2071176118334361743#m",
-            "score": 76,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "2026-aciklaniyor-araba-arabahabercisi-ayinda-belli-bol-bol-com-gorunuyor-gunu-haziran-haziran-https-konusu-olacak-oluyor-otomobil-otomobil-pazarinda-persembe-satislari-sonuclar-sonuclari-stok-stoklar-temmuz-temmuz-www"
-          },
-          {
-            "title": "Yeni elektrikli Porsche Cayenne, Türkiye’de satışa sunuldu",
-            "link": "https://www.log.com.tr/yeni-elektrikli-porsche-cayenne-turkiyede-satisa-sunuldu/",
-            "score": 74,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "cayenne-elektrikli-porsche-satisa-sunuldu-turkiye"
-          },
-          {
-            "title": "Araç İçi Aksesuarlar ve Ses Sistemleri için Yeni Düzenleme",
-            "link": "https://shiftdelete.net/arac-ici-aksesuarlar-ve-ses-sistemleri-icin-yeni-duzenleme",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "aksesuarlar-arac-duzenleme-ses-sistemleri"
-          }
-        ]
+        "scored_count": 1,
+        "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-06-28T16:48:21.095205+03:00"
+      "updated_at": "2026-06-28T18:18:58.976532+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "link": "https://nitter.net/taylandil/status/2071209314702815646#m",
-          "published": "2026-06-28T12:29:16+00:00",
-          "summary": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
+          "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+          "link": "https://tr.motor1.com/news/800002/dogan-trend-mazda-gecis/",
+          "published": "2026-06-28T15:00:00+00:00",
+          "summary": "Türkiye'deki satış sonrası hizmetler artık Doğan Trend'in sorumluluğunda.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg"
           ],
           "image_source": "rss",
-          "source_name": "TaylanOzgurDil",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "125-160-430-alinabilen-anlasilan-arac-aracin-avrupa-ayinda-beraber-biliniyor-cikaran-dogru-dogru-dusuk-elektrikli-farkli-fiyatlarla-geciyor-geliyor-getirmeye-girebilecek-guc-hareketlendirmeyi-hazirlaniyor-hedefliyor-kwh-kwh-lfp-makyajlanacagi-malum-megane-mevcut-milyon-nedenle-nisan-olmayabilir-orneklemek-otv-otv-ozellikleri-pile-pile-renault-renault-renault-renault-sahip-satin-satisa-satislarini-scenic-scenic-scenic-scenic-simdi-sonuna-soyle-tech-turkiye-uygun-uzerinden-versiyon-versiyonu-versiyonunu-versiyonunun-versiyonuyla-yil",
-          "base_ai_score": 88,
+          "topic_fingerprint": "basariyla-bunyesine-dogan-gecisi-mazda-tamamlandi-trend",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 5
           },
-          "score": 90,
+          "score": 72,
           "score_reason": "ai_scored",
-          "score_explanation": "Düşük ÖTV'li elektrikli araç haberi her zaman büyük ilgi çeker. Renault gibi yaygın bir markanın uygun fiyatlı elektrikli modeli, geniş bir kitlenin alım gücünü etkileyeceği için viral potansiyeli çok yüksek. Fiyat ve vergi avantajı odaklı olması kritik.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
+          "score_explanation": "Mazda gibi köklü bir markanın Türkiye'deki distribütör değişikliği önemli bir haber. Marka sahiplerini ve potansiyel alıcıları doğrudan etkileyecek bir gelişme. Özellikle satış sonrası hizmetler konusu tüketiciler için hassas ve merak uyandırıcı.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şubat ayında Mazda Motor Europe ile yeni birhizmet anlaşması imzalayanDoğan Trend Otomotiv, iş birliği kapsamındaki geçiş dönemini başarıyla tamamladı. Japon otomotiv devinin Türkiye’deki mevcut servis ağı yönetimini üstlenen şirket, Mazda servis ağını 22 hizmet noktasına çıkardı. İş birliğinin güçlü şekilde ilerlediğini söyleyen Doğan Trend Otomotiv CEO’su Uğur Sakarya, “İlk aşamada yetkili servislerle ilgili geçiş bölümünü başarıyla tamamladık. Şimdi de Mazda müşterilerinin araçlarını uzun yıllar boyunca güvenle kullanmalarını destekleyecek çalışmalarımızın hazırlıklarını tamamlamak üzereyiz. Amacımız her zaman süreklilik ve memnuniyet sağlamak” dedi. Doğan Holding’in distribütörlüğünü yaptığı tüm otomotiv markalarını aynı çatı altında toplayan Doğan Trend Otomotiv, şubat ayında köklü Japon otomotiv üreticisi Mazda’yı da portföyüne ekledi. Bu iş birliği kapsamında markanın Türkiye’deki mevcut servis ağı yönetimini üstlendi. TümMazdaservislerinde müşterilere uzman bakım hizmeti ve orijinal yedek parça sunmaya başlayan Doğan Trend Otomotiv, geçiş sürecini başarıyla tamamladı. Bayi ve servis ağını büyütmeye devam eden Doğan Trend Otomotiv, yeni açılan noktalarla birlikte Mazda servis ağını 22 hizmet noktasına çıkarmış oldu. Doğan Trend Otomotiv, Mazda operasyonuyla birlikte müşteri memnuniyeti ve satış sonrası hizmetleriyle dikkatleri üzerine çekmeye devam ediyor. Mazda’nın 1 Şubat 2026 itibarıyla Doğan Trend Otomotiv bünyesine katıldığını hatırlatan Doğan Trend Otomotiv CEO’su Uğur Sakarya, “İş birliğimiz güçlü şekilde ilerliyor. İlk aşamada yetkili servislerle ilgili geçiş bölümünü başarıyla tamamladık. Şimdi de Mazda müşterilerinin araçlarını uzun yıllar boyunca güvenle kullanmalarını destekleyecek çalışmalarımızın hazırlıklarını tamamlamak üzereyiz. Amacımız her zaman süreklilik ve memnuniyet sağlamak” dedi. Doğan Trend Otomotiv’in Türkiye genelinde 100’den fazla yetkili satış ve servis noktasında otomotiv, motosiklet ve deniz motorlarında hizmet verdiğini ifade eden Uğur Sakarya, “Şirket olarak bu iş birliğini, hizmet ağımızı güçlendirme yolunda önemli bir adım olarak değerlendiriyoruz. Mazda operasyonu, grubumuzun otomotiv sektöründe büyüme ve müşterilerine uluslararası standartlarda hizmet sunma kararlılığını da ortaya koyuyor” diye konuştu. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "⚡️ RENAULT SCENIC'TEN DÜŞÜK ÖTV'Lİ MODEL YOLDA!\n\nRenault, Scenic'in Nisan ayında çıkan 3.3 milyon TL'lik versiyonunun ardından şimdi de daha uygun fiyatlı bir seçeneği getiriyor.\n\nYüzde 25 ÖTV dilimine girecek bu yeni Scenic, 125 kW güç ve 60 kWh batarya ile 430 km menzil sunacak. Yıl sonunda makyajlanacak olması da cabası.\n\nSizce bu hamle elektrikli araç pazarını hareketlendirir mi?",
-        "post_text_length": 386,
+        "post_text": "🚗 MAZDA TURKIYE'DE YENI BIR SAYFA ACIYOR\n\nMazda'nın Türkiye'deki servis ağının yönetimi artık Doğan Trend Otomotiv'de. Geçiş süreci sorunsuz tamamlandı.\n\n22 hizmet noktasıyla Mazda sahiplerine uzman bakım ve orijinal yedek parça sunulmaya başlandı. Müşteri memnuniyeti odaklı çalışmalar hız kesmeden devam edecek.\n\nSiz de bu değişimi nasıl değerlendiriyorsunuz?",
+        "post_text_length": 361,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-06-28T16:48:29.920132+03:00"
+      "updated_at": "2026-06-28T18:19:00.437387+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "link": "https://nitter.net/taylandil/status/2071209314702815646#m",
-          "published": "2026-06-28T12:29:16+00:00",
-          "summary": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-          "image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large",
+          "title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+          "link": "https://tr.motor1.com/news/800002/dogan-trend-mazda-gecis/",
+          "published": "2026-06-28T15:00:00+00:00",
+          "summary": "Türkiye'deki satış sonrası hizmetler artık Doğan Trend'in sorumluluğunda.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HL5p48cW4AAhAE6.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/1Z1AKw/s3/mazda-cx-5-2025.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "TaylanOzgurDil",
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "125-160-430-alinabilen-anlasilan-arac-aracin-avrupa-ayinda-beraber-biliniyor-cikaran-dogru-dogru-dusuk-elektrikli-farkli-fiyatlarla-geciyor-geliyor-getirmeye-girebilecek-guc-hareketlendirmeyi-hazirlaniyor-hedefliyor-kwh-kwh-lfp-makyajlanacagi-malum-megane-mevcut-milyon-nedenle-nisan-olmayabilir-orneklemek-otv-otv-ozellikleri-pile-pile-renault-renault-renault-renault-sahip-satin-satisa-satislarini-scenic-scenic-scenic-scenic-simdi-sonuna-soyle-tech-turkiye-uygun-uzerinden-versiyon-versiyonu-versiyonunu-versiyonunun-versiyonuyla-yil",
-          "base_ai_score": 88,
+          "topic_fingerprint": "basariyla-bunyesine-dogan-gecisi-mazda-tamamlandi-trend",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 5
           },
-          "score": 90,
+          "score": 72,
           "score_reason": "ai_scored",
-          "score_explanation": "Düşük ÖTV'li elektrikli araç haberi her zaman büyük ilgi çeker. Renault gibi yaygın bir markanın uygun fiyatlı elektrikli modeli, geniş bir kitlenin alım gücünü etkileyeceği için viral potansiyeli çok yüksek. Fiyat ve vergi avantajı odaklı olması kritik.",
-          "freshness_bonus": 7,
+          "score_explanation": "Mazda gibi köklü bir markanın Türkiye'deki distribütör değişikliği önemli bir haber. Marka sahiplerini ve potansiyel alıcıları doğrudan etkileyecek bir gelişme. Özellikle satış sonrası hizmetler konusu tüketiciler için hassas ve merak uyandırıcı.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şubat ayında Mazda Motor Europe ile yeni birhizmet anlaşması imzalayanDoğan Trend Otomotiv, iş birliği kapsamındaki geçiş dönemini başarıyla tamamladı. Japon otomotiv devinin Türkiye’deki mevcut servis ağı yönetimini üstlenen şirket, Mazda servis ağını 22 hizmet noktasına çıkardı. İş birliğinin güçlü şekilde ilerlediğini söyleyen Doğan Trend Otomotiv CEO’su Uğur Sakarya, “İlk aşamada yetkili servislerle ilgili geçiş bölümünü başarıyla tamamladık. Şimdi de Mazda müşterilerinin araçlarını uzun yıllar boyunca güvenle kullanmalarını destekleyecek çalışmalarımızın hazırlıklarını tamamlamak üzereyiz. Amacımız her zaman süreklilik ve memnuniyet sağlamak” dedi. Doğan Holding’in distribütörlüğünü yaptığı tüm otomotiv markalarını aynı çatı altında toplayan Doğan Trend Otomotiv, şubat ayında köklü Japon otomotiv üreticisi Mazda’yı da portföyüne ekledi. Bu iş birliği kapsamında markanın Türkiye’deki mevcut servis ağı yönetimini üstlendi. TümMazdaservislerinde müşterilere uzman bakım hizmeti ve orijinal yedek parça sunmaya başlayan Doğan Trend Otomotiv, geçiş sürecini başarıyla tamamladı. Bayi ve servis ağını büyütmeye devam eden Doğan Trend Otomotiv, yeni açılan noktalarla birlikte Mazda servis ağını 22 hizmet noktasına çıkarmış oldu. Doğan Trend Otomotiv, Mazda operasyonuyla birlikte müşteri memnuniyeti ve satış sonrası hizmetleriyle dikkatleri üzerine çekmeye devam ediyor. Mazda’nın 1 Şubat 2026 itibarıyla Doğan Trend Otomotiv bünyesine katıldığını hatırlatan Doğan Trend Otomotiv CEO’su Uğur Sakarya, “İş birliğimiz güçlü şekilde ilerliyor. İlk aşamada yetkili servislerle ilgili geçiş bölümünü başarıyla tamamladık. Şimdi de Mazda müşterilerinin araçlarını uzun yıllar boyunca güvenle kullanmalarını destekleyecek çalışmalarımızın hazırlıklarını tamamlamak üzereyiz. Amacımız her zaman süreklilik ve memnuniyet sağlamak” dedi. Doğan Trend Otomotiv’in Türkiye genelinde 100’den fazla yetkili satış ve servis noktasında otomotiv, motosiklet ve deniz motorlarında hizmet verdiğini ifade eden Uğur Sakarya, “Şirket olarak bu iş birliğini, hizmet ağımızı güçlendirme yolunda önemli bir adım olarak değerlendiriyoruz. Mazda operasyonu, grubumuzun otomotiv sektöründe büyüme ve müşterilerine uluslararası standartlarda hizmet sunma kararlılığını da ortaya koyuyor” diye konuştu. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
           "image_sources": [
-            "article_candidates_field"
+            "meta_og",
+            "article_script",
+            "article_script",
+            "article_img"
           ],
-          "prepared_image_count": 1
+          "prepared_image_count": 4
         },
-        "post_text": "⚡️ RENAULT SCENIC'TEN DÜŞÜK ÖTV'Lİ MODEL YOLDA!\n\nRenault, Scenic'in Nisan ayında çıkan 3.3 milyon TL'lik versiyonunun ardından şimdi de daha uygun fiyatlı bir seçeneği getiriyor.\n\nYüzde 25 ÖTV dilimine girecek bu yeni Scenic, 125 kW güç ve 60 kWh batarya ile 430 km menzil sunacak. Yıl sonunda makyajlanacak olması da cabası.\n\nSizce bu hamle elektrikli araç pazarını hareketlendirir mi?",
-        "image_path": "/tmp/otoxtra_img_7ol6xb1v.jpg",
+        "post_text": "🚗 MAZDA TURKIYE'DE YENI BIR SAYFA ACIYOR\n\nMazda'nın Türkiye'deki servis ağının yönetimi artık Doğan Trend Otomotiv'de. Geçiş süreci sorunsuz tamamlandı.\n\n22 hizmet noktasıyla Mazda sahiplerine uzman bakım ve orijinal yedek parça sunulmaya başlandı. Müşteri memnuniyeti odaklı çalışmalar hız kesmeden devam edecek.\n\nSiz de bu değişimi nasıl değerlendiriyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_qcj9da54.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_7ol6xb1v.jpg"
+          "/tmp/otoxtra_img_qcj9da54.jpg",
+          "/tmp/otoxtra_img_8fp4rzpj.jpg",
+          "/tmp/otoxtra_img_oenk941d.jpg",
+          "/tmp/otoxtra_img_f75ulu6a.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-06-28T16:48:30.977512+03:00"
+      "updated_at": "2026-06-28T18:19:03.182985+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122170541408916499",
-        "article_title": "Düşük ÖTV’li Renault Scenic geliyor❗️ 🚘 Nisan ayında Scenic’in 160 kW güç - 87 kWh pile sahip versiyonunu 3.3 milyon TL’den satışa çıkaran Renault şimdi %25 ÖTV’ye girebilecek versiyonu Türkiye’ye getirmeye hazırlanıyor. 🚘 Scenic’in yıl sonuna doğru makyajlanacağı biliniyor. Renault da malum LFP pile geçiyor. Bu nedenle mevcut versiyon üzerinden örneklemek doğru olmayabilir. Ancak aracın “şu an” Avrupa’da daha uygun fiyatlarla satın alınabilen versiyonunun özellikleri şöyle: ⚡️125 kW 🔋 60 kWh 🚘430 km ➡️ Anlaşılan Renault yeni Megane E-Tech ile beraber Scenic’in 2 farklı versiyonuyla elektrikli araç satışlarını hareketlendirmeyi hedefliyor.",
-        "image_source": "single_image",
-        "image_count": 1,
+        "post_id": "678053852057751_122170549052916499",
+        "article_title": "Mazda'nın Doğan Trend bünyesine geçişi başarıyla tamamlandı!",
+        "image_source": "multi_image",
+        "image_count": 4,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-06-28T16:48:37.043823+03:00"
+      "updated_at": "2026-06-28T18:19:24.908730+03:00"
     }
   }
 }
