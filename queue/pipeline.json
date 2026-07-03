@@ -1,107 +1,31 @@
 {
-  "run_id": "2026-07-03-17:04",
+  "run_id": "2026-07-03-20:26",
   "status": "completed",
-  "started_at": "2026-07-03T17:04:54.224552+03:00",
-  "updated_at": "2026-07-03T17:06:46.918242+03:00",
+  "started_at": "2026-07-03T20:26:22.205336+03:00",
+  "updated_at": "2026-07-03T20:27:40.488997+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-            "link": "https://www.donanimhaber.com/en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak--207641",
-            "published": "2026-07-03T13:36:00+00:00",
-            "summary": "Kanadalı Moment Energy, dünyanın en büyük elektrikli araç bataryası yeniden kullanım fabrikasını açtı. Tesis, kullanım ömrünü tamamlayan bataryaları enerji depolama sistemlerine dönüştürecek.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
+            "title": "BMW, V8 motorun uzun süre hayatımızda olacağını açıkladı",
+            "link": "https://tr.motor1.com/news/800572/bmw-v8-uzun-sure-x5/",
+            "published": "2026-07-03T15:00:00+00:00",
+            "summary": "Yeni X5'te de kullanılacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/ZnzRZz/s3/2027-bmw-x5.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/ZnzRZz/s3/2027-bmw-x5.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg"
+              "https://cdn.motor1.com/images/mgl/ZnzRZz/s3/2027-bmw-x5.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Donanimhaber",
+            "source_name": "Motor1 TR",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "acildi-arac-bataryalari-elektrikli-kullanilacak-tesis-yeniden"
-          },
-          {
-            "title": "Tesla, Türkiye’de Supercharger fiyatlarına yeniden zam yaptı",
-            "link": "https://www.donanimhaber.com/tesla-turkiye-de-supercharger-fiyatlarina-yeniden-zam-yapti--207636",
-            "published": "2026-07-03T13:15:00+00:00",
-            "summary": "Tesla, Türkiye'deki Supercharger şarj ücretlerine yeniden zam yaptı. Yeni tarifeyle fiyatlar Tesla sahipleri için %5,05, diğer elektrikli araç kullanıcıları için ise %5,69 arttı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/207636/1200x675tesla-turkiye-de-supercharger-fiyatlarina-yeniden-zam-yapti.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207636/1200x675tesla-turkiye-de-supercharger-fiyatlarina-yeniden-zam-yapti.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/207636/1200x675tesla-turkiye-de-supercharger-fiyatlarina-yeniden-zam-yapti.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "fiyatlarina-supercharger-tesla-turkiye-yapti-yeniden-zam"
-          },
-          {
-            "title": "Çin'in hakim olduğu kritik hammaddede Almanya'dan tarihi adım",
-            "link": "https://www.donanimhaber.com/almanya-cin-in-hakim-oldugu-kritik-hammaddeyi-uretecek--207633",
-            "published": "2026-07-03T11:26:00+00:00",
-            "summary": "Almanya, çipler ve elektrikli araçlarda kullanılan silisyum karbürü (SiC) geri dönüştürecek dünyanın ilk tesisini kuruyor. Tesisin 2028 yılında üretime başlaması planlanıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/207633/1200x675almanya-cin-in-hakim-oldugu-kritik-hammaddeyi-uretecek.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207633/1200x675almanya-cin-in-hakim-oldugu-kritik-hammaddeyi-uretecek.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/207633/1200x675almanya-cin-in-hakim-oldugu-kritik-hammaddeyi-uretecek.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adim-almanya-cin-hakim-hammaddede-kritik-oldugu-tarihi"
-          },
-          {
-            "title": "HMD, yapay zeka destekli tuşlu Nokia telefonlar tanıttı",
-            "link": "https://www.log.com.tr/hmd-yapay-zeka-destekli-tuslu-nokia-telefonlar-tanitti/",
-            "published": "2026-07-03T12:54:21+00:00",
-            "summary": "Yapay zeka sonunda tuşlu telefonlara da giriş yaptı. HMD’nin bugün tanıttığı Nokia 200 4G, 210 4G, 215 4G 2nd Edition ve 235 4G 2nd Edition modelleri, “Sikey AI” temelli bir yapay zeka asistanıyla geliyor. Bu asistana, üzerinde “Ai” yazan büyük buton üzerinden erişilebiliyor. Söz konusu altyapı sayesinde asistana sesli olarak temel seviye sorular sorularak cevaplar alınabildiği ve cihaz özelliklerinin sesli komutlarla yönetilebildiği belirtiliyor. Asistanın etkinleştirildikten sonraki 180 gün boyunca ücretsiz kullanılabileceği aktarılırken, daha sonrası için ayrı bir abonelik satın alınmasının gerekeceği bildiriliyor. Görüntülü konuşma desteği de bulunan yeni tuşlu telefonlar, S30+ işletim sistemini temel alıyor ve USB-C üzerinden doldurulabilen 1.450 mAh kapasiteli batarya taşıyor. Bluetooth 5.0’ın eksik edilmediği cep telefonlarında, 3.5 mm kulaklık girişi ve FM Radyo da yer alıyor. HMD, yapay zeka destekli tuşlu Nokia telefonlar tanıttı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-47-57_MZQ7J-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-47-57_MZQ7J-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-47-57_MZQ7J-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "destekli-hmd-nokia-tanitti-telefonlar-tuslu-yapay-zeka"
-          },
-          {
-            "title": "Yeni Mercedes-Benz CLA 220 4MATIC Shooting Brake, Türkiye’de satışa sunuldu",
-            "link": "https://www.log.com.tr/yeni-mercedes-benz-cla-220-4matic-shooting-brake-turkiyede-satisa-sunuldu/",
-            "published": "2026-07-03T12:40:07+00:00",
-            "summary": "Yeni Mercedes-Benz CLA 220 4MATIC Shooting Brake, Türkiye’de 5 milyon TL’den satışa sunuldu. Yeni içten yanmalı CLA 220 4MATIC Shooting Brake AMG, 30 beygirlik elektrik motoruyla birlikte çalışan 1.5 litrelik 4 silindirli benzinli motoruyla 220 beygire kadar güç sunuyor. Sekiz ileri otomatik şanzımanla (8G-eDCT) donatılan araç, Mercedes-Benz işletim sistemi (MB.OS) ve Microsoft ile Google’ın yapay zeka (AI) destekli dördüncü nesil Mercedes-Benz Kullanıcı Deneyimi (MBUX) arayüzüyle geliyor. Güç ihtiyacının 27 beygirin altında olduğu durumlarda yalnızca elektrikle ilerleyebilen model, 19 inç AMG jantlar, MULTIBEAM yıldız desenli LED ön farlar, yıldız desenli arka stoplar ve AMG tasarımlı ön ve arka tamponlar taşıyor. Yeni Mercedes-Benz CLA 220 4MATIC Shooting Brake, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-38-57_3DnUE-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-38-57_3DnUE-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-03_15-38-57_3DnUE-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "220-4matic-benz-brake-cla-mercedes-satisa-shooting-sunuldu-turkiye"
+            "topic_fingerprint": "acikladi-bmw-hayatimizda-motorun-olacagini-sure-uzun"
           },
           {
             "title": "Alpine, yeni modelinin \"ilk gerçek elektrikli spor otomobil\" olacağını iddia ediyor",
@@ -123,26 +47,43 @@
             "topic_fingerprint": "alpine-ediyor-elektrikli-gercek-iddia-modelinin-olacagini-otomobil-spor"
           },
           {
-            "title": "Türkiye’deki Volvo talebinde şarjlı hibritler başrolde",
-            "link": "https://www.otoajanda.com/volvo-car-turkiye-sarjli-hibritlerle-yuzde-45-buyudu/",
-            "published": "2026-07-03T12:32:04+00:00",
-            "summary": "Volvo Car Türkiye, 2026 yılının ilk yarısında da büyümesini devam ettirdi. Premium segmentte elde ettiği satış performansı ve şarj edilebilir otomobillerde ulaştığı pazar payı ile marka, elektrifikasyon dönüşümündeki iddiasını bir kez daha ortaya koydu. 2026 yılının ilk altı ayında toplam 8 bin 623 adet otomobil satışı gerçekleştiren Volvo Car Türkiye, geçen yılın aynı dönemine göre […] Türkiye’deki Volvo talebinde şarjlı hibritler başrolde yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-            "image_url": "https://www.otoajanda.com/wp-content/uploads/2025/06/Yeni_Volvo_EX30_AliCan-Elmas.jpg",
-            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2025/06/Yeni_Volvo_EX30_AliCan-Elmas.jpg",
-            "image_candidates": [
-              "https://www.otoajanda.com/wp-content/uploads/2025/06/Yeni_Volvo_EX30_AliCan-Elmas.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "OtoAjanda",
+            "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+            "link": "https://nitter.net/ahmetcelik2016/status/2073061725117567095#m",
+            "published": "2026-07-03T15:10:05+00:00",
+            "summary": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "Ahmet Celik",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "basrolde-hibritler-sarjli-talebinde-turkiye-volvo"
+            "topic_fingerprint": "160-2008-493-541-633-637-662-809-923-933-942-alma-ayinda-ayni-basarini-boreal-boreal-chery-cuv-duster-frontera-gosterdi-gostergesi-haziran-iddiasinin-ise-kgm-mobility-modelleri-nissan-nissan-olmasi-opel-peugeot-qashqai-renault-renault-satilan-sekilde-sirada-siradaki-surpriz-suv-t10x-taigo-tiggo-togg-torres-toyota-volkswagen-yapti-yer-yine"
+          },
+          {
+            "title": "Gerek topuk koruması olması, gerekse de 245 tabana çıkması T10F'in eleştirilen bir yönü olan lastiğin gövdeye göre küçük durması konusunu büyük oranda çözecek gibi görünüyor. Taban genişlemesi; geniş bir zemin teması ile beraber yanağın da kalınlaşmasını sağlıyor. Ayrıca topuk koruması sayesinde tekerlekler daha dolgun hale geliyor aynı ebattaki korumasız lastiklere göre. Benim düşüncem bu farklar, lastiğin görünümüne birkaç boy etki edecektir.",
+            "link": "https://nitter.net/sekizsilindir/status/2073090681417949441#m",
+            "published": "2026-07-03T17:05:09+00:00",
+            "summary": "Gerek topuk koruması olması, gerekse de 245 tabana çıkması T10F'in eleştirilen bir yönü olan lastiğin gövdeye göre küçük durması konusunu büyük oranda çözecek gibi görünüyor. Taban genişlemesi; geniş bir zemin teması ile beraber yanağın da kalınlaşmasını sağlıyor. Ayrıca topuk koruması sayesinde tekerlekler daha dolgun hale geliyor aynı ebattaki korumasız lastiklere göre. Benim düşüncem bu farklar, lastiğin görünümüne birkaç boy etki edecektir. Togg Team Türkiye (@TOGG_Team) 🚗 Togg T10F V2 Versiyon'larda Lastik Güncellemesi Sıfır teslim edilen yeni Togg T10F modellerinde lastikler güncellendi. 🔹 Eski lastik: Continental EcoContact 235/40 R19 🔹 Yeni lastik: Pirelli P Zero 245/40 R19 Yeni ölçüyle birlikte lastik taban genişliği 235'den 245'e çıkarıldı. @Togg2022 #togg — https://nitter.net/TOGG_Team/status/2073060825107964224#m",
+            "image_url": "https://pbs.twimg.com/media/HMT8PfrWoAASYJp.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HMT8PfrWoAASYJp.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HMT8PfrWoAASYJp.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Sekizsilindir",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "245-ayni-ayrica-benim-beraber-birkac-boy-cikmasi-cozecek-dolgun-durmasi-dusuncem-ebattaki-edecektir-elestirilen-etki-farklar-geliyor-genis-genislemesi-gerek-gerekse-gorunumune-gorunuyor-govdeye-hale-kalinlasmasini-konusunu-korumasi-korumasi-korumasiz-lastigin-lastigin-lastiklere-olmasi-oranda-sagliyor-sayesinde-t10f-taban-tabana-tekerlekler-temasi-topuk-topuk-yanagin-yonu-zemin"
           }
         ],
-        "count": 7,
+        "count": 4,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -230,277 +171,241 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 93,
-            "after_time": 7,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "after_keyword": 89,
+            "after_time": 4,
+            "after_posted": 4,
+            "after_duplicate": 4,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 93,
-          "after_time": 7,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "after_keyword": 89,
+          "after_time": 4,
+          "after_posted": 4,
+          "after_duplicate": 4,
+          "after_shared_variant_cooldown": 4
         }
       },
       "error": null,
-      "updated_at": "2026-07-03T17:05:48.960086+03:00"
+      "updated_at": "2026-07-03T20:27:14.561953+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-          "link": "https://www.donanimhaber.com/en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak--207641",
-          "published": "2026-07-03T13:36:00+00:00",
-          "summary": "Kanadalı Moment Energy, dünyanın en büyük elektrikli araç bataryası yeniden kullanım fabrikasını açtı. Tesis, kullanım ömrünü tamamlayan bataryaları enerji depolama sistemlerine dönüştürecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "link": "https://nitter.net/ahmetcelik2016/status/2073061725117567095#m",
+          "published": "2026-07-03T15:10:05+00:00",
+          "summary": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acildi-arac-bataryalari-elektrikli-kullanilacak-tesis-yeniden",
-          "base_ai_score": 85,
+          "topic_fingerprint": "160-2008-493-541-633-637-662-809-923-933-942-alma-ayinda-ayni-basarini-boreal-boreal-chery-cuv-duster-frontera-gosterdi-gostergesi-haziran-iddiasinin-ise-kgm-mobility-modelleri-nissan-nissan-olmasi-opel-peugeot-qashqai-renault-renault-satilan-sekilde-sirada-siradaki-surpriz-suv-t10x-taigo-tiggo-togg-torres-toyota-volkswagen-yapti-yer-yine",
+          "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 19,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 15
           },
-          "score": 87,
+          "score": 99,
           "score_reason": "ai_scored",
-          "score_explanation": "Sürdürülebilirlik ve çevre bilinci konuları güncel ve önemli. Elektrikli araç bataryalarının geleceği hakkında somut bir adım olması, geniş kitlelerin ilgisini çekebilir. 'En büyük tesis' vurgusu viral potansiyeli artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "Ayın satış rakamları her zaman büyük ilgi görür, özellikle SUV/CUV gibi popüler bir segmentte. Togg'un zirvede olması, Boreal ve KG Mobility gibi markaların sürpriz çıkışları, yerel ve global markaların rekabeti, bu haberin viral potansiyelini çok yükseltiyor. İnsanlar kendi markalarını ve favori modellerini savunmak için etkileşime gireceklerdir.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 87,
-        "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
+        "score": 99,
+        "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 11
+          "etkilesim_potansiyeli": 25,
+          "benzersizlik": 19,
+          "gundem_gucu": 20,
+          "paylasilabilirlik": 15
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Sürdürülebilirlik ve çevre bilinci konuları güncel ve önemli. Elektrikli araç bataryalarının geleceği hakkında somut bir adım olması, geniş kitlelerin ilgisini çekebilir. 'En büyük tesis' vurgusu viral potansiyeli artırıyor.",
+        "score_explanation": "Ayın satış rakamları her zaman büyük ilgi görür, özellikle SUV/CUV gibi popüler bir segmentte. Togg'un zirvede olması, Boreal ve KG Mobility gibi markaların sürpriz çıkışları, yerel ve global markaların rekabeti, bu haberin viral potansiyelini çok yükseltiyor. İnsanlar kendi markalarını ve favori modellerini savunmak için etkileşime gireceklerdir.",
         "skipped": false,
         "threshold": 35,
         "top_articles": [
           {
-            "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-            "score": 87,
+            "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+            "score": 99,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 11
+              "etkilesim_potansiyeli": 25,
+              "benzersizlik": 19,
+              "gundem_gucu": 20,
+              "paylasilabilirlik": 15
             }
-          },
-          {
-            "title": "Çin'in hakim olduğu kritik hammaddede Almanya'dan tarihi adım",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 17,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Tesla, Türkiye’de Supercharger fiyatlarına yeniden zam yaptı",
-            "score": 79,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 7,
-        "cooldown_candidates": [
-          {
-            "title": "Çin'in hakim olduğu kritik hammaddede Almanya'dan tarihi adım",
-            "link": "https://www.donanimhaber.com/almanya-cin-in-hakim-oldugu-kritik-hammaddeyi-uretecek--207633",
-            "score": 85,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "adim-almanya-cin-hakim-hammaddede-kritik-oldugu-tarihi"
-          },
-          {
-            "title": "Tesla, Türkiye’de Supercharger fiyatlarına yeniden zam yaptı",
-            "link": "https://www.donanimhaber.com/tesla-turkiye-de-supercharger-fiyatlarina-yeniden-zam-yapti--207636",
-            "score": 79,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "fiyatlarina-supercharger-tesla-turkiye-yapti-yeniden-zam"
           },
           {
             "title": "Alpine, yeni modelinin \"ilk gerçek elektrikli spor otomobil\" olacağını iddia ediyor",
+            "score": 86,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 24,
+              "benzersizlik": 18,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "BMW, V8 motorun uzun süre hayatımızda olacağını açıkladı",
+            "score": 84,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 16,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 10
+            }
+          }
+        ],
+        "scored_count": 4,
+        "cooldown_candidates": [
+          {
+            "title": "Alpine, yeni modelinin \"ilk gerçek elektrikli spor otomobil\" olacağını iddia ediyor",
             "link": "https://tr.motor1.com/news/800567/alpine-a110-future-test-araci/",
-            "score": 74,
+            "score": 86,
             "score_reason": "ai_scored",
             "source_name": "Motor1 TR",
             "topic_fingerprint": "alpine-ediyor-elektrikli-gercek-iddia-modelinin-olacagini-otomobil-spor"
           },
           {
-            "title": "Türkiye’deki Volvo talebinde şarjlı hibritler başrolde",
-            "link": "https://www.otoajanda.com/volvo-car-turkiye-sarjli-hibritlerle-yuzde-45-buyudu/",
-            "score": 73,
+            "title": "BMW, V8 motorun uzun süre hayatımızda olacağını açıkladı",
+            "link": "https://tr.motor1.com/news/800572/bmw-v8-uzun-sure-x5/",
+            "score": 84,
             "score_reason": "ai_scored",
-            "source_name": "OtoAjanda",
-            "topic_fingerprint": "basrolde-hibritler-sarjli-talebinde-turkiye-volvo"
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "acikladi-bmw-hayatimizda-motorun-olacagini-sure-uzun"
           },
           {
-            "title": "HMD, yapay zeka destekli tuşlu Nokia telefonlar tanıttı",
-            "link": "https://www.log.com.tr/hmd-yapay-zeka-destekli-tuslu-nokia-telefonlar-tanitti/",
-            "score": 69,
+            "title": "Gerek topuk koruması olması, gerekse de 245 tabana çıkması T10F'in eleştirilen bir yönü olan lastiğin gövdeye göre küçük durması konusunu büyük oranda çözecek gibi görünüyor. Taban genişlemesi; geniş bir zemin teması ile beraber yanağın da kalınlaşmasını sağlıyor. Ayrıca topuk koruması sayesinde tekerlekler daha dolgun hale geliyor aynı ebattaki korumasız lastiklere göre. Benim düşüncem bu farklar, lastiğin görünümüne birkaç boy etki edecektir.",
+            "link": "https://nitter.net/sekizsilindir/status/2073090681417949441#m",
+            "score": 70,
             "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "destekli-hmd-nokia-tanitti-telefonlar-tuslu-yapay-zeka"
-          },
-          {
-            "title": "Yeni Mercedes-Benz CLA 220 4MATIC Shooting Brake, Türkiye’de satışa sunuldu",
-            "link": "https://www.log.com.tr/yeni-mercedes-benz-cla-220-4matic-shooting-brake-turkiyede-satisa-sunuldu/",
-            "score": 60,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "220-4matic-benz-brake-cla-mercedes-satisa-shooting-sunuldu-turkiye"
+            "source_name": "Sekizsilindir",
+            "topic_fingerprint": "245-ayni-ayrica-benim-beraber-birkac-boy-cikmasi-cozecek-dolgun-durmasi-dusuncem-ebattaki-edecektir-elestirilen-etki-farklar-geliyor-genis-genislemesi-gerek-gerekse-gorunumune-gorunuyor-govdeye-hale-kalinlasmasini-konusunu-korumasi-korumasi-korumasiz-lastigin-lastigin-lastiklere-olmasi-oranda-sagliyor-sayesinde-t10f-taban-tabana-tekerlekler-temasi-topuk-topuk-yanagin-yonu-zemin"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-07-03T17:05:56.941140+03:00"
+      "updated_at": "2026-07-03T20:27:21.485901+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-          "link": "https://www.donanimhaber.com/en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak--207641",
-          "published": "2026-07-03T13:36:00+00:00",
-          "summary": "Kanadalı Moment Energy, dünyanın en büyük elektrikli araç bataryası yeniden kullanım fabrikasını açtı. Tesis, kullanım ömrünü tamamlayan bataryaları enerji depolama sistemlerine dönüştürecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "link": "https://nitter.net/ahmetcelik2016/status/2073061725117567095#m",
+          "published": "2026-07-03T15:10:05+00:00",
+          "summary": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acildi-arac-bataryalari-elektrikli-kullanilacak-tesis-yeniden",
-          "base_ai_score": 85,
+          "topic_fingerprint": "160-2008-493-541-633-637-662-809-923-933-942-alma-ayinda-ayni-basarini-boreal-boreal-chery-cuv-duster-frontera-gosterdi-gostergesi-haziran-iddiasinin-ise-kgm-mobility-modelleri-nissan-nissan-olmasi-opel-peugeot-qashqai-renault-renault-satilan-sekilde-sirada-siradaki-surpriz-suv-t10x-taigo-tiggo-togg-torres-toyota-volkswagen-yapti-yer-yine",
+          "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 19,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 15
           },
-          "score": 87,
+          "score": 99,
           "score_reason": "ai_scored",
-          "score_explanation": "Sürdürülebilirlik ve çevre bilinci konuları güncel ve önemli. Elektrikli araç bataryalarının geleceği hakkında somut bir adım olması, geniş kitlelerin ilgisini çekebilir. 'En büyük tesis' vurgusu viral potansiyeli artırıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Vancouver’da kurulan tesis, yeni batarya hücreleri üretmek yerineelektrikli araçlardan çıkarılan bataryaları yeniden kullanıma hazırlıyor. Performansı araçlarda kullanılacak seviyenin altına düşen ancak önemli ölçüde enerji depolama kapasitesini koruyan bataryalar, kapsamlı testlerden geçirilereksabit enerji depolama sistemlerinedönüştürülüyor. Bu sistemler veri merkezleri, hastaneler, fabrikalar, mikro şebekeler ve diğer kritik altyapılarda elektrik depolamak amacıyla kullanılacak. Bununla birlikte ikinci ömür bataryaların yeniden kullanılması sanıldığı kadar basit bir süreç değil. Her bataryanın kullanım geçmişi farklı olduğu için şarj döngüsü, sıcaklık geçmişi, güvenlik durumu ve kalan kapasitesi ayrı ayrı analiz ediliyor. Performans ve güvenlik kriterlerini karşılayan bataryalar ticari enerji depolama sistemlerine entegre edilirken, uygun olmayanlar geri dönüşüme yönlendiriliyor. 2023 yılında yayımlanan bir araştırmaya göre 2030 yılında yaklaşık 1 milyon, 2040 yılında ise 1,9 milyon elektrikli araç batarya paketi kullanım ömrünü tamamlayacak. Uluslararası Enerji Ajansı (IEA) ise 2030 yılına kadar 100 ila 120 GWh seviyesinde elektrikli araç bataryasının emekliye ayrılacağını öngörüyor. Bu miktar, günümüzdeki yıllık batarya üretimine yakın bir hacme karşılık geliyor. Uzmanlara göre bu bataryaların doğrudan geri dönüştürülmesi yerine yıllarca sabit enerji depolama sistemlerinde kullanmak daha mantıklı. Zira bu yöntem maliyetleri azaltabilir, lityum, nikel ve kobalt gibi değerli hammaddelerin kullanım ömrünü uzatabilir ve batarya tedarik zinciri üzerindeki baskıyı hafifletebilir. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/dp/B0F9FM4JH4 https://www.amazon.com.tr/dp/B0BLHMHK3L https://www.amazon.com.tr/dp/B004556Y4W https://www.n11.com/urun/life-net-medikal-dijital-termometre-isi-ve-nem-olcer-d7-67835197?magaza=yigitmarketingmed https://www.akbank.com/icerik/mtv-odemenize-odul-kampanyasi"
+          "score_explanation": "Ayın satış rakamları her zaman büyük ilgi görür, özellikle SUV/CUV gibi popüler bir segmentte. Togg'un zirvede olması, Boreal ve KG Mobility gibi markaların sürpriz çıkışları, yerel ve global markaların rekabeti, bu haberin viral potansiyelini çok yükseltiyor. İnsanlar kendi markalarını ve favori modellerini savunmak için etkileşime gireceklerdir.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
         },
-        "post_text": "🔋 ELEKTRIKLI ARAC BATARYALARI IKINCI HAYATINA BASLIYOR\n\nKanada'da dunyanin en buyuk elektrikli arac batarya yeniden kullanim tesisi acildi. Artik omrunu tamamlayan bataryalar cope gitmeyecek.\n\nBu tesis, eski bataryalari veri merkezleri, hastaneler gibi yerler icin enerji depolama sistemlerine donusturecek. Hem cevreyi koruyacak hem de maliyetleri dusurecek.\n\nSizce bu tur projeler daha da artmali mi?",
-        "post_text_length": 402,
+        "post_text": "🔥 HAZİRAN'DA EN ÇOK SATAN SUV'LAR BELLİ OLDU!\n\nHaziran ayı satış rakamları açıklandı ve bazı sürprizler var. Togg T10X zirveyi kimseye bırakmazken, Renault Duster ikinci sırada yer aldı.\n\nRenault Boreal'in ilk üçe girmesi dikkat çekici. KG Mobility Torres ve Nissan Qashqai de ilk beşteki yerlerini sağlamlaştırdı.\n\nSizin favoriniz bu listede mi?",
+        "post_text_length": 346,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-03T17:05:59.615500+03:00"
+      "updated_at": "2026-07-03T20:27:23.584044+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-          "link": "https://www.donanimhaber.com/en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak--207641",
-          "published": "2026-07-03T13:36:00+00:00",
-          "summary": "Kanadalı Moment Energy, dünyanın en büyük elektrikli araç bataryası yeniden kullanım fabrikasını açtı. Tesis, kullanım ömrünü tamamlayan bataryaları enerji depolama sistemlerine dönüştürecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/207641/1200x675en-buyuk-tesis-acildi-ev-bataryalari-yeniden-kullanilacak.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
+          "title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "link": "https://nitter.net/ahmetcelik2016/status/2073061725117567095#m",
+          "published": "2026-07-03T15:10:05+00:00",
+          "summary": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "fallback",
+          "source_name": "Ahmet Celik",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acildi-arac-bataryalari-elektrikli-kullanilacak-tesis-yeniden",
-          "base_ai_score": 85,
+          "topic_fingerprint": "160-2008-493-541-633-637-662-809-923-933-942-alma-ayinda-ayni-basarini-boreal-boreal-chery-cuv-duster-frontera-gosterdi-gostergesi-haziran-iddiasinin-ise-kgm-mobility-modelleri-nissan-nissan-olmasi-opel-peugeot-qashqai-renault-renault-satilan-sekilde-sirada-siradaki-surpriz-suv-t10x-taigo-tiggo-togg-torres-toyota-volkswagen-yapti-yer-yine",
+          "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 19,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 15
           },
-          "score": 87,
+          "score": 99,
           "score_reason": "ai_scored",
-          "score_explanation": "Sürdürülebilirlik ve çevre bilinci konuları güncel ve önemli. Elektrikli araç bataryalarının geleceği hakkında somut bir adım olması, geniş kitlelerin ilgisini çekebilir. 'En büyük tesis' vurgusu viral potansiyeli artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "Ayın satış rakamları her zaman büyük ilgi görür, özellikle SUV/CUV gibi popüler bir segmentte. Togg'un zirvede olması, Boreal ve KG Mobility gibi markaların sürpriz çıkışları, yerel ve global markaların rekabeti, bu haberin viral potansiyelini çok yükseltiyor. İnsanlar kendi markalarını ve favori modellerini savunmak için etkileşime gireceklerdir.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Vancouver’da kurulan tesis, yeni batarya hücreleri üretmek yerineelektrikli araçlardan çıkarılan bataryaları yeniden kullanıma hazırlıyor. Performansı araçlarda kullanılacak seviyenin altına düşen ancak önemli ölçüde enerji depolama kapasitesini koruyan bataryalar, kapsamlı testlerden geçirilereksabit enerji depolama sistemlerinedönüştürülüyor. Bu sistemler veri merkezleri, hastaneler, fabrikalar, mikro şebekeler ve diğer kritik altyapılarda elektrik depolamak amacıyla kullanılacak. Bununla birlikte ikinci ömür bataryaların yeniden kullanılması sanıldığı kadar basit bir süreç değil. Her bataryanın kullanım geçmişi farklı olduğu için şarj döngüsü, sıcaklık geçmişi, güvenlik durumu ve kalan kapasitesi ayrı ayrı analiz ediliyor. Performans ve güvenlik kriterlerini karşılayan bataryalar ticari enerji depolama sistemlerine entegre edilirken, uygun olmayanlar geri dönüşüme yönlendiriliyor. 2023 yılında yayımlanan bir araştırmaya göre 2030 yılında yaklaşık 1 milyon, 2040 yılında ise 1,9 milyon elektrikli araç batarya paketi kullanım ömrünü tamamlayacak. Uluslararası Enerji Ajansı (IEA) ise 2030 yılına kadar 100 ila 120 GWh seviyesinde elektrikli araç bataryasının emekliye ayrılacağını öngörüyor. Bu miktar, günümüzdeki yıllık batarya üretimine yakın bir hacme karşılık geliyor. Uzmanlara göre bu bataryaların doğrudan geri dönüştürülmesi yerine yıllarca sabit enerji depolama sistemlerinde kullanmak daha mantıklı. Zira bu yöntem maliyetleri azaltabilir, lityum, nikel ve kobalt gibi değerli hammaddelerin kullanım ömrünü uzatabilir ve batarya tedarik zinciri üzerindeki baskıyı hafifletebilir. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/dp/B0F9FM4JH4 https://www.amazon.com.tr/dp/B0BLHMHK3L https://www.amazon.com.tr/dp/B004556Y4W https://www.n11.com/urun/life-net-medikal-dijital-termometre-isi-ve-nem-olcer-d7-67835197?magaza=yigitmarketingmed https://www.akbank.com/icerik/mtv-odemenize-odul-kampanyasi",
           "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img"
+            "fallback"
           ],
-          "prepared_image_count": 3
+          "prepared_image_count": 1
         },
-        "post_text": "🔋 ELEKTRIKLI ARAC BATARYALARI IKINCI HAYATINA BASLIYOR\n\nKanada'da dunyanin en buyuk elektrikli arac batarya yeniden kullanim tesisi acildi. Artik omrunu tamamlayan bataryalar cope gitmeyecek.\n\nBu tesis, eski bataryalari veri merkezleri, hastaneler gibi yerler icin enerji depolama sistemlerine donusturecek. Hem cevreyi koruyacak hem de maliyetleri dusurecek.\n\nSizce bu tur projeler daha da artmali mi?",
-        "image_path": "/tmp/otoxtra_img_hofm1ex1.jpg",
+        "post_text": "🔥 HAZİRAN'DA EN ÇOK SATAN SUV'LAR BELLİ OLDU!\n\nHaziran ayı satış rakamları açıklandı ve bazı sürprizler var. Togg T10X zirveyi kimseye bırakmazken, Renault Duster ikinci sırada yer aldı.\n\nRenault Boreal'in ilk üçe girmesi dikkat çekici. KG Mobility Torres ve Nissan Qashqai de ilk beşteki yerlerini sağlamlaştırdı.\n\nSizin favoriniz bu listede mi?",
+        "image_path": "/tmp/otoxtra_fallback_6sl8_5x6.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_hofm1ex1.jpg",
-          "/tmp/otoxtra_img_h91vqmgs.jpg",
-          "/tmp/otoxtra_img_azjqyezk.jpg"
+          "/tmp/otoxtra_fallback_6sl8_5x6.jpg"
         ],
-        "image_source": "article_img",
-        "image_count": 3
+        "image_source": "fallback",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-07-03T17:06:36.422487+03:00"
+      "updated_at": "2026-07-03T20:27:24.059609+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122171075822916499",
-        "article_title": "Elektrikli araç bataryaları yeniden kullanılacak: En büyük tesis açıldı",
-        "image_source": "multi_image",
-        "image_count": 3,
+        "post_id": "678053852057751_122171093612916499",
+        "article_title": "Haziran ayında en çok satılan SUV/CUV modelleri. Boreal'in 3. sırada olması iddiasının bir göstergesi. 4. sıradaki @kgm_tr ise yine sürpriz yaptı. Aynı şekilde @Nissan da ilk 5 arasında yer alma başarını gösterdi. 1) Togg T10X – 2.933 2) Renault Duster – 2.493 3) Renault Boreal – 2.160 4) KG Mobility Torres – 1.942 5) Nissan Qashqai – 1.923 6) Chery Tiggo 7 – 1.809 7) Volkswagen Taigo – 1.662 8) Opel Frontera – 1.637 9) Peugeot 2008 – 1.633 10) Toyota C-HR – 1.541",
+        "image_source": "text_only_fallback",
+        "image_count": 0,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-03T17:06:46.918242+03:00"
+      "updated_at": "2026-07-03T20:27:40.488997+03:00"
     }
   }
 }
