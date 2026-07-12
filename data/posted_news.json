@@ -1414,7 +1414,7 @@
     "2026-07-11": 8,
     "2026-07-12": 1
   },
-  "last_check_time": "2026-07-12T09:03:40.321857+03:00",
+  "last_check_time": "2026-07-12T11:28:48.927889+03:00",
   "stats": {
     "daily_actions": {
       "2026-06-12": 4,
@@ -1447,7 +1447,7 @@
       "2026-07-09": 3,
       "2026-07-10": 4,
       "2026-07-11": 8,
-      "2026-07-12": 1
+      "2026-07-12": 2
     },
     "weekly": {
       "2026-W16": {
@@ -1606,10 +1606,12 @@
         "report_sent_at": "2026-07-06T10:13:38.044986+03:00"
       },
       "2026-W28": {
-        "actions": 29,
+        "actions": 30,
         "shares": 29,
-        "error_total": 0,
-        "errors": {},
+        "error_total": 1,
+        "errors": {
+          "PUBLISH_FAILED: Facebook paylasimi tamamen basarisiz": 1
+        },
         "skip_total": 0,
         "skips": {},
         "report_sent": false,
