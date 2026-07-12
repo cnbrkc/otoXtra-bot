@@ -1,34 +1,68 @@
 {
-  "run_id": "2026-07-11-20:55",
+  "run_id": "2026-07-12-09:02",
   "status": "completed",
-  "started_at": "2026-07-11T20:55:16.153188+03:00",
-  "updated_at": "2026-07-11T20:56:38.809073+03:00",
+  "started_at": "2026-07-12T09:02:19.341237+03:00",
+  "updated_at": "2026-07-12T09:03:40.319683+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
-            "link": "https://tr.motor1.com/news/801359/ferrari-ilk-luce-muzayede/",
-            "published": "2026-07-11T17:00:00+00:00",
-            "summary": "Chassis 0'dan edinilen gelirler ile eğitim projeleri desteklenecek.",
-            "image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
+            "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
+            "link": "https://www.donanimhaber.com/byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi--207960",
+            "published": "2026-07-11T18:00:00+00:00",
+            "summary": "Çinli dev BYD, Birleşik Arap Emirlikleri'nde inşa edilen güneş + enerji depolama projesi kapsamında 11,275 GWh kapasiteli batarya tedarik etmek üzere anlaşma imzaladı.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg"
+              "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "acik-artirma-ferrari-luce-satilacak-uretilen-yoluyla"
+            "topic_fingerprint": "anlasma-batarya-byd-depolama-dev-dunyanin-gwh-projesine-saglayacak"
+          },
+          {
+            "title": "OMODA JAECOO Temmuz Fiyat Listesi ve Türkiye Büyümesi Açıklandı",
+            "link": "https://otomobilkolik.com/omoda-jaecoo-temmuz-fiyat-listesi-ve-turkiye-buyumesi-aciklandi/",
+            "published": "2026-07-11T21:13:43+00:00",
+            "summary": "OMODA JAECOO Temmuz Fiyat Listesi açıklandı. Küresel otomotiv pazarında fütüristik tasarımı ve yenilikçi teknolojileriyle dengeleri değiştiren OMODA |… OMODA JAECOO Temmuz Fiyat Listesi ve Türkiye Büyümesi Açıklandı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "buyumesi-fiyat-jaecoo-listesi-omoda-temmuz-turkiye"
+          },
+          {
+            "title": "Mercedes-Benz’den Türkiye’de Bir İlk: Premium Şarj Dönemi Başladı!",
+            "link": "https://otomobilkolik.com/mercedes-benzden-turkiyede-bir-ilk-premium-sarj-donemi-basladi/",
+            "published": "2026-07-11T21:08:56+00:00",
+            "summary": "Türkiye otomotiv pazarında elektrikli mobilite dönüşümü tüm hızıyla sürerken, lüks segmentin öncüsü Mercedes-Benz radikal bir adım attı. Alman… Mercedes-Benz’den Türkiye’de Bir İlk: Premium Şarj Dönemi Başladı! yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "benz-donemi-mercedes-premium-sarj-turkiye"
           }
         ],
-        "count": 1,
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -116,208 +150,243 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 98,
-            "after_time": 1,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 97,
+            "after_time": 3,
+            "after_posted": 3,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 98,
-          "after_time": 1,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 97,
+          "after_time": 3,
+          "after_posted": 3,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-07-11T20:56:14.505954+03:00"
+      "updated_at": "2026-07-12T09:03:05.837331+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
-          "link": "https://tr.motor1.com/news/801359/ferrari-ilk-luce-muzayede/",
-          "published": "2026-07-11T17:00:00+00:00",
-          "summary": "Chassis 0'dan edinilen gelirler ile eğitim projeleri desteklenecek.",
-          "image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
+          "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
+          "link": "https://www.donanimhaber.com/byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi--207960",
+          "published": "2026-07-11T18:00:00+00:00",
+          "summary": "Çinli dev BYD, Birleşik Arap Emirlikleri'nde inşa edilen güneş + enerji depolama projesi kapsamında 11,275 GWh kapasiteli batarya tedarik etmek üzere anlaşma imzaladı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg"
+            "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acik-artirma-ferrari-luce-satilacak-uretilen-yoluyla",
+          "topic_fingerprint": "anlasma-batarya-byd-depolama-dev-dunyanin-gwh-projesine-saglayacak",
           "base_ai_score": 88,
           "score_breakdown": {
-            "guncellik": 20,
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
             "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 15,
-            "etkilesim_potansiyeli": 0
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 69,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Ferrari'nin ilk Luce modelinin açık artırma ile satılması, otomobil koleksiyonerleri ve meraklıları için büyük bir olay. Gelirlerin eğitim projelerine gidecek olması da habere pozitif bir sosyal boyut katıyor ve paylaşılabilirliğini artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "BYD'nin küresel ölçekte attığı büyük bir adım. Enerji depolama ve elektrikli araçlar gündemiyle doğrudan ilgili, geleceğe yönelik önemli bir haber. Markanın gücünü ve teknolojisini gösteriyor.",
+          "freshness_bonus": -4,
           "trend_bonus_raw": 1
         },
-        "score": 69,
-        "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
+        "score": 85,
+        "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": -4,
         "score_breakdown": {
-          "guncellik": 20,
+          "guncellik": 14,
+          "etkilesim_potansiyeli": 22,
           "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 15,
-          "etkilesim_potansiyeli": 0
+          "gundem_gucu": 19,
+          "paylasilabilirlik": 12
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Ferrari'nin ilk Luce modelinin açık artırma ile satılması, otomobil koleksiyonerleri ve meraklıları için büyük bir olay. Gelirlerin eğitim projelerine gidecek olması da habere pozitif bir sosyal boyut katıyor ve paylaşılabilirliğini artırıyor.",
+        "score_explanation": "BYD'nin küresel ölçekte attığı büyük bir adım. Enerji depolama ve elektrikli araçlar gündemiyle doğrudan ilgili, geleceğe yönelik önemli bir haber. Markanın gücünü ve teknolojisini gösteriyor.",
         "skipped": false,
-        "threshold": 35,
+        "threshold": 25,
         "top_articles": [
           {
-            "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
-            "score": 69,
+            "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
+            "score": 85,
+            "score_breakdown": {
+              "guncellik": 14,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 18,
+              "gundem_gucu": 19,
+              "paylasilabilirlik": 12
+            }
+          },
+          {
+            "title": "Mercedes-Benz’den Türkiye’de Bir İlk: Premium Şarj Dönemi Başladı!",
+            "score": 80,
             "score_breakdown": {
               "guncellik": 20,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 15,
-              "etkilesim_potansiyeli": 0
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 16,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 9
+            }
+          },
+          {
+            "title": "OMODA JAECOO Temmuz Fiyat Listesi ve Türkiye Büyümesi Açıklandı",
+            "score": 67,
+            "score_breakdown": {
+              "guncellik": 18,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 8
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 3,
+        "cooldown_candidates": [
+          {
+            "title": "Mercedes-Benz’den Türkiye’de Bir İlk: Premium Şarj Dönemi Başladı!",
+            "link": "https://otomobilkolik.com/mercedes-benzden-turkiyede-bir-ilk-premium-sarj-donemi-basladi/",
+            "score": 80,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "benz-donemi-mercedes-premium-sarj-turkiye"
+          },
+          {
+            "title": "OMODA JAECOO Temmuz Fiyat Listesi ve Türkiye Büyümesi Açıklandı",
+            "link": "https://otomobilkolik.com/omoda-jaecoo-temmuz-fiyat-listesi-ve-turkiye-buyumesi-aciklandi/",
+            "score": 67,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "buyumesi-fiyat-jaecoo-listesi-omoda-temmuz-turkiye"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-07-11T20:56:17.317889+03:00"
+      "updated_at": "2026-07-12T09:03:10.361928+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
-          "link": "https://tr.motor1.com/news/801359/ferrari-ilk-luce-muzayede/",
-          "published": "2026-07-11T17:00:00+00:00",
-          "summary": "Chassis 0'dan edinilen gelirler ile eğitim projeleri desteklenecek.",
-          "image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
+          "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
+          "link": "https://www.donanimhaber.com/byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi--207960",
+          "published": "2026-07-11T18:00:00+00:00",
+          "summary": "Çinli dev BYD, Birleşik Arap Emirlikleri'nde inşa edilen güneş + enerji depolama projesi kapsamında 11,275 GWh kapasiteli batarya tedarik etmek üzere anlaşma imzaladı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg"
+            "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acik-artirma-ferrari-luce-satilacak-uretilen-yoluyla",
+          "topic_fingerprint": "anlasma-batarya-byd-depolama-dev-dunyanin-gwh-projesine-saglayacak",
           "base_ai_score": 88,
           "score_breakdown": {
-            "guncellik": 20,
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
             "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 15,
-            "etkilesim_potansiyeli": 0
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 69,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Ferrari'nin ilk Luce modelinin açık artırma ile satılması, otomobil koleksiyonerleri ve meraklıları için büyük bir olay. Gelirlerin eğitim projelerine gidecek olması da habere pozitif bir sosyal boyut katıyor ve paylaşılabilirliğini artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "BYD'nin küresel ölçekte attığı büyük bir adım. Enerji depolama ve elektrikli araçlar gündemiyle doğrudan ilgili, geleceğe yönelik önemli bir haber. Markanın gücünü ve teknolojisini gösteriyor.",
+          "freshness_bonus": -4,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şimdiye kadar üretilen ilkFerrari Lucedoğrudan bir müşteriye teslim edilmeyecek. Maranello merkezli marka, yeni elektrikli grand tourer modelinin0 numaralı şasisini, 13-15 Ağustos 2026 tarihleri arasında düzenlenecekMonterey Car WeekkapsamındaRM Sotheby'starafından gerçekleştirilecek biryardım müzayedesineayırma kararı aldı. Elde edilecek gelirin tamamı,Ferrari Foundationaracılığıyla eğitim odaklı projelere aktarılacak. Bunlar arasında Maranello’daki gelecekteki M-TECH Alfredo Ferrari merkezi ve ABD’deki eğitim girişimleri de yer alıyor. Ferrari Luce Tailor Made \"Chassis 0\"adı verilen bu otomobil, Ferrari Design Studio ile Tailor Made kişiselleştirme programının iş birliğiyle geliştirildi. Seçilen tema ışık oldu; bu yaklaşım, başka hiçbir örnekte tekrarlanmayacak özel kaplamalar ve malzemelerle yorumlandı. Ferrari Luce Tailor Made \"Şasi 0\" Gövde, bu otomobil için özel olarak geliştirilenMadreperla Semi-Glossadlı özel bir renge boyanmış. Özel bir pigment sayesinde yüzey, ışığın yoğunluğuna ve geliş açısına bağlı olarak yeşilden mora değişen yansımalar üretiyor; böylece sedefli etki,saten bir yüzeyile bir araya geliyor. Bu özelFerrari Luce'ninfarklılığı iç mekânda da sürüyor. Burada, seçilmiş derilerden üretilen Perla tonundaki yeni metallik Le Mans deri ilk kez kullanılıyor. Ayrıca bir Ferrari’de ilk kez, kabindeki ikincil unsurlar geleneksel siyah yerineGrigio Corvararenginde tamamlanıyor; bu da daha aydınlık bir atmosfer yaratıyor. Ferrari Luce Tailor Made \"Şasi 0\", iç mekân Kişiselleştirmeyi özel jantlar, modele özgü fren kaliperleri vebeyaz optik zemin üzerine yerleştirilen Ferrari Luce logosutamamlıyor. Bu çözüm yalnızca bu otomobile özel olarak geliştirildi. Ayrıca bir plaket, modeli Luce’nin ilk üretim şasisi olan \"Chassis 0\" olarak tanımlıyor. RM Sotheby's, Monterey Car Week sırasında aracı rezerv fiyatsız olarak satışa sunacak.Ferrari, otomobilin değerini1,1 milyon $'ın üzerindeolarak tahmin ediyor; bu rakam güncel kurla yaklaşık962.000 €seviyesine karşılık geliyor. Ancak örneğin benzersiz yapısı nedeniyle nihai satış fiyatı çok daha yüksek olabilir. Girişim, koleksiyonerlere yönelik bir operasyondan çok,geleceğin teknisyenleri ve mühendislerinin eğitimineodaklanan projelere kaynak yaratmanın bir yolu olarak öne çıkıyor. Böylece Ferrari’nin yeni Luce ile geliştirmeyi hedeflediği inovasyon, araştırma ve sosyal sorumluluk arasındaki bağ da güçlendiriliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "BYD'nin sağlayacağı sistemler,5,2 GW kurulu güce sahip dev güneş enerjisi santralinin bir parçası olacak.Toplam19 GWhenerji depolama kapasitesine sahip olması planlanan tesis, güneşten elde edilen elektriği depolayarak gününher saati kesintisiz temiz enerjiüretmeyi hedefliyor. Bu yönüyle proje, dünyanın en büyük güneş enerjisi ve batarya depolama tesislerinden biri olarak gösteriliyor. BYD'nin üstlendiği11,275 GWh'lik bölüm, enerji depolama sektöründe tek bir tesis için verilen en büyük siparişlerden biri olarak öne çıkıyor. Projenin ilk aşamasında7,5 GWh'lik enerji depolama sözleşmesiniSungrowkazanmıştı. Böylece toplam19 GWh'lik depolama kapasitesinin tamamı iki Çinli şirket tarafından sağlanacak. Projede BYD'nin yeni nesilHaohanenerji depolama sistemi kullanılacak. Şirket, elektrikli otomobillerde kullanılanBlade Batteryteknolojisini temel alan ancak şebeke uygulamalarına özel geliştirilen2710 Ahkapasiteli büyük batarya hücrelerine yer veriyor. Bu hücreler, önceki nesillere kıyaslayüzde 300'ün üzerinde daha yüksek kapasitesunarken, daha az sayıda hücre bağlantısı gerektirdiği için batarya yönetim sisteminin de önemli ölçüde sadeleşmesini sağlıyor. BYD'ye göre yeni tasarım sayesinde mekanik bağlantı sayısı ciddi oranda azalırken,batarya yönetim sistemi karmaşıklığı da yüzde 70 ila 80 arasında düşüyor.Ayrıca standart6 metrekonteyner içerisine10 MWhenerji depolama kapasitesi sığdırılabiliyor. Bu da aynı kapasite için daha küçük kurulum alanı ve daha düşük işletme maliyeti anlamına geliyor. Bu büyük ölçekli proje, BYD'nin sabit enerji depolama alanındaki uzun vadeli stratejisiyle de paralellik gösteriyor. Şirket, farklı batarya kimyaları üzerinde çalışırken, enerji depolama sistemlerinin üretim maliyetini0,04 dolar/Whseviyesine indirmeyi hedefliyor. BYD, otomotiv ve enerji depolama faaliyetlerinde aynı hammadde tedarik zincirini kullanarak üretim maliyetlerini düşürüyor ve elektrikli araç bataryalarının seri üretiminden elde ettiği ölçek ekonomisini enerji depolama sistemlerine de yansıtıyor. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/dp/B0DJP7ZLRN https://www.amazon.com.tr/dp/B07RBCMHJ1 https://www.amazon.com.tr/dp/B0H64HPPKR https://www.amazon.com.tr/dp/B0D4969VW4 https://www.mi.com/tr/product/poco-pad-x1/buy/?gid=4223722398"
         },
-        "post_text": "💎 İLK FERRARI LUCE'NİN AKIBETİ BELLİ OLDU\n\nFerrari'nin ilk elektrikli grand tourer modeli Luce, doğrudan bir müşteriye gitmeyecek. Şasi 0, ağustos 2026'da RM Sotheby's tarafından açık artırmaya çıkarılacak.\n\nElde edilecek tüm gelir, Ferrari Vakfı aracılığıyla eğitim projelerine aktarılacak. Bu özel Luce, ışık temasıyla tasarlandı ve benzersiz renk değişimleriyle dikkat çekiyor.\n\nSizce bu özel otomobil ne kadara alıcı bulur?",
-        "post_text_length": 427,
+        "post_text": "🔋 BYD'DEN DÜNYANIN EN BÜYÜK ENERJİ DEPOLAMA ANLAŞMASI\n\nÇinli dev BYD, Birleşik Arap Emirlikleri'nde kurulacak dev güneş enerjisi projesi için tam 11,3 GWh batarya tedarik edecek. Bu, enerji depolama sektöründe tek seferde verilen en büyük siparişlerden biri!\n\nGüneşten gelen elektriği depolayarak kesintisiz temiz enerji sağlayacak bu proje, BYD'nin yeni nesil Haohan enerji depolama sistemleri ve Blade Batarya teknolojisiyle güçlenecek.\n\nSizce bu tür projeler gelecekte daha da yaygınlaşacak mı?",
+        "post_text_length": 497,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-11T20:56:19.177057+03:00"
+      "updated_at": "2026-07-12T09:03:13.247156+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
-          "link": "https://tr.motor1.com/news/801359/ferrari-ilk-luce-muzayede/",
-          "published": "2026-07-11T17:00:00+00:00",
-          "summary": "Chassis 0'dan edinilen gelirler ile eğitim projeleri desteklenecek.",
-          "image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg",
+          "title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
+          "link": "https://www.donanimhaber.com/byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi--207960",
+          "published": "2026-07-11T18:00:00+00:00",
+          "summary": "Çinli dev BYD, Birleşik Arap Emirlikleri'nde inşa edilen güneş + enerji depolama projesi kapsamında 11,275 GWh kapasiteli batarya tedarik etmek üzere anlaşma imzaladı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/XBzVWp/s3/ferrari-luce-tailor-made-chassis-0.jpg"
+            "https://www.donanimhaber.com/images/images/haber/207960/1200x675byd-den-11-3-gwh-lik-rekor-batarya-anlasmasi.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acik-artirma-ferrari-luce-satilacak-uretilen-yoluyla",
+          "topic_fingerprint": "anlasma-batarya-byd-depolama-dev-dunyanin-gwh-projesine-saglayacak",
           "base_ai_score": 88,
           "score_breakdown": {
-            "guncellik": 20,
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
             "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 15,
-            "etkilesim_potansiyeli": 0
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 12
           },
-          "score": 69,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Ferrari'nin ilk Luce modelinin açık artırma ile satılması, otomobil koleksiyonerleri ve meraklıları için büyük bir olay. Gelirlerin eğitim projelerine gidecek olması da habere pozitif bir sosyal boyut katıyor ve paylaşılabilirliğini artırıyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "BYD'nin küresel ölçekte attığı büyük bir adım. Enerji depolama ve elektrikli araçlar gündemiyle doğrudan ilgili, geleceğe yönelik önemli bir haber. Markanın gücünü ve teknolojisini gösteriyor.",
+          "freshness_bonus": -4,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şimdiye kadar üretilen ilkFerrari Lucedoğrudan bir müşteriye teslim edilmeyecek. Maranello merkezli marka, yeni elektrikli grand tourer modelinin0 numaralı şasisini, 13-15 Ağustos 2026 tarihleri arasında düzenlenecekMonterey Car WeekkapsamındaRM Sotheby'starafından gerçekleştirilecek biryardım müzayedesineayırma kararı aldı. Elde edilecek gelirin tamamı,Ferrari Foundationaracılığıyla eğitim odaklı projelere aktarılacak. Bunlar arasında Maranello’daki gelecekteki M-TECH Alfredo Ferrari merkezi ve ABD’deki eğitim girişimleri de yer alıyor. Ferrari Luce Tailor Made \"Chassis 0\"adı verilen bu otomobil, Ferrari Design Studio ile Tailor Made kişiselleştirme programının iş birliğiyle geliştirildi. Seçilen tema ışık oldu; bu yaklaşım, başka hiçbir örnekte tekrarlanmayacak özel kaplamalar ve malzemelerle yorumlandı. Ferrari Luce Tailor Made \"Şasi 0\" Gövde, bu otomobil için özel olarak geliştirilenMadreperla Semi-Glossadlı özel bir renge boyanmış. Özel bir pigment sayesinde yüzey, ışığın yoğunluğuna ve geliş açısına bağlı olarak yeşilden mora değişen yansımalar üretiyor; böylece sedefli etki,saten bir yüzeyile bir araya geliyor. Bu özelFerrari Luce'ninfarklılığı iç mekânda da sürüyor. Burada, seçilmiş derilerden üretilen Perla tonundaki yeni metallik Le Mans deri ilk kez kullanılıyor. Ayrıca bir Ferrari’de ilk kez, kabindeki ikincil unsurlar geleneksel siyah yerineGrigio Corvararenginde tamamlanıyor; bu da daha aydınlık bir atmosfer yaratıyor. Ferrari Luce Tailor Made \"Şasi 0\", iç mekân Kişiselleştirmeyi özel jantlar, modele özgü fren kaliperleri vebeyaz optik zemin üzerine yerleştirilen Ferrari Luce logosutamamlıyor. Bu çözüm yalnızca bu otomobile özel olarak geliştirildi. Ayrıca bir plaket, modeli Luce’nin ilk üretim şasisi olan \"Chassis 0\" olarak tanımlıyor. RM Sotheby's, Monterey Car Week sırasında aracı rezerv fiyatsız olarak satışa sunacak.Ferrari, otomobilin değerini1,1 milyon $'ın üzerindeolarak tahmin ediyor; bu rakam güncel kurla yaklaşık962.000 €seviyesine karşılık geliyor. Ancak örneğin benzersiz yapısı nedeniyle nihai satış fiyatı çok daha yüksek olabilir. Girişim, koleksiyonerlere yönelik bir operasyondan çok,geleceğin teknisyenleri ve mühendislerinin eğitimineodaklanan projelere kaynak yaratmanın bir yolu olarak öne çıkıyor. Böylece Ferrari’nin yeni Luce ile geliştirmeyi hedeflediği inovasyon, araştırma ve sosyal sorumluluk arasındaki bağ da güçlendiriliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "full_text": "BYD'nin sağlayacağı sistemler,5,2 GW kurulu güce sahip dev güneş enerjisi santralinin bir parçası olacak.Toplam19 GWhenerji depolama kapasitesine sahip olması planlanan tesis, güneşten elde edilen elektriği depolayarak gününher saati kesintisiz temiz enerjiüretmeyi hedefliyor. Bu yönüyle proje, dünyanın en büyük güneş enerjisi ve batarya depolama tesislerinden biri olarak gösteriliyor. BYD'nin üstlendiği11,275 GWh'lik bölüm, enerji depolama sektöründe tek bir tesis için verilen en büyük siparişlerden biri olarak öne çıkıyor. Projenin ilk aşamasında7,5 GWh'lik enerji depolama sözleşmesiniSungrowkazanmıştı. Böylece toplam19 GWh'lik depolama kapasitesinin tamamı iki Çinli şirket tarafından sağlanacak. Projede BYD'nin yeni nesilHaohanenerji depolama sistemi kullanılacak. Şirket, elektrikli otomobillerde kullanılanBlade Batteryteknolojisini temel alan ancak şebeke uygulamalarına özel geliştirilen2710 Ahkapasiteli büyük batarya hücrelerine yer veriyor. Bu hücreler, önceki nesillere kıyaslayüzde 300'ün üzerinde daha yüksek kapasitesunarken, daha az sayıda hücre bağlantısı gerektirdiği için batarya yönetim sisteminin de önemli ölçüde sadeleşmesini sağlıyor. BYD'ye göre yeni tasarım sayesinde mekanik bağlantı sayısı ciddi oranda azalırken,batarya yönetim sistemi karmaşıklığı da yüzde 70 ila 80 arasında düşüyor.Ayrıca standart6 metrekonteyner içerisine10 MWhenerji depolama kapasitesi sığdırılabiliyor. Bu da aynı kapasite için daha küçük kurulum alanı ve daha düşük işletme maliyeti anlamına geliyor. Bu büyük ölçekli proje, BYD'nin sabit enerji depolama alanındaki uzun vadeli stratejisiyle de paralellik gösteriyor. Şirket, farklı batarya kimyaları üzerinde çalışırken, enerji depolama sistemlerinin üretim maliyetini0,04 dolar/Whseviyesine indirmeyi hedefliyor. BYD, otomotiv ve enerji depolama faaliyetlerinde aynı hammadde tedarik zincirini kullanarak üretim maliyetlerini düşürüyor ve elektrikli araç bataryalarının seri üretiminden elde ettiği ölçek ekonomisini enerji depolama sistemlerine de yansıtıyor. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/dp/B0DJP7ZLRN https://www.amazon.com.tr/dp/B07RBCMHJ1 https://www.amazon.com.tr/dp/B0H64HPPKR https://www.amazon.com.tr/dp/B0D4969VW4 https://www.mi.com/tr/product/poco-pad-x1/buy/?gid=4223722398",
           "image_sources": [
             "meta_og",
-            "article_script",
-            "article_img",
             "article_img"
           ],
-          "prepared_image_count": 4
+          "prepared_image_count": 2
         },
-        "post_text": "💎 İLK FERRARI LUCE'NİN AKIBETİ BELLİ OLDU\n\nFerrari'nin ilk elektrikli grand tourer modeli Luce, doğrudan bir müşteriye gitmeyecek. Şasi 0, ağustos 2026'da RM Sotheby's tarafından açık artırmaya çıkarılacak.\n\nElde edilecek tüm gelir, Ferrari Vakfı aracılığıyla eğitim projelerine aktarılacak. Bu özel Luce, ışık temasıyla tasarlandı ve benzersiz renk değişimleriyle dikkat çekiyor.\n\nSizce bu özel otomobil ne kadara alıcı bulur?",
-        "image_path": "/tmp/otoxtra_img_r_4cjku8.jpg",
+        "post_text": "🔋 BYD'DEN DÜNYANIN EN BÜYÜK ENERJİ DEPOLAMA ANLAŞMASI\n\nÇinli dev BYD, Birleşik Arap Emirlikleri'nde kurulacak dev güneş enerjisi projesi için tam 11,3 GWh batarya tedarik edecek. Bu, enerji depolama sektöründe tek seferde verilen en büyük siparişlerden biri!\n\nGüneşten gelen elektriği depolayarak kesintisiz temiz enerji sağlayacak bu proje, BYD'nin yeni nesil Haohan enerji depolama sistemleri ve Blade Batarya teknolojisiyle güçlenecek.\n\nSizce bu tür projeler gelecekte daha da yaygınlaşacak mı?",
+        "image_path": "/tmp/otoxtra_img_8jvslen5.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_r_4cjku8.jpg",
-          "/tmp/otoxtra_img_qx90up3m.jpg",
-          "/tmp/otoxtra_img_19bqt0o1.jpg",
-          "/tmp/otoxtra_img_hqhmgi1p.jpg"
+          "/tmp/otoxtra_img_8jvslen5.jpg",
+          "/tmp/otoxtra_img_wi4hjg3z.jpg"
         ],
         "image_source": "meta_og",
-        "image_count": 4
+        "image_count": 2
       },
       "error": null,
-      "updated_at": "2026-07-11T20:56:24.071590+03:00"
+      "updated_at": "2026-07-12T09:03:29.732659+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122171993708916499",
-        "article_title": "Üretilen ilk Ferrari Luce, açık artırma yoluyla satılacak",
+        "post_id": "678053852057751_122172050246916499",
+        "article_title": "BYD'den dev anlaşma: Dünyanın en büyük depolama projesine 11,3 GWh batarya sağlayacak",
         "image_source": "multi_image",
-        "image_count": 4,
+        "image_count": 2,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-11T20:56:38.809073+03:00"
+      "updated_at": "2026-07-12T09:03:40.319683+03:00"
     }
   }
 }
