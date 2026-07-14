@@ -1,13 +1,32 @@
 {
-  "run_id": "2026-07-14-16:43",
+  "run_id": "2026-07-14-18:23",
   "status": "completed",
-  "started_at": "2026-07-14T16:43:30.020203+03:00",
-  "updated_at": "2026-07-14T16:44:53.455547+03:00",
+  "started_at": "2026-07-14T18:23:07.808004+03:00",
+  "updated_at": "2026-07-14T18:24:43.346603+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
+            "link": "https://www.donanimhaber.com/benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin--208071",
+            "published": "2026-07-14T13:55:00+00:00",
+            "summary": "Mevcut benzinli motorlarda herhangi bir değişiklik gerektirmeden kullanılabilecek düşük maliyetli sentetik benzin geliştirildi. 95 oktan seviyesindeki yakıt premium benzinle benzer performans sunuyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "araclar-benzin-benzinli-dusuk-gelistirildi-maliyetli-oktan-sentetik"
+          },
           {
             "title": "Meta'nın gözlükleri \"sapık gözlüğü\" damgası yedi; İnsanlar artık takmaya çekiniyor",
             "link": "https://www.donanimhaber.com/meta-nin-akilli-gozlukleri-sapik-gozlugu-damgasi-yedi--208072",
@@ -28,52 +47,14 @@
             "topic_fingerprint": "cekiniyor-damgasi-gozlugu-gozlukleri-meta-nsanlar-sapik-takmaya-yedi"
           },
           {
-            "title": "BYD, Yangwang U9 Xtreme ile 500 km/s sınırını aşmayı hedefliyor",
-            "link": "https://www.log.com.tr/byd-yangwang-u9-xtreme-ile-500-km-s-sinirini-asmayi-hedefliyor/",
-            "published": "2026-07-14T13:13:08+00:00",
-            "summary": "Teknik olarak sınırları zorlayan tamamen elektrikli otomobil modeli BYD Yangwang U9 Xtreme, 496 km/s hıza ulaşarak üretime alınan en hızlı araç olmayı başarmıştı. 490,48 km/s hıza ulaşan Bugatti Chiron Super Sport 300+ modelini dahi geride bırakarak çok büyük ses getiren otomobil, şirketin başkan yardımcısı Stella Li’nin açıklamasına göre kasım ayında bir hız denemesine daha çıkarılacak. Bu denemede tam 500 km/s sınırını aşmayı hedefleyen şirket, uçuk modelde 744 beygirlik dört farklı elektrik motoru aracılığıyla toplam 2.978 beygir güç sunuyor. Modelin oldukça iddialı diğer detaylarına buradaki haberimizden ulaşabilirsiniz. BYD, Yangwang U9 Xtreme ile 500 km/s sınırını aşmayı hedefliyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_16-11-05_8ruJ3-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_16-11-05_8ruJ3-660x371.jpg",
+            "title": "Audi, Q5'i ilk kez \"RS\" versiyonuyla ödüllendiriyor",
+            "link": "https://tr.motor1.com/news/801588/audi-ilk-rsq5-casus/",
+            "published": "2026-07-14T15:00:00+00:00",
+            "summary": "Yeni bir casus video, genişletilmiş çamurluklara ve oval egzozlara sahip ilk RS Q5'i gösteriyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/2N4wrg/s3/audi-rs-q5-screenshot-from-spy-video.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/2N4wrg/s3/audi-rs-q5-screenshot-from-spy-video.jpg",
             "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_16-11-05_8ruJ3-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "500-asmayi-byd-hedefliyor-sinirini-xtreme-yangwang"
-          },
-          {
-            "title": "Çin’de arka elektrik motoru düşen BYD Tang SUV için resmi açıklama geldi [Video]",
-            "link": "https://www.log.com.tr/cinde-arka-elektrik-motoru-dusen-byd-tang-suv-icin-resmi-aciklama-geldi-video/",
-            "published": "2026-07-14T12:56:21+00:00",
-            "summary": "Yağmurlu bir günde arka elektrik motoru düşmüş şekilde yol alırken görüntülenen BYD Tang SUV modeli için şirketten resmi açıklama geldi. Çin’de meydana gelen olaydaki durumun bir üretim sorunu nedeniyle değil, suyun içinden geçerken meydana gelen bir darbe sonucunda oluştuğu açıklandı. Görüntülerde turuncu renkli elektrik kablosuyla araca bağlı olarak sürüklendiği görülen ünite, yere düşmüş olmasına rağmen işlevini yerine getirmeye “çalışıyor” gibi görünüyor. Çin’de arka elektrik motoru düşen BYD Tang SUV için resmi açıklama geldi [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_15-28-42_5I5S8-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_15-28-42_5I5S8-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_15-28-42_5I5S8-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aciklama-arka-byd-cin-dusen-elektrik-motoru-resmi-suv-tang-video"
-          },
-          {
-            "title": "Nissan'dan Temmuz'a özel satış sonrası kampanyaları!",
-            "link": "https://tr.motor1.com/news/801564/nissan-temmuz-2026-servis-kampanyalari/",
-            "published": "2026-07-14T11:30:00+00:00",
-            "summary": "3 yaş ve üzerindeki araçlara bakım aşamasında indirim.",
-            "image_url": "https://cdn.motor1.com/images/mgl/zxJYr8/s3/nissan-turkiye-kampanya.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/zxJYr8/s3/nissan-turkiye-kampanya.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/zxJYr8/s3/nissan-turkiye-kampanya.jpg"
+              "https://cdn.motor1.com/images/mgl/2N4wrg/s3/audi-rs-q5-screenshot-from-spy-video.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -82,13 +63,32 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "kampanyalari-nissan-ozel-satis-sonrasi-temmuz"
+            "topic_fingerprint": "audi-kez-odullendiriyor-versiyonuyla"
           },
           {
-            "title": "Elektrikli Araçlarda En Sık Görülen Arızalar Şaşırtıyor",
-            "link": "https://shiftdelete.net/elektrikli-araclarda-en-sik-gorulen-arizalar-sasirtiyor",
-            "published": "2026-07-14T11:30:19+00:00",
-            "summary": "Elektrikli araçlarda en pahalı arızanın batarya olduğu düşüncesi değişiyor. Yeni araştırmalar, en sık yaşanan sorunların batarya dışındaki sistemlerde yoğunlaştığını ortaya koyuyor.",
+            "title": "Elektrikli BMW M3, benzinli kardeşiyle aynı ismi taşıyacak",
+            "link": "https://tr.motor1.com/news/801587/bmw-m3-ev-ayni-isim/",
+            "published": "2026-07-14T14:00:00+00:00",
+            "summary": "CEO, \"iM3\" ismiyle ilgili söylentileri yalanlıyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/2N41qn/s3/bmw-m-concept-neue-klasse-2026.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ayni-benzinli-bmw-elektrikli-ismi-kardesiyle-tasiyacak"
+          },
+          {
+            "title": "Hyundai IONIQ 3 Fiyatı Şekilleniyor! Türkiye’de Nasıl Olacak?",
+            "link": "https://shiftdelete.net/hyundai-ioniq-3-fiyati-sekilleniyor-turkiyede-nasil-olacak",
+            "published": "2026-07-14T14:00:08+00:00",
+            "summary": "Elektrikli otomobil pazarına giriş yapmak isteyen ancak yüksek fiyat etiketleri nedeniyle kararsız kalan sürücüler için tünelin ucundaki ışık göründü. Küresel lansmanın hemen ardından Hyundai IONIQ 3 fiyatı ortaya çıktı. Modelin satış fiyatı pazar analizcilerinin tahminlerinden çok daha agresif bir seviyede gerçekleşti. Hyundai IONIQ 3 Fiyatı Ortaya Çıktı: İşte Paketler ve Fiyat Listesi Sektörde uzun süredir […]",
             "image_url": "",
             "rss_image_url": "",
             "image_candidates": [],
@@ -99,48 +99,10 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "araclarda-arizalar-elektrikli-gorulen-sasirtiyor-sik"
-          },
-          {
-            "title": "762 km menzile sahip elektrikli Mercedes C-Class üretimi resmen başladı. Mercedes-Benz, yaklaşık bir milyar avro yatırımla Macaristan'ın Keçmeket şehrine inşa ettiği elektrikli araç üretim üssünde elektrikli sedan C400'ü üretmeye başladı. Tesiste sadece C-Class üretimi değil GLB gibi diğer elektrikliler için gövde parçaları, batarya montajı ve hatta ihtiyaç duyulursa Bremen fabrikasını desteklemek üzere GLC üretimi de gerçekleştirecek. 489 beygir güce ulaşan dört çeker tahrik sistemi ve 94,5 kWh NMC batarya ile gelen C400, 22 dakikada %10'dan %80'e şarj olabiliyor ve Almanya'da 67.710 avrodan alıcı buluyor.",
-            "link": "https://nitter.net/DoluBatarya/status/2077013307022553172#m",
-            "published": "2026-07-14T12:52:16+00:00",
-            "summary": "762 km menzile sahip elektrikli Mercedes C-Class üretimi resmen başladı. Mercedes-Benz, yaklaşık bir milyar avro yatırımla Macaristan'ın Keçmeket şehrine inşa ettiği elektrikli araç üretim üssünde elektrikli sedan C400'ü üretmeye başladı. Tesiste sadece C-Class üretimi değil GLB gibi diğer elektrikliler için gövde parçaları, batarya montajı ve hatta ihtiyaç duyulursa Bremen fabrikasını desteklemek üzere GLC üretimi de gerçekleştirecek. 489 beygir güce ulaşan dört çeker tahrik sistemi ve 94,5 kWh NMC batarya ile gelen C400, 22 dakikada %10'dan %80'e şarj olabiliyor ve Almanya'da 67.710 avrodan alıcı buluyor.",
-            "image_url": "https://pbs.twimg.com/media/HNMGK02WUAAKTAr.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HNMGK02WUAAKTAr.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HNMGK02WUAAKTAr.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "489-710-762-alici-almanya-arac-avro-avrodan-batarya-batarya-benz-beygir-bremen-buluyor-c400-c400-ceker-class-class-dakikada-degil-desteklemek-diger-dort-duyulursa-elektrikli-elektrikli-elektrikli-elektrikliler-ettigi-fabrikasini-gelen-gerceklestirecek-glb-glc-govde-guce-hatta-ihtiyac-insa-kecmeket-kwh-macaristan-menzile-mercedes-mercedes-milyar-montaji-nmc-olabiliyor-parcalari-resmen-sahip-sarj-sedan-sehrine-sistemi-tahrik-tesiste-ulasan-uretim-uretimi-uretimi-uretimi-uretmeye-ussunde-yaklasik-yatirimla"
-          },
-          {
-            "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-            "link": "https://nitter.net/murattosunMSE/status/2076992272537727042#m",
-            "published": "2026-07-14T11:28:41+00:00",
-            "summary": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-            "image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "araclar-bakiyorum-basina-basina-detaylara-elektri-elektrikli-gundem-gundur-katedilen-kli-konu-mil-ngiltere-vergi-vergi"
+            "topic_fingerprint": "fiyati-hyundai-ioniq-nasil-olacak-sekilleniyor-turkiye"
           }
         ],
-        "count": 7,
+        "count": 5,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -228,271 +190,263 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 94,
-            "after_time": 7,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "after_keyword": 92,
+            "after_time": 5,
+            "after_posted": 5,
+            "after_duplicate": 5,
+            "after_shared_variant_cooldown": 5
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 94,
-          "after_time": 7,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "after_keyword": 92,
+          "after_time": 5,
+          "after_posted": 5,
+          "after_duplicate": 5,
+          "after_shared_variant_cooldown": 5
         }
       },
       "error": null,
-      "updated_at": "2026-07-14T16:44:37.613085+03:00"
+      "updated_at": "2026-07-14T18:24:00.470617+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "link": "https://nitter.net/murattosunMSE/status/2076992272537727042#m",
-          "published": "2026-07-14T11:28:41+00:00",
-          "summary": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
+          "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
+          "link": "https://www.donanimhaber.com/benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin--208071",
+          "published": "2026-07-14T13:55:00+00:00",
+          "summary": "Mevcut benzinli motorlarda herhangi bir değişiklik gerektirmeden kullanılabilecek düşük maliyetli sentetik benzin geliştirildi. 95 oktan seviyesindeki yakıt premium benzinle benzer performans sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg"
           ],
           "image_source": "rss",
-          "source_name": "MuratTosun",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bakiyorum-basina-basina-detaylara-elektri-elektrikli-gundem-gundur-katedilen-kli-konu-mil-ngiltere-vergi-vergi",
-          "base_ai_score": 95,
+          "topic_fingerprint": "araclar-benzin-benzinli-dusuk-gelistirildi-maliyetli-oktan-sentetik",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
+            "etkilesim_potansiyeli": 24,
             "benzersizlik": 19,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 11
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 8
           },
-          "score": 95,
+          "score": 90,
           "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araçların geleceğini doğrudan etkileyebilecek, tüketiciyi ilgilendiren ve tartışma yaratma potansiyeli çok yüksek bir konu. 'Mil başına vergi' kavramı geniş kitlelerin dikkatini çeker ve büyük bir gundem maddesi olur.",
+          "score_explanation": "Otomotiv dünyasında devrim niteliğinde bir gelişme. Mevcut araçları etkilemesi, çevresel faydaları ve maliyet avantajı sayesinde büyük ilgi çekecek, geniş kitlelere ulaşacak bir haber.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 95,
-        "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
+        "score": 90,
+        "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
+          "etkilesim_potansiyeli": 24,
           "benzersizlik": 19,
-          "gundem_gucu": 20,
-          "paylasilabilirlik": 11
+          "gundem_gucu": 19,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Elektrikli araçların geleceğini doğrudan etkileyebilecek, tüketiciyi ilgilendiren ve tartışma yaratma potansiyeli çok yüksek bir konu. 'Mil başına vergi' kavramı geniş kitlelerin dikkatini çeker ve büyük bir gundem maddesi olur.",
+        "score_explanation": "Otomotiv dünyasında devrim niteliğinde bir gelişme. Mevcut araçları etkilemesi, çevresel faydaları ve maliyet avantajı sayesinde büyük ilgi çekecek, geniş kitlelere ulaşacak bir haber.",
         "skipped": false,
         "threshold": 35,
         "top_articles": [
           {
-            "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-            "score": 95,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 19,
-              "gundem_gucu": 20,
-              "paylasilabilirlik": 11
-            }
-          },
-          {
-            "title": "Çin’de arka elektrik motoru düşen BYD Tang SUV için resmi açıklama geldi [Video]",
-            "score": 94,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 20,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "762 km menzile sahip elektrikli Mercedes C-Class üretimi resmen başladı. Mercedes-Benz, yaklaşık bir milyar avro yatırımla Macaristan'ın Keçmeket şehrine inşa ettiği elektrikli araç üretim üssünde elektrikli sedan C400'ü üretmeye başladı. Tesiste sadece C-Class üretimi değil GLB gibi diğer elektrikliler için gövde parçaları, batarya montajı ve hatta ihtiyaç duyulursa Bremen fabrikasını desteklemek üzere GLC üretimi de gerçekleştirecek. 489 beygir güce ulaşan dört çeker tahrik sistemi ve 94,5 kWh NMC batarya ile gelen C400, 22 dakikada %10'dan %80'e şarj olabiliyor ve Almanya'da 67.710 avrodan alıcı buluyor.",
+            "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
             "score": 90,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 24,
+              "benzersizlik": 19,
+              "gundem_gucu": 19,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Hyundai IONIQ 3 Fiyatı Şekilleniyor! Türkiye’de Nasıl Olacak?",
+            "score": 85,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 23,
               "benzersizlik": 17,
               "gundem_gucu": 17,
-              "paylasilabilirlik": 13
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Audi, Q5'i ilk kez \"RS\" versiyonuyla ödüllendiriyor",
+            "score": 79,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
             }
           }
         ],
-        "scored_count": 7,
+        "scored_count": 5,
         "cooldown_candidates": [
           {
-            "title": "Çin’de arka elektrik motoru düşen BYD Tang SUV için resmi açıklama geldi [Video]",
-            "link": "https://www.log.com.tr/cinde-arka-elektrik-motoru-dusen-byd-tang-suv-icin-resmi-aciklama-geldi-video/",
-            "score": 94,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "aciklama-arka-byd-cin-dusen-elektrik-motoru-resmi-suv-tang-video"
-          },
-          {
-            "title": "762 km menzile sahip elektrikli Mercedes C-Class üretimi resmen başladı. Mercedes-Benz, yaklaşık bir milyar avro yatırımla Macaristan'ın Keçmeket şehrine inşa ettiği elektrikli araç üretim üssünde elektrikli sedan C400'ü üretmeye başladı. Tesiste sadece C-Class üretimi değil GLB gibi diğer elektrikliler için gövde parçaları, batarya montajı ve hatta ihtiyaç duyulursa Bremen fabrikasını desteklemek üzere GLC üretimi de gerçekleştirecek. 489 beygir güce ulaşan dört çeker tahrik sistemi ve 94,5 kWh NMC batarya ile gelen C400, 22 dakikada %10'dan %80'e şarj olabiliyor ve Almanya'da 67.710 avrodan alıcı buluyor.",
-            "link": "https://nitter.net/DoluBatarya/status/2077013307022553172#m",
-            "score": 90,
-            "score_reason": "ai_scored",
-            "source_name": "Dolu Batarya",
-            "topic_fingerprint": "489-710-762-alici-almanya-arac-avro-avrodan-batarya-batarya-benz-beygir-bremen-buluyor-c400-c400-ceker-class-class-dakikada-degil-desteklemek-diger-dort-duyulursa-elektrikli-elektrikli-elektrikli-elektrikliler-ettigi-fabrikasini-gelen-gerceklestirecek-glb-glc-govde-guce-hatta-ihtiyac-insa-kecmeket-kwh-macaristan-menzile-mercedes-mercedes-milyar-montaji-nmc-olabiliyor-parcalari-resmen-sahip-sarj-sedan-sehrine-sistemi-tahrik-tesiste-ulasan-uretim-uretimi-uretimi-uretimi-uretmeye-ussunde-yaklasik-yatirimla"
-          },
-          {
-            "title": "BYD, Yangwang U9 Xtreme ile 500 km/s sınırını aşmayı hedefliyor",
-            "link": "https://www.log.com.tr/byd-yangwang-u9-xtreme-ile-500-km-s-sinirini-asmayi-hedefliyor/",
-            "score": 88,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "500-asmayi-byd-hedefliyor-sinirini-xtreme-yangwang"
-          },
-          {
-            "title": "Elektrikli Araçlarda En Sık Görülen Arızalar Şaşırtıyor",
-            "link": "https://shiftdelete.net/elektrikli-araclarda-en-sik-gorulen-arizalar-sasirtiyor",
-            "score": 83,
+            "title": "Hyundai IONIQ 3 Fiyatı Şekilleniyor! Türkiye’de Nasıl Olacak?",
+            "link": "https://shiftdelete.net/hyundai-ioniq-3-fiyati-sekilleniyor-turkiyede-nasil-olacak",
+            "score": 85,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "araclarda-arizalar-elektrikli-gorulen-sasirtiyor-sik"
+            "topic_fingerprint": "fiyati-hyundai-ioniq-nasil-olacak-sekilleniyor-turkiye"
+          },
+          {
+            "title": "Audi, Q5'i ilk kez \"RS\" versiyonuyla ödüllendiriyor",
+            "link": "https://tr.motor1.com/news/801588/audi-ilk-rsq5-casus/",
+            "score": 79,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "audi-kez-odullendiriyor-versiyonuyla"
+          },
+          {
+            "title": "Elektrikli BMW M3, benzinli kardeşiyle aynı ismi taşıyacak",
+            "link": "https://tr.motor1.com/news/801587/bmw-m3-ev-ayni-isim/",
+            "score": 75,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "ayni-benzinli-bmw-elektrikli-ismi-kardesiyle-tasiyacak"
           },
           {
             "title": "Meta'nın gözlükleri \"sapık gözlüğü\" damgası yedi; İnsanlar artık takmaya çekiniyor",
             "link": "https://www.donanimhaber.com/meta-nin-akilli-gozlukleri-sapik-gozlugu-damgasi-yedi--208072",
-            "score": 74,
+            "score": 71,
             "score_reason": "ai_scored",
             "source_name": "Donanimhaber",
             "topic_fingerprint": "cekiniyor-damgasi-gozlugu-gozlukleri-meta-nsanlar-sapik-takmaya-yedi"
-          },
-          {
-            "title": "Nissan'dan Temmuz'a özel satış sonrası kampanyaları!",
-            "link": "https://tr.motor1.com/news/801564/nissan-temmuz-2026-servis-kampanyalari/",
-            "score": 53,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "kampanyalari-nissan-ozel-satis-sonrasi-temmuz"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-07-14T16:44:45.969869+03:00"
+      "updated_at": "2026-07-14T18:24:06.819206+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "link": "https://nitter.net/murattosunMSE/status/2076992272537727042#m",
-          "published": "2026-07-14T11:28:41+00:00",
-          "summary": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
+          "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
+          "link": "https://www.donanimhaber.com/benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin--208071",
+          "published": "2026-07-14T13:55:00+00:00",
+          "summary": "Mevcut benzinli motorlarda herhangi bir değişiklik gerektirmeden kullanılabilecek düşük maliyetli sentetik benzin geliştirildi. 95 oktan seviyesindeki yakıt premium benzinle benzer performans sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg"
           ],
           "image_source": "rss",
-          "source_name": "MuratTosun",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bakiyorum-basina-basina-detaylara-elektri-elektrikli-gundem-gundur-katedilen-kli-konu-mil-ngiltere-vergi-vergi",
-          "base_ai_score": 95,
+          "topic_fingerprint": "araclar-benzin-benzinli-dusuk-gelistirildi-maliyetli-oktan-sentetik",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
+            "etkilesim_potansiyeli": 24,
             "benzersizlik": 19,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 11
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 8
           },
-          "score": 95,
+          "score": 90,
           "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araçların geleceğini doğrudan etkileyebilecek, tüketiciyi ilgilendiren ve tartışma yaratma potansiyeli çok yüksek bir konu. 'Mil başına vergi' kavramı geniş kitlelerin dikkatini çeker ve büyük bir gundem maddesi olur.",
+          "score_explanation": "Otomotiv dünyasında devrim niteliğinde bir gelişme. Mevcut araçları etkilemesi, çevresel faydaları ve maliyet avantajı sayesinde büyük ilgi çekecek, geniş kitlelere ulaşacak bir haber.",
           "freshness_bonus": 7,
-          "trend_bonus_raw": 1
+          "trend_bonus_raw": 1,
+          "full_text": "Bildiğiniz üzere Avrupa Birliği'nin 2035'ten itibaren yeni benzinli, dizel ve hibrit araç satışlarınısonlandırma planıotomobil dünyasında büyük bir dönüşümü tetiklemişti. Ancak bu planın en önemli istisnası, karbon nötr kabul edilensentetik yakıtlar(e-yakıtlar) olacak. Dolayısıyla Gota Energy'nin geliştirdiği teknoloji,içten yanmalı motorlarınçevre dostu bir şekilde yollarda kalmaya devam etmesini sağlayabilir. Alessia Cesarini liderliğindeki araştırma ekibi, yenilenebilir ham maddelerin fermente edilmesiyle elde edilenalkolü, sıvı yakıta dönüştürenözel bir kimyasal süreç geliştirdi.Oligomerizasyonadı verilen bu yöntemde, şirketin patentli katalizörleri sayesinde alkol, sıvı yakıta dönüştürülüyor. Bu yöntemi diğer e-yakıt çalışmalarından ayıran en temel özellik iseverimliliği. Karmaşık sentez gazı süreçlerini ortadan kaldıran sistem, daha az enerji tüketereküretim maliyetleriniönemli ölçüde düşürüyor. Böylece sentetik yakıt son kullanıcı içindaha ekonomikbir seçenek haline geliyor. Geliştirilen sentetik yakıtın en dikkat çekici özelliklerinden biri demevcut benzinli motorlardaherhangi bir modifikasyon gerektirmeden kullanılabilmesi. Şirket, yakıtın şimdiden95 oktan seviyesineulaştığını ve premium benzinlebenzer performanssunduğunu belirtiyor. Dünya genelindemilyonlarcabenzinli araç kullanılmaya devam ediyor ve bunların yerini yeni nesil araçların almasıonlarca yılsürecek Bu nedenle geliştirilen sentetik benzin, mevcut motorlarda herhangi birdeğişiklik gerektirmedenkarbon emisyonlarının azaltılmasına katkı sağlayabilecek önemli bir alternatif olarak görülüyor. Gota Energy ekibi şu anda laboratuvar ortamında yıllık10.000 litrekapasiteyle üretim yapıyor. Ancak hedefleri oldukça yüksek ve önümüzdeki aylarda bu kapasiteyi1 milyon litreyeçıkarmayı planlıyorlar. Teknolojiyi endüstriyel ölçeğe taşımayı hedefleyen ekip, bu yıl risk sermayesi yatırımı arayışına girdi. Gota Energy, geliştirdiği yöntemle fosil yakıtlardan uzaklaşmanın mevcut içten yanmalı motorlardanvazgeçmeden demümkün olabileceğini göstermeyi amaçlıyor. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/deals https://www.amazon.com.tr/promotion/psp/AZGC3J6SQ6C4A https://www.amazon.com.tr/promotion/psp/A1CJJ2Z6SVMLYH https://www.amazon.com.tr/dp/B0C4X6VJ1V https://www.mastercard.com/tr/tr/personal/get-support/currency-exchange-rate-converter.html"
         },
-        "post_text": "⚡️ İNGİLTERE'DE ELEKTRİKLİ ARAÇLARA YENİ VERGİ SİSTEMİ\n\nİngiltere'de elektrikli araç sahiplerini yakından ilgilendiren bir konu gündemde: Kat edilen mil başına vergi uygulaması.\n\nBu yeni düzenleme, elektrikli araçların yaygınlaşmasıyla birlikte ortaya çıkan vergi gelirlerindeki düşüşü dengelemeyi amaçlıyor.\n\nSizce bu tür bir uygulama Türkiye'de de gündeme gelir mi?",
-        "post_text_length": 367,
+        "post_text": "⛽ BENZINLI ARAC SAHIPLERINE MUTHIS HABER!\n\nMevcut benzinli motorlarda degisiklik yapmadan kullanilabilecek, dusuk maliyetli sentetik benzin gelistirildi!\n\n95 oktan seviyesindeki bu yakit, premium benzinle ayni performansi sunuyor ve daha ekonomik olacak. Icten yanmali motorlar yollarda kalmaya devam edebilir!\n\nSizce bu teknoloji otomotiv dunyasini nasil etkiler?",
+        "post_text_length": 364,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-14T16:44:47.624273+03:00"
+      "updated_at": "2026-07-14T18:24:09.317039+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "link": "https://nitter.net/murattosunMSE/status/2076992272537727042#m",
-          "published": "2026-07-14T11:28:41+00:00",
-          "summary": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-          "image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large",
+          "title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
+          "link": "https://www.donanimhaber.com/benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin--208071",
+          "published": "2026-07-14T13:55:00+00:00",
+          "summary": "Mevcut benzinli motorlarda herhangi bir değişiklik gerektirmeden kullanılabilecek düşük maliyetli sentetik benzin geliştirildi. 95 oktan seviyesindeki yakıt premium benzinle benzer performans sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HNL1b_eX0AAK8bI.jpg?format=jpg&name=large"
+            "https://www.donanimhaber.com/images/images/haber/208071/1200x675benzinli-araclar-icin-dusuk-maliyetli-95-oktan-sentetik-benzin.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "MuratTosun",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bakiyorum-basina-basina-detaylara-elektri-elektrikli-gundem-gundur-katedilen-kli-konu-mil-ngiltere-vergi-vergi",
-          "base_ai_score": 95,
+          "topic_fingerprint": "araclar-benzin-benzinli-dusuk-gelistirildi-maliyetli-oktan-sentetik",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
+            "etkilesim_potansiyeli": 24,
             "benzersizlik": 19,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 11
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 8
           },
-          "score": 95,
+          "score": 90,
           "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araçların geleceğini doğrudan etkileyebilecek, tüketiciyi ilgilendiren ve tartışma yaratma potansiyeli çok yüksek bir konu. 'Mil başına vergi' kavramı geniş kitlelerin dikkatini çeker ve büyük bir gundem maddesi olur.",
+          "score_explanation": "Otomotiv dünyasında devrim niteliğinde bir gelişme. Mevcut araçları etkilemesi, çevresel faydaları ve maliyet avantajı sayesinde büyük ilgi çekecek, geniş kitlelere ulaşacak bir haber.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
+          "full_text": "Bildiğiniz üzere Avrupa Birliği'nin 2035'ten itibaren yeni benzinli, dizel ve hibrit araç satışlarınısonlandırma planıotomobil dünyasında büyük bir dönüşümü tetiklemişti. Ancak bu planın en önemli istisnası, karbon nötr kabul edilensentetik yakıtlar(e-yakıtlar) olacak. Dolayısıyla Gota Energy'nin geliştirdiği teknoloji,içten yanmalı motorlarınçevre dostu bir şekilde yollarda kalmaya devam etmesini sağlayabilir. Alessia Cesarini liderliğindeki araştırma ekibi, yenilenebilir ham maddelerin fermente edilmesiyle elde edilenalkolü, sıvı yakıta dönüştürenözel bir kimyasal süreç geliştirdi.Oligomerizasyonadı verilen bu yöntemde, şirketin patentli katalizörleri sayesinde alkol, sıvı yakıta dönüştürülüyor. Bu yöntemi diğer e-yakıt çalışmalarından ayıran en temel özellik iseverimliliği. Karmaşık sentez gazı süreçlerini ortadan kaldıran sistem, daha az enerji tüketereküretim maliyetleriniönemli ölçüde düşürüyor. Böylece sentetik yakıt son kullanıcı içindaha ekonomikbir seçenek haline geliyor. Geliştirilen sentetik yakıtın en dikkat çekici özelliklerinden biri demevcut benzinli motorlardaherhangi bir modifikasyon gerektirmeden kullanılabilmesi. Şirket, yakıtın şimdiden95 oktan seviyesineulaştığını ve premium benzinlebenzer performanssunduğunu belirtiyor. Dünya genelindemilyonlarcabenzinli araç kullanılmaya devam ediyor ve bunların yerini yeni nesil araçların almasıonlarca yılsürecek Bu nedenle geliştirilen sentetik benzin, mevcut motorlarda herhangi birdeğişiklik gerektirmedenkarbon emisyonlarının azaltılmasına katkı sağlayabilecek önemli bir alternatif olarak görülüyor. Gota Energy ekibi şu anda laboratuvar ortamında yıllık10.000 litrekapasiteyle üretim yapıyor. Ancak hedefleri oldukça yüksek ve önümüzdeki aylarda bu kapasiteyi1 milyon litreyeçıkarmayı planlıyorlar. Teknolojiyi endüstriyel ölçeğe taşımayı hedefleyen ekip, bu yıl risk sermayesi yatırımı arayışına girdi. Gota Energy, geliştirdiği yöntemle fosil yakıtlardan uzaklaşmanın mevcut içten yanmalı motorlardanvazgeçmeden demümkün olabileceğini göstermeyi amaçlıyor. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/deals https://www.amazon.com.tr/promotion/psp/AZGC3J6SQ6C4A https://www.amazon.com.tr/promotion/psp/A1CJJ2Z6SVMLYH https://www.amazon.com.tr/dp/B0C4X6VJ1V https://www.mastercard.com/tr/tr/personal/get-support/currency-exchange-rate-converter.html",
           "image_sources": [
-            "article_candidates_field"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1
+          "prepared_image_count": 4
         },
-        "post_text": "⚡️ İNGİLTERE'DE ELEKTRİKLİ ARAÇLARA YENİ VERGİ SİSTEMİ\n\nİngiltere'de elektrikli araç sahiplerini yakından ilgilendiren bir konu gündemde: Kat edilen mil başına vergi uygulaması.\n\nBu yeni düzenleme, elektrikli araçların yaygınlaşmasıyla birlikte ortaya çıkan vergi gelirlerindeki düşüşü dengelemeyi amaçlıyor.\n\nSizce bu tür bir uygulama Türkiye'de de gündeme gelir mi?",
-        "image_path": "/tmp/otoxtra_img_2ccvw44v.jpg",
+        "post_text": "⛽ BENZINLI ARAC SAHIPLERINE MUTHIS HABER!\n\nMevcut benzinli motorlarda degisiklik yapmadan kullanilabilecek, dusuk maliyetli sentetik benzin gelistirildi!\n\n95 oktan seviyesindeki bu yakit, premium benzinle ayni performansi sunuyor ve daha ekonomik olacak. Icten yanmali motorlar yollarda kalmaya devam edebilir!\n\nSizce bu teknoloji otomotiv dunyasini nasil etkiler?",
+        "image_path": "/tmp/otoxtra_img_k1kpr2km.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_2ccvw44v.jpg"
+          "/tmp/otoxtra_img_k1kpr2km.jpg",
+          "/tmp/otoxtra_img_7fvacp7i.jpg",
+          "/tmp/otoxtra_img_x4ybvwws.jpg",
+          "/tmp/otoxtra_img_47h9_oel.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-07-14T16:44:48.551123+03:00"
+      "updated_at": "2026-07-14T18:24:28.934448+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122172330764916499",
-        "article_title": "ELEKTRİKLİYE MİL BAŞINA VERGİ! \"Elektrikli araçlar için katedilen mil başına vergi.\" İngiltere'de bu konu 2 gündür gündem oldu. Detaylara bakıyorum.",
-        "image_source": "single_image",
-        "image_count": 1,
+        "post_id": "678053852057751_122172336896916499",
+        "article_title": "Benzinli araçlar için düşük maliyetli 95 oktan sentetik benzin geliştirildi",
+        "image_source": "multi_image",
+        "image_count": 4,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-14T16:44:53.455547+03:00"
+      "updated_at": "2026-07-14T18:24:43.346603+03:00"
     }
   }
 }
