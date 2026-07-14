@@ -1,108 +1,85 @@
 {
-  "run_id": "2026-07-14-08:31",
+  "run_id": "2026-07-14-11:05",
   "status": "completed",
-  "started_at": "2026-07-14T08:31:04.953315+03:00",
-  "updated_at": "2026-07-14T08:32:27.554155+03:00",
+  "started_at": "2026-07-14T11:05:10.842619+03:00",
+  "updated_at": "2026-07-14T11:06:06.313712+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "İstanbul'da plaka serileri bitmek üzere: Gözler yeni plaka formatında",
-            "link": "https://www.donanimhaber.com/istanbul-da-plaka-serileri-bitmek-uzere-sadece-5-harf-kaldi--208053",
-            "published": "2026-07-13T22:15:00+00:00",
-            "summary": "İstanbul'da 2018'de kullanılmaya başlanan üç harfli plaka sisteminde sona yaklaşılıyor. Hususi araçlar için geriye sadece beş harf serisi kalmış durumda. Gözler ise yeni plaka formatında.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208053/1200x675istanbul-da-plaka-serileri-bitmek-uzere-sadece-5-harf-kaldi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208053/1200x675istanbul-da-plaka-serileri-bitmek-uzere-sadece-5-harf-kaldi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208053/1200x675istanbul-da-plaka-serileri-bitmek-uzere-sadece-5-harf-kaldi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bitmek-formatinda-gozler-plaka-plaka-serileri-stanbul"
-          },
-          {
-            "title": "Çin hidrojen motorunda bir ilke imza attı: 600 beygirlik dev motor testleri geçti",
-            "link": "https://www.donanimhaber.com/cin-in-600-beygirlik-dev-hidrojen-motoru-testleri-gecti--208051",
-            "published": "2026-07-13T21:50:00+00:00",
-            "summary": "Çin merkezli Weichai Power tarafından geliştirilen 600 beygirlik dev hidrojen motoru testleri geçti. %46,8 termal verimliliğe sahip motorun ağır hizmet araçlarında kullanılması planlanıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208051/1200x675cin-in-600-beygirlik-dev-hidrojen-motoru-testleri-gecti.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208051/1200x675cin-in-600-beygirlik-dev-hidrojen-motoru-testleri-gecti.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208051/1200x675cin-in-600-beygirlik-dev-hidrojen-motoru-testleri-gecti.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "600-atti-beygirlik-cin-dev-gecti-hidrojen-ilke-imza-motor-motorunda-testleri"
-          },
-          {
-            "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-            "link": "https://www.donanimhaber.com/motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti--208052",
-            "published": "2026-07-13T21:42:49+00:00",
-            "summary": "Çin'deki selde ilerleyen BYD marka aracın altından kopan parça sosyal medyayı ayağa kaldırdı. Motoru düştü denilen o videonun arkasındaki gerçek, otomotiv uzmanlarınca açığa kavuşturuldu.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-dustugu-edilen-gercek-iddia-ilgili-motoru-ortaya-trafikte"
-          },
-          {
-            "title": "Araba yolda gidiyor ve arabanın altından bir şey düşüyor 🔽 ➡️ Su şişesi takılmış o düşmüş ➡️ Lastikten taşlar düşmüş ➡️ Kaplama düşmüş ➡️ Motor düşmüş",
-            "link": "https://nitter.net/murattosunMSE/status/2076738885359374656#m",
-            "published": "2026-07-13T18:41:48+00:00",
-            "summary": "Araba yolda gidiyor ve arabanın altından bir şey düşüyor 🔽 ➡️ Su şişesi takılmış o düşmüş ➡️ Lastikten taşlar düşmüş ➡️ Kaplama düşmüş ➡️ Motor düşmüş",
+            "title": "Nissan’dan 3 Yaş Üzeri Araçlara Yüzde 30’a Varan Servis İndirimi",
+            "link": "https://otomobilkolik.com/nissan-servis-indirimi-2026/",
+            "published": "2026-07-14T07:38:02+00:00",
+            "summary": "Nissan Türkiye, Temmuz 2026 döneminde satış sonrası hizmetlere yönelik yeni avantajlar sunuyor. Marka, 3 yaş ve üzerindeki Nissan… Nissan’dan 3 Yaş Üzeri Araçlara Yüzde 30’a Varan Servis İndirimi yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
             "image_url": "",
             "rss_image_url": "",
             "image_candidates": [],
             "image_source": "none",
-            "source_name": "MuratTosun",
+            "source_name": "otomobilkolik",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "altindan-araba-arabanin-dusmus-dusmus-dusmus-dusmus-dusuyor-gidiyor-kaplama-lastikten-motor-sey-sisesi-takilmis-taslar-yolda"
+            "topic_fingerprint": "araclara-ndirimi-nissan-servis-uzeri-varan-yas-yuzde"
           },
           {
-            "title": "Buyurun efendim gerçek \"Kamp Modu\" 😄. Teslacılar öyle yeni icat edilmiş gibi hava atmayın 🤣. Üstelik 1994 model BMW 525i aracımda orijinal donanım olarak mevcut. Webasto'nun da hası, gerçeği 😉.",
-            "link": "https://nitter.net/sekizsilindir/status/2076735553056211080#m",
-            "published": "2026-07-13T18:28:34+00:00",
-            "summary": "Buyurun efendim gerçek \"Kamp Modu\" 😄. Teslacılar öyle yeni icat edilmiş gibi hava atmayın 🤣. Üstelik 1994 model BMW 525i aracımda orijinal donanım olarak mevcut. Webasto'nun da hası, gerçeği 😉.",
-            "image_url": "https://pbs.twimg.com/media/HNIL-gLWQAAkB5p.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HNIL-gLWQAAkB5p.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HNIL-gLWQAAkB5p.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Sekizsilindir",
+            "title": "Volkswagen’ın En Güçlü Elektrikli Sedanı: ID. UNYX 09",
+            "link": "https://otomobilkolik.com/volkswagen-id-unyx-09-503-bg/",
+            "published": "2026-07-14T07:11:22+00:00",
+            "summary": "Volkswagen, Çin pazarı için geliştirdiği yeni elektrikli sedan ID. UNYX 09 modelini satışa sunmaya hazırlanıyor. Beş metreyi aşan… Volkswagen’ın En Güçlü Elektrikli Sedanı: ID. UNYX 09 yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "1994-525i-aracimda-atmayin-bmw-buyurun-donanim-edilmis-efendim-gercegi-gercek-hasi-hava-icat-kamp-mevcut-model-modu-orijinal-oyle-teslacilar-ustelik-webasto"
+            "topic_fingerprint": "elektrikli-guclu-sedani-unyx-volkswagen"
+          },
+          {
+            "title": "Ferrari F80’den Daha Güçlü Elektrikli SUV: Yeni Denza N8",
+            "link": "https://otomobilkolik.com/yeni-denza-n8-elektrikli-suv/",
+            "published": "2026-07-14T06:20:50+00:00",
+            "summary": "BYD’nin premium otomobil markası Denza, tamamen elektrikli yeni Denza N8 modelini hazırlıyor. Beş koltuklu büyük SUV, üç motorlu… Ferrari F80’den Daha Güçlü Elektrikli SUV: Yeni Denza N8 yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "denza-elektrikli-f80-ferrari-guclu-suv"
+          },
+          {
+            "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+            "link": "https://www.log.com.tr/nilu27nin-ilk-kez-calistirilan-v12si-beklentileri-asti-video/",
+            "published": "2026-07-14T07:01:24+00:00",
+            "summary": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyi ateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar […] Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "asti-beklentileri-calistirilan-kez-nilu27-v12-video"
           }
         ],
-        "count": 5,
+        "count": 4,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -190,259 +167,249 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 95,
-            "after_time": 5,
-            "after_posted": 5,
-            "after_duplicate": 5,
-            "after_shared_variant_cooldown": 5
+            "after_keyword": 94,
+            "after_time": 4,
+            "after_posted": 4,
+            "after_duplicate": 4,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 95,
-          "after_time": 5,
-          "after_posted": 5,
-          "after_duplicate": 5,
-          "after_shared_variant_cooldown": 5
+          "after_keyword": 94,
+          "after_time": 4,
+          "after_posted": 4,
+          "after_duplicate": 4,
+          "after_shared_variant_cooldown": 4
         }
       },
       "error": null,
-      "updated_at": "2026-07-14T08:31:51.973735+03:00"
+      "updated_at": "2026-07-14T11:05:52.354350+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-          "link": "https://www.donanimhaber.com/motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti--208052",
-          "published": "2026-07-13T21:42:49+00:00",
-          "summary": "Çin'deki selde ilerleyen BYD marka aracın altından kopan parça sosyal medyayı ayağa kaldırdı. Motoru düştü denilen o videonun arkasındaki gerçek, otomotiv uzmanlarınca açığa kavuşturuldu.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
+          "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+          "link": "https://www.log.com.tr/nilu27nin-ilk-kez-calistirilan-v12si-beklentileri-asti-video/",
+          "published": "2026-07-14T07:01:24+00:00",
+          "summary": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyi ateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar […] Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-dustugu-edilen-gercek-iddia-ilgili-motoru-ortaya-trafikte",
+          "topic_fingerprint": "asti-beklentileri-calistirilan-kez-nilu27-v12-video",
           "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 19,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 20,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 92,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Sosyal medyada yayılan bir iddia üzerine yapılan açıklama, merak uyandırıcı ve 'gerçeğin peşinde' temasını işliyor. Yanlış bilginin düzeltilmesi viral potansiyeli artırır.",
-          "freshness_bonus": 1,
+          "score_explanation": "Hiper otomobil, V12 motor, Koenigsegg tasarımcısı ve ilk çalıştırma videosu olması viral potansiyelini zirveye taşıyor. Otomobil tutkunları için kaçırılmaz bir içerik.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 92,
-        "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
+        "score": 91,
+        "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 1,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 24,
-          "benzersizlik": 19,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 12
+          "etkilesim_potansiyeli": 25,
+          "benzersizlik": 20,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 10
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Sosyal medyada yayılan bir iddia üzerine yapılan açıklama, merak uyandırıcı ve 'gerçeğin peşinde' temasını işliyor. Yanlış bilginin düzeltilmesi viral potansiyeli artırır.",
+        "score_explanation": "Hiper otomobil, V12 motor, Koenigsegg tasarımcısı ve ilk çalıştırma videosu olması viral potansiyelini zirveye taşıyor. Otomobil tutkunları için kaçırılmaz bir içerik.",
         "skipped": false,
         "threshold": 25,
         "top_articles": [
           {
-            "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-            "score": 92,
+            "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+            "score": 91,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 24,
-              "benzersizlik": 19,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 12
-            }
-          },
-          {
-            "title": "İstanbul'da plaka serileri bitmek üzere: Gözler yeni plaka formatında",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 18,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 18,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 9
-            }
-          },
-          {
-            "title": "Çin hidrojen motorunda bir ilke imza attı: 600 beygirlik dev motor testleri geçti",
-            "score": 80,
-            "score_breakdown": {
-              "guncellik": 17,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 17,
+              "etkilesim_potansiyeli": 25,
+              "benzersizlik": 20,
               "gundem_gucu": 16,
               "paylasilabilirlik": 10
             }
+          },
+          {
+            "title": "Ferrari F80’den Daha Güçlü Elektrikli SUV: Yeni Denza N8",
+            "score": 84,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 24,
+              "benzersizlik": 18,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "Volkswagen’ın En Güçlü Elektrikli Sedanı: ID. UNYX 09",
+            "score": 79,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 15,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 7
+            }
           }
         ],
-        "scored_count": 5,
+        "scored_count": 4,
         "cooldown_candidates": [
           {
-            "title": "İstanbul'da plaka serileri bitmek üzere: Gözler yeni plaka formatında",
-            "link": "https://www.donanimhaber.com/istanbul-da-plaka-serileri-bitmek-uzere-sadece-5-harf-kaldi--208053",
-            "score": 87,
+            "title": "Ferrari F80’den Daha Güçlü Elektrikli SUV: Yeni Denza N8",
+            "link": "https://otomobilkolik.com/yeni-denza-n8-elektrikli-suv/",
+            "score": 84,
             "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "bitmek-formatinda-gozler-plaka-plaka-serileri-stanbul"
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "denza-elektrikli-f80-ferrari-guclu-suv"
           },
           {
-            "title": "Çin hidrojen motorunda bir ilke imza attı: 600 beygirlik dev motor testleri geçti",
-            "link": "https://www.donanimhaber.com/cin-in-600-beygirlik-dev-hidrojen-motoru-testleri-gecti--208051",
-            "score": 80,
+            "title": "Volkswagen’ın En Güçlü Elektrikli Sedanı: ID. UNYX 09",
+            "link": "https://otomobilkolik.com/volkswagen-id-unyx-09-503-bg/",
+            "score": 79,
             "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "600-atti-beygirlik-cin-dev-gecti-hidrojen-ilke-imza-motor-motorunda-testleri"
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "elektrikli-guclu-sedani-unyx-volkswagen"
           },
           {
-            "title": "Buyurun efendim gerçek \"Kamp Modu\" 😄. Teslacılar öyle yeni icat edilmiş gibi hava atmayın 🤣. Üstelik 1994 model BMW 525i aracımda orijinal donanım olarak mevcut. Webasto'nun da hası, gerçeği 😉.",
-            "link": "https://nitter.net/sekizsilindir/status/2076735553056211080#m",
-            "score": 77,
+            "title": "Nissan’dan 3 Yaş Üzeri Araçlara Yüzde 30’a Varan Servis İndirimi",
+            "link": "https://otomobilkolik.com/nissan-servis-indirimi-2026/",
+            "score": 71,
             "score_reason": "ai_scored",
-            "source_name": "Sekizsilindir",
-            "topic_fingerprint": "1994-525i-aracimda-atmayin-bmw-buyurun-donanim-edilmis-efendim-gercegi-gercek-hasi-hava-icat-kamp-mevcut-model-modu-orijinal-oyle-teslacilar-ustelik-webasto"
-          },
-          {
-            "title": "Araba yolda gidiyor ve arabanın altından bir şey düşüyor 🔽 ➡️ Su şişesi takılmış o düşmüş ➡️ Lastikten taşlar düşmüş ➡️ Kaplama düşmüş ➡️ Motor düşmüş",
-            "link": "https://nitter.net/murattosunMSE/status/2076738885359374656#m",
-            "score": 65,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "altindan-araba-arabanin-dusmus-dusmus-dusmus-dusmus-dusuyor-gidiyor-kaplama-lastikten-motor-sey-sisesi-takilmis-taslar-yolda"
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "araclara-ndirimi-nissan-servis-uzeri-varan-yas-yuzde"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-07-14T08:31:58.018940+03:00"
+      "updated_at": "2026-07-14T11:05:58.320271+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-          "link": "https://www.donanimhaber.com/motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti--208052",
-          "published": "2026-07-13T21:42:49+00:00",
-          "summary": "Çin'deki selde ilerleyen BYD marka aracın altından kopan parça sosyal medyayı ayağa kaldırdı. Motoru düştü denilen o videonun arkasındaki gerçek, otomotiv uzmanlarınca açığa kavuşturuldu.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
+          "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+          "link": "https://www.log.com.tr/nilu27nin-ilk-kez-calistirilan-v12si-beklentileri-asti-video/",
+          "published": "2026-07-14T07:01:24+00:00",
+          "summary": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyi ateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar […] Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-dustugu-edilen-gercek-iddia-ilgili-motoru-ortaya-trafikte",
+          "topic_fingerprint": "asti-beklentileri-calistirilan-kez-nilu27-v12-video",
           "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 19,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 20,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 92,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Sosyal medyada yayılan bir iddia üzerine yapılan açıklama, merak uyandırıcı ve 'gerçeğin peşinde' temasını işliyor. Yanlış bilginin düzeltilmesi viral potansiyeli artırır.",
-          "freshness_bonus": 1,
+          "score_explanation": "Hiper otomobil, V12 motor, Koenigsegg tasarımcısı ve ilk çalıştırma videosu olması viral potansiyelini zirveye taşıyor. Otomobil tutkunları için kaçırılmaz bir içerik.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Çin'inŞenyangşehrinde aşırı yağışlar sırasında kaydedilen ve bir BYD Tang modelinin altındanbüyük bir parçanın koptuğunugösteren görüntüler, kısa sürededezenformasyondalgasına dönüştü. Ancak uluslararası otomotiv otoritelerinin yaptığı teknik incelemeler, \"motor düştü\" iddialarının tamamenasılsız olduğunuortaya çıkardı. Sektörüngüvenilirhaber kaynaklarından CarNewsChina tarafından yapılan incelemede,derin su birikintisinehızla giren aracın maruz kaldığı yüksekhidrodinamik su basıncısebebiylealt taraftaki plastik/kompozit koruma panelininyerinden çıktığı belirtidi. Mühendisler, elektrikli bir aracınmotorunun düşmesidurumunda aks millerinin, yüksek voltajlı turuncu güç kablolarının ve sıvı soğutma borularının anındaparçalanacağını, bunun da tekerlekleri kilitleyip aracımilisaniyeler içinde hareketsiz bırakacağınıbelirtti. Videoda ise altındaki parça kopanBYD Tangmodelinin, hiçbir arıza ya da kilitlenme yaşamadan,stop lambalarıyanar vaziyette suda sorunsuz şekilde ilerlemeye devam ettiği görülüyor. Uzmanlar, derin sel sularınayüksek hızla girenhemen her araçta bu tür plastik muhafaza kopmalarınınyaşanabileceğinibelirterek sürücüleri uyardı. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/deals https://www.amazon.com.tr/dp/B071YDHGL3 https://www.amazon.com.tr/dp/B0H64HPPKR https://www.amazon.com.tr/dp/B0DPHFYNY4 https://app.hb.biz/Kdy8vHHk2Cp7"
+          "full_text": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyiateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar taşıyabilecek. Toplamda 54 adet üretilecek aracın satışına 2027’de başlanması ve fiyatının 3,5 milyon dolar civarında olması bekleniyor."
         },
-        "post_text": "🌧️ BYD ARACIN MOTORU MU DÜŞTÜ? İŞTE GERÇEK!\n\nÇin'deki selde ilerleyen bir BYD aracın altından bir parçanın koptuğu görüntüler sosyal medyayı salladı. \"Motoru düştü\" iddiaları hızla yayıldı.\n\nAncak uzmanlar olayın aslını açıkladı: Derin suya hızla giren aracın altındaki plastik koruma paneli, yüksek su basıncı nedeniyle yerinden çıkmış. Araç sorunsuz yoluna devam etmiş.\n\nSizce bu tür iddialar neden bu kadar hızlı yayılıyor?",
-        "post_text_length": 426,
+        "post_text": "🚀 NİLU27'NİN V12 MOTORU İLK KEZ ÇALIŞTI, BEKLENTİLERİ AŞTI!\n\nKoenigsegg Gemera'nın tasarımcısından çıkan Nilu markası, Nilu27 için özel V12 motorunu ateşledi. 1.070 beygir gücündeki bu canavar, ilk testlerde bile beklentilerin üzerine çıktı!\n\n0'dan 100'e 3 saniyenin altında, maksimum 400 km/s hız... Sadece 54 adet üretilecek bu hiper otomobil, 2027'de 3.5 milyon dolarlık fiyatla yollarda olacak.\n\nSizce bu yeni V12'nin sesi nasıl bir senfoniye dönüşecek?",
+        "post_text_length": 457,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-14T08:32:00.661220+03:00"
+      "updated_at": "2026-07-14T11:06:00.251706+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-          "link": "https://www.donanimhaber.com/motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti--208052",
-          "published": "2026-07-13T21:42:49+00:00",
-          "summary": "Çin'deki selde ilerleyen BYD marka aracın altından kopan parça sosyal medyayı ayağa kaldırdı. Motoru düştü denilen o videonun arkasındaki gerçek, otomotiv uzmanlarınca açığa kavuşturuldu.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg",
+          "title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+          "link": "https://www.log.com.tr/nilu27nin-ilk-kez-calistirilan-v12si-beklentileri-asti-video/",
+          "published": "2026-07-14T07:01:24+00:00",
+          "summary": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyi ateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar […] Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208052/1200x675motoru-dustugu-iddia-edilen-byd-ile-ilgili-gercek-ortaya-cikti.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-14_09-58-01_K92KP-660x371.jpg"
           ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
+          "image_source": "fallback",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-dustugu-edilen-gercek-iddia-ilgili-motoru-ortaya-trafikte",
+          "topic_fingerprint": "asti-beklentileri-calistirilan-kez-nilu27-v12-video",
           "base_ai_score": 90,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 19,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 20,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 92,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Sosyal medyada yayılan bir iddia üzerine yapılan açıklama, merak uyandırıcı ve 'gerçeğin peşinde' temasını işliyor. Yanlış bilginin düzeltilmesi viral potansiyeli artırır.",
-          "freshness_bonus": 1,
+          "score_explanation": "Hiper otomobil, V12 motor, Koenigsegg tasarımcısı ve ilk çalıştırma videosu olması viral potansiyelini zirveye taşıyor. Otomobil tutkunları için kaçırılmaz bir içerik.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Çin'inŞenyangşehrinde aşırı yağışlar sırasında kaydedilen ve bir BYD Tang modelinin altındanbüyük bir parçanın koptuğunugösteren görüntüler, kısa sürededezenformasyondalgasına dönüştü. Ancak uluslararası otomotiv otoritelerinin yaptığı teknik incelemeler, \"motor düştü\" iddialarının tamamenasılsız olduğunuortaya çıkardı. Sektörüngüvenilirhaber kaynaklarından CarNewsChina tarafından yapılan incelemede,derin su birikintisinehızla giren aracın maruz kaldığı yüksekhidrodinamik su basıncısebebiylealt taraftaki plastik/kompozit koruma panelininyerinden çıktığı belirtidi. Mühendisler, elektrikli bir aracınmotorunun düşmesidurumunda aks millerinin, yüksek voltajlı turuncu güç kablolarının ve sıvı soğutma borularının anındaparçalanacağını, bunun da tekerlekleri kilitleyip aracımilisaniyeler içinde hareketsiz bırakacağınıbelirtti. Videoda ise altındaki parça kopanBYD Tangmodelinin, hiçbir arıza ya da kilitlenme yaşamadan,stop lambalarıyanar vaziyette suda sorunsuz şekilde ilerlemeye devam ettiği görülüyor. Uzmanlar, derin sel sularınayüksek hızla girenhemen her araçta bu tür plastik muhafaza kopmalarınınyaşanabileceğinibelirterek sürücüleri uyardı. Ultra gerçekçi arkadaş robot kapışılıyor! https://www.amazon.com.tr/deals https://www.amazon.com.tr/dp/B071YDHGL3 https://www.amazon.com.tr/dp/B0H64HPPKR https://www.amazon.com.tr/dp/B0DPHFYNY4 https://app.hb.biz/Kdy8vHHk2Cp7",
+          "full_text": "Arkasında Koenigsegg Gemera’yı tasarlayan Sasha Selipanov’un yer aldığı hiper otomobil markası Nilu, ilk modeli Nilu27 için hazırlanan V12 üniteyiateşledi. “Size saf, dizginlenmemiş ve filtresiz bir şey vadetmiştik. Tasarım, mühendislik ve kusursuzluğa duyulan takıntıyla geçen sayısız saatin ardından, Yeni Zelanda’daki Hartley Engines’in olağanüstü yetenekli ekibiyle birlikte geliştirdiğimiz yepyeni V12 motorumuz ilk kez resmen ateşledik. Üstelik bu daha bir başlangıç. Asıl senfoni daha başlamadı. Hiper otomobillerin yeni çağına hoş geldiniz.” diyen şirket, 6.5 litrelik V12 için ilk aşamada tam 1.070 beygirlik güç verisi açıklamıştı. Hartley Engines şirketinden Nelson Hartley’nin, “Kağıt üzerinde gerçekten özel bir şey ortaya çıkardığımızı biliyorduk, ancak ünitenin daha ilk testte beklentilerimizi aşan bir performans sergilediğini görmek olağanüstüydü.” dediği deneme, aktarıldığı kadarıyla motorun 1.070 beygirin de üzerinde bir güç sunduğunu ortaya koyuyor. Nilu27’de İtalyan tedarikçi CIMA tarafından sağlanan 7 ileri manuel şanzımanla kombinlenen ünite, aracı 0’dan 100 km/s hıza 3 saniyenin altında çıkarabilecek ve maksimumda 400 km/s sürate kadar taşıyabilecek. Toplamda 54 adet üretilecek aracın satışına 2027’de başlanması ve fiyatının 3,5 milyon dolar civarında olması bekleniyor.",
           "image_sources": [
-            "meta_og",
-            "article_img"
+            "fallback"
           ],
-          "prepared_image_count": 2
+          "prepared_image_count": 1
         },
-        "post_text": "🌧️ BYD ARACIN MOTORU MU DÜŞTÜ? İŞTE GERÇEK!\n\nÇin'deki selde ilerleyen bir BYD aracın altından bir parçanın koptuğu görüntüler sosyal medyayı salladı. \"Motoru düştü\" iddiaları hızla yayıldı.\n\nAncak uzmanlar olayın aslını açıkladı: Derin suya hızla giren aracın altındaki plastik koruma paneli, yüksek su basıncı nedeniyle yerinden çıkmış. Araç sorunsuz yoluna devam etmiş.\n\nSizce bu tür iddialar neden bu kadar hızlı yayılıyor?",
-        "image_path": "/tmp/otoxtra_img_7b5gbq3g.jpg",
+        "post_text": "🚀 NİLU27'NİN V12 MOTORU İLK KEZ ÇALIŞTI, BEKLENTİLERİ AŞTI!\n\nKoenigsegg Gemera'nın tasarımcısından çıkan Nilu markası, Nilu27 için özel V12 motorunu ateşledi. 1.070 beygir gücündeki bu canavar, ilk testlerde bile beklentilerin üzerine çıktı!\n\n0'dan 100'e 3 saniyenin altında, maksimum 400 km/s hız... Sadece 54 adet üretilecek bu hiper otomobil, 2027'de 3.5 milyon dolarlık fiyatla yollarda olacak.\n\nSizce bu yeni V12'nin sesi nasıl bir senfoniye dönüşecek?",
+        "image_path": "/tmp/otoxtra_fallback_fbqickis.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_7b5gbq3g.jpg",
-          "/tmp/otoxtra_img_q21w881h.jpg"
+          "/tmp/otoxtra_fallback_fbqickis.jpg"
         ],
-        "image_source": "meta_og",
-        "image_count": 2
+        "image_source": "fallback",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-07-14T08:32:16.868861+03:00"
+      "updated_at": "2026-07-14T11:06:00.840682+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122172284396916499",
-        "article_title": "Trafikte motoru düştüğü iddia edilen BYD ile ilgili gerçek ortaya çıktı",
-        "image_source": "multi_image",
-        "image_count": 2,
+        "post_id": "678053852057751_122172298106916499",
+        "article_title": "Nilu27’nin ilk kez çalıştırılan V12’si beklentileri aştı [Video]",
+        "image_source": "text_only_fallback",
+        "image_count": 0,
         "dry_run": false,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-14T08:32:27.554155+03:00"
+      "updated_at": "2026-07-14T11:06:06.313712+03:00"
     }
   }
 }
