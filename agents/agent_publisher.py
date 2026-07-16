@@ -1,5 +1,5 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.5 FIXED)
+agents/agent_publisher.py - Yayinci Ajani (v4.5 FIXED + Threads)
 
 v4.5 FIXED:
   - CRITICAL FIX: _score_based_skip_percent() scoring.json ile senkronize edildi.
@@ -44,6 +44,7 @@ from core.logger import log
 from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
 from platforms import telegram as tg_platform
+from platforms import threads as threads_platform   # <-- EKLENDİ
 
 
 _RETRY_DELAY = 5
@@ -693,6 +694,23 @@ def run() -> bool:
 
         set_stage("publish", "done", output=output)
         log("BASARIYLA PAYLASILDI")
+
+        # ========== THREADS PAYLASIMI (YENI) ==========
+        try:
+            threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
+            if threads_cfg.get("enabled", False):
+                log("Threads paylasimi aktif, gonderiliyor...")
+                threads_post_id = threads_platform.post_text(post_text_content)
+                if threads_post_id:
+                    log(f"Threads paylasimi basarili: {threads_post_id}")
+                else:
+                    log("Threads paylasimi basarisiz, akis devam ediyor", "WARNING")
+            else:
+                log("Threads paylasimi devre disi (settings.json/threads.enabled=false)")
+        except Exception as exc:
+            log(f"Threads paylasimi beklenmeyen hata: {exc}", "WARNING")
+        # ========== THREADS SONU ==========
+
         return True
 
     except Exception as exc:
