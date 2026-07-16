@@ -1,12 +1,15 @@
 """
-platforms/threads.py - Threads API katmani (v1.1)
+platforms/threads.py - Threads API katmani (v2.0)
 
-v1.1: Ayrı THREADS_ACCESS_TOKEN desteği eklendi.
-      FB_ACCESS_TOKEN'e dokunmaz, sadece Threads için ayrı token kullanır.
+v2.0:
+  - post_image(message, image_path) eklendi.
+  - 0x0.st upload yardimcisi eklendi.
+  - Fallback: upload basarisiz olursa None doner, publisher text-only'e gecer.
+  - Ayrı THREADS_ACCESS_TOKEN kullanilir.
 
 Gerekli env:
   - THREADS_USER_ID
-  - THREADS_ACCESS_TOKEN  <-- YENİ
+  - THREADS_ACCESS_TOKEN
 """
 
 import os
@@ -19,12 +22,14 @@ _BASE_URL = f"https://graph.facebook.com/{_THREADS_API_VERSION}"
 _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT = 2.0
+# 0x0.st upload ayarları
+_UPLOAD_URL = "https://0x0.st"
+_UPLOAD_TIMEOUT = 30
 
 
 def _get_credentials():
     user_id = os.environ.get("THREADS_USER_ID", "")
-    token = os.environ.get("THREADS_ACCESS_TOKEN", "")  # <-- AYRI TOKEN
-
+    token = os.environ.get("THREADS_ACCESS_TOKEN", "")
     if not user_id:
         log("THREADS_USER_ID env bulunamadi", "ERROR")
     if not token:
@@ -76,13 +81,41 @@ def _post_with_retry(url, data, context="threads"):
     return {}
 
 
+def _upload_image_to_public_url(image_path: str) -> str | None:
+    """Yerel dosyayı 0x0.st'ye yükler, public URL döner."""
+    if not os.path.exists(image_path):
+        log(f"0x0.st upload: Dosya bulunamadi: {image_path}", "ERROR")
+        return None
+
+    try:
+        with open(image_path, "rb") as f:
+            resp = requests.post(
+                _UPLOAD_URL,
+                files={"file": f},
+                timeout=_UPLOAD_TIMEOUT,
+            )
+        if resp.status_code == 200:
+            url = resp.text.strip()
+            if url.startswith("http"):
+                log(f"0x0.st upload basarili: {url}")
+                return url
+            else:
+                log(f"0x0.st beklenmeyen yanit: {resp.text[:100]}", "ERROR")
+                return None
+        else:
+            log(f"0x0.st upload hatasi: {resp.status_code} {resp.text[:100]}", "ERROR")
+            return None
+    except Exception as exc:
+        log(f"0x0.st upload exception: {exc}", "ERROR")
+        return None
+
+
 def post_text(message: str) -> str | None:
-    """Threads’e yalnızca metin gönderir. Başarılıysa post ID döner."""
+    """Threads'e yalnızca metin gönderir."""
     user_id, token = _get_credentials()
     if not user_id or not token:
         return None
 
-    # 1. Container olustur
     container_url = f"{_BASE_URL}/{user_id}/threads"
     container_data = {
         "media_type": "TEXT",
@@ -90,37 +123,88 @@ def post_text(message: str) -> str | None:
         "access_token": token,
     }
 
-    log("Threads container olusturuluyor...")
-    container_resp = _post_with_retry(container_url, container_data, "create_container")
+    log("Threads TEXT container olusturuluyor...")
+    container_resp = _post_with_retry(container_url, container_data, "create_text_container")
     container_id = container_resp.get("id")
     if not container_id:
-        log("Threads container olusturulamadi", "ERROR")
+        log("Threads text container olusturulamadi", "ERROR")
         return None
 
     log(f"Container ID: {container_id}")
-
-    # 2. Yayinla
     publish_url = f"{_BASE_URL}/{user_id}/threads_publish"
     publish_data = {
         "creation_id": container_id,
         "access_token": token,
     }
-
-    log("Threads publish ediliyor...")
-    publish_resp = _post_with_retry(publish_url, publish_data, "publish_container")
+    log("Threads text publish ediliyor...")
+    publish_resp = _post_with_retry(publish_url, publish_data, "publish_text")
     post_id = publish_resp.get("id")
     if post_id:
-        log(f"Threads paylasimi basarili. Post ID: {post_id}")
+        log(f"Threads text paylasimi basarili. Post ID: {post_id}")
+        return post_id
+    log("Threads text publish basarisiz", "ERROR")
+    return None
+
+
+def post_image(message: str, image_path: str) -> str | None:
+    """
+    Threads'e görsel + metin gönderir.
+    - Önce görseli 0x0.st'ye yükler, public URL alır.
+    - IMAGE container oluşturur.
+    - Başarısız olursa None döner, çağrıcı fallback yapar.
+    """
+    user_id, token = _get_credentials()
+    if not user_id or not token:
+        return None
+    if not image_path:
+        log("post_image: image_path bos, metine dönülmeli", "WARNING")
+        return None
+
+    # 1. Upload
+    image_url = _upload_image_to_public_url(image_path)
+    if not image_url:
+        log("post_image: 0x0.st upload basarisiz, gorselli paylasim iptal", "ERROR")
+        return None
+
+    # 2. Container olustur
+    container_url = f"{_BASE_URL}/{user_id}/threads"
+    container_data = {
+        "media_type": "IMAGE",
+        "text": message,
+        "image_url": image_url,
+        "access_token": token,
+    }
+
+    log("Threads IMAGE container olusturuluyor...")
+    container_resp = _post_with_retry(container_url, container_data, "create_image_container")
+    container_id = container_resp.get("id")
+    if not container_id:
+        log("Threads image container olusturulamadi", "ERROR")
+        return None
+
+    log(f"Container ID: {container_id}")
+
+    # 3. Yayinla
+    publish_url = f"{_BASE_URL}/{user_id}/threads_publish"
+    publish_data = {
+        "creation_id": container_id,
+        "access_token": token,
+    }
+    log("Threads image publish ediliyor...")
+    publish_resp = _post_with_retry(publish_url, publish_data, "publish_image")
+    post_id = publish_resp.get("id")
+    if post_id:
+        log(f"Threads image paylasimi basarili. Post ID: {post_id}")
         return post_id
 
-    log("Threads publish basarisiz", "ERROR")
+    log("Threads image publish basarisiz", "ERROR")
     return None
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v1.1 - ayrı token)")
+    log("threads.py smoke test (v2.0)")
     uid, tok = _get_credentials()
     if uid and tok:
-        log("Threads kimlik bilgileri mevcut (gercek post atilmadi).")
+        log("Threads kimlik bilgileri mevcut.")
     else:
         log("Kimlik bilgileri eksik.", "WARNING")
