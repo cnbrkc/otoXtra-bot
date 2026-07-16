@@ -1,9 +1,10 @@
 """
-platforms/threads.py - Threads API katmani (v3.1 - Token temizleme)
+platforms/threads.py - Threads API katmani (v3.2 - /me Endpoint Guncellemesi)
 
-v3.1:
-  - _get_credentials() içinde token'a .strip() eklendi.
-  - Debug için token uzunluğu ve ilk 4 karakter loglanıyor (güvenli).
+v3.2:
+  - Eski ve hata veren 'threads_profile' (IG baglantisi gerektiren) sorgusu kaldirildi.
+  - Artik direkt '/me' uzerinden Threads User ID cekiliyor.
+  - /me basarisiz olursa, env'den gelen THREADS_USER_ID dogrudan kullanilir (Fallback).
 """
 
 import os
@@ -121,22 +122,33 @@ def _get_with_retry(url, params, context="threads_get"):
 
 
 def _get_threads_user_id(ig_user_id, token):
-    """Instagram Profesyonel Hesap ID'sini kullanarak Threads User ID'sini bulur."""
-    url = f"{_BASE_URL}/{ig_user_id}"
+    """
+    Threads User ID'sini bulur.
+    Yeni Threads API yapisinda /me uzerinden direkt kimlik dogrulanir.
+    Eger /me basarisiz olursa, env'den gelen ID'yi (ki dogru ayarlandiysa Threads ID'sidir) kullanir.
+    """
+    # 1. Once /me endpoint'ini deneyerek token'in ait oldugu Threads ID'sini cekelim.
+    url = f"{_BASE_URL}/me"
     params = {
-        "fields": "threads_profile",
+        "fields": "id,username",
         "access_token": token
     }
-    log(f"Threads User ID bulunuyor: IG_ID={ig_user_id}")
-    result = _get_with_retry(url, params, "get_threads_profile")
-    threads_profile = result.get("threads_profile", {})
-    threads_user_id = threads_profile.get("id")
-    if threads_user_id:
-        log(f"Threads User ID basariyla bulundu: {threads_user_id}")
-        return threads_user_id
-    else:
-        log("Threads User ID bulunamadi. IG hesabi Threads'e bagli olmayabilir.", "ERROR")
-        return None
+    log("Threads User ID '/me' uzerinden kontrol ediliyor...")
+    result = _get_with_retry(url, params, "get_me_profile")
+
+    me_id = result.get("id")
+    if me_id:
+        log(f"Threads User ID '/me' uzerinden basariyla bulundu: {me_id} (username: {result.get('username', 'N/A')})")
+        return me_id
+
+    # 2. Eger /me cagrisi basarisiz olursa, env'den okunan ID'yi direkt Threads ID olarak kabul et.
+    # (Kullanici THREADS_USER_ID env degiskenine dogru Threads ID'sini girdigi icin bu calisir).
+    if ig_user_id:
+        log(f"/me cagrisi basarisiz veya izin yok. Env'deki THREADS_USER_ID ({ig_user_id}) direkt kullanilacak.", "WARNING")
+        return ig_user_id
+
+    log("Threads User ID hicbir sekilde bulunamadi.", "ERROR")
+    return None
 
 
 def post_text(message: str) -> str | None:
@@ -215,7 +227,7 @@ def _publish_container(threads_user_id, container_id, token, media_type):
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v3.1)")
+    log("threads.py smoke test (v3.2)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
