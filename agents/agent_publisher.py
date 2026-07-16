@@ -1,10 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.6 + Threads Image)
+agents/agent_publisher.py - Yayinci Ajani (v4.7 - Ayrı Dry Run)
 
-v4.6:
-  - Threads görsel paylaşımı (fallback zincirli) eklendi.
-  - Mod: text_only / text_and_image (settings.json threads.mode)
-  - Önce gorselli dener, basarisiz olursa metine gecer.
+v4.7:
+  - FB_DRY_RUN / THREADS_DRY_RUN ortam değişkenleri eklendi.
+  - DRY_RUN genel kontrolü devam ediyor.
+  - Threads görsel paylaşımı (v2.0 threads.py ile) tam entegre.
 """
 
 import os
@@ -58,10 +58,25 @@ def _safe_int(value, default: int) -> int:
 
 
 def _is_dry_run(settings: dict) -> bool:
+    """Genel DRY_RUN: hem Facebook hem Threads"""
     if os.environ.get("DRY_RUN") is not None:
         return _get_env_bool("DRY_RUN", False)
     posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
     return bool(posting_cfg.get("dry_run", False))
+
+
+def _is_fb_dry_run() -> bool:
+    """Sadece Facebook dry run? (DRY_RUN genel ise zaten etkisiz)"""
+    if os.environ.get("DRY_RUN") is not None:
+        return _get_env_bool("DRY_RUN", False)
+    return _get_env_bool("FB_DRY_RUN", False)
+
+
+def _is_threads_dry_run() -> bool:
+    """Sadece Threads dry run? (DRY_RUN genel ise zaten etkisiz)"""
+    if os.environ.get("DRY_RUN") is not None:
+        return _get_env_bool("DRY_RUN", False)
+    return _get_env_bool("THREADS_DRY_RUN", False)
 
 
 def _is_random_delay_enabled() -> bool:
@@ -298,8 +313,10 @@ def _log_publish_preview(article: dict, post_text_content: str, image_paths: lis
 
 def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
     _log_publish_preview(article, post_text_content, image_paths)
+
     image_count = len(image_paths)
     post_id = None
+
     if image_count >= 2:
         log("[PUBLISH] STEP 1/4: Attempting multi-image publish", "INFO")
         post_id = _try_post_multi_photos(image_paths, post_text_content)
@@ -307,6 +324,7 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             article["image_source"] = "multi_image"
             return post_id
         log("[PUBLISH] Multi-image failed, falling back to single-image", "WARNING")
+
     if image_count >= 1:
         log("[PUBLISH] STEP 2/4: Attempting single-image publish", "INFO")
         post_id = _try_post_single_photo(image_paths[0], post_text_content)
@@ -314,18 +332,22 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             article["image_source"] = "single_image" if image_count == 1 else "single_fallback_from_multi"
             return post_id
         log("[PUBLISH] Single-image failed, falling back to text-only", "WARNING")
+
     log("[PUBLISH] STEP 3/4: Attempting text-only publish", "INFO")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_fallback"
         return post_id
+
     log(f"[PUBLISH] Text-only failed, waiting {_RETRY_DELAY}s before retry", "WARNING")
     time.sleep(_RETRY_DELAY)
+
     log("[PUBLISH] STEP 4/4: Retrying text-only publish (LAST RESORT)", "WARNING")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_retry"
         return post_id
+
     log("[PUBLISH] ALL PUBLISH ATTEMPTS FAILED", "ERROR")
     return None
 
@@ -533,6 +555,7 @@ def run() -> bool:
         random_delay_max = max(0, random_delay_max)
 
         dry_run = _is_dry_run(settings)
+        fb_dry_run = _is_fb_dry_run()
         random_delay_enabled = _is_random_delay_enabled()
 
         posted_data = get_posted_news()
@@ -543,7 +566,7 @@ def run() -> bool:
         else:
             log("Gunluk limit kontrolu atlandi (manual_priority=true)")
 
-        if not dry_run and (not manual_priority):
+        if not dry_run and not fb_dry_run and (not manual_priority):
             skip_allowed, skip_reason = _check_skip_probability(
                 _safe_int(article.get("score", 0), 0)
             )
@@ -561,100 +584,89 @@ def run() -> bool:
                 log("Skora bagli atlama nedeniyle bu tur publish skip edildi")
                 return True
 
-        if dry_run:
-            log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
-            output = _build_publish_output(
+        if dry_run or fb_dry_run:
+            if fb_dry_run:
+                log("FB_DRY_RUN: Facebook paylasimi atlaniyor, Threads serbest")
+            else:
+                log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
+            # Facebook'u atla, Threads'i aşağıda hallet
+            fake_post_id = "dryrun_000000000_111111111" if not fb_dry_run else "fb_dryrun_skip"
+            # Telegram bildirimi vs. için normal akışı taklit et, ama posted record'a yazma
+            set_stage("publish", "done", output=_build_publish_output(
+                article, fake_post_id, image_source, len(image_paths), True))
+            log("Facebook paylasimi atlandi (dry run).")
+            # Do not return, fall through to Threads
+        else:
+            if manual_priority:
+                log("Rastgele bekleme atlandi (manual_priority=true)")
+            elif random_delay_enabled and random_delay_max > 0:
+                delay_seconds = random.randint(0, random_delay_max * 60)
+                log(f"Rastgele bekleme: {delay_seconds} sn")
+                time.sleep(delay_seconds)
+            elif not random_delay_enabled:
+                log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
+
+            post_id = _publish_to_facebook(article, post_text_content, image_paths)
+
+            if post_id is None:
+                log("[PUBLISH] CRITICAL: All publish methods failed", "ERROR")
+                set_stage("publish", "error", error="Facebook paylasimi tamamen basarisiz")
+                return False
+
+            final_image_source = article.get("image_source", image_source)
+            final_image_count = _resolve_final_image_count(final_image_source, image_paths)
+
+            _record_posted(article, post_id, final_image_source, final_image_count)
+            _record_shared_variant_cooldowns(article)
+
+            fresh_data = get_posted_news()
+            action_count = get_today_action_count(fresh_data)
+            share_count = get_today_post_count(fresh_data)
+            health_report = _build_health_report()
+
+            telegram_ok = _send_telegram_notification(
                 article=article,
-                post_id="dryrun_000000000_111111111",
-                image_source=image_source,
-                image_count=len(image_paths),
-                dry_run=True,
+                action_count=action_count,
+                share_count=share_count,
+                health_report=health_report,
+                image_source=final_image_source,
+                image_count=final_image_count,
             )
-            set_stage("publish", "done", output=output)
-            log("DRY RUN tamamlandi")
-            return True
+            if not telegram_ok:
+                log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
 
-        if manual_priority:
-            log("Rastgele bekleme atlandi (manual_priority=true)")
-        elif random_delay_enabled and random_delay_max > 0:
-            delay_seconds = random.randint(0, random_delay_max * 60)
-            log(f"Rastgele bekleme: {delay_seconds} sn")
-            time.sleep(delay_seconds)
-        elif not random_delay_enabled:
-            log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
+            set_stage("publish", "done", output=_build_publish_output(
+                article, post_id, final_image_source, final_image_count, False))
+            log("BASARIYLA PAYLASILDI")
 
-        post_id = _publish_to_facebook(article, post_text_content, image_paths)
-
-        if post_id is None:
-            log("[PUBLISH] CRITICAL: All publish methods failed", "ERROR")
-            set_stage("publish", "error", error="Facebook paylasimi tamamen basarisiz")
-            return False
-
-        final_image_source = article.get("image_source", image_source)
-        final_image_count = _resolve_final_image_count(final_image_source, image_paths)
-
-        _record_posted(article, post_id, final_image_source, final_image_count)
-        _record_shared_variant_cooldowns(article)
-
-        fresh_data = get_posted_news()
-        action_count = get_today_action_count(fresh_data)
-        share_count = get_today_post_count(fresh_data)
-        health_report = _build_health_report()
-
-        telegram_ok = _send_telegram_notification(
-            article=article,
-            action_count=action_count,
-            share_count=share_count,
-            health_report=health_report,
-            image_source=final_image_source,
-            image_count=final_image_count,
-        )
-        if not telegram_ok:
-            log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
-
-        output = _build_publish_output(
-            article=article,
-            post_id=post_id,
-            image_source=final_image_source,
-            image_count=final_image_count,
-            dry_run=False,
-        )
-
-        if manual_priority and image_source == "telegram":
-            tg_platform.finalize_consumed_shareable_content(image_output)
-
-        set_stage("publish", "done", output=output)
-        log("BASARIYLA PAYLASILDI")
-
-        # ========== THREADS PAYLASIMI (Görsel + Metin Fallback) ==========
+        # ========== THREADS PAYLASIMI ==========
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False):
-                mode = threads_cfg.get("mode", "text_only")
-                threads_post_id = None
-
-                # Görsel varsa ve mod destekliyorsa gorselli dene
-                if image_paths and mode == "text_and_image":
-                    log("Threads: Gorselli paylasim deneniyor...")
-                    threads_post_id = threads_platform.post_image(post_text_content, image_paths[0])
-                    if threads_post_id:
-                        log(f"Threads gorselli paylasim basarili: {threads_post_id}")
+                if _is_threads_dry_run():
+                    log("THREADS_DRY_RUN: Threads paylasimi atlaniyor.")
+                else:
+                    mode = threads_cfg.get("mode", "text_only")
+                    threads_post_id = None
+                    if image_paths and mode == "text_and_image":
+                        log("Threads: Gorselli paylasim deneniyor...")
+                        threads_post_id = threads_platform.post_image(post_text_content, image_paths[0])
+                        if threads_post_id:
+                            log(f"Threads gorselli paylasim basarili: {threads_post_id}")
+                        else:
+                            log("Threads gorselli paylasim basarisiz, metine fallback", "WARNING")
+                            threads_post_id = threads_platform.post_text(post_text_content)
+                            if threads_post_id:
+                                log(f"Threads metin fallback basarili: {threads_post_id}")
+                            else:
+                                log("Threads metin fallback de basarisiz", "WARNING")
                     else:
-                        log("Threads gorselli paylasim basarisiz, metine fallback", "WARNING")
+                        log("Threads: Metin paylasimi yapiliyor")
                         threads_post_id = threads_platform.post_text(post_text_content)
                         if threads_post_id:
-                            log(f"Threads metin fallback basarili: {threads_post_id}")
+                            log(f"Threads metin paylasimi basarili: {threads_post_id}")
                         else:
-                            log("Threads metin fallback de basarisiz", "WARNING")
-                else:
-                    # Sadece metin modu veya görsel yok
-                    log("Threads: Metin paylasimi yapiliyor (mod veya gorsel yok)")
-                    threads_post_id = threads_platform.post_text(post_text_content)
-                    if threads_post_id:
-                        log(f"Threads metin paylasimi basarili: {threads_post_id}")
-                    else:
-                        log("Threads metin paylasimi basarisiz", "WARNING")
-
+                            log("Threads metin paylasimi basarisiz", "WARNING")
             else:
                 log("Threads paylasimi devre disi (settings.json/threads.enabled=false)")
         except Exception as exc:
