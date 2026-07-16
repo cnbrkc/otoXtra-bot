@@ -1,23 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.5 FIXED + Threads)
+agents/agent_publisher.py - Yayinci Ajani (v4.6 + Threads Image)
 
-v4.5 FIXED:
-  - CRITICAL FIX: _score_based_skip_percent() scoring.json ile senkronize edildi.
-    Eski: score < 70 -> %100 skip (hardcoded)
-    Yeni: scoring.json'daki publish_score esigi okunuyor (varsayilan 35)
-    Artik scoring.json degisirse publisher da otomatik guncelleniyor.
-  - CRITICAL FIX: _get_publish_threshold() fonksiyonu eklendi (scorer ile ayni logic)
-
-v4.4 ULTRA FIXED:
-  - CRITICAL FIX: Complete fallback chain implemented
-      Multi-image -> Single-image -> Text-only -> Retry text
-  - CRITICAL FIX: Text-only fallback guaranteed (no silent failures)
-  - CRITICAL FIX: Better error handling at each step
-  - Enhanced logging for troubleshooting
-
-v4.3:
-  - Score tabanli skip politikasi yeniden duzenlendi (scorer ile uyumlu).
-  - publish_score threshold scorer ile senkronize edildi.
+v4.6:
+  - Threads görsel paylaşımı (fallback zincirli) eklendi.
+  - Mod: text_only / text_and_image (settings.json threads.mode)
+  - Önce gorselli dener, basarisiz olursa metine gecer.
 """
 
 import os
@@ -44,7 +31,7 @@ from core.logger import log
 from core.state_manager import get_stage, set_stage
 from platforms import facebook as fb_platform
 from platforms import telegram as tg_platform
-from platforms import threads as threads_platform   # <-- EKLENDİ
+from platforms import threads as threads_platform
 
 
 _RETRY_DELAY = 5
@@ -95,10 +82,6 @@ def _check_daily_limit(posted_data: dict, max_daily_posts: int) -> bool:
 
 
 def _get_publish_threshold() -> int:
-    """
-    v4.5 FIX: scoring.json'dan esigi oku, scorer ile tam uyumlu.
-    Ayni logic agent_scorer._get_active_threshold() ile identik.
-    """
     try:
         scoring_config = load_config("scoring")
         thresholds = scoring_config.get("thresholds", {}) if isinstance(scoring_config, dict) else {}
@@ -115,51 +98,32 @@ def _get_publish_threshold() -> int:
 
 
 def _score_based_skip_percent(score: int) -> int:
-    """
-    v4.5 FIX: Hardcoded 70 kaldirildi, scoring.json'dan okunan esik kullaniliyor.
-
-    Eski (HATALI):
-      score < 70 -> %100 skip  (scoring.json'da 35 olsa bile 70 ile karsilastiriliyordu)
-
-    Yeni (DOGRU):
-      score < publish_threshold -> %100 skip
-      score >= publish_threshold+30 -> %0 skip (rahatlikla gecti)
-      arada -> kucuk olasiliksal skip
-    """
     threshold = _get_publish_threshold()
-
     if score < threshold:
-        return 100  # Esik altinda -> kesinlikle yayinlama
-
-    # Esigi gecti ama biraz uzerindeyse kucuk sansi var
+        return 100
     margin = score - threshold
     if margin < 10:
-        return 2   # Esigi yeni gecti -> %2 skip
+        return 2
     if margin < 20:
-        return 1   # Rahatca gecti -> %1 skip
-
-    return 0  # Cok iyi skor -> hic skip yok
+        return 1
+    return 0
 
 
 def _check_skip_probability(score: int = 0) -> tuple[bool, str]:
     effective_percent = _score_based_skip_percent(score)
     threshold = _get_publish_threshold()
-
     if effective_percent >= 100:
         reason = f"score_below_threshold_skip(score={score}, threshold={threshold})"
         log(f"Skora bagli atlama: {reason}", "INFO")
         return False, reason
-
     if effective_percent <= 0:
         log(f"Skora bagli atlama: score={score} threshold={threshold}, skip=0 -> devam")
         return True, ""
-
     roll = random.randint(1, 100)
     if roll <= effective_percent:
         reason = f"score_based_skip(score={score}, roll={roll}, threshold={effective_percent})"
         log(f"Skora bagli atlama: {reason} -> atlaniyor", "INFO")
         return False, reason
-
     log(f"Skora bagli atlama: score={score}, zar={roll}, esik={effective_percent} -> devam")
     return True, ""
 
@@ -184,24 +148,18 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
     if not _is_persist_state_enabled():
         log("State persistence kapali (PERSIST_STATE=false), posted kaydi yazilmadi")
         return
-
     try:
         posted_data = get_posted_news()
         today_str = get_today_str()
-
         posts_list = posted_data.get("posts", [])
         daily_counts = posted_data.get("daily_counts", {})
-
         posts_list.append(_build_new_post_record(article, post_id, image_source, image_count))
         daily_counts[today_str] = daily_counts.get(today_str, 0) + 1
-
         posted_data["posts"] = posts_list
         posted_data["daily_counts"] = daily_counts
-
         increment_weekly_share(posted_data)
         save_last_check_time(posted_data)
         save_posted_news(posted_data)
-
         log(
             f"Kayit guncellendi: {article.get('title', '')[:60]} "
             f"(bugun toplam: {daily_counts[today_str]}, gorsel: {image_count})"
@@ -213,7 +171,6 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
 def _collect_valid_image_paths(image_output: dict) -> list[str]:
     collected: list[str] = []
     seen_keys: set[str] = set()
-
     def _add_if_valid(path: str) -> None:
         if not isinstance(path, str) or not path:
             return
@@ -226,17 +183,14 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
             return
         seen_keys.add(key)
         collected.append(path)
-
     raw_paths = image_output.get("image_paths", [])
     if isinstance(raw_paths, list):
         for item in raw_paths:
             _add_if_valid(item)
-
     primary_path = image_output.get("image_path", "")
     if isinstance(primary_path, str) and primary_path and not os.path.exists(primary_path):
         log(f"Primary image path not found: {primary_path}", "WARNING")
     _add_if_valid(primary_path)
-
     return collected
 
 
@@ -257,7 +211,6 @@ def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Op
         lambda: fn(photo_paths=image_paths, message=post_text_content),
         lambda: fn(images=image_paths, message=post_text_content),
     ]
-
     for call_idx, call in enumerate(call_patterns, start=1):
         try:
             result = call()
@@ -268,7 +221,6 @@ def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Op
             continue
         except Exception as exc:
             log(f"Coklu gorsel cagri hatasi (pattern={call_idx}): {exc}", "WARNING")
-
     return None
 
 
@@ -277,7 +229,6 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
         fn = getattr(fb_platform, fn_name, None)
         if not callable(fn):
             continue
-
         try:
             log(f"[PUBLISH] Attempting multi-photo: facebook.{fn_name}()", "INFO")
             result = _try_call_multi_fn(fn, image_paths, post_text_content)
@@ -287,7 +238,6 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
             log(f"[PUBLISH] Multi-photo returned None: facebook.{fn_name}()", "WARNING")
         except Exception as exc:
             log(f"[PUBLISH] Multi-photo error: facebook.{fn_name}() - {exc}", "WARNING")
-
     log("[PUBLISH] All multi-photo methods failed", "WARNING")
     return None
 
@@ -297,7 +247,6 @@ def _try_post_single_photo(image_path: str, post_text_content: str) -> Optional[
     if not callable(post_photo_fn):
         log("[PUBLISH] post_photo function not available", "WARNING")
         return None
-
     try:
         log(f"[PUBLISH] Attempting single-photo: {image_path}", "INFO")
         result = post_photo_fn(image_path, post_text_content)
@@ -307,7 +256,6 @@ def _try_post_single_photo(image_path: str, post_text_content: str) -> Optional[
         log("[PUBLISH] post_photo returned None", "WARNING")
     except Exception as exc:
         log(f"[PUBLISH] Single-photo error: {exc}", "WARNING")
-
     return None
 
 
@@ -316,7 +264,6 @@ def _try_post_text_only(post_text_content: str) -> Optional[str]:
     if not callable(post_text_fn):
         log("[PUBLISH] post_text function not available", "ERROR")
         return None
-
     try:
         log("[PUBLISH] Attempting text-only publish", "INFO")
         result = post_text_fn(post_text_content)
@@ -326,19 +273,16 @@ def _try_post_text_only(post_text_content: str) -> Optional[str]:
         log("[PUBLISH] post_text returned None", "WARNING")
     except Exception as exc:
         log(f"[PUBLISH] Text-only error: {exc}", "WARNING")
-
     return None
 
 
 def _log_publish_preview(article: dict, post_text_content: str, image_paths: list[str]) -> None:
     image_source = article.get("image_source", "unknown")
     image_count = len(image_paths)
-
     log("=" * 55)
     log(f"Facebook'a paylasiliyor: {article.get('title', '')[:80]}")
     log("=" * 55)
     log(f"Gorsel adedi: {image_count} (kaynak: {image_source})")
-
     if image_paths:
         for idx, path in enumerate(image_paths, start=1):
             try:
@@ -348,17 +292,14 @@ def _log_publish_preview(article: dict, post_text_content: str, image_paths: lis
             log(f"Final image[{idx}] path={path} size_kb={size_kb}")
     else:
         log("Final image listesi bos -> text-only paylasim", "INFO")
-
     preview = post_text_content[:220] + ("..." if len(post_text_content) > 220 else "")
     log(f"Post onizleme:\n{preview}")
 
 
 def _publish_to_facebook(article: dict, post_text_content: str, image_paths: list[str]) -> Optional[str]:
     _log_publish_preview(article, post_text_content, image_paths)
-
     image_count = len(image_paths)
     post_id = None
-
     if image_count >= 2:
         log("[PUBLISH] STEP 1/4: Attempting multi-image publish", "INFO")
         post_id = _try_post_multi_photos(image_paths, post_text_content)
@@ -366,7 +307,6 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             article["image_source"] = "multi_image"
             return post_id
         log("[PUBLISH] Multi-image failed, falling back to single-image", "WARNING")
-
     if image_count >= 1:
         log("[PUBLISH] STEP 2/4: Attempting single-image publish", "INFO")
         post_id = _try_post_single_photo(image_paths[0], post_text_content)
@@ -374,22 +314,18 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
             article["image_source"] = "single_image" if image_count == 1 else "single_fallback_from_multi"
             return post_id
         log("[PUBLISH] Single-image failed, falling back to text-only", "WARNING")
-
     log("[PUBLISH] STEP 3/4: Attempting text-only publish", "INFO")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_fallback"
         return post_id
-
     log(f"[PUBLISH] Text-only failed, waiting {_RETRY_DELAY}s before retry", "WARNING")
     time.sleep(_RETRY_DELAY)
-
     log("[PUBLISH] STEP 4/4: Retrying text-only publish (LAST RESORT)", "WARNING")
     post_id = _try_post_text_only(post_text_content)
     if post_id:
         article["image_source"] = "text_only_retry"
         return post_id
-
     log("[PUBLISH] ALL PUBLISH ATTEMPTS FAILED", "ERROR")
     return None
 
@@ -468,13 +404,11 @@ def _workflow_timing_line() -> str:
 def _record_shared_variant_cooldowns(article: dict) -> None:
     if not _is_persist_state_enabled():
         return
-
     try:
         score_output = (get_stage("score").get("output", {}) or {})
         candidates = score_output.get("cooldown_candidates", [])
         if not isinstance(candidates, list) or not candidates:
             return
-
         posted_data = get_posted_news()
         recorded = 0
         for candidate in candidates:
@@ -484,7 +418,6 @@ def _record_shared_variant_cooldowns(article: dict) -> None:
                 continue
             record_shared_variant_cooldown(posted_data, article, candidate)
             recorded += 1
-
         if recorded:
             cleanup_shared_variant_cooldowns(posted_data, 72)
             save_posted_news(posted_data)
@@ -504,10 +437,8 @@ def _send_telegram_notification(
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
-
     publish_mode = _resolve_publish_mode(article, image_source)
     queue_state = _queue_status_text()
-
     message = (
         f"Paylaşım yapıldı.\n\n"
         f"Günün {action_count}. tetiklemesi\n"
@@ -695,16 +626,35 @@ def run() -> bool:
         set_stage("publish", "done", output=output)
         log("BASARIYLA PAYLASILDI")
 
-        # ========== THREADS PAYLASIMI (YENI) ==========
+        # ========== THREADS PAYLASIMI (Görsel + Metin Fallback) ==========
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False):
-                log("Threads paylasimi aktif, gonderiliyor...")
-                threads_post_id = threads_platform.post_text(post_text_content)
-                if threads_post_id:
-                    log(f"Threads paylasimi basarili: {threads_post_id}")
+                mode = threads_cfg.get("mode", "text_only")
+                threads_post_id = None
+
+                # Görsel varsa ve mod destekliyorsa gorselli dene
+                if image_paths and mode == "text_and_image":
+                    log("Threads: Gorselli paylasim deneniyor...")
+                    threads_post_id = threads_platform.post_image(post_text_content, image_paths[0])
+                    if threads_post_id:
+                        log(f"Threads gorselli paylasim basarili: {threads_post_id}")
+                    else:
+                        log("Threads gorselli paylasim basarisiz, metine fallback", "WARNING")
+                        threads_post_id = threads_platform.post_text(post_text_content)
+                        if threads_post_id:
+                            log(f"Threads metin fallback basarili: {threads_post_id}")
+                        else:
+                            log("Threads metin fallback de basarisiz", "WARNING")
                 else:
-                    log("Threads paylasimi basarisiz, akis devam ediyor", "WARNING")
+                    # Sadece metin modu veya görsel yok
+                    log("Threads: Metin paylasimi yapiliyor (mod veya gorsel yok)")
+                    threads_post_id = threads_platform.post_text(post_text_content)
+                    if threads_post_id:
+                        log(f"Threads metin paylasimi basarili: {threads_post_id}")
+                    else:
+                        log("Threads metin paylasimi basarisiz", "WARNING")
+
             else:
                 log("Threads paylasimi devre disi (settings.json/threads.enabled=false)")
         except Exception as exc:
@@ -723,7 +673,6 @@ def run() -> bool:
 
 if __name__ == "__main__":
     from core.state_manager import init_pipeline
-
     log("=== agent_publisher.py modul testi basliyor ===")
     init_pipeline("test-publisher")
     fake_article = {
