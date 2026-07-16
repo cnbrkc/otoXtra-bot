@@ -26,7 +26,6 @@ def _as_int(value: Any, default: int, min_value: int | None = None, max_value: i
         result = int(value)
     except Exception:
         result = default
-
     if min_value is not None and result < min_value:
         result = min_value
     if max_value is not None and result > max_value:
@@ -39,7 +38,6 @@ def _as_float(value: Any, default: float, min_value: float | None = None, max_va
         result = float(value)
     except Exception:
         result = default
-
     if min_value is not None and result < min_value:
         result = min_value
     if max_value is not None and result > max_value:
@@ -71,7 +69,6 @@ def _as_str(value: Any, default: str) -> str:
 def _normalize_sources(data: Any) -> dict:
     if isinstance(data, list):
         return {"feeds": data}
-
     if isinstance(data, dict):
         if isinstance(data.get("feeds"), list):
             return {"feeds": data.get("feeds", [])}
@@ -83,7 +80,6 @@ def _normalize_sources(data: Any) -> dict:
             return {"feeds": data.get("rss_feeds", [])}
         if isinstance(data.get("items"), list):
             return {"feeds": data.get("items", [])}
-
     return {"feeds": []}
 
 
@@ -92,20 +88,16 @@ def _sanitize_sources(data: Any) -> dict:
     feeds = normalized.get("feeds", [])
     if not isinstance(feeds, list):
         return {"feeds": []}
-
     safe_feeds = []
     for i, feed in enumerate(feeds, start=1):
         if not isinstance(feed, dict):
             continue
-
         url = _as_str(feed.get("url"), "")
         if not url:
             continue
-
         priority = _as_str(feed.get("priority"), "medium").lower()
         if priority not in ("high", "medium", "low"):
             priority = "medium"
-
         safe_feeds.append(
             {
                 "name": _as_str(feed.get("name"), f"Source {i}"),
@@ -116,7 +108,6 @@ def _sanitize_sources(data: Any) -> dict:
                 "can_scrape_image": _as_bool(feed.get("can_scrape_image"), False),
             }
         )
-
     return {"feeds": safe_feeds}
 
 
@@ -129,7 +120,7 @@ def _sanitize_settings(data: Any) -> dict:
     news = data.get("news", {})
     duplicate = data.get("duplicate_detection", {})
     ai = data.get("ai", {})
-    threads = data.get("threads", {})  # <-- YENİ
+    threads = data.get("threads", {})
 
     if not isinstance(posting, dict):
         posting = {}
@@ -193,7 +184,7 @@ def _sanitize_settings(data: Any) -> dict:
             "gemini_model": _as_str(ai.get("gemini_model"), "gemini-2.5-flash-lite"),
             "groq_model": _as_str(ai.get("groq_model"), "llama-3.3-70b-versatile"),
         },
-        "threads": {   # <-- YENİ
+        "threads": {
             "enabled": _as_bool(threads.get("enabled"), False),
             "mode": _as_str(threads.get("mode"), "text_only"),
         },
@@ -205,18 +196,14 @@ def _sanitize_settings(data: Any) -> dict:
 def _sanitize_keywords(data: Any) -> dict:
     if not isinstance(data, dict):
         return {"include_keywords": [], "exclude_keywords": []}
-
     include_keywords = data.get("include_keywords", [])
     exclude_keywords = data.get("exclude_keywords", [])
-
     if not isinstance(include_keywords, list):
         include_keywords = []
     if not isinstance(exclude_keywords, list):
         exclude_keywords = []
-
     include_keywords = [str(x).strip() for x in include_keywords if str(x).strip()]
     exclude_keywords = [str(x).strip() for x in exclude_keywords if str(x).strip()]
-
     return {
         "include_keywords": include_keywords,
         "exclude_keywords": exclude_keywords,
@@ -226,17 +213,13 @@ def _sanitize_keywords(data: Any) -> dict:
 def _sanitize_scoring(data: Any) -> dict:
     if not isinstance(data, dict):
         data = {}
-
     thresholds = data.get("thresholds", {})
     if not isinstance(thresholds, dict):
         thresholds = {}
-
     publish_score = _as_int(thresholds.get("publish_score"), 65, 0, 100)
     slow_day_score = _as_int(thresholds.get("slow_day_score"), 50, 0, 100)
-
     if slow_day_score > publish_score:
         slow_day_score = publish_score
-
     return {
         "thresholds": {
             "publish_score": publish_score,
@@ -248,7 +231,6 @@ def _sanitize_scoring(data: Any) -> dict:
 def _sanitize_prompts(data: Any) -> dict:
     if not isinstance(data, dict):
         data = {}
-
     return {
         "viral_scorer": _as_str(data.get("viral_scorer"), ""),
         "post_writer": _as_str(data.get("post_writer"), ""),
@@ -283,7 +265,6 @@ def save_json(filepath: str, data: Any) -> bool:
         ) as tmp_file:
             json.dump(data, tmp_file, indent=2, ensure_ascii=False)
             tmp_path = tmp_file.name
-
         os.replace(tmp_path, filepath)
         return True
     except Exception as exc:
@@ -299,11 +280,9 @@ def save_json(filepath: str, data: Any) -> bool:
 def load_config(config_name: str) -> Any:
     filepath = os.path.join(get_project_root(), "config", f"{config_name}.json")
     data = load_json(filepath)
-
     if data in ({}, None):
         log(f"Config could not be loaded: {config_name}.json", "WARNING")
         return _empty_for_config(config_name)
-
     if config_name == "sources":
         return _sanitize_sources(data)
     if config_name == "settings":
@@ -314,5 +293,4 @@ def load_config(config_name: str) -> Any:
         return _sanitize_scoring(data)
     if config_name == "prompts":
         return _sanitize_prompts(data)
-
     return data
