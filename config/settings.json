@@ -56,5 +56,9 @@
     "groq_model": "llama-3.3-70b-versatile",
     "openrouter_model": "openai/gpt-4o-mini",
     "hf_model": "mistralai/Mistral-7B-Instruct-v0.2"
+  },
+  "threads": {
+    "enabled": false,
+    "mode": "text_only"
   }
 }
