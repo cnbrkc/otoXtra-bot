@@ -1,14 +1,123 @@
 {
-  "run_id": "2026-07-16-16:59",
-  "status": "error",
-  "started_at": "2026-07-16T16:59:57.141555+03:00",
-  "updated_at": "2026-07-16T17:00:35.854497+03:00",
+  "run_id": "2026-07-16-18:38",
+  "status": "completed",
+  "started_at": "2026-07-16T18:38:41.104298+03:00",
+  "updated_at": "2026-07-16T18:40:09.250570+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Yazın arabası olan herkesin alması gereken ürünler!",
+            "link": "https://www.donanimhaber.com/yazin-arabasi-olan-herkesin-almasi-gereken-urunler--208163",
+            "published": "2026-07-16T15:01:01+00:00",
+            "summary": "Bu videoda yazın arabası olan herkesin alması gereken ürünlere yakından bakıyoruz. Özellikle sıcak havalarda hayat kurtaran bu ürünler hakkında sizler neler düşünüyorsunuz? İyi seyirler!",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208163/1200x675yazin-arabasi-olan-herkesin-almasi-gereken-urunler.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208163/1200x675yazin-arabasi-olan-herkesin-almasi-gereken-urunler.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/208163/1200x675yazin-arabasi-olan-herkesin-almasi-gereken-urunler.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "almasi-arabasi-gereken-herkesin-urunler-yazin"
+          },
+          {
+            "title": "Nissan Qashqai’den Dev Rekor! Satış Rakamları Ezber Bozuyor",
+            "link": "https://otomobilkolik.com/nissan-qashqaiden-dev-rekor-satis-rakamlari-ezber-bozuyor/",
+            "published": "2026-07-16T15:03:25+00:00",
+            "summary": "Nissan Qashqai satış rakamları ile otomotiv dünyasında taşları yerinden oynatmaya devam ediyor. Lansmanından bu yana geçen sürede Avrupa… Nissan Qashqai’den Dev Rekor! Satış Rakamları Ezber Bozuyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bozuyor-dev-ezber-nissan-qashqai-rakamlari-rekor-satis"
+          },
+          {
+            "title": "BYD Toyota’yı Geçme Hedefini 5 Yıla Bağladı: ABD Pazarı Şart Değil",
+            "link": "https://otomobilkolik.com/byd-toyota-yi-gecme-plani-5-yilda-dunya-liderligi/",
+            "published": "2026-07-16T14:54:57+00:00",
+            "summary": "BYD Toyota’yı geçme hedefini resmen ilan etti: Çinli elektrikli araç devi, beş yıl içinde dünyanın en çok satan… BYD Toyota’yı Geçme Hedefini 5 Yıla Bağladı: ABD Pazarı Şart Değil yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "abd-bagladi-byd-degil-gecme-hedefini-pazari-sart-toyota-yila"
+          },
+          {
+            "title": "Toyota, GR GT'yi daha da geliştirmek için çalışıyor",
+            "link": "https://tr.motor1.com/news/801885/toyota-grgt-daha-guclu-prototip/",
+            "published": "2026-07-16T15:00:00+00:00",
+            "summary": "Daha agresif aerodinamiğe sahip bir prototipiyle Nürburgring'e geri döndüler.",
+            "image_url": "https://cdn.motor1.com/images/mgl/P3Bl0X/s3/toyota-gr-gt-prototype.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/P3Bl0X/s3/toyota-gr-gt-prototype.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/P3Bl0X/s3/toyota-gr-gt-prototype.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "calisiyor-gelistirmek-toyota"
+          },
+          {
+            "title": "Aston Martin, tek koltuklu bir süper otomobil geliştiriyor",
+            "link": "https://tr.motor1.com/news/801876/aston-tek-koltuklu-valkyrie/",
+            "published": "2026-07-16T14:00:00+00:00",
+            "summary": "Tek seferlik süper otomobil muhtemelen Valkyrie'yi temel alıyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/7ZElP7/s3/aston-martin-single-seat-supercar.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/7ZElP7/s3/aston-martin-single-seat-supercar.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/7ZElP7/s3/aston-martin-single-seat-supercar.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aston-gelistiriyor-koltuklu-martin-otomobil-super-tek"
+          },
+          {
+            "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+            "link": "https://shiftdelete.net/motorlu-tasitlardan-toplanan-otv-rekor-kirdi",
+            "published": "2026-07-16T14:45:04+00:00",
+            "summary": "2026 yılının ilk 6 ayında motorlu taşıtlardan toplanan ÖTV 359 milyar TL'yi aştı. Pazardaki daralmaya rağmen araç başına alınan vergi yükü rekor seviyeye ulaştı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "kirdi-motorlu-otv-rekor-tasitlardan-toplanan"
+          }
+        ],
+        "count": 6,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -96,48 +205,261 @@
           },
           "_metrics": {
             "found": 140,
-            "after_keyword": 91,
-            "after_time": 1,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 92,
+            "after_time": 7,
+            "after_posted": 6,
+            "after_duplicate": 6,
+            "after_shared_variant_cooldown": 6
           }
         },
         "metrics": {
           "found": 140,
-          "after_keyword": 91,
-          "after_time": 1,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 92,
+          "after_time": 7,
+          "after_posted": 6,
+          "after_duplicate": 6,
+          "after_shared_variant_cooldown": 6
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-07-16T17:00:35.854497+03:00"
+      "error": null,
+      "updated_at": "2026-07-16T18:39:41.915460+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+          "link": "https://shiftdelete.net/motorlu-tasitlardan-toplanan-otv-rekor-kirdi",
+          "published": "2026-07-16T14:45:04+00:00",
+          "summary": "2026 yılının ilk 6 ayında motorlu taşıtlardan toplanan ÖTV 359 milyar TL'yi aştı. Pazardaki daralmaya rağmen araç başına alınan vergi yükü rekor seviyeye ulaştı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "kirdi-motorlu-otv-rekor-tasitlardan-toplanan",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 16,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 7
+          },
+          "score": 88,
+          "score_reason": "ai_scored",
+          "score_explanation": "Türkiye'deki otomobil alıcılarını ve genel ekonomiyi doğrudan etkileyen çok önemli bir haber. 'Rekor kırdı' ve 'vergi yükü' ifadeleri kamuoyunda büyük yankı uyandırır. Sosyal medyada bolca tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 88,
+        "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 25,
+          "benzersizlik": 16,
+          "gundem_gucu": 20,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Türkiye'deki otomobil alıcılarını ve genel ekonomiyi doğrudan etkileyen çok önemli bir haber. 'Rekor kırdı' ve 'vergi yükü' ifadeleri kamuoyunda büyük yankı uyandırır. Sosyal medyada bolca tartışma yaratır.",
+        "skipped": false,
+        "threshold": 35,
+        "top_articles": [
+          {
+            "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+            "score": 88,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 25,
+              "benzersizlik": 16,
+              "gundem_gucu": 20,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "BYD Toyota’yı Geçme Hedefini 5 Yıla Bağladı: ABD Pazarı Şart Değil",
+            "score": 87,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 25,
+              "benzersizlik": 18,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Aston Martin, tek koltuklu bir süper otomobil geliştiriyor",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 17,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 6,
+        "cooldown_candidates": [
+          {
+            "title": "BYD Toyota’yı Geçme Hedefini 5 Yıla Bağladı: ABD Pazarı Şart Değil",
+            "link": "https://otomobilkolik.com/byd-toyota-yi-gecme-plani-5-yilda-dunya-liderligi/",
+            "score": 87,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "abd-bagladi-byd-degil-gecme-hedefini-pazari-sart-toyota-yila"
+          },
+          {
+            "title": "Aston Martin, tek koltuklu bir süper otomobil geliştiriyor",
+            "link": "https://tr.motor1.com/news/801876/aston-tek-koltuklu-valkyrie/",
+            "score": 81,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "aston-gelistiriyor-koltuklu-martin-otomobil-super-tek"
+          },
+          {
+            "title": "Nissan Qashqai’den Dev Rekor! Satış Rakamları Ezber Bozuyor",
+            "link": "https://otomobilkolik.com/nissan-qashqaiden-dev-rekor-satis-rakamlari-ezber-bozuyor/",
+            "score": 78,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "bozuyor-dev-ezber-nissan-qashqai-rakamlari-rekor-satis"
+          },
+          {
+            "title": "Toyota, GR GT'yi daha da geliştirmek için çalışıyor",
+            "link": "https://tr.motor1.com/news/801885/toyota-grgt-daha-guclu-prototip/",
+            "score": 74,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "calisiyor-gelistirmek-toyota"
+          },
+          {
+            "title": "Yazın arabası olan herkesin alması gereken ürünler!",
+            "link": "https://www.donanimhaber.com/yazin-arabasi-olan-herkesin-almasi-gereken-urunler--208163",
+            "score": 72,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "almasi-arabasi-gereken-herkesin-urunler-yazin"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-16T18:39:49.802472+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+          "link": "https://shiftdelete.net/motorlu-tasitlardan-toplanan-otv-rekor-kirdi",
+          "published": "2026-07-16T14:45:04+00:00",
+          "summary": "2026 yılının ilk 6 ayında motorlu taşıtlardan toplanan ÖTV 359 milyar TL'yi aştı. Pazardaki daralmaya rağmen araç başına alınan vergi yükü rekor seviyeye ulaştı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "kirdi-motorlu-otv-rekor-tasitlardan-toplanan",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 16,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 7
+          },
+          "score": 88,
+          "score_reason": "ai_scored",
+          "score_explanation": "Türkiye'deki otomobil alıcılarını ve genel ekonomiyi doğrudan etkileyen çok önemli bir haber. 'Rekor kırdı' ve 'vergi yükü' ifadeleri kamuoyunda büyük yankı uyandırır. Sosyal medyada bolca tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otomotiv sektörü verileri, 2026 yılının ilk yarısında motorlu taşıtlardan tahsil edilen Özel Tüketim Vergisi (ÖTV) gelirlerinin rekor seviyeye ulaştığını ortaya koydu. Otomobil gazetecisi Emre Özpeynirci tarafından paylaşılan güncel verilere göre, otomotiv pazarındaki daralmaya rağmen devletin bu alandan elde ettiği ÖTV geliri 359 milyar TL barajını geçti. Haziran ayında pazarın %10,86 küçülmesine rağmen, devletin tahsil ettiği vergi tutarı %26,76 oranında artarak 77,2 milyar TL olarak gerçekleşti. Böylece yılın ilk altı ayında toplamda 359,8 milyar TL ÖTV geliri elde edilmiş oldu. Daha az araç satılmasına rağmen araç başına ödenen vergi yükü ciddi oranda arttı. Sektör temsilcileri, satış adetlerindeki düşüşün vergi tahsilatı üzerindeki etkilerini yakından izliyor. Pazarın ilk altı ayda %8,17 oranında küçülmesine karşın, vergi gelirlerindeki artışın temel sebebi olarak araç başına düşen ÖTV yükündeki yükseliş gösteriliyor. Emre Özpeynirci’nin analizleri, devletin otomotiv sektörünü önemli bir vergi kaynağı olarak kullanmaya devam ettiğini kanıtlıyor. Veriler, her yeni aracın Hazine’ye olan katkısının her geçen gün daha da ağırlaştığına işaret ediyor. Haziran 2025 döneminde araç başına tahsil edilen ÖTV ortalaması 497 bin 700 TL iken, 2026 yılının aynı ayında bu rakam 707 bin 780 TL seviyesine fırladı. Yılın ilk altı ayındaki genel ortalamaya bakıldığında ise vergi yükünün 501 bin 300 TL’den 622 bin 900 TL’ye çıktığı gözlemleniyor. Bu tablo, tüketicilerin satın aldığı her bir aracın fiyatı içerisinde verginin payının ne kadar baskın hale geldiğini net bir şekilde ortaya koyuyor. Vatandaşların sıfır araç sahibi olma maliyetleri vergi artışlarıyla birlikte önemli ölçüde yükseldi. Hükümetin otomotiv sektöründen beklediği vergi geliri hedefleri, ilk altı ayın sonunda önemli bir orana ulaştı. Toplanan 359,8 milyar TL’lik tutar, yılın tamamı için öngörülen hedefin %38’ini oluşturuyor. Bu durum, piyasadaki durgunluğa rağmen vergi gelirlerinin istikrarlı ve güçlü bir şekilde akmaya devam ettiğini gösteriyor. Uzmanlar, vergi sistemindeki bu yapının otomobil fiyatları üzerindeki baskıyı yılın geri kalanında da sürdüreceğini öngörüyor. Sizce otomotiv sektöründeki vergi yükünün bu seviyelerde seyretmesi, araç satışlarını ve otomobil piyasasının geleceğini nasıl etkileyecek? Görüşlerinizi ve konu hakkındaki düşüncelerinizi aşağıda bizimle paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+        },
+        "post_text": "📈 MOTORLU TAŞIT ÖTV GELİRLERİ REKOR KIRDI!\n\n2026'nın ilk yarısında devletin motorlu taşıtlardan topladığı ÖTV, tam 359 milyar TL'yi aştı. Pazar küçülse de araç başına düşen vergi yükü rekor seviyeye ulaştı.\n\nHaziran ayında satışlar %10,86 düşerken, ÖTV geliri %26,76 artarak 77,2 milyar TL oldu. Yani daha az araç satılmasına rağmen, her bir araçtan alınan vergi miktarı ciddi oranda arttı.\n\nBu durum, araç fiyatlarının ve dolayısıyla cebimizden çıkan paranın neden bu kadar yüksek olduğunu açıklıyor.\n\nSiz bu konuda ne düşünüyorsunuz?",
+        "post_text_length": 535,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-16T18:39:51.881393+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+          "link": "https://shiftdelete.net/motorlu-tasitlardan-toplanan-otv-rekor-kirdi",
+          "published": "2026-07-16T14:45:04+00:00",
+          "summary": "2026 yılının ilk 6 ayında motorlu taşıtlardan toplanan ÖTV 359 milyar TL'yi aştı. Pazardaki daralmaya rağmen araç başına alınan vergi yükü rekor seviyeye ulaştı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "meta_og",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "kirdi-motorlu-otv-rekor-tasitlardan-toplanan",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 16,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 7
+          },
+          "score": 88,
+          "score_reason": "ai_scored",
+          "score_explanation": "Türkiye'deki otomobil alıcılarını ve genel ekonomiyi doğrudan etkileyen çok önemli bir haber. 'Rekor kırdı' ve 'vergi yükü' ifadeleri kamuoyunda büyük yankı uyandırır. Sosyal medyada bolca tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otomotiv sektörü verileri, 2026 yılının ilk yarısında motorlu taşıtlardan tahsil edilen Özel Tüketim Vergisi (ÖTV) gelirlerinin rekor seviyeye ulaştığını ortaya koydu. Otomobil gazetecisi Emre Özpeynirci tarafından paylaşılan güncel verilere göre, otomotiv pazarındaki daralmaya rağmen devletin bu alandan elde ettiği ÖTV geliri 359 milyar TL barajını geçti. Haziran ayında pazarın %10,86 küçülmesine rağmen, devletin tahsil ettiği vergi tutarı %26,76 oranında artarak 77,2 milyar TL olarak gerçekleşti. Böylece yılın ilk altı ayında toplamda 359,8 milyar TL ÖTV geliri elde edilmiş oldu. Daha az araç satılmasına rağmen araç başına ödenen vergi yükü ciddi oranda arttı. Sektör temsilcileri, satış adetlerindeki düşüşün vergi tahsilatı üzerindeki etkilerini yakından izliyor. Pazarın ilk altı ayda %8,17 oranında küçülmesine karşın, vergi gelirlerindeki artışın temel sebebi olarak araç başına düşen ÖTV yükündeki yükseliş gösteriliyor. Emre Özpeynirci’nin analizleri, devletin otomotiv sektörünü önemli bir vergi kaynağı olarak kullanmaya devam ettiğini kanıtlıyor. Veriler, her yeni aracın Hazine’ye olan katkısının her geçen gün daha da ağırlaştığına işaret ediyor. Haziran 2025 döneminde araç başına tahsil edilen ÖTV ortalaması 497 bin 700 TL iken, 2026 yılının aynı ayında bu rakam 707 bin 780 TL seviyesine fırladı. Yılın ilk altı ayındaki genel ortalamaya bakıldığında ise vergi yükünün 501 bin 300 TL’den 622 bin 900 TL’ye çıktığı gözlemleniyor. Bu tablo, tüketicilerin satın aldığı her bir aracın fiyatı içerisinde verginin payının ne kadar baskın hale geldiğini net bir şekilde ortaya koyuyor. Vatandaşların sıfır araç sahibi olma maliyetleri vergi artışlarıyla birlikte önemli ölçüde yükseldi. Hükümetin otomotiv sektöründen beklediği vergi geliri hedefleri, ilk altı ayın sonunda önemli bir orana ulaştı. Toplanan 359,8 milyar TL’lik tutar, yılın tamamı için öngörülen hedefin %38’ini oluşturuyor. Bu durum, piyasadaki durgunluğa rağmen vergi gelirlerinin istikrarlı ve güçlü bir şekilde akmaya devam ettiğini gösteriyor. Uzmanlar, vergi sistemindeki bu yapının otomobil fiyatları üzerindeki baskıyı yılın geri kalanında da sürdüreceğini öngörüyor. Sizce otomotiv sektöründeki vergi yükünün bu seviyelerde seyretmesi, araç satışlarını ve otomobil piyasasının geleceğini nasıl etkileyecek? Görüşlerinizi ve konu hakkındaki düşüncelerinizi aşağıda bizimle paylaşabilirsiniz. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2
+        },
+        "post_text": "📈 MOTORLU TAŞIT ÖTV GELİRLERİ REKOR KIRDI!\n\n2026'nın ilk yarısında devletin motorlu taşıtlardan topladığı ÖTV, tam 359 milyar TL'yi aştı. Pazar küçülse de araç başına düşen vergi yükü rekor seviyeye ulaştı.\n\nHaziran ayında satışlar %10,86 düşerken, ÖTV geliri %26,76 artarak 77,2 milyar TL oldu. Yani daha az araç satılmasına rağmen, her bir araçtan alınan vergi miktarı ciddi oranda arttı.\n\nBu durum, araç fiyatlarının ve dolayısıyla cebimizden çıkan paranın neden bu kadar yüksek olduğunu açıklıyor.\n\nSiz bu konuda ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_9r38yww5.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_9r38yww5.jpg",
+          "/tmp/otoxtra_img_ccrrsqyv.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-16T18:39:56.306864+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122172570782916499",
+        "article_title": "Motorlu Taşıtlardan Toplanan ÖTV Rekor Kırdı",
+        "image_source": "multi_image",
+        "image_count": 2,
+        "dry_run": false,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-16T18:40:09.250570+03:00"
     }
   }
 }
