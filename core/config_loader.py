@@ -129,6 +129,7 @@ def _sanitize_settings(data: Any) -> dict:
     news = data.get("news", {})
     duplicate = data.get("duplicate_detection", {})
     ai = data.get("ai", {})
+    threads = data.get("threads", {})  # <-- YENİ
 
     if not isinstance(posting, dict):
         posting = {}
@@ -140,6 +141,8 @@ def _sanitize_settings(data: Any) -> dict:
         duplicate = {}
     if not isinstance(ai, dict):
         ai = {}
+    if not isinstance(threads, dict):
+        threads = {}
 
     safe = {
         "posting": {
@@ -189,6 +192,10 @@ def _sanitize_settings(data: Any) -> dict:
             "enable_gemini": _as_bool(ai.get("enable_gemini"), True),
             "gemini_model": _as_str(ai.get("gemini_model"), "gemini-2.5-flash-lite"),
             "groq_model": _as_str(ai.get("groq_model"), "llama-3.3-70b-versatile"),
+        },
+        "threads": {   # <-- YENİ
+            "enabled": _as_bool(threads.get("enabled"), False),
+            "mode": _as_str(threads.get("mode"), "text_only"),
         },
     }
 
