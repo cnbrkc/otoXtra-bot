@@ -1,10 +1,11 @@
 """
-platforms/threads.py - Threads API katmani (v3.4 - Header Auth Fix)
+platforms/threads.py - Threads API katmani (v3.5 - Threads API URL Fix)
 
-v3.4:
-  - "Cannot parse access token" (190) hatasini kesin olarak cozmek icin
-    token URL parametresi yerine HTTP Header olarak gonderildi.
-  - URL encoding bozulmalarinin onune gecildi.
+v3.5:
+  - "Cannot parse access token" (190) hatasi kesin olarak cozuldu.
+  - Sorun: graph.facebook.com kullaniliyordu. Threads'e ozel (THAA ile baslayan) 
+    token'lar Facebook Graph API tarafindan taninmaz. Bu yuzden graph.threads.net adresine gecildi.
+  - Token, hem URL parametresi (data) hem de Bearer header olarak gonderiliyor (Maksimum uyum).
 """
 
 import os
@@ -12,8 +13,9 @@ import time
 import requests
 from core.logger import log
 
-_THREADS_API_VERSION = "v25.0"
-_BASE_URL = f"https://graph.facebook.com/{_THREADS_API_VERSION}"
+# ARTIK FACEBOOK DEĞİL, THREADS KULLANIYORUZ!
+_THREADS_API_VERSION = "v1.0"
+_BASE_URL = f"https://graph.threads.net/{_THREADS_API_VERSION}"
 _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT = 2.0
@@ -23,9 +25,8 @@ def _get_credentials():
     user_id = os.environ.get("THREADS_USER_ID", "").strip()
     token = os.environ.get("THREADS_ACCESS_TOKEN", "")
 
-    # 🧹 TOKSIK TEMIZLEYICI: GitHub Secrets'a yapistirirken araya giren gizli 
-    # satir sonu (\n, \r), bosluk veya tirnak isaretlerini tamamen yok eder.
-    token = token.replace('"', '').replace("'", "").replace("\n", "").replace("\r", "").replace(" ", "")
+    # TOKSIK TEMIZLEYICI: Gizli satir sonu, bosluk veya tirnak isaretlerini yok eder.
+    token = token.replace('"', '').replace("'", "").replace("\n", "").replace("\r", "").replace(" ", "").strip()
 
     if not user_id:
         log("THREADS_USER_ID env bulunamadi", "ERROR")
@@ -45,7 +46,6 @@ def _post_with_retry(url, data, context="threads", headers=None):
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
         try:
             started = time.time()
-            # Token artik data icinde DEĞIL, headers icinde gidiyor
             resp = requests.post(url, data=data, headers=headers, timeout=_REQUEST_TIMEOUT)
             elapsed = int((time.time() - started) * 1000)
 
@@ -66,7 +66,7 @@ def _post_with_retry(url, data, context="threads", headers=None):
                 err = result["error"]
                 msg = err.get("error_user_msg") or err.get("message", "")
                 log(f"Threads API hatasi: {err.get('code')} - {msg}", "ERROR")
-                if "temporarily" in msg.lower() or err.get("code") in (4, 17, 32, 80000, 80001, 80002):
+                if "temporarily" in msg.lower() or err.get('code') in (4, 17, 32, 80000, 80001, 80002):
                     last_error = f"retryable: {msg}"
                 else:
                     return result
@@ -132,9 +132,9 @@ def _get_threads_user_id(ig_user_id, token):
     """
     url = f"{_BASE_URL}/me"
     params = {
-        "fields": "id,username"
+        "fields": "id,username",
+        "access_token": token  # URL parametresi olarak da eklendi (Garanti yöntem)
     }
-    # Token artik Header olarak gonderiliyor
     headers = {
         "Authorization": f"Bearer {token}"
     }
@@ -167,7 +167,8 @@ def post_text(message: str) -> str | None:
     container_url = f"{_BASE_URL}/{threads_user_id}/threads"
     container_data = {
         "media_type": "TEXT",
-        "text": message
+        "text": message,
+        "access_token": token  # En garanti yöntem: data içinde token gönderimi
     }
     headers = {
         "Authorization": f"Bearer {token}"
@@ -200,7 +201,8 @@ def post_image(message: str, image_url: str) -> str | None:
     container_data = {
         "media_type": "IMAGE",
         "text": message,
-        "image_url": image_url
+        "image_url": image_url,
+        "access_token": token
     }
     headers = {
         "Authorization": f"Bearer {token}"
@@ -219,7 +221,8 @@ def post_image(message: str, image_url: str) -> str | None:
 def _publish_container(threads_user_id, container_id, token, media_type):
     publish_url = f"{_BASE_URL}/{threads_user_id}/threads_publish"
     publish_data = {
-        "creation_id": container_id
+        "creation_id": container_id,
+        "access_token": token
     }
     headers = {
         "Authorization": f"Bearer {token}"
@@ -236,7 +239,7 @@ def _publish_container(threads_user_id, container_id, token, media_type):
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v3.4)")
+    log("threads.py smoke test (v3.5)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
