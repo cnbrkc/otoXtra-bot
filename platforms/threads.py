@@ -1,10 +1,9 @@
 """
-platforms/threads.py - Threads API katmani (v3.0 - Tam Otomatik)
+platforms/threads.py - Threads API katmani (v3.1 - Token temizleme)
 
-v3.0:
-  - Otomatik Threads User ID bulma.
-  - Orijinal gorsel URL'sini dogrudan kullanma (upload yok).
-  - Metin fallback.
+v3.1:
+  - _get_credentials() içinde token'a .strip() eklendi.
+  - Debug için token uzunluğu ve ilk 4 karakter loglanıyor (güvenli).
 """
 
 import os
@@ -20,13 +19,20 @@ _RETRY_BASE_WAIT = 2.0
 
 
 def _get_credentials():
-    ig_user_id = os.environ.get("THREADS_USER_ID", "")
-    token = os.environ.get("THREADS_ACCESS_TOKEN", "")
-    if not ig_user_id:
+    user_id = os.environ.get("THREADS_USER_ID", "").strip()
+    token = os.environ.get("THREADS_ACCESS_TOKEN", "").strip()
+
+    if not user_id:
         log("THREADS_USER_ID env bulunamadi", "ERROR")
+    else:
+        log(f"THREADS_USER_ID okundu: uzunluk={len(user_id)}")
+
     if not token:
         log("THREADS_ACCESS_TOKEN env bulunamadi", "ERROR")
-    return ig_user_id, token
+    else:
+        log(f"THREADS_ACCESS_TOKEN okundu: uzunluk={len(token)}, ilk_4={token[:4]}")
+
+    return user_id, token
 
 
 def _post_with_retry(url, data, context="threads"):
@@ -133,7 +139,7 @@ def _get_threads_user_id(ig_user_id, token):
         return None
 
 
-def post_text(message: str, image_url: str = None) -> str | None:
+def post_text(message: str) -> str | None:
     ig_user_id, token = _get_credentials()
     if not ig_user_id or not token:
         return None
@@ -209,7 +215,7 @@ def _publish_container(threads_user_id, container_id, token, media_type):
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v3.0)")
+    log("threads.py smoke test (v3.1)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
