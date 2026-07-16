@@ -1,10 +1,9 @@
 """
-platforms/threads.py - Threads API katmani (v3.2 - /me Endpoint Guncellemesi)
+platforms/threads.py - Threads API katmani (v3.3 - Toksik Token Temizleyici)
 
-v3.2:
-  - Eski ve hata veren 'threads_profile' (IG baglantisi gerektiren) sorgusu kaldirildi.
-  - Artik direkt '/me' uzerinden Threads User ID cekiliyor.
-  - /me basarisiz olursa, env'den gelen THREADS_USER_ID dogrudan kullanilir (Fallback).
+v3.3:
+  - "Cannot parse access token" (190) hatasini onlemek icin tokenin icindeki 
+    tum gorunmez satir sonu, bosluk ve tirnak isaretlerini otomatik yok eder.
 """
 
 import os
@@ -21,7 +20,11 @@ _RETRY_BASE_WAIT = 2.0
 
 def _get_credentials():
     user_id = os.environ.get("THREADS_USER_ID", "").strip()
-    token = os.environ.get("THREADS_ACCESS_TOKEN", "").strip()
+    token = os.environ.get("THREADS_ACCESS_TOKEN", "")
+
+    # 🧹 TOKSIK TEMIZLEYICI: GitHub Secrets'a yapistirirken araya giren gizli 
+    # satir sonu (\n, \r), bosluk veya tirnak isaretlerini tamamen yok eder.
+    token = token.replace('"', '').replace("'", "").replace("\n", "").replace("\r", "").replace(" ", "")
 
     if not user_id:
         log("THREADS_USER_ID env bulunamadi", "ERROR")
@@ -142,7 +145,6 @@ def _get_threads_user_id(ig_user_id, token):
         return me_id
 
     # 2. Eger /me cagrisi basarisiz olursa, env'den okunan ID'yi direkt Threads ID olarak kabul et.
-    # (Kullanici THREADS_USER_ID env degiskenine dogru Threads ID'sini girdigi icin bu calisir).
     if ig_user_id:
         log(f"/me cagrisi basarisiz veya izin yok. Env'deki THREADS_USER_ID ({ig_user_id}) direkt kullanilacak.", "WARNING")
         return ig_user_id
@@ -227,7 +229,7 @@ def _publish_container(threads_user_id, container_id, token, media_type):
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v3.2)")
+    log("threads.py smoke test (v3.3)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
