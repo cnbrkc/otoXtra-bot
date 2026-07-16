@@ -1,13 +1,12 @@
 """
-platforms/threads.py - Threads API katmani (v1.0)
+platforms/threads.py - Threads API katmani (v1.1)
 
-Sadece metin paylasimi. Threads API iki asamali:
-  1. Container olustur (POST /me/threads)
-  2. Yayinla (POST /me/threads_publish)
+v1.1: Ayrı THREADS_ACCESS_TOKEN desteği eklendi.
+      FB_ACCESS_TOKEN'e dokunmaz, sadece Threads için ayrı token kullanır.
 
 Gerekli env:
   - THREADS_USER_ID
-  - FB_ACCESS_TOKEN (Threads de ayni token'i kullanir)
+  - THREADS_ACCESS_TOKEN  <-- YENİ
 """
 
 import os
@@ -24,11 +23,12 @@ _RETRY_BASE_WAIT = 2.0
 
 def _get_credentials():
     user_id = os.environ.get("THREADS_USER_ID", "")
-    token = os.environ.get("FB_ACCESS_TOKEN", "")
+    token = os.environ.get("THREADS_ACCESS_TOKEN", "")  # <-- AYRI TOKEN
+
     if not user_id:
         log("THREADS_USER_ID env bulunamadi", "ERROR")
     if not token:
-        log("FB_ACCESS_TOKEN env bulunamadi", "ERROR")
+        log("THREADS_ACCESS_TOKEN env bulunamadi", "ERROR")
     return user_id, token
 
 
@@ -118,7 +118,7 @@ def post_text(message: str) -> str | None:
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test")
+    log("threads.py smoke test (v1.1 - ayrı token)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut (gercek post atilmadi).")
