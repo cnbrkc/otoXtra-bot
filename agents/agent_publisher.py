@@ -1,9 +1,8 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.7 - Ayrı Dry Run)
+agents/agent_publisher.py - Yayinci Ajani (v4.7 - Türkçe Test Modları)
 
 v4.7:
-  - FB_DRY_RUN / THREADS_DRY_RUN ortam değişkenleri eklendi.
-  - DRY_RUN genel kontrolü devam ediyor.
+  - TUM_PLATFORMLAR_TEST / SADECE_FACEBOOK_TEST / SADECE_THREADS_TEST eklendi.
   - Threads görsel paylaşımı (v2.0 threads.py ile) tam entegre.
 """
 
@@ -58,25 +57,25 @@ def _safe_int(value, default: int) -> int:
 
 
 def _is_dry_run(settings: dict) -> bool:
-    """Genel DRY_RUN: hem Facebook hem Threads"""
-    if os.environ.get("DRY_RUN") is not None:
-        return _get_env_bool("DRY_RUN", False)
+    """Genel test modu: hem Facebook hem Threads"""
+    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
+        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
     posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
     return bool(posting_cfg.get("dry_run", False))
 
 
 def _is_fb_dry_run() -> bool:
-    """Sadece Facebook dry run? (DRY_RUN genel ise zaten etkisiz)"""
-    if os.environ.get("DRY_RUN") is not None:
-        return _get_env_bool("DRY_RUN", False)
-    return _get_env_bool("FB_DRY_RUN", False)
+    """Sadece Facebook test modu? (TUM_PLATFORMLAR_TEST genel ise zaten etkisiz)"""
+    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
+        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
+    return _get_env_bool("SADECE_FACEBOOK_TEST", False)
 
 
 def _is_threads_dry_run() -> bool:
-    """Sadece Threads dry run? (DRY_RUN genel ise zaten etkisiz)"""
-    if os.environ.get("DRY_RUN") is not None:
-        return _get_env_bool("DRY_RUN", False)
-    return _get_env_bool("THREADS_DRY_RUN", False)
+    """Sadece Threads test modu? (TUM_PLATFORMLAR_TEST genel ise zaten etkisiz)"""
+    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
+        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
+    return _get_env_bool("SADECE_THREADS_TEST", False)
 
 
 def _is_random_delay_enabled() -> bool:
@@ -586,15 +585,15 @@ def run() -> bool:
 
         if dry_run or fb_dry_run:
             if fb_dry_run:
-                log("FB_DRY_RUN: Facebook paylasimi atlaniyor, Threads serbest")
+                log("SADECE_FACEBOOK_TEST: Facebook paylasimi atlaniyor, Threads serbest")
             else:
-                log("DRY RUN: Gercek Facebook paylasimi yapilmayacak")
+                log("TUM_PLATFORMLAR_TEST: Gercek paylasim yapilmayacak")
             # Facebook'u atla, Threads'i aşağıda hallet
             fake_post_id = "dryrun_000000000_111111111" if not fb_dry_run else "fb_dryrun_skip"
             # Telegram bildirimi vs. için normal akışı taklit et, ama posted record'a yazma
             set_stage("publish", "done", output=_build_publish_output(
                 article, fake_post_id, image_source, len(image_paths), True))
-            log("Facebook paylasimi atlandi (dry run).")
+            log("Facebook paylasimi atlandi (test modu).")
             # Do not return, fall through to Threads
         else:
             if manual_priority:
@@ -644,7 +643,7 @@ def run() -> bool:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False):
                 if _is_threads_dry_run():
-                    log("THREADS_DRY_RUN: Threads paylasimi atlaniyor.")
+                    log("SADECE_THREADS_TEST: Threads paylasimi atlaniyor.")
                 else:
                     mode = threads_cfg.get("mode", "text_only")
                     threads_post_id = None
