@@ -1,9 +1,10 @@
 """
-platforms/threads.py - Threads API katmani (v3.3 - Toksik Token Temizleyici)
+platforms/threads.py - Threads API katmani (v3.4 - Header Auth Fix)
 
-v3.3:
-  - "Cannot parse access token" (190) hatasini onlemek icin tokenin icindeki 
-    tum gorunmez satir sonu, bosluk ve tirnak isaretlerini otomatik yok eder.
+v3.4:
+  - "Cannot parse access token" (190) hatasini kesin olarak cozmek icin
+    token URL parametresi yerine HTTP Header olarak gonderildi.
+  - URL encoding bozulmalarinin onune gecildi.
 """
 
 import os
@@ -39,12 +40,13 @@ def _get_credentials():
     return user_id, token
 
 
-def _post_with_retry(url, data, context="threads"):
+def _post_with_retry(url, data, context="threads", headers=None):
     last_error = ""
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
         try:
             started = time.time()
-            resp = requests.post(url, data=data, timeout=_REQUEST_TIMEOUT)
+            # Token artik data icinde DEĞIL, headers icinde gidiyor
+            resp = requests.post(url, data=data, headers=headers, timeout=_REQUEST_TIMEOUT)
             elapsed = int((time.time() - started) * 1000)
 
             try:
@@ -83,12 +85,12 @@ def _post_with_retry(url, data, context="threads"):
     return {}
 
 
-def _get_with_retry(url, params, context="threads_get"):
+def _get_with_retry(url, params, context="threads_get", headers=None):
     last_error = ""
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
         try:
             started = time.time()
-            resp = requests.get(url, params=params, timeout=_REQUEST_TIMEOUT)
+            resp = requests.get(url, params=params, headers=headers, timeout=_REQUEST_TIMEOUT)
             elapsed = int((time.time() - started) * 1000)
 
             try:
@@ -127,24 +129,24 @@ def _get_with_retry(url, params, context="threads_get"):
 def _get_threads_user_id(ig_user_id, token):
     """
     Threads User ID'sini bulur.
-    Yeni Threads API yapisinda /me uzerinden direkt kimlik dogrulanir.
-    Eger /me basarisiz olursa, env'den gelen ID'yi (ki dogru ayarlandiysa Threads ID'sidir) kullanir.
     """
-    # 1. Once /me endpoint'ini deneyerek token'in ait oldugu Threads ID'sini cekelim.
     url = f"{_BASE_URL}/me"
     params = {
-        "fields": "id,username",
-        "access_token": token
+        "fields": "id,username"
     }
+    # Token artik Header olarak gonderiliyor
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
+    
     log("Threads User ID '/me' uzerinden kontrol ediliyor...")
-    result = _get_with_retry(url, params, "get_me_profile")
+    result = _get_with_retry(url, params, "get_me_profile", headers=headers)
 
     me_id = result.get("id")
     if me_id:
         log(f"Threads User ID '/me' uzerinden basariyla bulundu: {me_id} (username: {result.get('username', 'N/A')})")
         return me_id
 
-    # 2. Eger /me cagrisi basarisiz olursa, env'den okunan ID'yi direkt Threads ID olarak kabul et.
     if ig_user_id:
         log(f"/me cagrisi basarisiz veya izin yok. Env'deki THREADS_USER_ID ({ig_user_id}) direkt kullanilacak.", "WARNING")
         return ig_user_id
@@ -158,7 +160,6 @@ def post_text(message: str) -> str | None:
     if not ig_user_id or not token:
         return None
 
-    # 1. Dogru Threads User ID'sini bul
     threads_user_id = _get_threads_user_id(ig_user_id, token)
     if not threads_user_id:
         return None
@@ -166,12 +167,14 @@ def post_text(message: str) -> str | None:
     container_url = f"{_BASE_URL}/{threads_user_id}/threads"
     container_data = {
         "media_type": "TEXT",
-        "text": message,
-        "access_token": token,
+        "text": message
+    }
+    headers = {
+        "Authorization": f"Bearer {token}"
     }
 
     log("Threads TEXT container olusturuluyor...")
-    container_resp = _post_with_retry(container_url, container_data, "create_text_container")
+    container_resp = _post_with_retry(container_url, container_data, "create_text_container", headers=headers)
     container_id = container_resp.get("id")
     if not container_id:
         log("Threads text container olusturulamadi", "ERROR")
@@ -185,7 +188,6 @@ def post_image(message: str, image_url: str) -> str | None:
     if not ig_user_id or not token:
         return None
 
-    # 1. Dogru Threads User ID'sini bul
     threads_user_id = _get_threads_user_id(ig_user_id, token)
     if not threads_user_id:
         return None
@@ -198,12 +200,14 @@ def post_image(message: str, image_url: str) -> str | None:
     container_data = {
         "media_type": "IMAGE",
         "text": message,
-        "image_url": image_url,
-        "access_token": token,
+        "image_url": image_url
+    }
+    headers = {
+        "Authorization": f"Bearer {token}"
     }
 
     log(f"Threads IMAGE container olusturuluyor (orijinal URL ile)...")
-    container_resp = _post_with_retry(container_url, container_data, "create_image_container")
+    container_resp = _post_with_retry(container_url, container_data, "create_image_container", headers=headers)
     container_id = container_resp.get("id")
     if not container_id:
         log("Threads image container olusturulamadi, metine fallback.", "ERROR")
@@ -215,11 +219,14 @@ def post_image(message: str, image_url: str) -> str | None:
 def _publish_container(threads_user_id, container_id, token, media_type):
     publish_url = f"{_BASE_URL}/{threads_user_id}/threads_publish"
     publish_data = {
-        "creation_id": container_id,
-        "access_token": token,
+        "creation_id": container_id
     }
+    headers = {
+        "Authorization": f"Bearer {token}"
+    }
+    
     log(f"Threads {media_type} publish ediliyor...")
-    publish_resp = _post_with_retry(publish_url, publish_data, f"publish_{media_type}")
+    publish_resp = _post_with_retry(publish_url, publish_data, f"publish_{media_type}", headers=headers)
     post_id = publish_resp.get("id")
     if post_id:
         log(f"Threads {media_type} paylasimi basarili. Post ID: {post_id}")
@@ -229,7 +236,7 @@ def _publish_container(threads_user_id, container_id, token, media_type):
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v3.3)")
+    log("threads.py smoke test (v3.4)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
