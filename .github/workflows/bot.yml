@@ -21,7 +21,7 @@ on:
           - 'true'
 
       enable_random_delay:
-        description: 'Random bekleme aktif olsun mu?'
+        description: 'Rastgele bekleme aktif olsun mu?'
         required: false
         default: 'true'
         type: choice
@@ -29,8 +29,8 @@ on:
           - 'true'
           - 'false'
 
-      dry_run:
-        description: 'Genel Dry Run (Facebook ve Threads durur)'
+      tum_platformlar_test:
+        description: 'TÜM PLATFORMLAR TEST MODU - Facebook ve Threads paylaşımı yapılmaz'
         required: false
         default: 'false'
         type: choice
@@ -38,8 +38,8 @@ on:
           - 'true'
           - 'false'
 
-      fb_dry_run:
-        description: 'Sadece Facebook Dry Run (Threads serbest)'
+      sadece_facebook_test:
+        description: 'SADECE FACEBOOK TEST - Facebook paylaşımı durur, Threads çalışır'
         required: false
         default: 'false'
         type: choice
@@ -47,8 +47,8 @@ on:
           - 'true'
           - 'false'
 
-      threads_dry_run:
-        description: 'Sadece Threads Dry Run (Facebook serbest)'
+      sadece_threads_test:
+        description: 'SADECE THREADS TEST - Threads paylaşımı durur, Facebook çalışır'
         required: false
         default: 'false'
         type: choice
@@ -119,9 +119,9 @@ jobs:
 
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
-          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
-          FB_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_dry_run || 'false' }}
-          THREADS_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.threads_dry_run || 'false' }}
+          TUM_PLATFORMLAR_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tum_platformlar_test || 'false' }}
+          SADECE_FACEBOOK_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sadece_facebook_test || 'false' }}
+          SADECE_THREADS_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sadece_threads_test || 'false' }}
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'true' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
