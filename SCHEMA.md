@@ -1,4 +1,4 @@
-# otoXtra BOT - ANA SEMA v3.1
+# otoXtra BOT - ANA SEMA v3.2
 
 > BU DOSYA NEDIR?
 > Projenin tam haritasi. Her yeni sohbette YZ'ye SADECE BU DOSYAYI yapistir.
@@ -53,7 +53,9 @@ otoXtra-bot/
 │   └── agent_publisher.py
 │
 ├── platforms/
-│   └── facebook.py
+│   ├── facebook.py
+│   ├── threads.py        <-- YENI
+│   └── telegram.py
 │
 ├── queue/
 │   └── pipeline.json
@@ -76,6 +78,8 @@ bot.yml tetikler
     -> [3] agents/agent_writer.py
     -> [4] agents/agent_image.py
     -> [5] agents/agent_publisher.py
+       -> Facebook paylasimi (mevcut)
+       -> Threads paylasimi (yeni, metin)
 DOSYA DETAYLARI
 config/ ayarlari
 config/sources.json
@@ -89,6 +93,8 @@ posting
 images
 news
 ai
+threads (yeni)
+
 Not:
 
 news.max_article_age_hours aktif kullanilir.
@@ -125,6 +131,7 @@ Provider bazli hata loglama
 JSON parse fallback yardimi
 core/config_loader.py
 Config dosyalarini okur/yazar.
+Threads ayarlari eklendi.
 
 core/logger.py
 Zaman damgali log yazar.
@@ -174,6 +181,7 @@ Gorsel toplar/uretir, yeniden boyutlar, watermark uygular.
 
 agents/agent_publisher.py
 Facebook paylasimini yapar.
+Threads metin paylasimini da tetikler (threads.enabled).
 Onemli:
 
 DRY_RUN / RANDOM_DELAY / RANDOM_SKIP env kontrolleri.
@@ -186,10 +194,16 @@ Fonksiyonlar:
 
 post_photo(image_path, message)
 post_text(message)
-Varsa coklu gorsel fonksiyonlari (post_photos / post_multi_photo / post_album)
-API:
+post_photos(image_paths, message)
+API: Graph API v25.0
 
-Graph API v25.0
+platforms/threads.py (YENI)
+Threads metin paylasimi yapar.
+Fonksiyonlar:
+
+post_text(message)
+API: Graph API v25.0 (Threads API)
+
 data/
 data/posted_news.json
 Paylasilan haber gecmisi.
@@ -222,6 +236,7 @@ GEMINI_API_KEY
 GROQ_API_KEY
 OPENROUTER_API_KEY
 HF_API_KEY
+THREADS_USER_ID          <-- YENI
 Kural:
 
 Asla kod icine yazilmaz.
@@ -245,8 +260,8 @@ Gunluk limit                    : Var
 Sakin gun modu                  : Var
 Rastgele bekleme/skip           : Var
 Gecmis temizlik                 : Var (30 gun)
+Threads paylasimi (metin)       : Var (yeni)
 Instagram paylasimi             : Yok
-Telegram bildirimi              : Yok
 Twitter/X paylasimi             : Yok
 ALTIN KURALLAR
 txt
@@ -256,6 +271,5 @@ Kod degisikligi     -> YZ'den tam dosya al, komple degistir
 pipeline.json       -> Elle dokunma
 posted_news.json    -> Elle dokunma
 API key             -> Asla koda yazma
-Versiyon: 3.1
+Versiyon: 3.2
 Bu dosya degistiginde versiyon ve tarihi guncelle.
-
