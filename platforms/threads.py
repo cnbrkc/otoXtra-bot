@@ -1,15 +1,8 @@
 """
-platforms/threads.py - Threads API katmani (v2.0)
+platforms/threads.py - Threads API katmani (v2.1)
 
-v2.0:
-  - post_image(message, image_path) eklendi.
-  - 0x0.st upload yardimcisi eklendi.
-  - Fallback: upload basarisiz olursa None doner, publisher text-only'e gecer.
-  - Ayrı THREADS_ACCESS_TOKEN kullanilir.
-
-Gerekli env:
-  - THREADS_USER_ID
-  - THREADS_ACCESS_TOKEN
+v2.1:
+  - 0x0.st yerine file.io kullanildi.
 """
 
 import os
@@ -22,8 +15,7 @@ _BASE_URL = f"https://graph.facebook.com/{_THREADS_API_VERSION}"
 _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT = 2.0
-# 0x0.st upload ayarları
-_UPLOAD_URL = "https://0x0.st"
+_UPLOAD_URL = "https://file.io"
 _UPLOAD_TIMEOUT = 30
 
 
@@ -82,9 +74,9 @@ def _post_with_retry(url, data, context="threads"):
 
 
 def _upload_image_to_public_url(image_path: str) -> str | None:
-    """Yerel dosyayı 0x0.st'ye yükler, public URL döner."""
+    """Yerel dosyayı file.io'ya yükler, public URL döner."""
     if not os.path.exists(image_path):
-        log(f"0x0.st upload: Dosya bulunamadi: {image_path}", "ERROR")
+        log(f"file.io upload: Dosya bulunamadi: {image_path}", "ERROR")
         return None
 
     try:
@@ -95,23 +87,23 @@ def _upload_image_to_public_url(image_path: str) -> str | None:
                 timeout=_UPLOAD_TIMEOUT,
             )
         if resp.status_code == 200:
-            url = resp.text.strip()
-            if url.startswith("http"):
-                log(f"0x0.st upload basarili: {url}")
-                return url
-            else:
-                log(f"0x0.st beklenmeyen yanit: {resp.text[:100]}", "ERROR")
-                return None
+            data = resp.json()
+            if data.get("success"):
+                url = data.get("link")
+                if url:
+                    log(f"file.io upload basarili: {url}")
+                    return url
+            log(f"file.io upload basarisiz: {resp.text[:200]}", "ERROR")
+            return None
         else:
-            log(f"0x0.st upload hatasi: {resp.status_code} {resp.text[:100]}", "ERROR")
+            log(f"file.io upload hatasi: {resp.status_code} {resp.text[:200]}", "ERROR")
             return None
     except Exception as exc:
-        log(f"0x0.st upload exception: {exc}", "ERROR")
+        log(f"file.io upload exception: {exc}", "ERROR")
         return None
 
 
 def post_text(message: str) -> str | None:
-    """Threads'e yalnızca metin gönderir."""
     user_id, token = _get_credentials()
     if not user_id or not token:
         return None
@@ -147,26 +139,18 @@ def post_text(message: str) -> str | None:
 
 
 def post_image(message: str, image_path: str) -> str | None:
-    """
-    Threads'e görsel + metin gönderir.
-    - Önce görseli 0x0.st'ye yükler, public URL alır.
-    - IMAGE container oluşturur.
-    - Başarısız olursa None döner, çağrıcı fallback yapar.
-    """
     user_id, token = _get_credentials()
     if not user_id or not token:
         return None
     if not image_path:
-        log("post_image: image_path bos, metine dönülmeli", "WARNING")
+        log("post_image: image_path bos", "WARNING")
         return None
 
-    # 1. Upload
     image_url = _upload_image_to_public_url(image_path)
     if not image_url:
-        log("post_image: 0x0.st upload basarisiz, gorselli paylasim iptal", "ERROR")
+        log("post_image: upload basarisiz, gorselli paylasim iptal", "ERROR")
         return None
 
-    # 2. Container olustur
     container_url = f"{_BASE_URL}/{user_id}/threads"
     container_data = {
         "media_type": "IMAGE",
@@ -183,8 +167,6 @@ def post_image(message: str, image_path: str) -> str | None:
         return None
 
     log(f"Container ID: {container_id}")
-
-    # 3. Yayinla
     publish_url = f"{_BASE_URL}/{user_id}/threads_publish"
     publish_data = {
         "creation_id": container_id,
@@ -196,13 +178,12 @@ def post_image(message: str, image_path: str) -> str | None:
     if post_id:
         log(f"Threads image paylasimi basarili. Post ID: {post_id}")
         return post_id
-
     log("Threads image publish basarisiz", "ERROR")
     return None
 
 
 if __name__ == "__main__":
-    log("threads.py smoke test (v2.0)")
+    log("threads.py smoke test (v2.1)")
     uid, tok = _get_credentials()
     if uid and tok:
         log("Threads kimlik bilgileri mevcut.")
