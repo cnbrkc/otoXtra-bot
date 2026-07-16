@@ -30,7 +30,25 @@ on:
           - 'false'
 
       dry_run:
-        description: 'Dry run (gercek Facebook paylasimi kapali)'
+        description: 'Genel Dry Run (Facebook ve Threads durur)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+      fb_dry_run:
+        description: 'Sadece Facebook Dry Run (Threads serbest)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'true'
+          - 'false'
+
+      threads_dry_run:
+        description: 'Sadece Threads Dry Run (Facebook serbest)'
         required: false
         default: 'false'
         type: choice
@@ -102,6 +120,8 @@ jobs:
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.dry_run || 'false' }}
+          FB_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.fb_dry_run || 'false' }}
+          THREADS_DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.threads_dry_run || 'false' }}
           IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'true' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
