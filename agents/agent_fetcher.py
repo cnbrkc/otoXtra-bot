@@ -214,10 +214,76 @@ def _nitter_to_twitter_url(nitter_url: str) -> str:
     return ""
 
 
+def _is_profile_image_url(url: str) -> bool:
+    """v7.0: Profil fotosu URL'lerini tespit eder."""
+    lower = url.lower()
+    return "/profile_images/" in lower or "/profile_banners/" in lower
+
+
+def _extract_tweet_images_via_fxtwitter(tweet_url: str, timeout: int = 20) -> list[str]:
+    """
+    v7.0: FxTwitter API kullanarak tweet gorsel URL'lerini ceker.
+    Nitter sayfalari bos dondugunde ve x.com sadece profil fotosu dondugunde
+    bu API gercek tweet gorsellerini guvenilir sekilde verir.
+
+    Ornek: https://x.com/eozpeynirci/status/12345 ->
+           https://api.fxtwitter.com/eozpeynirci/status/12345
+    """
+    if not tweet_url:
+        return []
+
+    parsed = urlparse(tweet_url)
+    path = parsed.path or ""
+    if "/status/" not in path:
+        return []
+
+    api_url = f"https://api.fxtwitter.com{path}"
+    results: list[str] = []
+
+    try:
+        response = requests.get(
+            api_url,
+            headers={"User-Agent": _USER_AGENT, "Accept": "application/json"},
+            timeout=timeout,
+        )
+        response.raise_for_status()
+        data = response.json()
+
+        if data.get("code") != 200:
+            return []
+
+        tweet = data.get("tweet", {})
+        media = tweet.get("media", {})
+
+        for photo in media.get("photos", []):
+            url = photo.get("url", "")
+            if url and not _is_profile_image_url(url):
+                if "pbs.twimg.com" in url and "name=" not in urlparse(url).query:
+                    url = f"{url}?name=orig" if "?" in url else f"{url}?name=orig"
+                if url not in results:
+                    results.append(url)
+
+        for video in media.get("videos", []):
+            thumb = video.get("thumbnail_url", "")
+            if thumb and not _is_profile_image_url(thumb) and thumb not in results:
+                if "pbs.twimg.com" in thumb and "name=" not in urlparse(thumb).query:
+                    thumb = f"{thumb}?name=orig" if "?" in thumb else f"{thumb}?name=orig"
+                results.append(thumb)
+
+        if results:
+            log(f"FxTwitter API: {len(results)} gorsel bulundu: {tweet_url[:80]}")
+
+    except Exception as exc:
+        log(f"FxTwitter API hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+
+    return results
+
+
 def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
     """
-    x.com tweet sayfasindan og:image meta tagini ceker.
-    Twitter/X sayfalari pbs.twimg.com URL'leri icerir.
+    v7.0: x.com tweet sayfasindan og:image meta tagini ceker.
+    PROFIL FOTOGRAFLARI FILTRELENIR - /profile_images/ iceren URL'ler atlanir.
+    Bu fonksiyon artik SON CARE fallback olarak kullanilir.
     """
     if not tweet_url:
         return []
@@ -232,8 +298,10 @@ def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
         # og:image meta tag
         for tag in soup.select('meta[property="og:image"]'):
             img_url = tag.get("content", "")
-            if img_url and "pbs.twimg.com" in img_url:
-                # Yüksek kalite için name=orig parametresini ekle
+            # v7.0: Profil fotosu filtrele
+            if not img_url or _is_profile_image_url(img_url):
+                continue
+            if "pbs.twimg.com" in img_url:
                 parsed = urlparse(img_url)
                 if "name=" not in parsed.query:
                     img_url = f"{img_url}&name=orig" if "?" in img_url else f"{img_url}?name=orig"
@@ -242,9 +310,11 @@ def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
         # twitter:image meta tag
         for tag in soup.select('meta[name="twitter:image"]'):
             img_url = tag.get("content", "")
-            if img_url and "pbs.twimg.com" in img_url:
-                if img_url not in results:
-                    results.append(img_url)
+            # v7.0: Profil fotosu filtrele
+            if not img_url or _is_profile_image_url(img_url):
+                continue
+            if "pbs.twimg.com" in img_url and img_url not in results:
+                results.append(img_url)
 
     except Exception as exc:
         log(f"Twitter og:image cekme hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
@@ -375,15 +445,25 @@ def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) ->
 
     log(f"Nitter tweet sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
 
-    # v5.0: Nitter bos donerse orijinal Twitter URL'sine fallback yap
+    # v7.0: Nitter bos donerse FxTwitter API'ye fallback yap (ONCELIKLI)
+    # Nitter sayfalari 2025 ortasindan itibaren bos donmeye basladi
+    # (HTTP 200, content-length: 0). FxTwitter API guvenilir alternatiftir.
     if not results:
         twitter_url = _nitter_to_twitter_url(tweet_url)
         if twitter_url:
-            log(f"Nitter bos, Twitter fallback deneniyor: {twitter_url[:80]}")
-            twitter_images = _extract_twitter_og_image(twitter_url, timeout=timeout)
-            if twitter_images:
-                log(f"Twitter fallback'tan {len(twitter_images)} gorsel bulundu")
-                results.extend(twitter_images)
+            # 1. FxTwitter API (en guvenilir)
+            log(f"Nitter bos, FxTwitter API deneniyor: {twitter_url[:80]}")
+            fxtwitter_images = _extract_tweet_images_via_fxtwitter(twitter_url, timeout=timeout)
+            if fxtwitter_images:
+                log(f"FxTwitter API'den {len(fxtwitter_images)} gorsel bulundu")
+                results.extend(fxtwitter_images)
+            else:
+                # 2. x.com HTML scrape (son care, profil fotosu filtreli)
+                log(f"FxTwitter bosa dustu, x.com HTML scrape deneniyor: {twitter_url[:80]}")
+                twitter_images = _extract_twitter_og_image(twitter_url, timeout=timeout)
+                if twitter_images:
+                    log(f"x.com scrape'tan {len(twitter_images)} gorsel bulundu (profil fotosu filtrelendi)")
+                    results.extend(twitter_images)
 
     return results
 
@@ -613,18 +693,25 @@ def _candidate_key(url: str) -> str:
 
 def _looks_like_noise_image(url: str) -> bool:
     """
-    v4.2: pbs.twimg.com/media/ URL'leri asla gurultu degil.
+    v7.0: pbs.twimg.com/media/ URL'leri asla gurultu degil.
     Nitter /pic/ URL'leri de gercek gorsel.
+    PROFIL FOTOLARI gurultu olarak isaretlenir.
     """
     lower_url = url.lower()
     parsed = urlparse(lower_url)
     path = parsed.path or ""
     host = parsed.netloc or ""
 
-    # Twitter CDN ve Nitter gorsel URL'leri hic gurultu degil
+    # Twitter CDN: /media/ gercek gorsel, /profile_images/ gurultu
     if host in _TWITTER_CDN_HOSTS:
+        if "/profile_images/" in path or "/profile_banners/" in path:
+            return True
         return False
+
+    # Nitter /pic/ - profil fotosu ise gurultu
     if _is_nitter_url(lower_url) and "/pic/" in lower_url:
+        if "profile_images" in lower_url or "profile_banners" in lower_url:
+            return True
         return False
 
     if any(hint in lower_url for hint in _IMAGE_NOISE_HINTS):
