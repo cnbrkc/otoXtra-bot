@@ -23,8 +23,10 @@ v3.5:
 import base64
 import json
 import os
+import re
 import time
 import requests
+from urllib.parse import unquote, urlparse
 from core.logger import log
 
 # ── Threads API ──────────────────────────────────────────────────────────────
@@ -435,36 +437,86 @@ def _upload_imgbb(image_path: str) -> str | None:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# ORIJINAL URL CIKARMA
+# ORIJINAL URL CIKARMA & NITTER COZUMLEME
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def _extract_original_urls(article: dict, max_urls: int = 5) -> list[str]:
+_TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
+
+_NITTER_PIC_PATTERN = re.compile(
+    r"/pic/(?:orig/)?(?:media%2F|media/)([A-Za-z0-9_\-]+\.[a-zA-Z]{3,4})",
+    re.IGNORECASE,
+)
+
+
+def _resolve_nitter_url(url: str) -> str:
     """
-    Article dict'inden orijinal gorsel URL'lerini cikarir.
+    Nitter /pic/ URL'lerini orijinal Twitter CDN URL'lerine cevirir.
+    Ornek: /pic/media%2FABCdef.jpg -> https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=large
+    Zaten pbs.twimg.com ise dokunmaz.
+    """
+    if not url or not isinstance(url, str):
+        return url
 
-    Oncelik sirasi:
-    1. image_candidates (kaynak tipi bilgili, kalite sirali)
-    2. image_url (dogrudan alan)
-    3. rss_image_url (RSS'den gelen)
+    parsed = urlparse(url)
 
-    Returns:
-        En fazla max_urls adet benzersiz, gecerli HTTP(S) URL listesi
+    # Zaten Twitter CDN'deyse dokunma
+    if parsed.netloc in _TWITTER_CDN_HOSTS:
+        return url
+
+    # Nitter /pic/ formatini cozumle
+    if "/pic/" in url:
+        m = _NITTER_PIC_PATTERN.search(url)
+        if m:
+            filename = unquote(m.group(1))
+            name_part, _, ext_part = filename.rpartition(".")
+            ext_part = ext_part.lower()
+            quality = "orig" if "/orig/" in url else "large"
+            return f"https://pbs.twimg.com/media/{filename}?format={ext_part}&name={quality}"
+
+    return url
+
+
+def _extract_original_urls(article: dict, max_urls: int = 8) -> list[str]:
+    """
+    Article dict'inden orijinal gorsel URL'lerini cikarir ve cozumler.
+
+    ONCOULK SIRASI:
+    1. original_image_urls (agent_image tarafindan kaydedilen basarili URL'ler)
+    2. image_url (genelde zaten cozumlenmis pbs.twimg.com URL'si)
+    3. image_candidates (kalite sirali adaylar, Nitter URL'leri cozumlenir)
+    4. rss_image_url (RSS'ten gelen, Nitter URL'leri cozumlenir)
+
+    Tum Nitter /pic/ URL'leri otomatik olarak pbs.twimg.com URL'lerine
+    cevrilir. Boylece Threads API dogrudan public URL alir.
     """
     urls: list[str] = []
     seen: set[str] = set()
 
-    def _add(url: str) -> None:
-        if not url or not isinstance(url, str):
+    def _add(raw_url: str) -> None:
+        if not raw_url or not isinstance(raw_url, str):
             return
-        url = url.strip()
-        if not url.startswith("http"):
+        raw_url = raw_url.strip()
+        if not raw_url:
             return
-        if url in seen:
+        # Nitter /pic/ URL'lerini cozumle
+        resolved = _resolve_nitter_url(raw_url)
+        if not resolved or not resolved.startswith("http"):
             return
-        seen.add(url)
-        urls.append(url)
+        if resolved in seen:
+            return
+        seen.add(resolved)
+        urls.append(resolved)
 
-    # 1. image_candidates (en kaliteli adaylar once)
+    # 1. original_image_urls (agent_image tarafindan kaydedildi - EN GUVENILIR)
+    original_urls = article.get("original_image_urls", [])
+    if isinstance(original_urls, list):
+        for url in original_urls:
+            _add(url)
+
+    # 2. image_url (genelde cozumlenmis URL)
+    _add(article.get("image_url", ""))
+
+    # 3. image_candidates (kalite sirali, Nitter URL'leri cozumlenir)
     candidates = article.get("image_candidates", [])
     if isinstance(candidates, list):
         for candidate in candidates[:max_urls * 2]:
@@ -473,9 +525,11 @@ def _extract_original_urls(article: dict, max_urls: int = 5) -> list[str]:
             elif isinstance(candidate, str):
                 _add(candidate)
 
-    # 2. Direkt alanlar
-    _add(article.get("image_url", ""))
+    # 4. rss_image_url (RSS'ten gelen, Nitter URL'leri cozumlenir)
     _add(article.get("rss_image_url", ""))
+
+    if urls:
+        log(f"Threads: {len(urls)} orijinal URL cikarildi (cozumlenmis)")
 
     return urls[:max_urls]
 
