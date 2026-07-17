@@ -354,7 +354,6 @@ def _extract_original_urls(article: dict, max_urls: int = 5) -> list[str]:
     1. image_candidates (kaynak tipi bilgili, kalite sirali)
     2. image_url (dogrudan alan)
     3. rss_image_url (RSS'den gelen)
-    4. link (haber linki - degil, bu sayfa URL'si, atla)
     Returns:
         En fazla max_urls adet benzersiz, gecerli HTTP(S) URL listesi
     """
@@ -417,7 +416,7 @@ def post_image(message: str, image_url: str, auto_fallback: bool = True) -> str 
         message: Paylasim metni
         image_url: KAMUYA ACIK gorsel URL (yerel dosya YOLU DEGIL!)
         auto_fallback: True ise basarisiz olunca otomatik metne fallback yapar
-    DİKKAT: image_url KAMUYA ACIK bir URL olmalidir!
+    DIKKAT: image_url KAMUYA ACIK bir URL olmalidir!
     Yerel dosya yolu (/tmp/...) KULLANILAMAZ.
     Yerel dosya icin post_with_image() kullanin.
     """
@@ -432,8 +431,12 @@ def post_image(message: str, image_url: str, auto_fallback: bool = True) -> str 
         if auto_fallback:
             return post_text(message)
         return None
-    # Yerel dosya yolu kontrolu - yanlisliksa uyari ver
-    if image_url.startswith("/") or (len(image_path := image_url) > 2 and image_path[1] == ":"):
+    # Yerel dosya yolu kontrolu
+    is_local = (
+        image_url.startswith("/")
+        or (len(image_url) > 2 and image_url[1] == ":")
+    )
+    if is_local:
         log(f"post_image: YEREL DOSYA YOLU TESPIT EDILDI! URL={image_url}", "ERROR")
         log("post_image: Yerel dosyalar icin post_with_image() kullanin!", "ERROR")
         if auto_fallback:
@@ -493,13 +496,13 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
                 log(f"  Orijinal URL {idx}/{len(original_urls)}: {url[:80]}...")
                 result = post_image(message, url, auto_fallback=False)
                 if result:
-                    log(f"  ✅ Orijinal URL basarili! (deneme {idx})")
+                    log(f"  Orijinal URL basarili! (deneme {idx})")
                     return result
-                log(f"  ❌ Orijinal URL basarisiz (deneme {idx})", "WARNING")
+                log(f"  Orijinal URL basarisiz (deneme {idx})", "WARNING")
         else:
-            log("Threads ADIM 1: Article'da orijinal URL yok, atlanıyor")
+            log("Threads ADIM 1: Article'da orijinal URL yok, atlaniyor")
     else:
-        log("Threads ADIM 1: Article dict yok, orijinal URL atlanıyor")
+        log("Threads ADIM 1: Article dict yok, orijinal URL atlaniyor")
     # ── ADIM 2-5: Upload servisleri ─────────────────────────────────────────
     if image_path and os.path.exists(image_path):
         upload_services = [
@@ -512,14 +515,14 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
             log(f"Threads ADIM {step_num}: {service_name} deneniyor...")
             public_url = upload_fn(image_path)
             if not public_url:
-                log(f"  ❌ {service_name} upload basarisiz", "WARNING")
+                log(f"  {service_name} upload basarisiz", "WARNING")
                 continue
             log(f"  Upload basarili! URL: {public_url[:60]}...")
             result = post_image(message, public_url, auto_fallback=False)
             if result:
-                log(f"  ✅ {service_name} ile gorsel paylasim basarili!")
+                log(f"  {service_name} ile gorsel paylasim basarili!")
                 return result
-            log(f"  ❌ {service_name} URL ile Threads paylasim basarisiz", "WARNING")
+            log(f"  {service_name} URL ile Threads paylasim basarisiz", "WARNING")
     else:
         if image_path:
             log(f"Threads: Gorsel dosyasi bulunamadi: {image_path}", "WARNING")
@@ -579,11 +582,11 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
     item_ids = []
     for idx, img_path in enumerate(image_paths):
         if not os.path.exists(img_path):
-            log(f"post_carousel: Gorsel bulunamadi, atlanıyor: {img_path}", "WARNING")
+            log(f"post_carousel: Gorsel bulunamadi, atlaniyor: {img_path}", "WARNING")
             continue
         public_url = _resolve_public_url(img_path, article=article, image_index=idx)
         if not public_url:
-            log(f"post_carousel: Gorsel {idx + 1} icin URL elde edilemedi, atlanıyor", "WARNING")
+            log(f"post_carousel: Gorsel {idx + 1} icin URL elde edilemedi, atlaniyor", "WARNING")
             continue
         # Carousel item container olustur
         container_url = f"{_BASE_URL}/{threads_user_id}/threads"
@@ -601,7 +604,7 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
             item_ids.append(item_id)
             log(f"Carousel item {idx + 1} basarili: ID={item_id}")
         else:
-            log(f"Carousel item {idx + 1} basarisiz, atlanıyor", "WARNING")
+            log(f"Carousel item {idx + 1} basarisiz, atlaniyor", "WARNING")
     if len(item_ids) < 2:
         log(f"post_carousel: Yeterli item olusturulamadi ({len(item_ids)}/2)", "WARNING")
         if item_ids and image_paths:
