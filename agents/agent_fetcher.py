@@ -1,6 +1,13 @@
 """
 News fetch and filter agent. (v4.2 - Nitter Image Fix)
 
+v5.0:
+  - FIX: _extract_nitter_images_from_tweet_page() Nitter bos donerse otomatik
+          olarak orijinal Twitter/x.com URL'sine fallback yapar.
+  - YENI: _nitter_to_twitter_url() fonksiyonu - Nitter URL'lerini x.com'a cevirir.
+  - FIX: _extract_twitter_og_image() fonksiyonu - x.com tweet sayfasindan
+          og:image meta tagini ceker.
+
 v4.2:
   - FIX: _is_probable_image_url() Nitter /pic/orig/media... URL'lerini taniyor.
   - FIX: _looks_like_noise_image() Nitter URL'lerini yanlisl filtreden koruyor.
@@ -188,6 +195,64 @@ def _is_nitter_url(url: str) -> bool:
     return "nitter." in host or host.startswith("nitter")
 
 
+def _nitter_to_twitter_url(nitter_url: str) -> str:
+    """
+    Nitter tweet URL'sini orijinal Twitter/x.com URL'sine cevirir.
+
+    Ornekler:
+      https://nitter.net/eozpeynirci/status/1234567890  ->  https://x.com/eozpeynirci/status/1234567890
+      https://nitter.poast.org/ahmetcelik2016/status/999  ->  https://x.com/ahmetcelik2016/status/999
+    """
+    if not nitter_url:
+        return ""
+    parsed = urlparse(nitter_url)
+    path = parsed.path or ""
+    # /kullanici/status/ID formatini yakala
+    m = re.search(r"(/[^/]+/status/\d+)", path)
+    if m:
+        return f"https://x.com{m.group(1)}"
+    return ""
+
+
+def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
+    """
+    x.com tweet sayfasindan og:image meta tagini ceker.
+    Twitter/X sayfalari pbs.twimg.com URL'leri icerir.
+    """
+    if not tweet_url:
+        return []
+    results: list[str] = []
+    try:
+        response = _request_with_retry(
+            tweet_url, timeout=timeout, attempts=2, base_wait_seconds=1.5
+        )
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        # og:image meta tag
+        for tag in soup.select('meta[property="og:image"]'):
+            img_url = tag.get("content", "")
+            if img_url and "pbs.twimg.com" in img_url:
+                # Yüksek kalite için name=orig parametresini ekle
+                parsed = urlparse(img_url)
+                if "name=" not in parsed.query:
+                    img_url = f"{img_url}&name=orig" if "?" in img_url else f"{img_url}?name=orig"
+                results.append(img_url)
+
+        # twitter:image meta tag
+        for tag in soup.select('meta[name="twitter:image"]'):
+            img_url = tag.get("content", "")
+            if img_url and "pbs.twimg.com" in img_url:
+                if img_url not in results:
+                    results.append(img_url)
+
+    except Exception as exc:
+        log(f"Twitter og:image cekme hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+
+    return results
+
+
+
 def _resolve_nitter_image_url(raw_url: str, nitter_base: str) -> str:
     """
     Nitter'dan gelen gorsel URL'ini orijinal Twitter CDN URL'ine cevirir.
@@ -309,6 +374,17 @@ def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) ->
                 _add(resolved)
 
     log(f"Nitter tweet sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
+
+    # v5.0: Nitter bos donerse orijinal Twitter URL'sine fallback yap
+    if not results:
+        twitter_url = _nitter_to_twitter_url(tweet_url)
+        if twitter_url:
+            log(f"Nitter bos, Twitter fallback deneniyor: {twitter_url[:80]}")
+            twitter_images = _extract_twitter_og_image(twitter_url, timeout=timeout)
+            if twitter_images:
+                log(f"Twitter fallback'tan {len(twitter_images)} gorsel bulundu")
+                results.extend(twitter_images)
+
     return results
 
 
