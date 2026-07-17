@@ -1,10 +1,11 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.8 - Threads Gorsel Destegi)
+agents/agent_publisher.py - Yayinci Ajani (v5.0 - Logo Kaldirildi, Text-Only Paylasim)
 
 v5.0:
-  - CRITICAL: Gorselsiz haber artik PAYLASILMIYOR (no_image skip).
-  - Logo fallback kaldirildi - artik gorselsiz habere logo yapistirilmiyor.
-  - image_source == "no_image" olan haberler otomatik olarak skip ediliyor.
+  - Logo fallback KALDIRILDI - artik gorselsiz habere logo yapistirilmiyor.
+  - Gorselsiz haberler TEXT-ONLY (sadece metin) olarak paylasiliyor, SKIP edilmiyor.
+  - image_source == "no_image" veya "fallback" olanlarda gorsel listesi bosaltiliyor,
+    publisher otomatik text-only akisina duser.
 
 v4.8:
   - Threads gorsel paylasimi tam entegre! post_local_image() ile yerel dosya -> ImgBB -> Threads.
@@ -220,13 +221,15 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
-    """v5.0: Logo fallback KALDIRILDI. no_image = gorselsiz haber = SKIP."""
-    if (image_source or "").strip().lower() == "no_image":
-        log("Gorselsiz haber tespit edildi (no_image), gorsel listesi bosaltildi", "WARNING")
-        return []
-    # Eski fallback logo gorseller de artik desteklenmiyor
-    if (image_source or "").strip().lower() == "fallback":
-        log("Fallback logo gorsel tespit edildi, gorsel listesi bosaltildi (logo desteklenmiyor)", "WARNING")
+    """v5.0: Logo fallback KALDIRILDI. Gorselsiz haberler text-only paylasilir.
+    no_image veya fallback durumunda gorsel listesi bosaltilir,
+    publisher asagida text-only akisina otomatik duser."""
+    source_lower = (image_source or "").strip().lower()
+    if source_lower in {"no_image", "fallback"}:
+        if image_paths:
+            log(f"Gorsel kaynagi '{image_source}' - logo/fallback gorseller kaldirildi, text-only paylasim yapilacak", "INFO")
+        else:
+            log(f"Gorsel kaynagi '{image_source}' - gorsel yok, text-only paylasim yapilacak", "INFO")
         return []
     return image_paths
 
@@ -552,20 +555,11 @@ def run() -> bool:
         set_stage("publish", "error", error="Post metni yok")
         return False
 
-    # v5.0: Gorselsiz haberleri skip et
-    if (image_source or "").strip().lower() == "no_image" or (not image_paths and (image_source or "").strip().lower() != "text_only"):
-        log(f"Gorselsiz haber SKIP ediliyor: {article.get('title', '')[:80]} (image_source={image_source})", "WARNING")
-        output = _build_publish_output(
-            article=article,
-            post_id="skipped_no_image",
-            image_source=image_source,
-            image_count=0,
-            dry_run=False,
-            skipped=True,
-            skip_reason="no_real_image_found",
-        )
-        set_stage("publish", "done", output=output)
-        return True
+    # v5.0: Gorselsiz haberler SKIP edilmiyor, TEXT-ONLY paylasilir
+    if not image_paths:
+        log(f"Gorsel yok - text-only paylasim yapilacak: {article.get('title', '')[:80]} (image_source={image_source})", "INFO")
+    else:
+        log(f"Gorsel mevcut: {len(image_paths)} adet (image_source={image_source})")
 
     log(f"Paylasilacak haber: {article.get('title', '')[:80]}")
     log(f"Image source: {image_source}, image count: {len(image_paths)}")
