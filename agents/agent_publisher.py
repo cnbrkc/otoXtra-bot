@@ -215,10 +215,13 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
+    """Fallback (logo placeholder) gorselleri artik kaliyor.
+    Gorselsiz post yapmak logodan daha kotu.
+    Sadece isaretliyoruz ki publisher bilsin."""
     if (image_source or "").strip().lower() == "fallback":
         if image_paths:
-            log("Fallback gorsel tespit edildi, text-only paylasima geciliyor", "INFO")
-        return []
+            log("Fallback gorsel (logo placeholder) tespit edildi, gorsel korunuyor", "INFO")
+        return image_paths
     return image_paths
 
 
