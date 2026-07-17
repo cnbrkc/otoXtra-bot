@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v5.2 - Nitter Image Fix)
+agents/agent_image.py - Gorsel Isleme Ajani (v6.0 - Nitter-->Twitter Fallback + Logo Kaldirildi, Text-Only Paylasim)
 
 v5.2:
   - FIX: _is_probable_image_url() Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
@@ -1691,15 +1691,15 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
 
     if not prepared_paths:
-        # v6.0: Logo fallback KALDIRILDI. Gorsel yoksa haber paylasilmaz.
-        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + AI hepsi bosa). Haber SKIP edilecek.", "WARNING")
+        # v6.0: Logo fallback KALDIRILDI. Gorsel yoksa text-only paylasim yapilir.
+        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + AI hepsi bosa). Text-only paylasim yapilacak.", "WARNING")
         article["image_source"] = "no_image"
         article["image_sources"] = ["no_image"]
         article["prepared_image_count"] = 0
         article["original_image_urls"] = []
-        log(f"Gorsel hazirlama bitti. Adet=0 kaynak=no_image (SKIP)")
+        log(f"Gorsel hazirlama bitti. Adet=0 kaynak=no_image (text-only paylasim)")
         log("-" * 40)
-        return []  # Bos liste - publisher bu haberi atlayacak
+        return []  # Bos liste - publisher text-only akisina duser
 
     article["image_source"] = used_sources[0] if used_sources else "unknown"
     article["image_sources"] = used_sources
