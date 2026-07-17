@@ -1,6 +1,11 @@
 """
 agents/agent_publisher.py - Yayinci Ajani (v4.8 - Threads Gorsel Destegi)
 
+v5.0:
+  - CRITICAL: Gorselsiz haber artik PAYLASILMIYOR (no_image skip).
+  - Logo fallback kaldirildi - artik gorselsiz habere logo yapistirilmiyor.
+  - image_source == "no_image" olan haberler otomatik olarak skip ediliyor.
+
 v4.8:
   - Threads gorsel paylasimi tam entegre! post_local_image() ile yerel dosya -> ImgBB -> Threads.
   - Threads carousel (coklu gorsel) destegi eklendi.
@@ -215,13 +220,14 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
-    """Fallback (logo placeholder) gorselleri artik kaliyor.
-    Gorselsiz post yapmak logodan daha kotu.
-    Sadece isaretliyoruz ki publisher bilsin."""
+    """v5.0: Logo fallback KALDIRILDI. no_image = gorselsiz haber = SKIP."""
+    if (image_source or "").strip().lower() == "no_image":
+        log("Gorselsiz haber tespit edildi (no_image), gorsel listesi bosaltildi", "WARNING")
+        return []
+    # Eski fallback logo gorseller de artik desteklenmiyor
     if (image_source or "").strip().lower() == "fallback":
-        if image_paths:
-            log("Fallback gorsel (logo placeholder) tespit edildi, gorsel korunuyor", "INFO")
-        return image_paths
+        log("Fallback logo gorsel tespit edildi, gorsel listesi bosaltildi (logo desteklenmiyor)", "WARNING")
+        return []
     return image_paths
 
 
@@ -545,6 +551,21 @@ def run() -> bool:
     if not post_text_content:
         set_stage("publish", "error", error="Post metni yok")
         return False
+
+    # v5.0: Gorselsiz haberleri skip et
+    if (image_source or "").strip().lower() == "no_image" or (not image_paths and (image_source or "").strip().lower() != "text_only"):
+        log(f"Gorselsiz haber SKIP ediliyor: {article.get('title', '')[:80]} (image_source={image_source})", "WARNING")
+        output = _build_publish_output(
+            article=article,
+            post_id="skipped_no_image",
+            image_source=image_source,
+            image_count=0,
+            dry_run=False,
+            skipped=True,
+            skip_reason="no_real_image_found",
+        )
+        set_stage("publish", "done", output=output)
+        return True
 
     log(f"Paylasilacak haber: {article.get('title', '')[:80]}")
     log(f"Image source: {image_source}, image count: {len(image_paths)}")
