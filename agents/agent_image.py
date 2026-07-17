@@ -1,48 +1,25 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v7.0 - FxTwitter API + Profil Fotosu Filtre + Regex Fix)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.0 - DuckDuckGo Fallback)
 
+v8.0 KRITIK YENILIK:
+  - DuckDuckGo Entegrasyonu: Eger haberin kendi sitesinden veya Nitter'dan
+    gorsel bulunamazsa, haber basligi DuckDuckGo'da aranir ve internetten
+    habere uygun GERCEK bir gorsel bulunup indirilir. Böylece hiçbir haber
+    görselsiz kalmaz.
+  
 v7.0 KRITIK DUZELTMELER:
   - CRITICAL FIX #1: Nitter tweet sayfalari bos donuyor (content-length: 0).
     FxTwitter API entegrasyonu ile tweet gorselleri guvenilir sekilde cekiliyor.
-    api.fxtwitter.com/username/status/ID -> JSON -> media.photos[].url
   - CRITICAL FIX #2: x.com fallback sadece profil fotosu donduruyordu.
     Profil fotosu URL'leri (/profile_images/) artik filtreleniyor.
-    FxTwitter API oncelikli fallback, x.com HTML scrape son care.
   - CRITICAL FIX #3: _ai_search_image_url() regex kirikti.
-    Cift backslash (\\\\s, \\\\.) yerine tek backslash (\\s, \\.) duzeltildi.
   - IMPORTANT FIX: JSON-LD (schema.org) gorsel cekme eklendi.
-    Modern siteler ana gorseli <script type="application/ld+json"> icinde tutar.
-  - IMPORTANT FIX: Nitter /pic/pbs.twimg.com%2Fprofile_images%2... URL'leri
-    cozumleniyor ve profil fotosu olarak isaretleniyor (gurultu filtresi).
-  - MEDIUM FIX: "banner" noise filtresi daraltildi - sadece /banner/ path'inde
-    eslesiyor, URL'nin herhangi bir yerinde "banner" gecmesi artik filtrelenmiyor.
-  - MEDIUM FIX: "editor" noise filtresi daraltildi.
-  - YENI: _extract_tweet_images_via_fxtwitter() fonksiyonu.
-  - YENI: _is_profile_image_url() yardimci fonksiyonu.
-  - YENI: _collect_jsonld_images() fonksiyonu (agent_fetcher.py ile uyumlu).
 
 v6.0:
   - Nitter-->Twitter Fallback + Logo Kaldirildi, Text-Only Paylasim
 
 v5.2:
   - FIX: _is_probable_image_url() Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
-  - FIX: _looks_like_noise() Twitter CDN ve Nitter gorsel URL'lerini koruyuyor.
-  - FIX: scrape_article_image_urls() Nitter tweet sayfalarindan gorsel cekiyor.
-  - YENI: _is_nitter_url(), _resolve_nitter_image_url(),
-          _extract_nitter_images_from_page() fonksiyonlari eklendi.
-
-v5.1 FIXED:
-  - CRITICAL FIX: Minimum image size lowered (900x500 -> 738x400)
-  - CRITICAL FIX: Aspect ratio relaxed (0.8-2.1 -> 0.7-2.3)
-  - Better RSS feed compatibility (most feeds use 600-800px images)
-
-v5.0:
-  - DonanimHaber gibi sitelerde script/json icinden gorsel URL toplama.
-  - Domain-ozel URL varyant uretimi.
-  - Gurultu gorseller icin daha erken eleme.
-  - picture/source[srcset] tagleri taramaya dahil edildi.
-  - Aday deneme limiti multi-image senaryoda dinamik artirildi.
-  - article_script kaynak tipi eklendi.
 """
 
 import hashlib
@@ -57,6 +34,9 @@ from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse, un
 import requests
 from PIL import Image, ImageDraw
 from bs4 import BeautifulSoup
+
+# v8.0: DuckDuckGo kütüphanesi eklendi
+from duckduckgo_search import DDGS
 
 from core.config_loader import get_project_root, load_config
 from core.logger import log
@@ -102,7 +82,6 @@ _NOISE_HINTS = (
     "populer-",
 )
 
-# v7.0: Noise filtresi path-bazli - sadece belirli path kalıplarında eşleşir
 _NOISE_PATH_PATTERNS = (
     "/banner/",
     "/banners/",
@@ -126,8 +105,8 @@ _DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024
 _SOURCE_PRIORITY = {
     "meta_og": 0,
     "meta_twitter": 0,
-    "nitter_still": 0,       # v5.2: Nitter still-image en yuksek oncelik
-    "nitter_card": 1,        # v5.2: Nitter card image
+    "nitter_still": 0,       
+    "nitter_card": 1,        
     "article_script": 1,
     "article_img": 1,
     "article_field": 2,
@@ -139,8 +118,8 @@ _SOURCE_PRIORITY = {
 _SOURCE_SCORE_BONUS = {
     "meta_og": 12.0,
     "meta_twitter": 10.0,
-    "nitter_still": 14.0,    # v5.2: Tweet'in ana gorseli en yuksek bonus
-    "nitter_card": 10.0,     # v5.2: Tweet card gorseli
+    "nitter_still": 14.0,    
+    "nitter_card": 10.0,     
     "article_script": 8.0,
     "article_img": 7.0,
     "article_field": 4.0,
@@ -149,7 +128,6 @@ _SOURCE_SCORE_BONUS = {
     "unknown": 0.0,
 }
 
-# v5.2: Nitter sabitleri
 _NITTER_PIC_PATTERN = re.compile(
     r"^/pic/(?:orig/)?(?:media%2F|media/)([A-Za-z0-9_\-]+\.[a-zA-Z]{3,4})",
     re.IGNORECASE,
@@ -196,6 +174,41 @@ def _safe_unlink(path: str) -> None:
         pass
 
 
+# ── v8.0: DuckDuckGo Görsel Arama Yardımcısı ──────────────────────────────────────
+
+def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -> list[str]:
+    """
+    DuckDuckGo görsel araması yaparak habere uygun gerçek görsel URL'leri döndürür.
+    Sadece haberin kendi görseli bulunamazsa yedek olarak çağrılır.
+    """
+    try:
+        # Başlıktaki gereksiz karakterleri temizle ve Türkçe karakterleri İngilizce'ye çevir
+        clean_title = article_title.lower()
+        clean_title = re.sub(r'[^\w\s]', '', clean_title)
+        tr_map = str.maketrans("çğıöşü", "cgiosu")
+        clean_title = clean_title.translate(tr_map)
+        
+        log(f"DDG Görsel Aranıyor: {clean_title}")
+        
+        with DDGS() as ddgs:
+            results = list(ddgs.images(
+                keywords=clean_title,
+                max_results=max_results
+            ))
+            
+        if not results:
+            log("DuckDuckGo görsel sonuç döndürmedi.", "WARNING")
+            return []
+            
+        # Sadece görsel URL'lerini (image alanını) alıp döndür
+        image_urls = [r.get("image") for r in results if r.get("image")]
+        log(f"DuckDuckGo {len(image_urls)} adet görsel adayı buldu.")
+        return image_urls
+        
+    except Exception as e:
+        log(f"DuckDuckGo görsel arama hatası: {e}", "ERROR")
+        return []
+
 # ── v5.2: Nitter yardimci fonksiyonlari ──────────────────────────────────────
 
 def _is_nitter_url(url: str) -> bool:
@@ -204,9 +217,6 @@ def _is_nitter_url(url: str) -> bool:
 
 
 def _nitter_to_twitter_url(nitter_url: str) -> str:
-    """
-    Nitter tweet URL'sini orijinal Twitter/x.com URL'sine cevirir.
-    """
     if not nitter_url:
         return ""
     parsed = urlparse(nitter_url)
@@ -218,23 +228,11 @@ def _nitter_to_twitter_url(nitter_url: str) -> str:
 
 
 def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
-    """
-    v7.0: FxTwitter API kullanarak tweet gorsel URL'lerini ceker.
-    Nitter sayfalari bos dondugunde ve x.com sadece profil fotosu dondugunde
-    bu API gercek tweet gorsellerini guvenilir sekilde verir.
-
-    Ornek: https://x.com/eozpeynirci/status/12345 ->
-           https://api.fxtwitter.com/eozpeynirci/status/12345
-
-    Yanit: {"tweet": {"media": {"photos": [{"url": "pbs.twimg.com/...?name=orig", "width": 1262, "height": 764}]}}}
-    """
     if not tweet_url:
         return []
 
-    # x.com veya twitter.com URL'sini FxTwitter API URL'sine cevir
     parsed = urlparse(tweet_url)
     path = parsed.path or ""
-    # /username/status/12345 -> ayni path'i kullan
     if "/status/" not in path:
         return []
 
@@ -259,19 +257,16 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
         tweet = data.get("tweet", {})
         media = tweet.get("media", {})
 
-        # Oncelik: photos (tweet'in ana gorselleri)
         for photo in media.get("photos", []):
             url = photo.get("url", "")
             if not url or _is_profile_image_url(url):
                 continue
-            # Yüksek kalite garantisi
             if "pbs.twimg.com" in url and "name=" not in urlparse(url).query:
                 url = f"{url}?name=orig" if "?" in url else f"{url}?name=orig"
             if url not in seen:
                 seen.add(url)
                 results.append({"url": url, "source_type": "nitter_still"})
 
-        # Video thumbnail'leri
         for video in media.get("videos", []):
             thumb = video.get("thumbnail_url", "")
             if not thumb or _is_profile_image_url(thumb):
@@ -282,7 +277,6 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
                 seen.add(thumb)
                 results.append({"url": thumb, "source_type": "nitter_card"})
 
-        # all medya (animasyonlu gif vb.)
         for item in media.get("all", []):
             url = item.get("url", "")
             if not url or _is_profile_image_url(url) or url in seen:
@@ -314,12 +308,6 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
 
 
 def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
-    """
-    v7.0: x.com tweet sayfasindan og:image meta tagini ceker.
-    PROFIL FOTOGRAFLARI FILTRELENIR (/profile_images/ iceren URL'ler atlanir).
-    Bu fonksiyon artik SON CARE fallback olarak kullanilir.
-    Oncelik: FxTwitter API -> x.com HTML scrape
-    """
     if not tweet_url:
         return []
     results: list[dict] = []
@@ -336,7 +324,6 @@ def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
 
         for tag in soup.select('meta[property="og:image"]'):
             img_url = tag.get("content", "")
-            # v7.0: Profil fotosu filtrele
             if not img_url or _is_profile_image_url(img_url):
                 continue
             if "pbs.twimg.com" in img_url:
@@ -349,7 +336,6 @@ def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
 
         for tag in soup.select('meta[name="twitter:image"]'):
             img_url = tag.get("content", "")
-            # v7.0: Profil fotosu filtrele
             if not img_url or _is_profile_image_url(img_url):
                 continue
             if "pbs.twimg.com" in img_url:
@@ -365,18 +351,13 @@ def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
     return results
 
 
-
 def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
-    """
-    Nitter /pic/orig/media%2FABCdef.jpg  ->
-    https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=orig
-    """
     if not raw_url:
         return ""
 
     parsed_raw = urlparse(raw_url)
     if parsed_raw.netloc in _TWITTER_CDN_HOSTS:
-        return raw_url  # Zaten Twitter CDN
+        return raw_url  
 
     path = parsed_raw.path if parsed_raw.scheme else raw_url
 
@@ -389,16 +370,12 @@ def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
         return f"https://pbs.twimg.com/media/{filename}?format={ext_part}&name={quality}"
 
     if _is_nitter_url(raw_url) and "/pic/" in raw_url:
-        return raw_url  # Taninamayan Nitter formati, olduğu gibi dene
+        return raw_url  
 
     return ""
 
 
 def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
-    """
-    Nitter tweet sayfasindan gorsel URL'lerini toplar.
-    Her gorsel icin {"url": ..., "source_type": "nitter_still"|"nitter_card"} dict'i doner.
-    """
     if not tweet_url or not _is_nitter_url(tweet_url):
         return []
 
@@ -426,7 +403,6 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
             seen.add(url)
             results.append({"url": url, "source_type": stype})
 
-    # 1. <a class="still-image"> - tweet'in ana gorselleri
     for a_tag in soup.find_all("a", class_="still-image"):
         href = a_tag.get("href", "")
         resolved = _resolve_nitter_image_url(href, nitter_base)
@@ -439,7 +415,6 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
             if resolved_src:
                 _add(resolved_src, "nitter_still")
 
-    # 2. card-image div'leri
     for div in soup.find_all("div", class_=lambda c: c and ("card-image" in c or "attachment" in c)):
         for img in div.find_all("img"):
             src = img.get("src", "")
@@ -452,7 +427,6 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
             if resolved:
                 _add(resolved, "nitter_card")
 
-    # 3. Tum <img> src="/pic/..."
     for img in soup.find_all("img"):
         src = img.get("src", "")
         if "/pic/" in src:
@@ -460,7 +434,6 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
             if resolved:
                 _add(resolved, "nitter_card")
 
-    # 4. Tum <a href="/pic/...">
     for a_tag in soup.find_all("a", href=True):
         href = a_tag.get("href", "")
         if "/pic/" in href:
@@ -470,20 +443,15 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
 
     log(f"Nitter sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
 
-    # v7.0: Nitter bos donerse FxTwitter API'ye fallback yap (ONCELIKLI)
-    # Nitter sayfalari 2025 ortasindan itibaren bos donmeye basladi
-    # (HTTP 200, content-length: 0). FxTwitter API guvenilir alternatiftir.
     if not results:
         twitter_url = _nitter_to_twitter_url(tweet_url)
         if twitter_url:
-            # 1. FxTwitter API (en guvenilir)
             log(f"Nitter sayfa bos, FxTwitter API deneniyor: {twitter_url[:80]}")
             fxtwitter_images = _extract_tweet_images_via_fxtwitter(twitter_url)
             if fxtwitter_images:
                 log(f"FxTwitter API'den {len(fxtwitter_images)} gorsel bulundu")
                 results.extend(fxtwitter_images)
             else:
-                # 2. x.com HTML scrape (son care, profil fotosu filtreli)
                 log(f"FxTwitter bosa dustu, x.com HTML scrape deneniyor: {twitter_url[:80]}")
                 twitter_images = _extract_twitter_og_image(twitter_url)
                 if twitter_images:
@@ -596,7 +564,6 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     if not url:
         return ""
 
-    # v5.2: Nitter /pic/ URL'lerini coz
     if "/pic/" in url:
         resolved = _resolve_nitter_image_url(url, base_url)
         if resolved:
@@ -637,39 +604,29 @@ def _normalize_path_for_candidate_key(path: str) -> str:
 
 
 def _is_profile_image_url(url: str) -> bool:
-    """v7.0: Profil fotosu URL'lerini tespit eder."""
     lower = url.lower()
     return "/profile_images/" in lower or "/profile_banners/" in lower
 
 
 def _looks_like_noise(url: str) -> bool:
-    """
-    v7.0: pbs.twimg.com/media/ ve Nitter /pic/ URL'leri asla gurultu degil.
-    Profil fotosu URL'leri gurultu olarak isaretlenir.
-    "banner" ve "editor" filtreleri path-bazli yapilir (daha az agresif).
-    """
     lower = url.lower()
     parsed = urlparse(lower)
     path = parsed.path or ""
     host = parsed.netloc or ""
 
-    # Twitter CDN gorselleri: /media/ gercek gorsel, /profile_images/ gurultu
     if host in _TWITTER_CDN_HOSTS:
         if "/profile_images/" in path or "/profile_banners/" in path:
             return True
         return False
 
-    # Nitter /pic/ URL'leri - profil fotosu ise gurultu
     if _is_nitter_url(lower) and "/pic/" in lower:
         if "profile_images" in lower or "profile_banners" in lower:
             return True
         return False
 
-    # v7.0: Genel kelime eslemesi (banner ve editor kaldirildi)
     if any(hint in lower for hint in _NOISE_HINTS):
         return True
 
-    # v7.0: Path-bazli gurultu kaliplari (banner, editor, profil vb.)
     if any(pattern in lower for pattern in _NOISE_PATH_PATTERNS):
         return True
 
@@ -677,18 +634,13 @@ def _looks_like_noise(url: str) -> bool:
 
 
 def _is_probable_image_url(url: str) -> bool:
-    """
-    v5.2: Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
-    """
     lower = url.lower()
     parsed = urlparse(lower)
     host = parsed.netloc or ""
 
-    # Twitter CDN her zaman gorsel
     if host in _TWITTER_CDN_HOSTS:
         return True
 
-    # Nitter /pic/ her zaman gorsel
     if _is_nitter_url(lower) and "/pic/" in lower:
         return True
 
@@ -750,7 +702,6 @@ def _donanimhaber_variants(url: str) -> list[str]:
 
 
 def _thumbnail_to_original_variants(url: str) -> list[str]:
-    # Twitter CDN URL'leri icin variant uretme - zaten orijinal
     parsed_check = urlparse(url)
     if parsed_check.netloc in _TWITTER_CDN_HOSTS:
         return [url]
@@ -900,11 +851,6 @@ def _walk_json_for_image_urls(node, out: list[str]) -> None:
 
 
 def _collect_jsonld_images(node, page_url: str, collector: list[str]) -> None:
-    """
-    v7.0: JSON-LD (schema.org) icerisinden gorsel URL'lerini toplar.
-    Modern haber siteleri ana gorseli <script type="application/ld+json"> icinde tutar.
-    Ornek yapilar: {"image": "url"}, {"image": {"url": "..."}}, {"image": [{"url": "..."}]}
-    """
     if isinstance(node, dict):
         image_value = node.get("image")
         if isinstance(image_value, str):
@@ -927,7 +873,6 @@ def _collect_jsonld_images(node, page_url: str, collector: list[str]) -> None:
             normalized = _normalize_url(candidate, page_url)
             if normalized:
                 collector.append(normalized)
-        # Recurse into all values
         for value in node.values():
             _collect_jsonld_images(value, page_url, collector)
     elif isinstance(node, list):
@@ -1141,13 +1086,6 @@ def _adaptive_perceptual_threshold(
 
 
 def _ai_search_image_url(article: dict) -> str:
-    """
-    AI (Gemini) kullanarak haber basligindan uygun bir gorsel URL'si bulur.
-    Sadece diger tum yontemler basarisiz oldugunda cagrilir (son care).
-    
-    Returns:
-        Public gorsel URL'si, bulunamazsa bos string
-    """
     try:
         from core.ai_client import ask_ai
     except ImportError:
@@ -1179,15 +1117,12 @@ def _ai_search_image_url(article: dict) -> str:
             log("AI gorsel arama: AI gorsel bulamadi", "INFO")
             return ""
 
-        # URL formatini kontrol et
         if response.startswith("http") and any(
             ext in response.lower() for ext in (".jpg", ".jpeg", ".png", ".webp")
         ):
             log(f"AI gorsel arama: URL bulundu! {response[:80]}...")
             return response
 
-        # v7.0 FIX: Cift backslash (\\s, \\.) yerine tek backslash - regex artik duzgun calisiyor
-        import re
         _url_pattern = re.compile(r'https?://[^\s"\'<>]+\.(?:jpg|jpeg|png|webp)', re.IGNORECASE)
         url_match = _url_pattern.search(response)
         if url_match:
@@ -1414,14 +1349,9 @@ def download_image(image_url: str) -> Optional[str]:
 
 
 def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
-    """
-    v5.2: Nitter URL'si gelirse _extract_nitter_images_from_page() kullanilir.
-    Normal siteler icin eski BeautifulSoup logici korunur.
-    """
     if not url:
         return []
 
-    # v6.0: Nitter URL'si ise ozel fonksiyon + Twitter fallback
     if _is_nitter_url(url):
         nitter_results = _extract_nitter_images_from_page(url)
         pool: list[dict] = []
@@ -1439,11 +1369,9 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                     },
                 )
 
-        # v7.0: Nitter'dan gorsel gelmezse FxTwitter API'ye fallback yap
         if not pool:
             twitter_url = _nitter_to_twitter_url(url)
             if twitter_url:
-                # 1. FxTwitter API (en guvenilir)
                 log(f"Nitter scrape bosa dustu, FxTwitter API deneniyor: {twitter_url[:80]}")
                 fxtwitter_images = _extract_tweet_images_via_fxtwitter(twitter_url)
                 if fxtwitter_images:
@@ -1462,7 +1390,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                             )
                     log(f"FxTwitter API'den {len(pool)} gorsel adayi bulundu")
 
-                # 2. x.com HTML scrape (son care, profil fotosu filtreli)
                 if not pool:
                     log(f"FxTwitter bosa dustu, x.com HTML scrape deneniyor: {twitter_url[:80]}")
                     try:
@@ -1483,7 +1410,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                         for selector, attr, source_type in meta_selectors:
                             for tag in soup.select(selector):
                                 raw_url = tag.get(attr, "")
-                                # v7.0: Profil fotosu filtrele
                                 if raw_url and not _is_profile_image_url(raw_url):
                                     _add_scrape_candidate(pool, raw_url, twitter_url, source_type)
 
@@ -1541,7 +1467,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                 if best_srcset:
                     _add_scrape_candidate(pool_normal, best_srcset, url, "article_img")
 
-        # v7.0: JSON-LD (schema.org) gorsel cekme - modern siteler ana gorseli burada tutar
         for script in soup.select('script[type="application/ld+json"]'):
             script_text = (script.string or script.get_text() or "").strip()
             if not script_text:
@@ -1560,7 +1485,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
             script_text = script.string or script.get_text() or ""
             if not script_text.strip():
                 continue
-            # v7.0: ld+json zaten yukarida islendi, atla
             if script.get("type") == "application/ld+json":
                 continue
             for script_url in _extract_json_image_urls(script_text):
@@ -1636,11 +1560,9 @@ def prepare_images(article: dict) -> list[str]:
     article_title = article.get("title", "")[:120]
     article_link = article.get("link", "")
 
-    # v6.0: Secilen haber icin scrape HER ZAMAN aktif
-    # Eger RSS'ten gorsel gelmemisse, sayfa scrape zorunludur.
     has_rss_image = bool(article.get("image_url", "") or article.get("rss_image_url", "") or article.get("image_candidates", []))
     is_nitter_article = _is_nitter_url(article_link)
-    effective_scrape = True  # v6.0: Her zaman aktif - gorselsiz haber paylasilmasin
+    effective_scrape = True  
 
     log("-" * 40)
     log(f"Gorsel hazirlama basladi: {article_title}")
@@ -1903,6 +1825,43 @@ def prepare_images(article: dict) -> list[str]:
             if path and os.path.exists(path):
                 _safe_unlink(path)
 
+    # v8.0: DUCKDUCKGO FALLBACK - Eger hala gorsel bulunamadiysa internetten arama yap
+    if not prepared_paths:
+        log("Haberin kendi gorseli bulunamadi. DuckDuckGo görsel araması başlatılıyor...", "INFO")
+        ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""))
+        
+        for ddg_url in ddg_urls:
+            if len(prepared_paths) >= max_images_per_news:
+                break
+                
+            log(f"DuckDuckGo adayı deneniyor: {ddg_url[:100]}")
+            downloaded, reason = _download_image_with_reason(ddg_url, limits)
+            
+            if downloaded:
+                try:
+                    processed = downloaded
+                    needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+                    
+                    if needs_resize:
+                        log(f"DDG gorsel resize: {resize_reason}")
+                        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                    else:
+                        log(f"DDG gorsel resize atlandi: {resize_reason}")
+                        
+                    if should_add_logo:
+                        processed = add_logo(processed)
+                        
+                    prepared_paths.append(processed)
+                    used_sources.append("duckduckgo")
+                    article["image_source"] = "duckduckgo"
+                    log("DuckDuckGo gorsel basarili! Gorsel hazirlandi.")
+                    break # İlk saglam gorseli buldu, devam etmeye gerek yok
+                except Exception as exc:
+                    log(f"DuckDuckGo gorsel isleme hatasi: {exc}", "WARNING")
+                    _safe_unlink(downloaded)
+            else:
+                log(f"DuckDuckGo adayi elendi: {reason}", "WARNING")
+
     if not prepared_paths:
         # SON CARE: AI ile gorsel URL'si arama
         ai_url = _ai_search_image_url(article)
@@ -1931,22 +1890,19 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
 
     if not prepared_paths:
-        # v6.0: Logo fallback KALDIRILDI. Gorsel yoksa text-only paylasim yapilir.
-        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + AI hepsi bosa). Text-only paylasim yapilacak.", "WARNING")
+        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + DDG + AI hepsi bosa). Text-only paylasim yapilacak.", "WARNING")
         article["image_source"] = "no_image"
         article["image_sources"] = ["no_image"]
         article["prepared_image_count"] = 0
         article["original_image_urls"] = []
         log(f"Gorsel hazirlama bitti. Adet=0 kaynak=no_image (text-only paylasim)")
         log("-" * 40)
-        return []  # Bos liste - publisher text-only akisina duser
+        return []  
 
     article["image_source"] = used_sources[0] if used_sources else "unknown"
     article["image_sources"] = used_sources
     article["prepared_image_count"] = len(prepared_paths)
 
-    # Basariyla indirilen gorsellerin orijinal public URL'lerini kaydet
-    # Bu URL'ler Threads paylasiminda kullanilir (upload gerektirmez)
     original_urls: list[str] = []
     if accepted:
         accepted_sorted_for_urls = sorted(accepted, key=lambda x: x.get("score", 0.0), reverse=True)
