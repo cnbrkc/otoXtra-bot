@@ -654,42 +654,55 @@ def run() -> bool:
                     mode = threads_cfg.get("mode", "text_only")
                     threads_post_id = None
 
+                    # Article'daki orijinal URL'leri kontrol et
+                    has_original_urls = bool(article.get("original_image_urls")) or bool(article.get("image_url", "").startswith("http"))
+
                     if image_paths and mode == "text_image_carousel" and len(image_paths) >= 2:
                         # ---- CAROUSEL MODU (2+ gorsel) ----
                         log(f"Threads: Carousel paylasim deneniyor ({len(image_paths)} gorsel)...")
-                        threads_post_id = threads_platform.post_carousel(post_text_content, image_paths)
+                        threads_post_id = threads_platform.post_carousel(
+                            post_text_content, image_paths, article=article
+                        )
                         if threads_post_id:
                             log(f"Threads carousel paylasim basarili: {threads_post_id}")
                         else:
                             log("Threads carousel basarisiz, tek gorsele fallback", "WARNING")
-                            threads_post_id = threads_platform.post_local_image(post_text_content, image_paths[0])
+                            threads_post_id = threads_platform.post_with_image(
+                                post_text_content, image_paths[0], article=article
+                            )
                             if threads_post_id:
                                 log(f"Threads tek gorsel fallback basarili: {threads_post_id}")
                             else:
-                                log("Threads tek gorsel fallback de basarisiz, metne fallback", "WARNING")
+                                log("Threads tek gorsel fallback basarisiz, metne fallback", "WARNING")
                                 threads_post_id = threads_platform.post_text(post_text_content)
                                 if threads_post_id:
                                     log(f"Threads metin fallback basarili: {threads_post_id}")
                                 else:
-                                    log("Threads metin fallback de basarisiz", "WARNING")
+                                    log("Threads metin fallback basarisiz", "WARNING")
 
-                    elif image_paths and mode in ("text_and_image", "text_image_carousel"):
-                        # ---- TEK GORSELI PAYLASIM ----
-                        log("Threads: Gorselli paylasim deneniyor (post_local_image)...")
-                        threads_post_id = threads_platform.post_local_image(post_text_content, image_paths[0])
+                    elif (image_paths or has_original_urls) and mode in ("text_and_image", "text_image_carousel"):
+                        # ---- TEK GORSELI PAYLASIM (FALLBACK ZINCIRI) ----
+                        local_img = image_paths[0] if image_paths else ""
+                        if local_img:
+                            log("Threads: Gorselli paylasim deneniyor (yerel dosya + orijinal URL fallback zinciri)...")
+                        else:
+                            log("Threads: Yerel gorsel yok, article orijinal URL'ler deneniyor...")
+                        threads_post_id = threads_platform.post_with_image(
+                            post_text_content, local_img, article=article
+                        )
                         if threads_post_id:
                             log(f"Threads gorselli paylasim basarili: {threads_post_id}")
                         else:
-                            log("Threads gorselli paylasimi basarisiz, metine fallback", "WARNING")
+                            log("Threads tum yontemler basarisiz, metine fallback", "WARNING")
                             threads_post_id = threads_platform.post_text(post_text_content)
                             if threads_post_id:
                                 log(f"Threads metin fallback basarili: {threads_post_id}")
                             else:
-                                log("Threads metin fallback de basarisiz", "WARNING")
+                                log("Threads metin fallback basarisiz", "WARNING")
 
                     else:
                         # ---- SADECE METIN ----
-                        log(f"Threads: Metin paylasimi yapiliyor (mode={mode}, images={len(image_paths)})")
+                        log(f"Threads: Metin paylasimi yapiliyor (mode={mode}, images={len(image_paths)}, originals={has_original_urls})")
                         threads_post_id = threads_platform.post_text(post_text_content)
                         if threads_post_id:
                             log(f"Threads metin paylasimi basarili: {threads_post_id}")
