@@ -1,15 +1,8 @@
-# otoXtra BOT - ANA SEMA v3.2
+# otoXtra BOT - ANA SEMA v3.3
 
 > BU DOSYA NEDIR?
 > Projenin tam haritasi. Her yeni sohbette YZ'ye SADECE BU DOSYAYI yapistir.
 > YZ bunu okuyunca projeyi tanir, senden neye ihtiyaci oldugunu soyler.
->
-> NE ZAMAN KULLANIRSIN?
-> - Yeni ozellik eklemek istediginde
-> - Bir sey bozuldugunda
-> - "Hangi dosyayi degistireyim?" dediginde
->
-> ONEMLI: Bu dosyayi her buyuk degisiklikten sonra guncelle.
 
 ---
 
@@ -21,22 +14,21 @@ Mimari         : Moduler Ajan Sistemi v3.x
 Son Guncelleme : 2026-04-15
 Aktif Branch   : main
 Bot Durumu     : Calisiyor
-DOSYA YAPISI (Tam ve Guncel)
-txt
+```
 
+## DOSYA YAPISI (Tam ve Guncel)
+
+```txt
 otoXtra-bot/
-│
 ├── SCHEMA.md
 ├── README.md
 ├── requirements.txt
-│
 ├── config/
 │   ├── sources.json
 │   ├── settings.json
 │   ├── keywords.json
 │   ├── scoring.json
 │   └── prompts.json
-│
 ├── core/
 │   ├── orchestrator.py
 │   ├── ai_client.py
@@ -44,206 +36,130 @@ otoXtra-bot/
 │   ├── logger.py
 │   ├── helpers.py
 │   └── state_manager.py
-│
 ├── agents/
 │   ├── agent_fetcher.py
 │   ├── agent_scorer.py
 │   ├── agent_writer.py
 │   ├── agent_image.py
-│   └── agent_publisher.py
-│
+│   └── agent_publisher.py     <-- v4.8 (Threads Gorsel Fallback)
 ├── platforms/
 │   ├── facebook.py
-│   ├── threads.py        <-- YENI
+│   ├── threads.py              <-- v5.0 (Coklu Gorsel Fallback)
 │   └── telegram.py
-│
 ├── queue/
 │   └── pipeline.json
-│
 ├── data/
 │   └── posted_news.json
-│
 ├── assets/
 │   └── logo.png
-│
 └── .github/workflows/
-    └── bot.yml
-VERI AKISI
-txt
+    └── bot.yml                 <-- IMGBB_API_KEY eklendi
+```
 
-bot.yml tetikler
-  -> core/orchestrator.py baslar
-    -> [1] agents/agent_fetcher.py
-    -> [2] agents/agent_scorer.py
-    -> [3] agents/agent_writer.py
-    -> [4] agents/agent_image.py
-    -> [5] agents/agent_publisher.py
-       -> Facebook paylasimi (mevcut)
-       -> Threads paylasimi (yeni, metin)
-DOSYA DETAYLARI
-config/ ayarlari
-config/sources.json
-Haber kaynaklarinin RSS adreslerini icerir.
+## THREADS GORSEL FALLBACK ZINCIRI
 
-config/settings.json
-Botun genel davranisini kontrol eder.
-Bolumler:
+```
+post_with_image(message, image_path, article)
+  │
+  ├─ ADIM 1: Orijinal URL (article'dan) ← EN HIZLI, upload gerektirmez!
+  │   └─ article.image_candidates, image_url, rss_image_url
+  │   └─ Basarili → BITIR ✅
+  │   └─ Basarisiz → ADIM 2
+  │
+  ├─ ADIM 2: Catbox.moe upload ← Ucretsiz, API key YOK
+  │   └─ Basarili → BITIR ✅
+  │   └─ Basarisiz → ADIM 3
+  │
+  ├─ ADIM 3: 0x0.st upload ← Ucretsiz, API key YOK
+  │   └─ Basarili → BITIR ✅
+  │   └─ Basarisiz → ADIM 4
+  │
+  ├─ ADIM 4: Telegraph upload ← Ucretsiz, API key YOK
+  │   └─ Basarili → BITIR ✅
+  │   └─ Basarisiz → ADIM 5
+  │
+  ├─ ADIM 5: ImgBB upload ← Ucretsiz, IMGBB_API_KEY opsiyonel
+  │   └─ Basarili → BITIR ✅
+  │   └─ Basarisiz → ADIM 6
+  │
+  └─ ADIM 6: Metin-only fallback ← SON CARE
+      └─ post_text(message)
+```
 
-posting
-images
-news
-ai
-threads (yeni)
+## DOSYA DETAYLARI
 
-Not:
+### platforms/threads.py (v5.0)
 
-news.max_article_age_hours aktif kullanilir.
-news.max_articles_per_source aktif kullanilir (agent_fetcher tarafinda uygulanir).
-config/keywords.json
-Include/exclude kelime filtresi.
-
-config/scoring.json
-Yayin esikleri:
-
-publish_score
-slow_day_score
-config/prompts.json
-YZ komutlari:
-
-viral_scorer
-post_writer
-core/ ortak araclar
-core/orchestrator.py
-Ajanlari sirayla calistirir, pipeline akis kontrolunu yapar.
-
-core/ai_client.py
-YZ cagrilarinin tek merkezi katmani.
-Provider fallback sirasi:
-
-Gemini
-Groq
-OpenRouter
-HuggingFace
-Ek ozellikler:
-
-Retry/backoff
-Provider bazli hata loglama
-JSON parse fallback yardimi
-core/config_loader.py
-Config dosyalarini okur/yazar.
-Threads ayarlari eklendi.
-
-core/logger.py
-Zaman damgali log yazar.
-
-core/helpers.py
-Temel yardimci fonksiyonlar:
-
-clean_html
-get_turkey_now
-is_similar_title
-generate_topic_fingerprint
-is_topic_already_posted
-is_already_posted (URL + baslik + konu benzerligi)
-get_posted_news
-save_posted_news (30 gunluk temizlik)
-get_last_check_time (None/bozuk/eski/gelecek durumlarina korumali)
-save_last_check_time
-get_today_post_count
-core/state_manager.py
-queue/pipeline.json yonetimi:
-
-init_pipeline
-get_stage
-set_stage
-get_status
-is_stage_done
-agents/ bagimsiz ajanlar
-agents/agent_fetcher.py
-RSS ceker, filtreler, tekrar/duplikasyon temizler, trend sinyali ekler.
-Onemli:
-
-max_articles_per_source uygulanir.
-last_check_time korumali sekilde kullanilir.
-agents/agent_scorer.py
-Haberleri YZ ile puanlar, threshold ustu en iyi adayi secer.
-YZ parse sonucu dict/list farkina karsi korumali calisir.
-
-agents/agent_writer.py
-Secilen haberden Facebook metni uretir.
-Onemli:
-
-AI cagrilari core.ai_client.py uzerinden yapilir.
-Kalite kontrol + AI ile tamir + fallback metin akisi vardir.
-Top-level init_pipeline importu yoktur (sadece test blogunda lokal import).
-agents/agent_image.py
-Gorsel toplar/uretir, yeniden boyutlar, watermark uygular.
-
-agents/agent_publisher.py
-Facebook paylasimini yapar.
-Threads metin paylasimini da tetikler (threads.enabled).
-Onemli:
-
-DRY_RUN / RANDOM_DELAY / RANDOM_SKIP env kontrolleri.
-PERSIST_STATE=false ise posted kaydi yazmaz.
-Top-level init_pipeline importu yoktur (sadece test blogunda lokal import).
-platforms/
-platforms/facebook.py
-Sadece Facebook Graph API cagrilarini yapar.
 Fonksiyonlar:
+- `post_text(message)` - Metin paylasimi (500 kar. otomatik kesme)
+- `post_image(message, image_url)` - Public URL ile gorsel (dusuk seviye)
+- `post_with_image(message, image_path, article)` - ANA FONKSIYON, tam fallback zinciri
+- `post_carousel(message, image_paths, article)` - Coklu gorsel (2-10)
 
-post_photo(image_path, message)
-post_text(message)
-post_photos(image_paths, message)
-API: Graph API v25.0
+Upload servisleri (hepsi ucretsiz):
+- `_upload_catbox(image_path)` - Catbox.moe (key yok, 200MB limit)
+- `_upload_0x0(image_path)` - 0x0.st (key yok, 512MB limit)
+- `_upload_telegraph(image_path)` - Telegraph (key yok, 5MB limit)
+- `_upload_imgbb(image_path)` - ImgBB (IMGBB_API_KEY opsiyonel, 32MB limit)
 
-platforms/threads.py (YENI)
-Threads metin paylasimi yapar.
-Fonksiyonlar:
+Yardimci fonksiyonlar:
+- `_extract_original_urls(article)` - Article'dan public URL cikarir
+- `_resolve_public_url(image_path, article, index)` - Tek gorsel icin URL cozumler
+- `_truncate_for_threads(text)` - 500 karakter limiti
 
-post_text(message)
-API: Graph API v25.0 (Threads API)
+### agents/agent_publisher.py (v4.8)
 
-data/
-data/posted_news.json
-Paylasilan haber gecmisi.
-Minimum guvenli format:
+Threads bolumu degisiklikleri:
+- `post_image(text, local_path)` → `post_with_image(text, local_path, article=article)`
+- `article` dict artik Threads'a gecirilir (orijinal URL'ler icin)
+- Carousel modu: `post_carousel(text, image_paths, article=article)`
+- 3 mod: text_only | text_and_image | text_image_carousel
 
-JSON
+### config/settings.json - threads bolumu
 
-{"posts": [], "daily_counts": {}, "last_check_time": null}
-queue/
-queue/pipeline.json
-Ajanlar arasi veri tasima dosyasi.
-Elle duzenlenmez.
+```json
+"threads": {
+    "enabled": true,
+    "mode": "text_and_image"
+}
+```
 
-.github/workflows/bot.yml
-Tetiklenme:
+mode degerleri:
+- `text_only` - Sadece metin
+- `text_and_image` - Metin + tek gorsel (fallback zinciri)
+- `text_image_carousel` - Metin + coklu gorsel (2-10)
 
-Gun icinde coklu saatlerde cron
-TR saatleri:
+### .github/workflows/bot.yml
 
-08:00, 09:00, 10:00, 11:00, 13:00, 15:00, 17:00, 19:00, 20:00, 21:00, 22:00
-Not:
+Eklendi: `IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}` (opsiyonel)
 
-workflow_dispatch icin dry_run default degeri false.
-API KEYS (GitHub Secrets)
-txt
+## API KEYS (GitHub Secrets)
 
-FB_PAGE_ID
-FB_ACCESS_TOKEN
-GEMINI_API_KEY
-GROQ_API_KEY
-OPENROUTER_API_KEY
-HF_API_KEY
-THREADS_USER_ID          <-- YENI
-Kural:
+```txt
+FB_PAGE_ID               # Zorunlu
+FB_ACCESS_TOKEN           # Zorunlu
+GEMINI_API_KEY            # Zorunlu
+GROQ_API_KEY              # Zorunlu
+OPENROUTER_API_KEY        # Zorunlu
+HF_API_KEY                # Zorunlu
+THREADS_USER_ID           # Zorunlu
+THREADS_ACCESS_TOKEN      # Zorunlu
+IMGBB_API_KEY             # OPSIYONEL (sadece ImgBB fallback icin)
+TELEGRAM_BOT_TOKEN        # Zorunlu
+TELEGRAM_CHAT_ID          # Zorunlu
+```
 
-Asla kod icine yazilmaz.
-Sadece GitHub Secrets'ta tutulur.
-GUNCEL OZELLIKLER
-txt
+### IMGBB_API_KEY Nasil Alinir? (Opsiyonel - diger servisler key gerektirmez)
 
+1. https://api.imgbb.com/ → ucretsiz kaydol
+2. API key al
+3. GitHub Secrets'a ekle: IMGBB_API_KEY
+
+NOT: ImgBB olmadan da bot calisir! Catbox, 0x0.st ve Telegraph key gerektirmez.
+
+## GUNCEL OZELLIKLER
+
+```txt
 RSS haber cekme                 : Var
 Keyword filtresi                : Var
 Zaman filtresi                  : Var
@@ -260,16 +176,30 @@ Gunluk limit                    : Var
 Sakin gun modu                  : Var
 Rastgele bekleme/skip           : Var
 Gecmis temizlik                 : Var (30 gun)
-Threads paylasimi (metin)       : Var (yeni)
+Threads metin paylasimi         : Var
+Threads gorsel paylasimi        : Var (FALLBACK ZINCIRI!)
+  - Orijinal URL deneme         : Var (article'dan)
+  - Catbox.moe upload           : Var (ucretsiz, key yok)
+  - 0x0.st upload               : Var (ucretsiz, key yok)
+  - Telegraph upload            : Var (ucretsiz, key yok)
+  - ImgBB upload                : Var (opsiyonel key)
+  - Metin fallback              : Var
+Threads carousel paylasimi      : Var (2-10 gorsel)
+Threads metin 500 kar. limiti   : Var (otomatik kesme)
 Instagram paylasimi             : Yok
 Twitter/X paylasimi             : Yok
-ALTIN KURALLAR
-txt
+```
 
+## ALTIN KURALLAR
+
+```txt
 Config degisikligi  -> JSON dosyasinda yap
 Kod degisikligi     -> YZ'den tam dosya al, komple degistir
 pipeline.json       -> Elle dokunma
 posted_news.json    -> Elle dokunma
 API key             -> Asla koda yazma
-Versiyon: 3.2
-Bu dosya degistiginde versiyon ve tarihi guncelle.
+Upload servisleri   -> Catbox/0x0/Telegraph key gerektirmez
+ImgBB               -> Opsiyonel, sadece ekstra fallback
+```
+
+Versiyon: 3.3
