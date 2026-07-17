@@ -871,6 +871,69 @@ def _adaptive_perceptual_threshold(
     return base_threshold
 
 
+def _ai_search_image_url(article: dict) -> str:
+    """
+    AI (Gemini) kullanarak haber basligindan uygun bir gorsel URL'si bulur.
+    Sadece diger tum yontemler basarisiz oldugunda cagrilir (son care).
+    
+    Returns:
+        Public gorsel URL'si, bulunamazsa bos string
+    """
+    try:
+        from core.ai_client import ask_ai
+    except ImportError:
+        log("AI gorsel arama: ai_client import edilemedi", "WARNING")
+        return ""
+
+    title = (article.get("title", "") or "").strip()
+    if not title:
+        log("AI gorsel arama: Baslik bos, atlanıyor", "WARNING")
+        return ""
+
+    prompt = (
+        f"Find a publicly accessible image URL for this news headline. "
+        f"Return ONLY the direct image URL (ending in .jpg, .jpeg, or .png), nothing else. "
+        f"If you cannot find a suitable image, return the word NONE.\n\n"
+        f"Headline: {title}"
+    )
+
+    try:
+        log(f"AI gorsel arama baslatiliyor: {title[:60]}...")
+        response = ask_ai(prompt, stage="image_search")
+        if not response or not isinstance(response, str):
+            log("AI gorsel arama: Bos/gecersiz yanit", "WARNING")
+            return ""
+
+        response = response.strip()
+
+        if response.upper() == "NONE" or not response:
+            log("AI gorsel arama: AI gorsel bulamadi", "INFO")
+            return ""
+
+        # URL formatini kontrol et
+        if response.startswith("http") and any(
+            ext in response.lower() for ext in (".jpg", ".jpeg", ".png", ".webp")
+        ):
+            log(f"AI gorsel arama: URL bulundu! {response[:80]}...")
+            return response
+
+        # AI bazen markdown formatinda veya ek metinle donuyor, URL'yi cikar
+        import re
+        _url_pattern = re.compile(r'https?://[^\\s"\'<>]+\\.(?:jpg|jpeg|png|webp)', re.IGNORECASE)
+        url_match = _url_pattern.search(response)
+        if url_match:
+            found_url = url_match.group(0)
+            log(f"AI gorsel arama: URL cikarildi! {found_url[:80]}...")
+            return found_url
+
+        log(f"AI gorsel arama: Yanit gecersiz format: {response[:100]}", "WARNING")
+        return ""
+
+    except Exception as exc:
+        log(f"AI gorsel arama hata: {exc}", "WARNING")
+        return ""
+
+
 def _create_fallback_image(width: int, height: int) -> str:
     project_root = get_project_root()
     logo_candidates = [
@@ -1497,6 +1560,33 @@ def prepare_images(article: dict) -> list[str]:
             path = item.get("path", "")
             if path and os.path.exists(path):
                 _safe_unlink(path)
+
+    if not prepared_paths:
+        # SON CARE: AI ile gorsel URL'si arama
+        ai_url = _ai_search_image_url(article)
+        if ai_url:
+            log(f"AI gorsel arama: URL bulundu, deneniyor: {ai_url[:80]}...")
+            downloaded, reason = _download_image_with_reason(ai_url, limits)
+            if downloaded:
+                try:
+                    processed = downloaded
+                    needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+                    if needs_resize:
+                        log(f"AI gorsel resize: {resize_reason}")
+                        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                    else:
+                        log(f"AI gorsel resize atlandi: {resize_reason}")
+                    if should_add_logo:
+                        processed = add_logo(processed)
+                    prepared_paths.append(processed)
+                    used_sources.append("ai_search")
+                    article["image_source"] = "ai_search"
+                    log(f"AI gorsel basarili! Gorsel hazirlandi.")
+                except Exception as exc:
+                    log(f"AI gorsel isleme hatasi: {exc}", "WARNING")
+                    _safe_unlink(downloaded)
+            else:
+                log(f"AI gorsel indirilemedi: {reason}", "WARNING")
 
     if not prepared_paths:
         fallback = _create_fallback_image(feed_image_width, feed_image_height)
