@@ -171,6 +171,65 @@ def _is_nitter_url(url: str) -> bool:
     return "nitter." in host or host.startswith("nitter")
 
 
+def _nitter_to_twitter_url(nitter_url: str) -> str:
+    """
+    Nitter tweet URL'sini orijinal Twitter/x.com URL'sine cevirir.
+    """
+    if not nitter_url:
+        return ""
+    parsed = urlparse(nitter_url)
+    path = parsed.path or ""
+    m = re.search(r"(/[^/]+/status/\d+)", path)
+    if m:
+        return f"https://x.com{m.group(1)}"
+    return ""
+
+
+def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
+    """
+    x.com tweet sayfasindan og:image meta tagini ceker.
+    Twitter/X sayfalari pbs.twimg.com URL'leri icerir.
+    """
+    if not tweet_url:
+        return []
+    results: list[dict] = []
+    seen: set[str] = set()
+    try:
+        response = requests.get(
+            tweet_url,
+            headers={"User-Agent": _USER_AGENT},
+            timeout=_REQUEST_TIMEOUT,
+        )
+        response.raise_for_status()
+        response.encoding = response.apparent_encoding or "utf-8"
+        soup = BeautifulSoup(response.text, "html.parser")
+
+        for tag in soup.select('meta[property="og:image"]'):
+            img_url = tag.get("content", "")
+            if img_url and "pbs.twimg.com" in img_url:
+                parsed = urlparse(img_url)
+                if "name=" not in parsed.query:
+                    img_url = f"{img_url}&name=orig" if "?" in img_url else f"{img_url}?name=orig"
+                if img_url not in seen:
+                    seen.add(img_url)
+                    results.append({"url": img_url, "source_type": "nitter_still"})
+
+        for tag in soup.select('meta[name="twitter:image"]'):
+            img_url = tag.get("content", "")
+            if img_url and "pbs.twimg.com" in img_url:
+                parsed = urlparse(img_url)
+                if "name=" not in parsed.query:
+                    img_url = f"{img_url}&name=orig" if "?" in img_url else f"{img_url}?name=orig"
+                if img_url not in seen:
+                    seen.add(img_url)
+                    results.append({"url": img_url, "source_type": "nitter_card"})
+
+    except Exception as exc:
+        log(f"Twitter og:image cekme hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+    return results
+
+
+
 def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
     """
     Nitter /pic/orig/media%2FABCdef.jpg  ->
@@ -274,6 +333,17 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
                 _add(resolved, "nitter_card")
 
     log(f"Nitter sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
+
+    # v6.0: Nitter bos donerse orijinal Twitter URL'sine fallback yap
+    if not results:
+        twitter_url = _nitter_to_twitter_url(tweet_url)
+        if twitter_url:
+            log(f"Nitter sayfa bos, Twitter fallback deneniyor: {twitter_url[:80]}")
+            twitter_images = _extract_twitter_og_image(twitter_url)
+            if twitter_images:
+                log(f"Twitter fallback'tan {len(twitter_images)} gorsel bulundu")
+                results.extend(twitter_images)
+
     return results
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1152,7 +1222,7 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
     if not url:
         return []
 
-    # v5.2: Nitter URL'si ise ozel fonksiyon
+    # v6.0: Nitter URL'si ise ozel fonksiyon + Twitter fallback
     if _is_nitter_url(url):
         nitter_results = _extract_nitter_images_from_page(url)
         pool: list[dict] = []
@@ -1169,6 +1239,36 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
                         "priority": _SOURCE_PRIORITY.get(stype, 0),
                     },
                 )
+
+        # v6.0: Nitter'dan gorsel gelmezse direkt Twitter/x.com sayfasini dene
+        if not pool:
+            twitter_url = _nitter_to_twitter_url(url)
+            if twitter_url:
+                log(f"Nitter scrape bosa dustu, Twitter article scrape deneniyor: {twitter_url[:80]}")
+                # Twitter URL'sini normal site gibi scrape et
+                try:
+                    response = requests.get(
+                        twitter_url,
+                        headers={"User-Agent": _USER_AGENT},
+                        timeout=_REQUEST_TIMEOUT,
+                    )
+                    response.raise_for_status()
+                    soup = BeautifulSoup(response.text, "html.parser")
+
+                    meta_selectors = [
+                        ('meta[property="og:image"]', "content", "meta_og"),
+                        ('meta[property="og:image:url"]', "content", "meta_og"),
+                        ('meta[name="twitter:image"]', "content", "meta_twitter"),
+                        ('meta[name="twitter:image:src"]', "content", "meta_twitter"),
+                    ]
+                    for selector, attr, source_type in meta_selectors:
+                        for tag in soup.select(selector):
+                            _add_scrape_candidate(pool, tag.get(attr, ""), twitter_url, source_type)
+
+                    log(f"Twitter scrape'tan {len(pool)} gorsel adayi bulundu")
+                except Exception as exc:
+                    log(f"Twitter article scrape hatasi: {exc}", "WARNING")
+
         return pool
 
     try:
@@ -1296,9 +1396,11 @@ def prepare_images(article: dict) -> list[str]:
     article_title = article.get("title", "")[:120]
     article_link = article.get("link", "")
 
-    # v5.2: Nitter kaynagi ise scrape her zaman aktif
+    # v6.0: Secilen haber icin scrape HER ZAMAN aktif
+    # Eger RSS'ten gorsel gelmemisse, sayfa scrape zorunludur.
+    has_rss_image = bool(article.get("image_url", "") or article.get("rss_image_url", "") or article.get("image_candidates", []))
     is_nitter_article = _is_nitter_url(article_link)
-    effective_scrape = enable_selected_article_scrape or is_nitter_article
+    effective_scrape = True  # v6.0: Her zaman aktif - gorselsiz haber paylasilmasin
 
     log("-" * 40)
     log(f"Gorsel hazirlama basladi: {article_title}")
@@ -1589,9 +1691,15 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
 
     if not prepared_paths:
-        fallback = _create_fallback_image(feed_image_width, feed_image_height)
-        prepared_paths = [fallback]
-        used_sources = ["fallback"]
+        # v6.0: Logo fallback KALDIRILDI. Gorsel yoksa haber paylasilmaz.
+        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + AI hepsi bosa). Haber SKIP edilecek.", "WARNING")
+        article["image_source"] = "no_image"
+        article["image_sources"] = ["no_image"]
+        article["prepared_image_count"] = 0
+        article["original_image_urls"] = []
+        log(f"Gorsel hazirlama bitti. Adet=0 kaynak=no_image (SKIP)")
+        log("-" * 40)
+        return []  # Bos liste - publisher bu haberi atlayacak
 
     article["image_source"] = used_sources[0] if used_sources else "unknown"
     article["image_sources"] = used_sources
