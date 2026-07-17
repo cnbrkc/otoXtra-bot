@@ -1507,6 +1507,19 @@ def prepare_images(article: dict) -> list[str]:
     article["image_sources"] = used_sources
     article["prepared_image_count"] = len(prepared_paths)
 
+    # Basariyla indirilen gorsellerin orijinal public URL'lerini kaydet
+    # Bu URL'ler Threads paylasiminda kullanilir (upload gerektirmez)
+    original_urls: list[str] = []
+    if accepted:
+        accepted_sorted_for_urls = sorted(accepted, key=lambda x: x.get("score", 0.0), reverse=True)
+        for item in accepted_sorted_for_urls[:max_images_per_news]:
+            url = item.get("url", "")
+            if url and url.startswith("http"):
+                original_urls.append(url)
+    article["original_image_urls"] = original_urls
+    if original_urls:
+        log(f"Orijinal URL'ler kaydedildi: {len(original_urls)} adet")
+
     if fail_reasons:
         fail_summary = ", ".join([f"{k}={v}" for k, v in fail_reasons.items()])
         log(f"Gorsel deneme ozeti: tried={tried_count}, success={len(prepared_paths)}, fails=({fail_summary})")
