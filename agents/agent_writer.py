@@ -1,24 +1,18 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.1 ULTRA FIXED)
+agents/agent_writer.py - Icerik yazma ajani (v5.2 - 500 Char Limit Fixed)
+
+v5.2 FIXED:
+  - CRITICAL FIX: Facebook ve Threads uyumu icin maksimum karakter limiti 480'e dustu.
+  - Threads'de kelime ortasinda kesilmeyi onlemek icin YZ promptu ve kalite kontrolu guncellendi.
+  - Fallback post ozetleri otomatik olarak 330 karaktere kirpilarak toplam 480 limiti garanti edildi.
 
 v5.1 ULTRA FIXED:
   - CRITICAL FIX: English text detection added (_detect_english_injection)
   - CRITICAL FIX: Prompt instruction filtering (wait, let's, format, etc.)
   - CRITICAL FIX: Turkish/English ratio validation (>20% English = reject)
-  - Enhanced quality check with detailed failure logging
 
 v5.0 ULTRA:
   - Stage-aware AI calls: ask_ai(..., stage="writing")
-  - Detayli error logging (kalite kontrol, repair, fallback)
-  - Provider cascade tracking
-  - Quality check failure reasons logged
-
-v4.0:
-  - AI ile post yazma
-  - Kalite kontrolu
-  - Yabanci alfabe temizleme
-  - Onarim mekanizmasi
-  - Fallback post
 """
 
 import re
@@ -81,7 +75,6 @@ _HALLUCINATION_BAITS = [
     "detaylar su sekilde",
 ]
 
-# CRITICAL FIX: English prompt instruction keywords
 _ENGLISH_PROMPT_INSTRUCTIONS = [
     "wait",
     "let's",
@@ -100,7 +93,6 @@ _ENGLISH_PROMPT_INSTRUCTIONS = [
     "write it",
 ]
 
-# CRITICAL FIX: Common English words for ratio detection
 _COMMON_ENGLISH_WORDS = {
     "the", "and", "for", "are", "but", "not", "you", "all", "can", "her", "was", "one",
     "our", "out", "day", "get", "has", "him", "his", "how", "man", "new", "now", "old",
@@ -136,26 +128,17 @@ def _contains_forbidden_script(text: str) -> bool:
 
 
 def _detect_english_injection(post_text: str) -> tuple[bool, str]:
-    """
-    CRITICAL FIX v5.1: Detect English prompt instructions and excessive English text.
-    
-    Returns:
-        (is_valid, reason) - (False, reason) if English detected, (True, "") if clean
-    """
     if not post_text:
         return True, ""
     
     lower_text = post_text.lower()
     
-    # Check 1: Prompt instruction keywords (exact phrase match)
     for instruction in _ENGLISH_PROMPT_INSTRUCTIONS:
-        # Look for instruction as whole word (not part of Turkish word)
         pattern = r'\b' + re.escape(instruction) + r'\b'
         if re.search(pattern, lower_text):
             log(f"[WRITER] ENGLISH INJECTION: Found prompt instruction '{instruction}'", "WARNING")
             return False, f"english_prompt_instruction:{instruction}"
     
-    # Check 2: English word ratio (count common English words)
     words = re.findall(r'\b[a-z]+\b', lower_text)
     if not words:
         return True, ""
@@ -164,7 +147,6 @@ def _detect_english_injection(post_text: str) -> tuple[bool, str]:
     total_words = len(words)
     english_ratio = english_word_count / total_words if total_words > 0 else 0
     
-    # If more than 20% English words, reject
     if english_ratio > 0.20:
         log(
             f"[WRITER] ENGLISH INJECTION: {english_word_count}/{total_words} words "
@@ -173,7 +155,6 @@ def _detect_english_injection(post_text: str) -> tuple[bool, str]:
         )
         return False, f"english_ratio_high:{english_ratio*100:.0f}%"
     
-    # Check 3: Parenthetical meta-commentary (e.g., "(Wait, let's format...)")
     if re.search(r'\([^)]*\b(wait|let|format|rewrite|paragraph)\b[^)]*\)', lower_text, re.IGNORECASE):
         log("[WRITER] ENGLISH INJECTION: Found meta-commentary in parentheses", "WARNING")
         return False, "english_meta_commentary"
@@ -182,9 +163,6 @@ def _detect_english_injection(post_text: str) -> tuple[bool, str]:
 
 
 def _quality_check(post_text: str) -> tuple[bool, str]:
-    """
-    v5.1 ULTRA FIXED: Enhanced quality check with English detection
-    """
     if not post_text:
         log("[WRITER] Quality check FAIL: bos_metin", "WARNING")
         return False, "bos_metin"
@@ -193,9 +171,10 @@ def _quality_check(post_text: str) -> tuple[bool, str]:
         log(f"[WRITER] Quality check FAIL: cok_kisa (len={len(post_text)})", "WARNING")
         return False, "cok_kisa"
     
-    if len(post_text) > 1800:
-        log(f"[WRITER] Quality check FAIL: cok_uzun (len={len(post_text)})", "WARNING")
-        return False, "cok_uzun"
+    # v5.2: 480 Karakter limiti (Threads uyumu)
+    if len(post_text) > 480:
+        log(f"[WRITER] Quality check FAIL: cok_uzun_480_limit (len={len(post_text)})", "WARNING")
+        return False, "cok_uzun_480_limit"
 
     line_count = len([ln for ln in post_text.split("\n") if ln.strip()])
     
@@ -211,7 +190,6 @@ def _quality_check(post_text: str) -> tuple[bool, str]:
         log("[WRITER] Quality check FAIL: yabanci_alfabe", "WARNING")
         return False, "yabanci_alfabe"
 
-    # CRITICAL FIX: English injection check
     is_turkish_only, english_reason = _detect_english_injection(post_text)
     if not is_turkish_only:
         log(f"[WRITER] Quality check FAIL: {english_reason}", "WARNING")
@@ -234,14 +212,14 @@ def _quality_check(post_text: str) -> tuple[bool, str]:
 
 
 def _fallback_post(article: dict) -> str:
-    """
-    v5.0 ULTRA: Fallback post with logging
-    """
     title = (article.get("title", "") or "").strip()
     summary = (article.get("summary", "") or "").strip()
 
     safe_title = title.upper()[:90] if title else "OTOMOTIVDE YENI GELISME"
-    body = summary[:420].strip() if summary else (
+    
+    # v5.2: Özet kısmını 480 karakter limitini aşmaması için 330'a kırptık.
+    # 90 (başlık) + 50 (sabit cümle) + boşluklar = ~150 karakter. 330+150 = 480.
+    body = summary[:330].strip() if summary else (
         "Guncel gelismeyi sade sekilde aktardik. Net bilgiler geldikce paylasacagiz."
     )
 
@@ -251,14 +229,15 @@ def _fallback_post(article: dict) -> str:
         "Siz bu gelisme hakkinda ne dusunuyorsunuz?"
     ).strip()
     
+    # Eğer hala 480'i aşarsa zorla kes
+    if len(fallback) > 480:
+        fallback = fallback[:477].rstrip() + "..."
+        
     log(f"[WRITER] Using FALLBACK post (len={len(fallback)})", "INFO")
     return fallback
 
 
 def _repair_post_with_ai(post_text: str, article: dict) -> str:
-    """
-    v5.1 ULTRA FIXED: AI repair with stricter Turkish-only enforcement
-    """
     title = article.get("title", "")
     summary = article.get("summary", "")
     source = article.get("source_name", "")
@@ -267,16 +246,17 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
         "Asagidaki Facebook postunu duzelt.\n"
         "KRITIK KURALLAR:\n"
         "- MUTLAKA TAMAMEN TURKCE YAZ. Hic bir Ingilizce kelime kullanma.\n"
-        "- Parantez icinde aciklama/yorum yapma.\n"
+        "- PARANTEZ icinde aciklama/yorum yapma.\n"
         "- Meta-instruction verme ('format it like', 'rewrite as' gibi).\n"
         "- Bilgi uydurma, sadece verilen bilgileri kullan.\n"
         "- 15 satiri gecme.\n"
         "- Clickbait asiriligina kacma.\n"
         "- Son satirda dogal bir soru/cagri olsun.\n"
-        "- 'begen/paylas/takip et' gibi dogrudan CTA kullanma.\n\n"
+        "- 'begen/paylas/takip et' gibi dogrudan CTA kullanma.\n"
+        "- ONCELIKLI KURAL: Toplam karakter sayisi KESINLIKLE 480'i GECMEZ (Threads limiti 500). Gerekiyorsa ozeti kisalt.\n\n"
         f"Haber basligi: {title}\n"
         f"Kaynak: {source}\n"
-        f"Ozet: {summary[:500]}\n\n"
+        f"Ozet: {summary[:300]}\n\n"
         "Duzeltilecek metin:\n"
         f"{post_text}\n\n"
         "SADECE duzeltilmis Turkce post metnini ver. Baska hicbir sey ekleme."
@@ -302,10 +282,10 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
     input_parts = [
         f"BASLIK: {title}",
         f"KAYNAK: {source}",
-        f"OZET: {summary[:500]}",
+        f"OZET: {summary[:300]}",
     ]
     if full_text:
-        input_parts.append(f"TAM_METIN: {full_text[:1500]}")
+        input_parts.append(f"TAM_METIN: {full_text[:1000]}")
 
     return (
         f"{writer_prompt}\n\n"
@@ -315,15 +295,13 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
         "- 'Wait', 'let's', 'format', 'rewrite' gibi instruction verme.\n"
         "- Maksimum 15 satir\n"
         "- Bos satirlar dahil duzenli format\n"
+        "- EN ONEMLI KURAL: Toplam karakter sayisi KESINLIKLE 480'i GECMEZ. (Threads platform limiti 500'dur). Haberin tum onemli detayini bu 480 karakter icinde ver, gereksiz uzatma.\n"
         "- SADECE post metnini dondur, baska hicbir sey ekleme\n\n"
         + "\n".join(input_parts)
     )
 
 
 def generate_post_text(article: dict) -> str:
-    """
-    v5.1 ULTRA FIXED: Post generation with English injection prevention
-    """
     log("[WRITER] Starting post generation", "INFO")
     
     prompts_config = load_config("prompts")
@@ -352,7 +330,6 @@ def generate_post_text(article: dict) -> str:
 
     log(f"[WRITER] Initial post FAILED quality: {reason}", "WARNING")
     
-    # If English injection detected, skip repair and use fallback immediately
     if "english" in reason.lower():
         log("[WRITER] English injection detected, skipping repair, using fallback", "WARNING")
         return _fallback_post(article)
@@ -389,9 +366,6 @@ def _set_write_skipped(skip_reason: str) -> bool:
 
 
 def _try_attach_full_text(article: dict) -> None:
-    """
-    v5.0 ULTRA: Full text scraping with error logging
-    """
     article_url = article.get("link", "")
     if not article_url:
         log("[WRITER] No article URL for full text scraping", "INFO")
