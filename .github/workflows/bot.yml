@@ -116,6 +116,7 @@ jobs:
 
           THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
+          IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
 
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
