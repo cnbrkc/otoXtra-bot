@@ -1,5 +1,11 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v4.7 - Türkçe Test Modları)
+agents/agent_publisher.py - Yayinci Ajani (v4.8 - Threads Gorsel Destegi)
+
+v4.8:
+  - Threads gorsel paylasimi tam entegre! post_local_image() ile yerel dosya -> ImgBB -> Threads.
+  - Threads carousel (coklu gorsel) destegi eklendi.
+  - threads_mode = "text_only" | "text_and_image" | "text_image_carousel" desteği.
+  - Threads metin 500 karakter limiti otomatik kesme (threads.py icinde).
 
 v4.7:
   - TUM_PLATFORMLAR_TEST / SADECE_FACEBOOK_TEST / SADECE_THREADS_TEST eklendi.
@@ -638,7 +644,7 @@ def run() -> bool:
                 article, post_id, final_image_source, final_image_count, False))
             log("BASARIYLA PAYLASILDI")
 
-        # ========== THREADS PAYLASIMI ==========
+                # ========== THREADS PAYLASIMI ==========
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False):
@@ -647,20 +653,43 @@ def run() -> bool:
                 else:
                     mode = threads_cfg.get("mode", "text_only")
                     threads_post_id = None
-                    if image_paths and mode == "text_and_image":
-                        log("Threads: Gorselli paylasim deneniyor...")
-                        threads_post_id = threads_platform.post_image(post_text_content, image_paths[0])
+
+                    if image_paths and mode == "text_image_carousel" and len(image_paths) >= 2:
+                        # ---- CAROUSEL MODU (2+ gorsel) ----
+                        log(f"Threads: Carousel paylasim deneniyor ({len(image_paths)} gorsel)...")
+                        threads_post_id = threads_platform.post_carousel(post_text_content, image_paths)
+                        if threads_post_id:
+                            log(f"Threads carousel paylasim basarili: {threads_post_id}")
+                        else:
+                            log("Threads carousel basarisiz, tek gorsele fallback", "WARNING")
+                            threads_post_id = threads_platform.post_local_image(post_text_content, image_paths[0])
+                            if threads_post_id:
+                                log(f"Threads tek gorsel fallback basarili: {threads_post_id}")
+                            else:
+                                log("Threads tek gorsel fallback de basarisiz, metne fallback", "WARNING")
+                                threads_post_id = threads_platform.post_text(post_text_content)
+                                if threads_post_id:
+                                    log(f"Threads metin fallback basarili: {threads_post_id}")
+                                else:
+                                    log("Threads metin fallback de basarisiz", "WARNING")
+
+                    elif image_paths and mode in ("text_and_image", "text_image_carousel"):
+                        # ---- TEK GORSELI PAYLASIM ----
+                        log("Threads: Gorselli paylasim deneniyor (post_local_image)...")
+                        threads_post_id = threads_platform.post_local_image(post_text_content, image_paths[0])
                         if threads_post_id:
                             log(f"Threads gorselli paylasim basarili: {threads_post_id}")
                         else:
-                            log("Threads gorselli paylasim basarisiz, metine fallback", "WARNING")
+                            log("Threads gorselli paylasimi basarisiz, metine fallback", "WARNING")
                             threads_post_id = threads_platform.post_text(post_text_content)
                             if threads_post_id:
                                 log(f"Threads metin fallback basarili: {threads_post_id}")
                             else:
                                 log("Threads metin fallback de basarisiz", "WARNING")
+
                     else:
-                        log("Threads: Metin paylasimi yapiliyor")
+                        # ---- SADECE METIN ----
+                        log(f"Threads: Metin paylasimi yapiliyor (mode={mode}, images={len(image_paths)})")
                         threads_post_id = threads_platform.post_text(post_text_content)
                         if threads_post_id:
                             log(f"Threads metin paylasimi basarili: {threads_post_id}")
