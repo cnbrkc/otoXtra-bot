@@ -1,11 +1,13 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.1 - ddgs Fix + Threads Junk Blocker)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.2 - ddgs query fix)
+
+v8.2 KRITIK DUZELTME:
+  - ddgs kütüphanesinde 'keywords' parametresi 'query' olarak değiştirilmişti.
+    Bu yüzden DuckDuckGo görsel araması hata verip devreden çıkıyordu. Düzeltildi.
 
 v8.1 KRITIK DUZELTMELER:
-  - ddgs package guncellemesi (duckduckgo_search artik ddgs olarak geciyor, 403 ratelimit fix)
   - Eger gorsel bulunamazsa (no_image), article dict icindeki butun gorsel URL'leri silinir.
     Boylece Threads publisher, agent_image tarafindan elenmis "cop" URL'leri paylasamaz.
-  - Syntax fix (line 710 unclosed parenthesis)
 """
 
 import hashlib
@@ -177,8 +179,9 @@ def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -
         log(f"DDG Görsel Aranıyor: {clean_title}")
         
         with DDGS() as ddgs:
+            # v8.2 FIX: keywords yerine query kullanıldı
             results = list(ddgs.images(
-                keywords=clean_title,
+                query=clean_title,
                 max_results=max_results
             ))
             
@@ -708,7 +711,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            # V8.1 FIX: Missing closing parenthesis added here
             variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
 
     filename_cleaned_path = re.sub(
