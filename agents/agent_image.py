@@ -5,6 +5,7 @@ v8.1 KRITIK DUZELTMELER:
   - ddgs package guncellemesi (duckduckgo_search artik ddgs olarak geciyor, 403 ratelimit fix)
   - Eger gorsel bulunamazsa (no_image), article dict icindeki butun gorsel URL'leri silinir.
     Boylece Threads publisher, agent_image tarafindan elenmis "cop" URL'leri paylasamaz.
+  - Syntax fix (line 710 unclosed parenthesis)
 """
 
 import hashlib
@@ -707,7 +708,8 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs)))
+            # V8.1 FIX: Missing closing parenthesis added here
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
 
     filename_cleaned_path = re.sub(
         r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
