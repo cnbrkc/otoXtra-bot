@@ -1,25 +1,10 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.0 - DuckDuckGo Fallback)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.1 - ddgs Fix + Threads Junk Blocker)
 
-v8.0 KRITIK YENILIK:
-  - DuckDuckGo Entegrasyonu: Eger haberin kendi sitesinden veya Nitter'dan
-    gorsel bulunamazsa, haber basligi DuckDuckGo'da aranir ve internetten
-    habere uygun GERCEK bir gorsel bulunup indirilir. Böylece hiçbir haber
-    görselsiz kalmaz.
-  
-v7.0 KRITIK DUZELTMELER:
-  - CRITICAL FIX #1: Nitter tweet sayfalari bos donuyor (content-length: 0).
-    FxTwitter API entegrasyonu ile tweet gorselleri guvenilir sekilde cekiliyor.
-  - CRITICAL FIX #2: x.com fallback sadece profil fotosu donduruyordu.
-    Profil fotosu URL'leri (/profile_images/) artik filtreleniyor.
-  - CRITICAL FIX #3: _ai_search_image_url() regex kirikti.
-  - IMPORTANT FIX: JSON-LD (schema.org) gorsel cekme eklendi.
-
-v6.0:
-  - Nitter-->Twitter Fallback + Logo Kaldirildi, Text-Only Paylasim
-
-v5.2:
-  - FIX: _is_probable_image_url() Nitter /pic/ ve pbs.twimg.com URL'lerini taniyor.
+v8.1 KRITIK DUZELTMELER:
+  - ddgs package guncellemesi (duckduckgo_search artik ddgs olarak geciyor, 403 ratelimit fix)
+  - Eger gorsel bulunamazsa (no_image), article dict icindeki butun gorsel URL'leri silinir.
+    Boylece Threads publisher, agent_image tarafindan elenmis "cop" URL'leri paylasamaz.
 """
 
 import hashlib
@@ -35,8 +20,8 @@ import requests
 from PIL import Image, ImageDraw
 from bs4 import BeautifulSoup
 
-# v8.0: DuckDuckGo kütüphanesi eklendi
-from duckduckgo_search import DDGS
+# v8.1: Yeni ddgs kütüphanesi eklendi
+from ddgs import DDGS
 
 from core.config_loader import get_project_root, load_config
 from core.logger import log
@@ -722,7 +707,7 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs)))
 
     filename_cleaned_path = re.sub(
         r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
@@ -1894,7 +1879,15 @@ def prepare_images(article: dict) -> list[str]:
         article["image_source"] = "no_image"
         article["image_sources"] = ["no_image"]
         article["prepared_image_count"] = 0
+        
+        # v8.1 KRITIK FIX: Threads publisher, bu listeler boşalmazsa 
+        # agent_image tarafından elenen çöp (video thumbnail vb.) URL'leri 
+        # doğrudan alıp paylaşıyordu. Onları burada tamamen siliyoruz.
         article["original_image_urls"] = []
+        article["image_candidates"] = []
+        article["image_url"] = ""
+        article["rss_image_url"] = ""
+        
         log(f"Gorsel hazirlama bitti. Adet=0 kaynak=no_image (text-only paylasim)")
         log("-" * 40)
         return []  
