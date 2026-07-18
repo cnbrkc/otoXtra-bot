@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "title": "Porsche, Taycan'a 8 ileri sanal vites ekledi: Elektrikli sürüş deneyimi değişiyor",
-      "url": "https://www.donanimhaber.com/elektrikli-porsche-taycan-a-sanal-vites-geldi--206996",
-      "topic_fingerprint": "degisiyor-deneyimi-ekledi-elektrikli-ileri-porsche-sanal-surus-taycan-vites",
-      "source": "Donanimhaber",
-      "score": 75,
-      "trend_count": 1,
-      "posted_at": "2026-06-18T10:38:46.889946+03:00",
-      "fb_post_id": "678053852057751_122169359948916499",
-      "image_source": "multi_image",
-      "image_count": 4
-    },
-    {
       "title": "Çinli Arcfox'tan 9 bin dolarlık elektrikli otomobil: İşte yeni Beta T1",
       "url": "https://www.donanimhaber.com/450-km-menzil-lfp-batarya-ve-9-bin-dolar-fiyat-arcfox-beta-t1--206997",
       "topic_fingerprint": "arcfox-beta-bin-cinli-dolarlik-elektrikli-otomobil-ste",
@@ -1690,7 +1678,7 @@
     "2026-07-17": 7,
     "2026-07-18": 1
   },
-  "last_check_time": "2026-07-18T08:28:20.883570+03:00",
+  "last_check_time": "2026-07-18T10:51:30.806599+03:00",
   "stats": {
     "daily_actions": {
       "2026-06-18": 2,
@@ -1723,7 +1711,7 @@
       "2026-07-15": 6,
       "2026-07-16": 9,
       "2026-07-17": 7,
-      "2026-07-18": 1
+      "2026-07-18": 2
     },
     "weekly": {
       "2026-W16": {
@@ -1894,10 +1882,12 @@
         "report_sent_at": "2026-07-13T09:19:42.396113+03:00"
       },
       "2026-W29": {
-        "actions": 33,
+        "actions": 34,
         "shares": 31,
-        "error_total": 0,
-        "errors": {},
+        "error_total": 1,
+        "errors": {
+          "ORCHESTRATOR_CRITICAL: '(' was never closed (agent_image.py, line 710)": 1
+        },
         "skip_total": 2,
         "skips": {
           "no_article_found": 2
