@@ -11,6 +11,15 @@ on:
 
   workflow_dispatch:
     inputs:
+      image_test_mode:
+        description: 'GÖRSEL TEST MODU (Sadece Telegrama görsel atar, paylaşım/kayıt yapmaz)'
+        required: false
+        default: 'false'
+        type: choice
+        options:
+          - 'false'
+          - 'true'
+
       debug_score_breakdown:
         description: 'Skor dokumu logu acilsin mi?'
         required: false
@@ -118,6 +127,7 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
 
+          IMAGE_TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.image_test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
           TUM_PLATFORMLAR_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tum_platformlar_test || 'false' }}
