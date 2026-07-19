@@ -1,13 +1,9 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.2 - ddgs query fix)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.3 - Sosyal Medya Karti Entegrasyonu)
 
-v8.2 KRITIK DUZELTME:
-  - ddgs kütüphanesinde 'keywords' parametresi 'query' olarak değiştirilmişti.
-    Bu yüzden DuckDuckGo görsel araması hata verip devreden çıkıyordu. Düzeltildi.
-
-v8.1 KRITIK DUZELTMELER:
-  - Eger gorsel bulunamazsa (no_image), article dict icindeki butun gorsel URL'leri silinir.
-    Boylece Threads publisher, agent_image tarafindan elenmis "cop" URL'leri paylasamaz.
+v8.3 YENILIK:
+  - agent_image indirdigi gorseli artik düz degil, create_social_card ile 
+    "Başlık + Görsel + Özet" formatındaki şablon görsel haline getiriyor.
 """
 
 import hashlib
@@ -23,7 +19,6 @@ import requests
 from PIL import Image, ImageDraw
 from bs4 import BeautifulSoup
 
-# v8.1: Yeni ddgs kütüphanesi eklendi
 from ddgs import DDGS
 
 from core.config_loader import get_project_root, load_config
@@ -165,12 +160,7 @@ def _safe_unlink(path: str) -> None:
 # ── v8.0: DuckDuckGo Görsel Arama Yardımcısı ──────────────────────────────────────
 
 def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -> list[str]:
-    """
-    DuckDuckGo görsel araması yaparak habere uygun gerçek görsel URL'leri döndürür.
-    Sadece haberin kendi görseli bulunamazsa yedek olarak çağrılır.
-    """
     try:
-        # Başlıktaki gereksiz karakterleri temizle ve Türkçe karakterleri İngilizce'ye çevir
         clean_title = article_title.lower()
         clean_title = re.sub(r'[^\w\s]', '', clean_title)
         tr_map = str.maketrans("çğıöşü", "cgiosu")
@@ -179,7 +169,6 @@ def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -
         log(f"DDG Görsel Aranıyor: {clean_title}")
         
         with DDGS() as ddgs:
-            # v8.2 FIX: keywords yerine query kullanıldı
             results = list(ddgs.images(
                 query=clean_title,
                 max_results=max_results
@@ -189,7 +178,6 @@ def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -
             log("DuckDuckGo görsel sonuç döndürmedi.", "WARNING")
             return []
             
-        # Sadece görsel URL'lerini (image alanını) alıp döndür
         image_urls = [r.get("image") for r in results if r.get("image")]
         log(f"DuckDuckGo {len(image_urls)} adet görsel adayı buldu.")
         return image_urls
@@ -1665,6 +1653,33 @@ def prepare_images(article: dict) -> list[str]:
             if should_add_logo:
                 processed = add_logo(processed)
 
+            # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA ---
+            try:
+                from core.image_generator import create_social_card
+                
+                if processed and os.path.exists(processed):
+                    card_path = processed.replace(".jpg", "_card.jpg")
+                    
+                    # Haberin başlık ve özetini al
+                    art_title = article.get("title", "Haber Başlığı")
+                    art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                    
+                    create_social_card(
+                        title=art_title,
+                        summary=art_summary[:300], # Maksimum 300 karakter özet
+                        image_path=processed,
+                        output_path=card_path
+                    )
+                    
+                    if os.path.exists(card_path):
+                        _safe_unlink(processed) # Eski düz görseli sil
+                        processed = card_path    # Artık şablon görselimiz ana görsel
+                        log("Sosyal medya kartı başarıyla oluşturuldu ve seçildi.", "INFO")
+                        
+            except Exception as exc:
+                log(f"Kart oluşturma adımı atlandı: {exc}", "WARNING")
+            # ------------------------------------------
+
             score, score_detail = _score_image_quality(
                 width=width,
                 height=height,
@@ -1763,6 +1778,28 @@ def prepare_images(article: dict) -> list[str]:
                 if should_add_logo:
                     processed = add_logo(processed)
 
+                # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (Relaxed Pass) ---
+                try:
+                    from core.image_generator import create_social_card
+                    
+                    if processed and os.path.exists(processed):
+                        card_path = processed.replace(".jpg", "_card.jpg")
+                        art_title = article.get("title", "Haber Başlığı")
+                        art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                        create_social_card(
+                            title=art_title,
+                            summary=art_summary[:300],
+                            image_path=processed,
+                            output_path=card_path
+                        )
+                        if os.path.exists(card_path):
+                            _safe_unlink(processed)
+                            processed = card_path
+                            log("Sosyal medya kartı başarıyla oluşturuldu (relaxed).", "INFO")
+                except Exception as exc:
+                    log(f"Kart oluşturma adımı atlandı (relaxed): {exc}", "WARNING")
+                # -----------------------------------------------------------
+
                 score, score_detail = _score_image_quality(
                     width=width,
                     height=height,
@@ -1814,7 +1851,6 @@ def prepare_images(article: dict) -> list[str]:
             if path and os.path.exists(path):
                 _safe_unlink(path)
 
-    # v8.0: DUCKDUCKGO FALLBACK - Eger hala gorsel bulunamadiysa internetten arama yap
     if not prepared_paths:
         log("Haberin kendi gorseli bulunamadi. DuckDuckGo görsel araması başlatılıyor...", "INFO")
         ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""))
@@ -1839,12 +1875,33 @@ def prepare_images(article: dict) -> list[str]:
                         
                     if should_add_logo:
                         processed = add_logo(processed)
+
+                    # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (DuckDuckGo) ---
+                    try:
+                        from core.image_generator import create_social_card
+                        if processed and os.path.exists(processed):
+                            card_path = processed.replace(".jpg", "_card.jpg")
+                            art_title = article.get("title", "Haber Başlığı")
+                            art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                            create_social_card(
+                                title=art_title,
+                                summary=art_summary[:300],
+                                image_path=processed,
+                                output_path=card_path
+                            )
+                            if os.path.exists(card_path):
+                                _safe_unlink(processed)
+                                processed = card_path
+                                log("Sosyal medya kartı başarıyla oluşturuldu (DDG).", "INFO")
+                    except Exception as exc:
+                        log(f"Kart oluşturma adımı atlandı (DDG): {exc}", "WARNING")
+                    # ---------------------------------------------------------
                         
                     prepared_paths.append(processed)
                     used_sources.append("duckduckgo")
                     article["image_source"] = "duckduckgo"
                     log("DuckDuckGo gorsel basarili! Gorsel hazirlandi.")
-                    break # İlk saglam gorseli buldu, devam etmeye gerek yok
+                    break 
                 except Exception as exc:
                     log(f"DuckDuckGo gorsel isleme hatasi: {exc}", "WARNING")
                     _safe_unlink(downloaded)
@@ -1852,7 +1909,6 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"DuckDuckGo adayi elendi: {reason}", "WARNING")
 
     if not prepared_paths:
-        # SON CARE: AI ile gorsel URL'si arama
         ai_url = _ai_search_image_url(article)
         if ai_url:
             log(f"AI gorsel arama: URL bulundu, deneniyor: {ai_url[:80]}...")
@@ -1868,6 +1924,28 @@ def prepare_images(article: dict) -> list[str]:
                         log(f"AI gorsel resize atlandi: {resize_reason}")
                     if should_add_logo:
                         processed = add_logo(processed)
+
+                    # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (AI) ---
+                    try:
+                        from core.image_generator import create_social_card
+                        if processed and os.path.exists(processed):
+                            card_path = processed.replace(".jpg", "_card.jpg")
+                            art_title = article.get("title", "Haber Başlığı")
+                            art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                            create_social_card(
+                                title=art_title,
+                                summary=art_summary[:300],
+                                image_path=processed,
+                                output_path=card_path
+                            )
+                            if os.path.exists(card_path):
+                                _safe_unlink(processed)
+                                processed = card_path
+                                log("Sosyal medya kartı başarıyla oluşturuldu (AI).", "INFO")
+                    except Exception as exc:
+                        log(f"Kart oluşturma adımı atlandı (AI): {exc}", "WARNING")
+                    # ----------------------------------------------
+
                     prepared_paths.append(processed)
                     used_sources.append("ai_search")
                     article["image_source"] = "ai_search"
@@ -1884,9 +1962,6 @@ def prepare_images(article: dict) -> list[str]:
         article["image_sources"] = ["no_image"]
         article["prepared_image_count"] = 0
         
-        # v8.1 KRITIK FIX: Threads publisher, bu listeler boşalmazsa 
-        # agent_image tarafından elenen çöp (video thumbnail vb.) URL'leri 
-        # doğrudan alıp paylaşıyordu. Onları burada tamamen siliyoruz.
         article["original_image_urls"] = []
         article["image_candidates"] = []
         article["image_url"] = ""
