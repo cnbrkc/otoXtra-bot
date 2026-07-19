@@ -1,26 +1,23 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v5.0 - Logo Kaldirildi, Text-Only Paylasim)
+agents/agent_publisher.py - Yayinci Ajani (v6.0 - Test Modları Temizlendi + IMAGE_TEST_MODE)
+
+v6.0 YENİLİKLER:
+  - IMAGE_TEST_MODE EKLENDİ: Bu mod aktifken bot haberi paylaşmaz/kaydetmez.
+    Sadece sosyal medya kartı görselini üretip Telegram'dan sana fotoğraf olarak atar.
+    Böylece şablon tasarımını boşa haber harcamadan test edebilirsin.
+  - Test modları (TUM_PLATFORMLAR_TEST, SADECE_FACEBOOK_TEST, SADECE_THREADS_TEST) 
+    mantıksal hatalardan temizlendi. Artık tam olarak açıklamalarındaki işi yapıyorlar.
+  - Kod açıklamaları sadeleştirildi.
 
 v5.0:
-  - Logo fallback KALDIRILDI - artik gorselsiz habere logo yapistirilmiyor.
-  - Gorselsiz haberler TEXT-ONLY (sadece metin) olarak paylasiliyor, SKIP edilmiyor.
-  - image_source == "no_image" veya "fallback" olanlarda gorsel listesi bosaltiliyor,
-    publisher otomatik text-only akisina duser.
-
-v4.8:
-  - Threads gorsel paylasimi tam entegre! post_local_image() ile yerel dosya -> ImgBB -> Threads.
-  - Threads carousel (coklu gorsel) destegi eklendi.
-  - threads_mode = "text_only" | "text_and_image" | "text_image_carousel" desteği.
-  - Threads metin 500 karakter limiti otomatik kesme (threads.py icinde).
-
-v4.7:
-  - TUM_PLATFORMLAR_TEST / SADECE_FACEBOOK_TEST / SADECE_THREADS_TEST eklendi.
-  - Threads görsel paylaşımı (v2.0 threads.py ile) tam entegre.
+  - Logo fallback KALDIRILDI - gorselsiz habere logo yapistirilmiyor.
+  - Gorselsiz haberler TEXT-ONLY (sadece metin) olarak paylasiliyor.
 """
 
 import os
 import random
 import time
+import requests
 from typing import Optional
 
 from core.config_loader import load_config
@@ -68,25 +65,20 @@ def _safe_int(value, default: int) -> int:
         return default
 
 
-def _is_dry_run(settings: dict) -> bool:
-    """Genel test modu: hem Facebook hem Threads"""
-    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
-        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
-    posting_cfg = settings.get("posting", {}) if isinstance(settings, dict) else {}
-    return bool(posting_cfg.get("dry_run", False))
+def _is_image_test_mode() -> bool:
+    """Görsel Test Modu: Sadece görsel üretip Telegram'a atar, paylaşım yapmaz."""
+    return _get_env_bool("IMAGE_TEST_MODE", False)
 
+def _is_all_test_mode() -> bool:
+    """Tüm Platformlar Test Modu: Hiçbir yere gerçek paylaşım yapmaz."""
+    return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
 
-def _is_fb_dry_run() -> bool:
-    """Sadece Facebook test modu? (TUM_PLATFORMLAR_TEST genel ise zaten etkisiz)"""
-    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
-        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
+def _is_fb_test_mode() -> bool:
+    """Sadece Facebook Test: FB'ye atlamaz, Threads'e atar."""
     return _get_env_bool("SADECE_FACEBOOK_TEST", False)
 
-
-def _is_threads_dry_run() -> bool:
-    """Sadece Threads test modu? (TUM_PLATFORMLAR_TEST genel ise zaten etkisiz)"""
-    if os.environ.get("TUM_PLATFORMLAR_TEST") is not None:
-        return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
+def _is_threads_test_mode() -> bool:
+    """Sadece Threads Test: Threads'e atlamaz, FB'ye atar."""
     return _get_env_bool("SADECE_THREADS_TEST", False)
 
 
@@ -221,9 +213,6 @@ def _collect_valid_image_paths(image_output: dict) -> list[str]:
 
 
 def _prefer_text_only_on_fallback(image_source: str, image_paths: list[str]) -> list[str]:
-    """v5.0: Logo fallback KALDIRILDI. Gorselsiz haberler text-only paylasilir.
-    no_image veya fallback durumunda gorsel listesi bosaltilir,
-    publisher asagida text-only akisina otomatik duser."""
     source_lower = (image_source or "").strip().lower()
     if source_lower in {"no_image", "fallback"}:
         if image_paths:
@@ -530,6 +519,39 @@ def _resolve_final_image_count(final_image_source: str, image_paths: list[str]) 
     return len(image_paths)
 
 
+def _send_test_image_to_telegram(image_path: str, article_title: str) -> bool:
+    """IMAGE_TEST_MODE için görseli Telegram'a gönderir."""
+    bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
+    chat_id = os.environ.get("TELEGRAM_CHAT_ID")
+    
+    if not bot_token or not chat_id:
+        log("Test modu için TELEGRAM_BOT_TOKEN veya TELEGRAM_CHAT_ID eksik!", "ERROR")
+        return False
+        
+    if not image_path or not os.path.exists(image_path):
+        log("Test modu için görsel bulunamadı!", "ERROR")
+        return False
+
+    url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
+    caption = f"🖼️ GÖRSEL TEST MODU\n\nBaşlık: {article_title}\n\nBu bir test görselidir. Facebook/Threads'e paylaşılmadı ve haber veritabanına 'paylaşıldı' olarak kaydedilmedi."
+    
+    try:
+        with open(image_path, "rb") as photo:
+            files = {"photo": photo}
+            data = {"chat_id": chat_id, "caption": caption}
+            resp = requests.post(url, files=files, data=data, timeout=30)
+            
+            if resp.status_code == 200:
+                log("Test görseli Telegram'a başarıyla gönderildi.", "INFO")
+                return True
+            else:
+                log(f"Test görseli Telegram hatası: {resp.text}", "ERROR")
+    except Exception as e:
+        log(f"Test görseli Telegram gönderim hatası: {e}", "ERROR")
+        
+    return False
+
+
 def run() -> bool:
     log("-" * 55)
     log("agent_publisher basliyor")
@@ -555,7 +577,28 @@ def run() -> bool:
         set_stage("publish", "error", error="Post metni yok")
         return False
 
-    # v5.0: Gorselsiz haberler SKIP edilmiyor, TEXT-ONLY paylasilir
+    # ------------------------------------------------------------------
+    # YENİ: GÖRSEL TEST MODU KONTROLÜ
+    # Eğer IMAGE_TEST_MODE=true ise bot paylaşım yapmaz, haberi kaydetmez.
+    # Sadece görseli Telegram'a atar ve durur.
+    # ------------------------------------------------------------------
+    if _is_image_test_mode():
+        log("GÖRSEL TEST MODU AKTİF: Gerçek paylaşım yapılmayacak, haber kaydedilmeyecek.", "INFO")
+        test_image_path = image_paths[0] if image_paths else ""
+        _send_test_image_to_telegram(test_image_path, article.get("title", "Test"))
+        
+        set_stage("publish", "done", output=_build_publish_output(
+            article, 
+            "image_test_mode", 
+            image_source, 
+            len(image_paths), 
+            True, 
+            skipped=True, 
+            skip_reason="image_test_mode"
+        ))
+        log("Görsel test modu tamamlandı. Pipeline burada bitiyor.", "INFO")
+        return True
+
     if not image_paths:
         log(f"Gorsel yok - text-only paylasim yapilacak: {article.get('title', '')[:80]} (image_source={image_source})", "INFO")
     else:
@@ -577,19 +620,20 @@ def run() -> bool:
         random_delay_max = _safe_int(posting_settings.get("random_delay_max_minutes", 8), 8)
         random_delay_max = max(0, random_delay_max)
 
-        dry_run = _is_dry_run(settings)
-        fb_dry_run = _is_fb_dry_run()
+        all_test_mode = _is_all_test_mode()
+        fb_test_mode = _is_fb_test_mode()
+        threads_test_mode = _is_threads_test_mode()
         random_delay_enabled = _is_random_delay_enabled()
 
         posted_data = get_posted_news()
-        if not manual_priority:
+        if not manual_priority and not all_test_mode:
             if not _check_daily_limit(posted_data, max_daily_posts):
                 set_stage("publish", "error", error="Gunluk limit doldu")
                 return False
         else:
-            log("Gunluk limit kontrolu atlandi (manual_priority=true)")
+            log("Gunluk limit kontrolu atlandi (test modu veya manual_priority)")
 
-        if not dry_run and not fb_dry_run and (not manual_priority):
+        if not all_test_mode and not fb_test_mode and (not manual_priority):
             skip_allowed, skip_reason = _check_skip_probability(
                 _safe_int(article.get("score", 0), 0)
             )
@@ -607,18 +651,16 @@ def run() -> bool:
                 log("Skora bagli atlama nedeniyle bu tur publish skip edildi")
                 return True
 
-        if dry_run or fb_dry_run:
-            if fb_dry_run:
-                log("SADECE_FACEBOOK_TEST: Facebook paylasimi atlaniyor, Threads serbest")
+        # ------------------------------------------------------------------
+        # FACEBOOK PAYLAŞIMI
+        # ------------------------------------------------------------------
+        fb_post_id = None
+        if all_test_mode or fb_test_mode:
+            if all_test_mode:
+                log("TUM_PLATFORMLAR_TEST: Facebook paylasimi atlaniyor.")
             else:
-                log("TUM_PLATFORMLAR_TEST: Gercek paylasim yapilmayacak")
-            # Facebook'u atla, Threads'i aşağıda hallet
-            fake_post_id = "dryrun_000000000_111111111" if not fb_dry_run else "fb_dryrun_skip"
-            # Telegram bildirimi vs. için normal akışı taklit et, ama posted record'a yazma
-            set_stage("publish", "done", output=_build_publish_output(
-                article, fake_post_id, image_source, len(image_paths), True))
-            log("Facebook paylasimi atlandi (test modu).")
-            # Do not return, fall through to Threads
+                log("SADECE_FACEBOOK_TEST: Facebook paylasimi atlaniyor.")
+            fb_post_id = "test_mode_skip"
         else:
             if manual_priority:
                 log("Rastgele bekleme atlandi (manual_priority=true)")
@@ -629,9 +671,9 @@ def run() -> bool:
             elif not random_delay_enabled:
                 log("Rastgele bekleme devre disi (ENABLE_RANDOM_DELAY=false)")
 
-            post_id = _publish_to_facebook(article, post_text_content, image_paths)
+            fb_post_id = _publish_to_facebook(article, post_text_content, image_paths)
 
-            if post_id is None:
+            if fb_post_id is None:
                 log("[PUBLISH] CRITICAL: All publish methods failed", "ERROR")
                 set_stage("publish", "error", error="Facebook paylasimi tamamen basarisiz")
                 return False
@@ -639,7 +681,7 @@ def run() -> bool:
             final_image_source = article.get("image_source", image_source)
             final_image_count = _resolve_final_image_count(final_image_source, image_paths)
 
-            _record_posted(article, post_id, final_image_source, final_image_count)
+            _record_posted(article, fb_post_id, final_image_source, final_image_count)
             _record_shared_variant_cooldowns(article)
 
             fresh_data = get_posted_news()
@@ -659,78 +701,55 @@ def run() -> bool:
                 log("Telegram bildirimi gonderilemedi, akis devam ediyor", "WARNING")
 
             set_stage("publish", "done", output=_build_publish_output(
-                article, post_id, final_image_source, final_image_count, False))
+                article, fb_post_id, final_image_source, final_image_count, False))
             log("BASARIYLA PAYLASILDI")
 
-                # ========== THREADS PAYLASIMI ==========
+        # ------------------------------------------------------------------
+        # THREADS PAYLAŞIMI
+        # ------------------------------------------------------------------
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False):
-                if _is_threads_dry_run():
-                    log("SADECE_THREADS_TEST: Threads paylasimi atlaniyor.")
+                if all_test_mode or threads_test_mode:
+                    log("Threads paylasimi test modu nedeniyle atlaniyor.")
                 else:
                     mode = threads_cfg.get("mode", "text_only")
                     threads_post_id = None
 
-                    # Article'daki orijinal URL'leri kontrol et
                     has_original_urls = bool(article.get("original_image_urls")) or bool(article.get("image_url", "").startswith("http"))
 
                     if image_paths and mode == "text_image_carousel" and len(image_paths) >= 2:
-                        # ---- CAROUSEL MODU (2+ gorsel) ----
                         log(f"Threads: Carousel paylasim deneniyor ({len(image_paths)} gorsel)...")
-                        threads_post_id = threads_platform.post_carousel(
-                            post_text_content, image_paths, article=article
-                        )
+                        threads_post_id = threads_platform.post_carousel(post_text_content, image_paths, article=article)
                         if threads_post_id:
                             log(f"Threads carousel paylasim basarili: {threads_post_id}")
                         else:
                             log("Threads carousel basarisiz, tek gorsele fallback", "WARNING")
-                            threads_post_id = threads_platform.post_with_image(
-                                post_text_content, image_paths[0], article=article
-                            )
-                            if threads_post_id:
-                                log(f"Threads tek gorsel fallback basarili: {threads_post_id}")
-                            else:
-                                log("Threads tek gorsel fallback basarisiz, metne fallback", "WARNING")
-                                threads_post_id = threads_platform.post_text(post_text_content)
-                                if threads_post_id:
-                                    log(f"Threads metin fallback basarili: {threads_post_id}")
-                                else:
-                                    log("Threads metin fallback basarisiz", "WARNING")
+                            threads_post_id = threads_platform.post_with_image(post_text_content, image_paths[0], article=article)
 
                     elif (image_paths or has_original_urls) and mode in ("text_and_image", "text_image_carousel"):
-                        # ---- TEK GORSELI PAYLASIM (FALLBACK ZINCIRI) ----
                         local_img = image_paths[0] if image_paths else ""
                         if local_img:
                             log("Threads: Gorselli paylasim deneniyor (yerel dosya + orijinal URL fallback zinciri)...")
                         else:
                             log("Threads: Yerel gorsel yok, article orijinal URL'ler deneniyor...")
-                        threads_post_id = threads_platform.post_with_image(
-                            post_text_content, local_img, article=article
-                        )
-                        if threads_post_id:
-                            log(f"Threads gorselli paylasim basarili: {threads_post_id}")
-                        else:
-                            log("Threads tum yontemler basarisiz, metine fallback", "WARNING")
+                        threads_post_id = threads_platform.post_with_image(post_text_content, local_img, article=article)
+                        if not threads_post_id:
+                            log("Threads tum yontemler basarisiz, metne fallback", "WARNING")
                             threads_post_id = threads_platform.post_text(post_text_content)
-                            if threads_post_id:
-                                log(f"Threads metin fallback basarili: {threads_post_id}")
-                            else:
-                                log("Threads metin fallback basarisiz", "WARNING")
 
                     else:
-                        # ---- SADECE METIN ----
                         log(f"Threads: Metin paylasimi yapiliyor (mode={mode}, images={len(image_paths)}, originals={has_original_urls})")
                         threads_post_id = threads_platform.post_text(post_text_content)
-                        if threads_post_id:
-                            log(f"Threads metin paylasimi basarili: {threads_post_id}")
-                        else:
-                            log("Threads metin paylasimi basarisiz", "WARNING")
+
+                    if threads_post_id:
+                        log(f"Threads paylasim basarili: {threads_post_id}")
+                    else:
+                        log("Threads paylasim basarisiz", "WARNING")
             else:
                 log("Threads paylasimi devre disi (settings.json/threads.enabled=false)")
         except Exception as exc:
             log(f"Threads paylasimi beklenmeyen hata: {exc}", "WARNING")
-        # ========== THREADS SONU ==========
 
         return True
 
