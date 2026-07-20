@@ -127,6 +127,10 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
 
+          # Instagram API Credentials
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+
           IMAGE_TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.image_test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
           ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
