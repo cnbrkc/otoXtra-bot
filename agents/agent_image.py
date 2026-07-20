@@ -1,6 +1,7 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.6 - FB & Threads Standart Görsel)
-  - Kart oluşturma islemi kaldirildi. Sadece Instagram Story modulu icin ayri cagrilacak.
+agents/agent_image.py - Gorsel Isleme Ajani (v8.7 - Syntax Fix & FB/Threads Standart)
+  - Kart oluşturma islemi tamamen kaldirildi. Sadece Instagram Story modulu icin ayri cagrilacak.
+  - 553. satirdaki parantez hatasi giderildi.
 """
 
 import hashlib
@@ -550,7 +551,8 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs)))
+            # DÜZELTİLDİ: Eksik parantez kapatması eklendi.
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
 
     filename_cleaned_path = re.sub(
         r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
@@ -1719,7 +1721,6 @@ def run() -> bool:
         set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
 
-    # Kartın YZ metnini kullanabilmesi için article içine ekliyoruz (İleride Instagram modülü için lazım olacak)
     article["post_text_for_card"] = post_text
 
     set_stage("image", "running")
