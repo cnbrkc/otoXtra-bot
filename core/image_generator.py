@@ -1,4 +1,5 @@
 import os
+import re
 from PIL import Image, ImageDraw, ImageFont
 from core.config_loader import get_project_root
 from core.logger import log
@@ -9,33 +10,24 @@ CANVAS_HEIGHT = 1350
 
 # Renkler
 BG_COLOR = (18, 25, 36)           # Koyu lacivert arka plan
-TOP_BAR_COLOR = (24, 35, 50)      # Üst bar rengi
 TITLE_COLOR = (255, 255, 255)     # Başlık beyaz
 BODY_COLOR = (210, 215, 220)      # Haber metni açık gri
-ACCENT_COLOR = (0, 255, 150)      # Çizgi vurgu rengi (Neon yeşil/mavi)
 
-# Fontlar (Senin assets/ klasörüne attığın dosyalar)
+# Fontlar (assets/ klasörüne attığın dosyalar)
 FONT_BOLD_PATH = os.path.join(get_project_root(), "assets", "Roboto-Bold.ttf")
 FONT_REG_PATH = os.path.join(get_project_root(), "assets", "Roboto-Regular.ttf")
-FONT_MED_PATH = os.path.join(get_project_root(), "assets", "Roboto-Medium.ttf")
 
-def _get_font(size: int, bold: bool = False, medium: bool = False) -> ImageFont.FreeTypeFont:
-    path = FONT_BOLD_PATH
-    if medium:
-        path = FONT_MED_PATH
-    elif not bold:
-        path = FONT_REG_PATH
-        
+def _get_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
+    path = FONT_BOLD_PATH if bold else FONT_REG_PATH
     if not os.path.exists(path):
         log(f"Font bulunamadı: {path}. Varsayılan kullanılıyor.", "WARNING")
         return ImageFont.load_default()
     return ImageFont.truetype(path, size)
 
-def _draw_wrapped_text(draw, text, font, max_width, position, fill, line_spacing=10, max_lines=10):
-    """Metni belirli bir genişliğe göre satırlara böler ve çizer."""
-    y = position[1]
-    lines = []
+def _draw_centered_text(draw, text, font, y, max_width, fill, line_spacing=10):
+    """Metni ortalanmış şekilde satırlara böler ve çizer."""
     words = text.split()
+    lines = []
     current_line = ""
     
     for word in words:
@@ -53,67 +45,56 @@ def _draw_wrapped_text(draw, text, font, max_width, position, fill, line_spacing
     if current_line:
         lines.append(current_line)
 
-    # Sadece izin verilen kadar satır çiz (taşmayı önle)
-    for i, line in enumerate(lines):
-        if i >= max_lines:
-            # Son satırın sonuna ... ekle
-            if i > 0:
-                prev_line = lines[i-1]
-                if len(prev_line) > 3:
-                    draw.text((position[0], y - line_spacing - (bbox[3] - bbox[1])), prev_line[:-3] + "...", font=font, fill=fill)
-            break
-            
-        draw.text((position[0], y), line, font=font, fill=fill)
-        bbox = draw.textbbox((0, 0), line, font=font)
+    for line in lines:
+        bbox = draw.textbbox((0,0), line, font=font)
+        line_width = bbox[2] - bbox[0]
         line_height = bbox[3] - bbox[1]
-        y += line_height + line_spacing
         
-    return y # Bitiş Y koordinatını döndür
+        x = (CANVAS_WIDTH - line_width) // 2
+        draw.text((x, y), line, font=font, fill=fill)
+        y += line_height + line_spacing
+            
+    return y
 
-def create_social_card(title: str, summary: str, image_path: str, output_path: str) -> str:
+def create_social_card(post_text: str, image_path: str, output_path: str) -> str:
     """
-    Verilen başlık, özet ve görsel ile profesyonel bir sosyal medya kartı oluşturur.
+    Verilen YZ post metnini (ilk satır başlık, gerisi metin) ve görseli kullanarak 
+    ortalanmış profesyonel bir sosyal medya kartı oluşturur.
     """
     try:
-        # 1. Canvas oluştur
         canvas = Image.new("RGB", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR)
         draw = ImageDraw.Draw(canvas)
 
-        # 2. Üst Bar (Logo ve Site Adı)
-        top_bar_height = 120
-        draw.rectangle([0, 0, CANVAS_WIDTH, top_bar_height], fill=TOP_BAR_COLOR)
+        # 1. YZ Metnini Başlık ve Gövde olarak ayır (YZ ilk satırı başlık atar)
+        lines = [ln.strip() for ln in post_text.split("\n") if ln.strip()]
         
-        # Logo (Eğer assets/logo.png varsa)
+        title = lines[0] if lines else "OTOXTRA HABER"
+        # Emojileri ve gereksiz işaretleri temizleyip büyük harf yapalım
+        title = re.sub(r'[^\w\s]', '', title).strip().upper()
+        
+        body = "\n".join(lines[1:]) if len(lines) > 1 else ""
+
+        # 2. Logo (Üst Orta)
+        logo_y = 40
         logo_path = os.path.join(get_project_root(), "assets", "logo.png")
         if os.path.exists(logo_path):
             logo = Image.open(logo_path).convert("RGBA")
             logo_size = 80
             logo = logo.resize((logo_size, logo_size), Image.LANCZOS)
-            canvas.paste(logo, (40, 20), logo)
-            
-        # Marka Adı (Roboto-Medium kullanıyorum)
-        font_brand = _get_font(40, medium=True)
-        draw.text((140, 35), "otoXtra", font=font_brand, fill=TITLE_COLOR)
+            logo_x = (CANVAS_WIDTH - logo_size) // 2
+            canvas.paste(logo, (logo_x, logo_y), logo)
+            logo_y += logo_size + 20
+        else:
+            logo_y = 60
 
-        # 3. Başlık (Üst barın altı)
-        font_title = _get_font(42, bold=True)
-        title_y = 160
-        title_end_y = _draw_wrapped_text(
-            draw, title.upper(), font_title, 
-            max_width=CANVAS_WIDTH - 80, 
-            position=(40, title_y), 
-            fill=TITLE_COLOR,
-            line_spacing=12,
-            max_lines=3 # Başlık maksimum 3 satır olsun
-        )
-
-        # Başlık altı vurgu çizgisi
-        draw.rectangle([40, title_end_y + 10, 150, title_end_y + 15], fill=ACCENT_COLOR)
-        title_end_y += 40
+        # 3. Başlık (Ortalanmış, Kalın, Büyük)
+        font_title = _get_font(45, bold=True)
+        title_y = _draw_centered_text(draw, title, font_title, logo_y, CANVAS_WIDTH - 80, TITLE_COLOR, line_spacing=12)
+        title_y += 40 # Boşluk
 
         # 4. Haber Görseli (Ortada)
         img_area_height = 550
-        img_area_top = title_end_y
+        img_area_top = title_y
         img_area_bottom = img_area_top + img_area_height
 
         if image_path and os.path.exists(image_path):
@@ -143,27 +124,21 @@ def create_social_card(title: str, summary: str, image_path: str, output_path: s
                 log(f"Görsel işlenirken hata: {e}", "WARNING")
                 draw.rectangle([0, img_area_top, CANVAS_WIDTH, img_area_bottom], fill=(50, 50, 50))
 
-        # 5. Haber Metni (Alt Kısım)
-        font_body = _get_font(30, bold=False)
+        # 5. Haber Metni (Alt Kısım, Ortalanmış)
         body_y = img_area_bottom + 40
         
-        _draw_wrapped_text(
-            draw, summary, font_body, 
-            max_width=CANVAS_WIDTH - 80, 
-            position=(40, body_y), 
-            fill=BODY_COLOR,
-            line_spacing=10,
-            max_lines=8 # Metin maksimum 8 satır olsun, taşmasın
-        )
+        # Metin çok uzunsa 450 karakterde kes (Taşmayı önlemek için)
+        max_body_chars = 450
+        if len(body) > max_body_chars:
+            body = body[:max_body_chars].rsplit(' ', 1)[0] + "..."
 
-        # 6. Alt Bar (Vurgu çizgisi)
-        draw.rectangle([0, CANVAS_HEIGHT - 10, CANVAS_WIDTH, CANVAS_HEIGHT], fill=ACCENT_COLOR)
+        font_body = _get_font(32, bold=False)
+        _draw_centered_text(draw, body, font_body, body_y, CANVAS_WIDTH - 80, BODY_COLOR, line_spacing=12)
 
-        # Kaydet
         canvas.save(output_path, format="JPEG", quality=95)
         log(f"Sosyal medya kartı oluşturuldu: {output_path}")
         return output_path
 
     except Exception as e:
         log(f"Kart oluşturma hatası: {e}", "ERROR")
-        return image_path # Hata olursa orijinal görseli dön
+        return image_path
