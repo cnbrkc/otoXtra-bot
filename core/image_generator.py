@@ -50,15 +50,15 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         dummy_img = Image.new("RGB", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
 
-        # PUNTOLAR BÜYÜTÜLDÜ (55 -> 75)
-        font_title = _get_font(75, bold=True)
+        # PUNTOLAR BÜYÜTÜLDÜ (55 -> 65)
+        font_title = _get_font(65, bold=True)
         title_lines = _wrap_text(dummy_draw, title, font_title, CANVAS_WIDTH - 160)
-        title_h = sum([(dummy_draw.textbbox((0,0), line, font=font_title)[3]) for line in title_lines]) + (len(title_lines)-1)*20
+        title_h = sum([(dummy_draw.textbbox((0,0), line, font=font_title)[3]) for line in title_lines]) + (len(title_lines)-1)*18
 
-        # PUNTOLAR BÜYÜTÜLDÜ (35 -> 45)
-        font_body = _get_font(45, bold=False)
+        # PUNTOLAR BÜYÜTÜLDÜ (35 -> 40)
+        font_body = _get_font(40, bold=False)
         body_lines = _wrap_text(dummy_draw, body, font_body, CANVAS_WIDTH - 160)
-        body_h = sum([(dummy_draw.textbbox((0,0), line, font=font_body)[3]) for line in body_lines]) + (len(body_lines)-1)*15
+        body_h = sum([(dummy_draw.textbbox((0,0), line, font=font_body)[3]) for line in body_lines]) + (len(body_lines)-1)*13
 
         logo_h = 120
         img_h = 700
@@ -136,7 +136,7 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             line_w = bbox[2] - bbox[0]
             x = (CANVAS_WIDTH - line_w) // 2
             draw.text((x, y_cursor), line, font=font_title, fill=TEXT_COLOR)
-            y_cursor += bbox[3] + 20  # Satır aralığı biraz açıldı
+            y_cursor += bbox[3] + 18  # Satır aralığı biraz açıldı
         y_cursor += gap - 20
 
         # Ana Görsel (Kırpılmadan, sığdırılarak - Contain)
@@ -168,7 +168,7 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             line_w = bbox[2] - bbox[0]
             x = (CANVAS_WIDTH - line_w) // 2
             draw.text((x, y_cursor), line, font=font_body, fill=TEXT_COLOR)
-            y_cursor += bbox[3] + 15  # Satır aralığı biraz açıldı
+            y_cursor += bbox[3] + 13  # Satır aralığı biraz açıldı
 
         # Kaydet
         canvas.convert("RGB").save(output_path, format="JPEG", quality=95)
