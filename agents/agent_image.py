@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.4 - Kart Düzeltmesi)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.5 - DDG Fix & Kart Fix)
 """
 
 import hashlib
@@ -109,10 +109,16 @@ def _safe_unlink(path: str) -> None:
 # ── DuckDuckGo ──
 def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -> list[str]:
     try:
-        clean_title = article_title.lower()
+        # Linkleri ve çok uzun metinleri temizle
+        clean_title = re.sub(r'http\S+', '', article_title).strip()
+        clean_title = clean_title.lower()
         clean_title = re.sub(r'[^\w\s]', '', clean_title)
         tr_map = str.maketrans("çğıöşü", "cgiosu")
         clean_title = clean_title.translate(tr_map)
+        
+        # Sadece ilk 8 kelimeyi al (DuckDuckGo uzun sorgularda saçmalıyor)
+        words = clean_title.split()
+        clean_title = " ".join(words[:8])
         
         log(f"DDG Görsel Aranıyor: {clean_title}")
         with DDGS() as ddgs:
@@ -1459,7 +1465,6 @@ def prepare_images(article: dict) -> list[str]:
                 if processed and os.path.exists(processed):
                     card_path = processed.replace(".jpg", "_card.jpg")
                     
-                    # YZ'nin yazdığı metni al
                     post_text = article.get("post_text_for_card", "Başlık yok")
                     
                     create_social_card(
