@@ -4,16 +4,16 @@ from PIL import Image, ImageDraw, ImageFont
 from core.config_loader import get_project_root
 from core.logger import log
 
-# Kart boyutları (Instagram/Facebook optimal dikey boyut)
+# Kart boyutları (Instagram/Facebook STORY boyutu - 9:16)
 CANVAS_WIDTH = 1080
-CANVAS_HEIGHT = 1350
+CANVAS_HEIGHT = 1920
 
 # Renkler
 BG_COLOR = (18, 25, 36)           # Koyu lacivert arka plan
 TITLE_COLOR = (255, 255, 255)     # Başlık beyaz
 BODY_COLOR = (210, 215, 220)      # Haber metni açık gri
 
-# Fontlar (assets/ klasörüne attığın dosyalar)
+# Fontlar
 FONT_BOLD_PATH = os.path.join(get_project_root(), "assets", "Roboto-Bold.ttf")
 FONT_REG_PATH = os.path.join(get_project_root(), "assets", "Roboto-Regular.ttf")
 
@@ -58,42 +58,41 @@ def _draw_centered_text(draw, text, font, y, max_width, fill, line_spacing=10):
 
 def create_social_card(post_text: str, image_path: str, output_path: str) -> str:
     """
-    Verilen YZ post metnini (ilk satır başlık, gerisi metin) ve görseli kullanarak 
-    ortalanmış profesyonel bir sosyal medya kartı oluşturur.
+    Verilen YZ post metnini (ilk satır başlık, gerisi metin) ve ham görseli kullanarak 
+    ortalanmış profesyonel bir sosyal medya kartı (Story boyutunda) oluşturur.
     """
     try:
         canvas = Image.new("RGB", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR)
         draw = ImageDraw.Draw(canvas)
 
-        # 1. YZ Metnini Başlık ve Gövde olarak ayır (YZ ilk satırı başlık atar)
+        # 1. YZ Metnini Başlık ve Gövde olarak ayır
         lines = [ln.strip() for ln in post_text.split("\n") if ln.strip()]
         
         title = lines[0] if lines else "OTOXTRA HABER"
-        # Emojileri ve gereksiz işaretleri temizleyip büyük harf yapalım
         title = re.sub(r'[^\w\s]', '', title).strip().upper()
         
         body = "\n".join(lines[1:]) if len(lines) > 1 else ""
 
-        # 2. Logo (Üst Orta)
-        logo_y = 40
+        # 2. Logo (Üst Orta - 1.5x büyütüldü)
+        logo_y = 80
         logo_path = os.path.join(get_project_root(), "assets", "logo.png")
         if os.path.exists(logo_path):
             logo = Image.open(logo_path).convert("RGBA")
-            logo_size = 80
+            logo_size = 120  # Eskiden 80'di
             logo = logo.resize((logo_size, logo_size), Image.LANCZOS)
             logo_x = (CANVAS_WIDTH - logo_size) // 2
             canvas.paste(logo, (logo_x, logo_y), logo)
-            logo_y += logo_size + 20
+            logo_y += logo_size + 30
         else:
-            logo_y = 60
+            logo_y = 100
 
-        # 3. Başlık (Ortalanmış, Kalın, Büyük)
-        font_title = _get_font(45, bold=True)
-        title_y = _draw_centered_text(draw, title, font_title, logo_y, CANVAS_WIDTH - 80, TITLE_COLOR, line_spacing=12)
-        title_y += 40 # Boşluk
+        # 3. Başlık (Ortalanmış, Kalın, Büyük - x1.5 büyütüldü)
+        font_title = _get_font(65, bold=True)  # Eskiden 45'ti
+        title_y = _draw_centered_text(draw, title, font_title, logo_y, CANVAS_WIDTH - 80, TITLE_COLOR, line_spacing=15)
+        title_y += 50 # Boşluk
 
-        # 4. Haber Görseli (Ortada)
-        img_area_height = 550
+        # 4. Haber Görseli (Ortada - Story boyutuna göre ayarlandı)
+        img_area_height = 750
         img_area_top = title_y
         img_area_bottom = img_area_top + img_area_height
 
@@ -124,16 +123,16 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
                 log(f"Görsel işlenirken hata: {e}", "WARNING")
                 draw.rectangle([0, img_area_top, CANVAS_WIDTH, img_area_bottom], fill=(50, 50, 50))
 
-        # 5. Haber Metni (Alt Kısım, Ortalanmış)
-        body_y = img_area_bottom + 40
+        # 5. Haber Metni (Alt Kısım, Ortalanmış - x1.5 büyütüldü)
+        body_y = img_area_bottom + 60
         
-        # Metin çok uzunsa 450 karakterde kes (Taşmayı önlemek için)
-        max_body_chars = 450
+        # Story boyutu uzun olduğu için metin limitini 600 karaktere çıkardık
+        max_body_chars = 600
         if len(body) > max_body_chars:
             body = body[:max_body_chars].rsplit(' ', 1)[0] + "..."
 
-        font_body = _get_font(32, bold=False)
-        _draw_centered_text(draw, body, font_body, body_y, CANVAS_WIDTH - 80, BODY_COLOR, line_spacing=12)
+        font_body = _get_font(38, bold=False)  # Eskiden 32'ydi
+        _draw_centered_text(draw, body, font_body, body_y, CANVAS_WIDTH - 80, BODY_COLOR, line_spacing=15)
 
         canvas.save(output_path, format="JPEG", quality=95)
         log(f"Sosyal medya kartı oluşturuldu: {output_path}")
