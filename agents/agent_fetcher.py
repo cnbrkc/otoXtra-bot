@@ -354,7 +354,7 @@ def _resolve_nitter_image_url(raw_url: str, nitter_base: str) -> str:
         name_part, _, ext_part = filename.rpartition(".")
         ext_part = ext_part.lower()
 
-        # "orig" ge�en path daha yuksek kalite
+        # "orig" geçen path daha yuksek kalite
         quality = "orig" if "/orig/" in path else "large"
 
         return (
@@ -1195,11 +1195,12 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
         fetch_attempts, http_attempts, http_base_wait, timeout = _feed_attempt_config(feed_url)
 
-        # v4.2: Nitter feed'leri icin makale scrape her zaman aktif
+        # v9.0 HIZLANDIRMA: Fetch asamasinda makale scrape tamamen devre disi birakildi.
+        # Nitter dahil tum gorsel tarama islemleri agent_image.py tarafindan secilen 1 haber icin yapilacak.
         is_nitter_source = _is_nitter_feed(feed_url)
-        effective_scrape = enable_fetch_article_image_scrape or is_nitter_source
-        if is_nitter_source and not enable_fetch_article_image_scrape:
-            log(f"{feed_name}: Nitter kaynak, gorsel scrape otomatik aktif")
+        effective_scrape = False
+        # if is_nitter_source and not enable_fetch_article_image_scrape:
+        #     log(f"{feed_name}: Nitter kaynak, gorsel scrape otomatik aktif")
 
         if feed_idx > 0:
             _sleep_between_feeds(feed_name, delay_base, delay_jitter)
@@ -1265,13 +1266,13 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
                     article_image_candidates: list[str] = []
 
-                    # v4.2: effective_scrape Nitter icin her zaman True
-                    if feed_can_scrape and effective_scrape and scraped_in_feed < max_article_scrapes_per_feed:
-                        article_image_candidates = extract_images_from_article(
-                            link,
-                            max_candidates=max_candidates_per_article,
-                        )
-                        scraped_in_feed += 1
+                    # v9.0 HIZLANDIRMA: Bu blok kapali. agent_image.py zaten secilen haberin gorselini en iyi sekilde cekiyor.
+                    # if feed_can_scrape and effective_scrape and scraped_in_feed < max_article_scrapes_per_feed:
+                    #     article_image_candidates = extract_images_from_article(
+                    #         link,
+                    #         max_candidates=max_candidates_per_article,
+                    #     )
+                    #     scraped_in_feed += 1
 
                     if normalized_rss_image:
                         rss_variants = _thumbnail_to_original_variants(normalized_rss_image)
