@@ -1,9 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.3 - Sosyal Medya Karti Entegrasyonu)
-
-v8.3 YENILIK:
-  - agent_image indirdigi gorseli artik düz degil, create_social_card ile 
-    "Başlık + Görsel + Özet" formatındaki şablon görsel haline getiriyor.
+agents/agent_image.py - Gorsel Isleme Ajani (v8.4 - Kart Düzeltmesi)
 """
 
 import hashlib
@@ -47,32 +43,14 @@ _FALLBACK_STRIPE_COLOR = (24, 35, 60)
 _IMAGE_EXTENSIONS = (".jpg", ".jpeg", ".png", ".webp", ".gif", ".bmp", ".avif")
 _DISALLOWED_IMAGE_EXTENSIONS = (".svg", ".ico")
 _NOISE_HINTS = (
-    "logo",
-    "icon",
-    "avatar",
-    "sprite",
-    "favicon",
-    "ads",
-    "pixel",
-    "author",
-    "profile",
-    "yazar",
-    "cookie",
-    "uygulama-indir",
-    "dh-oneriyor",
-    "dh-cookie",
-    "instagram-big",
-    "populer-",
+    "logo", "icon", "avatar", "sprite", "favicon", "ads", "pixel",
+    "author", "profile", "yazar", "cookie", "uygulama-indir",
+    "dh-oneriyor", "dh-cookie", "instagram-big", "populer-",
 )
 
 _NOISE_PATH_PATTERNS = (
-    "/banner/",
-    "/banners/",
-    "/ad-banner",
-    "/images/editor/",
-    "/images/images/editor/",
-    "/content/img/",
-    "/profile_images/",
+    "/banner/", "/banners/", "/ad-banner", "/images/editor/",
+    "/images/images/editor/", "/content/img/", "/profile_images/",
 )
 _IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/", "/img/", "/media/")
 _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
@@ -86,29 +64,15 @@ _DEFAULT_PLATFORM_MAX_IMAGE_AREA = 16_000_000
 _DEFAULT_PLATFORM_MAX_IMAGE_BYTES = 20 * 1024 * 1024
 
 _SOURCE_PRIORITY = {
-    "meta_og": 0,
-    "meta_twitter": 0,
-    "nitter_still": 0,       
-    "nitter_card": 1,        
-    "article_script": 1,
-    "article_img": 1,
-    "article_field": 2,
-    "rss_field": 2,
-    "article_candidates_field": 2,
-    "unknown": 3,
+    "meta_og": 0, "meta_twitter": 0, "nitter_still": 0, "nitter_card": 1,
+    "article_script": 1, "article_img": 1, "article_field": 2,
+    "rss_field": 2, "article_candidates_field": 2, "unknown": 3,
 }
 
 _SOURCE_SCORE_BONUS = {
-    "meta_og": 12.0,
-    "meta_twitter": 10.0,
-    "nitter_still": 14.0,    
-    "nitter_card": 10.0,     
-    "article_script": 8.0,
-    "article_img": 7.0,
-    "article_field": 4.0,
-    "rss_field": 3.0,
-    "article_candidates_field": 3.0,
-    "unknown": 0.0,
+    "meta_og": 12.0, "meta_twitter": 10.0, "nitter_still": 14.0,
+    "nitter_card": 10.0, "article_script": 8.0, "article_img": 7.0,
+    "article_field": 4.0, "rss_field": 3.0, "article_candidates_field": 3.0, "unknown": 0.0,
 }
 
 _NITTER_PIC_PATTERN = re.compile(
@@ -120,45 +84,29 @@ _TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
 
 def _read_int_env(name: str) -> Optional[int]:
     raw = os.environ.get(name)
-    if raw is None:
-        return None
-    try:
-        return int(raw.strip())
-    except Exception:
-        return None
-
+    if raw is None: return None
+    try: return int(raw.strip())
+    except Exception: return None
 
 def _read_float_env(name: str) -> Optional[float]:
     raw = os.environ.get(name)
-    if raw is None:
-        return None
-    try:
-        return float(raw.strip())
-    except Exception:
-        return None
-
+    if raw is None: return None
+    try: return float(raw.strip())
+    except Exception: return None
 
 def _read_bool_env(name: str) -> Optional[bool]:
     raw = os.environ.get(name)
-    if raw is None:
-        return None
+    if raw is None: return None
     value = raw.strip().lower()
-    if value in {"1", "true", "yes", "on"}:
-        return True
-    if value in {"0", "false", "no", "off"}:
-        return False
+    if value in {"1", "true", "yes", "on"}: return True
+    if value in {"0", "false", "no", "off"}: return False
     return None
 
-
 def _safe_unlink(path: str) -> None:
-    try:
-        os.unlink(path)
-    except OSError:
-        pass
+    try: os.unlink(path)
+    except OSError: pass
 
-
-# ── v8.0: DuckDuckGo Görsel Arama Yardımcısı ──────────────────────────────────────
-
+# ── DuckDuckGo ──
 def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -> list[str]:
     try:
         clean_title = article_title.lower()
@@ -167,12 +115,8 @@ def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -
         clean_title = clean_title.translate(tr_map)
         
         log(f"DDG Görsel Aranıyor: {clean_title}")
-        
         with DDGS() as ddgs:
-            results = list(ddgs.images(
-                query=clean_title,
-                max_results=max_results
-            ))
+            results = list(ddgs.images(query=clean_title, max_results=max_results))
             
         if not results:
             log("DuckDuckGo görsel sonuç döndürmedi.", "WARNING")
@@ -181,46 +125,32 @@ def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -
         image_urls = [r.get("image") for r in results if r.get("image")]
         log(f"DuckDuckGo {len(image_urls)} adet görsel adayı buldu.")
         return image_urls
-        
     except Exception as e:
         log(f"DuckDuckGo görsel arama hatası: {e}", "ERROR")
         return []
 
-# ── v5.2: Nitter yardimci fonksiyonlari ──────────────────────────────────────
-
+# ── Nitter ──
 def _is_nitter_url(url: str) -> bool:
     host = (urlparse(url).netloc or "").lower()
     return "nitter." in host or host.startswith("nitter")
 
-
 def _nitter_to_twitter_url(nitter_url: str) -> str:
-    if not nitter_url:
-        return ""
+    if not nitter_url: return ""
     parsed = urlparse(nitter_url)
     path = parsed.path or ""
     m = re.search(r"(/[^/]+/status/\d+)", path)
-    if m:
-        return f"https://x.com{m.group(1)}"
+    if m: return f"https://x.com{m.group(1)}"
     return ""
 
-
 def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
-    if not tweet_url:
-        return []
-
+    if not tweet_url: return []
     parsed = urlparse(tweet_url)
     path = parsed.path or ""
-    if "/status/" not in path:
-        return []
+    if "/status/" not in path: return []
 
     api_url = f"https://api.fxtwitter.com{path}"
-
     try:
-        response = requests.get(
-            api_url,
-            headers={"User-Agent": _USER_AGENT, "Accept": "application/json"},
-            timeout=_REQUEST_TIMEOUT,
-        )
+        response = requests.get(api_url, headers={"User-Agent": _USER_AGENT, "Accept": "application/json"}, timeout=_REQUEST_TIMEOUT)
         response.raise_for_status()
         data = response.json()
 
@@ -230,14 +160,12 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
 
         results: list[dict] = []
         seen: set[str] = set()
-
         tweet = data.get("tweet", {})
         media = tweet.get("media", {})
 
         for photo in media.get("photos", []):
             url = photo.get("url", "")
-            if not url or _is_profile_image_url(url):
-                continue
+            if not url or _is_profile_image_url(url): continue
             if "pbs.twimg.com" in url and "name=" not in urlparse(url).query:
                 url = f"{url}?name=orig" if "?" in url else f"{url}?name=orig"
             if url not in seen:
@@ -246,8 +174,7 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
 
         for video in media.get("videos", []):
             thumb = video.get("thumbnail_url", "")
-            if not thumb or _is_profile_image_url(thumb):
-                continue
+            if not thumb or _is_profile_image_url(thumb): continue
             if "pbs.twimg.com" in thumb and "name=" not in urlparse(thumb).query:
                 thumb = f"{thumb}?name=orig" if "?" in thumb else f"{thumb}?name=orig"
             if thumb not in seen:
@@ -256,8 +183,7 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
 
         for item in media.get("all", []):
             url = item.get("url", "")
-            if not url or _is_profile_image_url(url) or url in seen:
-                continue
+            if not url or _is_profile_image_url(url) or url in seen: continue
             if "pbs.twimg.com" in url and "name=" not in urlparse(url).query:
                 url = f"{url}?name=orig" if "?" in url else f"{url}?name=orig"
             seen.add(url)
@@ -270,39 +196,23 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str) -> list[dict]:
 
         return results
 
-    except requests.exceptions.Timeout:
-        log(f"FxTwitter API timeout: {tweet_url[:80]}", "WARNING")
-        return []
-    except requests.exceptions.RequestException as exc:
+    except Exception as exc:
         log(f"FxTwitter API hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
         return []
-    except (json.JSONDecodeError, KeyError, TypeError) as exc:
-        log(f"FxTwitter API JSON hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
-        return []
-    except Exception as exc:
-        log(f"FxTwitter API beklenmeyen hata: {tweet_url[:80]} -> {exc}", "WARNING")
-        return []
-
 
 def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
-    if not tweet_url:
-        return []
+    if not tweet_url: return []
     results: list[dict] = []
     seen: set[str] = set()
     try:
-        response = requests.get(
-            tweet_url,
-            headers={"User-Agent": _USER_AGENT},
-            timeout=_REQUEST_TIMEOUT,
-        )
+        response = requests.get(tweet_url, headers={"User-Agent": _USER_AGENT}, timeout=_REQUEST_TIMEOUT)
         response.raise_for_status()
         response.encoding = response.apparent_encoding or "utf-8"
         soup = BeautifulSoup(response.text, "html.parser")
 
         for tag in soup.select('meta[property="og:image"]'):
             img_url = tag.get("content", "")
-            if not img_url or _is_profile_image_url(img_url):
-                continue
+            if not img_url or _is_profile_image_url(img_url): continue
             if "pbs.twimg.com" in img_url:
                 parsed = urlparse(img_url)
                 if "name=" not in parsed.query:
@@ -313,8 +223,7 @@ def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
 
         for tag in soup.select('meta[name="twitter:image"]'):
             img_url = tag.get("content", "")
-            if not img_url or _is_profile_image_url(img_url):
-                continue
+            if not img_url or _is_profile_image_url(img_url): continue
             if "pbs.twimg.com" in img_url:
                 parsed = urlparse(img_url)
                 if "name=" not in parsed.query:
@@ -327,14 +236,10 @@ def _extract_twitter_og_image(tweet_url: str) -> list[dict]:
         log(f"Twitter og:image cekme hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
     return results
 
-
 def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
-    if not raw_url:
-        return ""
-
+    if not raw_url: return ""
     parsed_raw = urlparse(raw_url)
-    if parsed_raw.netloc in _TWITTER_CDN_HOSTS:
-        return raw_url  
+    if parsed_raw.netloc in _TWITTER_CDN_HOSTS: return raw_url  
 
     path = parsed_raw.path if parsed_raw.scheme else raw_url
 
@@ -346,25 +251,17 @@ def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
         quality = "orig" if "/orig/" in path else "large"
         return f"https://pbs.twimg.com/media/{filename}?format={ext_part}&name={quality}"
 
-    if _is_nitter_url(raw_url) and "/pic/" in raw_url:
-        return raw_url  
-
+    if _is_nitter_url(raw_url) and "/pic/" in raw_url: return raw_url  
     return ""
 
-
 def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
-    if not tweet_url or not _is_nitter_url(tweet_url):
-        return []
+    if not tweet_url or not _is_nitter_url(tweet_url): return []
 
     parsed = urlparse(tweet_url)
     nitter_base = f"{parsed.scheme}://{parsed.netloc}"
 
     try:
-        response = requests.get(
-            tweet_url,
-            headers={"User-Agent": _USER_AGENT},
-            timeout=_REQUEST_TIMEOUT,
-        )
+        response = requests.get(tweet_url, headers={"User-Agent": _USER_AGENT}, timeout=_REQUEST_TIMEOUT)
         response.raise_for_status()
         response.encoding = response.apparent_encoding or "utf-8"
         soup = BeautifulSoup(response.text, "html.parser")
@@ -383,40 +280,34 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
     for a_tag in soup.find_all("a", class_="still-image"):
         href = a_tag.get("href", "")
         resolved = _resolve_nitter_image_url(href, nitter_base)
-        if resolved:
-            _add(resolved, "nitter_still")
+        if resolved: _add(resolved, "nitter_still")
         img = a_tag.find("img")
         if img:
             src = img.get("src", "")
             resolved_src = _resolve_nitter_image_url(src, nitter_base)
-            if resolved_src:
-                _add(resolved_src, "nitter_still")
+            if resolved_src: _add(resolved_src, "nitter_still")
 
     for div in soup.find_all("div", class_=lambda c: c and ("card-image" in c or "attachment" in c)):
         for img in div.find_all("img"):
             src = img.get("src", "")
             resolved = _resolve_nitter_image_url(src, nitter_base)
-            if resolved:
-                _add(resolved, "nitter_card")
+            if resolved: _add(resolved, "nitter_card")
         for a_tag in div.find_all("a"):
             href = a_tag.get("href", "")
             resolved = _resolve_nitter_image_url(href, nitter_base)
-            if resolved:
-                _add(resolved, "nitter_card")
+            if resolved: _add(resolved, "nitter_card")
 
     for img in soup.find_all("img"):
         src = img.get("src", "")
         if "/pic/" in src:
             resolved = _resolve_nitter_image_url(src, nitter_base)
-            if resolved:
-                _add(resolved, "nitter_card")
+            if resolved: _add(resolved, "nitter_card")
 
     for a_tag in soup.find_all("a", href=True):
         href = a_tag.get("href", "")
         if "/pic/" in href:
             resolved = _resolve_nitter_image_url(href, nitter_base)
-            if resolved:
-                _add(resolved, "nitter_card")
+            if resolved: _add(resolved, "nitter_card")
 
     log(f"Nitter sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
 
@@ -437,9 +328,7 @@ def _extract_nitter_images_from_page(tweet_url: str) -> list[dict]:
 
     return results
 
-# ─────────────────────────────────────────────────────────────────────────────
-
-
+# ── Yardımcılar ──
 def _get_image_validation_limits() -> dict:
     min_width = _read_int_env("IMAGE_MIN_WIDTH")
     min_height = _read_int_env("IMAGE_MIN_HEIGHT")
@@ -460,7 +349,6 @@ def _get_image_validation_limits() -> dict:
         limits["max_aspect"] = _DEFAULT_MAX_ASPECT_RATIO
 
     return limits
-
 
 def _build_relaxed_limits(limits: dict) -> dict:
     min_w = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
@@ -483,7 +371,6 @@ def _build_relaxed_limits(limits: dict) -> dict:
 
     return relaxed
 
-
 def _get_platform_resize_limits() -> dict:
     max_width = _read_int_env("IMAGE_PLATFORM_MAX_WIDTH")
     max_height = _read_int_env("IMAGE_PLATFORM_MAX_HEIGHT")
@@ -497,7 +384,6 @@ def _get_platform_resize_limits() -> dict:
         "max_bytes": max_bytes if max_bytes and max_bytes > 0 else _DEFAULT_PLATFORM_MAX_IMAGE_BYTES,
     }
 
-
 def _should_resize_for_platform(image_path: str, limits: dict) -> tuple[bool, str]:
     try:
         with Image.open(image_path) as img:
@@ -507,23 +393,16 @@ def _should_resize_for_platform(image_path: str, limits: dict) -> tuple[bool, st
 
         reasons: list[str] = []
 
-        if width > int(limits["max_width"]):
-            reasons.append(f"width>{limits['max_width']}")
-        if height > int(limits["max_height"]):
-            reasons.append(f"height>{limits['max_height']}")
-        if area > int(limits["max_area"]):
-            reasons.append(f"area>{limits['max_area']}")
-        if file_bytes > int(limits["max_bytes"]):
-            reasons.append(f"bytes>{limits['max_bytes']}")
+        if width > int(limits["max_width"]): reasons.append(f"width>{limits['max_width']}")
+        if height > int(limits["max_height"]): reasons.append(f"height>{limits['max_height']}")
+        if area > int(limits["max_area"]): reasons.append(f"area>{limits['max_area']}")
+        if file_bytes > int(limits["max_bytes"]): reasons.append(f"bytes>{limits['max_bytes']}")
 
-        if reasons:
-            return True, ",".join(reasons)
-
+        if reasons: return True, ",".join(reasons)
         return False, f"within_limits:{width}x{height}:{file_bytes // 1024}KB"
 
     except Exception as exc:
         return True, f"meta_read_error:{exc}"
-
 
 def _file_sha256(path: str) -> str:
     h = hashlib.sha256()
@@ -532,29 +411,21 @@ def _file_sha256(path: str) -> str:
             h.update(chunk)
     return h.hexdigest()
 
-
 def _normalize_url(raw_url: str, base_url: str = "") -> str:
-    if not raw_url:
-        return ""
-
+    if not raw_url: return ""
     url = raw_url.strip()
-    if not url:
-        return ""
+    if not url: return ""
 
     if "/pic/" in url:
         resolved = _resolve_nitter_image_url(url, base_url)
-        if resolved:
-            return resolved
+        if resolved: return resolved
 
-    if url.startswith("//"):
-        url = f"https:{url}"
+    if url.startswith("//"): url = f"https:{url}"
 
-    if base_url:
-        url = urljoin(base_url, url)
+    if base_url: url = urljoin(base_url, url)
 
     parsed = urlparse(url)
-    if parsed.scheme not in {"http", "https"} or not parsed.netloc:
-        return ""
+    if parsed.scheme not in {"http", "https"} or not parsed.netloc: return ""
 
     filtered_qs = [
         (k, v)
@@ -564,11 +435,8 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     cleaned = parsed._replace(query=urlencode(filtered_qs), fragment="")
     return urlunparse(cleaned)
 
-
 def _normalize_path_for_candidate_key(path: str) -> str:
-    if not path:
-        return path
-
+    if not path: return path
     dir_part, _, filename = path.rpartition("/")
     name, dot, ext = filename.partition(".")
     lower_name = name.lower()
@@ -579,11 +447,9 @@ def _normalize_path_for_candidate_key(path: str) -> str:
     normalized_filename = f"{lower_name}{dot}{ext}" if dot else lower_name
     return f"{dir_part}/{normalized_filename}" if dir_part else normalized_filename
 
-
 def _is_profile_image_url(url: str) -> bool:
     lower = url.lower()
     return "/profile_images/" in lower or "/profile_banners/" in lower
-
 
 def _looks_like_noise(url: str) -> bool:
     lower = url.lower()
@@ -592,51 +458,34 @@ def _looks_like_noise(url: str) -> bool:
     host = parsed.netloc or ""
 
     if host in _TWITTER_CDN_HOSTS:
-        if "/profile_images/" in path or "/profile_banners/" in path:
-            return True
+        if "/profile_images/" in path or "/profile_banners/" in path: return True
         return False
 
     if _is_nitter_url(lower) and "/pic/" in lower:
-        if "profile_images" in lower or "profile_banners" in lower:
-            return True
+        if "profile_images" in lower or "profile_banners" in lower: return True
         return False
 
-    if any(hint in lower for hint in _NOISE_HINTS):
-        return True
-
-    if any(pattern in lower for pattern in _NOISE_PATH_PATTERNS):
-        return True
-
+    if any(hint in lower for hint in _NOISE_HINTS): return True
+    if any(pattern in lower for pattern in _NOISE_PATH_PATTERNS): return True
     return False
-
 
 def _is_probable_image_url(url: str) -> bool:
     lower = url.lower()
     parsed = urlparse(lower)
     host = parsed.netloc or ""
 
-    if host in _TWITTER_CDN_HOSTS:
-        return True
+    if host in _TWITTER_CDN_HOSTS: return True
+    if _is_nitter_url(lower) and "/pic/" in lower: return True
 
-    if _is_nitter_url(lower) and "/pic/" in lower:
-        return True
+    if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS): return False
 
-    if parsed.path.endswith(_DISALLOWED_IMAGE_EXTENSIONS):
-        return False
+    if "/images/editor/" in lower or "/images/images/editor/" in lower: return False
+    if any(x in lower for x in ("/author/", "/profile/", "/avatar/")): return False
 
-    if "/images/editor/" in lower or "/images/images/editor/" in lower:
-        return False
-    if any(x in lower for x in ("/author/", "/profile/", "/avatar/")):
-        return False
-
-    if any(ext in lower for ext in _IMAGE_EXTENSIONS):
-        return True
-    if "image" in lower:
-        return True
-    if any(p in lower for p in _IMAGE_HINT_PATHS):
-        return True
+    if any(ext in lower for ext in _IMAGE_EXTENSIONS): return True
+    if "image" in lower: return True
+    if any(p in lower for p in _IMAGE_HINT_PATHS): return True
     return False
-
 
 def _donanimhaber_variants(url: str) -> list[str]:
     variants: list[str] = [url]
@@ -644,8 +493,7 @@ def _donanimhaber_variants(url: str) -> list[str]:
     host = parsed.netloc.lower()
     path = parsed.path or ""
 
-    if "donanimhaber.com" not in host:
-        return variants
+    if "donanimhaber.com" not in host: return variants
 
     upgraded_path = re.sub(r"/src_\d{2,4}x\d{2,4}x", "/src/", path, flags=re.IGNORECASE)
     if upgraded_path != path:
@@ -677,11 +525,9 @@ def _donanimhaber_variants(url: str) -> list[str]:
             unique.append(item)
     return unique
 
-
 def _thumbnail_to_original_variants(url: str) -> list[str]:
     parsed_check = urlparse(url)
-    if parsed_check.netloc in _TWITTER_CDN_HOSTS:
-        return [url]
+    if parsed_check.netloc in _TWITTER_CDN_HOSTS: return [url]
 
     variants: list[str] = [url]
     parsed = urlparse(url)
@@ -721,7 +567,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
             unique.append(item)
     return unique
 
-
 def _candidate_key(url: str) -> str:
     parsed = urlparse(url)
     path = _normalize_path_for_candidate_key(parsed.path or "")
@@ -738,7 +583,6 @@ def _candidate_key(url: str) -> str:
     ]
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
-
 def _visual_signature(url: str) -> str:
     parsed = urlparse(url.lower())
     path = parsed.path or ""
@@ -753,7 +597,6 @@ def _visual_signature(url: str) -> str:
     host = parsed.netloc.replace("www.", "")
     return f"{host}:{stem}"
 
-
 def _dhash(path: str) -> int:
     with Image.open(path) as img:
         gray = img.convert("L").resize((9, 8), Image.LANCZOS)
@@ -766,10 +609,8 @@ def _dhash(path: str) -> int:
             bits = (bits << 1) | (1 if row[x] > row[x + 1] else 0)
     return bits
 
-
 def _hamming(a: int, b: int) -> int:
     return (a ^ b).bit_count()
-
 
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
     best_url = ""
@@ -777,33 +618,26 @@ def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
 
     for item in srcset.split(","):
         item = item.strip()
-        if not item:
-            continue
+        if not item: continue
         parts = item.split()
         candidate = _normalize_url(parts[0], page_url)
-        if not candidate:
-            continue
+        if not candidate: continue
 
         score = 1.0
         if len(parts) > 1:
             descriptor = parts[1].lower()
             if descriptor.endswith("w"):
-                try:
-                    score = float(descriptor[:-1])
-                except ValueError:
-                    score = 1.0
+                try: score = float(descriptor[:-1])
+                except ValueError: score = 1.0
             elif descriptor.endswith("x"):
-                try:
-                    score = float(descriptor[:-1]) * 1000
-                except ValueError:
-                    score = 1.0
+                try: score = float(descriptor[:-1]) * 1000
+                except ValueError: score = 1.0
 
         if score > best_score:
             best_score = score
             best_url = candidate
 
     return best_url
-
 
 def _walk_json_for_image_urls(node, out: list[str]) -> None:
     if isinstance(node, dict):
@@ -826,40 +660,33 @@ def _walk_json_for_image_urls(node, out: list[str]) -> None:
         for item in node:
             _walk_json_for_image_urls(item, out)
 
-
 def _collect_jsonld_images(node, page_url: str, collector: list[str]) -> None:
     if isinstance(node, dict):
         image_value = node.get("image")
         if isinstance(image_value, str):
             normalized = _normalize_url(image_value, page_url)
-            if normalized:
-                collector.append(normalized)
+            if normalized: collector.append(normalized)
         elif isinstance(image_value, list):
             for item in image_value:
                 if isinstance(item, str):
                     normalized = _normalize_url(item, page_url)
-                    if normalized:
-                        collector.append(normalized)
+                    if normalized: collector.append(normalized)
                 elif isinstance(item, dict):
                     candidate = item.get("url") or item.get("contentUrl") or ""
                     normalized = _normalize_url(candidate, page_url)
-                    if normalized:
-                        collector.append(normalized)
+                    if normalized: collector.append(normalized)
         elif isinstance(image_value, dict):
             candidate = image_value.get("url") or image_value.get("contentUrl") or ""
             normalized = _normalize_url(candidate, page_url)
-            if normalized:
-                collector.append(normalized)
+            if normalized: collector.append(normalized)
         for value in node.values():
             _collect_jsonld_images(value, page_url, collector)
     elif isinstance(node, list):
         for item in node:
             _collect_jsonld_images(item, page_url, collector)
 
-
 def _extract_json_image_urls(script_text: str) -> list[str]:
-    if not script_text or not script_text.strip():
-        return []
+    if not script_text or not script_text.strip(): return []
     text = script_text.strip()
     urls: list[str] = []
 
@@ -874,15 +701,12 @@ def _extract_json_image_urls(script_text: str) -> list[str]:
         urls.append(m.group(0))
     return urls
 
-
 def _upsert_candidate(pool: list[dict], candidate: dict) -> None:
     key = candidate.get("key", "")
-    if not key:
-        return
+    if not key: return
 
     for idx, existing in enumerate(pool):
-        if existing.get("key") != key:
-            continue
+        if existing.get("key") != key: continue
 
         old_prio = int(existing.get("priority", 99))
         new_prio = int(candidate.get("priority", 99))
@@ -892,18 +716,15 @@ def _upsert_candidate(pool: list[dict], candidate: dict) -> None:
 
     pool.append(candidate)
 
-
 def _append_field_candidates(
     pool: list[dict],
     value: str,
     base_url: str,
     source_type: str,
 ) -> None:
-    if not isinstance(value, str) or not value.strip():
-        return
+    if not isinstance(value, str) or not value.strip(): return
     normalized = _normalize_url(value.strip(), base_url)
-    if not normalized:
-        return
+    if not normalized: return
     for variant in _thumbnail_to_original_variants(normalized):
         _upsert_candidate(
             pool,
@@ -914,7 +735,6 @@ def _append_field_candidates(
                 "priority": _SOURCE_PRIORITY.get(source_type, 99),
             },
         )
-
 
 def _add_scrape_candidate(
     pool: list[dict],
@@ -923,15 +743,12 @@ def _add_scrape_candidate(
     source_type: str,
 ) -> None:
     normalized = _normalize_url(raw_url, page_url)
-    if not normalized:
-        return
+    if not normalized: return
 
     for variant in _thumbnail_to_original_variants(normalized):
         lower = variant.lower()
-        if _looks_like_noise(lower):
-            continue
-        if not _is_probable_image_url(lower):
-            continue
+        if _looks_like_noise(lower): continue
+        if not _is_probable_image_url(lower): continue
         _upsert_candidate(
             pool,
             {
@@ -942,10 +759,8 @@ def _add_scrape_candidate(
             },
         )
 
-
 def _download_image_with_reason(image_url: str, limits: dict) -> tuple[Optional[str], str]:
-    if not image_url:
-        return None, "empty_url"
+    if not image_url: return None, "empty_url"
 
     min_width = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
     min_height = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
@@ -975,8 +790,7 @@ def _download_image_with_reason(image_url: str, limits: dict) -> tuple[Optional[
 
         downloaded = 0
         for chunk in response.iter_content(chunk_size=8192):
-            if not chunk:
-                continue
+            if not chunk: continue
             downloaded += len(chunk)
             if downloaded > _MAX_DOWNLOAD_BYTES:
                 temp_file.close()
@@ -1012,13 +826,11 @@ def _download_image_with_reason(image_url: str, limits: dict) -> tuple[Optional[
     except Exception as exc:
         return None, f"unexpected_error:{exc}"
 
-
 def _read_image_meta(path: str) -> tuple[int, int, int]:
     with Image.open(path) as img:
         width, height = img.size
     size_kb = max(1, os.path.getsize(path) // 1024)
     return width, height, size_kb
-
 
 def _score_image_quality(
     width: int,
@@ -1051,7 +863,6 @@ def _score_image_quality(
     )
     return total, detail
 
-
 def _adaptive_perceptual_threshold(
     base_threshold: int,
     current_signature: str,
@@ -1060,7 +871,6 @@ def _adaptive_perceptual_threshold(
     if current_signature and previous_signature and current_signature == previous_signature:
         return base_threshold + 3
     return base_threshold
-
 
 def _ai_search_image_url(article: dict) -> str:
     try:
@@ -1113,7 +923,6 @@ def _ai_search_image_url(article: dict) -> str:
     except Exception as exc:
         log(f"AI gorsel arama hata: {exc}", "WARNING")
         return ""
-
 
 def _create_fallback_image(width: int, height: int) -> str:
     project_root = get_project_root()
@@ -1208,7 +1017,6 @@ def _create_fallback_image(width: int, height: int) -> str:
         img.close()
         return temp_path
 
-
 def resize_and_crop(image_path: str, target_width: int, target_height: int) -> str:
     try:
         img = Image.open(image_path)
@@ -1249,7 +1057,6 @@ def resize_and_crop(image_path: str, target_width: int, target_height: int) -> s
     except Exception as exc:
         log(f"Boyutlandirma hatasi: {exc}", "WARNING")
         return image_path
-
 
 def add_logo(image_path: str) -> str:
     settings_config = load_config("settings")
@@ -1313,7 +1120,6 @@ def add_logo(image_path: str) -> str:
         log(f"Logo ekleme hatasi: {exc}", "WARNING")
         return image_path
 
-
 def download_image(image_url: str) -> Optional[str]:
     limits = _get_image_validation_limits()
     image_path, reason = _download_image_with_reason(image_url, limits)
@@ -1324,10 +1130,8 @@ def download_image(image_url: str) -> Optional[str]:
     log(f"Gorsel indirilemedi: {reason}", "WARNING")
     return None
 
-
 def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
-    if not url:
-        return []
+    if not url: return []
 
     if _is_nitter_url(url):
         nitter_results = _extract_nitter_images_from_page(url)
@@ -1446,8 +1250,7 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
 
         for script in soup.select('script[type="application/ld+json"]'):
             script_text = (script.string or script.get_text() or "").strip()
-            if not script_text:
-                continue
+            if not script_text: continue
             try:
                 parsed_ld = json.loads(script_text)
                 _jsonld_images: list[str] = []
@@ -1460,10 +1263,8 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
 
         for script in soup.find_all("script"):
             script_text = script.string or script.get_text() or ""
-            if not script_text.strip():
-                continue
-            if script.get("type") == "application/ld+json":
-                continue
+            if not script_text.strip(): continue
+            if script.get("type") == "application/ld+json": continue
             for script_url in _extract_json_image_urls(script_text):
                 _add_scrape_candidate(pool_normal, script_url, url, "article_script")
 
@@ -1482,7 +1283,6 @@ def scrape_article_image_urls(url: str, max_candidates: int = 8) -> list[dict]:
     except Exception as exc:
         log(f"Sayfa gorsel toplama hatasi: {exc}", "WARNING")
         return []
-
 
 def _collect_article_candidates(article: dict, max_candidates: int) -> list[dict]:
     pool: list[dict] = []
@@ -1589,8 +1389,7 @@ def prepare_images(article: dict) -> list[str]:
         source_type = candidate.get("source_type", "unknown")
         key = candidate.get("key", "") or _candidate_key(candidate_url)
 
-        if not candidate_url:
-            continue
+        if not candidate_url: continue
         if key in tried_keys:
             fail_reasons["duplicate_candidate_key"] += 1
             continue
@@ -1653,32 +1452,30 @@ def prepare_images(article: dict) -> list[str]:
             if should_add_logo:
                 processed = add_logo(processed)
 
-            # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA ---
+            # --- SOSYAL MEDYA KARTI OLUŞTURMA ---
             try:
                 from core.image_generator import create_social_card
                 
                 if processed and os.path.exists(processed):
                     card_path = processed.replace(".jpg", "_card.jpg")
                     
-                    # Haberin başlık ve özetini al
-                    art_title = article.get("title", "Haber Başlığı")
-                    art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                    # YZ'nin yazdığı metni al
+                    post_text = article.get("post_text_for_card", "Başlık yok")
                     
                     create_social_card(
-                        title=art_title,
-                        summary=art_summary[:300], # Maksimum 300 karakter özet
+                        post_text=post_text,
                         image_path=processed,
                         output_path=card_path
                     )
                     
                     if os.path.exists(card_path):
-                        _safe_unlink(processed) # Eski düz görseli sil
-                        processed = card_path    # Artık şablon görselimiz ana görsel
-                        log("Sosyal medya kartı başarıyla oluşturuldu ve seçildi.", "INFO")
+                        _safe_unlink(processed) 
+                        processed = card_path    
+                        log("Sosyal medya kartı başarıyla oluşturuldu.", "INFO")
                         
             except Exception as exc:
                 log(f"Kart oluşturma adımı atlandı: {exc}", "WARNING")
-            # ------------------------------------------
+            # -------------------------------------
 
             score, score_detail = _score_image_quality(
                 width=width,
@@ -1725,13 +1522,11 @@ def prepare_images(article: dict) -> list[str]:
         )
 
         for candidate in retry_relaxed_pool:
-            if len(accepted) >= max_images_per_news:
-                break
+            if len(accepted) >= max_images_per_news: break
 
             candidate_url = candidate.get("url", "")
             source_type = candidate.get("source_type", "unknown")
-            if not candidate_url:
-                continue
+            if not candidate_url: continue
 
             downloaded, reason = _download_image_with_reason(candidate_url, relaxed_limits)
             if not downloaded:
@@ -1778,17 +1573,14 @@ def prepare_images(article: dict) -> list[str]:
                 if should_add_logo:
                     processed = add_logo(processed)
 
-                # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (Relaxed Pass) ---
+                # --- SOSYAL MEDYA KARTI OLUŞTURMA (Relaxed Pass) ---
                 try:
                     from core.image_generator import create_social_card
-                    
                     if processed and os.path.exists(processed):
                         card_path = processed.replace(".jpg", "_card.jpg")
-                        art_title = article.get("title", "Haber Başlığı")
-                        art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                        post_text = article.get("post_text_for_card", "Başlık yok")
                         create_social_card(
-                            title=art_title,
-                            summary=art_summary[:300],
+                            post_text=post_text,
                             image_path=processed,
                             output_path=card_path
                         )
@@ -1798,7 +1590,7 @@ def prepare_images(article: dict) -> list[str]:
                             log("Sosyal medya kartı başarıyla oluşturuldu (relaxed).", "INFO")
                 except Exception as exc:
                     log(f"Kart oluşturma adımı atlandı (relaxed): {exc}", "WARNING")
-                # -----------------------------------------------------------
+                # -----------------------------------------------------
 
                 score, score_detail = _score_image_quality(
                     width=width,
@@ -1856,8 +1648,7 @@ def prepare_images(article: dict) -> list[str]:
         ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""))
         
         for ddg_url in ddg_urls:
-            if len(prepared_paths) >= max_images_per_news:
-                break
+            if len(prepared_paths) >= max_images_per_news: break
                 
             log(f"DuckDuckGo adayı deneniyor: {ddg_url[:100]}")
             downloaded, reason = _download_image_with_reason(ddg_url, limits)
@@ -1876,16 +1667,14 @@ def prepare_images(article: dict) -> list[str]:
                     if should_add_logo:
                         processed = add_logo(processed)
 
-                    # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (DuckDuckGo) ---
+                    # --- SOSYAL MEDYA KARTI OLUŞTURMA (DuckDuckGo) ---
                     try:
                         from core.image_generator import create_social_card
                         if processed and os.path.exists(processed):
                             card_path = processed.replace(".jpg", "_card.jpg")
-                            art_title = article.get("title", "Haber Başlığı")
-                            art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                            post_text = article.get("post_text_for_card", "Başlık yok")
                             create_social_card(
-                                title=art_title,
-                                summary=art_summary[:300],
+                                post_text=post_text,
                                 image_path=processed,
                                 output_path=card_path
                             )
@@ -1895,7 +1684,7 @@ def prepare_images(article: dict) -> list[str]:
                                 log("Sosyal medya kartı başarıyla oluşturuldu (DDG).", "INFO")
                     except Exception as exc:
                         log(f"Kart oluşturma adımı atlandı (DDG): {exc}", "WARNING")
-                    # ---------------------------------------------------------
+                    # -------------------------------------------------
                         
                     prepared_paths.append(processed)
                     used_sources.append("duckduckgo")
@@ -1925,16 +1714,14 @@ def prepare_images(article: dict) -> list[str]:
                     if should_add_logo:
                         processed = add_logo(processed)
 
-                    # --- YENİ: SOSYAL MEDYA KARTI OLUŞTURMA (AI) ---
+                    # --- SOSYAL MEDYA KARTI OLUŞTURMA (AI) ---
                     try:
                         from core.image_generator import create_social_card
                         if processed and os.path.exists(processed):
                             card_path = processed.replace(".jpg", "_card.jpg")
-                            art_title = article.get("title", "Haber Başlığı")
-                            art_summary = article.get("summary", "Haber özeti bulunamadı.")
+                            post_text = article.get("post_text_for_card", "Başlık yok")
                             create_social_card(
-                                title=art_title,
-                                summary=art_summary[:300],
+                                post_text=post_text,
                                 image_path=processed,
                                 output_path=card_path
                             )
@@ -1944,7 +1731,7 @@ def prepare_images(article: dict) -> list[str]:
                                 log("Sosyal medya kartı başarıyla oluşturuldu (AI).", "INFO")
                     except Exception as exc:
                         log(f"Kart oluşturma adımı atlandı (AI): {exc}", "WARNING")
-                    # ----------------------------------------------
+                    # ----------------------------------------
 
                     prepared_paths.append(processed)
                     used_sources.append("ai_search")
@@ -1957,7 +1744,7 @@ def prepare_images(article: dict) -> list[str]:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
 
     if not prepared_paths:
-        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi (RSS + scrape + DDG + AI hepsi bosa). Text-only paylasim yapilacak.", "WARNING")
+        log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi. Text-only paylasim yapilacak.", "WARNING")
         article["image_source"] = "no_image"
         article["image_sources"] = ["no_image"]
         article["prepared_image_count"] = 0
@@ -2022,6 +1809,9 @@ def run() -> bool:
         set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
 
+    # Kartın YZ metnini kullanabilmesi için article içine ekliyoruz
+    article["post_text_for_card"] = post_text
+
     set_stage("image", "running")
 
     try:
@@ -2048,66 +1838,3 @@ def run() -> bool:
         log(f"agent_image kritik hata: {exc}", "ERROR")
         set_stage("image", "error", error=str(exc))
         return False
-
-
-if __name__ == "__main__":
-    log("=== agent_image.py modul testi basliyor ===")
-
-    init_pipeline("test-image")
-
-    fake_article = {
-        "title": "Test: Yeni Elektrikli SUV Turkiye'de Satisa Cikti",
-        "link": "https://nitter.net/murattosunMSE/status/1234567890",
-        "summary": "Test ozet metni.",
-        "image_url": "",
-        "rss_image_url": "",
-        "image_candidates": [],
-        "source_name": "MuratTosun",
-        "source_priority": "medium",
-        "can_scrape_image": True,
-        "score": 78,
-    }
-    fake_post_text = (
-        "Yeni elektrikli SUV Turkiye'de.\n\n"
-        "Test post metni burada yer aliyor.\n\n"
-        "#elektrikli #SUV #otomotiv"
-    )
-
-    set_stage("fetch", "done", output={"articles": [fake_article], "count": 1})
-    set_stage(
-        "score",
-        "done",
-        output={
-            "selected_article": fake_article,
-            "score": 78,
-            "title": fake_article["title"],
-        },
-    )
-    set_stage(
-        "write",
-        "done",
-        output={
-            "article": fake_article,
-            "post_text": fake_post_text,
-            "post_text_length": len(fake_post_text),
-        },
-    )
-
-    success = run()
-
-    if success:
-        image_stage = get_stage("image")
-        output = image_stage.get("output", {})
-
-        log("-" * 50)
-        log("SONUC:")
-        log(f"Haber      : {output.get('article', {}).get('title', 'YOK')[:60]}")
-        log(f"Ilk gorsel : {output.get('image_path', 'YOK')}")
-        log(f"Gorsel adet: {output.get('image_count', 0)}")
-        log(f"Kaynak     : {output.get('image_source', 'YOK')}")
-        log(f"Post metni : {len(output.get('post_text', ''))} karakter")
-        log("-" * 50)
-    else:
-        log("Ajan basarisiz oldu", "WARNING")
-
-    log("=== agent_image.py modul testi tamamlandi ===")
