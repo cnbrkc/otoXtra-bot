@@ -1,8 +1,8 @@
 """
-platforms/instagram.py - Instagram Graph API katmani (v1.1 - Story Support)
+platforms/instagram.py - Instagram Graph API katmani (v1.2 - graph.instagram.com Fix)
   - Story (Hikaye) paylasimi yapar.
-  - ImgBB/Catbox/0x0.st gibi ucretsiz servislerle local gorseli public URL yapar.
-  - Instagram API'nin zorunlu "Container Processing" bekleme suresini yonetir.
+  - API Host URL graph.instagram.com olarak guncellendi (Instagram Login tokenlari icin).
+  - media_type STORIES olarak duzeltilmis (Meta dokumaninda belirtildigi uzere).
 """
 
 import base64
@@ -12,8 +12,9 @@ import requests
 from core.logger import log
 
 # ── Instagram API ────────────────────────────────────────────────────────────
-_IG_API_VERSION = "v20.0"
-_BASE_URL = f"https://graph.facebook.com/{_IG_API_VERSION}"
+# F1 Düzeltmesi: graph.facebook.com yerine graph.instagram.com kullanıldı (Instagram Login tokenları için zorunlu)
+_IG_API_VERSION = "v21.0"
+_BASE_URL = f"https://graph.instagram.com/{_IG_API_VERSION}"
 _REQUEST_TIMEOUT = 60
 
 # ── Upload servis limitleri ──────────────────────────────────────────────────
@@ -162,15 +163,15 @@ def post_story(image_path: str) -> str | None:
         log("IG Story: Tum upload servisleri basarisiz oldu. Story atilamadi.", "ERROR")
         return None
 
-    # 2. Container Oluştur (media_type=STORY)
+    # 2. Container Oluştur (media_type=STORIES - Dokümana göre düzeltildi)
     container_url = f"{_BASE_URL}/{ig_user_id}/media"
     container_data = {
-        "media_type": "STORY",
+        "media_type": "STORIES", # Dokümanda STORIES olarak geçiyor.
         "image_url": public_url,
         "access_token": token,
     }
 
-    log("IG Story: Container olusturuluyor (media_type=STORY)...")
+    log("IG Story: Container olusturuluyor (media_type=STORIES)...")
     try:
         resp = requests.post(container_url, data=container_data, timeout=_REQUEST_TIMEOUT)
         result = resp.json()
