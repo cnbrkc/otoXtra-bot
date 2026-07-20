@@ -1,5 +1,6 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.6 - Story Kart & Logosuz Görsel)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.6 - FB & Threads Standart Görsel)
+  - Kart oluşturma islemi kaldirildi. Sadece Instagram Story modulu icin ayri cagrilacak.
 """
 
 import hashlib
@@ -1453,35 +1454,8 @@ def prepare_images(article: dict) -> list[str]:
             else:
                 log(f"Resize atlandi: {resize_reason}")
 
-            card_created = False
-            # --- SOSYAL MEDYA KARTI OLUŞTURMA (Logosuz ham görsel ile) ---
-            try:
-                from core.image_generator import create_social_card
-                
-                if processed and os.path.exists(processed):
-                    card_path = processed.replace(".jpg", "_card.jpg")
-                    
-                    post_text = article.get("post_text_for_card", "Başlık yok")
-                    
-                    create_social_card(
-                        post_text=post_text,
-                        image_path=processed, # Ham görsel (logosuz)
-                        output_path=card_path
-                    )
-                    
-                    if os.path.exists(card_path):
-                        _safe_unlink(processed) 
-                        processed = card_path    
-                        card_created = True
-                        log("Sosyal medya kartı başarıyla oluşturuldu.", "INFO")
-                        
-            except Exception as exc:
-                log(f"Kart oluşturma adımı atlandı: {exc}", "WARNING")
-            
-            # Eğer kart oluşturulmadıysa, normal paylaşıma logoyu ekle.
-            if not card_created and should_add_logo:
+            if should_add_logo:
                 processed = add_logo(processed)
-            # ---------------------------------------------------------------
 
             score, score_detail = _score_image_quality(
                 width=width,
@@ -1576,22 +1550,7 @@ def prepare_images(article: dict) -> list[str]:
                 else:
                     log(f"Resize atlandi (relaxed): {resize_reason}")
 
-                card_created = False
-                try:
-                    from core.image_generator import create_social_card
-                    if processed and os.path.exists(processed):
-                        card_path = processed.replace(".jpg", "_card.jpg")
-                        post_text = article.get("post_text_for_card", "Başlık yok")
-                        create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
-                        if os.path.exists(card_path):
-                            _safe_unlink(processed)
-                            processed = card_path
-                            card_created = True
-                            log("Sosyal medya kartı başarıyla oluşturuldu (relaxed).", "INFO")
-                except Exception as exc:
-                    log(f"Kart oluşturma adımı atlandı (relaxed): {exc}", "WARNING")
-                
-                if not card_created and should_add_logo:
+                if should_add_logo:
                     processed = add_logo(processed)
 
                 score, score_detail = _score_image_quality(
@@ -1652,23 +1611,8 @@ def prepare_images(article: dict) -> list[str]:
                         processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
                     else:
                         log(f"DDG gorsel resize atlandi: {resize_reason}")
-
-                    card_created = False
-                    try:
-                        from core.image_generator import create_social_card
-                        if processed and os.path.exists(processed):
-                            card_path = processed.replace(".jpg", "_card.jpg")
-                            post_text = article.get("post_text_for_card", "Başlık yok")
-                            create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
-                            if os.path.exists(card_path):
-                                _safe_unlink(processed)
-                                processed = card_path
-                                card_created = True
-                                log("Sosyal medya kartı başarıyla oluşturuldu (DDG).", "INFO")
-                    except Exception as exc:
-                        log(f"Kart oluşturma adımı atlandı (DDG): {exc}", "WARNING")
-                    
-                    if not card_created and should_add_logo:
+                        
+                    if should_add_logo:
                         processed = add_logo(processed)
                         
                     prepared_paths.append(processed)
@@ -1696,23 +1640,7 @@ def prepare_images(article: dict) -> list[str]:
                         processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
                     else:
                         log(f"AI gorsel resize atlandi: {resize_reason}")
-
-                    card_created = False
-                    try:
-                        from core.image_generator import create_social_card
-                        if processed and os.path.exists(processed):
-                            card_path = processed.replace(".jpg", "_card.jpg")
-                            post_text = article.get("post_text_for_card", "Başlık yok")
-                            create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
-                            if os.path.exists(card_path):
-                                _safe_unlink(processed)
-                                processed = card_path
-                                card_created = True
-                                log("Sosyal medya kartı başarıyla oluşturuldu (AI).", "INFO")
-                    except Exception as exc:
-                        log(f"Kart oluşturma adımı atlandı (AI): {exc}", "WARNING")
-                    
-                    if not card_created and should_add_logo:
+                    if should_add_logo:
                         processed = add_logo(processed)
 
                     prepared_paths.append(processed)
@@ -1791,6 +1719,7 @@ def run() -> bool:
         set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
 
+    # Kartın YZ metnini kullanabilmesi için article içine ekliyoruz (İleride Instagram modülü için lazım olacak)
     article["post_text_for_card"] = post_text
 
     set_stage("image", "running")
