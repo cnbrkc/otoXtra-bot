@@ -8,9 +8,9 @@ from core.logger import log
 CANVAS_WIDTH = 1080
 CANVAS_HEIGHT = 1920
 
-# Renkler
-BG_COLOR = (18, 25, 36)           # Koyu lacivert arka plan
-TEXT_COLOR = (255, 255, 255)      # Saf Parlak Beyaz
+# Renkler (Şeffaf gradyan için RGBA formatında)
+BG_COLOR_RGBA = (18, 25, 36, 255)  # Koyu lacivert arka plan (Opak)
+TEXT_COLOR = (255, 255, 255)        # Saf Beyaz
 
 # Fontlar
 FONT_BOLD_PATH = os.path.join(get_project_root(), "assets", "Roboto-Bold.ttf")
@@ -46,27 +46,27 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         title = re.sub(r'[^\w\s]', '', title).strip().upper()
         body = "\n".join(lines[1:]) if len(lines) > 1 else ""
 
-        # 2. Yükseklikleri Hesapla (Tam Ortalama İçin)
+        # 2. Tam Ortalamak İçin Yükseklikleri Hesapla (Dummy Draw)
         dummy_img = Image.new("RGB", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
 
         font_title = _get_font(55, bold=True)
-        title_lines = _wrap_text(dummy_draw, title, font_title, CANVAS_WIDTH - 120)
+        title_lines = _wrap_text(dummy_draw, title, font_title, CANVAS_WIDTH - 160)
         title_h = sum([(dummy_draw.textbbox((0,0), line, font=font_title)[3]) for line in title_lines]) + (len(title_lines)-1)*15
 
         font_body = _get_font(35, bold=False)
-        body_lines = _wrap_text(dummy_draw, body, font_body, CANVAS_WIDTH - 120)
+        body_lines = _wrap_text(dummy_draw, body, font_body, CANVAS_WIDTH - 160)
         body_h = sum([(dummy_draw.textbbox((0,0), line, font=font_body)[3]) for line in body_lines]) + (len(body_lines)-1)*12
 
-        # Görsel için ayrılan alan (Kırpılmadan sığdırılacağı için sadece max yükseklik lazım)
-        img_max_h = 800 
+        logo_h = 120
+        img_h = 700
         gap = 40
 
-        total_h = title_h + gap + img_max_h + gap + body_h
-        y_cursor = (CANVAS_HEIGHT - total_h) // 2  # DİKEY TAM ORTALAMA
+        total_h = logo_h + gap + title_h + gap + img_h + gap + body_h
+        y_cursor = (CANVAS_HEIGHT - total_h) // 2  # TAM ORTALAMA
 
-        # 3. Arka Planı Oluştur (Blur Sihri)
-        canvas = Image.new("RGB", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR)
+        # 3. Arka Planı Oluştur (Blur ve Gradient Sihri)
+        canvas = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR_RGBA)
         
         if image_path and os.path.exists(image_path):
             try:
@@ -85,8 +85,8 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
                     
                 blur_img = img.resize((b_w, b_h), Image.LANCZOS)
                 
-                # B. Yoğun Blur uygula (Pürüzsüz renkler için)
-                blur_img = blur_img.filter(ImageFilter.GaussianBlur(80))
+                # B. Yoğun Blur uygula
+                blur_img = blur_img.filter(ImageFilter.GaussianBlur(70))
                 
                 # C. Ekrana ortala ve yapıştır
                 left = (b_w - CANVAS_WIDTH) // 2
@@ -96,39 +96,39 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             except Exception as e:
                 log(f"Blur arka plan hazırlanamadı: {e}", "WARNING")
 
-        # D. Koyu Lacivert Gradient (En üstten ve en alttan gelip fotoğrafa yaklaştıkça şeffaflaşan)
-        # Bunun için RGBA modunda bir overlay oluşturup alphayı değiştiriyoruz
+        # D. Koyu Lacivert Gradient (Alt ve Üst Kenarlarda Solarak Yok Olan Efekt)
         overlay = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (0,0,0,0))
+        draw_overlay = ImageDraw.Draw(overlay)
         
-        # Gradient için yükseklik sınırları
-        top_fade_limit = y_cursor - 60 # Başlığın biraz üstü
-        bottom_fade_limit = y_cursor + title_h + gap + img_max_h + gap + 60 # Metnin biraz altı
+        fade_dist = 600 # Geniş bir alanda yumuşakça kaybolması için
         
-        # Çizgi çizgi alpha değerini değiştirerek gradient oluştur
         for y in range(CANVAS_HEIGHT):
-            if y < top_fade_limit:
-                # En tepede full lacivert (alpha 255), aşağı indikçe şeffaflaşıyor (alpha 0)
-                alpha = int(255 * (1 - (y / top_fade_limit)))
-                # Alpha 0'ın altına düşmesin
-                if alpha < 0: alpha = 0
-            elif y > bottom_fade_limit:
-                # En altta full lacivert (alpha 255), yukarı çıktıkça şeffaflaşıyor (alpha 0)
-                dist_from_bottom = CANVAS_HEIGHT - y
-                dist_to_fade = CANVAS_HEIGHT - bottom_fade_limit
-                alpha = int(255 * (dist_from_bottom / dist_to_fade))
-                if alpha < 0: alpha = 0
-                if alpha > 255: alpha = 255
+            if y < fade_dist:
+                # Yukarıdan aşağıya şeffaflaşan lacivert
+                alpha = int(255 * (1 - y / fade_dist))
+            elif y > CANVAS_HEIGHT - fade_dist:
+                # Aşağıdan yukarıya şeffaflaşan lacivert
+                alpha = int(255 * ((y - (CANVAS_HEIGHT - fade_dist)) / fade_dist))
             else:
-                # Fotoğrafın ve metnin olduğu orta kısımda hiç lacivert olmasın
+                # Orta kısımda hiç lacivert olmasın (sadece blur kalsın)
                 alpha = 0
-                
-            # Bu satırı lacivert renkle çiz
-            ImageDraw.Draw(overlay).line([(0, y), (CANVAS_WIDTH, y)], fill=(18, 25, 36, alpha))
+            draw_overlay.line([(0, y), (CANVAS_WIDTH, y)], fill=(18, 25, 36, alpha))
             
-        canvas = Image.alpha_composite(canvas.convert("RGBA"), overlay)
+        canvas = Image.alpha_composite(canvas, overlay)
         draw = ImageDraw.Draw(canvas)
 
-        # 4. Başlık Çiz (Yatay Ortalı)
+        # 4. Elementleri Tam Ortalanmış Olarak Çiz
+
+        # Logo
+        logo_path = os.path.join(get_project_root(), "assets", "logo.png")
+        if os.path.exists(logo_path):
+            logo = Image.open(logo_path).convert("RGBA")
+            logo = logo.resize((logo_h, logo_h), Image.LANCZOS)
+            logo_x = (CANVAS_WIDTH - logo_h) // 2
+            canvas.paste(logo, (logo_x, y_cursor), logo)
+        y_cursor += logo_h + gap
+
+        # Başlık
         for line in title_lines:
             bbox = draw.textbbox((0,0), line, font=font_title)
             line_w = bbox[2] - bbox[0]
@@ -137,32 +137,30 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             y_cursor += bbox[3] + 15
         y_cursor += gap - 15
 
-        # 5. Ana Görseli Çiz (Kırpılmadan - Contain Mantığı ile Ortalanmış)
-        img_y_start = y_cursor
+        # Ana Görsel (Kırpılmadan, sığdırılarak - Contain)
+        img_y = y_cursor
         if image_path and os.path.exists(image_path):
             try:
                 img = Image.open(image_path).convert("RGB")
                 img_ratio = img.width / img.height
-                target_ratio = 1000 / img_max_h  # 1000 max width, 800 max height
+                target_ratio = 1000 / img_h  # 1000 max width, 700 max height
                 
                 if img_ratio > target_ratio: 
-                    # Yatay görsel, genişliğe sığdır
                     n_w = 1000
                     n_h = int(1000 / img_ratio)
                 else: 
-                    # Dikey görsel, yüksekliğe sığdır
-                    n_h = img_max_h
-                    n_w = int(img_max_h * img_ratio)
+                    n_h = img_h
+                    n_w = int(img_h * img_ratio)
                     
                 img = img.resize((n_w, n_h), Image.LANCZOS)
                 img_x = (CANVAS_WIDTH - n_w) // 2
-                img_y = img_y_start + (img_max_h - n_h) // 2
-                canvas.paste(img, (img_x, img_y))
+                # Görseli ayrılmış alanda dikey olarak da ortala
+                canvas.paste(img, (img_x, img_y + (img_h - n_h)//2))
             except Exception as e:
                 log(f"Ana görsel işlenirken hata: {e}", "WARNING")
-        y_cursor += img_max_h + gap
+        y_cursor += img_h + gap
 
-        # 6. Haber Metnini Çiz (Yatay Ortalı)
+        # Haber Metni (Alt Kısım)
         for line in body_lines:
             bbox = draw.textbbox((0,0), line, font=font_body)
             line_w = bbox[2] - bbox[0]
