@@ -1,5 +1,5 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.5 - DDG Fix & Kart Fix)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.6 - Story Kart & Logosuz Görsel)
 """
 
 import hashlib
@@ -109,14 +109,12 @@ def _safe_unlink(path: str) -> None:
 # ── DuckDuckGo ──
 def get_duckduckgo_image_candidates(article_title: str, max_results: int = 10) -> list[str]:
     try:
-        # Linkleri ve çok uzun metinleri temizle
         clean_title = re.sub(r'http\S+', '', article_title).strip()
         clean_title = clean_title.lower()
         clean_title = re.sub(r'[^\w\s]', '', clean_title)
         tr_map = str.maketrans("çğıöşü", "cgiosu")
         clean_title = clean_title.translate(tr_map)
         
-        # Sadece ilk 8 kelimeyi al (DuckDuckGo uzun sorgularda saçmalıyor)
         words = clean_title.split()
         clean_title = " ".join(words[:8])
         
@@ -551,7 +549,7 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
+            variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs)))
 
     filename_cleaned_path = re.sub(
         r"(?i)([-_](small|thumb|thumbnail|medium|preview))(?=\.)",
@@ -1455,10 +1453,8 @@ def prepare_images(article: dict) -> list[str]:
             else:
                 log(f"Resize atlandi: {resize_reason}")
 
-            if should_add_logo:
-                processed = add_logo(processed)
-
-            # --- SOSYAL MEDYA KARTI OLUŞTURMA ---
+            card_created = False
+            # --- SOSYAL MEDYA KARTI OLUŞTURMA (Logosuz ham görsel ile) ---
             try:
                 from core.image_generator import create_social_card
                 
@@ -1469,18 +1465,23 @@ def prepare_images(article: dict) -> list[str]:
                     
                     create_social_card(
                         post_text=post_text,
-                        image_path=processed,
+                        image_path=processed, # Ham görsel (logosuz)
                         output_path=card_path
                     )
                     
                     if os.path.exists(card_path):
                         _safe_unlink(processed) 
                         processed = card_path    
+                        card_created = True
                         log("Sosyal medya kartı başarıyla oluşturuldu.", "INFO")
                         
             except Exception as exc:
                 log(f"Kart oluşturma adımı atlandı: {exc}", "WARNING")
-            # -------------------------------------
+            
+            # Eğer kart oluşturulmadıysa, normal paylaşıma logoyu ekle.
+            if not card_created and should_add_logo:
+                processed = add_logo(processed)
+            # ---------------------------------------------------------------
 
             score, score_detail = _score_image_quality(
                 width=width,
@@ -1575,47 +1576,34 @@ def prepare_images(article: dict) -> list[str]:
                 else:
                     log(f"Resize atlandi (relaxed): {resize_reason}")
 
-                if should_add_logo:
-                    processed = add_logo(processed)
-
-                # --- SOSYAL MEDYA KARTI OLUŞTURMA (Relaxed Pass) ---
+                card_created = False
                 try:
                     from core.image_generator import create_social_card
                     if processed and os.path.exists(processed):
                         card_path = processed.replace(".jpg", "_card.jpg")
                         post_text = article.get("post_text_for_card", "Başlık yok")
-                        create_social_card(
-                            post_text=post_text,
-                            image_path=processed,
-                            output_path=card_path
-                        )
+                        create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
                         if os.path.exists(card_path):
                             _safe_unlink(processed)
                             processed = card_path
+                            card_created = True
                             log("Sosyal medya kartı başarıyla oluşturuldu (relaxed).", "INFO")
                 except Exception as exc:
                     log(f"Kart oluşturma adımı atlandı (relaxed): {exc}", "WARNING")
-                # -----------------------------------------------------
+                
+                if not card_created and should_add_logo:
+                    processed = add_logo(processed)
 
                 score, score_detail = _score_image_quality(
-                    width=width,
-                    height=height,
-                    size_kb=size_kb,
-                    source_type=source_type,
-                    target_ratio=target_ratio,
+                    width=width, height=height, size_kb=size_kb, source_type=source_type, target_ratio=target_ratio,
                 )
                 score = max(0.0, score - 7.0)
 
                 accepted.append(
                     {
-                        "path": processed,
-                        "url": candidate_url,
-                        "source_type": source_type,
-                        "score": score,
-                        "score_detail": f"{score_detail}, relaxed_penalty=7.0",
-                        "phash": current_phash,
-                        "signature": current_signature,
-                        "content_hash": content_hash,
+                        "path": processed, "url": candidate_url, "source_type": source_type,
+                        "score": score, "score_detail": f"{score_detail}, relaxed_penalty=7.0",
+                        "phash": current_phash, "signature": current_signature, "content_hash": content_hash,
                     }
                 )
 
@@ -1637,11 +1625,7 @@ def prepare_images(article: dict) -> list[str]:
         for item in selected:
             prepared_paths.append(item["path"])
             used_sources.append(item.get("source_type", "unknown"))
-            log(
-                f"Secilen gorsel: score={item.get('score', 0.0):.1f} "
-                f"source={item.get('source_type', 'unknown')} "
-                f"url={item.get('url', '')[:110]}"
-            )
+            log(f"Secilen gorsel: score={item.get('score', 0.0):.1f} source={item.get('source_type', 'unknown')} url={item.get('url', '')[:110]}")
 
         for item in discarded:
             path = item.get("path", "")
@@ -1668,28 +1652,24 @@ def prepare_images(article: dict) -> list[str]:
                         processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
                     else:
                         log(f"DDG gorsel resize atlandi: {resize_reason}")
-                        
-                    if should_add_logo:
-                        processed = add_logo(processed)
 
-                    # --- SOSYAL MEDYA KARTI OLUŞTURMA (DuckDuckGo) ---
+                    card_created = False
                     try:
                         from core.image_generator import create_social_card
                         if processed and os.path.exists(processed):
                             card_path = processed.replace(".jpg", "_card.jpg")
                             post_text = article.get("post_text_for_card", "Başlık yok")
-                            create_social_card(
-                                post_text=post_text,
-                                image_path=processed,
-                                output_path=card_path
-                            )
+                            create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
                             if os.path.exists(card_path):
                                 _safe_unlink(processed)
                                 processed = card_path
+                                card_created = True
                                 log("Sosyal medya kartı başarıyla oluşturuldu (DDG).", "INFO")
                     except Exception as exc:
                         log(f"Kart oluşturma adımı atlandı (DDG): {exc}", "WARNING")
-                    # -------------------------------------------------
+                    
+                    if not card_created and should_add_logo:
+                        processed = add_logo(processed)
                         
                     prepared_paths.append(processed)
                     used_sources.append("duckduckgo")
@@ -1716,27 +1696,24 @@ def prepare_images(article: dict) -> list[str]:
                         processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
                     else:
                         log(f"AI gorsel resize atlandi: {resize_reason}")
-                    if should_add_logo:
-                        processed = add_logo(processed)
 
-                    # --- SOSYAL MEDYA KARTI OLUŞTURMA (AI) ---
+                    card_created = False
                     try:
                         from core.image_generator import create_social_card
                         if processed and os.path.exists(processed):
                             card_path = processed.replace(".jpg", "_card.jpg")
                             post_text = article.get("post_text_for_card", "Başlık yok")
-                            create_social_card(
-                                post_text=post_text,
-                                image_path=processed,
-                                output_path=card_path
-                            )
+                            create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
                             if os.path.exists(card_path):
                                 _safe_unlink(processed)
                                 processed = card_path
+                                card_created = True
                                 log("Sosyal medya kartı başarıyla oluşturuldu (AI).", "INFO")
                     except Exception as exc:
                         log(f"Kart oluşturma adımı atlandı (AI): {exc}", "WARNING")
-                    # ----------------------------------------
+                    
+                    if not card_created and should_add_logo:
+                        processed = add_logo(processed)
 
                     prepared_paths.append(processed)
                     used_sources.append("ai_search")
@@ -1814,7 +1791,6 @@ def run() -> bool:
         set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
 
-    # Kartın YZ metnini kullanabilmesi için article içine ekliyoruz
     article["post_text_for_card"] = post_text
 
     set_stage("image", "running")
@@ -1833,10 +1809,7 @@ def run() -> bool:
         }
         set_stage("image", "done", output=output)
 
-        log(
-            f"agent_image tamamlandi -> kaynak={article.get('image_source', '?')} "
-            f"adet={len(image_paths)}"
-        )
+        log(f"agent_image tamamlandi -> kaynak={article.get('image_source', '?')} adet={len(image_paths)}")
         return True
 
     except Exception as exc:
