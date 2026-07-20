@@ -83,8 +83,9 @@ on:
           - 'true'
           - 'false'
 
+# F12 Düzeltmesi: run_id yerine sabit isim verildi, böylece eşzamanlı çalışma engellendi.
 concurrency:
-  group: otoxtra-bot-${{ github.run_id }}
+  group: otoxtra-bot
   cancel-in-progress: false
 
 jobs:
@@ -127,7 +128,7 @@ jobs:
           THREADS_ACCESS_TOKEN: ${{ secrets.THREADS_ACCESS_TOKEN }}
           IMGBB_API_KEY: ${{ secrets.IMGBB_API_KEY }}
 
-          # Instagram API Credentials
+          # F1 Düzeltmesi: Instagram API Credentials eklendi
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
 
