@@ -1,4 +1,4 @@
-# otoXtra BOT — ANA ŞEMA v4.0
+# otoXtra BOT — ANA ŞEMA v5.0
 > **BU DOSYA NEDİR?**
 > Projenin tam haritası. Her yeni YZ sohbetinde SADECE BU DOSYAYI yapıştır.
 > YZ bunu okuyunca projeyi tanır, senden neye ihtiyacı olduğunu söyler.
@@ -6,9 +6,9 @@
 ---
 ## PROJE DURUMU
 ```
-Proje Adı      : otoXtra Facebook Haber Botu
+Proje Adı      : otoXtra Facebook/Threads/Instagram Haber Botu
 Mimari         : Modüler Ajan Sistemi v5.x
-Son Güncelleme : 2026-05-05
+Son Güncelleme : 2025-12-21
 Aktif Branch   : main
 Bot Durumu     : Çalışıyor
 ```
@@ -36,11 +36,11 @@ otoXtra-bot/
 │   └── state_manager.py              ← pipeline.json yöneticisi (aşama takibi)
 │
 ├── agents/                           ← Her ajan bir boru hattı aşamasını yönetir
-│   ├── agent_fetcher.py              ← v5.0 — RSS çekme, Nitter desteği, FxTwitter API
+│   ├── agent_fetcher.py              ← v7.0 — RSS çekme, Nitter desteği, FxTwitter API, DuckDuckGo arama
 │   ├── agent_scorer.py               ← v5.2 — YZ ile viral puanlama (batch=8)
-│   ├── agent_writer.py               ← v5.1 — YZ ile Türkçe post yazma + kalite kontrolü
-│   ├── agent_image.py                ← v7.0 — Görsel bulma/indirme/logo watermark
-│   └── agent_publisher.py            ← v5.0 — Facebook + Threads + Telegram yayıncısı
+│   ├── agent_writer.py               ← v5.2 — YZ ile Türkçe post yazma + kalite kontrolü
+│   ├── agent_image.py                ← v8.8 — Görsel bulma/indirme/logo watermark/kart üretimi
+│   └── agent_publisher.py            ← v6.1 — Facebook + Threads + IG Story + Telegram yayıncısı
 │
 ├── platforms/                        ← Platform API katmanları (karar vermez, sadece API çağrısı yapar)
 │   ├── facebook.py                   ← v3.3 — Graph API v25.0 (tek/çoklu görsel)
@@ -403,7 +403,7 @@ GEMINI_MODELS = [
 }
 ```
 ---
-### agents/agent_fetcher.py (v5.0)
+### agents/agent_fetcher.py (v7.0)
 **Görev:** RSS ve Nitter feed'lerinden haber çeker, filtreler, görsel adayları toplar.
 **Akış:**
 1. `sources.json` → feed listesi
@@ -486,7 +486,7 @@ Maksimum trend bonusu: +18 puan (TREND_BONUS_CAP)
 }
 ```
 ---
-### agents/agent_writer.py (v5.1 ULTRA FIXED)
+### agents/agent_writer.py (v5.2 FIXED)
 **Görev:** En yüksek puanlı haber için Türkçe Facebook postu yazar.
 **Kalite kontrol kuralları:**
 ```
@@ -511,7 +511,7 @@ BAŞLIK BÜYÜK HARF (max 90 karakter)
 Siz bu gelişme hakkında ne düşünüyorsunuz?
 ```
 ---
-### agents/agent_image.py (v7.0)
+### agents/agent_image.py (v8.8)
 **Görev:** Haberler için görsel bulur, indirir, boyut/oran kontrolü yapar, logo ekler.
 **Görsel kaynak önceliği (düşük sayı = yüksek öncelik):**
 ```
@@ -551,7 +551,7 @@ Boyut: Görsel genişliğinin %logo_size_percent'i
 Opaklık: logo_opacity (0.0-1.0)
 ```
 ---
-### agents/agent_publisher.py (v5.0)
+### agents/agent_publisher.py (v6.1)
 **Görev:** Facebook, Threads ve Telegram'a paylaşım yapar.
 **Mod tespiti:**
 ```python
@@ -789,8 +789,8 @@ Threads 500 karakter limiti     : VAR (otomatik kesme, kelime ortasında kesmez)
 Telegram hata bildirimi         : VAR (workflow başarısız olursa)
 Nitter görsel çekimi (FxTwitter): VAR (profil fotosu filtrelenir)
 Görsel duplikasyon kontrolü     : VAR (perceptual hash, threshold ayarlanabilir)
-Instagram paylaşımı             : YOK
+Instagram Story paylaşımı     : VAR (kart üretimi, IMAGE_TEST_MODE)
 Twitter/X paylaşımı             : YOK
 ```
 ---
-**Versiyon: 4.0** — Tüm kaynak kodlar satır satır okunarak hazırlanmıştır.
+**Versiyon: 5.0** — Tüm kaynak kodlar satır satır okunarak hazırlanmıştır.

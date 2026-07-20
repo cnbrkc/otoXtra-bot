@@ -404,7 +404,15 @@ def run() -> bool:
         try:
             ig_cfg = settings.get("instagram", {}) if isinstance(settings, dict) else {}
             if ig_cfg.get("enabled", False) and not all_test_mode and not _is_image_test_mode():
-                if image_paths and os.path.exists(image_paths[0]):
+                # Credential kontrolü - eksikse baştan atla
+                ig_user_id = os.environ.get("IG_USER_ID", "").strip()
+                ig_token = os.environ.get("IG_ACCESS_TOKEN", "").strip()
+                imgbb_key = os.environ.get("IMGBB_API_KEY", "").strip()
+                
+                if not ig_user_id or not ig_token:
+                    log("IG Story: IG_USER_ID veya IG_ACCESS_TOKEN eksik. Story atlandı.", "WARNING")
+                    ig_success = False
+                elif image_paths and os.path.exists(image_paths[0]):
                     log("IG Story: Kart olusturuluyor...")
                     try:
                         from core.image_generator import create_social_card
@@ -417,9 +425,17 @@ def run() -> bool:
                             if ig_story_id:
                                 log(f"IG Story paylasim basarili: {ig_story_id}")
                                 ig_success = True
+                            else:
+                                log("IG Story: Paylaşım başarısız (post_story None döndürdü). IMGBB_API_KEY kontrol edin.", "ERROR")
                             os.unlink(card_path)
+                        else:
+                            log("IG Story: Kart dosyası oluşturulamadı.", "ERROR")
                     except Exception as ig_exc:
                         log(f"IG Story uretim hatasi: {ig_exc}", "WARNING")
+                else:
+                    log("IG Story: Görsel yolu yok veya dosya mevcut değil.", "WARNING")
+            elif not ig_cfg.get("enabled", False):
+                log("IG Story: Instagram config'de enabled=false.")
         except Exception as exc:
             log(f"IG Story beklenmeyen hata: {exc}", "WARNING")
 
