@@ -121,6 +121,7 @@ def _sanitize_settings(data: Any) -> dict:
     duplicate = data.get("duplicate_detection", {})
     ai = data.get("ai", {})
     threads = data.get("threads", {})
+    instagram = data.get("instagram", {})
 
     if not isinstance(posting, dict):
         posting = {}
@@ -134,6 +135,8 @@ def _sanitize_settings(data: Any) -> dict:
         ai = {}
     if not isinstance(threads, dict):
         threads = {}
+    if not isinstance(instagram, dict):
+        instagram = {}
 
     safe = {
         "posting": {
@@ -187,6 +190,9 @@ def _sanitize_settings(data: Any) -> dict:
         "threads": {
             "enabled": _as_bool(threads.get("enabled"), False),
             "mode": _as_str(threads.get("mode"), "text_only"),
+        },
+        "instagram": {
+            "enabled": _as_bool(instagram.get("enabled"), False),
         },
     }
 
