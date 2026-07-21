@@ -1,6 +1,10 @@
 """
-platforms/threads.py - Threads API katmani (v5.0 - Coklu Gorsel Fallback)
+platforms/threads.py - Threads API katmani (v5.1 - DRY Refactoring)
 
+v5.1:
+  - Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
+  - Tekrarlanan _upload_* fonksiyonlari kaldirildi
+  
 v5.0:
   - YENI: post_with_image() - Tam fallback zinciri ile gorsel paylasim
     1. Orijinal URL (article'dan, zaten indirdigimiz gorselin kaynagi)
@@ -28,6 +32,7 @@ import time
 import requests
 from urllib.parse import unquote, urlparse
 from core.logger import log
+from core.image_uploader import get_public_url_fallback
 
 # ── Threads API ──────────────────────────────────────────────────────────────
 _THREADS_API_VERSION = "v1.0"
@@ -437,6 +442,13 @@ def _upload_imgbb(image_path: str) -> str | None:
 
 
 # ═══════════════════════════════════════════════════════════════════════════════
+# DEPRECATED: Upload fonksiyonlari core/image_uploader.py'a tasindi
+# Bu fonksiyonlar artik kullanilmiyor, geriye donusum icin birakildi.
+# Yeni kodlarda get_public_url_fallback() kullanin.
+# ═══════════════════════════════════════════════════════════════════════════════
+
+
+# ═══════════════════════════════════════════════════════════════════════════════
 # ORIJINAL URL CIKARMA & NITTER COZUMLEME
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -685,10 +697,7 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
     # ── ADIM 2-5: Upload servisleri ─────────────────────────────────────────
     if image_path and os.path.exists(image_path):
         upload_services = [
-            ("Catbox.moe", _upload_catbox),
-            ("0x0.st", _upload_0x0),
-            ("Telegraph", _upload_telegraph),
-            ("ImgBB", _upload_imgbb),
+            ("Catbox.moe", get_public_url_fallback),
         ]
 
         for step_num, (service_name, upload_fn) in enumerate(upload_services, start=2):
@@ -738,10 +747,9 @@ def _resolve_public_url(image_path: str, article: dict = None, image_index: int 
 
     # Upload servisleri
     if image_path and os.path.exists(image_path):
-        for upload_fn in [_upload_catbox, _upload_0x0, _upload_telegraph, _upload_imgbb]:
-            url = upload_fn(image_path)
-            if url:
-                return url
+        url = get_public_url_fallback(image_path)
+        if url:
+            return url
 
     return None
 

@@ -440,7 +440,47 @@ def run() -> bool:
             log(f"IG Story beklenmeyen hata: {exc}", "WARNING")
 
         # ------------------------------------------------------------------
-        # 4. TELEGRAM BİLDİRİMİ (Checkpoint'li)
+        # 4. FACEBOOK STORY PAYLAŞIMI
+        # ------------------------------------------------------------------
+        try:
+            fb_cfg = settings.get("facebook", {}) if isinstance(settings, dict) else {}
+            if fb_cfg.get("enabled", False) and not all_test_mode and not fb_test_mode:
+                # Facebook Story için credential kontrolü
+                fb_page_id = os.environ.get("FB_PAGE_ID", "").strip()
+                fb_token = os.environ.get("FB_ACCESS_TOKEN", "").strip()
+                
+                if not fb_page_id or not fb_token:
+                    log("FB Story: FB_PAGE_ID veya FB_ACCESS_TOKEN eksik. Story atlandı.", "WARNING")
+                    fb_story_success = False
+                elif image_paths and os.path.exists(image_paths[0]):
+                    log("FB Story: Kart olusturuluyor...")
+                    try:
+                        from core.image_generator import create_social_card
+                        fb_card_path = tempfile.NamedTemporaryFile(suffix="_fb_card.jpg", delete=False).name
+                        create_social_card(post_text_content, image_paths[0], fb_card_path)
+                        
+                        if os.path.exists(fb_card_path):
+                            log("FB Story: Kart olusturuldu, paylasim baslatiliyor...")
+                            fb_story_id = fb_platform.post_story(fb_card_path)
+                            if fb_story_id:
+                                log(f"FB Story paylasim basarili: {fb_story_id}")
+                                fb_story_success = True
+                            else:
+                                log("FB Story: Paylaşım başarısız (post_story None döndürdü).", "ERROR")
+                            os.unlink(fb_card_path)
+                        else:
+                            log("FB Story: Kart dosyası oluşturulamadı.", "ERROR")
+                    except Exception as fb_exc:
+                        log(f"FB Story uretim hatasi: {fb_exc}", "WARNING")
+                else:
+                    log("FB Story: Görsel yolu yok veya dosya mevcut değil.", "WARNING")
+            elif not fb_cfg.get("enabled", False):
+                log("FB Story: Facebook config'de enabled=false.")
+        except Exception as exc:
+            log(f"FB Story beklenmeyen hata: {exc}", "WARNING")
+
+        # ------------------------------------------------------------------
+        # 5. TELEGRAM BİLDİRİMİ (Checkpoint'li)
         # ------------------------------------------------------------------
         fresh_data = get_posted_news()
         action_count = get_today_action_count(fresh_data)
