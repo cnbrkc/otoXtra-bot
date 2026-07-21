@@ -1,42 +1,24 @@
 """
-platforms/facebook.py - Facebook Graph API katmani (v3.6 - FB Story Endpoint Fix)
+platforms/facebook.py - Facebook Graph API katmani (v4.0 - Refined)
 
-v3.6:
-  - FB Story paylasimi /{page-id}/stories yerine dogru akisla guncellendi:
-    1) /{page-id}/photos (published=false) ile photo_id al
-    2) /{page-id}/photo_stories ile publish et
-  - Story hata loglari code/subcode/type/message seklinde detaylandirildi
-
-v3.5:
-  - core/image_uploader modulu entegre edildi (DRY prensibi)
-  - Tekrarlanan upload fonksiyonlari kaldirildi
-  
-v3.4:
-  - post_story(image_path) eklendi (Facebook Story/Hikaye paylaşımı)
-  - Instagram'dan farklı olarak Facebook direkt file upload kabul eder
-  - /{page-id}/stories endpoint'i kullanılır
-
-v3.3 ULTRA FIXED:
-  - CRITICAL FIX: Correct attached_media format for Graph API v25.0
-  - CRITICAL FIX: Payload size validation (prevent "too much data" error)
-  - CRITICAL FIX: Alternative format fallback (array vs key-value)
-  - Enhanced error handling for 500/400 responses
-
-v3.2:
-  - post_photos(image_paths, message) eklendi (coklu gorsel)
-  - Coklu gorsel icin unpublished upload + attached_media akisi eklendi
-  - Upload oncesi dosya hash ile son dedupe guvenlik kati eklendi
-  - attached_media alanlari loglanir
-  - HTTP cevaplari icin detayli retry / status / body preview loglari eklendi
+v4.0:
+  - Facebook Story publish akisi duzeltildi:
+      1) /{page-id}/photos (published=false) -> photo_id
+      2) /{page-id}/photo_stories -> publish
+  - Hata loglari code/subcode/type/message formatinda iyilestirildi
+  - Retry davranisi rafine edildi (429 ve gecici kodlar)
+  - Token/Page ID sanitization eklendi
+  - Coklu gorsel post akisinda format fallback korundu
+  - Geriye donuk alias fonksiyonlar eklendi (post_multi_photo/post_album)
 
 Sadece Facebook API cagrisi yapar.
 Karar vermez, durum tutmaz.
 """
 
+import hashlib
 import json
 import os
 import time
-import hashlib
 from typing import Optional
 
 import requests
@@ -46,30 +28,50 @@ from core.logger import log
 
 def _get_fb_api_version() -> str:
     """
-    Facebook API versiyonunu config'den okur, yoksa default döner.
-    Bu sayede Meta API versiyon değiştiğinde kod değişikliği gerekmez.
+    Facebook API versiyonunu config'den okur, yoksa default doner.
     """
     try:
         from core.config_loader import load_config
+
         settings = load_config("settings")
         facebook = settings.get("facebook", {})
         if isinstance(facebook, dict):
             version = facebook.get("api_version", "")
-            if version and isinstance(version, str):
+            if isinstance(version, str) and version.strip():
                 return version.strip()
     except Exception:
         pass
-    # Fallback default
     return "v25.0"
 
 
 _FB_API_VERSION = _get_fb_api_version()
 _FB_BASE_URL = f"https://graph.facebook.com/{_FB_API_VERSION}"
+
 _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT_SECONDS = 2.0
+
 _MAX_MULTI_PHOTOS = 10
-_MAX_PAYLOAD_SIZE_BYTES = 1024 * 1024  # CRITICAL FIX: 1MB payload limit
+_MAX_PAYLOAD_SIZE_BYTES = 1024 * 1024  # 1MB payload guard
+_FB_STORY_MAX_IMAGE_BYTES = 10 * 1024 * 1024  # Meta dokumanina gore story image icin tavsiye/limit
+
+
+def _sanitize_credential(value: str) -> str:
+    if not isinstance(value, str):
+        return ""
+    return (
+        value.replace('"', "")
+        .replace("'", "")
+        .replace("\n", "")
+        .replace("\r", "")
+        .strip()
+    )
+
+
+def _safe_body_preview(text: str, limit: int = 400) -> str:
+    if not text:
+        return ""
+    return text.replace("\n", " ").replace("\r", " ").strip()[:limit]
 
 
 def _file_sha256(path: str) -> str:
@@ -80,16 +82,20 @@ def _file_sha256(path: str) -> str:
     return h.hexdigest()
 
 
-def _safe_body_preview(text: str, limit: int = 400) -> str:
-    if not text:
-        return ""
-    value = text.replace("\n", " ").replace("\r", " ").strip()
-    return value[:limit]
+def _mask_id(value: str) -> str:
+    if not value:
+        return "???"
+    parts = value.split("_")
+    if len(parts) == 2:
+        return f"***_{parts[1]}"
+    if len(value) > 8:
+        return f"***{value[-6:]}"
+    return value
 
 
 def _get_credentials() -> tuple[str, str]:
-    page_id = os.environ.get("FB_PAGE_ID", "")
-    access_token = os.environ.get("FB_ACCESS_TOKEN", "")
+    page_id = _sanitize_credential(os.environ.get("FB_PAGE_ID", ""))
+    access_token = _sanitize_credential(os.environ.get("FB_ACCESS_TOKEN", ""))
 
     if not page_id:
         log("FB_PAGE_ID ortam degiskeni bulunamadi", "ERROR")
@@ -99,37 +105,42 @@ def _get_credentials() -> tuple[str, str]:
     return page_id, access_token
 
 
+def _parse_json_safe(response: requests.Response) -> dict:
+    try:
+        data = response.json()
+        return data if isinstance(data, dict) else {}
+    except Exception:
+        return {}
+
+
 def _extract_post_id(response: dict) -> str:
-    post_id = response.get("post_id", "")
+    post_id = str(response.get("post_id", "")).strip()
     if post_id:
         return post_id
-    return response.get("id", "")
-
-
-def _mask_id(post_id: str) -> str:
-    if not post_id:
-        return "???"
-    parts = post_id.split("_")
-    if len(parts) == 2:
-        return f"***_{parts[1]}"
-    return post_id
+    return str(response.get("id", "")).strip()
 
 
 def _handle_api_error(result: dict, context: str) -> None:
     err = result.get("error", {}) if isinstance(result, dict) else {}
     log(
         f"Facebook API hatasi ({context}): "
-        f"[{err.get('code', 0)}|{err.get('error_subcode', 0)}] "
-        f"{err.get('type', '')} {err.get('message', '')}",
+        f"code={err.get('code', 0)} "
+        f"subcode={err.get('error_subcode', 0)} "
+        f"type={err.get('type', '')} "
+        f"message={err.get('message', '')}",
         "ERROR",
     )
 
 
-def _should_retry_response(result: dict) -> bool:
+def _should_retry_response(result: dict, status_code: int = 0) -> bool:
     """
-    Facebook'tan gelen hata koduna gore tekrar deneme karari.
-    4/17/32 gibi gecici throttling veya 5xx benzeri durumlarda retry.
+    Retry karari:
+    - HTTP 429 / 5xx
+    - Facebook gecici/rate-limit kodlari
     """
+    if status_code == 429 or status_code >= 500:
+        return True
+
     try:
         err = result.get("error", {})
         code = int(err.get("code", 0))
@@ -144,14 +155,6 @@ def _should_retry_response(result: dict) -> bool:
         return False
 
 
-def _parse_json_safe(response: requests.Response) -> dict:
-    try:
-        data = response.json()
-        return data if isinstance(data, dict) else {}
-    except Exception:
-        return {}
-
-
 def _post_with_retry(
     url: str,
     data: dict,
@@ -159,20 +162,14 @@ def _post_with_retry(
     context: str = "post",
 ) -> dict:
     """
-    HTTP ve gecici API hatalarinda exponential backoff ile tekrar dener.
-    Basariliysa API yanitini dict doner, olmazsa bos dict.
+    HTTP/API gecici hatalarinda exponential backoff ile tekrar dener.
     """
-    last_error: str = ""
+    last_error = ""
 
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
         try:
             started = time.time()
-            response = requests.post(
-                url,
-                data=data,
-                files=files,
-                timeout=_REQUEST_TIMEOUT,
-            )
+            response = requests.post(url, data=data, files=files, timeout=_REQUEST_TIMEOUT)
             elapsed_ms = int((time.time() - started) * 1000)
 
             result = _parse_json_safe(response)
@@ -184,27 +181,28 @@ def _post_with_retry(
                 "INFO",
             )
 
-            if response.status_code >= 500:
-                last_error = f"http_{response.status_code}"
-                log(
-                    f"{context} server_error status={response.status_code} body={body_preview}",
-                    "WARNING",
-                )
-
-            elif "error" in result:
+            if "error" in result:
                 _handle_api_error(result, f"{context} attempt={attempt}")
-                if _should_retry_response(result):
-                    last_error = "retryable_api_error"
+
+                if _should_retry_response(result, response.status_code):
+                    last_error = f"api_error_retryable_http_{response.status_code}"
                 else:
                     return result
 
             elif response.status_code >= 400:
-                last_error = f"http_{response.status_code}"
-                log(
-                    f"{context} client_error_non_json status={response.status_code} body={body_preview}",
-                    "WARNING",
-                )
-                return {}
+                # JSON body'de error yoksa ama HTTP hata ise
+                if _should_retry_response({}, response.status_code):
+                    last_error = f"http_{response.status_code}"
+                    log(
+                        f"{context} retryable_http_error status={response.status_code} body={body_preview}",
+                        "WARNING",
+                    )
+                else:
+                    log(
+                        f"{context} non_retryable_http_error status={response.status_code} body={body_preview}",
+                        "WARNING",
+                    )
+                    return {}
 
             else:
                 return result
@@ -220,7 +218,7 @@ def _post_with_retry(
             log(f"{context} request error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
         except Exception as exc:
             last_error = f"unexpected_error: {exc}"
-            log(f"{context} unexpected error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
+            log(f"{context} unexpected error (attempt {attempt}/{_TRY_ATTEMPTS}): {exc}", "WARNING")
 
         if attempt < _RETRY_ATTEMPTS:
             wait_seconds = _RETRY_BASE_WAIT_SECONDS * (2 ** (attempt - 1))
@@ -233,8 +231,8 @@ def _post_with_retry(
 
 def _upload_unpublished_photo(image_path: str, access_token: str, page_id: str) -> Optional[str]:
     """
-    Coklu gorsel akisi icin gorseli published=false olarak yukler.
-    Donus: media_fbid olarak kullanilacak photo id.
+    /{page_id}/photos endpoint'ine published=false ile yukleme.
+    Donus: photo_id
     """
     if not image_path or not os.path.exists(image_path):
         log(f"Gorsel dosyasi bulunamadi (upload): {image_path}", "ERROR")
@@ -254,66 +252,52 @@ def _upload_unpublished_photo(image_path: str, access_token: str, page_id: str) 
                 files={"source": img_file},
                 context="upload_unpublished_photo",
             )
-
-        if not result:
-            return None
-
-        if "error" in result:
-            _handle_api_error(result, "upload_unpublished_photo final")
-            return None
-
-        media_id = result.get("id", "")
-        if media_id:
-            log(f"Unpublished gorsel yuklendi: ID={_mask_id(media_id)}")
-            return media_id
-
-        log(f"Beklenmeyen upload yaniti: {result}", "WARNING")
-        return None
-
     except Exception as exc:
         log(f"upload_unpublished_photo beklenmeyen hata: {exc}", "ERROR")
         return None
 
+    if not result:
+        return None
+
+    if "error" in result:
+        _handle_api_error(result, "upload_unpublished_photo final")
+        return None
+
+    photo_id = str(result.get("id", "")).strip()
+    if photo_id:
+        log(f"Unpublished gorsel yuklendi: ID={_mask_id(photo_id)}")
+        return photo_id
+
+    log(f"Beklenmeyen upload yaniti: {result}", "WARNING")
+    return None
+
 
 def _estimate_payload_size(payload: dict) -> int:
-    """
-    CRITICAL FIX: Estimate payload size in bytes to prevent "too much data" error
-    """
     try:
-        # Serialize to JSON and get byte size
-        json_str = json.dumps(payload)
-        return len(json_str.encode('utf-8'))
+        raw = json.dumps(payload)
+        return len(raw.encode("utf-8"))
     except Exception:
-        # Fallback: rough estimate
         return sum(len(str(k)) + len(str(v)) for k, v in payload.items())
 
 
 def _create_attached_media_payload_v1(media_ids: list[str]) -> dict:
     """
-    CRITICAL FIX: Format 1 - Individual key-value pairs (Facebook Graph API standard)
-    
-    Example:
-    {
-        "attached_media[0]": '{"media_fbid": "123"}',
-        "attached_media[1]": '{"media_fbid": "456"}',
-    }
+    Format 1:
+      attached_media[0] = {"media_fbid":"..."}
+      attached_media[1] = {"media_fbid":"..."}
     """
     payload = {}
     for idx, media_id in enumerate(media_ids):
-        key = f"attached_media[{idx}]"
-        payload[key] = json.dumps({"media_fbid": media_id})
+        payload[f"attached_media[{idx}]"] = json.dumps({"media_fbid": media_id})
     return payload
 
 
 def _create_attached_media_payload_v2(media_ids: list[str]) -> str:
     """
-    CRITICAL FIX: Format 2 - JSON array string (alternative format)
-    
-    Example:
-    '[{"media_fbid": "123"}, {"media_fbid": "456"}]'
+    Format 2:
+      attached_media = [{"media_fbid":"..."}, ...]
     """
-    media_objects = [{"media_fbid": mid} for mid in media_ids]
-    return json.dumps(media_objects)
+    return json.dumps([{"media_fbid": mid} for mid in media_ids])
 
 
 def _post_feed_with_media(
@@ -321,49 +305,30 @@ def _post_feed_with_media(
     access_token: str,
     message: str,
     media_ids: list[str],
-    format_version: int = 1
+    format_version: int = 1,
 ) -> dict:
-    """
-    CRITICAL FIX: Post to feed with attached_media using specified format
-    
-    Args:
-        page_id: Facebook Page ID
-        access_token: Access token
-        message: Post message
-        media_ids: List of media_fbid values
-        format_version: 1 = key-value pairs, 2 = JSON array
-    
-    Returns:
-        API response dict
-    """
     feed_url = f"{_FB_BASE_URL}/{page_id}/feed"
-    
+
     payload = {
         "message": message,
         "access_token": access_token,
     }
-    
+
     if format_version == 1:
-        # Format 1: Individual key-value pairs
-        media_payload = _create_attached_media_payload_v1(media_ids)
-        payload.update(media_payload)
-        log(f"[FB_API] Using attached_media format v1 (key-value pairs)", "INFO")
+        payload.update(_create_attached_media_payload_v1(media_ids))
+        log("[FB_API] attached_media format v1 kullaniliyor", "INFO")
     else:
-        # Format 2: JSON array
         payload["attached_media"] = _create_attached_media_payload_v2(media_ids)
-        log(f"[FB_API] Using attached_media format v2 (JSON array)", "INFO")
-    
-    # CRITICAL FIX: Check payload size
+        log("[FB_API] attached_media format v2 kullaniliyor", "INFO")
+
     payload_size = _estimate_payload_size(payload)
     if payload_size > _MAX_PAYLOAD_SIZE_BYTES:
         log(
-            f"[FB_API] WARNING: Payload size ({payload_size} bytes) exceeds limit "
-            f"({_MAX_PAYLOAD_SIZE_BYTES} bytes)",
-            "WARNING"
+            f"[FB_API] WARNING payload buyuk: {payload_size} > {_MAX_PAYLOAD_SIZE_BYTES}",
+            "WARNING",
         )
-    
-    log(f"[FB_API] Payload size: {payload_size} bytes, media_count: {len(media_ids)}", "INFO")
-    
+
+    log(f"[FB_API] payload_size={payload_size} media_count={len(media_ids)}", "INFO")
     return _post_with_retry(
         url=feed_url,
         data=payload,
@@ -382,7 +347,10 @@ def post_photo(image_path: str, message: str) -> Optional[str]:
         return None
 
     url = f"{_FB_BASE_URL}/{page_id}/photos"
-    payload = {"message": message, "access_token": access_token}
+    payload = {
+        "message": message,
+        "access_token": access_token,
+    }
 
     log(f"Gorselli post gonderiliyor. metin_uzunlugu={len(message)}")
 
@@ -394,41 +362,33 @@ def post_photo(image_path: str, message: str) -> Optional[str]:
                 files={"source": img_file},
                 context="post_photo",
             )
-
-        if not result:
-            return None
-
-        if "error" in result:
-            _handle_api_error(result, "post_photo final")
-            return None
-
-        post_id = _extract_post_id(result)
-        if post_id:
-            log(f"Gorselli post basarili: ID={_mask_id(post_id)}")
-            return post_id
-
-        log(f"Beklenmeyen post_photo yaniti: {result}", "WARNING")
-        return None
-
     except Exception as exc:
         log(f"post_photo beklenmeyen hata: {exc}", "ERROR")
         return None
 
+    if not result:
+        return None
+    if "error" in result:
+        _handle_api_error(result, "post_photo final")
+        return None
+
+    post_id = _extract_post_id(result)
+    if post_id:
+        log(f"Gorselli post basarili: ID={_mask_id(post_id)}")
+        return post_id
+
+    log(f"Beklenmeyen post_photo yaniti: {result}", "WARNING")
+    return None
+
 
 def post_photos(image_paths: list[str], message: str) -> Optional[str]:
     """
-    CRITICAL FIX v3.3: Facebook'a coklu gorsel + tek aciklama metni ile post atar.
-    
-    Improvements:
-    - Correct attached_media format for Graph API v25.0
-    - Payload size validation
-    - Alternative format fallback
-    - Better error handling
+    Facebook'a coklu gorsel + tek aciklama metni ile post atar.
 
     Akis:
-      1) Her gorsel /{page_id}/photos endpoint'ine published=false ile yuklenir
-      2) /{page_id}/feed endpoint'ine attached_media ile tek post olusturulur
-      3) Format 1 basarisiz olursa Format 2 denenir
+      1) Her gorsel /photos endpoint'ine published=false ile yuklenir
+      2) /feed endpoint'ine attached_media ile tek post olusturulur
+      3) Format v1 basarisiz olursa format v2 denenir
     """
     page_id, access_token = _get_credentials()
     if not page_id or not access_token:
@@ -439,7 +399,7 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         log("post_photos: gecerli gorsel yolu yok", "WARNING")
         return None
 
-    # Dedupe by file hash
+    # Dedupe by hash
     deduped_paths: list[str] = []
     seen_hashes: set[str] = set()
     for path in valid_paths:
@@ -460,7 +420,7 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         return None
 
     if len(valid_paths) == 1:
-        log("post_photos: dedupe sonrasi tek gorsel kaldi, post_photo akisina geciliyor")
+        log("post_photos: tek gorsel kaldi, post_photo akisina geciliyor")
         return post_photo(valid_paths[0], message)
 
     if len(valid_paths) > _MAX_MULTI_PHOTOS:
@@ -469,7 +429,6 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
 
     log(f"Coklu gorsel post basliyor. adet={len(valid_paths)}, metin_uzunlugu={len(message)}")
 
-    # Upload all images as unpublished
     media_ids: list[str] = []
     for idx, path in enumerate(valid_paths, start=1):
         try:
@@ -488,58 +447,47 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
             f"size_kb={size_kb} sha12={short_hash} path={path}"
         )
 
-        up_started = time.time()
+        started = time.time()
         media_id = _upload_unpublished_photo(path, access_token, page_id)
-        up_elapsed_ms = int((time.time() - up_started) * 1000)
+        elapsed_ms = int((time.time() - started) * 1000)
 
         if not media_id:
-            log(
-                f"post_photos upload_fail idx={idx} elapsed_ms={up_elapsed_ms}",
-                "WARNING",
-            )
+            log(f"post_photos upload_fail idx={idx} elapsed_ms={elapsed_ms}", "WARNING")
             log("Coklu gorsel akisi: upload basarisiz, islem durduruldu", "WARNING")
             return None
 
-        log(
-            f"post_photos upload_ok idx={idx} elapsed_ms={up_elapsed_ms} media_id={_mask_id(media_id)}"
-        )
+        log(f"post_photos upload_ok idx={idx} elapsed_ms={elapsed_ms} media_id={_mask_id(media_id)}")
         media_ids.append(media_id)
 
-    log(f"[FB_API] All media uploaded successfully: {len(media_ids)} items")
+    log(f"[FB_API] Tum media yuklendi: {len(media_ids)} adet")
     log("post_photos media_ids=" + ", ".join(_mask_id(m) for m in media_ids))
 
-    # CRITICAL FIX: Try format 1 first (key-value pairs)
-    log("[FB_API] Attempting feed post with attached_media format v1", "INFO")
+    log("[FB_API] Feed publish denemesi format v1", "INFO")
     result = _post_feed_with_media(page_id, access_token, message, media_ids, format_version=1)
 
-    # If format 1 failed, try format 2 (JSON array)
     if not result or "error" in result:
         if "error" in result:
             error = result.get("error", {})
-            error_msg = error.get("message", "").lower()
+            error_msg = str(error.get("message", "")).lower()
             error_code = error.get("code", 0)
-            
-            log(
-                f"[FB_API] Format v1 failed: code={error_code}, msg={error_msg}",
-                "WARNING"
-            )
-            
-            # Check for specific errors that might be resolved by format change
+
+            log(f"[FB_API] Format v1 fail: code={error_code}, msg={error_msg}", "WARNING")
+
             if "too much data" in error_msg or "invalid parameter" in error_msg or error_code == 100:
-                log("[FB_API] Retrying with attached_media format v2", "INFO")
+                log("[FB_API] Format v2 ile tekrar deneniyor", "INFO")
                 result = _post_feed_with_media(page_id, access_token, message, media_ids, format_version=2)
             else:
-                log("[FB_API] Error not related to format, skipping v2 attempt", "WARNING")
+                log("[FB_API] Hata format kaynakli gorunmuyor, v2 atlandi", "WARNING")
         else:
-            log("[FB_API] Format v1 returned empty, trying format v2", "INFO")
+            log("[FB_API] Format v1 bos dondu, v2 deneniyor", "INFO")
             result = _post_feed_with_media(page_id, access_token, message, media_ids, format_version=2)
 
     if not result:
-        log("[FB_API] Both attached_media formats failed", "ERROR")
+        log("[FB_API] attached_media formatlari basarisiz", "ERROR")
         return None
 
     if "error" in result:
-        _handle_api_error(result, "post_photos final (all formats failed)")
+        _handle_api_error(result, "post_photos final")
         return None
 
     post_id = _extract_post_id(result)
@@ -557,7 +505,10 @@ def post_text(message: str) -> Optional[str]:
         return None
 
     url = f"{_FB_BASE_URL}/{page_id}/feed"
-    payload = {"message": message, "access_token": access_token}
+    payload = {
+        "message": message,
+        "access_token": access_token,
+    }
 
     log(f"Metin post gonderiliyor. metin_uzunlugu={len(message)}")
 
@@ -570,7 +521,6 @@ def post_text(message: str) -> Optional[str]:
 
     if not result:
         return None
-
     if "error" in result:
         _handle_api_error(result, "post_text final")
         return None
@@ -586,17 +536,11 @@ def post_text(message: str) -> Optional[str]:
 
 def post_story(image_path: str) -> Optional[str]:
     """
-    Facebook Story (Photo Story) paylasimi yapar.
+    Facebook Photo Story paylasimi.
 
     Dogru Graph API akisi:
       1) /{page_id}/photos -> published=false ile upload (photo_id al)
       2) /{page_id}/photo_stories -> photo_id ile publish et
-
-    Args:
-        image_path: Yerel story gorseli
-
-    Returns:
-        Story post id (varsa) veya None
     """
     page_id, access_token = _get_credentials()
     if not page_id or not access_token:
@@ -605,6 +549,16 @@ def post_story(image_path: str) -> Optional[str]:
     if not image_path or not os.path.exists(image_path):
         log(f"Facebook Story: Gorsel bulunamadi: {image_path}", "ERROR")
         return None
+
+    try:
+        file_size = os.path.getsize(image_path)
+        if file_size > _FB_STORY_MAX_IMAGE_BYTES:
+            log(
+                f"Facebook Story: Dosya boyutu buyuk ({file_size} bytes), 10MB alti onerilir",
+                "WARNING",
+            )
+    except Exception:
+        pass
 
     log("Facebook Story: Adim 1/2 - unpublished photo upload basliyor...")
     photo_id = _upload_unpublished_photo(image_path, access_token, page_id)
@@ -633,28 +587,34 @@ def post_story(image_path: str) -> Optional[str]:
         return None
 
     if "error" in result:
-        err = result.get("error", {}) if isinstance(result, dict) else {}
-        log(
-            "Facebook Story publish hatasi: "
-            f"code={err.get('code')} "
-            f"subcode={err.get('error_subcode')} "
-            f"type={err.get('type')} "
-            f"message={err.get('message')}",
-            "ERROR",
-        )
+        _handle_api_error(result, "fb_photo_story_publish final")
         return None
 
-    post_id = result.get("post_id", "") or result.get("id", "")
+    post_id = str(result.get("post_id", "")).strip()
     if post_id:
         log(f"Facebook Story BASARIYLA yayinlandi! Story Post ID={_mask_id(post_id)}")
-        return str(post_id)
+        return post_id
+
+    fallback_id = str(result.get("id", "")).strip()
+    if fallback_id:
+        log(f"Facebook Story yayinlandi (id): {_mask_id(fallback_id)}")
+        return fallback_id
 
     if result.get("success") is True:
-        log("Facebook Story: success=true dondu ama post_id yok.", "WARNING")
+        log("Facebook Story: success=true dondu ama post_id/id yok.", "WARNING")
         return "story_success_no_id"
 
     log(f"Facebook Story: Beklenmeyen yanit: {result}", "WARNING")
     return None
+
+
+# Backward-compatible aliases (agent_publisher olasi isimleri dener)
+def post_multi_photo(image_paths: list[str], message: str) -> Optional[str]:
+    return post_photos(image_paths, message)
+
+
+def post_album(image_paths: list[str], message: str) -> Optional[str]:
+    return post_photos(image_paths, message)
 
 
 if __name__ == "__main__":
