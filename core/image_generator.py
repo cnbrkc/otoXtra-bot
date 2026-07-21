@@ -4,15 +4,13 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 from core.config_loader import get_project_root
 from core.logger import log
 
-# Story boyutu (1080x1920, 9:16) - platformlar için en stabil ölçü
+# Story boyutu (IG/Facebook Story standard)
 CANVAS_WIDTH = 1080
 CANVAS_HEIGHT = 1920
 
-# Renkler
 BG_COLOR_RGBA = (18, 25, 36, 255)
 TEXT_COLOR = (255, 255, 255)
 
-# Fontlar
 FONT_BOLD_PATH = os.path.join(get_project_root(), "assets", "Roboto-Bold.ttf")
 FONT_REG_PATH = os.path.join(get_project_root(), "assets", "Roboto-Regular.ttf")
 
@@ -72,16 +70,14 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
     - Blur arka plan
     - Ortada net ana görsel
     - Üstte başlık, altta açıklama
-    - Yüksek kalite JPEG export
+    - PNG/JPEG uzantısına göre uygun export
     """
     try:
         title, body = _prepare_text(post_text)
 
-        # Font boyutları (1080x1920 için optimize)
         font_title = _get_font(62, bold=True)
         font_body = _get_font(40, bold=False)
 
-        # Ölçüm için dummy draw
         dummy_img = Image.new("RGB", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
 
@@ -108,10 +104,8 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         total_h = logo_size + gap + title_h + gap + image_box_h + gap + body_h
         y_cursor = max(40, (CANVAS_HEIGHT - total_h) // 2)
 
-        # Ana canvas
         canvas = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR_RGBA)
 
-        # Blur background
         if image_path and os.path.exists(image_path):
             try:
                 src = Image.open(image_path).convert("RGB")
@@ -121,12 +115,10 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             except Exception as e:
                 log(f"Blur arka plan hazirlanamadi: {e}", "WARNING")
 
-        # Koyu overlay
         overlay = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (18, 25, 36, 120))
         canvas = Image.alpha_composite(canvas, overlay)
         draw = ImageDraw.Draw(canvas)
 
-        # Logo
         logo_path = os.path.join(get_project_root(), "assets", "logo.png")
         if os.path.exists(logo_path):
             try:
@@ -138,21 +130,17 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
                 log(f"Logo islenemedi: {e}", "WARNING")
         y_cursor += logo_size + gap
 
-        # Title
         for ln in title_lines:
             b = draw.textbbox((0, 0), ln, font=font_title)
             lw = b[2] - b[0]
             lh = b[3] - b[1]
             x = (CANVAS_WIDTH - lw) // 2
-
-            # Hafif gölge
             draw.text((x + 2, y_cursor + 2), ln, font=font_title, fill=(0, 0, 0, 140))
             draw.text((x, y_cursor), ln, font=font_title, fill=TEXT_COLOR)
             y_cursor += lh + 10
 
         y_cursor += gap
 
-        # Main image
         img_top = y_cursor
         if image_path and os.path.exists(image_path):
             try:
@@ -163,12 +151,10 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
                 img_x = (CANVAS_WIDTH - img_w) // 2
                 img_y = img_top + (image_box_h - img_h) // 2
 
-                # Rounded mask
                 mask = Image.new("L", (img_w, img_h), 0)
                 mdraw = ImageDraw.Draw(mask)
                 mdraw.rounded_rectangle((0, 0, img_w, img_h), radius=20, fill=255)
 
-                # Border shadow
                 shadow = Image.new("RGBA", (img_w + 12, img_h + 12), (0, 0, 0, 0))
                 sdraw = ImageDraw.Draw(shadow)
                 sdraw.rounded_rectangle((6, 6, img_w + 6, img_h + 6), radius=24, fill=(0, 0, 0, 90))
@@ -181,27 +167,30 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
 
         y_cursor += image_box_h + gap
 
-        # Body
         for ln in body_lines:
             b = draw.textbbox((0, 0), ln, font=font_body)
             lw = b[2] - b[0]
             lh = b[3] - b[1]
             x = (CANVAS_WIDTH - lw) // 2
-
             draw.text((x + 1, y_cursor + 1), ln, font=font_body, fill=(0, 0, 0, 130))
             draw.text((x, y_cursor), ln, font=font_body, fill=TEXT_COLOR)
             y_cursor += lh + 8
 
-        # Export: kaliteyi düşürmeden
-        # progressive kapalı, optimize açık; subsampling 0 => daha net text
         final_img = canvas.convert("RGB")
-        final_img.save(
-            output_path,
-            format="JPEG",
-            quality=95,
-            optimize=True,
-            subsampling=0
-        )
+        lower = (output_path or "").lower()
+
+        if lower.endswith(".png"):
+            # Metin netligi icin en iyi secenek
+            final_img.save(output_path, format="PNG", optimize=True, compress_level=4)
+        else:
+            # JPEG gerekirse kalite odakli
+            final_img.save(
+                output_path,
+                format="JPEG",
+                quality=95,
+                optimize=True,
+                subsampling=0
+            )
 
         log(f"Sosyal medya karti olusturuldu: {output_path}")
         return output_path
