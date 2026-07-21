@@ -198,5 +198,7 @@ jobs:
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
 
-          # State dosyalari .gitignore'da oldugu icin artik commit edilmiyor
-          echo "State dosyalari artik Git'e commit edilmiyor (.gitignore)"
+          # .gitignore'da olsalar bile bu dosyaları GitHub'a geri yüklüyoruz (Force add)
+          git add data/ queue/ -f
+          git commit -m "OtoXtra: State dosyalari guncellendi [skip ci]" || echo "Degisiklik yok, commit atlandi."
+          git push
