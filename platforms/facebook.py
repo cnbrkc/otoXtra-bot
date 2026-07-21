@@ -1,5 +1,11 @@
 """
-platforms/facebook.py - Facebook Graph API katmani (v3.5 - FB Story Desteği + ImageUploader Entegrasyonu)
+platforms/facebook.py - Facebook Graph API katmani (v3.6 - FB Story Endpoint Fix)
+
+v3.6:
+  - FB Story paylasimi /{page-id}/stories yerine dogru akisla guncellendi:
+    1) /{page-id}/photos (published=false) ile photo_id al
+    2) /{page-id}/photo_stories ile publish et
+  - Story hata loglari code/subcode/type/message seklinde detaylandirildi
 
 v3.5:
   - core/image_uploader modulu entegre edildi (DRY prensibi)
@@ -113,7 +119,8 @@ def _handle_api_error(result: dict, context: str) -> None:
     err = result.get("error", {}) if isinstance(result, dict) else {}
     log(
         f"Facebook API hatasi ({context}): "
-        f"[{err.get('code', 0)}] {err.get('type', '')} {err.get('message', '')}",
+        f"[{err.get('code', 0)}|{err.get('error_subcode', 0)}] "
+        f"{err.get('type', '')} {err.get('message', '')}",
         "ERROR",
     )
 
@@ -579,18 +586,17 @@ def post_text(message: str) -> Optional[str]:
 
 def post_story(image_path: str) -> Optional[str]:
     """
-    Facebook Story (Hikaye) paylaşımı yapar.
-    
-    Facebook Graph API v25.0+ kullanarak story paylaşımı:
-    - Doğrudan /{page-id}/stories endpoint'ine görsel yüklenir
-    - Instagram'dan farklı olarak Facebook direkt yükleme kabul eder (link gerekmez)
-    - Görsel doğrudan file upload ile gönderilir
-    
+    Facebook Story (Photo Story) paylasimi yapar.
+
+    Dogru Graph API akisi:
+      1) /{page_id}/photos -> published=false ile upload (photo_id al)
+      2) /{page_id}/photo_stories -> photo_id ile publish et
+
     Args:
-        image_path: Yerel görsel dosya yolu
-        
+        image_path: Yerel story gorseli
+
     Returns:
-        Story ID (başarılı ise) veya None (başarısız ise)
+        Story post id (varsa) veya None
     """
     page_id, access_token = _get_credentials()
     if not page_id or not access_token:
@@ -600,43 +606,55 @@ def post_story(image_path: str) -> Optional[str]:
         log(f"Facebook Story: Gorsel bulunamadi: {image_path}", "ERROR")
         return None
 
-    # Facebook Story endpoint'i - direkt görsel yükleme
-    story_url = f"{_FB_BASE_URL}/{page_id}/stories"
-    
-    log("Facebook Story: Paylasim baslatiliyor (direkt yukleme)...")
-    
-    try:
-        with open(image_path, "rb") as img_file:
-            result = _post_with_retry(
-                url=story_url,
-                data={
-                    "media_type": "photo",
-                    "access_token": access_token,
-                },
-                files={"source": img_file},
-                context="fb_story",
-            )
-        
-        if not result:
-            log("Facebook Story: Paylasim basarisiz.", "ERROR")
-            return None
-            
-        if "error" in result:
-            _handle_api_error(result, "fb_story")
-            return None
-        
-        # Facebook story creation response directly returns the story ID
-        story_id = result.get("id", "")
-        if story_id:
-            log(f"Facebook Story BASARIYLA yayinlandi! Story ID={story_id}")
-            return story_id
-        
-        log(f"Beklenmeyen yanit: {result}", "WARNING")
+    log("Facebook Story: Adim 1/2 - unpublished photo upload basliyor...")
+    photo_id = _upload_unpublished_photo(image_path, access_token, page_id)
+    if not photo_id:
+        log("Facebook Story: Adim 1 basarisiz, publish durduruldu.", "ERROR")
         return None
-        
-    except Exception as exc:
-        log(f"Facebook Story request hatasi: {exc}", "ERROR")
+
+    log(f"Facebook Story: Adim 1 tamamlandi. photo_id={_mask_id(photo_id)}")
+
+    story_url = f"{_FB_BASE_URL}/{page_id}/photo_stories"
+    payload = {
+        "photo_id": photo_id,
+        "access_token": access_token,
+    }
+
+    log("Facebook Story: Adim 2/2 - /photo_stories publish basliyor...")
+    result = _post_with_retry(
+        url=story_url,
+        data=payload,
+        files=None,
+        context="fb_photo_story_publish",
+    )
+
+    if not result:
+        log("Facebook Story: Publish bos yanit dondu.", "ERROR")
         return None
+
+    if "error" in result:
+        err = result.get("error", {}) if isinstance(result, dict) else {}
+        log(
+            "Facebook Story publish hatasi: "
+            f"code={err.get('code')} "
+            f"subcode={err.get('error_subcode')} "
+            f"type={err.get('type')} "
+            f"message={err.get('message')}",
+            "ERROR",
+        )
+        return None
+
+    post_id = result.get("post_id", "") or result.get("id", "")
+    if post_id:
+        log(f"Facebook Story BASARIYLA yayinlandi! Story Post ID={_mask_id(post_id)}")
+        return str(post_id)
+
+    if result.get("success") is True:
+        log("Facebook Story: success=true dondu ama post_id yok.", "WARNING")
+        return "story_success_no_id"
+
+    log(f"Facebook Story: Beklenmeyen yanit: {result}", "WARNING")
+    return None
 
 
 if __name__ == "__main__":
