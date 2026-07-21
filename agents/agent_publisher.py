@@ -345,20 +345,15 @@ def _send_test_image_to_telegram(image_path: str, article_title: str) -> bool:
 def _build_story_card(post_text_content: str, base_image_path: str) -> str | None:
     if not base_image_path or not os.path.exists(base_image_path):
         return None
+
     try:
         from core.image_generator import create_social_card
-        from PIL import Image
 
-        card_path = tempfile.NamedTemporaryFile(suffix="_story_card.jpg", delete=False).name
+        card_path = tempfile.NamedTemporaryFile(suffix="_story_card.png", delete=False).name
         create_social_card(post_text_content, base_image_path, card_path)
 
         if not os.path.exists(card_path):
             return None
-
-        with Image.open(card_path) as img:
-            rgb = img.convert("RGB")
-            rgb.save(card_path, format="JPEG", quality=95, optimize=True, subsampling=0)
-
         return card_path
     except Exception as exc:
         log(f"Story card olusturma hatasi: {exc}", "ERROR")
@@ -430,7 +425,6 @@ def run() -> bool:
                 set_stage("publish", "done", output={"skipped": True, "skip_reason": "score_based"})
                 return True
 
-        # 1) FACEBOOK FEED
         if all_test_mode or fb_test_mode:
             fb_post_id = "test_mode_skip"
             fb_success = True
@@ -445,7 +439,6 @@ def run() -> bool:
             else:
                 log("[PUBLISH] Facebook paylasimi basarisiz!", "ERROR")
 
-        # 2) THREADS
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
             if threads_cfg.get("enabled", False) and not all_test_mode and not threads_test_mode:
@@ -464,7 +457,6 @@ def run() -> bool:
         except Exception as exc:
             log(f"Threads paylasimi hata: {exc}", "WARNING")
 
-        # Story card tek sefer
         if image_paths and os.path.exists(image_paths[0]):
             log("Story card: olusturma basliyor...")
             story_card_path = _build_story_card(post_text_content, image_paths[0])
@@ -473,7 +465,6 @@ def run() -> bool:
             else:
                 log("Story card olusturulamadi.", "ERROR")
 
-        # 3) INSTAGRAM STORY
         try:
             ig_cfg = settings.get("instagram", {}) if isinstance(settings, dict) else {}
             ig_enabled = bool(ig_cfg.get("enabled", False))
@@ -507,7 +498,6 @@ def run() -> bool:
             story_status["instagram"]["error"] = f"exception:{exc}"
             log(f"IG Story beklenmeyen hata: {exc}", "WARNING")
 
-        # 4) FACEBOOK STORY
         try:
             fb_cfg = settings.get("facebook", {}) if isinstance(settings, dict) else {}
             fb_story_enabled = bool(fb_cfg.get("enabled", True))
@@ -541,7 +531,6 @@ def run() -> bool:
             story_status["facebook"]["error"] = f"exception:{exc}"
             log(f"FB Story beklenmeyen hata: {exc}", "WARNING")
 
-        # 5) TELEGRAM
         fresh_data = get_posted_news()
         action_count = get_today_action_count(fresh_data)
         share_count = get_today_post_count(fresh_data)
