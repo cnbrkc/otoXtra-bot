@@ -1,5 +1,5 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v6.1 - IG Story + Checkpoint'li Telegram Raporu)
+agents/agent_publisher.py - Yayinci Ajani (v6.2 - Story Checkpoint + Quality Refinement)
 """
 
 import os
@@ -58,17 +58,22 @@ def _safe_int(value, default: int) -> int:
 def _is_image_test_mode() -> bool:
     return _get_env_bool("IMAGE_TEST_MODE", False)
 
+
 def _is_all_test_mode() -> bool:
     return _get_env_bool("TUM_PLATFORMLAR_TEST", False)
+
 
 def _is_fb_test_mode() -> bool:
     return _get_env_bool("SADECE_FACEBOOK_TEST", False)
 
+
 def _is_threads_test_mode() -> bool:
     return _get_env_bool("SADECE_THREADS_TEST", False)
 
+
 def _is_random_delay_enabled() -> bool:
     return _get_env_bool("ENABLE_RANDOM_DELAY", True)
+
 
 def _is_persist_state_enabled() -> bool:
     return _get_env_bool("PERSIST_STATE", True)
@@ -160,16 +165,22 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
 def _collect_valid_image_paths(image_output: dict) -> list[str]:
     collected: list[str] = []
     seen_keys: set[str] = set()
+
     def _add_if_valid(path: str) -> None:
-        if not isinstance(path, str) or not path: return
-        if not os.path.exists(path): return
+        if not isinstance(path, str) or not path:
+            return
+        if not os.path.exists(path):
+            return
         key = os.path.normcase(os.path.realpath(path))
-        if key in seen_keys: return
+        if key in seen_keys:
+            return
         seen_keys.add(key)
         collected.append(path)
+
     raw_paths = image_output.get("image_paths", [])
     if isinstance(raw_paths, list):
-        for item in raw_paths: _add_if_valid(item)
+        for item in raw_paths:
+            _add_if_valid(item)
     _add_if_valid(image_output.get("image_path", ""))
     return collected
 
@@ -189,9 +200,12 @@ def _try_call_multi_fn(fn, image_paths: list[str], post_text_content: str) -> Op
     for call in call_patterns:
         try:
             result = call()
-            if result: return result
-        except TypeError: continue
-        except Exception: pass
+            if result:
+                return result
+        except TypeError:
+            continue
+        except Exception:
+            pass
     return None
 
 
@@ -200,7 +214,8 @@ def _try_post_multi_photos(image_paths: list[str], post_text_content: str) -> Op
         fn = getattr(fb_platform, fn_name, None)
         if callable(fn):
             result = _try_call_multi_fn(fn, image_paths, post_text_content)
-            if result: return result
+            if result:
+                return result
     return None
 
 
@@ -222,10 +237,12 @@ def _publish_to_facebook(article: dict, post_text_content: str, image_paths: lis
     image_count = len(image_paths)
     if image_count >= 2:
         post_id = _try_post_multi_photos(image_paths, post_text_content)
-        if post_id: return post_id
+        if post_id:
+            return post_id
     if image_count >= 1:
         post_id = _try_post_single_photo(image_paths[0], post_text_content)
-        if post_id: return post_id
+        if post_id:
+            return post_id
     return _try_post_text_only(post_text_content)
 
 
@@ -243,11 +260,13 @@ def _workflow_timing_line() -> str:
 
 
 def _record_shared_variant_cooldowns(article: dict) -> None:
-    if not _is_persist_state_enabled(): return
+    if not _is_persist_state_enabled():
+        return
     try:
         score_output = (get_stage("score").get("output", {}) or {})
         candidates = score_output.get("cooldown_candidates", [])
-        if not candidates: return
+        if not candidates:
+            return
         posted_data = get_posted_news()
         for candidate in candidates:
             if is_duplicate_article(article, candidate):
@@ -257,33 +276,59 @@ def _record_shared_variant_cooldowns(article: dict) -> None:
         pass
 
 
+def _build_story_checkpoint_line(status_obj: dict) -> str:
+    enabled = bool(status_obj.get("enabled", True))
+    attempted = bool(status_obj.get("attempted", False))
+    success = bool(status_obj.get("success", False))
+    sid = (status_obj.get("id", "") or "").strip()
+    error = (status_obj.get("error", "") or "").strip()
+
+    if not enabled:
+        return "disabled"
+    if not attempted:
+        return "not_attempted"
+    if success:
+        return f"success ({sid})" if sid else "success"
+    return f"failed ({error})" if error else "failed"
+
+
 def _send_telegram_notification(
-    article: dict, action_count: int, share_count: int, health_report: str,
-    image_source: str, image_count: int, fb_ok: bool, threads_ok: bool, ig_ok: bool
+    article: dict,
+    action_count: int,
+    share_count: int,
+    health_report: str,
+    image_source: str,
+    image_count: int,
+    fb_ok: bool,
+    threads_ok: bool,
+    story_status: dict,
 ) -> bool:
     title = (article.get("title", "") or "").strip()
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
-    
-    fb_emoji = "✅" if fb_ok else "❌"
-    threads_emoji = "✅" if threads_ok else "❌"
-    ig_emoji = "✅" if ig_ok else "❌"
-    
+
+    fb_feed = "OK" if fb_ok else "FAIL"
+    threads_feed = "OK" if threads_ok else "FAIL"
+
+    ig_story_line = _build_story_checkpoint_line(story_status.get("instagram", {}))
+    fb_story_line = _build_story_checkpoint_line(story_status.get("facebook", {}))
+
     message = (
-        f"🚀 Paylaşım Yapıldı.\n\n"
-        f"Günün {action_count}. tetiklemesi\n"
-        f"Günün {share_count}. paylaşımı\n"
+        "Paylasim Yapildi.\n\n"
+        f"Gunun {action_count}. tetiklemesi\n"
+        f"Gunun {share_count}. paylasimi\n"
         f"{_workflow_timing_line()}\n\n"
-        f"Platforms:\n"
-        f"- Facebook: {fb_emoji}\n"
-        f"- Threads: {threads_emoji}\n"
-        f"- IG Story: {ig_emoji}\n\n"
-        f"Seçilen haber:\n"
-        f"Başlık: {title or 'Bilinmiyor'}\n"
+        "Platform Durumu:\n"
+        f"- Facebook Feed: {fb_feed}\n"
+        f"- Threads: {threads_feed}\n"
+        f"- Instagram Story: {ig_story_line}\n"
+        f"- Facebook Story: {fb_story_line}\n\n"
+        "Secilen haber:\n"
+        f"Baslik: {title or 'Bilinmiyor'}\n"
         f"Link: {link or '-'}\n"
         f"Toplam Skor: {score}\n"
-        f"Görsel: {image_source} ({image_count})\n"
-        f"Sağlık: {health_report}"
+        f"Gorsel: {image_source} ({image_count})\n"
+        f"Saglik: {health_report}"
     )
     return tg_platform.send_message(message)
 
@@ -291,15 +336,54 @@ def _send_telegram_notification(
 def _send_test_image_to_telegram(image_path: str, article_title: str) -> bool:
     bot_token = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat_id = os.environ.get("TELEGRAM_CHAT_ID")
-    if not bot_token or not chat_id or not image_path or not os.path.exists(image_path): return False
+    if not bot_token or not chat_id or not image_path or not os.path.exists(image_path):
+        return False
     url = f"https://api.telegram.org/bot{bot_token}/sendPhoto"
-    caption = f"🖼️ GÖRSEL TEST MODU\n\nBaşlık: {article_title}"
+    caption = f"GORSEL TEST MODU\n\nBaslik: {article_title}"
     try:
         with open(image_path, "rb") as photo:
-            resp = requests.post(url, files={"photo": photo}, data={"chat_id": chat_id, "caption": caption}, timeout=30)
+            resp = requests.post(
+                url,
+                files={"photo": photo},
+                data={"chat_id": chat_id, "caption": caption},
+                timeout=30,
+            )
             return resp.status_code == 200
     except Exception:
         return False
+
+
+def _build_story_card(post_text_content: str, base_image_path: str) -> str | None:
+    """
+    Story kartini tek sefer olusturur.
+    Daha temiz kalite icin JPG yeniden encode uygulanir.
+    """
+    if not base_image_path or not os.path.exists(base_image_path):
+        return None
+
+    try:
+        from core.image_generator import create_social_card
+
+        card_path = tempfile.NamedTemporaryFile(suffix="_story_card.jpg", delete=False).name
+        create_social_card(post_text_content, base_image_path, card_path)
+
+        if not os.path.exists(card_path):
+            return None
+
+        # Kalite rafinesi: tekrar encode ile subsampling etkisini azalt
+        try:
+            from PIL import Image
+
+            with Image.open(card_path) as img:
+                rgb = img.convert("RGB")
+                rgb.save(card_path, format="JPEG", quality=95, optimize=True, subsampling=0)
+        except Exception as quality_exc:
+            log(f"Story card quality refine atlandi: {quality_exc}", "WARNING")
+
+        return card_path
+    except Exception as exc:
+        log(f"Story card olusturma hatasi: {exc}", "ERROR")
+        return None
 
 
 def run() -> bool:
@@ -324,7 +408,7 @@ def run() -> bool:
         return False
 
     if _is_image_test_mode():
-        log("GÖRSEL TEST MODU AKTİF: Paylaşım yapılmayacak.", "INFO")
+        log("GORSEL TEST MODU AKTIF: Paylasim yapilmayacak.", "INFO")
         test_image_path = image_paths[0] if image_paths else ""
         _send_test_image_to_telegram(test_image_path, article.get("title", "Test"))
         set_stage("publish", "done", output={"skipped": True, "skip_reason": "image_test_mode"})
@@ -335,10 +419,16 @@ def run() -> bool:
 
     fb_success = False
     threads_success = False
-    ig_success = False
     final_image_source = image_source
     final_image_count = len(image_paths)
     fb_post_id = None
+
+    story_status = {
+        "instagram": {"enabled": True, "attempted": False, "success": False, "id": "", "error": ""},
+        "facebook": {"enabled": True, "attempted": False, "success": False, "id": "", "error": ""},
+    }
+
+    story_card_path = None
 
     try:
         settings = load_config("settings")
@@ -362,7 +452,7 @@ def run() -> bool:
                 return True
 
         # ------------------------------------------------------------------
-        # 1. FACEBOOK PAYLAŞIMI
+        # 1. FACEBOOK FEED PAYLASIMI
         # ------------------------------------------------------------------
         if all_test_mode or fb_test_mode:
             fb_post_id = "test_mode_skip"
@@ -379,7 +469,7 @@ def run() -> bool:
                 log("[PUBLISH] Facebook paylasimi basarisiz!", "ERROR")
 
         # ------------------------------------------------------------------
-        # 2. THREADS PAYLAŞIMI
+        # 2. THREADS PAYLASIMI
         # ------------------------------------------------------------------
         try:
             threads_cfg = settings.get("threads", {}) if isinstance(settings, dict) else {}
@@ -391,96 +481,99 @@ def run() -> bool:
                     threads_post_id = threads_platform.post_with_image(post_text_content, image_paths[0], article=article)
                 else:
                     threads_post_id = threads_platform.post_text(post_text_content)
-                
-                if threads_post_id: threads_success = True
+
+                if threads_post_id:
+                    threads_success = True
             elif threads_cfg.get("enabled", False) and (all_test_mode or threads_test_mode):
-                threads_success = True # Test modunda başarılı say
+                threads_success = True
         except Exception as exc:
             log(f"Threads paylasimi hata: {exc}", "WARNING")
 
+        # Story karti tek sefer uret
+        if image_paths and os.path.exists(image_paths[0]):
+            log("Story card: olusturma basliyor...")
+            story_card_path = _build_story_card(post_text_content, image_paths[0])
+            if story_card_path:
+                log(f"Story card hazir: {story_card_path}")
+            else:
+                log("Story card olusturulamadi.", "ERROR")
+
         # ------------------------------------------------------------------
-        # 3. INSTAGRAM STORY PAYLAŞIMI
+        # 3. INSTAGRAM STORY PAYLASIMI
         # ------------------------------------------------------------------
         try:
             ig_cfg = settings.get("instagram", {}) if isinstance(settings, dict) else {}
-            if ig_cfg.get("enabled", False) and not all_test_mode and not _is_image_test_mode():
-                # Credential kontrolü - eksikse baştan atla
+            ig_enabled = bool(ig_cfg.get("enabled", False))
+            story_status["instagram"]["enabled"] = ig_enabled
+
+            if ig_enabled and not all_test_mode and not _is_image_test_mode():
                 ig_user_id = os.environ.get("IG_USER_ID", "").strip()
                 ig_token = os.environ.get("IG_ACCESS_TOKEN", "").strip()
-                imgbb_key = os.environ.get("IMGBB_API_KEY", "").strip()
-                
+
                 if not ig_user_id or not ig_token:
-                    log("IG Story: IG_USER_ID veya IG_ACCESS_TOKEN eksik. Story atlandı.", "WARNING")
-                    ig_success = False
-                elif image_paths and os.path.exists(image_paths[0]):
-                    log("IG Story: Kart olusturuluyor...")
-                    try:
-                        from core.image_generator import create_social_card
-                        card_path = tempfile.NamedTemporaryFile(suffix="_card.jpg", delete=False).name
-                        create_social_card(post_text_content, image_paths[0], card_path)
-                        
-                        if os.path.exists(card_path):
-                            log("IG Story: Kart olusturuldu, paylasim baslatiliyor...")
-                            ig_story_id = ig_platform.post_story(card_path)
-                            if ig_story_id:
-                                log(f"IG Story paylasim basarili: {ig_story_id}")
-                                ig_success = True
-                            else:
-                                log("IG Story: Paylaşım başarısız (post_story None döndürdü). IMGBB_API_KEY kontrol edin.", "ERROR")
-                            os.unlink(card_path)
-                        else:
-                            log("IG Story: Kart dosyası oluşturulamadı.", "ERROR")
-                    except Exception as ig_exc:
-                        log(f"IG Story uretim hatasi: {ig_exc}", "WARNING")
+                    story_status["instagram"]["attempted"] = True
+                    story_status["instagram"]["error"] = "credentials_missing"
+                    log("IG Story: IG_USER_ID veya IG_ACCESS_TOKEN eksik.", "WARNING")
+                elif story_card_path and os.path.exists(story_card_path):
+                    story_status["instagram"]["attempted"] = True
+                    ig_story_id = ig_platform.post_story(story_card_path)
+                    if ig_story_id:
+                        story_status["instagram"]["success"] = True
+                        story_status["instagram"]["id"] = str(ig_story_id)
+                        log(f"IG Story paylasim basarili: {ig_story_id}")
+                    else:
+                        story_status["instagram"]["error"] = "publish_failed"
+                        log("IG Story: Paylasim basarisiz (post_story None).", "ERROR")
                 else:
-                    log("IG Story: Görsel yolu yok veya dosya mevcut değil.", "WARNING")
-            elif not ig_cfg.get("enabled", False):
+                    story_status["instagram"]["attempted"] = True
+                    story_status["instagram"]["error"] = "story_card_missing"
+                    log("IG Story: Story card yok.", "WARNING")
+            elif not ig_enabled:
                 log("IG Story: Instagram config'de enabled=false.")
         except Exception as exc:
+            story_status["instagram"]["attempted"] = True
+            story_status["instagram"]["error"] = f"exception:{exc}"
             log(f"IG Story beklenmeyen hata: {exc}", "WARNING")
 
         # ------------------------------------------------------------------
-        # 4. FACEBOOK STORY PAYLAŞIMI
+        # 4. FACEBOOK STORY PAYLASIMI
         # ------------------------------------------------------------------
         try:
             fb_cfg = settings.get("facebook", {}) if isinstance(settings, dict) else {}
-            if fb_cfg.get("enabled", False) and not all_test_mode and not fb_test_mode:
-                # Facebook Story için credential kontrolü
+            fb_story_enabled = bool(fb_cfg.get("enabled", True))
+            story_status["facebook"]["enabled"] = fb_story_enabled
+
+            if fb_story_enabled and not all_test_mode and not fb_test_mode:
                 fb_page_id = os.environ.get("FB_PAGE_ID", "").strip()
                 fb_token = os.environ.get("FB_ACCESS_TOKEN", "").strip()
-                
+
                 if not fb_page_id or not fb_token:
-                    log("FB Story: FB_PAGE_ID veya FB_ACCESS_TOKEN eksik. Story atlandı.", "WARNING")
-                    fb_story_success = False
-                elif image_paths and os.path.exists(image_paths[0]):
-                    log("FB Story: Kart olusturuluyor...")
-                    try:
-                        from core.image_generator import create_social_card
-                        fb_card_path = tempfile.NamedTemporaryFile(suffix="_fb_card.jpg", delete=False).name
-                        create_social_card(post_text_content, image_paths[0], fb_card_path)
-                        
-                        if os.path.exists(fb_card_path):
-                            log("FB Story: Kart olusturuldu, paylasim baslatiliyor...")
-                            fb_story_id = fb_platform.post_story(fb_card_path)
-                            if fb_story_id:
-                                log(f"FB Story paylasim basarili: {fb_story_id}")
-                                fb_story_success = True
-                            else:
-                                log("FB Story: Paylaşım başarısız (post_story None döndürdü).", "ERROR")
-                            os.unlink(fb_card_path)
-                        else:
-                            log("FB Story: Kart dosyası oluşturulamadı.", "ERROR")
-                    except Exception as fb_exc:
-                        log(f"FB Story uretim hatasi: {fb_exc}", "WARNING")
+                    story_status["facebook"]["attempted"] = True
+                    story_status["facebook"]["error"] = "credentials_missing"
+                    log("FB Story: FB_PAGE_ID veya FB_ACCESS_TOKEN eksik.", "WARNING")
+                elif story_card_path and os.path.exists(story_card_path):
+                    story_status["facebook"]["attempted"] = True
+                    fb_story_id = fb_platform.post_story(story_card_path)
+                    if fb_story_id:
+                        story_status["facebook"]["success"] = True
+                        story_status["facebook"]["id"] = str(fb_story_id)
+                        log(f"FB Story paylasim basarili: {fb_story_id}")
+                    else:
+                        story_status["facebook"]["error"] = "publish_failed"
+                        log("FB Story: Paylasim basarisiz (post_story None).", "ERROR")
                 else:
-                    log("FB Story: Görsel yolu yok veya dosya mevcut değil.", "WARNING")
-            elif not fb_cfg.get("enabled", False):
+                    story_status["facebook"]["attempted"] = True
+                    story_status["facebook"]["error"] = "story_card_missing"
+                    log("FB Story: Story card yok.", "WARNING")
+            elif not fb_story_enabled:
                 log("FB Story: Facebook config'de enabled=false.")
         except Exception as exc:
+            story_status["facebook"]["attempted"] = True
+            story_status["facebook"]["error"] = f"exception:{exc}"
             log(f"FB Story beklenmeyen hata: {exc}", "WARNING")
 
         # ------------------------------------------------------------------
-        # 5. TELEGRAM BİLDİRİMİ (Checkpoint'li)
+        # 5. TELEGRAM BILDIRIMI (Checkpoint'li)
         # ------------------------------------------------------------------
         fresh_data = get_posted_news()
         action_count = get_today_action_count(fresh_data)
@@ -488,17 +581,23 @@ def run() -> bool:
         health_report = _build_health_report()
 
         _send_telegram_notification(
-            article=article, action_count=action_count, share_count=share_count,
-            health_report=health_report, image_source=final_image_source, image_count=final_image_count,
-            fb_ok=fb_success, threads_ok=threads_success, ig_ok=ig_success
+            article=article,
+            action_count=action_count,
+            share_count=share_count,
+            health_report=health_report,
+            image_source=final_image_source,
+            image_count=final_image_count,
+            fb_ok=fb_success,
+            threads_ok=threads_success,
+            story_status=story_status,
         )
 
         if fb_post_id and fb_post_id != "test_mode_skip":
-            set_stage("publish", "done", output={"success": True, "post_id": fb_post_id})
-            log("BASARIYLA PAYLASILDI (FB, Threads, IG akislari tamamlandi)")
+            set_stage("publish", "done", output={"success": True, "post_id": fb_post_id, "story_status": story_status})
+            log("BASARIYLA PAYLASILDI (FB/Threads/Story akislari tamamlandi)")
         else:
-            set_stage("publish", "done", output={"success": True, "post_id": "test_mode"})
-            
+            set_stage("publish", "done", output={"success": True, "post_id": "test_mode", "story_status": story_status})
+
         return True
 
     except Exception as exc:
@@ -507,3 +606,10 @@ def run() -> bool:
         log(f"Traceback: {traceback.format_exc()}", "ERROR")
         set_stage("publish", "error", error=str(exc))
         return False
+
+    finally:
+        if story_card_path and os.path.exists(story_card_path):
+            try:
+                os.unlink(story_card_path)
+            except Exception:
+                pass
