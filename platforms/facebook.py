@@ -1,15 +1,12 @@
 """
-platforms/facebook.py - Facebook Graph API katmani (v4.0 - Refined)
+platforms/facebook.py - Facebook Graph API katmani (v4.1 - Story + Retry Fix)
 
-v4.0:
-  - Facebook Story publish akisi duzeltildi:
+v4.1:
+  - Story akisi:
       1) /{page-id}/photos (published=false) -> photo_id
       2) /{page-id}/photo_stories -> publish
-  - Hata loglari code/subcode/type/message formatinda iyilestirildi
-  - Retry davranisi rafine edildi (429 ve gecici kodlar)
-  - Token/Page ID sanitization eklendi
-  - Coklu gorsel post akisinda format fallback korundu
-  - Geriye donuk alias fonksiyonlar eklendi (post_multi_photo/post_album)
+  - _TRY_ATTEMPTS typo fix -> _RETRY_ATTEMPTS
+  - Retry/log davranisi rafine edildi
 
 Sadece Facebook API cagrisi yapar.
 Karar vermez, durum tutmaz.
@@ -27,9 +24,6 @@ from core.logger import log
 
 
 def _get_fb_api_version() -> str:
-    """
-    Facebook API versiyonunu config'den okur, yoksa default doner.
-    """
     try:
         from core.config_loader import load_config
 
@@ -52,8 +46,8 @@ _RETRY_ATTEMPTS = 3
 _RETRY_BASE_WAIT_SECONDS = 2.0
 
 _MAX_MULTI_PHOTOS = 10
-_MAX_PAYLOAD_SIZE_BYTES = 1024 * 1024  # 1MB payload guard
-_FB_STORY_MAX_IMAGE_BYTES = 10 * 1024 * 1024  # Meta dokumanina gore story image icin tavsiye/limit
+_MAX_PAYLOAD_SIZE_BYTES = 1024 * 1024
+_FB_STORY_MAX_IMAGE_BYTES = 10 * 1024 * 1024
 
 
 def _sanitize_credential(value: str) -> str:
@@ -133,11 +127,6 @@ def _handle_api_error(result: dict, context: str) -> None:
 
 
 def _should_retry_response(result: dict, status_code: int = 0) -> bool:
-    """
-    Retry karari:
-    - HTTP 429 / 5xx
-    - Facebook gecici/rate-limit kodlari
-    """
     if status_code == 429 or status_code >= 500:
         return True
 
@@ -161,9 +150,6 @@ def _post_with_retry(
     files: dict | None = None,
     context: str = "post",
 ) -> dict:
-    """
-    HTTP/API gecici hatalarinda exponential backoff ile tekrar dener.
-    """
     last_error = ""
 
     for attempt in range(1, _RETRY_ATTEMPTS + 1):
@@ -183,14 +169,12 @@ def _post_with_retry(
 
             if "error" in result:
                 _handle_api_error(result, f"{context} attempt={attempt}")
-
                 if _should_retry_response(result, response.status_code):
                     last_error = f"api_error_retryable_http_{response.status_code}"
                 else:
                     return result
 
             elif response.status_code >= 400:
-                # JSON body'de error yoksa ama HTTP hata ise
                 if _should_retry_response({}, response.status_code):
                     last_error = f"http_{response.status_code}"
                     log(
@@ -218,7 +202,7 @@ def _post_with_retry(
             log(f"{context} request error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
         except Exception as exc:
             last_error = f"unexpected_error: {exc}"
-            log(f"{context} unexpected error (attempt {attempt}/{_TRY_ATTEMPTS}): {exc}", "WARNING")
+            log(f"{context} unexpected error (attempt {attempt}/{_RETRY_ATTEMPTS}): {exc}", "WARNING")
 
         if attempt < _RETRY_ATTEMPTS:
             wait_seconds = _RETRY_BASE_WAIT_SECONDS * (2 ** (attempt - 1))
@@ -230,10 +214,6 @@ def _post_with_retry(
 
 
 def _upload_unpublished_photo(image_path: str, access_token: str, page_id: str) -> Optional[str]:
-    """
-    /{page_id}/photos endpoint'ine published=false ile yukleme.
-    Donus: photo_id
-    """
     if not image_path or not os.path.exists(image_path):
         log(f"Gorsel dosyasi bulunamadi (upload): {image_path}", "ERROR")
         return None
@@ -281,11 +261,6 @@ def _estimate_payload_size(payload: dict) -> int:
 
 
 def _create_attached_media_payload_v1(media_ids: list[str]) -> dict:
-    """
-    Format 1:
-      attached_media[0] = {"media_fbid":"..."}
-      attached_media[1] = {"media_fbid":"..."}
-    """
     payload = {}
     for idx, media_id in enumerate(media_ids):
         payload[f"attached_media[{idx}]"] = json.dumps({"media_fbid": media_id})
@@ -293,10 +268,6 @@ def _create_attached_media_payload_v1(media_ids: list[str]) -> dict:
 
 
 def _create_attached_media_payload_v2(media_ids: list[str]) -> str:
-    """
-    Format 2:
-      attached_media = [{"media_fbid":"..."}, ...]
-    """
     return json.dumps([{"media_fbid": mid} for mid in media_ids])
 
 
@@ -382,14 +353,6 @@ def post_photo(image_path: str, message: str) -> Optional[str]:
 
 
 def post_photos(image_paths: list[str], message: str) -> Optional[str]:
-    """
-    Facebook'a coklu gorsel + tek aciklama metni ile post atar.
-
-    Akis:
-      1) Her gorsel /photos endpoint'ine published=false ile yuklenir
-      2) /feed endpoint'ine attached_media ile tek post olusturulur
-      3) Format v1 basarisiz olursa format v2 denenir
-    """
     page_id, access_token = _get_credentials()
     if not page_id or not access_token:
         return None
@@ -399,7 +362,6 @@ def post_photos(image_paths: list[str], message: str) -> Optional[str]:
         log("post_photos: gecerli gorsel yolu yok", "WARNING")
         return None
 
-    # Dedupe by hash
     deduped_paths: list[str] = []
     seen_hashes: set[str] = set()
     for path in valid_paths:
@@ -537,10 +499,9 @@ def post_text(message: str) -> Optional[str]:
 def post_story(image_path: str) -> Optional[str]:
     """
     Facebook Photo Story paylasimi.
-
-    Dogru Graph API akisi:
-      1) /{page_id}/photos -> published=false ile upload (photo_id al)
-      2) /{page_id}/photo_stories -> photo_id ile publish et
+    Akis:
+      1) /{page_id}/photos -> published=false ile upload
+      2) /{page_id}/photo_stories -> publish
     """
     page_id, access_token = _get_credentials()
     if not page_id or not access_token:
@@ -608,7 +569,6 @@ def post_story(image_path: str) -> Optional[str]:
     return None
 
 
-# Backward-compatible aliases (agent_publisher olasi isimleri dener)
 def post_multi_photo(image_paths: list[str], message: str) -> Optional[str]:
     return post_photos(image_paths, message)
 
