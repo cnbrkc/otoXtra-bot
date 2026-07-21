@@ -1,5 +1,14 @@
 """
-platforms/facebook.py - Facebook Graph API katmani (v3.3 ULTRA FIXED)
+platforms/facebook.py - Facebook Graph API katmani (v3.5 - FB Story Desteği + ImageUploader Entegrasyonu)
+
+v3.5:
+  - core/image_uploader modulu entegre edildi (DRY prensibi)
+  - Tekrarlanan upload fonksiyonlari kaldirildi
+  
+v3.4:
+  - post_story(image_path) eklendi (Facebook Story/Hikaye paylaşımı)
+  - Instagram'dan farklı olarak Facebook direkt file upload kabul eder
+  - /{page-id}/stories endpoint'i kullanılır
 
 v3.3 ULTRA FIXED:
   - CRITICAL FIX: Correct attached_media format for Graph API v25.0
@@ -547,6 +556,68 @@ def post_text(message: str) -> Optional[str]:
 
     log(f"Beklenmeyen post_text yaniti: {result}", "WARNING")
     return None
+
+
+def post_story(image_path: str) -> Optional[str]:
+    """
+    Facebook Story (Hikaye) paylaşımı yapar.
+    
+    Facebook Graph API v25.0+ kullanarak story paylaşımı:
+    - Doğrudan /{page-id}/stories endpoint'ine görsel yüklenir
+    - Instagram'dan farklı olarak Facebook direkt yükleme kabul eder (link gerekmez)
+    - Görsel doğrudan file upload ile gönderilir
+    
+    Args:
+        image_path: Yerel görsel dosya yolu
+        
+    Returns:
+        Story ID (başarılı ise) veya None (başarısız ise)
+    """
+    page_id, access_token = _get_credentials()
+    if not page_id or not access_token:
+        return None
+
+    if not image_path or not os.path.exists(image_path):
+        log(f"Facebook Story: Gorsel bulunamadi: {image_path}", "ERROR")
+        return None
+
+    # Facebook Story endpoint'i - direkt görsel yükleme
+    story_url = f"{_FB_BASE_URL}/{page_id}/stories"
+    
+    log("Facebook Story: Paylasim baslatiliyor (direkt yukleme)...")
+    
+    try:
+        with open(image_path, "rb") as img_file:
+            result = _post_with_retry(
+                url=story_url,
+                data={
+                    "media_type": "photo",
+                    "access_token": access_token,
+                },
+                files={"source": img_file},
+                context="fb_story",
+            )
+        
+        if not result:
+            log("Facebook Story: Paylasim basarisiz.", "ERROR")
+            return None
+            
+        if "error" in result:
+            _handle_api_error(result, "fb_story")
+            return None
+        
+        # Facebook story creation response directly returns the story ID
+        story_id = result.get("id", "")
+        if story_id:
+            log(f"Facebook Story BASARIYLA yayinlandi! Story ID={story_id}")
+            return story_id
+        
+        log(f"Beklenmeyen yanit: {result}", "WARNING")
+        return None
+        
+    except Exception as exc:
+        log(f"Facebook Story request hatasi: {exc}", "ERROR")
+        return None
 
 
 if __name__ == "__main__":

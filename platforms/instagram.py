@@ -1,15 +1,18 @@
 """
-platforms/instagram.py - Instagram Graph API katmani (v1.2 - graph.instagram.com Fix)
+platforms/instagram.py - Instagram Graph API katmani (v1.3 - DRY Refactoring)
   - Story (Hikaye) paylasimi yapar.
   - API Host URL graph.instagram.com olarak guncellendi (Instagram Login tokenlari icin).
   - media_type STORIES olarak duzeltilmis (Meta dokumaninda belirtildigi uzere).
+  - v1.3: Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
 """
 
-import base64
 import os
 import time
 import requests
+from typing import Optional
+
 from core.logger import log
+from core.image_uploader import get_public_url_fallback
 
 # ── Instagram API ────────────────────────────────────────────────────────────
 # F1 Düzeltmesi: graph.facebook.com yerine graph.instagram.com kullanıldı (Instagram Login tokenları için zorunlu)
