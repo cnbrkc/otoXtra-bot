@@ -69,9 +69,10 @@ def _get_credentials():
     token = os.environ.get("THREADS_ACCESS_TOKEN", "")
 
     # TOKSIK TEMIZLEYICI: Gizli satir sonu, bosluk veya tirnak isaretlerini yok eder.
+    # Sadece bas/son bosluklari ve kontrol karakterleri temizlenir, token formati korunur.
     token = (
         token.replace('"', "").replace("'", "")
-        .replace("\n", "").replace("\r", "").replace(" ", "")
+        .replace("\n", "").replace("\r", "")
         .strip()
     )
 

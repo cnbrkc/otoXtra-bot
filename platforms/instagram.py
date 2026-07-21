@@ -1,9 +1,10 @@
 """
-platforms/instagram.py - Instagram Graph API katmani (v1.3 - DRY Refactoring)
+platforms/instagram.py - Instagram Graph API katmani (v1.4 - DRY Refactoring Fix)
   - Story (Hikaye) paylasimi yapar.
   - API Host URL graph.instagram.com olarak guncellendi (Instagram Login tokenlari icin).
   - media_type STORIES olarak duzeltilmis (Meta dokumaninda belirtildigi uzere).
   - v1.3: Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
+  - v1.4: Tekrar eden upload fonksiyonlari kaldirildi, merkezi modül kullaniliyor.
 """
 
 import os
@@ -14,26 +15,11 @@ from typing import Optional
 from core.logger import log
 from core.image_uploader import get_public_url_fallback
 
-# ── Instagram API ────────────────────────────────────────────────────────────
+# ── Instagram API Sabitleri ──────────────────────────────────────────────────
 # F1 Düzeltmesi: graph.facebook.com yerine graph.instagram.com kullanıldı (Instagram Login tokenları için zorunlu)
 _IG_API_VERSION = "v21.0"
 _BASE_URL = f"https://graph.instagram.com/{_IG_API_VERSION}"
 _REQUEST_TIMEOUT = 60
-
-# ── Upload servis limitleri ──────────────────────────────────────────────────
-_IMGBB_API_URL = "https://api.imgbb.com/1/upload"
-_IMGBB_MAX_FILE_SIZE = 32 * 1024 * 1024
-
-_CATBOX_API_URL = "https://catbox.moe/user/api.php"
-_CATBOX_MAX_FILE_SIZE = 200 * 1024 * 1024
-
-_ZER0X_API_URL = "https://0x0.st"
-_ZER0X_MAX_FILE_SIZE = 512 * 1024 * 1024
-
-_TELEGRAPH_API_URL = "https://telegra.ph/upload"
-_TELEGRAPH_MAX_FILE_SIZE = 5 * 1024 * 1024
-
-_UPLOAD_USER_AGENT = "otoXtraBot/5.0"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CREDENTIALS & HELPERS
@@ -62,89 +48,6 @@ def _get_credentials():
     return user_id, token
 
 # ═══════════════════════════════════════════════════════════════════════════════
-# UPLOAD SERVISLERI 
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _upload_imgbb(image_path: str) -> str | None:
-    api_key = os.environ.get("IMGBB_API_KEY", "").strip()
-    if not api_key or not image_path or not os.path.exists(image_path): return None
-    try:
-        with open(image_path, "rb") as f:
-            image_data = base64.b64encode(f.read()).decode("utf-8")
-        resp = requests.post(_IMGBB_API_URL, data={"key": api_key, "image": image_data}, headers={"User-Agent": _UPLOAD_USER_AGENT}, timeout=30)
-        if resp.status_code == 200 and resp.json().get("success"):
-            url = resp.json()["data"].get("url")
-            log(f"ImgBB: Basarili! URL={url[:60]}")
-            return url
-        return None
-    except Exception as e:
-        log(f"ImgBB: Hata: {e}", "WARNING"); return None
-
-def _upload_catbox(image_path: str) -> str | None:
-    if not image_path or not os.path.exists(image_path): return None
-    try:
-        with open(image_path, "rb") as f:
-            resp = requests.post(_CATBOX_API_URL, data={"reqtype": "fileupload"}, files={"fileToUpload": f}, headers={"User-Agent": _UPLOAD_USER_AGENT}, timeout=30)
-        if resp.status_code == 200 and resp.text.strip().startswith("https://"):
-            log(f"Catbox: Basarili! URL={resp.text.strip()[:60]}")
-            return resp.text.strip()
-        return None
-    except Exception as e:
-        log(f"Catbox: Hata: {e}", "WARNING"); return None
-
-def _upload_0x0(image_path: str) -> str | None:
-    if not image_path or not os.path.exists(image_path): return None
-    try:
-        with open(image_path, "rb") as f:
-            resp = requests.post(_ZER0X_API_URL, files={"file": f}, headers={"User-Agent": _UPLOAD_USER_AGENT}, timeout=30)
-        if resp.status_code == 200 and resp.text.strip().startswith("https://"):
-            log(f"0x0.st: Basarili! URL={resp.text.strip()[:60]}")
-            return resp.text.strip()
-        return None
-    except Exception as e:
-        log(f"0x0.st: Hata: {e}", "WARNING"); return None
-
-def _upload_telegraph(image_path: str) -> str | None:
-    if not image_path or not os.path.exists(image_path): return None
-    try:
-        with open(image_path, "rb") as f:
-            resp = requests.post(_TELEGRAPH_API_URL, files={"file": ("image.jpg", f, "image/jpeg")}, headers={"User-Agent": _UPLOAD_USER_AGENT}, timeout=30)
-        if resp.status_code == 200:
-            data = resp.json()
-            if isinstance(data, list) and data and "src" in data[0]:
-                url = f"https://telegra.ph{data[0]['src']}"
-                log(f"Telegraph: Basarili! URL={url[:60]}")
-                return url
-        return None
-    except Exception as e:
-        log(f"Telegraph: Hata: {e}", "WARNING"); return None
-
-def _get_public_url(image_path: str) -> str | None:
-    """Local dosyayı public URL'ye çevirir (Fallback zinciri)."""
-    if not image_path or not os.path.exists(image_path):
-        return None
-        
-    file_size = os.path.getsize(image_path)
-    
-    # F4 Düzeltmesi: ImgBB (en IG-uyumlu) başa alındı ve boyut limitleri uygulandı.
-    upload_services = [
-        ("ImgBB", _upload_imgbb, _IMGBB_MAX_FILE_SIZE),
-        ("Catbox", _upload_catbox, _CATBOX_MAX_FILE_SIZE),
-        ("0x0.st", _upload_0x0, _ZER0X_MAX_FILE_SIZE),
-        ("Telegraph", _upload_telegraph, _TELEGRAPH_MAX_FILE_SIZE),
-    ]
-    
-    for name, fn, limit in upload_services:
-        if file_size > limit:
-            log(f"IG Story Upload: {name} atlandi (boyut limiti aşıldı: {file_size // 1024}KB)", "INFO")
-            continue
-        log(f"IG Story Upload: {name} deneniyor...")
-        url = fn(image_path)
-        if url:
-            return url
-    return None
-
-# ═══════════════════════════════════════════════════════════════════════════════
 # INSTAGRAM STORY PUBLISH
 # ═══════════════════════════════════════════════════════════════════════════════
 
@@ -160,8 +63,8 @@ def post_story(image_path: str) -> str | None:
         log(f"IG Story: Gorsel bulunamadi: {image_path}", "ERROR")
         return None
 
-    # 1. Görseli Public URL'ye çevir
-    public_url = _get_public_url(image_path)
+    # 1. Görseli Public URL'ye çevir (merkezi modülden)
+    public_url = get_public_url_fallback(image_path, platform_name="Instagram")
     if not public_url:
         log("IG Story: Tum upload servisleri basarisiz oldu. Story atilamadi.", "ERROR")
         return None

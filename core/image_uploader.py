@@ -6,6 +6,7 @@ DRY prensibi ile kod tekrarini onler.
 """
 
 import base64
+import json
 import os
 from typing import Optional
 

@@ -38,7 +38,26 @@ import requests
 from core.logger import log
 
 
-_FB_API_VERSION = "v25.0"
+def _get_fb_api_version() -> str:
+    """
+    Facebook API versiyonunu config'den okur, yoksa default döner.
+    Bu sayede Meta API versiyon değiştiğinde kod değişikliği gerekmez.
+    """
+    try:
+        from core.config_loader import load_config
+        settings = load_config("settings")
+        facebook = settings.get("facebook", {})
+        if isinstance(facebook, dict):
+            version = facebook.get("api_version", "")
+            if version and isinstance(version, str):
+                return version.strip()
+    except Exception:
+        pass
+    # Fallback default
+    return "v25.0"
+
+
+_FB_API_VERSION = _get_fb_api_version()
 _FB_BASE_URL = f"https://graph.facebook.com/{_FB_API_VERSION}"
 _REQUEST_TIMEOUT = 60
 _RETRY_ATTEMPTS = 3

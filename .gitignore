@@ -1,128 +1,41 @@
-# Python
+```gitignore
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
-.Python
-env/
-venv/
-.venv/
-.env
-.env.local
-.env.*
-pyproject.toml
-poetry.lock
-*.egg-info/
-.eggs/
-.mypy_cache/
-.pytest_cache/
-.coverage
-htmlcov/
-coverage.xml
-.tox/
-noxfile.py
-.hypothesis/
-
-# Distribution / packaging
-.Python
-_build/
-buck-out/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-pip-wheel-metadata/
-share/python-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-
-# IDEs
-.vscode/
-.idea/
-*.swp
-*.swo
-*.tmp
-
-# OS
-.DS_Store
-Thumbs.db
 
 # Logs
 *.log
 
-# Testing
-.pytest_cache/
-.hypothesis/
-.coverage*
-htmlcov/
-.tox/
-.nox/
-coverage.xml
-*.cover
-*.py,cover
-
-# Environment
+# Environment files
 .env
 .env.local
-.env.*
+*.env.*
 
-# General
-*.tmp
-*~
-.DS_Store
-Thumbs.db
+# Editor/IDE files
 .vscode/
 .idea/
-node_modules/
-target/
-.gradle/
-.mypy_cache/
-.pytest_cache/
-htmlcov/
-.coverage
-*.log
-*.tmp
 *.swp
 *.swo
-.env
-.env.local
-.env.*
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-env/
+*.tmp
+
+# Dependencies
 venv/
 .venv/
-.pytest_cache/
-.hypothesis/
-.coverage*
+node_modules/
+
+# Build/dist directories
+dist/
+build/
+target/
+
+# Coverage reports
+coverage/
 htmlcov/
-.tox/
-.nox/
-coverage.xml
-*.cover
-*.py,cover
-poetry.lock
-*.egg-info/
-.installed.cfg
-*.egg
-.pytest_cache/
-.hypothesis/
-.coverage*
-htmlcov/
-.tox/
-.nox/
-coverage.xml
-*.cover
-*.py,cover
+.coverage
+
+# OS files
+.DS_Store
+Thumbs.db
+```
