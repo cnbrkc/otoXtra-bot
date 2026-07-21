@@ -26,11 +26,11 @@
     "feed_image_width": 1200,
     "feed_image_height": 630,
     "enable_article_image_scrape": true,
+    "enable_fetch_article_image_scrape": true,
     "max_candidates_per_article": 20,
     "max_article_scrapes_per_feed": 10,
     "max_images_per_news": 4,
-    "perceptual_hash_threshold": 8,
-    "enable_fetch_article_image_scrape": true
+    "perceptual_hash_threshold": 8
   },
   "news": {
     "max_article_age_hours": 24,
@@ -65,7 +65,7 @@
     "enabled": true
   },
   "facebook": {
-  "enabled": true,
-  "api_version": "v25.0"
+    "enabled": true,
+    "api_version": "v25.0"
   }
 }
