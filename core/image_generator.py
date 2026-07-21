@@ -4,9 +4,9 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 from core.config_loader import get_project_root
 from core.logger import log
 
-# Kart boyutları (Instagram/Facebook STORY boyutu - 9:16)
-CANVAS_WIDTH = 1080
-CANVAS_HEIGHT = 1920
+# Kart boyutları (4K Instagram/Facebook STORY boyutu - 9:16)
+CANVAS_WIDTH = 2160  # 4K genişlik (1080p'den 2160p'ye yükseltildi)
+CANVAS_HEIGHT = 3840 # 4K yükseklik (1920'den 3840'a yükseltildi)
 
 # Renkler (Şeffaf gradyan için RGBA formatında)
 BG_COLOR_RGBA = (18, 25, 36, 255)  # Koyu lacivert arka plan (Opak)
@@ -50,19 +50,19 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         dummy_img = Image.new("RGB", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)
 
-        # PUNTOLAR BÜYÜTÜLDÜ (55 -> 65)
-        font_title = _get_font(65, bold=True)
-        title_lines = _wrap_text(dummy_draw, title, font_title, CANVAS_WIDTH - 160)
-        title_h = sum([(dummy_draw.textbbox((0,0), line, font=font_title)[3]) for line in title_lines]) + (len(title_lines)-1)*18
+        # PUNTOLAR BÜYÜTÜLDÜ (55 -> 65 -> 130 - 4K için ölçeklendi)
+        font_title = _get_font(130, bold=True)
+        title_lines = _wrap_text(dummy_draw, title, font_title, CANVAS_WIDTH - 320)
+        title_h = sum([(dummy_draw.textbbox((0,0), line, font=font_title)[3]) for line in title_lines]) + (len(title_lines)-1)*36
 
-        # PUNTOLAR BÜYÜTÜLDÜ (35 -> 40)
-        font_body = _get_font(40, bold=False)
-        body_lines = _wrap_text(dummy_draw, body, font_body, CANVAS_WIDTH - 160)
-        body_h = sum([(dummy_draw.textbbox((0,0), line, font=font_body)[3]) for line in body_lines]) + (len(body_lines)-1)*13
+        # PUNTOLAR BÜYÜTÜLDÜ (35 -> 40 -> 80 - 4K için ölçeklendi)
+        font_body = _get_font(80, bold=False)
+        body_lines = _wrap_text(dummy_draw, body, font_body, CANVAS_WIDTH - 320)
+        body_h = sum([(dummy_draw.textbbox((0,0), line, font=font_body)[3]) for line in body_lines]) + (len(body_lines)-1)*26
 
-        logo_h = 120
-        img_h = 700
-        gap = 40
+        logo_h = 240  # 4K için ölçeklendi (120 -> 240)
+        img_h = 1400  # 4K için ölçeklendi (700 -> 1400)
+        gap = 80      # 4K için ölçeklendi (40 -> 80)
 
         total_h = logo_h + gap + title_h + gap + img_h + gap + body_h
         y_cursor = (CANVAS_HEIGHT - total_h) // 2  # TAM ORTALAMA
@@ -102,7 +102,7 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         overlay = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), (0,0,0,0))
         draw_overlay = ImageDraw.Draw(overlay)
         
-        fade_dist = 600 # Geniş bir alanda yumuşakça kaybolması için
+        fade_dist = 1200 # 4K için genişletildi (600 -> 1200)
         
         for y in range(CANVAS_HEIGHT):
             if y < fade_dist:
@@ -136,8 +136,8 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             line_w = bbox[2] - bbox[0]
             x = (CANVAS_WIDTH - line_w) // 2
             draw.text((x, y_cursor), line, font=font_title, fill=TEXT_COLOR)
-            y_cursor += bbox[3] + 18  # Satır aralığı biraz açıldı
-        y_cursor += gap - 20
+            y_cursor += bbox[3] + 36  # Satır aralığı 4K için ölçeklendi (18 -> 36)
+        y_cursor += gap - 40  # 4K için ölçeklendi (-20 -> -40)
 
         # Ana Görsel (Kırpılmadan, sığdırılarak - Contain)
         img_y = y_cursor
@@ -145,11 +145,11 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             try:
                 img = Image.open(image_path).convert("RGB")
                 img_ratio = img.width / img.height
-                target_ratio = 1000 / img_h  # 1000 max width, 700 max height
+                target_ratio = 2000 / img_h  # 2000 max width (4K için), 1400 max height
                 
                 if img_ratio > target_ratio: 
-                    n_w = 1000
-                    n_h = int(1000 / img_ratio)
+                    n_w = 2000
+                    n_h = int(2000 / img_ratio)
                 else: 
                     n_h = img_h
                     n_w = int(img_h * img_ratio)
@@ -168,10 +168,10 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             line_w = bbox[2] - bbox[0]
             x = (CANVAS_WIDTH - line_w) // 2
             draw.text((x, y_cursor), line, font=font_body, fill=TEXT_COLOR)
-            y_cursor += bbox[3] + 13  # Satır aralığı biraz açıldı
+            y_cursor += bbox[3] + 26  # Satır aralığı 4K için ölçeklendi (13 -> 26)
 
-        # Kaydet
-        canvas.convert("RGB").save(output_path, format="JPEG", quality=95)
+        # Kaydet - 4K Kalite ayarları (maksimum kalite)
+        canvas.convert("RGB").save(output_path, format="JPEG", quality=100, optimize=True, progressive=True)
         log(f"Sosyal medya kartı oluşturuldu: {output_path}")
         return output_path
 
