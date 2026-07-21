@@ -134,11 +134,11 @@ jobs:
 
           IMAGE_TEST_MODE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.image_test_mode || 'false' }}
           DEBUG_SCORE_BREAKDOWN: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.debug_score_breakdown || 'false' }}
-          ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'false' }}
+          ENABLE_RANDOM_DELAY: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.enable_random_delay || 'true' }}
           TUM_PLATFORMLAR_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.tum_platformlar_test || 'false' }}
           SADECE_FACEBOOK_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sadece_facebook_test || 'false' }}
           SADECE_THREADS_TEST: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.sadece_threads_test || 'false' }}
-          IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'true' }}
+          IGNORE_MIN_POST_INTERVAL: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.ignore_min_post_interval || 'false' }}
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
           NEWS_MAX_AGE_HOURS: '24'
@@ -198,17 +198,5 @@ jobs:
           git config --local user.email "bot@otoxtra.com"
           git config --local user.name "otoXtra Bot"
 
-          git add data/posted_news.json
-          git add queue/pipeline.json
-          git add data/telegram_updates_state.json
-
-          git diff --staged --quiet && echo "Degisiklik yok, commit atlaniyor" && exit 0
-
-          git commit -m "Haber paylasildi [$(date +'%Y-%m-%d %H:%M')]"
-
-          for i in 1 2 3; do
-            git push && break
-            echo "Push basarisiz (deneme $i/3), pull --rebase yapiliyor..."
-            git pull --rebase origin $(git branch --show-current)
-            sleep 2
-          done
+          # State dosyalari .gitignore'da oldugu icin artik commit edilmiyor
+          echo "State dosyalari artik Git'e commit edilmiyor (.gitignore)"

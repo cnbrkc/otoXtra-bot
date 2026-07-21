@@ -185,7 +185,12 @@ def _sanitize_settings(data: Any) -> dict:
             "max_output_tokens": _as_int(ai.get("max_output_tokens"), 2048, 1, 8192),
             "enable_gemini": _as_bool(ai.get("enable_gemini"), True),
             "gemini_model": _as_str(ai.get("gemini_model"), "gemini-2.5-flash-lite"),
+            "enable_groq": _as_bool(ai.get("enable_groq"), False),
             "groq_model": _as_str(ai.get("groq_model"), "llama-3.3-70b-versatile"),
+            "enable_openrouter": _as_bool(ai.get("enable_openrouter"), False),
+            "openrouter_model": _as_str(ai.get("openrouter_model"), ""),
+            "enable_huggingface": _as_bool(ai.get("enable_huggingface"), False),
+            "hf_model": _as_str(ai.get("hf_model"), ""),
         },
         "threads": {
             "enabled": _as_bool(threads.get("enabled"), False),
@@ -195,6 +200,50 @@ def _sanitize_settings(data: Any) -> dict:
             "enabled": _as_bool(instagram.get("enabled"), False),
         },
     }
+
+    # F6 Düzeltmesi: settings.json'daki ek alanları koru (schema drift onayı)
+    # Forward-compatible: Bilinmeyen alanları koru, sessizce atma
+    # posting.* alanları - tüm alanları koru
+    for key, value in posting.items():
+        if key not in safe["posting"]:
+            safe["posting"][key] = value
+    
+    # images.* alanları - tüm alanları koru
+    for key, value in images.items():
+        if key not in safe["images"]:
+            safe["images"][key] = value
+    
+    # news.* alanları - tüm alanları koru
+    for key, value in news.items():
+        if key not in safe["news"]:
+            safe["news"][key] = value
+    
+    # duplicate_detection.* alanları - tüm alanları koru
+    for key, value in duplicate.items():
+        if key not in safe["duplicate_detection"]:
+            safe["duplicate_detection"][key] = value
+    
+    # ai.* alanları - tüm alanları koru
+    for key, value in ai.items():
+        if key not in safe["ai"]:
+            safe["ai"][key] = value
+    
+    # threads.* alanları - tüm alanları koru
+    for key, value in threads.items():
+        if key not in safe["threads"]:
+            safe["threads"][key] = value
+    
+    # instagram.* alanları - tüm alanları koru
+    for key, value in instagram.items():
+        if key not in safe["instagram"]:
+            safe["instagram"][key] = value
+    
+    # facebook.* alanları (API versiyonu ve diğer ayarlar)
+    facebook_config = data.get("facebook", {})
+    if isinstance(facebook_config, dict) and facebook_config:
+        safe["facebook"] = {}
+        for key, value in facebook_config.items():
+            safe["facebook"][key] = value
 
     return safe
 
