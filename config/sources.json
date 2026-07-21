@@ -143,10 +143,19 @@
       "language": "tr",
       "can_scrape_image": true,
       "enabled": true
-    },    
+    },
     {
       "name": "Sekizsilindir",
       "url": "https://nitter.net/sekizsilindir/rss",
+      "category": "otomobil",
+      "priority": "medium",
+      "language": "tr",
+      "can_scrape_image": true,
+      "enabled": true
+    },
+    {
+      "name": "otopodyum",
+      "url": "https://otopodyum.com.tr/service/rss.php?feed=atom",
       "category": "otomobil",
       "priority": "medium",
       "language": "tr",
