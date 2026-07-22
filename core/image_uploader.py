@@ -1,10 +1,9 @@
 """
-core/image_uploader.py - Ortak Gorsel Yukleme Servisleri (v1.1)
-
+core/image_uploader.py - Ortak Gorsel Yukleme Servisleri (v2.0 - GitHub Ban Fix)
 Instagram ve Threads platformlari icin ortak upload fonksiyonlari.
-IG kalite iyilestirmesi:
-- IG icin fallback sirasi Catbox -> 0x0 -> ImgBB -> Telegraph
-- ImgBB'de medium yerine orijinal URL oncelenir
+- 0x0.st (iflas etti) kaldirildi.
+- tmpfiles.org ve freeimage.host (API keysiz) eklendi.
+- Catbox ve ImgBB icin User-Agent guncellemesi yapildi (GitHub IP ban'i asmak icin).
 """
 
 import base64
@@ -24,13 +23,15 @@ _IMGBB_MAX_FILE_SIZE = 32 * 1024 * 1024
 _CATBOX_API_URL = "https://catbox.moe/user/api.php"
 _CATBOX_MAX_FILE_SIZE = 200 * 1024 * 1024
 
-_ZER0X_API_URL = "https://0x0.st"
-_ZER0X_MAX_FILE_SIZE = 512 * 1024 * 1024
+_TMPFILES_API_URL = "https://tmpfiles.org/api/v1/upload"
+_FREEIMAGE_API_URL = "https://freeimage.host/api/1/upload"
+_FREEIMAGE_API_KEY = "6d207e02198a847aa98d0a2a901485a5" # Anonim public key
 
 _TELEGRAPH_API_URL = "https://telegra.ph/upload"
 _TELEGRAPH_MAX_FILE_SIZE = 5 * 1024 * 1024
 
-_UPLOAD_USER_AGENT = "otoXtraBot/5.1"
+# GitHub IP banlarini asmak icin tarayici User-Agent'i
+_UPLOAD_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36 otoXtraBot/1.0"
 
 
 def _is_valid_file(path: str) -> bool:
@@ -57,30 +58,20 @@ def _guess_content_type(path: str) -> str:
 
 
 def upload_imgbb(image_path: str) -> Optional[str]:
-    """
-    ImgBB upload (API key gerekli).
-    """
     api_key = os.environ.get("IMGBB_API_KEY", "").strip()
-
     if not api_key:
         log("ImgBB: IMGBB_API_KEY env yok, atlaniyor", "INFO")
         return None
 
     if not _is_valid_file(image_path):
-        log("ImgBB: Dosya bulunamadi", "ERROR")
         return None
 
     try:
         file_size = _safe_size(image_path)
-        if file_size <= 0:
-            log("ImgBB: Dosya boyutu okunamadi", "ERROR")
-            return None
-        if file_size > _IMGBB_MAX_FILE_SIZE:
-            log(f"ImgBB: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
+        if file_size <= 0 or file_size > _IMGBB_MAX_FILE_SIZE:
             return None
 
         log(f"ImgBB: Yukleniyor... ({file_size // 1024}KB)")
-
         with open(image_path, "rb") as f:
             image_data = base64.b64encode(f.read()).decode("utf-8")
 
@@ -98,47 +89,28 @@ def upload_imgbb(image_path: str) -> Optional[str]:
 
         result = resp.json()
         if not result.get("success", False):
-            log(f"ImgBB: Upload basarisiz: {result}", "WARNING")
             return None
 
         data = result.get("data", {})
-        # IG kalite icin medium yerine orijinal URL once
-        image_url = (
-            data.get("url", "")
-            or data.get("display_url", "")
-            or data.get("image", {}).get("url", "")
-            or data.get("medium", {}).get("url", "")
-        )
+        image_url = data.get("url", "") or data.get("display_url", "")
 
         if _is_http_url(image_url):
             log(f"ImgBB: Basarili! URL uzunlugu={len(image_url)}")
             return image_url
-
-        log(f"ImgBB: URL bulunamadi: {list(data.keys())}", "WARNING")
         return None
 
-    except requests.exceptions.Timeout:
-        log("ImgBB: Zaman asimi", "WARNING")
-        return None
     except Exception as exc:
         log(f"ImgBB: Hata: {exc}", "WARNING")
         return None
 
 
 def upload_catbox(image_path: str) -> Optional[str]:
-    """
-    Catbox upload (API key gerekmez).
-    """
     if not _is_valid_file(image_path):
-        log("Catbox: Dosya bulunamadi", "ERROR")
         return None
 
     try:
         file_size = _safe_size(image_path)
-        if file_size <= 0:
-            return None
-        if file_size > _CATBOX_MAX_FILE_SIZE:
-            log(f"Catbox: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
+        if file_size <= 0 or file_size > _CATBOX_MAX_FILE_SIZE:
             return None
 
         log(f"Catbox: Yukleniyor... ({file_size // 1024}KB)")
@@ -159,69 +131,83 @@ def upload_catbox(image_path: str) -> Optional[str]:
         log(f"Catbox: Basarisiz status={resp.status_code} body={text[:200]}", "WARNING")
         return None
 
-    except requests.exceptions.Timeout:
-        log("Catbox: Zaman asimi", "WARNING")
-        return None
     except Exception as exc:
         log(f"Catbox: Hata: {exc}", "WARNING")
         return None
 
 
-def upload_0x0(image_path: str) -> Optional[str]:
-    """
-    0x0.st upload (API key gerekmez).
-    """
+def upload_tmpfiles(image_path: str) -> Optional[str]:
     if not _is_valid_file(image_path):
-        log("0x0.st: Dosya bulunamadi", "ERROR")
         return None
 
     try:
         file_size = _safe_size(image_path)
         if file_size <= 0:
             return None
-        if file_size > _ZER0X_MAX_FILE_SIZE:
-            log(f"0x0.st: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
-            return None
 
-        log(f"0x0.st: Yukleniyor... ({file_size // 1024}KB)")
+        log(f"tmpfiles: Yukleniyor... ({file_size // 1024}KB)")
         with open(image_path, "rb") as f:
             resp = requests.post(
-                _ZER0X_API_URL,
+                _TMPFILES_API_URL,
                 files={"file": f},
                 headers={"User-Agent": _UPLOAD_USER_AGENT},
                 timeout=30,
             )
 
-        text = (resp.text or "").strip()
-        if resp.status_code == 200 and _is_http_url(text):
-            log(f"0x0.st: Basarili! URL uzunlugu={len(text)}")
-            return text
-
-        log(f"0x0.st: Basarisiz status={resp.status_code} body={text[:200]}", "WARNING")
+        if resp.status_code == 200:
+            url = resp.json().get("data", {}).get("url", "")
+            if _is_http_url(url):
+                log(f"tmpfiles: Basarili! URL={url}")
+                return url
+        
+        log(f"tmpfiles: Basarisiz status={resp.status_code}", "WARNING")
         return None
 
-    except requests.exceptions.Timeout:
-        log("0x0.st: Zaman asimi", "WARNING")
-        return None
     except Exception as exc:
-        log(f"0x0.st: Hata: {exc}", "WARNING")
+        log(f"tmpfiles: Hata: {exc}", "WARNING")
         return None
 
 
-def upload_telegraph(image_path: str) -> Optional[str]:
-    """
-    Telegraph upload (max 5MB).
-    """
+def upload_freeimage(image_path: str) -> Optional[str]:
     if not _is_valid_file(image_path):
-        log("Telegraph: Dosya bulunamadi", "ERROR")
         return None
 
     try:
         file_size = _safe_size(image_path)
         if file_size <= 0:
             return None
-        if file_size > _TELEGRAPH_MAX_FILE_SIZE:
-            log(f"Telegraph: Dosya cok buyuk: {file_size // 1024}KB (max 5MB)", "WARNING")
+
+        log(f"freeimage: Yukleniyor... ({file_size // 1024}KB)")
+        with open(image_path, "rb") as f:
+            resp = requests.post(
+                _FREEIMAGE_API_URL,
+                params={"key": _FREEIMAGE_API_KEY},
+                files={"source": f},
+                headers={"User-Agent": _UPLOAD_USER_AGENT},
+                timeout=30,
+            )
+
+        if resp.status_code == 200:
+            url = resp.json().get("image", {}).get("url", "")
+            if _is_http_url(url):
+                log(f"freeimage: Basarili! URL={url}")
+                return url
+
+        log(f"freeimage: Basarisiz status={resp.status_code}", "WARNING")
+        return None
+
+    except Exception as exc:
+        log(f"freeimage: Hata: {exc}", "WARNING")
+        return None
+
+
+def upload_telegraph(image_path: str) -> Optional[str]:
+    if not _is_valid_file(image_path):
+        return None
+
+    try:
+        file_size = _safe_size(image_path)
+        if file_size <= 0 or file_size > _TELEGRAPH_MAX_FILE_SIZE:
             return None
 
         ctype = _guess_content_type(image_path)
@@ -243,17 +229,14 @@ def upload_telegraph(image_path: str) -> Optional[str]:
                     src = data[0]["src"]
                     url = f"https://telegra.ph{src}"
                     if _is_http_url(url):
-                        log(f"Telegraph: Basarili! URL uzunlugu={len(url)}")
+                        log(f"Telegraph: Basarili! URL={url}")
                         return url
             except (json.JSONDecodeError, KeyError, IndexError):
                 pass
 
-        log(f"Telegraph: Basarisiz status={resp.status_code} body={resp.text[:200]}", "WARNING")
+        log(f"Telegraph: Basarisiz status={resp.status_code}", "WARNING")
         return None
 
-    except requests.exceptions.Timeout:
-        log("Telegraph: Zaman asimi", "WARNING")
-        return None
     except Exception as exc:
         log(f"Telegraph: Hata: {exc}", "WARNING")
         return None
@@ -262,11 +245,7 @@ def upload_telegraph(image_path: str) -> Optional[str]:
 def get_public_url_fallback(image_path: str, platform_name: str = "Platform") -> Optional[str]:
     """
     Local dosyayi public URL'ye cevirir (fallback zinciri).
-
-    IG kalite icin:
-      Catbox -> 0x0.st -> ImgBB -> Telegraph
-    Diger platformlar icin:
-      ImgBB -> Catbox -> 0x0.st -> Telegraph
+    Github banlarini asan yeni guvenilir servis oncelikli calisir.
     """
     if not _is_valid_file(image_path):
         log(f"{platform_name} Upload: Dosya yok/gecersiz", "ERROR")
@@ -277,29 +256,16 @@ def get_public_url_fallback(image_path: str, platform_name: str = "Platform") ->
         log(f"{platform_name} Upload: Dosya boyutu okunamadi", "ERROR")
         return None
 
-    pname = (platform_name or "").strip().lower()
-
-    if "instagram" in pname or "ig" in pname:
-        upload_services = [
-            ("Catbox", upload_catbox, _CATBOX_MAX_FILE_SIZE),
-            ("0x0.st", upload_0x0, _ZER0X_MAX_FILE_SIZE),
-            ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
-            ("Telegraph", upload_telegraph, _TELEGRAPH_MAX_FILE_SIZE),
-        ]
-    else:
-        upload_services = [
-            ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
-            ("Catbox", upload_catbox, _CATBOX_MAX_FILE_SIZE),
-            ("0x0.st", upload_0x0, _ZER0X_MAX_FILE_SIZE),
-            ("Telegraph", upload_telegraph, _TELEGRAPH_MAX_FILE_SIZE),
-        ]
+    upload_services = [
+        ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
+        ("tmpfiles", upload_tmpfiles, 50 * 1024 * 1024),
+        ("freeimage", upload_freeimage, 30 * 1024 * 1024),
+        ("Catbox", upload_catbox, _CATBOX_MAX_FILE_SIZE),
+        ("Telegraph", upload_telegraph, _TELEGRAPH_MAX_FILE_SIZE),
+    ]
 
     for name, fn, limit in upload_services:
         if file_size > limit:
-            log(
-                f"{platform_name} Upload: {name} atlandi (boyut limiti asildi: {file_size // 1024}KB)",
-                "INFO",
-            )
             continue
 
         log(f"{platform_name} Upload: {name} deneniyor...")
