@@ -86,7 +86,7 @@ on:
 # F12 Düzeltmesi: run_id yerine sabit isim verildi, böylece eşzamanlı çalışma engellendi.
 concurrency:
   group: otoxtra-bot
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   run-bot:
