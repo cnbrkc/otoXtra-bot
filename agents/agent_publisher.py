@@ -1,5 +1,5 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v6.3 - Story Checkpoint Stabil)
+agents/agent_publisher.py - Yayinci Ajani (v6.4 - Minimal Telegram UI)
 """
 
 import os
@@ -246,7 +246,7 @@ def _build_health_report() -> str:
 
 def _workflow_timing_line() -> str:
     started_tr = os.environ.get("WORKFLOW_STARTED_AT_TR", "")
-    return f"Workflow baslangici: {started_tr} TR" if started_tr else "Zaman bilinmiyor"
+    return f"⏰ Workflow: {started_tr} TR" if started_tr else "Zaman bilinmiyor"
 
 
 def _record_shared_variant_cooldowns(article: dict) -> None:
@@ -266,20 +266,15 @@ def _record_shared_variant_cooldowns(article: dict) -> None:
         pass
 
 
-def _build_story_checkpoint_line(status_obj: dict) -> str:
-    enabled = bool(status_obj.get("enabled", True))
-    attempted = bool(status_obj.get("attempted", False))
-    success = bool(status_obj.get("success", False))
-    sid = (status_obj.get("id", "") or "").strip()
-    error = (status_obj.get("error", "") or "").strip()
-
-    if not enabled:
-        return "disabled"
-    if not attempted:
-        return "not_attempted"
-    if success:
-        return f"success ({sid})" if sid else "success"
-    return f"failed ({error})" if error else "failed"
+def _get_platform_emoji(status_dict: dict) -> str:
+    """Platform durumuna göre emoji döndürür."""
+    if not status_dict.get("enabled", True):
+        return "➖"  # Kapalı
+    if status_dict.get("success", False):
+        return "✅"  # Başarılı
+    if not status_dict.get("attempted", False):
+        return "⏳"  # Denenmedi
+    return "❌"  # Başarısız
 
 
 def _send_telegram_notification(
@@ -297,27 +292,25 @@ def _send_telegram_notification(
     link = (article.get("link", "") or "").strip()
     score = article.get("score", 0)
 
-    fb_feed = "OK" if fb_ok else "FAIL"
-    threads_feed = "OK" if threads_ok else "FAIL"
-    ig_story_line = _build_story_checkpoint_line(story_status.get("instagram", {}))
-    fb_story_line = _build_story_checkpoint_line(story_status.get("facebook", {}))
+    fb_feed_emoji = "✅" if fb_ok else "❌"
+    threads_emoji = "✅" if threads_ok else "❌"
+    ig_story_emoji = _get_platform_emoji(story_status.get("instagram", {}))
+    fb_story_emoji = _get_platform_emoji(story_status.get("facebook", {}))
 
+    # Minimal ve şık Telegram mesaj formatı
     message = (
-        "Paylasim Yapildi.\n\n"
-        f"Gunun {action_count}. tetiklemesi\n"
-        f"Gunun {share_count}. paylasimi\n"
-        f"{_workflow_timing_line()}\n\n"
-        "Platform Durumu:\n"
-        f"- Facebook Feed: {fb_feed}\n"
-        f"- Threads: {threads_feed}\n"
-        f"- Instagram Story: {ig_story_line}\n"
-        f"- Facebook Story: {fb_story_line}\n\n"
-        "Secilen haber:\n"
-        f"Baslik: {title or 'Bilinmiyor'}\n"
-        f"Link: {link or '-'}\n"
-        f"Toplam Skor: {score}\n"
-        f"Gorsel: {image_source} ({image_count})\n"
-        f"Saglik: {health_report}"
+        "🚀 Paylaşım Yapıldı!\n\n"
+        f"📘 Facebook: {fb_feed_emoji}    "
+        f"🧵 Threads: {threads_emoji}\n"
+        f"📸 Inst. Story: {ig_story_emoji}    "
+        f"📘 FB Story: {fb_story_emoji}\n"
+        "--------------------------------\n"
+        f"📌 Günün {share_count}. paylaşımı (Tetiklenme: {action_count})\n"
+        f"📰 Başlık: {title or 'Bilinmiyor'}\n"
+        f"🎯 Skor: {score} | 🖼️ Görsel: {image_source} ({image_count})\n"
+        f"🩺 Sağlık: {health_report}\n"
+        f"🔗 Link: {link or '-'}\n"
+        f"{_workflow_timing_line()}"
     )
     return tg_platform.send_message(message)
 
