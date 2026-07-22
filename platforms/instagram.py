@@ -1,9 +1,10 @@
 """
-platforms/instagram.py - Instagram Graph API katmani (v1.5 - Bulletproof Upload)
+platforms/instagram.py - Instagram Graph API katmani (v1.4 - DRY Refactoring Fix)
   - Story (Hikaye) paylasimi yapar.
   - API Host URL graph.instagram.com olarak guncellendi (Instagram Login tokenlari icin).
   - media_type STORIES olarak duzeltilmis (Meta dokumaninda belirtildigi uzere).
-  - v1.5: GitHub IP ban'larini asmak icin yeni guvenilir upload servisleri (tmpfiles, freeimage) eklendi.
+  - v1.3: Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
+  - v1.4: Tekrar eden upload fonksiyonlari kaldirildi, merkezi modül kullaniliyor.
 """
 
 import os
@@ -12,109 +13,12 @@ import requests
 from typing import Optional
 
 from core.logger import log
+from core.image_uploader import get_public_url_fallback
 
 # ── Instagram API Sabitleri ──────────────────────────────────────────────────
 _IG_API_VERSION = "v21.0"
 _BASE_URL = f"https://graph.instagram.com/{_IG_API_VERSION}"
 _REQUEST_TIMEOUT = 60
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# YENI GUVENILIR GORSEL UPLOAD SERVISLERI
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _upload_to_tmpfiles(image_path: str) -> Optional[str]:
-    try:
-        log("Instagram Upload: tmpfiles.org deneniyor...")
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) otoXtraBot/1.0"}
-        with open(image_path, "rb") as f:
-            resp = requests.post("https://tmpfiles.org/api/v1/upload", files={"file": f}, headers=headers, timeout=30)
-        if resp.status_code == 200:
-            url = resp.json().get("data", {}).get("url", "")
-            if url:
-                log(f"tmpfiles.org: Basarili! URL={url}")
-                return url
-        log(f"tmpfiles.org: Basarisiz status={resp.status_code} body={resp.text[:100]}")
-    except Exception as e:
-        log(f"tmpfiles.org: Hata {e}", "WARNING")
-    return None
-
-def _upload_to_freeimage(image_path: str) -> Optional[str]:
-    try:
-        log("Instagram Upload: freeimage.host deneniyor...")
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) otoXtraBot/1.0"}
-        # freeimage.host anonim public key
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                "https://freeimage.host/api/1/upload",
-                params={"key": "6d207e02198a847aa98d0a2a901485a5"},
-                files={"source": f},
-                headers=headers,
-                timeout=30
-            )
-        if resp.status_code == 200:
-            url = resp.json().get("image", {}).get("url", "")
-            if url:
-                log(f"freeimage.host: Basarili! URL={url}")
-                return url
-        log(f"freeimage.host: Basarisiz status={resp.status_code} body={resp.text[:100]}")
-    except Exception as e:
-        log(f"freeimage.host: Hata {e}", "WARNING")
-    return None
-
-def _upload_to_catbox_fixed(image_path: str) -> Optional[str]:
-    try:
-        log("Instagram Upload: Catbox deneniyor...")
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) otoXtraBot/1.0"}
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                "https://catbox.moe/user/api.php",
-                data={"reqtype": "fileupload"},
-                files={"fileToUpload": f},
-                headers=headers,
-                timeout=30
-            )
-        if resp.status_code == 200 and "https://" in resp.text:
-            log(f"Catbox: Basarili! URL={resp.text.strip()}")
-            return resp.text.strip()
-        log(f"Catbox: Basarisiz status={resp.status_code} body={resp.text[:100]}")
-    except Exception as e:
-        log(f"Catbox: Hata {e}", "WARNING")
-    return None
-
-def _upload_to_imgbb_safe(image_path: str) -> Optional[str]:
-    api_key = os.environ.get("IMGBB_API_KEY", "").strip()
-    if not api_key:
-        return None
-    try:
-        log("Instagram Upload: ImgBB deneniyor...")
-        headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) otoXtraBot/1.0"}
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                "https://api.imgbb.com/1/upload",
-                params={"key": api_key},
-                files={"image": f},
-                headers=headers,
-                timeout=30
-            )
-        if resp.status_code == 200:
-            url = resp.json().get("data", {}).get("url", "")
-            if url:
-                log(f"ImgBB: Basarili! URL={url}")
-                return url
-        log(f"ImgBB: Basarisiz status={resp.status_code} body={resp.text[:100]}")
-    except Exception as e:
-        log(f"ImgBB: Hata {e}", "WARNING")
-    return None
-
-def _get_public_url_for_instagram(image_path: str) -> Optional[str]:
-    """Instagram icin guvenilir public URL uretir."""
-    # Sira: ImgBB (varsa) -> tmpfiles -> freeimage -> catbox
-    uploaders = [_upload_to_imgbb_safe, _upload_to_tmpfiles, _upload_to_freeimage, _upload_to_catbox_fixed]
-    for uploader in uploaders:
-        url = uploader(image_path)
-        if url:
-            return url
-    return None
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CREDENTIALS & HELPERS
@@ -158,8 +62,8 @@ def post_story(image_path: str) -> str | None:
         log(f"IG Story: Gorsel bulunamadi: {image_path}", "ERROR")
         return None
 
-    # 1. Görseli Public URL'ye çevir (Yeni Guvenilir Servisler ile)
-    public_url = _get_public_url_for_instagram(image_path)
+    # 1. Görseli Public URL'ye çevir (merkezi modülden)
+    public_url = get_public_url_fallback(image_path, platform_name="Instagram")
     if not public_url:
         log("IG Story: Tum upload servisleri basarisiz oldu. Story atilamadi.", "ERROR")
         return None
