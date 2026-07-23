@@ -1,12 +1,11 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v6.0 - DIVISION OF LABOR)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v6.1 - CLEAN MAX_TOKENS)
 
-v6.0 MEGA UPDATE:
+v6.1 MEGA UPDATE:
+  - MONKEY-PATCH HACK KALDIRILDI! ask_ai fonksiyonuna max_tokens parametresi eklendi.
   - İŞ BÖLÜMÜ (Division of Labor): Puanlama ve Yazma aşamaları için ayrı model listeleri!
   - SCORING: 500 RPD kotalı hızlı modeller (gemini-3.5-flash-lite, gemini-3.1-flash-lite) kullanılır.
   - WRITING: En zeki model (gemini-2.5-flash) kullanılır. 20 RPD kotası yazma için yeterlidir.
-  - v5.3 JSON parser düzeltmeleri korundu.
-  - 503/500 hatalarında retry yapılmaz, sonraki modele geçilir.
 """
 
 import json
@@ -22,23 +21,20 @@ from core.logger import log
 
 
 # ========== GEMINI STACK (v6.0: İŞ BÖLÜMÜ) ==========
-# Puanlama için: Çok istek atılır (500 RPD kotaya sahip lite modeller)
 GEMINI_MODELS_SCORING = [
     "gemini-3.5-flash-lite",
     "gemini-3.1-flash-lite",
-    "gemini-2.5-flash-lite",  # Yedek
-    "gemini-2.0-flash-lite",  # Yedek
+    "gemini-2.5-flash-lite",
+    "gemini-2.0-flash-lite",
 ]
 
-# Yazma ve Onarım için: Günde 1-10 kez çağrılır (En zeki modeller)
 GEMINI_MODELS_WRITING = [
-    "gemini-2.5-flash",       # Türkçe yazımda en başarılı model
-    "gemini-2.5-flash-lite",  # Yedek
-    "gemini-3.5-flash-lite",  # Yedek
-    "gemini-2.0-flash",       # Son çare
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-3.5-flash-lite",
+    "gemini-2.0-flash",
 ]
 
-# Diğer/Generic istekler için karışık liste
 GEMINI_MODELS_DEFAULT = [
     "gemini-2.5-flash",
     "gemini-2.5-flash-lite",
@@ -46,11 +42,10 @@ GEMINI_MODELS_DEFAULT = [
     "gemini-2.0-flash-lite",
 ]
 
-# ========== GROQ STACK ==========
 GROQ_MODELS = [
-    "llama-3.3-70b-versatile",   # Groq primary (en guclu)
-    "llama-3.1-70b-versatile",   # Groq fallback 1
-    "llama-3.1-8b-instant",      # Groq fallback 2 (hizli)
+    "llama-3.3-70b-versatile",
+    "llama-3.1-70b-versatile",
+    "llama-3.1-8b-instant",
 ]
 
 _BOOL_TRUE_VALUES = ("1", "true", "yes", "on")
@@ -88,7 +83,6 @@ def _load_ai_config() -> Dict[str, Any]:
 
 
 def _get_retry_config() -> tuple[int, float, float]:
-    """Returns: (max_attempts, base_wait, max_wait)"""
     cfg = _load_ai_config()
     attempts = _safe_int(cfg.get("retry_attempts", 2), 2)
     base_wait = _safe_float(cfg.get("retry_base_wait_seconds", 3.0), 3.0)
@@ -115,7 +109,6 @@ def _is_enabled(cfg: Dict[str, Any], key: str, default: bool = True) -> bool:
 
 def _classify_error(error_text: str) -> str:
     lower = (error_text or "").lower()
-
     if "timeout" in lower or "timed out" in lower:
         return "timeout"
     if "rate limit" in lower or "429" in lower:
@@ -130,17 +123,14 @@ def _classify_error(error_text: str) -> str:
         return "unavailable"
     if "500" in lower or "internal" in lower:
         return "internal_error"
-
     return "unknown"
 
 
 def _should_retry(error_type: str, attempt: int, max_attempts: int) -> bool:
     if attempt >= max_attempts:
         return False
-
     if error_type in ("rate_limit", "quota_exceeded", "token_limit", "not_found", "unavailable", "internal_error"):
         return False
-
     return True
 
 
@@ -164,23 +154,24 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
         return None
 
 
-# ========== GEMINI PROVIDER (v6.0) ==========
+# ========== GEMINI PROVIDER (v6.1) ==========
 
 def _is_thinking_model(model_name: str) -> bool:
-    """gemini-2.5-* modelleri thinking modunu destekler."""
     return "2.5" in model_name
 
 
-def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) -> Optional[str]:
-    """Try a single Gemini model."""
+def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
     api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
         return None
 
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     
-    # Puanlama aşamasında token limitini 4000 yapıyoruz (settings.json'dan gelir ama garantiye alıyoruz)
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
+    # Hack kaldırıldı, parametre direkt alınıyor.
+    if max_tokens_override is not None:
+        max_tokens = max_tokens_override
+    else:
+        max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     try:
         from google import genai
@@ -223,12 +214,10 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
         raise
 
 
-def _try_gemini_stack(prompt: str, cfg: Dict[str, Any], stage: str = "generic") -> Optional[str]:
-    """Try all Gemini models in cascade. Stage'e göre model listesi seçer."""
+def _try_gemini_stack(prompt: str, cfg: Dict[str, Any], stage: str = "generic", max_tokens_override: Optional[int] = None) -> Optional[str]:
     if not _is_enabled(cfg, "enable_gemini", True):
         return None
 
-    # İŞ BÖLÜMÜ BURADA YAPILIYOR
     stage_lower = stage.lower()
     if "scoring" in stage_lower:
         model_list = GEMINI_MODELS_SCORING
@@ -246,7 +235,7 @@ def _try_gemini_stack(prompt: str, cfg: Dict[str, Any], stage: str = "generic") 
 
         for attempt in range(1, max_attempts + 1):
             try:
-                result = _try_gemini_single_model(prompt, model_name, cfg)
+                result = _try_gemini_single_model(prompt, model_name, cfg, max_tokens_override)
                 if result:
                     log(f"✅ Gemini success: {model_name} (attempt {attempt})", "INFO")
                     return result
@@ -268,13 +257,16 @@ def _try_gemini_stack(prompt: str, cfg: Dict[str, Any], stage: str = "generic") 
 
 
 # ========== GROQ PROVIDER ==========
-def _try_groq_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) -> Optional[str]:
+def _try_groq_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
     api_key = _get_env_str("GROQ_API_KEY")
     if not api_key:
         return None
 
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
+    if max_tokens_override is not None:
+        max_tokens = max_tokens_override
+    else:
+        max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     try:
         from groq import Groq
@@ -300,7 +292,7 @@ def _try_groq_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) ->
         raise
 
 
-def _try_groq_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+def _try_groq_stack(prompt: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
     if not _is_enabled(cfg, "enable_groq", True):
         return None
 
@@ -311,7 +303,7 @@ def _try_groq_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
         for attempt in range(1, max_attempts + 1):
             try:
-                result = _try_groq_single_model(prompt, model_name, cfg)
+                result = _try_groq_single_model(prompt, model_name, cfg, max_tokens_override)
                 if result:
                     log(f"✅ Groq success: {model_name} (attempt {attempt})", "INFO")
                     return result
@@ -333,7 +325,7 @@ def _try_groq_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
 
 # ========== EMERGENCY STACK ==========
-def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+def _try_openrouter(prompt: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
     if not _is_enabled(cfg, "enable_openrouter", True):
         return None
 
@@ -343,7 +335,10 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
     model_name = str(cfg.get("openrouter_model", "openai/gpt-4o-mini")).strip()
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
+    if max_tokens_override is not None:
+        max_tokens = max_tokens_override
+    else:
+        max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     headers = {
         "Authorization": f"Bearer {api_key}",
@@ -356,12 +351,7 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         "max_tokens": max_tokens,
     }
 
-    data = _post_json(
-        "https://openrouter.ai/api/v1/chat/completions",
-        headers=headers,
-        payload=payload,
-        timeout=45,
-    )
+    data = _post_json("https://openrouter.ai/api/v1/chat/completions", headers=headers, payload=payload, timeout=45)
     if not data:
         return None
 
@@ -374,7 +364,7 @@ def _try_openrouter(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
     return text or None
 
 
-def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
+def _try_huggingface(prompt: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
     if not _is_enabled(cfg, "enable_huggingface", True):
         return None
 
@@ -383,26 +373,15 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
         return None
 
     model_name = str(cfg.get("hf_model", "mistralai/Mistral-7B-Instruct-v0.2")).strip()
-    max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
+    if max_tokens_override is not None:
+        max_tokens = max_tokens_override
+    else:
+        max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
-    headers = {
-        "Authorization": f"Bearer {api_key}",
-        "Content-Type": "application/json",
-    }
-    payload = {
-        "inputs": prompt,
-        "parameters": {
-            "max_new_tokens": max_tokens,
-            "return_full_text": False,
-        },
-    }
+    headers = {"Authorization": f"Bearer {api_key}", "Content-Type": "application/json"}
+    payload = {"inputs": prompt, "parameters": {"max_new_tokens": max_tokens, "return_full_text": False}}
 
-    data = _post_json(
-        f"https://api-inference.huggingface.co/models/{model_name}",
-        headers=headers,
-        payload=payload,
-        timeout=60,
-    )
+    data = _post_json(f"https://api-inference.huggingface.co/models/{model_name}", headers=headers, payload=payload, timeout=60)
     if not data:
         return None
 
@@ -413,7 +392,7 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
 
 
 # ========== MAIN AI CLIENT ==========
-def ask_ai(prompt: str, stage: str = "generic") -> str:
+def ask_ai(prompt: str, stage: str = "generic", max_tokens: Optional[int] = None) -> str:
     if not isinstance(prompt, str) or not prompt.strip():
         log("ai_client.ask_ai: bos prompt", "WARNING")
         return ""
@@ -423,25 +402,25 @@ def ask_ai(prompt: str, stage: str = "generic") -> str:
     log(f"=== AI Request Start (stage={stage}) ===", "INFO")
 
     log("Trying GEMINI STACK...", "INFO")
-    result = _try_gemini_stack(prompt, cfg, stage) # Stage parametresi gönderiliyor!
+    result = _try_gemini_stack(prompt, cfg, stage, max_tokens)
     if result:
         log("✅ GEMINI STACK SUCCESS", "INFO")
         return result
 
     log("Trying GROQ STACK...", "INFO")
-    result = _try_groq_stack(prompt, cfg)
+    result = _try_groq_stack(prompt, cfg, max_tokens)
     if result:
         log("✅ GROQ STACK SUCCESS", "INFO")
         return result
 
     log("Trying EMERGENCY: OpenRouter...", "INFO")
-    result = _try_openrouter(prompt, cfg)
+    result = _try_openrouter(prompt, cfg, max_tokens)
     if result:
         log("✅ OPENROUTER SUCCESS", "INFO")
         return result
 
     log("Trying EMERGENCY: HuggingFace...", "INFO")
-    result = _try_huggingface(prompt, cfg)
+    result = _try_huggingface(prompt, cfg, max_tokens)
     if result:
         log("✅ HUGGINGFACE SUCCESS", "INFO")
         return result
@@ -456,11 +435,9 @@ def _strip_code_fences(text: str) -> str:
     cleaned = (text or "").strip()
     if not cleaned:
         return ""
-
     fenced = re.findall(r"```(?:json)?\s*([\s\S]*?)```", cleaned, flags=re.IGNORECASE)
     if fenced:
         return "\n".join([x.strip() for x in fenced if x.strip()]).strip()
-
     return cleaned
 
 
@@ -488,7 +465,6 @@ def _extract_balanced_json_candidates(text: str) -> list[str]:
             else:
                 stack = []
                 start_idx = None
-
     return sorted(set(candidates), key=len, reverse=True)
 
 
@@ -513,7 +489,6 @@ def _try_raw_decode_stream(text: str):
 def _extract_json_after_thinking(text: str) -> Optional[str]:
     if not text:
         return None
-
     closer_pos = -1
     closer_char = None
     for i in range(len(text) - 1, -1, -1):
@@ -521,12 +496,9 @@ def _extract_json_after_thinking(text: str) -> Optional[str]:
             closer_pos = i
             closer_char = text[i]
             break
-
     if closer_pos == -1:
         return None
-
     opener_char = "[" if closer_char == "]" else "{"
-
     depth = 0
     for i in range(closer_pos, -1, -1):
         ch = text[i]
@@ -537,7 +509,6 @@ def _extract_json_after_thinking(text: str) -> Optional[str]:
             if depth == 0:
                 snippet = text[i: closer_pos + 1].strip()
                 return snippet if snippet else None
-
     return None
 
 
@@ -545,21 +516,17 @@ def parse_ai_json(response: str) -> Any:
     cleaned = (response or "").strip()
     if not cleaned:
         return None
-
     try:
         return json.loads(cleaned)
     except Exception:
         pass
-
     no_fence = _strip_code_fences(cleaned)
     if no_fence and no_fence != cleaned:
         try:
             return json.loads(no_fence)
         except Exception:
             pass
-
     source_for_scan = no_fence if no_fence else cleaned
-
     candidates = _extract_balanced_json_candidates(source_for_scan)
     for candidate in candidates:
         try:
@@ -568,7 +535,6 @@ def parse_ai_json(response: str) -> Any:
                 return parsed
         except Exception:
             continue
-
     thinking_extracted = _extract_json_after_thinking(source_for_scan)
     if thinking_extracted and thinking_extracted != source_for_scan:
         try:
@@ -578,7 +544,6 @@ def parse_ai_json(response: str) -> Any:
                 return parsed
         except Exception:
             pass
-
         sub_candidates = _extract_balanced_json_candidates(thinking_extracted)
         for candidate in sub_candidates:
             try:
@@ -588,13 +553,11 @@ def parse_ai_json(response: str) -> Any:
                     return parsed
             except Exception:
                 continue
-
     try:
         parsed = _try_raw_decode_stream(source_for_scan)
         if parsed is not None:
             return parsed
     except Exception as exc:
         log(f"ai_client.parse_ai_json raw_decode error: {exc}", "WARNING")
-
     log("ai_client.parse_ai_json fallback: parse edilemedi", "WARNING")
     return None
