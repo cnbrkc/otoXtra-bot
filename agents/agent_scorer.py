@@ -1,28 +1,13 @@
 """
-Viral scoring agent. (v5.2 FIXED)
+Viral scoring agent. (v5.3 - MONKEY PATCH HACK REMOVED)
+
+v5.3 CLEANED:
+  - CRITICAL FIX: _ask_ai_for_scoring monkey-patch hacki tamamen kaldırıldı.
+  - ask_ai fonksiyonuna max_tokens parametresi eklendi, artık temiz şekilde kullanılıyor.
 
 v5.2 FIXED:
   - CRITICAL FIX: BATCH_SIZE 20 -> 8 (token limit asilmasi onlendi)
   - CRITICAL FIX: max_output_tokens 1400 -> 4000 (tum haberler icin yeterli token)
-  - CRITICAL FIX: _match_by_order() artik sira eslesmesini cross-validate olmadan
-    kabul ediyor (Unicode/emoji farki nedeniyle yanlis rejection onlendi)
-  - CRITICAL FIX: cross-validate threshold 0.6 -> 0.35 (cok katı esleme gevsetildi)
-  - CRITICAL FIX: _format_articles_numbered() ozet uzunlugu 300 -> 150
-    (prompt token tasarrufu icin)
-
-v5.1 ULTRA FIXED:
-  - CRITICAL FIX: Fallback score increased (25 -> 35)
-  - CRITICAL FIX: publish_score threshold synced with config (70 -> 40)
-  - CRITICAL FIX: Better title matching (fuzzy threshold 0.6 -> 0.5)
-  - CRITICAL FIX: Enhanced AI response logging for debugging
-  - Improved matching algorithm with partial title support
-
-v5.0 ULTRA:
-  - Stage-aware AI calls: ask_ai(..., stage="scoring")
-  - Batch-level retry with provider cascade
-  - Detayli error logging (model, batch, error type)
-  - Partial success handling
-  - Provider fallback stats tracking
 """
 
 import os
@@ -41,13 +26,10 @@ from core.helpers import (
 from core.logger import log
 from core.state_manager import get_stage, set_stage
 
-# v5.2: 8'e indirildi — Gemini 20 haber icin yeterli token uretemiyor
 BATCH_SIZE: int = 8
 BATCH_DELAY_SECONDS: int = 3
 UNSCORED_DEFAULT: int = 0
 
-# v5.2: Cross-validate esleme eşiği düşürüldü
-# Sira eslesmesi bulunduysa sadece cok açik uyumsuzlukta reddet
 CROSS_VALIDATE_THRESHOLD: float = 0.35
 
 FALLBACK_SCORE_HIGH: int = 35
@@ -79,7 +61,6 @@ _JSON_REPAIR_APPEND = (
     "- detay icinde su anahtarlar olmali: guncellik, etkilesim_potansiyeli, benzersizlik, gundem_gucu, paylasilabilirlik.\n"
 )
 
-# v5.2: Scorer icin AI token limitini artir
 _SCORER_MAX_TOKENS = 4000
 
 
@@ -139,15 +120,10 @@ def _is_probably_ten_scale(scores: list[int]) -> bool:
 
 
 def _format_articles_numbered(articles: list) -> str:
-    """
-    v5.2: Ozet uzunlugu 300 -> 150 karakter (token tasarrufu).
-    Bu sayede 8 haberin tamami daha az token tutuyor.
-    """
     lines = []
     for i, article in enumerate(articles, start=1):
         title = article.get("title", "No title").strip()
         summary = article.get("summary", "No summary").strip()
-        # v5.2: 150 karakter yeterli, AI haberi anlamak icin
         if len(summary) > 150:
             summary = summary[:147] + "..."
         lines.append(f"{i}. Baslik: {title} | Ozet: {summary}")
@@ -176,18 +152,6 @@ def _normalize_ai_results(parsed: object) -> Optional[list]:
 
 
 def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple[Optional[dict], Optional[int]]:
-    """
-    v5.2 FIXED: sira eslesmesi bulunursa cross-validate OLMADAN kabul et.
-
-    Onceki surum Unicode/emoji farki nedeniyle ayni gorunen basliği reddediyordu:
-      AI='Yerli imkânlarla üç yılı aşkın süredir g'
-      Article='Yerli imkânlarla üç yılı aşkın süredir g'
-      -> REJECTED (farkli invisible chars nedeniyle similarity dusuk)
-
-    Yeni yaklasim: sira sayisı gecerliyse ve kullanilmamissa DIREKT kabul et.
-    Eger AI baslik da gonderdiyse cok dusuk esikle sadece tamamen farkli
-    basliklari reddet (0.35 esigi).
-    """
     sira = ai_result.get("sira")
     if sira is None:
         return None, None
@@ -204,19 +168,14 @@ def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple
     ai_title = (ai_result.get("baslik", "") or "").strip()
     article_title = (articles[index].get("title", "") or "").strip()
 
-    # AI baslik gondermemisse direkt kabul et
     if not ai_title:
         log(f"[SCORER] Order match accepted (no AI title): sira={sira} -> {article_title[:60]}", "INFO")
         return articles[index], index
 
-    # v5.2: Cok dusuk esik - sadece TAMAMEN farkli basliğı reddet
-    # Ornegin sira=1 geldi ama AI haber 5'in basligini gonderdiyse reddet
     if is_similar_title(ai_title, article_title, threshold=CROSS_VALIDATE_THRESHOLD):
         log(f"[SCORER] Order match accepted: sira={sira}", "INFO")
         return articles[index], index
 
-    # Eslesme olmadi ama yine de basliklar cok benzer gorunuyor olabilir
-    # Unicode normalize ederek bir daha dene
     def _normalize_str(s: str) -> str:
         import unicodedata
         return unicodedata.normalize("NFC", s).lower().strip()
@@ -225,7 +184,6 @@ def _match_by_order(ai_result: dict, articles: list, used_indices: set) -> tuple
         log(f"[SCORER] Order match accepted (unicode normalized): sira={sira}", "INFO")
         return articles[index], index
 
-    # Gercekten farkli - reddet
     log(
         f"[SCORER] Order match REJECTED: sira={sira}, "
         f"AI='{ai_title[:50]}' vs Article='{article_title[:50]}'",
@@ -330,37 +288,15 @@ def _match_ai_results_to_articles(ai_results: list, articles: list) -> list:
     return matched
 
 
-def _ask_ai_for_scoring(prompt: str) -> str:
-    """
-    v5.2: Scorer icin max_output_tokens'i gecici olarak arttirir.
-    ai_client.py'deki settings'ten bagimsiz olarak scorer kendi limitini uyguluyor.
-    """
-    from core.config_loader import load_config as _load_cfg
-    import core.ai_client as _ai
-
-    # Gecici olarak config'i monkey-patch et
-    original_load = _ai._load_ai_config
-
-    def _patched_load():
-        cfg = original_load()
-        cfg = dict(cfg)
-        # v5.2: Scorer icin token limitini artir
-        cfg["max_output_tokens"] = _SCORER_MAX_TOKENS
-        return cfg
-
-    _ai._load_ai_config = _patched_load
-    try:
-        result = ask_ai(prompt, stage="scoring")
-    finally:
-        _ai._load_ai_config = original_load
-
-    return result
-
-
 def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optional[list], str]:
     log(f"[SCORER] Batch {batch_num}: Calling AI (articles={len(batch)}, max_tokens={_SCORER_MAX_TOKENS})", "INFO")
 
-    ai_response = _ask_ai_for_scoring(f"{prompt}\n\n{_format_articles_numbered(batch)}")
+    # HACK KALDIRILDI! Artık temizçe max_tokens parametresi gönderiliyor.
+    ai_response = ask_ai(
+        prompt=f"{prompt}\n\n{_format_articles_numbered(batch)}", 
+        stage="scoring", 
+        max_tokens=_SCORER_MAX_TOKENS
+    )
 
     if not ai_response:
         log(f"[SCORER] Batch {batch_num}: AI returned empty response", "ERROR")
@@ -381,7 +317,6 @@ def _score_batch_once(batch: list, prompt: str, batch_num: int) -> tuple[Optiona
         sample = ai_results[0]
         log(f"[SCORER] Batch {batch_num}: Sample keys: {list(sample.keys())}", "INFO")
 
-    # v5.2: Kısmi döndürme kontrolü
     if len(ai_results) < len(batch):
         log(
             f"[SCORER] Batch {batch_num}: AI returned {len(ai_results)}/{len(batch)} results "
@@ -935,9 +870,3 @@ def run() -> bool:
         log(f"[SCORER] Traceback: {traceback.format_exc()}", "ERROR")
         set_stage("score", "error", error=str(exc))
         return False
-
-
-if __name__ == "__main__":
-    from core.state_manager import init_pipeline
-    init_pipeline("test-scorer")
-    run()
