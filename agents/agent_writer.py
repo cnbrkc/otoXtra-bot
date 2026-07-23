@@ -1,5 +1,9 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.2 - 500 Char Limit Fixed)
+agents/agent_writer.py - Icerik yazma ajani (v5.3 - Turkce Karakter Zorunlulugu)
+
+v5.3 FIXED:
+  - Türkçe karakter (ç, ş, ğ, ü, ö, ı) kullanımı prompt ve fallback postlara işlendi.
+  - YZ'nin ASCII karakter (c, s, g) kullanması engellendi.
 
 v5.2 FIXED:
   - CRITICAL FIX: Facebook ve Threads uyumu icin maksimum karakter limiti 480'e dustu.
@@ -66,6 +70,10 @@ _FORBIDDEN_CTA = [
     "paylasmayi unutmayin",
     "takip etmeyi unutmayin",
     "sayfamizi takip edin",
+    "beğenmeyi unutmayın",
+    "paylaşmayı unutmayın",
+    "takip etmeyi unutmayın",
+    "sayfamızı takip edin",
 ]
 
 _HALLUCINATION_BAITS = [
@@ -73,6 +81,10 @@ _HALLUCINATION_BAITS = [
     "iste liste",
     "detaylar soyle",
     "detaylar su sekilde",
+    "işte o araçlar",
+    "işte liste",
+    "detaylar şöyle",
+    "detaylar şu şekilde",
 ]
 
 _ENGLISH_PROMPT_INSTRUCTIONS = [
@@ -215,18 +227,18 @@ def _fallback_post(article: dict) -> str:
     title = (article.get("title", "") or "").strip()
     summary = (article.get("summary", "") or "").strip()
 
-    safe_title = title.upper()[:90] if title else "OTOMOTIVDE YENI GELISME"
+    safe_title = title.upper()[:90] if title else "OTOMOTİVDE YENİ GELİŞME"
     
     # v5.2: Özet kısmını 480 karakter limitini aşmaması için 330'a kırptık.
     # 90 (başlık) + 50 (sabit cümle) + boşluklar = ~150 karakter. 330+150 = 480.
     body = summary[:330].strip() if summary else (
-        "Guncel gelismeyi sade sekilde aktardik. Net bilgiler geldikce paylasacagiz."
+        "Güncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız."
     )
 
     fallback = (
         f"{safe_title}\n\n"
         f"{body}\n\n"
-        "Siz bu gelisme hakkinda ne dusunuyorsunuz?"
+        "Siz bu gelişme hakkında ne düşünüyorsunuz?"
     ).strip()
     
     # Eğer hala 480'i aşarsa zorla kes
@@ -243,23 +255,24 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
     source = article.get("source_name", "")
 
     repair_prompt = (
-        "Asagidaki Facebook postunu duzelt.\n"
-        "KRITIK KURALLAR:\n"
-        "- MUTLAKA TAMAMEN TURKCE YAZ. Hic bir Ingilizce kelime kullanma.\n"
-        "- PARANTEZ icinde aciklama/yorum yapma.\n"
+        "Aşağıdaki Facebook postunu düzelt.\n"
+        "KRİTİK KURALLAR:\n"
+        "- MUTLAKA TAMAMEN TÜRKÇE YAZ. Hiçbir İngilizce kelime kullanma.\n"
+        "- TÜRKÇE KARAKTERLERİ (ç, ş, ğ, ü, ö, ı, Ç, Ş, Ğ, Ü, Ö, İ) MUTLAKA KULLAN. ASLA 'c, s, g, u, o, i' gibi İngilizce ASCII karakterlerle yazma.\n"
+        "- PARANTEZ içinde açıklama/yorum yapma.\n"
         "- Meta-instruction verme ('format it like', 'rewrite as' gibi).\n"
         "- Bilgi uydurma, sadece verilen bilgileri kullan.\n"
-        "- 15 satiri gecme.\n"
-        "- Clickbait asiriligina kacma.\n"
-        "- Son satirda dogal bir soru/cagri olsun.\n"
-        "- 'begen/paylas/takip et' gibi dogrudan CTA kullanma.\n"
-        "- ONCELIKLI KURAL: Toplam karakter sayisi KESINLIKLE 480'i GECMEZ (Threads limiti 500). Gerekiyorsa ozeti kisalt.\n\n"
-        f"Haber basligi: {title}\n"
+        "- 15 satırı geçme.\n"
+        "- Clickbait aşırılığına kaçma.\n"
+        "- Son satırda doğal bir soru/çağrı olsun.\n"
+        "- 'beğen/paylaş/takip et' gibi doğrudan CTA kullanma.\n"
+        "- ÖNCELİKLİ KURAL: Toplam karakter sayısı KESİNLİKLE 480'i GEÇMEZ (Threads limiti 500). Gerekirse özeti kısalt.\n\n"
+        f"Haber başlığı: {title}\n"
         f"Kaynak: {source}\n"
-        f"Ozet: {summary[:300]}\n\n"
-        "Duzeltilecek metin:\n"
+        f"Özet: {summary[:300]}\n\n"
+        "Düzeltilecek metin:\n"
         f"{post_text}\n\n"
-        "SADECE duzeltilmis Turkce post metnini ver. Baska hicbir sey ekleme."
+        "SADECE düzeltilmiş Türkçe post metnini ver. Başka hiçbir şey ekleme. Türkçe karakterleri (ç,ş,ğ,ü,ö,ı) mutlaka kullan."
     )
     
     log("[WRITER] Attempting AI repair", "INFO")
@@ -280,23 +293,24 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
     source = article.get("source_name", "")
 
     input_parts = [
-        f"BASLIK: {title}",
+        f"BAŞLIK: {title}",
         f"KAYNAK: {source}",
-        f"OZET: {summary[:300]}",
+        f"ÖZET: {summary[:300]}",
     ]
     if full_text:
-        input_parts.append(f"TAM_METIN: {full_text[:1000]}")
+        input_parts.append(f"TAM_METİN: {full_text[:1000]}")
 
     return (
         f"{writer_prompt}\n\n"
-        "KRITIK CIKTI KURALLARI:\n"
-        "- SADECE Turkce post metni don. Ingilizce kelime kullanma.\n"
-        "- Parantez icinde meta-aciklama yapma.\n"
+        "KRİTİK ÇIKTI KURALLARI:\n"
+        "- SADECE Türkçe post metni dön. İngilizce kelime kullanma.\n"
+        "- TÜRKÇE KARAKTERLERİ (ç, ş, ğ, ü, ö, ı) MUTLAKA KULLAN. ASLA ASCII KARAKTER (c, s, g) YAZMA.\n"
+        "- Parantez içinde meta-açıklama yapma.\n"
         "- 'Wait', 'let's', 'format', 'rewrite' gibi instruction verme.\n"
-        "- Maksimum 15 satir\n"
-        "- Bos satirlar dahil duzenli format\n"
-        "- EN ONEMLI KURAL: Toplam karakter sayisi KESINLIKLE 480'i GECMEZ. (Threads platform limiti 500'dur). Haberin tum onemli detayini bu 480 karakter icinde ver, gereksiz uzatma.\n"
-        "- SADECE post metnini dondur, baska hicbir sey ekleme\n\n"
+        "- Maksimum 15 satır\n"
+        "- Boş satırlar dahil düzenli format\n"
+        "- EN ÖNEMLİ KURAL: Toplam karakter sayısı KESİNLİKLE 480'i GEÇMEZ. (Threads platform limiti 500'dur). Haberin tüm önemli detayını bu 480 karakter içinde ver, gereksiz uzatma.\n"
+        "- SADECE post metnini döndür, başka hiçbir şey ekleme\n\n"
         + "\n".join(input_parts)
     )
 
@@ -448,9 +462,9 @@ if __name__ == "__main__":
     init_pipeline("test-writer")
 
     fake_article = {
-        "title": "Test: Yeni Elektrikli SUV Turkiye'de Satisa Cikti",
+        "title": "Test: Yeni Elektrikli SUV Türkiye'de Satışa Çıktı",
         "link": "https://test.com/haber1",
-        "summary": "Yeni elektrikli SUV modeli Turkiye pazarina girdi. Fiyatlar ve teknik ozellikler aciklandi.",
+        "summary": "Yeni elektrikli SUV modeli Türkiye pazarına girdi. Fiyatlar ve teknik özellikler açıklandı.",
         "published": "2025-01-15T12:00:00+03:00",
         "image_url": "",
         "source_name": "Test Kaynak",
