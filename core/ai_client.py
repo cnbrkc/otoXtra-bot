@@ -1,10 +1,10 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v6.2 - CONFIG CACHE)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v6.3 - SINGLETON CLIENT)
 
-v6.2 UPDATE:
-  - PERFORMANCE FIX: _load_ai_config artık lru_cache kullanıyor.
-    settings.json diske her YZ çağrısında defalarca kez okunmak yerine
-    sadece 1 kez okunup hafızada tutuluyor (I/O tasarrufu).
+v6.3 UPDATE:
+  - PERFORMANCE FIX: Gemini Client artık Singleton olarak çalışıyor.
+    Her ask_ai() çağrısında yeniden yaratılmıyor, hafızada tutuluyor.
+  - PERFORMANCE FIX: _load_ai_config lru_cache ile cacheleniyor.
   - MONKEY-PATCH HACK KALDIRILDI! ask_ai fonksiyonuna max_tokens parametresi eklendi.
   - İŞ BÖLÜMÜ (Division of Labor): Puanlama ve Yazma aşamaları için ayrı model listeleri!
 """
@@ -21,7 +21,7 @@ import requests
 
 from core.logger import log
 
-# ========== GEMINI STACK (v6.0: İŞ BÖLÜMÜ) ==========
+# ========== GEMINI STACK ==========
 GEMINI_MODELS_SCORING = [
     "gemini-3.5-flash-lite",
     "gemini-3.1-flash-lite",
@@ -51,6 +51,9 @@ GROQ_MODELS = [
 
 _BOOL_TRUE_VALUES = ("1", "true", "yes", "on")
 
+# v6.3: Singleton Client için global değişken
+_gemini_client_instance = None
+
 
 def _safe_int(value: Any, default: int) -> int:
     try:
@@ -72,7 +75,6 @@ def _get_env_str(name: str) -> str:
 
 @lru_cache(maxsize=1)
 def _load_ai_config() -> Dict[str, Any]:
-    """v6.2: lru_cache sayesinde bu fonksiyon sadece 1 kere diske erişir."""
     try:
         from core.config_loader import load_config
         settings = load_config("settings")
@@ -157,15 +159,34 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
         return None
 
 
-# ========== GEMINI PROVIDER (v6.1) ==========
+# ========== GEMINI PROVIDER (v6.3 SINGLETON) ==========
 
 def _is_thinking_model(model_name: str) -> bool:
     return "2.5" in model_name
 
 
-def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
+def _get_gemini_client():
+    """v6.3: Singleton Client. Sadece 1 kere yaratılır."""
+    global _gemini_client_instance
+    if _gemini_client_instance is not None:
+        return _gemini_client_instance
+
     api_key = _get_env_str("GEMINI_API_KEY")
     if not api_key:
+        return None
+
+    try:
+        from google import genai
+        _gemini_client_instance = genai.Client(api_key=api_key)
+        return _gemini_client_instance
+    except Exception as exc:
+        log(f"Gemini client init hatasi: {exc}", "WARNING")
+        return None
+
+
+def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], max_tokens_override: Optional[int] = None) -> Optional[str]:
+    client = _get_gemini_client()
+    if not client:
         return None
 
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
@@ -176,15 +197,12 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], 
         max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     try:
-        from google import genai
         from google.genai import types
     except Exception as exc:
-        log(f"Gemini import hatasi: {exc}", "WARNING")
+        log(f"Gemini types import hatasi: {exc}", "WARNING")
         return None
 
     try:
-        client = genai.Client(api_key=api_key)
-
         if _is_thinking_model(model_name):
             response = client.models.generate_content(
                 model=model_name,
@@ -431,7 +449,7 @@ def ask_ai(prompt: str, stage: str = "generic", max_tokens: Optional[int] = None
     return ""
 
 
-# ========== JSON PARSER (v5.3 ENHANCED) ==========
+# ========== JSON PARSER ==========
 
 def _strip_code_fences(text: str) -> str:
     cleaned = (text or "").strip()
