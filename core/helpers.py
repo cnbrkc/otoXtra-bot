@@ -432,6 +432,11 @@ def save_posted_news(data: dict) -> bool:
         keep_keys = set(sorted_keys[-16:])
         stats["weekly"] = {k: v for k, v in weekly.items() if k in keep_keys}
 
+    # --- BURASI DÜZELTİLDİ (v1.1) ---
+    # Soğuma listesi 3 gün (72 saat) sonra otomatik temizlenir.
+    cleanup_shared_variant_cooldowns(data, keep_hours=72)
+    # --------------------------------
+
     if old_count > 0:
         log(f"Cleanup removed {old_count} records older than {_HISTORY_DAYS} days")
 
@@ -524,6 +529,11 @@ def cleanup_shared_variant_cooldowns(posted_data: dict, keep_hours: int) -> None
                 cleaned[key] = record
         except Exception:
             continue
+    
+    removed_count = len(cooldowns) - len(cleaned)
+    if removed_count > 0:
+        log(f"Cleanup removed {removed_count} old shared_variant_cooldowns (older than {keep_hours}h)")
+        
     posted_data["shared_variant_cooldowns"] = cleaned
 
 def is_topic_already_posted(
