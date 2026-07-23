@@ -89,10 +89,10 @@ def is_similar_title(title1: str, title2: str, threshold: float = None) -> bool:
         try:
             settings = load_config("settings")
             threshold = settings.get("duplicate_detection", {}).get(
-                "title_similarity_threshold", 0.80
+                "title_similarity_threshold", 0.45
             )
         except Exception:
-            threshold = 0.80
+            threshold = 0.45
 
     clean1 = title1.lower().strip()
     clean2 = title2.lower().strip()
@@ -142,11 +142,11 @@ def is_duplicate_article(article1: dict, article2: dict) -> bool:
     try:
         settings = load_config("settings")
         dup_settings = settings.get("duplicate_detection", {})
-        title_threshold = dup_settings.get("title_similarity_threshold", 0.80)
-        keyword_threshold = dup_settings.get("keyword_overlap_threshold", 0.70)
+        title_threshold = dup_settings.get("title_similarity_threshold", 0.45)
+        keyword_threshold = dup_settings.get("keyword_overlap_threshold", 0.40)
     except Exception:
-        title_threshold = 0.80
-        keyword_threshold = 0.70
+        title_threshold = 0.45
+        keyword_threshold = 0.40
 
     url1 = article1.get("url") or article1.get("link", "")
     url2 = article2.get("url") or article2.get("link", "")
@@ -287,7 +287,6 @@ def _parse_expiry_datetime(raw_value: str):
     if not raw:
         return None
 
-    # Unix timestamp (seconds or milliseconds)
     try:
         if raw.isdigit():
             ts = int(raw)
@@ -297,7 +296,6 @@ def _parse_expiry_datetime(raw_value: str):
     except Exception:
         pass
 
-    # ISO format
     try:
         parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
         if parsed.tzinfo is None:
@@ -306,13 +304,11 @@ def _parse_expiry_datetime(raw_value: str):
     except Exception:
         pass
 
-    # YYYY-MM-DD
     try:
         return datetime.strptime(raw, "%Y-%m-%d").replace(tzinfo=_TR_TZ)
     except Exception:
         pass
 
-    # dateutil fallback
     try:
         from dateutil import parser as dateutil_parser
 
@@ -432,17 +428,13 @@ def save_posted_news(data: dict) -> bool:
         keep_keys = set(sorted_keys[-16:])
         stats["weekly"] = {k: v for k, v in weekly.items() if k in keep_keys}
 
-    # --- BURASI DÜZELTİLDİ (v1.1) ---
-    # Soğuma listesi 3 gün (72 saat) sonra otomatik temizlenir.
     cleanup_shared_variant_cooldowns(data, keep_hours=72)
-    # --------------------------------
 
     if old_count > 0:
         log(f"Cleanup removed {old_count} records older than {_HISTORY_DAYS} days")
 
     filepath = os.path.join(get_project_root(), "data", "posted_news.json")
     return save_json(filepath, data)
-
 
 
 def _cooldown_key(url: str, title: str) -> str:
@@ -459,11 +451,6 @@ def record_shared_variant_cooldown(
     variant_article: dict,
     reason: str = "shared_variant",
 ) -> None:
-    """Temporarily suppress a non-posted variant of a successfully shared article.
-
-    This cooldown is intentionally tied to successful sharing. It is not used for
-    valuable selected articles that failed later in the pipeline.
-    """
     key = _cooldown_key(variant_article.get("link", ""), variant_article.get("title", ""))
     if not key:
         return
@@ -539,7 +526,7 @@ def cleanup_shared_variant_cooldowns(posted_data: dict, keep_hours: int) -> None
 def is_topic_already_posted(
     fingerprint: str,
     posted_data: dict,
-    similarity_threshold: float = 0.75,
+    similarity_threshold: float = 0.45,
 ) -> bool:
     if not fingerprint:
         return False
@@ -564,7 +551,7 @@ def is_already_posted(url: str, title: str, posted_data: dict) -> bool:
             return True
 
         posted_fp = post.get("topic_fingerprint", "")
-        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= 0.75:
+        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= 0.45:
             return True
 
     return False
