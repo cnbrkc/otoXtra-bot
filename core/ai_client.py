@@ -1,11 +1,12 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v6.1 - CLEAN MAX_TOKENS)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v6.2 - CONFIG CACHE)
 
-v6.1 MEGA UPDATE:
+v6.2 UPDATE:
+  - PERFORMANCE FIX: _load_ai_config artık lru_cache kullanıyor.
+    settings.json diske her YZ çağrısında defalarca kez okunmak yerine
+    sadece 1 kez okunup hafızada tutuluyor (I/O tasarrufu).
   - MONKEY-PATCH HACK KALDIRILDI! ask_ai fonksiyonuna max_tokens parametresi eklendi.
   - İŞ BÖLÜMÜ (Division of Labor): Puanlama ve Yazma aşamaları için ayrı model listeleri!
-  - SCORING: 500 RPD kotalı hızlı modeller (gemini-3.5-flash-lite, gemini-3.1-flash-lite) kullanılır.
-  - WRITING: En zeki model (gemini-2.5-flash) kullanılır. 20 RPD kotası yazma için yeterlidir.
 """
 
 import json
@@ -13,12 +14,12 @@ import os
 import random
 import re
 import time
+from functools import lru_cache
 from typing import Any, Dict, Optional
 
 import requests
 
 from core.logger import log
-
 
 # ========== GEMINI STACK (v6.0: İŞ BÖLÜMÜ) ==========
 GEMINI_MODELS_SCORING = [
@@ -69,7 +70,9 @@ def _get_env_str(name: str) -> str:
     return (os.getenv(name, "") or "").strip()
 
 
+@lru_cache(maxsize=1)
 def _load_ai_config() -> Dict[str, Any]:
+    """v6.2: lru_cache sayesinde bu fonksiyon sadece 1 kere diske erişir."""
     try:
         from core.config_loader import load_config
         settings = load_config("settings")
@@ -167,7 +170,6 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any], 
 
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
     
-    # Hack kaldırıldı, parametre direkt alınıyor.
     if max_tokens_override is not None:
         max_tokens = max_tokens_override
     else:
