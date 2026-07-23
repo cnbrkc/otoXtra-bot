@@ -1,29 +1,12 @@
 """
-core/ai_client.py - Ultra Multi-Provider AI Stack (v5.3 FIXED)
+core/ai_client.py - Ultra Multi-Provider AI Stack (v6.0 - DIVISION OF LABOR)
 
-v5.3 FIXED:
-  - CRITICAL FIX: Gemini model listesi gercek/gecerli model adlariyla guncellendi.
-    gemini-3.5-flash gibi var olmayan modeller kaldirildi.
-  - CRITICAL FIX: parse_ai_json() - Gemini thinking/reasoning metninin ardindan
-    gelen JSON blogu artik doğru sekilde ayiklaniyor.
-    (Ornek: "...hesaplama metni...\n[{\"sira\":1,...}]")
-  - Gemini thinking modu (gemini-2.5-*) icin JSON output config eklendi.
-
-v5.2 FINAL:
-  - 503 UNAVAILABLE -> skip (no retry) FIX
-  - 500 INTERNAL_ERROR -> skip (no retry) FIX
-
-v5.1 FINAL:
-  - GEMINI MODEL FIX
-  - API v1beta yerine v1 API kullaniliyor
-
-v5.0:
-  - GEMINI STACK: 5 model cascade
-  - GROQ STACK: 3 model cascade
-  - EMERGENCY STACK: OpenRouter + HuggingFace
-  - ERROR CLASSIFICATION: timeout, rate_limit, quota, token_limit
-  - SMART RETRY: timeout=1x retry, quota=skip
-  - EXPONENTIAL BACKOFF: 3-10s
+v6.0 MEGA UPDATE:
+  - İŞ BÖLÜMÜ (Division of Labor): Puanlama ve Yazma aşamaları için ayrı model listeleri!
+  - SCORING: 500 RPD kotalı hızlı modeller (gemini-3.5-flash-lite, gemini-3.1-flash-lite) kullanılır.
+  - WRITING: En zeki model (gemini-2.5-flash) kullanılır. 20 RPD kotası yazma için yeterlidir.
+  - v5.3 JSON parser düzeltmeleri korundu.
+  - 503/500 hatalarında retry yapılmaz, sonraki modele geçilir.
 """
 
 import json
@@ -38,14 +21,29 @@ import requests
 from core.logger import log
 
 
-# ========== GEMINI STACK (v5.3: GERCEK MODEL ADLARI) ==========
-# Kaynak: https://ai.google.dev/gemini-api/docs/models
-GEMINI_MODELS = [
-    "gemini-2.5-flash",        # En guncel Flash - thinking destekli
-    "gemini-2.5-flash-lite",   # Hafif/hizli Flash
-    "gemini-2.0-flash",        # Stabil Flash
-    "gemini-2.0-flash-lite",   # Stabil hafif Flash
-    "gemini-1.5-flash-8b",        # Fallback - cok stabil
+# ========== GEMINI STACK (v6.0: İŞ BÖLÜMÜ) ==========
+# Puanlama için: Çok istek atılır (500 RPD kotaya sahip lite modeller)
+GEMINI_MODELS_SCORING = [
+    "gemini-3.5-flash-lite",
+    "gemini-3.1-flash-lite",
+    "gemini-2.5-flash-lite",  # Yedek
+    "gemini-2.0-flash-lite",  # Yedek
+]
+
+# Yazma ve Onarım için: Günde 1-10 kez çağrılır (En zeki modeller)
+GEMINI_MODELS_WRITING = [
+    "gemini-2.5-flash",       # Türkçe yazımda en başarılı model
+    "gemini-2.5-flash-lite",  # Yedek
+    "gemini-3.5-flash-lite",  # Yedek
+    "gemini-2.0-flash",       # Son çare
+]
+
+# Diğer/Generic istekler için karışık liste
+GEMINI_MODELS_DEFAULT = [
+    "gemini-2.5-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-2.0-flash",
+    "gemini-2.0-flash-lite",
 ]
 
 # ========== GROQ STACK ==========
@@ -166,7 +164,7 @@ def _post_json(url: str, headers: dict, payload: dict, timeout: int) -> Optional
         return None
 
 
-# ========== GEMINI PROVIDER (v5.3 FIXED) ==========
+# ========== GEMINI PROVIDER (v6.0) ==========
 
 def _is_thinking_model(model_name: str) -> bool:
     """gemini-2.5-* modelleri thinking modunu destekler."""
@@ -180,6 +178,8 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
         return None
 
     temperature = _safe_float(cfg.get("temperature", 0.65), 0.65)
+    
+    # Puanlama aşamasında token limitini 4000 yapıyoruz (settings.json'dan gelir ama garantiye alıyoruz)
     max_tokens = _safe_int(cfg.get("max_output_tokens", 1400), 1400)
 
     try:
@@ -192,8 +192,6 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
     try:
         client = genai.Client(api_key=api_key)
 
-        # v5.3 FIX: thinking modellerinde JSON output zorla, thinking budget 0 yap
-        # Bu sayede "hesaplama metni + JSON" yerine direkt JSON doner
         if _is_thinking_model(model_name):
             response = client.models.generate_content(
                 model=model_name,
@@ -202,7 +200,7 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
                     temperature=temperature,
                     max_output_tokens=max_tokens,
                     thinking_config=types.ThinkingConfig(
-                        thinking_budget=0,  # Thinking'i devre disi birak
+                        thinking_budget=0,
                     ),
                 ),
             )
@@ -225,15 +223,26 @@ def _try_gemini_single_model(prompt: str, model_name: str, cfg: Dict[str, Any]) 
         raise
 
 
-def _try_gemini_stack(prompt: str, cfg: Dict[str, Any]) -> Optional[str]:
-    """Try all Gemini models in cascade."""
+def _try_gemini_stack(prompt: str, cfg: Dict[str, Any], stage: str = "generic") -> Optional[str]:
+    """Try all Gemini models in cascade. Stage'e göre model listesi seçer."""
     if not _is_enabled(cfg, "enable_gemini", True):
         return None
 
+    # İŞ BÖLÜMÜ BURADA YAPILIYOR
+    stage_lower = stage.lower()
+    if "scoring" in stage_lower:
+        model_list = GEMINI_MODELS_SCORING
+        log("Using SCORING model list (High RPD)", "INFO")
+    elif "writing" in stage_lower:
+        model_list = GEMINI_MODELS_WRITING
+        log("Using WRITING model list (High Quality)", "INFO")
+    else:
+        model_list = GEMINI_MODELS_DEFAULT
+
     max_attempts, base_wait, max_wait = _get_retry_config()
 
-    for model_idx, model_name in enumerate(GEMINI_MODELS, start=1):
-        log(f"Gemini Stack [{model_idx}/{len(GEMINI_MODELS)}]: {model_name}", "INFO")
+    for model_idx, model_name in enumerate(model_list, start=1):
+        log(f"Gemini Stack [{model_idx}/{len(model_list)}]: {model_name}", "INFO")
 
         for attempt in range(1, max_attempts + 1):
             try:
@@ -414,7 +423,7 @@ def ask_ai(prompt: str, stage: str = "generic") -> str:
     log(f"=== AI Request Start (stage={stage}) ===", "INFO")
 
     log("Trying GEMINI STACK...", "INFO")
-    result = _try_gemini_stack(prompt, cfg)
+    result = _try_gemini_stack(prompt, cfg, stage) # Stage parametresi gönderiliyor!
     if result:
         log("✅ GEMINI STACK SUCCESS", "INFO")
         return result
@@ -502,33 +511,9 @@ def _try_raw_decode_stream(text: str):
 
 
 def _extract_json_after_thinking(text: str) -> Optional[str]:
-    """
-    v5.4 FIX (Codex P2): Gemini thinking/reasoning modellerinde metin + JSON
-    karisik gelir. Onceki surum rfind() ile en son '[' ve en son '{' pozisyonunu
-    karsilastirip max() aliyordu. Bu, su senaryoda bozuluyordu:
-
-      "...thinking [some list] ... [{"sira":1,...},{"sira":2,...}]"
-
-    Thinking metnindeki '[' ve array icindeki son '{' konumu karsilasinca
-    max() array basindaki '[' yerine son objenin '{' karakterini seciyordu.
-    Sonuc: tum array yerine sadece son obje cekiliyordu, geri kalan haberler
-    fallback skoruyla isleniyordu.
-
-    Yeni strateji - sondan geriye tara:
-      1. Metni sondan basina dogru tara.
-      2. Ilk karsilasilan '}' veya ']' kapanisini bul.
-      3. O kapanisin eslestigi acilis karakterine ('{' veya '[') kadar geri git.
-      4. Bulunan tam blogu dondur — boylece array disindaki thinking metni
-         ve array icindeki ara '{' karakterleri secimleri bozmaz.
-
-    Ornek:
-      "...thinking metni... [{"sira":1},{"sira":2}]"
-                            ^--- bu '[' secilir, tum array doner
-    """
     if not text:
         return None
 
-    # Sondan geriye tara: ilk gecerli kapanisi bul
     closer_pos = -1
     closer_char = None
     for i in range(len(text) - 1, -1, -1):
@@ -542,7 +527,6 @@ def _extract_json_after_thinking(text: str) -> Optional[str]:
 
     opener_char = "[" if closer_char == "]" else "{"
 
-    # Bu kapanisten geriye giderek eslesen acilanı bul
     depth = 0
     for i in range(closer_pos, -1, -1):
         ch = text[i]
@@ -558,30 +542,15 @@ def _extract_json_after_thinking(text: str) -> Optional[str]:
 
 
 def parse_ai_json(response: str) -> Any:
-    """
-    AI yanitini JSON'a cevirir.
-
-    v5.3 EK ADIM: Gemini thinking modellerinin "metin + JSON" karisik
-    ciktisini handle etmek icin _extract_json_after_thinking() eklendi.
-
-    Siralama:
-    1) Direkt json.loads
-    2) Code-fence temizleyip tekrar dener
-    3) Dengeli {} / [] bloklarini ayiklayip tek tek dener
-    4) v5.3 YENI: Son JSON blogunu thinking metninin ardindan ayikla
-    5) raw_decode stream fallback
-    """
     cleaned = (response or "").strip()
     if not cleaned:
         return None
 
-    # 1) Direkt
     try:
         return json.loads(cleaned)
     except Exception:
         pass
 
-    # 2) Code-fence temizle
     no_fence = _strip_code_fences(cleaned)
     if no_fence and no_fence != cleaned:
         try:
@@ -591,18 +560,15 @@ def parse_ai_json(response: str) -> Any:
 
     source_for_scan = no_fence if no_fence else cleaned
 
-    # 3) Balanced JSON bloklari tara (buyukten kucuge)
     candidates = _extract_balanced_json_candidates(source_for_scan)
     for candidate in candidates:
         try:
             parsed = json.loads(candidate)
-            # Bos dict/list kabul etme, anlamli icerik olmali
             if parsed or parsed == 0:
                 return parsed
         except Exception:
             continue
 
-    # 4) v5.3 YENI: Thinking metni + JSON karisimi - son JSON blogunu bul
     thinking_extracted = _extract_json_after_thinking(source_for_scan)
     if thinking_extracted and thinking_extracted != source_for_scan:
         try:
@@ -613,7 +579,6 @@ def parse_ai_json(response: str) -> Any:
         except Exception:
             pass
 
-        # Ayiklanan parcayi da balanced scan'e sok
         sub_candidates = _extract_balanced_json_candidates(thinking_extracted)
         for candidate in sub_candidates:
             try:
@@ -624,7 +589,6 @@ def parse_ai_json(response: str) -> Any:
             except Exception:
                 continue
 
-    # 5) raw_decode stream fallback
     try:
         parsed = _try_raw_decode_stream(source_for_scan)
         if parsed is not None:
