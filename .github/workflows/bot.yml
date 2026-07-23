@@ -142,7 +142,7 @@ jobs:
           PERSIST_STATE: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.persist_state || 'true' }}
 
           NEWS_MAX_AGE_HOURS: '24'
-          SHARED_VARIANT_COOLDOWN_HOURS: '3'
+          SHARED_VARIANT_COOLDOWN_HOURS: '72'
           ENABLE_FETCH_ARTICLE_IMAGE_SCRAPE: 'false'
           MAX_IMAGES_PER_NEWS: '4'
 
