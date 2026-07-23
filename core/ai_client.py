@@ -45,7 +45,7 @@ GEMINI_MODELS = [
     "gemini-2.5-flash-lite",   # Hafif/hizli Flash
     "gemini-2.0-flash",        # Stabil Flash
     "gemini-2.0-flash-lite",   # Stabil hafif Flash
-    "gemini-1.5-flash",        # Fallback - cok stabil
+    "gemini-1.5-flash-8b",        # Fallback - cok stabil
 ]
 
 # ========== GROQ STACK ==========
