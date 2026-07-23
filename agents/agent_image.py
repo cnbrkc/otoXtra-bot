@@ -1,5 +1,7 @@
 """
-agents/agent_image.py - Gorsel Isleme Ajani (v8.8 - Test Modu Kart Desteği)
+agents/agent_image.py - Gorsel Isleme Ajani (v8.9 - LOGO CACHE)
+  - PERFORMANCE FIX: Logo watermark artık her görselde diskin okunmak yerine
+    hafızadan (cache) çağrılıp boyutlandırılıyor. CPU/I/O tasarrufu sağlar.
   - Sadece IMAGE_TEST_MODE=true ise kart üretir. Normal çalışmada FB/Threads standart görselini kullanır.
 """
 
@@ -81,6 +83,9 @@ _NITTER_PIC_PATTERN = re.compile(
     re.IGNORECASE,
 )
 _TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
+
+# v8.9: Logo için Global Cache Değişkeni
+_CACHED_LOGO_INFO = None
 
 
 def _read_int_env(name: str) -> Optional[int]:
@@ -553,7 +558,6 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if query_items:
         filtered_qs = [(k, v) for k, v in query_items if k.lower() not in _RESIZE_QUERY_KEYS]
         if len(filtered_qs) != len(query_items):
-            # Parantez hatası düzeltildi
             variants.append(urlunparse(parsed._replace(query=urlencode(filtered_qs))))
 
     filename_cleaned_path = re.sub(
@@ -1067,18 +1071,49 @@ def resize_and_crop(image_path: str, target_width: int, target_height: int) -> s
         log(f"Boyutlandirma hatasi: {exc}", "WARNING")
         return image_path
 
+# v8.9: LOGO CACHE FONKSİYONU
+def _get_cached_logo():
+    """Logo dosyasını ve opaklık ayarını sadece 1 kez yükler (Cache)."""
+    global _CACHED_LOGO_INFO
+    if _CACHED_LOGO_INFO is not None:
+        return _CACHED_LOGO_INFO
+
+    settings_config = load_config("settings")
+    images_settings = settings_config.get("images", {})
+    logo_opacity = float(images_settings.get("logo_opacity", 0.7))
+    logo_path = os.path.join(get_project_root(), "assets", "logo.png")
+
+    if not os.path.exists(logo_path):
+        log(f"Logo dosyasi bulunamadi: {logo_path}", "WARNING")
+        _CACHED_LOGO_INFO = False
+        return False
+
+    try:
+        logo_img = Image.open(logo_path)
+        if logo_img.mode != "RGBA":
+            logo_img = logo_img.convert("RGBA")
+
+        r, g, b, alpha = logo_img.split()
+        alpha = alpha.point(lambda p: int(p * logo_opacity))
+        logo_img = Image.merge("RGBA", (r, g, b, alpha))
+
+        _CACHED_LOGO_INFO = logo_img
+        return logo_img
+    except Exception as exc:
+        log(f"Logo cache yukleme hatasi: {exc}", "WARNING")
+        _CACHED_LOGO_INFO = False
+        return False
+
 def add_logo(image_path: str) -> str:
     settings_config = load_config("settings")
     images_settings = settings_config.get("images", {})
 
     logo_position = images_settings.get("logo_position", "bottom_right")
-    logo_opacity = images_settings.get("logo_opacity", 0.7)
-    logo_size_percent = images_settings.get("logo_size_percent", 12)
+    logo_size_percent = float(images_settings.get("logo_size_percent", 12))
     padding = 20
 
-    logo_path = os.path.join(get_project_root(), "assets", "logo.png")
-    if not os.path.exists(logo_path):
-        log(f"Logo dosyasi bulunamadi: {logo_path}", "WARNING")
+    cached_logo = _get_cached_logo()
+    if not cached_logo:
         return image_path
 
     try:
@@ -1087,19 +1122,14 @@ def add_logo(image_path: str) -> str:
         if base_img.mode != "RGBA":
             base_img = base_img.convert("RGBA")
 
-        logo_img = Image.open(logo_path)
-        if logo_img.mode != "RGBA":
-            logo_img = logo_img.convert("RGBA")
-
         logo_target_width = int(base_width * logo_size_percent / 100)
-        logo_orig_w, logo_orig_h = logo_img.size
+        logo_orig_w, logo_orig_h = cached_logo.size
         aspect = logo_orig_h / logo_orig_w
         logo_target_height = int(logo_target_width * aspect)
+        
+        # v8.9: Orijinal cache'i bozmamak için copy() ile kopyalıyoruz
+        logo_img = cached_logo.copy()
         logo_img = logo_img.resize((logo_target_width, logo_target_height), Image.LANCZOS)
-
-        r, g, b, alpha = logo_img.split()
-        alpha = alpha.point(lambda p: int(p * logo_opacity))
-        logo_img = Image.merge("RGBA", (r, g, b, alpha))
 
         logo_w, logo_h = logo_img.size
         position_map = {
