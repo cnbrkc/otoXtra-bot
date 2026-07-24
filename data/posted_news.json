@@ -1,30 +1,6 @@
 {
   "posts": [
     {
-      "title": "Tamamen Elektrikli Qashqai Yalan Oldu",
-      "url": "https://shiftdelete.net/tamamen-elektrikli-qashqai-yalan-oldu",
-      "topic_fingerprint": "elektrikli-qashqai-tamamen-yalan",
-      "source": "ShiftDelete Otomobil",
-      "score": 73,
-      "trend_count": 1,
-      "posted_at": "2026-06-24T17:32:42.288390+03:00",
-      "fb_post_id": "678053852057751_122170133162916499",
-      "image_source": "multi_image",
-      "image_count": 2
-    },
-    {
-      "title": "Alpine, Porsche rakibi yeni modelini önümüzdeki ay tanıtacak",
-      "url": "https://tr.motor1.com/news/799692/alpine-porsche-rakibi-goodwood/",
-      "topic_fingerprint": "alpine-modelini-onumuzdeki-porsche-rakibi-tanitacak",
-      "source": "Motor1 TR",
-      "score": 83,
-      "trend_count": 1,
-      "posted_at": "2026-06-24T20:56:23.275427+03:00",
-      "fb_post_id": "678053852057751_122170150274916499",
-      "image_source": "multi_image",
-      "image_count": 4
-    },
-    {
       "title": "Elektrikli Araçlarda Yeni Dönem: 30 Yıl Ömürlü Sodyum-İyon Piller",
       "url": "https://shiftdelete.net/elektrikli-araclarda-yeni-donem-30-yil-omurlu-sodyum-iyon-piller",
       "topic_fingerprint": "araclarda-donem-elektrikli-omurlu-piller-sodyum-yil-yon",
@@ -1894,7 +1870,7 @@
     "2026-07-23": 6,
     "2026-07-24": 5
   },
-  "last_check_time": "2026-07-24T17:28:23.779937+03:00",
+  "last_check_time": "2026-07-24T21:06:58.779879+03:00",
   "stats": {
     "daily_actions": {
       "2026-06-24": 4,
@@ -1927,7 +1903,7 @@
       "2026-07-21": 2,
       "2026-07-22": 7,
       "2026-07-23": 6,
-      "2026-07-24": 8
+      "2026-07-24": 9
     },
     "weekly": {
       "2026-W16": {
@@ -2112,13 +2088,14 @@
         "report_sent_at": "2026-07-20T13:52:20.231604+03:00"
       },
       "2026-W30": {
-        "actions": 29,
+        "actions": 30,
         "shares": 26,
-        "error_total": 3,
+        "error_total": 4,
         "errors": {
           "FETCH_FAILED: name '_read_float_env' is not defined": 1,
           "ORCHESTRATOR_CRITICAL: cannot import name '_get_active_threshold' from 'agents.scorer_helpers' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/scorer_helpers.py)": 1,
-          "ORCHESTRATOR_CRITICAL: cannot import name '_FALLBACK_BG_COLOR' from 'agents.image_utils' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/image_utils.py)": 1
+          "ORCHESTRATOR_CRITICAL: cannot import name '_FALLBACK_BG_COLOR' from 'agents.image_utils' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/image_utils.py)": 1,
+          "IMAGE_FAILED: name '_candidate_key' is not defined": 1
         },
         "skip_total": 0,
         "skips": {},
