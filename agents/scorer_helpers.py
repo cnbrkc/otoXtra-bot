@@ -1,12 +1,11 @@
 """
 agents/scorer_helpers.py - Skorer Yardımcı Fonksiyonlar ve Eşleştirme (v5.3)
-AI cevaplarını makalelerle eşleştirme, puan doğrulama ve matematiksel yardımcılar burada.
-v1.1: Tip güvenliği (Type hints) eklendi.
+v1.2: DRY prensibi - _safe_int merkezi helpers'tan çekiliyor.
 """
 import os
 import unicodedata
 from typing import Any, Dict, List, Optional, Set, Tuple
-from core.helpers import is_similar_title
+from core.helpers import is_similar_title, _safe_int
 from core.logger import log
 
 # ── Sabitler ─────────────────────────────────────────────────────────────────
@@ -72,12 +71,6 @@ def _is_score_breakdown_enabled() -> bool:
 
 def _allow_skip_as_success() -> bool:
     return False
-
-def _safe_int(value: Any, default: int = 0) -> int:
-    try:
-        return int(value)
-    except Exception:
-        return default
 
 def _safe_score_number(value: Any, default: int = 0) -> int:
     try:
