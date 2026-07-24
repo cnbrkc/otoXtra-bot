@@ -1858,7 +1858,7 @@
     "2026-07-23": 6,
     "2026-07-24": 1
   },
-  "last_check_time": "2026-07-24T11:21:29.796330+03:00",
+  "last_check_time": "2026-07-24T11:25:34.030073+03:00",
   "stats": {
     "daily_actions": {
       "2026-06-24": 4,
@@ -1891,7 +1891,7 @@
       "2026-07-21": 2,
       "2026-07-22": 7,
       "2026-07-23": 6,
-      "2026-07-24": 2
+      "2026-07-24": 3
     },
     "weekly": {
       "2026-W16": {
@@ -2076,11 +2076,12 @@
         "report_sent_at": "2026-07-20T13:52:20.231604+03:00"
       },
       "2026-W30": {
-        "actions": 23,
+        "actions": 24,
         "shares": 22,
-        "error_total": 1,
+        "error_total": 2,
         "errors": {
-          "FETCH_FAILED: name '_read_float_env' is not defined": 1
+          "FETCH_FAILED: name '_read_float_env' is not defined": 1,
+          "ORCHESTRATOR_CRITICAL: cannot import name '_get_active_threshold' from 'agents.scorer_helpers' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/scorer_helpers.py)": 1
         },
         "skip_total": 0,
         "skips": {},

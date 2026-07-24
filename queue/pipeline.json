@@ -1,14 +1,182 @@
 {
-  "run_id": "2026-07-24-11:21",
-  "status": "error",
-  "started_at": "2026-07-24T11:21:29.162061+03:00",
-  "updated_at": "2026-07-24T11:21:29.235515+03:00",
+  "run_id": "2026-07-24-11:25",
+  "status": "running",
+  "started_at": "2026-07-24T11:25:00.345737+03:00",
+  "updated_at": "2026-07-24T11:25:33.477561+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
-      "output": null,
-      "error": "name '_read_float_env' is not defined",
-      "updated_at": "2026-07-24T11:21:29.235515+03:00"
+      "status": "done",
+      "output": {
+        "articles": [
+          {
+            "title": "GT Grand Finals, TOSFED İstanbul Park’ta gerçekleştirilecek",
+            "link": "https://www.log.com.tr/gt-grand-finals-tosfed-istanbul-parkta-gerceklestirilecek/",
+            "published": "2026-07-24T11:25:00.406841+03:00",
+            "summary": "GT Grand Finals, bugün Türkiye Otomobil Sporları Federasyonu (TOSFED) tarafından yapılan açıklamaya göre İstanbul Park’ta düzenlenecek. 06-08 Kasım 2026 tarihlerinde gerçekleştirilecek etkinlik için şunlara değinildi: “Uluslararası GT yarışları için oluşturulan yeni bir etkinlik olan GT Grand Finals İstanbul 06-08 Kasım 2026 tarihlerinde TOSFED İstanbul Park’ta gerçekleştirilecek. Gulf 12 Hours organizatörü Driving Force Events tarafından düzenlenecek GT Grand Finals İstanbul, 20 yıl aradan sonra GT sınıfı araçların mücadelesini Türk sporseverler ile buluşturacak. Sprint formatındaki organizasyon, 06 Kasım Cuma günü serbest antrenmanlar ile başlayacak. 07 Kasım Cumartesi günü resmi antrenmanlar ve sıralama turları gerçekleştirilirken, 08 Kasım Pazar günü de birer saatlik üç yarış koşulacak.” TOSFED Başkanı Eren Üçlertoprağı ise konu hakkında yaptığı açıklamada; “TOSFED İstanbul Park’taki yeni bir uluslararası yarışın müjdesini vermek istiyoruz. Pistimizi, bölgemizdeki otomobil sporlarının uluslararası cazibe merkezi yaparak, ülkemizin tanıtımı ve spor turizmine katkı yapmak hedefiyle yürüttüğümüz yoğun çalışmalar sayesinde, tesisteki organizasyonlarımızın sayısı gittikçe artıyor. Bu bağlamda, yaklaşık 20 […] GT Grand Finals, TOSFED İstanbul Park’ta gerçekleştirilecek yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-23_15-35-17_xTOzB-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-23_15-35-17_xTOzB-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-23_15-35-17_xTOzB-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "LogDergisi",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "finals-gerceklestirilecek-grand-park-stanbul-tosfed"
+          },
+          {
+            "title": "Benzinli Peugeot 208 uzun yıllar daha satışta kalacak",
+            "link": "https://www.log.com.tr/benzinli-peugeot-208-uzun-yillar-daha-satista-kalacak/",
+            "published": "2026-07-24T11:25:00.406841+03:00",
+            "summary": "Benzinli, yani içten yanmalı motora sahip Peugeot 208, şirket CEO’su Alain Favey’in açıklamasına göre uzun yıllar satışta kalacak. Talep olduğu sürece tamamen elektrikli ve benzinli 208’i bir arada satacaklarını belirten Favey, 2030’dan sonra dahi ürün gamlarında içten yanmalı araçların bulunacağına işaret etti. “Tamamen elektrikli araçlara olan talebin çok güçlü şekilde artacağına inanıyoruz.” diyen Favey, “Önümüzdeki yıllarda da bu talep büyümeye devam edecek. Biz de kesinlikle bu alana odaklanacağız. Bu yüzden yeni e-208’in tanıtımı bizim için B segmentindeki en önemli gelişme.” ifadelerini kullandı. Benzinli Peugeot 208 uzun yıllar daha satışta kalacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-21_09-26-11_TsjPN-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-21_09-26-11_TsjPN-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-21_09-26-11_TsjPN-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "LogDergisi",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "208-benzinli-kalacak-peugeot-satista-uzun-yillar"
+          }
+        ],
+        "count": 2,
+        "source_health": {
+          "Donanimhaber": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "otogundem": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "otomobilkolik": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Log": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Motor1 TR": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "ShiftDelete Otomobil": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "OtoAjanda": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "LogDergisi": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Emre Ozpeynirci": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Dolu Batarya": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Ahmet Celik": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Otomobilcom": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "TaylanOzgurDil": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "HakanDOgu": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "MuratTosun": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "VeyselKarani": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Sekizsilindir": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "otopodyum": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "_metrics": {
+            "found": 180,
+            "after_keyword": 124,
+            "after_time": 12,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
+          }
+        },
+        "metrics": {
+          "found": 180,
+          "after_keyword": 124,
+          "after_time": 12,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
+        }
+      },
+      "error": null,
+      "updated_at": "2026-07-24T11:25:33.477561+03:00"
     },
     "score": {
       "status": "waiting",
