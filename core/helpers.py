@@ -1,6 +1,6 @@
 """
 General helper utilities for otoXtra bot.
-v1.1: Tip güvenliği (Type hints) eklendi.
+v1.2: DRY prensibi - Merkezi _safe_int eklendi.
 """
 import difflib
 import os
@@ -47,6 +47,15 @@ _RAW_STOP_WORDS: Set[str] = {
     "tanitildi", "basladi",
 }
 
+# ── MERKEZİ YARDIMCILAR (DRY) ─────────────────────────────────────────────────
+
+def _safe_int(value: Any, default: int = 0) -> int:
+    try:
+        return int(value)
+    except Exception:
+        return default
+
+# ── ZAMAN VE TARİH ────────────────────────────────────────────────────────────
 
 def get_turkey_now() -> datetime:
     return datetime.now(_TR_TZ)
@@ -54,37 +63,43 @@ def get_turkey_now() -> datetime:
 def get_today_str() -> str:
     return get_turkey_now().strftime("%Y-%m-%d")
 
+def _parse_dt_safe(value: Optional[str]) -> Optional[datetime]:
+    if not value: return None
+    try:
+        from dateutil import parser as dateutil_parser
+        dt = dateutil_parser.parse(value)
+        if dt.tzinfo is None: dt = dt.replace(tzinfo=_TR_TZ)
+        return dt
+    except Exception:
+        return None
+
+# ── METİN VE HTML ─────────────────────────────────────────────────────────────
+
 def clean_html(html_text: str) -> str:
-    if not html_text:
-        return ""
+    if not html_text: return ""
     soup = BeautifulSoup(html_text, "html.parser")
     return soup.get_text(separator=" ", strip=True)
 
 def _normalize_token(text: str) -> str:
-    if not text:
-        return ""
+    if not text: return ""
     return re.sub(r"[^a-z0-9]", "", text.lower().translate(_TR_MAP))
 
 _NORMALIZED_STOP_WORDS: Set[str] = {_normalize_token(w) for w in _RAW_STOP_WORDS if w}
 
 def is_similar_title(title1: str, title2: str, threshold: Optional[float] = None) -> bool:
-    if not title1 or not title2:
-        return False
-
+    if not title1 or not title2: return False
     if threshold is None:
         try:
             settings = load_config("settings")
             threshold = settings.get("duplicate_detection", {}).get("title_similarity_threshold", 0.45)
         except Exception:
             threshold = 0.45
-
     clean1 = title1.lower().strip()
     clean2 = title2.lower().strip()
     return difflib.SequenceMatcher(None, clean1, clean2).ratio() >= threshold
 
 def generate_topic_fingerprint(title: str) -> str:
-    if not title:
-        return ""
+    if not title: return ""
     normalized = title.lower().translate(_TR_MAP)
     normalized = re.sub(r"[^a-z0-9\s]", " ", normalized)
     words = normalized.split()
@@ -92,8 +107,7 @@ def generate_topic_fingerprint(title: str) -> str:
     return "-".join(keywords)
 
 def _fingerprint_similarity(fp1: str, fp2: str) -> float:
-    if not fp1 or not fp2:
-        return 0.0
+    if not fp1 or not fp2: return 0.0
     return difflib.SequenceMatcher(None, fp1, fp2).ratio()
 
 def _extract_domain(url: str) -> str:
@@ -135,6 +149,8 @@ def is_duplicate_article(article1: Dict[str, Any], article2: Dict[str, Any]) -> 
             if union and (len(keywords1 & keywords2) / len(union)) >= keyword_threshold:
                 return True
     return False
+
+# ── İSTATİSTİK VE HAFTALIK RAPOR ──────────────────────────────────────────────
 
 def _get_week_key(dt: Optional[datetime] = None) -> str:
     current = dt or get_turkey_now()
@@ -222,6 +238,8 @@ def mark_weekly_report_sent(posted_data: Dict[str, Any], week_key: str) -> None:
     bucket["report_sent"] = True
     bucket["report_sent_at"] = get_turkey_now().isoformat()
 
+# ── TOKEN VE DOSYA İŞLEMLERİ ──────────────────────────────────────────────────
+
 def _parse_expiry_datetime(raw_value: str) -> Optional[datetime]:
     if not raw_value: return None
     raw = raw_value.strip()
@@ -271,16 +289,6 @@ def get_posted_news() -> Dict[str, Any]:
     if "last_check_time" not in data: data["last_check_time"] = None
     _ensure_stats_schema(data)
     return data
-
-def _parse_dt_safe(value: Optional[str]) -> Optional[datetime]:
-    if not value: return None
-    try:
-        from dateutil import parser as dateutil_parser
-        dt = dateutil_parser.parse(value)
-        if dt.tzinfo is None: dt = dt.replace(tzinfo=_TR_TZ)
-        return dt
-    except Exception:
-        return None
 
 def _cleanup_posts(posts: List[Dict[str, Any]], cutoff: datetime) -> Tuple[List[Dict[str, Any]], int]:
     cleaned_posts = []
@@ -366,13 +374,9 @@ def is_shared_variant_in_cooldown(url: str, title: str, posted_data: Dict[str, A
     if not isinstance(cooldowns, dict): return False
     record = cooldowns.get(key)
     if not isinstance(record, dict): return False
-    raw = record.get("cooldown_at", "")
-    try:
-        cooldown_at = datetime.fromisoformat(raw)
-        if cooldown_at.tzinfo is None: cooldown_at = cooldown_at.replace(tzinfo=_TR_TZ)
-        return get_turkey_now() - cooldown_at < timedelta(hours=cooldown_hours)
-    except Exception:
-        return False
+    cooldown_at = _parse_dt_safe(record.get("cooldown_at", ""))
+    if not cooldown_at: return False
+    return get_turkey_now() - cooldown_at < timedelta(hours=cooldown_hours)
 
 def cleanup_shared_variant_cooldowns(posted_data: Dict[str, Any], keep_hours: int) -> None:
     cooldowns = posted_data.get("shared_variant_cooldowns", {})
@@ -383,11 +387,9 @@ def cleanup_shared_variant_cooldowns(posted_data: Dict[str, Any], keep_hours: in
     cleaned = {}
     for key, record in cooldowns.items():
         if not isinstance(record, dict): continue
-        try:
-            cooldown_at = datetime.fromisoformat(record.get("cooldown_at", ""))
-            if cooldown_at.tzinfo is None: cooldown_at = cooldown_at.replace(tzinfo=_TR_TZ)
-            if cooldown_at >= cutoff: cleaned[key] = record
-        except Exception: continue
+        cooldown_at = _parse_dt_safe(record.get("cooldown_at", ""))
+        if cooldown_at and cooldown_at >= cutoff:
+            cleaned[key] = record
     removed_count = len(cooldowns) - len(cleaned)
     if removed_count > 0:
         log(f"Cleanup removed {removed_count} old shared_variant_cooldowns (older than {keep_hours}h)")
@@ -421,20 +423,19 @@ def get_last_check_time(posted_data: Dict[str, Any]) -> datetime:
     if not raw_value or not isinstance(raw_value, str):
         log("last_check_time not found, fallback to 6 hours ago")
         return default_fallback
-    try:
-        parsed = datetime.fromisoformat(raw_value)
-        if parsed.tzinfo is None: parsed = parsed.replace(tzinfo=_TR_TZ)
-        now = get_turkey_now()
-        if parsed > now:
-            log("last_check_time is in the future, corrected", "WARNING")
-            return now - timedelta(hours=1)
-        if parsed < (now - timedelta(hours=48)):
-            log("last_check_time older than 48h, fallback applied", "WARNING")
-            return default_fallback
-        return parsed
-    except (ValueError, TypeError) as exc:
-        log(f"last_check_time parse error: {exc}", "WARNING")
+    parsed = _parse_dt_safe(raw_value)
+    if not parsed:
+        log("last_check_time parse error", "WARNING")
         return default_fallback
+        
+    now = get_turkey_now()
+    if parsed > now:
+        log("last_check_time is in the future, corrected", "WARNING")
+        return now - timedelta(hours=1)
+    if parsed < (now - timedelta(hours=48)):
+        log("last_check_time older than 48h, fallback applied", "WARNING")
+        return default_fallback
+    return parsed
 
 def save_last_check_time(posted_data: Dict[str, Any]) -> None:
     now = get_turkey_now()
