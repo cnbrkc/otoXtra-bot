@@ -68,9 +68,8 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
     Story kart üretimi:
     - 1080x1920 canvas
     - Blur arka plan
-    - Ortada net ana görsel (büyütülmüş)
-    - Üstte başlık (yukarı kaydırılmış), altta açıklama (aşağı kaydırılmış)
-    - Yazılara ince siyah kontur (stroke) eklenerek beyaz zeminde okunabilirlik artırıldı
+    - Ortada net ana görsel
+    - Üstte başlık, altta açıklama
     - PNG/JPEG uzantısına göre uygun export
     """
     try:
@@ -99,21 +98,11 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         body_h = max(0, body_h - 8)
 
         logo_size = 120
-        image_box_h = 940      # 760 -> 940 (foto daha büyük)
+        image_box_h = 760
         gap = 48
-        body_push = 80         # body'i aşağı kaydırmak için ekstra boşluk
-        top_pull_up = 80       # logo+başlık'ı yukarı çekmek için offset
 
-        total_h = (
-            logo_size + gap
-            + title_h + gap
-            + image_box_h + gap
-            + body_push
-            + body_h
-        )
-
-        # Logo+başlık yukarı, gövde aşağı yerleşsin diye başlangıcı yukarı çekiyoruz
-        y_cursor = max(80, (CANVAS_HEIGHT - total_h) // 2 - top_pull_up)
+        total_h = logo_size + gap + title_h + gap + image_box_h + gap + body_h
+        y_cursor = max(40, (CANVAS_HEIGHT - total_h) // 2)
 
         canvas = Image.new("RGBA", (CANVAS_WIDTH, CANVAS_HEIGHT), BG_COLOR_RGBA)
 
@@ -130,7 +119,6 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
         canvas = Image.alpha_composite(canvas, overlay)
         draw = ImageDraw.Draw(canvas)
 
-        # --- Logo ---
         logo_path = os.path.join(get_project_root(), "assets", "logo.png")
         if os.path.exists(logo_path):
             try:
@@ -142,25 +130,17 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
                 log(f"Logo islenemedi: {e}", "WARNING")
         y_cursor += logo_size + gap
 
-        # --- Başlık (ince siyah kontur ile) ---
         for ln in title_lines:
             b = draw.textbbox((0, 0), ln, font=font_title)
             lw = b[2] - b[0]
             lh = b[3] - b[1]
             x = (CANVAS_WIDTH - lw) // 2
-            # İnce siyah stroke -> beyaz zeminde kaybolmaması için
-            draw.text(
-                (x, y_cursor), ln,
-                font=font_title,
-                fill=TEXT_COLOR,
-                stroke_width=2,
-                stroke_fill=(0, 0, 0, 220),
-            )
+            draw.text((x + 2, y_cursor + 2), ln, font=font_title, fill=(0, 0, 0, 140))
+            draw.text((x, y_cursor), ln, font=font_title, fill=TEXT_COLOR)
             y_cursor += lh + 10
 
         y_cursor += gap
 
-        # --- Ana görsel (büyütülmüş) ---
         img_top = y_cursor
         if image_path and os.path.exists(image_path):
             try:
@@ -185,30 +165,25 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
             except Exception as e:
                 log(f"Ana gorsel islenemedi: {e}", "WARNING")
 
-        # Body'yi aşağı kaydırmak için ekstra boşluk
-        y_cursor += image_box_h + gap + body_push
+        y_cursor += image_box_h + gap
 
-        # --- Body (ince siyah kontur ile) ---
         for ln in body_lines:
             b = draw.textbbox((0, 0), ln, font=font_body)
             lw = b[2] - b[0]
             lh = b[3] - b[1]
             x = (CANVAS_WIDTH - lw) // 2
-            draw.text(
-                (x, y_cursor), ln,
-                font=font_body,
-                fill=TEXT_COLOR,
-                stroke_width=1,
-                stroke_fill=(0, 0, 0, 200),
-            )
+            draw.text((x + 1, y_cursor + 1), ln, font=font_body, fill=(0, 0, 0, 130))
+            draw.text((x, y_cursor), ln, font=font_body, fill=TEXT_COLOR)
             y_cursor += lh + 8
 
         final_img = canvas.convert("RGB")
         lower = (output_path or "").lower()
 
         if lower.endswith(".png"):
+            # Metin netligi icin en iyi secenek
             final_img.save(output_path, format="PNG", optimize=True, compress_level=4)
         else:
+            # JPEG gerekirse kalite odakli
             final_img.save(
                 output_path,
                 format="JPEG",
