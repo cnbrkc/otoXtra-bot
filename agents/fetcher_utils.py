@@ -6,6 +6,7 @@ import os
 import re
 import sys
 import time
+from typing import Any, Optional, Tuple, List
 import requests
 from urllib.parse import parse_qsl, urlencode, urljoin, urlparse, urlunparse, unquote
 from core.logger import log
@@ -42,27 +43,33 @@ _TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
 # ── Tip Dönüşümleri ───────────────────────────────────────────────────────────
 
 def _is_test_mode() -> bool:
+    """Test modunun aktif olup olmadığını kontrol eder (ENV veya CLI argümanı ile)."""
     if os.environ.get("TEST_MODE", "false").lower() == "true":
         return True
     return "--test" in sys.argv
 
-def _safe_int(value, default: int) -> int:
+def _safe_int(value: Any, default: int) -> int:
+    """Değeri güvenli şekilde tam sayıya (int) çevirir, başarısız olursa varsayılan değeri döndürür."""
     try: return int(value)
     except Exception: return default
 
-def _safe_float(value, default: float) -> float:
+def _safe_float(value: Any, default: float) -> float:
+    """Değeri güvenli şekilde ondalıklı sayıya (float) çevirir, başarısız olursa varsayılan değeri döndürür."""
     try: return float(value)
     except Exception: return default
 
-def _safe_int_min(value, default: int, minimum: int) -> int:
+def _safe_int_min(value: Any, default: int, minimum: int) -> int:
+    """Güvenli int çevirme işlemi yapar ve minimum değerin altına düşmesini engeller."""
     parsed = _safe_int(value, default)
     return parsed if parsed >= minimum else minimum
 
-def _safe_float_min(value, default: float, minimum: float = 0.0) -> float:
+def _safe_float_min(value: Any, default: float, minimum: float = 0.0) -> float:
+    """Güvenli float çevirme işlemi yapar ve minimum değerin altına düşmesini engeller."""
     parsed = _safe_float(value, default)
     return parsed if parsed >= minimum else minimum
 
-def _coerce_bool(value, default: bool = False) -> bool:
+def _coerce_bool(value: Any, default: bool = False) -> bool:
+    """Çeşitli tip ve formatlardaki veriyi boolean (True/False) değerine dönüştürür."""
     if isinstance(value, bool): return value
     if value is None: return default
     s = str(value).strip().lower()
@@ -71,34 +78,41 @@ def _coerce_bool(value, default: bool = False) -> bool:
     return default
 
 def _read_bool_env(name: str, default: bool) -> bool:
+    """Environment variable (ENV) değerini boolean olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return default
     return _coerce_bool(raw, default)
 
 def _read_int_env(name: str, default: int) -> int:
+    """Environment variable (ENV) değerini int olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return default
     return _safe_int(raw, default)
 
 def _read_float_env(name: str, default: float) -> float:
+    """Environment variable (ENV) değerini float olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return default
     return _safe_float(raw, default)
 
 def _turkish_lower(text: str) -> str:
+    """Türkçe karakterleri (I->i vb.) doğru şekilde küçük harfe çevirir."""
     return text.replace("I", "i").lower()
 
 # ── URL & Nitter ──────────────────────────────────────────────────────────────
 
 def _is_nitter_feed(url: str) -> bool:
+    """URL'nin bir Nitter feed kaynağına ait olup olmadığını kontrol eder."""
     host = (urlparse(url).netloc or "").lower()
     return "nitter." in host or host.startswith("nitter")
 
 def _is_nitter_url(url: str) -> bool:
+    """Verilen URL'nin bir Nitter instance'ına ait olup olmadığını kontrol eder."""
     host = (urlparse(url).netloc or "").lower()
     return "nitter." in host or host.startswith("nitter")
 
 def _nitter_to_twitter_url(nitter_url: str) -> str:
+    """Nitter tweet URL'sini orijinal Twitter/x.com URL'sine çevirir."""
     if not nitter_url: return ""
     parsed = urlparse(nitter_url)
     path = parsed.path or ""
@@ -107,10 +121,12 @@ def _nitter_to_twitter_url(nitter_url: str) -> str:
     return ""
 
 def _is_profile_image_url(url: str) -> bool:
+    """URL'nin bir Twitter/Nitter profil fotosu mu yoksa içerik görseli mi olduğunu kontrol eder."""
     lower = url.lower()
     return "/profile_images/" in lower or "/profile_banners/" in lower
 
-def _resolve_nitter_image_url(raw_url: str, nitter_base: str) -> str:
+def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
+    """Nitter /pic/ formatındaki URL'leri orijinal Twitter CDN (pbs.twimg.com) URL'sine çevirir."""
     if not raw_url: return ""
     parsed_raw = urlparse(raw_url)
     if parsed_raw.netloc in _TWITTER_CDN_HOSTS: return raw_url
@@ -131,7 +147,8 @@ def _resolve_nitter_image_url(raw_url: str, nitter_base: str) -> str:
 # ── HTTP ──────────────────────────────────────────────────────────────────────
 
 def _request_with_retry(url: str, timeout: int = 20, attempts: int = 3, base_wait_seconds: float = 1.5) -> requests.Response:
-    last_exc = None
+    """Geçici ağ hatalarında exponential backoff ile HTTP isteğini tekrar dener."""
+    last_exc: Optional[Exception] = None
     headers = {"User-Agent": _USER_AGENT}
     for attempt in range(1, attempts + 1):
         try:
@@ -152,6 +169,7 @@ def _request_with_retry(url: str, timeout: int = 20, attempts: int = 3, base_wai
 # ── Görsel URL İşlemleri ──────────────────────────────────────────────────────
 
 def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
+    """Görsel URL'sini temizler (tracking parametrelerini atar, Nitter'i çevirir, göreli URL'leri tamamlar)."""
     if not raw_url: return ""
     candidate = raw_url.strip()
     if not candidate: return ""
@@ -167,6 +185,7 @@ def _normalize_image_url(raw_url: str, page_url: str = "") -> str:
     return urlunparse(cleaned)
 
 def _normalize_path_for_candidate_key(path: str) -> str:
+    """Dosya yolunu normalize ederek candidate key oluşturulmasına uygun hale getirir."""
     if not path: return path
     dir_part, _, filename = path.rpartition("/")
     name, dot, ext = filename.partition(".")
@@ -177,6 +196,7 @@ def _normalize_path_for_candidate_key(path: str) -> str:
     return f"{dir_part}/{normalized_filename}" if dir_part else normalized_filename
 
 def _candidate_key(url: str) -> str:
+    """URL'yi duplikasyon kontrolü için standart bir anahtara (key) dönüştürür."""
     parsed = urlparse(url)
     path = _normalize_path_for_candidate_key(parsed.path or "")
     path = re.sub(r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", r"\3", path, flags=re.IGNORECASE)
@@ -184,6 +204,7 @@ def _candidate_key(url: str) -> str:
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
 def _looks_like_noise_image(url: str) -> bool:
+    """URL'nin bir gürültü (logo, ikon, banner, profil fotosu vb.) olup olmadığını kontrol eder."""
     lower_url = url.lower()
     parsed = urlparse(lower_url)
     path = parsed.path or ""
@@ -199,6 +220,7 @@ def _looks_like_noise_image(url: str) -> bool:
     return False
 
 def _is_probable_image_url(url: str) -> bool:
+    """URL'nin gerçek bir görsel dosyasına (.jpg, .png vb.) işaret edip etmediğini kontrol eder."""
     lower = url.lower()
     parsed = urlparse(lower)
     host = parsed.netloc or ""
@@ -212,7 +234,8 @@ def _is_probable_image_url(url: str) -> bool:
     if any(p in lower for p in _IMAGE_HINT_PATHS): return True
     return False
 
-def _donanimhaber_variants(url: str) -> list[str]:
+def _donanimhaber_variants(url: str) -> List[str]:
+    """Donanimhaber sitesine özel görsel boyut formatlarını varyant olarak üretir."""
     variants = [url]
     parsed = urlparse(url)
     host = parsed.netloc.lower()
@@ -238,7 +261,10 @@ def _donanimhaber_variants(url: str) -> list[str]:
             seen.add(item); unique.append(item)
     return unique
 
-def _thumbnail_to_original_variants(url: str) -> list[str]:
+def _thumbnail_to_original_variants(url: str) -> List[str]:
+    """Thumbnail (küçük resim) URL'sinden orijinal büyük resim URL varyantlarını türetir."""
+    parsed_check = urlparse(url)
+    if parsed_check.netloc in _TWITTER_CDN_HOSTS: return [url]
     variants = [url]
     parsed = urlparse(url)
     path = parsed.path or ""
@@ -255,7 +281,8 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     if filename_cleaned_path != path:
         variants.append(urlunparse(parsed._replace(path=filename_cleaned_path)))
     for item in list(variants):
-        variants.extend(_donanimhaber_variants(item))
+        for dv in _donanimhaber_variants(item):
+            variants.append(dv)
     unique = []; seen = set()
     for item in variants:
         if item and item not in seen:
@@ -263,6 +290,7 @@ def _thumbnail_to_original_variants(url: str) -> list[str]:
     return unique
 
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
+    """HTML srcset özniteliğinden en yüksek çözünürlüklü görsel URL'sini çıkarır."""
     best_url = ""; best_score = -1.0
     for item in srcset.split(","):
         item = item.strip()
