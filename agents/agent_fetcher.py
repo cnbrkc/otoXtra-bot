@@ -25,7 +25,7 @@ from core.state_manager import set_stage
 from agents.fetcher_utils import (
     _USER_AGENT, _PRIORITY_ORDER, _TREND_BONUSES, _TREND_FINGERPRINT_THRESHOLD,
     _is_test_mode, _safe_int, _safe_float, _safe_int_min, _safe_float_min,
-    _coerce_bool, _read_bool_env, _read_int_env, _turkish_lower,
+    _coerce_bool, _read_bool_env, _read_int_env, _read_float_env, _turkish_lower,
     _is_nitter_feed, _resolve_nitter_image_url, _normalize_image_url,
     _thumbnail_to_original_variants, _candidate_key, _request_with_retry
 )
