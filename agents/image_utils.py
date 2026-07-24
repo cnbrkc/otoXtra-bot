@@ -50,6 +50,9 @@ _IMAGE_HINT_PATHS = ("/wp-content/uploads/", "/uploads/", "/images/", "/image/",
 _TRACKING_QUERY_KEYS = {"utm_source", "utm_medium", "utm_campaign", "utm_term", "utm_content", "gclid", "fbclid"}
 _RESIZE_QUERY_KEYS = {"w", "h", "width", "height", "resize", "fit", "crop", "quality", "q"}
 
+_FALLBACK_BG_COLOR = (18, 25, 44)
+_FALLBACK_STRIPE_COLOR = (24, 35, 60)
+
 _SOURCE_PRIORITY = {
     "meta_og": 0, "meta_twitter": 0, "nitter_still": 0, "nitter_card": 1,
     "article_script": 1, "article_img": 1, "article_field": 2,
