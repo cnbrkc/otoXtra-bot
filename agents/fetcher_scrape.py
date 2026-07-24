@@ -1,9 +1,11 @@
 """
 agents/fetcher_scrape.py - Makale Sayfa Scraping ve Görsel Çekme
 HTML parse, JSON-LD, Script tag içeriği ve makale metni çıkarma işlemleri burada.
+v1.1: Spesifik hata yakalama (RequestException, JSONDecodeError) eklendi.
 """
 import json
 import re
+import requests
 from bs4 import BeautifulSoup
 from typing import Any
 from core.logger import log
@@ -69,8 +71,12 @@ def _extract_script_image_urls(script_text: str, page_url: str) -> list[str]:
     try:
         parsed = json.loads(text)
         _walk_json_for_image_urls(parsed, out, page_url)
-    except Exception:
+    except (json.JSONDecodeError, ValueError) as exc:
+        # Sadece JSON format hatasıysa buraya düşer, regex ile devam eder
         pass
+    except Exception as exc:
+        log(f"Script JSON parse beklenmedik hata: {exc}", "WARNING")
+        
     for m in re.finditer(r'https?://[^\s"\'<>]+?\.(?:jpg|jpeg|png|webp|gif|bmp|avif)', text, flags=re.IGNORECASE):
         normalized = _normalize_image_url(m.group(0), page_url)
         if normalized: out.append(normalized)
@@ -113,7 +119,10 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
                 _collect_jsonld_images(parsed, url, tmp)
                 for item in tmp:
                     raw_candidates.extend(_thumbnail_to_original_variants(item))
-            except Exception:
+            except (json.JSONDecodeError, ValueError):
+                continue
+            except Exception as exc:
+                log(f"JSON-LD parse hatasi: {exc}", "WARNING")
                 continue
 
         for script in soup.find_all("script"):
@@ -128,7 +137,7 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
             try:
                 if width_attr and height_attr and int(width_attr) < 200 and int(height_attr) < 200:
                     continue
-            except Exception:
+            except (ValueError, TypeError):
                 pass
 
             src_candidates = [
@@ -171,8 +180,11 @@ def extract_images_from_article(url: str, max_candidates: int = 8) -> list[str]:
         log(f"extract_images_from_article: raw={raw_count}, canonical={len(unique_candidates)}, url={url[:120]}")
         return unique_candidates
 
+    except requests.exceptions.RequestException as exc:
+        log(f"extract_images_from_article HTTP hatasi: {exc}", "WARNING")
+        return []
     except Exception as exc:
-        log(f"extract_images_from_article warning: {exc}", "WARNING")
+        log(f"extract_images_from_article beklenmedik hata: {exc}", "WARNING")
         return []
 
 def scrape_full_article(url: str) -> str:
@@ -189,6 +201,9 @@ def scrape_full_article(url: str) -> str:
         if len(full_text) > 5000:
             full_text = full_text[:5000].rsplit(" ", 1)[0] + "..."
         return full_text
+    except requests.exceptions.RequestException as exc:
+        log(f"scrape_full_article HTTP hatasi: {exc}", "WARNING")
+        return ""
     except Exception as exc:
-        log(f"scrape_full_article warning: {exc}", "WARNING")
+        log(f"scrape_full_article beklenmedik hata: {exc}", "WARNING")
         return ""
