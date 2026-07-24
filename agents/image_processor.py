@@ -1,6 +1,7 @@
 """
 agents/image_processor.py - Görsel İşleme, Boyutlandırma ve Logo Ekleme
 Pillow (PIL) ile boyutlandırma, fallback üretimi ve logo watermark işlemleri burada.
+v1.1: Bellek sızıntısı önleme (with blokları ve .load() eklendi).
 """
 import os
 import tempfile
@@ -27,6 +28,7 @@ def _create_fallback_image(width: int, height: int) -> str:
         temp_file = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False, prefix="otoxtra_fallback_")
         temp_path = temp_file.name
         temp_file.close()
+        
         img = Image.new("RGB", (width, height), _FALLBACK_BG_COLOR)
         draw = ImageDraw.Draw(img)
         stripe_thickness = 2
@@ -37,7 +39,11 @@ def _create_fallback_image(width: int, height: int) -> str:
 
         if logo_path:
             try:
-                logo_img = Image.open(logo_path).convert("RGBA")
+                # GÜVENLİ AÇMA: with bloğu ile açıp hemen RAM'e yüklüyoruz (file descriptor sızıntısı önlenir)
+                with Image.open(logo_path) as logo_src:
+                    logo_img = logo_src.convert("RGBA")
+                    logo_img.load()
+                
                 logo_max_width = int(width * 0.25)
                 logo_orig_w, logo_orig_h = logo_img.size
                 aspect = logo_orig_h / logo_orig_w
@@ -53,13 +59,14 @@ def _create_fallback_image(width: int, height: int) -> str:
                 img_rgba = img.convert("RGBA")
                 overlay = Image.new("RGBA", (width, height), (0, 0, 0, 0))
                 overlay.paste(logo_img, (paste_x, paste_y))
-                img_rgba = Image.alpha_composite(img_rgba, overlay)
-                img = img_rgba.convert("RGB")
-                logo_img.close(); overlay.close(); img_rgba.close()
+                img = Image.alpha_composite(img_rgba, overlay)
+                
+                img_rgba.close(); overlay.close(); logo_img.close()
             except Exception as logo_err:
                 log(f"Yedek gorsele logo eklenemedi: {logo_err}", "WARNING")
         else:
             log("Logo dosyasi bulunamadi, sadece arka plan olusturuldu", "WARNING")
+            
         img.save(temp_path, format="JPEG", quality=95)
         img.close()
         log(f"Yedek gorsel hazir: {temp_path}")
@@ -76,10 +83,15 @@ def _create_fallback_image(width: int, height: int) -> str:
 
 def resize_and_crop(image_path: str, target_width: int, target_height: int) -> str:
     try:
-        img = Image.open(image_path)
+        # GÜVENLİ AÇMA: Görseli RAM'e alıp dosyayı kapatıyoruz, böylece üzerine yazabiliriz.
+        with Image.open(image_path) as img_src:
+            img_src.load()
+            img = img_src.copy()
+            
         img_width, img_height = img.size
         target_ratio = target_width / target_height
         current_ratio = img_width / img_height
+        
         if current_ratio > target_ratio:
             new_height = target_height
             new_width = int(img_width * (target_height / img_height))
@@ -94,14 +106,18 @@ def resize_and_crop(image_path: str, target_width: int, target_height: int) -> s
             img = img.crop((0, top, new_width, top + target_height))
         else:
             img = img.resize((target_width, target_height), Image.LANCZOS)
+            
         if img.size != (target_width, target_height):
             img = img.resize((target_width, target_height), Image.LANCZOS)
+            
         if img.mode == "RGBA":
             background = Image.new("RGB", img.size, (255, 255, 255))
             background.paste(img, mask=img.split()[3])
+            img.close()
             img = background
         elif img.mode != "RGB":
             img = img.convert("RGB")
+            
         img.save(image_path, format="JPEG", quality=90)
         img.close()
         return image_path
@@ -116,13 +132,18 @@ def _get_cached_logo():
     images_settings = settings_config.get("images", {})
     logo_opacity = float(images_settings.get("logo_opacity", 0.7))
     logo_path = os.path.join(get_project_root(), "assets", "logo.png")
+    
     if not os.path.exists(logo_path):
         log(f"Logo dosyasi bulunamadi: {logo_path}", "WARNING")
         _CACHED_LOGO_INFO = False
         return False
+        
     try:
-        logo_img = Image.open(logo_path)
-        if logo_img.mode != "RGBA": logo_img = logo_img.convert("RGBA")
+        # GÜVENLİ AÇMA: Cache'leme yaparken file pointer'ı kapatıyoruz.
+        with Image.open(logo_path) as f:
+            logo_img = f.convert("RGBA")
+            logo_img.load()
+            
         r, g, b, alpha = logo_img.split()
         alpha = alpha.point(lambda p: int(p * logo_opacity))
         logo_img = Image.merge("RGBA", (r, g, b, alpha))
@@ -141,17 +162,26 @@ def add_logo(image_path: str) -> str:
     padding = 20
     cached_logo = _get_cached_logo()
     if not cached_logo: return image_path
+    
     try:
-        base_img = Image.open(image_path)
+        # GÜVENLİ AÇMA: Görseli RAM'e alıp dosyayı kapatıyoruz.
+        with Image.open(image_path) as base_src:
+            base_src.load()
+            base_img = base_src.copy()
+            
         base_width, base_height = base_img.size
         if base_img.mode != "RGBA": base_img = base_img.convert("RGBA")
+        
         logo_target_width = int(base_width * logo_size_percent / 100)
         logo_orig_w, logo_orig_h = cached_logo.size
         aspect = logo_orig_h / logo_orig_w
         logo_target_height = int(logo_target_width * aspect)
+        
+        # cached_logo.copy() ile cache'i bozmadan yeni bir obje oluşturuyoruz
         logo_img = cached_logo.copy()
         logo_img = logo_img.resize((logo_target_width, logo_target_height), Image.LANCZOS)
         logo_w, logo_h = logo_img.size
+        
         position_map = {
             "bottom_right": (base_width - logo_w - padding, base_height - logo_h - padding),
             "bottom_left": (padding, base_height - logo_h - padding),
@@ -160,11 +190,15 @@ def add_logo(image_path: str) -> str:
         }
         pos_x, pos_y = position_map.get(logo_position, position_map["bottom_right"])
         pos_x = max(0, pos_x); pos_y = max(0, pos_y)
+        
         overlay = Image.new("RGBA", base_img.size, (0, 0, 0, 0))
         overlay.paste(logo_img, (pos_x, pos_y))
         base_img = Image.alpha_composite(base_img, overlay)
+        
+        # Kaydetme işlemi için RGB'ye çevirip dosyaya yazıyoruz
         final_img = base_img.convert("RGB")
         final_img.save(image_path, format="JPEG", quality=90)
+        
         base_img.close(); logo_img.close(); overlay.close(); final_img.close()
         return image_path
     except Exception as exc:
