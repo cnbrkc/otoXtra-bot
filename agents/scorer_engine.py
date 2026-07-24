@@ -1,6 +1,6 @@
 """
 agents/scorer_engine.py - Puanlama Motoru ve Bonus Hesaplamaları (v5.3)
-AI ile iletişim, batch puanlama, tazelik/trend bonusları ve eşik filtreleme burada.
+v1.2: DRY prensibi - Tarih işlemleri merkezi helpers'tan çekiliyor.
 """
 import time
 from datetime import timedelta
@@ -8,7 +8,7 @@ from typing import Optional, Tuple
 
 from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
-from core.helpers import get_posted_news, get_today_post_count, get_turkey_now
+from core.helpers import get_posted_news, get_today_post_count, get_turkey_now, _parse_dt_safe, _safe_int
 from core.logger import log
 from agents.scorer_helpers import (
     BATCH_DELAY_SECONDS, BATCH_SIZE, FALLBACK_SCORE_HIGH, FALLBACK_SCORE_LOW, 
@@ -17,8 +17,8 @@ from agents.scorer_helpers import (
     _allow_skip_as_success, _apply_component_delta, _breakdown_total, _clamp_score,
     _extract_raw_ai_score, _extract_score_breakdown, _format_articles_numbered,
     _is_probably_ten_scale, _is_score_breakdown_enabled, _mark_unscored_batch,
-    _match_ai_results_to_articles, _normalize_ai_results, _normalize_ai_score,
-    _safe_int, _split_into_batches
+    _match_ai_results_to_articles, _normalize_ai_results, _normalize_ai_score, 
+    _split_into_batches
 )
 
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -212,32 +212,21 @@ def run_viral_scoring(articles: list) -> list:
 def _calculate_freshness_bonus(published_str: str) -> int:
     if not published_str:
         return 0
-    try:
-        from datetime import datetime, timezone
-
-        try:
-            from dateutil import parser as dateutil_parser
-            pub_dt = dateutil_parser.parse(published_str)
-        except ImportError:
-            cleaned = published_str.strip()
-            if cleaned.endswith("Z"):
-                cleaned = cleaned[:-1] + "+00:00"
-            pub_dt = datetime.fromisoformat(cleaned)
-
-        if pub_dt.tzinfo is None:
-            pub_dt = pub_dt.replace(tzinfo=timezone(timedelta(hours=3)))
-
-        age_hours = (get_turkey_now() - pub_dt).total_seconds() / 3600
-        if age_hours < 0:
-            return 0
-
-        for max_hours, bonus in FRESHNESS_TIERS:
-            if age_hours < max_hours:
-                return bonus
-
-        return FRESHNESS_OLD_MALUS
-    except Exception:
+        
+    # DRY: Merkezi _parse_dt_safe kullanılıyor
+    pub_dt = _parse_dt_safe(published_str)
+    if not pub_dt:
         return 0
+
+    age_hours = (get_turkey_now() - pub_dt).total_seconds() / 3600
+    if age_hours < 0:
+        return 0
+
+    for max_hours, bonus in FRESHNESS_TIERS:
+        if age_hours < max_hours:
+            return bonus
+
+    return FRESHNESS_OLD_MALUS
 
 def apply_freshness_bonus(scored_articles: list) -> list:
     if not scored_articles:
