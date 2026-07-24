@@ -1,6 +1,7 @@
 """
 agents/image_utils.py - Görsel Doğrulama, URL İşlemleri ve Puanlama
 Limit kontrolü, perceptual hash, duplicate tespiti ve URL normalize işlemleri burada.
+v1.1: Bellek sızıntısı önleme (with blokları eklendi).
 """
 import hashlib
 import json
@@ -71,21 +72,18 @@ _NITTER_PIC_PATTERN = re.compile(
 _TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
 
 def _read_int_env(name: str) -> Optional[int]:
-    """Environment variable (ENV) değerini int olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return None
     try: return int(raw.strip())
     except Exception: return None
 
 def _read_float_env(name: str) -> Optional[float]:
-    """Environment variable (ENV) değerini float olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return None
     try: return float(raw.strip())
     except Exception: return None
 
 def _read_bool_env(name: str) -> Optional[bool]:
-    """Environment variable (ENV) değerini boolean olarak okur."""
     raw = os.environ.get(name)
     if raw is None: return None
     value = raw.strip().lower()
@@ -94,26 +92,21 @@ def _read_bool_env(name: str) -> Optional[bool]:
     return None
 
 def _safe_unlink(path: str) -> None:
-    """Belirtilen yoldaki dosyayı güvenli şekilde siler (hata vermez)."""
     try: os.unlink(path)
     except OSError: pass
 
 def _is_test_mode() -> bool:
-    """Test modunun aktif olup olmadığını kontrol eder (ENV veya CLI argümanı ile)."""
     return _read_bool_env("IMAGE_TEST_MODE") == True
 
 def _is_nitter_url(url: str) -> bool:
-    """Verilen URL'nin bir Nitter instance'ına ait olup olmadığını kontrol eder."""
     host = (urlparse(url).netloc or "").lower()
     return "nitter." in host or host.startswith("nitter")
 
 def _is_profile_image_url(url: str) -> bool:
-    """URL'nin bir Twitter/Nitter profil fotosu mu yoksa içerik görseli mi olduğunu kontrol eder."""
     lower = url.lower()
     return "/profile_images/" in lower or "/profile_banners/" in lower
 
 def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
-    """Nitter /pic/ formatındaki URL'leri orijinal Twitter CDN (pbs.twimg.com) URL'sine çevirir."""
     if not raw_url: return ""
     parsed_raw = urlparse(raw_url)
     if parsed_raw.netloc in _TWITTER_CDN_HOSTS: return raw_url  
@@ -129,7 +122,6 @@ def _resolve_nitter_image_url(raw_url: str, nitter_base: str = "") -> str:
     return ""
 
 def _get_image_validation_limits() -> Dict[str, Any]:
-    """Görsel doğrulama limitlerini (minumum genişlik, yükseklik, alan, oran) ENV veya varsayılan değerlerden üretir."""
     min_width = _read_int_env("IMAGE_MIN_WIDTH")
     min_height = _read_int_env("IMAGE_MIN_HEIGHT")
     min_area = _read_int_env("IMAGE_MIN_AREA")
@@ -148,7 +140,6 @@ def _get_image_validation_limits() -> Dict[str, Any]:
     return limits
 
 def _build_relaxed_limits(limits: Dict[str, Any]) -> Dict[str, Any]:
-    """Standart limitlerin altında kalan görseller için gevşetilmiş (relaxed) limitleri üretir."""
     min_w = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
     min_h = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
     min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
@@ -167,7 +158,6 @@ def _build_relaxed_limits(limits: Dict[str, Any]) -> Dict[str, Any]:
     return relaxed
 
 def _get_platform_resize_limits() -> Dict[str, Any]:
-    """Platform (Facebook/Threads) için maksimum görsel boyut limitlerini getirir."""
     max_width = _read_int_env("IMAGE_PLATFORM_MAX_WIDTH")
     max_height = _read_int_env("IMAGE_PLATFORM_MAX_HEIGHT")
     max_area = _read_int_env("IMAGE_PLATFORM_MAX_AREA")
@@ -180,8 +170,8 @@ def _get_platform_resize_limits() -> Dict[str, Any]:
     }
 
 def _should_resize_for_platform(image_path: str, limits: Dict[str, Any]) -> Tuple[bool, str]:
-    """Görselin platform limitlerini aşıp aşmadığını kontrol eder, resize gerekiyorsa sebep döndürür."""
     try:
+        # GÜVENLİ AÇMA
         with Image.open(image_path) as img:
             width, height = img.size
         area = width * height
@@ -197,7 +187,7 @@ def _should_resize_for_platform(image_path: str, limits: Dict[str, Any]) -> Tupl
         return True, f"meta_read_error:{exc}"
 
 def _file_sha256(path: str) -> str:
-    """Verilen dosyanın SHA256 hash değerini hesaplar (duplikasyon kontrolü için)."""
+    # GÜVENLİ AÇMA
     h = hashlib.sha256()
     with open(path, "rb") as f:
         for chunk in iter(lambda: f.read(1024 * 1024), b""):
@@ -205,7 +195,6 @@ def _file_sha256(path: str) -> str:
     return h.hexdigest()
 
 def _normalize_url(raw_url: str, base_url: str = "") -> str:
-    """Görsel URL'sini temizler (tracking parametrelerini atar, Nitter'i çevirir, göreli URL'leri tamamlar)."""
     if not raw_url: return ""
     url = raw_url.strip()
     if not url: return ""
@@ -221,7 +210,6 @@ def _normalize_url(raw_url: str, base_url: str = "") -> str:
     return urlunparse(cleaned)
 
 def _normalize_path_for_candidate_key(path: str) -> str:
-    """Dosya yolunu normalize ederek candidate key oluşturulmasına uygun hale getirir."""
     if not path: return path
     dir_part, _, filename = path.rpartition("/")
     name, dot, ext = filename.partition(".")
@@ -232,7 +220,6 @@ def _normalize_path_for_candidate_key(path: str) -> str:
     return f"{dir_part}/{normalized_filename}" if dir_part else normalized_filename
 
 def _looks_like_noise(url: str) -> bool:
-    """URL'nin bir gürültü (logo, ikon, banner, profil fotosu vb.) olup olmadığını kontrol eder."""
     lower = url.lower()
     parsed = urlparse(lower)
     path = parsed.path or ""
@@ -248,7 +235,6 @@ def _looks_like_noise(url: str) -> bool:
     return False
 
 def _is_probable_image_url(url: str) -> bool:
-    """URL'nin gerçek bir görsel dosyasına (.jpg, .png vb.) işaret edip etmediğini kontrol eder."""
     lower = url.lower()
     parsed = urlparse(lower)
     host = parsed.netloc or ""
@@ -263,7 +249,6 @@ def _is_probable_image_url(url: str) -> bool:
     return False
 
 def _donanimhaber_variants(url: str) -> List[str]:
-    """Donanimhaber sitesine özel görsel boyut formatlarını varyant olarak üretir."""
     variants = [url]
     parsed = urlparse(url)
     host = parsed.netloc.lower()
@@ -290,7 +275,6 @@ def _donanimhaber_variants(url: str) -> List[str]:
     return unique
 
 def _thumbnail_to_original_variants(url: str) -> List[str]:
-    """Thumbnail (küçük resim) URL'sinden orijinal büyük resim URL varyantlarını türetir."""
     parsed_check = urlparse(url)
     if parsed_check.netloc in _TWITTER_CDN_HOSTS: return [url]
     variants = [url]
@@ -318,7 +302,6 @@ def _thumbnail_to_original_variants(url: str) -> List[str]:
     return unique
 
 def _candidate_key(url: str) -> str:
-    """URL'yi duplikasyon kontrolü için standart bir anahtara (key) dönüştürür."""
     parsed = urlparse(url)
     path = _normalize_path_for_candidate_key(parsed.path or "")
     path = re.sub(r"-(\d{2,4})x(\d{2,4})(\.(?:jpg|jpeg|png|webp|gif|bmp|avif))$", r"\3", path, flags=re.IGNORECASE)
@@ -326,7 +309,6 @@ def _candidate_key(url: str) -> str:
     return urlunparse(parsed._replace(path=path, query=urlencode(filtered_qs), fragment="")).lower()
 
 def _visual_signature(url: str) -> str:
-    """Görsel URL'sinden, görselin görsel imzasını (signature) üretir (perceptual hash eşleştirme için)."""
     parsed = urlparse(url.lower())
     path = parsed.path or ""
     filename = path.rsplit("/", 1)[-1]
@@ -339,7 +321,7 @@ def _visual_signature(url: str) -> str:
     return f"{host}:{stem}"
 
 def _dhash(path: str) -> int:
-    """Verilen görsel dosyasının dhash (difference hash) değerini hesaplar."""
+    # GÜVENLİ AÇMA
     with Image.open(path) as img:
         gray = img.convert("L").resize((9, 8), Image.LANCZOS)
         pixels = list(gray.getdata())
@@ -351,11 +333,9 @@ def _dhash(path: str) -> int:
     return bits
 
 def _hamming(a: int, b: int) -> int:
-    """İki hash arasındaki Hamming mesafesini (fark bit sayısı) hesaplar."""
     return (a ^ b).bit_count()
 
 def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
-    """HTML srcset özniteliğinden en yüksek çözünürlüklü görsel URL'sini çıkarır."""
     best_url = ""; best_score = -1.0
     for item in srcset.split(","):
         item = item.strip()
@@ -377,7 +357,6 @@ def _extract_best_src_from_srcset(srcset: str, page_url: str) -> str:
     return best_url
 
 def _walk_json_for_image_urls(node: Any, out: List[str]) -> None:
-    """JSON ağacını dolaşarak içindeki görsel URL'lerini toplar."""
     if isinstance(node, dict):
         for key, value in node.items():
             lk = str(key).lower()
@@ -397,7 +376,6 @@ def _walk_json_for_image_urls(node: Any, out: List[str]) -> None:
             _walk_json_for_image_urls(item, out)
 
 def _collect_jsonld_images(node: Any, page_url: str, collector: List[str]) -> None:
-    """Schema.org JSON-LD verisinden görsel URL'lerini çıkarır ve toplar."""
     if isinstance(node, dict):
         image_value = node.get("image")
         if isinstance(image_value, str):
@@ -423,7 +401,6 @@ def _collect_jsonld_images(node: Any, page_url: str, collector: List[str]) -> No
             _collect_jsonld_images(item, page_url, collector)
 
 def _extract_json_image_urls(script_text: str) -> List[str]:
-    """Script etiketi içeriğinden regex ile görsel URL'leri çıkarır."""
     if not script_text or not script_text.strip(): return []
     text = script_text.strip()
     urls = []
@@ -438,7 +415,6 @@ def _extract_json_image_urls(script_text: str) -> List[str]:
     return urls
 
 def _upsert_candidate(pool: List[Dict[str, Any]], candidate: Dict[str, Any]) -> None:
-    """Aday havuzuna yeni görsel ekler, aynı key varsa önceliğe göre günceller."""
     key = candidate.get("key", "")
     if not key: return
     for idx, existing in enumerate(pool):
@@ -450,7 +426,6 @@ def _upsert_candidate(pool: List[Dict[str, Any]], candidate: Dict[str, Any]) -> 
     pool.append(candidate)
 
 def _append_field_candidates(pool: List[Dict[str, Any]], value: str, base_url: str, source_type: str) -> None:
-    """Article nesnesi içindeki alanlardan görsel adaylarını havuza ekler."""
     if not isinstance(value, str) or not value.strip(): return
     normalized = _normalize_url(value.strip(), base_url)
     if not normalized: return
@@ -458,7 +433,6 @@ def _append_field_candidates(pool: List[Dict[str, Any]], value: str, base_url: s
         _upsert_candidate(pool, {"url": variant, "key": _candidate_key(variant), "source_type": source_type, "priority": _SOURCE_PRIORITY.get(source_type, 99)})
 
 def _add_scrape_candidate(pool: List[Dict[str, Any]], raw_url: str, page_url: str, source_type: str) -> None:
-    """Scrape edilen HTML içerikten bulunan görsel URL'sini havuza işler ve ekler."""
     normalized = _normalize_url(raw_url, page_url)
     if not normalized: return
     for variant in _thumbnail_to_original_variants(normalized):
@@ -468,57 +442,64 @@ def _add_scrape_candidate(pool: List[Dict[str, Any]], raw_url: str, page_url: st
         _upsert_candidate(pool, {"url": variant, "key": _candidate_key(variant), "source_type": source_type, "priority": _SOURCE_PRIORITY.get(source_type, 99)})
 
 def _download_image_with_reason(image_url: str, limits: Dict[str, Any]) -> Tuple[Optional[str], str]:
-    """Verilen URL'den görseli indirir, limitlere göre doğrular ve geçici dosya yolunu döndürür."""
     if not image_url: return None, "empty_url"
     min_width = int(limits.get("min_width", _DEFAULT_MIN_IMAGE_WIDTH))
     min_height = int(limits.get("min_height", _DEFAULT_MIN_IMAGE_HEIGHT))
     min_area = int(limits.get("min_area", _DEFAULT_MIN_IMAGE_AREA))
     min_aspect = float(limits.get("min_aspect", _DEFAULT_MIN_ASPECT_RATIO))
     max_aspect = float(limits.get("max_aspect", _DEFAULT_MAX_ASPECT_RATIO))
+    
+    temp_path = ""
     try:
         response = requests.get(image_url, headers={"User-Agent": _USER_AGENT}, timeout=_REQUEST_TIMEOUT, stream=True)
         response.raise_for_status()
         content_type = response.headers.get("Content-Type", "")
         if content_type and not content_type.startswith("image/"):
             return None, f"not_image_content_type:{content_type}"
-        temp_file = tempfile.NamedTemporaryFile(suffix=".jpg", delete=False, prefix="otoxtra_img_")
-        temp_path = temp_file.name
-        downloaded = 0
-        for chunk in response.iter_content(chunk_size=8192):
-            if not chunk: continue
-            downloaded += len(chunk)
-            if downloaded > _MAX_DOWNLOAD_BYTES:
-                temp_file.close(); _safe_unlink(temp_path); return None, "download_too_large"
-            temp_file.write(chunk)
-        temp_file.close()
-        try:
-            with Image.open(temp_path) as img:
-                img_width, img_height = img.size
-            area = img_width * img_height
-            if img_width < min_width or img_height < min_height or area < min_area:
-                _safe_unlink(temp_path); return None, f"too_small:{img_width}x{img_height}:area={area}"
-            ratio = img_width / img_height if img_height else 0.0
-            if ratio < min_aspect or ratio > max_aspect:
-                _safe_unlink(temp_path); return None, f"bad_aspect:{img_width}x{img_height}:ratio={ratio:.3f}"
-        except Exception:
-            _safe_unlink(temp_path); return None, "invalid_image_file"
+            
+        # GÜVENLİ AÇMA: tempfile ile güvenli yazma
+        with tempfile.NamedTemporaryFile(suffix=".jpg", delete=False, prefix="otoxtra_img_") as temp_file:
+            temp_path = temp_file.name
+            downloaded = 0
+            for chunk in response.iter_content(chunk_size=8192):
+                if not chunk: continue
+                downloaded += len(chunk)
+                if downloaded > _MAX_DOWNLOAD_BYTES:
+                    temp_file.close()
+                    _safe_unlink(temp_path)
+                    return None, "download_too_large"
+                temp_file.write(chunk)
+                
+        # GÜVENLİ AÇMA: Görseli kontrol et
+        with Image.open(temp_path) as img:
+            img_width, img_height = img.size
+            
+        area = img_width * img_height
+        if img_width < min_width or img_height < min_height or area < min_area:
+            _safe_unlink(temp_path); return None, f"too_small:{img_width}x{img_height}:area={area}"
+        ratio = img_width / img_height if img_height else 0.0
+        if ratio < min_aspect or ratio > max_aspect:
+            _safe_unlink(temp_path); return None, f"bad_aspect:{img_width}x{img_height}:ratio={ratio:.3f}"
+            
         return temp_path, f"ok:{img_width}x{img_height}"
     except requests.exceptions.Timeout:
+        if temp_path: _safe_unlink(temp_path)
         return None, "timeout"
     except requests.exceptions.RequestException as exc:
+        if temp_path: _safe_unlink(temp_path)
         return None, f"http_error:{exc}"
     except Exception as exc:
+        if temp_path: _safe_unlink(temp_path)
         return None, f"unexpected_error:{exc}"
 
 def _read_image_meta(path: str) -> Tuple[int, int, int]:
-    """Görsel dosyasının genişlik, yükseklik ve dosya boyutunu (KB) okur."""
+    # GÜVENLİ AÇMA
     with Image.open(path) as img:
         width, height = img.size
     size_kb = max(1, os.path.getsize(path) // 1024)
     return width, height, size_kb
 
 def _score_image_quality(width: int, height: int, size_kb: int, source_type: str, target_ratio: float) -> Tuple[float, str]:
-    """Görselin kalitesini (çözünürlük, oran, boyut, kaynak tipi) puanlar."""
     area = width * height
     ratio = width / height if height else 0.0
     resolution_score = min(25.0, (area / 1_200_000.0) * 25.0)
@@ -533,13 +514,11 @@ def _score_image_quality(width: int, height: int, size_kb: int, source_type: str
     return total, detail
 
 def _adaptive_perceptual_threshold(base_threshold: int, current_signature: str, previous_signature: str) -> int:
-    """Görsel imzalarına göre perceptual hash eşik değerini dinamik olarak ayarlar."""
     if current_signature and previous_signature and current_signature == previous_signature:
         return base_threshold + 3
     return base_threshold
 
 def download_image(image_url: str) -> Optional[str]:
-    """Dışarıdan çağrılabilen public fonksiyon: Görseli indirir ve geçici dosya yolunu döndürür."""
     limits = _get_image_validation_limits()
     image_path, reason = _download_image_with_reason(image_url, limits)
     if image_path:
