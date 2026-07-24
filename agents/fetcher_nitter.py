@@ -1,7 +1,9 @@
 """
 agents/fetcher_nitter.py - Nitter ve Twitter Görsel Çekme İşlemleri
 FxTwitter API, Nitter HTML parse ve x.com og:image fallback fonksiyonları burada.
+v1.1: Spesifik hata yakalama (RequestException, JSONDecodeError) eklendi.
 """
+import json
 import requests
 from bs4 import BeautifulSoup
 from urllib.parse import urlparse
@@ -39,8 +41,16 @@ def _extract_tweet_images_via_fxtwitter(tweet_url: str, timeout: int = 20) -> li
                 results.append(thumb)
         if results:
             log(f"FxTwitter API: {len(results)} gorsel bulundu: {tweet_url[:80]}")
+    except requests.exceptions.Timeout:
+        log(f"FxTwitter API zaman asimi: {tweet_url[:80]}", "WARNING")
+    except requests.exceptions.ConnectionError:
+        log(f"FxTwitter API baglanti hatasi: {tweet_url[:80]}", "WARNING")
+    except requests.exceptions.RequestException as exc:
+        log(f"FxTwitter API HTTP hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+    except (json.JSONDecodeError, ValueError) as exc:
+        log(f"FxTwitter API JSON decode hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
     except Exception as exc:
-        log(f"FxTwitter API hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+        log(f"FxTwitter API beklenmedik hata: {tweet_url[:80]} -> {exc}", "WARNING")
     return results
 
 def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
@@ -63,8 +73,10 @@ def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
             if not img_url or _is_profile_image_url(img_url): continue
             if "pbs.twimg.com" in img_url and img_url not in results:
                 results.append(img_url)
+    except requests.exceptions.RequestException as exc:
+        log(f"Twitter og:image HTTP hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
     except Exception as exc:
-        log(f"Twitter og:image cekme hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+        log(f"Twitter og:image beklenmedik hata: {tweet_url[:80]} -> {exc}", "WARNING")
     return results
 
 def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) -> list[str]:
@@ -75,8 +87,11 @@ def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) ->
         response = _request_with_retry(tweet_url, timeout=timeout, attempts=3, base_wait_seconds=1.8)
         response.encoding = response.apparent_encoding or "utf-8"
         soup = BeautifulSoup(response.text, "html.parser")
+    except requests.exceptions.RequestException as exc:
+        log(f"Nitter tweet sayfasi HTTP hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+        return []
     except Exception as exc:
-        log(f"Nitter tweet sayfasi alinamadi: {tweet_url[:80]} -> {exc}", "WARNING")
+        log(f"Nitter tweet sayfasi beklenmedik hata: {tweet_url[:80]} -> {exc}", "WARNING")
         return []
 
     results = []
