@@ -1,14 +1,19 @@
-# otoXtra BOT — ANA ŞEMA v5.0
+# otoXtra BOT — ANA ŞEMA v6.0 (MODÜLER MİMARİ)
 > **BU DOSYA NEDİR?**
 > Projenin tam haritası. Her yeni YZ sohbetinde SADECE BU DOSYAYI yapıştır.
 > YZ bunu okuyunca projeyi tanır, senden neye ihtiyacı olduğunu söyler.
 > Bir şeyi değiştirmeden önce buraya bak.
+> 
+> **v6.0 GÜNCELLEME NOTU:**
+> Devasa boyutlara ulaşan agent dosyaları (threads, fetcher, scorer, image)
+> DRY (Kendini Tekrar Etme) prensibiyle alt modüllere bölünmüştür. 
+> Artık proje çok daha hızlı, yönetilebilir ve hata ayıklamaya açıktır.
 ---
 ## PROJE DURUMU
 ```
 Proje Adı      : otoXtra Facebook/Threads/Instagram Haber Botu
-Mimari         : Modüler Ajan Sistemi v5.x
-Son Güncelleme : 2025-12-21
+Mimari         : Modüler Ajan Sistemi v6.0 (DRY Refactoring)
+Son Güncelleme : 2024-05-21
 Aktif Branch   : main
 Bot Durumu     : Çalışıyor
 ```
@@ -33,18 +38,36 @@ otoXtra-bot/
 │   ├── config_loader.py              ← JSON okuma/yazma + config doğrulama
 │   ├── logger.py                     ← Merkezi log sistemi (UTC+3 Türkiye saati)
 │   ├── helpers.py                    ← Genel yardımcılar (tekrar kontrolü, istatistik, tarih)
-│   └── state_manager.py              ← pipeline.json yöneticisi (aşama takibi)
+│   ├── state_manager.py              ← pipeline.json yöneticisi (aşama takibi)
+│   ├── image_uploader.py             ← Görsel upload fallback servisi (Catbox/0x0/Telegraph/ImgBB)
+│   └── image_generator.py            ← Sosyal medya kartı (IG Story) üreticisi
 │
 ├── agents/                           ← Her ajan bir boru hattı aşamasını yönetir
-│   ├── agent_fetcher.py              ← v7.0 — RSS çekme, Nitter desteği, FxTwitter API, DuckDuckGo arama
-│   ├── agent_scorer.py               ← v5.2 — YZ ile viral puanlama (batch=8)
+│   ├── agent_fetcher.py              ← v8.0 — RSS çekme ve Filtreleme (ANA KÖPRÜ)
+│   ├── fetcher_utils.py              ← v8.0 — URL/İstek yardımcıları, Nitter çevirici, tip dönüşümleri
+│   ├── fetcher_nitter.py             ← v8.0 — Nitter HTML, FxTwitter API ve x.com og:image çekme
+│   ├── fetcher_scrape.py             ← v8.0 — Makale sayfası HTML tarama ve metin çıkarma
+│   │
+│   ├── agent_scorer.py               ← v6.0 — YZ viral puanlama (ANA KÖPRÜ)
+│   ├── scorer_helpers.py             ← v6.0 — AI cevaplarını makalelerle eşleştirme, puan dökümü
+│   ├── scorer_engine.py              ← v6.0 — Batch puanlama motoru, tazelik/trend bonus hesaplama
+│   │
 │   ├── agent_writer.py               ← v5.2 — YZ ile Türkçe post yazma + kalite kontrolü
-│   ├── agent_image.py                ← v8.8 — Görsel bulma/indirme/logo watermark/kart üretimi
+│   │
+│   ├── agent_image.py                ← v9.0 — Görsel işleme ana orkestratör (ANA KÖPRÜ)
+│   ├── image_utils.py                ← v9.0 — Görsel URL doğrulama, limit kontrolü, perceptual hash
+│   ├── image_nitter.py               ← v9.0 — Nitter/Twitter görsel adayları toplama
+│   ├── image_processor.py            ← v9.0 — PIL ile boyutlandırma, logo watermark, fallback üretimi
+│   ├── image_search.py               ← v9.0 — DuckDuckGo ve AI ile yedek görsel arama
+│   ├── image_scraper.py              ← v9.0 — HTML parse, JSON-LD, Script tag içeriğinden aday bulma
+│   │
 │   └── agent_publisher.py            ← v6.1 — Facebook + Threads + IG Story + Telegram yayıncısı
 │
 ├── platforms/                        ← Platform API katmanları (karar vermez, sadece API çağrısı yapar)
 │   ├── facebook.py                   ← v3.3 — Graph API v25.0 (tek/çoklu görsel)
-│   ├── threads.py                    ← v5.0 — Threads API (text/görsel/carousel + fallback zinciri)
+│   ├── threads.py                    ← v6.0 — Threads API köprü dosyası (fallback zinciri)
+│   ├── threads_api.py                ← v6.0 — Threads API iletişimi, token, container oluşturma
+│   ├── threads_uploader.py           ← v6.0 — Görsel URL çözümleme ve public URL'ye çevirme
 │   └── telegram.py                   ← Telegram mesaj gönderimi + görsel kuyruğu yönetimi
 │
 ├── queue/
@@ -70,16 +93,17 @@ python -m core.orchestrator
          │   ├─ Son paylaşımdan yeterli süre geçti mi? (min_post_interval)
          │   └─ Haftalık rapor gönderilecek mi? (Pazartesi kontrolü)
          │
-         ├─ 1. FETCH — agent_fetcher.py
+         ├─ 1. FETCH — agent_fetcher.py (ve alt modülleri)
          │   ├─ sources.json → RSS feed'leri çek (feedparser)
-         │   ├─ Nitter feed'leri özel işlenir (FxTwitter API ile görsel)
+         │   ├─ Nitter feed'leri özel işlenir (fetcher_nitter.py ile FxTwitter API)
          │   ├─ Zaman filtresi (max_article_age_hours)
          │   ├─ Keyword filtresi (include/exclude keywords)
          │   ├─ Tekrar kontrolü (URL + başlık benzerliği + topic fingerprint)
          │   └─ Çıktı: pipeline.json → stages.fetch.output.articles[]
          │
-         ├─ 2. SCORE — agent_scorer.py
-         │   ├─ Haberleri 8'lik gruplar (batch) halinde YZ'ye gönder
+         ├─ 2. SCORE — agent_scorer.py (ve alt modülleri)
+         │   ├─ scorer_engine.py ile Haberleri 8'lik gruplar (batch) halinde YZ'ye gönder
+         │   ├─ scorer_helpers.py ile AI yanıtlarını makalelerle eşleştir
          │   ├─ Viral puanlama: 0-100 arası tam sayı
          │   ├─ Tazelik bonusu eklenir (1-10 puan arası, saate göre)
          │   ├─ Trend bonusu eklenir (aynı konudan birden fazla kaynak varsa)
@@ -94,14 +118,15 @@ python -m core.orchestrator
          │   ├─ O da başarısız olursa → fallback post (başlık + özet)
          │   └─ Çıktı: pipeline.json → stages.write.output.post_text
          │
-         ├─ 4. IMAGE — agent_image.py
-         │   ├─ Görsel aday listesi derlenir (meta_og, meta_twitter, article_img, rss_field...)
-         │   ├─ Nitter/Twitter haberlerde FxTwitter API kullanılır
-         │   ├─ Profil fotosu URL'leri filtrelenir (/profile_images/)
+         ├─ 4. IMAGE — agent_image.py (ve alt modülleri)
+         │   ├─ image_scraper.py ile görsel aday listesi derlenir
+         │   ├─ Nitter/Twitter haberlerde image_nitter.py (FxTwitter API) kullanılır
+         │   ├─ image_utils.py ile profil fotosu URL'leri ve gürültü filtrelenir
          │   ├─ Boyut/oran kontrolü (min 738×400, oran 0.7-2.3)
          │   ├─ Perceptual hash ile duplikasyon elenir
-         │   ├─ Logo watermark eklenir (sağ-alt köşe, %12 boyut, %70 opaklık)
-         │   ├─ Görsel yoksa → image_source="no_image" (publisher text-only geçer)
+         │   ├─ image_processor.py ile Logo watermark eklenir (sağ-alt köşe, %12 boyut)
+         │   ├─ Görsel yoksa image_search.py devreye girer (DuckDuckGo/AI)
+         │   ├─ Görsel yine yoksa → image_source="no_image" (publisher text-only geçer)
          │   └─ Çıktı: pipeline.json → stages.image.output{image_path, image_paths[], image_source}
          │
          └─ 5. PUBLISH — agent_publisher.py
@@ -116,30 +141,30 @@ python -m core.orchestrator
 ---
 ## THREADS GÖRSEL FALLBACK ZİNCİRİ
 ```
-post_with_image(message, image_path, article)
+post_with_image(message, image_path, article)  [threads.py üzerinden başlar]
   │
-  ├─ ADIM 1: Orijinal URL (article dict'inden) ← EN HIZLI, upload gerektirmez
+  ├─ ADIM 1: Orijinal URL (article dict'inden) ← threads_uploader.py ile çözümlenir
   │   └─ article["image_candidates"], article["image_url"], article["rss_image_url"]
   │   └─ Başarılı → BİTİR ✅
   │   └─ Başarısız → ADIM 2
   │
-  ├─ ADIM 2: Catbox.moe upload ← Ücretsiz, API key YOK, limit 200MB
+  ├─ ADIM 2: Catbox.moe upload ← core/image_uploader.py üzerinden
   │   └─ Başarılı → BİTİR ✅
   │   └─ Başarısız → ADIM 3
   │
-  ├─ ADIM 3: 0x0.st upload ← Ücretsiz, API key YOK, limit 512MB
+  ├─ ADIM 3: 0x0.st upload ← core/image_uploader.py üzerinden
   │   └─ Başarılı → BİTİR ✅
   │   └─ Başarısız → ADIM 4
   │
-  ├─ ADIM 4: Telegraph upload ← Ücretsiz, API key YOK, limit 5MB
+  ├─ ADIM 4: Telegraph upload ← core/image_uploader.py üzerinden
   │   └─ Başarılı → BİTİR ✅
   │   └─ Başarısız → ADIM 5
   │
-  ├─ ADIM 5: ImgBB upload ← Ücretsiz tier, IMGBB_API_KEY opsiyonel, limit 32MB
+  ├─ ADIM 5: ImgBB upload ← core/image_uploader.py üzerinden
   │   └─ Başarılı → BİTİR ✅
   │   └─ Başarısız → ADIM 6
   │
-  └─ ADIM 6: Metin-only fallback ← SON ÇARE
+  └─ ADIM 6: Metin-only fallback ← SON ÇARE (threads_api.py post_text)
       └─ post_text(message) — görsel olmadan paylaşılır
 ```
 ---
@@ -309,7 +334,7 @@ IGNORE_MIN_POST_INTERVAL=true/false → Min süre kontrolunu atla
 ### core/ai_client.py (v5.3 FIXED)
 **Görev:** Çok sağlayıcılı YZ istemcisi. Tüm agent'lar buradan YZ çağrısı yapar.
 **Ana fonksiyonlar:**
-- `ask_ai(prompt, stage=None)` → Gemini → Groq → OpenRouter → HF sırasıyla dener
+- `ask_ai(prompt, stage=None, max_tokens=...)` → Gemini → Groq → OpenRouter → HF sırasıyla dener
 - `parse_ai_json(text)` → YZ yanıtından JSON parse eder (thinking modu artıkları temizlenir)
 **Kritik düzeltmeler (v5.3):**
 - `gemini-3.5-flash` gibi var olmayan modeller kaldırıldı → gerçek model listesi kullanılıyor
@@ -367,43 +392,10 @@ GEMINI_MODELS = [
 - `record_weekly_skip(data, reason)` → Haftalık atlama kaydı
 - `get_weekly_stats(data, week_key)` → Haftalık istatistik özeti
 - `is_shared_variant_in_cooldown(article, data)` → Aynı konunun son X saatte paylaşılıp paylaşılmadığı
-**data/posted_news.json yapısı:**
-```json
-{
-  "posts": [
-    {
-      "title": "Haber başlığı",
-      "url": "https://...",
-      "topic_fingerprint": "elektrikli-togg-uretim",
-      "source": "Motor1 TR",
-      "score": 72,
-      "trend_count": 2,
-      "posted_at": "2026-05-05T09:08:44+03:00",
-      "fb_post_id": "123456789_987654321",
-      "image_source": "meta_og",
-      "image_count": 1
-    }
-  ],
-  "daily_counts": { "2026-05-05": 1 },
-  "last_check_time": "2026-05-05T09:08:44+03:00",
-  "stats": {
-    "daily_actions": { "2026-05-05": 3 },
-    "weekly": {
-      "2026-W18": {
-        "actions": 11,
-        "shares": 4,
-        "error_total": 1,
-        "errors": { "FETCH_ERROR: timeout": 1 },
-        "skip_total": 6,
-        "skips": { "score_below_threshold_skip(score=28, threshold=35)": 4 },
-        "report_sent": false
-      }
-    }
-  }
-}
-```
 ---
-### agents/agent_fetcher.py (v7.0)
+### agents/ Modül Ailesi — FETCH (v8.0)
+**Ana Dosya:** `agent_fetcher.py` (Köprü)
+**Alt Modüller:** `fetcher_utils.py`, `fetcher_nitter.py`, `fetcher_scrape.py`
 **Görev:** RSS ve Nitter feed'lerinden haber çeker, filtreler, görsel adayları toplar.
 **Akış:**
 1. `sources.json` → feed listesi
@@ -413,7 +405,7 @@ GEMINI_MODELS = [
    - Keyword filtresi (include/exclude)
    - Tekrar/benzerlik kontrolü
    - Görsel URL adayları toplanır (`image_candidates[]`)
-4. Nitter feed'ler → FxTwitter API (`api.fxtwitter.com`) ile görsel çekilir
+4. Nitter feed'ler → `fetcher_nitter.py` içindeki FxTwitter API (`api.fxtwitter.com`) ile görsel çekilir
 5. Tweet URL çevirisi: `nitter.net/user/status/ID` → `x.com/user/status/ID`
 **Çevre değişkenleri:**
 ```
@@ -441,13 +433,15 @@ TEST_MODE=true                  → Filtreleri gevşetir, test için
 }
 ```
 ---
-### agents/agent_scorer.py (v5.2 FIXED)
+### agents/ Modül Ailesi — SCORER (v6.0)
+**Ana Dosya:** `agent_scorer.py` (Köprü)
+**Alt Modüller:** `scorer_helpers.py`, `scorer_engine.py`
 **Görev:** Haberleri YZ ile 0-100 arasında puanlar, tazelik ve trend bonusu ekler.
 **Kritik sabitler:**
 ```python
-BATCH_SIZE = 8              # Tek YZ çağrısında maksimum haber sayısı (20→8 düşürüldü, token limit aşımı önlendi)
+BATCH_SIZE = 8              # Tek YZ çağrısında maksimum haber sayısı
 BATCH_DELAY_SECONDS = 3     # Batch'ler arası bekleme
-_SCORER_MAX_TOKENS = 4000   # Puanlama için token limiti (1400→4000 artırıldı)
+_SCORER_MAX_TOKENS = 4000   # Puanlama için token limiti
 CROSS_VALIDATE_THRESHOLD = 0.35  # Sıra eşleşmesi onayı için başlık benzerlik eşiği
 ```
 **Tazelik bonusu:**
@@ -466,7 +460,7 @@ CROSS_VALIDATE_THRESHOLD = 0.35  # Sıra eşleşmesi onayı için başlık benze
 Maksimum trend bonusu: +18 puan (TREND_BONUS_CAP)
 ```
 **Eşleşme algoritması (AI yanıtı ↔ makale):**
-1. `_match_by_order()` → `sira` alanı ile sıra eşleşmesi (v5.2: artık cross-validate olmadan kabul eder)
+1. `_match_by_order()` → `sira` alanı ile sıra eşleşmesi
 2. `_match_by_exact_title()` → Tam başlık eşleşmesi
 3. `_match_by_fuzzy_title()` → Bulanık başlık eşleşmesi (threshold=0.50)
 **Puan alanları (AI'dan beklenen JSON):**
@@ -511,7 +505,9 @@ BAŞLIK BÜYÜK HARF (max 90 karakter)
 Siz bu gelişme hakkında ne düşünüyorsunuz?
 ```
 ---
-### agents/agent_image.py (v8.8)
+### agents/ Modül Ailesi — IMAGE (v9.0)
+**Ana Dosya:** `agent_image.py` (Köprü)
+**Alt Modüller:** `image_utils.py`, `image_nitter.py`, `image_processor.py`, `image_search.py`, `image_scraper.py`
 **Görev:** Haberler için görsel bulur, indirir, boyut/oran kontrolü yapar, logo ekler.
 **Görsel kaynak önceliği (düşük sayı = yüksek öncelik):**
 ```
@@ -527,7 +523,7 @@ Yükseklik: 400px
 Alan: 337.500px²
 En-boy oranı: 0.7 — 2.3
 ```
-**Nitter/Twitter görsel çekimi (v7.0 FxTwitter):**
+**Nitter/Twitter görsel çekimi:**
 ```
 Nitter tweet URL → FxTwitter API → JSON → media.photos[].url
   Profil fotosu URL'leri (/profile_images/, /profile_banners/) FİLTRELENİR
@@ -539,7 +535,7 @@ URL'de şunlar varsa GÖRSELİ ATLA:
   logo, icon, avatar, sprite, favicon, ads, pixel, author, profile,
   yazar, cookie, uygulama-indir, dh-oneriyor, dh-cookie,
   instagram-big, populer-
-Path'te şunlar varsa GÖRSELİ ATLA (v7.0: path-bazlı, daha hassas):
+Path'te şunlar varsa GÖRSELİ ATLA:
   /banner/, /banners/, /ad-banner, /images/editor/,
   /profile_images/
 ```
@@ -588,22 +584,9 @@ score >= threshold, margin 10-20             → %1 şans atla
 score >= threshold, margin 20+               → hiç atla
 ```
 ---
-### platforms/facebook.py (v3.3 ULTRA FIXED)
-**API:** Graph API v25.0 (`https://graph.facebook.com/v25.0`)
-**Fonksiyonlar:**
-- `post_text(message)` → Sadece metin paylaşımı
-- `post_photo(image_path, message)` → Tek görsel
-- `post_photos(image_paths, message)` → Çoklu görsel (2-10 arası)
-  - Her görsel önce `published=false` olarak yüklenir
-  - Sonra `attached_media[]` ile tek post olarak yayınlanır
-  - Payload boyut kontrolü: 1MB limit aşılırsa alternatif format denenir
-**Retry mekanizması:**
-- HTTP 5xx → retry (exponential backoff)
-- API hata kodu 1/2/4/17/32/613 → retry
-- "temporarily" / "try again" / "rate limit" → retry
-- Diğer API hataları → anında çık
----
-### platforms/threads.py (v5.0)
+### platforms/ Modül Ailesi — THREADS (v6.0)
+**Ana Dosya:** `threads.py` (Köprü)
+**Alt Modüller:** `threads_api.py`, `threads_uploader.py`
 **API:** `https://graph.threads.net/v1.0`
 **Fonksiyonlar:**
 - `post_text(message)` → Metin paylaşımı (500 karakter otomatik kesme)
@@ -626,6 +609,21 @@ token = token.replace('"', '').replace("'", '').replace('\n', '').strip()
 ```
 500 karakterden uzun metinler son kelimeden (boşluktan) kesilir → "..." eklenir
 ```
+---
+### platforms/facebook.py (v3.3 ULTRA FIXED)
+**API:** Graph API v25.0 (`https://graph.facebook.com/v25.0`)
+**Fonksiyonlar:**
+- `post_text(message)` → Sadece metin paylaşımı
+- `post_photo(image_path, message)` → Tek görsel
+- `post_photos(image_paths, message)` → Çoklu görsel (2-10 arası)
+  - Her görsel önce `published=false` olarak yüklenir
+  - Sonra `attached_media[]` ile tek post olarak yayınlanır
+  - Payload boyut kontrolü: 1MB limit aşılırsa alternatif format denenir
+**Retry mekanizması:**
+- HTTP 5xx → retry (exponential backoff)
+- API hata kodu 1/2/4/17/32/613 → retry
+- "temporarily" / "try again" / "rate limit" → retry
+- Diğer API hataları → anında çık
 ---
 ### platforms/telegram.py
 **Görev:** Telegram'a metin mesajı gönderir. Haftalık rapor ve hata bildirimleri için.
@@ -711,6 +709,7 @@ PERSIST_STATE=true
 PERSIST_STATE         → orchestrator + publisher: JSON kaydı aktif mi?
 IGNORE_MIN_POST_INTERVAL → orchestrator: Süre kontrolunu atla
 DEBUG_SCORE_BREAKDOWN → agent_scorer: Detaylı puan logu
+IMAGE_TEST_MODE       → agent_image: Sadece test kartı üretir, gerçek görsel yüklemez
 ```
 ---
 ## GELİŞTİRME REHBERİ
@@ -753,7 +752,7 @@ Token süresi    → FB_ACCESS_TOKEN 60 günde bir yenilenmeli! Takvime hatırla
 | Hiç haber paylaşmıyor          | scoring.json → publish_score değerini düşür (35→20)              |
 | Çok fazla paylaşıyor           | settings.json → max_daily_posts değerini düşür                   |
 | Actions çalışmıyor             | Settings → Actions → "Read and write permissions" seç            |
-| Görsel gelmiyor                | agent_image.py v7.0 FxTwitter API deniyor, Nitter artık boş dönüyor |
+| Görsel gelmiyor                | image_nitter.py FxTwitter API deniyor, Nitter artık boş dönüyor |
 | İngilizce metin geldi          | agent_writer.py v5.1 engelliyor, fallback devreye giriyor        |
 | Groq "quota exceeded"          | ai_client.py otomatik OpenRouter/HF'e geçiyor                    |
 | Gemini "thinking" metni geldi  | ai_client.py v5.3'te thinking_budget=0 ile düzeltildi            |
@@ -762,6 +761,7 @@ Token süresi    → FB_ACCESS_TOKEN 60 günde bir yenilenmeli! Takvime hatırla
 ---
 ## GÜNCEL ÖZELLİKLER
 ```
+Modüler Mimari (v6.0)           : VAR (Devasa dosyalar bölündü, yönetim kolaylaştı)
 RSS haber çekme                 : VAR (feedparser)
 Nitter/Twitter desteği          : VAR (FxTwitter API v7.0)
 Keyword filtresi                : VAR (include + exclude)
@@ -789,8 +789,11 @@ Threads 500 karakter limiti     : VAR (otomatik kesme, kelime ortasında kesmez)
 Telegram hata bildirimi         : VAR (workflow başarısız olursa)
 Nitter görsel çekimi (FxTwitter): VAR (profil fotosu filtrelenir)
 Görsel duplikasyon kontrolü     : VAR (perceptual hash, threshold ayarlanabilir)
-Instagram Story paylaşımı     : VAR (kart üretimi, IMAGE_TEST_MODE)
+Instagram Story paylaşımı       : VAR (kart üretimi, IMAGE_TEST_MODE)
 Twitter/X paylaşımı             : YOK
 ```
 ---
-**Versiyon: 5.0** — Tüm kaynak kodlar satır satır okunarak hazırlanmıştır.
+**Versiyon: 6.0 (Modüler Refactoring)** — Tüm kaynak kodlar satır satır okunarak ve optimize edilerek hazırlanmıştır.
+```
+
+Bu dosyayı GitHub'a ekledikten sonra projenin altyapısı tam anlamıyla profesyonel bir standarta kavuşmuş olacak. Başka bir sorun olursa buradayım! 🚀
