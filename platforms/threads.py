@@ -1,684 +1,29 @@
 """
-platforms/threads.py - Threads API katmani (v5.1 - DRY Refactoring)
+platforms/threads.py - Threads Ana Köprü Dosyası (v5.1 - DRY Refactoring)
 
-v5.1:
-  - Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
-  - Tekrarlanan _upload_* fonksiyonlari kaldirildi
-  
-v5.0:
-  - YENI: post_with_image() - Tam fallback zinciri ile gorsel paylasim
-    1. Orijinal URL (article'dan, zaten indirdigimiz gorselin kaynagi)
-    2. Catbox.moe upload (ucretsiz, API key gerektirmez)
-    3. 0x0.st upload (ucretsiz, API key gerektirmez)
-    4. Telegraph upload (ucretsiz, API key gerektirmez)
-    5. ImgBB upload (ucretsiz tier, IMGBB_API_KEY opsiyonel)
-    6. Metin-only fallback
-  - YENI: _extract_original_urls() - Article'dan orijinal gorsel URL'leri cikarir
-  - YENI: _upload_catbox() - Catbox.moe ucretsiz yukleme
-  - YENI: _upload_0x0() - 0x0.st ucretsiz yukleme
-  - YENI: _upload_telegraph() - Telegraph ucretsiz yukleme
-  - YENI: _truncate_for_threads() - 500 karakter limiti
-  - MEVCUT: post_text(), post_image() korundu (backward compatible)
-
-v3.5:
-  - "Cannot parse access token" (190) hatasi cozuldu (graph.threads.net'e gecildi).
+v5.1 GÜNCELLEME:
+  - Dosya 3 modüle bölündü: threads.py (köprü), threads_api.py (API), threads_uploader.py (Görsel URL)
+  - Tüm diğer agent'lar (örn: agent_publisher) eski çağrı şekilleriyle kullanmaya devam edebilir.
 """
-
-import base64
-import json
 import os
-import re
-import time
-import requests
-from urllib.parse import unquote, urlparse
 from core.logger import log
+from platforms.threads_api import post_text, post_image
+from platforms.threads_uploader import _extract_original_urls, _resolve_public_url
 from core.image_uploader import get_public_url_fallback
 
-# ── Threads API ──────────────────────────────────────────────────────────────
-_THREADS_API_VERSION = "v1.0"
-_BASE_URL = f"https://graph.threads.net/{_THREADS_API_VERSION}"
-_REQUEST_TIMEOUT = 60
-_RETRY_ATTEMPTS = 3
-_RETRY_BASE_WAIT = 2.0
-
-# ── Threads limitleri ────────────────────────────────────────────────────────
-_THREADS_MAX_TEXT_LENGTH = 500
-
-# ── Upload servis limitleri ──────────────────────────────────────────────────
-_IMGBB_API_URL = "https://api.imgbb.com/1/upload"
-_IMGBB_MAX_FILE_SIZE = 32 * 1024 * 1024
-
-_CATBOX_API_URL = "https://catbox.moe/user/api.php"
-_CATBOX_MAX_FILE_SIZE = 200 * 1024 * 1024
-
-_ZER0X_API_URL = "https://0x0.st"
-_ZER0X_MAX_FILE_SIZE = 512 * 1024 * 1024
-
-_TELEGRAPH_API_URL = "https://telegra.ph/upload"
-_TELEGRAPH_MAX_FILE_SIZE = 5 * 1024 * 1024
-
-_UPLOAD_USER_AGENT = "otoXtraBot/5.0"
-
-
 # ═══════════════════════════════════════════════════════════════════════════════
-# CREDENTIALS & HELPERS
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _get_credentials():
-    user_id = os.environ.get("THREADS_USER_ID", "").strip()
-    token = os.environ.get("THREADS_ACCESS_TOKEN", "")
-
-    # TOKSIK TEMIZLEYICI: Gizli satir sonu, bosluk veya tirnak isaretlerini yok eder.
-    # Sadece bas/son bosluklari ve kontrol karakterleri temizlenir, token formati korunur.
-    token = (
-        token.replace('"', "").replace("'", "")
-        .replace("\n", "").replace("\r", "")
-        .strip()
-    )
-
-    if not user_id:
-        log("THREADS_USER_ID env bulunamadi", "ERROR")
-    else:
-        log(f"THREADS_USER_ID okundu: uzunluk={len(user_id)}")
-
-    if not token:
-        log("THREADS_ACCESS_TOKEN env bulunamadi", "ERROR")
-    else:
-        log(f"THREADS_ACCESS_TOKEN okundu: uzunluk={len(token)}, ilk_4={token[:4]}")
-
-    return user_id, token
-
-
-def _truncate_for_threads(text: str, max_length: int = _THREADS_MAX_TEXT_LENGTH) -> str:
-    """
-    Threads'in 500 karakter limitine uygun sekilde metni keser.
-    Son kelimeyi tam kesmez, onceki bosluktan keser.
-    """
-    if not text:
-        return ""
-    if len(text) <= max_length:
-        return text
-
-    truncated = text[: max_length - 3]
-    last_space = truncated.rfind(" ")
-    if last_space > max_length * 0.6:
-        truncated = truncated[:last_space]
-    return truncated + "..."
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# HTTP RETRY HELPERS
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _post_with_retry(url, data, context="threads", headers=None):
-    last_error = ""
-    for attempt in range(1, _RETRY_ATTEMPTS + 1):
-        try:
-            started = time.time()
-            resp = requests.post(url, data=data, headers=headers, timeout=_REQUEST_TIMEOUT)
-            elapsed = int((time.time() - started) * 1000)
-
-            try:
-                result = resp.json()
-            except Exception:
-                result = {"error": {"message": resp.text, "code": resp.status_code}}
-
-            log(
-                f"{context} attempt={attempt}/{_RETRY_ATTEMPTS} "
-                f"status={resp.status_code} elapsed_ms={elapsed}",
-                "INFO",
-            )
-
-            if resp.status_code == 200 and "id" in result:
-                return result
-            if "error" in result:
-                err = result["error"]
-                msg = err.get("error_user_msg") or err.get("message", "")
-                log(f"Threads API hatasi: {err.get('code')} - {msg}", "ERROR")
-                if "temporarily" in msg.lower() or err.get("code") in (4, 17, 32, 80000, 80001, 80002):
-                    last_error = f"retryable: {msg}"
-                else:
-                    return result
-            else:
-                last_error = f"http {resp.status_code}"
-        except Exception as e:
-            last_error = str(e)
-            log(f"{context} request error: {e}", "WARNING")
-
-        if attempt < _RETRY_ATTEMPTS:
-            wait = _RETRY_BASE_WAIT * (2 ** (attempt - 1))
-            log(f"{context} retry wait {wait:.1f}s", "INFO")
-            time.sleep(wait)
-
-    log(f"{context} all retries failed: {last_error}", "ERROR")
-    return {}
-
-
-def _get_with_retry(url, params, context="threads_get", headers=None):
-    last_error = ""
-    for attempt in range(1, _RETRY_ATTEMPTS + 1):
-        try:
-            started = time.time()
-            resp = requests.get(url, params=params, headers=headers, timeout=_REQUEST_TIMEOUT)
-            elapsed = int((time.time() - started) * 1000)
-
-            try:
-                result = resp.json()
-            except Exception:
-                result = {"error": {"message": resp.text, "code": resp.status_code}}
-
-            log(
-                f"{context} attempt={attempt}/{_RETRY_ATTEMPTS} "
-                f"status={resp.status_code} elapsed_ms={elapsed}",
-                "INFO",
-            )
-
-            if resp.status_code == 200 and "id" in result:
-                return result
-            if "error" in result:
-                err = result["error"]
-                msg = err.get("error_user_msg") or err.get("message", "")
-                log(f"Threads API GET hatasi: {err.get('code')} - {msg}", "ERROR")
-                return result
-            else:
-                last_error = f"http {resp.status_code}"
-        except Exception as e:
-            last_error = str(e)
-            log(f"{context} request error: {e}", "WARNING")
-
-        if attempt < _RETRY_ATTEMPTS:
-            wait = _RETRY_BASE_WAIT * (2 ** (attempt - 1))
-            log(f"{context} retry wait {wait:.1f}s", "INFO")
-            time.sleep(wait)
-
-    log(f"{context} all retries failed: {last_error}", "ERROR")
-    return {}
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# THREADS USER ID & PUBLISH
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _get_threads_user_id(ig_user_id, token):
-    """Threads User ID'sini bulur."""
-    url = f"{_BASE_URL}/me"
-    params = {"fields": "id,username", "access_token": token}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    log("Threads User ID '/me' uzerinden kontrol ediliyor...")
-    result = _get_with_retry(url, params, "get_me_profile", headers=headers)
-
-    me_id = result.get("id")
-    if me_id:
-        log(f"Threads User ID '/me' basarili: {me_id} (username: {result.get('username', 'N/A')})")
-        return me_id
-
-    if ig_user_id:
-        log(f"/me basarisiz. Env THREADS_USER_ID ({ig_user_id}) kullanilacak.", "WARNING")
-        return ig_user_id
-
-    log("Threads User ID hicbir sekilde bulunamadi.", "ERROR")
-    return None
-
-
-def _publish_container(threads_user_id, container_id, token, media_type):
-    """Container'i publish eder."""
-    publish_url = f"{_BASE_URL}/{threads_user_id}/threads_publish"
-    publish_data = {"creation_id": container_id, "access_token": token}
-    headers = {"Authorization": f"Bearer {token}"}
-
-    log(f"Threads {media_type} publish ediliyor...")
-    publish_resp = _post_with_retry(publish_url, publish_data, f"publish_{media_type}", headers=headers)
-
-    publish_id = publish_resp.get("id")
-    if publish_id:
-        log(f"Threads {media_type} basariyla publish edildi! ID={publish_id}")
-    else:
-        log(f"Threads {media_type} publish basarisiz", "ERROR")
-
-    return publish_id
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# UPLOAD SERVISLERI (Hepsi Ucretsiz)
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def _upload_catbox(image_path: str) -> str | None:
-    """
-    Catbox.moe'a gorsel yukler. (Ucretsiz, API key gerektirmez, kalici depolama)
-    Dosya limiti: 200MB
-    """
-    if not image_path or not os.path.exists(image_path):
-        log("Catbox: Dosya bulunamadi", "ERROR")
-        return None
-
-    try:
-        file_size = os.path.getsize(image_path)
-        if file_size > _CATBOX_MAX_FILE_SIZE:
-            log(f"Catbox: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
-            return None
-
-        log(f"Catbox: Yukleniyor... ({file_size // 1024}KB)")
-
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                _CATBOX_API_URL,
-                data={"reqtype": "fileupload"},
-                files={"fileToUpload": f},
-                headers={"User-Agent": _UPLOAD_USER_AGENT},
-                timeout=30,
-            )
-
-        if resp.status_code == 200 and resp.text.strip().startswith("https://"):
-            url = resp.text.strip()
-            log(f"Catbox: Basarili! URL uzunlugu={len(url)}")
-            return url
-
-        log(f"Catbox: Basarisiz status={resp.status_code} body={resp.text[:200]}", "WARNING")
-        return None
-
-    except requests.exceptions.Timeout:
-        log("Catbox: Zaman asimi", "WARNING")
-        return None
-    except Exception as exc:
-        log(f"Catbox: Hata: {exc}", "WARNING")
-        return None
-
-
-def _upload_0x0(image_path: str) -> str | None:
-    """
-    0x0.st'ye gorsel yukler. (Ucretsiz, API key gerektirmez, kalici depolama)
-    Dosya limiti: 512MB
-    """
-    if not image_path or not os.path.exists(image_path):
-        log("0x0.st: Dosya bulunamadi", "ERROR")
-        return None
-
-    try:
-        file_size = os.path.getsize(image_path)
-        if file_size > _ZER0X_MAX_FILE_SIZE:
-            log(f"0x0.st: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
-            return None
-
-        log(f"0x0.st: Yukleniyor... ({file_size // 1024}KB)")
-
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                _ZER0X_API_URL,
-                files={"file": f},
-                headers={"User-Agent": _UPLOAD_USER_AGENT},
-                timeout=30,
-            )
-
-        if resp.status_code == 200 and resp.text.strip().startswith("https://"):
-            url = resp.text.strip()
-            log(f"0x0.st: Basarili! URL uzunlugu={len(url)}")
-            return url
-
-        log(f"0x0.st: Basarisiz status={resp.status_code} body={resp.text[:200]}", "WARNING")
-        return None
-
-    except requests.exceptions.Timeout:
-        log("0x0.st: Zaman asimi", "WARNING")
-        return None
-    except Exception as exc:
-        log(f"0x0.st: Hata: {exc}", "WARNING")
-        return None
-
-
-def _upload_telegraph(image_path: str) -> str | None:
-    """
-    Telegraph'a gorsel yukler. (Ucretsiz, API key gerektirmez)
-    Dosya limiti: 5MB, format: JPEG/PNG
-    """
-    if not image_path or not os.path.exists(image_path):
-        log("Telegraph: Dosya bulunamadi", "ERROR")
-        return None
-
-    try:
-        file_size = os.path.getsize(image_path)
-        if file_size > _TELEGRAPH_MAX_FILE_SIZE:
-            log(f"Telegraph: Dosya cok buyuk: {file_size // 1024}KB (max 5MB)", "WARNING")
-            return None
-
-        log(f"Telegraph: Yukleniyor... ({file_size // 1024}KB)")
-
-        with open(image_path, "rb") as f:
-            resp = requests.post(
-                _TELEGRAPH_API_URL,
-                files={"file": ("image.jpg", f, "image/jpeg")},
-                headers={"User-Agent": _UPLOAD_USER_AGENT},
-                timeout=30,
-            )
-
-        if resp.status_code == 200:
-            try:
-                data = resp.json()
-                if isinstance(data, list) and data and "src" in data[0]:
-                    src = data[0]["src"]
-                    url = f"https://telegra.ph{src}"
-                    log(f"Telegraph: Basarili! URL uzunlugu={len(url)}")
-                    return url
-            except (json.JSONDecodeError, KeyError, IndexError):
-                pass
-
-        log(f"Telegraph: Basarisiz status={resp.status_code} body={resp.text[:200]}", "WARNING")
-        return None
-
-    except requests.exceptions.Timeout:
-        log("Telegraph: Zaman asimi", "WARNING")
-        return None
-    except Exception as exc:
-        log(f"Telegraph: Hata: {exc}", "WARNING")
-        return None
-
-
-def _upload_imgbb(image_path: str) -> str | None:
-    """
-    ImgBB'ye gorsel yukler. (Ucretsiz tier, IMGBB_API_KEY gerekli)
-    Dosya limiti: 32MB
-    NOT: IMGBB_API_KEY env yoksa atlanir.
-    """
-    api_key = os.environ.get("IMGBB_API_KEY", "").strip()
-
-    if not api_key:
-        log("ImgBB: IMGBB_API_KEY env yok, atlaniyor", "INFO")
-        return None
-
-    if not image_path or not os.path.exists(image_path):
-        log("ImgBB: Dosya bulunamadi", "ERROR")
-        return None
-
-    try:
-        file_size = os.path.getsize(image_path)
-        if file_size > _IMGBB_MAX_FILE_SIZE:
-            log(f"ImgBB: Dosya cok buyuk: {file_size // 1024}KB", "ERROR")
-            return None
-
-        log(f"ImgBB: Yukleniyor... ({file_size // 1024}KB)")
-
-        with open(image_path, "rb") as f:
-            image_data = base64.b64encode(f.read()).decode("utf-8")
-
-        payload = {"key": api_key, "image": image_data}
-
-        resp = requests.post(
-            _IMGBB_API_URL,
-            data=payload,
-            headers={"User-Agent": _UPLOAD_USER_AGENT},
-            timeout=30,
-        )
-
-        if resp.status_code != 200:
-            log(f"ImgBB: HTTP hatasi: {resp.status_code} - {resp.text[:200]}", "WARNING")
-            return None
-
-        result = resp.json()
-
-        if not result.get("success", False):
-            log(f"ImgBB: Upload basarisiz: {result}", "WARNING")
-            return None
-
-        data = result.get("data", {})
-        # En kaliteli versiyonu tercih et
-        image_url = (
-            data.get("medium", {}).get("url", "")
-            or data.get("url", "")
-            or data.get("display_url", "")
-        )
-
-        if image_url:
-            log(f"ImgBB: Basarili! URL uzunlugu={len(image_url)}")
-            return image_url
-
-        log(f"ImgBB: URL bulunamadi: {list(data.keys())}", "WARNING")
-        return None
-
-    except requests.exceptions.Timeout:
-        log("ImgBB: Zaman asimi", "WARNING")
-        return None
-    except Exception as exc:
-        log(f"ImgBB: Hata: {exc}", "WARNING")
-        return None
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# DEPRECATED: Upload fonksiyonlari core/image_uploader.py'a tasindi
-# Bu fonksiyonlar artik kullanilmiyor, geriye donusum icin birakildi.
-# Yeni kodlarda get_public_url_fallback() kullanin.
-# ═══════════════════════════════════════════════════════════════════════════════
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# ORIJINAL URL CIKARMA & NITTER COZUMLEME
-# ═══════════════════════════════════════════════════════════════════════════════
-
-_TWITTER_CDN_HOSTS = {"pbs.twimg.com", "ton.twimg.com", "video.twimg.com"}
-
-_NITTER_PIC_PATTERN = re.compile(
-    r"/pic/(?:orig/)?(?:media%2F|media/)([A-Za-z0-9_\-]+\.[a-zA-Z]{3,4})",
-    re.IGNORECASE,
-)
-
-
-def _resolve_nitter_url(url: str) -> str:
-    """
-    Nitter /pic/ URL'lerini orijinal Twitter CDN URL'lerine cevirir.
-    Ornek: /pic/media%2FABCdef.jpg -> https://pbs.twimg.com/media/ABCdef.jpg?format=jpg&name=large
-    Zaten pbs.twimg.com ise dokunmaz.
-    """
-    if not url or not isinstance(url, str):
-        return url
-
-    parsed = urlparse(url)
-
-    # Zaten Twitter CDN'deyse dokunma
-    if parsed.netloc in _TWITTER_CDN_HOSTS:
-        return url
-
-    # Nitter /pic/ formatini cozumle
-    if "/pic/" in url:
-        m = _NITTER_PIC_PATTERN.search(url)
-        if m:
-            filename = unquote(m.group(1))
-            name_part, _, ext_part = filename.rpartition(".")
-            ext_part = ext_part.lower()
-            quality = "orig" if "/orig/" in url else "large"
-            return f"https://pbs.twimg.com/media/{filename}?format={ext_part}&name={quality}"
-
-    return url
-
-
-def _extract_original_urls(article: dict, max_urls: int = 8) -> list[str]:
-    """
-    Article dict'inden orijinal gorsel URL'lerini cikarir ve cozumler.
-
-    ONCOULK SIRASI:
-    1. original_image_urls (agent_image tarafindan kaydedilen basarili URL'ler)
-    2. image_url (genelde zaten cozumlenmis pbs.twimg.com URL'si)
-    3. image_candidates (kalite sirali adaylar, Nitter URL'leri cozumlenir)
-    4. rss_image_url (RSS'ten gelen, Nitter URL'leri cozumlenir)
-
-    Tum Nitter /pic/ URL'leri otomatik olarak pbs.twimg.com URL'lerine
-    cevrilir. Boylece Threads API dogrudan public URL alir.
-    """
-    urls: list[str] = []
-    seen: set[str] = set()
-
-    def _add(raw_url: str) -> None:
-        if not raw_url or not isinstance(raw_url, str):
-            return
-        raw_url = raw_url.strip()
-        if not raw_url:
-            return
-        # Nitter /pic/ URL'lerini cozumle
-        resolved = _resolve_nitter_url(raw_url)
-        if not resolved or not resolved.startswith("http"):
-            return
-        if resolved in seen:
-            return
-        seen.add(resolved)
-        urls.append(resolved)
-
-    # 1. original_image_urls (agent_image tarafindan kaydedildi - EN GUVENILIR)
-    original_urls = article.get("original_image_urls", [])
-    if isinstance(original_urls, list):
-        for url in original_urls:
-            _add(url)
-
-    # 2. image_url (genelde cozumlenmis URL)
-    _add(article.get("image_url", ""))
-
-    # 3. image_candidates (kalite sirali, Nitter URL'leri cozumlenir)
-    candidates = article.get("image_candidates", [])
-    if isinstance(candidates, list):
-        for candidate in candidates[:max_urls * 2]:
-            if isinstance(candidate, dict):
-                _add(candidate.get("url", ""))
-            elif isinstance(candidate, str):
-                _add(candidate)
-
-    # 4. rss_image_url (RSS'ten gelen, Nitter URL'leri cozumlenir)
-    _add(article.get("rss_image_url", ""))
-
-    if urls:
-        log(f"Threads: {len(urls)} orijinal URL cikarildi (cozumlenmis)")
-
-    return urls[:max_urls]
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# PUBLIC API - TEMEL FONKSIYONLAR
-# ═══════════════════════════════════════════════════════════════════════════════
-
-def post_text(message: str) -> str | None:
-    """Threads'a sadece metin paylasimi yapar."""
-    ig_user_id, token = _get_credentials()
-    if not ig_user_id or not token:
-        return None
-
-    threads_user_id = _get_threads_user_id(ig_user_id, token)
-    if not threads_user_id:
-        return None
-
-    truncated_message = _truncate_for_threads(message)
-    if len(truncated_message) < len(message):
-        log(f"Threads: Metin {len(message)} -> {len(truncated_message)} karaktere kisildi", "WARNING")
-
-    container_url = f"{_BASE_URL}/{threads_user_id}/threads"
-    container_data = {
-        "media_type": "TEXT",
-        "text": truncated_message,
-        "access_token": token,
-    }
-    headers = {"Authorization": f"Bearer {token}"}
-
-    log("Threads TEXT container olusturuluyor...")
-    container_resp = _post_with_retry(container_url, container_data, "create_text_container", headers=headers)
-    container_id = container_resp.get("id")
-    if not container_id:
-        log("Threads text container olusturulamadi", "ERROR")
-        return None
-
-    return _publish_container(threads_user_id, container_id, token, "text")
-
-
-def post_image(message: str, image_url: str, auto_fallback: bool = True) -> str | None:
-    """
-    Threads'a public URL ile gorsel paylasimi yapar.
-
-    Args:
-        message: Paylasim metni
-        image_url: KAMUYA ACIK gorsel URL (yerel dosya YOLU DEGIL!)
-        auto_fallback: True ise basarisiz olunca otomatik metne fallback yapar
-
-    DIKKAT: image_url KAMUYA ACIK bir URL olmalidir!
-    Yerel dosya yolu (/tmp/...) KULLANILAMAZ.
-    Yerel dosya icin post_with_image() kullanin.
-    """
-    ig_user_id, token = _get_credentials()
-    if not ig_user_id or not token:
-        return None
-
-    threads_user_id = _get_threads_user_id(ig_user_id, token)
-    if not threads_user_id:
-        return None
-
-    if not image_url:
-        log("post_image: image_url bos", "WARNING")
-        if auto_fallback:
-            return post_text(message)
-        return None
-
-    # Yerel dosya yolu kontrolu
-    is_local = (
-        image_url.startswith("/")
-        or (len(image_url) > 2 and image_url[1] == ":")
-    )
-    if is_local:
-        log(f"post_image: YEREL DOSYA YOLU TESPIT EDILDI! URL={image_url}", "ERROR")
-        log("post_image: Yerel dosyalar icin post_with_image() kullanin!", "ERROR")
-        if auto_fallback:
-            return post_text(message)
-        return None
-
-    truncated_message = _truncate_for_threads(message)
-    if len(truncated_message) < len(message):
-        log(f"Threads: Metin {len(message)} -> {len(truncated_message)} karaktere kisildi", "WARNING")
-
-    container_url = f"{_BASE_URL}/{threads_user_id}/threads"
-    container_data = {
-        "media_type": "IMAGE",
-        "text": truncated_message,
-        "image_url": image_url,
-        "access_token": token,
-    }
-    headers = {"Authorization": f"Bearer {token}"}
-
-    log(f"Threads IMAGE container olusturuluyor (public URL ile)...")
-    container_resp = _post_with_retry(container_url, container_data, "create_image_container", headers=headers)
-    container_id = container_resp.get("id")
-
-    if not container_id:
-        log("Threads image container olusturulamadi", "WARNING")
-        if auto_fallback:
-            log("Threads: Metin fallback yapiliyor...", "WARNING")
-            return post_text(message)
-        return None
-
-    return _publish_container(threads_user_id, container_id, token, "image")
-
-
-# ═══════════════════════════════════════════════════════════════════════════════
-# PUBLIC API - FALLBACK ZINCIRI (ANA FONKSIYON)
+# PUBLIC API - FALLBACK ZİNCİRİ (ANA FONKSİYON)
 # ═══════════════════════════════════════════════════════════════════════════════
 
 def post_with_image(message: str, image_path: str, article: dict = None) -> str | None:
     """
     Threads gorsel paylasimi - TAM FALLBACK ZINCIRI.
-
-    Akis sirasi:
-    1. Article'daki orijinal gorsel URL'lerini dene (RSS/kaynak)
-       -> En hizli yol, upload gerektirmez!
-    2. Catbox.moe upload (ucretsiz, API key gerektirmez)
-    3. 0x0.st upload (ucretsiz, API key gerektirmez)
-    4. Telegraph upload (ucretsiz, API key gerektirmez)
-    5. ImgBB upload (ucretsiz tier, IMGBB_API_KEY opsiyonel)
-    6. Metin-only fallback (son care)
-
-    Args:
-        message: Paylasim metni (otomatik 500 karaktere kisilir)
-        image_path: Yerel gorsel dosya yolu (orn: /tmp/otoxtra_img_xxx.jpg)
-        article: Haber dict (orijinal URL'leri cikarmak icin, opsiyonel)
-
-    Returns:
-        Threads post ID, basarisiz olursa None
     """
     log("=" * 50)
     log("Threads GORSEL PAYLASIM: Fallback zinciri basliyor...")
     log("=" * 50)
 
-    # ── ADIM 1: Orijinal URL'leri dene ──────────────────────────────────────
+    # ADIM 1: Orijinal URL'leri dene
     if article:
         original_urls = _extract_original_urls(article)
         if original_urls:
@@ -695,7 +40,7 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
     else:
         log("Threads ADIM 1: Article dict yok, orijinal URL atlaniyor")
 
-    # ── ADIM 2-5: Upload servisleri ─────────────────────────────────────────
+    # ADIM 2-5: Upload servisleri
     if image_path and os.path.exists(image_path):
         upload_services = [
             ("Catbox.moe", get_public_url_fallback),
@@ -723,7 +68,7 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
         else:
             log("Threads: Gorsel dosya yolu bos", "WARNING")
 
-    # ── ADIM 6: Metin fallback ──────────────────────────────────────────────
+    # ADIM 6: Metin fallback
     log("Threads ADIM 6: Tum gorsel yontemleri basarisiz, metin-only fallback!", "WARNING")
     return post_text(message)
 
@@ -732,34 +77,9 @@ def post_with_image(message: str, image_path: str, article: dict = None) -> str 
 # PUBLIC API - CAROUSEL
 # ═══════════════════════════════════════════════════════════════════════════════
 
-def _resolve_public_url(image_path: str, article: dict = None, image_index: int = 0) -> str | None:
-    """
-    Bir yerel gorsel dosyasini public URL'ye donusturur.
-    Orijinal URL'leri once dener, sonra upload servislerini kullanir.
-    """
-    # Orijinal URL'leri dene
-    if article:
-        original_urls = _extract_original_urls(article)
-        if image_index < len(original_urls):
-            url = original_urls[image_index]
-            if url:
-                log(f"Carousel gorsel {image_index + 1}: Orijinal URL kullanilacak")
-                return url
-
-    # Upload servisleri
-    if image_path and os.path.exists(image_path):
-        url = get_public_url_fallback(image_path)
-        if url:
-            return url
-
-    return None
-
-
 def post_local_image(message: str, image_path: str, article: dict = None) -> str | None:
     """
     post_with_image() icin backward-compatible alias.
-    Eski kodlarda post_local_image cagrisi varsa diye eklendi.
-    Yeni kodda post_with_image() kullanin.
     """
     return post_with_image(message, image_path, article=article)
 
@@ -767,15 +87,6 @@ def post_local_image(message: str, image_path: str, article: dict = None) -> str
 def post_carousel(message: str, image_paths: list[str], article: dict = None) -> str | None:
     """
     Threads'a carousel (coklu gorsel) paylasim yapar.
-    Orijinal URL'leri once dener, sonra upload servislerini kullanir.
-
-    Args:
-        message: Paylasim metni
-        image_paths: Yerel gorsel dosya yollari listesi (2-10 arasi)
-        article: Haber dict (orijinal URL'leri cikarmak icin, opsiyonel)
-
-    Returns:
-        Threads post ID, basarisiz olursa None
     """
     if not image_paths or len(image_paths) < 2:
         log("post_carousel: En az 2 gorsel gerekli", "WARNING")
@@ -783,9 +94,10 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
             return post_with_image(message, image_paths[0], article=article)
         return post_text(message)
 
-    # Max 10 gorsel (Threads carousel limiti)
     image_paths = image_paths[:10]
 
+    from platforms.threads_api import _get_credentials, _get_threads_user_id, _post_with_retry, _publish_container, _truncate_for_threads
+    
     ig_user_id, token = _get_credentials()
     if not ig_user_id or not token:
         return None
@@ -794,7 +106,8 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
     if not threads_user_id:
         return None
 
-    # 1. Her gorsel icin public URL cozumle
+    _BASE_URL = f"https://graph.threads.net/v1.0"
+
     item_ids = []
     for idx, img_path in enumerate(image_paths):
         if not os.path.exists(img_path):
@@ -806,7 +119,6 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
             log(f"post_carousel: Gorsel {idx + 1} icin URL elde edilemedi, atlaniyor", "WARNING")
             continue
 
-        # Carousel item container olustur
         container_url = f"{_BASE_URL}/{threads_user_id}/threads"
         container_data = {
             "media_type": "IMAGE",
@@ -832,7 +144,6 @@ def post_carousel(message: str, image_paths: list[str], article: dict = None) ->
             return post_with_image(message, image_paths[0], article=article)
         return post_text(message)
 
-    # 2. Carousel container olustur
     truncated_message = _truncate_for_threads(message)
 
     carousel_url = f"{_BASE_URL}/{threads_user_id}/threads"
