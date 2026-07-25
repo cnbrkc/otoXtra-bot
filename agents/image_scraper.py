@@ -10,7 +10,7 @@ from agents.image_utils import (
     _USER_AGENT, _REQUEST_TIMEOUT, _is_nitter_url, _is_profile_image_url,
     _add_scrape_candidate, _upsert_candidate, _append_field_candidates,
     _extract_best_src_from_srcset, _collect_jsonld_images, _extract_json_image_urls,
-    _SOURCE_PRIORITY
+    _SOURCE_PRIORITY, _candidate_key
 )
 from agents.image_nitter import _extract_nitter_images_from_page, _nitter_to_twitter_url, _extract_tweet_images_via_fxtwitter
 
