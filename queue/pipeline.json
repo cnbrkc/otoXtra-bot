@@ -1,50 +1,31 @@
 {
-  "run_id": "2026-07-24-21:05",
-  "status": "error",
-  "started_at": "2026-07-24T21:05:24.186150+03:00",
-  "updated_at": "2026-07-24T21:06:58.242610+03:00",
+  "run_id": "2026-07-25-09:06",
+  "status": "completed",
+  "started_at": "2026-07-25T09:06:17.790187+03:00",
+  "updated_at": "2026-07-25T09:08:46.632597+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Süperşarjlı bir Corvette, orijinal motoruyla 300.000 mil'i devirdi!",
-            "link": "https://tr.motor1.com/news/802669/supersarj-corvette-300-bin-mil/",
-            "published": "2026-07-24T16:00:00+00:00",
-            "summary": "480.000 kilometreye denk geliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/RqkBW9/s3/2010-callaway-sc606-chevrolet-corvette-grand-sport.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/RqkBW9/s3/2010-callaway-sc606-chevrolet-corvette-grand-sport.jpg",
+            "title": "Her yüzeyi güneş paneline dönüştürecek yeni teknoloji",
+            "link": "https://www.donanimhaber.com/her-yuzeyi-gunes-paneline-donusturen-yeni-teknoloji--208489",
+            "published": "2026-07-24T21:30:00+00:00",
+            "summary": "Güneş panelleri artık sadece çatılarda olmayabilir. Avrupa'da yürütülen yeni proje; binaları, araçları ve yolları elektrik üreten yüzeylere dönüştürecek teknolojilerin önünü açmayı hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208489/1200x675her-yuzeyi-gunes-paneline-donusturen-yeni-teknoloji.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208489/1200x675her-yuzeyi-gunes-paneline-donusturen-yeni-teknoloji.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/RqkBW9/s3/2010-callaway-sc606-chevrolet-corvette-grand-sport.jpg"
+              "https://www.donanimhaber.com/images/images/haber/208489/1200x675her-yuzeyi-gunes-paneline-donusturen-yeni-teknoloji.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "000-300-corvette-devirdi-mil-motoruyla-orijinal-supersarjli"
-          },
-          {
-            "title": "Mercedes-AMG, V8 coupe'sini test etmek için Nürburgring’i kapattı",
-            "link": "https://tr.motor1.com/news/802663/amg-cle-mythos-ring-kapatti/",
-            "published": "2026-07-24T14:00:00+00:00",
-            "summary": "Alman üretici, pisti bir süreliğine kiralayarak CLE Mythos'un sınırlarını zorladı.",
-            "image_url": "https://cdn.motor1.com/images/mgl/wl8bRQ/s3/mercedes-amg-cle-based-mythos-model-teasers.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/wl8bRQ/s3/mercedes-amg-cle-based-mythos-model-teasers.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/wl8bRQ/s3/mercedes-amg-cle-based-mythos-model-teasers.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "amg-coupe-etmek-kapatti-mercedes-nurburgring-sini-test"
+            "topic_fingerprint": "donusturecek-gunes-paneline-teknoloji-yuzeyi"
           },
           {
             "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
@@ -62,119 +43,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "dev-geleneksel-hayatta-kalamayiz-kriz-tirafi-toyota-yontemlerle"
-          },
-          {
-            "title": "Fransa’dan Tesla FSD’ye Kırmızı Işık: Avrupa’da Otonom Sürüş Düğümü!",
-            "link": "https://shiftdelete.net/fransadan-tesla-fsdye-kirmizi-isik-avrupada-otonom-surus-dugumu",
-            "published": "2026-07-24T17:30:20+00:00",
-            "summary": "Tesla’nın sürücüsüz sürüş vaadinin en önemli ayağı olan “Full Self-Driving (Supervised)” yani Tam Otonom Sürüş sistemi, Avrupa kıtasında hukuki ve bürokratik engellere takılmaya devam ediyor. Hollanda’nın (RDW) öncülük ettiği onay sürecinin ardından Danimarka, Estonya ve Litvanya gibi ülkeler FSD sistemine yeşil ışık yakmıştı. Ancak AB’nin en büyük otomotiv pazarlarından biri olan Fransa, güvenlik endişelerini gerekçe […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "avrupa-dugumu-fransa-fsd-isik-kirmizi-otonom-surus-tesla"
-          },
-          {
-            "title": "Tesla’dan Hardware 3 Sahiplerine Kötü Haber: Musk Söylediklerini Unuttu mu?",
-            "link": "https://shiftdelete.net/tesladan-hardware-3-sahiplerine-kotu-haber-elon-musk-soylediklerini-unuttu-mu",
-            "published": "2026-07-24T17:00:58+00:00",
-            "summary": "Tesla, yıllardır ürettiği tüm otomobillerin “Sürücüsüz Otonom Sürüş (FSD)” için gerekli donanıma sahip olduğunu iddia ederek binlerce müşterisine binlerce dolarlık FSD paketleri sattı. Ancak şirketin son finansal sonuç toplantısında (Q2 2026 Earnings Call) Elon Musk’a yöneltilen net bir soru, Tesla Hardware 3 (HW3) bilgisayarına sahip milyonlarca araç sahibini hayal kırıklığına uğrattı. Eski araçların yeni FSD […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "haber-hardware-kotu-musk-sahiplerine-soylediklerini-tesla-unuttu"
-          },
-          {
-            "title": "925 beygirlik elektrikli bir GT ile dünyanın en etkileyici sürüş rotalarından biri… Elektrikli olmasa en az 40 milyon TL 😱 Romanya’nın efsanevi Transfagaraşan yolunda, yenilenen Audi RS e-tron GT Performance ile unutulmaz bir sürüş deneyimi yaşadım. Bir tarafta eşsiz manzaralı göller, diğer tarafta temmuz ayında bile erimeyen karlar… Her viraj yeni bir manzara, her tırmanış farklı bir hikaye sunuyor. Jeremy Clarkson’ın 'dünyanın en güzel yolu' dediği Transfagarașan’ın neden bu kadar özel olduğunu direksiyon başında çok daha iyi anlıyorsunuz. Zaten bu meşhur yok, motosiklet ve otomobil tutkunları için zorlu virajları ve muazzam manzaraları nedeniyle bir 'hac' yeri olarak kabul ediliyormuş. Ben de hacı oldum anlayacağınız 🤣 Ancak bu yol sadece manzarasıyla değil, otomobili zorlayan yapısıyla da etkileyici. Yer yer bozuk asfalt, keskin virajlar, ani yükseklik değişimleri ve hızlı yön değiştirmeler şasiyi gerçek anlamda sınava sokuyor. Bu şartlarda en çok dikkatimi çeken özelliklerden biri yeni şasi teknolojisi oldu. Standart olarak sunulan 2 odacıklı havalı süspansiyon ve 2 valfli adaptif amortisörler, otomobilin hem konforunu hem de yol tutuşunu aynı anda bir üst seviyeye taşıyor. Ama en unutulmaz anlardan biri asfalt üzerinde değil, ormanda yaşandı… Yol kenarında karşımıza çıkan boz ayılar, bir yandan ürkütücü, diğer yandan doğanın hala ne kadar güçlü olduğunu hatırlatan eşsiz bir deneyimdi. Peki ya otomobil⁉️ ⚡ 925 bg (680 kW) anlık güç ⚡ 0-100 km/s: 2,5 saniye ⚡ 1.027 Nm tork (Launch Control ile) ⚡ 97 kWh batarya ⚡ WLTP’ye göre 592 km’ye varan menzil Bu arada yenilenen Audi e-tron GT ailesi Türkiye’de de satışa sunuldu. Türkiye fiyatları ise; 💢Audi e-tron GT: 10,7 milyon TL 💢Audi S e-tron GT: 14 milyon TL 💢Benim kullandığım RS e-tron GT Performance ise Türkiye’de standart satış listesinde yer almıyor. Özel siparişle getirilebiliyor ve fiyatı yaklaşık 20 milyon TL seviyesine ulaşıyor. İşin ilginç tarafı, bu otomobil elektrikli olduğu için %75 ÖTV ile vergilendiriliyor. Eğer aynı güçte bir içten yanmalı otomobil olsaydı, bugün %220 ÖTV dilimine girecek fiyatı 40 milyona ulaşacaktı.",
-            "link": "https://nitter.net/eozpeynirci/status/2080674240857002184#m",
-            "published": "2026-07-24T15:19:30+00:00",
-            "summary": "925 beygirlik elektrikli bir GT ile dünyanın en etkileyici sürüş rotalarından biri… Elektrikli olmasa en az 40 milyon TL 😱 Romanya’nın efsanevi Transfagaraşan yolunda, yenilenen Audi RS e-tron GT Performance ile unutulmaz bir sürüş deneyimi yaşadım. Bir tarafta eşsiz manzaralı göller, diğer tarafta temmuz ayında bile erimeyen karlar… Her viraj yeni bir manzara, her tırmanış farklı bir hikaye sunuyor. Jeremy Clarkson’ın 'dünyanın en güzel yolu' dediği Transfagarașan’ın neden bu kadar özel olduğunu direksiyon başında çok daha iyi anlıyorsunuz. Zaten bu meşhur yok, motosiklet ve otomobil tutkunları için zorlu virajları ve muazzam manzaraları nedeniyle bir 'hac' yeri olarak kabul ediliyormuş. Ben de hacı oldum anlayacağınız 🤣 Ancak bu yol sadece manzarasıyla değil, otomobili zorlayan yapısıyla da etkileyici. Yer yer bozuk asfalt, keskin virajlar, ani yükseklik değişimleri ve hızlı yön değiştirmeler şasiyi gerçek anlamda sınava sokuyor. Bu şartlarda en çok dikkatimi çeken özelliklerden biri yeni şasi teknolojisi oldu. Standart olarak sunulan 2 odacıklı havalı süspansiyon ve 2 valfli adaptif amortisörler, otomobilin hem konforunu hem de yol tutuşunu aynı anda bir üst seviyeye taşıyor. Ama en unutulmaz anlardan biri asfalt üzerinde değil, ormanda yaşandı… Yol kenarında karşımıza çıkan boz ayılar, bir yandan ürkütücü, diğer yandan doğanın hala ne kadar güçlü olduğunu hatırlatan eşsiz bir deneyimdi. Peki ya otomobil⁉️ ⚡ 925 bg (680 kW) anlık güç ⚡ 0-100 km/s: 2,5 saniye ⚡ 1.027 Nm tork (Launch Control ile) ⚡ 97 kWh batarya ⚡ WLTP’ye göre 592 km’ye varan menzil Bu arada yenilenen Audi e-tron GT ailesi Türkiye’de de satışa sunuldu. Türkiye fiyatları ise; 💢Audi e-tron GT: 10,7 milyon TL 💢Audi S e-tron GT: 14 milyon TL 💢Benim kullandığım RS e-tron GT Performance ise Türkiye’de standart satış listesinde yer almıyor. Özel siparişle getirilebiliyor ve fiyatı yaklaşık 20 milyon TL seviyesine ulaşıyor. İşin ilginç tarafı, bu otomobil elektrikli olduğu için %75 ÖTV ile vergilendiriliyor. Eğer aynı güçte bir içten yanmalı otomobil olsaydı, bugün %220 ÖTV dilimine girecek fiyatı 40 milyona ulaşacaktı.",
-            "image_url": "https://pbs.twimg.com/media/HOAKJ0LXoAAmp06.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOAKJ0LXoAAmp06.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOAKJ0LXoAAmp06.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "027-100-220-592-680-925-925-adaptif-ailesi-almiyor-amortisorler-anda-ani-anlamda-anlardan-anlayacaginiz-anlik-anliyorsunuz-arada-asfalt-asfalt-audi-audi-audi-audi-ayilar-ayinda-ayni-ayni-basinda-batarya-ben-benim-beygirlik-biri-biri-biri-boz-bozuk-bugun-ceken-cikan-clarkson-control-dedigi-degil-degil-degisimleri-degistirmeler-deneyimdi-deneyimi-diger-diger-dikkatimi-dilimine-direksiyon-doganin-dunyanin-dunyanin-ediliyormus-efsanevi-eger-elektrikli-elektrikli-elektrikli-erimeyen-essiz-essiz-etkileyici-etkileyici-farkli-fiyati-fiyati-fiyatlari-gercek-getirilebiliyor-girecek-goller-guc-guclu-gucte-guzel-hac-haci-hala-hatirlatan-havali-hem-hem-hikaye-hizli-icten-ilginc-ise-ise-iyi-jeremy-kabul-karlar-karsimiza-kenarinda-keskin-konforunu-kullandigim-kwh-launch-listesinde-manzara-manzaralari-manzarali-manzarasiyla-menzil-meshur-milyon-milyon-milyon-milyon-milyona-motosiklet-muazzam-neden-nedeniyle-odacikli-oldugu-oldugunu-oldugunu-oldum-olmasa-olsaydi-ormanda-otomobil-otomobil-otomobil-otomobil-otomobili-otomobilin-otv-otv-ozel-ozel-ozelliklerden-peki-performance-performance-romanya-rotalarindan-saniye-sartlarda-sasi-sasiyi-satis-satisa-seviyesine-seviyeye-sin-sinava-siparisle-sokuyor-standart-standart-sunulan-sunuldu-sunuyor-surus-surus-suspansiyon-tarafi-tarafta-tarafta-tasiyor-teknolojisi-temmuz-tirmanis-tork-transfagara-transfagarasan-tron-tron-tron-tron-tron-turkiye-turkiye-turkiye-tutkunlari-tutusunu-ulasacakti-ulasiyor-unutulmaz-unutulmaz-urkutucu-ust-uzerinde-valfli-varan-vergilendiriliyor-viraj-virajlar-virajlari-wltp-yaklasik-yandan-yandan-yanmali-yapisiyla-yasadim-yasandi-yenilenen-yenilenen-yer-yer-yer-yeri-yok-yol-yol-yol-yolu-yolunda-yon-yukseklik-zaten-zorlayan-zorlu"
-          },
-          {
-            "title": "Dünyanın en büyük elektrikli otobüs üreticisi Yutong Suriye'de fabrika kurmak üzere anlaştı. Çinli Yutong, Suriye'de toplu ulaşımın yeniden canlanması için SCAI adlı Suriye devlet firmasıyla anlaşma imzaladı. 16 farklı ülkede otobüs üretimi/montajı gerçekleştiren Yutong, 2025'te toplam 18.356 adet prizli hibrit ve tamamen elektrikli toplu ulaşım aracı üretmişti. Suriye'de ilk etapta başkent Şam'da toplu ulaşımın elektrikli otobüslerle gerçekleştirilmesi için çalışma yürütülecek. Geçen yıl ilk otobüs şarj istasyonları için kurulumlara başlanmış, Mart 2026'da ise 150 araçlık alım duyurusu yapılmıştı.",
-            "link": "https://nitter.net/DoluBatarya/status/2080667240660107694#m",
-            "published": "2026-07-24T14:51:41+00:00",
-            "summary": "Dünyanın en büyük elektrikli otobüs üreticisi Yutong Suriye'de fabrika kurmak üzere anlaştı. Çinli Yutong, Suriye'de toplu ulaşımın yeniden canlanması için SCAI adlı Suriye devlet firmasıyla anlaşma imzaladı. 16 farklı ülkede otobüs üretimi/montajı gerçekleştiren Yutong, 2025'te toplam 18.356 adet prizli hibrit ve tamamen elektrikli toplu ulaşım aracı üretmişti. Suriye'de ilk etapta başkent Şam'da toplu ulaşımın elektrikli otobüslerle gerçekleştirilmesi için çalışma yürütülecek. Geçen yıl ilk otobüs şarj istasyonları için kurulumlara başlanmış, Mart 2026'da ise 150 araçlık alım duyurusu yapılmıştı.",
-            "image_url": "https://pbs.twimg.com/media/HN__qbqWcAEnJm_.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HN__qbqWcAEnJm_.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HN__qbqWcAEnJm_.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "150-2025-2026-356-adet-adli-alim-anlasma-anlasti-araci-araclik-baskent-baslanmis-calisma-canlanmasi-cinli-devlet-dunyanin-duyurusu-elektrikli-elektrikli-elektrikli-etapta-fabrika-farkli-firmasiyla-gecen-gerceklestiren-gerceklestirilmesi-hibrit-imzaladi-ise-istasyonlari-kurmak-kurulumlara-mart-montaji-otobus-otobus-otobus-otobuslerle-prizli-sam-sarj-scai-suriye-suriye-suriye-suriye-tamamen-toplam-toplu-toplu-toplu-ulasim-ulasimin-ulasimin-ulkede-ureticisi-uretimi-uretmisti-yapilmisti-yeniden-yil-yurutulecek-yutong-yutong-yutong"
-          },
-          {
-            "title": "Mercedes-Benz yeni S-Serisi ve Maybach S-Serisi’ni Türkiye’de satışa açtı. 🚘 S-Serisi’nde fiyat 22.8 milyon TL’den başlıyor. “S 450 d 4MATİC L FL” ve “S 500 4MATİC L FL” olmak üzere 2 farklı seçenek mevcut. Aracın vergisiz fiyatı yaklaşık 6 milyon TL ancak üzerinde %220 ÖTV + %20 KDV var. 🚘 Maybach S-Serisi’nde ise fiyat 36.2 milyon TL’den başlıyor. “S 580 FL Inspiration” versiyonla satışa çıkıyor. Bu aracın vergisiz fiyatı da 9.5 milyon TL seviyesinde. ➡️ W223 mimarisini koruyan ancak 2700 parçasını değiştirip büyük bir teknoloji güncellemesi alan S-Klasse’nin tüm motorlarında artık 17 kW’lık entegre marş jeneratörü (ISG) ve 48 voltluk sistem var.",
-            "link": "https://nitter.net/taylandil/status/2080675704685867394#m",
-            "published": "2026-07-24T15:25:19+00:00",
-            "summary": "Mercedes-Benz yeni S-Serisi ve Maybach S-Serisi’ni Türkiye’de satışa açtı. 🚘 S-Serisi’nde fiyat 22.8 milyon TL’den başlıyor. “S 450 d 4MATİC L FL” ve “S 500 4MATİC L FL” olmak üzere 2  farklı seçenek mevcut. Aracın vergisiz fiyatı yaklaşık 6 milyon TL ancak üzerinde %220 ÖTV + %20 KDV var. 🚘 Maybach S-Serisi’nde ise fiyat 36.2 milyon TL’den başlıyor. “S 580 FL Inspiration” versiyonla satışa çıkıyor. Bu aracın vergisiz fiyatı da 9.5 milyon TL seviyesinde. ➡️ W223 mimarisini koruyan ancak 2700 parçasını değiştirip büyük bir teknoloji güncellemesi alan S-Klasse’nin tüm motorlarında artık 17 kW’lık entegre marş jeneratörü (ISG) ve 48 voltluk sistem var.",
-            "image_url": "https://pbs.twimg.com/media/HOALRdxWcAAmkU_.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOALRdxWcAAmkU_.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOALRdxWcAAmkU_.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TaylanOzgurDil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "220-2700-450-4mati-4mati-500-580-acti-alan-aracin-aracin-basliyor-basliyor-benz-cikiyor-degistirip-entegre-farkli-fiyat-fiyat-fiyati-fiyati-guncellemesi-inspiration-ise-isg-jeneratoru-kdv-klasse-koruyan-lik-mars-maybach-maybach-mercedes-mevcut-milyon-milyon-milyon-milyon-mimarisini-motorlarinda-nde-nde-olmak-otv-parcasini-satisa-satisa-secenek-serisi-serisi-serisi-serisi-seviyesinde-sistem-teknoloji-turkiye-uzerinde-var-var-vergisiz-vergisiz-versiyonla-voltluk-w223-yaklasik"
-          },
-          {
-            "title": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-            "link": "https://nitter.net/HakanDOGU/status/2080679663479771245#m",
-            "published": "2026-07-24T15:41:03+00:00",
-            "summary": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-            "image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "HakanDOgu",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2019-2019-2019-2025-2025-2026-above-affordable-aged-and-and-and-and-and-anti-around-barely-berger-brief-buy-car-car-cars-cars-china-climate-commit-destroyed-diesels-dirtier-doubled-drove-escape-europe-europe-evs-flat-fleet-fleet-follows-for-for-for-forever-france-french-from-gone-green-green-harm-how-hybrids-ideology-industrial-its-itself-june-laboratory-lobby-market-market-market-million-million-million-million-mobilians-mobility-more-moved-multiples-nearly-new-new-not-nothing-nox-offered-old-older-older-older-one-ordinary-out-out-out-overdrive-overkill-own-particles-people-people-period-period-pfa-pivoted-policy-power-priced-prices-prices-produced-pumping-purchasing-recent-regulating-regulatory-result-roland-rooted-sales-same-self-share-share-simply-sold-sold-still-still-story-strategy-study-suicide-tariffs-that-the-the-the-the-the-the-the-they-thinking-this-this-units-used-vanished-virtue-volumes-walked-wall-was-while-woke-wrecks-year-years"
           }
         ],
-        "count": 9,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -225,10 +96,10 @@
             "attempts": 1
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -237,10 +108,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -261,16 +132,16 @@
             "attempts": 1
           },
           "MuratTosun": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
+          },
+          "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
-          },
-          "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -286,235 +157,240 @@
           },
           "_metrics": {
             "found": 160,
-            "after_keyword": 105,
-            "after_time": 17,
-            "after_posted": 9,
-            "after_duplicate": 9,
-            "after_shared_variant_cooldown": 9
+            "after_keyword": 112,
+            "after_time": 9,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 160,
-          "after_keyword": 105,
-          "after_time": 17,
-          "after_posted": 9,
-          "after_duplicate": 9,
-          "after_shared_variant_cooldown": 9
+          "after_keyword": 112,
+          "after_time": 9,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-07-24T21:06:44.249262+03:00"
+      "updated_at": "2026-07-25T09:07:43.896572+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-          "link": "https://nitter.net/HakanDOGU/status/2080679663479771245#m",
-          "published": "2026-07-24T15:41:03+00:00",
-          "summary": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-          "image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "HakanDOgu",
+          "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
+          "link": "https://shiftdelete.net/toyotadan-dev-kriz-itirafi-geleneksel-yontemlerle-hayatta-kalamayiz",
+          "published": "2026-07-24T18:00:54+00:00",
+          "summary": "Dünya otomotiv satışlarında liderliğini sürdüren Japon devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipleri karşısında yaşadığı baskıyı ilk kez bu kadar net bir dille kabul etti. Şirket içi ciddi bir kriz hissinin hakim olduğunu belirten yetkililer, otomotiv tarihinin en çok satan modeli olan Corolla’nın yeni nesil elektrikli versiyonu Toyota Corolla EV projesini markanın kaderini belirleyecek […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "2019-2019-2019-2025-2025-2026-above-affordable-aged-and-and-and-and-and-anti-around-barely-berger-brief-buy-car-car-cars-cars-china-climate-commit-destroyed-diesels-dirtier-doubled-drove-escape-europe-europe-evs-flat-fleet-fleet-follows-for-for-for-forever-france-french-from-gone-green-green-harm-how-hybrids-ideology-industrial-its-itself-june-laboratory-lobby-market-market-market-million-million-million-million-mobilians-mobility-more-moved-multiples-nearly-new-new-not-nothing-nox-offered-old-older-older-older-one-ordinary-out-out-out-overdrive-overkill-own-particles-people-people-period-period-pfa-pivoted-policy-power-priced-prices-prices-produced-pumping-purchasing-recent-regulating-regulatory-result-roland-rooted-sales-same-self-share-share-simply-sold-sold-still-still-story-strategy-study-suicide-tariffs-that-the-the-the-the-the-the-the-they-thinking-this-this-units-used-vanished-virtue-volumes-walked-wall-was-while-woke-wrecks-year-years",
-          "base_ai_score": 85,
+          "topic_fingerprint": "dev-geleneksel-hayatta-kalamayiz-kriz-tirafi-toyota-yontemlerle",
+          "base_ai_score": 82,
           "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 11
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 10
           },
-          "score": 89,
+          "score": 79,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv endüstrisindeki krizleri, fiyat artışlarını ve Avrupa'nın politikalarını sert bir dille eleştiren, sosyal medyada tartışma yaratacak ve yüksek etkileşim alacak türden çarpıcı bir analiz.",
-          "freshness_bonus": 7,
+          "score_explanation": "Dünyanın en büyük üreticisinden gelen bu çarpıcı itiraf sektörde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": -4,
           "trend_bonus_raw": 1
         },
-        "score": 89,
-        "title": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
+        "score": 79,
+        "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 7,
+        "freshness_bonus": -4,
         "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 18,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 11
+          "guncellik": 14,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 15,
+          "gundem_gucu": 18,
+          "paylasilabilirlik": 10
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv endüstrisindeki krizleri, fiyat artışlarını ve Avrupa'nın politikalarını sert bir dille eleştiren, sosyal medyada tartışma yaratacak ve yüksek etkileşim alacak türden çarpıcı bir analiz.",
+        "score_explanation": "Dünyanın en büyük üreticisinden gelen bu çarpıcı itiraf sektörde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
         "skipped": false,
-        "threshold": 40,
+        "threshold": 30,
         "top_articles": [
           {
-            "title": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-            "score": 89,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 18,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 11
-            }
-          },
-          {
             "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
-            "score": 83,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 11
-            }
-          },
-          {
-            "title": "Fransa’dan Tesla FSD’ye Kırmızı Işık: Avrupa’da Otonom Sürüş Düğümü!",
             "score": 79,
             "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 19,
-              "benzersizlik": 14,
-              "gundem_gucu": 16,
+              "guncellik": 14,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 15,
+              "gundem_gucu": 18,
               "paylasilabilirlik": 10
+            }
+          },
+          {
+            "title": "Her yüzeyi güneş paneline dönüştürecek yeni teknoloji",
+            "score": 66,
+            "score_breakdown": {
+              "guncellik": 15,
+              "etkilesim_potansiyeli": 16,
+              "benzersizlik": 16,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 8
             }
           }
         ],
-        "scored_count": 9,
+        "scored_count": 2,
         "cooldown_candidates": [
           {
-            "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
-            "link": "https://shiftdelete.net/toyotadan-dev-kriz-itirafi-geleneksel-yontemlerle-hayatta-kalamayiz",
-            "score": 83,
+            "title": "Her yüzeyi güneş paneline dönüştürecek yeni teknoloji",
+            "link": "https://www.donanimhaber.com/her-yuzeyi-gunes-paneline-donusturen-yeni-teknoloji--208489",
+            "score": 66,
             "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "dev-geleneksel-hayatta-kalamayiz-kriz-tirafi-toyota-yontemlerle"
-          },
-          {
-            "title": "Fransa’dan Tesla FSD’ye Kırmızı Işık: Avrupa’da Otonom Sürüş Düğümü!",
-            "link": "https://shiftdelete.net/fransadan-tesla-fsdye-kirmizi-isik-avrupada-otonom-surus-dugumu",
-            "score": 79,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "avrupa-dugumu-fransa-fsd-isik-kirmizi-otonom-surus-tesla"
-          },
-          {
-            "title": "Tesla’dan Hardware 3 Sahiplerine Kötü Haber: Musk Söylediklerini Unuttu mu?",
-            "link": "https://shiftdelete.net/tesladan-hardware-3-sahiplerine-kotu-haber-elon-musk-soylediklerini-unuttu-mu",
-            "score": 78,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "haber-hardware-kotu-musk-sahiplerine-soylediklerini-tesla-unuttu"
-          },
-          {
-            "title": "925 beygirlik elektrikli bir GT ile dünyanın en etkileyici sürüş rotalarından biri… Elektrikli olmasa en az 40 milyon TL 😱 Romanya’nın efsanevi Transfagaraşan yolunda, yenilenen Audi RS e-tron GT Performance ile unutulmaz bir sürüş deneyimi yaşadım. Bir tarafta eşsiz manzaralı göller, diğer tarafta temmuz ayında bile erimeyen karlar… Her viraj yeni bir manzara, her tırmanış farklı bir hikaye sunuyor. Jeremy Clarkson’ın 'dünyanın en güzel yolu' dediği Transfagarașan’ın neden bu kadar özel olduğunu direksiyon başında çok daha iyi anlıyorsunuz. Zaten bu meşhur yok, motosiklet ve otomobil tutkunları için zorlu virajları ve muazzam manzaraları nedeniyle bir 'hac' yeri olarak kabul ediliyormuş. Ben de hacı oldum anlayacağınız 🤣 Ancak bu yol sadece manzarasıyla değil, otomobili zorlayan yapısıyla da etkileyici. Yer yer bozuk asfalt, keskin virajlar, ani yükseklik değişimleri ve hızlı yön değiştirmeler şasiyi gerçek anlamda sınava sokuyor. Bu şartlarda en çok dikkatimi çeken özelliklerden biri yeni şasi teknolojisi oldu. Standart olarak sunulan 2 odacıklı havalı süspansiyon ve 2 valfli adaptif amortisörler, otomobilin hem konforunu hem de yol tutuşunu aynı anda bir üst seviyeye taşıyor. Ama en unutulmaz anlardan biri asfalt üzerinde değil, ormanda yaşandı… Yol kenarında karşımıza çıkan boz ayılar, bir yandan ürkütücü, diğer yandan doğanın hala ne kadar güçlü olduğunu hatırlatan eşsiz bir deneyimdi. Peki ya otomobil⁉️ ⚡ 925 bg (680 kW) anlık güç ⚡ 0-100 km/s: 2,5 saniye ⚡ 1.027 Nm tork (Launch Control ile) ⚡ 97 kWh batarya ⚡ WLTP’ye göre 592 km’ye varan menzil Bu arada yenilenen Audi e-tron GT ailesi Türkiye’de de satışa sunuldu. Türkiye fiyatları ise; 💢Audi e-tron GT: 10,7 milyon TL 💢Audi S e-tron GT: 14 milyon TL 💢Benim kullandığım RS e-tron GT Performance ise Türkiye’de standart satış listesinde yer almıyor. Özel siparişle getirilebiliyor ve fiyatı yaklaşık 20 milyon TL seviyesine ulaşıyor. İşin ilginç tarafı, bu otomobil elektrikli olduğu için %75 ÖTV ile vergilendiriliyor. Eğer aynı güçte bir içten yanmalı otomobil olsaydı, bugün %220 ÖTV dilimine girecek fiyatı 40 milyona ulaşacaktı.",
-            "link": "https://nitter.net/eozpeynirci/status/2080674240857002184#m",
-            "score": 71,
-            "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "027-100-220-592-680-925-925-adaptif-ailesi-almiyor-amortisorler-anda-ani-anlamda-anlardan-anlayacaginiz-anlik-anliyorsunuz-arada-asfalt-asfalt-audi-audi-audi-audi-ayilar-ayinda-ayni-ayni-basinda-batarya-ben-benim-beygirlik-biri-biri-biri-boz-bozuk-bugun-ceken-cikan-clarkson-control-dedigi-degil-degil-degisimleri-degistirmeler-deneyimdi-deneyimi-diger-diger-dikkatimi-dilimine-direksiyon-doganin-dunyanin-dunyanin-ediliyormus-efsanevi-eger-elektrikli-elektrikli-elektrikli-erimeyen-essiz-essiz-etkileyici-etkileyici-farkli-fiyati-fiyati-fiyatlari-gercek-getirilebiliyor-girecek-goller-guc-guclu-gucte-guzel-hac-haci-hala-hatirlatan-havali-hem-hem-hikaye-hizli-icten-ilginc-ise-ise-iyi-jeremy-kabul-karlar-karsimiza-kenarinda-keskin-konforunu-kullandigim-kwh-launch-listesinde-manzara-manzaralari-manzarali-manzarasiyla-menzil-meshur-milyon-milyon-milyon-milyon-milyona-motosiklet-muazzam-neden-nedeniyle-odacikli-oldugu-oldugunu-oldugunu-oldum-olmasa-olsaydi-ormanda-otomobil-otomobil-otomobil-otomobil-otomobili-otomobilin-otv-otv-ozel-ozel-ozelliklerden-peki-performance-performance-romanya-rotalarindan-saniye-sartlarda-sasi-sasiyi-satis-satisa-seviyesine-seviyeye-sin-sinava-siparisle-sokuyor-standart-standart-sunulan-sunuldu-sunuyor-surus-surus-suspansiyon-tarafi-tarafta-tarafta-tasiyor-teknolojisi-temmuz-tirmanis-tork-transfagara-transfagarasan-tron-tron-tron-tron-tron-turkiye-turkiye-turkiye-tutkunlari-tutusunu-ulasacakti-ulasiyor-unutulmaz-unutulmaz-urkutucu-ust-uzerinde-valfli-varan-vergilendiriliyor-viraj-virajlar-virajlari-wltp-yaklasik-yandan-yandan-yanmali-yapisiyla-yasadim-yasandi-yenilenen-yenilenen-yer-yer-yer-yeri-yok-yol-yol-yol-yolu-yolunda-yon-yukseklik-zaten-zorlayan-zorlu"
-          },
-          {
-            "title": "Mercedes-Benz yeni S-Serisi ve Maybach S-Serisi’ni Türkiye’de satışa açtı. 🚘 S-Serisi’nde fiyat 22.8 milyon TL’den başlıyor. “S 450 d 4MATİC L FL” ve “S 500 4MATİC L FL” olmak üzere 2 farklı seçenek mevcut. Aracın vergisiz fiyatı yaklaşık 6 milyon TL ancak üzerinde %220 ÖTV + %20 KDV var. 🚘 Maybach S-Serisi’nde ise fiyat 36.2 milyon TL’den başlıyor. “S 580 FL Inspiration” versiyonla satışa çıkıyor. Bu aracın vergisiz fiyatı da 9.5 milyon TL seviyesinde. ➡️ W223 mimarisini koruyan ancak 2700 parçasını değiştirip büyük bir teknoloji güncellemesi alan S-Klasse’nin tüm motorlarında artık 17 kW’lık entegre marş jeneratörü (ISG) ve 48 voltluk sistem var.",
-            "link": "https://nitter.net/taylandil/status/2080675704685867394#m",
-            "score": 68,
-            "score_reason": "ai_scored",
-            "source_name": "TaylanOzgurDil",
-            "topic_fingerprint": "220-2700-450-4mati-4mati-500-580-acti-alan-aracin-aracin-basliyor-basliyor-benz-cikiyor-degistirip-entegre-farkli-fiyat-fiyat-fiyati-fiyati-guncellemesi-inspiration-ise-isg-jeneratoru-kdv-klasse-koruyan-lik-mars-maybach-maybach-mercedes-mevcut-milyon-milyon-milyon-milyon-mimarisini-motorlarinda-nde-nde-olmak-otv-parcasini-satisa-satisa-secenek-serisi-serisi-serisi-serisi-seviyesinde-sistem-teknoloji-turkiye-uzerinde-var-var-vergisiz-vergisiz-versiyonla-voltluk-w223-yaklasik"
-          },
-          {
-            "title": "Mercedes-AMG, V8 coupe'sini test etmek için Nürburgring’i kapattı",
-            "link": "https://tr.motor1.com/news/802663/amg-cle-mythos-ring-kapatti/",
-            "score": 57,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "amg-coupe-etmek-kapatti-mercedes-nurburgring-sini-test"
-          },
-          {
-            "title": "Dünyanın en büyük elektrikli otobüs üreticisi Yutong Suriye'de fabrika kurmak üzere anlaştı. Çinli Yutong, Suriye'de toplu ulaşımın yeniden canlanması için SCAI adlı Suriye devlet firmasıyla anlaşma imzaladı. 16 farklı ülkede otobüs üretimi/montajı gerçekleştiren Yutong, 2025'te toplam 18.356 adet prizli hibrit ve tamamen elektrikli toplu ulaşım aracı üretmişti. Suriye'de ilk etapta başkent Şam'da toplu ulaşımın elektrikli otobüslerle gerçekleştirilmesi için çalışma yürütülecek. Geçen yıl ilk otobüs şarj istasyonları için kurulumlara başlanmış, Mart 2026'da ise 150 araçlık alım duyurusu yapılmıştı.",
-            "link": "https://nitter.net/DoluBatarya/status/2080667240660107694#m",
-            "score": 53,
-            "score_reason": "ai_scored",
-            "source_name": "Dolu Batarya",
-            "topic_fingerprint": "150-2025-2026-356-adet-adli-alim-anlasma-anlasti-araci-araclik-baskent-baslanmis-calisma-canlanmasi-cinli-devlet-dunyanin-duyurusu-elektrikli-elektrikli-elektrikli-etapta-fabrika-farkli-firmasiyla-gecen-gerceklestiren-gerceklestirilmesi-hibrit-imzaladi-ise-istasyonlari-kurmak-kurulumlara-mart-montaji-otobus-otobus-otobus-otobuslerle-prizli-sam-sarj-scai-suriye-suriye-suriye-suriye-tamamen-toplam-toplu-toplu-toplu-ulasim-ulasimin-ulasimin-ulkede-ureticisi-uretimi-uretmisti-yapilmisti-yeniden-yil-yurutulecek-yutong-yutong-yutong"
-          },
-          {
-            "title": "Süperşarjlı bir Corvette, orijinal motoruyla 300.000 mil'i devirdi!",
-            "link": "https://tr.motor1.com/news/802669/supersarj-corvette-300-bin-mil/",
-            "score": 53,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "000-300-corvette-devirdi-mil-motoruyla-orijinal-supersarjli"
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "donusturecek-gunes-paneline-teknoloji-yuzeyi"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-07-24T21:06:55.675947+03:00"
+      "updated_at": "2026-07-25T09:07:46.314938+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-          "link": "https://nitter.net/HakanDOGU/status/2080679663479771245#m",
-          "published": "2026-07-24T15:41:03+00:00",
-          "summary": "⚠️A brief story of how to commit industrial suicide. 🇫🇷France is the laboratory. Roland Berger study for the PFA, Mobilians for 2019–2025 period: 🚩New-car prices +34% 🚩Sales –27% → 1.6 million. 🚩Purchasing power barely moved in the same period. Ordinary people priced out. 🇪🇺Europe follows: 15.8 million new cars in 2019. 13.3 million in 2025. 2.5 million units gone. Forever. ‼️The used market offered no escape. Volumes flat. Prices still ~40% above 2019. Recent cars vanished people buy older and older wrecks. ‼️Result: the French fleet aged from ~10.4 to nearly 12 years. Old diesels still pumping out multiples more NOx and particles. The “green” strategy produced an older, dirtier fleet. This is not climate policy. This is green ideology in overdrive, an anti-car lobby rooted in woke thinking and regulatory overkill that destroyed affordable mobility. And while Europe was regulating itself out of its own market, China walked in: 10.9% share in June 2026, doubled in one year. Tariffs on EVs? They simply pivoted to hybrids and drove around the wall. Self-harm sold as virtue. Market share sold for nothing.",
-          "image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HOAPAiaWAAAIot0.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "HakanDOgu",
+          "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
+          "link": "https://shiftdelete.net/toyotadan-dev-kriz-itirafi-geleneksel-yontemlerle-hayatta-kalamayiz",
+          "published": "2026-07-24T18:00:54+00:00",
+          "summary": "Dünya otomotiv satışlarında liderliğini sürdüren Japon devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipleri karşısında yaşadığı baskıyı ilk kez bu kadar net bir dille kabul etti. Şirket içi ciddi bir kriz hissinin hakim olduğunu belirten yetkililer, otomotiv tarihinin en çok satan modeli olan Corolla’nın yeni nesil elektrikli versiyonu Toyota Corolla EV projesini markanın kaderini belirleyecek […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "2019-2019-2019-2025-2025-2026-above-affordable-aged-and-and-and-and-and-anti-around-barely-berger-brief-buy-car-car-cars-cars-china-climate-commit-destroyed-diesels-dirtier-doubled-drove-escape-europe-europe-evs-flat-fleet-fleet-follows-for-for-for-forever-france-french-from-gone-green-green-harm-how-hybrids-ideology-industrial-its-itself-june-laboratory-lobby-market-market-market-million-million-million-million-mobilians-mobility-more-moved-multiples-nearly-new-new-not-nothing-nox-offered-old-older-older-older-one-ordinary-out-out-out-overdrive-overkill-own-particles-people-people-period-period-pfa-pivoted-policy-power-priced-prices-prices-produced-pumping-purchasing-recent-regulating-regulatory-result-roland-rooted-sales-same-self-share-share-simply-sold-sold-still-still-story-strategy-study-suicide-tariffs-that-the-the-the-the-the-the-the-they-thinking-this-this-units-used-vanished-virtue-volumes-walked-wall-was-while-woke-wrecks-year-years",
-          "base_ai_score": 85,
+          "topic_fingerprint": "dev-geleneksel-hayatta-kalamayiz-kriz-tirafi-toyota-yontemlerle",
+          "base_ai_score": 82,
           "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 11
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 10
           },
-          "score": 89,
+          "score": 79,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv endüstrisindeki krizleri, fiyat artışlarını ve Avrupa'nın politikalarını sert bir dille eleştiren, sosyal medyada tartışma yaratacak ve yüksek etkileşim alacak türden çarpıcı bir analiz.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
+          "score_explanation": "Dünyanın en büyük üreticisinden gelen bu çarpıcı itiraf sektörde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": -4,
+          "trend_bonus_raw": 1,
+          "full_text": "Dünya otomotiv satışlarında liderliğini sürdüren Japon devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipleri karşısında yaşadığı baskıyı ilk kez bu kadar net bir dille kabul etti. Şirket içi ciddi bir kriz hissinin hakim olduğunu belirten yetkililer, otomotiv tarihinin en çok satan modeli olan Corolla’nın yeni nesil elektrikli versiyonuToyota Corolla EVprojesini markanın kaderini belirleyecek dönüm noktası olarak görüyor. Japon devlet televizyonu NHK’nin Toyota’nın gizli geliştirme merkezine konuk olduğu belgeselde konuşan şirket YK Başkanı Akio Toyoda,“Eski yöntemlerimize bağlı kalarak hayatta kalamayız. Rahatlığa kapılırsak her şey biter”uyarısında bulundu. Belgesel sırasında geliştirme aşamasındaki yeni nesil modeller ve prototipler ilk kez gün yüzüne çıkarken, geliştirme ekibinden bir Toyota mühendisinin“Dürüst olmak gerekirse Çin’e karşı kaybediyoruz”sözleri dikkat çekti. ÖzellikleBYD ve Teslagibi üreticilerin hızlı üretim döngüleri, yazılım odaklı mimarileri ve düşük batarya maliyetleriyle sektörü domine etmesi, Toyota’nın klasik ve yavaş ilerleyen ürün geliştirme süreçlerini radikal şekilde değiştirmeye zorluyor. Geçtiğimiz dönemde gösterilen Corolla Concept çizgilerini taşıyan yeni model, sadece saf elektrikli (BEV) değil; şarj edilebilir hibrit (PHEV), hibrit ve benzinli motor seçeneklerini aynı anda destekleyen modüler yeni bir platform üzerine inşa ediliyor. Geliştirme sürecine dair öne çıkan teknik noktalar şunlar: Çoklu Güç Seçeneği:Yeni platform; tamamen elektrikli (EV), plug-in hibrit ve geleneksel motorları aynı şaside barındıracak. Yeni Nesil Batarya Teknolojisi:Aracın tam elektrikli sürümünde daha yüksek enerji yoğunluğuna sahip güncel batarya paketlerinin kullanılması planlanıyor. Farklı Gövde Tipleri:Proje kapsamında sedandan hatchback’e, crossover’dan performans odaklı GR sürümüne kadar geniş bir ürün ailesi hazırlanıyor. Yıllardır tamamen elektrikli araçlara (BEV) geçişte mesafeli davranan ve hibrit teknolojisini savunan Toyota, pazardaki dengelerin Çin lehine hızla değişmesi üzerine stratejisini sert bir şekilde revize etmek zorunda kaldı. Geçtiğimiz aylarda amiral gemisi Lexus LF-ZC projesini iptal ederek kaynaklarını daha verimli platformlara aktaran şirket, tüm gücünü küresel pazarın en çok satan simge modeli Corolla’yı elektriklendirmeye veriyor. Peki siz Toyota’nın bu itirafı ve elektrikli araç stratejisi hakkında ne düşünüyorsunuz? Sizce yeni Corolla EV, Çinli rakiplerini geride bırakabilir mi? Görüşlerinizi yorumlarda paylaşmayı unutmayın! Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
         },
-        "post_text": "⚠️ OTOMOTİVDE SANAYİ İNTİHARI MI YAŞANIYOR?\n\nFransa'da 2019-2025 arası yeni araç fiyatları %34 artarken, satışlar %27 düştü. Avrupa genelinde de benzer bir tablo var, 2.5 milyon araç piyasadan çekildi.\n\nİkinci el piyasası da çözüm olmadı, fiyatlar 2019'a göre %40 yukarıda. Sonuç: Fransız araç filosu 10.4 yıldan 12 yıla yaşlandı, çevre kirliliği arttı.\n\n\"Yeşil\" strateji, daha eski ve kirli bir filoya yol açtı. Sizce bu durum nasıl düzeltilebilir?",
-        "post_text_length": 449,
+        "post_text": "🚨 TOYOTA'DAN KRİTİK İTİRAF: DEĞİŞİM ŞART!\n\nOtomotiv devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipler karşısında zorlandığını ilk kez açıkça kabul etti. Şirket içinde büyük bir kriz hissi yaşanıyor.\n\nBaşkan Akio Toyoda, \"Eski yöntemlerle hayatta kalamayız\" dedi. Yeni nesil elektrikli Corolla, markanın kaderini belirleyecek.\n\nSizce Toyota bu dönüşümü başarabilecek mi?",
+        "post_text_length": 378,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-24T21:06:57.525507+03:00"
+      "updated_at": "2026-07-25T09:07:48.107285+03:00"
     },
     "image": {
-      "status": "error",
-      "output": null,
-      "error": "name '_candidate_key' is not defined",
-      "updated_at": "2026-07-24T21:06:58.242610+03:00"
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Toyota’dan Dev Kriz İtirafı: “Geleneksel Yöntemlerle Hayatta Kalamayız!”",
+          "link": "https://shiftdelete.net/toyotadan-dev-kriz-itirafi-geleneksel-yontemlerle-hayatta-kalamayiz",
+          "published": "2026-07-24T18:00:54+00:00",
+          "summary": "Dünya otomotiv satışlarında liderliğini sürdüren Japon devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipleri karşısında yaşadığı baskıyı ilk kez bu kadar net bir dille kabul etti. Şirket içi ciddi bir kriz hissinin hakim olduğunu belirten yetkililer, otomotiv tarihinin en çok satan modeli olan Corolla’nın yeni nesil elektrikli versiyonu Toyota Corolla EV projesini markanın kaderini belirleyecek […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "meta_og",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "dev-geleneksel-hayatta-kalamayiz-kriz-tirafi-toyota-yontemlerle",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 14,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 10
+          },
+          "score": 79,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dünyanın en büyük üreticisinden gelen bu çarpıcı itiraf sektörde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": -4,
+          "trend_bonus_raw": 1,
+          "full_text": "Dünya otomotiv satışlarında liderliğini sürdüren Japon devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipleri karşısında yaşadığı baskıyı ilk kez bu kadar net bir dille kabul etti. Şirket içi ciddi bir kriz hissinin hakim olduğunu belirten yetkililer, otomotiv tarihinin en çok satan modeli olan Corolla’nın yeni nesil elektrikli versiyonuToyota Corolla EVprojesini markanın kaderini belirleyecek dönüm noktası olarak görüyor. Japon devlet televizyonu NHK’nin Toyota’nın gizli geliştirme merkezine konuk olduğu belgeselde konuşan şirket YK Başkanı Akio Toyoda,“Eski yöntemlerimize bağlı kalarak hayatta kalamayız. Rahatlığa kapılırsak her şey biter”uyarısında bulundu. Belgesel sırasında geliştirme aşamasındaki yeni nesil modeller ve prototipler ilk kez gün yüzüne çıkarken, geliştirme ekibinden bir Toyota mühendisinin“Dürüst olmak gerekirse Çin’e karşı kaybediyoruz”sözleri dikkat çekti. ÖzellikleBYD ve Teslagibi üreticilerin hızlı üretim döngüleri, yazılım odaklı mimarileri ve düşük batarya maliyetleriyle sektörü domine etmesi, Toyota’nın klasik ve yavaş ilerleyen ürün geliştirme süreçlerini radikal şekilde değiştirmeye zorluyor. Geçtiğimiz dönemde gösterilen Corolla Concept çizgilerini taşıyan yeni model, sadece saf elektrikli (BEV) değil; şarj edilebilir hibrit (PHEV), hibrit ve benzinli motor seçeneklerini aynı anda destekleyen modüler yeni bir platform üzerine inşa ediliyor. Geliştirme sürecine dair öne çıkan teknik noktalar şunlar: Çoklu Güç Seçeneği:Yeni platform; tamamen elektrikli (EV), plug-in hibrit ve geleneksel motorları aynı şaside barındıracak. Yeni Nesil Batarya Teknolojisi:Aracın tam elektrikli sürümünde daha yüksek enerji yoğunluğuna sahip güncel batarya paketlerinin kullanılması planlanıyor. Farklı Gövde Tipleri:Proje kapsamında sedandan hatchback’e, crossover’dan performans odaklı GR sürümüne kadar geniş bir ürün ailesi hazırlanıyor. Yıllardır tamamen elektrikli araçlara (BEV) geçişte mesafeli davranan ve hibrit teknolojisini savunan Toyota, pazardaki dengelerin Çin lehine hızla değişmesi üzerine stratejisini sert bir şekilde revize etmek zorunda kaldı. Geçtiğimiz aylarda amiral gemisi Lexus LF-ZC projesini iptal ederek kaynaklarını daha verimli platformlara aktaran şirket, tüm gücünü küresel pazarın en çok satan simge modeli Corolla’yı elektriklendirmeye veriyor. Peki siz Toyota’nın bu itirafı ve elektrikli araç stratejisi hakkında ne düşünüyorsunuz? Sizce yeni Corolla EV, Çinli rakiplerini geride bırakabilir mi? Görüşlerinizi yorumlarda paylaşmayı unutmayın! Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "🚨 TOYOTA'DAN KRİTİK İTİRAF: DEĞİŞİM ŞART!\n\nOtomotiv devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipler karşısında zorlandığını ilk kez açıkça kabul etti. Şirket içinde büyük bir kriz hissi yaşanıyor.\n\nBaşkan Akio Toyoda, \"Eski yöntemlerle hayatta kalamayız\" dedi. Yeni nesil elektrikli Corolla, markanın kaderini belirleyecek.\n\nSizce Toyota bu dönüşümü başarabilecek mi?",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/07/Toyota-Corolla-EV-4-e1784893513398.webp",
+            "https://ares.shiftdelete.net/2026/07/Toyota-Corolla-EV.webp",
+            "https://ares.shiftdelete.net/2026/07/Toyota-Corolla-EV-2.webp",
+            "https://ares.shiftdelete.net/2026/07/Toyota-Corolla-EV-3.webp"
+          ]
+        },
+        "post_text": "🚨 TOYOTA'DAN KRİTİK İTİRAF: DEĞİŞİM ŞART!\n\nOtomotiv devi Toyota, elektrikli araç dönüşümünde ve Çinli rakipler karşısında zorlandığını ilk kez açıkça kabul etti. Şirket içinde büyük bir kriz hissi yaşanıyor.\n\nBaşkan Akio Toyoda, \"Eski yöntemlerle hayatta kalamayız\" dedi. Yeni nesil elektrikli Corolla, markanın kaderini belirleyecek.\n\nSizce Toyota bu dönüşümü başarabilecek mi?",
+        "image_path": "/tmp/otoxtra_img_cdmxcq5q.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_cdmxcq5q.jpg",
+          "/tmp/otoxtra_img_9ru3wlmi.jpg",
+          "/tmp/otoxtra_img_yyw_8mq1.jpg",
+          "/tmp/otoxtra_img_u03s4_ve.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
+      "error": null,
+      "updated_at": "2026-07-25T09:07:52.127816+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122173546910916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17940465138273091",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1526686318935987",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-25T09:08:46.632597+03:00"
     }
   }
 }
