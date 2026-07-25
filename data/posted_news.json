@@ -1858,7 +1858,7 @@
     "2026-07-24": 5,
     "2026-07-25": 2
   },
-  "last_check_time": "2026-07-25T18:47:05.702228+03:00",
+  "last_check_time": "2026-07-25T20:43:49.752256+03:00",
   "stats": {
     "daily_actions": {
       "2026-06-25": 4,
@@ -1891,7 +1891,7 @@
       "2026-07-22": 7,
       "2026-07-23": 6,
       "2026-07-24": 9,
-      "2026-07-25": 6
+      "2026-07-25": 7
     },
     "weekly": {
       "2026-W16": {
@@ -2076,7 +2076,7 @@
         "report_sent_at": "2026-07-20T13:52:20.231604+03:00"
       },
       "2026-W30": {
-        "actions": 36,
+        "actions": 37,
         "shares": 28,
         "error_total": 5,
         "errors": {
@@ -2085,9 +2085,9 @@
           "ORCHESTRATOR_CRITICAL: cannot import name '_FALLBACK_BG_COLOR' from 'agents.image_utils' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/image_utils.py)": 1,
           "IMAGE_FAILED: name '_candidate_key' is not defined": 2
         },
-        "skip_total": 3,
+        "skip_total": 4,
         "skips": {
-          "no_article_found": 3
+          "no_article_found": 4
         },
         "report_sent": false,
         "report_sent_at": null
