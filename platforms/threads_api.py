@@ -1,6 +1,7 @@
 """
-platforms/threads_api.py - Threads API iletişim katmanı (v5.1)
+platforms/threads_api.py - Threads API iletişim katmanı (v5.2)
 Token, HTTP istekleri ve container oluşturma işlemleri burada.
+v5.2: Code 24 (Media cannot be found) hatası için publish oncesi 5 sn bekleme eklendi.
 """
 import os
 import time
@@ -177,6 +178,11 @@ def _publish_container(threads_user_id, container_id, token, media_type):
     publish_url = f"{_BASE_URL}/{threads_user_id}/threads_publish"
     publish_data = {"creation_id": container_id, "access_token": token}
     headers = {"Authorization": f"Bearer {token}"}
+
+    # v5.2 FIX: Threads API Code 24 (Media cannot be found) hatası çözümü.
+    # API container'ı anında 200 ile onaylasa bile, arka planda işlemi tamamlaması için zamana ihtiyacı var.
+    log(f"Threads {media_type} publish oncesi 5 sn bekleniyor (API isleme suresi)...")
+    time.sleep(5)
 
     log(f"Threads {media_type} publish ediliyor...")
     publish_resp = _post_with_retry(publish_url, publish_data, f"publish_{media_type}", headers=headers)
