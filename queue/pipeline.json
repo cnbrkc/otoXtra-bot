@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-07-26-20:43",
-  "status": "completed",
-  "started_at": "2026-07-26T20:43:41.288035+03:00",
-  "updated_at": "2026-07-26T20:45:34.321184+03:00",
+  "run_id": "2026-07-26-21:43",
+  "status": "error",
+  "started_at": "2026-07-26T21:43:35.483414+03:00",
+  "updated_at": "2026-07-26T21:45:27.884974+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-            "link": "https://tr.motor1.com/news/802754/honda-ridgeline-ucuncu-nesil/",
-            "published": "2026-07-26T17:00:00+00:00",
-            "summary": "Ridgeline, 3. nesline önümüzdeki 2 yıl içinde kavuşacak.",
-            "image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "hazirlaniyor-honda-ini-pickup-populer-yenileme"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,16 +65,16 @@
             "attempts": 3
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
+            "attempts": 3
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -121,10 +101,10 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "attempts": 3
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -139,227 +119,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 168,
-            "after_keyword": 104,
+            "found": 138,
+            "after_keyword": 82,
             "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 168,
-          "after_keyword": 104,
+          "found": 138,
+          "after_keyword": 82,
           "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-26T20:44:36.246813+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-26T21:45:27.884974+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-          "link": "https://tr.motor1.com/news/802754/honda-ridgeline-ucuncu-nesil/",
-          "published": "2026-07-26T17:00:00+00:00",
-          "summary": "Ridgeline, 3. nesline önümüzdeki 2 yıl içinde kavuşacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "hazirlaniyor-honda-ini-pickup-populer-yenileme",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni modelin 2 yıl uzakta olması güncelliği ve aciliyeti düşürüyor, standart bir ürün yaşam döngüsü haberi.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 53,
-        "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 18,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yeni modelin 2 yıl uzakta olması güncelliği ve aciliyeti düşürüyor, standart bir ürün yaşam döngüsü haberi.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-            "score": 53,
-            "score_breakdown": {
-              "guncellik": 18,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-26T20:44:38.383966+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-          "link": "https://tr.motor1.com/news/802754/honda-ridgeline-ucuncu-nesil/",
-          "published": "2026-07-26T17:00:00+00:00",
-          "summary": "Ridgeline, 3. nesline önümüzdeki 2 yıl içinde kavuşacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "hazirlaniyor-honda-ini-pickup-populer-yenileme",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni modelin 2 yıl uzakta olması güncelliği ve aciliyeti düşürüyor, standart bir ürün yaşam döngüsü haberi.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Well, Honda has made it official. The third-generation Ridgeline is currently in development, which means production for the current pickup will end later this year as the automaker readies its replacement. Hondawill design the new truck at its design studio in Southern California. Engineering development will occur at the Honda Auto Development Center in Ohio. Honda says the next-genRidgelinewill arrive within the next two years. The truck will have an even more rugged design, likely borrowing the styling cues of the newPassport. Lance Woelfer, Honda America’s vice president of auto sales, said the truck will also gain even more capabilities, but he did not elaborate. Honda will continue to build the next-generation Ridgeline at its factory in Alabama. It’s where Honda currently assembles the Passport,Odyssey,Pilot, and current Ridgeline. 2029 Honda Ridgeline Rendering By Motor1 In addition to the more rugged styling, the Ridgeline will reportedly also get a new V6 engine designed to meet emissions regulations. The current Ridgeline features Honda’s 3.5-liter J35Y6 V6. It has single overhead cams, while Honda’s J35Y8 V6 that powers the Pilot and Passport has dual-overhead cams and lacks VTEC. The current 3.5-liter V6 engine produces 280 horsepower and 262 pound-feet of torque. A new V6 will likely make a similar amount of power. The Passport’s engine makes 285 hp. While Honda has not provided a specific timeline, a report from May alleged that Honda would cease current Ridgeline production in the fourth quarter of this year. Production for the next-generation model is rumored to start in the third quarter of 2028, with the model likely arriving for the 2029 model year. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🚚 YENİ HONDA RIDGELINE YOLDA!\n\nHonda, sevilen pickup modeli Ridgeline'ı yeniliyor. 3. nesil Ridgeline, önümüzdeki iki yıl içinde yollarda olacak.\n\nDaha sağlam bir tasarıma sahip olacak ve yetenekleri artırılacak. Geliştirme çalışmaları ABD'de devam ediyor.\n\nSizce yeni Ridgeline nasıl görünmeli?",
-        "post_text_length": 295,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-26T20:44:39.768259+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda, popüler pickup'ını yenileme hazırlanıyor",
-          "link": "https://tr.motor1.com/news/802754/honda-ridgeline-ucuncu-nesil/",
-          "published": "2026-07-26T17:00:00+00:00",
-          "summary": "Ridgeline, 3. nesline önümüzdeki 2 yıl içinde kavuşacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s3/third-generation-honda-ridgeline-teaser.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "hazirlaniyor-honda-ini-pickup-populer-yenileme",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni modelin 2 yıl uzakta olması güncelliği ve aciliyeti düşürüyor, standart bir ürün yaşam döngüsü haberi.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Well, Honda has made it official. The third-generation Ridgeline is currently in development, which means production for the current pickup will end later this year as the automaker readies its replacement. Hondawill design the new truck at its design studio in Southern California. Engineering development will occur at the Honda Auto Development Center in Ohio. Honda says the next-genRidgelinewill arrive within the next two years. The truck will have an even more rugged design, likely borrowing the styling cues of the newPassport. Lance Woelfer, Honda America’s vice president of auto sales, said the truck will also gain even more capabilities, but he did not elaborate. Honda will continue to build the next-generation Ridgeline at its factory in Alabama. It’s where Honda currently assembles the Passport,Odyssey,Pilot, and current Ridgeline. 2029 Honda Ridgeline Rendering By Motor1 In addition to the more rugged styling, the Ridgeline will reportedly also get a new V6 engine designed to meet emissions regulations. The current Ridgeline features Honda’s 3.5-liter J35Y6 V6. It has single overhead cams, while Honda’s J35Y8 V6 that powers the Pilot and Passport has dual-overhead cams and lacks VTEC. The current 3.5-liter V6 engine produces 280 horsepower and 262 pound-feet of torque. A new V6 will likely make a similar amount of power. The Passport’s engine makes 285 hp. While Honda has not provided a specific timeline, a report from May alleged that Honda would cease current Ridgeline production in the fourth quarter of this year. Production for the next-generation model is rumored to start in the third quarter of 2028, with the model likely arriving for the 2029 model year. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🚚 YENİ HONDA RIDGELINE YOLDA!\n\nHonda, sevilen pickup modeli Ridgeline'ı yeniliyor. 3. nesil Ridgeline, önümüzdeki iki yıl içinde yollarda olacak.\n\nDaha sağlam bir tasarıma sahip olacak ve yetenekleri artırılacak. Geliştirme çalışmaları ABD'de devam ediyor.\n\nSizce yeni Ridgeline nasıl görünmeli?",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_script",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s1/third-generation-honda-ridgeline-teaser.jpg",
-            "https://cdn.motor1.com/images/mgl/pbJnm0/s3/2028-honda-ridgeline-rendering-by-motor1.jpg",
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s1/4x3/third-generation-honda-ridgeline-teaser.webp",
-            "https://cdn.motor1.com/images/mgl/E6NgPw/s1/1x1/third-generation-honda-ridgeline-teaser.webp"
-          ]
-        },
-        "post_text": "🚚 YENİ HONDA RIDGELINE YOLDA!\n\nHonda, sevilen pickup modeli Ridgeline'ı yeniliyor. 3. nesil Ridgeline, önümüzdeki iki yıl içinde yollarda olacak.\n\nDaha sağlam bir tasarıma sahip olacak ve yetenekleri artırılacak. Geliştirme çalışmaları ABD'de devam ediyor.\n\nSizce yeni Ridgeline nasıl görünmeli?",
-        "image_path": "/tmp/otoxtra_img_4m6xbtsn.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_4m6xbtsn.jpg",
-          "/tmp/otoxtra_img_573qmqmh.jpg",
-          "/tmp/otoxtra_img_nvbbwd29.jpg",
-          "/tmp/otoxtra_img__0nw2l2w.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-26T20:44:44.009853+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122173718300916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18076792763334722",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1240006048178514",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-26T20:45:34.321184+03:00"
+      "updated_at": null
     }
   }
 }
