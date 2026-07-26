@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-07-25-21:39",
-  "status": "error",
-  "started_at": "2026-07-25T21:39:54.765215+03:00",
-  "updated_at": "2026-07-25T21:40:43.796875+03:00",
+  "run_id": "2026-07-26-09:24",
+  "status": "completed",
+  "started_at": "2026-07-26T09:24:10.967817+03:00",
+  "updated_at": "2026-07-26T09:26:24.646200+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+            "link": "https://www.donanimhaber.com/gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti--208538",
+            "published": "2026-07-25T20:30:00+00:00",
+            "summary": "İspanya'nın ilk yüzer açık deniz güneş enerjisi platformu, saha testleri için Valencia'ya ulaştı. 500 kW kapasiteli sistem, açık denizde güneş enerjisi üretimini mümkün kılacak.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "500-acik-denizlere-gunes-lik-platform-spanya-tarlalarini-tasiyor-ulasti-valencia-yuzer"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -83,10 +103,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
             "status": "ok",
@@ -101,10 +121,10 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "attempts": 3
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -114,54 +134,226 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 10,
+            "count": 7,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 170,
-            "after_keyword": 113,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 167,
+            "after_keyword": 110,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 170,
-          "after_keyword": 113,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 167,
+          "after_keyword": 110,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-07-25T21:40:43.796875+03:00"
+      "error": null,
+      "updated_at": "2026-07-26T09:25:05.990639+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+          "link": "https://www.donanimhaber.com/gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti--208538",
+          "published": "2026-07-25T20:30:00+00:00",
+          "summary": "İspanya'nın ilk yüzer açık deniz güneş enerjisi platformu, saha testleri için Valencia'ya ulaştı. 500 kW kapasiteli sistem, açık denizde güneş enerjisi üretimini mümkün kılacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "500-acik-denizlere-gunes-lik-platform-spanya-tarlalarini-tasiyor-ulasti-valencia-yuzer",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 16,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 12,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 44,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yenilenebilir enerji alanında ilginç bir gelişme olsa da otomotiv sektörüyle doğrudan bağlantısı zayıf, daha çok genel teknoloji/enerji haberi niteliğinde.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1
+        },
+        "score": 44,
+        "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 1,
+        "score_breakdown": {
+          "guncellik": 16,
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 12,
+          "gundem_gucu": 5,
+          "paylasilabilirlik": 3
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yenilenebilir enerji alanında ilginç bir gelişme olsa da otomotiv sektörüyle doğrudan bağlantısı zayıf, daha çok genel teknoloji/enerji haberi niteliğinde.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+            "score": 44,
+            "score_breakdown": {
+              "guncellik": 16,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 12,
+              "gundem_gucu": 5,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-26T09:25:08.356198+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+          "link": "https://www.donanimhaber.com/gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti--208538",
+          "published": "2026-07-25T20:30:00+00:00",
+          "summary": "İspanya'nın ilk yüzer açık deniz güneş enerjisi platformu, saha testleri için Valencia'ya ulaştı. 500 kW kapasiteli sistem, açık denizde güneş enerjisi üretimini mümkün kılacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "500-acik-denizlere-gunes-lik-platform-spanya-tarlalarini-tasiyor-ulasti-valencia-yuzer",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 16,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 12,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 44,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yenilenebilir enerji alanında ilginç bir gelişme olsa da otomotiv sektörüyle doğrudan bağlantısı zayıf, daha çok genel teknoloji/enerji haberi niteliğinde.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "İspanya merkezliBlueNewablestarafından geliştirilen500kWkapasiteliaçık deniz güneş enerjisi platformu, test edilmek üzere Valencia Limanı'na ulaştı.Ülkeninbu alandaki ilk platformuolmaözelliğinitaşıyan sistem, İspanyol enerji şirketi Naturgy ile yürütülen pilot proje kapsamında kullanılacak. Platform, limanın güney mendireğinin açıklarına yerleştirilecek ve buradagerçek deniz koşullarında kapsamlı testlerden geçirilecek. Aslında Valencia'ya ulaşan bu platformdaha büyük bir projenin ilk parçasını oluşturuyor.Mart 2025'te başlatılan proje kapsamında aynı tasarıma sahip iki adet yüzer platform kurulacak. Toplam 1 MW kurulu güce ulaşacak sisteminyılda yaklaşık 1.500 MWh elektrik üretmesi hedefleniyor. Bu miktar, yüzlerce hanenin yıllık elektrik ihtiyacını karşılayabilecek seviyede bir üretime karşılık geliyor. BlueNewables'ın geliştirdiği sistem yalnızca enerji üretmeyi değil,açık deniz güneş santrallerinin ekonomik olarak yaygınlaştırılmasını da hedefliyor.Şirket, platformları endüstriyel ve modüler üretim süreçleriyle imal ederek gelecekte çok daha büyük projelerin önünü açmayı planlıyor. Bu sayede üretim süresinin kısaltılması, bakım maliyetlerinin düşürülmesi ve seri üretime geçişin kolaylaştırılması amaçlanıyor. Katamaran benzeri bir tasarıma sahip olanher platform 64 metre uzunluğunda ve 41 metre genişliğinde bir güverteye sahip.Bu yapı üzerine toplam 600 adet güneş paneli yerleştiriliyor. Platformun açık denizde kullanılacak olması nedeniyle tasarımda dalga hareketleri, rüzgâr yükleri ve tuzlu suyun neden olduğu korozyon gibi zorlu çevresel koşullar da dikkate alındı. Böylece sistemin kıyıya yakın açık deniz bölgelerinde uzun yıllar boyunca güvenilir şekilde çalışması hedefleniyor. BlueNewables, geliştirdiği bu teknolojiyiyalnızca İspanya'da kullanmayı planlamıyor.Şirketin hedefi, açık deniz güneş enerjisi platformlarını küresel pazara sunarak farklı ülkelerde de kullanılabilecek ölçeklenebilir bir çözüm hâline getirmek. Eğer BlueNewables'ın geliştirdiği platform gerçek deniz koşullarındaki testlerden başarıyla geçerse, açık deniz güneş enerjisinin ticarileşmesi adına önemli bir kilometre taşı olabilir. Özellikle rüzgâr enerjisinin yaygın olduğu kıyı bölgelerinde, gelecekte açık deniz rüzgâr santralleri ile yüzer güneş platformlarının aynı sahalarda birlikte kullanılması da ihtimaller arasında gösteriliyor. Güneş enerjili geçici barınma çantası https://www.amazon.com.tr/dp/B0G4WCL8Q1 https://www.amazon.com.tr/dp/B0G49XZVWY https://www.amazon.com.tr/dp/B0DL2QS8V3 https://www.amazon.com.tr/dp/B0FDGDQWQG https://www.kinguin.net/category/564106/google-ai-pro-gemini-advanced-18-month-subscription-activation-link"
+        },
+        "post_text": "☀️ İSPANYA AÇIK DENİZ GÜNEŞ ENERJİSİNDE ÇIĞIR AÇIYOR\n\nİspanya'nın ilk yüzer açık deniz güneş enerjisi platformu Valencia'ya ulaştı. 500 kW kapasiteli bu sistem, gerçek deniz koşullarında test edilecek.\n\nBu pilot proje, açık denizde enerji üretiminin önünü açacak. Gelecekte daha büyük bir projenin ilk adımı olan bu gelişme, yüzlerce hanenin elektrik ihtiyacını karşılayacak.\n\nSizce bu teknoloji Türkiye için uygun mu?",
+        "post_text_length": 418,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-26T09:25:11.332934+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "İspanya, güneş tarlalarını açık denizlere taşıyor: 500 kW'lık yüzer platform Valencia'ya ulaştı",
+          "link": "https://www.donanimhaber.com/gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti--208538",
+          "published": "2026-07-25T20:30:00+00:00",
+          "summary": "İspanya'nın ilk yüzer açık deniz güneş enerjisi platformu, saha testleri için Valencia'ya ulaştı. 500 kW kapasiteli sistem, açık denizde güneş enerjisi üretimini mümkün kılacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "500-acik-denizlere-gunes-lik-platform-spanya-tarlalarini-tasiyor-ulasti-valencia-yuzer",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 16,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 12,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 44,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yenilenebilir enerji alanında ilginç bir gelişme olsa da otomotiv sektörüyle doğrudan bağlantısı zayıf, daha çok genel teknoloji/enerji haberi niteliğinde.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "İspanya merkezliBlueNewablestarafından geliştirilen500kWkapasiteliaçık deniz güneş enerjisi platformu, test edilmek üzere Valencia Limanı'na ulaştı.Ülkeninbu alandaki ilk platformuolmaözelliğinitaşıyan sistem, İspanyol enerji şirketi Naturgy ile yürütülen pilot proje kapsamında kullanılacak. Platform, limanın güney mendireğinin açıklarına yerleştirilecek ve buradagerçek deniz koşullarında kapsamlı testlerden geçirilecek. Aslında Valencia'ya ulaşan bu platformdaha büyük bir projenin ilk parçasını oluşturuyor.Mart 2025'te başlatılan proje kapsamında aynı tasarıma sahip iki adet yüzer platform kurulacak. Toplam 1 MW kurulu güce ulaşacak sisteminyılda yaklaşık 1.500 MWh elektrik üretmesi hedefleniyor. Bu miktar, yüzlerce hanenin yıllık elektrik ihtiyacını karşılayabilecek seviyede bir üretime karşılık geliyor. BlueNewables'ın geliştirdiği sistem yalnızca enerji üretmeyi değil,açık deniz güneş santrallerinin ekonomik olarak yaygınlaştırılmasını da hedefliyor.Şirket, platformları endüstriyel ve modüler üretim süreçleriyle imal ederek gelecekte çok daha büyük projelerin önünü açmayı planlıyor. Bu sayede üretim süresinin kısaltılması, bakım maliyetlerinin düşürülmesi ve seri üretime geçişin kolaylaştırılması amaçlanıyor. Katamaran benzeri bir tasarıma sahip olanher platform 64 metre uzunluğunda ve 41 metre genişliğinde bir güverteye sahip.Bu yapı üzerine toplam 600 adet güneş paneli yerleştiriliyor. Platformun açık denizde kullanılacak olması nedeniyle tasarımda dalga hareketleri, rüzgâr yükleri ve tuzlu suyun neden olduğu korozyon gibi zorlu çevresel koşullar da dikkate alındı. Böylece sistemin kıyıya yakın açık deniz bölgelerinde uzun yıllar boyunca güvenilir şekilde çalışması hedefleniyor. BlueNewables, geliştirdiği bu teknolojiyiyalnızca İspanya'da kullanmayı planlamıyor.Şirketin hedefi, açık deniz güneş enerjisi platformlarını küresel pazara sunarak farklı ülkelerde de kullanılabilecek ölçeklenebilir bir çözüm hâline getirmek. Eğer BlueNewables'ın geliştirdiği platform gerçek deniz koşullarındaki testlerden başarıyla geçerse, açık deniz güneş enerjisinin ticarileşmesi adına önemli bir kilometre taşı olabilir. Özellikle rüzgâr enerjisinin yaygın olduğu kıyı bölgelerinde, gelecekte açık deniz rüzgâr santralleri ile yüzer güneş platformlarının aynı sahalarda birlikte kullanılması da ihtimaller arasında gösteriliyor. Güneş enerjili geçici barınma çantası https://www.amazon.com.tr/dp/B0G4WCL8Q1 https://www.amazon.com.tr/dp/B0G49XZVWY https://www.amazon.com.tr/dp/B0DL2QS8V3 https://www.amazon.com.tr/dp/B0FDGDQWQG https://www.kinguin.net/category/564106/google-ai-pro-gemini-advanced-18-month-subscription-activation-link",
+          "post_text_for_card": "☀️ İSPANYA AÇIK DENİZ GÜNEŞ ENERJİSİNDE ÇIĞIR AÇIYOR\n\nİspanya'nın ilk yüzer açık deniz güneş enerjisi platformu Valencia'ya ulaştı. 500 kW kapasiteli bu sistem, gerçek deniz koşullarında test edilecek.\n\nBu pilot proje, açık denizde enerji üretiminin önünü açacak. Gelecekte daha büyük bir projenin ilk adımı olan bu gelişme, yüzlerce hanenin elektrik ihtiyacını karşılayacak.\n\nSizce bu teknoloji Türkiye için uygun mu?",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/208538/1200x675gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti.jpg",
+            "https://www.donanimhaber.com/images/images/haber/208538/src/gunes-tarlalari-acik-denize-tasiniyor-ispanya-ilk-adimi-atti208538_0.jpg"
+          ]
+        },
+        "post_text": "☀️ İSPANYA AÇIK DENİZ GÜNEŞ ENERJİSİNDE ÇIĞIR AÇIYOR\n\nİspanya'nın ilk yüzer açık deniz güneş enerjisi platformu Valencia'ya ulaştı. 500 kW kapasiteli bu sistem, gerçek deniz koşullarında test edilecek.\n\nBu pilot proje, açık denizde enerji üretiminin önünü açacak. Gelecekte daha büyük bir projenin ilk adımı olan bu gelişme, yüzlerce hanenin elektrik ihtiyacını karşılayacak.\n\nSizce bu teknoloji Türkiye için uygun mu?",
+        "image_path": "/tmp/otoxtra_img_uzkxwb6y.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_uzkxwb6y.jpg",
+          "/tmp/otoxtra_img_c2p90dnl.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-26T09:25:32.529229+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122173661150916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18138225463583174",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1361529402790539",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-26T09:26:24.646200+03:00"
     }
   }
 }
