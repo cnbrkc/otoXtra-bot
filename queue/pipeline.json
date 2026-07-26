@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-07-26-17:15",
+  "run_id": "2026-07-26-18:45",
   "status": "error",
-  "started_at": "2026-07-26T17:15:14.244739+03:00",
-  "updated_at": "2026-07-26T17:16:36.460539+03:00",
+  "started_at": "2026-07-26T18:45:47.627312+03:00",
+  "updated_at": "2026-07-26T18:46:49.927746+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -73,7 +73,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/ahmetcelik2016/rss",
             "attempts": 3
           },
           "Otomobilcom": {
@@ -89,10 +89,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "MuratTosun": {
             "status": "ok",
@@ -119,8 +119,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 158,
-            "after_keyword": 99,
+            "found": 168,
+            "after_keyword": 103,
             "after_time": 5,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -128,8 +128,8 @@
           }
         },
         "metrics": {
-          "found": 158,
-          "after_keyword": 99,
+          "found": 168,
+          "after_keyword": 103,
           "after_time": 5,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -137,7 +137,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-07-26T17:16:36.460539+03:00"
+      "updated_at": "2026-07-26T18:46:49.927746+03:00"
     },
     "score": {
       "status": "waiting",
