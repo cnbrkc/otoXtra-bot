@@ -257,7 +257,7 @@ def prepare_images(article: dict) -> list[str]:
 
     if not prepared_paths:
         log("Haberin kendi gorseli bulunamadi. DuckDuckGo görsel araması başlatılıyor...", "INFO")
-        ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""))
+        ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""), max_results=15)
         for ddg_url in ddg_urls:
             if len(prepared_paths) >= max_images_per_news: break
             log(f"DuckDuckGo adayı deneniyor: {ddg_url[:100]}")
@@ -297,7 +297,9 @@ def prepare_images(article: dict) -> list[str]:
             else:
                 log(f"DuckDuckGo adayi elendi: {reason}", "WARNING")
 
+    # Fallback 2: AI görsel arama (daha agresif prompt ile)
     if not prepared_paths:
+        log("DuckDuckGo sonuc vermedi. AI görsel aramasi deneniyor...", "INFO")
         ai_url = _ai_search_image_url(article)
         if ai_url:
             log(f"AI gorsel arama: URL bulundu, deneniyor: {ai_url[:80]}...")
@@ -335,6 +337,35 @@ def prepare_images(article: dict) -> list[str]:
                     _safe_unlink(downloaded)
             else:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
+
+    # Fallback 3: DuckDuckGo'yu genişletilmiş arama ile tekrar dene
+    if not prepared_paths:
+        log("AI da sonuc vermedi. DuckDuckGo genisletilmis arama deneniyor...", "WARNING")
+        title_keywords = article.get("title", "").split()[:5]
+        for keyword_combo in [title_keywords, title_keywords[:3], title_keywords[:2]]:
+            if prepared_paths: break
+            search_query = " ".join(keyword_combo)
+            if len(search_query) < 4: continue
+            log(f"Genisletilmis DDG arama: '{search_query}'")
+            ddg_urls = get_duckduckgo_image_candidates(search_query, max_results=20)
+            for ddg_url in ddg_urls[:5]:
+                if len(prepared_paths) >= max_images_per_news: break
+                downloaded, reason = _download_image_with_reason(ddg_url, limits)
+                if downloaded:
+                    try:
+                        processed = downloaded
+                        needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+                        if needs_resize:
+                            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+                        if should_add_logo:
+                            processed = add_logo(processed)
+                        prepared_paths.append(processed)
+                        used_sources.append("duckduckgo_extended")
+                        article["image_source"] = "duckduckgo_extended"
+                        log(f"Genisletilmis DDG gorsel bulundu: {ddg_url[:80]}")
+                        break
+                    except Exception:
+                        _safe_unlink(downloaded)
 
     if not prepared_paths:
         log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi. Text-only paylasim yapilacak.", "WARNING")

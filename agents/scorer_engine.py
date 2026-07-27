@@ -293,7 +293,13 @@ def _get_active_threshold() -> int:
     publish_score = _safe_int(thresholds.get("publish_score", 35), 35)
     slow_day_score = _safe_int(thresholds.get("slow_day_score", 25), 25)
     today_post_count = get_today_post_count(get_posted_news())
-    return slow_day_score if today_post_count < 2 else publish_score
+    
+    # Skor eşik dalgalanması sorunu çözüldü: İlk 3 paylaşım için düşük eşik, sonrası için yüksek eşik
+    # Bu sayede gün içinde daha tutarlı paylaşım yapılır
+    if today_post_count < 3:
+        return slow_day_score
+    else:
+        return publish_score
 
 def apply_thresholds(scored_articles: list) -> list:
     if not scored_articles:
