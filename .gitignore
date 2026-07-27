@@ -1,41 +1,33 @@
-```
-# Compiled and build artifacts
-*.pyc
-__pycache__/
-*.o
-*.obj
-*.out
+```yaml
+name: Update pre-commit hooks
+on:
+  schedule:
+    - cron: '0 0 * * 1'  # Run weekly on Monday at 00:00 UTC
+  workflow_dispatch:  # Allow manual trigger
 
-# Dependencies
-.venv/
-venv/
-node_modules/
+jobs:
+  update-hooks:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
-# Logs and temp files
-*.log
-*.tmp
-*.swp
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
 
-# Environment
-.env
-.env.local
-*.env.*
+      - name: Install pre-commit
+        run: pip install pre-commit
 
-# Editors
-.vscode/
-.idea/
-
-# Coverage reports
-.coverage
-coverage/
-htmlcov/
-
-# Python cache
-.mypy_cache/
-.pytest_cache/
-
-# Build directories
-dist/
-build/
-target/
+      - name: Update pre-commit hooks
+        run: |
+          pre-commit autoupdate --config .pre-commit-config.yaml
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add .pre-commit-config.yaml
+          git commit -m "chore: update pre-commit hooks" || echo "No changes to commit"
+          git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
