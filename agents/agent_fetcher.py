@@ -339,17 +339,35 @@ def _apply_time_filter_with_hours(articles: list[dict], max_age_hours: int, use_
         cutoff_utc = max(smart_cutoff_utc, max_cutoff_utc)
 
     passed = []
+    fallback_passed = []
     for article in articles:
         published_str = article.get("published", "")
         if not published_str:
-            passed.append(article); continue
+            # Tarih olmayan haberler için fallback: direkt geçir ama logla
+            passed.append(article)
+            fallback_passed.append(article)
+            continue
         try:
             pub_dt = dateutil_parser.parse(published_str)
             if pub_dt.tzinfo is None: pub_dt = pub_dt.replace(tzinfo=timezone.utc)
-            if pub_dt < cutoff_utc: continue
+            if pub_dt < cutoff_utc:
+                # Fallback için daha geniş bir pencere kontrolü
+                relaxed_cutoff = now_utc - timedelta(hours=max(48, max_age_hours + 12))
+                if pub_dt >= relaxed_cutoff:
+                    fallback_passed.append(article)
+                continue
         except Exception:
-            passed.append(article); continue
+            # Parse edilemeyen tarihler için fallback: direkt geçir
+            passed.append(article)
+            fallback_passed.append(article)
+            continue
         passed.append(article)
+    
+    # Eğer hiç haber geçmediyse ve fallback adayları varsa, onları kullan
+    if not passed and fallback_passed:
+        log(f"time_filter fallback: {len(fallback_passed)} haber kurtarıldı (tarih yok veya relaxed cutoff)", "WARNING")
+        return fallback_passed, max_cutoff_utc
+    
     return passed, cutoff_utc
 
 def apply_time_filter(articles: list[dict]) -> list[dict]:
@@ -372,11 +390,21 @@ def remove_already_posted(articles: list[dict]) -> list[dict]:
 def apply_shared_variant_cooldown_filter(articles: list[dict]) -> list[dict]:
     settings = load_config("settings")
     news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-    cooldown_hours = _read_int_env("SHARED_VARIANT_COOLDOWN_HOURS", _safe_int(news_cfg.get("shared_variant_cooldown_hours", 3), 3))
+    cooldown_hours = _read_int_env("SHARED_VARIANT_COOLDOWN_HOURS", _safe_int(news_cfg.get("shared_variant_cooldown_hours", 48), 48))
     if cooldown_hours <= 0: return articles
     posted_data = get_posted_news()
     passed = [article for article in articles if not is_shared_variant_in_cooldown(article.get("link", ""), article.get("title", ""), posted_data, cooldown_hours)]
     log(f"pipeline.shared_variant_cooldown: {len(articles)} -> {len(passed)} (hours={cooldown_hours})")
+    
+    # Fallback: Eğer tüm haberler cooldown yüzünden elendiyse, en eski paylaşımı baz alarak gevşetme yap
+    if not passed and articles:
+        log(f"shared_variant_cooldown fallback: tum haberler elendi ({len(articles)}), daha eski cooldown'lar kontrol ediliyor", "WARNING")
+        relaxed_hours = max(24, cooldown_hours // 2)
+        passed_relaxed = [article for article in articles if not is_shared_variant_in_cooldown(article.get("link", ""), article.get("title", ""), posted_data, relaxed_hours)]
+        if passed_relaxed:
+            log(f"shared_variant_cooldown fallback: {len(passed_relaxed)} haber kurtarıldı (relaxed_hours={relaxed_hours})", "WARNING")
+            return passed_relaxed
+    
     return passed
 
 def remove_duplicates(articles: list[dict]) -> list[dict]:
@@ -446,8 +474,8 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
     if not articles:
         settings = load_config("settings")
         news_cfg = settings.get("news", {}) if isinstance(settings, dict) else {}
-        base_hours = _read_int_env("NEWS_MAX_AGE_HOURS", _safe_int(news_cfg.get("max_article_age_hours", 24), 24))
-        relaxed_hours = max(base_hours, 36)
+        base_hours = _read_int_env("NEWS_MAX_AGE_HOURS", _safe_int(news_cfg.get("max_article_age_hours", 36), 36))
+        relaxed_hours = max(base_hours, 48)
         relaxed, relaxed_cutoff = _apply_time_filter_with_hours(articles=original_after_keyword, max_age_hours=relaxed_hours, use_smart_cutoff=False)
         if relaxed:
             log(f"time_filter fallback aktif: {len(original_after_keyword)} -> {len(relaxed)} (hours={relaxed_hours}, cutoff={relaxed_cutoff.isoformat()})", "WARNING")
@@ -467,10 +495,18 @@ def fetch_and_filter_news() -> tuple[list[dict], dict]:
         articles = apply_shared_variant_cooldown_filter(articles)
         metrics["after_posted"] = len(articles)
         metrics["after_shared_variant_cooldown"] = len(articles)
-        if not articles:
-            source_health["_metrics"] = metrics
-            log(f"pipeline.shared_variant_cooldown exhausted candidates: {before_cooldown} -> 0")
-            return [], source_health
+        # Fallback: Eğer cooldown tüm haberleri elerse, relaxed modda tekrar dene
+        if not articles and before_cooldown > 0:
+            log(f"pipeline.shared_variant_cooldown exhausted candidates: {before_cooldown} -> 0, relaxed fallback deneniyor", "WARNING")
+            relaxed_cooldown_hours = max(24, _read_int_env("SHARED_VARIANT_COOLDOWN_HOURS", 48) // 2)
+            posted_data = get_posted_news()
+            passed_relaxed = [article for article in original_after_keyword if not is_shared_variant_in_cooldown(article.get("link", ""), article.get("title", ""), posted_data, relaxed_cooldown_hours)]
+            if passed_relaxed:
+                log(f"shared_variant_cooldown relaxed fallback: {len(passed_relaxed)} haber kurtarıldı (hours={relaxed_cooldown_hours})", "WARNING")
+                articles = passed_relaxed
+            else:
+                source_health["_metrics"] = metrics
+                return [], source_health
 
     before_dup = len(articles)
     articles = remove_duplicates(articles)
