@@ -1,72 +1,14 @@
 {
-  "run_id": "2026-07-27-19:56",
-  "status": "completed",
-  "started_at": "2026-07-27T19:56:04.439880+03:00",
-  "updated_at": "2026-07-27T19:58:20.712826+03:00",
+  "run_id": "2026-07-27-21:24",
+  "status": "error",
+  "started_at": "2026-07-27T21:24:15.985333+03:00",
+  "updated_at": "2026-07-27T21:25:08.273766+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-            "link": "https://www.donanimhaber.com/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu--208578",
-            "published": "2026-07-27T15:15:00+00:00",
-            "summary": "Güney Çin’i etkisi altına alan Noul Tayfunu, BYD’nin Shenshan’daki devasa üretim üssünü vurdu. Tesislerdeki hasar ve sıfır araçlardaki zayiat teslimatların gecikmesine yol açacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "araclar-bekleyen-byd-fabrikasini-sifir-tayfun-tesiste-vurdu-ziyan"
-          },
-          {
-            "title": "DPF ve AdBlue sorunu sonunda tarih olacak mı? Türk mühendisten patentli çare!",
-            "link": "https://www.donanimhaber.com/dpf-ve-adblue-sorunu-tarih-olacak-mi-caresi-turk-muhendiste--208551",
-            "published": "2026-07-27T15:01:58+00:00",
-            "summary": "Dizel araçların en büyük derdi DPF ve AdBlue arızaları. ABD'de yaşayan Türk mühendis Şaban Akyıldız'ın patentli çözümü olan emisyonu çıkışta değil kaynağında azaltan teknolojisini anlatıyoruz",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208551/1200x675dpf-ve-adblue-sorunu-tarih-olacak-mi-caresi-turk-muhendiste.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208551/1200x675dpf-ve-adblue-sorunu-tarih-olacak-mi-caresi-turk-muhendiste.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208551/1200x675dpf-ve-adblue-sorunu-tarih-olacak-mi-caresi-turk-muhendiste.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adblue-care-dpf-muhendisten-olacak-patentli-sonunda-sorunu-tarih-turk"
-          },
-          {
-            "title": "Suriye elektrikli otobüse geçerken Türkiye'de dizele devam! Suriye'nin başkentine Çinli elektrikli otobüs devi Yutong yatırım yapıyor, en az 150 otobüs alınacağı açıklanıyor. Türkiye'de ise İstanbul için yeni dizel otobüs ihalesine hazırlık yapılıyor. Elektrikli araç dönüşümünde Afrika ülkelerinin bile gerisine düşüyoruz. Farkında mısınız?",
-            "link": "https://nitter.net/DoluBatarya/status/2081770747052151102#m",
-            "published": "2026-07-27T15:56:38+00:00",
-            "summary": "Suriye elektrikli otobüse geçerken Türkiye'de dizele devam! Suriye'nin başkentine Çinli elektrikli otobüs devi Yutong yatırım yapıyor, en az 150 otobüs alınacağı açıklanıyor. Türkiye'de ise İstanbul için yeni dizel otobüs ihalesine hazırlık yapılıyor. Elektrikli araç dönüşümünde Afrika ülkelerinin bile gerisine düşüyoruz. Farkında mısınız? Video",
-            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2081770602759639040%2Fimg%2Fr8NWUtoh-Ha1gHzn.jpg",
-            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2081770602759639040%2Fimg%2Fr8NWUtoh-Ha1gHzn.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/amplify_video_thumb%2F2081770602759639040%2Fimg%2Fr8NWUtoh-Ha1gHzn.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "150-aciklaniyor-afrika-alinacagi-arac-baskentine-cinli-devam-devi-dizel-dizele-donusumunde-dusuyoruz-elektrikli-elektrikli-elektrikli-farkinda-gecerken-gerisine-hazirlik-ihalesine-ise-misiniz-otobus-otobus-otobus-otobuse-stanbul-suriye-suriye-turkiye-turkiye-ulkelerinin-yapiliyor-yapiyor-yatirim-yutong"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,10 +89,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
           },
           "MuratTosun": {
             "status": "ok",
@@ -177,263 +119,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 178,
-            "after_keyword": 117,
-            "after_time": 15,
-            "after_posted": 3,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 3
+            "found": 168,
+            "after_keyword": 112,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 178,
-          "after_keyword": 117,
-          "after_time": 15,
-          "after_posted": 3,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 3
+          "found": 168,
+          "after_keyword": 112,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-27T19:56:38.327428+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-27T21:25:08.273766+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-          "link": "https://www.donanimhaber.com/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu--208578",
-          "published": "2026-07-27T15:15:00+00:00",
-          "summary": "Güney Çin’i etkisi altına alan Noul Tayfunu, BYD’nin Shenshan’daki devasa üretim üssünü vurdu. Tesislerdeki hasar ve sıfır araçlardaki zayiat teslimatların gecikmesine yol açacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bekleyen-byd-fabrikasini-sifir-tayfun-tesiste-vurdu-ziyan",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Dünyanın en büyük elektrikli araç üreticisinin tesisini felaket vurması ve sıfır araçların zarar görmesi yüksek merak ve paylaşım potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 80,
-        "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
-          "gundem_gucu": 14,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Dünyanın en büyük elektrikli araç üreticisinin tesisini felaket vurması ve sıfır araçların zarar görmesi yüksek merak ve paylaşım potansiyeli taşıyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-            "score": 80,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "DPF ve AdBlue sorunu sonunda tarih olacak mı? Türk mühendisten patentli çare!",
-            "score": 78,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 17,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "Suriye elektrikli otobüse geçerken Türkiye'de dizele devam! Suriye'nin başkentine Çinli elektrikli otobüs devi Yutong yatırım yapıyor, en az 150 otobüs alınacağı açıklanıyor. Türkiye'de ise İstanbul için yeni dizel otobüs ihalesine hazırlık yapılıyor. Elektrikli araç dönüşümünde Afrika ülkelerinin bile gerisine düşüyoruz. Farkında mısınız?",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 13,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "DPF ve AdBlue sorunu sonunda tarih olacak mı? Türk mühendisten patentli çare!",
-            "link": "https://www.donanimhaber.com/dpf-ve-adblue-sorunu-tarih-olacak-mi-caresi-turk-muhendiste--208551",
-            "score": 78,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "adblue-care-dpf-muhendisten-olacak-patentli-sonunda-sorunu-tarih-turk"
-          },
-          {
-            "title": "Suriye elektrikli otobüse geçerken Türkiye'de dizele devam! Suriye'nin başkentine Çinli elektrikli otobüs devi Yutong yatırım yapıyor, en az 150 otobüs alınacağı açıklanıyor. Türkiye'de ise İstanbul için yeni dizel otobüs ihalesine hazırlık yapılıyor. Elektrikli araç dönüşümünde Afrika ülkelerinin bile gerisine düşüyoruz. Farkında mısınız?",
-            "link": "https://nitter.net/DoluBatarya/status/2081770747052151102#m",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Dolu Batarya",
-            "topic_fingerprint": "150-aciklaniyor-afrika-alinacagi-arac-baskentine-cinli-devam-devi-dizel-dizele-donusumunde-dusuyoruz-elektrikli-elektrikli-elektrikli-farkinda-gecerken-gerisine-hazirlik-ihalesine-ise-misiniz-otobus-otobus-otobus-otobuse-stanbul-suriye-suriye-turkiye-turkiye-ulkelerinin-yapiliyor-yapiyor-yatirim-yutong"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-27T19:56:41.431377+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-          "link": "https://www.donanimhaber.com/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu--208578",
-          "published": "2026-07-27T15:15:00+00:00",
-          "summary": "Güney Çin’i etkisi altına alan Noul Tayfunu, BYD’nin Shenshan’daki devasa üretim üssünü vurdu. Tesislerdeki hasar ve sıfır araçlardaki zayiat teslimatların gecikmesine yol açacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bekleyen-byd-fabrikasini-sifir-tayfun-tesiste-vurdu-ziyan",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Dünyanın en büyük elektrikli araç üreticisinin tesisini felaket vurması ve sıfır araçların zarar görmesi yüksek merak ve paylaşım potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "BYD, yaklaşık bir hafta önce küresel talebe yanıt vermek amacıyla söz konusu tesis için devasa bir genişleme hamlesi açıklamış ve 9.000’den fazla yeni personel alım süreci başlatmıştı. Olayda herhangi bir can kaybı ya da yaralanma bildirilmedi ancak hem üretim tesisleri hem de tesiste park halinde bekleyen sıfır araçlar fırtınadan nasibini aldı. Sığınma emirleri nedeniyle üretim geçici olarak durduruldu. Bu durum, markanın yeni duyurulanDa TangveFCB Ti7gibi SUV modellerinin teslimatlarında gecikmelere yol açacak. Olayda asıl zayiataçık otoparkta müşteri teslimatı bekleyen sıfır araçlardayaşandı. Yayınlanan görsellerde araçların üzerinde derin çizikler, göçükler, kırık camlar ve bükülmüş kaporta parçaları göze çarpıyor. Zarar gören filonun büyük çoğunluğunu yüksek sipariş pazarında sıra bekleyenDa Tangve Fang Cheng Bao markasınınTi7SUV modelleri oluşturuyor. BYD, yakın zamandaSeal 08lansmanıyla birlikte Blade Battery 2.0 pil paketlerindeki tedarik sıkıntısını aşarak teslimat hızını artırmıştı. Ancak bu beklenmedik doğal afet, teslimata hazır araç filosunun bir kısmını kullanılmaz hale getirdi ve müşteri bekleme sürelerini tekrar uzatacak. Güneş enerjili geçici barınma çantası https://www.amazon.com.tr/dp/B0G2T2JXSH https://www.amazon.com.tr/dp/B082L2LP8P https://www.amazon.com.tr/dp/B0FB963HTF https://www.amazon.com.tr/dp/B000MX59JC https://www.itemsatis.com/yapay-zeka/18-ay-gemini-ai-pro-aktivasyon-kodu-5553215.html"
-        },
-        "post_text": "🌪️ BYD FABRİKASINI TAYFUN VURDU! SIFIR ARAÇLAR ZİYAN OLDU\n\nGüney Çin'deki Noul Tayfunu, BYD'nin Shenshan üretim üssünü vurdu. Tesislerdeki ve bekleyen sıfır araçlardaki hasar büyük.\n\nÜretim durdu, yeni Da Tang ve FCB Ti7g gibi SUV modellerinin teslimatları gecikecek. Açık otoparktaki araçlar ağır hasar gördü.\n\nBu durum sizi nasıl etkiler?",
-        "post_text_length": 340,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-27T19:56:45.806364+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BYD fabrikasını tayfun vurdu: Tesiste bekleyen sıfır araçlar ziyan oldu",
-          "link": "https://www.donanimhaber.com/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu--208578",
-          "published": "2026-07-27T15:15:00+00:00",
-          "summary": "Güney Çin’i etkisi altına alan Noul Tayfunu, BYD’nin Shenshan’daki devasa üretim üssünü vurdu. Tesislerdeki hasar ve sıfır araçlardaki zayiat teslimatların gecikmesine yol açacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-bekleyen-byd-fabrikasini-sifir-tayfun-tesiste-vurdu-ziyan",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Dünyanın en büyük elektrikli araç üreticisinin tesisini felaket vurması ve sıfır araçların zarar görmesi yüksek merak ve paylaşım potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "BYD, yaklaşık bir hafta önce küresel talebe yanıt vermek amacıyla söz konusu tesis için devasa bir genişleme hamlesi açıklamış ve 9.000’den fazla yeni personel alım süreci başlatmıştı. Olayda herhangi bir can kaybı ya da yaralanma bildirilmedi ancak hem üretim tesisleri hem de tesiste park halinde bekleyen sıfır araçlar fırtınadan nasibini aldı. Sığınma emirleri nedeniyle üretim geçici olarak durduruldu. Bu durum, markanın yeni duyurulanDa TangveFCB Ti7gibi SUV modellerinin teslimatlarında gecikmelere yol açacak. Olayda asıl zayiataçık otoparkta müşteri teslimatı bekleyen sıfır araçlardayaşandı. Yayınlanan görsellerde araçların üzerinde derin çizikler, göçükler, kırık camlar ve bükülmüş kaporta parçaları göze çarpıyor. Zarar gören filonun büyük çoğunluğunu yüksek sipariş pazarında sıra bekleyenDa Tangve Fang Cheng Bao markasınınTi7SUV modelleri oluşturuyor. BYD, yakın zamandaSeal 08lansmanıyla birlikte Blade Battery 2.0 pil paketlerindeki tedarik sıkıntısını aşarak teslimat hızını artırmıştı. Ancak bu beklenmedik doğal afet, teslimata hazır araç filosunun bir kısmını kullanılmaz hale getirdi ve müşteri bekleme sürelerini tekrar uzatacak. Güneş enerjili geçici barınma çantası https://www.amazon.com.tr/dp/B0G2T2JXSH https://www.amazon.com.tr/dp/B082L2LP8P https://www.amazon.com.tr/dp/B0FB963HTF https://www.amazon.com.tr/dp/B000MX59JC https://www.itemsatis.com/yapay-zeka/18-ay-gemini-ai-pro-aktivasyon-kodu-5553215.html",
-          "post_text_for_card": "🌪️ BYD FABRİKASINI TAYFUN VURDU! SIFIR ARAÇLAR ZİYAN OLDU\n\nGüney Çin'deki Noul Tayfunu, BYD'nin Shenshan üretim üssünü vurdu. Tesislerdeki ve bekleyen sıfır araçlardaki hasar büyük.\n\nÜretim durdu, yeni Da Tang ve FCB Ti7g gibi SUV modellerinin teslimatları gecikecek. Açık otoparktaki araçlar ağır hasar gördü.\n\nBu durum sizi nasıl etkiler?",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/208578/1200x675byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208578/src/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu208578_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208578/src/byd-fabrikasini-tayfun-vurdu-tesisteki-sifir-araclar-ziyan-oldu208578_0.jpg"
-          ]
-        },
-        "post_text": "🌪️ BYD FABRİKASINI TAYFUN VURDU! SIFIR ARAÇLAR ZİYAN OLDU\n\nGüney Çin'deki Noul Tayfunu, BYD'nin Shenshan üretim üssünü vurdu. Tesislerdeki ve bekleyen sıfır araçlardaki hasar büyük.\n\nÜretim durdu, yeni Da Tang ve FCB Ti7g gibi SUV modellerinin teslimatları gecikecek. Açık otoparktaki araçlar ağır hasar gördü.\n\nBu durum sizi nasıl etkiler?",
-        "image_path": "/tmp/otoxtra_img_2lyg4arr.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_2lyg4arr.jpg",
-          "/tmp/otoxtra_img_1ovfp5vj.jpg",
-          "/tmp/otoxtra_img_rykx6_tz.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-27T19:57:13.080503+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122173827632916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18129665494638884",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27655576370776399",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-27T19:58:20.712826+03:00"
+      "updated_at": null
     }
   }
 }
