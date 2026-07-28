@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-07-28-19:38",
-  "status": "completed",
-  "started_at": "2026-07-28T19:38:56.667205+03:00",
-  "updated_at": "2026-07-28T19:40:55.017915+03:00",
+  "run_id": "2026-07-28-21:12",
+  "status": "error",
+  "started_at": "2026-07-28T21:12:59.310373+03:00",
+  "updated_at": "2026-07-28T21:13:32.804996+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Ford Bronco, yeni tasarım paketiyle fuşya tonlarına bürünüyor",
-            "link": "https://tr.motor1.com/news/802967/ford-bronco-desert-rising/",
-            "published": "2026-07-28T16:00:00+00:00",
-            "summary": "Ford Custom Garage'ın yeni eseri Desert Rising adını taşıyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/9m8O7y/s3/ford-bronco-desert-rising.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/9m8O7y/s3/ford-bronco-desert-rising.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/9m8O7y/s3/ford-bronco-desert-rising.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bronco-burunuyor-ford-fusya-paketiyle-tasarim-tonlarina"
-          },
-          {
-            "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-            "link": "https://nitter.net/eozpeynirci/status/2082115075113205996#m",
-            "published": "2026-07-28T14:44:52+00:00",
-            "summary": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye 'nin katkılarıyla @GazeteOksijen TV’de. piped.video/5ZQmK9-n-HY Video",
-            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "5zqmk9-aciliyor-anlama-arac-arac-artislarinin-asgari-ayinda-ayinda-azaliyor-bin-buyuyor-castrolturkiye-daralma-degerlendirmesi-detaylariyla-dustu-elektrikli-elektrikli-elektrikli-gazeteoksijen-gecen-geliyor-gelmiyor-giren-gorunen-gun-gunde-gununde-haftanin-haziran-https-kanuna-katkilariyla-kez-maktu-mayis-neden-neden-neler-oluyor-onu-otomobil-otomobil-otomobillerde-otomotiv-otv-otv-pazarda-rakama-satilmisti-satislari-secenekler-sinyali-talep-temmuzda-temmuzda-turkiye-ulasilamayacak-uzerinde-vergi-verildi-yok-youtu-yuksek-zamlarin"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -140,10 +101,10 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -158,234 +119,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 168,
-            "after_keyword": 106,
-            "after_time": 16,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 178,
+            "after_keyword": 108,
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 168,
-          "after_keyword": 106,
-          "after_time": 16,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 178,
+          "after_keyword": 108,
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-28T19:40:01.093255+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-28T21:13:32.804996+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-          "link": "https://nitter.net/eozpeynirci/status/2082115075113205996#m",
-          "published": "2026-07-28T14:44:52+00:00",
-          "summary": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye 'nin katkılarıyla @GazeteOksijen TV’de. piped.video/5ZQmK9-n-HY Video",
-          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "5zqmk9-aciliyor-anlama-arac-arac-artislarinin-asgari-ayinda-ayinda-azaliyor-bin-buyuyor-castrolturkiye-daralma-degerlendirmesi-detaylariyla-dustu-elektrikli-elektrikli-elektrikli-gazeteoksijen-gecen-geliyor-gelmiyor-giren-gorunen-gun-gunde-gununde-haftanin-haziran-https-kanuna-katkilariyla-kez-maktu-mayis-neden-neden-neler-oluyor-onu-otomobil-otomobil-otomobillerde-otomotiv-otv-otv-pazarda-rakama-satilmisti-satislari-secenekler-sinyali-talep-temmuzda-temmuzda-turkiye-ulasilamayacak-uzerinde-vergi-verildi-yok-youtu-yuksek-zamlarin",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 86,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil piyasasını, vergi değişimlerini ve satış düşüşlerini doğrudan ilgilendirdiği için yüksek sosyal medya etkileşimi ve gündem gücüne sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 86,
-        "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 15,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'deki otomobil piyasasını, vergi değişimlerini ve satış düşüşlerini doğrudan ilgilendirdiği için yüksek sosyal medya etkileşimi ve gündem gücüne sahip.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-            "score": 86,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 15,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Ford Bronco, yeni tasarım paketiyle fuşya tonlarına bürünüyor",
-            "score": 49,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 9,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Ford Bronco, yeni tasarım paketiyle fuşya tonlarına bürünüyor",
-            "link": "https://tr.motor1.com/news/802967/ford-bronco-desert-rising/",
-            "score": 49,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "bronco-burunuyor-ford-fusya-paketiyle-tasarim-tonlarina"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-28T19:40:04.255293+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-          "link": "https://nitter.net/eozpeynirci/status/2082115075113205996#m",
-          "published": "2026-07-28T14:44:52+00:00",
-          "summary": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye 'nin katkılarıyla @GazeteOksijen TV’de. piped.video/5ZQmK9-n-HY Video",
-          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "5zqmk9-aciliyor-anlama-arac-arac-artislarinin-asgari-ayinda-ayinda-azaliyor-bin-buyuyor-castrolturkiye-daralma-degerlendirmesi-detaylariyla-dustu-elektrikli-elektrikli-elektrikli-gazeteoksijen-gecen-geliyor-gelmiyor-giren-gorunen-gun-gunde-gununde-haftanin-haziran-https-kanuna-katkilariyla-kez-maktu-mayis-neden-neden-neler-oluyor-onu-otomobil-otomobil-otomobillerde-otomotiv-otv-otv-pazarda-rakama-satilmisti-satislari-secenekler-sinyali-talep-temmuzda-temmuzda-turkiye-ulasilamayacak-uzerinde-vergi-verildi-yok-youtu-yuksek-zamlarin",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 86,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil piyasasını, vergi değişimlerini ve satış düşüşlerini doğrudan ilgilendirdiği için yüksek sosyal medya etkileşimi ve gündem gücüne sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "🚨 ÖTV'DE YENİ ZAMLAR KAPIDA MI?\n\nKanuna giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor?\n\nElektrikli otomobil talebi yüksek ama araç yok. Seçenekler neden azalıyor? Haziran'da satışlar %40 düştü, temmuz daha kötü mü?\n\nPazarda neler oluyor, bu değişimler sizi nasıl etkileyecek?",
-        "post_text_length": 313,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-28T19:40:05.947278+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye'nin katkılarıyla @GazeteOksijen TV’de. https://youtu.be/5ZQmK9-n-HY",
-          "link": "https://nitter.net/eozpeynirci/status/2082115075113205996#m",
-          "published": "2026-07-28T14:44:52+00:00",
-          "summary": "ÖTV’de yeni zamların sinyali mi verildi? ⚠️ 📌 Kanuna ilk kez giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor? 📌 Elektrikli otomobillerde talep yüksek ama araç yok. Türkiye’ye neden elektrikli otomobil gelmiyor? Seçenekler neden her geçen gün azalıyor? 📌 Haziran ayında elektrikli otomobil satışları %40’ın üzerinde düştü. Temmuzda daralma daha da mı büyüyor? 📌 Mayıs ayında sadece 15 iş gününde 85 bin araç satılmıştı. Görünen o ki temmuzda 31 günde bile bu rakama ulaşılamayacak. Pazarda neler oluyor? Tüm detaylarıyla haftanın otomotiv değerlendirmesi @CastrolTurkiye 'nin katkılarıyla @GazeteOksijen TV’de. piped.video/5ZQmK9-n-HY Video",
-          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg",
-          "image_candidates": [
-            "https://nitter.net/pic/amplify_video_thumb%2F2082114983341559809%2Fimg%2FkFBB3rJhQaNq_Fpv.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "5zqmk9-aciliyor-anlama-arac-arac-artislarinin-asgari-ayinda-ayinda-azaliyor-bin-buyuyor-castrolturkiye-daralma-degerlendirmesi-detaylariyla-dustu-elektrikli-elektrikli-elektrikli-gazeteoksijen-gecen-geliyor-gelmiyor-giren-gorunen-gun-gunde-gununde-haftanin-haziran-https-kanuna-katkilariyla-kez-maktu-mayis-neden-neden-neler-oluyor-onu-otomobil-otomobil-otomobillerde-otomotiv-otv-otv-pazarda-rakama-satilmisti-satislari-secenekler-sinyali-talep-temmuzda-temmuzda-turkiye-ulasilamayacak-uzerinde-vergi-verildi-yok-youtu-yuksek-zamlarin",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 86,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil piyasasını, vergi değişimlerini ve satış düşüşlerini doğrudan ilgilendirdiği için yüksek sosyal medya etkileşimi ve gündem gücüne sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "🚨 ÖTV'DE YENİ ZAMLAR KAPIDA MI?\n\nKanuna giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor?\n\nElektrikli otomobil talebi yüksek ama araç yok. Seçenekler neden azalıyor? Haziran'da satışlar %40 düştü, temmuz daha kötü mü?\n\nPazarda neler oluyor, bu değişimler sizi nasıl etkileyecek?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🚨 ÖTV'DE YENİ ZAMLAR KAPIDA MI?\n\nKanuna giren 'asgari maktu ÖTV' ne anlama geliyor? Yeni vergi artışlarının önü mü açılıyor?\n\nElektrikli otomobil talebi yüksek ama araç yok. Seçenekler neden azalıyor? Haziran'da satışlar %40 düştü, temmuz daha kötü mü?\n\nPazarda neler oluyor, bu değişimler sizi nasıl etkileyecek?",
-        "image_path": "/tmp/otoxtra_img_8tjhkniy.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_8tjhkniy.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-28T19:40:10.722031+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122173940210916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17979158313106891",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27554675197494489",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-28T19:40:55.017915+03:00"
+      "updated_at": null
     }
   }
 }
