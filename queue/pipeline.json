@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-07-28-09:35",
-  "status": "error",
-  "started_at": "2026-07-28T09:35:13.284138+03:00",
-  "updated_at": "2026-07-28T09:36:04.091146+03:00",
+  "run_id": "2026-07-28-11:26",
+  "status": "completed",
+  "started_at": "2026-07-28T11:26:02.187145+03:00",
+  "updated_at": "2026-07-28T11:29:18.792097+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+            "link": "https://www.donanimhaber.com/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi--208611",
+            "published": "2026-07-28T08:10:00+00:00",
+            "summary": "Teknoloji devi Xiaomi, menzil uzatıcılı ilk SUV serisi Skynomad için geliştirdiği Kunlun mimarisini duyurdu. Düşük yakıt tüketimi ve devasa boyutlarıyla model lansmana gün sayıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "detaylandi-dev-hibrit-litre-skynomad-suv-xiaomi-yakan"
+          },
+          {
+            "title": "Yeni Mercedes GLA'nın ilk görüntüsü internete sızdı. Yarın tanıtılacak elektrikli SUV, MMA platformunda geliştirilen üçüncü model olarak sonbaharda müşteriyle buluşacak. Elektrikli GLA'nın 58 kWh LFP, 71 ve 85 kWh NMC batarya seçenekleriyle satılması ve 800V elektrik mimarisine sahip olması bekleniyor. Tüm teknik detaylar 29 Temmuz'daki tanıtım etkinliği sonrası netleşecek.",
+            "link": "https://nitter.net/DoluBatarya/status/2082013827198013836#m",
+            "published": "2026-07-28T08:02:33+00:00",
+            "summary": "Yeni Mercedes GLA'nın ilk görüntüsü internete sızdı. Yarın tanıtılacak elektrikli SUV, MMA platformunda geliştirilen üçüncü model olarak sonbaharda müşteriyle buluşacak. Elektrikli GLA'nın 58 kWh LFP, 71 ve 85 kWh NMC batarya seçenekleriyle satılması ve 800V elektrik mimarisine sahip olması bekleniyor. Tüm teknik detaylar 29 Temmuz'daki tanıtım etkinliği sonrası netleşecek.",
+            "image_url": "https://pbs.twimg.com/media/HOTLkOjW4AA2ejS.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HOTLkOjW4AA2ejS.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HOTLkOjW4AA2ejS.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Dolu Batarya",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "800v-batarya-bekleniyor-bulusacak-detaylar-elektrik-elektrikli-elektrikli-etkinligi-gelistirilen-gla-gla-goruntusu-internete-kwh-kwh-lfp-mercedes-mimarisine-mma-model-musteriyle-netlesecek-nmc-olmasi-platformunda-sahip-satilmasi-secenekleriyle-sizdi-sonbaharda-sonrasi-suv-tanitilacak-tanitim-teknik-temmuz-ucuncu-yarin"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -95,10 +134,10 @@
             "attempts": 1
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
             "status": "ok",
@@ -119,49 +158,247 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 166,
-            "after_keyword": 109,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 176,
+            "after_keyword": 113,
+            "after_time": 15,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 166,
-          "after_keyword": 109,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 176,
+          "after_keyword": 113,
+          "after_time": 15,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-07-28T09:36:04.091146+03:00"
+      "error": null,
+      "updated_at": "2026-07-28T11:28:09.107805+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+          "link": "https://www.donanimhaber.com/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi--208611",
+          "published": "2026-07-28T08:10:00+00:00",
+          "summary": "Teknoloji devi Xiaomi, menzil uzatıcılı ilk SUV serisi Skynomad için geliştirdiği Kunlun mimarisini duyurdu. Düşük yakıt tüketimi ve devasa boyutlarıyla model lansmana gün sayıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "detaylandi-dev-hibrit-litre-skynomad-suv-xiaomi-yakan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Xiaomi markasının otomotiv sektöründeki yankı uyandıran büyümesi, devasa boyutlar ve düşük yakıt tüketimi iddiası sosyal medyada yüksek etkileşim çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Xiaomi markasının otomotiv sektöründeki yankı uyandıran büyümesi, devasa boyutlar ve düşük yakıt tüketimi iddiası sosyal medyada yüksek etkileşim çekecek nitelikte.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Yeni Mercedes GLA'nın ilk görüntüsü internete sızdı. Yarın tanıtılacak elektrikli SUV, MMA platformunda geliştirilen üçüncü model olarak sonbaharda müşteriyle buluşacak. Elektrikli GLA'nın 58 kWh LFP, 71 ve 85 kWh NMC batarya seçenekleriyle satılması ve 800V elektrik mimarisine sahip olması bekleniyor. Tüm teknik detaylar 29 Temmuz'daki tanıtım etkinliği sonrası netleşecek.",
+            "score": 75,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 19,
+              "benzersizlik": 14,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Yeni Mercedes GLA'nın ilk görüntüsü internete sızdı. Yarın tanıtılacak elektrikli SUV, MMA platformunda geliştirilen üçüncü model olarak sonbaharda müşteriyle buluşacak. Elektrikli GLA'nın 58 kWh LFP, 71 ve 85 kWh NMC batarya seçenekleriyle satılması ve 800V elektrik mimarisine sahip olması bekleniyor. Tüm teknik detaylar 29 Temmuz'daki tanıtım etkinliği sonrası netleşecek.",
+            "link": "https://nitter.net/DoluBatarya/status/2082013827198013836#m",
+            "score": 75,
+            "score_reason": "ai_scored",
+            "source_name": "Dolu Batarya",
+            "topic_fingerprint": "800v-batarya-bekleniyor-bulusacak-detaylar-elektrik-elektrikli-elektrikli-etkinligi-gelistirilen-gla-gla-goruntusu-internete-kwh-kwh-lfp-mercedes-mimarisine-mma-model-musteriyle-netlesecek-nmc-olmasi-platformunda-sahip-satilmasi-secenekleriyle-sizdi-sonbaharda-sonrasi-suv-tanitilacak-tanitim-teknik-temmuz-ucuncu-yarin"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-28T11:28:11.809079+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+          "link": "https://www.donanimhaber.com/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi--208611",
+          "published": "2026-07-28T08:10:00+00:00",
+          "summary": "Teknoloji devi Xiaomi, menzil uzatıcılı ilk SUV serisi Skynomad için geliştirdiği Kunlun mimarisini duyurdu. Düşük yakıt tüketimi ve devasa boyutlarıyla model lansmana gün sayıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "detaylandi-dev-hibrit-litre-skynomad-suv-xiaomi-yakan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Xiaomi markasının otomotiv sektöründeki yankı uyandıran büyümesi, devasa boyutlar ve düşük yakıt tüketimi iddiası sosyal medyada yüksek etkileşim çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Xiaomi, Harbin Dongan Auto Engine ortaklığıyla geliştirilen1.5T M15DREbenzinli motorun tekerlekleri çevirmek yerine yalnızca jeneratör görevi görerek bataryayı şarj edeceğini açıkladı. 150 beygir maksimum güç sunan motor,bataryanın boşaldığı durumlarda 100 km'de 5,7 litre tüketimsunuyor. Menzil uzatıcı ve elektrik sistemi için8 yıl veya 160.000 km garantisunan Xiaomi, ilk servis sonrasındakiperiyodik bakımların da 3 yıl veya 30.000 km'de biryapılacağını belirtiyor. Sanayi Bakanlığı tescil belgelerine göre N90 Max'in diğer teknik özellikleri şu şekilde: Skynomad serisi, Xiaomi’nin Çin iç pazarındaki güçlü yükselişini daha da pekiştirmeyi hedefliyor. Haziran 2026 verilerine göre Xiaomi Auto, toplam34.738 adetaraç satarak geçen yılın aynı dönemine göre%36,4 artışkaydetti ve pazar payını %2,2 seviyesine çıkardı. Model bazındaSU7 sedan 20.414 adet,YU7 SUV ise 14.324 adetsatış rakamına ulaştı. 30 Temmuz'daki Kunlun Mimarisi lansmanında teknolojiye dair tüm detaylar netleşecek olsa da Skynomad serisinin kesin fiyatları ve teslimat takvimi Ağustos ayındaki resmi tanıtımda açıklanacak. Güneş enerjili geçici barınma çantası çok olmuş birazını alsın artık eski tel. gibi gitmiyor pil gücü 2 senede pert https://www.amazon.com.tr/dp/B00BD1DKIE https://www.amazon.com.tr/dp/B0D8W4Q3JH?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/b?node=44219324031 https://www.amazon.com.tr/dp/B0B25CY9G9 https://www.turkishairlines.com/tr-tr/miles-and-smiles/kampanyalar/dostlugun-rituelleri-farkli-hissettirdigi-heyecan-ortak/ https://www.migros.com.tr/bahcivan-tam-yagli-krem-peynir-300-g-p-9d3299"
+        },
+        "post_text": "🚗 XIAOMI'DEN YENİ HİBRİT SUV: SKYNOMAD YOLDA\n\nXiaomi, Kunlun mimarisiyle geliştirdiği ilk SUV serisi Skynomad'ı tanıttı. Düşük yakıt tüketimi ve devasa boyutlarıyla dikkat çeken model, lansmana hazırlanıyor.\n\n1.5T benzinli motoru sadece jeneratör olarak kullanacak model, 100 km'de 5.7 litre yakıt tüketimiyle öne çıkıyor.\n\nSizce bu hibrit SUV'lar geleceğin otomobilleri mi olacak?",
+        "post_text_length": 381,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-28T11:28:14.620177+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Xiaomi'den 5,7 litre yakan dev hibrit SUV: Skynomad detaylandı",
+          "link": "https://www.donanimhaber.com/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi--208611",
+          "published": "2026-07-28T08:10:00+00:00",
+          "summary": "Teknoloji devi Xiaomi, menzil uzatıcılı ilk SUV serisi Skynomad için geliştirdiği Kunlun mimarisini duyurdu. Düşük yakıt tüketimi ve devasa boyutlarıyla model lansmana gün sayıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "detaylandi-dev-hibrit-litre-skynomad-suv-xiaomi-yakan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Xiaomi markasının otomotiv sektöründeki yankı uyandıran büyümesi, devasa boyutlar ve düşük yakıt tüketimi iddiası sosyal medyada yüksek etkileşim çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Xiaomi, Harbin Dongan Auto Engine ortaklığıyla geliştirilen1.5T M15DREbenzinli motorun tekerlekleri çevirmek yerine yalnızca jeneratör görevi görerek bataryayı şarj edeceğini açıkladı. 150 beygir maksimum güç sunan motor,bataryanın boşaldığı durumlarda 100 km'de 5,7 litre tüketimsunuyor. Menzil uzatıcı ve elektrik sistemi için8 yıl veya 160.000 km garantisunan Xiaomi, ilk servis sonrasındakiperiyodik bakımların da 3 yıl veya 30.000 km'de biryapılacağını belirtiyor. Sanayi Bakanlığı tescil belgelerine göre N90 Max'in diğer teknik özellikleri şu şekilde: Skynomad serisi, Xiaomi’nin Çin iç pazarındaki güçlü yükselişini daha da pekiştirmeyi hedefliyor. Haziran 2026 verilerine göre Xiaomi Auto, toplam34.738 adetaraç satarak geçen yılın aynı dönemine göre%36,4 artışkaydetti ve pazar payını %2,2 seviyesine çıkardı. Model bazındaSU7 sedan 20.414 adet,YU7 SUV ise 14.324 adetsatış rakamına ulaştı. 30 Temmuz'daki Kunlun Mimarisi lansmanında teknolojiye dair tüm detaylar netleşecek olsa da Skynomad serisinin kesin fiyatları ve teslimat takvimi Ağustos ayındaki resmi tanıtımda açıklanacak. Güneş enerjili geçici barınma çantası çok olmuş birazını alsın artık eski tel. gibi gitmiyor pil gücü 2 senede pert https://www.amazon.com.tr/dp/B00BD1DKIE https://www.amazon.com.tr/dp/B0D8W4Q3JH?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/b?node=44219324031 https://www.amazon.com.tr/dp/B0B25CY9G9 https://www.turkishairlines.com/tr-tr/miles-and-smiles/kampanyalar/dostlugun-rituelleri-farkli-hissettirdigi-heyecan-ortak/ https://www.migros.com.tr/bahcivan-tam-yagli-krem-peynir-300-g-p-9d3299",
+          "post_text_for_card": "🚗 XIAOMI'DEN YENİ HİBRİT SUV: SKYNOMAD YOLDA\n\nXiaomi, Kunlun mimarisiyle geliştirdiği ilk SUV serisi Skynomad'ı tanıttı. Düşük yakıt tüketimi ve devasa boyutlarıyla dikkat çeken model, lansmana hazırlanıyor.\n\n1.5T benzinli motoru sadece jeneratör olarak kullanacak model, 100 km'de 5.7 litre yakıt tüketimiyle öne çıkıyor.\n\nSizce bu hibrit SUV'lar geleceğin otomobilleri mi olacak?",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/208611/1200x675xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi.jpg",
+            "https://www.donanimhaber.com/images/images/haber/208611/src/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi208611_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/208611/src/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi208611_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/208611/src/xiaomi-den-5-7-litre-yakan-dev-hibrit-suv-skynomad-detaylandi208611_2.jpg"
+          ]
+        },
+        "post_text": "🚗 XIAOMI'DEN YENİ HİBRİT SUV: SKYNOMAD YOLDA\n\nXiaomi, Kunlun mimarisiyle geliştirdiği ilk SUV serisi Skynomad'ı tanıttı. Düşük yakıt tüketimi ve devasa boyutlarıyla dikkat çeken model, lansmana hazırlanıyor.\n\n1.5T benzinli motoru sadece jeneratör olarak kullanacak model, 100 km'de 5.7 litre yakıt tüketimiyle öne çıkıyor.\n\nSizce bu hibrit SUV'lar geleceğin otomobilleri mi olacak?",
+        "image_path": "/tmp/otoxtra_img_st8oe_st.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_st8oe_st.jpg",
+          "/tmp/otoxtra_img_yg0v2lii.jpg",
+          "/tmp/otoxtra_img_l56sp9oc.jpg",
+          "/tmp/otoxtra_img_6g0s5g1z.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-28T11:28:29.263317+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122173897292916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18150800299484389",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1803074007718386",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-28T11:29:18.792097+03:00"
     }
   }
 }
