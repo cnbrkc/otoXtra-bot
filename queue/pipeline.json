@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-07-28-06:59",
+  "run_id": "2026-07-28-09:35",
   "status": "error",
-  "started_at": "2026-07-28T06:59:10.241463+03:00",
-  "updated_at": "2026-07-28T07:00:13.204945+03:00",
+  "started_at": "2026-07-28T09:35:13.284138+03:00",
+  "updated_at": "2026-07-28T09:36:04.091146+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -95,10 +95,10 @@
             "attempts": 1
           },
           "MuratTosun": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
           },
           "VeyselKarani": {
             "status": "ok",
@@ -107,37 +107,37 @@
             "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "otopodyum": {
             "status": "ok",
-            "count": 5,
+            "count": 6,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 165,
-            "after_keyword": 106,
-            "after_time": 6,
+            "found": 166,
+            "after_keyword": 109,
+            "after_time": 8,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 165,
-          "after_keyword": 106,
-          "after_time": 6,
+          "found": 166,
+          "after_keyword": 109,
+          "after_time": 8,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-07-28T07:00:13.204945+03:00"
+      "updated_at": "2026-07-28T09:36:04.091146+03:00"
     },
     "score": {
       "status": "waiting",
