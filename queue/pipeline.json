@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-07-28-03:00",
+  "run_id": "2026-07-28-06:59",
   "status": "error",
-  "started_at": "2026-07-28T03:00:35.485758+03:00",
-  "updated_at": "2026-07-28T03:01:04.005675+03:00",
+  "started_at": "2026-07-28T06:59:10.241463+03:00",
+  "updated_at": "2026-07-28T07:00:13.204945+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -107,10 +107,10 @@
             "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
           },
           "otopodyum": {
             "status": "ok",
@@ -119,8 +119,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 175,
-            "after_keyword": 113,
+            "found": 165,
+            "after_keyword": 106,
             "after_time": 6,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -128,8 +128,8 @@
           }
         },
         "metrics": {
-          "found": 175,
-          "after_keyword": 113,
+          "found": 165,
+          "after_keyword": 106,
           "after_time": 6,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -137,7 +137,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-07-28T03:01:04.005675+03:00"
+      "updated_at": "2026-07-28T07:00:13.204945+03:00"
     },
     "score": {
       "status": "waiting",
