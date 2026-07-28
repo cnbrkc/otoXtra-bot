@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-07-29-01:02",
-  "status": "completed",
-  "started_at": "2026-07-29T01:02:47.212859+03:00",
-  "updated_at": "2026-07-29T01:04:39.730364+03:00",
+  "run_id": "2026-07-29-02:56",
+  "status": "error",
+  "started_at": "2026-07-29T02:56:49.901175+03:00",
+  "updated_at": "2026-07-29T02:57:44.484423+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-            "link": "https://www.donanimhaber.com/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti--208646",
-            "published": "2026-07-28T20:23:44+00:00",
-            "summary": "BYD, Japonya'nın en popüler araç segmenti olan \"Kei-Car\" pazarına özel hazırladığı elektrikli modeli Racco'yu satışa sundu. Uygun fiyatı ve 320 km menziliyle yerli üreticileri zorlayacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-cin-darbesi-japonya-kalbine-racco-satisa"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -141,225 +121,47 @@
           "_metrics": {
             "found": 177,
             "after_keyword": 107,
-            "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 177,
           "after_keyword": 107,
-          "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-29T01:03:17.712673+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-29T02:57:44.484423+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-          "link": "https://www.donanimhaber.com/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti--208646",
-          "published": "2026-07-28T20:23:44+00:00",
-          "summary": "BYD, Japonya'nın en popüler araç segmenti olan \"Kei-Car\" pazarına özel hazırladığı elektrikli modeli Racco'yu satışa sundu. Uygun fiyatı ve 320 km menziliyle yerli üreticileri zorlayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "byd-cin-darbesi-japonya-kalbine-racco-satisa",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çinli bir üreticinin geleneksel olarak korumacı ve zorlu Japon kei-car pazarına girmesi sektörel açıdan büyük bir olay ve yüksek tartışma potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 87,
-        "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Çinli bir üreticinin geleneksel olarak korumacı ve zorlu Japon kei-car pazarına girmesi sektörel açıdan büyük bir olay ve yüksek tartışma potansiyeli taşıyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 10
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-29T01:03:20.023002+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-          "link": "https://www.donanimhaber.com/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti--208646",
-          "published": "2026-07-28T20:23:44+00:00",
-          "summary": "BYD, Japonya'nın en popüler araç segmenti olan \"Kei-Car\" pazarına özel hazırladığı elektrikli modeli Racco'yu satışa sundu. Uygun fiyatı ve 320 km menziliyle yerli üreticileri zorlayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "byd-cin-darbesi-japonya-kalbine-racco-satisa",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çinli bir üreticinin geleneksel olarak korumacı ve zorlu Japon kei-car pazarına girmesi sektörel açıdan büyük bir olay ve yüksek tartışma potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Japonya'da sıfır araç satışlarının yaklaşık%40'ınıoluşturan K-Car segmenti, dar şehir sokakları ve kırsal yollar için ülkenin vazgeçilmezi konumunda. BYD Racco, Japonya'da devlet teşvikleri öncesinde2,145 milyon yen (yaklaşık 13.100 dolar)başlangıç fiyatıyla satışa sunuldu. Hükümetin sağladığı 150.000 yenlik elektrikli araç teşvikiyle birlikte aracın giriş versiyonu2 milyon yenin altınadüşüyor. Üst paketler olan300 Plusve300 Premiumversiyonlarında yer alan35,84 kWsa LFP Blade bataryasayesinde menzil320 kilometreyeulaşıyor. Bu değer, Racco'yu Japonya'da300 km sınırını aşan ilk elektrikli Kei-Carunvanına taşıyor. İlk kez Ekim 2025'te tanıtılan Racco, Çin iç pazarında satılmayıp doğrudan yurt dışı pazarlar için sıfırdan tasarlanan nadir BYD modellerinden biri. 3.395 mm uzunluk ve 1.475 mm genişlik ile tam olarak Japon K-Car standart sınırlarında yer alıyor. 1.800 mm yüksekliği ise Japon tüketicilerin çok sevdiği \"süper yüksek tavan\" mimarisini sunuyor. İç mekanda ise 10,1 inçlik multimedya ekranı, Seviye 2 sürüş destek sistemleri, V2L desteği, ısıtmalı koltuklar ve direksiyon ile NFC telefon anahtarı standart donanımlar arasında yer alıyor. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B0001MQHZ4 https://www.amazon.com.tr/dp/B0FRM4S914 https://www.amazon.com.tr/dp/B0B5YHN3P8 https://www.n11.com/arama?&pg=2&promotions=2188592 https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ"
-        },
-        "post_text": "⚡ JAPONYA'DA BYD RACCO RÜZGARI BAŞLADI\n\nBYD, Japonya'nın Kei-Car pazarına özel elektrikli Racco'yu satışa sundu. Başlangıç fiyatı 2,145 milyon yen (yaklaşık 13.100 dolar).\n\nDevlet teşvikleriyle fiyatı 2 milyon yenin altına düşüyor. 320 km menziliyle bu segmentte 300 km sınırını aşan ilk araç oldu.\n\nSizce bu model Japon pazarını nasıl etkiler?",
-        "post_text_length": 344,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-29T01:03:22.608650+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Japonya'nın kalbine Çin darbesi: Yeni BYD Racco satışa çıktı",
-          "link": "https://www.donanimhaber.com/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti--208646",
-          "published": "2026-07-28T20:23:44+00:00",
-          "summary": "BYD, Japonya'nın en popüler araç segmenti olan \"Kei-Car\" pazarına özel hazırladığı elektrikli modeli Racco'yu satışa sundu. Uygun fiyatı ve 320 km menziliyle yerli üreticileri zorlayacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "byd-cin-darbesi-japonya-kalbine-racco-satisa",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çinli bir üreticinin geleneksel olarak korumacı ve zorlu Japon kei-car pazarına girmesi sektörel açıdan büyük bir olay ve yüksek tartışma potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Japonya'da sıfır araç satışlarının yaklaşık%40'ınıoluşturan K-Car segmenti, dar şehir sokakları ve kırsal yollar için ülkenin vazgeçilmezi konumunda. BYD Racco, Japonya'da devlet teşvikleri öncesinde2,145 milyon yen (yaklaşık 13.100 dolar)başlangıç fiyatıyla satışa sunuldu. Hükümetin sağladığı 150.000 yenlik elektrikli araç teşvikiyle birlikte aracın giriş versiyonu2 milyon yenin altınadüşüyor. Üst paketler olan300 Plusve300 Premiumversiyonlarında yer alan35,84 kWsa LFP Blade bataryasayesinde menzil320 kilometreyeulaşıyor. Bu değer, Racco'yu Japonya'da300 km sınırını aşan ilk elektrikli Kei-Carunvanına taşıyor. İlk kez Ekim 2025'te tanıtılan Racco, Çin iç pazarında satılmayıp doğrudan yurt dışı pazarlar için sıfırdan tasarlanan nadir BYD modellerinden biri. 3.395 mm uzunluk ve 1.475 mm genişlik ile tam olarak Japon K-Car standart sınırlarında yer alıyor. 1.800 mm yüksekliği ise Japon tüketicilerin çok sevdiği \"süper yüksek tavan\" mimarisini sunuyor. İç mekanda ise 10,1 inçlik multimedya ekranı, Seviye 2 sürüş destek sistemleri, V2L desteği, ısıtmalı koltuklar ve direksiyon ile NFC telefon anahtarı standart donanımlar arasında yer alıyor. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B0001MQHZ4 https://www.amazon.com.tr/dp/B0FRM4S914 https://www.amazon.com.tr/dp/B0B5YHN3P8 https://www.n11.com/arama?&pg=2&promotions=2188592 https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ",
-          "post_text_for_card": "⚡ JAPONYA'DA BYD RACCO RÜZGARI BAŞLADI\n\nBYD, Japonya'nın Kei-Car pazarına özel elektrikli Racco'yu satışa sundu. Başlangıç fiyatı 2,145 milyon yen (yaklaşık 13.100 dolar).\n\nDevlet teşvikleriyle fiyatı 2 milyon yenin altına düşüyor. 320 km menziliyle bu segmentte 300 km sınırını aşan ilk araç oldu.\n\nSizce bu model Japon pazarını nasıl etkiler?",
-          "image_sources": [
-            "article_img",
-            "article_img",
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/galeri/9338/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti-9338-1.jpg",
-            "https://www.donanimhaber.com/images/images/galeri/9338/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti-9338-3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208646/1200x675japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti.jpg",
-            "https://www.donanimhaber.com/images/images/galeri/9338/japonya-nin-kalbine-cin-darbesi-yeni-byd-racco-satisa-cikti-9338-4.jpg"
-          ]
-        },
-        "post_text": "⚡ JAPONYA'DA BYD RACCO RÜZGARI BAŞLADI\n\nBYD, Japonya'nın Kei-Car pazarına özel elektrikli Racco'yu satışa sundu. Başlangıç fiyatı 2,145 milyon yen (yaklaşık 13.100 dolar).\n\nDevlet teşvikleriyle fiyatı 2 milyon yenin altına düşüyor. 320 km menziliyle bu segmentte 300 km sınırını aşan ilk araç oldu.\n\nSizce bu model Japon pazarını nasıl etkiler?",
-        "image_path": "/tmp/otoxtra_img_7i_ey5il.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_7i_ey5il.jpg",
-          "/tmp/otoxtra_img_zn42lkpa.jpg",
-          "/tmp/otoxtra_img_bp_21ce_.jpg",
-          "/tmp/otoxtra_img_oihwm9dm.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-29T01:03:44.058870+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122173965134916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18104766215333224",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1191028139890203",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-29T01:04:39.730364+03:00"
+      "updated_at": null
     }
   }
 }
