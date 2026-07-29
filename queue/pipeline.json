@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-07-30-00:59",
-  "status": "completed",
-  "started_at": "2026-07-30T00:59:09.324237+03:00",
-  "updated_at": "2026-07-30T01:00:59.033405+03:00",
+  "run_id": "2026-07-30-02:05",
+  "status": "error",
+  "started_at": "2026-07-30T02:05:05.907846+03:00",
+  "updated_at": "2026-07-30T02:05:35.780216+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-            "link": "https://www.donanimhaber.com/bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun--208689",
-            "published": "2026-07-29T20:45:00+00:00",
-            "summary": "Dil hareketleriyle bilgisayar ve telefon kontrolü sağlayan MouthPad'i satışa sunuldu. Beyin implantlarına alternatif olarak geliştirilen cihaz, özellikle felçli hastalara yardımcı olacak.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bilgisayar-dil-etmek-kontrol-mouthpad-mumkun-satisa-sunuldu-telefonlari"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -141,216 +121,47 @@
           "_metrics": {
             "found": 178,
             "after_keyword": 116,
-            "after_time": 12,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 178,
           "after_keyword": 116,
-          "after_time": 12,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-30T00:59:42.990341+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-30T02:05:35.780216+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-          "link": "https://www.donanimhaber.com/bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun--208689",
-          "published": "2026-07-29T20:45:00+00:00",
-          "summary": "Dil hareketleriyle bilgisayar ve telefon kontrolü sağlayan MouthPad'i satışa sunuldu. Beyin implantlarına alternatif olarak geliştirilen cihaz, özellikle felçli hastalara yardımcı olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bilgisayar-dil-etmek-kontrol-mouthpad-mumkun-satisa-sunuldu-telefonlari",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Teknoloji ve otomotiv/erişilebilirlik kesişiminde yer alan, sci-fi filmlerini aratmayan benzersiz ve şaşırtıcı bir ürün olduğu için sosyal medyada yüksek etkileşim potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 87,
-        "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 11
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Teknoloji ve otomotiv/erişilebilirlik kesişiminde yer alan, sci-fi filmlerini aratmayan benzersiz ve şaşırtıcı bir ürün olduğu için sosyal medyada yüksek etkileşim potansiyeli taşıyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 11
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-30T00:59:45.332976+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-          "link": "https://www.donanimhaber.com/bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun--208689",
-          "published": "2026-07-29T20:45:00+00:00",
-          "summary": "Dil hareketleriyle bilgisayar ve telefon kontrolü sağlayan MouthPad'i satışa sunuldu. Beyin implantlarına alternatif olarak geliştirilen cihaz, özellikle felçli hastalara yardımcı olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bilgisayar-dil-etmek-kontrol-mouthpad-mumkun-satisa-sunuldu-telefonlari",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Teknoloji ve otomotiv/erişilebilirlik kesişiminde yer alan, sci-fi filmlerini aratmayan benzersiz ve şaşırtıcı bir ürün olduğu için sosyal medyada yüksek etkileşim potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Felç veya inme gibi rahatsızlıklardan muzdarip olan bireyler için son yıllarda umut verici teknolojiler ortaya çıkıyor. Neuralink gibi implantlar ve beyin-bilgisayar arayüzleri, test aşamasında oldukça başarılı sonuçlar veriyor. Ancak bu tarz teknolojiler şimdilik herkesin ulaşamayacağı, prototip aşamasındaki projeler. Özellikle invaziv olmayan, yani cerrahi müdahâle gerektirmeyen versiyonların genel kitleye ulaşması yıllar alabilir. Fakat bu süreçtepek çok hastanın yardımına koşabilecek alternatif çözümlerde ortaya çıkmaya başlamış durumda. Bunlar arasında en dikkat çekicilerden biri olanMouthPad, artık herkesin ulaşabileceği ticari bir ürüne dönüştü. İki yıl önce gerçekleşen tanıtımıyla epey ses getiren cihaz, bu hafta itibarıyla satışa çıktı. 1.400 dolarlık bir fiyat etiketine sahipolan MouthPad, görünüş olarak üst dişlere takılan ince, şeffaf bir plağı andırıyor. Ancak bu özel ağız aparatı, kullanıcının dil hareketlerini ve baş hareketlerini takip ederekbilgisayar, tablet ya da akıllı telefonları tamamen eller serbest şekilde kontrol edebilmesini sağlıyor.Özellikle hareket kabiliyeti kısıtlı kullanıcılar için geliştirilen cihaz, cerrahi müdahale gerektiren beyin implantlarına alternatif olabilecek başlıca çözümlerden biri olarak görülüyor. Her kullanıcı için özel olarak üretilen MouthPad'in sipariş edilebilmesi için öncelikle kullanıcının diş taramasının alınması gerekiyor. Yaklaşık 10 gram ağırlığındaki cihaz,damağa yerleştirilen basınca duyarlı dokunmatik yüzey sayesinde dil hareketlerini algılıyor. İçerisindeki hareket sensörleri ise baş hareketlerini takip ederek imlecin yönünü belirliyor Bluetooth üzerinden çalışan cihaz;Windows bilgisayarlar, Mac'ler, akıllı telefonlar ve tabletlerle kablosuz olarak bağlantı kurabiliyor.Kullanıcılar yalnızca dillerini hareket ettirerek fare imlecini yönlendirebilirken; tıklama, kaydırma (scroll), sürükle-bırak gibi işlemleri de gerçekleştirebiliyor. Ayrıca emme hareketi de ek bir girdi yöntemi olarak kullanılabiliyor. Üstelik Augmental'ın geliştirdiği ikinci nesil MouthPad, artık yalnızca bir bilgisayar faresinin de ötesine geçmiş durumda.Kullanıcılar farklı dil hareketlerine klavye kısayolları atayabiliyor. Bu sayede yalnızca günlük bilgisayar kullanımı değil, oyun oynama veya 3 boyutlu modelleme gibi daha karmaşık işlemler de mümkün hâle geliyor. Şirket tarafından paylaşılan tanıtım videolarında kullanıcıların yalnızca dil hareketleriyle hassas imleç kontrolü yaptığı, hatta bazı oyunları oynayabildiği görülüyor. Augmental'ın aktardığı verilere göre bekleme listesinde 6.300'den fazla kişi bulunuyor. Augmental'ın en dikkat çekici iddialarından biri ise performans tarafında geliyor.Şirkete göre MouthPad'in imleç kontrolündeki hız ve doğruluğu, Neuralink gibi beyin-bilgisayar arayüzleriyle benzer seviyelere ulaşabiliyor.Elbette iki teknoloji tamamen farklı prensiplerle çalışıyor. Neuralink doğrudan beyne yerleştirilen elektrotlar aracılığıyla sinir sinyallerini okurken, MouthPad bunu tamamen dil hareketlerinden faydalanarak gerçekleştiriyor. Bu yüzden MouthPad herhangi bir cerrahi operasyon gerektirmeyen çok daha düşük riskli bir alternatif. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B00295DAJC https://www.amazon.com.tr/dp/B09CN2QW85 https://www.amazon.com.tr/dp/B0GV4PRW1D?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.n11.com/urun/kiwi-kim-4751-oto-buzdolabi-10-l-124846865?magaza=n11 https://www.idefix.com/bosch-wtx87k8xtr-a-serie-8-isi-pompali-kurutma-makinesi-9-kg-gri-p-1929886 https://app.hb.biz/VrnNls0Wtsh0"
-        },
-        "post_text": "👅 DİLİNLE CİHAZ KONTROLÜ ARTIK GERÇEK!\n\nFelçli hastalar için çığır açan MouthPad satışta. Dil hareketleriyle bilgisayar ve telefonları kontrol edebilen bu cihaz, beyin implantlarına invazif olmayan bir alternatif sunuyor.\n\n1400 dolarlık fiyatıyla, hayatı kolaylaştıracak bir teknoloji.\n\nSizce bu tür yenilikler gelecekte daha da yaygınlaşır mı?",
-        "post_text_length": 344,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-30T00:59:47.930654+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Bilgisayar ve telefonları dil ile kontrol etmek artık mümkün: MouthPad satışa sunuldu",
-          "link": "https://www.donanimhaber.com/bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun--208689",
-          "published": "2026-07-29T20:45:00+00:00",
-          "summary": "Dil hareketleriyle bilgisayar ve telefon kontrolü sağlayan MouthPad'i satışa sunuldu. Beyin implantlarına alternatif olarak geliştirilen cihaz, özellikle felçli hastalara yardımcı olacak.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bilgisayar-dil-etmek-kontrol-mouthpad-mumkun-satisa-sunuldu-telefonlari",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Teknoloji ve otomotiv/erişilebilirlik kesişiminde yer alan, sci-fi filmlerini aratmayan benzersiz ve şaşırtıcı bir ürün olduğu için sosyal medyada yüksek etkileşim potansiyeli taşıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Felç veya inme gibi rahatsızlıklardan muzdarip olan bireyler için son yıllarda umut verici teknolojiler ortaya çıkıyor. Neuralink gibi implantlar ve beyin-bilgisayar arayüzleri, test aşamasında oldukça başarılı sonuçlar veriyor. Ancak bu tarz teknolojiler şimdilik herkesin ulaşamayacağı, prototip aşamasındaki projeler. Özellikle invaziv olmayan, yani cerrahi müdahâle gerektirmeyen versiyonların genel kitleye ulaşması yıllar alabilir. Fakat bu süreçtepek çok hastanın yardımına koşabilecek alternatif çözümlerde ortaya çıkmaya başlamış durumda. Bunlar arasında en dikkat çekicilerden biri olanMouthPad, artık herkesin ulaşabileceği ticari bir ürüne dönüştü. İki yıl önce gerçekleşen tanıtımıyla epey ses getiren cihaz, bu hafta itibarıyla satışa çıktı. 1.400 dolarlık bir fiyat etiketine sahipolan MouthPad, görünüş olarak üst dişlere takılan ince, şeffaf bir plağı andırıyor. Ancak bu özel ağız aparatı, kullanıcının dil hareketlerini ve baş hareketlerini takip ederekbilgisayar, tablet ya da akıllı telefonları tamamen eller serbest şekilde kontrol edebilmesini sağlıyor.Özellikle hareket kabiliyeti kısıtlı kullanıcılar için geliştirilen cihaz, cerrahi müdahale gerektiren beyin implantlarına alternatif olabilecek başlıca çözümlerden biri olarak görülüyor. Her kullanıcı için özel olarak üretilen MouthPad'in sipariş edilebilmesi için öncelikle kullanıcının diş taramasının alınması gerekiyor. Yaklaşık 10 gram ağırlığındaki cihaz,damağa yerleştirilen basınca duyarlı dokunmatik yüzey sayesinde dil hareketlerini algılıyor. İçerisindeki hareket sensörleri ise baş hareketlerini takip ederek imlecin yönünü belirliyor Bluetooth üzerinden çalışan cihaz;Windows bilgisayarlar, Mac'ler, akıllı telefonlar ve tabletlerle kablosuz olarak bağlantı kurabiliyor.Kullanıcılar yalnızca dillerini hareket ettirerek fare imlecini yönlendirebilirken; tıklama, kaydırma (scroll), sürükle-bırak gibi işlemleri de gerçekleştirebiliyor. Ayrıca emme hareketi de ek bir girdi yöntemi olarak kullanılabiliyor. Üstelik Augmental'ın geliştirdiği ikinci nesil MouthPad, artık yalnızca bir bilgisayar faresinin de ötesine geçmiş durumda.Kullanıcılar farklı dil hareketlerine klavye kısayolları atayabiliyor. Bu sayede yalnızca günlük bilgisayar kullanımı değil, oyun oynama veya 3 boyutlu modelleme gibi daha karmaşık işlemler de mümkün hâle geliyor. Şirket tarafından paylaşılan tanıtım videolarında kullanıcıların yalnızca dil hareketleriyle hassas imleç kontrolü yaptığı, hatta bazı oyunları oynayabildiği görülüyor. Augmental'ın aktardığı verilere göre bekleme listesinde 6.300'den fazla kişi bulunuyor. Augmental'ın en dikkat çekici iddialarından biri ise performans tarafında geliyor.Şirkete göre MouthPad'in imleç kontrolündeki hız ve doğruluğu, Neuralink gibi beyin-bilgisayar arayüzleriyle benzer seviyelere ulaşabiliyor.Elbette iki teknoloji tamamen farklı prensiplerle çalışıyor. Neuralink doğrudan beyne yerleştirilen elektrotlar aracılığıyla sinir sinyallerini okurken, MouthPad bunu tamamen dil hareketlerinden faydalanarak gerçekleştiriyor. Bu yüzden MouthPad herhangi bir cerrahi operasyon gerektirmeyen çok daha düşük riskli bir alternatif. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B00295DAJC https://www.amazon.com.tr/dp/B09CN2QW85 https://www.amazon.com.tr/dp/B0GV4PRW1D?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.n11.com/urun/kiwi-kim-4751-oto-buzdolabi-10-l-124846865?magaza=n11 https://www.idefix.com/bosch-wtx87k8xtr-a-serie-8-isi-pompali-kurutma-makinesi-9-kg-gri-p-1929886 https://app.hb.biz/VrnNls0Wtsh0",
-          "post_text_for_card": "👅 DİLİNLE CİHAZ KONTROLÜ ARTIK GERÇEK!\n\nFelçli hastalar için çığır açan MouthPad satışta. Dil hareketleriyle bilgisayar ve telefonları kontrol edebilen bu cihaz, beyin implantlarına invazif olmayan bir alternatif sunuyor.\n\n1400 dolarlık fiyatıyla, hayatı kolaylaştıracak bir teknoloji.\n\nSizce bu tür yenilikler gelecekte daha da yaygınlaşır mı?",
-          "image_sources": [
-            "meta_og"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/208689/1200x675bilgisayar-ve-telefonlari-dil-ile-kontrol-etmek-artik-mumkun.jpg"
-          ]
-        },
-        "post_text": "👅 DİLİNLE CİHAZ KONTROLÜ ARTIK GERÇEK!\n\nFelçli hastalar için çığır açan MouthPad satışta. Dil hareketleriyle bilgisayar ve telefonları kontrol edebilen bu cihaz, beyin implantlarına invazif olmayan bir alternatif sunuyor.\n\n1400 dolarlık fiyatıyla, hayatı kolaylaştıracak bir teknoloji.\n\nSizce bu tür yenilikler gelecekte daha da yaygınlaşır mı?",
-        "image_path": "/tmp/otoxtra_img_xagjbbsw.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_xagjbbsw.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-30T01:00:00.189997+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174073146916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17898613851515690",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1596574968576204",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-30T01:00:59.033405+03:00"
+      "updated_at": null
     }
   }
 }
