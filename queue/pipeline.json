@@ -1,34 +1,53 @@
 {
-  "run_id": "2026-07-29-17:05",
+  "run_id": "2026-07-29-19:19",
   "status": "completed",
-  "started_at": "2026-07-29T17:05:01.738922+03:00",
-  "updated_at": "2026-07-29T17:07:13.120101+03:00",
+  "started_at": "2026-07-29T19:19:57.532186+03:00",
+  "updated_at": "2026-07-29T19:21:25.050587+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
-            "link": "https://www.donanimhaber.com/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim--208667",
-            "published": "2026-07-29T11:30:00+00:00",
-            "summary": "Honda ve Nissan, Çinli rakiplere karşı yazılım tanımlı araçlar (SDV) için ortak işletim sistemi geliştirmek üzere masaya oturdu. Sistem, şaşırtıcı bir şekilde Nissan altyapısı üzerine inşa edilecek.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
+            "title": "Audi’nin en büyük SUV’u sahneye çıktı: İşte 5.31 metrelik dev Audi Q9 ve fiyatı!",
+            "link": "https://otogundem.com.tr/audinin-en-buyuk-suvu-sahneye-cikti-iste-5-31-metrelik-dev-audi-q9-ve-fiyati/21419/",
+            "published": "2026-07-29T15:55:11+00:00",
+            "summary": "Q7’yi gölgede bırakan boyutları, kavisli OLED ışık teknolojisi, 90 derece açılan otomatik kapıları ve Mercedes-Benz GLS ile BMW X7’yi hedef alan lüks detaylarıyla yeni 2027 Audi Q9 resmi olarak tanıtıldı. Audi, model ailesinin en üst noktasına 9 numarasını ekleyerek markanın bugüne kadarki en büyük, en geniş ve en iddialı SUV modelini tanıttı. Q7’nin boyutlarını ve […] The post Audi’nin en büyük SUV’u sahneye çıktı: İşte 5.31 metrelik dev Audi Q9 ve fiyatı! appeared first on Otomobil Haberleri .",
+            "image_url": "https://otogundem.com.tr/wp-content/uploads/2026/07/audi-q9-otogundem-3-1.jpg",
+            "rss_image_url": "https://otogundem.com.tr/wp-content/uploads/2026/07/audi-q9-otogundem-3-1.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg"
+              "https://otogundem.com.tr/wp-content/uploads/2026/07/audi-q9-otogundem-3-1.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Donanimhaber",
+            "source_name": "otogundem",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "adim-cin-dev-gelistiriyor-honda-isletim-nissan-ortak-sistemi-tehdidine"
+            "topic_fingerprint": "audi-audi-dev-fiyati-metrelik-sahneye-ste-suv"
+          },
+          {
+            "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/lidar-fiyasko-cikti-volvo-tazminat-odeyecek-5177h",
+            "published": "2026-07-29T15:14:40+00:00",
+            "summary": "Volvo, güvenlikte yeni bir dönem başlatması beklenen LiDAR teknolojisini rafa kaldırdı. Şirket, EX90 ve ES90 sahiplerine artık sunulmayacak LiDAR tabanlı özellikler nedeniyle tazminat ödeyecek.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5481.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "dar-fiyasko-odeyecek-tazminat-volvo"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -121,10 +140,10 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -139,224 +158,247 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 170,
-            "after_keyword": 115,
-            "after_time": 15,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 180,
+            "after_keyword": 117,
+            "after_time": 11,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 170,
-          "after_keyword": 115,
-          "after_time": 15,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 180,
+          "after_keyword": 117,
+          "after_time": 11,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-07-29T17:06:07.118399+03:00"
+      "updated_at": "2026-07-29T19:20:30.906753+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
-          "link": "https://www.donanimhaber.com/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim--208667",
-          "published": "2026-07-29T11:30:00+00:00",
-          "summary": "Honda ve Nissan, Çinli rakiplere karşı yazılım tanımlı araçlar (SDV) için ortak işletim sistemi geliştirmek üzere masaya oturdu. Sistem, şaşırtıcı bir şekilde Nissan altyapısı üzerine inşa edilecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
+          "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/lidar-fiyasko-cikti-volvo-tazminat-odeyecek-5177h",
+          "published": "2026-07-29T15:14:40+00:00",
+          "summary": "Volvo, güvenlikte yeni bir dönem başlatması beklenen LiDAR teknolojisini rafa kaldırdı. Şirket, EX90 ve ES90 sahiplerine artık sunulmayacak LiDAR tabanlı özellikler nedeniyle tazminat ödeyecek.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg"
+            "https://cdn.otopodyum.com.tr/news/5481.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "adim-cin-dev-gelistiriyor-honda-isletim-nissan-ortak-sistemi-tehdidine",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dar-fiyasko-odeyecek-tazminat-volvo",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 10
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasında iki devin Çin rekabetine karşı güç birliği yapması sektör genelinde büyük yankı uyandıracak ve yüksek etkileşim yaratacak bir gelişme.",
+          "score_explanation": "Güvenliğiyle bilinen Volvo'nun devrim niteliğindeki LiDAR teknolojisinden vazgeçmesi ve tazminat ödeyecek olması otomotiv dünyasında büyük yankı uyandıracak ve yüksek etkileşim alacak bir skandal niteliğinde.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 81,
-        "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
+        "score": 85,
+        "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 8
+          "etkilesim_potansiyeli": 23,
+          "benzersizlik": 18,
+          "gundem_gucu": 14,
+          "paylasilabilirlik": 10
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv dünyasında iki devin Çin rekabetine karşı güç birliği yapması sektör genelinde büyük yankı uyandıracak ve yüksek etkileşim yaratacak bir gelişme.",
+        "score_explanation": "Güvenliğiyle bilinen Volvo'nun devrim niteliğindeki LiDAR teknolojisinden vazgeçmesi ve tazminat ödeyecek olması otomotiv dünyasında büyük yankı uyandıracak ve yüksek etkileşim alacak bir skandal niteliğinde.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
-            "score": 81,
+            "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
+            "score": 85,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 18,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 10
+            }
+          },
+          {
+            "title": "Audi’nin en büyük SUV’u sahneye çıktı: İşte 5.31 metrelik dev Audi Q9 ve fiyatı!",
+            "score": 80,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 21,
+              "benzersizlik": 15,
               "gundem_gucu": 15,
-              "paylasilabilirlik": 8
+              "paylasilabilirlik": 9
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Audi’nin en büyük SUV’u sahneye çıktı: İşte 5.31 metrelik dev Audi Q9 ve fiyatı!",
+            "link": "https://otogundem.com.tr/audinin-en-buyuk-suvu-sahneye-cikti-iste-5-31-metrelik-dev-audi-q9-ve-fiyati/21419/",
+            "score": 80,
+            "score_reason": "ai_scored",
+            "source_name": "otogundem",
+            "topic_fingerprint": "audi-audi-dev-fiyati-metrelik-sahneye-ste-suv"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-07-29T17:06:09.461818+03:00"
+      "updated_at": "2026-07-29T19:20:34.490397+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
-          "link": "https://www.donanimhaber.com/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim--208667",
-          "published": "2026-07-29T11:30:00+00:00",
-          "summary": "Honda ve Nissan, Çinli rakiplere karşı yazılım tanımlı araçlar (SDV) için ortak işletim sistemi geliştirmek üzere masaya oturdu. Sistem, şaşırtıcı bir şekilde Nissan altyapısı üzerine inşa edilecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
+          "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/lidar-fiyasko-cikti-volvo-tazminat-odeyecek-5177h",
+          "published": "2026-07-29T15:14:40+00:00",
+          "summary": "Volvo, güvenlikte yeni bir dönem başlatması beklenen LiDAR teknolojisini rafa kaldırdı. Şirket, EX90 ve ES90 sahiplerine artık sunulmayacak LiDAR tabanlı özellikler nedeniyle tazminat ödeyecek.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg"
+            "https://cdn.otopodyum.com.tr/news/5481.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "adim-cin-dev-gelistiriyor-honda-isletim-nissan-ortak-sistemi-tehdidine",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dar-fiyasko-odeyecek-tazminat-volvo",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 10
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasında iki devin Çin rekabetine karşı güç birliği yapması sektör genelinde büyük yankı uyandıracak ve yüksek etkileşim yaratacak bir gelişme.",
+          "score_explanation": "Güvenliğiyle bilinen Volvo'nun devrim niteliğindeki LiDAR teknolojisinden vazgeçmesi ve tazminat ödeyecek olması otomotiv dünyasında büyük yankı uyandıracak ve yüksek etkileşim alacak bir skandal niteliğinde.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Ağustos 2026 ayı sonuna kadar resmiyet kazanması beklenen bu anlaşma, iki markanın mühendislik yol haritalarını sadece parça paylaşımının ötesinde, doğrudan otomobilin \"beyni\" seviyesinde birbirine bağlayacak. Ortaklığa dair en dikkat çekici unsur, geliştirilecek yeni işletim sistemininHonda değil, Nissan’ın mevcut yazılım teknolojisi üzerine inşa edilecek olması. İki şirket arasındaki genel güç dengesi göz önüne alındığında bu durum sektör analistleri için büyük bir sürpriz olarak değerlendiriliyor. Geliştirilecek bu ortak OS mimarisi tıpkı akıllı telefonlarda olduğu gibi araca uzaktan gelecek yazılım güncellemeleriyle otonom sürüş ve multimedya yeteneklerinin anında güncellenmesini sağlayacak. Devasa Ar-Ge bütçeleri gerektiren yazılım geliştirme süreçlerinde maliyetler bölünerek her iki markanın da kârlılığı artırılacak. Haziran ayı sonlarında sızan bilgilerde Honda, Nissan ve ittifak ortağıMitsubishi'nin yeni nesil hibrit ve elektrikli araçlar için ortakECU (Elektronik Kontrol Ünitesi)kullanmayı hedeflediği ortaya çıkmıştı. Özellikle Asyalı rakiplerine kıyasla araç içi yazılım ve işletim sistemleri konusunda güncelliğini kaybetmiş olan Honda ve Nissan, mali tablolarındaki gerilemeler ve ABD/Çin merkezli üreticilerin teknolojik üstünlüğü nedeniyle hızlı hareket etmek zorunda. İki markanın başarısızlıkla sonuçlanan birleşme görüşmelerinin ardından, projeler bazında bu derece derin bir teknoloji ortaklığına gitmesi, Çinli elektrikli araç devlerinin küresel pazardaki baskısına karşı geliştirdikleri en kritik savunma stratejisi olarak öne çıkıyor. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B0GV4PRW1D?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0DMNS8RT8 https://www.amazon.com.tr/dp/B0FPRJLLNB https://www.amazon.com.tr/dp/B0F8R651V1 https://app.hb.biz/dYxr2YWuKcKV https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ"
+          "full_text": "Volvo bazı araçlarında kullanmaya başladığıLiDAR teknolojisindenvazgeçme kararı aldı. Şirket, bu kararın ardından Norveç'te LiDAR donanımlıEX90veES90sahiplerine, artık sunulmayacak LiDAR tabanlı özellikler nedeniyle18.000 Norveç kronu(yaklaşık 89 bin lira) tazminat ödeyeceğini duyurdu. Volvo Cars, teknoloji tedarikçisiLuminarile olan ortaklığını sonlandırarak EX90 ve ES90 modelleri için planlananLiDAR tabanlı özellikleringeliştirilmesinden vazgeçti. Böylece daha önce vaat edilen LiDAR fonksiyonları hiçbir zaman kullanıma sunulmayacak. Şirket ayrıca LiDAR üzerindenveri toplamayıda aşamalı olarak sonlandıracağını açıkladı. Norveç'te LiDAR donanımlı EX90 ve ES90 sahipleri için belirlenen 18.000 kronluktazminat, LiDAR donanımının liste fiyatını ve 2026 model yılıyla birlikte uygulanan fiyat indirimini yansıtıyor. Şirket, tazminat sürecinin başlatılması için müşterilerinyetkili satıcılarıylailetişime geçmelerini istedi."
         },
-        "post_text": "🤝 JAPON DEVLERİ ÇİN'E KARŞI BİRLEŞTİ\n\nHonda ve Nissan, Çinli rakiplere karşı ortak bir işletim sistemi geliştirmek için güçlerini birleştirdi.\n\nBu anlaşma, otomobillerin beynini doğrudan birbirine bağlayacak. Üstelik sistem, Nissan altyapısı üzerine inşa edilecek.\n\nSizce bu ortaklık Japon otomotivine güç katar mı?",
-        "post_text_length": 315,
+        "post_text": "🚨 VOLVO LİDAR TEKNOLOJİSİNDEN VAZGEÇTİ\n\nVolvo, EX90 ve ES90 modellerindeki LiDAR teknolojisini rafa kaldırdı. Güvenlikte çığır açması beklenen bu teknoloji, artık araçlarda kullanılmayacak.\n\nNorveç'teki LiDAR donanımlı araç sahiplerine 18.000 Norveç kronu (yaklaşık 89 bin lira) tazminat ödenecek.\n\nSizce bu karar, otonom sürüşün geleceğini nasıl etkiler?",
+        "post_text_length": 355,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-29T17:06:12.194117+03:00"
+      "updated_at": "2026-07-29T19:20:36.443145+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Çin tehdidine karşı dev adım: Honda ve Nissan ortak işletim sistemi geliştiriyor",
-          "link": "https://www.donanimhaber.com/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim--208667",
-          "published": "2026-07-29T11:30:00+00:00",
-          "summary": "Honda ve Nissan, Çinli rakiplere karşı yazılım tanımlı araçlar (SDV) için ortak işletim sistemi geliştirmek üzere masaya oturdu. Sistem, şaşırtıcı bir şekilde Nissan altyapısı üzerine inşa edilecek.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
+          "title": "LİDAR, fiyasko çıktı; Volvo tazminat ödeyecek",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/lidar-fiyasko-cikti-volvo-tazminat-odeyecek-5177h",
+          "published": "2026-07-29T15:14:40+00:00",
+          "summary": "Volvo, güvenlikte yeni bir dönem başlatması beklenen LiDAR teknolojisini rafa kaldırdı. Şirket, EX90 ve ES90 sahiplerine artık sunulmayacak LiDAR tabanlı özellikler nedeniyle tazminat ödeyecek.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5481.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg"
+            "https://cdn.otopodyum.com.tr/news/5481.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Donanimhaber",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "adim-cin-dev-gelistiriyor-honda-isletim-nissan-ortak-sistemi-tehdidine",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dar-fiyasko-odeyecek-tazminat-volvo",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 10
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasında iki devin Çin rekabetine karşı güç birliği yapması sektör genelinde büyük yankı uyandıracak ve yüksek etkileşim yaratacak bir gelişme.",
+          "score_explanation": "Güvenliğiyle bilinen Volvo'nun devrim niteliğindeki LiDAR teknolojisinden vazgeçmesi ve tazminat ödeyecek olması otomotiv dünyasında büyük yankı uyandıracak ve yüksek etkileşim alacak bir skandal niteliğinde.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Ağustos 2026 ayı sonuna kadar resmiyet kazanması beklenen bu anlaşma, iki markanın mühendislik yol haritalarını sadece parça paylaşımının ötesinde, doğrudan otomobilin \"beyni\" seviyesinde birbirine bağlayacak. Ortaklığa dair en dikkat çekici unsur, geliştirilecek yeni işletim sistemininHonda değil, Nissan’ın mevcut yazılım teknolojisi üzerine inşa edilecek olması. İki şirket arasındaki genel güç dengesi göz önüne alındığında bu durum sektör analistleri için büyük bir sürpriz olarak değerlendiriliyor. Geliştirilecek bu ortak OS mimarisi tıpkı akıllı telefonlarda olduğu gibi araca uzaktan gelecek yazılım güncellemeleriyle otonom sürüş ve multimedya yeteneklerinin anında güncellenmesini sağlayacak. Devasa Ar-Ge bütçeleri gerektiren yazılım geliştirme süreçlerinde maliyetler bölünerek her iki markanın da kârlılığı artırılacak. Haziran ayı sonlarında sızan bilgilerde Honda, Nissan ve ittifak ortağıMitsubishi'nin yeni nesil hibrit ve elektrikli araçlar için ortakECU (Elektronik Kontrol Ünitesi)kullanmayı hedeflediği ortaya çıkmıştı. Özellikle Asyalı rakiplerine kıyasla araç içi yazılım ve işletim sistemleri konusunda güncelliğini kaybetmiş olan Honda ve Nissan, mali tablolarındaki gerilemeler ve ABD/Çin merkezli üreticilerin teknolojik üstünlüğü nedeniyle hızlı hareket etmek zorunda. İki markanın başarısızlıkla sonuçlanan birleşme görüşmelerinin ardından, projeler bazında bu derece derin bir teknoloji ortaklığına gitmesi, Çinli elektrikli araç devlerinin küresel pazardaki baskısına karşı geliştirdikleri en kritik savunma stratejisi olarak öne çıkıyor. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/dp/B0GV4PRW1D?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0DMNS8RT8 https://www.amazon.com.tr/dp/B0FPRJLLNB https://www.amazon.com.tr/dp/B0F8R651V1 https://app.hb.biz/dYxr2YWuKcKV https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ",
-          "post_text_for_card": "🤝 JAPON DEVLERİ ÇİN'E KARŞI BİRLEŞTİ\n\nHonda ve Nissan, Çinli rakiplere karşı ortak bir işletim sistemi geliştirmek için güçlerini birleştirdi.\n\nBu anlaşma, otomobillerin beynini doğrudan birbirine bağlayacak. Üstelik sistem, Nissan altyapısı üzerine inşa edilecek.\n\nSizce bu ortaklık Japon otomotivine güç katar mı?",
+          "full_text": "Volvo bazı araçlarında kullanmaya başladığıLiDAR teknolojisindenvazgeçme kararı aldı. Şirket, bu kararın ardından Norveç'te LiDAR donanımlıEX90veES90sahiplerine, artık sunulmayacak LiDAR tabanlı özellikler nedeniyle18.000 Norveç kronu(yaklaşık 89 bin lira) tazminat ödeyeceğini duyurdu. Volvo Cars, teknoloji tedarikçisiLuminarile olan ortaklığını sonlandırarak EX90 ve ES90 modelleri için planlananLiDAR tabanlı özellikleringeliştirilmesinden vazgeçti. Böylece daha önce vaat edilen LiDAR fonksiyonları hiçbir zaman kullanıma sunulmayacak. Şirket ayrıca LiDAR üzerindenveri toplamayıda aşamalı olarak sonlandıracağını açıkladı. Norveç'te LiDAR donanımlı EX90 ve ES90 sahipleri için belirlenen 18.000 kronluktazminat, LiDAR donanımının liste fiyatını ve 2026 model yılıyla birlikte uygulanan fiyat indirimini yansıtıyor. Şirket, tazminat sürecinin başlatılması için müşterilerinyetkili satıcılarıylailetişime geçmelerini istedi.",
+          "post_text_for_card": "🚨 VOLVO LİDAR TEKNOLOJİSİNDEN VAZGEÇTİ\n\nVolvo, EX90 ve ES90 modellerindeki LiDAR teknolojisini rafa kaldırdı. Güvenlikte çığır açması beklenen bu teknoloji, artık araçlarda kullanılmayacak.\n\nNorveç'teki LiDAR donanımlı araç sahiplerine 18.000 Norveç kronu (yaklaşık 89 bin lira) tazminat ödenecek.\n\nSizce bu karar, otonom sürüşün geleceğini nasıl etkiler?",
           "image_sources": [
             "meta_og",
             "article_img",
+            "article_img",
             "article_img"
           ],
-          "prepared_image_count": 3,
+          "prepared_image_count": 4,
           "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/208667/1200x675honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208667/src/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim208667_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208667/src/honda-ve-nissan-dan-cin-tehdidine-karsi-dev-adim208667_0.jpg"
+            "https://cdn.otopodyum.com.tr/news/5481.jpg",
+            "https://cdn.otopodyum.com.tr/news/5470.jpg",
+            "https://cdn.otopodyum.com.tr/news/5454.jpg",
+            "https://cdn.otopodyum.com.tr/news/5455.jpg"
           ]
         },
-        "post_text": "🤝 JAPON DEVLERİ ÇİN'E KARŞI BİRLEŞTİ\n\nHonda ve Nissan, Çinli rakiplere karşı ortak bir işletim sistemi geliştirmek için güçlerini birleştirdi.\n\nBu anlaşma, otomobillerin beynini doğrudan birbirine bağlayacak. Üstelik sistem, Nissan altyapısı üzerine inşa edilecek.\n\nSizce bu ortaklık Japon otomotivine güç katar mı?",
-        "image_path": "/tmp/otoxtra_img_xw4hiwq4.jpg",
+        "post_text": "🚨 VOLVO LİDAR TEKNOLOJİSİNDEN VAZGEÇTİ\n\nVolvo, EX90 ve ES90 modellerindeki LiDAR teknolojisini rafa kaldırdı. Güvenlikte çığır açması beklenen bu teknoloji, artık araçlarda kullanılmayacak.\n\nNorveç'teki LiDAR donanımlı araç sahiplerine 18.000 Norveç kronu (yaklaşık 89 bin lira) tazminat ödenecek.\n\nSizce bu karar, otonom sürüşün geleceğini nasıl etkiler?",
+        "image_path": "/tmp/otoxtra_img_4m6np90g.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_xw4hiwq4.jpg",
-          "/tmp/otoxtra_img_gvaa8wdp.jpg",
-          "/tmp/otoxtra_img_9xhxdcrj.jpg"
+          "/tmp/otoxtra_img_4m6np90g.jpg",
+          "/tmp/otoxtra_img_d2nw3owz.jpg",
+          "/tmp/otoxtra_img_dgccni7o.jpg",
+          "/tmp/otoxtra_img_6ahsn758.jpg"
         ],
         "image_source": "meta_og",
-        "image_count": 3
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-07-29T17:06:35.233667+03:00"
+      "updated_at": "2026-07-29T19:20:41.503616+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122174041994916499",
+        "post_id": "678053852057751_122174051624916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18002168864969150",
+            "id": "18110189707955302",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1750498016262273",
+            "id": "2118196805745379",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-07-29T17:07:13.120101+03:00"
+      "updated_at": "2026-07-29T19:21:25.050587+03:00"
     }
   }
 }
