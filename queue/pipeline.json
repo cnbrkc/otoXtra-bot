@@ -1,53 +1,34 @@
 {
-  "run_id": "2026-07-30-22:21",
+  "run_id": "2026-07-31-00:06",
   "status": "completed",
-  "started_at": "2026-07-30T22:21:49.927744+03:00",
-  "updated_at": "2026-07-30T22:23:33.267074+03:00",
+  "started_at": "2026-07-31T00:06:45.659964+03:00",
+  "updated_at": "2026-07-31T00:08:33.726808+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Top Gear sunucusu Richard Hammond, 1.800 £ hız cezası yemiş!",
-            "link": "https://tr.motor1.com/news/803260/hammond-hiz-cezasi-puan/",
-            "published": "2026-07-30T17:00:00+00:00",
-            "summary": "Porsche Taycan ve Bentley Continental GT ile yaptığı iki sürüşün ardından ehliyetine 7 ceza puanı eklendi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/1GQRK/s3/richard-hammond-ranger-raptor.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/1GQRK/s3/richard-hammond-ranger-raptor.jpg",
+            "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
+            "link": "https://www.donanimhaber.com/sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi--208725",
+            "published": "2026-07-30T20:31:00+00:00",
+            "summary": "Kia, kompakt elektrikli SUV modeli EV3’ü 4 Ağustos itibarıyla Meksika’daki Pesquería tesisinde üretmeye başlayacağını duyurdu. 649 milyon dolarlık yatırım kapsamında şarj ağı da genişletilecek.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/1GQRK/s3/richard-hammond-ranger-raptor.jpg"
+              "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "800-cezasi-gear-hammond-hiz-richard-sunucusu-top-yemis"
-          },
-          {
-            "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
-            "link": "https://www.otoajanda.com/arac-muayenesinde-20-yillik-yeni-donem-172-milyar-dolar-pesin-yatirimla-turka-devrede/",
-            "published": "2026-07-30T17:08:22+00:00",
-            "summary": "Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Araç muayenenin yeni adı Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev […] Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
-            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
-            "image_candidates": [
-              "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "OtoAjanda",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arac-bekliyor-dolar-donem-milyar-muayenesinde-pesin-sira-turka-yatirimla-yillik"
+            "topic_fingerprint": "adresi-belli-ev3-guney-kia-kore-uretilen"
           }
         ],
-        "count": 2,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,10 +127,10 @@
             "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "otopodyum": {
             "status": "ok",
@@ -158,238 +139,224 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 170,
-            "after_keyword": 111,
-            "after_time": 10,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 180,
+            "after_keyword": 119,
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 170,
-          "after_keyword": 111,
-          "after_time": 10,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 180,
+          "after_keyword": 119,
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-07-30T22:22:46.110405+03:00"
+      "updated_at": "2026-07-31T00:07:20.012819+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
-          "link": "https://www.otoajanda.com/arac-muayenesinde-20-yillik-yeni-donem-172-milyar-dolar-pesin-yatirimla-turka-devrede/",
-          "published": "2026-07-30T17:08:22+00:00",
-          "summary": "Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Araç muayenenin yeni adı Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev […] Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
+          "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
+          "link": "https://www.donanimhaber.com/sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi--208725",
+          "published": "2026-07-30T20:31:00+00:00",
+          "summary": "Kia, kompakt elektrikli SUV modeli EV3’ü 4 Ağustos itibarıyla Meksika’daki Pesquería tesisinde üretmeye başlayacağını duyurdu. 649 milyon dolarlık yatırım kapsamında şarj ağı da genişletilecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
           "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg"
+            "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "OtoAjanda",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-bekliyor-dolar-donem-milyar-muayenesinde-pesin-sira-turka-yatirimla-yillik",
-          "base_ai_score": 74,
+          "topic_fingerprint": "adresi-belli-ev3-guney-kia-kore-uretilen",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 79,
+          "score": 48,
           "score_reason": "ai_scored",
-          "score_explanation": "Milyar dolarlık devasa yatırım ve Türkiye'deki milyonlarca araç sahibini doğrudan ilgilendiren muayene süreci nedeniyle yüksek gündem gücüne sahip.",
-          "freshness_bonus": 7,
+          "score_explanation": "Kia EV3'ün Meksika'da üretime başlayacak olması stratejik bir hamle olsa da, günlük otomobil kullanıcıları için çok yüksek viral ve etkileşim potansiyeli taşımayan rutin bir endüstriyel gelişmedir.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 79,
-        "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
+        "score": 48,
+        "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 7,
+        "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 15,
-          "benzersizlik": 15,
-          "gundem_gucu": 19,
-          "paylasilabilirlik": 10
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 8,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 3
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Milyar dolarlık devasa yatırım ve Türkiye'deki milyonlarca araç sahibini doğrudan ilgilendiren muayene süreci nedeniyle yüksek gündem gücüne sahip.",
+        "score_explanation": "Kia EV3'ün Meksika'da üretime başlayacak olması stratejik bir hamle olsa da, günlük otomobil kullanıcıları için çok yüksek viral ve etkileşim potansiyeli taşımayan rutin bir endüstriyel gelişmedir.",
         "skipped": false,
-        "threshold": 40,
+        "threshold": 30,
         "top_articles": [
           {
-            "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
-            "score": 79,
+            "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
+            "score": 48,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 15,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Top Gear sunucusu Richard Hammond, 1.800 £ hız cezası yemiş!",
-            "score": 72,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 10
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 3
             }
           }
         ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Top Gear sunucusu Richard Hammond, 1.800 £ hız cezası yemiş!",
-            "link": "https://tr.motor1.com/news/803260/hammond-hiz-cezasi-puan/",
-            "score": 72,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "800-cezasi-gear-hammond-hiz-richard-sunucusu-top-yemis"
-          }
-        ]
+        "scored_count": 1,
+        "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-07-30T22:22:48.714529+03:00"
+      "updated_at": "2026-07-31T00:07:24.161194+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
-          "link": "https://www.otoajanda.com/arac-muayenesinde-20-yillik-yeni-donem-172-milyar-dolar-pesin-yatirimla-turka-devrede/",
-          "published": "2026-07-30T17:08:22+00:00",
-          "summary": "Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Araç muayenenin yeni adı Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev […] Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
+          "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
+          "link": "https://www.donanimhaber.com/sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi--208725",
+          "published": "2026-07-30T20:31:00+00:00",
+          "summary": "Kia, kompakt elektrikli SUV modeli EV3’ü 4 Ağustos itibarıyla Meksika’daki Pesquería tesisinde üretmeye başlayacağını duyurdu. 649 milyon dolarlık yatırım kapsamında şarj ağı da genişletilecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
           "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg"
+            "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "OtoAjanda",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-bekliyor-dolar-donem-milyar-muayenesinde-pesin-sira-turka-yatirimla-yillik",
-          "base_ai_score": 74,
+          "topic_fingerprint": "adresi-belli-ev3-guney-kia-kore-uretilen",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 79,
+          "score": 48,
           "score_reason": "ai_scored",
-          "score_explanation": "Milyar dolarlık devasa yatırım ve Türkiye'deki milyonlarca araç sahibini doğrudan ilgilendiren muayene süreci nedeniyle yüksek gündem gücüne sahip.",
-          "freshness_bonus": 7,
+          "score_explanation": "Kia EV3'ün Meksika'da üretime başlayacak olması stratejik bir hamle olsa da, günlük otomobil kullanıcıları için çok yüksek viral ve etkileşim potansiyeli taşımayan rutin bir endüstriyel gelişmedir.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev imtiyaz sözleşmesi resmen tamamlandı. Ulaştırma ve Altyapı Bakanlığı, Özelleştirme İdaresi Başkanlığı (ÖİB) ve MOI Ortak Girişim Grubu’nun kurduğuTURKAarasında imzalanan anlaşmayla, Türkiye’nin 81 ilindeki araç muayene hizmetleri 15 Ağustos 2027 itibarıyla yeni işletmeciye devredilecek. Toplam3 milyar dolarlık yatırım bütçesiylehayata geçirilecek proje kapsamında, 1,72 milyar dolarlık işletme hakkı bedeli Hazine’ye peşin olarak aktarıldı. Anlaşma şartları gereği, 20 yıllık işletme süresince elde edilecek toplam gelirin yaklaşık%65’i doğrudan kamuyadevredilecek. Ankara’daki imza töreninde konuşan Ulaştırma ve Altyapı Bakanı Abdulkadir Uraloğlu, yeni dönemin en belirgin farkınınotomasyon ve dijitalleşmeolacağını vurguladı. Muayene süreçlerindeki insan müdahalesini ve takdir yetkisini en aza indirmeyi hedeflediklerini belirten Uraloğlu, sistemin işleyişini şu sözlerle özetledi: “Araç ilk istasyona girerken plaka tanıma sistemiyle başlayıp; sürücünün, teknisyenin ve araç sahibinin sürecin içinde mümkün olduğunca yer almadığı, tamamen otomasyon odaklı bir yapı kuruyoruz. Süreç, bekleme alanlarındaki ekranlardan şeffaf bir şekilde izlenebilecek.” Yeni nesil istasyonlarda öne çıkan teknolojik yenilikler: Yapay Zekâ Destekli Görüntü İşleme:Araç kusur tespitinde objektif kamera analizleri. Lazer Tarama ve Çok Noktalı Kameralar:Alt gövde ve aksam denetimlerinde milimetrik hassasiyet. Tam Dijital İletişim:Randevu, süreç bilgilendirme ve muayene sonuç raporları tamamen dijital kanallar üzerinden iletilecek. Son yıllarda araç sahiplerinin en çok tepki gösterdiği konuların başında gelenkredi kartı ödemelerindeki ekstra komisyon ve fark yüküyeni dönemde tamamen tarih oluyor. Bakanlık tarafından ihale şartnamesine eklenen özel madde sayesinde, kredi kartı tahsilatlarında doğan finansal maliyet ve komisyonlar doğrudan yüklenici firma (TURKA) tarafından karşılanacak. 15 Ağustos 2027’den itibaren sürücülerden kredi kartı kullanımı nedeniyle ek bir ücret talep edilmeyecek. Türkiye’de trafiğe kayıtlı araç sayısının 34,5 milyona ulaştığı ve yıllık muayene hacminin (tekrarlarla birlikte) 16 milyonu bulduğu bir dönemde, kapasite artışı da kaçınılmaz hale geldi. Tamamı özel sektör finansmanıyla kurulacak altyapı detayları şöyle şekillendi: TURKA Yönetim Kurulu Başkanı Halis Ezer, finansman sürecini sözleşmeyle aynı gün kapattıklarını belirterek, 20’yi aşkın inşaat firmasıyla eş zamanlı çalışıldığını ve yeni konsepti yansıtan ilk örnek istasyonun çok kısa süre içinde kamuoyuna tanıtılacağını ifade etti. Otoajanda.com haber merkezi, konusunda çok deneyimli ve uzman bir ekip tarafından yönetiliyor. Tüm haberler bu ekibin tecrübeli üyelerince edite edilerek, yayınlanıyor. Araç başına en düşük ÖTV kararı çıktı Araç başına en düşük ÖTV kararı çıktı Avrupa’da zirveye oynayan Skoda, ciro ve kârda rekor seviyeye ulaştı Renault Group 2026’nın ilk yarısında EV’ler, Hindistan, Türkiye ve Fas ile… Qashqai gizli özellikler dedi, Avrupa’da 4 milyon barajını aştı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment."
+          "full_text": "Meksika Devlet Başkanı Claudia Sheinbaum ve Ekonomi Bakanı Marcelo Ebrard’ın katılımıyla düzenlenen toplantıda duyurulan649 milyon dolarlık yatırım paketi, üretim hattı modernizasyonunun yanı sıra ülkedeki şarj altyapısını ve yenilenebilir enerji kapasitesini artırmayı da hedefliyor. Kia, EV3 üretimi için tamamen yeni bir fabrika kurmak yerine Pesquería’daki mevcut üretim hatlarını elektrikli araç mimarisine uygun hale getirmeyi tercih etti. Kia Meksika Başkanı Horacio Chávez, bu yöntemin artan gümrük vergileri ve ticaret anlaşmaları zeminindesermaye açısından en verimli yaklaşımolduğunu vurguladı. Yeni üretim kararıyla birlikte bu yıl 500 kişiye, 2030 yılına kadar ise ek 1.500 kişiye doğrudan istihdam sağlanması planlanıyor. Kia, Meksika’da ilk kez yerel olarak ürettiği tam elektrikli bir modeli doğrudan ülke pazarında yüksek hacimlerde satışa sunmuş olacak. Nuevo León bölgesinde yaşanan kuraklık ve altyapı yetersizliklerine yanıt olarak Kia, tesise ve çevreye yönelik çeşitli adımlar atacak. Fabrika sahasına başlangıçta 2 MW kapasiteli bir güneş enerjisi parkı kurulacak ve bu kapasite 2030’a kadar 8 MW’a çıkarılacak. İkinci bir arıtma tesisi sayesinde sanayi suyunun yaklaşık%70’i geri dönüştürülerekgünlük 1.050 metreküp su tasarrufu elde edilecek. Şehir içi ve otoyol rotalarına şarj istasyonları kurulacak, yolda kalan elektrikli araçlar için mobil şarj üniteleri devreye alınacak. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/gp/product/B0CQMVBD32 https://www.amazon.com.tr/dp/B00INZWF5M?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/promotion/psp/A2FL7C9LJ74UI5 https://www.amazon.com.tr/dp/B0FX5MSQFH https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ"
         },
-        "post_text": "🚗 ARAÇ MUAYENESİNDE 20 YILLIK YENİ DÖNEM BAŞLIYOR\n\nTURKA, 1.72 milyar dolarlık peşin ödemeyle 2027-2047 yılları arasında araç muayene hizmetlerini üstlenecek.\n\nYapay zeka odaklı sistemler ve kredi kartı komisyonunu sıfırlayan altyapı 15 Ağustos 2027'de devreye giriyor. 81 ilde hizmet verecek.\n\nBu yenilikler hakkında ne düşünüyorsunuz?",
-        "post_text_length": 336,
+        "post_text": "🇲🇽 KIA EV3 ARTIK MEKSİKA'DA ÜRETİLECEK!\n\nKia'nın kompakt elektrikli SUV'u EV3, 4 Ağustos'tan itibaren Meksika Pesquería tesisinde üretilecek. Güney Kore'deki tek üretim noktasına Meksika da eklendi.\n\n649 milyon dolarlık yatırımla şarj ağı da genişleyecek. Bu hamle, artan gümrük vergilerine karşı stratejik bir adım.\n\nKia EV3'ün Meksika üretimi hakkında ne düşünüyorsunuz?",
+        "post_text_length": 372,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-07-30T22:22:50.488549+03:00"
+      "updated_at": "2026-07-31T00:07:26.783605+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor",
-          "link": "https://www.otoajanda.com/arac-muayenesinde-20-yillik-yeni-donem-172-milyar-dolar-pesin-yatirimla-turka-devrede/",
-          "published": "2026-07-30T17:08:22+00:00",
-          "summary": "Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Araç muayenenin yeni adı Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev […] Araç muayenesinde 20 yıllık yeni dönem: 1,72 milyar dolar peşin yatırımla TURKA sıra bekliyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg",
+          "title": "Sadece Güney Kore'de üretilen Kia EV3'ün yeni adresi belli oldu",
+          "link": "https://www.donanimhaber.com/sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi--208725",
+          "published": "2026-07-30T20:31:00+00:00",
+          "summary": "Kia, kompakt elektrikli SUV modeli EV3’ü 4 Ağustos itibarıyla Meksika’daki Pesquería tesisinde üretmeye başlayacağını duyurdu. 649 milyon dolarlık yatırım kapsamında şarj ağı da genişletilecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
           "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg"
+            "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "OtoAjanda",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-bekliyor-dolar-donem-milyar-muayenesinde-pesin-sira-turka-yatirimla-yillik",
-          "base_ai_score": 74,
+          "topic_fingerprint": "adresi-belli-ev3-guney-kia-kore-uretilen",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 79,
+          "score": 48,
           "score_reason": "ai_scored",
-          "score_explanation": "Milyar dolarlık devasa yatırım ve Türkiye'deki milyonlarca araç sahibini doğrudan ilgilendiren muayene süreci nedeniyle yüksek gündem gücüne sahip.",
-          "freshness_bonus": 7,
+          "score_explanation": "Kia EV3'ün Meksika'da üretime başlayacak olması stratejik bir hamle olsa da, günlük otomobil kullanıcıları için çok yüksek viral ve etkileşim potansiyeli taşımayan rutin bir endüstriyel gelişmedir.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Türkiye genelinde araç muayene hizmetlerini 2027-2047 yılları arasında yürütecek 20 yıllık imtiyaz sözleşmesi Ankara’da imzalandı. 1,72 milyar dolarlık lisans bedelini Hazine’ye peşin ödeyen TURKA, yapay zekâ odaklı otomasyon sistemleri ve kredi kartı komisyonunu sıfırlayan yeni altyapısıyla 15 Ağustos 2027’de kapılarını açıyor. Türkiye otomotiv ve ulaşım sektörünün önümüzdeki 20 yılını şekillendirecek dev imtiyaz sözleşmesi resmen tamamlandı. Ulaştırma ve Altyapı Bakanlığı, Özelleştirme İdaresi Başkanlığı (ÖİB) ve MOI Ortak Girişim Grubu’nun kurduğuTURKAarasında imzalanan anlaşmayla, Türkiye’nin 81 ilindeki araç muayene hizmetleri 15 Ağustos 2027 itibarıyla yeni işletmeciye devredilecek. Toplam3 milyar dolarlık yatırım bütçesiylehayata geçirilecek proje kapsamında, 1,72 milyar dolarlık işletme hakkı bedeli Hazine’ye peşin olarak aktarıldı. Anlaşma şartları gereği, 20 yıllık işletme süresince elde edilecek toplam gelirin yaklaşık%65’i doğrudan kamuyadevredilecek. Ankara’daki imza töreninde konuşan Ulaştırma ve Altyapı Bakanı Abdulkadir Uraloğlu, yeni dönemin en belirgin farkınınotomasyon ve dijitalleşmeolacağını vurguladı. Muayene süreçlerindeki insan müdahalesini ve takdir yetkisini en aza indirmeyi hedeflediklerini belirten Uraloğlu, sistemin işleyişini şu sözlerle özetledi: “Araç ilk istasyona girerken plaka tanıma sistemiyle başlayıp; sürücünün, teknisyenin ve araç sahibinin sürecin içinde mümkün olduğunca yer almadığı, tamamen otomasyon odaklı bir yapı kuruyoruz. Süreç, bekleme alanlarındaki ekranlardan şeffaf bir şekilde izlenebilecek.” Yeni nesil istasyonlarda öne çıkan teknolojik yenilikler: Yapay Zekâ Destekli Görüntü İşleme:Araç kusur tespitinde objektif kamera analizleri. Lazer Tarama ve Çok Noktalı Kameralar:Alt gövde ve aksam denetimlerinde milimetrik hassasiyet. Tam Dijital İletişim:Randevu, süreç bilgilendirme ve muayene sonuç raporları tamamen dijital kanallar üzerinden iletilecek. Son yıllarda araç sahiplerinin en çok tepki gösterdiği konuların başında gelenkredi kartı ödemelerindeki ekstra komisyon ve fark yüküyeni dönemde tamamen tarih oluyor. Bakanlık tarafından ihale şartnamesine eklenen özel madde sayesinde, kredi kartı tahsilatlarında doğan finansal maliyet ve komisyonlar doğrudan yüklenici firma (TURKA) tarafından karşılanacak. 15 Ağustos 2027’den itibaren sürücülerden kredi kartı kullanımı nedeniyle ek bir ücret talep edilmeyecek. Türkiye’de trafiğe kayıtlı araç sayısının 34,5 milyona ulaştığı ve yıllık muayene hacminin (tekrarlarla birlikte) 16 milyonu bulduğu bir dönemde, kapasite artışı da kaçınılmaz hale geldi. Tamamı özel sektör finansmanıyla kurulacak altyapı detayları şöyle şekillendi: TURKA Yönetim Kurulu Başkanı Halis Ezer, finansman sürecini sözleşmeyle aynı gün kapattıklarını belirterek, 20’yi aşkın inşaat firmasıyla eş zamanlı çalışıldığını ve yeni konsepti yansıtan ilk örnek istasyonun çok kısa süre içinde kamuoyuna tanıtılacağını ifade etti. Otoajanda.com haber merkezi, konusunda çok deneyimli ve uzman bir ekip tarafından yönetiliyor. Tüm haberler bu ekibin tecrübeli üyelerince edite edilerek, yayınlanıyor. Araç başına en düşük ÖTV kararı çıktı Araç başına en düşük ÖTV kararı çıktı Avrupa’da zirveye oynayan Skoda, ciro ve kârda rekor seviyeye ulaştı Renault Group 2026’nın ilk yarısında EV’ler, Hindistan, Türkiye ve Fas ile… Qashqai gizli özellikler dedi, Avrupa’da 4 milyon barajını aştı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment.",
-          "post_text_for_card": "🚗 ARAÇ MUAYENESİNDE 20 YILLIK YENİ DÖNEM BAŞLIYOR\n\nTURKA, 1.72 milyar dolarlık peşin ödemeyle 2027-2047 yılları arasında araç muayene hizmetlerini üstlenecek.\n\nYapay zeka odaklı sistemler ve kredi kartı komisyonunu sıfırlayan altyapı 15 Ağustos 2027'de devreye giriyor. 81 ilde hizmet verecek.\n\nBu yenilikler hakkında ne düşünüyorsunuz?",
+          "full_text": "Meksika Devlet Başkanı Claudia Sheinbaum ve Ekonomi Bakanı Marcelo Ebrard’ın katılımıyla düzenlenen toplantıda duyurulan649 milyon dolarlık yatırım paketi, üretim hattı modernizasyonunun yanı sıra ülkedeki şarj altyapısını ve yenilenebilir enerji kapasitesini artırmayı da hedefliyor. Kia, EV3 üretimi için tamamen yeni bir fabrika kurmak yerine Pesquería’daki mevcut üretim hatlarını elektrikli araç mimarisine uygun hale getirmeyi tercih etti. Kia Meksika Başkanı Horacio Chávez, bu yöntemin artan gümrük vergileri ve ticaret anlaşmaları zeminindesermaye açısından en verimli yaklaşımolduğunu vurguladı. Yeni üretim kararıyla birlikte bu yıl 500 kişiye, 2030 yılına kadar ise ek 1.500 kişiye doğrudan istihdam sağlanması planlanıyor. Kia, Meksika’da ilk kez yerel olarak ürettiği tam elektrikli bir modeli doğrudan ülke pazarında yüksek hacimlerde satışa sunmuş olacak. Nuevo León bölgesinde yaşanan kuraklık ve altyapı yetersizliklerine yanıt olarak Kia, tesise ve çevreye yönelik çeşitli adımlar atacak. Fabrika sahasına başlangıçta 2 MW kapasiteli bir güneş enerjisi parkı kurulacak ve bu kapasite 2030’a kadar 8 MW’a çıkarılacak. İkinci bir arıtma tesisi sayesinde sanayi suyunun yaklaşık%70’i geri dönüştürülerekgünlük 1.050 metreküp su tasarrufu elde edilecek. Şehir içi ve otoyol rotalarına şarj istasyonları kurulacak, yolda kalan elektrikli araçlar için mobil şarj üniteleri devreye alınacak. Sürücüsüz nakliye çağına hazır mısınız? https://www.amazon.com.tr/gp/product/B0CQMVBD32 https://www.amazon.com.tr/dp/B00INZWF5M?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/promotion/psp/A2FL7C9LJ74UI5 https://www.amazon.com.tr/dp/B0FX5MSQFH https://www.hepsiburada.com/opp-45-watt-beyaz-ayakli-vantilator-40-cm-genis-salinim-acisi-ile-yuksek-performans-saglar-p-HBCV00006LF6KQ",
+          "post_text_for_card": "🇲🇽 KIA EV3 ARTIK MEKSİKA'DA ÜRETİLECEK!\n\nKia'nın kompakt elektrikli SUV'u EV3, 4 Ağustos'tan itibaren Meksika Pesquería tesisinde üretilecek. Güney Kore'deki tek üretim noktasına Meksika da eklendi.\n\n649 milyon dolarlık yatırımla şarj ağı da genişleyecek. Bu hamle, artan gümrük vergilerine karşı stratejik bir adım.\n\nKia EV3'ün Meksika üretimi hakkında ne düşünüyorsunuz?",
           "image_sources": [
-            "article_candidates_field"
+            "meta_og",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
+          "prepared_image_count": 3,
           "original_image_urls": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/07/Turka_OID_imza-toreni1.jpg"
+            "https://www.donanimhaber.com/images/images/haber/208725/1200x675sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi.jpg",
+            "https://www.donanimhaber.com/images/images/haber/208725/src/sadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi208725_1.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260730135140&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F208725%2Fsadece-guney-kore-de-uretiliyordu-iste-kia-ev3-un-yeni-adresi208725_0.jpg"
           ]
         },
-        "post_text": "🚗 ARAÇ MUAYENESİNDE 20 YILLIK YENİ DÖNEM BAŞLIYOR\n\nTURKA, 1.72 milyar dolarlık peşin ödemeyle 2027-2047 yılları arasında araç muayene hizmetlerini üstlenecek.\n\nYapay zeka odaklı sistemler ve kredi kartı komisyonunu sıfırlayan altyapı 15 Ağustos 2027'de devreye giriyor. 81 ilde hizmet verecek.\n\nBu yenilikler hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_q23ih6l_.jpg",
+        "post_text": "🇲🇽 KIA EV3 ARTIK MEKSİKA'DA ÜRETİLECEK!\n\nKia'nın kompakt elektrikli SUV'u EV3, 4 Ağustos'tan itibaren Meksika Pesquería tesisinde üretilecek. Güney Kore'deki tek üretim noktasına Meksika da eklendi.\n\n649 milyon dolarlık yatırımla şarj ağı da genişleyecek. Bu hamle, artan gümrük vergilerine karşı stratejik bir adım.\n\nKia EV3'ün Meksika üretimi hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img__izw8ulj.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_q23ih6l_.jpg"
+          "/tmp/otoxtra_img__izw8ulj.jpg",
+          "/tmp/otoxtra_img_sfrdl3ok.jpg",
+          "/tmp/otoxtra_img_iw54t6sj.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 3
       },
       "error": null,
-      "updated_at": "2026-07-30T22:22:51.114138+03:00"
+      "updated_at": "2026-07-31T00:07:47.421605+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122174167862916499",
+        "post_id": "678053852057751_122174173514916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18384804043166943",
+            "id": "18050910209609425",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "4012634245538680",
+            "id": "4527295987503898",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-07-30T22:23:33.267074+03:00"
+      "updated_at": "2026-07-31T00:08:33.726808+03:00"
     }
   }
 }
