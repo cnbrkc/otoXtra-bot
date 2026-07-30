@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-07-30-05:08",
-  "status": "error",
-  "started_at": "2026-07-30T05:08:17.233747+03:00",
-  "updated_at": "2026-07-30T05:08:47.783651+03:00",
+  "run_id": "2026-07-30-08:38",
+  "status": "completed",
+  "started_at": "2026-07-30T08:38:15.624242+03:00",
+  "updated_at": "2026-07-30T08:39:36.150321+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+            "link": "https://nitter.net/ahmetcelik2016/status/2082675503727550692#m",
+            "published": "2026-07-30T03:51:48+00:00",
+            "summary": "Yeni videomuz yayında... BMW iX3... piped.video/watch?v=rceUWvP9… @BMWTurkiye @borusanotomotiv",
+            "image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bmw-bmwturkiye-borusanotomotiv-com-https-ix3-rceuwvp9clk-videomuz-watch-www-yayinda-youtube"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -114,54 +134,221 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 8,
+            "count": 10,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 178,
-            "after_keyword": 116,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 180,
+            "after_keyword": 118,
+            "after_time": 10,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 178,
-          "after_keyword": 116,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 180,
+          "after_keyword": 118,
+          "after_time": 10,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-07-30T05:08:47.783651+03:00"
+      "error": null,
+      "updated_at": "2026-07-30T08:38:45.976244+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+          "link": "https://nitter.net/ahmetcelik2016/status/2082675503727550692#m",
+          "published": "2026-07-30T03:51:48+00:00",
+          "summary": "Yeni videomuz yayında... BMW iX3... piped.video/watch?v=rceUWvP9… @BMWTurkiye @borusanotomotiv",
+          "image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-bmwturkiye-borusanotomotiv-com-https-ix3-rceuwvp9clk-videomuz-watch-www-yayinda-youtube",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 2
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğrudan bir haber içeriğinden ziyade YouTube video duyurusu olduğu için viral ve haber değeri düşüktür.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 33,
+        "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 17,
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 2,
+          "gundem_gucu": 4,
+          "paylasilabilirlik": 2
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Doğrudan bir haber içeriğinden ziyade YouTube video duyurusu olduğu için viral ve haber değeri düşüktür.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+            "score": 33,
+            "score_breakdown": {
+              "guncellik": 17,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 2,
+              "gundem_gucu": 4,
+              "paylasilabilirlik": 2
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-30T08:38:48.260073+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+          "link": "https://nitter.net/ahmetcelik2016/status/2082675503727550692#m",
+          "published": "2026-07-30T03:51:48+00:00",
+          "summary": "Yeni videomuz yayında... BMW iX3... piped.video/watch?v=rceUWvP9… @BMWTurkiye @borusanotomotiv",
+          "image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-bmwturkiye-borusanotomotiv-com-https-ix3-rceuwvp9clk-videomuz-watch-www-yayinda-youtube",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 2
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğrudan bir haber içeriğinden ziyade YouTube video duyurusu olduğu için viral ve haber değeri düşüktür.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🎬 BMW iX3 İLE ELEKTRİKLİ SÜRÜŞ KEYFİ BAŞLADI\n\nYeni videomuz yayında! BMW iX3'ü yakından inceledik. Elektrikli sürüş deneyimi, tasarımı ve özellikleri videoda sizi bekliyor.\n\nSiz de bu heyecan verici SUV'u keşfetmek ister misiniz? Detaylar için videomuza göz atın!",
+        "post_text_length": 263,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-30T08:38:49.899519+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni videomuz yayında... BMW iX3... https://www.youtube.com/watch?v=rceUWvP9Clk @BMWTurkiye @borusanotomotiv",
+          "link": "https://nitter.net/ahmetcelik2016/status/2082675503727550692#m",
+          "published": "2026-07-30T03:51:48+00:00",
+          "summary": "Yeni videomuz yayında... BMW iX3... piped.video/watch?v=rceUWvP9… @BMWTurkiye @borusanotomotiv",
+          "image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-bmwturkiye-borusanotomotiv-com-https-ix3-rceuwvp9clk-videomuz-watch-www-yayinda-youtube",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 2
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğrudan bir haber içeriğinden ziyade YouTube video duyurusu olduğu için viral ve haber değeri düşüktür.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🎬 BMW iX3 İLE ELEKTRİKLİ SÜRÜŞ KEYFİ BAŞLADI\n\nYeni videomuz yayında! BMW iX3'ü yakından inceledik. Elektrikli sürüş deneyimi, tasarımı ve özellikleri videoda sizi bekliyor.\n\nSiz de bu heyecan verici SUV'u keşfetmek ister misiniz? Detaylar için videomuza göz atın!",
+          "image_sources": [
+            "nitter_still"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HOcmPzvXQAEmBqJ.jpg?name=orig"
+          ]
+        },
+        "post_text": "🎬 BMW iX3 İLE ELEKTRİKLİ SÜRÜŞ KEYFİ BAŞLADI\n\nYeni videomuz yayında! BMW iX3'ü yakından inceledik. Elektrikli sürüş deneyimi, tasarımı ve özellikleri videoda sizi bekliyor.\n\nSiz de bu heyecan verici SUV'u keşfetmek ister misiniz? Detaylar için videomuza göz atın!",
+        "image_path": "/tmp/otoxtra_img_3w1j5i_c.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_3w1j5i_c.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-30T08:38:51.840088+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174105204916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18090345857432453",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1352590483089014",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-30T08:39:36.150321+03:00"
     }
   }
 }
