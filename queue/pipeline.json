@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-07-31-02:04",
-  "status": "completed",
-  "started_at": "2026-07-31T02:04:05.451547+03:00",
-  "updated_at": "2026-07-31T02:05:31.819904+03:00",
+  "run_id": "2026-07-31-05:35",
+  "status": "error",
+  "started_at": "2026-07-31T05:35:58.176802+03:00",
+  "updated_at": "2026-07-31T05:36:57.665304+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Volvo rafa kaldırmıştı: Yeni Deepal S05'e LiDAR desteği geldi",
-            "link": "https://www.donanimhaber.com/volvo-rafa-kaldirmisti-yeni-deepal-s05-e-lidar-destegi-geldi--208738",
-            "published": "2026-07-30T21:20:00+00:00",
-            "summary": "Changan bünyesindeki Deepal, yenilenen S05 modelini ön satışa sundu. LiDAR sensörü, 3nm çipli kokpit ve DeepSeek-R1 yapay zeka entegrasyonuyla öne çıkan elektrikli SUV 6 Ağustos'ta pazara çıkıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208738/1200x675volvo-rafa-kaldirmisti-yeni-deepal-s05-e-lidar-destegi-geldi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208738/1200x675volvo-rafa-kaldirmisti-yeni-deepal-s05-e-lidar-destegi-geldi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208738/1200x675volvo-rafa-kaldirmisti-yeni-deepal-s05-e-lidar-destegi-geldi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "deepal-destegi-kaldirmisti-lidar-rafa-s05-volvo"
-          },
-          {
-            "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-            "link": "https://nitter.net/DoluBatarya/status/2082941699290955978#m",
-            "published": "2026-07-30T21:29:34+00:00",
-            "summary": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-            "image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-100-araclarda-asgar-asgar-asgari-basliyor-batarya-batarya-bazi-belirlenerek-binek-birden-cekis-cikarilabilecek-degeri-degerleme-degisiklik-donemi-dusuk-emisyon-farkli-fazla-gazete-getirmesi-gucune-guncellenecek-halinde-kademelerinin-kapasitesi-katina-maktu-maktu-maktu-menzili-motor-mumkun-olacak-olusturulmasi-orani-otomobil-otomobillerin-otomobillerin-otv-otv-otv-otv-ozellik-ozellikleri-resmi-sartini-sifirlanabilecek-sinde-siniri-sistemi-turu-tutari-tutari-uzerinden-uzerinden-vergi-vergi-yayimlanan-yeniden-yerine-yil"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -98,10 +59,10 @@
             "attempts": 1
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -158,236 +119,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 180,
-            "after_keyword": 120,
-            "after_time": 7,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 170,
+            "after_keyword": 114,
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 180,
-          "after_keyword": 120,
-          "after_time": 7,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 170,
+          "after_keyword": 114,
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-07-31T02:04:38.779325+03:00"
+      "error": "No article found",
+      "updated_at": "2026-07-31T05:36:57.665304+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "link": "https://nitter.net/DoluBatarya/status/2082941699290955978#m",
-          "published": "2026-07-30T21:29:34+00:00",
-          "summary": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-100-araclarda-asgar-asgar-asgari-basliyor-batarya-batarya-bazi-belirlenerek-binek-birden-cekis-cikarilabilecek-degeri-degerleme-degisiklik-donemi-dusuk-emisyon-farkli-fazla-gazete-getirmesi-gucune-guncellenecek-halinde-kademelerinin-kapasitesi-katina-maktu-maktu-maktu-menzili-motor-mumkun-olacak-olusturulmasi-orani-otomobil-otomobillerin-otomobillerin-otv-otv-otv-otv-ozellik-ozellikleri-resmi-sartini-sifirlanabilecek-sinde-siniri-sistemi-turu-tutari-tutari-uzerinden-uzerinden-vergi-vergi-yayimlanan-yeniden-yerine-yil",
-          "base_ai_score": 95,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 12
-          },
-          "score": 95,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki tüm araç alıcılarını ve sektörü doğrudan etkileyen, ekonomik olarak büyük yankı uyandıracak ve sosyal medyada en çok tartışılacak vergi haberi.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 95,
-        "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 18,
-          "gundem_gucu": 20,
-          "paylasilabilirlik": 12
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'deki tüm araç alıcılarını ve sektörü doğrudan etkileyen, ekonomik olarak büyük yankı uyandıracak ve sosyal medyada en çok tartışılacak vergi haberi.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-            "score": 95,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 18,
-              "gundem_gucu": 20,
-              "paylasilabilirlik": 12
-            }
-          },
-          {
-            "title": "Volvo rafa kaldırmıştı: Yeni Deepal S05'e LiDAR desteği geldi",
-            "score": 51,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 12,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Volvo rafa kaldırmıştı: Yeni Deepal S05'e LiDAR desteği geldi",
-            "link": "https://www.donanimhaber.com/volvo-rafa-kaldirmisti-yeni-deepal-s05-e-lidar-destegi-geldi--208738",
-            "score": 51,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "deepal-destegi-kaldirmisti-lidar-rafa-s05-volvo"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-31T02:04:41.995294+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "link": "https://nitter.net/DoluBatarya/status/2082941699290955978#m",
-          "published": "2026-07-30T21:29:34+00:00",
-          "summary": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-100-araclarda-asgar-asgar-asgari-basliyor-batarya-batarya-bazi-belirlenerek-binek-birden-cekis-cikarilabilecek-degeri-degerleme-degisiklik-donemi-dusuk-emisyon-farkli-fazla-gazete-getirmesi-gucune-guncellenecek-halinde-kademelerinin-kapasitesi-katina-maktu-maktu-maktu-menzili-motor-mumkun-olacak-olusturulmasi-orani-otomobil-otomobillerin-otomobillerin-otv-otv-otv-otv-ozellik-ozellikleri-resmi-sartini-sifirlanabilecek-sinde-siniri-sistemi-turu-tutari-tutari-uzerinden-uzerinden-vergi-vergi-yayimlanan-yeniden-yerine-yil",
-          "base_ai_score": 95,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 12
-          },
-          "score": 95,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki tüm araç alıcılarını ve sektörü doğrudan etkileyen, ekonomik olarak büyük yankı uyandıracak ve sosyal medyada en çok tartışılacak vergi haberi.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "🚨 OTOMOBİL ÖTV'SİNDE YENİ DÖNEM BAŞLADI!\n\nResmi Gazete'de yayımlanan kararla binek araçlarda en düşük ÖTV 100.000 TL oldu. Bu tutar her yıl güncellenecek.\n\nMotor gücü, batarya kapasitesi, menzil gibi özelliklere göre farklı ÖTV kademeleri belirlenebilecek. Hatta bazı araçlarda ÖTV sıfırlanabilir veya 10 katına çıkabilir.\n\nBu değişiklik araç fiyatlarını nasıl etkiler dersiniz?",
-        "post_text_length": 378,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-31T02:04:43.888530+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "link": "https://nitter.net/DoluBatarya/status/2082941699290955978#m",
-          "published": "2026-07-30T21:29:34+00:00",
-          "summary": "Resmi Gazete'de yayımlanan değişiklik ile otomobil ÖTV'sinde 'asgari maktu vergi' dönemi başlıyor. 📌Binek araçlarda en düşük ÖTV sınırı 100.000 ₺ oldu. Her yıl yeniden değerleme oranı üzerinden güncellenecek. 📌Otomobillerin motor gücüne ek olarak çekiş sistemi, batarya kapasitesi, batarya türü, menzili, emisyon değeri gibi özellikleri üzerinden birden fazla asgarî maktu ÖTV tutarı belirlenerek farklı vergi kademelerinin oluşturulması mümkün olacak. 📌Bazı otomobillerin özellik şartını yerine getirmesi halinde asgarî maktu ÖTV tutarı sıfırlanabilecek veya 10 katına kadar çıkarılabilecek.",
-          "image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-100-araclarda-asgar-asgar-asgari-basliyor-batarya-batarya-bazi-belirlenerek-binek-birden-cekis-cikarilabilecek-degeri-degerleme-degisiklik-donemi-dusuk-emisyon-farkli-fazla-gazete-getirmesi-gucune-guncellenecek-halinde-kademelerinin-kapasitesi-katina-maktu-maktu-maktu-menzili-motor-mumkun-olacak-olusturulmasi-orani-otomobil-otomobillerin-otomobillerin-otv-otv-otv-otv-ozellik-ozellikleri-resmi-sartini-sifirlanabilecek-sinde-siniri-sistemi-turu-tutari-tutari-uzerinden-uzerinden-vergi-vergi-yayimlanan-yeniden-yerine-yil",
-          "base_ai_score": 95,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 20,
-            "paylasilabilirlik": 12
-          },
-          "score": 95,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki tüm araç alıcılarını ve sektörü doğrudan etkileyen, ekonomik olarak büyük yankı uyandıracak ve sosyal medyada en çok tartışılacak vergi haberi.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "🚨 OTOMOBİL ÖTV'SİNDE YENİ DÖNEM BAŞLADI!\n\nResmi Gazete'de yayımlanan kararla binek araçlarda en düşük ÖTV 100.000 TL oldu. Bu tutar her yıl güncellenecek.\n\nMotor gücü, batarya kapasitesi, menzil gibi özelliklere göre farklı ÖTV kademeleri belirlenebilecek. Hatta bazı araçlarda ÖTV sıfırlanabilir veya 10 katına çıkabilir.\n\nBu değişiklik araç fiyatlarını nasıl etkiler dersiniz?",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HOgYabZXcAAB7GY.jpg?name=orig"
-          ]
-        },
-        "post_text": "🚨 OTOMOBİL ÖTV'SİNDE YENİ DÖNEM BAŞLADI!\n\nResmi Gazete'de yayımlanan kararla binek araçlarda en düşük ÖTV 100.000 TL oldu. Bu tutar her yıl güncellenecek.\n\nMotor gücü, batarya kapasitesi, menzil gibi özelliklere göre farklı ÖTV kademeleri belirlenebilecek. Hatta bazı araçlarda ÖTV sıfırlanabilir veya 10 katına çıkabilir.\n\nBu değişiklik araç fiyatlarını nasıl etkiler dersiniz?",
-        "image_path": "/tmp/otoxtra_img_191xwu91.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_191xwu91.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-31T02:04:45.325095+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174180528916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18073783136378315",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1367958284666984",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-07-31T02:05:31.819904+03:00"
+      "updated_at": null
     }
   }
 }
