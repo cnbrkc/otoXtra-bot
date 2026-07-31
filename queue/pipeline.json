@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-07-31-05:35",
-  "status": "error",
-  "started_at": "2026-07-31T05:35:58.176802+03:00",
-  "updated_at": "2026-07-31T05:36:57.665304+03:00",
+  "run_id": "2026-07-31-09:10",
+  "status": "completed",
+  "started_at": "2026-07-31T09:10:53.436546+03:00",
+  "updated_at": "2026-07-31T09:12:17.828155+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+            "link": "https://nitter.net/eozpeynirci/status/2083072697773269271#m",
+            "published": "2026-07-31T06:10:07+00:00",
+            "summary": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️ Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor 💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen gazeteoksijen.com/yazarlar/e…",
+            "image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "284168-alman-almanlar-almanlar-altina-avantajini-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayni-birligi-cin-cin-cin-cin-cin-cin-cini-cinli-com-degisen-dengesi-devleri-donemde-donustugunu-dusen-duvarlariyla-ediyor-elektrikli-emre-fabrikalari-gazeteoksijen-gazeteoksijen-gelistirdigi-getirmeye-gosteriyor-guc-gumruk-hazirlanmasi-hibritlere-https-iyi-kapasitenin-kaybetti-kaybetti-kim-kullanacak-kurmaya-modellerden-modelleri-nden-otomotiv-otomotivde-ozpeynirci-plug-politikasi-rekabetin-sanayi-sirada-sirada-sorusuna-sorusundan-talep-var-var-vergi-volkswagen-yari-yazarlar-zorluyor"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -59,10 +79,10 @@
             "attempts": 1
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -119,49 +139,214 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 170,
-            "after_keyword": 114,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 180,
+            "after_keyword": 119,
+            "after_time": 6,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 170,
-          "after_keyword": 114,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 180,
+          "after_keyword": 119,
+          "after_time": 6,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-07-31T05:36:57.665304+03:00"
+      "error": null,
+      "updated_at": "2026-07-31T09:11:20.730921+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+          "link": "https://nitter.net/eozpeynirci/status/2083072697773269271#m",
+          "published": "2026-07-31T06:10:07+00:00",
+          "summary": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️ Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor 💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen gazeteoksijen.com/yazarlar/e…",
+          "image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "284168-alman-almanlar-almanlar-altina-avantajini-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayni-birligi-cin-cin-cin-cin-cin-cin-cini-cinli-com-degisen-dengesi-devleri-donemde-donustugunu-dusen-duvarlariyla-ediyor-elektrikli-emre-fabrikalari-gazeteoksijen-gazeteoksijen-gelistirdigi-getirmeye-gosteriyor-guc-gumruk-hazirlanmasi-hibritlere-https-iyi-kapasitenin-kaybetti-kaybetti-kim-kullanacak-kurmaya-modellerden-modelleri-nden-otomotiv-otomotivde-ozpeynirci-plug-politikasi-rekabetin-sanayi-sirada-sirada-sorusuna-sorusundan-talep-var-var-vergi-volkswagen-yari-yazarlar-zorluyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 16,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Küresel otomotiv pazarındaki devasa güç değişimini, Alman devlerinin krizini ve Çin rekabetini ele alması nedeniyle yüksek gündem ve etkileşim gücüne sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 16,
+          "gundem_gucu": 17,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Küresel otomotiv pazarındaki devasa güç değişimini, Alman devlerinin krizini ve Çin rekabetini ele alması nedeniyle yüksek gündem ve etkileşim gücüne sahip.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 16,
+              "gundem_gucu": 17,
+              "paylasilabilirlik": 10
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-31T09:11:23.283722+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+          "link": "https://nitter.net/eozpeynirci/status/2083072697773269271#m",
+          "published": "2026-07-31T06:10:07+00:00",
+          "summary": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️ Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor 💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen gazeteoksijen.com/yazarlar/e…",
+          "image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "284168-alman-almanlar-almanlar-altina-avantajini-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayni-birligi-cin-cin-cin-cin-cin-cin-cini-cinli-com-degisen-dengesi-devleri-donemde-donustugunu-dusen-duvarlariyla-ediyor-elektrikli-emre-fabrikalari-gazeteoksijen-gazeteoksijen-gelistirdigi-getirmeye-gosteriyor-guc-gumruk-hazirlanmasi-hibritlere-https-iyi-kapasitenin-kaybetti-kaybetti-kim-kullanacak-kurmaya-modellerden-modelleri-nden-otomotiv-otomotivde-ozpeynirci-plug-politikasi-rekabetin-sanayi-sirada-sirada-sorusuna-sorusundan-talep-var-var-vergi-volkswagen-yari-yazarlar-zorluyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 16,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Küresel otomotiv pazarındaki devasa güç değişimini, Alman devlerinin krizini ve Çin rekabetini ele alması nedeniyle yüksek gündem ve etkileşim gücüne sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🚨 ALMAN OTOMOTİVİNİN ÇİN ÇIKMAZI!\n\nÇin'de fabrikaları zorlanan Alman devleri, AB'den Çinli hibritlere ek vergi istiyor. Ama Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirme planı kafaları karıştırıyor.\n\nOtomotivde artık \"Çin mi Avrupa mı\" değil, \"Çin'in avantajını kim kullanacak\" dönemi mi başlıyor? Siz ne dersiniz?",
+        "post_text_length": 330,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-31T09:11:24.929421+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️   Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor   💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen https://gazeteoksijen.com/yazarlar/emre-ozpeynirci/almanlar-cini-kaybetti-sirada-avrupa-mi-var-284168",
+          "link": "https://nitter.net/eozpeynirci/status/2083072697773269271#m",
+          "published": "2026-07-31T06:10:07+00:00",
+          "summary": "Almanlar Çin'i kaybetti sırada Avrupa mı var⁉️ Çin'de değişen güç dengesi, Avrupa'yı gümrük duvarlarıyla yeni bir sanayi politikası kurmaya zorluyor 💢Çin'de fabrikaları yarı kapasitenin altına düşen Alman otomotiv devleri, elektrikli modellerden sonra Avrupa Birliği'nden Çinli plug-in hibritlere de ek vergi talep ediyor. 💢Ancak aynı dönemde Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirmeye hazırlanması, otomotivde artık rekabetin \"Çin mi Avrupa mı?\" sorusundan çok, \"Çin'in avantajını kim daha iyi kullanacak?\" sorusuna dönüştüğünü gösteriyor. @GazeteOksijen gazeteoksijen.com/yazarlar/e…",
+          "image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HOiPkwqXoAAYfh_.jpg?format=jpg&name=large"
+          ],
+          "image_source": "duckduckgo",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "284168-alman-almanlar-almanlar-altina-avantajini-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayni-birligi-cin-cin-cin-cin-cin-cin-cini-cinli-com-degisen-dengesi-devleri-donemde-donustugunu-dusen-duvarlariyla-ediyor-elektrikli-emre-fabrikalari-gazeteoksijen-gazeteoksijen-gelistirdigi-getirmeye-gosteriyor-guc-gumruk-hazirlanmasi-hibritlere-https-iyi-kapasitenin-kaybetti-kaybetti-kim-kullanacak-kurmaya-modellerden-modelleri-nden-otomotiv-otomotivde-ozpeynirci-plug-politikasi-rekabetin-sanayi-sirada-sirada-sorusuna-sorusundan-talep-var-var-vergi-volkswagen-yari-yazarlar-zorluyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 16,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Küresel otomotiv pazarındaki devasa güç değişimini, Alman devlerinin krizini ve Çin rekabetini ele alması nedeniyle yüksek gündem ve etkileşim gücüne sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🚨 ALMAN OTOMOTİVİNİN ÇİN ÇIKMAZI!\n\nÇin'de fabrikaları zorlanan Alman devleri, AB'den Çinli hibritlere ek vergi istiyor. Ama Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirme planı kafaları karıştırıyor.\n\nOtomotivde artık \"Çin mi Avrupa mı\" değil, \"Çin'in avantajını kim kullanacak\" dönemi mi başlıyor? Siz ne dersiniz?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "🚨 ALMAN OTOMOTİVİNİN ÇİN ÇIKMAZI!\n\nÇin'de fabrikaları zorlanan Alman devleri, AB'den Çinli hibritlere ek vergi istiyor. Ama Volkswagen'in Çin'de geliştirdiği modelleri Avrupa'ya getirme planı kafaları karıştırıyor.\n\nOtomotivde artık \"Çin mi Avrupa mı\" değil, \"Çin'in avantajını kim kullanacak\" dönemi mi başlıyor? Siz ne dersiniz?",
+        "image_path": "/tmp/otoxtra_img_ytzmpcv6.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_ytzmpcv6.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-31T09:11:27.313213+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174215160916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17876640261528460",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1856142778699507",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-07-31T09:12:17.828155+03:00"
     }
   }
 }
