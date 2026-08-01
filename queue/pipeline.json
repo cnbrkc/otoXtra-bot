@@ -1,31 +1,31 @@
 {
-  "run_id": "2026-08-01-19:04",
+  "run_id": "2026-08-01-20:58",
   "status": "completed",
-  "started_at": "2026-08-01T19:04:47.369904+03:00",
-  "updated_at": "2026-08-01T19:06:48.155086+03:00",
+  "started_at": "2026-08-01T20:58:23.698129+03:00",
+  "updated_at": "2026-08-01T21:00:09.533665+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
-            "link": "https://www.donanimhaber.com/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda--208808",
-            "published": "2026-08-01T16:00:00+00:00",
-            "summary": "Motorola, Moto Watch Ultra akıllı saat modeliyle premium giyilebilir teknoloji pazarına geri dönmeye hazırlanıyor. Sızdırılan görseller, Galaxy Watch Ultra 2 rakibi özelliklere işaret ediyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
+            "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
+            "link": "https://tr.motor1.com/news/803456/bmw-welt-art-cars/",
+            "published": "2026-08-01T17:00:00+00:00",
+            "summary": "20 benzersiz araç, ilk kez bir arada.",
+            "image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg"
+              "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Donanimhaber",
+            "source_name": "Motor1 TR",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "galaxy-moto-rakibi-sizdirildi-ultra-ultra-watch-watch-yolda"
+            "topic_fingerprint": "art-bmw-cars-koleksiyonunun-munih-sergileniyor-tamami"
           }
         ],
         "count": 1,
@@ -79,10 +79,10 @@
             "attempts": 1
           },
           "TeknoTags": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/teknotagstr/rss",
+            "attempts": 3
           },
           "Emre Ozpeynirci": {
             "status": "ok",
@@ -121,10 +121,10 @@
             "attempts": 1
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
             "status": "ok",
@@ -146,8 +146,8 @@
           },
           "_metrics": {
             "found": 180,
-            "after_keyword": 134,
-            "after_time": 8,
+            "after_keyword": 127,
+            "after_time": 10,
             "after_posted": 1,
             "after_duplicate": 1,
             "after_shared_variant_cooldown": 1
@@ -155,77 +155,77 @@
         },
         "metrics": {
           "found": 180,
-          "after_keyword": 134,
-          "after_time": 8,
+          "after_keyword": 127,
+          "after_time": 10,
           "after_posted": 1,
           "after_duplicate": 1,
           "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-08-01T19:05:46.541281+03:00"
+      "updated_at": "2026-08-01T20:59:20.990234+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
-          "link": "https://www.donanimhaber.com/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda--208808",
-          "published": "2026-08-01T16:00:00+00:00",
-          "summary": "Motorola, Moto Watch Ultra akıllı saat modeliyle premium giyilebilir teknoloji pazarına geri dönmeye hazırlanıyor. Sızdırılan görseller, Galaxy Watch Ultra 2 rakibi özelliklere işaret ediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
+          "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
+          "link": "https://tr.motor1.com/news/803456/bmw-welt-art-cars/",
+          "published": "2026-08-01T17:00:00+00:00",
+          "summary": "20 benzersiz araç, ilk kez bir arada.",
+          "image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg"
+            "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "galaxy-moto-rakibi-sizdirildi-ultra-ultra-watch-watch-yolda",
-          "base_ai_score": 42,
+          "topic_fingerprint": "art-bmw-cars-koleksiyonunun-munih-sergileniyor-tamami",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 5,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 17,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 48,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv odaklı olmayan, akıllı saat kategorisinde yer alan bir teknoloji sızıntısı olduğu için otomotiv gündeminde viral gücü sınırlı kalıyor.",
+          "score_explanation": "Sanat ve otomotiv dünyasını birleştiren ikonik bir koleksiyonun ilk kez bir arada sergilenmesi estetik açıdan yüksek paylaşılabilirlik sunuyor ancak kitleye hitabı biraz daha niş.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 48,
-        "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
+        "score": 71,
+        "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 8,
-          "gundem_gucu": 5,
-          "paylasilabilirlik": 3
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 17,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 5
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv odaklı olmayan, akıllı saat kategorisinde yer alan bir teknoloji sızıntısı olduğu için otomotiv gündeminde viral gücü sınırlı kalıyor.",
+        "score_explanation": "Sanat ve otomotiv dünyasını birleştiren ikonik bir koleksiyonun ilk kez bir arada sergilenmesi estetik açıdan yüksek paylaşılabilirlik sunuyor ancak kitleye hitabı biraz daha niş.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
-            "score": 48,
+            "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
+            "score": 71,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 8,
-              "gundem_gucu": 5,
-              "paylasilabilirlik": 3
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 17,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 5
             }
           }
         ],
@@ -233,136 +233,139 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-08-01T19:05:48.557299+03:00"
+      "updated_at": "2026-08-01T20:59:23.238146+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
-          "link": "https://www.donanimhaber.com/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda--208808",
-          "published": "2026-08-01T16:00:00+00:00",
-          "summary": "Motorola, Moto Watch Ultra akıllı saat modeliyle premium giyilebilir teknoloji pazarına geri dönmeye hazırlanıyor. Sızdırılan görseller, Galaxy Watch Ultra 2 rakibi özelliklere işaret ediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
+          "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
+          "link": "https://tr.motor1.com/news/803456/bmw-welt-art-cars/",
+          "published": "2026-08-01T17:00:00+00:00",
+          "summary": "20 benzersiz araç, ilk kez bir arada.",
+          "image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg"
+            "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "galaxy-moto-rakibi-sizdirildi-ultra-ultra-watch-watch-yolda",
-          "base_ai_score": 42,
+          "topic_fingerprint": "art-bmw-cars-koleksiyonunun-munih-sergileniyor-tamami",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 5,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 17,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 48,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv odaklı olmayan, akıllı saat kategorisinde yer alan bir teknoloji sızıntısı olduğu için otomotiv gündeminde viral gücü sınırlı kalıyor.",
+          "score_explanation": "Sanat ve otomotiv dünyasını birleştiren ikonik bir koleksiyonun ilk kez bir arada sergilenmesi estetik açıdan yüksek paylaşılabilirlik sunuyor ancak kitleye hitabı biraz daha niş.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Sızdırılan görsellere göre Moto Watch Ultra,46 mmölçüsünde paslanmaz çelik bir kasa ile karşımıza çıkıyor. Dairesel ekranın çevresinde dijital saat indekslerine benzeyen detaylar bulunurken, cihazın yanında büyük bir döner kurma kolu ve ek fiziksel düğme yer alıyor. Bu tasarım yaklaşımı, klasik saat kullanıcılarını hedefleyen estetik anlayış ile modern akıllı saat işlevlerini bir araya getirmeye yönelik bir tercih olarak görülüyor. Cihazın arka bölümünde görülen sensör yapısı, Moto Watch Ultra'nın sağlık ve spor takibi özelliklerine odaklanabileceğini gösteriyor. Görsellerde dahili GPS ve LTE bağlantı desteğine işaret eden detaylar bulunurken, cihazınIP68 sertifikası ve 5 ATMseviyesinde su dayanıklılığı sunabileceği görülüyor. Bu değerler, saatin günlük kullanımın yanı sıra açık hava aktiviteleri ve spor senaryolarında da kullanılabilecek şekilde tasarlanmış olabileceğini düşündürüyor. Şarj tarafında ise cihazın arka bölümünde görülen dört pimli manyetik bağlantı noktası dikkat çekiyor. Bu detay, Motorola'nın klasik kablosuz şarj yerine özel bir şarj aparatı tercih edebileceğini gösteriyor. Ancak pil kapasitesi, kullanım süresi ve şarj hızına ilişkin herhangi bir resmi bilgi henüz paylaşılmış değil. Ayrıca Moto Watch Ultra'nın gerçek bir amiral gemisi alternatifi olup olmayacağı, şirketin işlemci seçimi, yazılım desteği, pil performansı ve fiyatlandırma stratejisiyle netleşecek. Sürücüsüz nakliye çağına hazır mısınız? şu temu işine de bir el atsa şiii https://www.amazon.com.tr/Anthony-Jackson-Premium-T-Shirt-Starlight/dp/B0DC14521W/ref=pd_rhf_cr_s_pd_crcbs_d_sccl_1_4/259-3027696-0646419?psc=1 https://www.amazon.com.tr/gp/product/B0DFMHJ6D3 https://www.n11.com/urun/xiaomi-redmi-buds-8-lite-bluetooth-54-kulak-ici-kulaklik-121950257?renk=acik-mavi&magaza=n11 https://www.amazon.com.tr/promotion/psp/A35PC2BD4FFC9R https://www.migros.com.tr/migros-naturel-sizma-zeytinyagi-5-l-p-3f05de"
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW Welt, koleksiyonun50. yılıkapsamında 29 Temmuz - 31 Ağustos 2026 tarihleri arasında Münih’te“BMW ART CARS – 20 ARTISTS, 50 YEARS OF INNOVATION. REUNITED AT BMW WELT”sergisine ev sahipliği yapıyor. İlk kez tüm20 “tekerlekli heykel”tek bir mekânda bir araya getiriliyor. 28 Temmuz 2026’daki açılış aynı zamanda daha önce 30’dan fazla ülkeyi dolaşan BMW Art Car World Tour’un görkemli finali niteliğini taşıdı. Etkinlik, Münih kent genelinde René Staud’un renk kodlu fotoğraf serisinin kullanıldığı bir afiş kampanyasıyla da destekleniyor. BMW'ninefsanevi koleksiyonunun temeli, 1975 yılında yarış pilotu ve sanat müzayedecisi Hervé Poulain ile dönemin motorsporları patronu Jochen Neerpasch’ın, Alexander Calder’i Le Mans 24 Saat yarışı için birBMW 3.0 CSLtasarlamakla görevlendirmesiyle atıldı. Neerpasch’a göre başlangıçta tek seferlik düşünülen bu fikir, zamanla dünyanın en önemli otomobil sanat eserleri serisine dönüştü. “Art Car” modellerinin büyük bölümü bugün artık şirketin sahip olduğu en değerli araçlar arasında yer alıyor. Bu otomobiller, günümüzde Andy Warhol ve Jeff Koons gibi önemli sanatçıların üretimlerini BMW’nin tasarım ve teknoloji tarihiyle buluşturuyor. 1975'ten itibaren BMW'nin ilk üç Art Car'ı BMW Art Car Collection’ın tamamına bakıldığında, modern sanat tarihinin adeta bir yıldızlar geçidi görülüyor: Temeli 1975’te Alexander Calder’in hazırladığıBMW 3.0 CSLile atılan seriyi, 1976’da aynı model üzerinde Frank Stella ve 1977’de bir320i Turboüzerinde Roy Lichtenstein izledi. 1979’da Andy Warhol efsaneviM1üzerinde iz bırakırken, 1982’de Ernst Fuchs ve 1986’da Robert Rauschenberg birer635 CSimodelini hareketli sanat eserine dönüştürdü. 1989’da ise Michael Nelson Jagamara ve Ken Done,BMW M3 Group A (E30)için geliştirdikleri iki farklı yorumla koleksiyonu genişletti. 1990’lı yıllar tasarım açısından büyük bir çeşitlilik getirdi: Matazo Kayama 1990’da birBMW 535i, aynı yıl César Manrique bir730i (E32)tasarladı. Ardından 1991’deZ1üzerinde A.R. Penck, yine 1991’de bir525i (E34)üzerinde Esther Mahlangu, 1992’de birM3 GTR (E36)üzerinde Sandro Chia ve 1995’te bir850 CSiüzerinde David Hockney geldi. Milenyuma kısa süre kala Jenny Holzer, 1999’daBMW V12 LMRiçin tasarımı hazırladı. Gizli tavsiyemiz: David Hockney imzalı BMW 850 CSi Olafur Eliasson, 2007’de yenilikçi hidrojen prototipiBMW H2Rile güçlü bir ekolojik mesaj verdi; onu 2010’da renkli birBMW M3 GT2tasarlayan Jeff Koons izledi. Koleksiyonun daha yakın dönemine ise 2016’daBMW M6 GTLMile John Baldessari, 2017’deBMW M6 GT3temelindeki dijital konseptiyle Cao Fei ve son olarak 2024’teBMW M Hybrid V8üzerindeki çalışmasıyla Julie Mehretu damga vurdu. Sergi rotası kronolojik bir yapıda kurgulanmış ve ziyaretçileri en yeni eserden başlangıç noktasına doğru götürüyor; tarihsel bağlam ise video dokümantasyonları ve zaman çizelgesiyle aktarılıyor. Açılış bölümünde John Baldessari’ninBMW Art Car #19çalışması ile Julie Mehretu’nunBMW Art Car #20eseri yer alıyor. Mehretu, tasarladığıBMW M Hybrid V8ile eş zamanlı olarak Mehret Mandefro ile birlikte, Afrika’daki sanat ve sinema üreticilerini destekleyenAfrican Film and Media Arts Collective (AFMAC)oluşumunu kurdu. AFMAC, 2026’nın sonunda Cape Town’daki Zeitz MOCAA’da büyük bir sergi planlıyor. Turun finali ise merkezi bir platformda sergilenen Alexander Calder’in#1numaralı eseriyle yapılıyor. 16 numaralı çadırda soğutulmuş Eliasson projesi bulunuyor Öne çıkan işlerden biri, Olafur Eliasson’un“BMW H2R Project” (#16)çalışması. Bir hidrojen prototipi temel alınarak hazırlanan enstalasyonda Eliasson, gövdeyi donmuş sudan oluşan metal bir örgüyle değiştirdi. İçten aydınlatılan ve yaklaşık2 tonağırlığındaki heykel, sürdürülebilirlik üzerine şiirsel bir düşünce alanı yaratırken, sanatçı da otomobili zaman ve mekân bağlamında yeniden deneyimlemeye davet ediyor. Sergi dijital çözümlerle de destekleniyor:“Treasure Hunt”uygulaması keşif odaklı bir deneyim sunuyor ve 5 sanat eserinin taranmasının ardından“Cooper’s Garden”için bir ikram kuponu açılıyor. Ayrıca25 dildesunulan Artlas uygulaması; kişiselleştirilmiş erişim, sesli rehberler ve küratörlü bir yapay zekâ sohbeti sağlıyor. Ücretsiz ziyaret edilebilen sergi her gün09:00-18:00saatleri arasında açık. Her gün çevrimiçi rezervasyonla katılınabilen 2 dilli kısa turlar düzenleniyor. Açılış programında, otomobilin kültürel anlamı üzerine yüksek profilli bir sanatçı söyleşisi ile BMW Welt mağazasında sunulan özel ürünler de yer alıyor; bunlar arasında“BMW Art Cars”yayını, minyatür modeller ve Cao Fei’nin Capsule Collection parçaları bulunuyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "⌚ YENİ MOTO WATCH ULTRA SIZDIRILDI!\n\nMotorola, Moto Watch Ultra ile premium akıllı saat pazarına dönüyor. Sızan görseller, Galaxy Watch Ultra 2'ye rakip olacağını gösteriyor.\n\n46 mm paslanmaz çelik kasa, döner kurma kolu, dahili GPS ve LTE desteğiyle geliyor. IP68 ve 5 ATM su dayanıklılığı da cabası.\n\nSizce rekabete yeni bir soluk getirebilir mi?",
-        "post_text_length": 348,
+        "post_text": "🎨 TÜM BMW ART CARS İLK KEZ BİR ARADA!\n\nBMW'nin efsanevi \"Art Cars\" koleksiyonu, 50. yıl kutlamaları kapsamında Münih'teki BMW Welt'te sergileniyor. Tam 20 benzersiz araç, 29 Temmuz - 31 Ağustos 2026 tarihleri arasında ilk kez bir araya geliyor.\n\n1975'te Alexander Calder'in tasarımıyla başlayan bu sanat eseri tekerlekli heykelleri kaçırmayın!\n\nGörmeyi en çok istediğiniz Art Car hangisi?",
+        "post_text_length": 388,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-01T19:05:51.128260+03:00"
+      "updated_at": "2026-08-01T20:59:24.692009+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Moto Watch Ultra sızdırıldı: Galaxy Watch Ultra rakibi yolda",
-          "link": "https://www.donanimhaber.com/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda--208808",
-          "published": "2026-08-01T16:00:00+00:00",
-          "summary": "Motorola, Moto Watch Ultra akıllı saat modeliyle premium giyilebilir teknoloji pazarına geri dönmeye hazırlanıyor. Sızdırılan görseller, Galaxy Watch Ultra 2 rakibi özelliklere işaret ediyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
+          "title": "BMW'nin \"Art Cars\" koleksiyonunun tamamı Münih'te sergileniyor!",
+          "link": "https://tr.motor1.com/news/803456/bmw-welt-art-cars/",
+          "published": "2026-08-01T17:00:00+00:00",
+          "summary": "20 benzersiz araç, ilk kez bir arada.",
+          "image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg"
+            "https://cdn.motor1.com/images/mgl/bgPrNw/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Donanimhaber",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "galaxy-moto-rakibi-sizdirildi-ultra-ultra-watch-watch-yolda",
-          "base_ai_score": 42,
+          "topic_fingerprint": "art-bmw-cars-koleksiyonunun-munih-sergileniyor-tamami",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 5,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 17,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 48,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv odaklı olmayan, akıllı saat kategorisinde yer alan bir teknoloji sızıntısı olduğu için otomotiv gündeminde viral gücü sınırlı kalıyor.",
+          "score_explanation": "Sanat ve otomotiv dünyasını birleştiren ikonik bir koleksiyonun ilk kez bir arada sergilenmesi estetik açıdan yüksek paylaşılabilirlik sunuyor ancak kitleye hitabı biraz daha niş.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Sızdırılan görsellere göre Moto Watch Ultra,46 mmölçüsünde paslanmaz çelik bir kasa ile karşımıza çıkıyor. Dairesel ekranın çevresinde dijital saat indekslerine benzeyen detaylar bulunurken, cihazın yanında büyük bir döner kurma kolu ve ek fiziksel düğme yer alıyor. Bu tasarım yaklaşımı, klasik saat kullanıcılarını hedefleyen estetik anlayış ile modern akıllı saat işlevlerini bir araya getirmeye yönelik bir tercih olarak görülüyor. Cihazın arka bölümünde görülen sensör yapısı, Moto Watch Ultra'nın sağlık ve spor takibi özelliklerine odaklanabileceğini gösteriyor. Görsellerde dahili GPS ve LTE bağlantı desteğine işaret eden detaylar bulunurken, cihazınIP68 sertifikası ve 5 ATMseviyesinde su dayanıklılığı sunabileceği görülüyor. Bu değerler, saatin günlük kullanımın yanı sıra açık hava aktiviteleri ve spor senaryolarında da kullanılabilecek şekilde tasarlanmış olabileceğini düşündürüyor. Şarj tarafında ise cihazın arka bölümünde görülen dört pimli manyetik bağlantı noktası dikkat çekiyor. Bu detay, Motorola'nın klasik kablosuz şarj yerine özel bir şarj aparatı tercih edebileceğini gösteriyor. Ancak pil kapasitesi, kullanım süresi ve şarj hızına ilişkin herhangi bir resmi bilgi henüz paylaşılmış değil. Ayrıca Moto Watch Ultra'nın gerçek bir amiral gemisi alternatifi olup olmayacağı, şirketin işlemci seçimi, yazılım desteği, pil performansı ve fiyatlandırma stratejisiyle netleşecek. Sürücüsüz nakliye çağına hazır mısınız? şu temu işine de bir el atsa şiii https://www.amazon.com.tr/Anthony-Jackson-Premium-T-Shirt-Starlight/dp/B0DC14521W/ref=pd_rhf_cr_s_pd_crcbs_d_sccl_1_4/259-3027696-0646419?psc=1 https://www.amazon.com.tr/gp/product/B0DFMHJ6D3 https://www.n11.com/urun/xiaomi-redmi-buds-8-lite-bluetooth-54-kulak-ici-kulaklik-121950257?renk=acik-mavi&magaza=n11 https://www.amazon.com.tr/promotion/psp/A35PC2BD4FFC9R https://www.migros.com.tr/migros-naturel-sizma-zeytinyagi-5-l-p-3f05de",
-          "post_text_for_card": "⌚ YENİ MOTO WATCH ULTRA SIZDIRILDI!\n\nMotorola, Moto Watch Ultra ile premium akıllı saat pazarına dönüyor. Sızan görseller, Galaxy Watch Ultra 2'ye rakip olacağını gösteriyor.\n\n46 mm paslanmaz çelik kasa, döner kurma kolu, dahili GPS ve LTE desteğiyle geliyor. IP68 ve 5 ATM su dayanıklılığı da cabası.\n\nSizce rekabete yeni bir soluk getirebilir mi?",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW Welt, koleksiyonun50. yılıkapsamında 29 Temmuz - 31 Ağustos 2026 tarihleri arasında Münih’te“BMW ART CARS – 20 ARTISTS, 50 YEARS OF INNOVATION. REUNITED AT BMW WELT”sergisine ev sahipliği yapıyor. İlk kez tüm20 “tekerlekli heykel”tek bir mekânda bir araya getiriliyor. 28 Temmuz 2026’daki açılış aynı zamanda daha önce 30’dan fazla ülkeyi dolaşan BMW Art Car World Tour’un görkemli finali niteliğini taşıdı. Etkinlik, Münih kent genelinde René Staud’un renk kodlu fotoğraf serisinin kullanıldığı bir afiş kampanyasıyla da destekleniyor. BMW'ninefsanevi koleksiyonunun temeli, 1975 yılında yarış pilotu ve sanat müzayedecisi Hervé Poulain ile dönemin motorsporları patronu Jochen Neerpasch’ın, Alexander Calder’i Le Mans 24 Saat yarışı için birBMW 3.0 CSLtasarlamakla görevlendirmesiyle atıldı. Neerpasch’a göre başlangıçta tek seferlik düşünülen bu fikir, zamanla dünyanın en önemli otomobil sanat eserleri serisine dönüştü. “Art Car” modellerinin büyük bölümü bugün artık şirketin sahip olduğu en değerli araçlar arasında yer alıyor. Bu otomobiller, günümüzde Andy Warhol ve Jeff Koons gibi önemli sanatçıların üretimlerini BMW’nin tasarım ve teknoloji tarihiyle buluşturuyor. 1975'ten itibaren BMW'nin ilk üç Art Car'ı BMW Art Car Collection’ın tamamına bakıldığında, modern sanat tarihinin adeta bir yıldızlar geçidi görülüyor: Temeli 1975’te Alexander Calder’in hazırladığıBMW 3.0 CSLile atılan seriyi, 1976’da aynı model üzerinde Frank Stella ve 1977’de bir320i Turboüzerinde Roy Lichtenstein izledi. 1979’da Andy Warhol efsaneviM1üzerinde iz bırakırken, 1982’de Ernst Fuchs ve 1986’da Robert Rauschenberg birer635 CSimodelini hareketli sanat eserine dönüştürdü. 1989’da ise Michael Nelson Jagamara ve Ken Done,BMW M3 Group A (E30)için geliştirdikleri iki farklı yorumla koleksiyonu genişletti. 1990’lı yıllar tasarım açısından büyük bir çeşitlilik getirdi: Matazo Kayama 1990’da birBMW 535i, aynı yıl César Manrique bir730i (E32)tasarladı. Ardından 1991’deZ1üzerinde A.R. Penck, yine 1991’de bir525i (E34)üzerinde Esther Mahlangu, 1992’de birM3 GTR (E36)üzerinde Sandro Chia ve 1995’te bir850 CSiüzerinde David Hockney geldi. Milenyuma kısa süre kala Jenny Holzer, 1999’daBMW V12 LMRiçin tasarımı hazırladı. Gizli tavsiyemiz: David Hockney imzalı BMW 850 CSi Olafur Eliasson, 2007’de yenilikçi hidrojen prototipiBMW H2Rile güçlü bir ekolojik mesaj verdi; onu 2010’da renkli birBMW M3 GT2tasarlayan Jeff Koons izledi. Koleksiyonun daha yakın dönemine ise 2016’daBMW M6 GTLMile John Baldessari, 2017’deBMW M6 GT3temelindeki dijital konseptiyle Cao Fei ve son olarak 2024’teBMW M Hybrid V8üzerindeki çalışmasıyla Julie Mehretu damga vurdu. Sergi rotası kronolojik bir yapıda kurgulanmış ve ziyaretçileri en yeni eserden başlangıç noktasına doğru götürüyor; tarihsel bağlam ise video dokümantasyonları ve zaman çizelgesiyle aktarılıyor. Açılış bölümünde John Baldessari’ninBMW Art Car #19çalışması ile Julie Mehretu’nunBMW Art Car #20eseri yer alıyor. Mehretu, tasarladığıBMW M Hybrid V8ile eş zamanlı olarak Mehret Mandefro ile birlikte, Afrika’daki sanat ve sinema üreticilerini destekleyenAfrican Film and Media Arts Collective (AFMAC)oluşumunu kurdu. AFMAC, 2026’nın sonunda Cape Town’daki Zeitz MOCAA’da büyük bir sergi planlıyor. Turun finali ise merkezi bir platformda sergilenen Alexander Calder’in#1numaralı eseriyle yapılıyor. 16 numaralı çadırda soğutulmuş Eliasson projesi bulunuyor Öne çıkan işlerden biri, Olafur Eliasson’un“BMW H2R Project” (#16)çalışması. Bir hidrojen prototipi temel alınarak hazırlanan enstalasyonda Eliasson, gövdeyi donmuş sudan oluşan metal bir örgüyle değiştirdi. İçten aydınlatılan ve yaklaşık2 tonağırlığındaki heykel, sürdürülebilirlik üzerine şiirsel bir düşünce alanı yaratırken, sanatçı da otomobili zaman ve mekân bağlamında yeniden deneyimlemeye davet ediyor. Sergi dijital çözümlerle de destekleniyor:“Treasure Hunt”uygulaması keşif odaklı bir deneyim sunuyor ve 5 sanat eserinin taranmasının ardından“Cooper’s Garden”için bir ikram kuponu açılıyor. Ayrıca25 dildesunulan Artlas uygulaması; kişiselleştirilmiş erişim, sesli rehberler ve küratörlü bir yapay zekâ sohbeti sağlıyor. Ücretsiz ziyaret edilebilen sergi her gün09:00-18:00saatleri arasında açık. Her gün çevrimiçi rezervasyonla katılınabilen 2 dilli kısa turlar düzenleniyor. Açılış programında, otomobilin kültürel anlamı üzerine yüksek profilli bir sanatçı söyleşisi ile BMW Welt mağazasında sunulan özel ürünler de yer alıyor; bunlar arasında“BMW Art Cars”yayını, minyatür modeller ve Cao Fei’nin Capsule Collection parçaları bulunuyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "🎨 TÜM BMW ART CARS İLK KEZ BİR ARADA!\n\nBMW'nin efsanevi \"Art Cars\" koleksiyonu, 50. yıl kutlamaları kapsamında Münih'teki BMW Welt'te sergileniyor. Tam 20 benzersiz araç, 29 Temmuz - 31 Ağustos 2026 tarihleri arasında ilk kez bir araya geliyor.\n\n1975'te Alexander Calder'in tasarımıyla başlayan bu sanat eseri tekerlekli heykelleri kaçırmayın!\n\nGörmeyi en çok istediğiniz Art Car hangisi?",
           "image_sources": [
             "meta_og",
             "article_img",
-            "article_img"
+            "article_img",
+            "article_script"
           ],
-          "prepared_image_count": 3,
+          "prepared_image_count": 4,
           "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/208808/1200x675moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208808/src/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda208808_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/208808/src/moto-watch-ultra-sizdirildi-galaxy-watch-ultra-rakibi-yolda208808_1.jpg"
+            "https://cdn.motor1.com/images/mgl/bgPrNw/s1/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+            "https://cdn.motor1.com/images/mgl/2N4o0n/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+            "https://cdn.motor1.com/images/mgl/40YgVk/s3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.jpg",
+            "https://cdn.motor1.com/images/mgl/bgPrNw/s1/4x3/sonderausstellung-bmw-art-cars---20-artists-50-years-of-innovation.-reunited-at-bmw-welt.webp"
           ]
         },
-        "post_text": "⌚ YENİ MOTO WATCH ULTRA SIZDIRILDI!\n\nMotorola, Moto Watch Ultra ile premium akıllı saat pazarına dönüyor. Sızan görseller, Galaxy Watch Ultra 2'ye rakip olacağını gösteriyor.\n\n46 mm paslanmaz çelik kasa, döner kurma kolu, dahili GPS ve LTE desteğiyle geliyor. IP68 ve 5 ATM su dayanıklılığı da cabası.\n\nSizce rekabete yeni bir soluk getirebilir mi?",
-        "image_path": "/tmp/otoxtra_img_adqvwlv2.jpg",
+        "post_text": "🎨 TÜM BMW ART CARS İLK KEZ BİR ARADA!\n\nBMW'nin efsanevi \"Art Cars\" koleksiyonu, 50. yıl kutlamaları kapsamında Münih'teki BMW Welt'te sergileniyor. Tam 20 benzersiz araç, 29 Temmuz - 31 Ağustos 2026 tarihleri arasında ilk kez bir araya geliyor.\n\n1975'te Alexander Calder'in tasarımıyla başlayan bu sanat eseri tekerlekli heykelleri kaçırmayın!\n\nGörmeyi en çok istediğiniz Art Car hangisi?",
+        "image_path": "/tmp/otoxtra_img_8k1s2t3y.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_adqvwlv2.jpg",
-          "/tmp/otoxtra_img_es5hpctj.jpg",
-          "/tmp/otoxtra_img_8i19dc71.jpg"
+          "/tmp/otoxtra_img_8k1s2t3y.jpg",
+          "/tmp/otoxtra_img_hi6zras_.jpg",
+          "/tmp/otoxtra_img_kqarb1c6.jpg",
+          "/tmp/otoxtra_img_z4gv57tt.jpg"
         ],
         "image_source": "meta_og",
-        "image_count": 3
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-08-01T19:06:09.644543+03:00"
+      "updated_at": "2026-08-01T20:59:27.599493+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122174393282916499",
+        "post_id": "678053852057751_122174402246916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18126141370780766",
+            "id": "17995898462812865",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1056671363492891",
+            "id": "2728285727567059",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-01T19:06:48.155086+03:00"
+      "updated_at": "2026-08-01T21:00:09.533665+03:00"
     }
   }
 }
