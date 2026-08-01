@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-01-06:41",
-  "status": "error",
-  "started_at": "2026-08-01T06:41:38.417449+03:00",
-  "updated_at": "2026-08-01T06:42:08.968559+03:00",
+  "run_id": "2026-08-01-09:26",
+  "status": "completed",
+  "started_at": "2026-08-01T09:26:54.668545+03:00",
+  "updated_at": "2026-08-01T09:28:22.857151+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Otosende, artık Ergün Holding'in",
+            "link": "https://otopodyum.com.tr/firmalar-dernekler/otosende-artik-ergun-holdingin-5189h",
+            "published": "2026-08-01T05:11:34+00:00",
+            "summary": "Ergün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamle ile holding, Otosende'nin teknoloji altyapısını güçlendirmeyi ve hizmet ağını genişletmeyi hedefliyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5493.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ergun-holding-otosende"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -121,47 +141,225 @@
           "_metrics": {
             "found": 180,
             "after_keyword": 125,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 180,
           "after_keyword": 125,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-01T06:42:08.968559+03:00"
+      "error": null,
+      "updated_at": "2026-08-01T09:27:25.033635+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Otosende, artık Ergün Holding'in",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/otosende-artik-ergun-holdingin-5189h",
+          "published": "2026-08-01T05:11:34+00:00",
+          "summary": "Ergün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamle ile holding, Otosende'nin teknoloji altyapısını güçlendirmeyi ve hizmet ağını genişletmeyi hedefliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5493.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ergun-holding-otosende",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
+          },
+          "score": 48,
+          "score_reason": "ai_scored",
+          "score_explanation": "Şirket satın almaları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için yüksek bir viral veya etkileşim potansiyeli barındırmıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 48,
+        "title": "Otosende, artık Ergün Holding'in",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 10,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 3
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Şirket satın almaları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için yüksek bir viral veya etkileşim potansiyeli barındırmıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Otosende, artık Ergün Holding'in",
+            "score": 48,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 10,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-01T09:27:27.274373+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otosende, artık Ergün Holding'in",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/otosende-artik-ergun-holdingin-5189h",
+          "published": "2026-08-01T05:11:34+00:00",
+          "summary": "Ergün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamle ile holding, Otosende'nin teknoloji altyapısını güçlendirmeyi ve hizmet ağını genişletmeyi hedefliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5493.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ergun-holding-otosende",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
+          },
+          "score": 48,
+          "score_reason": "ai_scored",
+          "score_explanation": "Şirket satın almaları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için yüksek bir viral veya etkileşim potansiyeli barındırmıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Ergün Holding, taksitle araç sahibi olma imkanı sunan dijital otomotiv platformu Otosende'yi satın aldığını duyurdu. Satın almayla birlikte holding, Otosende'nin teknoloji altyapısını güçlendirmeyi, hizmet ağını genişletmeyi ve mevcut müşteri ekosistemini platformla entegre etmeyi hedefliyor. 2017 yılında finansal hizmetler alanına adım atan ve bugün 1 milyon müşteriye ulaştığını paylaşan Ergün Holding, bu satın almanın uzun vadeli büyüme stratejisinin önemli bir parçası olduğunu açıkladı Şirket, yatırım kararında Otosende'nin büyüme potansiyeli, dijital operasyon kabiliyeti ve faaliyet gösterdiği pazarın geleceğine ilişkin beklentilerin etkili olduğunu aktardı. Satın alma sonrasında platformun teknolojik altyapısının güçlendirilmesi, hizmet ağının genişletilmesi ve Ergün Holding'in mevcut müşteri tabanına yönelik yeni çözümlerin hayata geçirilmesi planlanıyor."
+        },
+        "post_text": "🤝 OTOSENDE ARTIK ERGÜN HOLDİNG BÜNYESİNDE\n\nErgün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamleyle Otosende'nin teknoloji altyapısı güçlenecek, hizmet ağı genişleyecek.\n\nTaksitle araç sahibi olma imkanı sunan platform, Ergün Holding'in uzun vadeli büyüme stratejisinin parçası oldu.\n\nSizce bu iş birliği sektöre neler getirir?",
+        "post_text_length": 348,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-01T09:27:29.038280+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otosende, artık Ergün Holding'in",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/otosende-artik-ergun-holdingin-5189h",
+          "published": "2026-08-01T05:11:34+00:00",
+          "summary": "Ergün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamle ile holding, Otosende'nin teknoloji altyapısını güçlendirmeyi ve hizmet ağını genişletmeyi hedefliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5493.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5493.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ergun-holding-otosende",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
+          },
+          "score": 48,
+          "score_reason": "ai_scored",
+          "score_explanation": "Şirket satın almaları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için yüksek bir viral veya etkileşim potansiyeli barındırmıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Ergün Holding, taksitle araç sahibi olma imkanı sunan dijital otomotiv platformu Otosende'yi satın aldığını duyurdu. Satın almayla birlikte holding, Otosende'nin teknoloji altyapısını güçlendirmeyi, hizmet ağını genişletmeyi ve mevcut müşteri ekosistemini platformla entegre etmeyi hedefliyor. 2017 yılında finansal hizmetler alanına adım atan ve bugün 1 milyon müşteriye ulaştığını paylaşan Ergün Holding, bu satın almanın uzun vadeli büyüme stratejisinin önemli bir parçası olduğunu açıkladı Şirket, yatırım kararında Otosende'nin büyüme potansiyeli, dijital operasyon kabiliyeti ve faaliyet gösterdiği pazarın geleceğine ilişkin beklentilerin etkili olduğunu aktardı. Satın alma sonrasında platformun teknolojik altyapısının güçlendirilmesi, hizmet ağının genişletilmesi ve Ergün Holding'in mevcut müşteri tabanına yönelik yeni çözümlerin hayata geçirilmesi planlanıyor.",
+          "post_text_for_card": "🤝 OTOSENDE ARTIK ERGÜN HOLDİNG BÜNYESİNDE\n\nErgün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamleyle Otosende'nin teknoloji altyapısı güçlenecek, hizmet ağı genişleyecek.\n\nTaksitle araç sahibi olma imkanı sunan platform, Ergün Holding'in uzun vadeli büyüme stratejisinin parçası oldu.\n\nSizce bu iş birliği sektöre neler getirir?",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5493.jpg",
+            "https://cdn.otopodyum.com.tr/news/5461.jpg",
+            "https://cdn.otopodyum.com.tr/news/5464.jpg",
+            "https://cdn.otopodyum.com.tr/news/5465.jpg"
+          ]
+        },
+        "post_text": "🤝 OTOSENDE ARTIK ERGÜN HOLDİNG BÜNYESİNDE\n\nErgün Holding, dijital otomotiv platformu Otosende'yi satın aldı. Bu hamleyle Otosende'nin teknoloji altyapısı güçlenecek, hizmet ağı genişleyecek.\n\nTaksitle araç sahibi olma imkanı sunan platform, Ergün Holding'in uzun vadeli büyüme stratejisinin parçası oldu.\n\nSizce bu iş birliği sektöre neler getirir?",
+        "image_path": "/tmp/otoxtra_img_xltrd7sn.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_xltrd7sn.jpg",
+          "/tmp/otoxtra_img_a8o5olod.jpg",
+          "/tmp/otoxtra_img_bfj13ipq.jpg",
+          "/tmp/otoxtra_img_h1a7ikvh.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-01T09:27:38.472128+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174329526916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18159848056478881",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1850259535935936",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-01T09:28:22.857151+03:00"
     }
   }
 }
