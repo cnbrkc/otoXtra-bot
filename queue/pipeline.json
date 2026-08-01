@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-01-16:14",
-  "status": "completed",
-  "started_at": "2026-08-01T16:14:44.052929+03:00",
-  "updated_at": "2026-08-01T16:16:24.239772+03:00",
+  "run_id": "2026-08-01-17:58",
+  "status": "error",
+  "started_at": "2026-08-01T17:58:15.579075+03:00",
+  "updated_at": "2026-08-01T17:58:45.750591+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-            "link": "https://tr.motor1.com/news/803449/nissan-agustos-2026-kampanyalari/",
-            "published": "2026-08-01T13:00:00+00:00",
-            "summary": "Tüm modellerde geçerli kampanyalar sizleri bekliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "agustos-ayina-firsatlar-nissan-ozel"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,225 +127,47 @@
           "_metrics": {
             "found": 190,
             "after_keyword": 136,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 10,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 190,
           "after_keyword": 136,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 10,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-01T16:15:25.879234+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-01T17:58:45.750591+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/803449/nissan-agustos-2026-kampanyalari/",
-          "published": "2026-08-01T13:00:00+00:00",
-          "summary": "Tüm modellerde geçerli kampanyalar sizleri bekliyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "agustos-ayina-firsatlar-nissan-ozel",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 3,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 44,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart aylık marka kampanyası, sektörde benzersiz bir yenilik sunmuyor, sıradan ticari duyuru.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 44,
-        "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 8,
-          "benzersizlik": 3,
-          "gundem_gucu": 8,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Standart aylık marka kampanyası, sektörde benzersiz bir yenilik sunmuyor, sıradan ticari duyuru.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-            "score": 44,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 3,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-01T16:15:28.084953+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/803449/nissan-agustos-2026-kampanyalari/",
-          "published": "2026-08-01T13:00:00+00:00",
-          "summary": "Tüm modellerde geçerli kampanyalar sizleri bekliyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "agustos-ayina-firsatlar-nissan-ozel",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 3,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 44,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart aylık marka kampanyası, sektörde benzersiz bir yenilik sunmuyor, sıradan ticari duyuru.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nissan Türkiye, ağustos ayına özel hazırladığı kampanyalar kapsamında SUV segmentinin iddialı modeli Qashqai'yi avantajlı satın alma koşullarıyla kullanıcılarla buluşturuyor. Sınırlı sayıda araç için geçerli kampanya kapsamında Qashqai Mild Hybrid Designpack versiyonu, 2.199.000 TL tavsiye edilen kampanyalı anahtar teslim fiyatıyla Nissan yetkili satıcılarında yeni sahiplerini bekliyor. Qashqai ailesinin üst donanım seviyelerini tercih eden ticari müşteriler için de cazip finansman fırsatları sunuluyor. Qashqai Mild Hybrid N-Design, Platinum ve Platinum Premium versiyonlarında 600.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi avantajı sağlanırken,Qashqaie-POWER modelinde ise bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sunuluyor. Ticari müşteriler ayrıca Qashqai e-POWER için 600.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi desteğinden de yararlanabiliyor. Nissan'ın kompakt crossover modeli Juke da Ağustos kampanyaları kapsamında avantajlı satın alma seçenekleriyle öne çıkıyor. Sınırlı sayıda Juke Tekna Plus DCT, 1.899.000 TL tavsiye edilen kampanyalı anahtar teslim fiyatıyla satışa sunulurken, Juke Platinum Premium versiyonunda bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sağlanıyor. Ticari müşteriler ayrıca 500.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi avantajından faydalanabiliyor. SUV ürün gamının bir diğer güçlü üyesiX-Trailde ağustos ayı boyunca avantajlı kampanyalarla kullanıcılarla buluşuyor. Modelde bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sunulurken, ticari müşteriler için 1.000.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi desteği de kampanya kapsamında yer alıyor. Nissan'ın hafif ticari araç ailesinde yer alan Yeni Townstar Van modelleri de KOBİ'lere yönelik finansman çözümleriyle dikkat çekiyor. Benzinli L2 Uzun Şasi versiyonunda 50.000 TL nakit alım indirimi veya 50.000 TL nakit alım indirimiyle birlikte 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi seçeneği sunulurken, L2 DCT Tekna versiyonunda 50.000 TL nakit alım indiriminin yanı sıra 1.350.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi fırsatı sağlanıyor. Benzinli L1 Kısa Şasi versiyonunda KOBİ'lere özel 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi sunulurken, Yeni Townstar Van EV modelinde de KOBİ'ler 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi avantajından yararlanabiliyor. Nissan Türkiye'nin ağustos ayına özel hazırladığı kampanyalar, sınırlı sayıda araç için katılımcı yetkili satıcılarda geçerli olacak. Kampanyalara ilişkin detaylı bilgi ve başvuru koşullarına Nissan yetkili satıcılarından ulaşılabiliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🚗 NİSSAN'DAN AĞUSTOS AYINA ÖZEL FIRSATLAR BAŞLADI\n\nNissan, ağustos ayına özel kampanyalarını duyurdu! SUV modeli Qashqai, Mild Hybrid Designpack versiyonuyla 2.199.000 TL'den satışta.\n\nTicari müşterilere de cazip finansman seçenekleri var. Qashqai e-POWER modelinde 100.000 TL nakit indirim veya 600.000 TL'ye %0 faizli kredi imkanı sunuluyor.\n\nBu fırsatları kaçırmamak için Nissan bayilerine uğradınız mı?",
-        "post_text_length": 406,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-01T16:15:29.949503+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Nissan'dan Ağustos ayına özel fırsatlar!",
-          "link": "https://tr.motor1.com/news/803449/nissan-agustos-2026-kampanyalari/",
-          "published": "2026-08-01T13:00:00+00:00",
-          "summary": "Tüm modellerde geçerli kampanyalar sizleri bekliyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "agustos-ayina-firsatlar-nissan-ozel",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 3,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 44,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart aylık marka kampanyası, sektörde benzersiz bir yenilik sunmuyor, sıradan ticari duyuru.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nissan Türkiye, ağustos ayına özel hazırladığı kampanyalar kapsamında SUV segmentinin iddialı modeli Qashqai'yi avantajlı satın alma koşullarıyla kullanıcılarla buluşturuyor. Sınırlı sayıda araç için geçerli kampanya kapsamında Qashqai Mild Hybrid Designpack versiyonu, 2.199.000 TL tavsiye edilen kampanyalı anahtar teslim fiyatıyla Nissan yetkili satıcılarında yeni sahiplerini bekliyor. Qashqai ailesinin üst donanım seviyelerini tercih eden ticari müşteriler için de cazip finansman fırsatları sunuluyor. Qashqai Mild Hybrid N-Design, Platinum ve Platinum Premium versiyonlarında 600.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi avantajı sağlanırken,Qashqaie-POWER modelinde ise bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sunuluyor. Ticari müşteriler ayrıca Qashqai e-POWER için 600.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi desteğinden de yararlanabiliyor. Nissan'ın kompakt crossover modeli Juke da Ağustos kampanyaları kapsamında avantajlı satın alma seçenekleriyle öne çıkıyor. Sınırlı sayıda Juke Tekna Plus DCT, 1.899.000 TL tavsiye edilen kampanyalı anahtar teslim fiyatıyla satışa sunulurken, Juke Platinum Premium versiyonunda bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sağlanıyor. Ticari müşteriler ayrıca 500.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi avantajından faydalanabiliyor. SUV ürün gamının bir diğer güçlü üyesiX-Trailde ağustos ayı boyunca avantajlı kampanyalarla kullanıcılarla buluşuyor. Modelde bireysel ve ticari müşterilere 100.000 TL nakit alım indirimi sunulurken, ticari müşteriler için 1.000.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi desteği de kampanya kapsamında yer alıyor. Nissan'ın hafif ticari araç ailesinde yer alan Yeni Townstar Van modelleri de KOBİ'lere yönelik finansman çözümleriyle dikkat çekiyor. Benzinli L2 Uzun Şasi versiyonunda 50.000 TL nakit alım indirimi veya 50.000 TL nakit alım indirimiyle birlikte 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi seçeneği sunulurken, L2 DCT Tekna versiyonunda 50.000 TL nakit alım indiriminin yanı sıra 1.350.000 TL tutarında 6 ay vadeli %0 faizli ticari kredi fırsatı sağlanıyor. Benzinli L1 Kısa Şasi versiyonunda KOBİ'lere özel 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi sunulurken, Yeni Townstar Van EV modelinde de KOBİ'ler 800.000 TL tutarında 12 ay vadeli %0 faizli ticari kredi avantajından yararlanabiliyor. Nissan Türkiye'nin ağustos ayına özel hazırladığı kampanyalar, sınırlı sayıda araç için katılımcı yetkili satıcılarda geçerli olacak. Kampanyalara ilişkin detaylı bilgi ve başvuru koşullarına Nissan yetkili satıcılarından ulaşılabiliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🚗 NİSSAN'DAN AĞUSTOS AYINA ÖZEL FIRSATLAR BAŞLADI\n\nNissan, ağustos ayına özel kampanyalarını duyurdu! SUV modeli Qashqai, Mild Hybrid Designpack versiyonuyla 2.199.000 TL'den satışta.\n\nTicari müşterilere de cazip finansman seçenekleri var. Qashqai e-POWER modelinde 100.000 TL nakit indirim veya 600.000 TL'ye %0 faizli kredi imkanı sunuluyor.\n\nBu fırsatları kaçırmamak için Nissan bayilerine uğradınız mı?",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_script",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/s1/nissan-qashqai-e-power.jpg",
-            "https://cdn.motor1.com/images/video-thumbs/youtube/b9BG6MP9j2s/s3/thumb.jpg",
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/110:0:1776:1332/nissan-qashqai-e-power.webp",
-            "https://cdn.motor1.com/images/mgl/W8Kgp3/333:0:1332:1332/nissan-qashqai-e-power.webp"
-          ]
-        },
-        "post_text": "🚗 NİSSAN'DAN AĞUSTOS AYINA ÖZEL FIRSATLAR BAŞLADI\n\nNissan, ağustos ayına özel kampanyalarını duyurdu! SUV modeli Qashqai, Mild Hybrid Designpack versiyonuyla 2.199.000 TL'den satışta.\n\nTicari müşterilere de cazip finansman seçenekleri var. Qashqai e-POWER modelinde 100.000 TL nakit indirim veya 600.000 TL'ye %0 faizli kredi imkanı sunuluyor.\n\nBu fırsatları kaçırmamak için Nissan bayilerine uğradınız mı?",
-        "image_path": "/tmp/otoxtra_img_n2dt886l.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_n2dt886l.jpg",
-          "/tmp/otoxtra_img_v9_9w7od.jpg",
-          "/tmp/otoxtra_img_6cg8c2o0.jpg",
-          "/tmp/otoxtra_img_l6jd9nta.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-01T16:15:36.759106+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174381090916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18102461951584117",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1006610298858591",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-01T16:16:24.239772+03:00"
+      "updated_at": null
     }
   }
 }
