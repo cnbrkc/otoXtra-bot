@@ -1,72 +1,14 @@
 {
-  "run_id": "2026-08-03-00:53",
-  "status": "completed",
-  "started_at": "2026-08-03T00:53:22.863192+03:00",
-  "updated_at": "2026-08-03T00:55:10.446242+03:00",
+  "run_id": "2026-08-03-01:53",
+  "status": "error",
+  "started_at": "2026-08-03T01:53:53.373296+03:00",
+  "updated_at": "2026-08-03T01:54:24.509086+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-            "link": "https://www.log.com.tr/taksi-olarak-kullanilabilecek-araclarla-alakali-guncellemeye-gidildi/",
-            "published": "2026-08-03T00:53:22.899897+03:00",
-            "summary": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılan paylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi. Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı: “UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan,  Megane Sedan, Corolla 1.5 benzinli […] Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "alakali-araclarla-gidildi-guncellemeye-kullanilabilecek-taksi"
-          },
-          {
-            "title": "🚗 MG, Ağustos ayı fiyat listesini açıkladı. • ZS Hybrid+ Luxury Cam Tavanlı: 2.655.000 TL (kampanyalı: 2.545.000 TL) • HS Luxury Benzin: 2.697.000 TL (kampanyalı: 2.612.000 TL) • HS Hybrid+ Luxury: 3.265.000 TL (kampanyalı: 3.165.000 TL) • MG7 Excellence: 3.300.000 TL • MG7 Excellence Red Edition: 3.450.000 TL",
-            "link": "https://nitter.net/teknotagstr/status/2084024880157110525#m",
-            "published": "2026-08-02T21:13:45+00:00",
-            "summary": "🚗 MG, Ağustos ayı fiyat listesini açıkladı. • ZS Hybrid+ Luxury Cam Tavanlı: 2.655.000 TL (kampanyalı: 2.545.000 TL) • HS Luxury Benzin: 2.697.000 TL (kampanyalı: 2.612.000 TL) • HS Hybrid+ Luxury: 3.265.000 TL (kampanyalı: 3.165.000 TL) • MG7 Excellence: 3.300.000 TL • MG7 Excellence Red Edition: 3.450.000 TL",
-            "image_url": "https://pbs.twimg.com/media/HOvxlAGXIAAT6_n.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOvxlAGXIAAT6_n.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOvxlAGXIAAT6_n.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TeknoTags",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-000-000-000-000-000-000-000-165-265-300-450-545-612-655-697-acikladi-agustos-ayi-benzin-cam-edition-excellence-excellence-fiyat-hybrid-hybrid-kampanyali-kampanyali-kampanyali-listesini-luxury-luxury-luxury-mg7-mg7-red-tavanli"
-          },
-          {
-            "title": "🚗 Volvo, Ağustos ayı fiyat listesini açıkladı. • EX30 Single Motor Extended Range Ultra: 2.436.910 TL • EX30 Twin Motor Ultra: 3.619.314 TL • EX30 Cross Country Twin Motor Performance Ultra: 3.758.544 TL • EX40 Single Motor Extended Range Ultra: 4.317.300 TL • EX40 Black Edition Ultra: 4.456.800 TL • EC40 Single Motor Extended Range Ultra: 4.409.184 TL • V60 B4 Mild Hybrid Plus Dark: 5.958.559 TL • XC60 B5 AWD Mild Hybrid Plus: 7.292.014 TL • XC60 T8 AWD Plug-in Hybrid Plus: 7.965.934 TL • XC90 B5 AWD Mild Hybrid Plus: 11.123.054 TL • XC90 T8 AWD Plug-in Hybrid Plus: 11.796.974 TL",
-            "link": "https://nitter.net/teknotagstr/status/2084022564897087758#m",
-            "published": "2026-08-02T21:04:33+00:00",
-            "summary": "🚗 Volvo, Ağustos ayı fiyat listesini açıkladı. • EX30 Single Motor Extended Range Ultra: 2.436.910 TL • EX30 Twin Motor Ultra: 3.619.314 TL • EX30 Cross Country Twin Motor Performance Ultra: 3.758.544 TL • EX40 Single Motor Extended Range Ultra: 4.317.300 TL • EX40 Black Edition Ultra: 4.456.800 TL • EC40 Single Motor Extended Range Ultra: 4.409.184 TL • V60 B4 Mild Hybrid Plus Dark: 5.958.559 TL • XC60 B5 AWD Mild Hybrid Plus: 7.292.014 TL • XC60 T8 AWD Plug-in Hybrid Plus: 7.965.934 TL • XC90 B5 AWD Mild Hybrid Plus: 11.123.054 TL • XC90 T8 AWD Plug-in Hybrid Plus: 11.796.974 TL",
-            "image_url": "https://pbs.twimg.com/media/HOvvZryXoAAOfVj.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HOvvZryXoAAOfVj.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HOvvZryXoAAOfVj.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TeknoTags",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "014-054-123-184-292-300-314-317-409-436-456-544-559-619-758-796-800-910-934-958-965-974-acikladi-agustos-awd-awd-awd-awd-ayi-black-country-cross-dark-ec40-edition-ex30-ex30-ex30-ex40-ex40-extended-extended-extended-fiyat-hybrid-hybrid-hybrid-hybrid-hybrid-listesini-mild-mild-mild-motor-motor-motor-motor-motor-performance-plug-plug-plus-plus-plus-plus-plus-range-range-range-single-single-single-twin-twin-ultra-ultra-ultra-ultra-ultra-ultra-v60-volvo-xc60-xc60-xc90-xc90"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -171,10 +113,10 @@
             "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "otopodyum": {
             "status": "ok",
@@ -183,255 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 172,
-            "after_keyword": 116,
-            "after_time": 11,
-            "after_posted": 4,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 4
+            "found": 182,
+            "after_keyword": 123,
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 172,
-          "after_keyword": 116,
-          "after_time": 11,
-          "after_posted": 4,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 4
+          "found": 182,
+          "after_keyword": 123,
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-03T00:54:24.170925+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-03T01:54:24.509086+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-          "link": "https://www.log.com.tr/taksi-olarak-kullanilabilecek-araclarla-alakali-guncellemeye-gidildi/",
-          "published": "2026-08-03T00:53:22.899897+03:00",
-          "summary": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılan paylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi. Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı: “UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan,  Megane Sedan, Corolla 1.5 benzinli […] Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alakali-araclarla-gidildi-guncellemeye-kullanilabilecek-taksi",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 4
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Taksi esnafını ve sektörü yakından ilgilendiren yerel bir gelişme ancak genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 54,
-        "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 9,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Taksi esnafını ve sektörü yakından ilgilendiren yerel bir gelişme ancak genel kitle için viral potansiyeli sınırlı.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-            "score": 54,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 9,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 4
-            }
-          },
-          {
-            "title": "🚗 MG, Ağustos ayı fiyat listesini açıkladı. • ZS Hybrid+ Luxury Cam Tavanlı: 2.655.000 TL (kampanyalı: 2.545.000 TL) • HS Luxury Benzin: 2.697.000 TL (kampanyalı: 2.612.000 TL) • HS Hybrid+ Luxury: 3.265.000 TL (kampanyalı: 3.165.000 TL) • MG7 Excellence: 3.300.000 TL • MG7 Excellence Red Edition: 3.450.000 TL",
-            "score": 44,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 2,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
-            }
-          },
-          {
-            "title": "🚗 Volvo, Ağustos ayı fiyat listesini açıkladı. • EX30 Single Motor Extended Range Ultra: 2.436.910 TL • EX30 Twin Motor Ultra: 3.619.314 TL • EX30 Cross Country Twin Motor Performance Ultra: 3.758.544 TL • EX40 Single Motor Extended Range Ultra: 4.317.300 TL • EX40 Black Edition Ultra: 4.456.800 TL • EC40 Single Motor Extended Range Ultra: 4.409.184 TL • V60 B4 Mild Hybrid Plus Dark: 5.958.559 TL • XC60 B5 AWD Mild Hybrid Plus: 7.292.014 TL • XC60 T8 AWD Plug-in Hybrid Plus: 7.965.934 TL • XC90 B5 AWD Mild Hybrid Plus: 11.123.054 TL • XC90 T8 AWD Plug-in Hybrid Plus: 11.796.974 TL",
-            "score": 41,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 7,
-              "benzersizlik": 2,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "🚗 MG, Ağustos ayı fiyat listesini açıkladı. • ZS Hybrid+ Luxury Cam Tavanlı: 2.655.000 TL (kampanyalı: 2.545.000 TL) • HS Luxury Benzin: 2.697.000 TL (kampanyalı: 2.612.000 TL) • HS Hybrid+ Luxury: 3.265.000 TL (kampanyalı: 3.165.000 TL) • MG7 Excellence: 3.300.000 TL • MG7 Excellence Red Edition: 3.450.000 TL",
-            "link": "https://nitter.net/teknotagstr/status/2084024880157110525#m",
-            "score": 44,
-            "score_reason": "ai_scored",
-            "source_name": "TeknoTags",
-            "topic_fingerprint": "000-000-000-000-000-000-000-000-165-265-300-450-545-612-655-697-acikladi-agustos-ayi-benzin-cam-edition-excellence-excellence-fiyat-hybrid-hybrid-kampanyali-kampanyali-kampanyali-listesini-luxury-luxury-luxury-mg7-mg7-red-tavanli"
-          },
-          {
-            "title": "🚗 Volvo, Ağustos ayı fiyat listesini açıkladı. • EX30 Single Motor Extended Range Ultra: 2.436.910 TL • EX30 Twin Motor Ultra: 3.619.314 TL • EX30 Cross Country Twin Motor Performance Ultra: 3.758.544 TL • EX40 Single Motor Extended Range Ultra: 4.317.300 TL • EX40 Black Edition Ultra: 4.456.800 TL • EC40 Single Motor Extended Range Ultra: 4.409.184 TL • V60 B4 Mild Hybrid Plus Dark: 5.958.559 TL • XC60 B5 AWD Mild Hybrid Plus: 7.292.014 TL • XC60 T8 AWD Plug-in Hybrid Plus: 7.965.934 TL • XC90 B5 AWD Mild Hybrid Plus: 11.123.054 TL • XC90 T8 AWD Plug-in Hybrid Plus: 11.796.974 TL",
-            "link": "https://nitter.net/teknotagstr/status/2084022564897087758#m",
-            "score": 41,
-            "score_reason": "ai_scored",
-            "source_name": "TeknoTags",
-            "topic_fingerprint": "014-054-123-184-292-300-314-317-409-436-456-544-559-619-758-796-800-910-934-958-965-974-acikladi-agustos-awd-awd-awd-awd-ayi-black-country-cross-dark-ec40-edition-ex30-ex30-ex30-ex40-ex40-extended-extended-extended-fiyat-hybrid-hybrid-hybrid-hybrid-hybrid-listesini-mild-mild-mild-motor-motor-motor-motor-motor-performance-plug-plug-plus-plus-plus-plus-plus-range-range-range-single-single-single-twin-twin-ultra-ultra-ultra-ultra-ultra-ultra-v60-volvo-xc60-xc60-xc90-xc90"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T00:54:27.757088+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-          "link": "https://www.log.com.tr/taksi-olarak-kullanilabilecek-araclarla-alakali-guncellemeye-gidildi/",
-          "published": "2026-08-03T00:53:22.899897+03:00",
-          "summary": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılan paylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi. Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı: “UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan,  Megane Sedan, Corolla 1.5 benzinli […] Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alakali-araclarla-gidildi-guncellemeye-kullanilabilecek-taksi",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 4
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Taksi esnafını ve sektörü yakından ilgilendiren yerel bir gelişme ancak genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılanpaylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi.Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı:“UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan, Megane Sedan, Corolla 1.5 benzinli otomobilleri satın alıp kullanabilecek. Yani Corolla da seçenekler arasına girmiş oldu. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Bilgi ile görüştüm. Gerek Tofaş’ın Fiat Egea üretimini sonlandırmasıyla gerekse son yıllardan artan maliyetlerden ötürü taksicilerin araç erişiminde zorlandığını belirterek bu kararın esnafı biraz olsun rahatlatacağını söyledi. Bilgi ayrıca, İstanbul’da taksilerin elektrikli olmasına yönelik çalışmalarının olduğunu da kaydetti.” Egea sonrası taksilerde yeni dönem 🚕 UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiler %50’nin…pic.twitter.com/henKcfqhjQ — Taylan Özgür Dil (@taylandil)July 30, 2026"
-        },
-        "post_text": "🚕 TAKSİ ARAÇLARINDA YAŞ SINIRI GÜNCELLENDİ\n\nEgea üretimi sonrası taksi araçlarında önemli bir değişiklik yapıldı. UKOME kararıyla yerli araçlarda ilk alım yaşı 0-5'e, ithal araçlarda ise 0-3'e yükseltildi.\n\nTüm araçlarda kullanım yaşı 9 olarak belirlendi. Taksi esnafımıza hayırlı olsun.\n\nSizce bu değişiklik sektörü nasıl etkiler?",
-        "post_text_length": 331,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T00:54:29.165022+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi",
-          "link": "https://www.log.com.tr/taksi-olarak-kullanilabilecek-araclarla-alakali-guncellemeye-gidildi/",
-          "published": "2026-08-03T00:53:22.899897+03:00",
-          "summary": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılan paylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi. Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı: “UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan,  Megane Sedan, Corolla 1.5 benzinli […] Taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/07/2026-07-30_17-34-09_BJCjx-660x371.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alakali-araclarla-gidildi-guncellemeye-kullanilabilecek-taksi",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 4
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Taksi esnafını ve sektörü yakından ilgilendiren yerel bir gelişme ancak genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Kısa süre önce üretimi sona eren Egea sonrasında taksi olarak kullanılabilecek araçlarla alakalı güncellemeye gidildi. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Dalcı tarafından bu konuda yapılanpaylaşımda, “Bugün yapılan UKOME toplantısında alınan karar ile: Yerlilik katkı oranı %50 den fazla olan araçlarda; (Fiat Egea Sedan, Renault Megane, Toyota Corolla) ilk alım yaşı 0-5 yaşa, Yerlilik katkı oranı %50 den az olan araçlarda ise; (Kia Cerato, Ford Focus, Honda Civic, Citroen C4x, vb.) ilk alım yaşı 0-3 yaşa çıkarılmıştır. Ayrıca tüm araçlarda kullanım yaşı 9 yaş olarak revize edilmiştir. Taksi esnafımıza hayırlı ve uğurlu olsun.” ifadelerine yer verildi.Gelişme hakkında otomobil gazetecisi Taylan Özgür Dil ise şunları aktardı:“UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiciler %50’nin üzerinde yerlilik oranını karşılayan; Egea Sedan, Megane Sedan, Corolla 1.5 benzinli otomobilleri satın alıp kullanabilecek. Yani Corolla da seçenekler arasına girmiş oldu. İstanbul Taksiciler Esnaf Odası Başkanı İsmet Bilgi ile görüştüm. Gerek Tofaş’ın Fiat Egea üretimini sonlandırmasıyla gerekse son yıllardan artan maliyetlerden ötürü taksicilerin araç erişiminde zorlandığını belirterek bu kararın esnafı biraz olsun rahatlatacağını söyledi. Bilgi ayrıca, İstanbul’da taksilerin elektrikli olmasına yönelik çalışmalarının olduğunu da kaydetti.” Egea sonrası taksilerde yeni dönem 🚕 UKOME toplantısında alınan kararla taksici esnafın kullanacağı “yerli” otomobillerde yaş aralığı 0-2’den 0-5’e uzatıldı. İthallerde ise “0 km” şartı esnetilerek 0-3 yaşa çıkartıldı. Kullanım yaşı ise 9 yaş oldu. Böylece taksiler %50’nin…pic.twitter.com/henKcfqhjQ — Taylan Özgür Dil (@taylandil)July 30, 2026",
-          "post_text_for_card": "🚕 TAKSİ ARAÇLARINDA YAŞ SINIRI GÜNCELLENDİ\n\nEgea üretimi sonrası taksi araçlarında önemli bir değişiklik yapıldı. UKOME kararıyla yerli araçlarda ilk alım yaşı 0-5'e, ithal araçlarda ise 0-3'e yükseltildi.\n\nTüm araçlarda kullanım yaşı 9 olarak belirlendi. Taksi esnafımıza hayırlı olsun.\n\nSizce bu değişiklik sektörü nasıl etkiler?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🚕 TAKSİ ARAÇLARINDA YAŞ SINIRI GÜNCELLENDİ\n\nEgea üretimi sonrası taksi araçlarında önemli bir değişiklik yapıldı. UKOME kararıyla yerli araçlarda ilk alım yaşı 0-5'e, ithal araçlarda ise 0-3'e yükseltildi.\n\nTüm araçlarda kullanım yaşı 9 olarak belirlendi. Taksi esnafımıza hayırlı olsun.\n\nSizce bu değişiklik sektörü nasıl etkiler?",
-        "image_path": "/tmp/otoxtra_img_tnuimb52.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tnuimb52.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T00:54:31.515584+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174533820916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1591686625696743",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T00:55:10.446242+03:00"
+      "updated_at": null
     }
   }
 }
