@@ -1,14 +1,32 @@
 {
-  "run_id": "2026-08-02-08:55",
-  "status": "error",
-  "started_at": "2026-08-02T08:55:19.614235+03:00",
-  "updated_at": "2026-08-02T08:55:53.909810+03:00",
+  "run_id": "2026-08-02-11:20",
+  "status": "completed",
+  "started_at": "2026-08-02T11:20:56.381170+03:00",
+  "updated_at": "2026-08-02T11:22:21.483024+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+            "link": "https://otomobilkolik.com/omoda-4-yapay-zeka-destekli-suv/",
+            "published": "2026-08-02T07:01:08+00:00",
+            "summary": "OMODA | JAECOO, yeni OMODA 4 modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber… OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "destekli-omoda-suv-yapay-zek"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +144,209 @@
           },
           "_metrics": {
             "found": 186,
-            "after_keyword": 132,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 130,
+            "after_time": 14,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 186,
-          "after_keyword": 132,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 130,
+          "after_time": 14,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-02T08:55:53.909810+03:00"
+      "error": null,
+      "updated_at": "2026-08-02T11:21:30.464008+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+          "link": "https://otomobilkolik.com/omoda-4-yapay-zeka-destekli-suv/",
+          "published": "2026-08-02T07:01:08+00:00",
+          "summary": "OMODA | JAECOO, yeni OMODA 4 modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber… OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "destekli-omoda-suv-yapay-zek",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 63,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yapay zekâ odaklı yeni bir model lansmanı olması teknoloji meraklılarının ilgisini çeker ancak marka yeni olduğu için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 63,
+        "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 14,
+          "benzersizlik": 12,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yapay zekâ odaklı yeni bir model lansmanı olması teknoloji meraklılarının ilgisini çeker ancak marka yeni olduğu için viral etkisi orta seviyede kalıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+            "score": 63,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 12,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-02T11:21:33.267288+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+          "link": "https://otomobilkolik.com/omoda-4-yapay-zeka-destekli-suv/",
+          "published": "2026-08-02T07:01:08+00:00",
+          "summary": "OMODA | JAECOO, yeni OMODA 4 modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber… OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "destekli-omoda-suv-yapay-zek",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 63,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yapay zekâ odaklı yeni bir model lansmanı olması teknoloji meraklılarının ilgisini çeker ancak marka yeni olduğu için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "OMODA | JAECOO, yeniOMODA 4modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber Mecha SUV” olarak konumlandırılan OMODA 4, teknoloji ve kişiselleştirme odaklı genç kullanıcıları hedefliyor. Model, ASEAN bölgesinde yerel olarak entegre edilmiş büyük dil modeli teknolojisine sahip ilk sağdan direksiyonlu seri üretim araçlardan biri olacak. OMODA 4’te sunulan Super AI Cockpit, ByteDance Seed büyük dil modeliyle çalışıyor. Sistem, kullanıcıyla kurduğu etkileşimi zaman içinde kişiselleştirebiliyor. Yapay zekâ destekli kokpitin temel özellikleri şöyle: Sistem; günlük ulaşım, eğlence, sosyal etkileşim ve yaşam tarzı senaryolarında kişiselleştirilmiş bir deneyim sunmayı amaçlıyor. OMODA 4, keskin tasarım çizgilerini akıllı etkileşim teknolojileriyle bir araya getiriyor. Markanın “Cyber Mecha” tasarım yaklaşımını taşıyan SUV’un teknik özellikleri, motor seçenekleri, menzili ve fiyatı henüz açıklanmadı. OMODA | JAECOO, modeli ilk aşamada Endonezya ve ASEAN pazarlarındaki büyüme planının önemli parçalarından biri olarak konumlandırıyor. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin."
+        },
+        "post_text": "🤖 OMODA 4 TANITILDI: YAPAY ZEKÂ DESTEKLİ YENİ SUV\n\nOMODA 4, Endonezya'da \"Cyber Mecha SUV\" olarak tanıtıldı. Genç ve teknoloji odaklı kullanıcıları hedefliyor.\n\nBölgesinde büyük dil modeli entegre ilk sağdan direksiyonlu araçlardan biri olacak. Super AI Cockpit, ByteDance Seed ile kişiselleştirilebilir bir deneyim sunuyor.\n\nSizce bu yapay zekâlı kokpit hayatımızı nasıl değiştirecek?",
+        "post_text_length": 385,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-02T11:21:34.816105+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV",
+          "link": "https://otomobilkolik.com/omoda-4-yapay-zeka-destekli-suv/",
+          "published": "2026-08-02T07:01:08+00:00",
+          "summary": "OMODA | JAECOO, yeni OMODA 4 modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber… OMODA 4 Tanıtıldı: Yapay Zekâ Destekli Yeni SUV yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "duckduckgo",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "destekli-omoda-suv-yapay-zek",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 63,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yapay zekâ odaklı yeni bir model lansmanı olması teknoloji meraklılarının ilgisini çeker ancak marka yeni olduğu için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "OMODA | JAECOO, yeniOMODA 4modelini Endonezya’nın başkenti Cakarta’da düzenlenen OMODA SUPER AI NIGHT etkinliğinde tanıttı. “Cyber Mecha SUV” olarak konumlandırılan OMODA 4, teknoloji ve kişiselleştirme odaklı genç kullanıcıları hedefliyor. Model, ASEAN bölgesinde yerel olarak entegre edilmiş büyük dil modeli teknolojisine sahip ilk sağdan direksiyonlu seri üretim araçlardan biri olacak. OMODA 4’te sunulan Super AI Cockpit, ByteDance Seed büyük dil modeliyle çalışıyor. Sistem, kullanıcıyla kurduğu etkileşimi zaman içinde kişiselleştirebiliyor. Yapay zekâ destekli kokpitin temel özellikleri şöyle: Sistem; günlük ulaşım, eğlence, sosyal etkileşim ve yaşam tarzı senaryolarında kişiselleştirilmiş bir deneyim sunmayı amaçlıyor. OMODA 4, keskin tasarım çizgilerini akıllı etkileşim teknolojileriyle bir araya getiriyor. Markanın “Cyber Mecha” tasarım yaklaşımını taşıyan SUV’un teknik özellikleri, motor seçenekleri, menzili ve fiyatı henüz açıklanmadı. OMODA | JAECOO, modeli ilk aşamada Endonezya ve ASEAN pazarlarındaki büyüme planının önemli parçalarından biri olarak konumlandırıyor. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin.",
+          "post_text_for_card": "🤖 OMODA 4 TANITILDI: YAPAY ZEKÂ DESTEKLİ YENİ SUV\n\nOMODA 4, Endonezya'da \"Cyber Mecha SUV\" olarak tanıtıldı. Genç ve teknoloji odaklı kullanıcıları hedefliyor.\n\nBölgesinde büyük dil modeli entegre ilk sağdan direksiyonlu araçlardan biri olacak. Super AI Cockpit, ByteDance Seed ile kişiselleştirilebilir bir deneyim sunuyor.\n\nSizce bu yapay zekâlı kokpit hayatımızı nasıl değiştirecek?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "🤖 OMODA 4 TANITILDI: YAPAY ZEKÂ DESTEKLİ YENİ SUV\n\nOMODA 4, Endonezya'da \"Cyber Mecha SUV\" olarak tanıtıldı. Genç ve teknoloji odaklı kullanıcıları hedefliyor.\n\nBölgesinde büyük dil modeli entegre ilk sağdan direksiyonlu araçlardan biri olacak. Super AI Cockpit, ByteDance Seed ile kişiselleştirilebilir bir deneyim sunuyor.\n\nSizce bu yapay zekâlı kokpit hayatımızı nasıl değiştirecek?",
+        "image_path": "/tmp/otoxtra_img_grfdndmb.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_grfdndmb.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-02T11:21:39.453929+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174464232916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17899799901518050",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1486838609914029",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-02T11:22:21.483024+03:00"
     }
   }
 }
