@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-08-03-23:25",
-  "status": "completed",
-  "started_at": "2026-08-03T23:25:59.801219+03:00",
-  "updated_at": "2026-08-03T23:27:54.667720+03:00",
+  "run_id": "2026-08-04-01:07",
+  "status": "error",
+  "started_at": "2026-08-04T01:07:16.561036+03:00",
+  "updated_at": "2026-08-04T01:07:51.379078+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-            "link": "https://nitter.net/murattosunMSE/status/2084353619592163444#m",
-            "published": "2026-08-03T19:00:02+00:00",
-            "summary": "Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-050-650-acaba-arabanin-artisi-cikmis-degil-fiyata-fiyati-murattosunmse-otv-vergisiz"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,10 +59,10 @@
             "attempts": 1
           },
           "TeknoTags": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/teknotagstr/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Emre Ozpeynirci": {
             "status": "ok",
@@ -138,213 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 5,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 175,
-            "after_keyword": 108,
+            "found": 184,
+            "after_keyword": 116,
             "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 175,
-          "after_keyword": 108,
+          "found": 184,
+          "after_keyword": 116,
           "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-03T23:26:56.938757+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-04T01:07:51.379078+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "link": "https://nitter.net/murattosunMSE/status/2084353619592163444#m",
-          "published": "2026-08-03T19:00:02+00:00",
-          "summary": "Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-050-650-acaba-arabanin-artisi-cikmis-degil-fiyata-fiyati-murattosunmse-otv-vergisiz",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil fiyatları ve vergi politikaları sosyal medyada her zaman yüksek etkileşim ve tartışma yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 71,
-        "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 10,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'deki otomobil fiyatları ve vergi politikaları sosyal medyada her zaman yüksek etkileşim ve tartışma yaratır.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-            "score": 71,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 10,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T23:27:06.141549+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "link": "https://nitter.net/murattosunMSE/status/2084353619592163444#m",
-          "published": "2026-08-03T19:00:02+00:00",
-          "summary": "Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-050-650-acaba-arabanin-artisi-cikmis-degil-fiyata-fiyati-murattosunmse-otv-vergisiz",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil fiyatları ve vergi politikaları sosyal medyada her zaman yüksek etkileşim ve tartışma yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "🚗 VERGİSİZ FİYATLAR YÜKSELDİ!\n\nOtomotiv sektöründe vergisiz fiyatlara dikkat çekildi. Bir aracın vergisiz fiyatı 1.650.000 TL'den 2.050.000 TL'ye çıkmış.\n\nBu durumun sadece ÖTV artışıyla açıklanamayacağı belirtiliyor. Sektördeki gelişmeler merakla bekleniyor.\n\nSizce bu artışların sebebi ne olabilir?",
-        "post_text_length": 300,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T23:27:07.781697+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "R to @murattosunMSE: Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "link": "https://nitter.net/murattosunMSE/status/2084353619592163444#m",
-          "published": "2026-08-03T19:00:02+00:00",
-          "summary": "Bu sadece bir ÖTV artışı değil. Arabanın vergisiz fiyatı 1.650.000'den 2.050.00 TL gibi bir fiyata çıkmış. Ne oldu acaba?",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "duckduckgo",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-050-650-acaba-arabanin-artisi-cikmis-degil-fiyata-fiyati-murattosunmse-otv-vergisiz",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomobil fiyatları ve vergi politikaları sosyal medyada her zaman yüksek etkileşim ve tartışma yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "🚗 VERGİSİZ FİYATLAR YÜKSELDİ!\n\nOtomotiv sektöründe vergisiz fiyatlara dikkat çekildi. Bir aracın vergisiz fiyatı 1.650.000 TL'den 2.050.000 TL'ye çıkmış.\n\nBu durumun sadece ÖTV artışıyla açıklanamayacağı belirtiliyor. Sektördeki gelişmeler merakla bekleniyor.\n\nSizce bu artışların sebebi ne olabilir?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🚗 VERGİSİZ FİYATLAR YÜKSELDİ!\n\nOtomotiv sektöründe vergisiz fiyatlara dikkat çekildi. Bir aracın vergisiz fiyatı 1.650.000 TL'den 2.050.000 TL'ye çıkmış.\n\nBu durumun sadece ÖTV artışıyla açıklanamayacağı belirtiliyor. Sektördeki gelişmeler merakla bekleniyor.\n\nSizce bu artışların sebebi ne olabilir?",
-        "image_path": "/tmp/otoxtra_img_s_x6u7uw.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_s_x6u7uw.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T23:27:11.950293+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174637122916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18091618382092991",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1722968818913514",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-03T23:27:54.667720+03:00"
+      "updated_at": null
     }
   }
 }
