@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-03-05:54",
+  "run_id": "2026-08-03-09:20",
   "status": "error",
-  "started_at": "2026-08-03T05:54:53.932012+03:00",
-  "updated_at": "2026-08-03T05:55:27.509632+03:00",
+  "started_at": "2026-08-03T09:20:34.628467+03:00",
+  "updated_at": "2026-08-03T09:21:13.536773+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Bu hafta 15 yıldır süren bir dostluk hikayesini yazdım... https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_03082026-2/#google_vignette",
+            "link": "https://nitter.net/ahmetcelik2016/status/2084133483706802359#m",
+            "published": "2026-08-03T04:25:18+00:00",
+            "summary": "Bu hafta 15 yıldır süren bir dostluk hikayesini yazdım... online.fliphtml5.com/pdelr/O…",
+            "image_url": "https://pbs.twimg.com/media/HOxUUvFXgAAZ6AY.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HOxUUvFXgAAZ6AY.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HOxUUvFXgAAZ6AY.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "03082026-com-dostluk-fliphtml5-google-hafta-hikayesini-https-online-otomobilgazetesi-pdelr-suren-vignette-yazdim-yildir"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -120,36 +140,36 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 2,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 182,
-            "after_keyword": 123,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 184,
+            "after_keyword": 124,
+            "after_time": 11,
+            "after_posted": 2,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 182,
-          "after_keyword": 123,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 184,
+          "after_keyword": 124,
+          "after_time": 11,
+          "after_posted": 2,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-03T05:55:27.509632+03:00"
+      "error": null,
+      "updated_at": "2026-08-03T09:21:11.145662+03:00"
     },
     "score": {
-      "status": "waiting",
+      "status": "error",
       "output": null,
-      "error": null,
-      "updated_at": null
+      "error": "No article above threshold (threshold=30, top_score=23)",
+      "updated_at": "2026-08-03T09:21:13.536773+03:00"
     },
     "write": {
       "status": "waiting",
