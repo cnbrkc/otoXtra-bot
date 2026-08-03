@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "title": "İtalyan otomotiv devi IVECO, Tata’ya mı geçiyor?",
-      "url": "https://www.otoajanda.com/italyan-otomotiv-devi-ivecotataya-mi-geciyor/",
-      "topic_fingerprint": "devi-geciyor-iveco-otomotiv-talyan-tata",
-      "source": "OtoAjanda",
-      "score": 86,
-      "trend_count": 1,
-      "posted_at": "2026-07-04T18:06:51.845587+03:00",
-      "fb_post_id": "678053852057751_122171189624916499",
-      "image_source": "single_image",
-      "image_count": 1
-    },
-    {
       "title": "Stellantis’in yeni planında Türkiye merkez üs olacak, FIAT’ın liderliği desteklenecek",
       "url": "https://www.otoajanda.com/stellantisin-yeni-planinda-turkiye-merkez-us-olacak-fiatin-liderligi-desteklenecek/",
       "topic_fingerprint": "desteklenecek-fiat-liderligi-merkez-olacak-planinda-stellantis-turkiye",
@@ -2038,7 +2026,7 @@
     "2026-08-02": 8,
     "2026-08-03": 3
   },
-  "last_check_time": "2026-08-03T16:44:43.698746+03:00",
+  "last_check_time": "2026-08-03T19:23:21.621864+03:00",
   "stats": {
     "daily_actions": {
       "2026-07-04": 5,
@@ -2071,7 +2059,7 @@
       "2026-07-31": 10,
       "2026-08-01": 12,
       "2026-08-02": 13,
-      "2026-08-03": 7
+      "2026-08-03": 8
     },
     "weekly": {
       "2026-W16": {
@@ -2285,10 +2273,12 @@
         "report_sent_at": "2026-08-03T00:53:22.487921+03:00"
       },
       "2026-W32": {
-        "actions": 7,
+        "actions": 8,
         "shares": 3,
-        "error_total": 0,
-        "errors": {},
+        "error_total": 1,
+        "errors": {
+          "SCORER_FAILED: Scoring parse failed (ai_parse_failed) (threshold=40, top_score=11)": 1
+        },
         "skip_total": 4,
         "skips": {
           "no_article_found": 3,
