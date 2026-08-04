@@ -2037,7 +2037,7 @@
     "2026-08-02": 8,
     "2026-08-03": 5
   },
-  "last_check_time": "2026-08-04T01:07:51.923229+03:00",
+  "last_check_time": "2026-08-04T03:07:39.334517+03:00",
   "stats": {
     "daily_actions": {
       "2026-07-05": 5,
@@ -2070,7 +2070,7 @@
       "2026-08-01": 12,
       "2026-08-02": 13,
       "2026-08-03": 10,
-      "2026-08-04": 1
+      "2026-08-04": 2
     },
     "weekly": {
       "2026-W16": {
@@ -2284,15 +2284,15 @@
         "report_sent_at": "2026-08-03T00:53:22.487921+03:00"
       },
       "2026-W32": {
-        "actions": 11,
+        "actions": 12,
         "shares": 5,
         "error_total": 1,
         "errors": {
           "SCORER_FAILED: Scoring parse failed (ai_parse_failed) (threshold=40, top_score=11)": 1
         },
-        "skip_total": 5,
+        "skip_total": 6,
         "skips": {
-          "no_article_found": 4,
+          "no_article_found": 5,
           "no_article_above_threshold": 1
         },
         "report_sent": false,
