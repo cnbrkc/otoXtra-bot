@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-05-05:13",
-  "status": "error",
-  "started_at": "2026-08-05T05:13:41.148384+03:00",
-  "updated_at": "2026-08-05T05:14:09.355142+03:00",
+  "run_id": "2026-08-05-08:44",
+  "status": "completed",
+  "started_at": "2026-08-05T08:44:06.496637+03:00",
+  "updated_at": "2026-08-05T08:46:08.263180+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Chery’den 3 rekor birden",
+            "link": "https://otopodyum.com.tr/firmalar-dernekler/cheryden-3-rekor-birden-5196h",
+            "published": "2026-08-05T04:29:05+00:00",
+            "summary": "Aylık ihracatta ilk kez 200 bin araç sınırını geçen Chery Grubu, AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5501.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "birden-chery-rekor"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -120,54 +140,232 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 4,
+            "count": 6,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 184,
-            "after_keyword": 124,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 186,
+            "after_keyword": 125,
+            "after_time": 10,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 184,
-          "after_keyword": 124,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 186,
+          "after_keyword": 125,
+          "after_time": 10,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-05T05:14:09.355142+03:00"
+      "error": null,
+      "updated_at": "2026-08-05T08:44:42.382438+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Chery’den 3 rekor birden",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/cheryden-3-rekor-birden-5196h",
+          "published": "2026-08-05T04:29:05+00:00",
+          "summary": "Aylık ihracatta ilk kez 200 bin araç sınırını geçen Chery Grubu, AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5501.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "birden-chery-rekor",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Satış rekorları ve robot teslimatları gibi dikkat çekici endüstriyel başarılar barındırıyor, sosyal medyada ve ekonomi çevrelerinde paylaşılmaya uygun.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 71,
+        "title": "Chery’den 3 rekor birden",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 14,
+          "gundem_gucu": 13,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Satış rekorları ve robot teslimatları gibi dikkat çekici endüstriyel başarılar barındırıyor, sosyal medyada ve ekonomi çevrelerinde paylaşılmaya uygun.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Chery’den 3 rekor birden",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 14,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-05T08:44:45.053710+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Chery’den 3 rekor birden",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/cheryden-3-rekor-birden-5196h",
+          "published": "2026-08-05T04:29:05+00:00",
+          "summary": "Aylık ihracatta ilk kez 200 bin araç sınırını geçen Chery Grubu, AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5501.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "birden-chery-rekor",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Satış rekorları ve robot teslimatları gibi dikkat çekici endüstriyel başarılar barındırıyor, sosyal medyada ve ekonomi çevrelerinde paylaşılmaya uygun.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Çinli otomotiv devi Chery Grubu, temmuz ayında küresel büyüme yolculuğunda üç önemli kilometre taşını geride bıraktı. Dünya genelindeki kümülatif araç satışı 20 milyon adedi aşan şirket, aylık ihracatta ilk kez 200 bin araç sınırını geçerken AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı. Temmuz ayında 276 bin 820 araç satan Chery Grubu, satışlarını geçen yılın aynı dönemine göre yüzde 23,3 artırdı. 7 milyonu Çin dışındaki pazarlardan! Teknoloji, kalite ve küresel gelişime yönelik uzun vadeli yatırımlarıyla büyümesini sürdüren Chery Grubu, temmuz ayında satış, ihracat ve akıllı teknoloji alanlarında yeni rekorlara imza attı. Chery Grubu’nun temmuz ayı satışları, geçen yılın aynı dönemine göre yüzde 23,3 artarak 276 bin 820 adede ulaştı. Şirketin aylık ihracatı ise yüzde 70,1 artışla 202 bin 533 adet olarak gerçekleşti. Böylece Chery, tek bir ayda 200 bin adedin üzerinde ihracat gerçekleştiren ilk Çinli otomotiv üreticisi olurken, Çin’in otomobil ihracatına art arda beşinci ayda da liderlik etti. Ocak-temmuz dönemindeki toplam satışlarını 1 milyon 634 bin 353 adede yükselten Chery Grubu, aynı dönemde 1,14 milyon adedin üzerinde araç ihraç etti. Bugün 130’dan fazla ülke ve bölgede faaliyet gösteren şirket, yaklaşık 7 milyonu Çin dışındaki pazarlarda olmak üzere dünya genelinde 20,16 milyondan fazla kullanıcıya ulaştı. Chery kullanıcılarının yaklaşık üçte birinin Çin dışındaki pazarlarda bulunması, markanın küresel aileler nezdinde kazandığı güveni ve uluslararası pazarlardaki güçlü gelişimini ortaya koyuyor. Türkiye Chery’nin küresel büyümesine katkısını artırıyor! Türkiye, Chery'nin Avrupa bölgesindeki büyüme stratejisinde önemli pazarlardan biri olmayı sürdürürken, genişleyen bayi ağı, satış sonrası hizmet altyapısı ve büyüyen kullanıcı topluluğuyla markanın küresel gelişimine katkı sağlamaya devam ediyor. Chery’nin stratejik öneme sahip pazarlarından biri olan Türkiye, markanın küresel büyüme yolculuğuna katkısını artırmaya devam ediyor. Sürdürülebilir müşteri talebi, genişleyen yetkili satıcı ve satış sonrası hizmet ağı ile büyüyen Chery kullanıcı topluluğu, markanın Türkiye’deki güçlü gelişimini destekliyor. Chery Türkiye, ürün satışının ötesinde kapsamlı satış sonrası hizmetleri, ülke genelindeki müşteri deneyimi uygulamaları ve aile odaklı marka etkinlikleriyle kullanıcılarına uzun vadeli değer sunmayı hedefliyor. Chery Family Care ve WCWL (With Chery With Love) gibi programlar, markanın müşterilerini araç sahipliği sürecinin her aşamasında destekleme ve ailelerle kurduğu duygusal bağı güçlendirme yaklaşımını yansıtıyor. Chery Türkiye, önümüzdeki dönemde de müşteri deneyimi, hizmet kalitesi ve yerelleştirilmiş marka iletişimine yatırım yaparak Chery’nin küresel gelişim stratejisindeki rolünü daha da güçlendirmeyi amaçlıyor. Chery 20 milyon araçlık küresel satışa ulaştı! Chery, 25 Temmuz tarihinde dünya genelindeki kümülatif araç satışlarında 20 milyon adet sınırını aşarak 29 yıllık tarihinde önemli bir kilometre taşına ulaştı. Bu başarı, yalnızca üretim ve satış hacmine ilişkin bir gösterge olmanın ötesinde, Chery’nin bağımsız araştırma-geliştirme, ürün kalitesi ve küresel büyüme alanlarında yürüttüğü uzun vadeli çalışmaların bir sonucu olarak öne çıkıyor. Çin’in ilk bağımsız otomotiv markalarından biri olarak faaliyetlerine başlayan Chery, bugün 130’dan fazla ülke ve bölgede müşterilerine ulaşıyor. Şirket, sürekli inovasyon, müşteri güveni ve yerel pazarlara yönelik uzun vadeli yatırımlarıyla uluslararası varlığını güçlendirmeye devam ediyor. 20 milyon adetlik satış başarısı, Chery’nin yalnızca araç ihraç eden bir üreticiden, faaliyet gösterdiği pazarlarda ürün, hizmet ve yerel etkileşim yoluyla uzun vadeli değer oluşturan küresel bir markaya dönüşümünü de ortaya koyuyor. AiMOGA robotlarının küresel teslimatı 2 bin adedi aştı! Chery, otomotiv teknolojilerinin yanı sıra yapay zekâ ve robotik alanındaki çalışmalarını da AiMOGA çatısı altında hızlandırıyor. AiMOGA robotlarının kümülatif küresel teslimatı 30 Temmuz itibarıyla 2 bin adedi aşarken, şirketin ürün ve hizmetleri 60’tan fazla ülke ve bölgede kullanılmaya başlandı. AiMOGA robotları, yalnızca bir teknoloji gösterimi olmanın ötesine geçerek müşteri karşılama, akıllı showroom deneyimleri ve kamusal hizmetler gibi gerçek ticari kullanım alanlarında görev yapıyor. Robotlar, Çin dışındaki pazarlarda düzenlenen Chery etkinliklerinde ve müşteri buluşmalarında da kullanılarak ailelere daha etkileşimli deneyimler sunuyor ve markanın geleceğin akıllı mobilitesine yönelik vizyonunu sergiliyor. Chery Türkiye de showroom etkinlikleri ve AiMOGA gibi yapay zekâ destekli teknolojiler aracılığıyla markanın küresel akıllı mobilite yaklaşımını Türkiye’deki kullanıcılarla buluşturmayı sürdürüyor. AiMOGA’nın ulaştığı teslimat rakamı, Chery’nin yalnızca bir otomotiv üreticisi olmaktan çıkarak yapay zekâ, robotik ve akıllı mobilite çözümlerini kapsayan küresel bir teknoloji ekosistemine dönüşme hedefini destekliyor. Bu gelişme, Chery'nin..."
+        },
+        "post_text": "🚀 CHERY'DEN TEMMUZ AYINDA 3 BÜYÜK REKOR\n\nChery, temmuz ayında küresel satışta 20 milyon adedi geçti. Aylık ihracatta ilk kez 200 bin aracı aşan marka, AiMOGA robot teslimatlarını da 2 binin üzerine çıkardı.\n\nSatışlarını %23,3 artırarak 276.820 adede ulaştı. İhracat ise %70,1 artışla 202.533 adet oldu.\n\nSizce Chery'nin başarısının sırrı ne?",
+        "post_text_length": 341,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-05T08:44:47.188238+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Chery’den 3 rekor birden",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/cheryden-3-rekor-birden-5196h",
+          "published": "2026-08-05T04:29:05+00:00",
+          "summary": "Aylık ihracatta ilk kez 200 bin araç sınırını geçen Chery Grubu, AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5501.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5501.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "birden-chery-rekor",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Satış rekorları ve robot teslimatları gibi dikkat çekici endüstriyel başarılar barındırıyor, sosyal medyada ve ekonomi çevrelerinde paylaşılmaya uygun.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Çinli otomotiv devi Chery Grubu, temmuz ayında küresel büyüme yolculuğunda üç önemli kilometre taşını geride bıraktı. Dünya genelindeki kümülatif araç satışı 20 milyon adedi aşan şirket, aylık ihracatta ilk kez 200 bin araç sınırını geçerken AiMOGA robotlarının küresel teslimat sayısını da 2 bin adedin üzerine çıkardı. Temmuz ayında 276 bin 820 araç satan Chery Grubu, satışlarını geçen yılın aynı dönemine göre yüzde 23,3 artırdı. 7 milyonu Çin dışındaki pazarlardan! Teknoloji, kalite ve küresel gelişime yönelik uzun vadeli yatırımlarıyla büyümesini sürdüren Chery Grubu, temmuz ayında satış, ihracat ve akıllı teknoloji alanlarında yeni rekorlara imza attı. Chery Grubu’nun temmuz ayı satışları, geçen yılın aynı dönemine göre yüzde 23,3 artarak 276 bin 820 adede ulaştı. Şirketin aylık ihracatı ise yüzde 70,1 artışla 202 bin 533 adet olarak gerçekleşti. Böylece Chery, tek bir ayda 200 bin adedin üzerinde ihracat gerçekleştiren ilk Çinli otomotiv üreticisi olurken, Çin’in otomobil ihracatına art arda beşinci ayda da liderlik etti. Ocak-temmuz dönemindeki toplam satışlarını 1 milyon 634 bin 353 adede yükselten Chery Grubu, aynı dönemde 1,14 milyon adedin üzerinde araç ihraç etti. Bugün 130’dan fazla ülke ve bölgede faaliyet gösteren şirket, yaklaşık 7 milyonu Çin dışındaki pazarlarda olmak üzere dünya genelinde 20,16 milyondan fazla kullanıcıya ulaştı. Chery kullanıcılarının yaklaşık üçte birinin Çin dışındaki pazarlarda bulunması, markanın küresel aileler nezdinde kazandığı güveni ve uluslararası pazarlardaki güçlü gelişimini ortaya koyuyor. Türkiye Chery’nin küresel büyümesine katkısını artırıyor! Türkiye, Chery'nin Avrupa bölgesindeki büyüme stratejisinde önemli pazarlardan biri olmayı sürdürürken, genişleyen bayi ağı, satış sonrası hizmet altyapısı ve büyüyen kullanıcı topluluğuyla markanın küresel gelişimine katkı sağlamaya devam ediyor. Chery’nin stratejik öneme sahip pazarlarından biri olan Türkiye, markanın küresel büyüme yolculuğuna katkısını artırmaya devam ediyor. Sürdürülebilir müşteri talebi, genişleyen yetkili satıcı ve satış sonrası hizmet ağı ile büyüyen Chery kullanıcı topluluğu, markanın Türkiye’deki güçlü gelişimini destekliyor. Chery Türkiye, ürün satışının ötesinde kapsamlı satış sonrası hizmetleri, ülke genelindeki müşteri deneyimi uygulamaları ve aile odaklı marka etkinlikleriyle kullanıcılarına uzun vadeli değer sunmayı hedefliyor. Chery Family Care ve WCWL (With Chery With Love) gibi programlar, markanın müşterilerini araç sahipliği sürecinin her aşamasında destekleme ve ailelerle kurduğu duygusal bağı güçlendirme yaklaşımını yansıtıyor. Chery Türkiye, önümüzdeki dönemde de müşteri deneyimi, hizmet kalitesi ve yerelleştirilmiş marka iletişimine yatırım yaparak Chery’nin küresel gelişim stratejisindeki rolünü daha da güçlendirmeyi amaçlıyor. Chery 20 milyon araçlık küresel satışa ulaştı! Chery, 25 Temmuz tarihinde dünya genelindeki kümülatif araç satışlarında 20 milyon adet sınırını aşarak 29 yıllık tarihinde önemli bir kilometre taşına ulaştı. Bu başarı, yalnızca üretim ve satış hacmine ilişkin bir gösterge olmanın ötesinde, Chery’nin bağımsız araştırma-geliştirme, ürün kalitesi ve küresel büyüme alanlarında yürüttüğü uzun vadeli çalışmaların bir sonucu olarak öne çıkıyor. Çin’in ilk bağımsız otomotiv markalarından biri olarak faaliyetlerine başlayan Chery, bugün 130’dan fazla ülke ve bölgede müşterilerine ulaşıyor. Şirket, sürekli inovasyon, müşteri güveni ve yerel pazarlara yönelik uzun vadeli yatırımlarıyla uluslararası varlığını güçlendirmeye devam ediyor. 20 milyon adetlik satış başarısı, Chery’nin yalnızca araç ihraç eden bir üreticiden, faaliyet gösterdiği pazarlarda ürün, hizmet ve yerel etkileşim yoluyla uzun vadeli değer oluşturan küresel bir markaya dönüşümünü de ortaya koyuyor. AiMOGA robotlarının küresel teslimatı 2 bin adedi aştı! Chery, otomotiv teknolojilerinin yanı sıra yapay zekâ ve robotik alanındaki çalışmalarını da AiMOGA çatısı altında hızlandırıyor. AiMOGA robotlarının kümülatif küresel teslimatı 30 Temmuz itibarıyla 2 bin adedi aşarken, şirketin ürün ve hizmetleri 60’tan fazla ülke ve bölgede kullanılmaya başlandı. AiMOGA robotları, yalnızca bir teknoloji gösterimi olmanın ötesine geçerek müşteri karşılama, akıllı showroom deneyimleri ve kamusal hizmetler gibi gerçek ticari kullanım alanlarında görev yapıyor. Robotlar, Çin dışındaki pazarlarda düzenlenen Chery etkinliklerinde ve müşteri buluşmalarında da kullanılarak ailelere daha etkileşimli deneyimler sunuyor ve markanın geleceğin akıllı mobilitesine yönelik vizyonunu sergiliyor. Chery Türkiye de showroom etkinlikleri ve AiMOGA gibi yapay zekâ destekli teknolojiler aracılığıyla markanın küresel akıllı mobilite yaklaşımını Türkiye’deki kullanıcılarla buluşturmayı sürdürüyor. AiMOGA’nın ulaştığı teslimat rakamı, Chery’nin yalnızca bir otomotiv üreticisi olmaktan çıkarak yapay zekâ, robotik ve akıllı mobilite çözümlerini kapsayan küresel bir teknoloji ekosistemine dönüşme hedefini destekliyor. Bu gelişme, Chery'nin...",
+          "post_text_for_card": "🚀 CHERY'DEN TEMMUZ AYINDA 3 BÜYÜK REKOR\n\nChery, temmuz ayında küresel satışta 20 milyon adedi geçti. Aylık ihracatta ilk kez 200 bin aracı aşan marka, AiMOGA robot teslimatlarını da 2 binin üzerine çıkardı.\n\nSatışlarını %23,3 artırarak 276.820 adede ulaştı. İhracat ise %70,1 artışla 202.533 adet oldu.\n\nSizce Chery'nin başarısının sırrı ne?",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5501.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/08/05/chery-gorsel-3.jpeg",
+            "https://cdn.otopodyum.com.tr/news/5464.jpg",
+            "https://cdn.otopodyum.com.tr/news/5465.jpg"
+          ]
+        },
+        "post_text": "🚀 CHERY'DEN TEMMUZ AYINDA 3 BÜYÜK REKOR\n\nChery, temmuz ayında küresel satışta 20 milyon adedi geçti. Aylık ihracatta ilk kez 200 bin aracı aşan marka, AiMOGA robot teslimatlarını da 2 binin üzerine çıkardı.\n\nSatışlarını %23,3 artırarak 276.820 adede ulaştı. İhracat ise %70,1 artışla 202.533 adet oldu.\n\nSizce Chery'nin başarısının sırrı ne?",
+        "image_path": "/tmp/otoxtra_img_h98ubtly.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_h98ubtly.jpg",
+          "/tmp/otoxtra_img_ti_msgta.jpg",
+          "/tmp/otoxtra_img_bx00rl18.jpg",
+          "/tmp/otoxtra_img_mf6dqp1o.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-05T08:44:55.834878+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174818754916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "publish_failed"
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1613897840747604",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-05T08:46:08.263180+03:00"
     }
   }
 }
