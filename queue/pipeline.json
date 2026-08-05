@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-06-01:11",
-  "status": "completed",
-  "started_at": "2026-08-06T01:11:15.477799+03:00",
-  "updated_at": "2026-08-06T01:12:37.257147+03:00",
+  "run_id": "2026-08-06-02:58",
+  "status": "error",
+  "started_at": "2026-08-06T02:58:30.472272+03:00",
+  "updated_at": "2026-08-06T02:59:01.251756+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-            "link": "https://www.log.com.tr/toyota-yeni-hibrit-arac-bataryalarinin-uretimine-2027de-baslayacak/",
-            "published": "2026-08-06T01:11:15.571014+03:00",
-            "summary": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağını duyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir. Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2027-arac-baslayacak-bataryalarinin-hibrit-toyota-uretimine"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,214 +127,47 @@
           "_metrics": {
             "found": 189,
             "after_keyword": 131,
-            "after_time": 11,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 189,
           "after_keyword": 131,
-          "after_time": 11,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-06T01:11:52.049604+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-06T02:59:01.251756+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-          "link": "https://www.log.com.tr/toyota-yeni-hibrit-arac-bataryalarinin-uretimine-2027de-baslayacak/",
-          "published": "2026-08-06T01:11:15.571014+03:00",
-          "summary": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağını duyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir. Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2027-arac-baslayacak-bataryalarinin-hibrit-toyota-uretimine",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör devi için önemli bir stratejik adım ancak 2027 yılı çok uzak bir tarih olduğu için günlük sosyal medya gündeminde sınırlı etki yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 54,
-        "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 10,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Sektör devi için önemli bir stratejik adım ancak 2027 yılı çok uzak bir tarih olduğu için günlük sosyal medya gündeminde sınırlı etki yaratır.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-            "score": 54,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 10,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-06T01:11:54.077837+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-          "link": "https://www.log.com.tr/toyota-yeni-hibrit-arac-bataryalarinin-uretimine-2027de-baslayacak/",
-          "published": "2026-08-06T01:11:15.571014+03:00",
-          "summary": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağını duyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir. Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2027-arac-baslayacak-bataryalarinin-hibrit-toyota-uretimine",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör devi için önemli bir stratejik adım ancak 2027 yılı çok uzak bir tarih olduğu için günlük sosyal medya gündeminde sınırlı etki yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağınıduyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir."
-        },
-        "post_text": "🔋 TOYOTA'DAN YENİ HİBRİT BATARYA ATAĞI GELİYOR!\n\nJapon devi Toyota, 2027'de yeni nesil hibrit batarya üretimine başlıyor. Bu bataryalar, daha iyi performans ve daha uygun maliyet sunacak.\n\nİlk aşamada yıllık 600 bin hibrit araca yetecek kapasiteyle yola çıkılacak. Yakıt tüketiminde büyük düşüş bekleniyor.\n\nSizce bu gelişme hibrit araç pazarını nasıl etkiler?",
-        "post_text_length": 360,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-06T01:11:55.817858+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak",
-          "link": "https://www.log.com.tr/toyota-yeni-hibrit-arac-bataryalarinin-uretimine-2027de-baslayacak/",
-          "published": "2026-08-06T01:11:15.571014+03:00",
-          "summary": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağını duyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir. Toyota, yeni hibrit araç bataryalarının üretimine 2027’de başlayacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-05_09-48-27_28OrF-660x371.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2027-arac-baslayacak-bataryalarinin-hibrit-toyota-uretimine",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör devi için önemli bir stratejik adım ancak 2027 yılı çok uzak bir tarih olduğu için günlük sosyal medya gündeminde sınırlı etki yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Japon otomobil devi Toyota, yeni nesil hibrit araç bataryalarının üretimine 2027 yılında başlayacağınıduyurdu. Yeni bataryaların gelişmiş performans ve maliyet açısından yüksek rekabet gücü sunacağını belirten üretici, Japonya merkezli yıllık üretim kapasitesinin ilk aşamada 600 bin hibrit araca yeni nesil batarya tedarik etmeye yetecek düzeyde olacağını açıkladı. Uzun yıllardır hibrit otomobiller üreten şirket, henüz teknik olarak detaylandırılmayan yeni bataryalarla verimliliği artırarak yakıt tüketimini kayda değer ölçüde düşürebilir.",
-          "post_text_for_card": "🔋 TOYOTA'DAN YENİ HİBRİT BATARYA ATAĞI GELİYOR!\n\nJapon devi Toyota, 2027'de yeni nesil hibrit batarya üretimine başlıyor. Bu bataryalar, daha iyi performans ve daha uygun maliyet sunacak.\n\nİlk aşamada yıllık 600 bin hibrit araca yetecek kapasiteyle yola çıkılacak. Yakıt tüketiminde büyük düşüş bekleniyor.\n\nSizce bu gelişme hibrit araç pazarını nasıl etkiler?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🔋 TOYOTA'DAN YENİ HİBRİT BATARYA ATAĞI GELİYOR!\n\nJapon devi Toyota, 2027'de yeni nesil hibrit batarya üretimine başlıyor. Bu bataryalar, daha iyi performans ve daha uygun maliyet sunacak.\n\nİlk aşamada yıllık 600 bin hibrit araca yetecek kapasiteyle yola çıkılacak. Yakıt tüketiminde büyük düşüş bekleniyor.\n\nSizce bu gelişme hibrit araç pazarını nasıl etkiler?",
-        "image_path": "/tmp/otoxtra_img_d0i1hyk8.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_d0i1hyk8.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-06T01:11:58.433177+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122174911460916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18134719195717589",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1790833748588370",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-06T01:12:37.257147+03:00"
+      "updated_at": null
     }
   }
 }
