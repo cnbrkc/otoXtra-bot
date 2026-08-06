@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-06-02:58",
+  "run_id": "2026-08-06-06:16",
   "status": "error",
-  "started_at": "2026-08-06T02:58:30.472272+03:00",
-  "updated_at": "2026-08-06T02:59:01.251756+03:00",
+  "started_at": "2026-08-06T06:16:44.777107+03:00",
+  "updated_at": "2026-08-06T06:17:42.296958+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -95,10 +95,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
           },
           "MuratTosun": {
             "status": "ok",
@@ -125,8 +125,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 189,
-            "after_keyword": 131,
+            "found": 179,
+            "after_keyword": 126,
             "after_time": 7,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -134,8 +134,8 @@
           }
         },
         "metrics": {
-          "found": 189,
-          "after_keyword": 131,
+          "found": 179,
+          "after_keyword": 126,
           "after_time": 7,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -143,7 +143,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-06T02:59:01.251756+03:00"
+      "updated_at": "2026-08-06T06:17:42.296958+03:00"
     },
     "score": {
       "status": "waiting",
