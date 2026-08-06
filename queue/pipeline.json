@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-06-06:16",
-  "status": "error",
-  "started_at": "2026-08-06T06:16:44.777107+03:00",
-  "updated_at": "2026-08-06T06:17:42.296958+03:00",
+  "run_id": "2026-08-06-09:27",
+  "status": "completed",
+  "started_at": "2026-08-06T09:27:43.053006+03:00",
+  "updated_at": "2026-08-06T09:30:01.817232+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+            "link": "https://otopodyum.com.tr/oto-sikayet/toyota-corollanin-sorunsuzluk-algisi-servis-sureclerinde-test-mi-ediliyor-5205h",
+            "published": "2026-08-06T05:06:01+00:00",
+            "summary": "Otopodyum, şikâyet platformlarında ve tüketici geri bildirimlerinde Toyota Corolla ve Corolla Cross kullanıcılarının garanti uygulamaları, multimedya sistemi, yetkili servis süreçleri ve mekanik sorunlara ilişkin paylaşımlarını dosya haber haline getirdi.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5510.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "algisi-corolla-ediliyor-servis-sorunsuzluk-sureclerinde-test-toyota"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -71,10 +91,10 @@
             "attempts": 1
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/DoluBatarya/rss",
+            "attempts": 3
           },
           "Ahmet Celik": {
             "status": "ok",
@@ -95,16 +115,16 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
-          },
-          "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
+          },
+          "MuratTosun": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
           },
           "VeyselKarani": {
             "status": "ok",
@@ -120,54 +140,232 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 9,
+            "count": 10,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 179,
-            "after_keyword": 126,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 170,
+            "after_keyword": 123,
+            "after_time": 14,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 179,
-          "after_keyword": 126,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 170,
+          "after_keyword": 123,
+          "after_time": 14,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-06T06:17:42.296958+03:00"
+      "error": null,
+      "updated_at": "2026-08-06T09:29:08.173082+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+          "link": "https://otopodyum.com.tr/oto-sikayet/toyota-corollanin-sorunsuzluk-algisi-servis-sureclerinde-test-mi-ediliyor-5205h",
+          "published": "2026-08-06T05:06:01+00:00",
+          "summary": "Otopodyum, şikâyet platformlarında ve tüketici geri bildirimlerinde Toyota Corolla ve Corolla Cross kullanıcılarının garanti uygulamaları, multimedya sistemi, yetkili servis süreçleri ve mekanik sorunlara ilişkin paylaşımlarını dosya haber haline getirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5510.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algisi-corolla-ediliyor-servis-sorunsuzluk-sureclerinde-test-toyota",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketici şikayetleri ve garanti süreçleri niş bir kitleyi ilgilendiriyor ancak genel sektörel algı açısından orta düzeyde tartışma potansiyeli barındırıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 50,
+        "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 8,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 4
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Tüketici şikayetleri ve garanti süreçleri niş bir kitleyi ilgilendiriyor ancak genel sektörel algı açısından orta düzeyde tartışma potansiyeli barındırıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+            "score": 50,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-06T09:29:10.477798+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+          "link": "https://otopodyum.com.tr/oto-sikayet/toyota-corollanin-sorunsuzluk-algisi-servis-sureclerinde-test-mi-ediliyor-5205h",
+          "published": "2026-08-06T05:06:01+00:00",
+          "summary": "Otopodyum, şikâyet platformlarında ve tüketici geri bildirimlerinde Toyota Corolla ve Corolla Cross kullanıcılarının garanti uygulamaları, multimedya sistemi, yetkili servis süreçleri ve mekanik sorunlara ilişkin paylaşımlarını dosya haber haline getirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5510.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algisi-corolla-ediliyor-servis-sorunsuzluk-sureclerinde-test-toyota",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketici şikayetleri ve garanti süreçleri niş bir kitleyi ilgilendiriyor ancak genel sektörel algı açısından orta düzeyde tartışma potansiyeli barındırıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "İşte uzun yıllardır \"sorunsuz otomobil\" algısıyla öne çıkan Corolla'nın kullanıcı deneyimlerinde dikkat çeken başlıklar… Türkiye otomotiv pazarının en çok tercih edilen modellerinden biri olanToyota Corolla, hibrit teknolojisi, yakıt ekonomisi, dayanıklılık algısı ve yüksek ikinci el değeriyle milyonlarca kullanıcı tarafından tercih ediliyor. Özellikle hibrit motor teknolojisi ve düşük işletme maliyetleri, Corolla'nın en güçlü satış argümanları arasında yer alıyor. Ancak araçların kullanım süresi arttıkça kamuya açık kullanıcı platformlarında; multimedya sistemi, süspansiyon sesleri, servis teşhis süreçleri ve bazı donanım beklentilerine ilişkin çeşitli kullanıcı geri bildirimleri dikkat çekiyor. Otopodyum olarak kullanıcıların en sık dile getirdiği başlıkları derledik. 1. Multimedya Sistemi ve Yazılım Kaynaklı Olduğu Öne Sürülen Problemler Toyota kullanıcılarının paylaşımlarında öne çıkan başlıklardan biri multimedya sistemiyle ilgili yaşanan sorunlar oluyor. • Tabela Okuma Sistemi ve Yazılım Beklentileri 2025 model Corolla Hybrid sahibi bir kullanıcının paylaşımına göre; araçtaki trafik işareti tanıma sisteminde yer alan ses kapatma fonksiyonunun çalışmadığı belirtiliyor. Kullanıcı, yetkili serviste yapılan kontroller sonrasında sorunun giderilemediğini ve herhangi bir çözüm sunulamadığını ifade ediyor. Kullanıcılar, yazılım kaynaklı olduğu düşünülen bu tür problemlerde güncelleme süreçleri hakkında daha ayrıntılı bilgilendirme yapılmasını beklediklerini dile getiriyor. 2. Arıza Teşhis Süreçleri ve Gereksiz Parça Değişimi İddiaları Satış sonrası hizmetlerde kullanıcıların dikkat çektiği konulardan biri de arızanın doğru kaynağının belirlenmesi oluyor. • Ses Problemi İçin Farklı Parçaların Değiştirilmesi Bir Corolla kullanıcısının kamuya açık paylaşımına göre; uzun süre devam eden süspansiyon kaynaklı olduğu düşünülen bir ses nedeniyle araç defalarca yetkili servise götürülüyor. Kullanıcı, süreç içerisinde çeşitli süspansiyon parçalarının değiştirildiğini; ancak problemin devam ettiğini, daha sonra sesin farklı bir parçadan kaynaklandığının değerlendirildiğini öne sürüyor. Kullanıcı bu süreçte değiştirilen parçalar için ödediği ücretlerin iadesini talep ettiğini ifade ediyor. Bu örnek bireysel kullanıcı deneyimine dayanmakta olup tüm araçlar için genellenemez. 3. Servis Sonrası Devam Ettiği Belirtilen Mekanik Sorunlar Kamuya açık platformlarda öne çıkan bir diğer konu ise bakım veya onarım sonrasında devam ettiği belirtilen mekanik şikâyetler oluyor. • Fren ve Direksiyon Bölgesinden Gelen Sesler Bazı Corolla Cross kullanıcıları; Ayrıca bazı kullanıcılar klima sistemiyle ilgili koku şikâyetlerinin yapılan işlemlere rağmen tamamen giderilemediğini ifade ediyor. Bu kullanıcılar, aracın serviste kaldığı süre boyunca ikame araç beklentilerini de kamuya açık platformlarda dile getiriyor. 4. Servis Randevuları ve İletişim Süreçleri Kullanıcı geri bildirimlerinde dikkat çeken başlıklardan biri de servis organizasyonu oluyor. • Randevu ve Geri Dönüş Beklentisi Özellikle garanti kapsamındaki araçlarda daha hızlı iletişim kurulmasının müşteri memnuniyetini artırabileceği yönünde değerlendirmeler bulunuyor. 5. Trim Sesleri ve Kabin Kalitesiyle İlgili Kullanıcı Görüşleri Bazı Corolla kullanıcıları ise araçlarında uzun süre devam ettiğini belirttikleri trim seslerini gündeme getiriyor. • Ön Göğüs ve İç Dikiz Aynasından Gelen Sesler Bazı kullanıcılar aynı şikâyet nedeniyle birden fazla kez yetkili servise başvurmalarına rağmen problemin tamamen giderilemediğini ifade ediyor. ???? Otopodyum Dengeli Toyota Terazisi: Güvenilirlik Algısı vs. Kullanıcı Geri Bildirimleri KAĞIT ÜZERİNDE TOYOTA (AVANTAJLARI) KULLANICI GERİ BİLDİRİMLERİNDE GELİŞTİRİLMESİ BEKLENEN ALANLAR Hibrit teknolojisindeki deneyim Multimedya yazılımı ve dijital sistemlere ilişkin kullanıcı geri bildirimleri Arıza teşhis süreçlerinde daha hızlı ve doğru teknik değerlendirme beklentisi Bazı servislerde iletişim ve randevu süreçleri Trim sesleri ve kabin içi kaliteye ilişkin kullanıcı görüşleri İkame araç ve satış sonrası destek beklentileri Toyota Corolla Tercih Edilmeli mi? Toyota Corolla, uzun yıllardır dayanıklılığı, hibrit teknolojisi ve düşük kullanım maliyetleriyle Türkiye'nin en çok tercih edilen otomobilleri arasında yer almaya devam ediyor. Bununla birlikte kamuya açık kullanıcı geri bildirimleri incelendiğinde; bazı kullanıcıların multimedya sistemi, servis süreçleri, trim sesleri ve mekanik problemlere ilişkin farklı deneyimler yaşadığı görülüyor. Her araç ve her teknik süreç kendi koşulları içinde değerlendirilmekle birlikte; özellikle yazılım güncellemeleri, arıza teşhis süreçleri ve satış sonrası iletişim konusunda kullanıcı beklentilerinin karşılanması müşteri memnuniyetini artırabilecek unsurlar arasında değerlendirilebilir. Eğer Toyota Corolla veya Corolla Cross satın almayı planlıyor ya da garanti süreci yaşıyorsanız; haklarınızı daha etkin şekilde takip edebilmeniz açısından faydalı olabilir. Bu yazı dizisi; herhangi bir markayı kötülemek,..."
+        },
+        "post_text": "🚗 COROLLA SORUNSUZLUĞU TEST EDİLİYOR MU?\n\nToyota Corolla kullanıcılarından gelen şikayetler artıyor. Garanti, servis süreçleri, multimedya sistemi ve mekanik sorunlar gündemde.\n\nÖzellikle hibrit modellerin düşük işletme maliyetiyle öne çıktığı biliniyor. Ancak kullanıcı yorumları, bu algıyı sarsıyor gibi.\n\nSiz de Corolla kullanıcısı mısınız? Deneyimleriniz neler?",
+        "post_text_length": 365,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-06T09:29:12.238539+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Toyota Corolla'nın Sorunsuzluk Algısı Servis Süreçlerinde Test mi Ediliyor?",
+          "link": "https://otopodyum.com.tr/oto-sikayet/toyota-corollanin-sorunsuzluk-algisi-servis-sureclerinde-test-mi-ediliyor-5205h",
+          "published": "2026-08-06T05:06:01+00:00",
+          "summary": "Otopodyum, şikâyet platformlarında ve tüketici geri bildirimlerinde Toyota Corolla ve Corolla Cross kullanıcılarının garanti uygulamaları, multimedya sistemi, yetkili servis süreçleri ve mekanik sorunlara ilişkin paylaşımlarını dosya haber haline getirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5510.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5510.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algisi-corolla-ediliyor-servis-sorunsuzluk-sureclerinde-test-toyota",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketici şikayetleri ve garanti süreçleri niş bir kitleyi ilgilendiriyor ancak genel sektörel algı açısından orta düzeyde tartışma potansiyeli barındırıyor.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "İşte uzun yıllardır \"sorunsuz otomobil\" algısıyla öne çıkan Corolla'nın kullanıcı deneyimlerinde dikkat çeken başlıklar… Türkiye otomotiv pazarının en çok tercih edilen modellerinden biri olanToyota Corolla, hibrit teknolojisi, yakıt ekonomisi, dayanıklılık algısı ve yüksek ikinci el değeriyle milyonlarca kullanıcı tarafından tercih ediliyor. Özellikle hibrit motor teknolojisi ve düşük işletme maliyetleri, Corolla'nın en güçlü satış argümanları arasında yer alıyor. Ancak araçların kullanım süresi arttıkça kamuya açık kullanıcı platformlarında; multimedya sistemi, süspansiyon sesleri, servis teşhis süreçleri ve bazı donanım beklentilerine ilişkin çeşitli kullanıcı geri bildirimleri dikkat çekiyor. Otopodyum olarak kullanıcıların en sık dile getirdiği başlıkları derledik. 1. Multimedya Sistemi ve Yazılım Kaynaklı Olduğu Öne Sürülen Problemler Toyota kullanıcılarının paylaşımlarında öne çıkan başlıklardan biri multimedya sistemiyle ilgili yaşanan sorunlar oluyor. • Tabela Okuma Sistemi ve Yazılım Beklentileri 2025 model Corolla Hybrid sahibi bir kullanıcının paylaşımına göre; araçtaki trafik işareti tanıma sisteminde yer alan ses kapatma fonksiyonunun çalışmadığı belirtiliyor. Kullanıcı, yetkili serviste yapılan kontroller sonrasında sorunun giderilemediğini ve herhangi bir çözüm sunulamadığını ifade ediyor. Kullanıcılar, yazılım kaynaklı olduğu düşünülen bu tür problemlerde güncelleme süreçleri hakkında daha ayrıntılı bilgilendirme yapılmasını beklediklerini dile getiriyor. 2. Arıza Teşhis Süreçleri ve Gereksiz Parça Değişimi İddiaları Satış sonrası hizmetlerde kullanıcıların dikkat çektiği konulardan biri de arızanın doğru kaynağının belirlenmesi oluyor. • Ses Problemi İçin Farklı Parçaların Değiştirilmesi Bir Corolla kullanıcısının kamuya açık paylaşımına göre; uzun süre devam eden süspansiyon kaynaklı olduğu düşünülen bir ses nedeniyle araç defalarca yetkili servise götürülüyor. Kullanıcı, süreç içerisinde çeşitli süspansiyon parçalarının değiştirildiğini; ancak problemin devam ettiğini, daha sonra sesin farklı bir parçadan kaynaklandığının değerlendirildiğini öne sürüyor. Kullanıcı bu süreçte değiştirilen parçalar için ödediği ücretlerin iadesini talep ettiğini ifade ediyor. Bu örnek bireysel kullanıcı deneyimine dayanmakta olup tüm araçlar için genellenemez. 3. Servis Sonrası Devam Ettiği Belirtilen Mekanik Sorunlar Kamuya açık platformlarda öne çıkan bir diğer konu ise bakım veya onarım sonrasında devam ettiği belirtilen mekanik şikâyetler oluyor. • Fren ve Direksiyon Bölgesinden Gelen Sesler Bazı Corolla Cross kullanıcıları; Ayrıca bazı kullanıcılar klima sistemiyle ilgili koku şikâyetlerinin yapılan işlemlere rağmen tamamen giderilemediğini ifade ediyor. Bu kullanıcılar, aracın serviste kaldığı süre boyunca ikame araç beklentilerini de kamuya açık platformlarda dile getiriyor. 4. Servis Randevuları ve İletişim Süreçleri Kullanıcı geri bildirimlerinde dikkat çeken başlıklardan biri de servis organizasyonu oluyor. • Randevu ve Geri Dönüş Beklentisi Özellikle garanti kapsamındaki araçlarda daha hızlı iletişim kurulmasının müşteri memnuniyetini artırabileceği yönünde değerlendirmeler bulunuyor. 5. Trim Sesleri ve Kabin Kalitesiyle İlgili Kullanıcı Görüşleri Bazı Corolla kullanıcıları ise araçlarında uzun süre devam ettiğini belirttikleri trim seslerini gündeme getiriyor. • Ön Göğüs ve İç Dikiz Aynasından Gelen Sesler Bazı kullanıcılar aynı şikâyet nedeniyle birden fazla kez yetkili servise başvurmalarına rağmen problemin tamamen giderilemediğini ifade ediyor. ???? Otopodyum Dengeli Toyota Terazisi: Güvenilirlik Algısı vs. Kullanıcı Geri Bildirimleri KAĞIT ÜZERİNDE TOYOTA (AVANTAJLARI) KULLANICI GERİ BİLDİRİMLERİNDE GELİŞTİRİLMESİ BEKLENEN ALANLAR Hibrit teknolojisindeki deneyim Multimedya yazılımı ve dijital sistemlere ilişkin kullanıcı geri bildirimleri Arıza teşhis süreçlerinde daha hızlı ve doğru teknik değerlendirme beklentisi Bazı servislerde iletişim ve randevu süreçleri Trim sesleri ve kabin içi kaliteye ilişkin kullanıcı görüşleri İkame araç ve satış sonrası destek beklentileri Toyota Corolla Tercih Edilmeli mi? Toyota Corolla, uzun yıllardır dayanıklılığı, hibrit teknolojisi ve düşük kullanım maliyetleriyle Türkiye'nin en çok tercih edilen otomobilleri arasında yer almaya devam ediyor. Bununla birlikte kamuya açık kullanıcı geri bildirimleri incelendiğinde; bazı kullanıcıların multimedya sistemi, servis süreçleri, trim sesleri ve mekanik problemlere ilişkin farklı deneyimler yaşadığı görülüyor. Her araç ve her teknik süreç kendi koşulları içinde değerlendirilmekle birlikte; özellikle yazılım güncellemeleri, arıza teşhis süreçleri ve satış sonrası iletişim konusunda kullanıcı beklentilerinin karşılanması müşteri memnuniyetini artırabilecek unsurlar arasında değerlendirilebilir. Eğer Toyota Corolla veya Corolla Cross satın almayı planlıyor ya da garanti süreci yaşıyorsanız; haklarınızı daha etkin şekilde takip edebilmeniz açısından faydalı olabilir. Bu yazı dizisi; herhangi bir markayı kötülemek,...",
+          "post_text_for_card": "🚗 COROLLA SORUNSUZLUĞU TEST EDİLİYOR MU?\n\nToyota Corolla kullanıcılarından gelen şikayetler artıyor. Garanti, servis süreçleri, multimedya sistemi ve mekanik sorunlar gündemde.\n\nÖzellikle hibrit modellerin düşük işletme maliyetiyle öne çıktığı biliniyor. Ancak kullanıcı yorumları, bu algıyı sarsıyor gibi.\n\nSiz de Corolla kullanıcısı mısınız? Deneyimleriniz neler?",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5510.jpg",
+            "https://cdn.otopodyum.com.tr/news/5473.jpg",
+            "https://cdn.otopodyum.com.tr/news/5482.jpg",
+            "https://cdn.otopodyum.com.tr/news/5489.jpg"
+          ]
+        },
+        "post_text": "🚗 COROLLA SORUNSUZLUĞU TEST EDİLİYOR MU?\n\nToyota Corolla kullanıcılarından gelen şikayetler artıyor. Garanti, servis süreçleri, multimedya sistemi ve mekanik sorunlar gündemde.\n\nÖzellikle hibrit modellerin düşük işletme maliyetiyle öne çıktığı biliniyor. Ancak kullanıcı yorumları, bu algıyı sarsıyor gibi.\n\nSiz de Corolla kullanıcısı mısınız? Deneyimleriniz neler?",
+        "image_path": "/tmp/otoxtra_img_xhh906m0.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_xhh906m0.jpg",
+          "/tmp/otoxtra_img_haggdj2l.jpg",
+          "/tmp/otoxtra_img_qmxp95xk.jpg",
+          "/tmp/otoxtra_img_dy0np6nq.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-06T09:29:23.481915+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122174950856916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18081245825315901",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1743289500315767",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-06T09:30:01.817232+03:00"
     }
   }
 }
