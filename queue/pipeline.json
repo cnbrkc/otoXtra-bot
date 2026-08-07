@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-07-05:38",
-  "status": "error",
-  "started_at": "2026-08-07T05:38:40.162285+03:00",
-  "updated_at": "2026-08-07T05:39:16.835782+03:00",
+  "run_id": "2026-08-07-07:52",
+  "status": "completed",
+  "started_at": "2026-08-07T07:52:47.485094+03:00",
+  "updated_at": "2026-08-07T07:54:11.251521+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+            "link": "https://nitter.net/ahmetcelik2016/status/2085576329626255800#m",
+            "published": "2026-08-07T03:58:39+00:00",
+            "summary": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi piped.video/watch?v=5AhEbueE…",
+            "image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "408-5ahebueepds-adem-amca-com-dostluk-eskikaraagac-gittigimiz-goruntuler-hikayesi-https-koyu-leylek-nden-nefis-otomoblgazetesi-peugeot-peugeotturkiye-watch-www-yaren-yillik-youtube"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,47 +147,214 @@
           "_metrics": {
             "found": 190,
             "after_keyword": 130,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 190,
           "after_keyword": 130,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-07T05:39:16.835782+03:00"
+      "error": null,
+      "updated_at": "2026-08-07T07:53:22.919201+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+          "link": "https://nitter.net/ahmetcelik2016/status/2085576329626255800#m",
+          "published": "2026-08-07T03:58:39+00:00",
+          "summary": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi piped.video/watch?v=5AhEbueE…",
+          "image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "408-5ahebueepds-adem-amca-com-dostluk-eskikaraagac-gittigimiz-goruntuler-hikayesi-https-koyu-leylek-nden-nefis-otomoblgazetesi-peugeot-peugeotturkiye-watch-www-yaren-yillik-youtube",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 8
+          },
+          "score": 74,
+          "score_reason": "ai_scored",
+          "score_explanation": "Duygusal bağ kuran hikaye anlatımı ve popüler bir modelin entegrasyonu sosyal medyada yüksek etkileşim potansiyeli taşıyor ancak otomotiv odaklılıktan ziyade viral hikaye kategorisinde kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 74,
+        "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Duygusal bağ kuran hikaye anlatımı ve popüler bir modelin entegrasyonu sosyal medyada yüksek etkileşim potansiyeli taşıyor ancak otomotiv odaklılıktan ziyade viral hikaye kategorisinde kalıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+            "score": 74,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-07T07:53:25.650897+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+          "link": "https://nitter.net/ahmetcelik2016/status/2085576329626255800#m",
+          "published": "2026-08-07T03:58:39+00:00",
+          "summary": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi piped.video/watch?v=5AhEbueE…",
+          "image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "408-5ahebueepds-adem-amca-com-dostluk-eskikaraagac-gittigimiz-goruntuler-hikayesi-https-koyu-leylek-nden-nefis-otomoblgazetesi-peugeot-peugeotturkiye-watch-www-yaren-yillik-youtube",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 8
+          },
+          "score": 74,
+          "score_reason": "ai_scored",
+          "score_explanation": "Duygusal bağ kuran hikaye anlatımı ve popüler bir modelin entegrasyonu sosyal medyada yüksek etkileşim potansiyeli taşıyor ancak otomotiv odaklılıktan ziyade viral hikaye kategorisinde kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🕊️ ADEM AMCA VE YAREN LEYLEK'İN DOSTLUĞU\n\n15 yıldır süren bu eşsiz dostluk hikayesi için Eskikaraağaç Köyü'ne gittik.\n\nPeugeot 408 ile yaptığımız yolculuktan nefis görüntüler ve Adem Amca ile Yaren Leylek'in yürek ısıtan anları videomuzda!\n\nSiz bu dostluk hikayesini biliyor muydunuz?",
+        "post_text_length": 284,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-07T07:53:27.245208+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi https://www.youtube.com/watch?v=5AhEbueEpDs",
+          "link": "https://nitter.net/ahmetcelik2016/status/2085576329626255800#m",
+          "published": "2026-08-07T03:58:39+00:00",
+          "summary": "15 yıllık bir dostluk hikayesi. Adem Amca ve Yaren Leylek... Peugeot 408 ile gittiğimiz Eskikaraağaç Köyü'nden nefis görüntüler... @PeugeotTurkiye @otomoblgazetesi piped.video/watch?v=5AhEbueE…",
+          "image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "408-5ahebueepds-adem-amca-com-dostluk-eskikaraagac-gittigimiz-goruntuler-hikayesi-https-koyu-leylek-nden-nefis-otomoblgazetesi-peugeot-peugeotturkiye-watch-www-yaren-yillik-youtube",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 8
+          },
+          "score": 74,
+          "score_reason": "ai_scored",
+          "score_explanation": "Duygusal bağ kuran hikaye anlatımı ve popüler bir modelin entegrasyonu sosyal medyada yüksek etkileşim potansiyeli taşıyor ancak otomotiv odaklılıktan ziyade viral hikaye kategorisinde kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🕊️ ADEM AMCA VE YAREN LEYLEK'İN DOSTLUĞU\n\n15 yıldır süren bu eşsiz dostluk hikayesi için Eskikaraağaç Köyü'ne gittik.\n\nPeugeot 408 ile yaptığımız yolculuktan nefis görüntüler ve Adem Amca ile Yaren Leylek'in yürek ısıtan anları videomuzda!\n\nSiz bu dostluk hikayesini biliyor muydunuz?",
+          "image_sources": [
+            "nitter_still"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HPF0g9aXgAArXxc.jpg?name=orig"
+          ]
+        },
+        "post_text": "🕊️ ADEM AMCA VE YAREN LEYLEK'İN DOSTLUĞU\n\n15 yıldır süren bu eşsiz dostluk hikayesi için Eskikaraağaç Köyü'ne gittik.\n\nPeugeot 408 ile yaptığımız yolculuktan nefis görüntüler ve Adem Amca ile Yaren Leylek'in yürek ısıtan anları videomuzda!\n\nSiz bu dostluk hikayesini biliyor muydunuz?",
+        "image_path": "/tmp/otoxtra_img_pcknztt0.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_pcknztt0.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-07T07:53:28.652385+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175064496916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18093178640564114",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1518747176240157",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-07T07:54:11.251521+03:00"
     }
   }
 }
