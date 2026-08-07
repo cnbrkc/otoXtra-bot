@@ -1,49 +1,14 @@
 {
-  "run_id": "2026-08-08-00:36",
-  "status": "completed",
-  "started_at": "2026-08-08T00:36:16.301533+03:00",
-  "updated_at": "2026-08-08T00:37:43.396690+03:00",
+  "run_id": "2026-08-08-01:32",
+  "status": "error",
+  "started_at": "2026-08-08T01:32:02.192245+03:00",
+  "updated_at": "2026-08-08T01:32:34.429679+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-            "link": "https://nitter.net/murattosunMSE/status/2085824981632455007#m",
-            "published": "2026-08-07T20:26:43+00:00",
-            "summary": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acayip-acil-altin-ayrica-bugun-degerinde-detayli-durumda-elektrikli-elektrikli-gecirdim-geliyor-gercekten-hazirliyorum-icerik-icerik-istasyonunun-konusunda-oldugu-otomobil-otomobil-saatimi-sarj-soketli-tecrube-tecrube-yerde-yerinde"
-          },
-          {
-            "title": "Bu çok acil bir durumdu. Şarjın kaç para olduğu önemli değildi. . Bu arada ACİL DURUMDA ELEKTRİKLİ OTOMOBİL konusunda detaylı bir içerik hazırlıyorum.",
-            "link": "https://nitter.net/murattosunMSE/status/2085821855051505823#m",
-            "published": "2026-08-07T20:14:17+00:00",
-            "summary": "Bu çok acil bir durumdu. Şarjın kaç para olduğu önemli değildi. . Bu arada ACİL DURUMDA ELEKTRİKLİ OTOMOBİL konusunda detaylı bir içerik hazırlıyorum. Murat Tosun (@murattosunMSE) Az önce depoyu fulledim 70 kWh 1050 TL — https://nitter.net/murattosunMSE/status/2085757888010539072#m",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aci-acil-arada-degildi-detayli-durumda-durumdu-elektri-hazirliyorum-icerik-kac-kli-konusunda-oldugu-onemli-otomobi-para-sarjin"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -162,226 +127,47 @@
           "_metrics": {
             "found": 188,
             "after_keyword": 134,
-            "after_time": 9,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 188,
           "after_keyword": 134,
-          "after_time": 9,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-08T00:36:49.036722+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-08T01:32:34.429679+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "link": "https://nitter.net/murattosunMSE/status/2085824981632455007#m",
-          "published": "2026-08-07T20:26:43+00:00",
-          "summary": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acayip-acil-altin-ayrica-bugun-degerinde-detayli-durumda-elektrikli-elektrikli-gecirdim-geliyor-gercekten-hazirliyorum-icerik-icerik-istasyonunun-konusunda-oldugu-otomobil-otomobil-saatimi-sarj-soketli-tecrube-tecrube-yerde-yerinde",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Kişisel bir deneyim paylaşımı ve duyuru niteliğinde; doğrudan somut bir otomotiv haberi içermediği için viral potansiyeli orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 50,
-        "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 8,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Kişisel bir deneyim paylaşımı ve duyuru niteliğinde; doğrudan somut bir otomotiv haberi içermediği için viral potansiyeli orta seviyede kalıyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 5
-            }
-          },
-          {
-            "title": "Bu çok acil bir durumdu. Şarjın kaç para olduğu önemli değildi. . Bu arada ACİL DURUMDA ELEKTRİKLİ OTOMOBİL konusunda detaylı bir içerik hazırlıyorum.",
-            "score": 46,
-            "score_breakdown": {
-              "guncellik": 17,
-              "etkilesim_potansiyeli": 9,
-              "benzersizlik": 7,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Bu çok acil bir durumdu. Şarjın kaç para olduğu önemli değildi. . Bu arada ACİL DURUMDA ELEKTRİKLİ OTOMOBİL konusunda detaylı bir içerik hazırlıyorum.",
-            "link": "https://nitter.net/murattosunMSE/status/2085821855051505823#m",
-            "score": 46,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "aci-acil-arada-degildi-detayli-durumda-durumdu-elektri-hazirliyorum-icerik-kac-kli-konusunda-oldugu-onemli-otomobi-para-sarjin"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T00:36:51.690001+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "link": "https://nitter.net/murattosunMSE/status/2085824981632455007#m",
-          "published": "2026-08-07T20:26:43+00:00",
-          "summary": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acayip-acil-altin-ayrica-bugun-degerinde-detayli-durumda-elektrikli-elektrikli-gecirdim-geliyor-gercekten-hazirliyorum-icerik-icerik-istasyonunun-konusunda-oldugu-otomobil-otomobil-saatimi-sarj-soketli-tecrube-tecrube-yerde-yerinde",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Kişisel bir deneyim paylaşımı ve duyuru niteliğinde; doğrudan somut bir otomotiv haberi içermediği için viral potansiyeli orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "⚡️ ELEKTRİKLİ OTOMOBİL ŞARJ DENEYİMİ!\n\nMurat Tosun, 30'dan fazla soketli bir şarj istasyonunda 3 saat geçirdi. Yerinde tecrübe çok değerliydi!\n\nBu deneyimin detayları ve acil durumda elektrikli otomobil kullanımı hakkında özel içerikler yolda.\n\nSiz elektrikli araba kullanıyor musunuz?",
-        "post_text_length": 285,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T00:36:52.933355+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "link": "https://nitter.net/murattosunMSE/status/2085824981632455007#m",
-          "published": "2026-08-07T20:26:43+00:00",
-          "summary": "Çok acayip bir tecrübe oldu. Bugün 3 saatimi 30+ soketli elektrikli otomobil şarj istasyonunun olduğu bir yerde geçirdim. Yerinde tecrübe gerçekten altın değerinde. Detaylı bir içerik hazırlıyorum. . Ayrıca acil durumda elektrikli otomobil konusunda da bir içerik geliyor.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "duckduckgo",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acayip-acil-altin-ayrica-bugun-degerinde-detayli-durumda-elektrikli-elektrikli-gecirdim-geliyor-gercekten-hazirliyorum-icerik-icerik-istasyonunun-konusunda-oldugu-otomobil-otomobil-saatimi-sarj-soketli-tecrube-tecrube-yerde-yerinde",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Kişisel bir deneyim paylaşımı ve duyuru niteliğinde; doğrudan somut bir otomotiv haberi içermediği için viral potansiyeli orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "⚡️ ELEKTRİKLİ OTOMOBİL ŞARJ DENEYİMİ!\n\nMurat Tosun, 30'dan fazla soketli bir şarj istasyonunda 3 saat geçirdi. Yerinde tecrübe çok değerliydi!\n\nBu deneyimin detayları ve acil durumda elektrikli otomobil kullanımı hakkında özel içerikler yolda.\n\nSiz elektrikli araba kullanıyor musunuz?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "⚡️ ELEKTRİKLİ OTOMOBİL ŞARJ DENEYİMİ!\n\nMurat Tosun, 30'dan fazla soketli bir şarj istasyonunda 3 saat geçirdi. Yerinde tecrübe çok değerliydi!\n\nBu deneyimin detayları ve acil durumda elektrikli otomobil kullanımı hakkında özel içerikler yolda.\n\nSiz elektrikli araba kullanıyor musunuz?",
-        "image_path": "/tmp/otoxtra_img_w1ec8m7v.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_w1ec8m7v.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T00:36:55.528413+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175143714916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18077256842445580",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27741225752166260",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T00:37:43.396690+03:00"
+      "updated_at": null
     }
   }
 }
