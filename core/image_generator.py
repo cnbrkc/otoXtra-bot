@@ -14,14 +14,12 @@ TEXT_COLOR = (255, 255, 255)
 FONT_BOLD_PATH = os.path.join(get_project_root(), "assets", "Roboto-Bold.ttf")
 FONT_REG_PATH = os.path.join(get_project_root(), "assets", "Roboto-Regular.ttf")
 
-
 def _get_font(size: int, bold: bool = False) -> ImageFont.FreeTypeFont:
     path = FONT_BOLD_PATH if bold else FONT_REG_PATH
     if not os.path.exists(path):
         log(f"Font bulunamadi: {path}. Varsayilan kullaniliyor.", "WARNING")
         return ImageFont.load_default()
     return ImageFont.truetype(path, size)
-
 
 def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font, max_width: int) -> list[str]:
     words = text.split()
@@ -43,10 +41,8 @@ def _wrap_text(draw: ImageDraw.ImageDraw, text: str, font, max_width: int) -> li
 
     return lines
 
-
 def _fit_cover(img: Image.Image, target_w: int, target_h: int) -> Image.Image:
     return ImageOps.fit(img, (target_w, target_h), method=Image.LANCZOS, centering=(0.5, 0.5))
-
 
 def _fit_contain(img: Image.Image, max_w: int, max_h: int) -> Image.Image:
     ratio = min(max_w / img.width, max_h / img.height)
@@ -54,14 +50,15 @@ def _fit_contain(img: Image.Image, max_w: int, max_h: int) -> Image.Image:
     n_h = max(1, int(img.height * ratio))
     return img.resize((n_w, n_h), Image.LANCZOS)
 
-
 def _prepare_text(post_text: str) -> tuple[str, str]:
     lines = [ln.strip() for ln in (post_text or "").split("\n") if ln.strip()]
     title = lines[0] if lines else "OTOXTRA HABER"
-    title = re.sub(r"[^\w\s]", "", title).strip().upper()
+    # ✅ FIX: Noktalama işaretlerini KORU (eski regex [^\w\s] tüm noktalama işaretlerini siliyordu!)
+    # Şu karakterler ARTIK SİLİNMİYOR: . , ! ? ; : ' " ( ) - /
+    # Sadece @ # $ % ^ & * + = < > | \ ~ gibi gereksiz semboller temizlenir
+    title = re.sub(r"[^\w\s.,!?;:'\"()\-/]", "", title).strip().upper()
     body = "\n".join(lines[1:]) if len(lines) > 1 else ""
     return title, body
-
 
 def create_social_card(post_text: str, image_path: str, output_path: str) -> str:
     """
