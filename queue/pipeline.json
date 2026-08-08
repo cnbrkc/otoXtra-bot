@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-08-18:26",
-  "status": "error",
-  "started_at": "2026-08-08T18:26:43.571892+03:00",
-  "updated_at": "2026-08-08T18:27:12.196448+03:00",
+  "run_id": "2026-08-08-19:30",
+  "status": "completed",
+  "started_at": "2026-08-08T19:30:22.729846+03:00",
+  "updated_at": "2026-08-08T19:32:08.032622+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+            "link": "https://www.donanimhaber.com/nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir--209060",
+            "published": "2026-08-08T16:00:00+00:00",
+            "summary": "NASA, Mars görevlerinde kullanılan test araçlarından birini Ay’ın güney kutbuna göndermeyi planlıyor. PROMISE, nükleer güçle güneş ışığından bağımsız keşif yapabilecek yeni bir görev olacak.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "gezicisi-gonderilebilir-mars-nasa-plan-surpriz"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,220 @@
           },
           "_metrics": {
             "found": 190,
-            "after_keyword": 129,
-            "after_time": 10,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 130,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 190,
-          "after_keyword": 129,
-          "after_time": 10,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 130,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-08T18:27:12.196448+03:00"
+      "error": null,
+      "updated_at": "2026-08-08T19:30:57.351460+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+          "link": "https://www.donanimhaber.com/nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir--209060",
+          "published": "2026-08-08T16:00:00+00:00",
+          "summary": "NASA, Mars görevlerinde kullanılan test araçlarından birini Ay’ın güney kutbuna göndermeyi planlıyor. PROMISE, nükleer güçle güneş ışığından bağımsız keşif yapabilecek yeni bir görev olacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "gezicisi-gonderilebilir-mars-nasa-plan-surpriz",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 12,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 56,
+          "score_reason": "ai_scored",
+          "score_explanation": "Uzay teknolojileri ve nükleer güç içeren ilgi çekici bir bilim haberi olsa da, otomotiv dünyasıyla doğrudan bir bağı olmaması nedeniyle sosyal medyada otomobil meraklıları arasında sınırlı etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 56,
+        "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 12,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 5
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Uzay teknolojileri ve nükleer güç içeren ilgi çekici bir bilim haberi olsa da, otomotiv dünyasıyla doğrudan bir bağı olmaması nedeniyle sosyal medyada otomobil meraklıları arasında sınırlı etkileşim yaratır.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+            "score": 56,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 12,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 5
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T19:30:59.506567+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+          "link": "https://www.donanimhaber.com/nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir--209060",
+          "published": "2026-08-08T16:00:00+00:00",
+          "summary": "NASA, Mars görevlerinde kullanılan test araçlarından birini Ay’ın güney kutbuna göndermeyi planlıyor. PROMISE, nükleer güçle güneş ışığından bağımsız keşif yapabilecek yeni bir görev olacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "gezicisi-gonderilebilir-mars-nasa-plan-surpriz",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 12,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 56,
+          "score_reason": "ai_scored",
+          "score_explanation": "Uzay teknolojileri ve nükleer güç içeren ilgi çekici bir bilim haberi olsa da, otomotiv dünyasıyla doğrudan bir bağı olmaması nedeniyle sosyal medyada otomobil meraklıları arasında sınırlı etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "NASA’nın Mars araçlarının Dünya’da bulunan tam ölçekli mühendislik kopyaları, gerçek görevlerde kullanılacak sistemleri test etmek ve yazılım, donanım ya da operasyonel değişiklikleri önceden doğrulamak amacıyla geliştirildi. Bunlardan Perseverance’ın test modeli uzun süreOPTIMISMadıyla biliniyordu. Açılımı “Operational Perseverance Twin for Integration of Mechanisms and Instruments Sent to Mars” olan araç, artık PROMISE projesinin temelini oluşturacak şekilde yeniden değerlendiriliyor. NASA’nın açıklamalarında yeni Ay aracının yalnızca Perseverance türevi olmadığı, Curiosity ve Perseverance mühendislik araçlarının bir hibriti olabileceği belirtiliyor. Projenin arkasındaki temel gerekçelerden biri, NASA’nın Mars yüzeyinde iki farklı geziciyle elde ettiği operasyon deneyimini yeni bir görev alanına taşımak. NASA yöneticisiJared Isaacman, Ay üssü planlarına ilişkin bir güncellemede, yıllardır kullanılan Mars gezicilerinin mühendislik altyapısının Ay için yeniden değerlendirilmesi fikrinin ortaya çıktığını belirtti. Bu yaklaşım, tamamen yeni bir gezici geliştirilmesine kıyasla mevcut tasarım ve test deneyiminden yararlanma imkanı sağlayabilir. Bununla birlikte, Mars ile Ay arasındaki çevresel farklılıklar nedeniyle mevcut sistemlerin doğrudan kullanılabileceği anlamına gelmiyor. PROMISE’ın özellikle Ay’ın güney kutbuna yönlendirilmesinin arkasında bölgedekisu buzupotansiyeli bulunuyor. Güney kutbu, gelecekte kurulması planlanan kalıcı Ay üsleri açısından kaynaklara erişim ve bilimsel araştırmalar nedeniyle önemli bölgelerden biri olarak değerlendiriliyor. Gezicinin yüzeyin yanı sıra yüzey altını da karakterize etmesi ve bölgenin jeolojik yapısı hakkında veri toplaması hedefleniyor. Bu nedenle araç yalnızca ulaşım sağlayan bir platform olarak değil, Ay çevresini ayrıntılı biçimde inceleyecek bir bilimsel keşif sistemi olarak düşünülüyor. PROMISE konseptinin dikkat çeken yönlerinden biri, enerji ihtiyacınıgüneş panellerine bağlı olmadankarşılamasının planlanması. Araçta, plütonyumun doğal radyoaktif bozunmasından ortaya çıkan ısıyı elektriğe dönüştüren çok görevliradyoizotop termoelektrik jeneratörünün(MMRTG) kullanılması öngörülüyor. Benzer radyoizotop güç sistemleri, güneş ışığının sınırlı olduğu veya uzun süreli enerji ihtiyacının bulunduğu uzay görevlerinde kullanılıyor. Böyle bir sistemin Ay gezicisine uyarlanması, aydınlatma koşullarının operasyon üzerindeki etkisini önemli ölçüde azaltabilir. NASA’nın Ay Üssü projesi program yöneticisiCarlos García-Galánda nükleer RTG kullanımının aracı aydınlatmadan bağımsız şekilde hareket ettirebilme avantajına dikkat çekti. Bu özellik özellikle Ay’ın kutup bölgelerinde önem taşıyor; çünkü kraterlerin bazı bölümleri çok az güneş ışığı alırken diğer yüksek bölgeler uzun süre aydınlık kalabiliyor. Ancak enerji sorununun çözülmesi, aracın Ay ortamına hazır olduğu anlamına gelmiyor. Ay tozunun aşındırıcı yapısı, sıcaklık değişimleri ve iletişim gereksinimleri gibi unsurların ayrıca ele alınması gerekiyor. PROMISE’ın önünde bu nedenle kapsamlı bir mühendislik geliştirme süreci bulunuyor. Mevcut OPTIMISM aracında uçuşa hazır bilimsel cihazlar, iletişim sistemi ve jeneratör gibi temel unsurların bulunmadığı, ayrıca bileşenlerin Ay’ın keskin ve aşındırıcı tozuna dayanacak şekilde derecelendirilmediği aktarılıyor. Aracın sıcaklık kontrolünü sağlayacak sensörler gibi sistemlerin de geliştirilmesi gerekiyor. Dolayısıyla mevcut mühendislik modelinin Ay’a doğrudan gönderilmesinden ziyade, kapsamlı biçimde yeniden yapılandırılması söz konusu olacak. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/dp/B01D5P6H4Y https://www.amazon.com.tr/dp/B0BNVS49WY https://www.n11.com/urun/galatasaray-puma-20242025-ic-saha-parcali-forma-77965001-sari-kirmizi-59697659?beden=l&magaza=gsstore https://www.amazon.com.tr/dp/B0GHZNCRXN https://www.migros.com.tr/bind-chocobomb-pumpkin-marshmallowlu-bitter-35-g-p-6b4a09 https://www.kinguin.net/category/564106/google-ai-pro-gemini-advanced-18-month-subscription-activation-link"
+        },
+        "post_text": "🚀 MARS GEZİCİSİ AY'A GİDEBİLİR!\n\nNASA'dan şaşırtıcı bir hamle geldi. Mars görevlerinde kullanılan test araçlarından biri, Ay'ın güney kutbuna gönderilebilir.\n\nPROMISE adı verilen bu yeni proje, nükleer güçle güneş ışığından bağımsız keşif yapmayı hedefliyor.\n\nSizce bu fikir başarılı olur mu?",
+        "post_text_length": 292,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T19:31:02.724580+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "NASA’dan sürpriz plan: Mars gezicisi Ay’a gönderilebilir",
+          "link": "https://www.donanimhaber.com/nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir--209060",
+          "published": "2026-08-08T16:00:00+00:00",
+          "summary": "NASA, Mars görevlerinde kullanılan test araçlarından birini Ay’ın güney kutbuna göndermeyi planlıyor. PROMISE, nükleer güçle güneş ışığından bağımsız keşif yapabilecek yeni bir görev olacak.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "gezicisi-gonderilebilir-mars-nasa-plan-surpriz",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 12,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 56,
+          "score_reason": "ai_scored",
+          "score_explanation": "Uzay teknolojileri ve nükleer güç içeren ilgi çekici bir bilim haberi olsa da, otomotiv dünyasıyla doğrudan bir bağı olmaması nedeniyle sosyal medyada otomobil meraklıları arasında sınırlı etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "NASA’nın Mars araçlarının Dünya’da bulunan tam ölçekli mühendislik kopyaları, gerçek görevlerde kullanılacak sistemleri test etmek ve yazılım, donanım ya da operasyonel değişiklikleri önceden doğrulamak amacıyla geliştirildi. Bunlardan Perseverance’ın test modeli uzun süreOPTIMISMadıyla biliniyordu. Açılımı “Operational Perseverance Twin for Integration of Mechanisms and Instruments Sent to Mars” olan araç, artık PROMISE projesinin temelini oluşturacak şekilde yeniden değerlendiriliyor. NASA’nın açıklamalarında yeni Ay aracının yalnızca Perseverance türevi olmadığı, Curiosity ve Perseverance mühendislik araçlarının bir hibriti olabileceği belirtiliyor. Projenin arkasındaki temel gerekçelerden biri, NASA’nın Mars yüzeyinde iki farklı geziciyle elde ettiği operasyon deneyimini yeni bir görev alanına taşımak. NASA yöneticisiJared Isaacman, Ay üssü planlarına ilişkin bir güncellemede, yıllardır kullanılan Mars gezicilerinin mühendislik altyapısının Ay için yeniden değerlendirilmesi fikrinin ortaya çıktığını belirtti. Bu yaklaşım, tamamen yeni bir gezici geliştirilmesine kıyasla mevcut tasarım ve test deneyiminden yararlanma imkanı sağlayabilir. Bununla birlikte, Mars ile Ay arasındaki çevresel farklılıklar nedeniyle mevcut sistemlerin doğrudan kullanılabileceği anlamına gelmiyor. PROMISE’ın özellikle Ay’ın güney kutbuna yönlendirilmesinin arkasında bölgedekisu buzupotansiyeli bulunuyor. Güney kutbu, gelecekte kurulması planlanan kalıcı Ay üsleri açısından kaynaklara erişim ve bilimsel araştırmalar nedeniyle önemli bölgelerden biri olarak değerlendiriliyor. Gezicinin yüzeyin yanı sıra yüzey altını da karakterize etmesi ve bölgenin jeolojik yapısı hakkında veri toplaması hedefleniyor. Bu nedenle araç yalnızca ulaşım sağlayan bir platform olarak değil, Ay çevresini ayrıntılı biçimde inceleyecek bir bilimsel keşif sistemi olarak düşünülüyor. PROMISE konseptinin dikkat çeken yönlerinden biri, enerji ihtiyacınıgüneş panellerine bağlı olmadankarşılamasının planlanması. Araçta, plütonyumun doğal radyoaktif bozunmasından ortaya çıkan ısıyı elektriğe dönüştüren çok görevliradyoizotop termoelektrik jeneratörünün(MMRTG) kullanılması öngörülüyor. Benzer radyoizotop güç sistemleri, güneş ışığının sınırlı olduğu veya uzun süreli enerji ihtiyacının bulunduğu uzay görevlerinde kullanılıyor. Böyle bir sistemin Ay gezicisine uyarlanması, aydınlatma koşullarının operasyon üzerindeki etkisini önemli ölçüde azaltabilir. NASA’nın Ay Üssü projesi program yöneticisiCarlos García-Galánda nükleer RTG kullanımının aracı aydınlatmadan bağımsız şekilde hareket ettirebilme avantajına dikkat çekti. Bu özellik özellikle Ay’ın kutup bölgelerinde önem taşıyor; çünkü kraterlerin bazı bölümleri çok az güneş ışığı alırken diğer yüksek bölgeler uzun süre aydınlık kalabiliyor. Ancak enerji sorununun çözülmesi, aracın Ay ortamına hazır olduğu anlamına gelmiyor. Ay tozunun aşındırıcı yapısı, sıcaklık değişimleri ve iletişim gereksinimleri gibi unsurların ayrıca ele alınması gerekiyor. PROMISE’ın önünde bu nedenle kapsamlı bir mühendislik geliştirme süreci bulunuyor. Mevcut OPTIMISM aracında uçuşa hazır bilimsel cihazlar, iletişim sistemi ve jeneratör gibi temel unsurların bulunmadığı, ayrıca bileşenlerin Ay’ın keskin ve aşındırıcı tozuna dayanacak şekilde derecelendirilmediği aktarılıyor. Aracın sıcaklık kontrolünü sağlayacak sensörler gibi sistemlerin de geliştirilmesi gerekiyor. Dolayısıyla mevcut mühendislik modelinin Ay’a doğrudan gönderilmesinden ziyade, kapsamlı biçimde yeniden yapılandırılması söz konusu olacak. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/dp/B01D5P6H4Y https://www.amazon.com.tr/dp/B0BNVS49WY https://www.n11.com/urun/galatasaray-puma-20242025-ic-saha-parcali-forma-77965001-sari-kirmizi-59697659?beden=l&magaza=gsstore https://www.amazon.com.tr/dp/B0GHZNCRXN https://www.migros.com.tr/bind-chocobomb-pumpkin-marshmallowlu-bitter-35-g-p-6b4a09 https://www.kinguin.net/category/564106/google-ai-pro-gemini-advanced-18-month-subscription-activation-link",
+          "post_text_for_card": "🚀 MARS GEZİCİSİ AY'A GİDEBİLİR!\n\nNASA'dan şaşırtıcı bir hamle geldi. Mars görevlerinde kullanılan test araçlarından biri, Ay'ın güney kutbuna gönderilebilir.\n\nPROMISE adı verilen bu yeni proje, nükleer güçle güneş ışığından bağımsız keşif yapmayı hedefliyor.\n\nSizce bu fikir başarılı olur mu?",
+          "image_sources": [
+            "article_img",
+            "meta_og"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209060/src/nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir209060_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209060/1200x675nasa-dan-surpriz-plan-mars-gezicisi-ay-a-gonderilebilir.jpg"
+          ]
+        },
+        "post_text": "🚀 MARS GEZİCİSİ AY'A GİDEBİLİR!\n\nNASA'dan şaşırtıcı bir hamle geldi. Mars görevlerinde kullanılan test araçlarından biri, Ay'ın güney kutbuna gönderilebilir.\n\nPROMISE adı verilen bu yeni proje, nükleer güçle güneş ışığından bağımsız keşif yapmayı hedefliyor.\n\nSizce bu fikir başarılı olur mu?",
+        "image_path": "/tmp/otoxtra_img_g8w_ixdp.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_g8w_ixdp.jpg",
+          "/tmp/otoxtra_img_dhtmun72.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T19:31:22.787385+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175238334916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17901965217334321",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2108975663047507",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T19:32:08.032622+03:00"
     }
   }
 }
