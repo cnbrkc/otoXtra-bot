@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-08-20:27",
-  "status": "completed",
-  "started_at": "2026-08-08T20:27:29.446031+03:00",
-  "updated_at": "2026-08-08T20:28:58.452104+03:00",
+  "run_id": "2026-08-08-21:33",
+  "status": "error",
+  "started_at": "2026-08-08T21:33:55.820131+03:00",
+  "updated_at": "2026-08-08T21:34:30.612907+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-            "link": "https://tr.motor1.com/news/804253/dodge-charger-super-bee-2026/",
-            "published": "2026-08-08T17:00:00+00:00",
-            "summary": "Daha büyük turbolara, daha büyük frenlere ve 600 beygir güce sahip.",
-            "image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ari-bee-charger-dodge-sok-super"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,226 +126,48 @@
           },
           "_metrics": {
             "found": 190,
-            "after_keyword": 130,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 132,
+            "after_time": 10,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 190,
-          "after_keyword": 130,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 132,
+          "after_time": 10,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-08T20:28:03.427944+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-08T21:34:30.612907+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-          "link": "https://tr.motor1.com/news/804253/dodge-charger-super-bee-2026/",
-          "published": "2026-08-08T17:00:00+00:00",
-          "summary": "Daha büyük turbolara, daha büyük frenlere ve 600 beygir güce sahip.",
-          "image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ari-bee-charger-dodge-sok-super",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 21,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, ikonik model adı ve performans tutkunlarını heyecanlandıracak özellikleriyle sosyal medyada yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 81,
-        "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 21,
-          "benzersizlik": 15,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 9
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yüksek beygir gücü, ikonik model adı ve performans tutkunlarını heyecanlandıracak özellikleriyle sosyal medyada yüksek etkileşim potansiyeline sahip.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 15,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 9
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T20:28:05.678590+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-          "link": "https://tr.motor1.com/news/804253/dodge-charger-super-bee-2026/",
-          "published": "2026-08-08T17:00:00+00:00",
-          "summary": "Daha büyük turbolara, daha büyük frenlere ve 600 beygir güce sahip.",
-          "image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ari-bee-charger-dodge-sok-super",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 21,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, ikonik model adı ve performans tutkunlarını heyecanlandıracak özellikleriyle sosyal medyada yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Super Bee geri döndü. Dodge'un şimdiye kadarki en güçlüCharger Sixpackversiyonu,2027 model yılıiçin geliyor; daha yüksek güç, daha keskin yol tutuşu ve pist odaklı bir dizi güncelleme sunuyor. Yeni Charger Super Bee, Dodge'un çift turboşarjlı3.0 litrelik sıralı altı silindirlimotorunun elden geçirilmiş bir versiyonundan600 bggüç ve720 Nmtork üretiyor. Güç, 8 ileri otomatik şanzıman üzerinden aktarılıyor ve model standart olarak dört tekerlekten çekişle geliyor. Ayrıca yeni bir arkadan itiş modu, sürücünün mevcut torkun tamamını arka tekerleklere göndermesine olanak tanıyor. Ekstra güç, motora%7,5daha fazla hava çeken56 milimetrelikçift Garrett Motion turboşarjdan geliyor. Maksimum tork artık daha erken,3.000 d/d'de sunuluyor ve5.900 d/d'ye kadar korunuyor. Motor güncellemelerine ek olarak, yeni Charger versiyonu şimdiye kadarki \"en pist odaklı\" Super Bee olması için soğutma sistemleri ve aerodinamik tarafta da önemli geliştirmeler alıyor. Yüksek sıcaklık radyatöründeki soğutma kapasitesi%50'den fazlaartırılırken, düşük sıcaklık devresinin kapasitesiiki katın da üzerineçıkıyor. Super Bee, hava akışını%30artıran ve241 km/shızda45 kg'dan fazlayere basma kuvveti sağlayan kendine özgü bir ön tasarım ve yeniden şekillendirilmiş farlarla geliyor. Ön bölümün köşelerinde ek radyatörler gizlenirken, yeniden tasarlanan ve konumu değiştirilen ön bileşenler ilave soğutma donanımı ve hava kanalları için alan yaratıyor. Charger'da uzatılmış bir ön splitter ve yeni, daha büyük bir performans spoyleri de bulunuyor. 2027 Dodge Charger Super Bee Launch Edition kaputu 2027 Dodge Charger Super Bee, Goodyear Eagle F1 Supercar 3305/35ZR20lastiklerle sarılı20 inçdövme jantlarla geliyor. Bu büyük jantların arkasında ise önde ve arkada havalandırmalı406 mmBrembo frenler yer alıyor. Önde altı pistonlu, arkada dört pistonlu sabit kaliperler bulunuyor. Super Bee Launch Edition ayrıca yeni Continuous Damping Control (CDC) çift valfli adaptif amortisörleri içeren bir süspansiyon paketi de alıyor. Ön tension-link burçlarıyüzde 25daha sertken, ön handling-link burçları%50daha sert ve bu da önden kayma eğilimini azaltmaya yardımcı oluyor. Arka denge çubuğu%20daha sert hale getirilirken, ön yay oranları%12artırılmış. Arka yay oranlarındaki artış ise%6seviyesinde. 2027 Dodge Charger Super Bee Launch Edition 20 inç jantı ve Goodyear Eagle F1 Supercar 3 lastikleri Charger'ın yeni performans potansiyelinden tam olarak yararlanmak için Dodge, yeni sürüş modları eklemiş. Yeni bir Track Mode ve Drag Mode bulunuyor; bunlar da beklendiği gibi görev yapıyor. Drag Mode, güç aktarımını en üst seviyeye çıkarmak için ön taraftaki geri sekmeyi azaltıyor ve arka taraftaki sıkıştırma kuvvetini artırıyor. Track Mode ise daha keskin direksiyon tepkileri ve yükseltilmiş vites değiştirme noktaları dahil olmak üzere çekiş ve stabilite ayarlarını içeren özel kalibrasyonlarla geliyor. Torque Reserve sistemi de geri dönüyor ve Launch Control'ü geliştiriyor. Sürücü frene basılı tutup gaza yüklendiğinde sistem hava akışını artırıyor ve ateşleme zamanlamasını geciktirerek tekerleklere giden torku sınırlarken turboşarjları hazır hale getiriyor. Sürücü freni bıraktığında, depolanan tork devreye giriyor ve turbo gecikmesi azaltılıyor. Super Bee ayrıca Race Prep özelliğini alan ilk Charger Sixpack olma özelliğini taşıyor. Bu sistem, motor kapatıldıktan sonra da elektrikli soğutma fanını çalıştırarak motoru soğutmaya devam ediyor. Dodge, yeni direksiyon simidinin üzerine arkadan itiş modu için özel bir düğme yerleştirmiş. Bu sayede sürücüler mevcut torkun%100'ünüanlık olarak maksimum keyif için arka tekerleklere gönderebiliyor veya Line Lock özelliğini devreye alabiliyor. 2027 Dodge Charger Super Bee Launch Edition iç mekanı Super Bee Launch Edition satışa sunulduğunda, yeni sarı-yeşilSuckerPunchgövde rengiyle tercih edilebilecek. Bu, 2027 için sunulan yeni renklerden biri; diğeri iseShady. Eğer bunlar size hitap etmiyorsa, Dodge ayrıca arka spoyler ve ön tasarım gibi Sucker Punch vurgularına sahipDiamond Blackseçeneğini de sunacak. Diğer görsel yenilikler arasında özel grafikler ve yeni Super Bee logosu yer alıyor. İç mekânda Super Bee, kendine özgü markalamaya sahip yeni koltuklarla geliyor. Ayrıca özel RWD düğmesine sahip yeni deri performans direksiyonu ve arkasında daha büyük kulakçıklar bulunuyor. Her birinde özel bir gösterge paneli rozeti yer alıyor. Dodge,2027 Charger Super Beefiyatını bu yılın ilerleyen dönemlerinde açıklayacağını söylüyor. Sipariş ve satışa sunulma takvimiyle ilgili detaylar da o dönemde paylaşılacak. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🐝 YENİ DODGE CHARGER SUPER BEE ARTIK ÇOK DAHA GÜÇLÜ\n\nDodge'un efsanevi Super Bee modeli, 2027 için geri döndü! Çift turbo 3.0 litrelik motoruyla tam 600 bg güç üretiyor.\n\nDaha büyük frenler, pist odaklı güncellemeler ve dört tekerlekten çekiş sistemiyle yollara çıkmaya hazırlanıyor.\n\nBu gücü deneyimlemek ister miydiniz?",
-        "post_text_length": 321,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T20:28:06.872906+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Dodge Charger Super Bee: \"... Arı gibi sok!\"",
-          "link": "https://tr.motor1.com/news/804253/dodge-charger-super-bee-2026/",
-          "published": "2026-08-08T17:00:00+00:00",
-          "summary": "Daha büyük turbolara, daha büyük frenlere ve 600 beygir güce sahip.",
-          "image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/mMzGOB/s3/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ari-bee-charger-dodge-sok-super",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 21,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, ikonik model adı ve performans tutkunlarını heyecanlandıracak özellikleriyle sosyal medyada yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Super Bee geri döndü. Dodge'un şimdiye kadarki en güçlüCharger Sixpackversiyonu,2027 model yılıiçin geliyor; daha yüksek güç, daha keskin yol tutuşu ve pist odaklı bir dizi güncelleme sunuyor. Yeni Charger Super Bee, Dodge'un çift turboşarjlı3.0 litrelik sıralı altı silindirlimotorunun elden geçirilmiş bir versiyonundan600 bggüç ve720 Nmtork üretiyor. Güç, 8 ileri otomatik şanzıman üzerinden aktarılıyor ve model standart olarak dört tekerlekten çekişle geliyor. Ayrıca yeni bir arkadan itiş modu, sürücünün mevcut torkun tamamını arka tekerleklere göndermesine olanak tanıyor. Ekstra güç, motora%7,5daha fazla hava çeken56 milimetrelikçift Garrett Motion turboşarjdan geliyor. Maksimum tork artık daha erken,3.000 d/d'de sunuluyor ve5.900 d/d'ye kadar korunuyor. Motor güncellemelerine ek olarak, yeni Charger versiyonu şimdiye kadarki \"en pist odaklı\" Super Bee olması için soğutma sistemleri ve aerodinamik tarafta da önemli geliştirmeler alıyor. Yüksek sıcaklık radyatöründeki soğutma kapasitesi%50'den fazlaartırılırken, düşük sıcaklık devresinin kapasitesiiki katın da üzerineçıkıyor. Super Bee, hava akışını%30artıran ve241 km/shızda45 kg'dan fazlayere basma kuvveti sağlayan kendine özgü bir ön tasarım ve yeniden şekillendirilmiş farlarla geliyor. Ön bölümün köşelerinde ek radyatörler gizlenirken, yeniden tasarlanan ve konumu değiştirilen ön bileşenler ilave soğutma donanımı ve hava kanalları için alan yaratıyor. Charger'da uzatılmış bir ön splitter ve yeni, daha büyük bir performans spoyleri de bulunuyor. 2027 Dodge Charger Super Bee Launch Edition kaputu 2027 Dodge Charger Super Bee, Goodyear Eagle F1 Supercar 3305/35ZR20lastiklerle sarılı20 inçdövme jantlarla geliyor. Bu büyük jantların arkasında ise önde ve arkada havalandırmalı406 mmBrembo frenler yer alıyor. Önde altı pistonlu, arkada dört pistonlu sabit kaliperler bulunuyor. Super Bee Launch Edition ayrıca yeni Continuous Damping Control (CDC) çift valfli adaptif amortisörleri içeren bir süspansiyon paketi de alıyor. Ön tension-link burçlarıyüzde 25daha sertken, ön handling-link burçları%50daha sert ve bu da önden kayma eğilimini azaltmaya yardımcı oluyor. Arka denge çubuğu%20daha sert hale getirilirken, ön yay oranları%12artırılmış. Arka yay oranlarındaki artış ise%6seviyesinde. 2027 Dodge Charger Super Bee Launch Edition 20 inç jantı ve Goodyear Eagle F1 Supercar 3 lastikleri Charger'ın yeni performans potansiyelinden tam olarak yararlanmak için Dodge, yeni sürüş modları eklemiş. Yeni bir Track Mode ve Drag Mode bulunuyor; bunlar da beklendiği gibi görev yapıyor. Drag Mode, güç aktarımını en üst seviyeye çıkarmak için ön taraftaki geri sekmeyi azaltıyor ve arka taraftaki sıkıştırma kuvvetini artırıyor. Track Mode ise daha keskin direksiyon tepkileri ve yükseltilmiş vites değiştirme noktaları dahil olmak üzere çekiş ve stabilite ayarlarını içeren özel kalibrasyonlarla geliyor. Torque Reserve sistemi de geri dönüyor ve Launch Control'ü geliştiriyor. Sürücü frene basılı tutup gaza yüklendiğinde sistem hava akışını artırıyor ve ateşleme zamanlamasını geciktirerek tekerleklere giden torku sınırlarken turboşarjları hazır hale getiriyor. Sürücü freni bıraktığında, depolanan tork devreye giriyor ve turbo gecikmesi azaltılıyor. Super Bee ayrıca Race Prep özelliğini alan ilk Charger Sixpack olma özelliğini taşıyor. Bu sistem, motor kapatıldıktan sonra da elektrikli soğutma fanını çalıştırarak motoru soğutmaya devam ediyor. Dodge, yeni direksiyon simidinin üzerine arkadan itiş modu için özel bir düğme yerleştirmiş. Bu sayede sürücüler mevcut torkun%100'ünüanlık olarak maksimum keyif için arka tekerleklere gönderebiliyor veya Line Lock özelliğini devreye alabiliyor. 2027 Dodge Charger Super Bee Launch Edition iç mekanı Super Bee Launch Edition satışa sunulduğunda, yeni sarı-yeşilSuckerPunchgövde rengiyle tercih edilebilecek. Bu, 2027 için sunulan yeni renklerden biri; diğeri iseShady. Eğer bunlar size hitap etmiyorsa, Dodge ayrıca arka spoyler ve ön tasarım gibi Sucker Punch vurgularına sahipDiamond Blackseçeneğini de sunacak. Diğer görsel yenilikler arasında özel grafikler ve yeni Super Bee logosu yer alıyor. İç mekânda Super Bee, kendine özgü markalamaya sahip yeni koltuklarla geliyor. Ayrıca özel RWD düğmesine sahip yeni deri performans direksiyonu ve arkasında daha büyük kulakçıklar bulunuyor. Her birinde özel bir gösterge paneli rozeti yer alıyor. Dodge,2027 Charger Super Beefiyatını bu yılın ilerleyen dönemlerinde açıklayacağını söylüyor. Sipariş ve satışa sunulma takvimiyle ilgili detaylar da o dönemde paylaşılacak. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🐝 YENİ DODGE CHARGER SUPER BEE ARTIK ÇOK DAHA GÜÇLÜ\n\nDodge'un efsanevi Super Bee modeli, 2027 için geri döndü! Çift turbo 3.0 litrelik motoruyla tam 600 bg güç üretiyor.\n\nDaha büyük frenler, pist odaklı güncellemeler ve dört tekerlekten çekiş sistemiyle yollara çıkmaya hazırlanıyor.\n\nBu gücü deneyimlemek ister miydiniz?",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/mMzGOB/s1/2027-dodge-charger-super-bee-launch-edition-front-3-4.jpg",
-            "https://cdn.motor1.com/images/mgl/7ZEM0W/s3/2027-dodge-charger-super-bee-launch-edition-interior.jpg",
-            "https://cdn.motor1.com/images/mgl/W8KxAN/s3/2027-dodge-charger-super-bee-launch-edition-wheel.jpg",
-            "https://cdn.motor1.com/images/mgl/0eglPn/s3/2027-dodge-charger-super-bee-launch-edition-hood.jpg"
-          ]
-        },
-        "post_text": "🐝 YENİ DODGE CHARGER SUPER BEE ARTIK ÇOK DAHA GÜÇLÜ\n\nDodge'un efsanevi Super Bee modeli, 2027 için geri döndü! Çift turbo 3.0 litrelik motoruyla tam 600 bg güç üretiyor.\n\nDaha büyük frenler, pist odaklı güncellemeler ve dört tekerlekten çekiş sistemiyle yollara çıkmaya hazırlanıyor.\n\nBu gücü deneyimlemek ister miydiniz?",
-        "image_path": "/tmp/otoxtra_img_miqcrros.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_miqcrros.jpg",
-          "/tmp/otoxtra_img_orbfrun9.jpg",
-          "/tmp/otoxtra_img_4lwez06_.jpg",
-          "/tmp/otoxtra_img_2v6muor0.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T20:28:10.263649+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175242906916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17944816341301810",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27503144009384433",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-08T20:28:58.452104+03:00"
+      "updated_at": null
     }
   }
 }
