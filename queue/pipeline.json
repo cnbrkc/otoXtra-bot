@@ -1,14 +1,32 @@
 {
-  "run_id": "2026-08-08-15:41",
-  "status": "error",
-  "started_at": "2026-08-08T15:41:56.289783+03:00",
-  "updated_at": "2026-08-08T15:42:30.314324+03:00",
+  "run_id": "2026-08-08-16:43",
+  "status": "completed",
+  "started_at": "2026-08-08T16:43:06.358377+03:00",
+  "updated_at": "2026-08-08T16:44:20.596760+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+            "link": "https://nitter.net/murattosunMSE/status/2086079917226066184#m",
+            "published": "2026-08-08T13:19:44+00:00",
+            "summary": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "MuratTosun",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "adresini-banka-baslamali-bilgini-bitsin-dogrula-dogrula-dogrula-donemi-durum-elektri-elektrikli-farkli-fatura-gereken-gir-gir-guncel-indir-istasyonlarinda-karti-kartini-kartiyla-kartli-kli-kredi-kredi-maili-odeme-odeme-okutalim-olmasi-olsun-otomobi-otomobil-sarj-sonucta-telefonda-telefonu-tmeli-uygulama-uyguluma-zorlugu"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +144,207 @@
           },
           "_metrics": {
             "found": 189,
-            "after_keyword": 129,
+            "after_keyword": 128,
             "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 189,
-          "after_keyword": 129,
+          "after_keyword": 128,
           "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-08T15:42:30.314324+03:00"
+      "error": null,
+      "updated_at": "2026-08-08T16:43:39.130870+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "link": "https://nitter.net/murattosunMSE/status/2086079917226066184#m",
+          "published": "2026-08-08T13:19:44+00:00",
+          "summary": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "MuratTosun",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "adresini-banka-baslamali-bilgini-bitsin-dogrula-dogrula-dogrula-donemi-durum-elektri-elektrikli-farkli-fatura-gereken-gir-gir-guncel-indir-istasyonlarinda-karti-kartini-kartiyla-kartli-kli-kredi-kredi-maili-odeme-odeme-okutalim-olmasi-olsun-otomobi-otomobil-sarj-sonucta-telefonda-telefonu-tmeli-uygulama-uyguluma-zorlugu",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 14,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 9
+          },
+          "score": 82,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin en büyük ortak sorununa parmak bastığı ve sosyal medyada yüksek etkileşim/yorum alabilecek bir kullanıcı deneyimi eleştirisi içerdiği için.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 82,
+        "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 14,
+          "gundem_gucu": 17,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli araç sahiplerinin en büyük ortak sorununa parmak bastığı ve sosyal medyada yüksek etkileşim/yorum alabilecek bir kullanıcı deneyimi eleştirisi içerdiği için.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+            "score": 82,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 14,
+              "gundem_gucu": 17,
+              "paylasilabilirlik": 9
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T16:43:41.509453+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "link": "https://nitter.net/murattosunMSE/status/2086079917226066184#m",
+          "published": "2026-08-08T13:19:44+00:00",
+          "summary": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "MuratTosun",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "adresini-banka-baslamali-bilgini-bitsin-dogrula-dogrula-dogrula-donemi-durum-elektri-elektrikli-farkli-fatura-gereken-gir-gir-guncel-indir-istasyonlarinda-karti-kartini-kartiyla-kartli-kli-kredi-kredi-maili-odeme-odeme-okutalim-olmasi-olsun-otomobi-otomobil-sarj-sonucta-telefonda-telefonu-tmeli-uygulama-uyguluma-zorlugu",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 14,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 9
+          },
+          "score": 82,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin en büyük ortak sorununa parmak bastığı ve sosyal medyada yüksek etkileşim/yorum alabilecek bir kullanıcı deneyimi eleştirisi içerdiği için.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "⚡️ ŞARJ İSTASYONUNDA KREDİ KARTI DÖNEMİ BAŞLAMALI\n\nElektrikli otomobil sahiplerinin en büyük derdi şarj istasyonlarındaki uygulama karmaşası. Her istasyon için ayrı uygulama indirmek, kayıt olmak, kart bilgilerini girmek tam bir eziyet.\n\nArtık bu çile bitsin! Şarj istasyonlarında kredi kartıyla ödeme kolaylığı gelmeli. Kartı okut, şarj et, git. Bu kadar basit olmalı.\n\nSizce de bu sistem değişmeli mi?",
+        "post_text_length": 403,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T16:43:43.112029+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "link": "https://nitter.net/murattosunMSE/status/2086079917226066184#m",
+          "published": "2026-08-08T13:19:44+00:00",
+          "summary": "ELEKTRİKLİ OTOMOBİLİN EN BÜYÜK ZORLUĞU ARTIK BİTMELİ ‼️ . Güncel durum ⬇️ Uyguluma indir Telefonu doğrula Maili doğrula Banka kartını doğrula Adresini gir Fatura bilgini gir vs vs vs Sonuçta telefonda 10-15 farklı uygulama . Olması gereken ⬇️ Elektrikli otomobil şarj istasyonlarında kredi kartıyla ödeme dönemi başlamalı. Kredi kartlı ödeme olsun, kartı okutalım bitsin.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "duckduckgo",
+          "source_name": "MuratTosun",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "adresini-banka-baslamali-bilgini-bitsin-dogrula-dogrula-dogrula-donemi-durum-elektri-elektrikli-farkli-fatura-gereken-gir-gir-guncel-indir-istasyonlarinda-karti-kartini-kartiyla-kartli-kli-kredi-kredi-maili-odeme-odeme-okutalim-olmasi-olsun-otomobi-otomobil-sarj-sonucta-telefonda-telefonu-tmeli-uygulama-uyguluma-zorlugu",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 14,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 9
+          },
+          "score": 82,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin en büyük ortak sorununa parmak bastığı ve sosyal medyada yüksek etkileşim/yorum alabilecek bir kullanıcı deneyimi eleştirisi içerdiği için.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "⚡️ ŞARJ İSTASYONUNDA KREDİ KARTI DÖNEMİ BAŞLAMALI\n\nElektrikli otomobil sahiplerinin en büyük derdi şarj istasyonlarındaki uygulama karmaşası. Her istasyon için ayrı uygulama indirmek, kayıt olmak, kart bilgilerini girmek tam bir eziyet.\n\nArtık bu çile bitsin! Şarj istasyonlarında kredi kartıyla ödeme kolaylığı gelmeli. Kartı okut, şarj et, git. Bu kadar basit olmalı.\n\nSizce de bu sistem değişmeli mi?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "⚡️ ŞARJ İSTASYONUNDA KREDİ KARTI DÖNEMİ BAŞLAMALI\n\nElektrikli otomobil sahiplerinin en büyük derdi şarj istasyonlarındaki uygulama karmaşası. Her istasyon için ayrı uygulama indirmek, kayıt olmak, kart bilgilerini girmek tam bir eziyet.\n\nArtık bu çile bitsin! Şarj istasyonlarında kredi kartıyla ödeme kolaylığı gelmeli. Kartı okut, şarj et, git. Bu kadar basit olmalı.\n\nSizce de bu sistem değişmeli mi?",
+        "image_path": "/tmp/otoxtra_img_gimo_uqm.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_gimo_uqm.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T16:43:46.285498+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175222704916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18323950564277911",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1036689678984116",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-08T16:44:20.596760+03:00"
     }
   }
 }
