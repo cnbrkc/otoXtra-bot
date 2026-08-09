@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-08-09-11:39",
-  "status": "error",
-  "started_at": "2026-08-09T11:39:08.576698+03:00",
-  "updated_at": "2026-08-09T11:40:06.780088+03:00",
+  "run_id": "2026-08-09-12:36",
+  "status": "completed",
+  "started_at": "2026-08-09T12:36:34.087513+03:00",
+  "updated_at": "2026-08-09T12:38:14.294633+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Chevrolet Camaro, dört kapılı bir sedana dönüşebilir",
+            "link": "https://tr.motor1.com/news/804252/camaro-dort-kapi-sedan-olabilir/",
+            "published": "2026-08-09T09:00:00+00:00",
+            "summary": "2029'a kadar ortaya çıkması beklenmiyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/Ak3Z2W/s3/2028-chevrolet-camaro-rendering-by-motor1.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3Z2W/s3/2028-chevrolet-camaro-rendering-by-motor1.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/Ak3Z2W/s3/2028-chevrolet-camaro-rendering-by-motor1.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "camaro-chevrolet-donusebilir-dort-kapili-sedana"
+          },
+          {
+            "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+            "link": "https://nitter.net/veysellkaranii/status/2086375121145446524#m",
+            "published": "2026-08-09T08:52:46+00:00",
+            "summary": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+            "image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "VeyselKarani",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "1977-320i-arac-belirledigi-bin-bin-bmw-bulamadi-dolara-duzenlenen-e21-fiyatina-gectigimiz-gunlerde-kilometredeki-koleksiyonluk-kondisyondaki-model-muzayedede-otomobil-rezerv-sahibini-saticinin-satisa-teklifler-ulasilamadigi-yukselse"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,47 +166,234 @@
           "_metrics": {
             "found": 175,
             "after_keyword": 119,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 10,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 175,
           "after_keyword": 119,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 10,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-09T11:40:06.780088+03:00"
+      "error": null,
+      "updated_at": "2026-08-09T12:37:27.536471+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "link": "https://nitter.net/veysellkaranii/status/2086375121145446524#m",
+          "published": "2026-08-09T08:52:46+00:00",
+          "summary": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "VeyselKarani",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "1977-320i-arac-belirledigi-bin-bin-bmw-bulamadi-dolara-duzenlenen-e21-fiyatina-gectigimiz-gunlerde-kilometredeki-koleksiyonluk-kondisyondaki-model-muzayedede-otomobil-rezerv-sahibini-saticinin-satisa-teklifler-ulasilamadigi-yukselse",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 15,
+            "benzersizlik": 14,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik BMW tutkunlarının ilgisini çekecek nostaljik bir içerik, ancak müzayedenin başarısızlıkla sonuçlanması hikayenin etkisini biraz düşürüyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 67,
+        "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 15,
+          "benzersizlik": 14,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Klasik BMW tutkunlarının ilgisini çekecek nostaljik bir içerik, ancak müzayedenin başarısızlıkla sonuçlanması hikayenin etkisini biraz düşürüyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+            "score": 67,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 14,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "Chevrolet Camaro, dört kapılı bir sedana dönüşebilir",
+            "score": 56,
+            "score_breakdown": {
+              "guncellik": 18,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 10,
+              "gundem_gucu": 10,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Chevrolet Camaro, dört kapılı bir sedana dönüşebilir",
+            "link": "https://tr.motor1.com/news/804252/camaro-dort-kapi-sedan-olabilir/",
+            "score": 56,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "camaro-chevrolet-donusebilir-dort-kapili-sedana"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-09T12:37:30.147900+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "link": "https://nitter.net/veysellkaranii/status/2086375121145446524#m",
+          "published": "2026-08-09T08:52:46+00:00",
+          "summary": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "VeyselKarani",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "1977-320i-arac-belirledigi-bin-bin-bmw-bulamadi-dolara-duzenlenen-e21-fiyatina-gectigimiz-gunlerde-kilometredeki-koleksiyonluk-kondisyondaki-model-muzayedede-otomobil-rezerv-sahibini-saticinin-satisa-teklifler-ulasilamadigi-yukselse",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 15,
+            "benzersizlik": 14,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik BMW tutkunlarının ilgisini çekecek nostaljik bir içerik, ancak müzayedenin başarısızlıkla sonuçlanması hikayenin etkisini biraz düşürüyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🚗 1977 BMW 320i SATILAMADI!\n\nSadece 15 bin km'deki 1977 model E21 BMW 320i, müzayedede alıcı bulamadı.\n\nKoleksiyonluk kondisyondaki araç için 20 bin dolara kadar teklifler gelse de, satıcının belirlediği rezerv fiyata ulaşılamadı.\n\nSizce bu klasik BMW'nin değeri ne kadar olmalıydı?",
+        "post_text_length": 282,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-09T12:37:31.915894+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "link": "https://nitter.net/veysellkaranii/status/2086375121145446524#m",
+          "published": "2026-08-09T08:52:46+00:00",
+          "summary": "Sadece 15 bin kilometredeki 1977 model E21 BMW 320i, geçtiğimiz günlerde düzenlenen bir müzayedede satışa çıktı. Koleksiyonluk kondisyondaki otomobil için teklifler 20 bin dolara kadar yükselse de, satıcının belirlediği rezerv fiyatına ulaşılamadığı için araç yeni sahibini bulamadı.",
+          "image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "VeyselKarani",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "1977-320i-arac-belirledigi-bin-bin-bmw-bulamadi-dolara-duzenlenen-e21-fiyatina-gectigimiz-gunlerde-kilometredeki-koleksiyonluk-kondisyondaki-model-muzayedede-otomobil-rezerv-sahibini-saticinin-satisa-teklifler-ulasilamadigi-yukselse",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 15,
+            "benzersizlik": 14,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik BMW tutkunlarının ilgisini çekecek nostaljik bir içerik, ancak müzayedenin başarısızlıkla sonuçlanması hikayenin etkisini biraz düşürüyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🚗 1977 BMW 320i SATILAMADI!\n\nSadece 15 bin km'deki 1977 model E21 BMW 320i, müzayedede alıcı bulamadı.\n\nKoleksiyonluk kondisyondaki araç için 20 bin dolara kadar teklifler gelse de, satıcının belirlediği rezerv fiyata ulaşılamadı.\n\nSizce bu klasik BMW'nin değeri ne kadar olmalıydı?",
+          "image_sources": [
+            "nitter_still"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HPRLG-dXQAAyLrk.jpg?name=orig"
+          ]
+        },
+        "post_text": "🚗 1977 BMW 320i SATILAMADI!\n\nSadece 15 bin km'deki 1977 model E21 BMW 320i, müzayedede alıcı bulamadı.\n\nKoleksiyonluk kondisyondaki araç için 20 bin dolara kadar teklifler gelse de, satıcının belirlediği rezerv fiyata ulaşılamadı.\n\nSizce bu klasik BMW'nin değeri ne kadar olmalıydı?",
+        "image_path": "/tmp/otoxtra_img_sciyavh7.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_sciyavh7.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-09T12:37:33.574730+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175317018916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18279716764292602",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1350555787163873",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-09T12:38:14.294633+03:00"
     }
   }
 }
