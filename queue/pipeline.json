@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-09-19:32",
+  "run_id": "2026-08-09-20:28",
   "status": "error",
-  "started_at": "2026-08-09T19:32:03.398765+03:00",
-  "updated_at": "2026-08-09T19:33:01.519384+03:00",
+  "started_at": "2026-08-09T20:28:50.311643+03:00",
+  "updated_at": "2026-08-09T20:29:45.858866+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Claude Code oturumları artık birbiriyle konuşuyor",
-            "link": "https://www.donanimhaber.com/claude-code-oturumlari-artik-birbiriyle-konusuyor--209086",
-            "published": "2026-08-09T16:00:00+00:00",
-            "summary": "Claude Code 2.1.224, macOS ve Linux'ta oturumlar arası mesajlaşmayı başlattı. Yeni araçlar, ayrı Terminal oturumlarının metin paylaşmasını sağlayarak kodlama akışını artık değiştiriyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209086/1200x675claude-code-oturumlari-artik-birbiriyle-konusuyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209086/1200x675claude-code-oturumlari-artik-birbiriyle-konusuyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209086/1200x675claude-code-oturumlari-artik-birbiriyle-konusuyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "birbiriyle-claude-code-konusuyor-oturumlari"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,30 +126,30 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 120,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 119,
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 120,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 119,
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-09T19:32:59.402708+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-09T20:29:45.858866+03:00"
     },
     "score": {
-      "status": "error",
+      "status": "waiting",
       "output": null,
-      "error": "No article above threshold (threshold=40, top_score=38)",
-      "updated_at": "2026-08-09T19:33:01.519384+03:00"
+      "error": null,
+      "updated_at": null
     },
     "write": {
       "status": "waiting",
