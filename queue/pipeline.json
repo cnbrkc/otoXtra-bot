@@ -1,14 +1,51 @@
 {
-  "run_id": "2026-08-10-04:28",
-  "status": "error",
-  "started_at": "2026-08-10T04:28:41.397030+03:00",
-  "updated_at": "2026-08-10T04:29:39.305901+03:00",
+  "run_id": "2026-08-10-06:51",
+  "status": "completed",
+  "started_at": "2026-08-10T06:51:57.417753+03:00",
+  "updated_at": "2026-08-10T06:53:54.946135+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Türkiye'nin ilk ve tek Haftalık Otomobil Gazetesi 10 Ağustos Pazartesi sayısı yayında. Özel haber, röportaj ve yorumlarla... https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_10082026/",
+            "link": "https://nitter.net/ahmetcelik2016/status/2086634065239617566#m",
+            "published": "2026-08-10T02:01:43+00:00",
+            "summary": "Türkiye'nin ilk ve tek Haftalık Otomobil Gazetesi 10 Ağustos Pazartesi sayısı yayında. Özel haber, röportaj ve yorumlarla... online.fliphtml5.com/pdelr/O…",
+            "image_url": "https://pbs.twimg.com/media/HPU2liPW8AA478Z.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HPU2liPW8AA478Z.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HPU2liPW8AA478Z.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "10082026-agustos-com-fliphtml5-gazetesi-haber-haftalik-https-online-otomobil-otomobilgazetesi-ozel-pazartesi-pdelr-roportaj-sayisi-tek-turkiye-yayinda-yorumlarla"
+          },
+          {
+            "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+            "link": "https://nitter.net/ahmetcelik2016/status/2086626555409662023#m",
+            "published": "2026-08-10T01:31:53+00:00",
+            "summary": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. otomobilgazetesi.com/haber/s… @HyundaiTurkiye @otoshopsturkiye",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "com-guzergahinda-guzergahinda-h15641-haber-html-https-hyundaiturkiye-ioniq-ioniq-izlenimleri-izlenimleri-kim-kim-mutlu-mutlu-otomobilgazetesi-otoshops-otoshopstan-otoshopsturkiye-samsun-samsun-sinop-sinop-surus-surus"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,47 +164,226 @@
           "_metrics": {
             "found": 173,
             "after_keyword": 118,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 12,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 173,
           "after_keyword": 118,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 12,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-10T04:29:39.305901+03:00"
+      "error": null,
+      "updated_at": "2026-08-10T06:52:54.618413+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+          "link": "https://nitter.net/ahmetcelik2016/status/2086626555409662023#m",
+          "published": "2026-08-10T01:31:53+00:00",
+          "summary": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. otomobilgazetesi.com/haber/s… @HyundaiTurkiye @otoshopsturkiye",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "com-guzergahinda-guzergahinda-h15641-haber-html-https-hyundaiturkiye-ioniq-ioniq-izlenimleri-izlenimleri-kim-kim-mutlu-mutlu-otomobilgazetesi-otoshops-otoshopstan-otoshopsturkiye-samsun-samsun-sinop-sinop-surus-surus",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç test sürüşü ve yerel güzergah içeriği barındırıyor ancak başlık ve kurgu itibarıyla standart bir inceleme haberi düzeyinde.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 50,
+        "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 8,
+          "gundem_gucu": 8,
+          "paylasilabilirlik": 5
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli araç test sürüşü ve yerel güzergah içeriği barındırıyor ancak başlık ve kurgu itibarıyla standart bir inceleme haberi düzeyinde.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+            "score": 50,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 8,
+              "paylasilabilirlik": 5
+            }
+          },
+          {
+            "title": "Türkiye'nin ilk ve tek Haftalık Otomobil Gazetesi 10 Ağustos Pazartesi sayısı yayında. Özel haber, röportaj ve yorumlarla... https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_10082026/",
+            "score": 33,
+            "score_breakdown": {
+              "guncellik": 17,
+              "etkilesim_potansiyeli": 4,
+              "benzersizlik": 3,
+              "gundem_gucu": 5,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Türkiye'nin ilk ve tek Haftalık Otomobil Gazetesi 10 Ağustos Pazartesi sayısı yayında. Özel haber, röportaj ve yorumlarla... https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_10082026/",
+            "link": "https://nitter.net/ahmetcelik2016/status/2086634065239617566#m",
+            "score": 33,
+            "score_reason": "ai_scored",
+            "source_name": "Ahmet Celik",
+            "topic_fingerprint": "10082026-agustos-com-fliphtml5-gazetesi-haber-haftalik-https-online-otomobil-otomobilgazetesi-ozel-pazartesi-pdelr-roportaj-sayisi-tek-turkiye-yayinda-yorumlarla"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-10T06:52:57.612135+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+          "link": "https://nitter.net/ahmetcelik2016/status/2086626555409662023#m",
+          "published": "2026-08-10T01:31:53+00:00",
+          "summary": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. otomobilgazetesi.com/haber/s… @HyundaiTurkiye @otoshopsturkiye",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "com-guzergahinda-guzergahinda-h15641-haber-html-https-hyundaiturkiye-ioniq-ioniq-izlenimleri-izlenimleri-kim-kim-mutlu-mutlu-otomobilgazetesi-otoshops-otoshopstan-otoshopsturkiye-samsun-samsun-sinop-sinop-surus-surus",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç test sürüşü ve yerel güzergah içeriği barındırıyor ancak başlık ve kurgu itibarıyla standart bir inceleme haberi düzeyinde.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "⚡️ IONIQ 6 SİNOP-SAMSUN YOLUNDA TEST EDİLDİ\n\nHyundai Ioniq 6, Sinop-Samsun arasında uzun bir yolculukta incelendi. Sürüş keyfi ve performansı dikkat çekti.\n\nAyrıca Otoshops'tan ikinci el araç alanların memnuniyet düzeyleri de araştırıldı. Sonuçlar yüz güldürdü!\n\nSizce Ioniq 6 uzun yola uygun mu?",
+        "post_text_length": 296,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-10T06:52:59.185607+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. https://otomobilgazetesi.com/haber/sinop-samsun-guzergahinda-ioniq-6-surus-izlenimleri-ve-otoshopstan-kim-mutlu-h15641.html @HyundaiTurkiye @otoshopsturkiye",
+          "link": "https://nitter.net/ahmetcelik2016/status/2086626555409662023#m",
+          "published": "2026-08-10T01:31:53+00:00",
+          "summary": "Sinop-Samsun güzergahında Ioniq 6 sürüş izlenimleri ve Otoshops’tan kim mutlu?.. otomobilgazetesi.com/haber/s… @HyundaiTurkiye @otoshopsturkiye",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "duckduckgo",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "com-guzergahinda-guzergahinda-h15641-haber-html-https-hyundaiturkiye-ioniq-ioniq-izlenimleri-izlenimleri-kim-kim-mutlu-mutlu-otomobilgazetesi-otoshops-otoshopstan-otoshopsturkiye-samsun-samsun-sinop-sinop-surus-surus",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç test sürüşü ve yerel güzergah içeriği barındırıyor ancak başlık ve kurgu itibarıyla standart bir inceleme haberi düzeyinde.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "⚡️ IONIQ 6 SİNOP-SAMSUN YOLUNDA TEST EDİLDİ\n\nHyundai Ioniq 6, Sinop-Samsun arasında uzun bir yolculukta incelendi. Sürüş keyfi ve performansı dikkat çekti.\n\nAyrıca Otoshops'tan ikinci el araç alanların memnuniyet düzeyleri de araştırıldı. Sonuçlar yüz güldürdü!\n\nSizce Ioniq 6 uzun yola uygun mu?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "⚡️ IONIQ 6 SİNOP-SAMSUN YOLUNDA TEST EDİLDİ\n\nHyundai Ioniq 6, Sinop-Samsun arasında uzun bir yolculukta incelendi. Sürüş keyfi ve performansı dikkat çekti.\n\nAyrıca Otoshops'tan ikinci el araç alanların memnuniyet düzeyleri de araştırıldı. Sonuçlar yüz güldürdü!\n\nSizce Ioniq 6 uzun yola uygun mu?",
+        "image_path": "/tmp/otoxtra_img_hqd679fh.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_hqd679fh.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-10T06:53:02.930980+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175398240916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "publish_failed"
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2087389708518789",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-10T06:53:54.946135+03:00"
     }
   }
 }
