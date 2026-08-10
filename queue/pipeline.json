@@ -1,51 +1,14 @@
 {
-  "run_id": "2026-08-10-14:05",
-  "status": "completed",
-  "started_at": "2026-08-10T14:05:45.277610+03:00",
-  "updated_at": "2026-08-10T14:07:38.318145+03:00",
+  "run_id": "2026-08-10-16:01",
+  "status": "error",
+  "started_at": "2026-08-10T16:01:44.069772+03:00",
+  "updated_at": "2026-08-10T16:02:39.498191+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "ASIL KONU NE? Menzil mi? Hızlı şarj mı? . Benim için menzil.",
-            "link": "https://nitter.net/murattosunMSE/status/2086737720571822546#m",
-            "published": "2026-08-10T08:53:36+00:00",
-            "summary": "ASIL KONU NE? Menzil mi? Hızlı şarj mı? . Benim için menzil. Murat Tosun (@murattosunMSE) 500 km altında menzili olan elektrikli satın alınır mı? Benim fikrim değişti. — https://nitter.net/murattosunMSE/status/2086150594557858209#m",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "asil-benim-hizli-konu-menzil-menzil-sarj"
-          },
-          {
-            "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-            "link": "https://nitter.net/veysellkaranii/status/2086755161058202104#m",
-            "published": "2026-08-10T10:02:55+00:00",
-            "summary": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 :  2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli :  6.190.000 TL XC60 T8 Hybrid:  7.080.000 TL XC90 B5 Benzinli :  8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-            "image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-000-000-000-000-000-080-190-365-380-605-740-acikladi-agustos-ayina-benzinli-benzinli-ex30-ex40-fiyatlarini-hybrid-hybrid-kampanyali-ozel-volvo-xc60-xc60-xc90-xc90"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -163,235 +126,48 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 117,
-            "after_time": 11,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 114,
+            "after_time": 9,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 117,
-          "after_time": 11,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 114,
+          "after_time": 9,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-10T14:06:44.187204+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-10T16:02:39.498191+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2086755161058202104#m",
-          "published": "2026-08-10T10:02:55+00:00",
-          "summary": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 :  2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli :  6.190.000 TL XC60 T8 Hybrid:  7.080.000 TL XC90 B5 Benzinli :  8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-000-000-000-080-190-365-380-605-740-acikladi-agustos-ayina-benzinli-benzinli-ex30-ex40-fiyatlarini-hybrid-hybrid-kampanyali-ozel-volvo-xc60-xc60-xc90-xc90",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 8,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 63,
-          "score_reason": "ai_scored",
-          "score_explanation": "Güncel sıfır araç fiyat listeleri ve kampanyalar otomotiv pazarında yüksek arama hacmine ve etkileşime sahiptir.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 63,
-        "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 15,
-          "benzersizlik": 8,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Güncel sıfır araç fiyat listeleri ve kampanyalar otomotiv pazarında yüksek arama hacmine ve etkileşime sahiptir.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-            "score": 63,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 8,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "ASIL KONU NE? Menzil mi? Hızlı şarj mı? . Benim için menzil.",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 6,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "ASIL KONU NE? Menzil mi? Hızlı şarj mı? . Benim için menzil.",
-            "link": "https://nitter.net/murattosunMSE/status/2086737720571822546#m",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "asil-benim-hizli-konu-menzil-menzil-sarj"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T14:06:53.093894+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2086755161058202104#m",
-          "published": "2026-08-10T10:02:55+00:00",
-          "summary": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 :  2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli :  6.190.000 TL XC60 T8 Hybrid:  7.080.000 TL XC90 B5 Benzinli :  8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-000-000-000-080-190-365-380-605-740-acikladi-agustos-ayina-benzinli-benzinli-ex30-ex40-fiyatlarini-hybrid-hybrid-kampanyali-ozel-volvo-xc60-xc60-xc90-xc90",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 8,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 63,
-          "score_reason": "ai_scored",
-          "score_explanation": "Güncel sıfır araç fiyat listeleri ve kampanyalar otomotiv pazarında yüksek arama hacmine ve etkileşime sahiptir.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "💸 VOLVO AĞUSTOS FİYATLARI AÇIKLANDI!\n\nVolvo'dan Ağustos ayına özel kampanya fiyatları geldi. EX30, EX40, XC60 ve XC90 modellerinde güncel fiyatlar belli oldu.\n\nEX30: 2.380.000 TL, EX40: 3.605.000 TL. XC60 Benzinli: 6.190.000 TL, Hybrid: 7.080.000 TL. XC90 Benzinli: 8.740.000 TL, Hybrid: 10.365.000 TL.\n\nSiz hangi Volvo modelini tercih ederdiniz?",
-        "post_text_length": 346,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T14:06:54.957253+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 : 2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli : 6.190.000 TL XC60 T8 Hybrid: 7.080.000 TL XC90 B5 Benzinli : 8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2086755161058202104#m",
-          "published": "2026-08-10T10:02:55+00:00",
-          "summary": "VOLVO , Ağustos ayına özel kampanyalı fiyatlarını açıkladı . EX30 :  2.380.000 TL EX40 : 3.605.000 TL XC60 B5 Benzinli :  6.190.000 TL XC60 T8 Hybrid:  7.080.000 TL XC90 B5 Benzinli :  8.740.000 TL XC90 T8 Hybrid : 10.365.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-000-000-000-080-190-365-380-605-740-acikladi-agustos-ayina-benzinli-benzinli-ex30-ex40-fiyatlarini-hybrid-hybrid-kampanyali-ozel-volvo-xc60-xc60-xc90-xc90",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 8,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 63,
-          "score_reason": "ai_scored",
-          "score_explanation": "Güncel sıfır araç fiyat listeleri ve kampanyalar otomotiv pazarında yüksek arama hacmine ve etkileşime sahiptir.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "💸 VOLVO AĞUSTOS FİYATLARI AÇIKLANDI!\n\nVolvo'dan Ağustos ayına özel kampanya fiyatları geldi. EX30, EX40, XC60 ve XC90 modellerinde güncel fiyatlar belli oldu.\n\nEX30: 2.380.000 TL, EX40: 3.605.000 TL. XC60 Benzinli: 6.190.000 TL, Hybrid: 7.080.000 TL. XC90 Benzinli: 8.740.000 TL, Hybrid: 10.365.000 TL.\n\nSiz hangi Volvo modelini tercih ederdiniz?",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HPWkwZzWoAAkXcU.jpg?name=orig"
-          ]
-        },
-        "post_text": "💸 VOLVO AĞUSTOS FİYATLARI AÇIKLANDI!\n\nVolvo'dan Ağustos ayına özel kampanya fiyatları geldi. EX30, EX40, XC60 ve XC90 modellerinde güncel fiyatlar belli oldu.\n\nEX30: 2.380.000 TL, EX40: 3.605.000 TL. XC60 Benzinli: 6.190.000 TL, Hybrid: 7.080.000 TL. XC90 Benzinli: 8.740.000 TL, Hybrid: 10.365.000 TL.\n\nSiz hangi Volvo modelini tercih ederdiniz?",
-        "image_path": "/tmp/otoxtra_img_f2u0zi75.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_f2u0zi75.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T14:06:55.913920+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175437306916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18349433188168056",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "909931165013261",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T14:07:38.318145+03:00"
+      "updated_at": null
     }
   }
 }
