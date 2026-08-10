@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-10-21:53",
-  "status": "completed",
-  "started_at": "2026-08-10T21:53:54.186750+03:00",
-  "updated_at": "2026-08-10T21:55:56.865180+03:00",
+  "run_id": "2026-08-10-22:54",
+  "status": "error",
+  "started_at": "2026-08-10T22:54:09.361266+03:00",
+  "updated_at": "2026-08-10T22:55:10.496400+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-            "link": "https://www.log.com.tr/pininfarina-ve-jas-motorsport-imzali-nsxin-yasam-alani-da-sergilendi/",
-            "published": "2026-08-10T17:45:32+00:00",
-            "summary": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yer alıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor. Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "alani-imzali-jas-motorsport-nsx-pininfarina-sergilendi-yasam"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,215 +126,48 @@
           },
           "_metrics": {
             "found": 176,
-            "after_keyword": 112,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 113,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 176,
-          "after_keyword": 112,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 113,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-10T21:54:59.533943+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-10T22:55:10.496400+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-          "link": "https://www.log.com.tr/pininfarina-ve-jas-motorsport-imzali-nsxin-yasam-alani-da-sergilendi/",
-          "published": "2026-08-10T17:45:32+00:00",
-          "summary": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yer alıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor. Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alani-imzali-jas-motorsport-nsx-pininfarina-sergilendi-yasam",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "İkonik bir modelin özel bir versiyonu olması nedeniyle otomobil tutkunlarının ilgisini çekebilir, ancak kitleleri harekete geçirecek genel bir viral gücü bulunmuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 53,
-        "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 12,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "İkonik bir modelin özel bir versiyonu olması nedeniyle otomobil tutkunlarının ilgisini çekebilir, ancak kitleleri harekete geçirecek genel bir viral gücü bulunmuyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-            "score": 53,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 12,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T21:55:01.959325+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-          "link": "https://www.log.com.tr/pininfarina-ve-jas-motorsport-imzali-nsxin-yasam-alani-da-sergilendi/",
-          "published": "2026-08-10T17:45:32+00:00",
-          "summary": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yer alıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor. Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alani-imzali-jas-motorsport-nsx-pininfarina-sergilendi-yasam",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "İkonik bir modelin özel bir versiyonu olması nedeniyle otomobil tutkunlarının ilgisini çekebilir, ancak kitleleri harekete geçirecek genel bir viral gücü bulunmuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yeralıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor."
-        },
-        "post_text": "🏎️ EFSANEVİ HONDA NSX YENİDEN DOĞDU!\n\n1990'ların ikonik Honda NSX'i, Pininfarina ve JAS Motorsport iş birliğiyle \"Tensei\" adıyla geri döndü. Milano Tasarım Haftası'nda tanıtılan bu özel restomod, modern çizgilerle klasiği buluşturuyor.\n\nKarbon fiber parçalar, LED ışıklar ve 3.0 litrelik V6 motorla güçlenen Tensei, manuel şanzımanla sürüş keyfini artırıyor. Sınırlı sayıda üretilecek modelin yaşam alanı da ilk kez görücüye çıktı.\n\nBu efsaneyi garajınızda görmek ister miydiniz?",
-        "post_text_length": 479,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T21:55:04.448445+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi",
-          "link": "https://www.log.com.tr/pininfarina-ve-jas-motorsport-imzali-nsxin-yasam-alani-da-sergilendi/",
-          "published": "2026-08-10T17:45:32+00:00",
-          "summary": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yer alıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor. Pininfarina ve JAS Motorsport imzalı NSX’in yaşam alanı da sergilendi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-10_20-41-04_TmE4N-660x371.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "Log",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alani-imzali-jas-motorsport-nsx-pininfarina-sergilendi-yasam",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "İkonik bir modelin özel bir versiyonu olması nedeniyle otomobil tutkunlarının ilgisini çekebilir, ancak kitleleri harekete geçirecek genel bir viral gücü bulunmuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "1990 yılında hayatımıza giren Honda NSX (Acura NSX), üretilmiş en güzel ve ikonik araçlar arasında yeralıyor. Akla direkt olarak Formula 1 şampiyonu Ayrton Senna’yı da getiren NSX, geçtiğimiz yıl Pininfarina ve JAS Motorsport’un ortaklığıyla gündeme gelmiş, birinci jenerasyon NSX’i alarak “Tensei” adı altında geleceğe taşıyan ikili, hazırladıkları özel “restomod” ile Milano Tasarım Haftası’nda büyük ses getirmişti. Orijinaline sadık kalınan ancak Pininfarina’nın tasarladığı karbon fiber parçalarla modernleştirilen model, LED aydınlatmalarla donatılmış ve gücünü 3.0 litrelik turbo ya da elektrikli desteği olmayan bir “V6” üniteden alıyor. Modifiye çalışmaları sayesinde orijinaline kıyasla daha fazla güç ve tork sunduğu belirtilen motor, yüksek sürüş keyfi için altı ileri manuel şanzıman ile kombinleniyor. Ticari olarak satışa sunulacağı (sınırlı sayıda) ve sağdan ya da soldan direksiyonlu olarak özelleştirilebileceği söylenen Tensei, bugün modern yaşam alanını gözler önüne seren fotoğraflarla karşımıza çıktı. Ekim ayındaki Paris Otomobil Fuarı’dan halka açık olarak sergileneceği açıklanan Tensei, genel olarak oldukça etkileyici bulunuyor.",
-          "post_text_for_card": "🏎️ EFSANEVİ HONDA NSX YENİDEN DOĞDU!\n\n1990'ların ikonik Honda NSX'i, Pininfarina ve JAS Motorsport iş birliğiyle \"Tensei\" adıyla geri döndü. Milano Tasarım Haftası'nda tanıtılan bu özel restomod, modern çizgilerle klasiği buluşturuyor.\n\nKarbon fiber parçalar, LED ışıklar ve 3.0 litrelik V6 motorla güçlenen Tensei, manuel şanzımanla sürüş keyfini artırıyor. Sınırlı sayıda üretilecek modelin yaşam alanı da ilk kez görücüye çıktı.\n\nBu efsaneyi garajınızda görmek ister miydiniz?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🏎️ EFSANEVİ HONDA NSX YENİDEN DOĞDU!\n\n1990'ların ikonik Honda NSX'i, Pininfarina ve JAS Motorsport iş birliğiyle \"Tensei\" adıyla geri döndü. Milano Tasarım Haftası'nda tanıtılan bu özel restomod, modern çizgilerle klasiği buluşturuyor.\n\nKarbon fiber parçalar, LED ışıklar ve 3.0 litrelik V6 motorla güçlenen Tensei, manuel şanzımanla sürüş keyfini artırıyor. Sınırlı sayıda üretilecek modelin yaşam alanı da ilk kez görücüye çıktı.\n\nBu efsaneyi garajınızda görmek ister miydiniz?",
-        "image_path": "/tmp/otoxtra_img_isj169cc.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_isj169cc.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T21:55:06.532345+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175484172916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18092366684415901",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1090925153500793",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T21:55:56.865180+03:00"
+      "updated_at": null
     }
   }
 }
