@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-10-23:39",
-  "status": "completed",
-  "started_at": "2026-08-10T23:39:30.722632+03:00",
-  "updated_at": "2026-08-10T23:41:40.618514+03:00",
+  "run_id": "2026-08-11-00:39",
+  "status": "error",
+  "started_at": "2026-08-11T00:39:09.207670+03:00",
+  "updated_at": "2026-08-11T00:40:04.757385+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-            "link": "https://tr.motor1.com/news/804415/ford-4kapi-mustang-bayi-prototip/",
-            "published": "2026-08-10T20:00:00+00:00",
-            "summary": "Bayiler, başlangıç fiyatı 40.000 $'ın altında olan bir prototipi şimdiden gördü.",
-            "image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adim-ford-gercege-hayali-kapili-mustang-yaklasti"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -140,232 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 6,
+            "count": 3,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 176,
-            "after_keyword": 113,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 173,
+            "after_keyword": 110,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 176,
-          "after_keyword": 113,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 173,
+          "after_keyword": 110,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-10T23:40:31.918434+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-11T00:40:04.757385+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-          "link": "https://tr.motor1.com/news/804415/ford-4kapi-mustang-bayi-prototip/",
-          "published": "2026-08-10T20:00:00+00:00",
-          "summary": "Bayiler, başlangıç fiyatı 40.000 $'ın altında olan bir prototipi şimdiden gördü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "adim-ford-gercege-hayali-kapili-mustang-yaklasti",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir ikonun gövde tipinin kökten değişmesi otomobil dünyasında büyük tartışma ve merak uyandıracak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 83,
-        "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 17,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Klasik bir ikonun gövde tipinin kökten değişmesi otomobil dünyasında büyük tartışma ve merak uyandıracak bir gelişmedir.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-            "score": 83,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 17,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T23:40:52.409975+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-          "link": "https://tr.motor1.com/news/804415/ford-4kapi-mustang-bayi-prototip/",
-          "published": "2026-08-10T20:00:00+00:00",
-          "summary": "Bayiler, başlangıç fiyatı 40.000 $'ın altında olan bir prototipi şimdiden gördü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "adim-ford-gercege-hayali-kapili-mustang-yaklasti",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir ikonun gövde tipinin kökten değişmesi otomobil dünyasında büyük tartışma ve merak uyandıracak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ford’un 4 kapılı Mustang modeli uzun süredir söylentilerle gündemdeydi, ancak bu performans sedanı artık gerçeğe dönüşmeye her zamankinden daha yakın görünüyor. İddiaya göre üretici geçen hafta bayilere bir prototip gösterdi, ancak böyle bir otomobilin ne zaman satışa çıkacağı hâlâ net değil. Ford yöneticileri, 2 yıl önce özel bir bayi toplantısında ilk kez gösterildiği öne sürülen modeli \"Mach-4\" olarak adlandırmıştı. KaynaklarınAutomotive News'everdiği bilgilere göre otomobil, görünüm olarak birMustang'dençok Porsche Panamera'yı andırıyordu. İddiaya göre üretici, bayilere 4 kapılı Mustang’in başlangıç fiyatının40.000 $'ın altındaolacağını söyledi. Yeni Mustang türevi,Panamera'dandaha geniş arka diz mesafesi sunacak ve0-100 km/s hızlanmasını 4,0 saniyenin altındatamamlayacak. Fordbayileri, markanın yaklaşık25.000 $başlangıç fiyatına sahip olacak yeni ana akım modelini de görme fırsatı buldu. Bu yeni crossover, benzinli ve hibrit motor seçenekleriyle gelecek, ancak satışlarının 2029'dan önce başlaması beklenmiyor. Automotive News kaynakları prototipi “köşeli ve geniş” olarak tanımlarken, yöneticiler bayilere tasarımın henüz kesinleşmediğini aktardı. Ford’un bu modeli hangi platform üzerine inşa edeceği de belirsizliğini koruyor, ancak yayına konuşan üç kişi, üreticinin 2029 yılında Maverick ve Bronco Sport ile birlikte yeni bir hibrit crossover üretmeye başlayacağını ve bunun söz konusu yeni model olabileceğini söyledi. Amerikalı üretici ayrıca yeni Fathom’u da tanıttı. Bu model, Ford’un yeni Universal EV platformu üzerine geliştirilen ilk araç olacak ve yöneticiler iddiaya göre bu yeni mimari üzerinde 5araçüretileceğini açıkladı. Üretici, pickup'ın yanı sıra crossover, sedan ve van gövde tiplerinin de mümkün olduğunu ima etmişti. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🐎 4 KAPILI MUSTANG HAYALİ GERÇEK OLUYOR MU?\n\nFord'un uzun süredir konuşulan 4 kapılı Mustang prototipi bayilere gösterildi!\n\nİlk bilgilere göre başlangıç fiyatı 40.000 doların altında olacak. Otomobilin 0-100 km/s hızlanması 4 saniyenin altında tamamlayacağı söyleniyor.\n\nSizce bu model tutar mı?",
-        "post_text_length": 296,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T23:40:54.049820+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford'un \"4 kapılı Mustang\" hayali, gerçeğe bir adım daha yaklaştı",
-          "link": "https://tr.motor1.com/news/804415/ford-4kapi-mustang-bayi-prototip/",
-          "published": "2026-08-10T20:00:00+00:00",
-          "summary": "Bayiler, başlangıç fiyatı 40.000 $'ın altında olan bir prototipi şimdiden gördü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s3/2026-ford-mustang-fx-package-front.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "adim-ford-gercege-hayali-kapili-mustang-yaklasti",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir ikonun gövde tipinin kökten değişmesi otomobil dünyasında büyük tartışma ve merak uyandıracak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Ford’un 4 kapılı Mustang modeli uzun süredir söylentilerle gündemdeydi, ancak bu performans sedanı artık gerçeğe dönüşmeye her zamankinden daha yakın görünüyor. İddiaya göre üretici geçen hafta bayilere bir prototip gösterdi, ancak böyle bir otomobilin ne zaman satışa çıkacağı hâlâ net değil. Ford yöneticileri, 2 yıl önce özel bir bayi toplantısında ilk kez gösterildiği öne sürülen modeli \"Mach-4\" olarak adlandırmıştı. KaynaklarınAutomotive News'everdiği bilgilere göre otomobil, görünüm olarak birMustang'dençok Porsche Panamera'yı andırıyordu. İddiaya göre üretici, bayilere 4 kapılı Mustang’in başlangıç fiyatının40.000 $'ın altındaolacağını söyledi. Yeni Mustang türevi,Panamera'dandaha geniş arka diz mesafesi sunacak ve0-100 km/s hızlanmasını 4,0 saniyenin altındatamamlayacak. Fordbayileri, markanın yaklaşık25.000 $başlangıç fiyatına sahip olacak yeni ana akım modelini de görme fırsatı buldu. Bu yeni crossover, benzinli ve hibrit motor seçenekleriyle gelecek, ancak satışlarının 2029'dan önce başlaması beklenmiyor. Automotive News kaynakları prototipi “köşeli ve geniş” olarak tanımlarken, yöneticiler bayilere tasarımın henüz kesinleşmediğini aktardı. Ford’un bu modeli hangi platform üzerine inşa edeceği de belirsizliğini koruyor, ancak yayına konuşan üç kişi, üreticinin 2029 yılında Maverick ve Bronco Sport ile birlikte yeni bir hibrit crossover üretmeye başlayacağını ve bunun söz konusu yeni model olabileceğini söyledi. Amerikalı üretici ayrıca yeni Fathom’u da tanıttı. Bu model, Ford’un yeni Universal EV platformu üzerine geliştirilen ilk araç olacak ve yöneticiler iddiaya göre bu yeni mimari üzerinde 5araçüretileceğini açıkladı. Üretici, pickup'ın yanı sıra crossover, sedan ve van gövde tiplerinin de mümkün olduğunu ima etmişti. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🐎 4 KAPILI MUSTANG HAYALİ GERÇEK OLUYOR MU?\n\nFord'un uzun süredir konuşulan 4 kapılı Mustang prototipi bayilere gösterildi!\n\nİlk bilgilere göre başlangıç fiyatı 40.000 doların altında olacak. Otomobilin 0-100 km/s hızlanması 4 saniyenin altında tamamlayacağı söyleniyor.\n\nSizce bu model tutar mı?",
-          "image_sources": [
-            "meta_og",
-            "article_script",
-            "article_img",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s1/2026-ford-mustang-fx-package-front.jpg",
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s1/4x3/2026-ford-mustang-fx-package-front.webp",
-            "https://cdn.motor1.com/images/mgl/7Z3G2J/s3/2026-ford-mustang-fx-package.jpg",
-            "https://cdn.motor1.com/images/mgl/L3XGX3/s1/1x1/2026-ford-mustang-fx-package-front.webp"
-          ]
-        },
-        "post_text": "🐎 4 KAPILI MUSTANG HAYALİ GERÇEK OLUYOR MU?\n\nFord'un uzun süredir konuşulan 4 kapılı Mustang prototipi bayilere gösterildi!\n\nİlk bilgilere göre başlangıç fiyatı 40.000 doların altında olacak. Otomobilin 0-100 km/s hızlanması 4 saniyenin altında tamamlayacağı söyleniyor.\n\nSizce bu model tutar mı?",
-        "image_path": "/tmp/otoxtra_img_fkb30tk6.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_fkb30tk6.jpg",
-          "/tmp/otoxtra_img_qxwr10aq.jpg",
-          "/tmp/otoxtra_img_0c5pdmux.jpg",
-          "/tmp/otoxtra_img_8nq6kby2.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T23:40:57.788584+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175491816916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18230103778318239",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1084194927533699",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T23:41:40.618514+03:00"
+      "updated_at": null
     }
   }
 }
