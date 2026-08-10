@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-08-10-18:58",
-  "status": "completed",
-  "started_at": "2026-08-10T18:58:31.678523+03:00",
-  "updated_at": "2026-08-10T19:00:13.820584+03:00",
+  "run_id": "2026-08-10-19:59",
+  "status": "error",
+  "started_at": "2026-08-10T19:59:43.410190+03:00",
+  "updated_at": "2026-08-10T20:00:43.775199+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-            "link": "https://nitter.net/taylandil/status/2086833409612030280#m",
-            "published": "2026-08-10T15:13:50+00:00",
-            "summary": "➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "TaylanOzgurDil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aktaracagim-ayda-ayni-bagimsiz-bakanliklarca-binlercesi-bunun-calisiyorum-degerlendirilmesi-detaylarini-dusundugum-elektrikli-fazlasi-geldigini-gerektigini-gorusmeler-haline-hem-hem-ilgili-konunun-konunun-kullanicilarla-markadan-mesele-mumkun-oldugunca-ortadan-otomobil-otomobillerden-skywellturkiye-tarafindan-taylandil-toplumsal-yaniyorsa-yapilmali-yaptim-yarin-yazdim-yazmaya-yetkililerle-yollardaysa"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -145,206 +127,47 @@
           "_metrics": {
             "found": 176,
             "after_keyword": 113,
-            "after_time": 12,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 176,
           "after_keyword": 113,
-          "after_time": 12,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-10T18:59:25.430832+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-10T20:00:43.775199+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "link": "https://nitter.net/taylandil/status/2086833409612030280#m",
-          "published": "2026-08-10T15:13:50+00:00",
-          "summary": "➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aktaracagim-ayda-ayni-bagimsiz-bakanliklarca-binlercesi-bunun-calisiyorum-degerlendirilmesi-detaylarini-dusundugum-elektrikli-fazlasi-geldigini-gerektigini-gorusmeler-haline-hem-hem-ilgili-konunun-konunun-kullanicilarla-markadan-mesele-mumkun-oldugunca-ortadan-otomobil-otomobillerden-skywellturkiye-tarafindan-taylandil-toplumsal-yaniyorsa-yapilmali-yaptim-yarin-yazdim-yazmaya-yetkililerle-yollardaysa",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç güvenliği ve peş peşe yaşanan yangın iddiaları sosyal medyada büyük yankı uyandırabilecek, kamusal tartışma yaratacak kritik bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 80,
-        "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 15,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Elektrikli araç güvenliği ve peş peşe yaşanan yangın iddiaları sosyal medyada büyük yankı uyandırabilecek, kamusal tartışma yaratacak kritik bir konu.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-            "score": 80,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T18:59:28.033099+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "link": "https://nitter.net/taylandil/status/2086833409612030280#m",
-          "published": "2026-08-10T15:13:50+00:00",
-          "summary": "➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aktaracagim-ayda-ayni-bagimsiz-bakanliklarca-binlercesi-bunun-calisiyorum-degerlendirilmesi-detaylarini-dusundugum-elektrikli-fazlasi-geldigini-gerektigini-gorusmeler-haline-hem-hem-ilgili-konunun-konunun-kullanicilarla-markadan-mesele-mumkun-oldugunca-ortadan-otomobil-otomobillerden-skywellturkiye-tarafindan-taylandil-toplumsal-yaniyorsa-yapilmali-yaptim-yarin-yazdim-yazmaya-yetkililerle-yollardaysa",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç güvenliği ve peş peşe yaşanan yangın iddiaları sosyal medyada büyük yankı uyandırabilecek, kamusal tartışma yaratacak kritik bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "🔥 SKYWELL ARAÇLARDA YANGIN ENDİŞESİ BÜYÜYOR!\n\nSkywell yetkilileri ve kullanıcılarla görüştük. 6 ayda 8 aracın yanması ciddi bir durum.\n\nBu artık sadece bir marka sorunu değil, toplumsal bir mesele. Konunun ilgili Bakanlıklarca incelenmesi şart.\n\nSizce elektrikli araçlarda güvenlik önlemleri yeterli mi?",
-        "post_text_length": 303,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T18:59:29.556509+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "R to @taylandil: ➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "link": "https://nitter.net/taylandil/status/2086833409612030280#m",
-          "published": "2026-08-10T15:13:50+00:00",
-          "summary": "➡️ Hem @SkywellTurkiye tarafından yetkililerle hem de kullanıcılarla görüşmeler yaptım. Yarın konunun detaylarını aktaracağım. Bunun artık markadan bağımsız toplumsal bir mesele haline geldiğini düşündüğüm için konunun ilgili Bakanlıklarca da değerlendirilmesi gerektiğini yazdım. Mümkün olduğunca ortadan yazmaya çalışıyorum. Ancak 6 ayda aynı elektrikli 8 otomobil yanıyorsa ve bu otomobillerden binlercesi yollardaysa daha fazlası yapılmalı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "duckduckgo",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aktaracagim-ayda-ayni-bagimsiz-bakanliklarca-binlercesi-bunun-calisiyorum-degerlendirilmesi-detaylarini-dusundugum-elektrikli-fazlasi-geldigini-gerektigini-gorusmeler-haline-hem-hem-ilgili-konunun-konunun-kullanicilarla-markadan-mesele-mumkun-oldugunca-ortadan-otomobil-otomobillerden-skywellturkiye-tarafindan-taylandil-toplumsal-yaniyorsa-yapilmali-yaptim-yarin-yazdim-yazmaya-yetkililerle-yollardaysa",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç güvenliği ve peş peşe yaşanan yangın iddiaları sosyal medyada büyük yankı uyandırabilecek, kamusal tartışma yaratacak kritik bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "🔥 SKYWELL ARAÇLARDA YANGIN ENDİŞESİ BÜYÜYOR!\n\nSkywell yetkilileri ve kullanıcılarla görüştük. 6 ayda 8 aracın yanması ciddi bir durum.\n\nBu artık sadece bir marka sorunu değil, toplumsal bir mesele. Konunun ilgili Bakanlıklarca incelenmesi şart.\n\nSizce elektrikli araçlarda güvenlik önlemleri yeterli mi?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🔥 SKYWELL ARAÇLARDA YANGIN ENDİŞESİ BÜYÜYOR!\n\nSkywell yetkilileri ve kullanıcılarla görüştük. 6 ayda 8 aracın yanması ciddi bir durum.\n\nBu artık sadece bir marka sorunu değil, toplumsal bir mesele. Konunun ilgili Bakanlıklarca incelenmesi şart.\n\nSizce elektrikli araçlarda güvenlik önlemleri yeterli mi?",
-        "image_path": "/tmp/otoxtra_img_8pyrne44.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_8pyrne44.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T18:59:32.137800+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175471740916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18112316915515279",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1033630082620612",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-10T19:00:13.820584+03:00"
+      "updated_at": null
     }
   }
 }
