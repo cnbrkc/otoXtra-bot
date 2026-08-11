@@ -1,34 +1,53 @@
 {
-  "run_id": "2026-08-11-15:57",
+  "run_id": "2026-08-11-17:21",
   "status": "completed",
-  "started_at": "2026-08-11T15:57:55.300891+03:00",
-  "updated_at": "2026-08-11T15:59:45.807407+03:00",
+  "started_at": "2026-08-11T17:21:41.507330+03:00",
+  "updated_at": "2026-08-11T17:23:52.677121+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
-            "link": "https://tr.motor1.com/news/804491/eccentrica-lamborghini-diablo-restomod/",
-            "published": "2026-08-11T11:59:50+00:00",
-            "summary": "Ekrana ekmek banası geliyor insanın.",
-            "image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
+            "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
+            "link": "https://www.donanimhaber.com/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu--209170",
+            "published": "2026-08-11T13:22:00+00:00",
+            "summary": "Tuna Nehri'ndeki su seviyesinin tarihi düşüşü Romanya'nın nükleer santralini tehdit ediyor. İkinci reaktör kapanabileceği bildirilirken Ford Otosan da üretime ara verdi.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg"
+              "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "aklinizi-alacak-basinizdan-diablo-lamborghini-restomodu"
+            "topic_fingerprint": "durdurdu-enerji-ford-kapanabilir-krizi-nukleer-otosan-reaktor-romanya-uretimi"
+          },
+          {
+            "title": "Spotify, yapay zeka kullanarak müzik üreten hesaplarda “AI Persona” etiketini kullanacak",
+            "link": "https://www.log.com.tr/spotify-yapay-zeka-kullanarak-muzik-ureten-hesaplarda-ai-persona-etiketini-kullanacak/",
+            "published": "2026-08-11T13:21:21+00:00",
+            "summary": "Spotify, önümüzdeki dönemde doğrudan yapay zeka sistemleri kullanılarak müzik üretip paylaşan hesaplarda “AI Persona” etiketini kullanmaya başlayacak ve bu hesapları kişisel tavsiye listelerinden çıkaracak. Spotify, bir kişinin ad ve görsel gibi profil unsurlarının yapay zeka tarafından oluşturulmuş bir kimliği temsil ediyor gibi görünüp görünmediğini belirlemek için insan incelemesi yanında özel bazı yapay zeka araçlarının kullanacağını söylüyor. Bir sanatçının kimliğinin yapay zekayla oluşturulmuş olabileceğinden şüphe duyulan durumlarda ise nihai karar verilene kadar profillere “Likely AI Persona” rozetinin ekleneceği belirtiliyor. Şirket, bundan önce ise gerçek sanatçılar için hazırlanan “doğrulanmış sanatçı” rozetini duyurmuştu. Dinleyicilerin “gerçek” sanatçıları ayırt etmesini kolaylaştırmak amacıyla tasarlanan bu rozet, şirketin açıklamasına göre her sanatçıya verilmeyecek. Platform rozetin tutarlı dinleyici etkinliğine ve etkileşimine sahip sanatçılar için tasarlandığını açıklarken, sistemin kullanıma alındığında kullanıcıların aktif olarak aradığı sanatçıların yüzde 99’undan fazlasının doğrulanmış olacağını belirtmişti. Spotify, yapay zeka kullanarak müzik üreten hesaplarda “AI Persona” etiketini kullanacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-11_16-09-01_GCsqK-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-11_16-09-01_GCsqK-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-11_16-09-01_GCsqK-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "etiketini-hesaplarda-kullanacak-kullanarak-muzik-persona-spotify-ureten-yapay-zeka"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,223 +165,243 @@
           },
           "_metrics": {
             "found": 174,
-            "after_keyword": 116,
-            "after_time": 11,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 115,
+            "after_time": 13,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 174,
-          "after_keyword": 116,
-          "after_time": 11,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 115,
+          "after_time": 13,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-08-11T15:58:49.971341+03:00"
+      "updated_at": "2026-08-11T17:22:37.554241+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
-          "link": "https://tr.motor1.com/news/804491/eccentrica-lamborghini-diablo-restomod/",
-          "published": "2026-08-11T11:59:50+00:00",
-          "summary": "Ekrana ekmek banası geliyor insanın.",
-          "image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
+          "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
+          "link": "https://www.donanimhaber.com/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu--209170",
+          "published": "2026-08-11T13:22:00+00:00",
+          "summary": "Tuna Nehri'ndeki su seviyesinin tarihi düşüşü Romanya'nın nükleer santralini tehdit ediyor. İkinci reaktör kapanabileceği bildirilirken Ford Otosan da üretime ara verdi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "aklinizi-alacak-basinizdan-diablo-lamborghini-restomodu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "durdurdu-enerji-ford-kapanabilir-krizi-nukleer-otosan-reaktor-romanya-uretimi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 10
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
           },
-          "score": 74,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik süper otomobil restomodları sosyal medyada her zaman yüksek görsel ilgi çeker ancak niş bir konudur.",
-          "freshness_bonus": 10,
+          "score_explanation": "Enerji krizinin doğrudan büyük bir otomotiv üreticisinin (Ford Otosan) üretimini durdurmasına yol açması, hem sektörel hem de ekonomik açıdan yüksek viral ve gündem gücüne sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 74,
-        "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
+        "score": 78,
+        "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
           "etkilesim_potansiyeli": 18,
-          "benzersizlik": 15,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 10
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Klasik süper otomobil restomodları sosyal medyada her zaman yüksek görsel ilgi çeker ancak niş bir konudur.",
+        "score_explanation": "Enerji krizinin doğrudan büyük bir otomotiv üreticisinin (Ford Otosan) üretimini durdurmasına yol açması, hem sektörel hem de ekonomik açıdan yüksek viral ve gündem gücüne sahip.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
-            "score": 74,
+            "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
+            "score": 78,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 18,
-              "benzersizlik": 15,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 10
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Spotify, yapay zeka kullanarak müzik üreten hesaplarda “AI Persona” etiketini kullanacak",
+            "score": 48,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 9,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 3
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Spotify, yapay zeka kullanarak müzik üreten hesaplarda “AI Persona” etiketini kullanacak",
+            "link": "https://www.log.com.tr/spotify-yapay-zeka-kullanarak-muzik-ureten-hesaplarda-ai-persona-etiketini-kullanacak/",
+            "score": 48,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "etiketini-hesaplarda-kullanacak-kullanarak-muzik-persona-spotify-ureten-yapay-zeka"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-08-11T15:58:52.207373+03:00"
+      "updated_at": "2026-08-11T17:22:40.600437+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
-          "link": "https://tr.motor1.com/news/804491/eccentrica-lamborghini-diablo-restomod/",
-          "published": "2026-08-11T11:59:50+00:00",
-          "summary": "Ekrana ekmek banası geliyor insanın.",
-          "image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
+          "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
+          "link": "https://www.donanimhaber.com/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu--209170",
+          "published": "2026-08-11T13:22:00+00:00",
+          "summary": "Tuna Nehri'ndeki su seviyesinin tarihi düşüşü Romanya'nın nükleer santralini tehdit ediyor. İkinci reaktör kapanabileceği bildirilirken Ford Otosan da üretime ara verdi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "aklinizi-alacak-basinizdan-diablo-lamborghini-restomodu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "durdurdu-enerji-ford-kapanabilir-krizi-nukleer-otosan-reaktor-romanya-uretimi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 10
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
           },
-          "score": 74,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik süper otomobil restomodları sosyal medyada her zaman yüksek görsel ilgi çeker ancak niş bir konudur.",
-          "freshness_bonus": 10,
+          "score_explanation": "Enerji krizinin doğrudan büyük bir otomotiv üreticisinin (Ford Otosan) üretimini durdurmasına yol açması, hem sektörel hem de ekonomik açıdan yüksek viral ve gündem gücüne sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Sanıyorum ilk kez Top Gear'da Diablo ve Countach'ın gerçekten rahatsız otomobiller olduğunu duymuştum. Maalesef ikisine de binme şansım olmadığı için bu ifadeleri doğrulayamıyorum. Doğrulayabildiğim yegane şey, her iki modelin de birbirinden şık görünmesi. Eccantrica ekibi, zaten olağanüstü olanDiablo'yu çok daha özel hale getirmek istemiş. İtalya menşeli restomod ekibi, Monterey Otomobil Haftası'nda katılımcıların beğenisine sunacağı özel restomod projesini resmen tanıttı. Kaputun altında da akıllara zarar bir performans yatıyor. Model gücünü yakından tanıdığımız 5.7 litrelik V12'sinden alıyor. Lakin bu motor artık 550 bg güç ve 600 Nm tork üretebilecek. Gated yani açık kanallı diye tabir edilen 6 ileri manuel şanzıman ile eşleştirilen bu ünite, aracın 0-100 km/s hızlanmasını 3.8 saniyede tamamlamasına yardımcı oluyor. Aynı zamanda ağırlık da 1.5 tonun biraz üzerinde. Sadece 19 adet üretilecek model aynı zamanda bir roadster. Tabii ki bu işlem yalnızca tavanı kesip atmakla yapılmamış. Aksine Eccentrica; açık kabin etrafındaki hava akışını yönetmek için özel bir aerodinamik çalışma yürüttüğünü, şasisinin ise karbon fiber yapısal takviyeler aldığını ifade ediyor. Orijinal Diablo görünümünü koruyan modelin omurgası da güçlendirilerek daha sağlam hale getirilmiş. Modern süspansiyon sistemi ve çağımızın olmazsa olmazıBrembofren kaliperleri de denkleme eklenmiş durumda. Modelin tüm detayları, Monterey Otomobil Haftası'nda ortaya çıkacak. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Romanya,Tuna Nehri'ndeki su seviyesinin tarihi düşük seviyelere gerilemesi nedeniyle nükleer elektrik üretiminde yeni bir krizle karşı karşıya. Ülkenin elektrik üretiminin yaklaşık beşte birini karşılayanÇernavoda Nükleer Santrali'ndeki ikinci reaktörün de 13 Ağustos'ta kontrollü şekilde devre dışı bırakılması gündemde. Romanya'nın devlete ait nükleer enerji şirketi Nuclearelectrica, santralin soğutma sistemi için gerekli suyun sağlanmasındaki zorluklar nedeniyle ikinci reaktörün çalışmaya devam edip edemeyeceğinin hava tahminleri, Tuna Nehri'ndeki su seviyesi ve santralin işletme parametreleri doğrultusunda değerlendirildiğini açıkladı. Çernavoda'daki iki reaktör, toplamda ülkenin elektrik üretiminin yaklaşıkyüzde 20'sinikarşılıyor. Reaktörlerden biri, Tuna Nehri'ndeki su seviyesinin rekor seviyede düşmesi nedeniyle temmuz ayının sonlarında zaten devre dışı bırakılmıştı. Bu reaktörün devre dışı kalmasıyla680 megavatlık nükleer üretim kapasitesikullanılamıyor. Verilere göre Tuna Nehri'nin Çernavoda'daki su seviyesi 10 Ağustos'ta eksi 227 santimetreye geriledi. Santralin işletilebilmesi için belirlenen asgari seviye ise eksi 230 santimetre. Tuna'nın Romanya sınırına giriş noktasındaki debisi de salı günü saniyede 1.370 metreküpe kadar gerileyerek tüm zamanların en düşük seviyesine ulaştı. Romanya'nın su yönetiminden sorumlu yetkilileri, ikinci reaktörün devre dışı bırakılmasının kaçınılmaz hale gelebileceğini belirtiyor. Yetkililerin tahminlerine göre nehir seviyesindeki düşüş 14 Ağustos'a kadar günde yaklaşık 2 santimetre devam edecek. Bu tarihten sonra düşüş hızının günde yaklaşık 1 santimetreye gerilemesi bekleniyor. Buna rağmen su seviyesinin 16 Ağustos'ta yaklaşık eksi 236 santimetreye ulaşacağı öngörülüyor. Üretimin talebi karşılamaya yetmemesi halinde uygulanmak üzere sanayi kuruluşlarına yönelik kademeli bir elektrik kesintisi mekanizması da hazırlandı. Şebeke işletmecisi Transelectrica, ihtiyaç ortaya çıkması durumunda bazı büyük sanayi tüketicilerinin elektriğinien az 24 saat öncedenbildirim yaparak kesebilecek. Romanya'nın elektrik üretiminde nükleer enerjinin yanı sıra güneş ve rüzgar gibi kaynaklar da önemli bir paya sahip. Ancak nükleer santraldeki üretim kaybının oluşturduğu baskı şimdiden sanayiyi etkiliyor. Ülkenin en büyük iki otomotiv üreticisindenDacia ve Ford Otosan, üretimlerini ağustos sonuna kadar durdurdu. İki şirketin üretime ara vermesi, ülkenin elektrik talebini yaklaşık 200 megavat düşürdü. Ford’un buradaki tesisi Puma, Transit Courier ve Tourneo Courier'i (elektrikli versiyonları dahil) üretiyor. Dacia ise Duster ve Bigster'ı üretiyor. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/dp/B0C3WH2V7C https://www.amazon.com.tr/dp/B0CHS15WCH https://www.amazon.com.tr/STANLEY-FB533-Katlan%C4%B1r-Ama%C3%A7l%C4%B1-Ta%C5%9F%C4%B1ma/dp/B0CL9PXRC6 https://www.amazon.com.tr/dp/B0GLP6JCLT https://www.penti.com/tr/c/boxer https://trshop.honor.com/products/infowear-watch-2pro-mea"
         },
-        "post_text": "🔥 BU LAMBORGHINI DIABLO RESTOMODU AKLINIZI BAŞINIZDAN ALACAK!\n\nEccentrica ekibi, efsanevi Diablo'yu yeniden yorumladı. Monterey Otomobil Haftası'nda tanıtılacak bu özel restomod, göz kamaştırıyor.\n\nKaputun altında 5.7 litrelik V12 motor, 550 bg güç ve 600 Nm tork üretiyor. 6 ileri manuel şanzımanla 0-100 km/s hızlanması sadece 3.8 saniye!\n\nSizce modern dokunuşlar Diablo'ya yakışmış mı?",
-        "post_text_length": 388,
+        "post_text": "⚡️ ROMANYA'DA ENERJİ KRİZİ KAPIDA\n\nTuna Nehri'ndeki su seviyesi tehlikeli derecede düştü. Bu durum, Romanya'nın nükleer santralini tehdit ediyor.\n\nİkinci nükleer reaktörün kapanması ihtimali konuşuluyor. Hatta Ford Otosan bile üretime ara verdi.\n\nSizce bu durum bizi nasıl etkiler?",
+        "post_text_length": 281,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-11T15:58:53.740316+03:00"
+      "updated_at": "2026-08-11T17:22:46.754388+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Bu Lamborghini Diablo restomodu aklınızı başınızdan alacak!",
-          "link": "https://tr.motor1.com/news/804491/eccentrica-lamborghini-diablo-restomod/",
-          "published": "2026-08-11T11:59:50+00:00",
-          "summary": "Ekrana ekmek banası geliyor insanın.",
-          "image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
+          "title": "Romanya'da enerji krizi: Nükleer reaktör kapanabilir, Ford Otosan üretimi durdurdu",
+          "link": "https://www.donanimhaber.com/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu--209170",
+          "published": "2026-08-11T13:22:00+00:00",
+          "summary": "Tuna Nehri'ndeki su seviyesinin tarihi düşüşü Romanya'nın nükleer santralini tehdit ediyor. İkinci reaktör kapanabileceği bildirilirken Ford Otosan da üretime ara verdi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "Motor1 TR",
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "aklinizi-alacak-basinizdan-diablo-lamborghini-restomodu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "durdurdu-enerji-ford-kapanabilir-krizi-nukleer-otosan-reaktor-romanya-uretimi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 10
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
           },
-          "score": 74,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik süper otomobil restomodları sosyal medyada her zaman yüksek görsel ilgi çeker ancak niş bir konudur.",
-          "freshness_bonus": 10,
+          "score_explanation": "Enerji krizinin doğrudan büyük bir otomotiv üreticisinin (Ford Otosan) üretimini durdurmasına yol açması, hem sektörel hem de ekonomik açıdan yüksek viral ve gündem gücüne sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Sanıyorum ilk kez Top Gear'da Diablo ve Countach'ın gerçekten rahatsız otomobiller olduğunu duymuştum. Maalesef ikisine de binme şansım olmadığı için bu ifadeleri doğrulayamıyorum. Doğrulayabildiğim yegane şey, her iki modelin de birbirinden şık görünmesi. Eccantrica ekibi, zaten olağanüstü olanDiablo'yu çok daha özel hale getirmek istemiş. İtalya menşeli restomod ekibi, Monterey Otomobil Haftası'nda katılımcıların beğenisine sunacağı özel restomod projesini resmen tanıttı. Kaputun altında da akıllara zarar bir performans yatıyor. Model gücünü yakından tanıdığımız 5.7 litrelik V12'sinden alıyor. Lakin bu motor artık 550 bg güç ve 600 Nm tork üretebilecek. Gated yani açık kanallı diye tabir edilen 6 ileri manuel şanzıman ile eşleştirilen bu ünite, aracın 0-100 km/s hızlanmasını 3.8 saniyede tamamlamasına yardımcı oluyor. Aynı zamanda ağırlık da 1.5 tonun biraz üzerinde. Sadece 19 adet üretilecek model aynı zamanda bir roadster. Tabii ki bu işlem yalnızca tavanı kesip atmakla yapılmamış. Aksine Eccentrica; açık kabin etrafındaki hava akışını yönetmek için özel bir aerodinamik çalışma yürüttüğünü, şasisinin ise karbon fiber yapısal takviyeler aldığını ifade ediyor. Orijinal Diablo görünümünü koruyan modelin omurgası da güçlendirilerek daha sağlam hale getirilmiş. Modern süspansiyon sistemi ve çağımızın olmazsa olmazıBrembofren kaliperleri de denkleme eklenmiş durumda. Modelin tüm detayları, Monterey Otomobil Haftası'nda ortaya çıkacak. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🔥 BU LAMBORGHINI DIABLO RESTOMODU AKLINIZI BAŞINIZDAN ALACAK!\n\nEccentrica ekibi, efsanevi Diablo'yu yeniden yorumladı. Monterey Otomobil Haftası'nda tanıtılacak bu özel restomod, göz kamaştırıyor.\n\nKaputun altında 5.7 litrelik V12 motor, 550 bg güç ve 600 Nm tork üretiyor. 6 ileri manuel şanzımanla 0-100 km/s hızlanması sadece 3.8 saniye!\n\nSizce modern dokunuşlar Diablo'ya yakışmış mı?",
+          "full_text": "Romanya,Tuna Nehri'ndeki su seviyesinin tarihi düşük seviyelere gerilemesi nedeniyle nükleer elektrik üretiminde yeni bir krizle karşı karşıya. Ülkenin elektrik üretiminin yaklaşık beşte birini karşılayanÇernavoda Nükleer Santrali'ndeki ikinci reaktörün de 13 Ağustos'ta kontrollü şekilde devre dışı bırakılması gündemde. Romanya'nın devlete ait nükleer enerji şirketi Nuclearelectrica, santralin soğutma sistemi için gerekli suyun sağlanmasındaki zorluklar nedeniyle ikinci reaktörün çalışmaya devam edip edemeyeceğinin hava tahminleri, Tuna Nehri'ndeki su seviyesi ve santralin işletme parametreleri doğrultusunda değerlendirildiğini açıkladı. Çernavoda'daki iki reaktör, toplamda ülkenin elektrik üretiminin yaklaşıkyüzde 20'sinikarşılıyor. Reaktörlerden biri, Tuna Nehri'ndeki su seviyesinin rekor seviyede düşmesi nedeniyle temmuz ayının sonlarında zaten devre dışı bırakılmıştı. Bu reaktörün devre dışı kalmasıyla680 megavatlık nükleer üretim kapasitesikullanılamıyor. Verilere göre Tuna Nehri'nin Çernavoda'daki su seviyesi 10 Ağustos'ta eksi 227 santimetreye geriledi. Santralin işletilebilmesi için belirlenen asgari seviye ise eksi 230 santimetre. Tuna'nın Romanya sınırına giriş noktasındaki debisi de salı günü saniyede 1.370 metreküpe kadar gerileyerek tüm zamanların en düşük seviyesine ulaştı. Romanya'nın su yönetiminden sorumlu yetkilileri, ikinci reaktörün devre dışı bırakılmasının kaçınılmaz hale gelebileceğini belirtiyor. Yetkililerin tahminlerine göre nehir seviyesindeki düşüş 14 Ağustos'a kadar günde yaklaşık 2 santimetre devam edecek. Bu tarihten sonra düşüş hızının günde yaklaşık 1 santimetreye gerilemesi bekleniyor. Buna rağmen su seviyesinin 16 Ağustos'ta yaklaşık eksi 236 santimetreye ulaşacağı öngörülüyor. Üretimin talebi karşılamaya yetmemesi halinde uygulanmak üzere sanayi kuruluşlarına yönelik kademeli bir elektrik kesintisi mekanizması da hazırlandı. Şebeke işletmecisi Transelectrica, ihtiyaç ortaya çıkması durumunda bazı büyük sanayi tüketicilerinin elektriğinien az 24 saat öncedenbildirim yaparak kesebilecek. Romanya'nın elektrik üretiminde nükleer enerjinin yanı sıra güneş ve rüzgar gibi kaynaklar da önemli bir paya sahip. Ancak nükleer santraldeki üretim kaybının oluşturduğu baskı şimdiden sanayiyi etkiliyor. Ülkenin en büyük iki otomotiv üreticisindenDacia ve Ford Otosan, üretimlerini ağustos sonuna kadar durdurdu. İki şirketin üretime ara vermesi, ülkenin elektrik talebini yaklaşık 200 megavat düşürdü. Ford’un buradaki tesisi Puma, Transit Courier ve Tourneo Courier'i (elektrikli versiyonları dahil) üretiyor. Dacia ise Duster ve Bigster'ı üretiyor. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/dp/B0C3WH2V7C https://www.amazon.com.tr/dp/B0CHS15WCH https://www.amazon.com.tr/STANLEY-FB533-Katlan%C4%B1r-Ama%C3%A7l%C4%B1-Ta%C5%9F%C4%B1ma/dp/B0CL9PXRC6 https://www.amazon.com.tr/dp/B0GLP6JCLT https://www.penti.com/tr/c/boxer https://trshop.honor.com/products/infowear-watch-2pro-mea",
+          "post_text_for_card": "⚡️ ROMANYA'DA ENERJİ KRİZİ KAPIDA\n\nTuna Nehri'ndeki su seviyesi tehlikeli derecede düştü. Bu durum, Romanya'nın nükleer santralini tehdit ediyor.\n\nİkinci nükleer reaktörün kapanması ihtimali konuşuluyor. Hatta Ford Otosan bile üretime ara verdi.\n\nSizce bu durum bizi nasıl etkiler?",
           "image_sources": [
-            "article_candidates_field",
             "article_img",
+            "meta_og",
             "article_img"
           ],
           "prepared_image_count": 3,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/vx81Mq/s3/eccentrica-v12-roadster.jpg",
-            "https://cdn.motor1.com/images/mgl/P3B12r/s4/spacecamper-sondermodelle-2026.jpg",
-            "https://cdn.motor1.com/images/mgl/mMzGBR/s4/jeep-compass.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209170/src/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu209170_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209170/1200x675romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209170/src/romanya-da-enerji-krizi-nukleer-santrali-ve-ford-otosan-i-vurdu209170_1.jpg"
           ]
         },
-        "post_text": "🔥 BU LAMBORGHINI DIABLO RESTOMODU AKLINIZI BAŞINIZDAN ALACAK!\n\nEccentrica ekibi, efsanevi Diablo'yu yeniden yorumladı. Monterey Otomobil Haftası'nda tanıtılacak bu özel restomod, göz kamaştırıyor.\n\nKaputun altında 5.7 litrelik V12 motor, 550 bg güç ve 600 Nm tork üretiyor. 6 ileri manuel şanzımanla 0-100 km/s hızlanması sadece 3.8 saniye!\n\nSizce modern dokunuşlar Diablo'ya yakışmış mı?",
-        "image_path": "/tmp/otoxtra_img_glba514p.jpg",
+        "post_text": "⚡️ ROMANYA'DA ENERJİ KRİZİ KAPIDA\n\nTuna Nehri'ndeki su seviyesi tehlikeli derecede düştü. Bu durum, Romanya'nın nükleer santralini tehdit ediyor.\n\nİkinci nükleer reaktörün kapanması ihtimali konuşuluyor. Hatta Ford Otosan bile üretime ara verdi.\n\nSizce bu durum bizi nasıl etkiler?",
+        "image_path": "/tmp/otoxtra_img_2wa52yhq.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_glba514p.jpg",
-          "/tmp/otoxtra_img_5c2isvis.jpg",
-          "/tmp/otoxtra_img_m5dnyb53.jpg"
+          "/tmp/otoxtra_img_2wa52yhq.jpg",
+          "/tmp/otoxtra_img_xk4915mb.jpg",
+          "/tmp/otoxtra_img_scpboh7h.jpg"
         ],
-        "image_source": "article_candidates_field",
+        "image_source": "article_img",
         "image_count": 3
       },
       "error": null,
-      "updated_at": "2026-08-11T15:58:57.994244+03:00"
+      "updated_at": "2026-08-11T17:23:11.045003+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122175566840916499",
+        "post_id": "678053852057751_122175574916916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18452663143191124",
+            "id": "17984220609058230",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1250638968131366",
+            "id": "4406773699467935",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-11T15:59:45.807407+03:00"
+      "updated_at": "2026-08-11T17:23:52.677121+03:00"
     }
   }
 }
