@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-08-11-23:01",
-  "status": "completed",
-  "started_at": "2026-08-11T23:01:42.008405+03:00",
-  "updated_at": "2026-08-11T23:03:36.462763+03:00",
+  "run_id": "2026-08-12-00:43",
+  "status": "error",
+  "started_at": "2026-08-12T00:43:13.837020+03:00",
+  "updated_at": "2026-08-12T00:44:09.297195+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-            "link": "https://nitter.net/murattosunMSE/status/2087257951023005751#m",
-            "published": "2026-08-11T19:20:49+00:00",
-            "summary": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-            "image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-4990-4990-aboneli-arabada-ayda-aylik-bunlari-gerekecekmis-kullanmak-odemek-saka-yilda"
-          },
-          {
-            "title": "Son 5 yılda HONDA markasını tercih edip kullananların dikkatine! HONDA almayı düşünen kişilere ne gibi tavsiyeleriniz olur ?",
-            "link": "https://nitter.net/veysellkaranii/status/2087253290367004696#m",
-            "published": "2026-08-11T19:02:18+00:00",
-            "summary": "Son 5 yılda HONDA markasını tercih edip kullananların dikkatine! HONDA almayı düşünen kişilere ne gibi tavsiyeleriniz olur ?",
-            "image_url": "https://pbs.twimg.com/media/HPdpzeFX0AAQGQW.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HPdpzeFX0AAQGQW.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HPdpzeFX0AAQGQW.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "almayi-dikkatine-dusunen-edip-honda-honda-kisilere-kullananlarin-markasini-olur-tavsiyeleriniz-tercih-yilda"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -165,235 +126,48 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 116,
-            "after_time": 13,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 117,
+            "after_time": 12,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 116,
-          "after_time": 13,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 117,
+          "after_time": 12,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-11T23:02:46.299411+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-12T00:44:09.297195+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "link": "https://nitter.net/murattosunMSE/status/2087257951023005751#m",
-          "published": "2026-08-11T19:20:49+00:00",
-          "summary": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-4990-4990-aboneli-arabada-ayda-aylik-bunlari-gerekecekmis-kullanmak-odemek-saka-yilda",
-          "base_ai_score": 88,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 16,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 13
-          },
-          "score": 92,
-          "score_reason": "ai_scored",
-          "score_explanation": "Fahiş fiyat ve otomotivde abonelik sistemi tartışması yaratarak sosyal medyada yüksek öfke ve etkileşim potansiyeli barındırıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 92,
-        "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 24,
-          "benzersizlik": 16,
-          "gundem_gucu": 19,
-          "paylasilabilirlik": 13
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Fahiş fiyat ve otomotivde abonelik sistemi tartışması yaratarak sosyal medyada yüksek öfke ve etkileşim potansiyeli barındırıyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-            "score": 92,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 24,
-              "benzersizlik": 16,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 13
-            }
-          },
-          {
-            "title": "Son 5 yılda HONDA markasını tercih edip kullananların dikkatine! HONDA almayı düşünen kişilere ne gibi tavsiyeleriniz olur ?",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 15,
-              "etkilesim_potansiyeli": 14,
-              "benzersizlik": 6,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Son 5 yılda HONDA markasını tercih edip kullananların dikkatine! HONDA almayı düşünen kişilere ne gibi tavsiyeleriniz olur ?",
-            "link": "https://nitter.net/veysellkaranii/status/2087253290367004696#m",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "almayi-dikkatine-dusunen-edip-honda-honda-kisilere-kullananlarin-markasini-olur-tavsiyeleriniz-tercih-yilda"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T23:02:49.185185+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "link": "https://nitter.net/murattosunMSE/status/2087257951023005751#m",
-          "published": "2026-08-11T19:20:49+00:00",
-          "summary": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-4990-4990-aboneli-arabada-ayda-aylik-bunlari-gerekecekmis-kullanmak-odemek-saka-yilda",
-          "base_ai_score": 88,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 16,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 13
-          },
-          "score": 92,
-          "score_reason": "ai_scored",
-          "score_explanation": "Fahiş fiyat ve otomotivde abonelik sistemi tartışması yaratarak sosyal medyada yüksek öfke ve etkileşim potansiyeli barındırıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "🤯 ARABADA AYLIK ABONELİK DÖNEMİ BAŞLIYOR MU?\n\nMurat Tosun'un paylaşımına göre, bazı araçlarda özellikler için aylık 4990 TL ödemek gerekecekmiş. Bu da yılda 60.000 TL demek!\n\nIsıtmalı koltuk, direksiyon gibi konfor özellikleri için abonelik sistemi geliyor olabilir. Bu durum sizi nasıl etkiler?\n\nSizce bu yeni sistem mantıklı mı?",
-        "post_text_length": 330,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T23:02:52.538722+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "link": "https://nitter.net/murattosunMSE/status/2087257951023005751#m",
-          "published": "2026-08-11T19:20:49+00:00",
-          "summary": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-          "image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-4990-4990-aboneli-arabada-ayda-aylik-bunlari-gerekecekmis-kullanmak-odemek-saka-yilda",
-          "base_ai_score": 88,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 24,
-            "benzersizlik": 16,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 13
-          },
-          "score": 92,
-          "score_reason": "ai_scored",
-          "score_explanation": "Fahiş fiyat ve otomotivde abonelik sistemi tartışması yaratarak sosyal medyada yüksek öfke ve etkileşim potansiyeli barındırıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "🤯 ARABADA AYLIK ABONELİK DÖNEMİ BAŞLIYOR MU?\n\nMurat Tosun'un paylaşımına göre, bazı araçlarda özellikler için aylık 4990 TL ödemek gerekecekmiş. Bu da yılda 60.000 TL demek!\n\nIsıtmalı koltuk, direksiyon gibi konfor özellikleri için abonelik sistemi geliyor olabilir. Bu durum sizi nasıl etkiler?\n\nSizce bu yeni sistem mantıklı mı?",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HPduCsFWkAEcCQC.jpg?name=orig"
-          ]
-        },
-        "post_text": "🤯 ARABADA AYLIK ABONELİK DÖNEMİ BAŞLIYOR MU?\n\nMurat Tosun'un paylaşımına göre, bazı araçlarda özellikler için aylık 4990 TL ödemek gerekecekmiş. Bu da yılda 60.000 TL demek!\n\nIsıtmalı koltuk, direksiyon gibi konfor özellikleri için abonelik sistemi geliyor olabilir. Bu durum sizi nasıl etkiler?\n\nSizce bu yeni sistem mantıklı mı?",
-        "image_path": "/tmp/otoxtra_img_tgdukhnv.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tgdukhnv.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T23:02:54.353815+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175602510916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18363786118210800",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1576037564069121",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T23:03:36.462763+03:00"
+      "updated_at": null
     }
   }
 }
