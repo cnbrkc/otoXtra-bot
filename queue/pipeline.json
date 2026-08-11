@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-11-20:04",
-  "status": "completed",
-  "started_at": "2026-08-11T20:04:55.054470+03:00",
-  "updated_at": "2026-08-11T20:07:39.460766+03:00",
+  "run_id": "2026-08-11-21:58",
+  "status": "error",
+  "started_at": "2026-08-11T21:58:09.633936+03:00",
+  "updated_at": "2026-08-11T21:59:03.030885+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-            "link": "https://tr.motor1.com/news/804521/manuel-vites-ingiltere-dusus/",
-            "published": "2026-08-11T16:00:00+00:00",
-            "summary": "Pazar payı %8’in altına düştü.",
-            "image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "dusuyor-gozden-manuel-ngiltere-pazarinda-sanziman"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,226 +126,48 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 116,
+            "after_keyword": 115,
             "after_time": 12,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 116,
+          "after_keyword": 115,
           "after_time": 12,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-11T20:06:37.545767+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-11T21:59:03.030885+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-          "link": "https://tr.motor1.com/news/804521/manuel-vites-ingiltere-dusus/",
-          "published": "2026-08-11T16:00:00+00:00",
-          "summary": "Pazar payı %8’in altına düştü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dusuyor-gozden-manuel-ngiltere-pazarinda-sanziman",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 4
-          },
-          "score": 49,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil severlerin ilgisini çekebilecek ancak sektörel bir trendi yansıttığı için sosyal medyada sınırlı etkileşim yaratacak nispeten rutin bir haber.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 49,
-        "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Klasik otomobil severlerin ilgisini çekebilecek ancak sektörel bir trendi yansıttığı için sosyal medyada sınırlı etkileşim yaratacak nispeten rutin bir haber.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-            "score": 49,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T20:06:39.933023+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-          "link": "https://tr.motor1.com/news/804521/manuel-vites-ingiltere-dusus/",
-          "published": "2026-08-11T16:00:00+00:00",
-          "summary": "Pazar payı %8’in altına düştü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dusuyor-gozden-manuel-ngiltere-pazarinda-sanziman",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 4
-          },
-          "score": 49,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil severlerin ilgisini çekebilecek ancak sektörel bir trendi yansıttığı için sosyal medyada sınırlı etkileşim yaratacak nispeten rutin bir haber.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Birleşik Krallık’ta manuel şanzımana duyulan ilgi, hızlı bir vedaya dönüşüyor. İngiltere’den gelen güncel veriler, yeni otomobillerin neredeyse tamamının otomatik şanzımanlı olduğunu gösteriyor. Üstelik bu durum, Temmuz 2026’da otomobil satışlarının çift haneli artış kaydettiği bir dönemde yaşanıyor. Yani sağlıklı görünen pazarda, motor sporları tarihinin göbeğinde yer alan bir pazarda bile manuelin payı hızla eriyor. Bu da ülkeyi, şanzıman tercihinin nereye gittiğini gösteren gerçek zamanlı bir örnek haline getiriyor. Üç pedallı otomobilleri önemsiyorsanız, bu önemli bir değişim. Çünkü manuel seçeneklerin bayilerdeki varlığının ne kadar hızlı azaldığını ve ciddi bir destek olmadan bu eğilimin neden tersine dönmesinin zor olduğunu ortaya koyuyor. En net uyarı işaretlerinden biri sipariş tarafında görülüyor. Bu yıl Birleşik Krallık pazarından toplanan veriler, sipariş edilen yeni otomobillerin neredeyse%92’sinin otomatikşanzımanlı olduğunu ortaya koydu. Bu da araçlar henüz showroom’lara ulaşmadan manuelin niş bir tercih haline geldiğini gösteriyor. Yılın ilk yarısında teslim edilen yeni otomobillerin yalnızca%7,9’umanuel şanzımanla geldi. Model erişilebilirliği de aynı yönde ilerliyor. Birleşik Krallık’ta satışta olan356yeni otomobil modelinin yalnızca72’sindehâlâ manuel şanzıman seçeneği bulunuyor. Bu da pek çok alıcının, konfigüratörde bile manuel vites seçeneğiyle karşılaşmayacağı anlamına geliyor. Bu tablo, BMW’nin giderek küçülen M ürün gamından Volkswagen’inGolf GTI’dabu seçeneği sona erdirmesine kadar, ana akım markaların başka pazarlarda da üç pedallı seçenekleri azaltma biçimiyle örtüşüyor. Bunun küresel ölçekte nasıl bir tabloya oturduğunu görmek için daha geniş kapsamlımanuel şanzıman ve otomatik satış verilerinebakılabilir; ayrıca eğilimin diğer pazarlarda nasıl şekillendiği de görülebilir. Birleşik Krallık’ta alıcıları otomatiğe yönelten birden fazla etken aynı anda devrede. Hibrit ve elektrikli araçlar pazarın giderek daha büyük bir bölümünü ele geçiriyor; bu araçlar ya geleneksel bir şanzıman kullanmıyor ya da elektrifikasyonu otomatik ünitelerle birleştiriyor. Birleşik Krallık’ta Temmuz 2026 tescilleri yıllık bazda%12arttı ve bunda elektrikli araçların güçlü katkısı etkili oldu. Dolayısıyla elektrifikasyonlu her ek satış, fiilen manuelin pazar payından götürüyor. Arz tarafında iseBMW’ninperformans bölümü yöneticisi, manuel donanımlar için tedarikçi desteğinin giderek azaldığına dikkat çekti. Bu da düşük hacimlerin artık ayrı pedal setleri, vites kolu mekanizmaları ve kalibrasyon çalışmasını masraflı hâle getirdiğini gösteriyor. Hükümetler de otomatik ve manuel ehliyetler arasında net bir ayrım yapmayı sürdürüyor ve yalnızca otomatik ehliyeti olan sürücülerin yasal olarak manuel kullanmasına izin verilmesine yönelik bir plan bulunmadığını doğruluyor. Bu da manuel otomobilleri eğitim ve sınav tarafında daha da küçük bir nişe itiyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🚗 MANUEL ŞANZIMAN İNGİLTERE'DE DE GÖZDEN DÜŞÜYOR\n\nBirleşik Krallık'ta manuel şanzımanlı yeni otomobil satışı %8'in altına indi. Otomatik vitesli araçlar pazarın hakimi olmaya başladı.\n\nBu durum, hem otomatik vitesin yaygınlaşmasını hem de manuel seçeneğin hızla azaldığını gösteriyor.\n\nSizce manuel vites gelecekte tamamen yok olacak mı?",
-        "post_text_length": 337,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T20:06:42.504461+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Manuel şanzıman, İngiltere pazarında da gözden düşüyor",
-          "link": "https://tr.motor1.com/news/804521/manuel-vites-ingiltere-dusus/",
-          "published": "2026-08-11T16:00:00+00:00",
-          "summary": "Pazar payı %8’in altına düştü.",
-          "image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s3/subaru-brz-manual-transmission.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dusuyor-gozden-manuel-ngiltere-pazarinda-sanziman",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 4
-          },
-          "score": 49,
-          "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil severlerin ilgisini çekebilecek ancak sektörel bir trendi yansıttığı için sosyal medyada sınırlı etkileşim yaratacak nispeten rutin bir haber.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Birleşik Krallık’ta manuel şanzımana duyulan ilgi, hızlı bir vedaya dönüşüyor. İngiltere’den gelen güncel veriler, yeni otomobillerin neredeyse tamamının otomatik şanzımanlı olduğunu gösteriyor. Üstelik bu durum, Temmuz 2026’da otomobil satışlarının çift haneli artış kaydettiği bir dönemde yaşanıyor. Yani sağlıklı görünen pazarda, motor sporları tarihinin göbeğinde yer alan bir pazarda bile manuelin payı hızla eriyor. Bu da ülkeyi, şanzıman tercihinin nereye gittiğini gösteren gerçek zamanlı bir örnek haline getiriyor. Üç pedallı otomobilleri önemsiyorsanız, bu önemli bir değişim. Çünkü manuel seçeneklerin bayilerdeki varlığının ne kadar hızlı azaldığını ve ciddi bir destek olmadan bu eğilimin neden tersine dönmesinin zor olduğunu ortaya koyuyor. En net uyarı işaretlerinden biri sipariş tarafında görülüyor. Bu yıl Birleşik Krallık pazarından toplanan veriler, sipariş edilen yeni otomobillerin neredeyse%92’sinin otomatikşanzımanlı olduğunu ortaya koydu. Bu da araçlar henüz showroom’lara ulaşmadan manuelin niş bir tercih haline geldiğini gösteriyor. Yılın ilk yarısında teslim edilen yeni otomobillerin yalnızca%7,9’umanuel şanzımanla geldi. Model erişilebilirliği de aynı yönde ilerliyor. Birleşik Krallık’ta satışta olan356yeni otomobil modelinin yalnızca72’sindehâlâ manuel şanzıman seçeneği bulunuyor. Bu da pek çok alıcının, konfigüratörde bile manuel vites seçeneğiyle karşılaşmayacağı anlamına geliyor. Bu tablo, BMW’nin giderek küçülen M ürün gamından Volkswagen’inGolf GTI’dabu seçeneği sona erdirmesine kadar, ana akım markaların başka pazarlarda da üç pedallı seçenekleri azaltma biçimiyle örtüşüyor. Bunun küresel ölçekte nasıl bir tabloya oturduğunu görmek için daha geniş kapsamlımanuel şanzıman ve otomatik satış verilerinebakılabilir; ayrıca eğilimin diğer pazarlarda nasıl şekillendiği de görülebilir. Birleşik Krallık’ta alıcıları otomatiğe yönelten birden fazla etken aynı anda devrede. Hibrit ve elektrikli araçlar pazarın giderek daha büyük bir bölümünü ele geçiriyor; bu araçlar ya geleneksel bir şanzıman kullanmıyor ya da elektrifikasyonu otomatik ünitelerle birleştiriyor. Birleşik Krallık’ta Temmuz 2026 tescilleri yıllık bazda%12arttı ve bunda elektrikli araçların güçlü katkısı etkili oldu. Dolayısıyla elektrifikasyonlu her ek satış, fiilen manuelin pazar payından götürüyor. Arz tarafında iseBMW’ninperformans bölümü yöneticisi, manuel donanımlar için tedarikçi desteğinin giderek azaldığına dikkat çekti. Bu da düşük hacimlerin artık ayrı pedal setleri, vites kolu mekanizmaları ve kalibrasyon çalışmasını masraflı hâle getirdiğini gösteriyor. Hükümetler de otomatik ve manuel ehliyetler arasında net bir ayrım yapmayı sürdürüyor ve yalnızca otomatik ehliyeti olan sürücülerin yasal olarak manuel kullanmasına izin verilmesine yönelik bir plan bulunmadığını doğruluyor. Bu da manuel otomobilleri eğitim ve sınav tarafında daha da küçük bir nişe itiyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🚗 MANUEL ŞANZIMAN İNGİLTERE'DE DE GÖZDEN DÜŞÜYOR\n\nBirleşik Krallık'ta manuel şanzımanlı yeni otomobil satışı %8'in altına indi. Otomatik vitesli araçlar pazarın hakimi olmaya başladı.\n\nBu durum, hem otomatik vitesin yaygınlaşmasını hem de manuel seçeneğin hızla azaldığını gösteriyor.\n\nSizce manuel vites gelecekte tamamen yok olacak mı?",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_script",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s1/subaru-brz-manual-transmission.jpg",
-            "https://cdn.motor1.com/images/mgl/PvlGA/s3/top-reasons-to-still-love-manual-transmissions.jpg",
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s1/4x3/subaru-brz-manual-transmission.webp",
-            "https://cdn.motor1.com/images/mgl/qkBz9Z/s1/1x1/subaru-brz-manual-transmission.webp"
-          ]
-        },
-        "post_text": "🚗 MANUEL ŞANZIMAN İNGİLTERE'DE DE GÖZDEN DÜŞÜYOR\n\nBirleşik Krallık'ta manuel şanzımanlı yeni otomobil satışı %8'in altına indi. Otomatik vitesli araçlar pazarın hakimi olmaya başladı.\n\nBu durum, hem otomatik vitesin yaygınlaşmasını hem de manuel seçeneğin hızla azaldığını gösteriyor.\n\nSizce manuel vites gelecekte tamamen yok olacak mı?",
-        "image_path": "/tmp/otoxtra_img_q7hzpsd0.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_q7hzpsd0.jpg",
-          "/tmp/otoxtra_img_jbhath25.jpg",
-          "/tmp/otoxtra_img_ko423hj0.jpg",
-          "/tmp/otoxtra_img_swexu9v6.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T20:06:46.248965+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175590216916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17991271001833599",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1279801565212772",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T20:07:39.460766+03:00"
+      "updated_at": null
     }
   }
 }
