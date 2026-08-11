@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-11-13:53",
-  "status": "completed",
-  "started_at": "2026-08-11T13:53:50.208982+03:00",
-  "updated_at": "2026-08-11T13:56:07.826821+03:00",
+  "run_id": "2026-08-11-14:41",
+  "status": "error",
+  "started_at": "2026-08-11T14:41:45.343045+03:00",
+  "updated_at": "2026-08-11T14:42:40.923987+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-            "link": "https://www.donanimhaber.com/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor--209153",
-            "published": "2026-08-11T10:39:00+00:00",
-            "summary": "SIM kartların cihazlara doğrudan komut gönderebildiği ortaya çıktı. Araştırmacılar, bu yöntemle telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riskleri tespit etti.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cihazlar-gizli-kapatilabiliyor-kartlardaki-sim-tehlike-uzaktan"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,223 +126,48 @@
           },
           "_metrics": {
             "found": 174,
-            "after_keyword": 117,
-            "after_time": 11,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 116,
+            "after_time": 9,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 174,
-          "after_keyword": 117,
-          "after_time": 11,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 116,
+          "after_time": 9,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-11T13:54:50.676499+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-11T14:42:40.923987+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-          "link": "https://www.donanimhaber.com/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor--209153",
-          "published": "2026-08-11T10:39:00+00:00",
-          "summary": "SIM kartların cihazlara doğrudan komut gönderebildiği ortaya çıktı. Araştırmacılar, bu yöntemle telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riskleri tespit etti.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cihazlar-gizli-kapatilabiliyor-kartlardaki-sim-tehlike-uzaktan",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 8
-          },
-          "score": 79,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç şarj cihazları ve akıllı otomobilleri hedef alan siber güvenlik tehdidi, geniş kitlelerde endişe yaratacak ve yüksek sosyal medya etkileşimi toplayacak nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 79,
-        "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Elektrikli araç şarj cihazları ve akıllı otomobilleri hedef alan siber güvenlik tehdidi, geniş kitlelerde endişe yaratacak ve yüksek sosyal medya etkileşimi toplayacak nitelikte.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-            "score": 79,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T13:54:53.105969+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-          "link": "https://www.donanimhaber.com/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor--209153",
-          "published": "2026-08-11T10:39:00+00:00",
-          "summary": "SIM kartların cihazlara doğrudan komut gönderebildiği ortaya çıktı. Araştırmacılar, bu yöntemle telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riskleri tespit etti.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cihazlar-gizli-kapatilabiliyor-kartlardaki-sim-tehlike-uzaktan",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 8
-          },
-          "score": 79,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç şarj cihazları ve akıllı otomobilleri hedef alan siber güvenlik tehdidi, geniş kitlelerde endişe yaratacak ve yüksek sosyal medya etkileşimi toplayacak nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Birmingham Üniversitesi ve Fuzzware'dan siber güvenlik araştırmacıları, SIM kartların göz ardı edilen güvenlik risklerini inceledi. Araştırmacılar, geliştirdikleri CATana adlı analiz aracıyla 26 cihazı test etti. İncelenen cihazlar arasında 18 akıllı telefon ve elektrikli araç şarj istasyonları, bağlantılı otomobiller ve endüstriyel ekipmanlarda kullanılan 8 hücresel IoT modülü yer aldı. Farklı üreticilere ve işletim sistemlerine ait cihazların dahil edildiği çalışma, sorunun belirli bir marka veya platformla sınırlı olmadığını gösterdi. Araştırmacılara göre güvenlik açığının temelinde doğrudan bir yazılım hatası bulunmuyor. Sorun, hücresel iletişim standartlarında uzun süredir yer alanProactive SIMözelliğinden kaynaklanıyor. Bu özellik, SIM kartın cihazın modemine doğrudan komut göndermesine imkan tanıyor. Bu mekanizmanın önemli parçalarından biri ise 1980'li yıllarda çevirmeli modemleri kontrol etmek için geliştirilenAT komutları. Hücresel donanımları yönetmek için kullanılan bu komutlar, SIM kart tarafından gönderildiğinde modem tarafından işlenebiliyor. Testler, saldırganların kullanıcıdan herhangi bir etkileşim gerektirmeden cihazlar üzerinde kapsamlı kontrol sağlayabildiğini gösterdi. Araştırmacılar SIM üzerinden gerçekleştirilen saldırılarla cihazlarda kod çalıştırabildi ve hassas donanım kimlik bilgilerini ele geçirebildi. Bunun yanında kilitli Android telefonlarınkötü amaçlı bağlantıları açmaya zorlanabildiği, mobil bağlantının güvenlik seviyesinin 4G'den daha savunmasız olan2G'ye düşürülebildiğigörüldü. Bazı durumlarda cihazların uzaktan bağlantısının kesilmesi veyatamamen kapatılmasıda mümkün oldu. Bu sistemler genellikle USB bağlantıları ve uzaktan yazılım erişimi gibi dışarıdan gelebilecek saldırı noktalarını mümkün olduğunca kısıtlayacak şekilde tasarlanıyor. Ancak hücresel bağlantı için kullanılan SIM yuvası, güvenlik modelinde gözden kaçabilecek bir giriş noktası oluşturuyor. Üstelik saldırganın SIM kartı fiziksel olarak değiştirmesi de her zaman gerekmiyor. Kötü amaçlı SIM yazılım güncellemeleri, uzaktan yönetim platformlarını kötüye kullanan sahte veya kötü niyetli operatörler ve üretim aşamasındaki tedarik zinciri müdahaleleri üzerinden zararlı SIM kartların cihazlara ulaşması mümkün olabiliyor. Araştırmacılar bulgularını kamuoyuna açıklamadan önce etkilenen çip üreticileri, cihaz üreticileri ve GSMA ile paylaştı. Bunun ardından bazı üreticiler kötü amaçlı AT komutlarını engellemek amacıyla yazılım güncellemeleri ve daha sıkı güvenlik yapılandırmaları üzerinde çalışmaya başladı. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/STANLEY-FB533-Katlan%C4%B1r-Ama%C3%A7l%C4%B1-Ta%C5%9F%C4%B1ma/dp/B0CL9PXRC6 https://www.amazon.com.tr/dp/B0GLP6JCLT https://www.amazon.com.tr/dp/B0C3K78BWQ https://www.amazon.com.tr/dp/B0F1X81VHZ https://www.yalispor.com.tr/nike-metro-tek-erkek-spor-ayakkabi-beyaz https://app.hb.biz/cPz6I5A4MBHE"
-        },
-        "post_text": "🚨 SİM KARTLARDAKİ GİZLİ TEHLİKE ORTAYA ÇIKTI!\n\nAraştırmacılar, SIM kartların cihazlara doğrudan komut gönderebildiğini keşfetti. Bu durum telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riski oluşturuyor.\n\nSorun, SIM kartın modeme komut göndermesini sağlayan Proactive SIM özelliğinden kaynaklanıyor. Cihazınız uzaktan kapatılabilir!\n\nSizce bu açık nasıl kapatılmalı?",
-        "post_text_length": 382,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T13:54:55.985517+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "SIM kartlardaki gizli tehlike: Cihazlar uzaktan kapatılabiliyor",
-          "link": "https://www.donanimhaber.com/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor--209153",
-          "published": "2026-08-11T10:39:00+00:00",
-          "summary": "SIM kartların cihazlara doğrudan komut gönderebildiği ortaya çıktı. Araştırmacılar, bu yöntemle telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riskleri tespit etti.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cihazlar-gizli-kapatilabiliyor-kartlardaki-sim-tehlike-uzaktan",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 8
-          },
-          "score": 79,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç şarj cihazları ve akıllı otomobilleri hedef alan siber güvenlik tehdidi, geniş kitlelerde endişe yaratacak ve yüksek sosyal medya etkileşimi toplayacak nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Birmingham Üniversitesi ve Fuzzware'dan siber güvenlik araştırmacıları, SIM kartların göz ardı edilen güvenlik risklerini inceledi. Araştırmacılar, geliştirdikleri CATana adlı analiz aracıyla 26 cihazı test etti. İncelenen cihazlar arasında 18 akıllı telefon ve elektrikli araç şarj istasyonları, bağlantılı otomobiller ve endüstriyel ekipmanlarda kullanılan 8 hücresel IoT modülü yer aldı. Farklı üreticilere ve işletim sistemlerine ait cihazların dahil edildiği çalışma, sorunun belirli bir marka veya platformla sınırlı olmadığını gösterdi. Araştırmacılara göre güvenlik açığının temelinde doğrudan bir yazılım hatası bulunmuyor. Sorun, hücresel iletişim standartlarında uzun süredir yer alanProactive SIMözelliğinden kaynaklanıyor. Bu özellik, SIM kartın cihazın modemine doğrudan komut göndermesine imkan tanıyor. Bu mekanizmanın önemli parçalarından biri ise 1980'li yıllarda çevirmeli modemleri kontrol etmek için geliştirilenAT komutları. Hücresel donanımları yönetmek için kullanılan bu komutlar, SIM kart tarafından gönderildiğinde modem tarafından işlenebiliyor. Testler, saldırganların kullanıcıdan herhangi bir etkileşim gerektirmeden cihazlar üzerinde kapsamlı kontrol sağlayabildiğini gösterdi. Araştırmacılar SIM üzerinden gerçekleştirilen saldırılarla cihazlarda kod çalıştırabildi ve hassas donanım kimlik bilgilerini ele geçirebildi. Bunun yanında kilitli Android telefonlarınkötü amaçlı bağlantıları açmaya zorlanabildiği, mobil bağlantının güvenlik seviyesinin 4G'den daha savunmasız olan2G'ye düşürülebildiğigörüldü. Bazı durumlarda cihazların uzaktan bağlantısının kesilmesi veyatamamen kapatılmasıda mümkün oldu. Bu sistemler genellikle USB bağlantıları ve uzaktan yazılım erişimi gibi dışarıdan gelebilecek saldırı noktalarını mümkün olduğunca kısıtlayacak şekilde tasarlanıyor. Ancak hücresel bağlantı için kullanılan SIM yuvası, güvenlik modelinde gözden kaçabilecek bir giriş noktası oluşturuyor. Üstelik saldırganın SIM kartı fiziksel olarak değiştirmesi de her zaman gerekmiyor. Kötü amaçlı SIM yazılım güncellemeleri, uzaktan yönetim platformlarını kötüye kullanan sahte veya kötü niyetli operatörler ve üretim aşamasındaki tedarik zinciri müdahaleleri üzerinden zararlı SIM kartların cihazlara ulaşması mümkün olabiliyor. Araştırmacılar bulgularını kamuoyuna açıklamadan önce etkilenen çip üreticileri, cihaz üreticileri ve GSMA ile paylaştı. Bunun ardından bazı üreticiler kötü amaçlı AT komutlarını engellemek amacıyla yazılım güncellemeleri ve daha sıkı güvenlik yapılandırmaları üzerinde çalışmaya başladı. Nike'tan ayaklara masaj yapan akıllı terlik https://www.amazon.com.tr/STANLEY-FB533-Katlan%C4%B1r-Ama%C3%A7l%C4%B1-Ta%C5%9F%C4%B1ma/dp/B0CL9PXRC6 https://www.amazon.com.tr/dp/B0GLP6JCLT https://www.amazon.com.tr/dp/B0C3K78BWQ https://www.amazon.com.tr/dp/B0F1X81VHZ https://www.yalispor.com.tr/nike-metro-tek-erkek-spor-ayakkabi-beyaz https://app.hb.biz/cPz6I5A4MBHE",
-          "post_text_for_card": "🚨 SİM KARTLARDAKİ GİZLİ TEHLİKE ORTAYA ÇIKTI!\n\nAraştırmacılar, SIM kartların cihazlara doğrudan komut gönderebildiğini keşfetti. Bu durum telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riski oluşturuyor.\n\nSorun, SIM kartın modeme komut göndermesini sağlayan Proactive SIM özelliğinden kaynaklanıyor. Cihazınız uzaktan kapatılabilir!\n\nSizce bu açık nasıl kapatılmalı?",
-          "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209153/src/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor209153_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209153/1200x675sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209153/src/sim-kartlardaki-gizli-tehlike-cihazlar-uzaktan-kapatilabiliyor209153_0.jpg"
-          ]
-        },
-        "post_text": "🚨 SİM KARTLARDAKİ GİZLİ TEHLİKE ORTAYA ÇIKTI!\n\nAraştırmacılar, SIM kartların cihazlara doğrudan komut gönderebildiğini keşfetti. Bu durum telefonlar ve elektrikli araç şarj cihazlarında ciddi güvenlik riski oluşturuyor.\n\nSorun, SIM kartın modeme komut göndermesini sağlayan Proactive SIM özelliğinden kaynaklanıyor. Cihazınız uzaktan kapatılabilir!\n\nSizce bu açık nasıl kapatılmalı?",
-        "image_path": "/tmp/otoxtra_img_0iicmlfa.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_0iicmlfa.jpg",
-          "/tmp/otoxtra_img_1ve5v8ej.jpg",
-          "/tmp/otoxtra_img_2ysg4uy9.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T13:55:19.932392+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175556562916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18185357299399732",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2166051944261276",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-11T13:56:07.826821+03:00"
+      "updated_at": null
     }
   }
 }
