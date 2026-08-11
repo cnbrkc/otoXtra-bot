@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-11-06:41",
-  "status": "error",
-  "started_at": "2026-08-11T06:41:24.406275+03:00",
-  "updated_at": "2026-08-11T06:42:16.131843+03:00",
+  "run_id": "2026-08-11-08:05",
+  "status": "completed",
+  "started_at": "2026-08-11T08:05:33.743522+03:00",
+  "updated_at": "2026-08-11T08:07:21.720641+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+            "link": "https://nitter.net/ahmetcelik2016/status/2087042035341476164#m",
+            "published": "2026-08-11T05:02:51+00:00",
+            "summary": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr piped.video/g6Mn6wizVvQ?si=mZqM…",
+            "image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "biri-g6mn6wizvvq-heyecani-https-jaecoo-mokw2cmc-mzqmad7-nda-omodajaecootr-surus-tasyolu-turkiye-videomuz-yayinda-yollarindan-youtu-zorlu"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,215 @@
           },
           "_metrics": {
             "found": 173,
-            "after_keyword": 110,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 111,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 173,
-          "after_keyword": 110,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 111,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-11T06:42:16.131843+03:00"
+      "error": null,
+      "updated_at": "2026-08-11T08:06:35.480083+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+          "link": "https://nitter.net/ahmetcelik2016/status/2087042035341476164#m",
+          "published": "2026-08-11T05:02:51+00:00",
+          "summary": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr piped.video/g6Mn6wizVvQ?si=mZqM…",
+          "image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "biri-g6mn6wizvvq-heyecani-https-jaecoo-mokw2cmc-mzqmad7-nda-omodajaecootr-surus-tasyolu-turkiye-videomuz-yayinda-yollarindan-youtu-zorlu",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni bir modelin zorlu yol testini içeren içerik, otomobil meraklıları için ilgi çekici olsa da genel kitle için ticari/tanıtım niteliği ağır basıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 54,
+        "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 8,
+          "gundem_gucu": 10,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yeni bir modelin zorlu yol testini içeren içerik, otomobil meraklıları için ilgi çekici olsa da genel kitle için ticari/tanıtım niteliği ağır basıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+            "score": 54,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 10,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-11T08:06:37.976315+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+          "link": "https://nitter.net/ahmetcelik2016/status/2087042035341476164#m",
+          "published": "2026-08-11T05:02:51+00:00",
+          "summary": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr piped.video/g6Mn6wizVvQ?si=mZqM…",
+          "image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "biri-g6mn6wizvvq-heyecani-https-jaecoo-mokw2cmc-mzqmad7-nda-omodajaecootr-surus-tasyolu-turkiye-videomuz-yayinda-yollarindan-youtu-zorlu",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni bir modelin zorlu yol testini içeren içerik, otomobil meraklıları için ilgi çekici olsa da genel kitle için ticari/tanıtım niteliği ağır basıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🏞️ JAECOO 7 İLE TAŞYOLU MÜCADELESİ VİDEOMUZ YAYINDA!\n\nTürkiye'nin en zorlu yollarından Taşyolu'nda Jaecoo 7 ile inanılmaz bir sürüş deneyimi yaşadık.\n\nBu heyecan dolu macerayı kaçırmayın! Videomuz şimdi YouTube'da.\n\nSizce Jaecoo 7 bu zorlu testi geçti mi?",
+        "post_text_length": 255,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-11T08:06:39.597846+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr https://youtu.be/g6Mn6wizVvQ?si=mZqMAd7-mokw2cmC",
+          "link": "https://nitter.net/ahmetcelik2016/status/2087042035341476164#m",
+          "published": "2026-08-11T05:02:51+00:00",
+          "summary": "Jaecoo 7 ile Türkiye’nin en zorlu yollarından biri olan Taşyolu’nda sürüş heyecanı… Videomuz yayında! @omodajaecootr piped.video/g6Mn6wizVvQ?si=mZqM…",
+          "image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "biri-g6mn6wizvvq-heyecani-https-jaecoo-mokw2cmc-mzqmad7-nda-omodajaecootr-surus-tasyolu-turkiye-videomuz-yayinda-yollarindan-youtu-zorlu",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 10,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni bir modelin zorlu yol testini içeren içerik, otomobil meraklıları için ilgi çekici olsa da genel kitle için ticari/tanıtım niteliği ağır basıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🏞️ JAECOO 7 İLE TAŞYOLU MÜCADELESİ VİDEOMUZ YAYINDA!\n\nTürkiye'nin en zorlu yollarından Taşyolu'nda Jaecoo 7 ile inanılmaz bir sürüş deneyimi yaşadık.\n\nBu heyecan dolu macerayı kaçırmayın! Videomuz şimdi YouTube'da.\n\nSizce Jaecoo 7 bu zorlu testi geçti mi?",
+          "image_sources": [
+            "nitter_still"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HPapq2fW4AAUbvj.jpg?name=orig"
+          ]
+        },
+        "post_text": "🏞️ JAECOO 7 İLE TAŞYOLU MÜCADELESİ VİDEOMUZ YAYINDA!\n\nTürkiye'nin en zorlu yollarından Taşyolu'nda Jaecoo 7 ile inanılmaz bir sürüş deneyimi yaşadık.\n\nBu heyecan dolu macerayı kaçırmayın! Videomuz şimdi YouTube'da.\n\nSizce Jaecoo 7 bu zorlu testi geçti mi?",
+        "image_path": "/tmp/otoxtra_img_oz7ok3v_.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_oz7ok3v_.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-11T08:06:41.499725+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175529748916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18130748572658754",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1742691466969051",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-11T08:07:21.720641+03:00"
     }
   }
 }
