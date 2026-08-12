@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-12-22:13",
-  "status": "error",
-  "started_at": "2026-08-12T22:13:27.993564+03:00",
-  "updated_at": "2026-08-12T22:14:21.900378+03:00",
+  "run_id": "2026-08-12-23:40",
+  "status": "completed",
+  "started_at": "2026-08-12T23:40:30.110847+03:00",
+  "updated_at": "2026-08-12T23:42:23.832592+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+            "link": "https://tr.motor1.com/news/804733/porsche-macan-halefi-casus-q5/",
+            "published": "2026-08-12T20:00:00+00:00",
+            "summary": "Test aracı, aslen garip görünen bir Audi Q5.",
+            "image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "goruntulendi-halefi-icten-macan-porsche-sirasinda-test-yanmali"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,226 @@
           },
           "_metrics": {
             "found": 177,
-            "after_keyword": 117,
-            "after_time": 10,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 116,
+            "after_time": 13,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 177,
-          "after_keyword": 117,
-          "after_time": 10,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 116,
+          "after_time": 13,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-12T22:14:21.900378+03:00"
+      "error": null,
+      "updated_at": "2026-08-12T23:41:24.231761+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+          "link": "https://tr.motor1.com/news/804733/porsche-macan-halefi-casus-q5/",
+          "published": "2026-08-12T20:00:00+00:00",
+          "summary": "Test aracı, aslen garip görünen bir Audi Q5.",
+          "image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-halefi-icten-macan-porsche-sirasinda-test-yanmali",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir marka ve model geçişi olmasına rağmen, henüz sadece erken aşama test görüntüleri ve kafa karıştırıcı bir altyapı barındırdığı için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 51,
+        "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 8,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 4
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Popüler bir marka ve model geçişi olmasına rağmen, henüz sadece erken aşama test görüntüleri ve kafa karıştırıcı bir altyapı barındırdığı için viral etkisi orta seviyede kalıyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+            "score": 51,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-12T23:41:26.699797+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+          "link": "https://tr.motor1.com/news/804733/porsche-macan-halefi-casus-q5/",
+          "published": "2026-08-12T20:00:00+00:00",
+          "summary": "Test aracı, aslen garip görünen bir Audi Q5.",
+          "image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-halefi-icten-macan-porsche-sirasinda-test-yanmali",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir marka ve model geçişi olmasına rağmen, henüz sadece erken aşama test görüntüleri ve kafa karıştırıcı bir altyapı barındırdığı için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tamamen kamufle edilmiş birAudi Q5prototipi, yalnızca deneysel bir versiyondan çok daha fazlasını gizliyor olabilir. Instagram’da paylaşılan bazı casus fotoğraflarda görülen araç,Porsche’nin yeni orta boy SUV’sinin, yani içten yanmalıMacan’ın halefinin ilk hâli olabilir. Elbette şu an için prototipin kimliğine dair resmi bir doğrulama bulunmuyor. Gövde yapısı birQ5'iandırıyor, ancak çamurluk kemerindeki şişiklik dikkat çekici bir ipucu sunuyor. Bu tür bir çözümün farklı açıklamaları olabilir.Audi(veyaPorsche) bunu özelsüspansiyonları, genişletilmiş iz açıklığını, daha büyük frenleri ya da daha geniş lastikleri test etmek için kullanıyor olabilir. Bunların tamamı, Q5’e kıyasla daha sportif karaktere sahip bir modelin geliştirilmesiyle uyumlu unsurlar. Bu nedenle, içten yanmalıMacan’ınyerini alması beklenen gelecek Porsche modelini düşünmek kaçınılmaz hale geliyor. Çünkü bu model ile Q5’inPPC platformunupaylaşması bekleniyor. Ancak bu, iki aracın aynı olacağı anlamına gelmiyor. Platform,ortak bir teknik temelsunacak; buna karşın Porsche’nin şasi, süspansiyon, direksiyon, sürüş dinamikleri, tasarım ve elektronik yönetim tarafında kapsamlı değişiklikler yapması bekleniyor. Porsche CEO’su Michael Leiters, projenin “gerçek bir Porsche” olması gerektiğini daha önce açıkça ifade etmiş ve bu doğrultuda markaya özgü içeriklerin, teknolojinin ve çözümlerin sunulacağını vurgulamıştı. Fotoğraflanan prototip de bu sürecin ilk aşamalarından birini temsil ediyor olabilir. Ancak burada önemli bir detay var: yeni benzinli SUV’ninMacan adını taşımamasıbekleniyor. Çünkü bu isim, yalnızca tam elektrikli araçlara yönelik PPE platformu üzerinde geliştirilen mevcut nesil için ayrılmış bulunuyor. Yeni benzinli SUV’nin2028yılına kadar tanıtılması ve saf içten yanmalı ile hibrit güç ünitelerinden oluşan bir ürün gamı sunması bekleniyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "📸 YENİ PORSCHE MACAN'IN İLK İPUÇLARI GELDİ Mİ?\n\nİçten yanmalı Macan'ın halefi olduğu düşünülen gizemli bir test aracı görüntülendi! Audi Q5 kılığındaki prototip, çamurluklarındaki şişkinliklerle dikkat çekiyor.\n\nBu durum, özel süspansiyon, geniş iz açıklığı veya daha büyük frenler gibi sportif özelliklerin test edildiğine işaret ediyor olabilir.\n\nSizce bu gerçekten yeni Macan mı?",
+        "post_text_length": 382,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-12T23:41:28.146510+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche Macan'ın içten yanmalı halefi test sırasında görüntülendi!",
+          "link": "https://tr.motor1.com/news/804733/porsche-macan-halefi-casus-q5/",
+          "published": "2026-08-12T20:00:00+00:00",
+          "summary": "Test aracı, aslen garip görünen bir Audi Q5.",
+          "image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/koGQkB/s3/2026-porsche-macan-gts.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-halefi-icten-macan-porsche-sirasinda-test-yanmali",
+          "base_ai_score": 42,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 8,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir marka ve model geçişi olmasına rağmen, henüz sadece erken aşama test görüntüleri ve kafa karıştırıcı bir altyapı barındırdığı için viral etkisi orta seviyede kalıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tamamen kamufle edilmiş birAudi Q5prototipi, yalnızca deneysel bir versiyondan çok daha fazlasını gizliyor olabilir. Instagram’da paylaşılan bazı casus fotoğraflarda görülen araç,Porsche’nin yeni orta boy SUV’sinin, yani içten yanmalıMacan’ın halefinin ilk hâli olabilir. Elbette şu an için prototipin kimliğine dair resmi bir doğrulama bulunmuyor. Gövde yapısı birQ5'iandırıyor, ancak çamurluk kemerindeki şişiklik dikkat çekici bir ipucu sunuyor. Bu tür bir çözümün farklı açıklamaları olabilir.Audi(veyaPorsche) bunu özelsüspansiyonları, genişletilmiş iz açıklığını, daha büyük frenleri ya da daha geniş lastikleri test etmek için kullanıyor olabilir. Bunların tamamı, Q5’e kıyasla daha sportif karaktere sahip bir modelin geliştirilmesiyle uyumlu unsurlar. Bu nedenle, içten yanmalıMacan’ınyerini alması beklenen gelecek Porsche modelini düşünmek kaçınılmaz hale geliyor. Çünkü bu model ile Q5’inPPC platformunupaylaşması bekleniyor. Ancak bu, iki aracın aynı olacağı anlamına gelmiyor. Platform,ortak bir teknik temelsunacak; buna karşın Porsche’nin şasi, süspansiyon, direksiyon, sürüş dinamikleri, tasarım ve elektronik yönetim tarafında kapsamlı değişiklikler yapması bekleniyor. Porsche CEO’su Michael Leiters, projenin “gerçek bir Porsche” olması gerektiğini daha önce açıkça ifade etmiş ve bu doğrultuda markaya özgü içeriklerin, teknolojinin ve çözümlerin sunulacağını vurgulamıştı. Fotoğraflanan prototip de bu sürecin ilk aşamalarından birini temsil ediyor olabilir. Ancak burada önemli bir detay var: yeni benzinli SUV’ninMacan adını taşımamasıbekleniyor. Çünkü bu isim, yalnızca tam elektrikli araçlara yönelik PPE platformu üzerinde geliştirilen mevcut nesil için ayrılmış bulunuyor. Yeni benzinli SUV’nin2028yılına kadar tanıtılması ve saf içten yanmalı ile hibrit güç ünitelerinden oluşan bir ürün gamı sunması bekleniyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "📸 YENİ PORSCHE MACAN'IN İLK İPUÇLARI GELDİ Mİ?\n\nİçten yanmalı Macan'ın halefi olduğu düşünülen gizemli bir test aracı görüntülendi! Audi Q5 kılığındaki prototip, çamurluklarındaki şişkinliklerle dikkat çekiyor.\n\nBu durum, özel süspansiyon, geniş iz açıklığı veya daha büyük frenler gibi sportif özelliklerin test edildiğine işaret ediyor olabilir.\n\nSizce bu gerçekten yeni Macan mı?",
+          "image_sources": [
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_script"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/koGQkB/s1/2026-porsche-macan-gts.jpg",
+            "https://cdn.motor1.com/images/mgl/koGQkB/s1/4x3/2026-porsche-macan-gts.webp",
+            "https://cdn.motor1.com/images/mgl/9mp6gm/s3/2026-porsche-macan-gts.jpg",
+            "https://cdn.motor1.com/images/mgl/koGQkB/s1/1x1/2026-porsche-macan-gts.webp"
+          ]
+        },
+        "post_text": "📸 YENİ PORSCHE MACAN'IN İLK İPUÇLARI GELDİ Mİ?\n\nİçten yanmalı Macan'ın halefi olduğu düşünülen gizemli bir test aracı görüntülendi! Audi Q5 kılığındaki prototip, çamurluklarındaki şişkinliklerle dikkat çekiyor.\n\nBu durum, özel süspansiyon, geniş iz açıklığı veya daha büyük frenler gibi sportif özelliklerin test edildiğine işaret ediyor olabilir.\n\nSizce bu gerçekten yeni Macan mı?",
+        "image_path": "/tmp/otoxtra_img_e7n9ojus.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_e7n9ojus.jpg",
+          "/tmp/otoxtra_img_41y8768i.jpg",
+          "/tmp/otoxtra_img_s_ktqxp4.jpg",
+          "/tmp/otoxtra_img_jwdfmx9u.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-12T23:41:32.974792+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175729188916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17940112377339298",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2209517049998155",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-12T23:42:23.832592+03:00"
     }
   }
 }
