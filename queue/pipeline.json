@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-12-19:58",
-  "status": "completed",
-  "started_at": "2026-08-12T19:58:22.243501+03:00",
-  "updated_at": "2026-08-12T20:00:08.724302+03:00",
+  "run_id": "2026-08-12-20:59",
+  "status": "error",
+  "started_at": "2026-08-12T20:59:37.927210+03:00",
+  "updated_at": "2026-08-12T21:00:33.556447+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-            "link": "https://www.log.com.tr/yeni-peugeot-308-turkiyede-satisa-sunuldu/",
-            "published": "2026-08-12T19:58:22.315199+03:00",
-            "summary": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışa sunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi. GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu: “Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc […] Yeni Peugeot 308, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "308-peugeot-satisa-sunuldu-turkiye"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,215 +126,48 @@
           },
           "_metrics": {
             "found": 177,
-            "after_keyword": 119,
+            "after_keyword": 117,
             "after_time": 10,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 177,
-          "after_keyword": 119,
+          "after_keyword": 117,
           "after_time": 10,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-12T19:59:21.171580+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-12T21:00:33.556447+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-          "link": "https://www.log.com.tr/yeni-peugeot-308-turkiyede-satisa-sunuldu/",
-          "published": "2026-08-12T19:58:22.315199+03:00",
-          "summary": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışa sunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi. GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu: “Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc […] Yeni Peugeot 308, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "308-peugeot-satisa-sunuldu-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 7,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin satışa çıkması standart bir otomotiv haberidir, fiyat açıklaması yerel düzeyde ilgi çekse de sektörü sarsacak bir viral potansiyeli yoktur.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 50,
-        "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 7,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yeni bir modelin satışa çıkması standart bir otomotiv haberidir, fiyat açıklaması yerel düzeyde ilgi çekse de sektörü sarsacak bir viral potansiyeli yoktur.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 7,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-12T19:59:23.253867+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-          "link": "https://www.log.com.tr/yeni-peugeot-308-turkiyede-satisa-sunuldu/",
-          "published": "2026-08-12T19:58:22.315199+03:00",
-          "summary": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışa sunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi. GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu: “Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc […] Yeni Peugeot 308, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "308-peugeot-satisa-sunuldu-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 7,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin satışa çıkması standart bir otomotiv haberidir, fiyat açıklaması yerel düzeyde ilgi çekse de sektörü sarsacak bir viral potansiyeli yoktur.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışasunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi.GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu:“Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc hacmindeki motor, 1.750 d/d’de 300 Nm maksimum tork üreterek günlük kullanımda güçlü ara hızlanmalar ve yüksek sürüş konforu sağlıyor. Yeni 308, bu motorla 207 km/s maksimum hıza ulaşırken, 0’dan 100 km/s hıza 10,6 saniyede çıkabiliyor. WLTP normlarına göre 100 kilometrede 4,9 ila 5,1 litre aralığında karma yakıt tüketimi sunan model, performans ve verimlilik arasında başarılı bir denge kuruyor. 53 litrelik yakıt deposu ve düşük tüketim değerleri sayesinde uzun yolculuklarda daha az yakıt molasıyla yüksek kullanım konforu sağlıyor.”"
-        },
-        "post_text": "🦁 YENİ PEUGEOT 308 TÜRKİYE YOLLARINDA!\n\nPeugeot 308, Allure ve GT donanım paketleriyle 2.360.000 TL'den başlayan fiyatlarla satışta.\n\n130 HP gücünde 1.5 litrelik BlueHDi dizel motor ve EAT8 otomatik şanzımanla geliyor.\n\nYeni 308'i yakından incelemeyi düşünüyor musunuz?",
-        "post_text_length": 269,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-12T19:59:25.104707+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Peugeot 308, Türkiye’de satışa sunuldu",
-          "link": "https://www.log.com.tr/yeni-peugeot-308-turkiyede-satisa-sunuldu/",
-          "published": "2026-08-12T19:58:22.315199+03:00",
-          "summary": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışa sunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi. GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu: “Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc […] Yeni Peugeot 308, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-12_11-55-10_5GdMo-660x371.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "308-peugeot-satisa-sunuldu-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 7,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin satışa çıkması standart bir otomotiv haberidir, fiyat açıklaması yerel düzeyde ilgi çekse de sektörü sarsacak bir viral potansiyeli yoktur.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Yeni Peugeot 308, Türkiye’de Allure ve GT donanım paketleriyle birlikte 2.360.000 TL başlangıç fiyatıyla satışasunuldu. Araç hakkında şirketten yapılan resmi açıklamada, “Yeni 308, Peugeot tasarımını ve Fransız ruhunu en güzel şekilde örnekliyor. Peugeot ürün gamında gerçek bir marka imzası niteliğinde aydınlatmalı logoya sahip ilk model olan yeni 308, yeni ön cephesi ve yeni üç pençeli ışık imzasıyla daha güçlü. Verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motoru ve EAT8 otomatik şanzıman kombinasyonu ile yollara çıkan yeni Peugeot 308, dinamik sürüş karakteri ve zengin donanım özellikleriyle C hatchback segmentindeki iddiasını güçlendiriyor.” ifadelerine yer verildi.GT donanımlı versiyonu için 2.695.000 TL fiyatın açıklandığı aracın motoru için yapılan ayrı açıklama ise şöyle oldu:“Yeni 308’de verimliliğini kanıtlamış 130 HP gücünde dört silindirli 1,5 litrelik BlueHDi dizel motor da sunuyor. Dizel motorla eşleştirilen EAT8 otomatik şanzıman ise özellikle uzun mesafeli yoğun sürüşleri daha da keyifli hale getiriyor. 1.499 cc hacmindeki motor, 1.750 d/d’de 300 Nm maksimum tork üreterek günlük kullanımda güçlü ara hızlanmalar ve yüksek sürüş konforu sağlıyor. Yeni 308, bu motorla 207 km/s maksimum hıza ulaşırken, 0’dan 100 km/s hıza 10,6 saniyede çıkabiliyor. WLTP normlarına göre 100 kilometrede 4,9 ila 5,1 litre aralığında karma yakıt tüketimi sunan model, performans ve verimlilik arasında başarılı bir denge kuruyor. 53 litrelik yakıt deposu ve düşük tüketim değerleri sayesinde uzun yolculuklarda daha az yakıt molasıyla yüksek kullanım konforu sağlıyor.”",
-          "post_text_for_card": "🦁 YENİ PEUGEOT 308 TÜRKİYE YOLLARINDA!\n\nPeugeot 308, Allure ve GT donanım paketleriyle 2.360.000 TL'den başlayan fiyatlarla satışta.\n\n130 HP gücünde 1.5 litrelik BlueHDi dizel motor ve EAT8 otomatik şanzımanla geliyor.\n\nYeni 308'i yakından incelemeyi düşünüyor musunuz?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "🦁 YENİ PEUGEOT 308 TÜRKİYE YOLLARINDA!\n\nPeugeot 308, Allure ve GT donanım paketleriyle 2.360.000 TL'den başlayan fiyatlarla satışta.\n\n130 HP gücünde 1.5 litrelik BlueHDi dizel motor ve EAT8 otomatik şanzımanla geliyor.\n\nYeni 308'i yakından incelemeyi düşünüyor musunuz?",
-        "image_path": "/tmp/otoxtra_img_b13ao29k.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_b13ao29k.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-12T19:59:27.501279+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175713282916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18238690618312664",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1706175067316902",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-12T20:00:08.724302+03:00"
+      "updated_at": null
     }
   }
 }
