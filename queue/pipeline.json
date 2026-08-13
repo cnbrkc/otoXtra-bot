@@ -1,49 +1,14 @@
 {
-  "run_id": "2026-08-13-22:13",
-  "status": "completed",
-  "started_at": "2026-08-13T22:13:51.870344+03:00",
-  "updated_at": "2026-08-13T22:15:44.901200+03:00",
+  "run_id": "2026-08-13-23:39",
+  "status": "error",
+  "started_at": "2026-08-13T23:39:14.038324+03:00",
+  "updated_at": "2026-08-13T23:40:13.761197+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-            "link": "https://nitter.net/ahmetcelik2016/status/2087963794114752720#m",
-            "published": "2026-08-13T18:05:35+00:00",
-            "summary": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Ahmet Celik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "120-150-300-317-450-641-641-aciklama-alici-araci-basin-batarya-batarya-batarya-bekleniyor-bilgisi-bin-bulacak-bulteninde-dogru-edilen-elektrikli-ev2-ev2-ev2-giris-ibaresi-iddia-indirimle-ise-kafalari-karistirdi-kia-kia-kia-kiaturkiye-kompakt-kwh-kwh-lfp-lira-liradan-markanin-menzil-menzil-menzil-menzile-menzilli-metrelik-milyon-nmc-ongoruyor-ozel-satilan-satisa-satisa-secenegi-seviye-sunan-sundu-sunulan-suv-talebe-turkiye-turkiye-ucuz-ulasabildigi-varan-versiyonuyla-yapmasi"
-          },
-          {
-            "title": "RT by @ahmetcelik2016: Kia EV2'nin basın bülteninde 641 Km'ye varan menzil sunan ibaresini kullanıyor. Oysa o batarya 450 Km menzil sunuyor. Bu da tüketiciye yanlış bilgi vermek anlamına gelmiyor mu? @kiaturkiye @SikayetvarCom",
-            "link": "https://nitter.net/otomoblgazetesi/status/2087958902809735580#m",
-            "published": "2026-08-13T17:46:09+00:00",
-            "summary": "Kia EV2'nin basın bülteninde 641 Km'ye varan menzil sunan ibaresini kullanıyor. Oysa o batarya 450 Km menzil sunuyor. Bu da tüketiciye yanlış bilgi vermek anlamına gelmiyor mu? @kiaturkiye @SikayetvarCom Ahmet Çelik (@ahmetcelik2016) Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? otomobilgazetesi.com/haber/s… @kiaturkiye — https://nitter.net/ahmetcelik2016/status/2087954315017146623#m",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Ahmet Celik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "450-641-ahmetcelik2016-anlamina-basin-batarya-bilgi-bulteninde-ev2-gelmiyor-ibaresini-kia-kiaturkiye-kullaniyor-menzil-menzil-oysa-sikayetvarcom-sunan-sunuyor-tuketiciye-varan-vermek-yanlis"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -161,227 +126,48 @@
           },
           "_metrics": {
             "found": 177,
-            "after_keyword": 116,
-            "after_time": 11,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 117,
+            "after_time": 9,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 177,
-          "after_keyword": 116,
-          "after_time": 11,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 117,
+          "after_time": 9,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-13T22:14:50.780817+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-13T23:40:13.761197+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "link": "https://nitter.net/ahmetcelik2016/status/2087963794114752720#m",
-          "published": "2026-08-13T18:05:35+00:00",
-          "summary": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Ahmet Celik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "120-150-300-317-450-641-641-aciklama-alici-araci-basin-batarya-batarya-batarya-bekleniyor-bilgisi-bin-bulacak-bulteninde-dogru-edilen-elektrikli-ev2-ev2-ev2-giris-ibaresi-iddia-indirimle-ise-kafalari-karistirdi-kia-kia-kia-kiaturkiye-kompakt-kwh-kwh-lfp-lira-liradan-markanin-menzil-menzil-menzil-menzile-menzilli-metrelik-milyon-nmc-ongoruyor-ozel-satilan-satisa-satisa-secenegi-seviye-sunan-sundu-sunulan-suv-talebe-turkiye-turkiye-ucuz-ulasabildigi-varan-versiyonuyla-yapmasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin lansmanı ve menzil çelişkisi gibi tüketiciyi ilgilendiren hatalı bilgilendirme iddiası otomotiv gündeminde etkileşim yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 12,
-          "gundem_gucu": 12,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yeni bir elektrikli modelin lansmanı ve menzil çelişkisi gibi tüketiciyi ilgilendiren hatalı bilgilendirme iddiası otomotiv gündeminde etkileşim yaratır.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "RT by @ahmetcelik2016: Kia EV2'nin basın bülteninde 641 Km'ye varan menzil sunan ibaresini kullanıyor. Oysa o batarya 450 Km menzil sunuyor. Bu da tüketiciye yanlış bilgi vermek anlamına gelmiyor mu? @kiaturkiye @SikayetvarCom",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 5,
-              "gundem_gucu": 10,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "RT by @ahmetcelik2016: Kia EV2'nin basın bülteninde 641 Km'ye varan menzil sunan ibaresini kullanıyor. Oysa o batarya 450 Km menzil sunuyor. Bu da tüketiciye yanlış bilgi vermek anlamına gelmiyor mu? @kiaturkiye @SikayetvarCom",
-            "link": "https://nitter.net/otomoblgazetesi/status/2087958902809735580#m",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Ahmet Celik",
-            "topic_fingerprint": "450-641-ahmetcelik2016-anlamina-basin-batarya-bilgi-bulteninde-ev2-gelmiyor-ibaresini-kia-kiaturkiye-kullaniyor-menzil-menzil-oysa-sikayetvarcom-sunan-sunuyor-tuketiciye-varan-vermek-yanlis"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-13T22:14:53.413016+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "link": "https://nitter.net/ahmetcelik2016/status/2087963794114752720#m",
-          "published": "2026-08-13T18:05:35+00:00",
-          "summary": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Ahmet Celik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "120-150-300-317-450-641-641-aciklama-alici-araci-basin-batarya-batarya-batarya-bekleniyor-bilgisi-bin-bulacak-bulteninde-dogru-edilen-elektrikli-ev2-ev2-ev2-giris-ibaresi-iddia-indirimle-ise-kafalari-karistirdi-kia-kia-kia-kiaturkiye-kompakt-kwh-kwh-lfp-lira-liradan-markanin-menzil-menzil-menzil-menzile-menzilli-metrelik-milyon-nmc-ongoruyor-ozel-satilan-satisa-satisa-secenegi-seviye-sunan-sundu-sunulan-suv-talebe-turkiye-turkiye-ucuz-ulasabildigi-varan-versiyonuyla-yapmasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin lansmanı ve menzil çelişkisi gibi tüketiciyi ilgilendiren hatalı bilgilendirme iddiası otomotiv gündeminde etkileşim yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "⚡️ KIA EV2 MENZİL BİLGİSİ KAFA KARIŞTIRDI!\n\nKia Türkiye, en ucuz elektrikli modeli EV2'yi ön talebe özel indirimlerle satışa sundu. Giriş seviyesi 1,59 milyon TL'den başlıyor ve 317 km menzil sunuyor.\n\nAncak basın bültenindeki \"641 km'ye varan menzil\" ifadesi soru işaretleri yarattı. Markanın bu konuda net bir açıklama yapması bekleniyor.\n\nSizce bu menzil farkı neden kaynaklanıyor olabilir?",
-        "post_text_length": 393,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-13T22:14:55.225114+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "link": "https://nitter.net/ahmetcelik2016/status/2087963794114752720#m",
-          "published": "2026-08-13T18:05:35+00:00",
-          "summary": "Satışa sunulan Kia EV2'nin Menzil Bilgisi Doğru mu? Kia Türkiye, en ucuz elektrikli aracı EV2'yi Türkiye'de satışa sundu. Ön talebe özel 120/150 bin lira indirimle satılan 4 metrelik kompakt SUV, 317 km menzilli giriş seviye versiyonuyla 1,59 milyon liradan alıcı bulacak. Ancak basın bülteninde, 641 KM’ye Varan Menzil Sunan İki Batarya Seçeneği ibaresi kafaları karıştırdı. 641 km menzile ulaşabildiği iddia edilen Kia EV2, 42,2 kWh LFP batarya ile 300 km, 61 kWh NMC batarya ile ise 450 km menzil öngörüyor. Markanın açıklama yapması bekleniyor. @kiaturkiye",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "duckduckgo",
-          "source_name": "Ahmet Celik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "120-150-300-317-450-641-641-aciklama-alici-araci-basin-batarya-batarya-batarya-bekleniyor-bilgisi-bin-bulacak-bulteninde-dogru-edilen-elektrikli-ev2-ev2-ev2-giris-ibaresi-iddia-indirimle-ise-kafalari-karistirdi-kia-kia-kia-kiaturkiye-kompakt-kwh-kwh-lfp-lira-liradan-markanin-menzil-menzil-menzil-menzile-menzilli-metrelik-milyon-nmc-ongoruyor-ozel-satilan-satisa-satisa-secenegi-seviye-sunan-sundu-sunulan-suv-talebe-turkiye-turkiye-ucuz-ulasabildigi-varan-versiyonuyla-yapmasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin lansmanı ve menzil çelişkisi gibi tüketiciyi ilgilendiren hatalı bilgilendirme iddiası otomotiv gündeminde etkileşim yaratır.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "⚡️ KIA EV2 MENZİL BİLGİSİ KAFA KARIŞTIRDI!\n\nKia Türkiye, en ucuz elektrikli modeli EV2'yi ön talebe özel indirimlerle satışa sundu. Giriş seviyesi 1,59 milyon TL'den başlıyor ve 317 km menzil sunuyor.\n\nAncak basın bültenindeki \"641 km'ye varan menzil\" ifadesi soru işaretleri yarattı. Markanın bu konuda net bir açıklama yapması bekleniyor.\n\nSizce bu menzil farkı neden kaynaklanıyor olabilir?",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "⚡️ KIA EV2 MENZİL BİLGİSİ KAFA KARIŞTIRDI!\n\nKia Türkiye, en ucuz elektrikli modeli EV2'yi ön talebe özel indirimlerle satışa sundu. Giriş seviyesi 1,59 milyon TL'den başlıyor ve 317 km menzil sunuyor.\n\nAncak basın bültenindeki \"641 km'ye varan menzil\" ifadesi soru işaretleri yarattı. Markanın bu konuda net bir açıklama yapması bekleniyor.\n\nSizce bu menzil farkı neden kaynaklanıyor olabilir?",
-        "image_path": "/tmp/otoxtra_img_6m6ev44s.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_6m6ev44s.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-13T22:14:57.975950+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122175841058916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18124068745837083",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1984204172237876",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-13T22:15:44.901200+03:00"
+      "updated_at": null
     }
   }
 }
