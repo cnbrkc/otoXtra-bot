@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-14-20:50",
-  "status": "error",
-  "started_at": "2026-08-14T20:50:44.313340+03:00",
-  "updated_at": "2026-08-14T20:51:41.173893+03:00",
+  "run_id": "2026-08-14-21:50",
+  "status": "completed",
+  "started_at": "2026-08-14T21:50:26.789880+03:00",
+  "updated_at": "2026-08-14T21:52:49.387888+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+            "link": "https://www.donanimhaber.com/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar--209332",
+            "published": "2026-08-14T18:05:00+00:00",
+            "summary": "Otonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "algiliyor-degil-degiseni-devrim-gordugunu-noromorfik-otonom-suruste"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,226 @@
           },
           "_metrics": {
             "found": 178,
-            "after_keyword": 117,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 118,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 178,
-          "after_keyword": 117,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 118,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-14T20:51:41.173893+03:00"
+      "error": null,
+      "updated_at": "2026-08-14T21:51:27.217378+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+          "link": "https://www.donanimhaber.com/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar--209332",
+          "published": "2026-08-14T18:05:00+00:00",
+          "summary": "Otonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algiliyor-degil-degiseni-devrim-gordugunu-noromorfik-otonom-suruste",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom sürüş teknolojilerinde çığır açabilecek yapay zeka ve nöromorfik vizyon teknolojisini ele alması, teknoloji meraklıları arasında yüksek viral ve tartışma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 18,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Otonom sürüş teknolojilerinde çığır açabilecek yapay zeka ve nöromorfik vizyon teknolojisini ele alması, teknoloji meraklıları arasında yüksek viral ve tartışma potansiyeli taşıyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 18,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 9
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-14T21:51:28.892884+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+          "link": "https://www.donanimhaber.com/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar--209332",
+          "published": "2026-08-14T18:05:00+00:00",
+          "summary": "Otonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algiliyor-degil-degiseni-devrim-gordugunu-noromorfik-otonom-suruste",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom sürüş teknolojilerinde çığır açabilecek yapay zeka ve nöromorfik vizyon teknolojisini ele alması, teknoloji meraklıları arasında yüksek viral ve tartışma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tam anlamıyla birotonom araçtanbahsedebilmek için aracın, saniyenin çok küçük bir bölümünde önündeki yayayı, bisikletliyi veya aniden yola düşen bir nesneyi algılaması ve buna göre karar verebilmesi gerekiyor. Bu nedenle modernrobotaksilerdekamera, radar, LiDAR ve LWIR gibi farklı sensörlerin kullanıldığını görüyoruz. Her biri çevrenin farklı bir özelliğini algılıyor ve elde edilen veriler yapay zeka tarafından bir araya getiriliyor. Ancak tüm bunlar bile yeterli değil. Geleneksel kamera ve sensörler çevrede hiçbir şey değişmese bile görüntünün tamamını tekrar tekrar araç bilgisayarına gönderiyor. Örneğin 30 kare/saniye çalışan bir kamera, her karede gökyüzünü, binaları ve yolun değişmeyen bölümlerini yeniden işliyor. Oysa otonom sürüş açısından asıl kritik bilgi çoğu zaman hareket eden nesneler. Üstelik hızlı hareket nesnelerde bazı hareket ayrıntıları da bu kareler arasında kaçırılabiliyor. İştenöromorfik kameralartam olarak bu probleme farklı bir yaklaşım getiriyor. Görüntünün tamamını belirli aralıklarla kaydetmek yerine, her piksel yalnızca gördüğü ışık seviyesinde bir değişiklik olduğunda veri üretiyor. Bu nedenle bu teknolojiolay tabanlı kamera(event-based camera) veyaDinamik Görüş Sensörleri(Dynamic Vision Sensor - DVS) olarak da adlandırılıyor. Geleneksel bir görüntü sensöründe bütün pikseller aynı anda ölçüm yapıyor ve belirlenen kare hızına göre tam görüntüler oluşturuluyor. Örneğin saniyede 30 kare kaydeden bir kamera, sahnede herhangi bir değişiklik olup olmadığına bakmadan saniyede 30 kez tüm piksellerin değerlerini sisteme aktarıyor. Nöromorfik kamerada ise her piksel bağımsız çalışıyor. Bir pikselin üzerine düşen ışık miktarı değişmiyorsa herhangi bir veri gönderilmiyor. Işık seviyesinde belirli bir değişiklik meydana geldiğinde ise yalnızca o piksel bir \"olay\" üretiyor. Böylece görüntünün tamamı yerine sahnede gerçekleşen değişiklikler sürekli bir veri akışı olarak sisteme aktarılıyor. Bu çalışma prensibi aslında insan görme sistemine de benziyor. Gözümüz çevredeki her noktayı sürekli olarak bir kamera gibi beynimize tam görüntüler halinde aktarmıyor. Görsel sistem, meydana gelen değişiklikleri algılayıp bunları beyne iletiyor. Beynimiz ise bu bilgilerden gördüğümüz dünyanın anlamlı bir temsilini oluşturuyor. Nöromorfik kameraların temel fikri de bilgisayar görüşünü buna benzer şekilde çalıştırmak. Bu yaklaşım, özellikle hareketin önemli olduğu otonom sürüş senaryolarında ciddi bir avantaj sağlıyor. Kamera, sabit bir arka planı tekrar tekrar işlemek yerine hareket eden nesnelere yoğunlaşabiliyor. Nöromorfik kameralarınen dikkat çekici özelliği ise hızları.Geleneksel kameralar belirli bir kare hızına bağlı çalışırken event tabanlı sensörler herhangi bir kareyi beklemeden değişiklik meydana geldiği anda veri üretebiliyor. Bu kameraların mikro saniye seviyesinde zamansal çözünürlüğe ulaşabildiği ve 1 milisaniyenin altında gecikme sağlayabildiği belirtiliyor. Bu alanda öne çıkanProphesee'ninçözümlerinde eşdeğer zamansal çözünürlük10.000 fps'nin üzerineçıkabiliyor. Literatürdeki araştırmalardaysa olayların 0,2 milisaniye içinde kaydedilebildiği ve kameranın yaklaşık 5.000 fps seviyesinde bir zamansal performansa ulaştığı aktarılıyor. Bu, geleneksel kameraya kıyasla yaklaşık 100 kat daha hızlı bir tepki anlamına geliyor. Nöromorfik kameraların hız kadar önemli bir başka avantajı da ürettikleri veri miktarı. Bahsettiğimiz gibi bu kameralar sadece o andaki olayı gönderiyor. Bu durum veri bant genişliğini ciddi biçimde azaltıyor. Prophesee, event tabanlı görüntüleme sistemlerinin geleneksel sensörlere kıyasla1.000 kata kadar daha az veriüretebildiğini ve buna rağmen 10.000 fps'nin üzerinde eşdeğer zamansal çözünürlük sağlayabildiğini belirtiyor. Mercedes-Benz'in nöromorfik hesaplama araştırmalarında da enerji verimliliği önemli bir hedef olarak öne çıkıyor. Şirket, Waterloo Üniversitesi ile yürüttüğü araştırmalarda insan beyninin çalışma biçiminden esinlenen mimarilerin yapay zeka hesaplamalarını daha hızlı ve enerji verimli hale getirebileceğini belirtiyor. Bu yaklaşımın otonom sürüşte veri işleme için gereken enerjiyi mevcut sistemlere kıyasla yüzde 90'a kadar azaltma potansiyelinden söz ediliyor. Bu özellik geleceğin araçları açısından daha da önemli hale gelebilir. Otonom sürüş sistemlerine yeni işlevler eklendikçe araçların işlem gücü ve dolayısıyla enerji ihtiyacı artıyor. Elektrikli araçlarda ise işlemcilerin tükettiği enerji doğrudan menzil üzerinde de etkili olabiliyor. Nöromorfik kameraların bir diğer güçlü tarafı yüksek dinamik aralık. 140 dB'in üzerindeki dinamik aralığı sayesinde nöromorfik kameralar, ışık şiddeti ne kadar ani değişirse değişsin nesneleri izlemeye devam edebiliyor. Geleneksel kameralar çok parlak ve çok karanlık bölgeleri aynı anda görüntülerken pozlama konusunda zorlanabiliyor. Nöromorfik sensörler ise değişiklikleri piksel bazında ve sürekli olarak takip ettiği için ani ışık değişimlerine çok daha hızlı tepki verebiliyor. Bu, özellikle çok karanlık bir ortamdan..."
+        },
+        "post_text": "GÖRDÜĞÜNÜ DEĞIL, DEĞIŞENI ALGILIYOR: OTONOM SÜRÜŞTE NÖROMORFIK DEVRIM\n\nOtonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 291,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-14T21:51:33.432749+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Gördüğünü değil, değişeni algılıyor: Otonom sürüşte nöromorfik devrim",
+          "link": "https://www.donanimhaber.com/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar--209332",
+          "published": "2026-08-14T18:05:00+00:00",
+          "summary": "Otonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "algiliyor-degil-degiseni-devrim-gordugunu-noromorfik-otonom-suruste",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom sürüş teknolojilerinde çığır açabilecek yapay zeka ve nöromorfik vizyon teknolojisini ele alması, teknoloji meraklıları arasında yüksek viral ve tartışma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tam anlamıyla birotonom araçtanbahsedebilmek için aracın, saniyenin çok küçük bir bölümünde önündeki yayayı, bisikletliyi veya aniden yola düşen bir nesneyi algılaması ve buna göre karar verebilmesi gerekiyor. Bu nedenle modernrobotaksilerdekamera, radar, LiDAR ve LWIR gibi farklı sensörlerin kullanıldığını görüyoruz. Her biri çevrenin farklı bir özelliğini algılıyor ve elde edilen veriler yapay zeka tarafından bir araya getiriliyor. Ancak tüm bunlar bile yeterli değil. Geleneksel kamera ve sensörler çevrede hiçbir şey değişmese bile görüntünün tamamını tekrar tekrar araç bilgisayarına gönderiyor. Örneğin 30 kare/saniye çalışan bir kamera, her karede gökyüzünü, binaları ve yolun değişmeyen bölümlerini yeniden işliyor. Oysa otonom sürüş açısından asıl kritik bilgi çoğu zaman hareket eden nesneler. Üstelik hızlı hareket nesnelerde bazı hareket ayrıntıları da bu kareler arasında kaçırılabiliyor. İştenöromorfik kameralartam olarak bu probleme farklı bir yaklaşım getiriyor. Görüntünün tamamını belirli aralıklarla kaydetmek yerine, her piksel yalnızca gördüğü ışık seviyesinde bir değişiklik olduğunda veri üretiyor. Bu nedenle bu teknolojiolay tabanlı kamera(event-based camera) veyaDinamik Görüş Sensörleri(Dynamic Vision Sensor - DVS) olarak da adlandırılıyor. Geleneksel bir görüntü sensöründe bütün pikseller aynı anda ölçüm yapıyor ve belirlenen kare hızına göre tam görüntüler oluşturuluyor. Örneğin saniyede 30 kare kaydeden bir kamera, sahnede herhangi bir değişiklik olup olmadığına bakmadan saniyede 30 kez tüm piksellerin değerlerini sisteme aktarıyor. Nöromorfik kamerada ise her piksel bağımsız çalışıyor. Bir pikselin üzerine düşen ışık miktarı değişmiyorsa herhangi bir veri gönderilmiyor. Işık seviyesinde belirli bir değişiklik meydana geldiğinde ise yalnızca o piksel bir \"olay\" üretiyor. Böylece görüntünün tamamı yerine sahnede gerçekleşen değişiklikler sürekli bir veri akışı olarak sisteme aktarılıyor. Bu çalışma prensibi aslında insan görme sistemine de benziyor. Gözümüz çevredeki her noktayı sürekli olarak bir kamera gibi beynimize tam görüntüler halinde aktarmıyor. Görsel sistem, meydana gelen değişiklikleri algılayıp bunları beyne iletiyor. Beynimiz ise bu bilgilerden gördüğümüz dünyanın anlamlı bir temsilini oluşturuyor. Nöromorfik kameraların temel fikri de bilgisayar görüşünü buna benzer şekilde çalıştırmak. Bu yaklaşım, özellikle hareketin önemli olduğu otonom sürüş senaryolarında ciddi bir avantaj sağlıyor. Kamera, sabit bir arka planı tekrar tekrar işlemek yerine hareket eden nesnelere yoğunlaşabiliyor. Nöromorfik kameralarınen dikkat çekici özelliği ise hızları.Geleneksel kameralar belirli bir kare hızına bağlı çalışırken event tabanlı sensörler herhangi bir kareyi beklemeden değişiklik meydana geldiği anda veri üretebiliyor. Bu kameraların mikro saniye seviyesinde zamansal çözünürlüğe ulaşabildiği ve 1 milisaniyenin altında gecikme sağlayabildiği belirtiliyor. Bu alanda öne çıkanProphesee'ninçözümlerinde eşdeğer zamansal çözünürlük10.000 fps'nin üzerineçıkabiliyor. Literatürdeki araştırmalardaysa olayların 0,2 milisaniye içinde kaydedilebildiği ve kameranın yaklaşık 5.000 fps seviyesinde bir zamansal performansa ulaştığı aktarılıyor. Bu, geleneksel kameraya kıyasla yaklaşık 100 kat daha hızlı bir tepki anlamına geliyor. Nöromorfik kameraların hız kadar önemli bir başka avantajı da ürettikleri veri miktarı. Bahsettiğimiz gibi bu kameralar sadece o andaki olayı gönderiyor. Bu durum veri bant genişliğini ciddi biçimde azaltıyor. Prophesee, event tabanlı görüntüleme sistemlerinin geleneksel sensörlere kıyasla1.000 kata kadar daha az veriüretebildiğini ve buna rağmen 10.000 fps'nin üzerinde eşdeğer zamansal çözünürlük sağlayabildiğini belirtiyor. Mercedes-Benz'in nöromorfik hesaplama araştırmalarında da enerji verimliliği önemli bir hedef olarak öne çıkıyor. Şirket, Waterloo Üniversitesi ile yürüttüğü araştırmalarda insan beyninin çalışma biçiminden esinlenen mimarilerin yapay zeka hesaplamalarını daha hızlı ve enerji verimli hale getirebileceğini belirtiyor. Bu yaklaşımın otonom sürüşte veri işleme için gereken enerjiyi mevcut sistemlere kıyasla yüzde 90'a kadar azaltma potansiyelinden söz ediliyor. Bu özellik geleceğin araçları açısından daha da önemli hale gelebilir. Otonom sürüş sistemlerine yeni işlevler eklendikçe araçların işlem gücü ve dolayısıyla enerji ihtiyacı artıyor. Elektrikli araçlarda ise işlemcilerin tükettiği enerji doğrudan menzil üzerinde de etkili olabiliyor. Nöromorfik kameraların bir diğer güçlü tarafı yüksek dinamik aralık. 140 dB'in üzerindeki dinamik aralığı sayesinde nöromorfik kameralar, ışık şiddeti ne kadar ani değişirse değişsin nesneleri izlemeye devam edebiliyor. Geleneksel kameralar çok parlak ve çok karanlık bölgeleri aynı anda görüntülerken pozlama konusunda zorlanabiliyor. Nöromorfik sensörler ise değişiklikleri piksel bazında ve sürekli olarak takip ettiği için ani ışık değişimlerine çok daha hızlı tepki verebiliyor. Bu, özellikle çok karanlık bir ortamdan...",
+          "post_text_for_card": "GÖRDÜĞÜNÜ DEĞIL, DEĞIŞENI ALGILIYOR: OTONOM SÜRÜŞTE NÖROMORFIK DEVRIM\n\nOtonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209332/src/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar209332_4.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209332/1200x675otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209332/src/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar209332_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209332/src/otonom-suruste-noromorfik-kamera-devrimi-ne-ise-yariyorlar209332_1.jpg"
+          ]
+        },
+        "post_text": "GÖRDÜĞÜNÜ DEĞIL, DEĞIŞENI ALGILIYOR: OTONOM SÜRÜŞTE NÖROMORFIK DEVRIM\n\nOtonom araçlar geleceğin yollarının temel unsurlarından olmaya hazırlanırken, nöromorfik kameralar hızlı ve düşük güç tüketimli gerçek zamanlı görüş teknolojisiyle öne çıkıyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_e5lznhnn.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_e5lznhnn.jpg",
+          "/tmp/otoxtra_img_tc5vyxux.jpg",
+          "/tmp/otoxtra_img_3fnmjgq1.jpg",
+          "/tmp/otoxtra_img_yhgyw8z8.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-14T21:51:56.397634+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122175960200916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18063819392771239",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "976829115372715",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-14T21:52:49.387888+03:00"
     }
   }
 }
