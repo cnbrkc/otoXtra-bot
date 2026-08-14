@@ -2398,7 +2398,7 @@
     "2026-08-13": 9,
     "2026-08-14": 10
   },
-  "last_check_time": "2026-08-14T22:47:18.570857+03:00",
+  "last_check_time": "2026-08-14T23:28:22.448961+03:00",
   "stats": {
     "daily_actions": {
       "2026-07-15": 6,
@@ -2431,7 +2431,7 @@
       "2026-08-11": 17,
       "2026-08-12": 16,
       "2026-08-13": 16,
-      "2026-08-14": 16
+      "2026-08-14": 17
     },
     "weekly": {
       "2026-W16": {
@@ -2661,14 +2661,15 @@
         "report_sent_at": "2026-08-10T00:29:05.994902+03:00"
       },
       "2026-W33": {
-        "actions": 82,
+        "actions": 83,
         "shares": 46,
         "error_total": 0,
         "errors": {},
-        "skip_total": 36,
+        "skip_total": 37,
         "skips": {
           "no_article_found": 35,
-          "score_based": 1
+          "score_based": 1,
+          "daily_limit_reached": 1
         },
         "report_sent": false,
         "report_sent_at": null
