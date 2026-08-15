@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-08-15-14:17",
-  "status": "completed",
-  "started_at": "2026-08-15T14:17:42.660866+03:00",
-  "updated_at": "2026-08-15T14:20:01.224041+03:00",
+  "run_id": "2026-08-15-15:32",
+  "status": "error",
+  "started_at": "2026-08-15T15:32:26.574096+03:00",
+  "updated_at": "2026-08-15T15:33:22.159851+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-            "link": "https://shiftdelete.net/surucusuz-kamyonlar-yollarda-testler-basladi",
-            "published": "2026-08-15T10:00:00+00:00",
-            "summary": "Aurora ve Kodiak, Kaliforniya'da otonom kamyon testlerine başladı. Eyaletteki yeni düzenlemeler ve devam eden hukuki süreçler hakkında detaylar.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "kamyonlar-surucusuz-testler-yollarda"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -138,223 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 7,
+            "count": 8,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 177,
-            "after_keyword": 121,
-            "after_time": 10,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 178,
+            "after_keyword": 120,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 177,
-          "after_keyword": 121,
-          "after_time": 10,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 178,
+          "after_keyword": 120,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-15T14:18:40.213373+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-15T15:33:22.159851+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-          "link": "https://shiftdelete.net/surucusuz-kamyonlar-yollarda-testler-basladi",
-          "published": "2026-08-15T10:00:00+00:00",
-          "summary": "Aurora ve Kodiak, Kaliforniya'da otonom kamyon testlerine başladı. Eyaletteki yeni düzenlemeler ve devam eden hukuki süreçler hakkında detaylar.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "kamyonlar-surucusuz-testler-yollarda",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 14,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 5
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojileri ve lojistik sektörü açısından önemli bir gelişme; toplumsal ve ticari etkileri yüksek.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 14,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otonom sürüş teknolojileri ve lojistik sektörü açısından önemli bir gelişme; toplumsal ve ticari etkileri yüksek.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 14,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T14:18:41.955492+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-          "link": "https://shiftdelete.net/surucusuz-kamyonlar-yollarda-testler-basladi",
-          "published": "2026-08-15T10:00:00+00:00",
-          "summary": "Aurora ve Kodiak, Kaliforniya'da otonom kamyon testlerine başladı. Eyaletteki yeni düzenlemeler ve devam eden hukuki süreçler hakkında detaylar.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "kamyonlar-surucusuz-testler-yollarda",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 14,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 5
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojileri ve lojistik sektörü açısından önemli bir gelişme; toplumsal ve ticari etkileri yüksek.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Aurora Innovation ve Kodiak AI, otonom sürüş teknolojisine sahip kamyonlarını Kaliforniya’daki kamuya açık yollarda test etmek için gerekli izinleri aldı. Kodiak, Mountain View ofisi çevresinde az sayıda test aracıyla çalışmalara resmen başladı. Kaliforniya Motorlu Taşıtlar Departmanı (DMV), 28 Nisan’da onaylanan güncellenmiş kurallar kapsamında 10.000 pound üzerindeki sürücüsüz araçların kamuya açık yollarda test edilmesine yönelik yasağı kaldırdı. Bu düzenleme, şirketlere ağır vasıta kategorisindeki otonom araçları test etme ve gelecekte kullanıma sunma imkanı tanıyor. Kodiak ve Aurora, DMV’nin güvenlik, sigorta, araç tescili ve güvenlik sürücüsü yeterliliği gibi katı kriterlerini karşılayarak izinleri elde etti. Mevcut izinler, direksiyon başında her zaman bir güvenlik operatörünün bulunmasını zorunlu kılıyor ve araçların 25 mil veya daha düşük hız sınırı olan yollarda, doğrudan güzergahlar dışında çalışmasını yasaklıyor. Şirketler, daha önce Kaliforniya’daki yasaklar nedeniyle test faaliyetlerini ağırlıklı olarak Teksas’ta yürütüyordu. Aurora, Mayıs 2025’te Dallas-Houston hattında başlattığı hizmetini Fort Worth-El Paso ve Phoenix gibi bölgelere genişletirken, Kodiak ise Ocak 2025’te Teksas’ta ticari sürücüsüz operasyonlarına başlamıştı. Otonom kamyonların Kaliforniya otoyollarında yer alması, eyalette bazı kesimlerin tepkisiyle karşılaşıyor. Teamsters California, DMV’ye karşı Alameda County Yüksek Mahkemesi’nde dava açarak kurumun ekonomik etkileri yeterince incelemediğini ve kamuoyunu bilgilendirmediğini iddia ediyor. Dava dilekçesinde, DMV’nin sürücüsüz kamyonların trafikteki diğer araçlar için oluşturabileceği güvenlik risklerini göz ardı ettiği savunuluyor. Şirketler, yeni düzenlemelerin kendi merkezlerinin bulunduğu eyalette teknoloji geliştirmelerine olanak tanıdığını belirtiyor. Sizce otonom kamyonların otoyollarda yaygınlaşması trafik güvenliğini nasıl etkileyecek? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
-        },
-        "post_text": "🚚 SÜRÜCÜSÜZ KAMYONLAR KALİFORNİYA YOLLARINDA!\n\nAurora ve Kodiak, otonom kamyonlarını Kaliforniya'da test etmeye başladı. Yeni eyalet düzenlemeleri sayesinde 10.000 pound üzeri araçların test yasağı kalktı.\n\nİlk etapta güvenlik operatörleri kamyonlarda olacak ve düşük hızlı yollarda denemeler yapılacak. Geleceğin taşımacılığı yavaş yavaş şekilleniyor.\n\nSizce bu teknoloji ne zaman yaygınlaşır?",
-        "post_text_length": 394,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T14:19:10.624568+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Sürücüsüz Kamyonlar Yollarda: Testler Başladı",
-          "link": "https://shiftdelete.net/surucusuz-kamyonlar-yollarda-testler-basladi",
-          "published": "2026-08-15T10:00:00+00:00",
-          "summary": "Aurora ve Kodiak, Kaliforniya'da otonom kamyon testlerine başladı. Eyaletteki yeni düzenlemeler ve devam eden hukuki süreçler hakkında detaylar.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "article_img",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "kamyonlar-surucusuz-testler-yollarda",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 14,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 5
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojileri ve lojistik sektörü açısından önemli bir gelişme; toplumsal ve ticari etkileri yüksek.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Aurora Innovation ve Kodiak AI, otonom sürüş teknolojisine sahip kamyonlarını Kaliforniya’daki kamuya açık yollarda test etmek için gerekli izinleri aldı. Kodiak, Mountain View ofisi çevresinde az sayıda test aracıyla çalışmalara resmen başladı. Kaliforniya Motorlu Taşıtlar Departmanı (DMV), 28 Nisan’da onaylanan güncellenmiş kurallar kapsamında 10.000 pound üzerindeki sürücüsüz araçların kamuya açık yollarda test edilmesine yönelik yasağı kaldırdı. Bu düzenleme, şirketlere ağır vasıta kategorisindeki otonom araçları test etme ve gelecekte kullanıma sunma imkanı tanıyor. Kodiak ve Aurora, DMV’nin güvenlik, sigorta, araç tescili ve güvenlik sürücüsü yeterliliği gibi katı kriterlerini karşılayarak izinleri elde etti. Mevcut izinler, direksiyon başında her zaman bir güvenlik operatörünün bulunmasını zorunlu kılıyor ve araçların 25 mil veya daha düşük hız sınırı olan yollarda, doğrudan güzergahlar dışında çalışmasını yasaklıyor. Şirketler, daha önce Kaliforniya’daki yasaklar nedeniyle test faaliyetlerini ağırlıklı olarak Teksas’ta yürütüyordu. Aurora, Mayıs 2025’te Dallas-Houston hattında başlattığı hizmetini Fort Worth-El Paso ve Phoenix gibi bölgelere genişletirken, Kodiak ise Ocak 2025’te Teksas’ta ticari sürücüsüz operasyonlarına başlamıştı. Otonom kamyonların Kaliforniya otoyollarında yer alması, eyalette bazı kesimlerin tepkisiyle karşılaşıyor. Teamsters California, DMV’ye karşı Alameda County Yüksek Mahkemesi’nde dava açarak kurumun ekonomik etkileri yeterince incelemediğini ve kamuoyunu bilgilendirmediğini iddia ediyor. Dava dilekçesinde, DMV’nin sürücüsüz kamyonların trafikteki diğer araçlar için oluşturabileceği güvenlik risklerini göz ardı ettiği savunuluyor. Şirketler, yeni düzenlemelerin kendi merkezlerinin bulunduğu eyalette teknoloji geliştirmelerine olanak tanıdığını belirtiyor. Sizce otonom kamyonların otoyollarda yaygınlaşması trafik güvenliğini nasıl etkileyecek? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "🚚 SÜRÜCÜSÜZ KAMYONLAR KALİFORNİYA YOLLARINDA!\n\nAurora ve Kodiak, otonom kamyonlarını Kaliforniya'da test etmeye başladı. Yeni eyalet düzenlemeleri sayesinde 10.000 pound üzeri araçların test yasağı kalktı.\n\nİlk etapta güvenlik operatörleri kamyonlarda olacak ve düşük hızlı yollarda denemeler yapılacak. Geleceğin taşımacılığı yavaş yavaş şekilleniyor.\n\nSizce bu teknoloji ne zaman yaygınlaşır?",
-          "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/08/surucusuz-kamyonlar-yollarda-testler-basladi-3.webp",
-            "https://ares.shiftdelete.net/2026/08/surucusuz-kamyonlar-yollarda-testler-basladi.webp",
-            "https://ares.shiftdelete.net/2026/08/surucusuz-kamyonlar-yollarda-testler-basladi-2.webp"
-          ]
-        },
-        "post_text": "🚚 SÜRÜCÜSÜZ KAMYONLAR KALİFORNİYA YOLLARINDA!\n\nAurora ve Kodiak, otonom kamyonlarını Kaliforniya'da test etmeye başladı. Yeni eyalet düzenlemeleri sayesinde 10.000 pound üzeri araçların test yasağı kalktı.\n\nİlk etapta güvenlik operatörleri kamyonlarda olacak ve düşük hızlı yollarda denemeler yapılacak. Geleceğin taşımacılığı yavaş yavaş şekilleniyor.\n\nSizce bu teknoloji ne zaman yaygınlaşır?",
-        "image_path": "/tmp/otoxtra_img_i58u2jwq.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_i58u2jwq.jpg",
-          "/tmp/otoxtra_img_xpl6qc3s.jpg",
-          "/tmp/otoxtra_img_v5m9_qdm.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T14:19:16.204860+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176028720916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18162004879467960",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "911493918699475",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T14:20:01.224041+03:00"
+      "updated_at": null
     }
   }
 }
