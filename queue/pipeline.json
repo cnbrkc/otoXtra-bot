@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-15-16:27",
-  "status": "error",
-  "started_at": "2026-08-15T16:27:54.670641+03:00",
-  "updated_at": "2026-08-15T16:28:49.083789+03:00",
+  "run_id": "2026-08-15-17:19",
+  "status": "completed",
+  "started_at": "2026-08-15T17:19:39.802447+03:00",
+  "updated_at": "2026-08-15T17:21:23.861141+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+            "link": "https://nitter.net/sekizsilindir/status/2088630977849405650#m",
+            "published": "2026-08-15T14:16:44+00:00",
+            "summary": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir. Tesla Kulübü Türkiye 🇹🇷 (@TeslaClubTurkey) Tesla, ABD’de Model Y Premium için V2L desteğini kullanıma sundu! Tesla Model Y Premium Model Y L, artık V2L adaptörü sayesinde aracın bataryasındaki enerjiyi harici cihazlara aktarabiliyor. - V2L desteği konfigüratöre eklendi. - Priz adaptörü yeni araç siparişlerinde 80 dolara alınabiliyor. - Tesla Shop’ta Model Y Premium artık uyumlu modeller arasında listeleniyor. İstek değil ihtiyaçlardan :) — https://nitter.net/TeslaClubTurkey/status/2088563557222777293#m",
+            "image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Sekizsilindir",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2026-84kwh-abd-almanya-aracim-araclar-aractan-ayrisabilir-baslanan-bataryali-bildigim-bizim-donanim-durumda-edilen-ettim-ettim-gerekiyor-gorunuyor-kadariyla-karsiligi-kendi-kontrol-kontrol-lg5m-listemde-mevcut-model-oldugu-parca-pcs-pcs-pcs2-pilleri-premium-satilmaya-tesla-teslim-uretim-v2l-vin-yine"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,218 @@
           },
           "_metrics": {
             "found": 178,
-            "after_keyword": 120,
+            "after_keyword": 119,
             "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 178,
-          "after_keyword": 120,
+          "after_keyword": 119,
           "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-15T16:28:49.083789+03:00"
+      "error": null,
+      "updated_at": "2026-08-15T17:20:40.585429+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+          "link": "https://nitter.net/sekizsilindir/status/2088630977849405650#m",
+          "published": "2026-08-15T14:16:44+00:00",
+          "summary": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir. Tesla Kulübü Türkiye 🇹🇷 (@TeslaClubTurkey) Tesla, ABD’de Model Y Premium için V2L desteğini kullanıma sundu! Tesla Model Y Premium Model Y L, artık V2L adaptörü sayesinde aracın bataryasındaki enerjiyi harici cihazlara aktarabiliyor. - V2L desteği konfigüratöre eklendi. - Priz adaptörü yeni araç siparişlerinde 80 dolara alınabiliyor. - Tesla Shop’ta Model Y Premium artık uyumlu modeller arasında listeleniyor. İstek değil ihtiyaçlardan :) — https://nitter.net/TeslaClubTurkey/status/2088563557222777293#m",
+          "image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Sekizsilindir",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2026-84kwh-abd-almanya-aracim-araclar-aractan-ayrisabilir-baslanan-bataryali-bildigim-bizim-donanim-durumda-edilen-ettim-ettim-gerekiyor-gorunuyor-kadariyla-karsiligi-kendi-kontrol-kontrol-lg5m-listemde-mevcut-model-oldugu-parca-pcs-pcs-pcs2-pilleri-premium-satilmaya-tesla-teslim-uretim-v2l-vin-yine",
+          "base_ai_score": 32,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 6,
+            "gundem_gucu": 6,
+            "paylasilabilirlik": 3
+          },
+          "score": 43,
+          "score_reason": "ai_scored",
+          "score_explanation": "Kullanıcı deneyimi ve niş teknik detaylar barındırıyor, geniş kitleler için viral potansiyeli düşük ve sadece belirli araç sahiplerini ilgilendiriyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 43,
+        "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 6,
+          "gundem_gucu": 6,
+          "paylasilabilirlik": 3
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Kullanıcı deneyimi ve niş teknik detaylar barındırıyor, geniş kitleler için viral potansiyeli düşük ve sadece belirli araç sahiplerini ilgilendiriyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+            "score": 43,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 6,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-15T17:20:42.220347+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+          "link": "https://nitter.net/sekizsilindir/status/2088630977849405650#m",
+          "published": "2026-08-15T14:16:44+00:00",
+          "summary": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir. Tesla Kulübü Türkiye 🇹🇷 (@TeslaClubTurkey) Tesla, ABD’de Model Y Premium için V2L desteğini kullanıma sundu! Tesla Model Y Premium Model Y L, artık V2L adaptörü sayesinde aracın bataryasındaki enerjiyi harici cihazlara aktarabiliyor. - V2L desteği konfigüratöre eklendi. - Priz adaptörü yeni araç siparişlerinde 80 dolara alınabiliyor. - Tesla Shop’ta Model Y Premium artık uyumlu modeller arasında listeleniyor. İstek değil ihtiyaçlardan :) — https://nitter.net/TeslaClubTurkey/status/2088563557222777293#m",
+          "image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Sekizsilindir",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2026-84kwh-abd-almanya-aracim-araclar-aractan-ayrisabilir-baslanan-bataryali-bildigim-bizim-donanim-durumda-edilen-ettim-ettim-gerekiyor-gorunuyor-kadariyla-karsiligi-kendi-kontrol-kontrol-lg5m-listemde-mevcut-model-oldugu-parca-pcs-pcs-pcs2-pilleri-premium-satilmaya-tesla-teslim-uretim-v2l-vin-yine",
+          "base_ai_score": 32,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 6,
+            "gundem_gucu": 6,
+            "paylasilabilirlik": 3
+          },
+          "score": 43,
+          "score_reason": "ai_scored",
+          "score_explanation": "Kullanıcı deneyimi ve niş teknik detaylar barındırıyor, geniş kitleler için viral potansiyeli düşük ve sadece belirli araç sahiplerini ilgilendiriyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "🔋 TESLA MODEL Y'DE V2L ÖZELLİĞİ HENÜZ YOK\n\n2026 LG5M 84kWh bataryalı Model Y Premium LR araçlarda yapılan kontrollerde, parça listesinde PCS donanımı görünüyor.\n\nV2L (Araçtan Yüke Güç Aktarımı) özelliği için gerekli olan PCS2 donanımı ise mevcut değil. Yeni teslim edilen LR araçlarda da durum aynı.\n\nSizce bu özellik Türkiye'ye ne zaman gelir?",
+        "post_text_length": 344,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-15T17:20:43.615149+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir.",
+          "link": "https://nitter.net/sekizsilindir/status/2088630977849405650#m",
+          "published": "2026-08-15T14:16:44+00:00",
+          "summary": "2026 LG5M 84kWh bataryalı Model Y Premium LR aracım için kontrol ettim. VIN no karşılığı parça listemde PCS olarak görünüyor, bildiğim kadarıyla V2L için PCS2 donanım gerekiyor. Mevcut durumda Tesla'nın kendi pilleri ile satılmaya başlanan ve yeni teslim edilen LR araçtan da kontrol ettim o da PCS. Ancak bizim araçlar Almanya üretim olduğu için ABD ile yine de ayrışabilir. Tesla Kulübü Türkiye 🇹🇷 (@TeslaClubTurkey) Tesla, ABD’de Model Y Premium için V2L desteğini kullanıma sundu! Tesla Model Y Premium Model Y L, artık V2L adaptörü sayesinde aracın bataryasındaki enerjiyi harici cihazlara aktarabiliyor. - V2L desteği konfigüratöre eklendi. - Priz adaptörü yeni araç siparişlerinde 80 dolara alınabiliyor. - Tesla Shop’ta Model Y Premium artık uyumlu modeller arasında listeleniyor. İstek değil ihtiyaçlardan :) — https://nitter.net/TeslaClubTurkey/status/2088563557222777293#m",
+          "image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "Sekizsilindir",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "2026-84kwh-abd-almanya-aracim-araclar-aractan-ayrisabilir-baslanan-bataryali-bildigim-bizim-donanim-durumda-edilen-ettim-ettim-gerekiyor-gorunuyor-kadariyla-karsiligi-kendi-kontrol-kontrol-lg5m-listemde-mevcut-model-oldugu-parca-pcs-pcs-pcs2-pilleri-premium-satilmaya-tesla-teslim-uretim-v2l-vin-yine",
+          "base_ai_score": 32,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 6,
+            "gundem_gucu": 6,
+            "paylasilabilirlik": 3
+          },
+          "score": 43,
+          "score_reason": "ai_scored",
+          "score_explanation": "Kullanıcı deneyimi ve niş teknik detaylar barındırıyor, geniş kitleler için viral potansiyeli düşük ve sadece belirli araç sahiplerini ilgilendiriyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "🔋 TESLA MODEL Y'DE V2L ÖZELLİĞİ HENÜZ YOK\n\n2026 LG5M 84kWh bataryalı Model Y Premium LR araçlarda yapılan kontrollerde, parça listesinde PCS donanımı görünüyor.\n\nV2L (Araçtan Yüke Güç Aktarımı) özelliği için gerekli olan PCS2 donanımı ise mevcut değil. Yeni teslim edilen LR araçlarda da durum aynı.\n\nSizce bu özellik Türkiye'ye ne zaman gelir?",
+          "image_sources": [
+            "nitter_still",
+            "nitter_still"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HPxOzcRXkAAEJh_.jpg?name=orig",
+            "https://pbs.twimg.com/media/HPxOzcPWEAAawxG.jpg?name=orig"
+          ]
+        },
+        "post_text": "🔋 TESLA MODEL Y'DE V2L ÖZELLİĞİ HENÜZ YOK\n\n2026 LG5M 84kWh bataryalı Model Y Premium LR araçlarda yapılan kontrollerde, parça listesinde PCS donanımı görünüyor.\n\nV2L (Araçtan Yüke Güç Aktarımı) özelliği için gerekli olan PCS2 donanımı ise mevcut değil. Yeni teslim edilen LR araçlarda da durum aynı.\n\nSizce bu özellik Türkiye'ye ne zaman gelir?",
+        "image_path": "/tmp/otoxtra_img_x91btchr.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_x91btchr.jpg",
+          "/tmp/otoxtra_img_gsobwtby.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-15T17:20:44.921251+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176047458916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18103059542228971",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1340448818298827",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-15T17:21:23.861141+03:00"
     }
   }
 }
