@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-15-20:17",
-  "status": "completed",
-  "started_at": "2026-08-15T20:17:51.942764+03:00",
-  "updated_at": "2026-08-15T20:19:42.165927+03:00",
+  "run_id": "2026-08-16-00:18",
+  "status": "error",
+  "started_at": "2026-08-16T00:18:19.126814+03:00",
+  "updated_at": "2026-08-16T00:19:18.198231+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-            "link": "https://tr.motor1.com/news/805063/gma-s1-mclarenf1-ruhu-resmi/",
-            "published": "2026-08-15T17:00:00+00:00",
-            "summary": "S1 LM'in aktif aerodinamik özelliklere ve 6 vitesli manuel şanzımana sahip, daha hafif bir versiyonu.",
-            "image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "690-dondu-gma-lik-mclaren-ruhu-v12"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -140,232 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 8,
+            "count": 5,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 178,
-            "after_keyword": 118,
-            "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 175,
+            "after_keyword": 116,
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 178,
-          "after_keyword": 118,
-          "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 175,
+          "after_keyword": 116,
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-15T20:18:45.796287+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-16T00:19:18.198231+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-          "link": "https://tr.motor1.com/news/805063/gma-s1-mclarenf1-ruhu-resmi/",
-          "published": "2026-08-15T17:00:00+00:00",
-          "summary": "S1 LM'in aktif aerodinamik özelliklere ve 6 vitesli manuel şanzımana sahip, daha hafif bir versiyonu.",
-          "image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "690-dondu-gma-lik-mclaren-ruhu-v12",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi McLaren F1'in manevi varisi olması, atmosferik V12 motoru ve manuel şanzımanı ile otomobil tutkunlarında büyük heyecan yaratacak viral bir model.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 87,
-        "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 11
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Efsanevi McLaren F1'in manevi varisi olması, atmosferik V12 motoru ve manuel şanzımanı ile otomobil tutkunlarında büyük heyecan yaratacak viral bir model.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 11
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T20:18:47.395347+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-          "link": "https://tr.motor1.com/news/805063/gma-s1-mclarenf1-ruhu-resmi/",
-          "published": "2026-08-15T17:00:00+00:00",
-          "summary": "S1 LM'in aktif aerodinamik özelliklere ve 6 vitesli manuel şanzımana sahip, daha hafif bir versiyonu.",
-          "image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "690-dondu-gma-lik-mclaren-ruhu-v12",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi McLaren F1'in manevi varisi olması, atmosferik V12 motoru ve manuel şanzımanı ile otomobil tutkunlarında büyük heyecan yaratacak viral bir model.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Gordon Murray Special Vehicles, Monterey Otomobil Haftası kapsamında düzenlenen The Quail etkinliğinde,S1 LM pist versiyonuüstüne geliştirilen ve uzun yola çıkmak için tasarlanmış yeni S1’i tanıttı. 3 koltuklu düzeni, merkezi sürüş pozisyonu, atmosferik Cosworth V12 motoru ve hafifliğe odaklanan tasarımıyla, adı hariç her yönüyle modern bir McLaren F1 gibi görünüyor. S1, S1 LM ile benzer bir karbon fiber monokok gövdeye sahip olmakla birlikte, o modelin sabit aerodinamik donanımını daha pürüzsüz bir gövde tasarımı ve aktif arka aerodinamik sistemle değiştiriyor. Konfor için sürüş yüksekliği artırılmış ve süspansiyon yumuşatılmış; ancak hedef ağırlık, Murray’in daha önceki F1 esintili süper otomobiliGMA T.50’dendaha düşük tutulmuş. Güç, 690 bg üreten ve 12.100 devir çeviren 4,2 litrelik Cosworth V12 motordan sağlanıyor. Gordon Murray, motorun yaklaşık 500 Nm tork ürettiğini ve bu torkun büyük kısmının, gerçek sürüş koşullarında güçlü tepki sağlamak amacıyla düşük devirlerden itibaren kullanılabilir olduğunu belirtiyor. Silikon karbür kaplı hafif pistonlar, titanyum valfler ve bağlantı çubukları ile kuru karter yağlama sistemi, aracın yarış karakterini vurguluyor. V12 motorun gücü, daha uzun bir tur vitesine ve daha düz kablo yönlendirmesine sahip 6 vitesli manuel şanzıman aracılığıyla aktarıyor. S1, S1 LM’in iz genişliğini, hafif süspansiyon düzenini ve daha geniş lastiklerini koruyor; ancak sürüş yüksekliği yaklaşık 1 cm artırılıyor ve sönümleme,T.33 Spidergibi önceki GMA modellerinde görülen keskin direksiyon hissini korumayı hedeflerken daha fazla esneklik sağlayacak şekilde yeniden tasarlanıyor. Entegre aktif arka aerodinamik sistem, S1 LM’in büyük sabit arka kanadının, uzun ön splitter’ın ve derin yan eteklerin yerini alıyor. Gordon Murray Special Vehicles, aerodinamik paketin manşetlere taşınacak downforce rakamlarından ziyade yüksek hızda stabilite ve fren desteği için ayarlandığını, genel yol tutuşunun ise yarış tarzı gövde tasarımı yerine mekanik dengeye dayandığını belirtiyor. S1'in tüm gövde panelleri özel olarak tasarlanmış ve daha temiz bir profil ve aydınlatmaya sahip olmasıyla S1 LM'den ayrılırken, F1 yol otomobilinin kompakt ve düşük sürtünmeli şekline de gönderme yapılmış. Gündüz farları far grubuna taşınmış ve yardımcı uzun farlar, Murray'in 1992 Monaco fuar arabasını anımsatan şekilde burun hava girişinin alt kısmına yerleştirilmiş. Yeni hafif jantlar ve ayrı bir kamera sistemine sahip A direğine monte edilmiş aynalar da bu modele özgü. Motor bölmesi, V12 motoru çevreleyen parlatılmış Inconel egzoz ve 24 ayar altın kaplamalı ısı kalkanı ile adeta bir vitrin gibi tasarlanmış. İç mekanda, 3 koltuklu kabin merkezi sürüş pozisyonunu ve alçak ön paneli korurken, daha fazla deri, özel kumaşlar, ekstra ses yalıtımı, güncellenmiş multimedya ekranları ve uzun mesafeli kullanım için hafif bir ses sistemi ile donatılmış. Sürücüler hidrolik direksiyon desteğini ayarlayabilir ve S1 LM'deki Lexan bilet penceresinin yerini, standart camlı yeni dihedral kapılar almış. Gordon Murray, bu otomobili S1 LM’in daha rahat bir versiyonu olarak nitelendiriyor: “Bu, Los Angeles’tan Monterey’e kadar sahil şeridinde gerçek bir konfor içinde sürebileceğiniz, yol açıldığında her vites değişimini, her virajı ve V12 motorunun sesini keyifle yaşayabileceğiniz bir otomobil.” Üretim, dünya çapında 64 araçla sınırlı ve her biri ayrı ayrı sipariş üzerine üretilmekte. Kaynak:Gordon Murray Special Vehicles Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "🚀 MCLAREN F1 RUHU YENİDEN CANLANDI: GMA S1 SAHNEDE!\n\nGordon Murray Special Vehicles, Monterey'de yeni S1 modelini tanıttı. Merkezde sürücü koltuğu, hafif tasarım ve atmosferik Cosworth V12 motoruyla adeta modern bir F1.\n\n690 bg güç üreten 4.2 litrelik V12 motor, 12.100 devire çıkabiliyor. Aktif aerodinamik özelliklere ve 6 ileri manuel şanzımana sahip S1, daha konforlu bir yol deneyimi sunuyor.\n\nSizce bu efsanevi ruhu başarıyla yansıtabilmiş mi?",
-        "post_text_length": 449,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T20:18:48.852236+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "GMA S1: McLaren F1'in ruhu, 690 bg'lik bir V12 ile döndü!",
-          "link": "https://tr.motor1.com/news/805063/gma-s1-mclarenf1-ruhu-resmi/",
-          "published": "2026-08-15T17:00:00+00:00",
-          "summary": "S1 LM'in aktif aerodinamik özelliklere ve 6 vitesli manuel şanzımana sahip, daha hafif bir versiyonu.",
-          "image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/9m8oWb/s3/gordon-murray-special-vehicles-s1.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "690-dondu-gma-lik-mclaren-ruhu-v12",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 11
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi McLaren F1'in manevi varisi olması, atmosferik V12 motoru ve manuel şanzımanı ile otomobil tutkunlarında büyük heyecan yaratacak viral bir model.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Gordon Murray Special Vehicles, Monterey Otomobil Haftası kapsamında düzenlenen The Quail etkinliğinde,S1 LM pist versiyonuüstüne geliştirilen ve uzun yola çıkmak için tasarlanmış yeni S1’i tanıttı. 3 koltuklu düzeni, merkezi sürüş pozisyonu, atmosferik Cosworth V12 motoru ve hafifliğe odaklanan tasarımıyla, adı hariç her yönüyle modern bir McLaren F1 gibi görünüyor. S1, S1 LM ile benzer bir karbon fiber monokok gövdeye sahip olmakla birlikte, o modelin sabit aerodinamik donanımını daha pürüzsüz bir gövde tasarımı ve aktif arka aerodinamik sistemle değiştiriyor. Konfor için sürüş yüksekliği artırılmış ve süspansiyon yumuşatılmış; ancak hedef ağırlık, Murray’in daha önceki F1 esintili süper otomobiliGMA T.50’dendaha düşük tutulmuş. Güç, 690 bg üreten ve 12.100 devir çeviren 4,2 litrelik Cosworth V12 motordan sağlanıyor. Gordon Murray, motorun yaklaşık 500 Nm tork ürettiğini ve bu torkun büyük kısmının, gerçek sürüş koşullarında güçlü tepki sağlamak amacıyla düşük devirlerden itibaren kullanılabilir olduğunu belirtiyor. Silikon karbür kaplı hafif pistonlar, titanyum valfler ve bağlantı çubukları ile kuru karter yağlama sistemi, aracın yarış karakterini vurguluyor. V12 motorun gücü, daha uzun bir tur vitesine ve daha düz kablo yönlendirmesine sahip 6 vitesli manuel şanzıman aracılığıyla aktarıyor. S1, S1 LM’in iz genişliğini, hafif süspansiyon düzenini ve daha geniş lastiklerini koruyor; ancak sürüş yüksekliği yaklaşık 1 cm artırılıyor ve sönümleme,T.33 Spidergibi önceki GMA modellerinde görülen keskin direksiyon hissini korumayı hedeflerken daha fazla esneklik sağlayacak şekilde yeniden tasarlanıyor. Entegre aktif arka aerodinamik sistem, S1 LM’in büyük sabit arka kanadının, uzun ön splitter’ın ve derin yan eteklerin yerini alıyor. Gordon Murray Special Vehicles, aerodinamik paketin manşetlere taşınacak downforce rakamlarından ziyade yüksek hızda stabilite ve fren desteği için ayarlandığını, genel yol tutuşunun ise yarış tarzı gövde tasarımı yerine mekanik dengeye dayandığını belirtiyor. S1'in tüm gövde panelleri özel olarak tasarlanmış ve daha temiz bir profil ve aydınlatmaya sahip olmasıyla S1 LM'den ayrılırken, F1 yol otomobilinin kompakt ve düşük sürtünmeli şekline de gönderme yapılmış. Gündüz farları far grubuna taşınmış ve yardımcı uzun farlar, Murray'in 1992 Monaco fuar arabasını anımsatan şekilde burun hava girişinin alt kısmına yerleştirilmiş. Yeni hafif jantlar ve ayrı bir kamera sistemine sahip A direğine monte edilmiş aynalar da bu modele özgü. Motor bölmesi, V12 motoru çevreleyen parlatılmış Inconel egzoz ve 24 ayar altın kaplamalı ısı kalkanı ile adeta bir vitrin gibi tasarlanmış. İç mekanda, 3 koltuklu kabin merkezi sürüş pozisyonunu ve alçak ön paneli korurken, daha fazla deri, özel kumaşlar, ekstra ses yalıtımı, güncellenmiş multimedya ekranları ve uzun mesafeli kullanım için hafif bir ses sistemi ile donatılmış. Sürücüler hidrolik direksiyon desteğini ayarlayabilir ve S1 LM'deki Lexan bilet penceresinin yerini, standart camlı yeni dihedral kapılar almış. Gordon Murray, bu otomobili S1 LM’in daha rahat bir versiyonu olarak nitelendiriyor: “Bu, Los Angeles’tan Monterey’e kadar sahil şeridinde gerçek bir konfor içinde sürebileceğiniz, yol açıldığında her vites değişimini, her virajı ve V12 motorunun sesini keyifle yaşayabileceğiniz bir otomobil.” Üretim, dünya çapında 64 araçla sınırlı ve her biri ayrı ayrı sipariş üzerine üretilmekte. Kaynak:Gordon Murray Special Vehicles Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "🚀 MCLAREN F1 RUHU YENİDEN CANLANDI: GMA S1 SAHNEDE!\n\nGordon Murray Special Vehicles, Monterey'de yeni S1 modelini tanıttı. Merkezde sürücü koltuğu, hafif tasarım ve atmosferik Cosworth V12 motoruyla adeta modern bir F1.\n\n690 bg güç üreten 4.2 litrelik V12 motor, 12.100 devire çıkabiliyor. Aktif aerodinamik özelliklere ve 6 ileri manuel şanzımana sahip S1, daha konforlu bir yol deneyimi sunuyor.\n\nSizce bu efsanevi ruhu başarıyla yansıtabilmiş mi?",
-          "image_sources": [
-            "meta_og",
-            "article_script",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/9m8oWb/s1/gordon-murray-special-vehicles-s1.jpg",
-            "https://cdn.motor1.com/images/mgl/9m8oWb/s1/4x3/gordon-murray-special-vehicles-s1.webp",
-            "https://cdn.motor1.com/images/mgl/7ZEx16/s3/gordon-murray-special-vehicles-s1.jpg",
-            "https://cdn.motor1.com/images/mgl/BXZq16/s3/gordon-murray-special-vehicles-s1.jpg"
-          ]
-        },
-        "post_text": "🚀 MCLAREN F1 RUHU YENİDEN CANLANDI: GMA S1 SAHNEDE!\n\nGordon Murray Special Vehicles, Monterey'de yeni S1 modelini tanıttı. Merkezde sürücü koltuğu, hafif tasarım ve atmosferik Cosworth V12 motoruyla adeta modern bir F1.\n\n690 bg güç üreten 4.2 litrelik V12 motor, 12.100 devire çıkabiliyor. Aktif aerodinamik özelliklere ve 6 ileri manuel şanzımana sahip S1, daha konforlu bir yol deneyimi sunuyor.\n\nSizce bu efsanevi ruhu başarıyla yansıtabilmiş mi?",
-        "image_path": "/tmp/otoxtra_img_8eje88hr.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_8eje88hr.jpg",
-          "/tmp/otoxtra_img_ti356r3o.jpg",
-          "/tmp/otoxtra_img_bu14tfu6.jpg",
-          "/tmp/otoxtra_img_hl45d8dp.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T20:18:51.953778+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176061600916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1563584535223911",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-15T20:19:42.165927+03:00"
+      "updated_at": null
     }
   }
 }
