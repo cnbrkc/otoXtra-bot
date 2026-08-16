@@ -1,14 +1,51 @@
 {
-  "run_id": "2026-08-16-17:19",
-  "status": "error",
-  "started_at": "2026-08-16T17:19:28.616717+03:00",
-  "updated_at": "2026-08-16T17:20:30.019288+03:00",
+  "run_id": "2026-08-16-18:18",
+  "status": "completed",
+  "started_at": "2026-08-16T18:18:35.408606+03:00",
+  "updated_at": "2026-08-16T18:20:41.078288+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+            "link": "https://nitter.net/DoluBatarya/status/2088995215310791068#m",
+            "published": "2026-08-16T14:24:05+00:00",
+            "summary": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: piped.video/52FnGwyRfvw Video",
+            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+            "image_candidates": [
+              "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Dolu Batarya",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "52fngwyrfvw-arac-cikan-defa-detaylari-elektrikli-gelismeleri-haftanin-https-hyundai-marka-one-togg-turkiye-uretmeye-yatiriminin-youtu"
+          },
+          {
+            "title": "Çünkü amaç trafiği terbiye etmekten ziyade para almak için olduğu, ehliyete ceza puanı yazmamaktan anlaşılıyor. Bu şekilde puan yazsalar millette ehliyet kalmayacağından bu yöntemi uyguluyorlar.",
+            "link": "https://nitter.net/HakanDOGU/status/2088995903122165798#m",
+            "published": "2026-08-16T14:26:49+00:00",
+            "summary": "Çünkü amaç trafiği terbiye etmekten ziyade para almak için olduğu, ehliyete ceza puanı yazmamaktan anlaşılıyor. Bu şekilde puan yazsalar millette ehliyet kalmayacağından bu yöntemi uyguluyorlar. Hasan Mert Kaya (@kayamerthasan_) Dün İstanbul’dan Antalya’ya araçla geldim. Bozüyük’te hız limitini 11-15km aştığım için 2.000₺ (bu arada hızım 123-124) ve Kütahya’da 15-20km aştığım için 4.000₺ ceza geldi anında. Yol boyu yüzlerce HDS uyarısı, stresli bir sürüş. Çoğu yerde yolun yapısı hızı kontrole imkan vermiyor, illa 10-15km üzerine çıkılıyor birçok noktada. Ceza yememek neredeyse imkansız. — https://nitter.net/kayamerthasan_/status/2088585234027630842#m",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "HakanDOgu",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "almak-amac-anlasiliyor-ceza-cunku-ehliyet-ehliyete-etmekten-kalmayacagindan-millette-oldugu-para-puan-puani-sekilde-terbiye-trafigi-uyguluyorlar-yazmamaktan-yazsalar-yontemi-ziyade"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +163,235 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 109,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 110,
+            "after_time": 7,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 109,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 110,
+          "after_time": 7,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-16T17:20:30.019288+03:00"
+      "error": null,
+      "updated_at": "2026-08-16T18:19:33.099921+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+          "link": "https://nitter.net/DoluBatarya/status/2088995215310791068#m",
+          "published": "2026-08-16T14:24:05+00:00",
+          "summary": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: piped.video/52FnGwyRfvw Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "52fngwyrfvw-arac-cikan-defa-detaylari-elektrikli-gelismeleri-haftanin-https-hyundai-marka-one-togg-turkiye-uretmeye-yatiriminin-youtu",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Togg sonrasında Türkiye'de yerli elektrikli araç üretimi ile ilgili büyük bir yatırım hamlesi olması, ulusal ölçekte yüksek etkileşim ve merak uyandıracak bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 17,
+          "gundem_gucu": 14,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Togg sonrasında Türkiye'de yerli elektrikli araç üretimi ile ilgili büyük bir yatırım hamlesi olması, ulusal ölçekte yüksek etkileşim ve merak uyandıracak bir gelişmedir.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 17,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Çünkü amaç trafiği terbiye etmekten ziyade para almak için olduğu, ehliyete ceza puanı yazmamaktan anlaşılıyor. Bu şekilde puan yazsalar millette ehliyet kalmayacağından bu yöntemi uyguluyorlar.",
+            "score": 46,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 5,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Çünkü amaç trafiği terbiye etmekten ziyade para almak için olduğu, ehliyete ceza puanı yazmamaktan anlaşılıyor. Bu şekilde puan yazsalar millette ehliyet kalmayacağından bu yöntemi uyguluyorlar.",
+            "link": "https://nitter.net/HakanDOGU/status/2088995903122165798#m",
+            "score": 46,
+            "score_reason": "ai_scored",
+            "source_name": "HakanDOgu",
+            "topic_fingerprint": "almak-amac-anlasiliyor-ceza-cunku-ehliyet-ehliyete-etmekten-kalmayacagindan-millette-oldugu-para-puan-puani-sekilde-terbiye-trafigi-uyguluyorlar-yazmamaktan-yazsalar-yontemi-ziyade"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T18:19:39.328430+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+          "link": "https://nitter.net/DoluBatarya/status/2088995215310791068#m",
+          "published": "2026-08-16T14:24:05+00:00",
+          "summary": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: piped.video/52FnGwyRfvw Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "52fngwyrfvw-arac-cikan-defa-detaylari-elektrikli-gelismeleri-haftanin-https-hyundai-marka-one-togg-turkiye-uretmeye-yatiriminin-youtu",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Togg sonrasında Türkiye'de yerli elektrikli araç üretimi ile ilgili büyük bir yatırım hamlesi olması, ulusal ölçekte yüksek etkileşim ve merak uyandıracak bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "Togg'dan sonra bir ilk: Hyundai Türkiye'de elektrikli araç üretimine başladı.\n\nBu, sadece yeni bir modelin banttan inmesi değil. Türkiye pazarında elektrikli otomobil üretimi için atılan büyük bir adım. Artık sadece ithalata bağımlı kalmayacağız; yerli üretimle rekabetin şekli değişecek.\n\nKim bilir, belki de bu, sektördeki domino etkisinin başlangıcıdır.",
+        "post_text_length": 356,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T18:19:52.821106+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: https://youtu.be/52FnGwyRfvw",
+          "link": "https://nitter.net/DoluBatarya/status/2088995215310791068#m",
+          "published": "2026-08-16T14:24:05+00:00",
+          "summary": "Türkiye'de Togg'dan sonra ilk defa bir marka elektrikli araç üretmeye başladı. Hyundai yatırımının detayları ve haftanın öne çıkan gelişmeleri: piped.video/52FnGwyRfvw Video",
+          "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg",
+          "image_candidates": [
+            "https://nitter.net/pic/amplify_video_thumb%2F2088995155541909504%2Fimg%2FuAGpz6M9Vy05rh60.jpg"
+          ],
+          "image_source": "nitter_card",
+          "source_name": "Dolu Batarya",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "52fngwyrfvw-arac-cikan-defa-detaylari-elektrikli-gelismeleri-haftanin-https-hyundai-marka-one-togg-turkiye-uretmeye-yatiriminin-youtu",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Togg sonrasında Türkiye'de yerli elektrikli araç üretimi ile ilgili büyük bir yatırım hamlesi olması, ulusal ölçekte yüksek etkileşim ve merak uyandıracak bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "Togg'dan sonra bir ilk: Hyundai Türkiye'de elektrikli araç üretimine başladı.\n\nBu, sadece yeni bir modelin banttan inmesi değil. Türkiye pazarında elektrikli otomobil üretimi için atılan büyük bir adım. Artık sadece ithalata bağımlı kalmayacağız; yerli üretimle rekabetin şekli değişecek.\n\nKim bilir, belki de bu, sektördeki domino etkisinin başlangıcıdır.",
+          "image_sources": [
+            "nitter_card"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://pbs.twimg.com/amplify_video_thumb/2088995155541909504/img/uAGpz6M9Vy05rh60.jpg?name=orig"
+          ]
+        },
+        "post_text": "Togg'dan sonra bir ilk: Hyundai Türkiye'de elektrikli araç üretimine başladı.\n\nBu, sadece yeni bir modelin banttan inmesi değil. Türkiye pazarında elektrikli otomobil üretimi için atılan büyük bir adım. Artık sadece ithalata bağımlı kalmayacağız; yerli üretimle rekabetin şekli değişecek.\n\nKim bilir, belki de bu, sektördeki domino etkisinin başlangıcıdır.",
+        "image_path": "/tmp/otoxtra_img_3t7s69cp.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_3t7s69cp.jpg"
+        ],
+        "image_source": "nitter_card",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T18:19:59.898240+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176163312916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18214722430355832",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1378627850910739",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T18:20:41.078288+03:00"
     }
   }
 }
