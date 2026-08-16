@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-16-10:28",
-  "status": "completed",
-  "started_at": "2026-08-16T10:28:57.458052+03:00",
-  "updated_at": "2026-08-16T10:30:34.785655+03:00",
+  "run_id": "2026-08-16-11:26",
+  "status": "error",
+  "started_at": "2026-08-16T11:26:02.374390+03:00",
+  "updated_at": "2026-08-16T11:27:00.809615+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-            "link": "https://nitter.net/veysellkaranii/status/2088890198583099582#m",
-            "published": "2026-08-16T07:26:47+00:00",
-            "summary": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-            "image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-2022-220-251-669-bodrum-corolla-cross-dahil-gunluk-hersey-hybrid-model-otel-toyota"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,214 +127,47 @@
           "_metrics": {
             "found": 175,
             "after_keyword": 116,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
           "after_keyword": 116,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-16T10:29:49.422578+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-16T11:27:00.809615+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2088890198583099582#m",
-          "published": "2026-08-16T07:26:47+00:00",
-          "summary": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-2022-220-251-669-bodrum-corolla-cross-dahil-gunluk-hersey-hybrid-model-otel-toyota",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki yüksek enflasyon ve tatil fiyatlarını otomobil kıyaslamasıyla gözler önüne serdiği için sosyal medyada çok yüksek viral ve etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 88,
-        "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 18,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'deki yüksek enflasyon ve tatil fiyatlarını otomobil kıyaslamasıyla gözler önüne serdiği için sosyal medyada çok yüksek viral ve etkileşim potansiyeline sahip.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-            "score": 88,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 18,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-16T10:29:51.152532+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2088890198583099582#m",
-          "published": "2026-08-16T07:26:47+00:00",
-          "summary": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-2022-220-251-669-bodrum-corolla-cross-dahil-gunluk-hersey-hybrid-model-otel-toyota",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki yüksek enflasyon ve tatil fiyatlarını otomobil kıyaslamasıyla gözler önüne serdiği için sosyal medyada çok yüksek viral ve etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "Otomobil fiyatları artık sadece ulaşım aracı olmaktan çıktı, lüks tatil paketiyle yarışır hale geldi.\n\n2022 model Toyota Corolla Cross Hybrid'in 2.220.000 TL'lik etiketi, Bodrum'da 7 günlük her şey dahil otel tatilinin (2.251.669 TL) hemen altında. Bu karşılaştırma, alım gücünün geldiği noktayı ve tüketicinin önceliklerinin nasıl değiştiğini açıkça gösteriyor.\n\nArtık otomobil almak yerine tatile gitmek daha cazip bir seçenek mi?",
-        "post_text_length": 432,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-16T10:29:52.919763+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2088890198583099582#m",
-          "published": "2026-08-16T07:26:47+00:00",
-          "summary": "2022 model Toyota Corolla Cross Hybrid 2.220.000 TL Bodrum’da 7 günlük herşey dahil otel 2.251.669 TL",
-          "image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-2022-220-251-669-bodrum-corolla-cross-dahil-gunluk-hersey-hybrid-model-otel-toyota",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki yüksek enflasyon ve tatil fiyatlarını otomobil kıyaslamasıyla gözler önüne serdiği için sosyal medyada çok yüksek viral ve etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "Otomobil fiyatları artık sadece ulaşım aracı olmaktan çıktı, lüks tatil paketiyle yarışır hale geldi.\n\n2022 model Toyota Corolla Cross Hybrid'in 2.220.000 TL'lik etiketi, Bodrum'da 7 günlük her şey dahil otel tatilinin (2.251.669 TL) hemen altında. Bu karşılaştırma, alım gücünün geldiği noktayı ve tüketicinin önceliklerinin nasıl değiştiğini açıkça gösteriyor.\n\nArtık otomobil almak yerine tatile gitmek daha cazip bir seçenek mi?",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HP06jXlW0AA6gi0.jpg?name=orig"
-          ]
-        },
-        "post_text": "Otomobil fiyatları artık sadece ulaşım aracı olmaktan çıktı, lüks tatil paketiyle yarışır hale geldi.\n\n2022 model Toyota Corolla Cross Hybrid'in 2.220.000 TL'lik etiketi, Bodrum'da 7 günlük her şey dahil otel tatilinin (2.251.669 TL) hemen altında. Bu karşılaştırma, alım gücünün geldiği noktayı ve tüketicinin önceliklerinin nasıl değiştiğini açıkça gösteriyor.\n\nArtık otomobil almak yerine tatile gitmek daha cazip bir seçenek mi?",
-        "image_path": "/tmp/otoxtra_img_auh42o9x.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_auh42o9x.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-16T10:29:54.302669+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176121594916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18146408572494415",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1092924586732124",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-16T10:30:34.785655+03:00"
+      "updated_at": null
     }
   }
 }
