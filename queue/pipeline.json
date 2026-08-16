@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-16-21:24",
+  "run_id": "2026-08-16-22:19",
   "status": "error",
-  "started_at": "2026-08-16T21:24:26.688788+03:00",
-  "updated_at": "2026-08-16T21:25:26.739347+03:00",
+  "started_at": "2026-08-16T22:19:40.584203+03:00",
+  "updated_at": "2026-08-16T22:20:43.929669+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Petronas'tan yaz sezonuna dair doğru bakım yaklaşımı!",
-            "link": "https://tr.motor1.com/news/805090/petronas-yaz-sezonu-bakim/",
-            "published": "2026-08-16T17:00:00+00:00",
-            "summary": "Yüksek sıcaklıklar, motor ve soğutma sistemleri üzerinde ilave yük oluşturuyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/9m4ylb/s3/mercedes-petronas-in-50.-yilini-ozel-bir-tasarim-ile-kutluyor.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/9m4ylb/s3/mercedes-petronas-in-50.-yilini-ozel-bir-tasarim-ile-kutluyor.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/9m4ylb/s3/mercedes-petronas-in-50.-yilini-ozel-bir-tasarim-ile-kutluyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bakim-dair-dogru-petronas-sezonuna-yaklasimi-yaz"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,30 +126,30 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 112,
-            "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 111,
+            "after_time": 4,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 112,
-          "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 111,
+          "after_time": 4,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-16T21:25:25.226021+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-16T22:20:43.929669+03:00"
     },
     "score": {
-      "status": "error",
+      "status": "waiting",
       "output": null,
-      "error": "No article above threshold (threshold=40, top_score=32)",
-      "updated_at": "2026-08-16T21:25:26.739347+03:00"
+      "error": null,
+      "updated_at": null
     },
     "write": {
       "status": "waiting",
