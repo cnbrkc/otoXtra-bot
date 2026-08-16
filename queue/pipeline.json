@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-16-08:25",
-  "status": "error",
-  "started_at": "2026-08-16T08:25:02.171552+03:00",
-  "updated_at": "2026-08-16T08:25:59.017078+03:00",
+  "run_id": "2026-08-16-09:35",
+  "status": "completed",
+  "started_at": "2026-08-16T09:35:26.186488+03:00",
+  "updated_at": "2026-08-16T09:37:19.205476+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+            "link": "https://nitter.net/eozpeynirci/status/2088870046093267423#m",
+            "published": "2026-08-16T06:06:42+00:00",
+            "summary": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+            "image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "acik-aktarilacak-artirmaya-bicilen-chassis-deger-dolar-dolara-dolarin-edilen-egitim-elde-elektrikli-elektrikli-ferrari-ferrari-gelirin-luce-milyon-milyon-milyon-modeli-monterey-numarali-ornegi-otomobil-projelerine-satildi-tam-tamamen-tamami-tartisilan-uretim-ustelik-uzerinde"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,221 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 116,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 115,
+            "after_time": 6,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 116,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 115,
+          "after_time": 6,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-16T08:25:59.017078+03:00"
+      "error": null,
+      "updated_at": "2026-08-16T09:36:23.386707+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "link": "https://nitter.net/eozpeynirci/status/2088870046093267423#m",
+          "published": "2026-08-16T06:06:42+00:00",
+          "summary": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "acik-aktarilacak-artirmaya-bicilen-chassis-deger-dolar-dolara-dolarin-edilen-egitim-elde-elektrikli-elektrikli-ferrari-ferrari-gelirin-luce-milyon-milyon-milyon-modeli-monterey-numarali-ornegi-otomobil-projelerine-satildi-tam-tamamen-tamami-tartisilan-uretim-ustelik-uzerinde",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 19,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 11
+          },
+          "score": 91,
+          "score_reason": "ai_scored",
+          "score_explanation": "Ferrari gibi ikonik bir markanın ilk elektrikli modelinin rekor fiyata satılması ve hayır amaçlı olması sosyal medyada ve otomotiv dünyasında büyük yankı uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 91,
+        "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 23,
+          "benzersizlik": 19,
+          "gundem_gucu": 18,
+          "paylasilabilirlik": 11
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Ferrari gibi ikonik bir markanın ilk elektrikli modelinin rekor fiyata satılması ve hayır amaçlı olması sosyal medyada ve otomotiv dünyasında büyük yankı uyandıracak nitelikte.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+            "score": 91,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 19,
+              "gundem_gucu": 18,
+              "paylasilabilirlik": 11
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T09:36:25.443862+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "link": "https://nitter.net/eozpeynirci/status/2088870046093267423#m",
+          "published": "2026-08-16T06:06:42+00:00",
+          "summary": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "acik-aktarilacak-artirmaya-bicilen-chassis-deger-dolar-dolara-dolarin-edilen-egitim-elde-elektrikli-elektrikli-ferrari-ferrari-gelirin-luce-milyon-milyon-milyon-modeli-monterey-numarali-ornegi-otomobil-projelerine-satildi-tam-tamamen-tamami-tartisilan-uretim-ustelik-uzerinde",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 19,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 11
+          },
+          "score": 91,
+          "score_reason": "ai_scored",
+          "score_explanation": "Ferrari gibi ikonik bir markanın ilk elektrikli modelinin rekor fiyata satılması ve hayır amaçlı olması sosyal medyada ve otomotiv dünyasında büyük yankı uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "İLK ELEKTRIKLI FERRARI’YE 40 MILYON DOLAR‼️ FERRARI’NIN ÇOK TARTIŞILAN ILK TAMAMEN ELEKTRI\n\nİlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 466,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T09:36:28.584264+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "link": "https://nitter.net/eozpeynirci/status/2088870046093267423#m",
+          "published": "2026-08-16T06:06:42+00:00",
+          "summary": "İlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak.",
+          "image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?format=jpg&name=large"
+          ],
+          "image_source": "nitter_still",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "acik-aktarilacak-artirmaya-bicilen-chassis-deger-dolar-dolara-dolarin-edilen-egitim-elde-elektrikli-elektrikli-ferrari-ferrari-gelirin-luce-milyon-milyon-milyon-modeli-monterey-numarali-ornegi-otomobil-projelerine-satildi-tam-tamamen-tamami-tartisilan-uretim-ustelik-uzerinde",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 19,
+            "gundem_gucu": 18,
+            "paylasilabilirlik": 11
+          },
+          "score": 91,
+          "score_reason": "ai_scored",
+          "score_explanation": "Ferrari gibi ikonik bir markanın ilk elektrikli modelinin rekor fiyata satılması ve hayır amaçlı olması sosyal medyada ve otomotiv dünyasında büyük yankı uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "İLK ELEKTRIKLI FERRARI’YE 40 MILYON DOLAR‼️ FERRARI’NIN ÇOK TARTIŞILAN ILK TAMAMEN ELEKTRI\n\nİlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "nitter_still",
+            "nitter_still",
+            "nitter_still"
+          ],
+          "prepared_image_count": 3,
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HP0oO_tWoAEzh9u.jpg?name=orig",
+            "https://pbs.twimg.com/media/HP0oO_qXIAAZ_Xk.jpg?name=orig",
+            "https://pbs.twimg.com/media/HP0oO_rXUAAQpXU.jpg?name=orig"
+          ]
+        },
+        "post_text": "İLK ELEKTRIKLI FERRARI’YE 40 MILYON DOLAR‼️ FERRARI’NIN ÇOK TARTIŞILAN ILK TAMAMEN ELEKTRI\n\nİlk elektrikli Ferrari’ye 40 milyon dolar‼️ Ferrari’nin çok tartışılan ilk tamamen elektrikli modeli Luce’nin 'Chassis 0' numaralı ilk üretim örneği, Monterey’de açık artırmaya çıktı. 1,1 milyon doların üzerinde değer biçilen otomobil tam 40 milyon dolara satıldı. Üstelik elde edilen gelirin tamamı eğitim projelerine aktarılacak\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_5bc5648c.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_5bc5648c.jpg",
+          "/tmp/otoxtra_img_h8i3ifc8.jpg",
+          "/tmp/otoxtra_img_vx4xsim8.jpg"
+        ],
+        "image_source": "nitter_still",
+        "image_count": 3
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T09:36:30.149091+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176118714916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18076074056347859",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2614229262356417",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T09:37:19.205476+03:00"
     }
   }
 }
