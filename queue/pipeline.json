@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-16-14:17",
-  "status": "error",
-  "started_at": "2026-08-16T14:17:56.026407+03:00",
-  "updated_at": "2026-08-16T14:18:57.244687+03:00",
+  "run_id": "2026-08-16-15:33",
+  "status": "completed",
+  "started_at": "2026-08-16T15:33:32.174867+03:00",
+  "updated_at": "2026-08-16T15:35:12.233354+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+            "link": "https://www.otoajanda.com/otomotivde-yeni-kriz-motor-yagi-darbogazi-basladi-arac-servis-maliyetleri-artacak/",
+            "published": "2026-08-16T11:40:27+00:00",
+            "summary": "Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesi Grup III baz yağlarda yaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Krizin kaynağı: Doğu Akdeniz; Orta Doğu tedarik hattı ve Hürmüz Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı […] Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "arac-artacak-darbogazi-kriz-maliyetleri-motor-otomotivde-servis-yagi"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,215 @@
           },
           "_metrics": {
             "found": 175,
-            "after_keyword": 108,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 109,
+            "after_time": 5,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 175,
-          "after_keyword": 108,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 109,
+          "after_time": 5,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-16T14:18:57.244687+03:00"
+      "error": null,
+      "updated_at": "2026-08-16T15:34:24.333174+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+          "link": "https://www.otoajanda.com/otomotivde-yeni-kriz-motor-yagi-darbogazi-basladi-arac-servis-maliyetleri-artacak/",
+          "published": "2026-08-16T11:40:27+00:00",
+          "summary": "Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesi Grup III baz yağlarda yaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Krizin kaynağı: Doğu Akdeniz; Orta Doğu tedarik hattı ve Hürmüz Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı […] Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-artacak-darbogazi-kriz-maliyetleri-motor-otomotivde-servis-yagi",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketicilerin doğrudan cebini etkileyen maliyet artışları sosyal medyada yüksek etkileşim ve tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 71,
+        "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 14,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Tüketicilerin doğrudan cebini etkileyen maliyet artışları sosyal medyada yüksek etkileşim ve tartışma yaratır.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 7
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T15:34:25.971833+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+          "link": "https://www.otoajanda.com/otomotivde-yeni-kriz-motor-yagi-darbogazi-basladi-arac-servis-maliyetleri-artacak/",
+          "published": "2026-08-16T11:40:27+00:00",
+          "summary": "Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesi Grup III baz yağlarda yaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Krizin kaynağı: Doğu Akdeniz; Orta Doğu tedarik hattı ve Hürmüz Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı […] Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-artacak-darbogazi-kriz-maliyetleri-motor-otomotivde-servis-yagi",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketicilerin doğrudan cebini etkileyen maliyet artışları sosyal medyada yüksek etkileşim ve tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesiGrup III baz yağlardayaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı 0W-8, 0W-16, 0W-20 ve 5W-30 viskoziteli yağlar) hammaddesinin yaklaşık%40 ila %45’i Basra Körfezi bölgesindentemin ediliyordu. Tesis zararları ve lojistik:Dünyanın en büyük baz yağ üreticilerinden biri olan Katar’dakiShell Pearl GTLtesisinin operasyonel kapasitesinin düşmesi veHürmüz Boğazıhattındaki sevkiyat riskleri, hammaddelerin Batı pazarlarına ulaşmasını engelledi. Alternatif üreticilerin yetersizliği:Güney Kore gibi alternatif üreticilerin hammadde darboğazı yaşaması ve rafinelerin yüksek kâr marjları nedeniyle jet yakıtı ve dizele yönelmesi baz yağ üretimini daha da sıkıştırdı. Otomotiv devleri, küresel stokların erimesi üzerineformülasyon değişikliğineve kotaya gitmek zorunda kaldı: Toyota, Volkswagen ve Stellantis gibi üreticiler; motor onay spesifikasyonlarını esneterek farklı baz yağ karışımlarına onay vermeye başladı. Amerika ve Avrupa’daki yetkili servis ağına gönderilen genelgelerle, stok dağıtımlarına %70 gibi kısıtlamalar (tahsis kotaları) getirildi. Sosyal medyadaki “araçlar yağsız kalacak” algısının aksine, doğrudan bir “yağsızlık” durumu yaşanmıyor; kriz daha çokmaliyet ve viskozite bulunabilirliğiboyutunda: Ton fiyatları uçtu:Baz yağların ton fiyatı savaş/kriz öncesi seviyelerinin yaklaşık 3 katına çıkarak 4.000 dolar seviyelerini gördü. Servis fiyatlarına yansıdı:Sürücüler açısından kriz, yağ bulunamamasından ziyade periyodik bakım maliyetlerinin %30-%40 oranında artması ve ince vizkoziteli (0W serisi) özel sentetik yağların temininde gecikmeler yaşanması şeklinde hissediliyor. Küresel otomotiv sanayinin elektrikli araç dönüşümüne yönelik büyük yatırımlar yaptığı bir dönemde, içten yanmalı motorların bel kemiği olan geleneksel vesentetik madeni yağtedarik zincirlerinin ne kadar kırılgan olduğunu gösteriyor. Üreticilerin yeni yağ harmanlarına onay vermesiyle kısa vadelerde bir sorun yaşanmasının önüne geçildi. Ancak fiyat artışlarının 2027’ye kadar kademeli olarak tüketiciye yansıması bekleniyor. Avrupa otomotiv parkı; Euro 6e standartları gereği yüksek oranda düşük viskoziteli (0W-8, 0W-16, 0W-20) tam sentetik yağlara bağımlı. Stok kotaları ve tahsisat:Castrol, Shell, Mobil ve TotalEnergies gibi Avrupa merkezli dev üreticiler, distribütörlerine ve yetkili servislere sipariş sınırlaması (tahsisat kotası) getirmeye başladı. Formül esnekliği:Volkswagen, Stellantis ve BMW gibi Avrupalı devler; fabrika çıkış yağ onaynamelerinde esnekliğe giderek, yetkili servislerin geçici olarak alternatif baz yağ karışımlarını kullanmasına yeşil ışık yaktı. Periyodik bakım fiyatlarında sıçrama:Avrupa’daki hızlı yağ değişim merkezlerinde (Quick-Lube) periyodik bakım maliyetleri son aylarda yaklaşık15 ila 25 Euro arasında doğrudan zamlandı. Türkiye pazarı hem döviz kuru hem de ithal hammaddelere olan yüksek bağımlılık nedeniyle bu tip küresel şokları iki kat daha sert hissediyor. Döviz ve baz yağ çarpanı:Türkiye madeni yağ üreticileri, hammaddenin (Grup III baz yağ) ton fiyatının dolar bazında yükselmesi ve lojistik maliyetlerinin artması sebebiyle 2026’nın ikinci yarısına art arda zam güncellemeleriyle girdi. Sürücülerin bütçesine yansıması:Türkiye’de standart bir periyodik araç bakımının (yağ ve filtre değişimi) maliyeti, yağ fiyatlarındaki bu artışla birlikte servis kategorisine göre %30 ila %40 oranında yukarı çekildi. Merdiven Altı yani sahte yağ riski:Orijinal tam sentetik yağ fiyatlarının hızla artması ve piyasada0W serisi özel yağların temininde dönemsel gecikmeler yaşanması, Türkiye pazarında maalesef “sahte madeni yağ” ve “onaysız merdiven altı ürün” riskini yeniden tırmandırdı. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. 2. el otomobilde riskli şirketler artıyor 2. el otomobilde riskli şirketler artıyor Araç kiralamaya yeni düzen: Depozitodan kilometreye tüm şartlar değişiyor Hyundai Türkiye’de elektrikli Ioniq 3 üretimine başladı Satışa çıkan yeni Kia EV2 fiyatı ve menzili ile sürpriz yaptı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment."
+        },
+        "post_text": "Motor yağı krizi mi? Bu, akaryakıt zamlarından sonra tam da ihtiyacımız olan şeydi.\n\nSentetik yağların hammaddesi Grup III baz yağlarda yaşanan arz sıkıntısı, servis maliyetlerini yukarı çekecek gibi duruyor. Doğu Akdeniz'deki gerilim ve üretici tesis sorunları, yeni nesil araçların olmazsa olmazı 0W-8 gibi yağları bulmayı zorlaştıracak.\n\nAraç sahiplerini yeni bir maliyet kalemi bekliyor.",
+        "post_text_length": 391,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T15:34:27.410095+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak",
+          "link": "https://www.otoajanda.com/otomotivde-yeni-kriz-motor-yagi-darbogazi-basladi-arac-servis-maliyetleri-artacak/",
+          "published": "2026-08-16T11:40:27+00:00",
+          "summary": "Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesi Grup III baz yağlarda yaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Krizin kaynağı: Doğu Akdeniz; Orta Doğu tedarik hattı ve Hürmüz Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı […] Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2017/06/motor-oil-e1498053535102.jpg"
+          ],
+          "image_source": "duckduckgo_extended",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-artacak-darbogazi-kriz-maliyetleri-motor-otomotivde-servis-yagi",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tüketicilerin doğrudan cebini etkileyen maliyet artışları sosyal medyada yüksek etkileşim ve tartışma yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Otomotiv endüstrisi, bri süredir yaşadığı akaryakıt fiyatlarındaki dalgalanmaya ilaveten şimdi de sentetik motor yağlarının hammaddesiGrup III baz yağlardayaşanan arz darboğazıyla karşı karşıya. Böyle bir sorun gerçek mi ve eğer gerçek ise piyasayı nasıl etkileyebilir? Tam sentetik motor yağlarının (özellikle yeni nesil araçların kullandığı 0W-8, 0W-16, 0W-20 ve 5W-30 viskoziteli yağlar) hammaddesinin yaklaşık%40 ila %45’i Basra Körfezi bölgesindentemin ediliyordu. Tesis zararları ve lojistik:Dünyanın en büyük baz yağ üreticilerinden biri olan Katar’dakiShell Pearl GTLtesisinin operasyonel kapasitesinin düşmesi veHürmüz Boğazıhattındaki sevkiyat riskleri, hammaddelerin Batı pazarlarına ulaşmasını engelledi. Alternatif üreticilerin yetersizliği:Güney Kore gibi alternatif üreticilerin hammadde darboğazı yaşaması ve rafinelerin yüksek kâr marjları nedeniyle jet yakıtı ve dizele yönelmesi baz yağ üretimini daha da sıkıştırdı. Otomotiv devleri, küresel stokların erimesi üzerineformülasyon değişikliğineve kotaya gitmek zorunda kaldı: Toyota, Volkswagen ve Stellantis gibi üreticiler; motor onay spesifikasyonlarını esneterek farklı baz yağ karışımlarına onay vermeye başladı. Amerika ve Avrupa’daki yetkili servis ağına gönderilen genelgelerle, stok dağıtımlarına %70 gibi kısıtlamalar (tahsis kotaları) getirildi. Sosyal medyadaki “araçlar yağsız kalacak” algısının aksine, doğrudan bir “yağsızlık” durumu yaşanmıyor; kriz daha çokmaliyet ve viskozite bulunabilirliğiboyutunda: Ton fiyatları uçtu:Baz yağların ton fiyatı savaş/kriz öncesi seviyelerinin yaklaşık 3 katına çıkarak 4.000 dolar seviyelerini gördü. Servis fiyatlarına yansıdı:Sürücüler açısından kriz, yağ bulunamamasından ziyade periyodik bakım maliyetlerinin %30-%40 oranında artması ve ince vizkoziteli (0W serisi) özel sentetik yağların temininde gecikmeler yaşanması şeklinde hissediliyor. Küresel otomotiv sanayinin elektrikli araç dönüşümüne yönelik büyük yatırımlar yaptığı bir dönemde, içten yanmalı motorların bel kemiği olan geleneksel vesentetik madeni yağtedarik zincirlerinin ne kadar kırılgan olduğunu gösteriyor. Üreticilerin yeni yağ harmanlarına onay vermesiyle kısa vadelerde bir sorun yaşanmasının önüne geçildi. Ancak fiyat artışlarının 2027’ye kadar kademeli olarak tüketiciye yansıması bekleniyor. Avrupa otomotiv parkı; Euro 6e standartları gereği yüksek oranda düşük viskoziteli (0W-8, 0W-16, 0W-20) tam sentetik yağlara bağımlı. Stok kotaları ve tahsisat:Castrol, Shell, Mobil ve TotalEnergies gibi Avrupa merkezli dev üreticiler, distribütörlerine ve yetkili servislere sipariş sınırlaması (tahsisat kotası) getirmeye başladı. Formül esnekliği:Volkswagen, Stellantis ve BMW gibi Avrupalı devler; fabrika çıkış yağ onaynamelerinde esnekliğe giderek, yetkili servislerin geçici olarak alternatif baz yağ karışımlarını kullanmasına yeşil ışık yaktı. Periyodik bakım fiyatlarında sıçrama:Avrupa’daki hızlı yağ değişim merkezlerinde (Quick-Lube) periyodik bakım maliyetleri son aylarda yaklaşık15 ila 25 Euro arasında doğrudan zamlandı. Türkiye pazarı hem döviz kuru hem de ithal hammaddelere olan yüksek bağımlılık nedeniyle bu tip küresel şokları iki kat daha sert hissediyor. Döviz ve baz yağ çarpanı:Türkiye madeni yağ üreticileri, hammaddenin (Grup III baz yağ) ton fiyatının dolar bazında yükselmesi ve lojistik maliyetlerinin artması sebebiyle 2026’nın ikinci yarısına art arda zam güncellemeleriyle girdi. Sürücülerin bütçesine yansıması:Türkiye’de standart bir periyodik araç bakımının (yağ ve filtre değişimi) maliyeti, yağ fiyatlarındaki bu artışla birlikte servis kategorisine göre %30 ila %40 oranında yukarı çekildi. Merdiven Altı yani sahte yağ riski:Orijinal tam sentetik yağ fiyatlarının hızla artması ve piyasada0W serisi özel yağların temininde dönemsel gecikmeler yaşanması, Türkiye pazarında maalesef “sahte madeni yağ” ve “onaysız merdiven altı ürün” riskini yeniden tırmandırdı. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. 2. el otomobilde riskli şirketler artıyor 2. el otomobilde riskli şirketler artıyor Araç kiralamaya yeni düzen: Depozitodan kilometreye tüm şartlar değişiyor Hyundai Türkiye’de elektrikli Ioniq 3 üretimine başladı Satışa çıkan yeni Kia EV2 fiyatı ve menzili ile sürpriz yaptı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment.",
+          "post_text_for_card": "Motor yağı krizi mi? Bu, akaryakıt zamlarından sonra tam da ihtiyacımız olan şeydi.\n\nSentetik yağların hammaddesi Grup III baz yağlarda yaşanan arz sıkıntısı, servis maliyetlerini yukarı çekecek gibi duruyor. Doğu Akdeniz'deki gerilim ve üretici tesis sorunları, yeni nesil araçların olmazsa olmazı 0W-8 gibi yağları bulmayı zorlaştıracak.\n\nAraç sahiplerini yeni bir maliyet kalemi bekliyor.",
+          "image_sources": [
+            "duckduckgo_extended"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "Motor yağı krizi mi? Bu, akaryakıt zamlarından sonra tam da ihtiyacımız olan şeydi.\n\nSentetik yağların hammaddesi Grup III baz yağlarda yaşanan arz sıkıntısı, servis maliyetlerini yukarı çekecek gibi duruyor. Doğu Akdeniz'deki gerilim ve üretici tesis sorunları, yeni nesil araçların olmazsa olmazı 0W-8 gibi yağları bulmayı zorlaştıracak.\n\nAraç sahiplerini yeni bir maliyet kalemi bekliyor.",
+        "image_path": "/tmp/otoxtra_img_kwmg1751.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_kwmg1751.jpg"
+        ],
+        "image_source": "duckduckgo_extended",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T15:34:29.074529+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176149164916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17968497933138869",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "819959904472508",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-16T15:35:12.233354+03:00"
     }
   }
 }
