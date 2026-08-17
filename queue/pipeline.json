@@ -1,31 +1,31 @@
 {
-  "run_id": "2026-08-17-07:39",
+  "run_id": "2026-08-17-08:32",
   "status": "completed",
-  "started_at": "2026-08-17T07:39:00.954230+03:00",
-  "updated_at": "2026-08-17T07:41:21.796136+03:00",
+  "started_at": "2026-08-17T08:32:45.380783+03:00",
+  "updated_at": "2026-08-17T08:35:02.586041+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
-            "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
-            "published": "2026-08-17T04:23:33+00:00",
-            "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
-            "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+            "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
+            "link": "https://nitter.net/sekizsilindir/status/2089222318094467456#m",
+            "published": "2026-08-17T05:26:31+00:00",
+            "summary": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄. Tango Down (@Tangocharliejui) İsveç'te yapılan bir testte, sürücülerin 2026 model otomobillerin içerisinde basit ihtiyaçlarını ekran üzerinden hallederken ortalama 813 metre mesafede yola bakmadıkları ortaya çıkmış. 2022'de 756 metreymiş. Daha da kötüsü 2005 Model Volvo V70'te 306 metreymiş. — https://nitter.net/Tangocharliejui/status/2089094581383995488#m",
+            "image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
             "image_candidates": [
-              "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+              "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large"
             ],
             "image_source": "rss",
-            "source_name": "Ahmet Celik",
+            "source_name": "Sekizsilindir",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti"
+            "topic_fingerprint": "diger-ekran-illa-sonuc-tesla-tussuz-yapacaksaniz-yapin"
           }
         ],
         "count": 1,
@@ -85,10 +85,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -97,10 +97,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -115,10 +115,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "MuratTosun": {
             "status": "ok",
@@ -145,87 +145,87 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 163,
-            "after_keyword": 107,
-            "after_time": 10,
-            "after_posted": 5,
+            "found": 153,
+            "after_keyword": 94,
+            "after_time": 6,
+            "after_posted": 1,
             "after_duplicate": 1,
-            "after_shared_variant_cooldown": 5
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 163,
-          "after_keyword": 107,
-          "after_time": 10,
-          "after_posted": 5,
+          "found": 153,
+          "after_keyword": 94,
+          "after_time": 6,
+          "after_posted": 1,
           "after_duplicate": 1,
-          "after_shared_variant_cooldown": 5
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-08-17T07:40:23.030772+03:00"
+      "updated_at": "2026-08-17T08:34:18.582024+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
-          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
-          "published": "2026-08-17T04:23:33+00:00",
-          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
-          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
+          "link": "https://nitter.net/sekizsilindir/status/2089222318094467456#m",
+          "published": "2026-08-17T05:26:31+00:00",
+          "summary": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄. Tango Down (@Tangocharliejui) İsveç'te yapılan bir testte, sürücülerin 2026 model otomobillerin içerisinde basit ihtiyaçlarını ekran üzerinden hallederken ortalama 813 metre mesafede yola bakmadıkları ortaya çıkmış. 2022'de 756 metreymiş. Daha da kötüsü 2005 Model Volvo V70'te 306 metreymiş. — https://nitter.net/Tangocharliejui/status/2089094581383995488#m",
+          "image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large"
           ],
           "image_source": "rss",
-          "source_name": "Ahmet Celik",
+          "source_name": "Sekizsilindir",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
-          "base_ai_score": 45,
+          "topic_fingerprint": "diger-ekran-illa-sonuc-tesla-tussuz-yapacaksaniz-yapin",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
           },
-          "score": 54,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "score_explanation": "Dokunmatik ekran trendine yönelik sosyal medyada sıkça tartışılan bir eleştiriyi barındırıyor ancak kapsamlı bir haber değerinden ziyade bir gözlem veya yorum niteliğinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 54,
-        "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+        "score": 53,
+        "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 9,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 6
+          "etkilesim_potansiyeli": 12,
+          "benzersizlik": 8,
+          "gundem_gucu": 8,
+          "paylasilabilirlik": 5
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+        "score_explanation": "Dokunmatik ekran trendine yönelik sosyal medyada sıkça tartışılan bir eleştiriyi barındırıyor ancak kapsamlı bir haber değerinden ziyade bir gözlem veya yorum niteliğinde.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
-            "score": 54,
+            "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
+            "score": 53,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 9,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 6
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 8,
+              "gundem_gucu": 8,
+              "paylasilabilirlik": 5
             }
           }
         ],
@@ -233,126 +233,128 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-08-17T07:40:24.782983+03:00"
+      "updated_at": "2026-08-17T08:34:20.112552+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
-          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
-          "published": "2026-08-17T04:23:33+00:00",
-          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
-          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
+          "link": "https://nitter.net/sekizsilindir/status/2089222318094467456#m",
+          "published": "2026-08-17T05:26:31+00:00",
+          "summary": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄. Tango Down (@Tangocharliejui) İsveç'te yapılan bir testte, sürücülerin 2026 model otomobillerin içerisinde basit ihtiyaçlarını ekran üzerinden hallederken ortalama 813 metre mesafede yola bakmadıkları ortaya çıkmış. 2022'de 756 metreymiş. Daha da kötüsü 2005 Model Volvo V70'te 306 metreymiş. — https://nitter.net/Tangocharliejui/status/2089094581383995488#m",
+          "image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large"
           ],
           "image_source": "rss",
-          "source_name": "Ahmet Celik",
+          "source_name": "Sekizsilindir",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
-          "base_ai_score": 45,
+          "topic_fingerprint": "diger-ekran-illa-sonuc-tesla-tussuz-yapacaksaniz-yapin",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
           },
-          "score": 54,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "score_explanation": "Dokunmatik ekran trendine yönelik sosyal medyada sıkça tartışılan bir eleştiriyi barındırıyor ancak kapsamlı bir haber değerinden ziyade bir gözlem veya yorum niteliğinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "post_text": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
-        "post_text_length": 465,
+        "post_text": "İlla ki tuşsuz ekran yapacaksanız Tesla gibi yapın. 🙄\n\nİsveç'teki test, otomobil üreticilerine tokat gibi çarptı. Sürücüler, 2026 model araçlarda basit ayarları ekrandan yaparken ortalama 813 metre boyunca yola bakmıyor. 2022'de bu rakam 756 metreydi.\n\nTeknoloji bizi daha güvenli mi yapıyor yoksa yoldan mı uzaklaştırıyor? Otomobil içi ekranlar, dikkati dağıtma konusunda bambaşka bir seviyeye çıktı.",
+        "post_text_length": 401,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-17T07:40:26.610241+03:00"
+      "updated_at": "2026-08-17T08:34:21.696494+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
-          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
-          "published": "2026-08-17T04:23:33+00:00",
-          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
-          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "title": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄.",
+          "link": "https://nitter.net/sekizsilindir/status/2089222318094467456#m",
+          "published": "2026-08-17T05:26:31+00:00",
+          "summary": "Bir diğer sonuç; illa ki tuşsuz ekran yapacaksanız Tesla gibi yapın 😄. Tango Down (@Tangocharliejui) İsveç'te yapılan bir testte, sürücülerin 2026 model otomobillerin içerisinde basit ihtiyaçlarını ekran üzerinden hallederken ortalama 813 metre mesafede yola bakmadıkları ortaya çıkmış. 2022'de 756 metreymiş. Daha da kötüsü 2005 Model Volvo V70'te 306 metreymiş. — https://nitter.net/Tangocharliejui/status/2089094581383995488#m",
+          "image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large"
           ],
-          "image_source": "duckduckgo_extended",
-          "source_name": "Ahmet Celik",
+          "image_source": "article_candidates_field",
+          "source_name": "Sekizsilindir",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
-          "base_ai_score": 45,
+          "topic_fingerprint": "diger-ekran-illa-sonuc-tesla-tussuz-yapacaksaniz-yapin",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 8,
+            "gundem_gucu": 8,
+            "paylasilabilirlik": 5
           },
-          "score": 54,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "score_explanation": "Dokunmatik ekran trendine yönelik sosyal medyada sıkça tartışılan bir eleştiriyi barındırıyor ancak kapsamlı bir haber değerinden ziyade bir gözlem veya yorum niteliğinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "post_text_for_card": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
+          "post_text_for_card": "İlla ki tuşsuz ekran yapacaksanız Tesla gibi yapın. 🙄\n\nİsveç'teki test, otomobil üreticilerine tokat gibi çarptı. Sürücüler, 2026 model araçlarda basit ayarları ekrandan yaparken ortalama 813 metre boyunca yola bakmıyor. 2022'de bu rakam 756 metreydi.\n\nTeknoloji bizi daha güvenli mi yapıyor yoksa yoldan mı uzaklaştırıyor? Otomobil içi ekranlar, dikkati dağıtma konusunda bambaşka bir seviyeye çıktı.",
           "image_sources": [
-            "duckduckgo_extended"
+            "article_candidates_field"
           ],
           "prepared_image_count": 1,
-          "original_image_urls": []
+          "original_image_urls": [
+            "https://pbs.twimg.com/media/HP3tfM-WAAEk2Oj.png?format=png&name=large"
+          ]
         },
-        "post_text": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
-        "image_path": "/tmp/otoxtra_img_8awk866u.jpg",
+        "post_text": "İlla ki tuşsuz ekran yapacaksanız Tesla gibi yapın. 🙄\n\nİsveç'teki test, otomobil üreticilerine tokat gibi çarptı. Sürücüler, 2026 model araçlarda basit ayarları ekrandan yaparken ortalama 813 metre boyunca yola bakmıyor. 2022'de bu rakam 756 metreydi.\n\nTeknoloji bizi daha güvenli mi yapıyor yoksa yoldan mı uzaklaştırıyor? Otomobil içi ekranlar, dikkati dağıtma konusunda bambaşka bir seviyeye çıktı.",
+        "image_path": "/tmp/otoxtra_img_3i5uc080.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_8awk866u.jpg"
+          "/tmp/otoxtra_img_3i5uc080.jpg"
         ],
-        "image_source": "duckduckgo_extended",
+        "image_source": "article_candidates_field",
         "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-08-17T07:40:30.774960+03:00"
+      "updated_at": "2026-08-17T08:34:23.340652+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122176221854916499",
+        "post_id": "678053852057751_122176225916916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "17996788079809472",
+            "id": "18073473875400400",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1084643450923207",
+            "id": "1035560782690735",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-17T07:41:21.796136+03:00"
+      "updated_at": "2026-08-17T08:35:02.586041+03:00"
     }
   }
 }
