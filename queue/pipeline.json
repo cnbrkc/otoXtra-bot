@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-17-06:51",
-  "status": "error",
-  "started_at": "2026-08-17T06:51:39.941599+03:00",
-  "updated_at": "2026-08-17T06:53:21.014534+03:00",
+  "run_id": "2026-08-17-07:39",
+  "status": "completed",
+  "started_at": "2026-08-17T07:39:00.954230+03:00",
+  "updated_at": "2026-08-17T07:41:21.796136+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+            "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
+            "published": "2026-08-17T04:23:33+00:00",
+            "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
+            "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -71,16 +91,16 @@
             "attempts": 1
           },
           "Dolu Batarya": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -95,10 +115,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
           },
           "MuratTosun": {
             "status": "ok",
@@ -125,49 +145,214 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 153,
-            "after_keyword": 94,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 163,
+            "after_keyword": 107,
+            "after_time": 10,
+            "after_posted": 5,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 5
           }
         },
         "metrics": {
-          "found": 153,
-          "after_keyword": 94,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 163,
+          "after_keyword": 107,
+          "after_time": 10,
+          "after_posted": 5,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 5
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-17T06:53:21.014534+03:00"
+      "error": null,
+      "updated_at": "2026-08-17T07:40:23.030772+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
+          "published": "2026-08-17T04:23:33+00:00",
+          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
+          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 54,
+        "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 9,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+            "score": 54,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 9,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T07:40:24.782983+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
+          "published": "2026-08-17T04:23:33+00:00",
+          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
+          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+          ],
+          "image_source": "rss",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
+        "post_text_length": 465,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T07:40:26.610241+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye https://online.fliphtml5.com/pdelr/OTOMOBILGAZETESI_17082026/",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089206472550875566#m",
+          "published": "2026-08-17T04:23:33+00:00",
+          "summary": "Kia Türkiye bize özel açıklama yaptı ama 641 Km menzil konusunda şüpheler hala devam ediyor! @kiaturkiye online.fliphtml5.com/pdelr/O…",
+          "image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "rss_image_url": "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HP5aNklWwAAlFBN.jpg?format=jpg&name=large"
+          ],
+          "image_source": "duckduckgo_extended",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "17082026-641-aciklama-bize-com-devam-ediyor-fliphtml5-hala-https-kia-kiaturkiye-konusunda-menzil-online-otomobilgazetesi-ozel-pdelr-supheler-turkiye-yapti",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Özel açıklama iddiası ilgi çekse de menzil şüpheleri gibi belirsizlikler barındırması ve niş bir dergi/bülten formatında kalması nedeniyle orta seviye etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
+          "image_sources": [
+            "duckduckgo_extended"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "Kia'nın 641 km menzil iddiası herkesin dilinde ama asıl soru şu: Bu rakam gerçekten neyi ifade ediyor? Laboratuvar testleri bir yana, günlük kullanımda bu menzile yaklaşmak bile zorlu bir mücadele.\n\nOtomobil üreticilerinin menzil açıklamaları artık bir pazarlama stratejisinden ibaret. Gerçek dünya şartlarında sürüş alışkanlıkları, trafik ve iklim koşulları bu rakamları fazlasıyla etkiliyor.\n\nTüketici, kağıt üstündeki rakamlar yerine gerçek performansı bekliyor.",
+        "image_path": "/tmp/otoxtra_img_8awk866u.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_8awk866u.jpg"
+        ],
+        "image_source": "duckduckgo_extended",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T07:40:30.774960+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176221854916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17996788079809472",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1084643450923207",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T07:41:21.796136+03:00"
     }
   }
 }
