@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-18-00:23",
-  "status": "completed",
-  "started_at": "2026-08-18T00:23:22.568445+03:00",
-  "updated_at": "2026-08-18T00:26:23.566363+03:00",
+  "run_id": "2026-08-18-01:21",
+  "status": "error",
+  "started_at": "2026-08-18T01:21:38.673426+03:00",
+  "updated_at": "2026-08-18T01:23:15.338868+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-            "link": "https://www.log.com.tr/japon-tasarimci-ken-okuyamadan-yeni-model-kode89/",
-            "published": "2026-08-18T00:23:22.627740+03:00",
-            "summary": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündeme geldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil. Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "japon-ken-kode89-model-okuyama-tasarimci"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,10 +65,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -109,10 +89,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
             "status": "ok",
@@ -127,10 +107,10 @@
             "attempts": 3
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -145,216 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 142,
-            "after_keyword": 103,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 152,
+            "after_keyword": 107,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 142,
-          "after_keyword": 103,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 152,
+          "after_keyword": 107,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-18T00:25:22.671227+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-18T01:23:15.338868+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-          "link": "https://www.log.com.tr/japon-tasarimci-ken-okuyamadan-yeni-model-kode89/",
-          "published": "2026-08-18T00:23:22.627740+03:00",
-          "summary": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündeme geldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil. Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "japon-ken-kode89-model-okuyama-tasarimci",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv tasarımı meraklılarına hitap eden niş bir haber, geniş kitlelerde viral olma potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 53,
-        "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 12,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 3
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv tasarımı meraklılarına hitap eden niş bir haber, geniş kitlelerde viral olma potansiyeli sınırlı.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-            "score": 53,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 12,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T00:25:24.409908+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-          "link": "https://www.log.com.tr/japon-tasarimci-ken-okuyamadan-yeni-model-kode89/",
-          "published": "2026-08-18T00:23:22.627740+03:00",
-          "summary": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündeme geldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil. Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "japon-ken-kode89-model-okuyama-tasarimci",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv tasarımı meraklılarına hitap eden niş bir haber, geniş kitlelerde viral olma potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündemegeldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil."
-        },
-        "post_text": "Ken Okuyama'nın yeni Kode89 modeli, otomobil dünyasına \"eski usul\" bir meydan okuma gibi.\n\nSekiz adetle sınırlı, V12 motorlu ve manuel şanzımanlı bu araç, dijitalleşen dünyada analog kokpit ve köşeli hatlarıyla bir duruş sergiliyor.\n\nBu, otomobilin sadece bir ulaşım aracı olmadığını, aynı zamanda bir sanat eseri ve koleksiyon objesi olabileceğini hatırlatıyor.",
-        "post_text_length": 362,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T00:25:26.357766+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89”",
-          "link": "https://www.log.com.tr/japon-tasarimci-ken-okuyamadan-yeni-model-kode89/",
-          "published": "2026-08-18T00:23:22.627740+03:00",
-          "summary": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündeme geldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil. Japon tasarımcı Ken Okuyama’dan yeni model: “Kode89” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-17_17-00-06_JSNws-660x371.jpg"
-          ],
-          "image_source": "duckduckgo",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "japon-ken-kode89-model-okuyama-tasarimci",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv tasarımı meraklılarına hitap eden niş bir haber, geniş kitlelerde viral olma potansiyeli sınırlı.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ferrari Enzo ve Maserati Quattroporte gibi ikonik otomobillerin tasarımında rol oynamış Pininfarina’nın eski tasarım direktörü Ken Okuyama, bu kez “Kode89” isimli yeni aracıyla gündemegeldi. Tüm detayları daha sonra paylaşılacak olan araçtan toplamda sekiz adet üretileceği aktarılıyor. Kalbinde bir “V12” ünite yer alan ve altı ileri manuel şanzımanla sunulacağı aktarılan araç, köşeli hatların tercih edildiği dikkat çekici bir tasarıma sahip. Analog bir kokpitin tercih edildiği Kode89’ün üstü de açılabiliyor. 1959 doğumlu Japon endüstriyel tasarımcının son harikasının kaça satılacağı ise henüz tam olarak belli olmuş değil.",
-          "post_text_for_card": "Ken Okuyama'nın yeni Kode89 modeli, otomobil dünyasına \"eski usul\" bir meydan okuma gibi.\n\nSekiz adetle sınırlı, V12 motorlu ve manuel şanzımanlı bu araç, dijitalleşen dünyada analog kokpit ve köşeli hatlarıyla bir duruş sergiliyor.\n\nBu, otomobilin sadece bir ulaşım aracı olmadığını, aynı zamanda bir sanat eseri ve koleksiyon objesi olabileceğini hatırlatıyor.",
-          "image_sources": [
-            "duckduckgo"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "Ken Okuyama'nın yeni Kode89 modeli, otomobil dünyasına \"eski usul\" bir meydan okuma gibi.\n\nSekiz adetle sınırlı, V12 motorlu ve manuel şanzımanlı bu araç, dijitalleşen dünyada analog kokpit ve köşeli hatlarıyla bir duruş sergiliyor.\n\nBu, otomobilin sadece bir ulaşım aracı olmadığını, aynı zamanda bir sanat eseri ve koleksiyon objesi olabileceğini hatırlatıyor.",
-        "image_path": "/tmp/otoxtra_img_u5ag0qyz.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_u5ag0qyz.jpg"
-        ],
-        "image_source": "duckduckgo",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T00:25:30.214326+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176303400916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18045163214608300",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1516783227141911",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T00:26:23.566363+03:00"
+      "updated_at": null
     }
   }
 }
