@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-17-14:22",
-  "status": "error",
-  "started_at": "2026-08-17T14:22:11.120798+03:00",
-  "updated_at": "2026-08-17T14:24:18.310680+03:00",
+  "run_id": "2026-08-17-15:38",
+  "status": "completed",
+  "started_at": "2026-08-17T15:38:28.864807+03:00",
+  "updated_at": "2026-08-17T15:40:56.360615+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+            "link": "https://www.donanimhaber.com/otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor--209407",
+            "published": "2026-08-17T12:34:00+00:00",
+            "summary": "Şirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "avusturya-centro-ediliyor-modeli-otokar-otonom-test"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,10 +97,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -89,10 +109,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
             "status": "ok",
@@ -107,67 +127,239 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
-          },
-          "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
           },
+          "Sekizsilindir": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
+          },
           "otopodyum": {
             "status": "ok",
-            "count": 3,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 143,
-            "after_keyword": 93,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 164,
+            "after_keyword": 112,
+            "after_time": 11,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 143,
-          "after_keyword": 93,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 164,
+          "after_keyword": 112,
+          "after_time": 11,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-17T14:24:18.310680+03:00"
+      "error": null,
+      "updated_at": "2026-08-17T15:39:44.125427+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+          "link": "https://www.donanimhaber.com/otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor--209407",
+          "published": "2026-08-17T12:34:00+00:00",
+          "summary": "Şirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avusturya-centro-ediliyor-modeli-otokar-otonom-test",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom ve elektrikli toplu taşıma araçları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için niş ve sıradan bir pilot test haberi niteliğinde.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 51,
+        "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 10,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 4
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Otonom ve elektrikli toplu taşıma araçları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için niş ve sıradan bir pilot test haberi niteliğinde.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+            "score": 51,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 10,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T15:39:45.870679+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+          "link": "https://www.donanimhaber.com/otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor--209407",
+          "published": "2026-08-17T12:34:00+00:00",
+          "summary": "Şirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avusturya-centro-ediliyor-modeli-otokar-otonom-test",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom ve elektrikli toplu taşıma araçları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için niş ve sıradan bir pilot test haberi niteliğinde.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otokar'ın tamamen elektrikli ve otonom aracı e-Centro, 4 Eylül tarihine kadar European Forum Alpbach 2026 kapsamında belirlenen güzergahta test edilecek. Pilot uygulamanın ardından araç, Wolfurt Kampüsü'nde düzenli seferlerde kullanılacak. Avusturya Federal Bakanı Peter Hanke, otonom araçların ülkenin iş ve inovasyon merkezi olma hedefi açısından önem taşıdığını belirterek, \"Otonom araçlar, daha modern, daha güvenli ve daha verimli bir ulaşım sisteminin önemli bir unsuru ve aynı zamanda Avusturya'nın iş ve inovasyon merkezi olarak büyük bir fırsat barındırıyor. Özellikle toplu taşımada büyük bir potansiyel görüyorum. Otokar'ın tamamen elektrikli otonom aracı e-CENTRO, seviye 4 otonom sürüş teknolojisiyle tanımlanan operasyonel alan içinde sürücüye gerek kalmadan hareket ediyor. Avusturya'da test edilen araç, ülkenin mevzuatı gereği eğitimli bir güvenlik sürücüsüyle kullanılacak. 32 yolcuya kadar kapasite sunan Otokar e-CENTRO, alçak tabanlı gövde tasarımı ve tekerlekli sandalye rampasıyla bariyersiz erişim sağlıyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B0C6BQ4C9S https://www.amazon.com.tr/dp/B0D6V76YZL https://www.amazon.com.tr/dp/B0F24VHMK4 https://www.amazon.com.tr/dp/B08WL59HZK https://oyunbul.io/game/424370?share=1786839577"
+        },
+        "post_text": "OTOKAR'IN OTONOM E-CENTRO MODELI AVUSTURYA'DA TEST EDILIYOR\n\nŞirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 282,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T15:39:49.802232+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Otokar'ın otonom e-Centro modeli Avusturya'da test ediliyor",
+          "link": "https://www.donanimhaber.com/otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor--209407",
+          "published": "2026-08-17T12:34:00+00:00",
+          "summary": "Şirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avusturya-centro-ediliyor-modeli-otokar-otonom-test",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 51,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otonom ve elektrikli toplu taşıma araçları sektörel açıdan önemli olsa da genel sosyal medya kitlesi için niş ve sıradan bir pilot test haberi niteliğinde.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Otokar'ın tamamen elektrikli ve otonom aracı e-Centro, 4 Eylül tarihine kadar European Forum Alpbach 2026 kapsamında belirlenen güzergahta test edilecek. Pilot uygulamanın ardından araç, Wolfurt Kampüsü'nde düzenli seferlerde kullanılacak. Avusturya Federal Bakanı Peter Hanke, otonom araçların ülkenin iş ve inovasyon merkezi olma hedefi açısından önem taşıdığını belirterek, \"Otonom araçlar, daha modern, daha güvenli ve daha verimli bir ulaşım sisteminin önemli bir unsuru ve aynı zamanda Avusturya'nın iş ve inovasyon merkezi olarak büyük bir fırsat barındırıyor. Özellikle toplu taşımada büyük bir potansiyel görüyorum. Otokar'ın tamamen elektrikli otonom aracı e-CENTRO, seviye 4 otonom sürüş teknolojisiyle tanımlanan operasyonel alan içinde sürücüye gerek kalmadan hareket ediyor. Avusturya'da test edilen araç, ülkenin mevzuatı gereği eğitimli bir güvenlik sürücüsüyle kullanılacak. 32 yolcuya kadar kapasite sunan Otokar e-CENTRO, alçak tabanlı gövde tasarımı ve tekerlekli sandalye rampasıyla bariyersiz erişim sağlıyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B0C6BQ4C9S https://www.amazon.com.tr/dp/B0D6V76YZL https://www.amazon.com.tr/dp/B0F24VHMK4 https://www.amazon.com.tr/dp/B08WL59HZK https://oyunbul.io/game/424370?share=1786839577",
+          "post_text_for_card": "OTOKAR'IN OTONOM E-CENTRO MODELI AVUSTURYA'DA TEST EDILIYOR\n\nŞirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209407/1200x675otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209407/src/otokar-in-otonom-e-centro-modeli-avusturya-da-test-ediliyor209407_0.jpg"
+          ]
+        },
+        "post_text": "OTOKAR'IN OTONOM E-CENTRO MODELI AVUSTURYA'DA TEST EDILIYOR\n\nŞirketin tam elektrikli ve otonom otobüsü e-Centro, Avusturya'nın önde gelen toplu taşıma şirketlerinden ÖBB Postbus tarafından pilot uygulama kapsamında test edilmeye başlandı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_f93ofk7m.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_f93ofk7m.jpg",
+          "/tmp/otoxtra_img_1m2ud9wx.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T15:40:07.294563+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176262048916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18086064812212011",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2242039653262714",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-17T15:40:56.360615+03:00"
     }
   }
 }
