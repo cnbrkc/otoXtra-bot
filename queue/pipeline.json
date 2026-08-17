@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-17-13:29",
-  "status": "completed",
-  "started_at": "2026-08-17T13:29:19.137238+03:00",
-  "updated_at": "2026-08-17T13:31:34.854935+03:00",
+  "run_id": "2026-08-17-14:22",
+  "status": "error",
+  "started_at": "2026-08-17T14:22:11.120798+03:00",
+  "updated_at": "2026-08-17T14:24:18.310680+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-            "link": "https://nitter.net/webtekno/status/2089291269096841414#m",
-            "published": "2026-08-17T10:00:30+00:00",
-            "summary": "Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-            "image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TaylanOzgurDil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "alternatif-artirabilir-avantajlari-avrupa-avrupa-avrupa-avrupa-belirtti-birakilirsa-biri-ceo-dahil-degerlendirecek-disinda-durum-duzenlemeden-duzenlemesine-edilmesi-edilmesi-etkilenebilecek-europe-gerektigini-gucu-hurriyet-hyundai-hyundai-hyundai-hyundai-ihrac-ioniq-kapasitesi-kapsam-made-maliyet-maliyetleri-martinet-martinet-martinet-modellerden-nedeniyle-nitelikli-oldugunu-oneme-onemli-otomobil-ozgur-pazari-sahip-satislarinda-senaryolari-soyledi-stratejik-tasimak-taylan-taylandil-tuketicilere-turkiye-turkiye-turkiye-turkiye-turkiye-turkiye-ucuncu-uretilip-uretim-uretim-uretimi-xavier-yansiyabilir"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -97,10 +77,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -109,10 +89,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
+            "attempts": 3
           },
           "HakanDOgu": {
             "status": "ok",
@@ -145,219 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 163,
-            "after_keyword": 110,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 143,
+            "after_keyword": 93,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 163,
-          "after_keyword": 110,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 143,
+          "after_keyword": 93,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-17T13:30:40.966183+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-17T14:24:18.310680+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "link": "https://nitter.net/webtekno/status/2089291269096841414#m",
-          "published": "2026-08-17T10:00:30+00:00",
-          "summary": "Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alternatif-artirabilir-avantajlari-avrupa-avrupa-avrupa-avrupa-belirtti-birakilirsa-biri-ceo-dahil-degerlendirecek-disinda-durum-duzenlemeden-duzenlemesine-edilmesi-edilmesi-etkilenebilecek-europe-gerektigini-gucu-hurriyet-hyundai-hyundai-hyundai-hyundai-ihrac-ioniq-kapasitesi-kapsam-made-maliyet-maliyetleri-martinet-martinet-martinet-modellerden-nedeniyle-nitelikli-oldugunu-oneme-onemli-otomobil-ozgur-pazari-sahip-satislarinda-senaryolari-soyledi-stratejik-tasimak-taylan-taylandil-tuketicilere-turkiye-turkiye-turkiye-turkiye-turkiye-turkiye-ucuncu-uretilip-uretim-uretim-uretimi-xavier-yansiyabilir",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomotiv üretimi ve AB düzenlemeleri gibi stratejik ve ekonomik bir konuyu doğrudan ilgilendirdiği için sektörde büyük yankı uyandıracak ve yüksek etkileşim alacak.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 83,
-        "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 16,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'deki otomotiv üretimi ve AB düzenlemeleri gibi stratejik ve ekonomik bir konuyu doğrudan ilgilendirdiği için sektörde büyük yankı uyandıracak ve yüksek etkileşim alacak.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-            "score": 83,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 16,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 10
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-17T13:30:42.958140+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "link": "https://nitter.net/webtekno/status/2089291269096841414#m",
-          "published": "2026-08-17T10:00:30+00:00",
-          "summary": "Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alternatif-artirabilir-avantajlari-avrupa-avrupa-avrupa-avrupa-belirtti-birakilirsa-biri-ceo-dahil-degerlendirecek-disinda-durum-duzenlemeden-duzenlemesine-edilmesi-edilmesi-etkilenebilecek-europe-gerektigini-gucu-hurriyet-hyundai-hyundai-hyundai-hyundai-ihrac-ioniq-kapasitesi-kapsam-made-maliyet-maliyetleri-martinet-martinet-martinet-modellerden-nedeniyle-nitelikli-oldugunu-oneme-onemli-otomobil-ozgur-pazari-sahip-satislarinda-senaryolari-soyledi-stratejik-tasimak-taylan-taylandil-tuketicilere-turkiye-turkiye-turkiye-turkiye-turkiye-turkiye-ucuncu-uretilip-uretim-uretim-uretimi-xavier-yansiyabilir",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomotiv üretimi ve AB düzenlemeleri gibi stratejik ve ekonomik bir konuyu doğrudan ilgilendirdiği için sektörde büyük yankı uyandıracak ve yüksek etkileşim alacak.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "RT BY @TAYLANDIL: HYUNDAI EUROPE CEO’SU XAVIER MARTINET, TÜRKIYE’NIN AB’NIN “MADE IN EU” D\n\nHyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketic\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "post_text_length": 466,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-17T13:30:46.174829+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "RT by @taylandil: Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "link": "https://nitter.net/webtekno/status/2089291269096841414#m",
-          "published": "2026-08-17T10:00:30+00:00",
-          "summary": "Hyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketicilere yansıyabilir. 📌 Türkiye, Hyundai için üretim kapasitesi, nitelikli iş gücü ve maliyet avantajları nedeniyle stratejik öneme sahip. 📌 Yeni IONIQ 3’ün Türkiye’de üretilip Avrupa’ya ihraç edilmesi, düzenlemeden etkilenebilecek önemli modellerden biri. 📌 Martinet, Türkiye’nin otomobil satışlarında da Avrupa’daki en büyük üçüncü Hyundai pazarı olduğunu belirtti. (ℹ️ Hürriyet - Taylan Özgür DİL)",
-          "image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "TaylanOzgurDil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "alternatif-artirabilir-avantajlari-avrupa-avrupa-avrupa-avrupa-belirtti-birakilirsa-biri-ceo-dahil-degerlendirecek-disinda-durum-duzenlemeden-duzenlemesine-edilmesi-edilmesi-etkilenebilecek-europe-gerektigini-gucu-hurriyet-hyundai-hyundai-hyundai-hyundai-ihrac-ioniq-kapasitesi-kapsam-made-maliyet-maliyetleri-martinet-martinet-martinet-modellerden-nedeniyle-nitelikli-oldugunu-oneme-onemli-otomobil-ozgur-pazari-sahip-satislarinda-senaryolari-soyledi-stratejik-tasimak-taylan-taylandil-tuketicilere-turkiye-turkiye-turkiye-turkiye-turkiye-turkiye-ucuncu-uretilip-uretim-uretim-uretimi-xavier-yansiyabilir",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'deki otomotiv üretimi ve AB düzenlemeleri gibi stratejik ve ekonomik bir konuyu doğrudan ilgilendirdiği için sektörde büyük yankı uyandıracak ve yüksek etkileşim alacak.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "RT BY @TAYLANDIL: HYUNDAI EUROPE CEO’SU XAVIER MARTINET, TÜRKIYE’NIN AB’NIN “MADE IN EU” D\n\nHyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketic\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-          "image_sources": [
-            "nitter_still",
-            "nitter_still"
-          ],
-          "prepared_image_count": 2,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HP6BILSXAAA5F3o.jpg?name=orig",
-            "https://pbs.twimg.com/media/HP6BILNXUAA-AIe.jpg?name=orig"
-          ]
-        },
-        "post_text": "RT BY @TAYLANDIL: HYUNDAI EUROPE CEO’SU XAVIER MARTINET, TÜRKIYE’NIN AB’NIN “MADE IN EU” D\n\nHyundai Europe CEO’su Xavier Martinet, Türkiye’nin AB’nin “Made in EU” düzenlemesine dahil edilmesi gerektiğini söyledi. 📌 Türkiye kapsam dışında bırakılırsa Hyundai, üretim için alternatif senaryoları değerlendirecek. 📌 Martinet’e göre üretimi Türkiye’den Avrupa’ya taşımak maliyetleri artırabilir ve bu durum Avrupa’daki tüketic\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img__guw6uqd.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img__guw6uqd.jpg",
-          "/tmp/otoxtra_img_llsrl_rl.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 2
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-17T13:30:47.613298+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176250324916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17986458552021083",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2137242837219405",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-17T13:31:34.854935+03:00"
+      "updated_at": null
     }
   }
 }
