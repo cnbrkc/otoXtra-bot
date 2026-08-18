@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-19-00:20",
+  "run_id": "2026-08-19-01:20",
   "status": "error",
-  "started_at": "2026-08-19T00:20:53.917758+03:00",
-  "updated_at": "2026-08-19T00:22:32.079811+03:00",
+  "started_at": "2026-08-19T01:20:13.182688+03:00",
+  "updated_at": "2026-08-19T01:22:33.987617+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -65,10 +65,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -83,9 +83,9 @@
             "attempts": 1
           },
           "Otomobilcom": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 522 Server Error: <none> for url: https://www.otomobil.com.tr/rss",
             "attempts": 1
           },
           "TaylanOzgurDil": {
@@ -95,10 +95,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "MuratTosun": {
             "status": "ok",
@@ -107,10 +107,10 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -126,8 +126,8 @@
           },
           "_metrics": {
             "found": 153,
-            "after_keyword": 110,
-            "after_time": 11,
+            "after_keyword": 101,
+            "after_time": 10,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
@@ -135,15 +135,15 @@
         },
         "metrics": {
           "found": 153,
-          "after_keyword": 110,
-          "after_time": 11,
+          "after_keyword": 101,
+          "after_time": 10,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-19T00:22:32.079811+03:00"
+      "updated_at": "2026-08-19T01:22:33.987617+03:00"
     },
     "score": {
       "status": "waiting",
