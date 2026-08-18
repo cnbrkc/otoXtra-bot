@@ -1,14 +1,91 @@
 {
-  "run_id": "2026-08-18-20:24",
-  "status": "error",
-  "started_at": "2026-08-18T20:24:24.619214+03:00",
-  "updated_at": "2026-08-18T20:26:30.049585+03:00",
+  "run_id": "2026-08-18-21:34",
+  "status": "completed",
+  "started_at": "2026-08-18T21:34:13.014515+03:00",
+  "updated_at": "2026-08-18T21:36:39.919978+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+            "link": "https://www.donanimhaber.com/einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor--209458",
+            "published": "2026-08-18T18:10:00+00:00",
+            "summary": "Einride, Tesla Semi için şimdiye kadar açıklanan en büyük siparişi verdi. Şirket, 500 elektrikli çekiciyi filosuna ekleyerek Kuzey Amerika’daki taşımacılık ağını genişletecek.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "dev-dunyanin-filosu-kuruluyor-semi-siparis-tesla-tesla"
+          },
+          {
+            "title": "Audi, 5 silindirli motorunu kurtarabilir",
+            "link": "https://tr.motor1.com/news/805366/audi-bes-silindir-euro7/",
+            "published": "2026-08-18T17:30:00+00:00",
+            "summary": "Audi, Euro 7 düzenlemelerine rağmen 5 silindirli motoru yaşatmak için mücadele ediyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/JlPLQ/s3/2022-audi-rs3-sportback-side-profile.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/JlPLQ/s3/2022-audi-rs3-sportback-side-profile.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/JlPLQ/s3/2022-audi-rs3-sportback-side-profile.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "audi-kurtarabilir-motorunu-silindirli"
+          },
+          {
+            "title": "Bu bahsi geçen şirkete giripte uzun süre kalan kimse duymadım şu ana kadar. CEO'su kim mesela? Otomotiv üretimi iyi kadro ve takım oyunu gerektirir, benim dışarıdan izlemimim bu şirket henüz bu doygunluğa ulaşmış değil ve iddialı işlerle geliyor. Umarım başarılı olurlar ve ben bu endişelerimde haksız çıkarım diyelim, burada şimdilik susalım.",
+            "link": "https://nitter.net/HakanDOGU/status/2089777222101987650#m",
+            "published": "2026-08-18T18:11:30+00:00",
+            "summary": "Bu bahsi geçen şirkete giripte uzun süre kalan kimse duymadım şu ana kadar. CEO'su kim mesela? Otomotiv üretimi iyi kadro ve takım oyunu gerektirir, benim dışarıdan izlemimim bu şirket henüz bu doygunluğa ulaşmış değil ve iddialı işlerle geliyor. Umarım başarılı olurlar ve ben bu endişelerimde haksız çıkarım diyelim, burada şimdilik susalım. Levent Köprülü (@Lev_Kop) Eski Honda fabrikası yeniden hareketlenecek. HABAŞ, kendi markasıyla üretime başlayacakmış… ekonomigazetesi.com/sirket-h… Link Togg’a rakip yerli, geri sayıma başladı Honda fabrikasını devralarak binek otomobil yatırımı için kolları sıvayan HABAŞ’ın, merakla beklenen yerli otomobili yıl sonuna kadar sahneye çıkacak. Togg’dan sonra Türkiye’nin ikinci yerli otomob... ekonomigazetesi.com — https://nitter.net/Lev_Kop/status/2089617038620696886#m",
+            "image_url": "https://nitter.net/pic/card_img%2F2089346906514247680%2FofEZ56UM%3Fformat%3Djpg%26name%3D800x419",
+            "rss_image_url": "https://nitter.net/pic/card_img%2F2089346906514247680%2FofEZ56UM%3Fformat%3Djpg%26name%3D800x419",
+            "image_candidates": [
+              "https://nitter.net/pic/card_img%2F2089346906514247680%2FofEZ56UM%3Fformat%3Djpg%26name%3D800x419"
+            ],
+            "image_source": "rss",
+            "source_name": "HakanDOgu",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ana-bahsi-basarili-ben-benim-burada-ceo-cikarim-degil-disaridan-diyelim-doygunluga-duymadim-endiselerimde-gecen-geliyor-gerektirir-giripte-haksiz-henuz-iddiali-islerle-iyi-izlemimim-kadro-kalan-kim-kimse-mesela-olurlar-otomotiv-oyunu-simdilik-sirket-sirkete-sure-susalim-takim-ulasmis-umarim-uretimi-uzun"
+          },
+          {
+            "title": "Maalesef durum böyle gidecek, Türkiye bir şekilde Made in EU içinde kalma ihtimali hızla azalıyor. Çinlilere masa altından verilen mesajlarla Türkiye yatırımından caydırdılar. Türkiye'de AB'ye ihracat yapan şirketler Hyundai dışında elektrikli üretmemesi de bu yüzden. Hyundai'ye ve yan sanayisine büyük baskı var sonraki üretimi AB'de yap diye. Kısaca AB elektrikli araç AB'de üretilsin istiyor. Kendi açılarından haklılar. Türkiye'nin planı ne bu müzekare masasında? AB ile yeniden kurulamayan köprüler nedeniyle Çin'le yeniden bir flirt başlayacak yakında, ama bu sefer hedef iç pazar olacaktır. İç pazarı 2.0-2,5 m üstüne çıkarma planı ile masaya oturulabilir, ama bu araç üzeri vergileri düşürmek demek, bu da bu devirse zor. Bu arada Türk otomotiv sanayisinde işçi çıkarma, beyaz yakalı çıkarma devam ediyor, emekli olunacak şirket statüsünde şirketlerde çalışanlar geleceklerinden endişe duyuyorlar. \"Şans daima cesurlardan yanadır\"",
+            "link": "https://nitter.net/HakanDOGU/status/2089776426882863498#m",
+            "published": "2026-08-18T18:08:20+00:00",
+            "summary": "Maalesef durum böyle gidecek, Türkiye bir şekilde Made in EU içinde kalma ihtimali hızla azalıyor. Çinlilere masa altından verilen mesajlarla Türkiye yatırımından caydırdılar. Türkiye'de AB'ye ihracat yapan şirketler Hyundai dışında elektrikli üretmemesi de bu yüzden. Hyundai'ye ve yan sanayisine büyük baskı var sonraki üretimi AB'de yap diye. Kısaca AB elektrikli araç AB'de üretilsin istiyor. Kendi açılarından haklılar. Türkiye'nin planı ne bu müzekare masasında? AB ile yeniden kurulamayan köprüler nedeniyle Çin'le yeniden bir flirt başlayacak yakında, ama bu sefer hedef iç pazar olacaktır. İç pazarı 2.0-2,5  m üstüne çıkarma planı ile masaya oturulabilir, ama bu araç üzeri vergileri düşürmek demek, bu da bu devirse zor. Bu arada Türk otomotiv sanayisinde işçi çıkarma, beyaz yakalı çıkarma devam ediyor, emekli olunacak şirket statüsünde şirketlerde çalışanlar geleceklerinden endişe duyuyorlar. \"Şans daima cesurlardan yanadır\" Hakkı Alkan (@hakki_alkan) Otomotiv Sanayii Derneği (OSD), 2022 yılının ilk çeyrek verilerini açıklamış. Tablo, maalesef iç açıcı değil. Üretim / pazar / ihracat verilerinin iyileşmesi, sanayimiz için çok önemli. Umarım, bu durum böyle gitmez. 🙄 — https://nitter.net/hakki_alkan/status/1513432783921856512#m",
+            "image_url": "https://pbs.twimg.com/media/FQDKvYFXwAIw9q-.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/FQDKvYFXwAIw9q-.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/FQDKvYFXwAIw9q-.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "HakanDOgu",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "acilarindan-altindan-arac-arac-arada-azaliyor-baski-baslayacak-beyaz-boyle-calisanlar-caydirdilar-cesurlardan-cikarma-cikarma-cikarma-cin-cinlilere-daima-demek-devam-devirse-disinda-diye-durum-dusurmek-duyuyorlar-ediyor-elektrikli-elektrikli-emekli-endise-flirt-geleceklerinden-gidecek-haklilar-hedef-hizla-hyundai-hyundai-ihracat-ihtimali-isci-istiyor-kalma-kendi-kisaca-kopruler-kurulamayan-maalesef-made-masa-masasinda-masaya-mesajlarla-muzekare-nedeniyle-olacaktir-olunacak-otomotiv-oturulabilir-pazar-pazari-plani-plani-sanayisinde-sanayisine-sans-sefer-sekilde-sirket-sirketler-sirketlerde-sonraki-statusunde-turk-turkiye-turkiye-turkiye-turkiye-uretilsin-uretimi-uretmemesi-ustune-uzeri-var-vergileri-verilen-yakali-yakinda-yan-yanadir-yap-yapan-yatirimindan-yeniden-yeniden-yuzden-zor"
+          }
+        ],
+        "count": 4,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -65,10 +142,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -77,10 +154,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -107,16 +184,16 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
-          },
-          "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
+          },
+          "Sekizsilindir": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
           },
           "otopodyum": {
             "status": "ok",
@@ -125,49 +202,268 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 143,
-            "after_keyword": 94,
-            "after_time": 12,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 163,
+            "after_keyword": 115,
+            "after_time": 14,
+            "after_posted": 4,
+            "after_duplicate": 4,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
-          "found": 143,
-          "after_keyword": 94,
-          "after_time": 12,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 163,
+          "after_keyword": 115,
+          "after_time": 14,
+          "after_posted": 4,
+          "after_duplicate": 4,
+          "after_shared_variant_cooldown": 4
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-18T20:26:30.049585+03:00"
+      "error": null,
+      "updated_at": "2026-08-18T21:35:28.611169+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+          "link": "https://www.donanimhaber.com/einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor--209458",
+          "published": "2026-08-18T18:10:00+00:00",
+          "summary": "Einride, Tesla Semi için şimdiye kadar açıklanan en büyük siparişi verdi. Şirket, 500 elektrikli çekiciyi filosuna ekleyerek Kuzey Amerika’daki taşımacılık ağını genişletecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "dev-dunyanin-filosu-kuruluyor-semi-siparis-tesla-tesla",
+          "base_ai_score": 75,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla elektrikli ticari araç pazarında büyük bir hamle yapıyor, küresel yankı uyandıracak ve yüksek etkileşim alacak bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 80,
+        "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 15,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Tesla elektrikli ticari araç pazarında büyük bir hamle yapıyor, küresel yankı uyandıracak ve yüksek etkileşim alacak bir gelişme.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+            "score": 80,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 15,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 9
+            }
+          },
+          {
+            "title": "Audi, 5 silindirli motorunu kurtarabilir",
+            "score": 69,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 16,
+              "benzersizlik": 14,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Maalesef durum böyle gidecek, Türkiye bir şekilde Made in EU içinde kalma ihtimali hızla azalıyor. Çinlilere masa altından verilen mesajlarla Türkiye yatırımından caydırdılar. Türkiye'de AB'ye ihracat yapan şirketler Hyundai dışında elektrikli üretmemesi de bu yüzden. Hyundai'ye ve yan sanayisine büyük baskı var sonraki üretimi AB'de yap diye. Kısaca AB elektrikli araç AB'de üretilsin istiyor. Kendi açılarından haklılar. Türkiye'nin planı ne bu müzekare masasında? AB ile yeniden kurulamayan köprüler nedeniyle Çin'le yeniden bir flirt başlayacak yakında, ama bu sefer hedef iç pazar olacaktır. İç pazarı 2.0-2,5 m üstüne çıkarma planı ile masaya oturulabilir, ama bu araç üzeri vergileri düşürmek demek, bu da bu devirse zor. Bu arada Türk otomotiv sanayisinde işçi çıkarma, beyaz yakalı çıkarma devam ediyor, emekli olunacak şirket statüsünde şirketlerde çalışanlar geleceklerinden endişe duyuyorlar. \"Şans daima cesurlardan yanadır\"",
+            "score": 56,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 10,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 5
+            }
+          }
+        ],
+        "scored_count": 4,
+        "cooldown_candidates": [
+          {
+            "title": "Audi, 5 silindirli motorunu kurtarabilir",
+            "link": "https://tr.motor1.com/news/805366/audi-bes-silindir-euro7/",
+            "score": 69,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "audi-kurtarabilir-motorunu-silindirli"
+          },
+          {
+            "title": "Maalesef durum böyle gidecek, Türkiye bir şekilde Made in EU içinde kalma ihtimali hızla azalıyor. Çinlilere masa altından verilen mesajlarla Türkiye yatırımından caydırdılar. Türkiye'de AB'ye ihracat yapan şirketler Hyundai dışında elektrikli üretmemesi de bu yüzden. Hyundai'ye ve yan sanayisine büyük baskı var sonraki üretimi AB'de yap diye. Kısaca AB elektrikli araç AB'de üretilsin istiyor. Kendi açılarından haklılar. Türkiye'nin planı ne bu müzekare masasında? AB ile yeniden kurulamayan köprüler nedeniyle Çin'le yeniden bir flirt başlayacak yakında, ama bu sefer hedef iç pazar olacaktır. İç pazarı 2.0-2,5 m üstüne çıkarma planı ile masaya oturulabilir, ama bu araç üzeri vergileri düşürmek demek, bu da bu devirse zor. Bu arada Türk otomotiv sanayisinde işçi çıkarma, beyaz yakalı çıkarma devam ediyor, emekli olunacak şirket statüsünde şirketlerde çalışanlar geleceklerinden endişe duyuyorlar. \"Şans daima cesurlardan yanadır\"",
+            "link": "https://nitter.net/HakanDOGU/status/2089776426882863498#m",
+            "score": 56,
+            "score_reason": "ai_scored",
+            "source_name": "HakanDOgu",
+            "topic_fingerprint": "acilarindan-altindan-arac-arac-arada-azaliyor-baski-baslayacak-beyaz-boyle-calisanlar-caydirdilar-cesurlardan-cikarma-cikarma-cikarma-cin-cinlilere-daima-demek-devam-devirse-disinda-diye-durum-dusurmek-duyuyorlar-ediyor-elektrikli-elektrikli-emekli-endise-flirt-geleceklerinden-gidecek-haklilar-hedef-hizla-hyundai-hyundai-ihracat-ihtimali-isci-istiyor-kalma-kendi-kisaca-kopruler-kurulamayan-maalesef-made-masa-masasinda-masaya-mesajlarla-muzekare-nedeniyle-olacaktir-olunacak-otomotiv-oturulabilir-pazar-pazari-plani-plani-sanayisinde-sanayisine-sans-sefer-sekilde-sirket-sirketler-sirketlerde-sonraki-statusunde-turk-turkiye-turkiye-turkiye-turkiye-uretilsin-uretimi-uretmemesi-ustune-uzeri-var-vergileri-verilen-yakali-yakinda-yan-yanadir-yap-yapan-yatirimindan-yeniden-yeniden-yuzden-zor"
+          },
+          {
+            "title": "Bu bahsi geçen şirkete giripte uzun süre kalan kimse duymadım şu ana kadar. CEO'su kim mesela? Otomotiv üretimi iyi kadro ve takım oyunu gerektirir, benim dışarıdan izlemimim bu şirket henüz bu doygunluğa ulaşmış değil ve iddialı işlerle geliyor. Umarım başarılı olurlar ve ben bu endişelerimde haksız çıkarım diyelim, burada şimdilik susalım.",
+            "link": "https://nitter.net/HakanDOGU/status/2089777222101987650#m",
+            "score": 26,
+            "score_reason": "ai_scored",
+            "source_name": "HakanDOgu",
+            "topic_fingerprint": "ana-bahsi-basarili-ben-benim-burada-ceo-cikarim-degil-disaridan-diyelim-doygunluga-duymadim-endiselerimde-gecen-geliyor-gerektirir-giripte-haksiz-henuz-iddiali-islerle-iyi-izlemimim-kadro-kalan-kim-kimse-mesela-olurlar-otomotiv-oyunu-simdilik-sirket-sirkete-sure-susalim-takim-ulasmis-umarim-uretimi-uzun"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T21:35:32.782994+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+          "link": "https://www.donanimhaber.com/einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor--209458",
+          "published": "2026-08-18T18:10:00+00:00",
+          "summary": "Einride, Tesla Semi için şimdiye kadar açıklanan en büyük siparişi verdi. Şirket, 500 elektrikli çekiciyi filosuna ekleyerek Kuzey Amerika’daki taşımacılık ağını genişletecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "dev-dunyanin-filosu-kuruluyor-semi-siparis-tesla-tesla",
+          "base_ai_score": 75,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla elektrikli ticari araç pazarında büyük bir hamle yapıyor, küresel yankı uyandıracak ve yüksek etkileşim alacak bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tesla Semi’ler Kaliforniya, Teksas, New Jersey, Illinois ve Georgia’daki yük taşımacılığı rotalarında çalışacak. Araçlar başta Amazon olmak üzere Einride’ın müşterilerine hizmet verecek. Filonun yönetimi şirketinSaga AI filo yönetim yazılımıüzerinden yapılacak. İlk araçlarıneylül ayındadevreye girmesi bekleniyor. Ancak 500 aracın hangi aşamalarda teslim edileceği, birim fiyatı ve Amazon dışındaki müşterileri gibi bilgiler açıklanmadı. Tesla ve Einride anlaşmanın toplam değerini de paylaşmadı. Einride şu anda Amazon’un ABD’deki orta mesafe taşımacılığında 75 elektrikli ağır hizmet sınıfı araç işletiyor. Bu operasyon için beş ABD lokasyonunda şarj altyapısı da bulunuyor. Şirketin Amazon, PepsiCo ve Heineken dahil müşterileri için işlettiği toplam elektrikli ağır sınıf tır sayısı yaklaşık 200. 500 yeni araçla Einride’ın elektrikli ağır hizmet sınıfı filosu yaklaşık üç katına çıkacak. Tesla Semi programının direktörü Dan Priestley, elektrikli kamyonların yakıt tasarrufu, daha düşük bakım maliyeti ve daha yüksek kullanım süresi sayesinde dizel araçlara göre kilometre başına daha düşük maliyet sunduğunu belirtti. Üretim versiyonu Tesla Semi’nin548 kWhbataryalı standart menzilli modeli yaklaşık 523 km,822 kWhbataryalı uzun menzilli modeli ise yaklaşık805 km menzilsağlıyor. Araçlarda üç bağımsız arka motor, 4680 batarya hücreleri ve 48 volt elektrik mimarisi bulunuyor. Bildirilen fiyatlar standart model için yaklaşık260 bin dolar, uzun menzilli model için290 bin dolar. Üretim öncesi Semi filosu yaklaşık 21,7 milyon km yol yaptı ve yüzde 95’in üzerinde çalışma süresine ulaştı. Yaklaşık 7.560 km’lik bir testte tüketim mil (1,6 km) başına 1,64 kWh ölçüldü. Tesla’nın resmi değeri ise 1,7 kWh.Bununla birlikte Einride, 500 kamyonun beş eyalette nasıl şarj edileceğini açıklamadı. Tesla, temmuz ayında Kaliforniya’nın Bloomington kentindeki ilk halka açık Megacharger istasyonunu açtı. Şirket bunu Megacharger ağının başlangıcı olarak tanımlıyor ve 2027’ye kadar 46 lokasyona erişmeyi hedefliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Bildirilen fiyatlar standart model için yaklaşık260 bin dolar, uzun menzilli model için290 bin dolar. Üretim öncesi Semi filosu yaklaşık 21,7 milyon km yol yaptı ve yüzde 95’in üzerinde çalışma süresine ulaştı. Yaklaşık 7.560 km’lik bir testte tüketim mil (1,6 km) başına 1,64 kWh ölçüldü. Tesla’nın resmi değeri ise 1,7 kWh. Bununla birlikte Einride, 500 kamyonun beş eyalette nasıl şarj edileceğini açıklamadı. Tesla, temmuz ayında Kaliforniya’nın Bloomington kentindeki ilk halka açık Megacharger istasyonunu açtı. Şirket bunu Megacharger ağının başlangıcı olarak tanımlıyor ve 2027’ye kadar 46 lokasyona erişmeyi hedefliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/gp/product/B0FCYNTX8G https://www.amazon.com.tr/dp/6259198981 https://www.n11.com/urun/honor-choise-watch-2-pro-nano-ekran-koruyucu-ultra-ince-hd-maxxpro-121438876?magaza=elsastore https://www.amazon.com.tr/dp/B000WCI2YC https://www.greenmangamingbundles.com/bundles/wb-games-blood-grit-collection https://www.vatanbilgisayar.com/hisense-55e7s-pro-55inc-139-cm-4k-uhd-hi-qled-vidaa-smart-tv-uydu-alicili.html"
+        },
+        "post_text": "Einride'dan Tesla Semi'ye dev sipariş! 500 adet elektrikli çekiciyle Kuzey Amerika'da taşımacılık ağı genişliyor.\n\nBu sipariş, elektrikli tırların artık sadece bir gelecek vaadi olmadığını gösteriyor. Einride'ın bu büyük yatırımı, sektörün sürdürülebilirlik kadar maliyet avantajına da odaklandığının kanıtı. Yakıt ve bakım giderlerindeki tasarruf, şirketleri elektrikli araçlara yöneltiyor.\n\nElektrikli tırların yaygınlaşması için artık geri sayım mı başlıyor?",
+        "post_text_length": 461,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T21:35:36.223663+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Tesla’ya dev sipariş: Dünyanın en büyük Tesla Semi filosu kuruluyor",
+          "link": "https://www.donanimhaber.com/einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor--209458",
+          "published": "2026-08-18T18:10:00+00:00",
+          "summary": "Einride, Tesla Semi için şimdiye kadar açıklanan en büyük siparişi verdi. Şirket, 500 elektrikli çekiciyi filosuna ekleyerek Kuzey Amerika’daki taşımacılık ağını genişletecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "dev-dunyanin-filosu-kuruluyor-semi-siparis-tesla-tesla",
+          "base_ai_score": 75,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla elektrikli ticari araç pazarında büyük bir hamle yapıyor, küresel yankı uyandıracak ve yüksek etkileşim alacak bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tesla Semi’ler Kaliforniya, Teksas, New Jersey, Illinois ve Georgia’daki yük taşımacılığı rotalarında çalışacak. Araçlar başta Amazon olmak üzere Einride’ın müşterilerine hizmet verecek. Filonun yönetimi şirketinSaga AI filo yönetim yazılımıüzerinden yapılacak. İlk araçlarıneylül ayındadevreye girmesi bekleniyor. Ancak 500 aracın hangi aşamalarda teslim edileceği, birim fiyatı ve Amazon dışındaki müşterileri gibi bilgiler açıklanmadı. Tesla ve Einride anlaşmanın toplam değerini de paylaşmadı. Einride şu anda Amazon’un ABD’deki orta mesafe taşımacılığında 75 elektrikli ağır hizmet sınıfı araç işletiyor. Bu operasyon için beş ABD lokasyonunda şarj altyapısı da bulunuyor. Şirketin Amazon, PepsiCo ve Heineken dahil müşterileri için işlettiği toplam elektrikli ağır sınıf tır sayısı yaklaşık 200. 500 yeni araçla Einride’ın elektrikli ağır hizmet sınıfı filosu yaklaşık üç katına çıkacak. Tesla Semi programının direktörü Dan Priestley, elektrikli kamyonların yakıt tasarrufu, daha düşük bakım maliyeti ve daha yüksek kullanım süresi sayesinde dizel araçlara göre kilometre başına daha düşük maliyet sunduğunu belirtti. Üretim versiyonu Tesla Semi’nin548 kWhbataryalı standart menzilli modeli yaklaşık 523 km,822 kWhbataryalı uzun menzilli modeli ise yaklaşık805 km menzilsağlıyor. Araçlarda üç bağımsız arka motor, 4680 batarya hücreleri ve 48 volt elektrik mimarisi bulunuyor. Bildirilen fiyatlar standart model için yaklaşık260 bin dolar, uzun menzilli model için290 bin dolar. Üretim öncesi Semi filosu yaklaşık 21,7 milyon km yol yaptı ve yüzde 95’in üzerinde çalışma süresine ulaştı. Yaklaşık 7.560 km’lik bir testte tüketim mil (1,6 km) başına 1,64 kWh ölçüldü. Tesla’nın resmi değeri ise 1,7 kWh.Bununla birlikte Einride, 500 kamyonun beş eyalette nasıl şarj edileceğini açıklamadı. Tesla, temmuz ayında Kaliforniya’nın Bloomington kentindeki ilk halka açık Megacharger istasyonunu açtı. Şirket bunu Megacharger ağının başlangıcı olarak tanımlıyor ve 2027’ye kadar 46 lokasyona erişmeyi hedefliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Bildirilen fiyatlar standart model için yaklaşık260 bin dolar, uzun menzilli model için290 bin dolar. Üretim öncesi Semi filosu yaklaşık 21,7 milyon km yol yaptı ve yüzde 95’in üzerinde çalışma süresine ulaştı. Yaklaşık 7.560 km’lik bir testte tüketim mil (1,6 km) başına 1,64 kWh ölçüldü. Tesla’nın resmi değeri ise 1,7 kWh. Bununla birlikte Einride, 500 kamyonun beş eyalette nasıl şarj edileceğini açıklamadı. Tesla, temmuz ayında Kaliforniya’nın Bloomington kentindeki ilk halka açık Megacharger istasyonunu açtı. Şirket bunu Megacharger ağının başlangıcı olarak tanımlıyor ve 2027’ye kadar 46 lokasyona erişmeyi hedefliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/gp/product/B0FCYNTX8G https://www.amazon.com.tr/dp/6259198981 https://www.n11.com/urun/honor-choise-watch-2-pro-nano-ekran-koruyucu-ultra-ince-hd-maxxpro-121438876?magaza=elsastore https://www.amazon.com.tr/dp/B000WCI2YC https://www.greenmangamingbundles.com/bundles/wb-games-blood-grit-collection https://www.vatanbilgisayar.com/hisense-55e7s-pro-55inc-139-cm-4k-uhd-hi-qled-vidaa-smart-tv-uydu-alicili.html",
+          "post_text_for_card": "Einride'dan Tesla Semi'ye dev sipariş! 500 adet elektrikli çekiciyle Kuzey Amerika'da taşımacılık ağı genişliyor.\n\nBu sipariş, elektrikli tırların artık sadece bir gelecek vaadi olmadığını gösteriyor. Einride'ın bu büyük yatırımı, sektörün sürdürülebilirlik kadar maliyet avantajına da odaklandığının kanıtı. Yakıt ve bakım giderlerindeki tasarruf, şirketleri elektrikli araçlara yöneltiyor.\n\nElektrikli tırların yaygınlaşması için artık geri sayım mı başlıyor?",
+          "image_sources": [
+            "article_img",
+            "meta_og"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209458/src/einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor209458_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209458/1200x675einride-dunyanin-en-buyuk-tesla-semi-filosunu-kuruyor.jpg"
+          ]
+        },
+        "post_text": "Einride'dan Tesla Semi'ye dev sipariş! 500 adet elektrikli çekiciyle Kuzey Amerika'da taşımacılık ağı genişliyor.\n\nBu sipariş, elektrikli tırların artık sadece bir gelecek vaadi olmadığını gösteriyor. Einride'ın bu büyük yatırımı, sektörün sürdürülebilirlik kadar maliyet avantajına da odaklandığının kanıtı. Yakıt ve bakım giderlerindeki tasarruf, şirketleri elektrikli araçlara yöneltiyor.\n\nElektrikli tırların yaygınlaşması için artık geri sayım mı başlıyor?",
+        "image_path": "/tmp/otoxtra_img_7putrq3j.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_7putrq3j.jpg",
+          "/tmp/otoxtra_img_yw47clgb.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T21:35:53.697454+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176404038916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18102131021246810",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1606011981148118",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T21:36:39.919978+03:00"
     }
   }
 }
