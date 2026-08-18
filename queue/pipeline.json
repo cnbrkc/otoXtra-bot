@@ -1,14 +1,32 @@
 {
-  "run_id": "2026-08-18-15:39",
-  "status": "error",
-  "started_at": "2026-08-18T15:39:52.631077+03:00",
-  "updated_at": "2026-08-18T15:40:49.272176+03:00",
+  "run_id": "2026-08-18-16:40",
+  "status": "completed",
+  "started_at": "2026-08-18T16:40:21.817628+03:00",
+  "updated_at": "2026-08-18T16:42:22.574465+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+            "link": "https://otomobilkolik.com/ac-sarj-istasyonu-ile-dcnin-farki-ne/",
+            "published": "2026-08-18T12:52:21+00:00",
+            "summary": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "farki-istasyonu-sarj"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -77,10 +95,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -125,49 +143,210 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 172,
-            "after_keyword": 125,
+            "found": 162,
+            "after_keyword": 111,
             "after_time": 13,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 172,
-          "after_keyword": 125,
+          "found": 162,
+          "after_keyword": 111,
           "after_time": 13,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-18T15:40:49.272176+03:00"
+      "error": null,
+      "updated_at": "2026-08-18T16:41:34.982425+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+          "link": "https://otomobilkolik.com/ac-sarj-istasyonu-ile-dcnin-farki-ne/",
+          "published": "2026-08-18T12:52:21+00:00",
+          "summary": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "farki-istasyonu-sarj",
+          "base_ai_score": 35,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 4,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 46,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahipleri için temel ve rutin bir bilgilendirme içeriği, viral veya benzersiz bir yönü bulunmuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 46,
+        "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 4,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 5
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli araç sahipleri için temel ve rutin bir bilgilendirme içeriği, viral veya benzersiz bir yönü bulunmuyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+            "score": 46,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 4,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 5
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T16:41:36.473397+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+          "link": "https://otomobilkolik.com/ac-sarj-istasyonu-ile-dcnin-farki-ne/",
+          "published": "2026-08-18T12:52:21+00:00",
+          "summary": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "farki-istasyonu-sarj",
+          "base_ai_score": 35,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 4,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 46,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahipleri için temel ve rutin bir bilgilendirme içeriği, viral veya benzersiz bir yönü bulunmuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu haline geldi. Elektrikli araç şarj altyapısında temel olarak AC ve DC olmak üzere iki farklı şarj yöntemi kullanılır. Her iki sistem de elektrikli aracın bataryasını doldurmayı amaçlasa da şarj hızı, kullanım alanı, maliyet ve teknik yapı açısından önemli farklılıklara sahiptir. Bu nedenle sürücülerin kullanım alışkanlıklarına göre doğru şarj yöntemini tercih etmesi önemlidir. BirAC şarj istasyonu, elektrik şebekesinden gelen alternatif akımı araca iletir. Elektrikli aracın içerisinde bulunan dönüştürücü, bu elektriği bataryanın kullanabileceği doğru akıma çevirerek şarj işlemini gerçekleştirir. Bu nedenle AC şarjın ulaşabileceği hız yalnızca istasyonun gücüne değil, aracın dahili şarj kapasitesine de bağlıdır. AC şarj istasyonlarının en önemli avantajlarından biri kurulum ve kullanım maliyetlerinin DC sistemlere göre genellikle daha düşük olmasıdır. Evler, apartmanlar, iş yerleri, otoparklar, alışveriş merkezleri ve oteller gibi araçların birkaç saat boyunca park halinde kaldığı alanlarda oldukça kullanışlıdır. Özellikle elektrikli aracını gece boyunca evinde şarj eden veya çalışma saatleri boyunca aracını otoparkta bırakan kullanıcılar için AC şarj yeterli olabilir. Buna karşılık uzun yolculuklarda veya bataryanın kısa sürede doldurulması gereken durumlarda AC şarjın daha uzun süre gerektirmesi bir dezavantajdır. BirDC şarj istasyonuise elektriği doğrudan aracın bataryasının kullanabileceği doğru akım şeklinde sağlar. Dönüşüm işleminin istasyon tarafında gerçekleştirilmesi sayesinde araç bataryasına daha yüksek güç aktarılabilir. Bu nedenle DC şarj, AC şarja kıyasla çok daha hızlı şarj imkanı sunabilir. DC şarj istasyonları özellikle otoyollar, şehirler arası güzergahlar, dinlenme tesisleri ve yoğun kullanılan halka açık şarj noktalarında avantaj sağlar. Uzun yolculuk yapan bir sürücü, mola sırasında aracının bataryasını kısa sürede önemli ölçüde doldurarak yoluna devam edebilir. Bununla birlikte DC şarj sistemlerinin kurulum maliyetleri ve altyapı ihtiyaçları daha yüksektir. Ayrıca sürekli olarak yüksek güçlü hızlı şarj kullanılması, araç ve batarya teknolojisine bağlı olarak uzun vadede batarya yönetimi açısından daha dikkatli bir kullanım gerektirebilir. AC ve DC şarj arasında seçim yapılırken en önemli kriter aracın ne kadar süre park halinde kalacağıdır. Evde gece boyunca, iş yerinde mesai süresince veya bir alışveriş merkezinde birkaç saat şarj yapılacaksa AC şarj ekonomik ve pratik bir seçenek olabilir. Kısa sürede yüksek miktarda enerjiye ihtiyaç duyulan uzun yolculuklarda ise DC şarj çok daha avantajlıdır. Bu nedenle AC ve DC şarj sistemlerini birbirinin alternatifi olmaktan çok, farklı kullanım senaryolarını tamamlayan çözümler olarak değerlendirmek daha doğru olur. Günlük kullanımda düşük maliyetli ve düzenli AC şarjdan yararlanırken, uzun yolculuklarda hızlı DC şarj istasyonlarını tercih etmek elektrikli araç kullanıcıları için dengeli ve verimli bir şarj deneyimi sağlayabilir. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin."
+        },
+        "post_text": "AC ŞARJ ISTASYONU ILE DC’NIN FARKI NE?\n\nElektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 309,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T16:41:38.996088+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AC şarj istasyonu ile DC’nin farkı ne?",
+          "link": "https://otomobilkolik.com/ac-sarj-istasyonu-ile-dcnin-farki-ne/",
+          "published": "2026-08-18T12:52:21+00:00",
+          "summary": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "duckduckgo",
+          "source_name": "otomobilkolik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "farki-istasyonu-sarj",
+          "base_ai_score": 35,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 4,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 46,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahipleri için temel ve rutin bir bilgilendirme içeriği, viral veya benzersiz bir yönü bulunmuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Elektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu haline geldi. Elektrikli araç şarj altyapısında temel olarak AC ve DC olmak üzere iki farklı şarj yöntemi kullanılır. Her iki sistem de elektrikli aracın bataryasını doldurmayı amaçlasa da şarj hızı, kullanım alanı, maliyet ve teknik yapı açısından önemli farklılıklara sahiptir. Bu nedenle sürücülerin kullanım alışkanlıklarına göre doğru şarj yöntemini tercih etmesi önemlidir. BirAC şarj istasyonu, elektrik şebekesinden gelen alternatif akımı araca iletir. Elektrikli aracın içerisinde bulunan dönüştürücü, bu elektriği bataryanın kullanabileceği doğru akıma çevirerek şarj işlemini gerçekleştirir. Bu nedenle AC şarjın ulaşabileceği hız yalnızca istasyonun gücüne değil, aracın dahili şarj kapasitesine de bağlıdır. AC şarj istasyonlarının en önemli avantajlarından biri kurulum ve kullanım maliyetlerinin DC sistemlere göre genellikle daha düşük olmasıdır. Evler, apartmanlar, iş yerleri, otoparklar, alışveriş merkezleri ve oteller gibi araçların birkaç saat boyunca park halinde kaldığı alanlarda oldukça kullanışlıdır. Özellikle elektrikli aracını gece boyunca evinde şarj eden veya çalışma saatleri boyunca aracını otoparkta bırakan kullanıcılar için AC şarj yeterli olabilir. Buna karşılık uzun yolculuklarda veya bataryanın kısa sürede doldurulması gereken durumlarda AC şarjın daha uzun süre gerektirmesi bir dezavantajdır. BirDC şarj istasyonuise elektriği doğrudan aracın bataryasının kullanabileceği doğru akım şeklinde sağlar. Dönüşüm işleminin istasyon tarafında gerçekleştirilmesi sayesinde araç bataryasına daha yüksek güç aktarılabilir. Bu nedenle DC şarj, AC şarja kıyasla çok daha hızlı şarj imkanı sunabilir. DC şarj istasyonları özellikle otoyollar, şehirler arası güzergahlar, dinlenme tesisleri ve yoğun kullanılan halka açık şarj noktalarında avantaj sağlar. Uzun yolculuk yapan bir sürücü, mola sırasında aracının bataryasını kısa sürede önemli ölçüde doldurarak yoluna devam edebilir. Bununla birlikte DC şarj sistemlerinin kurulum maliyetleri ve altyapı ihtiyaçları daha yüksektir. Ayrıca sürekli olarak yüksek güçlü hızlı şarj kullanılması, araç ve batarya teknolojisine bağlı olarak uzun vadede batarya yönetimi açısından daha dikkatli bir kullanım gerektirebilir. AC ve DC şarj arasında seçim yapılırken en önemli kriter aracın ne kadar süre park halinde kalacağıdır. Evde gece boyunca, iş yerinde mesai süresince veya bir alışveriş merkezinde birkaç saat şarj yapılacaksa AC şarj ekonomik ve pratik bir seçenek olabilir. Kısa sürede yüksek miktarda enerjiye ihtiyaç duyulan uzun yolculuklarda ise DC şarj çok daha avantajlıdır. Bu nedenle AC ve DC şarj sistemlerini birbirinin alternatifi olmaktan çok, farklı kullanım senaryolarını tamamlayan çözümler olarak değerlendirmek daha doğru olur. Günlük kullanımda düşük maliyetli ve düzenli AC şarjdan yararlanırken, uzun yolculuklarda hızlı DC şarj istasyonlarını tercih etmek elektrikli araç kullanıcıları için dengeli ve verimli bir şarj deneyimi sağlayabilir. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin.",
+          "post_text_for_card": "AC ŞARJ ISTASYONU ILE DC’NIN FARKI NE?\n\nElektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "AC ŞARJ ISTASYONU ILE DC’NIN FARKI NE?\n\nElektrikli araçların yaygınlaşmasıyla birlikte araçların nerede, ne kadar sürede ve hangi yöntemle şarj edileceği de önemli bir konu… AC şarj istasyonu ile DC’nin farkı ne? yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_c4kg4f1b.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_c4kg4f1b.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T16:41:39.984886+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176380668916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17952882741223416",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "4640117209605279",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T16:42:22.574465+03:00"
     }
   }
 }
