@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-08-18-18:28",
-  "status": "completed",
-  "started_at": "2026-08-18T18:28:30.715990+03:00",
-  "updated_at": "2026-08-18T18:31:36.357165+03:00",
+  "run_id": "2026-08-18-19:28",
+  "status": "error",
+  "started_at": "2026-08-18T19:28:12.320827+03:00",
+  "updated_at": "2026-08-18T19:29:34.373954+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "NASA, GPS'e ihtiyaç duymadan çalışan navigasyon sistemini başarıyla test etti",
-            "link": "https://www.donanimhaber.com/nasa-gps-e-ihtiyac-duymayan-navigasyon-sistemini-calistirdi--209455",
-            "published": "2026-08-18T14:46:00+00:00",
-            "summary": "GPS sinyallerinin yetersiz kaldığı Ay ve derin uzay görevleri için yeni bir dönem başlıyor. NASA, uzay araçlarının çevredeki cisimleri kullanarak konumunu belirlemesini sağlayan sistemi test etti.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209455/1200x675nasa-gps-e-ihtiyac-duymayan-navigasyon-sistemini-calistirdi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209455/1200x675nasa-gps-e-ihtiyac-duymayan-navigasyon-sistemini-calistirdi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209455/1200x675nasa-gps-e-ihtiyac-duymayan-navigasyon-sistemini-calistirdi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "basariyla-calisan-duymadan-etti-gps-ihtiyac-nasa-navigasyon-sistemini-test"
-          },
-          {
-            "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-            "link": "https://nitter.net/veysellkaranii/status/2089726337288225189#m",
-            "published": "2026-08-18T14:49:18+00:00",
-            "summary": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-            "image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-000-000-204-390-48v-500-590-990-adventure-cruiser-dizel-guc-hilux-hybrid-invincible-litrelik-mild-motor-satisa-sunuldu-teknolojisi-tork-toyota-turkiye"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -104,22 +65,22 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
-          },
-          "Dolu Batarya": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
-            "attempts": 3
-          },
-          "Ahmet Celik": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
+          },
+          "Dolu Batarya": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "Ahmet Celik": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -134,10 +95,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "MuratTosun": {
             "status": "ok",
@@ -159,241 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 2,
+            "count": 3,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 142,
-            "after_keyword": 101,
-            "after_time": 14,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 163,
+            "after_keyword": 112,
+            "after_time": 12,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 142,
-          "after_keyword": 101,
-          "after_time": 14,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 163,
+          "after_keyword": 112,
+          "after_time": 12,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-18T18:30:38.862400+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-18T19:29:34.373954+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2089726337288225189#m",
-          "published": "2026-08-18T14:49:18+00:00",
-          "summary": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-204-390-48v-500-590-990-adventure-cruiser-dizel-guc-hilux-hybrid-invincible-litrelik-mild-motor-satisa-sunuldu-teknolojisi-tork-toyota-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 10,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 65,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye pazarında popüler bir modelin yeni motor seçeneği ve güncel fiyatlarıyla duyurulması, yerel otomobil meraklıları arasında etkileşim yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 65,
-        "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 15,
-          "benzersizlik": 10,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye pazarında popüler bir modelin yeni motor seçeneği ve güncel fiyatlarıyla duyurulması, yerel otomobil meraklıları arasında etkileşim yaratır.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-            "score": 65,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 10,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "NASA, GPS'e ihtiyaç duymadan çalışan navigasyon sistemini başarıyla test etti",
-            "score": 51,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 12,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "NASA, GPS'e ihtiyaç duymadan çalışan navigasyon sistemini başarıyla test etti",
-            "link": "https://www.donanimhaber.com/nasa-gps-e-ihtiyac-duymayan-navigasyon-sistemini-calistirdi--209455",
-            "score": 51,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "basariyla-calisan-duymadan-etti-gps-ihtiyac-nasa-navigasyon-sistemini-test"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T18:30:41.031868+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2089726337288225189#m",
-          "published": "2026-08-18T14:49:18+00:00",
-          "summary": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-204-390-48v-500-590-990-adventure-cruiser-dizel-guc-hilux-hybrid-invincible-litrelik-mild-motor-satisa-sunuldu-teknolojisi-tork-toyota-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 10,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 65,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye pazarında popüler bir modelin yeni motor seçeneği ve güncel fiyatlarıyla duyurulması, yerel otomobil meraklıları arasında etkileşim yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "Hilux'ın yeni nesli geldi ama asıl konuşulacak olan, pickup'ların bambaşka bir lige atlaması.\n\n204 hp ve 500 Nm torklu 2.8 litre mild hybrid motoruyla Hilux, artık sadece iş aracı değil. Üç farklı donanım seviyesiyle 3.990.000 TL'den başlayıp 4.590.000 TL'ye kadar çıkan fiyatlar, bu araçların artık SUV'lara kafa tuttuğunu gösteriyor.\n\nSadece araziye değil, prestije de oynuyor.",
-        "post_text_length": 379,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T18:30:43.172568+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork  • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "link": "https://nitter.net/veysellkaranii/status/2089726337288225189#m",
-          "published": "2026-08-18T14:49:18+00:00",
-          "summary": "Yeni Toyota Hilux Türkiye’de satışa sunuldu. • 2.8 litrelik dizel motor • 48V Mild Hybrid teknolojisi • 204 hp güç & 500 Nm tork • Adventure : 3.990.000 TL • Hi-Cruiser : 4.390.000 TL • Invincible : 4.590.000 TL",
-          "image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "VeyselKarani",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "000-000-000-204-390-48v-500-590-990-adventure-cruiser-dizel-guc-hilux-hybrid-invincible-litrelik-mild-motor-satisa-sunuldu-teknolojisi-tork-toyota-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 10,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 65,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye pazarında popüler bir modelin yeni motor seçeneği ve güncel fiyatlarıyla duyurulması, yerel otomobil meraklıları arasında etkileşim yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "Hilux'ın yeni nesli geldi ama asıl konuşulacak olan, pickup'ların bambaşka bir lige atlaması.\n\n204 hp ve 500 Nm torklu 2.8 litre mild hybrid motoruyla Hilux, artık sadece iş aracı değil. Üç farklı donanım seviyesiyle 3.990.000 TL'den başlayıp 4.590.000 TL'ye kadar çıkan fiyatlar, bu araçların artık SUV'lara kafa tuttuğunu gösteriyor.\n\nSadece araziye değil, prestije de oynuyor.",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HQAzBrDXwAA95Rw.jpg?name=orig"
-          ]
-        },
-        "post_text": "Hilux'ın yeni nesli geldi ama asıl konuşulacak olan, pickup'ların bambaşka bir lige atlaması.\n\n204 hp ve 500 Nm torklu 2.8 litre mild hybrid motoruyla Hilux, artık sadece iş aracı değil. Üç farklı donanım seviyesiyle 3.990.000 TL'den başlayıp 4.590.000 TL'ye kadar çıkan fiyatlar, bu araçların artık SUV'lara kafa tuttuğunu gösteriyor.\n\nSadece araziye değil, prestije de oynuyor.",
-        "image_path": "/tmp/otoxtra_img_wst7i8ej.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_wst7i8ej.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T18:30:44.688683+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176391360916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17962194087178013",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1546856070503007",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T18:31:36.357165+03:00"
+      "updated_at": null
     }
   }
 }
