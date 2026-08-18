@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-08-18-13:25",
-  "status": "completed",
-  "started_at": "2026-08-18T13:25:23.004447+03:00",
-  "updated_at": "2026-08-18T13:28:30.480610+03:00",
+  "run_id": "2026-08-18-14:22",
+  "status": "error",
+  "started_at": "2026-08-18T14:22:24.669230+03:00",
+  "updated_at": "2026-08-18T14:26:04.554590+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-            "link": "https://www.donanimhaber.com/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas--209439",
-            "published": "2026-08-18T09:40:00+00:00",
-            "summary": "Togg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "efsanesine-emanet-ferrari-geliyor-ikinci-otomobil-tasarimi-togg-yerli"
-          },
-          {
-            "title": "HABAŞ’ın yerli otomobilleri yıl sonunda tanıtılabilir ⤵️ 🚗 Honda’nın Gebze’deki eski fabrikasını satın alan HABAŞ, bu fabrikada Sedan ve Crossover gövdede iki model üretmeye başlıyor. ⚙️ Modellerin hibrit, PHEV ve benzinli motora sahip olması bekleniyor. (Bence elektrikli de olmalıydı.) ✍️ Otomobillerin tasarım işi Ferrari F430, Maserati MC12, McLaren P1, Fiat 500, BMW X5 gibi modellerin tasarımını üstlenen Frank Stephenson’un stüdyosuna verilmiş. ➡️ Şirket daha önce ticari ve binek modelleri için 1 milyar Euro’luk bir yatırım planı duyurmuştu. (✏️ Ekonomim Gazetesi)",
-            "link": "https://nitter.net/taylandil/status/2089657632541880772#m",
-            "published": "2026-08-18T10:16:18+00:00",
-            "summary": "HABAŞ’ın yerli otomobilleri yıl sonunda tanıtılabilir ⤵️ 🚗 Honda’nın Gebze’deki eski fabrikasını satın alan HABAŞ, bu fabrikada Sedan ve Crossover gövdede iki model üretmeye başlıyor. ⚙️ Modellerin hibrit, PHEV ve benzinli motora sahip olması bekleniyor. (Bence elektrikli de olmalıydı.) ✍️ Otomobillerin tasarım işi Ferrari F430, Maserati MC12, McLaren P1, Fiat 500, BMW X5 gibi modellerin tasarımını üstlenen Frank Stephenson’un stüdyosuna verilmiş. ➡️ Şirket daha önce ticari ve binek modelleri için 1 milyar Euro’luk bir yatırım planı duyurmuştu. (✏️ Ekonomim Gazetesi)",
-            "image_url": "https://pbs.twimg.com/media/HP_0igXWsAA7agC.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HP_0igXWsAA7agC.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HP_0igXWsAA7agC.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "TaylanOzgurDil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "500-alan-basliyor-bekleniyor-bence-benzinli-binek-bmw-crossover-duyurmustu-ekonomim-elektrikli-eski-euro-f430-fabrikada-fabrikasini-ferrari-fiat-frank-gazetesi-gebze-govdede-habas-habas-hibrit-honda-iki-isi-luk-maserati-mc12-mclaren-milyar-model-modelleri-modellerin-modellerin-motora-olmaliydi-olmasi-otomobilleri-otomobillerin-phev-plani-sahip-satin-sedan-sirket-sonunda-stephenson-studyosuna-tanitilabilir-tasarim-tasarimini-ticari-uretmeye-ustlenen-verilmis-yatirim-yerli-yil"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -100,25 +61,25 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/teknotagstr/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/teknotagstr/rss",
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/DoluBatarya/rss",
             "attempts": 3
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/ahmetcelik2016/rss",
             "attempts": 3
           },
           "Otomobilcom": {
@@ -128,34 +89,34 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/taylandil/rss",
+            "attempts": 3
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
           },
           "MuratTosun": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
           },
           "VeyselKarani": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
             "attempts": 3
           },
           "Sekizsilindir": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
           },
           "otopodyum": {
             "status": "ok",
@@ -164,244 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 142,
-            "after_keyword": 97,
-            "after_time": 17,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 92,
+            "after_keyword": 70,
+            "after_time": 14,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 142,
-          "after_keyword": 97,
-          "after_time": 17,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 92,
+          "after_keyword": 70,
+          "after_time": 14,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-18T13:27:18.630991+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-18T14:26:04.554590+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-          "link": "https://www.donanimhaber.com/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas--209439",
-          "published": "2026-08-18T09:40:00+00:00",
-          "summary": "Togg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "efsanesine-emanet-ferrari-geliyor-ikinci-otomobil-tasarimi-togg-yerli",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Togg sonrasında ikinci yerli otomobil girişimi olması ve dünyaca ünlüm bir tasarımcıya emanet edilmesi nedeniyle yüksek ulusal merak ve viral potansiyel taşıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 88,
-        "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 18,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Togg sonrasında ikinci yerli otomobil girişimi olması ve dünyaca ünlüm bir tasarımcıya emanet edilmesi nedeniyle yüksek ulusal merak ve viral potansiyel taşıyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-            "score": 88,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 18,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "HABAŞ’ın yerli otomobilleri yıl sonunda tanıtılabilir ⤵️ 🚗 Honda’nın Gebze’deki eski fabrikasını satın alan HABAŞ, bu fabrikada Sedan ve Crossover gövdede iki model üretmeye başlıyor. ⚙️ Modellerin hibrit, PHEV ve benzinli motora sahip olması bekleniyor. (Bence elektrikli de olmalıydı.) ✍️ Otomobillerin tasarım işi Ferrari F430, Maserati MC12, McLaren P1, Fiat 500, BMW X5 gibi modellerin tasarımını üstlenen Frank Stephenson’un stüdyosuna verilmiş. ➡️ Şirket daha önce ticari ve binek modelleri için 1 milyar Euro’luk bir yatırım planı duyurmuştu. (✏️ Ekonomim Gazetesi)",
-            "score": 86,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 17,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 11
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "HABAŞ’ın yerli otomobilleri yıl sonunda tanıtılabilir ⤵️ 🚗 Honda’nın Gebze’deki eski fabrikasını satın alan HABAŞ, bu fabrikada Sedan ve Crossover gövdede iki model üretmeye başlıyor. ⚙️ Modellerin hibrit, PHEV ve benzinli motora sahip olması bekleniyor. (Bence elektrikli de olmalıydı.) ✍️ Otomobillerin tasarım işi Ferrari F430, Maserati MC12, McLaren P1, Fiat 500, BMW X5 gibi modellerin tasarımını üstlenen Frank Stephenson’un stüdyosuna verilmiş. ➡️ Şirket daha önce ticari ve binek modelleri için 1 milyar Euro’luk bir yatırım planı duyurmuştu. (✏️ Ekonomim Gazetesi)",
-            "link": "https://nitter.net/taylandil/status/2089657632541880772#m",
-            "score": 86,
-            "score_reason": "ai_scored",
-            "source_name": "TaylanOzgurDil",
-            "topic_fingerprint": "500-alan-basliyor-bekleniyor-bence-benzinli-binek-bmw-crossover-duyurmustu-ekonomim-elektrikli-eski-euro-f430-fabrikada-fabrikasini-ferrari-fiat-frank-gazetesi-gebze-govdede-habas-habas-hibrit-honda-iki-isi-luk-maserati-mc12-mclaren-milyar-model-modelleri-modellerin-modellerin-motora-olmaliydi-olmasi-otomobilleri-otomobillerin-phev-plani-sahip-satin-sedan-sirket-sonunda-stephenson-studyosuna-tanitilabilir-tasarim-tasarimini-ticari-uretmeye-ustlenen-verilmis-yatirim-yerli-yil"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T13:27:21.020052+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-          "link": "https://www.donanimhaber.com/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas--209439",
-          "published": "2026-08-18T09:40:00+00:00",
-          "summary": "Togg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "efsanesine-emanet-ferrari-geliyor-ikinci-otomobil-tasarimi-togg-yerli",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Togg sonrasında ikinci yerli otomobil girişimi olması ve dünyaca ünlüm bir tasarımcıya emanet edilmesi nedeniyle yüksek ulusal merak ve viral potansiyel taşıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Türkiye’nin yüzde 100 yerli sermayeli ikinci binek otomobil markası olmaya hazırlanan HABAŞ, ilk aşamadasedan ve crossoverolmak üzere iki farklı model geliştiriyor. Araçların güç seçenekleri arasındabenzinli, hibrit ve plug-in hibritmotorların bulunması planlanıyor. Şirketin daha önce yaptığı açıklamalara göre ticari ve binek araç üretimini kapsayan otomotiv yatırımlarının toplam büyüklüğüyaklaşık 1 milyar euroseviyesinde olacak. Binek otomobiller Gebze’deki eski Honda fabrikasında üretilecek ve tesisin yıllık otomobil üretim kapasitesinin75 bin adede çıkarılmasıhedefleniyor. Projenin en dikkat çekici noktalarından biri tasarım tarafında dünyaca tanınan Frank Stephenson’ın görev alması. Amerikalı tasarımcı, kariyeri boyunca BMW, Ferrari ve McLaren başta olmak üzere çok sayıda önemli otomotiv markasıyla çalıştı ve çeşitli ikonik modellerin tasarımlarına katkı sağladı. Bu modeller arasındaFerrari F430veMcLaren P1bulunuyor. Bu ikonik araçlara ek olarak Mini'yi hayata döndüren modeli de yine Frank tasarlamıştı. Ayrıca modern Fiat 500 ve ilk BMW X5'te de yine kendi imzası bulunuyor. Stephenson'ın resmi internet sitesinde de marka adı belirtilmeden, yeni bir Türk otomotiv üreticisi için tasarım yetkilisi/merkezi olarak görevlendirildiği ifade ediliyor. Açıklamaya göre çalışma yalnızca dış tasarımla sınırlı tutulmuyor. Yeni markanın tasarım dilinin oluşturulması, ilk eskizler, 3D modelleme, yüzey geliştirme, kil ve sert model incelemeleri, mühendislik desteği ve kalıplama süreçleri tasarım çalışmasının kapsamı içinde bulunuyor. HABAŞ’ın binek otomobil projesinin üretim altyapısını ise Honda’nın Gebze’deki eski fabrikası oluşturuyor. Honda, Türkiye’de 24 yıl boyunca Civic Sedan üretimi gerçekleştirdikten sonra 2021 yılında ülkedeki üretim faaliyetlerini sonlandırmıştı. Fabrika aynı dönemde HABAŞ tarafından satın alındı. HABAŞ ayrıca Honda’nın İngiltere’de kapanan fabrikasına ait bazı üretim ekipmanlarını da satın alarak Türkiye’ye getirdi. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/gp/product/B0FCYNTX8G https://www.amazon.com.tr/dp/B000WCI2YC https://www.amazon.com.tr/Dagi-22SM45893ST-Ahtapot-Desenli-Turkuaz/dp/B0BPSXLPJX https://www.amazon.com.tr/dp/B0H292PG8L https://tombankhadi.com/hadi-kazan/bayii-kampanyalari https://store.steampowered.com/app/219990/Grim_Dawn/"
-        },
-        "post_text": "TOGG’DAN SONRA IKINCI YERLI OTOMOBIL GELIYOR: TASARIMI FERRARI EFSANESINE EMANET\n\nTogg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "post_text_length": 294,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T13:27:24.699202+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet",
-          "link": "https://www.donanimhaber.com/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas--209439",
-          "published": "2026-08-18T09:40:00+00:00",
-          "summary": "Togg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "efsanesine-emanet-ferrari-geliyor-ikinci-otomobil-tasarimi-togg-yerli",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 18,
-            "paylasilabilirlik": 10
-          },
-          "score": 88,
-          "score_reason": "ai_scored",
-          "score_explanation": "Togg sonrasında ikinci yerli otomobil girişimi olması ve dünyaca ünlüm bir tasarımcıya emanet edilmesi nedeniyle yüksek ulusal merak ve viral potansiyel taşıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Türkiye’nin yüzde 100 yerli sermayeli ikinci binek otomobil markası olmaya hazırlanan HABAŞ, ilk aşamadasedan ve crossoverolmak üzere iki farklı model geliştiriyor. Araçların güç seçenekleri arasındabenzinli, hibrit ve plug-in hibritmotorların bulunması planlanıyor. Şirketin daha önce yaptığı açıklamalara göre ticari ve binek araç üretimini kapsayan otomotiv yatırımlarının toplam büyüklüğüyaklaşık 1 milyar euroseviyesinde olacak. Binek otomobiller Gebze’deki eski Honda fabrikasında üretilecek ve tesisin yıllık otomobil üretim kapasitesinin75 bin adede çıkarılmasıhedefleniyor. Projenin en dikkat çekici noktalarından biri tasarım tarafında dünyaca tanınan Frank Stephenson’ın görev alması. Amerikalı tasarımcı, kariyeri boyunca BMW, Ferrari ve McLaren başta olmak üzere çok sayıda önemli otomotiv markasıyla çalıştı ve çeşitli ikonik modellerin tasarımlarına katkı sağladı. Bu modeller arasındaFerrari F430veMcLaren P1bulunuyor. Bu ikonik araçlara ek olarak Mini'yi hayata döndüren modeli de yine Frank tasarlamıştı. Ayrıca modern Fiat 500 ve ilk BMW X5'te de yine kendi imzası bulunuyor. Stephenson'ın resmi internet sitesinde de marka adı belirtilmeden, yeni bir Türk otomotiv üreticisi için tasarım yetkilisi/merkezi olarak görevlendirildiği ifade ediliyor. Açıklamaya göre çalışma yalnızca dış tasarımla sınırlı tutulmuyor. Yeni markanın tasarım dilinin oluşturulması, ilk eskizler, 3D modelleme, yüzey geliştirme, kil ve sert model incelemeleri, mühendislik desteği ve kalıplama süreçleri tasarım çalışmasının kapsamı içinde bulunuyor. HABAŞ’ın binek otomobil projesinin üretim altyapısını ise Honda’nın Gebze’deki eski fabrikası oluşturuyor. Honda, Türkiye’de 24 yıl boyunca Civic Sedan üretimi gerçekleştirdikten sonra 2021 yılında ülkedeki üretim faaliyetlerini sonlandırmıştı. Fabrika aynı dönemde HABAŞ tarafından satın alındı. HABAŞ ayrıca Honda’nın İngiltere’de kapanan fabrikasına ait bazı üretim ekipmanlarını da satın alarak Türkiye’ye getirdi. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/gp/product/B0FCYNTX8G https://www.amazon.com.tr/dp/B000WCI2YC https://www.amazon.com.tr/Dagi-22SM45893ST-Ahtapot-Desenli-Turkuaz/dp/B0BPSXLPJX https://www.amazon.com.tr/dp/B0H292PG8L https://tombankhadi.com/hadi-kazan/bayii-kampanyalari https://store.steampowered.com/app/219990/Grim_Dawn/",
-          "post_text_for_card": "TOGG’DAN SONRA IKINCI YERLI OTOMOBIL GELIYOR: TASARIMI FERRARI EFSANESINE EMANET\n\nTogg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-          "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209439/src/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas209439_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209439/1200x675togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209439/src/togg-dan-sonra-ikinci-yerli-otomobil-geliyor-habas209439_0.jpg"
-          ]
-        },
-        "post_text": "TOGG’DAN SONRA IKINCI YERLI OTOMOBIL GELIYOR: TASARIMI FERRARI EFSANESINE EMANET\n\nTogg’dan sonra Türkiye’nin ikinci yüzde 100 yerli sermayeli otomobili geliyor. HABAŞ’ın yeni otomobili yıl sonunda tanıtılacak. Aracın tasarımcısı ise Frank Stephenson.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_nzr4hldf.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_nzr4hldf.jpg",
-          "/tmp/otoxtra_img_8rfeuigt.jpg",
-          "/tmp/otoxtra_img_ry4foafy.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T13:27:43.968542+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176361066916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17981976909066350",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1778047286704220",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-18T13:28:30.480610+03:00"
+      "updated_at": null
     }
   }
 }
