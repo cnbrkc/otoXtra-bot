@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-18-06:41",
+  "run_id": "2026-08-18-07:32",
   "status": "error",
-  "started_at": "2026-08-18T06:41:50.556631+03:00",
-  "updated_at": "2026-08-18T06:42:43.456930+03:00",
+  "started_at": "2026-08-18T07:32:47.232714+03:00",
+  "updated_at": "2026-08-18T07:35:04.706394+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -65,16 +65,16 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
+            "attempts": 3
           },
           "Ahmet Celik": {
             "status": "ok",
@@ -107,16 +107,16 @@
             "attempts": 1
           },
           "VeyselKarani": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "attempts": 3
           },
           "Sekizsilindir": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
           },
           "otopodyum": {
             "status": "ok",
@@ -125,25 +125,25 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 172,
-            "after_keyword": 117,
-            "after_time": 8,
+            "found": 132,
+            "after_keyword": 85,
+            "after_time": 9,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 172,
-          "after_keyword": 117,
-          "after_time": 8,
+          "found": 132,
+          "after_keyword": 85,
+          "after_time": 9,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-18T06:42:43.456930+03:00"
+      "updated_at": "2026-08-18T07:35:04.706394+03:00"
     },
     "score": {
       "status": "waiting",
