@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-18-08:25",
+  "run_id": "2026-08-18-09:38",
   "status": "error",
-  "started_at": "2026-08-18T08:25:58.919724+03:00",
-  "updated_at": "2026-08-18T08:27:57.555278+03:00",
+  "started_at": "2026-08-18T09:38:06.808726+03:00",
+  "updated_at": "2026-08-18T09:39:42.518679+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Bu sokak Karabağlar belediyesi tarafından temizlenmeyi hak etmiyor mu sayın @Hkinayy @KarabaglarBel @izmirhim @izmirbld . Bu mahallenin muhtarı hiç çıkıp da dolaşmıyor mu sokakları ? Kendisinin görevi nedir ? Ali Fuat Cebesoy mahallesi 9135/6 sokak Karabağlar",
-            "link": "https://nitter.net/veysellkaranii/status/2089583613595570676#m",
-            "published": "2026-08-18T05:22:10+00:00",
-            "summary": "Bu sokak Karabağlar belediyesi tarafından temizlenmeyi hak etmiyor mu sayın @Hkinayy @KarabaglarBel @izmirhim @izmirbld . Bu mahallenin muhtarı hiç çıkıp da dolaşmıyor mu sokakları ? Kendisinin görevi nedir ? Ali Fuat Cebesoy mahallesi 9135/6 sokak Karabağlar Video",
-            "image_url": "https://nitter.net/pic/amplify_video_thumb%2F2089583244060565504%2Fimg%2F1LuLPm8lG7Uxkcar.jpg",
-            "rss_image_url": "https://nitter.net/pic/amplify_video_thumb%2F2089583244060565504%2Fimg%2F1LuLPm8lG7Uxkcar.jpg",
-            "image_candidates": [
-              "https://nitter.net/pic/amplify_video_thumb%2F2089583244060565504%2Fimg%2F1LuLPm8lG7Uxkcar.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "9135-ali-belediyesi-cebesoy-cikip-dolasmiyor-etmiyor-fuat-gorevi-hak-hkinayy-izmirbld-izmirhim-karabaglar-karabaglar-karabaglarbel-kendisinin-mahallenin-mahallesi-muhtari-nedir-sayin-sokak-sokak-sokaklari-tarafindan-temizlenmeyi"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,10 +71,10 @@
             "attempts": 1
           },
           "Dolu Batarya": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/DoluBatarya/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Ahmet Celik": {
             "status": "ok",
@@ -109,28 +89,28 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
+            "attempts": 3
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
-          },
-          "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
-          },
-          "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
+          },
+          "MuratTosun": {
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
+          },
+          "VeyselKarani": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "attempts": 3
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -145,31 +125,31 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 142,
-            "after_keyword": 102,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 152,
+            "after_keyword": 103,
+            "after_time": 10,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 142,
-          "after_keyword": 102,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 152,
+          "after_keyword": 103,
+          "after_time": 10,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-18T08:27:54.869741+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-18T09:39:42.518679+03:00"
     },
     "score": {
-      "status": "error",
+      "status": "waiting",
       "output": null,
-      "error": "No article above threshold (threshold=30, top_score=26)",
-      "updated_at": "2026-08-18T08:27:57.555278+03:00"
+      "error": null,
+      "updated_at": null
     },
     "write": {
       "status": "waiting",
