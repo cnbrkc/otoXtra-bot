@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-18-09:38",
-  "status": "error",
-  "started_at": "2026-08-18T09:38:06.808726+03:00",
-  "updated_at": "2026-08-18T09:39:42.518679+03:00",
+  "run_id": "2026-08-18-10:35",
+  "status": "completed",
+  "started_at": "2026-08-18T10:35:29.616362+03:00",
+  "updated_at": "2026-08-18T10:37:33.600506+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+            "link": "https://www.log.com.tr/habas-frank-stephenson-imzali-yerli-otomobilini-yil-sonunda-tanitmaya-hazirlaniyor/",
+            "published": "2026-08-18T06:39:39+00:00",
+            "summary": "HABAŞ, Ekonomim’de yer alan habere göre BMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda. HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "frank-habas-hazirlaniyor-imzali-otomobilini-sonunda-stephenson-tanitmaya-yerli-yil"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -89,10 +109,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
             "status": "ok",
@@ -125,49 +145,216 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 152,
-            "after_keyword": 103,
+            "found": 162,
+            "after_keyword": 106,
             "after_time": 10,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_posted": 2,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 152,
-          "after_keyword": 103,
+          "found": 162,
+          "after_keyword": 106,
           "after_time": 10,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_posted": 2,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-18T09:39:42.518679+03:00"
+      "error": null,
+      "updated_at": "2026-08-18T10:36:45.087880+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+          "link": "https://www.log.com.tr/habas-frank-stephenson-imzali-yerli-otomobilini-yil-sonunda-tanitmaya-hazirlaniyor/",
+          "published": "2026-08-18T06:39:39+00:00",
+          "summary": "HABAŞ, Ekonomim’de yer alan habere göre BMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda. HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "frank-habas-hazirlaniyor-imzali-otomobilini-sonunda-stephenson-tanitmaya-yerli-yil",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dünyaca ünlü bir tasarımcının yerli otomobil projesinde yer alması ve yıl sonu lansman tarihi sosyal medyada büyük yankı uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 18,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Dünyaca ünlü bir tasarımcının yerli otomobil projesinde yer alması ve yıl sonu lansman tarihi sosyal medyada büyük yankı uyandırır.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 18,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 9
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T10:36:46.646615+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+          "link": "https://www.log.com.tr/habas-frank-stephenson-imzali-yerli-otomobilini-yil-sonunda-tanitmaya-hazirlaniyor/",
+          "published": "2026-08-18T06:39:39+00:00",
+          "summary": "HABAŞ, Ekonomim’de yer alan habere göre BMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda. HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "frank-habas-hazirlaniyor-imzali-otomobilini-sonunda-stephenson-tanitmaya-yerli-yil",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dünyaca ünlü bir tasarımcının yerli otomobil projesinde yer alması ve yıl sonu lansman tarihi sosyal medyada büyük yankı uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "HABAŞ,Ekonomim’de yer alan habere göreBMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda."
+        },
+        "post_text": "Yerli otomobil pazarında yeni bir dönem başlıyor! HABAŞ, BMW ve Ferrari gibi markaların tasarımcısı Frank Stephenson imzalı yerli aracını yıl sonunda tanıtacak.\n\nEkonomim'den alınan bilgiye göre, 1 milyar avroluk dev yatırımla ticari ve binek araç üretmeyi hedefleyen HABAŞ, Türkiye otomotiv sektörüne güçlü bir giriş yapıyor. Bu gelişme, rekabeti daha da artıracak.\n\nSizce bu yeni yerli otomobil beklentileri karşılayabilecek mi?",
+        "post_text_length": 430,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T10:36:49.563186+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor",
+          "link": "https://www.log.com.tr/habas-frank-stephenson-imzali-yerli-otomobilini-yil-sonunda-tanitmaya-hazirlaniyor/",
+          "published": "2026-08-18T06:39:39+00:00",
+          "summary": "HABAŞ, Ekonomim’de yer alan habere göre BMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda. HABAŞ, Frank Stephenson imzalı yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-18_09-37-47_XDtB2-660x371.jpg"
+          ],
+          "image_source": "duckduckgo",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "frank-habas-hazirlaniyor-imzali-otomobilini-sonunda-stephenson-tanitmaya-yerli-yil",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dünyaca ünlü bir tasarımcının yerli otomobil projesinde yer alması ve yıl sonu lansman tarihi sosyal medyada büyük yankı uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "HABAŞ,Ekonomim’de yer alan habere göreBMW, Ferrari ve McLaren gibi devler için çalışmış Frank Stephenson tarafından tasarlanan yerli otomobilini yıl sonunda tanıtmaya hazırlanıyor. Yapılan açıklamalara göre şirket, ticari ve binek araç üretimine yaklaşık 1 milyar avroluk yatırım planlıyor. Türkiye’de üretimini sonlandıran Honda’nın Gebze’deki fabrikasını binek otomobil üretimi için kullanacağı aktarılan şirket, burada sedan ve crossover olmak üzere iki ayrı model üretmeyi hedefliyor. Bu araçlarda hibrit, plug-in hibrit ve benzinli olmak üzere üç versiyonun olması beklenirken, eski Honda fabrikasındaki üretim kapasitesinin otomobil için 75 bine yükseltilmesi hedefleniyor. Şirket, binek araç üretimini Gebze tesisinde konumlandırırken, ticari araç üretimini Manisa OSB’deki yeni fabrikasında yürütüyor. Şirket burada SteelPower adı verilen dizel ve yüzde 100 elektrikli şasiye sahip çekici ve ağır hizmet kamyonlarının üretimini tamamlamış durumda.",
+          "post_text_for_card": "Yerli otomobil pazarında yeni bir dönem başlıyor! HABAŞ, BMW ve Ferrari gibi markaların tasarımcısı Frank Stephenson imzalı yerli aracını yıl sonunda tanıtacak.\n\nEkonomim'den alınan bilgiye göre, 1 milyar avroluk dev yatırımla ticari ve binek araç üretmeyi hedefleyen HABAŞ, Türkiye otomotiv sektörüne güçlü bir giriş yapıyor. Bu gelişme, rekabeti daha da artıracak.\n\nSizce bu yeni yerli otomobil beklentileri karşılayabilecek mi?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "Yerli otomobil pazarında yeni bir dönem başlıyor! HABAŞ, BMW ve Ferrari gibi markaların tasarımcısı Frank Stephenson imzalı yerli aracını yıl sonunda tanıtacak.\n\nEkonomim'den alınan bilgiye göre, 1 milyar avroluk dev yatırımla ticari ve binek araç üretmeyi hedefleyen HABAŞ, Türkiye otomotiv sektörüne güçlü bir giriş yapıyor. Bu gelişme, rekabeti daha da artıracak.\n\nSizce bu yeni yerli otomobil beklentileri karşılayabilecek mi?",
+        "image_path": "/tmp/otoxtra_img_x6a_0rbt.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_x6a_0rbt.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T10:36:52.530995+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176347842916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17902739493330977",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "900236172731360",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-18T10:37:33.600506+03:00"
     }
   }
 }
