@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-18-14:22",
+  "run_id": "2026-08-18-15:39",
   "status": "error",
-  "started_at": "2026-08-18T14:22:24.669230+03:00",
-  "updated_at": "2026-08-18T14:26:04.554590+03:00",
+  "started_at": "2026-08-18T15:39:52.631077+03:00",
+  "updated_at": "2026-08-18T15:40:49.272176+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -61,26 +61,26 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/teknotagstr/rss",
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/DoluBatarya/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -89,34 +89,34 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/sekizsilindir/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "otopodyum": {
             "status": "ok",
@@ -125,25 +125,25 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 92,
-            "after_keyword": 70,
-            "after_time": 14,
+            "found": 172,
+            "after_keyword": 125,
+            "after_time": 13,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 92,
-          "after_keyword": 70,
-          "after_time": 14,
+          "found": 172,
+          "after_keyword": 125,
+          "after_time": 13,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-18T14:26:04.554590+03:00"
+      "updated_at": "2026-08-18T15:40:49.272176+03:00"
     },
     "score": {
       "status": "waiting",
