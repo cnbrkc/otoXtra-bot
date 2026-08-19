@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-19-17:30",
-  "status": "error",
-  "started_at": "2026-08-19T17:30:35.128117+03:00",
-  "updated_at": "2026-08-19T17:32:26.789273+03:00",
+  "run_id": "2026-08-19-18:28",
+  "status": "completed",
+  "started_at": "2026-08-19T18:28:24.458354+03:00",
+  "updated_at": "2026-08-19T18:30:26.473890+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+            "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
+            "published": "2026-08-19T15:00:00+00:00",
+            "summary": "\"Ben burada doğdum abi...\"",
+            "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -65,10 +85,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -95,16 +115,16 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
-            "attempts": 3
-          },
-          "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
+          },
+          "MuratTosun": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
           },
           "VeyselKarani": {
             "status": "ok",
@@ -125,49 +145,227 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 153,
-            "after_keyword": 99,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 163,
+            "after_keyword": 111,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 153,
-          "after_keyword": 99,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 163,
+          "after_keyword": 111,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-19T17:32:26.789273+03:00"
+      "error": null,
+      "updated_at": "2026-08-19T18:29:37.670222+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
+          "published": "2026-08-19T15:00:00+00:00",
+          "summary": "\"Ben burada doğdum abi...\"",
+          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 12
+          },
+          "score": 87,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 87,
+        "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 17,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 12
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+            "score": 87,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 17,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 12
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T18:29:39.283684+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
+          "published": "2026-08-19T15:00:00+00:00",
+          "summary": "\"Ben burada doğdum abi...\"",
+          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 12
+          },
+          "score": 87,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nürburgring, 2027 yılında 100. yaşını kutlayacak. Haziran 1927’de açılan bu ikonik yarış pisti; 73 virajı, sıradışı eğimleri ve sürekli değişen yük koşulları nedeniyle dünyanın en zorlu pistlerinden biri olarak kabul ediliyor. Porscheiçin Nordschleife her zaman iki farklı görev üstlendi. Hem tarihî motor sporları başarılarının sahnesi hem de seri üretim araçların geliştirme süreci için merkezî bir test sahası... 20,8 kilometrelik pist, mekanik zorluğu nedeniyle her kilometresinde normal yollardan kat kat fazla test verisi sağlıyor. Zuffenhausen’da Nordschleife kutlamaları biraz erken başladı: Yaklaşan yıldönümü vesilesiyle Porsche Almanya,911 GT3’ün100 adetle sınırlı bir özel serisini piyasaya sürüyor. Araç, seri üretim GT teknolojisini, pistin tarihine atıfta bulunan özel tasarım özellikleriyle birleştiriyor. Araç, Ağustos 2026’da Nürburgring’de düzenlenecek Porsche Sixt Carrera Cup Almanya kapsamında ilk kez kamuoyuna tanıtılacak. Siparişler Eylül 2026’da açılacak ve teslimatlar, 2027 yılındaki yıldönümü sırasında gerçekleştirilecek. Aracın dış gövdesi, Beyaz veya GT Gümüş Metalik renk seçenekleriyle sunuluyor. Beyaz renk, tarihî müşteri yarış araçlarının klasik temel rengini yansıtırken, GT Gümüş Metalik renk ise modern Cup araçlarından esinleniyor. Ön ve arka tamponlar yeşil koruyucu folyo ile kaplanıyor. Bu tasarım, yarışlarda araçların daha iyi ayırt edilebilmesi için renkli işaretler kullanma şeklindeki geleneksel uygulamaya bir saygı duruşu niteliğinde. Ayrıca bu renk tonu, Jackie Stewart'ın ortaya attığı \"Yeşil Cehennem\" kavramına da atıfta bulunmakta. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Diğer detaylar arasında ön ve arkada yeşil bağlantı plakaları ile motor sporları yönetmeliğine uygun beyaz ok işaretleri yer alıyor. Çamurluklardaki tarihi Nürburgring logoları ve gövdede kişiselleştirilebilir yarış numarası, aracın görünümünü tamamlıyor. Yarış numarasının tipografisi, Nordschleife’nin asfaltını süsleyen grafitilerden esinleniyor. Ön camdaki altın renkli marka logolu güneşlik şeridi, güneş ışınlarını azaltıyor. Önde 20 inç, arkada 21 inç boyutundaki dövme jantlar, “parlak California altın” renginde tasarlanmış ve mat siyah merkez kapaklarla birleştirilmiş. B direkleri ve arka kanadın alt kısmı, yıldönümüne özel plaketler ve grafikler ile süslenmiş. Renk şeması iç mekanda da devam ediyor. Siyah eloksal alüminyum kapı eşikleri aydınlatmalı bir yazı taşırken, LED projektörler yolun konturunu zemine yansıtıyor. Arka koltuklardaki roll-cage yeşil renkte tasarlanmış. Sürücü tarafında, deri koltuk orta kısmındaki degrade deliklerden yeşil bir kaplama parıldıyor. Koltuk başlıklarında sürücü tarafında Nürburgring logosu, yolcu tarafında ise model adı nakışla işleniyor. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Gösterge paneli, direksiyon kumandaları ve vites şeması da yeşil vurgular taşıyor. Müşteriler, 7 vitesli Porsche Çift Kavramalı Şanzıman (PDK) ile 6 vitesli spor manuel şanzıman arasında seçim yapabilir. Vites kademelerinin ve viteslerin yazıları yeşil renkte tasarlanmış. Manuel vitesli versiyonun vites topuzu da 911 Carrera T modelinde olduğu gibi ceviz ağacından imal edilmiş. Üretici, isteğe bağlı olarak aynı renk tonlarında bir Manthey kiti sunuyor. Bu kit, modifiye edilmiş bir şasi, uyarlanmış fren bileşenleri ve 285 km/h hızda 540 kilogramlık yere basma kuvveti üreten bir aerodinamik paketi içeriyor. Bu özel modelin alıcıları ayrıca, Manthey yarış ekibinden teknik bilgiler edinecekleri Nürburgring’de düzenlenecek bir etkinliğe katılım hakkı ve aracın rengiyle uyumlu titanyum kasalı bir saat kazanıyor. Chronograph 1’in özel sürümünün kasası, hafif ve dayanıklı titanyumdan üretilmiş ve siyaha kaplanmış. İçinde, ikili gün ve tarih göstergesine sahip, COSC sertifikalı Porsche Design Kalibre WERK 01.140 çalışıyor. Mekanizma, aracın jantının şekil ve rengini yansıtan bir rotorla çalışıyor. Spor otomobil ile saati birbirine bağlayan başka detaylar da bulunuyor: Örneğin, mat siyah kadran üzerinde tarihi Nürburgring logosu yer alıyor. Orijinal Porsche iç döşeme derisinden üretilen siyah kayış, araç koltukları gibi delikli ve yeşil renkli bir tekstil \"arka yüz\" ile tasarlanmış. Dekoratif dikiş, araca uygun olarak GT gümüşü renginde geliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
+        "post_text_length": 418,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T18:29:41.229905+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
+          "published": "2026-08-19T15:00:00+00:00",
+          "summary": "\"Ben burada doğdum abi...\"",
+          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 12
+          },
+          "score": 87,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nürburgring, 2027 yılında 100. yaşını kutlayacak. Haziran 1927’de açılan bu ikonik yarış pisti; 73 virajı, sıradışı eğimleri ve sürekli değişen yük koşulları nedeniyle dünyanın en zorlu pistlerinden biri olarak kabul ediliyor. Porscheiçin Nordschleife her zaman iki farklı görev üstlendi. Hem tarihî motor sporları başarılarının sahnesi hem de seri üretim araçların geliştirme süreci için merkezî bir test sahası... 20,8 kilometrelik pist, mekanik zorluğu nedeniyle her kilometresinde normal yollardan kat kat fazla test verisi sağlıyor. Zuffenhausen’da Nordschleife kutlamaları biraz erken başladı: Yaklaşan yıldönümü vesilesiyle Porsche Almanya,911 GT3’ün100 adetle sınırlı bir özel serisini piyasaya sürüyor. Araç, seri üretim GT teknolojisini, pistin tarihine atıfta bulunan özel tasarım özellikleriyle birleştiriyor. Araç, Ağustos 2026’da Nürburgring’de düzenlenecek Porsche Sixt Carrera Cup Almanya kapsamında ilk kez kamuoyuna tanıtılacak. Siparişler Eylül 2026’da açılacak ve teslimatlar, 2027 yılındaki yıldönümü sırasında gerçekleştirilecek. Aracın dış gövdesi, Beyaz veya GT Gümüş Metalik renk seçenekleriyle sunuluyor. Beyaz renk, tarihî müşteri yarış araçlarının klasik temel rengini yansıtırken, GT Gümüş Metalik renk ise modern Cup araçlarından esinleniyor. Ön ve arka tamponlar yeşil koruyucu folyo ile kaplanıyor. Bu tasarım, yarışlarda araçların daha iyi ayırt edilebilmesi için renkli işaretler kullanma şeklindeki geleneksel uygulamaya bir saygı duruşu niteliğinde. Ayrıca bu renk tonu, Jackie Stewart'ın ortaya attığı \"Yeşil Cehennem\" kavramına da atıfta bulunmakta. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Diğer detaylar arasında ön ve arkada yeşil bağlantı plakaları ile motor sporları yönetmeliğine uygun beyaz ok işaretleri yer alıyor. Çamurluklardaki tarihi Nürburgring logoları ve gövdede kişiselleştirilebilir yarış numarası, aracın görünümünü tamamlıyor. Yarış numarasının tipografisi, Nordschleife’nin asfaltını süsleyen grafitilerden esinleniyor. Ön camdaki altın renkli marka logolu güneşlik şeridi, güneş ışınlarını azaltıyor. Önde 20 inç, arkada 21 inç boyutundaki dövme jantlar, “parlak California altın” renginde tasarlanmış ve mat siyah merkez kapaklarla birleştirilmiş. B direkleri ve arka kanadın alt kısmı, yıldönümüne özel plaketler ve grafikler ile süslenmiş. Renk şeması iç mekanda da devam ediyor. Siyah eloksal alüminyum kapı eşikleri aydınlatmalı bir yazı taşırken, LED projektörler yolun konturunu zemine yansıtıyor. Arka koltuklardaki roll-cage yeşil renkte tasarlanmış. Sürücü tarafında, deri koltuk orta kısmındaki degrade deliklerden yeşil bir kaplama parıldıyor. Koltuk başlıklarında sürücü tarafında Nürburgring logosu, yolcu tarafında ise model adı nakışla işleniyor. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Gösterge paneli, direksiyon kumandaları ve vites şeması da yeşil vurgular taşıyor. Müşteriler, 7 vitesli Porsche Çift Kavramalı Şanzıman (PDK) ile 6 vitesli spor manuel şanzıman arasında seçim yapabilir. Vites kademelerinin ve viteslerin yazıları yeşil renkte tasarlanmış. Manuel vitesli versiyonun vites topuzu da 911 Carrera T modelinde olduğu gibi ceviz ağacından imal edilmiş. Üretici, isteğe bağlı olarak aynı renk tonlarında bir Manthey kiti sunuyor. Bu kit, modifiye edilmiş bir şasi, uyarlanmış fren bileşenleri ve 285 km/h hızda 540 kilogramlık yere basma kuvveti üreten bir aerodinamik paketi içeriyor. Bu özel modelin alıcıları ayrıca, Manthey yarış ekibinden teknik bilgiler edinecekleri Nürburgring’de düzenlenecek bir etkinliğe katılım hakkı ve aracın rengiyle uyumlu titanyum kasalı bir saat kazanıyor. Chronograph 1’in özel sürümünün kasası, hafif ve dayanıklı titanyumdan üretilmiş ve siyaha kaplanmış. İçinde, ikili gün ve tarih göstergesine sahip, COSC sertifikalı Porsche Design Kalibre WERK 01.140 çalışıyor. Mekanizma, aracın jantının şekil ve rengini yansıtan bir rotorla çalışıyor. Spor otomobil ile saati birbirine bağlayan başka detaylar da bulunuyor: Örneğin, mat siyah kadran üzerinde tarihi Nürburgring logosu yer alıyor. Orijinal Porsche iç döşeme derisinden üretilen siyah kayış, araç koltukları gibi delikli ve yeşil renkli bir tekstil \"arka yüz\" ile tasarlanmış. Dekoratif dikiş, araca uygun olarak GT gümüşü renginde geliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
+          "image_sources": [
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/Ak3egP/s1/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+            "https://cdn.motor1.com/images/mgl/Ak3egP/s1/4x3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.webp",
+            "https://cdn.motor1.com/images/mgl/nAlYmk/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+            "https://cdn.motor1.com/images/mgl/y2lMpY/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+          ]
+        },
+        "post_text": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
+        "image_path": "/tmp/otoxtra_img_7af6h8fy.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_7af6h8fy.jpg",
+          "/tmp/otoxtra_img_44lfrew1.jpg",
+          "/tmp/otoxtra_img_2uinnry8.jpg",
+          "/tmp/otoxtra_img_y4qw_fwm.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T18:29:47.441938+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176525112916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17968973591943158",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1091517320491022",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T18:30:26.473890+03:00"
     }
   }
 }
