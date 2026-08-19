@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-19-16:41",
-  "status": "completed",
-  "started_at": "2026-08-19T16:41:52.103683+03:00",
-  "updated_at": "2026-08-19T16:45:11.995851+03:00",
+  "run_id": "2026-08-19-17:30",
+  "status": "error",
+  "started_at": "2026-08-19T17:30:35.128117+03:00",
+  "updated_at": "2026-08-19T17:32:26.789273+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-            "link": "https://www.donanimhaber.com/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi--209485",
-            "published": "2026-08-19T13:15:00+00:00",
-            "summary": "Audi'nin Çin için SAIC ortaklığıyla ürettiği logosuz AUDI modelleri, bağımsız bir ithalatçı tarafından Almanya’ya getirildi. Çinli modeller, Alman rakiplerinden daha ucuza çok daha fazla güç sunuyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "almanya-audi-audi-cin-cinli-fiyatina-karistirdi-ler-uretimi-yari"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,10 +65,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -115,10 +95,10 @@
             "attempts": 1
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
           },
           "MuratTosun": {
             "status": "ok",
@@ -145,227 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 173,
-            "after_keyword": 112,
-            "after_time": 11,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 153,
+            "after_keyword": 99,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 173,
-          "after_keyword": 112,
-          "after_time": 11,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 153,
+          "after_keyword": 99,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-19T16:42:51.305242+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-19T17:32:26.789273+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-          "link": "https://www.donanimhaber.com/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi--209485",
-          "published": "2026-08-19T13:15:00+00:00",
-          "summary": "Audi'nin Çin için SAIC ortaklığıyla ürettiği logosuz AUDI modelleri, bağımsız bir ithalatçı tarafından Almanya’ya getirildi. Çinli modeller, Alman rakiplerinden daha ucuza çok daha fazla güç sunuyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-audi-audi-cin-cinli-fiyatina-karistirdi-ler-uretimi-yari",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Alman otomotiv devinin kendi ülkesinde yarı fiyatına Çin üretimi araçlarla vurulması küresel çapta yüksek merak ve etkileşim uyandıracak bir skandal niteliğinde.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Alman otomotiv devinin kendi ülkesinde yarı fiyatına Çin üretimi araçlarla vurulması küresel çapta yüksek merak ve etkileşim uyandıracak bir skandal niteliğinde.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T16:44:06.802388+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-          "link": "https://www.donanimhaber.com/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi--209485",
-          "published": "2026-08-19T13:15:00+00:00",
-          "summary": "Audi'nin Çin için SAIC ortaklığıyla ürettiği logosuz AUDI modelleri, bağımsız bir ithalatçı tarafından Almanya’ya getirildi. Çinli modeller, Alman rakiplerinden daha ucuza çok daha fazla güç sunuyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-audi-audi-cin-cinli-fiyatina-karistirdi-ler-uretimi-yari",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Alman otomotiv devinin kendi ülkesinde yarı fiyatına Çin üretimi araçlarla vurulması küresel çapta yüksek merak ve etkileşim uyandıracak bir skandal niteliğinde.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Xiaomi SU7 Ultra ve Zeekr 9X gibi modelleri Avrupa’ya getirmesiyle tanınan bağımsız ithalatçıAuto China, Çinli AUDI modellerini (E5 Sportback ve E7X) resmi tip onaylarını alarak Almanya'ya ithal etmeye başladı. Çin üretimiE5 Sportback, çift motorlu yapısıyla tam776 beygir güçüretiyor ve 100 kWsa bataryayla geliyor. Buna karşın Almanya’da üretilen 543 beygirlik S6 e-tron’dan tam28.000 euro daha ucuzasatılıyor.ÇinliE7X SUVmodelinin vergiler ve tescil dahil Almanya teslim fiyatı86.800 euroolarak belirlendi. Buna karşılık daha küçük, daha güçsüz ve LiDAR sensöründen yoksun Alman üretimi Audi SQ6 e-tron’un başlangıç fiyatı93.800 euroseviyesinde.800V ve 900V mimarileri üzerine kurulan ve sinema salonunu andıran devasa kabin içi ekranlara sahip olan bu araçlar, Avrupalı tüketiciler için oldukça cazip bir alternatif haline geldi.Madalyonun öteki yüzü: Dev riskler ve hurdaya çıkarılma ihtimaliTam Boyutta GörKağıt üzerinde harika görünen bu durum, araç sahipleri için ciddi riskleri de beraberinde getiriyor. Almanya Bağımsız Motorlu Araç Satıcıları Federasyonu (BVfK) Başkanı Ansgar Klein, \"Bir satıcı olarak Çin'den bu araçları getirmezdim. Hukuki olarak yeşil ışık yakılsa bile büyük bir risk kalıyor\" uyarısında bulundu.Satın alan kullanıcıları bekleyen temel sorunlar şunlar:Yedek Parça ve Servis Bilgisizliği:Yerel yetkili servislerin bu araçlar üzerinde hiçbir teknik eğitimi bulunmuyor. Parça tedariki tam bir soru işareti.Yazılım ve Otonom Sürüş Uyumsuzluğu:LiDAR ve gelişmiş sensörlerin yazılımları Çin’deki yol koşullarına göre kalibre edildiği için Avrupa’da doğru çalışmayabilir.Volkswagen’in \"Hurdalık\" Emsali:Geçmiş yıllarda benzer şekilde Çin’den ithal edilen yaklaşık 20 adet Volkswagen ID.6 modeli için VW mahkemeye başvurmuş, mahkeme kararıyla araçların satışı durdurulmuş ve araçlarhurdaya çıkarılarak imha edilmişti.Audi sözcüsü yaptığı açıklamada, \"AUDI kardeş markasının modelleri, ortağımız SAIC ile geliştirilen kendi platformumuza dayanmaktadır ve Çin'in dijital ekosistemine derinlemesine entegre edilmiştir\" diyerek araçların resmi olarak Avrupa için uygun olmadığını belirtti.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Çin üretimiE5 Sportback, çift motorlu yapısıyla tam776 beygir güçüretiyor ve 100 kWsa bataryayla geliyor. Buna karşın Almanya’da üretilen 543 beygirlik S6 e-tron’dan tam28.000 euro daha ucuzasatılıyor. ÇinliE7X SUVmodelinin vergiler ve tescil dahil Almanya teslim fiyatı86.800 euroolarak belirlendi. Buna karşılık daha küçük, daha güçsüz ve LiDAR sensöründen yoksun Alman üretimi Audi SQ6 e-tron’un başlangıç fiyatı93.800 euroseviyesinde. 800V ve 900V mimarileri üzerine kurulan ve sinema salonunu andıran devasa kabin içi ekranlara sahip olan bu araçlar, Avrupalı tüketiciler için oldukça cazip bir alternatif haline geldi. Satın alan kullanıcıları bekleyen temel sorunlar şunlar: Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.n11.com/urun/beko-crystal-8-b-855-c-4k-ultra-55-140-ekran-uydu-alicili-google-smart-qled-tv-116850956?magaza=aygunlerdtm https://www.amazon.com.tr/promotion/psp/A1NI55IHY1H02J https://store.steampowered.com/app/2610650/Dont_Stop_Girlypop https://www.akbank.com/icerik/akbanklinin-odul-kumbarasi-ile-odul-kampanyasi"
-        },
-        "post_text": "Audi'nin Çin için ürettiği modeller Almanya'yı karıştırdı. Bağımsız bir ithalatçı, Çinli Audi'leri Almanya'ya getirdi.\n\nBu modeller, Alman rakiplerinden çok daha ucuza, çok daha fazla güç sunuyor. Örneğin 776 beygirlik E5 Sportback, Alman S6 e-tron'dan tam 28.000 euro daha ucuz.\n\nBurada mesele sadece fiyat farkı değil. Marka algısı ve küresel üretim stratejileri, tüketicinin gözünde yeni bir boyut kazanıyor. Audi, kendi logosuyla bile rekabet etmek zorunda kalıyor.",
-        "post_text_length": 469,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T16:44:10.833372+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Çin üretimi Audi'ler Almanya'yı karıştırdı: Yarı fiyatına Çinli Audi!",
-          "link": "https://www.donanimhaber.com/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi--209485",
-          "published": "2026-08-19T13:15:00+00:00",
-          "summary": "Audi'nin Çin için SAIC ortaklığıyla ürettiği logosuz AUDI modelleri, bağımsız bir ithalatçı tarafından Almanya’ya getirildi. Çinli modeller, Alman rakiplerinden daha ucuza çok daha fazla güç sunuyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-audi-audi-cin-cinli-fiyatina-karistirdi-ler-uretimi-yari",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Alman otomotiv devinin kendi ülkesinde yarı fiyatına Çin üretimi araçlarla vurulması küresel çapta yüksek merak ve etkileşim uyandıracak bir skandal niteliğinde.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Xiaomi SU7 Ultra ve Zeekr 9X gibi modelleri Avrupa’ya getirmesiyle tanınan bağımsız ithalatçıAuto China, Çinli AUDI modellerini (E5 Sportback ve E7X) resmi tip onaylarını alarak Almanya'ya ithal etmeye başladı. Çin üretimiE5 Sportback, çift motorlu yapısıyla tam776 beygir güçüretiyor ve 100 kWsa bataryayla geliyor. Buna karşın Almanya’da üretilen 543 beygirlik S6 e-tron’dan tam28.000 euro daha ucuzasatılıyor.ÇinliE7X SUVmodelinin vergiler ve tescil dahil Almanya teslim fiyatı86.800 euroolarak belirlendi. Buna karşılık daha küçük, daha güçsüz ve LiDAR sensöründen yoksun Alman üretimi Audi SQ6 e-tron’un başlangıç fiyatı93.800 euroseviyesinde.800V ve 900V mimarileri üzerine kurulan ve sinema salonunu andıran devasa kabin içi ekranlara sahip olan bu araçlar, Avrupalı tüketiciler için oldukça cazip bir alternatif haline geldi.Madalyonun öteki yüzü: Dev riskler ve hurdaya çıkarılma ihtimaliTam Boyutta GörKağıt üzerinde harika görünen bu durum, araç sahipleri için ciddi riskleri de beraberinde getiriyor. Almanya Bağımsız Motorlu Araç Satıcıları Federasyonu (BVfK) Başkanı Ansgar Klein, \"Bir satıcı olarak Çin'den bu araçları getirmezdim. Hukuki olarak yeşil ışık yakılsa bile büyük bir risk kalıyor\" uyarısında bulundu.Satın alan kullanıcıları bekleyen temel sorunlar şunlar:Yedek Parça ve Servis Bilgisizliği:Yerel yetkili servislerin bu araçlar üzerinde hiçbir teknik eğitimi bulunmuyor. Parça tedariki tam bir soru işareti.Yazılım ve Otonom Sürüş Uyumsuzluğu:LiDAR ve gelişmiş sensörlerin yazılımları Çin’deki yol koşullarına göre kalibre edildiği için Avrupa’da doğru çalışmayabilir.Volkswagen’in \"Hurdalık\" Emsali:Geçmiş yıllarda benzer şekilde Çin’den ithal edilen yaklaşık 20 adet Volkswagen ID.6 modeli için VW mahkemeye başvurmuş, mahkeme kararıyla araçların satışı durdurulmuş ve araçlarhurdaya çıkarılarak imha edilmişti.Audi sözcüsü yaptığı açıklamada, \"AUDI kardeş markasının modelleri, ortağımız SAIC ile geliştirilen kendi platformumuza dayanmaktadır ve Çin'in dijital ekosistemine derinlemesine entegre edilmiştir\" diyerek araçların resmi olarak Avrupa için uygun olmadığını belirtti.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Çin üretimiE5 Sportback, çift motorlu yapısıyla tam776 beygir güçüretiyor ve 100 kWsa bataryayla geliyor. Buna karşın Almanya’da üretilen 543 beygirlik S6 e-tron’dan tam28.000 euro daha ucuzasatılıyor. ÇinliE7X SUVmodelinin vergiler ve tescil dahil Almanya teslim fiyatı86.800 euroolarak belirlendi. Buna karşılık daha küçük, daha güçsüz ve LiDAR sensöründen yoksun Alman üretimi Audi SQ6 e-tron’un başlangıç fiyatı93.800 euroseviyesinde. 800V ve 900V mimarileri üzerine kurulan ve sinema salonunu andıran devasa kabin içi ekranlara sahip olan bu araçlar, Avrupalı tüketiciler için oldukça cazip bir alternatif haline geldi. Satın alan kullanıcıları bekleyen temel sorunlar şunlar: Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.n11.com/urun/beko-crystal-8-b-855-c-4k-ultra-55-140-ekran-uydu-alicili-google-smart-qled-tv-116850956?magaza=aygunlerdtm https://www.amazon.com.tr/promotion/psp/A1NI55IHY1H02J https://store.steampowered.com/app/2610650/Dont_Stop_Girlypop https://www.akbank.com/icerik/akbanklinin-odul-kumbarasi-ile-odul-kampanyasi",
-          "post_text_for_card": "Audi'nin Çin için ürettiği modeller Almanya'yı karıştırdı. Bağımsız bir ithalatçı, Çinli Audi'leri Almanya'ya getirdi.\n\nBu modeller, Alman rakiplerinden çok daha ucuza, çok daha fazla güç sunuyor. Örneğin 776 beygirlik E5 Sportback, Alman S6 e-tron'dan tam 28.000 euro daha ucuz.\n\nBurada mesele sadece fiyat farkı değil. Marka algısı ve küresel üretim stratejileri, tüketicinin gözünde yeni bir boyut kazanıyor. Audi, kendi logosuyla bile rekabet etmek zorunda kalıyor.",
-          "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209485/src/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi209485_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209485/1200x675cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209485/src/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi209485_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209485/src/cin-uretimi-audi-ler-almanya-yi-karistirdi-yari-fiyatina-audi209485_2.jpg"
-          ]
-        },
-        "post_text": "Audi'nin Çin için ürettiği modeller Almanya'yı karıştırdı. Bağımsız bir ithalatçı, Çinli Audi'leri Almanya'ya getirdi.\n\nBu modeller, Alman rakiplerinden çok daha ucuza, çok daha fazla güç sunuyor. Örneğin 776 beygirlik E5 Sportback, Alman S6 e-tron'dan tam 28.000 euro daha ucuz.\n\nBurada mesele sadece fiyat farkı değil. Marka algısı ve küresel üretim stratejileri, tüketicinin gözünde yeni bir boyut kazanıyor. Audi, kendi logosuyla bile rekabet etmek zorunda kalıyor.",
-        "image_path": "/tmp/otoxtra_img_gn9vv3y9.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_gn9vv3y9.jpg",
-          "/tmp/otoxtra_img_dm7tc6bf.jpg",
-          "/tmp/otoxtra_img_xpb5vbc6.jpg",
-          "/tmp/otoxtra_img_c_316ckp.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T16:44:24.239818+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176512740916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17922780714422068",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "916620914344232",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T16:45:11.995851+03:00"
+      "updated_at": null
     }
   }
 }
