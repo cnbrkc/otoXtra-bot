@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-19-20:24",
-  "status": "completed",
-  "started_at": "2026-08-19T20:24:04.796840+03:00",
-  "updated_at": "2026-08-19T20:27:22.861762+03:00",
+  "run_id": "2026-08-19-21:31",
+  "status": "error",
+  "started_at": "2026-08-19T21:31:31.303933+03:00",
+  "updated_at": "2026-08-19T21:33:15.618407+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-            "link": "https://www.donanimhaber.com/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler--209481",
-            "published": "2026-08-19T17:09:00+00:00",
-            "summary": "Apple, iOS 27 ile CarPlay'e birçok kullanışlı yükseltme getirerek araç içi deneyimi daha akıllı, etkileşimli ve kullanımı kolay hale getirecek. İşte sonbaharda gelecek Apple CarPlay yenilikleri:",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "apple-carplay-gelecek-ios-ozellikler"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,10 +65,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "error",
@@ -145,227 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 143,
-            "after_keyword": 90,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 153,
+            "after_keyword": 99,
+            "after_time": 10,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 143,
-          "after_keyword": 90,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 153,
+          "after_keyword": 99,
+          "after_time": 10,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-19T20:26:10.733304+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-19T21:33:15.618407+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-          "link": "https://www.donanimhaber.com/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler--209481",
-          "published": "2026-08-19T17:09:00+00:00",
-          "summary": "Apple, iOS 27 ile CarPlay'e birçok kullanışlı yükseltme getirerek araç içi deneyimi daha akıllı, etkileşimli ve kullanımı kolay hale getirecek. İşte sonbaharda gelecek Apple CarPlay yenilikleri:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "apple-carplay-gelecek-ios-ozellikler",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Apple ekosistemi ve teknoloji meraklıları için ilgi çekici ancak henüz çıkmamış bir işletim sistemi versiyonu (iOS 27 hayali bir sürüm veya geleceğe yönelik bir iddia) olduğu için şimdilik spekülatif kalıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 54,
-        "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 10,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Apple ekosistemi ve teknoloji meraklıları için ilgi çekici ancak henüz çıkmamış bir işletim sistemi versiyonu (iOS 27 hayali bir sürüm veya geleceğe yönelik bir iddia) olduğu için şimdilik spekülatif kalıyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-            "score": 54,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 10,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T20:26:12.550204+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-          "link": "https://www.donanimhaber.com/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler--209481",
-          "published": "2026-08-19T17:09:00+00:00",
-          "summary": "Apple, iOS 27 ile CarPlay'e birçok kullanışlı yükseltme getirerek araç içi deneyimi daha akıllı, etkileşimli ve kullanımı kolay hale getirecek. İşte sonbaharda gelecek Apple CarPlay yenilikleri:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "apple-carplay-gelecek-ios-ozellikler",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Apple ekosistemi ve teknoloji meraklıları için ilgi çekici ancak henüz çıkmamış bir işletim sistemi versiyonu (iOS 27 hayali bir sürüm veya geleceğe yönelik bir iddia) olduğu için şimdilik spekülatif kalıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Video uygulamalarıTam Boyutta GörCarPlay uygulamaları, videolarda gezinme özelliğini içerebilir, böylece park halindeyken araç içi ekranınızda video arayıp izleyebileceksiniz. Video oynatma özelliği, güvenlik nedenleriyle araç hareket halindeyken çalışmayacak ancak bir şey izlerken vitese geçerseniz, oynatma yalnızca sese geçecek.Yalnız, araç üreticilerinin de araçta video oynatma desteğini etkinleştirmesi gerekecek. Şu an itibariyle hiçbir otomobil üreticisi özelliğin geleceğine ilişkin bir açıklama yapmadı. Apple TV uygulaması, bu özellik ile çalışacak ilk onaylı uygulama.Siri AITam Boyutta GörApple'ın daha akıllı ve yetenekli Siri sürümü, araçta eller serbest konuşmalar için kullanılabiliyor. CarPlay için Siri AI, diğer cihazlardaki Siri yapay zekası gibi çalışacak; sürüş sırasında görevleri tamamlamasını veya sizin için bilgi bulmasını isteyebileceksiniz. CarPlay'deki konuşmalar, daha sonra devam edebilmeniz için iPhone'daki Siri uygulamasıyla senkronize edilecek.iOS 27’yi yüklediğinizde Şimdi Oynatılıyor CarPlay şablonu için kalıcı bir mini oynatıcı fark edeceksiniz. Oynatıcı, ses ve medya uygulamalarının sağ üst köşesinde resim ve oynatma kontrollerini gösterecek. CarPlay'deki Şimdi Oynatılıyor arayüzünde ayrıca bir ilerleme çubuğu olacak; böylece bir şarkıda, podcast yayınında veya sesli kitapta belirli bir noktaya atlayabileceksiniz.Duvar kağıtlarıTam Boyutta GöriOS 27, CarPlay arayüzüne özel yeni duvar kağıtları getiriyor. Duvar kağıtları, çeşitli renklerde dalga tarzı tasarımlara sahip ve toplam 14 seçenek mevcut. iOS 27'deki CarPlay ayrıca daha büyük, daha etkileşimli içerik küçük resimlerini destekliyor ve Haritalar, Hava Durumu gibi uygulamalar için güncellenmiş Liquid Glass simgelerini kullanıyor.Rota verileri, Konum doğruluğuTam Boyutta GörApple Maps ve Google Haritalar gibi navigasyon uygulamaları, yol tariflerine EV şarj durakları gibi bilgiler eklemek için rota verilerini araçla paylaşabilecek. Araç, harita rotasını aracın menziliyle karşılaştıracak ve bir şarj durağı önerecek.Apple, iOS 27'de kablosuz CarPlay'in daha güvenilir olduğunu, GPS konum doğruluğunun ve navigasyon yönü algılamasının iyileştirildiğini söylüyor.Ses kontrolüArtık tüm uygulama kategorileri ses kontrolü seçeneği sunabiliyor. Apple, sesli görüşmeler için uygulamalara entegre edilebilen ses kontrolü şablonu da tasarladı.Doğal dil geliştirmeleriApple, Harita uygulamasında doğal dil aramasını navigasyona getirdi ve bu özellik CarPlay ile de çalışıyor. Siri'den ücretli yollardan, otoyollardan ve daha fazlasından kaçınan yol tarifleri isteyebileceksiniz.UyumlulukiOS 27'deki yeni CarPlay özelliklerini kullanmak için iOS 27 yüklü iPhone gerekiyor. Siri AI için, Apple Intelligence'ı destekleyen bir iPhone’a (15 Pro veya daha yeni) ihtiyacınız olacak.iOS 27 şu anda geliştiriciler ve genel beta test kullanıcıları için indirilebilir durumda olup, Eylül ayında tüm uyumlu cihazlara gönderilmesi bekleniyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Yalnız, araç üreticilerinin de araçta video oynatma desteğini etkinleştirmesi gerekecek. Şu an itibariyle hiçbir otomobil üreticisi özelliğin geleceğine ilişkin bir açıklama yapmadı. Apple TV uygulaması, bu özellik ile çalışacak ilk onaylı uygulama. iOS 27’yi yüklediğinizde Şimdi Oynatılıyor CarPlay şablonu için kalıcı bir mini oynatıcı fark edeceksiniz. Oynatıcı, ses ve medya uygulamalarının sağ üst köşesinde resim ve oynatma kontrollerini gösterecek. CarPlay'deki Şimdi Oynatılıyor arayüzünde ayrıca bir ilerleme çubuğu olacak; böylece bir şarkıda, podcast yayınında veya sesli kitapta belirli bir noktaya atlayabileceksiniz. Apple, iOS 27'de kablosuz CarPlay'in daha güvenilir olduğunu, GPS konum doğruluğunun ve navigasyon yönü algılamasının iyileştirildiğini söylüyor. Artık tüm uygulama kategorileri ses kontrolü seçeneği sunabiliyor. Apple, sesli görüşmeler için uygulamalara entegre edilebilen ses kontrolü şablonu da tasarladı. Apple, Harita uygulamasında doğal dil aramasını navigasyona getirdi ve bu özellik CarPlay ile de çalışıyor. Siri'den ücretli yollardan, otoyollardan ve daha fazlasından kaçınan yol tarifleri isteyebileceksiniz. iOS 27'deki yeni CarPlay özelliklerini kullanmak için iOS 27 yüklü iPhone gerekiyor. Siri AI için, Apple Intelligence'ı destekleyen bir iPhone’a (15 Pro veya daha yeni) ihtiyacınız olacak. iOS 27 şu anda geliştiriciler ve genel beta test kullanıcıları için indirilebilir durumda olup, Eylül ayında tüm uyumlu cihazlara gönderilmesi bekleniyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.amazon.com.tr/dp/B0G2YF883G https://www.amazon.com.tr/dp/B092TN8FWV..."
-        },
-        "post_text": "iOS 27 ile CarPlay'e gelecek video oynatma özelliği, otomobil üreticilerinin inisiyatifinde.\n\nApple bu yeniliği getirse de, asıl soru şu: Kaç marka park halindeyken bile araç içinde video izlemeye izin verecek? Yoksa bu, sadece bazı lüks modellerin \"ekstra\" özelliği olarak mı kalacak?\n\nSiri AI'ın iPhone ile senkronize çalışması ise günlük kullanımda fark yaratır. Ama video işi biraz havada.",
-        "post_text_length": 393,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T20:26:15.686325+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "iOS 27 ile Apple CarPlay'e gelecek yeni özellikler",
-          "link": "https://www.donanimhaber.com/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler--209481",
-          "published": "2026-08-19T17:09:00+00:00",
-          "summary": "Apple, iOS 27 ile CarPlay'e birçok kullanışlı yükseltme getirerek araç içi deneyimi daha akıllı, etkileşimli ve kullanımı kolay hale getirecek. İşte sonbaharda gelecek Apple CarPlay yenilikleri:",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209481/1200x675ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "apple-carplay-gelecek-ios-ozellikler",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 10,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Apple ekosistemi ve teknoloji meraklıları için ilgi çekici ancak henüz çıkmamış bir işletim sistemi versiyonu (iOS 27 hayali bir sürüm veya geleceğe yönelik bir iddia) olduğu için şimdilik spekülatif kalıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Video uygulamalarıTam Boyutta GörCarPlay uygulamaları, videolarda gezinme özelliğini içerebilir, böylece park halindeyken araç içi ekranınızda video arayıp izleyebileceksiniz. Video oynatma özelliği, güvenlik nedenleriyle araç hareket halindeyken çalışmayacak ancak bir şey izlerken vitese geçerseniz, oynatma yalnızca sese geçecek.Yalnız, araç üreticilerinin de araçta video oynatma desteğini etkinleştirmesi gerekecek. Şu an itibariyle hiçbir otomobil üreticisi özelliğin geleceğine ilişkin bir açıklama yapmadı. Apple TV uygulaması, bu özellik ile çalışacak ilk onaylı uygulama.Siri AITam Boyutta GörApple'ın daha akıllı ve yetenekli Siri sürümü, araçta eller serbest konuşmalar için kullanılabiliyor. CarPlay için Siri AI, diğer cihazlardaki Siri yapay zekası gibi çalışacak; sürüş sırasında görevleri tamamlamasını veya sizin için bilgi bulmasını isteyebileceksiniz. CarPlay'deki konuşmalar, daha sonra devam edebilmeniz için iPhone'daki Siri uygulamasıyla senkronize edilecek.iOS 27’yi yüklediğinizde Şimdi Oynatılıyor CarPlay şablonu için kalıcı bir mini oynatıcı fark edeceksiniz. Oynatıcı, ses ve medya uygulamalarının sağ üst köşesinde resim ve oynatma kontrollerini gösterecek. CarPlay'deki Şimdi Oynatılıyor arayüzünde ayrıca bir ilerleme çubuğu olacak; böylece bir şarkıda, podcast yayınında veya sesli kitapta belirli bir noktaya atlayabileceksiniz.Duvar kağıtlarıTam Boyutta GöriOS 27, CarPlay arayüzüne özel yeni duvar kağıtları getiriyor. Duvar kağıtları, çeşitli renklerde dalga tarzı tasarımlara sahip ve toplam 14 seçenek mevcut. iOS 27'deki CarPlay ayrıca daha büyük, daha etkileşimli içerik küçük resimlerini destekliyor ve Haritalar, Hava Durumu gibi uygulamalar için güncellenmiş Liquid Glass simgelerini kullanıyor.Rota verileri, Konum doğruluğuTam Boyutta GörApple Maps ve Google Haritalar gibi navigasyon uygulamaları, yol tariflerine EV şarj durakları gibi bilgiler eklemek için rota verilerini araçla paylaşabilecek. Araç, harita rotasını aracın menziliyle karşılaştıracak ve bir şarj durağı önerecek.Apple, iOS 27'de kablosuz CarPlay'in daha güvenilir olduğunu, GPS konum doğruluğunun ve navigasyon yönü algılamasının iyileştirildiğini söylüyor.Ses kontrolüArtık tüm uygulama kategorileri ses kontrolü seçeneği sunabiliyor. Apple, sesli görüşmeler için uygulamalara entegre edilebilen ses kontrolü şablonu da tasarladı.Doğal dil geliştirmeleriApple, Harita uygulamasında doğal dil aramasını navigasyona getirdi ve bu özellik CarPlay ile de çalışıyor. Siri'den ücretli yollardan, otoyollardan ve daha fazlasından kaçınan yol tarifleri isteyebileceksiniz.UyumlulukiOS 27'deki yeni CarPlay özelliklerini kullanmak için iOS 27 yüklü iPhone gerekiyor. Siri AI için, Apple Intelligence'ı destekleyen bir iPhone’a (15 Pro veya daha yeni) ihtiyacınız olacak.iOS 27 şu anda geliştiriciler ve genel beta test kullanıcıları için indirilebilir durumda olup, Eylül ayında tüm uyumlu cihazlara gönderilmesi bekleniyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Yalnız, araç üreticilerinin de araçta video oynatma desteğini etkinleştirmesi gerekecek. Şu an itibariyle hiçbir otomobil üreticisi özelliğin geleceğine ilişkin bir açıklama yapmadı. Apple TV uygulaması, bu özellik ile çalışacak ilk onaylı uygulama. iOS 27’yi yüklediğinizde Şimdi Oynatılıyor CarPlay şablonu için kalıcı bir mini oynatıcı fark edeceksiniz. Oynatıcı, ses ve medya uygulamalarının sağ üst köşesinde resim ve oynatma kontrollerini gösterecek. CarPlay'deki Şimdi Oynatılıyor arayüzünde ayrıca bir ilerleme çubuğu olacak; böylece bir şarkıda, podcast yayınında veya sesli kitapta belirli bir noktaya atlayabileceksiniz. Apple, iOS 27'de kablosuz CarPlay'in daha güvenilir olduğunu, GPS konum doğruluğunun ve navigasyon yönü algılamasının iyileştirildiğini söylüyor. Artık tüm uygulama kategorileri ses kontrolü seçeneği sunabiliyor. Apple, sesli görüşmeler için uygulamalara entegre edilebilen ses kontrolü şablonu da tasarladı. Apple, Harita uygulamasında doğal dil aramasını navigasyona getirdi ve bu özellik CarPlay ile de çalışıyor. Siri'den ücretli yollardan, otoyollardan ve daha fazlasından kaçınan yol tarifleri isteyebileceksiniz. iOS 27'deki yeni CarPlay özelliklerini kullanmak için iOS 27 yüklü iPhone gerekiyor. Siri AI için, Apple Intelligence'ı destekleyen bir iPhone’a (15 Pro veya daha yeni) ihtiyacınız olacak. iOS 27 şu anda geliştiriciler ve genel beta test kullanıcıları için indirilebilir durumda olup, Eylül ayında tüm uyumlu cihazlara gönderilmesi bekleniyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.amazon.com.tr/dp/B0G2YF883G https://www.amazon.com.tr/dp/B092TN8FWV...",
-          "post_text_for_card": "iOS 27 ile CarPlay'e gelecek video oynatma özelliği, otomobil üreticilerinin inisiyatifinde.\n\nApple bu yeniliği getirse de, asıl soru şu: Kaç marka park halindeyken bile araç içinde video izlemeye izin verecek? Yoksa bu, sadece bazı lüks modellerin \"ekstra\" özelliği olarak mı kalacak?\n\nSiri AI'ın iPhone ile senkronize çalışması ise günlük kullanımda fark yaratır. Ama video işi biraz havada.",
-          "image_sources": [
-            "article_img",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209481/src/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler209481_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209481/src/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler209481_2.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209481/src/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler209481_4.jpg",
-            "https://www.donanimhaber.com/images/images/haber/209481/src/ios-27-ile-apple-carplay-e-gelecek-yeni-ozellikler209481_3.jpg"
-          ]
-        },
-        "post_text": "iOS 27 ile CarPlay'e gelecek video oynatma özelliği, otomobil üreticilerinin inisiyatifinde.\n\nApple bu yeniliği getirse de, asıl soru şu: Kaç marka park halindeyken bile araç içinde video izlemeye izin verecek? Yoksa bu, sadece bazı lüks modellerin \"ekstra\" özelliği olarak mı kalacak?\n\nSiri AI'ın iPhone ile senkronize çalışması ise günlük kullanımda fark yaratır. Ama video işi biraz havada.",
-        "image_path": "/tmp/otoxtra_img_e4vjtvn3.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_e4vjtvn3.jpg",
-          "/tmp/otoxtra_img_r184ov6i.jpg",
-          "/tmp/otoxtra_img_op3l4q7x.jpg",
-          "/tmp/otoxtra_img__d7163gm.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T20:26:37.495453+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176537748916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18129392269647813",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "898837549586662",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-19T20:27:22.861762+03:00"
+      "updated_at": null
     }
   }
 }
