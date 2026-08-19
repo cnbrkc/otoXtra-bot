@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-19-08:26",
+  "run_id": "2026-08-19-09:39",
   "status": "error",
-  "started_at": "2026-08-19T08:26:49.306619+03:00",
-  "updated_at": "2026-08-19T08:28:33.090141+03:00",
+  "started_at": "2026-08-19T09:39:04.578719+03:00",
+  "updated_at": "2026-08-19T09:40:34.615537+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -77,10 +77,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -89,10 +89,10 @@
             "attempts": 1
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/taylandil/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "HakanDOgu": {
             "status": "ok",
@@ -101,10 +101,10 @@
             "attempts": 1
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
             "status": "ok",
@@ -125,8 +125,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 153,
-            "after_keyword": 113,
+            "found": 163,
+            "after_keyword": 109,
             "after_time": 11,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -134,8 +134,8 @@
           }
         },
         "metrics": {
-          "found": 153,
-          "after_keyword": 113,
+          "found": 163,
+          "after_keyword": 109,
           "after_time": 11,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -143,7 +143,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-19T08:28:33.090141+03:00"
+      "updated_at": "2026-08-19T09:40:34.615537+03:00"
     },
     "score": {
       "status": "waiting",
