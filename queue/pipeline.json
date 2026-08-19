@@ -1,14 +1,32 @@
 {
-  "run_id": "2026-08-19-09:39",
-  "status": "error",
-  "started_at": "2026-08-19T09:39:04.578719+03:00",
-  "updated_at": "2026-08-19T09:40:34.615537+03:00",
+  "run_id": "2026-08-19-10:35",
+  "status": "completed",
+  "started_at": "2026-08-19T10:35:38.653502+03:00",
+  "updated_at": "2026-08-19T10:37:43.818718+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+            "link": "https://nitter.net/ahmetcelik2016/status/2089965901898486060#m",
+            "published": "2026-08-19T06:41:15+00:00",
+            "summary": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak...  Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet.  HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor.  Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor.   Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor.  Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "Ahmet Celik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aciklama-aciklama-araclarin-ardindan-asagida-asagidaki-bakalim-baris-barisesen-basin-basta-bekleniyor-benzinli-binek-bmw-bulunan-bulunmasi-cikacak-degerli-diyecegim-diyemeyecegim-dogru-duyum-duyumlari-duzenlenmemis-efsanesine-ekonomist-emanet-esen-eski-fabrikasinda-ferrari-ferrari-frank-gebze-gelistirdigi-geliyor-guc-habas-haber-haber-haberdeki-halinde-hedefler-hemen-hemen-herkes-hibrit-hibrit-honda-ikinci-ikonik-imzasi-kaci-kesinmis-markalarin-mclaren-medyada-modellerinde-motorlarin-olmak-otomobil-otomobil-otomobilini-otomoblgazetesi-paylasmis-planlaniyor-plug-projenin-projesinde-resmi-secenekleri-sirket-sirketin-sirketten-sona-sonuna-sosyal-stephenson-sunmus-surecte-tanitmasi-tasarimi-tasarimini-teknoloji-togg-toplantisi-yaklasiliyor-yapacak-yayincilari-yazilanlarin-yerli-yerli-yerli-yil-yok-yurutuyor"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -17,9 +35,9 @@
             "attempts": 1
           },
           "otogundem": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 500 Server Error: Internal Server Error for url: https://otogundem.com.tr/rss",
             "attempts": 1
           },
           "otomobilkolik": {
@@ -65,10 +83,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -77,10 +95,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Otomobilcom": {
             "status": "ok",
@@ -125,49 +143,208 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 163,
-            "after_keyword": 109,
-            "after_time": 11,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 153,
+            "after_keyword": 100,
+            "after_time": 12,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 163,
-          "after_keyword": 109,
-          "after_time": 11,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 153,
+          "after_keyword": 100,
+          "after_time": 12,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-19T09:40:34.615537+03:00"
+      "error": null,
+      "updated_at": "2026-08-19T10:36:55.123450+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089965901898486060#m",
+          "published": "2026-08-19T06:41:15+00:00",
+          "summary": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak...  Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet.  HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor.  Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor.   Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor.  Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aciklama-aciklama-araclarin-ardindan-asagida-asagidaki-bakalim-baris-barisesen-basin-basta-bekleniyor-benzinli-binek-bmw-bulunan-bulunmasi-cikacak-degerli-diyecegim-diyemeyecegim-dogru-duyum-duyumlari-duzenlenmemis-efsanesine-ekonomist-emanet-esen-eski-fabrikasinda-ferrari-ferrari-frank-gebze-gelistirdigi-geliyor-guc-habas-haber-haber-haberdeki-halinde-hedefler-hemen-hemen-herkes-hibrit-hibrit-honda-ikinci-ikonik-imzasi-kaci-kesinmis-markalarin-mclaren-medyada-modellerinde-motorlarin-olmak-otomobil-otomobil-otomobilini-otomoblgazetesi-paylasmis-planlaniyor-plug-projenin-projesinde-resmi-secenekleri-sirket-sirketin-sirketten-sona-sonuna-sosyal-stephenson-sunmus-surecte-tanitmasi-tasarimi-tasarimini-teknoloji-togg-toplantisi-yaklasiliyor-yapacak-yayincilari-yazilanlarin-yerli-yerli-yerli-yil-yok-yurutuyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerli otomobil iddiası ve dünyaca ünlü bir tasarımcının projede yer alması sosyal medyada yüksek etkileşim ve merak uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yerli otomobil iddiası ve dünyaca ünlü bir tasarımcının projede yer alması sosyal medyada yüksek etkileşim ve merak uyandıracak nitelikte.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 9
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T10:36:57.282098+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089965901898486060#m",
+          "published": "2026-08-19T06:41:15+00:00",
+          "summary": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak...  Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet.  HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor.  Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor.   Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor.  Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aciklama-aciklama-araclarin-ardindan-asagida-asagidaki-bakalim-baris-barisesen-basin-basta-bekleniyor-benzinli-binek-bmw-bulunan-bulunmasi-cikacak-degerli-diyecegim-diyemeyecegim-dogru-duyum-duyumlari-duzenlenmemis-efsanesine-ekonomist-emanet-esen-eski-fabrikasinda-ferrari-ferrari-frank-gebze-gelistirdigi-geliyor-guc-habas-haber-haber-haberdeki-halinde-hedefler-hemen-hemen-herkes-hibrit-hibrit-honda-ikinci-ikonik-imzasi-kaci-kesinmis-markalarin-mclaren-medyada-modellerinde-motorlarin-olmak-otomobil-otomobil-otomobilini-otomoblgazetesi-paylasmis-planlaniyor-plug-projenin-projesinde-resmi-secenekleri-sirket-sirketin-sirketten-sona-sonuna-sosyal-stephenson-sunmus-surecte-tanitmasi-tasarimi-tasarimini-teknoloji-togg-toplantisi-yaklasiliyor-yapacak-yayincilari-yazilanlarin-yerli-yerli-yerli-yil-yok-yurutuyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerli otomobil iddiası ve dünyaca ünlü bir tasarımcının projede yer alması sosyal medyada yüksek etkileşim ve merak uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "HABER DIYEMEYECEĞIM IÇIN \"DUYUM\" DIYECEĞIM! ÖNCE DEĞERLI EKONOMIST DR. BARIŞ ESEN PAYLAŞMI\n\nHaber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büy\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 466,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T10:37:00.040112+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak... Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet. HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor. Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor. Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor. Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "link": "https://nitter.net/ahmetcelik2016/status/2089965901898486060#m",
+          "published": "2026-08-19T06:41:15+00:00",
+          "summary": "Haber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büyük. Bakalım bu süreçte aşağıda yazılanların kaçı doğru çıkacak...  Ve şirket açıklama yapacak mı? @barisesen \"Togg’dan sonra ikinci yerli otomobil geliyor: Tasarımı Ferrari efsanesine emanet.  HABAŞ'ın Honda'nın Gebze'deki eski fabrikasında geliştirdiği yerli binek otomobil projesinde sona yaklaşılıyor.  Şirketin ilk yerli otomobilini yıl sonuna kadar tanıtması bekleniyor.   Araçların güç seçenekleri arasında benzinli, hibrit ve plug-in hibrit motorların bulunması planlanıyor.  Projenin tasarımını BMW, Ferrari ve McLaren gibi markaların ikonik modellerinde imzası bulunan Frank Stephenson yürütüyor.\" @otomoblgazetesi",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "duckduckgo",
+          "source_name": "Ahmet Celik",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aciklama-aciklama-araclarin-ardindan-asagida-asagidaki-bakalim-baris-barisesen-basin-basta-bekleniyor-benzinli-binek-bmw-bulunan-bulunmasi-cikacak-degerli-diyecegim-diyemeyecegim-dogru-duyum-duyumlari-duzenlenmemis-efsanesine-ekonomist-emanet-esen-eski-fabrikasinda-ferrari-ferrari-frank-gebze-gelistirdigi-geliyor-guc-habas-haber-haber-haberdeki-halinde-hedefler-hemen-hemen-herkes-hibrit-hibrit-honda-ikinci-ikonik-imzasi-kaci-kesinmis-markalarin-mclaren-medyada-modellerinde-motorlarin-olmak-otomobil-otomobil-otomobilini-otomoblgazetesi-paylasmis-planlaniyor-plug-projenin-projesinde-resmi-secenekleri-sirket-sirketin-sirketten-sona-sonuna-sosyal-stephenson-sunmus-surecte-tanitmasi-tasarimi-tasarimini-teknoloji-togg-toplantisi-yaklasiliyor-yapacak-yayincilari-yazilanlarin-yerli-yerli-yerli-yil-yok-yurutuyor",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerli otomobil iddiası ve dünyaca ünlü bir tasarımcının projede yer alması sosyal medyada yüksek etkileşim ve merak uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "HABER DIYEMEYECEĞIM IÇIN \"DUYUM\" DIYECEĞIM! ÖNCE DEĞERLI EKONOMIST DR. BARIŞ ESEN PAYLAŞMI\n\nHaber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büy\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "duckduckgo"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "HABER DIYEMEYECEĞIM IÇIN \"DUYUM\" DIYECEĞIM! ÖNCE DEĞERLI EKONOMIST DR. BARIŞ ESEN PAYLAŞMI\n\nHaber diyemeyeceğim için \"duyum\" diyeceğim! Önce değerli ekonomist Dr. Barış Esen paylaşmış. Ardından başta teknoloji yayıncıları olmak üzere sosyal medyada hemen hemen herkes aşağıdaki \"duyumları\" haber halinde kesinmiş gibi sunmuş. Şirketten resmi bir açıklama yok, basın toplantısı düzenlenmemiş. Ama haberdeki hedefler çok büy\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_uhblkfvq.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_uhblkfvq.jpg"
+        ],
+        "image_source": "duckduckgo",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T10:37:02.992831+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176470122916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18088945100207093",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "904584228977515",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-19T10:37:43.818718+03:00"
     }
   }
 }
