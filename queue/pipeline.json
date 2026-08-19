@@ -1,34 +1,53 @@
 {
-  "run_id": "2026-08-19-18:28",
+  "run_id": "2026-08-19-19:28",
   "status": "completed",
-  "started_at": "2026-08-19T18:28:24.458354+03:00",
-  "updated_at": "2026-08-19T18:30:26.473890+03:00",
+  "started_at": "2026-08-19T19:28:19.094631+03:00",
+  "updated_at": "2026-08-19T19:31:24.981118+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
-            "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
-            "published": "2026-08-19T15:00:00+00:00",
-            "summary": "\"Ben burada doğdum abi...\"",
-            "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+            "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
+            "link": "https://www.donanimhaber.com/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru--209492",
+            "published": "2026-08-19T16:01:00+00:00",
+            "summary": "BMW, Neue Klasse platformunda yükselen yeni iX3 ile menzil rekoru kırdı. Çin'deki iç testlerde tek şarjla 1.030 km kateden elektrikli SUV, Chengdu Otomobil Fuarı'nda ön siparişe açılıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+              "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini"
+            "topic_fingerprint": "030-bmw-etti-ix3-kat-menzil-rekoru-sarjla-tek-yol"
+          },
+          {
+            "title": "Bugün elektrikli araç sektörüyle alakalı heyecan verici haberler aldığımız güzel bir görüşme yaptık. Detaylar yakında! Bizi ağırladığı için sevgili Kutay Yamacı'ya teşekkür ederiz.",
+            "link": "https://nitter.net/DoluBatarya/status/2090104314706440360#m",
+            "published": "2026-08-19T15:51:15+00:00",
+            "summary": "Bugün elektrikli araç sektörüyle alakalı heyecan verici haberler aldığımız güzel bir görüşme yaptık. Detaylar yakında! Bizi ağırladığı için sevgili Kutay Yamacı'ya teşekkür ederiz.",
+            "image_url": "https://pbs.twimg.com/media/HQGKy0uWkAAth_6.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HQGKy0uWkAAth_6.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HQGKy0uWkAAth_6.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "Dolu Batarya",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "agirladigi-alakali-aldigimiz-arac-bizi-bugun-detaylar-ederiz-elektrikli-gorusme-guzel-haberler-heyecan-kutay-sektoruyle-sevgili-tesekkur-verici-yakinda-yamaci-yaptik"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -97,10 +116,10 @@
             "attempts": 1
           },
           "Ahmet Celik": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/ahmetcelik2016/rss",
+            "attempts": 3
           },
           "Otomobilcom": {
             "status": "ok",
@@ -115,16 +134,16 @@
             "attempts": 1
           },
           "HakanDOgu": {
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/HakanDOGU/rss",
+            "attempts": 3
+          },
+          "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1
-          },
-          "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
           },
           "VeyselKarani": {
             "status": "ok",
@@ -133,10 +152,10 @@
             "attempts": 1
           },
           "Sekizsilindir": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/sekizsilindir/rss",
+            "attempts": 3
           },
           "otopodyum": {
             "status": "ok",
@@ -145,48 +164,48 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 163,
-            "after_keyword": 111,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 143,
+            "after_keyword": 93,
+            "after_time": 11,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 163,
-          "after_keyword": 111,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 143,
+          "after_keyword": 93,
+          "after_time": 11,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-08-19T18:29:37.670222+03:00"
+      "updated_at": "2026-08-19T19:30:14.465250+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
-          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
-          "published": "2026-08-19T15:00:00+00:00",
-          "summary": "\"Ben burada doğdum abi...\"",
-          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
+          "link": "https://www.donanimhaber.com/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru--209492",
+          "published": "2026-08-19T16:01:00+00:00",
+          "summary": "BMW, Neue Klasse platformunda yükselen yeni iX3 ile menzil rekoru kırdı. Çin'deki iç testlerde tek şarjla 1.030 km kateden elektrikli SUV, Chengdu Otomobil Fuarı'nda ön siparişe açılıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
-          "base_ai_score": 82,
+          "topic_fingerprint": "030-bmw-etti-ix3-kat-menzil-rekoru-sarjla-tek-yol",
+          "base_ai_score": 84,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 22,
@@ -196,12 +215,12 @@
           },
           "score": 87,
           "score_reason": "ai_scored",
-          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "score_explanation": "1000 km menzil psikolojik bir sınır ve elektrikli araç dünyasında büyük yankı uyandıracak türden bir rekor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
         "score": 87,
-        "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+        "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
@@ -213,12 +232,12 @@
           "paylasilabilirlik": 12
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+        "score_explanation": "1000 km menzil psikolojik bir sınır ve elektrikli araç dünyasında büyük yankı uyandıracak türden bir rekor.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
+            "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
             "score": 87,
             "score_breakdown": {
               "guncellik": 20,
@@ -227,36 +246,56 @@
               "gundem_gucu": 16,
               "paylasilabilirlik": 12
             }
+          },
+          {
+            "title": "Bugün elektrikli araç sektörüyle alakalı heyecan verici haberler aldığımız güzel bir görüşme yaptık. Detaylar yakında! Bizi ağırladığı için sevgili Kutay Yamacı'ya teşekkür ederiz.",
+            "score": 26,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 3,
+              "benzersizlik": 1,
+              "gundem_gucu": 1,
+              "paylasilabilirlik": 1
+            }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Bugün elektrikli araç sektörüyle alakalı heyecan verici haberler aldığımız güzel bir görüşme yaptık. Detaylar yakında! Bizi ağırladığı için sevgili Kutay Yamacı'ya teşekkür ederiz.",
+            "link": "https://nitter.net/DoluBatarya/status/2090104314706440360#m",
+            "score": 26,
+            "score_reason": "ai_scored",
+            "source_name": "Dolu Batarya",
+            "topic_fingerprint": "agirladigi-alakali-aldigimiz-arac-bizi-bugun-detaylar-ederiz-elektrikli-gorusme-guzel-haberler-heyecan-kutay-sektoruyle-sevgili-tesekkur-verici-yakinda-yamaci-yaptik"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-08-19T18:29:39.283684+03:00"
+      "updated_at": "2026-08-19T19:30:16.558092+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
-          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
-          "published": "2026-08-19T15:00:00+00:00",
-          "summary": "\"Ben burada doğdum abi...\"",
-          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
+          "link": "https://www.donanimhaber.com/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru--209492",
+          "published": "2026-08-19T16:01:00+00:00",
+          "summary": "BMW, Neue Klasse platformunda yükselen yeni iX3 ile menzil rekoru kırdı. Çin'deki iç testlerde tek şarjla 1.030 km kateden elektrikli SUV, Chengdu Otomobil Fuarı'nda ön siparişe açılıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
-          "base_ai_score": 82,
+          "topic_fingerprint": "030-bmw-etti-ix3-kat-menzil-rekoru-sarjla-tek-yol",
+          "base_ai_score": 84,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 22,
@@ -266,40 +305,40 @@
           },
           "score": 87,
           "score_reason": "ai_scored",
-          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "score_explanation": "1000 km menzil psikolojik bir sınır ve elektrikli araç dünyasında büyük yankı uyandıracak türden bir rekor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nürburgring, 2027 yılında 100. yaşını kutlayacak. Haziran 1927’de açılan bu ikonik yarış pisti; 73 virajı, sıradışı eğimleri ve sürekli değişen yük koşulları nedeniyle dünyanın en zorlu pistlerinden biri olarak kabul ediliyor. Porscheiçin Nordschleife her zaman iki farklı görev üstlendi. Hem tarihî motor sporları başarılarının sahnesi hem de seri üretim araçların geliştirme süreci için merkezî bir test sahası... 20,8 kilometrelik pist, mekanik zorluğu nedeniyle her kilometresinde normal yollardan kat kat fazla test verisi sağlıyor. Zuffenhausen’da Nordschleife kutlamaları biraz erken başladı: Yaklaşan yıldönümü vesilesiyle Porsche Almanya,911 GT3’ün100 adetle sınırlı bir özel serisini piyasaya sürüyor. Araç, seri üretim GT teknolojisini, pistin tarihine atıfta bulunan özel tasarım özellikleriyle birleştiriyor. Araç, Ağustos 2026’da Nürburgring’de düzenlenecek Porsche Sixt Carrera Cup Almanya kapsamında ilk kez kamuoyuna tanıtılacak. Siparişler Eylül 2026’da açılacak ve teslimatlar, 2027 yılındaki yıldönümü sırasında gerçekleştirilecek. Aracın dış gövdesi, Beyaz veya GT Gümüş Metalik renk seçenekleriyle sunuluyor. Beyaz renk, tarihî müşteri yarış araçlarının klasik temel rengini yansıtırken, GT Gümüş Metalik renk ise modern Cup araçlarından esinleniyor. Ön ve arka tamponlar yeşil koruyucu folyo ile kaplanıyor. Bu tasarım, yarışlarda araçların daha iyi ayırt edilebilmesi için renkli işaretler kullanma şeklindeki geleneksel uygulamaya bir saygı duruşu niteliğinde. Ayrıca bu renk tonu, Jackie Stewart'ın ortaya attığı \"Yeşil Cehennem\" kavramına da atıfta bulunmakta. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Diğer detaylar arasında ön ve arkada yeşil bağlantı plakaları ile motor sporları yönetmeliğine uygun beyaz ok işaretleri yer alıyor. Çamurluklardaki tarihi Nürburgring logoları ve gövdede kişiselleştirilebilir yarış numarası, aracın görünümünü tamamlıyor. Yarış numarasının tipografisi, Nordschleife’nin asfaltını süsleyen grafitilerden esinleniyor. Ön camdaki altın renkli marka logolu güneşlik şeridi, güneş ışınlarını azaltıyor. Önde 20 inç, arkada 21 inç boyutundaki dövme jantlar, “parlak California altın” renginde tasarlanmış ve mat siyah merkez kapaklarla birleştirilmiş. B direkleri ve arka kanadın alt kısmı, yıldönümüne özel plaketler ve grafikler ile süslenmiş. Renk şeması iç mekanda da devam ediyor. Siyah eloksal alüminyum kapı eşikleri aydınlatmalı bir yazı taşırken, LED projektörler yolun konturunu zemine yansıtıyor. Arka koltuklardaki roll-cage yeşil renkte tasarlanmış. Sürücü tarafında, deri koltuk orta kısmındaki degrade deliklerden yeşil bir kaplama parıldıyor. Koltuk başlıklarında sürücü tarafında Nürburgring logosu, yolcu tarafında ise model adı nakışla işleniyor. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Gösterge paneli, direksiyon kumandaları ve vites şeması da yeşil vurgular taşıyor. Müşteriler, 7 vitesli Porsche Çift Kavramalı Şanzıman (PDK) ile 6 vitesli spor manuel şanzıman arasında seçim yapabilir. Vites kademelerinin ve viteslerin yazıları yeşil renkte tasarlanmış. Manuel vitesli versiyonun vites topuzu da 911 Carrera T modelinde olduğu gibi ceviz ağacından imal edilmiş. Üretici, isteğe bağlı olarak aynı renk tonlarında bir Manthey kiti sunuyor. Bu kit, modifiye edilmiş bir şasi, uyarlanmış fren bileşenleri ve 285 km/h hızda 540 kilogramlık yere basma kuvveti üreten bir aerodinamik paketi içeriyor. Bu özel modelin alıcıları ayrıca, Manthey yarış ekibinden teknik bilgiler edinecekleri Nürburgring’de düzenlenecek bir etkinliğe katılım hakkı ve aracın rengiyle uyumlu titanyum kasalı bir saat kazanıyor. Chronograph 1’in özel sürümünün kasası, hafif ve dayanıklı titanyumdan üretilmiş ve siyaha kaplanmış. İçinde, ikili gün ve tarih göstergesine sahip, COSC sertifikalı Porsche Design Kalibre WERK 01.140 çalışıyor. Mekanizma, aracın jantının şekil ve rengini yansıtan bir rotorla çalışıyor. Spor otomobil ile saati birbirine bağlayan başka detaylar da bulunuyor: Örneğin, mat siyah kadran üzerinde tarihi Nürburgring logosu yer alıyor. Orijinal Porsche iç döşeme derisinden üretilen siyah kayış, araç koltukları gibi delikli ve yeşil renkli bir tekstil \"arka yüz\" ile tasarlanmış. Dekoratif dikiş, araca uygun olarak GT gümüşü renginde geliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Resmi Çin CLTC normlarına göre 919 km menzile sahip olan aracın testte 1.000 km barajını aşması, yalnızca büyük bir bataryadan kaynaklanmıyor. Bu başarı; BMW’nin800V mimarisinedayanan 6. nesil yüksek voltajlı batarya teknolojisinin, yeni elektrikli tahrik sisteminin ve gelişmiş enerji yönetiminin bir sonucu.Tam Boyutta GörYeni batarya teknolojisinin öne çıkan teknik detayları şu şekilde:BMW'nin Seri 9 yüksek nikel kimyasına sahipbüyük silindirik hücreliyapısı, Çin'de üretilen bir BMW modelinde ilk kez kullanılıyor.Modülsüz yapıda tasarlanan batarya paketi, hücreleri doğrudan muhafazaya entegre ederek yapısal fazlalıkları azaltıyor ve alan kullanımını maksimuma çıkarıyor.Yeni hücreler, önceki nesil eDrive sisteminde kullanılan prizmatik hücrelere kıyasla %20 daha yüksek enerji yoğunluğu sunuyor.Tam Boyutta GörDaha önce Qinghai Gölü çevresindeki gerçek yol koşullarında 805 km mesafe kat eden modelin son 1.030 km’lik rekoru, uç sınırların test edildiği özel bir sürüşle elde edildi.BMW’nin bu teknolojik gövde gösterisinin arkasında, Çin pazarındaki yerli üreticilerin oluşturduğu yoğun baskı yatıyor. 2026 yılının ilk yarısında BMW Group’un Çin’deki satışları geçen yılın aynı dönemine göre%20,4 gerileyerek 262.000 adede düştü. Yerel markaların uygun fiyatlı ve lüks donanımlı elektrikli modelleri karşısında BMW, 5 Serisi dâhil pek çok modelin satış fiyatında agresif indirimlere gitmek zorunda kaldı.Bu doğrultuda Neue Klasse iX3, markanın elektrikli gelecekteki rekabet gücü için kritik bir sınav niteliği taşıyor. Chengdu Otomobil Fuarı’nda ön siparişe açılacak olan iX3'ün yanı sıra, Çin'de üretilen2027 BMW X3veM3 40. Yıl Özel Seriside fuarda boy gösterecek.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Resmi Çin CLTC normlarına göre 919 km menzile sahip olan aracın testte 1.000 km barajını aşması, yalnızca büyük bir bataryadan kaynaklanmıyor. Bu başarı; BMW’nin800V mimarisinedayanan 6. nesil yüksek voltajlı batarya teknolojisinin, yeni elektrikli tahrik sisteminin ve gelişmiş enerji yönetiminin bir sonucu. BMW’nin bu teknolojik gövde gösterisinin arkasında, Çin pazarındaki yerli üreticilerin oluşturduğu yoğun baskı yatıyor. 2026 yılının ilk yarısında BMW Group’un Çin’deki satışları geçen yılın aynı dönemine göre%20,4 gerileyerek 262.000 adede düştü. Yerel markaların uygun fiyatlı ve lüks donanımlı elektrikli modelleri karşısında BMW, 5 Serisi dâhil pek çok modelin satış fiyatında agresif indirimlere gitmek zorunda kaldı. Bu doğrultuda Neue Klasse iX3, markanın elektrikli gelecekteki rekabet gücü için kritik bir sınav niteliği taşıyor. Chengdu Otomobil Fuarı’nda ön siparişe açılacak olan iX3'ün yanı sıra, Çin'de üretilen2027 BMW X3veM3 40. Yıl Özel Seriside fuarda boy gösterecek. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.amazon.com.tr/promotion/psp/A19WZ1S9AZWVAN https://www.amazon.com.tr/dp/B0G2YF883G https://www.akbank.com/icerik/akbanklinin-odul-kumbarasi-ile-odul-kampanyasi"
         },
-        "post_text": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
-        "post_text_length": 418,
+        "post_text": "Yeni BMW iX3, tek şarjla 1.030 km menzil kat ederek dikkatleri üzerine çekti. Bu rekor, sadece batarya büyüklüğüyle değil; 800V mimarisi ve 6. nesil batarya teknolojisiyle mümkün oldu.\n\nBMW'nin Neue Klasse platformunda yükselen bu elektrikli SUV, Çin'deki iç testlerde sınırları zorlayarak önemli bir başarıya imza attı. Chengdu Otomobil Fuarı'nda ön siparişe açılacak olan yeni iX3, menzil kaygısını tarihe karıştırıyor.\n\nElektrikli otomobil teknolojisi sizi de şaşırtıyor mu?",
+        "post_text_length": 477,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-19T18:29:41.229905+03:00"
+      "updated_at": "2026-08-19T19:30:21.809614+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Porsche, 911 GT3 özel serisiyle Nürburgring’in 100. yılını kutluyor!",
-          "link": "https://tr.motor1.com/news/805468/porsche-911-gt3-ring-100/",
-          "published": "2026-08-19T15:00:00+00:00",
-          "summary": "\"Ben burada doğdum abi...\"",
-          "image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
+          "title": "Tek şarjla 1.030 km yol kat etti: Yeni BMW iX3'ten menzil rekoru",
+          "link": "https://www.donanimhaber.com/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru--209492",
+          "published": "2026-08-19T16:01:00+00:00",
+          "summary": "BMW, Neue Klasse platformunda yükselen yeni iX3 ile menzil rekoru kırdı. Çin'deki iç testlerde tek şarjla 1.030 km kateden elektrikli SUV, Chengdu Otomobil Fuarı'nda ön siparişe açılıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/Ak3egP/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-911-gt3-kutluyor-nurburgring-ozel-porsche-serisiyle-yilini",
-          "base_ai_score": 82,
+          "topic_fingerprint": "030-bmw-etti-ix3-kat-menzil-rekoru-sarjla-tek-yol",
+          "base_ai_score": 84,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 22,
@@ -309,63 +348,63 @@
           },
           "score": 87,
           "score_reason": "ai_scored",
-          "score_explanation": "Porsche ve Nürburgring gibi iki dev efsanenin birleşimi, otomobil tutkunları arasında büyük heyecan yaratacak ve sosyal medyada hızla paylaşılacak bir içerik sunuyor.",
+          "score_explanation": "1000 km menzil psikolojik bir sınır ve elektrikli araç dünyasında büyük yankı uyandıracak türden bir rekor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Nürburgring, 2027 yılında 100. yaşını kutlayacak. Haziran 1927’de açılan bu ikonik yarış pisti; 73 virajı, sıradışı eğimleri ve sürekli değişen yük koşulları nedeniyle dünyanın en zorlu pistlerinden biri olarak kabul ediliyor. Porscheiçin Nordschleife her zaman iki farklı görev üstlendi. Hem tarihî motor sporları başarılarının sahnesi hem de seri üretim araçların geliştirme süreci için merkezî bir test sahası... 20,8 kilometrelik pist, mekanik zorluğu nedeniyle her kilometresinde normal yollardan kat kat fazla test verisi sağlıyor. Zuffenhausen’da Nordschleife kutlamaları biraz erken başladı: Yaklaşan yıldönümü vesilesiyle Porsche Almanya,911 GT3’ün100 adetle sınırlı bir özel serisini piyasaya sürüyor. Araç, seri üretim GT teknolojisini, pistin tarihine atıfta bulunan özel tasarım özellikleriyle birleştiriyor. Araç, Ağustos 2026’da Nürburgring’de düzenlenecek Porsche Sixt Carrera Cup Almanya kapsamında ilk kez kamuoyuna tanıtılacak. Siparişler Eylül 2026’da açılacak ve teslimatlar, 2027 yılındaki yıldönümü sırasında gerçekleştirilecek. Aracın dış gövdesi, Beyaz veya GT Gümüş Metalik renk seçenekleriyle sunuluyor. Beyaz renk, tarihî müşteri yarış araçlarının klasik temel rengini yansıtırken, GT Gümüş Metalik renk ise modern Cup araçlarından esinleniyor. Ön ve arka tamponlar yeşil koruyucu folyo ile kaplanıyor. Bu tasarım, yarışlarda araçların daha iyi ayırt edilebilmesi için renkli işaretler kullanma şeklindeki geleneksel uygulamaya bir saygı duruşu niteliğinde. Ayrıca bu renk tonu, Jackie Stewart'ın ortaya attığı \"Yeşil Cehennem\" kavramına da atıfta bulunmakta. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Diğer detaylar arasında ön ve arkada yeşil bağlantı plakaları ile motor sporları yönetmeliğine uygun beyaz ok işaretleri yer alıyor. Çamurluklardaki tarihi Nürburgring logoları ve gövdede kişiselleştirilebilir yarış numarası, aracın görünümünü tamamlıyor. Yarış numarasının tipografisi, Nordschleife’nin asfaltını süsleyen grafitilerden esinleniyor. Ön camdaki altın renkli marka logolu güneşlik şeridi, güneş ışınlarını azaltıyor. Önde 20 inç, arkada 21 inç boyutundaki dövme jantlar, “parlak California altın” renginde tasarlanmış ve mat siyah merkez kapaklarla birleştirilmiş. B direkleri ve arka kanadın alt kısmı, yıldönümüne özel plaketler ve grafikler ile süslenmiş. Renk şeması iç mekanda da devam ediyor. Siyah eloksal alüminyum kapı eşikleri aydınlatmalı bir yazı taşırken, LED projektörler yolun konturunu zemine yansıtıyor. Arka koltuklardaki roll-cage yeşil renkte tasarlanmış. Sürücü tarafında, deri koltuk orta kısmındaki degrade deliklerden yeşil bir kaplama parıldıyor. Koltuk başlıklarında sürücü tarafında Nürburgring logosu, yolcu tarafında ise model adı nakışla işleniyor. Porsche 911 GT3 Nürburgring’in 100. Yılı Özel Sürümü (2026) Gösterge paneli, direksiyon kumandaları ve vites şeması da yeşil vurgular taşıyor. Müşteriler, 7 vitesli Porsche Çift Kavramalı Şanzıman (PDK) ile 6 vitesli spor manuel şanzıman arasında seçim yapabilir. Vites kademelerinin ve viteslerin yazıları yeşil renkte tasarlanmış. Manuel vitesli versiyonun vites topuzu da 911 Carrera T modelinde olduğu gibi ceviz ağacından imal edilmiş. Üretici, isteğe bağlı olarak aynı renk tonlarında bir Manthey kiti sunuyor. Bu kit, modifiye edilmiş bir şasi, uyarlanmış fren bileşenleri ve 285 km/h hızda 540 kilogramlık yere basma kuvveti üreten bir aerodinamik paketi içeriyor. Bu özel modelin alıcıları ayrıca, Manthey yarış ekibinden teknik bilgiler edinecekleri Nürburgring’de düzenlenecek bir etkinliğe katılım hakkı ve aracın rengiyle uyumlu titanyum kasalı bir saat kazanıyor. Chronograph 1’in özel sürümünün kasası, hafif ve dayanıklı titanyumdan üretilmiş ve siyaha kaplanmış. İçinde, ikili gün ve tarih göstergesine sahip, COSC sertifikalı Porsche Design Kalibre WERK 01.140 çalışıyor. Mekanizma, aracın jantının şekil ve rengini yansıtan bir rotorla çalışıyor. Spor otomobil ile saati birbirine bağlayan başka detaylar da bulunuyor: Örneğin, mat siyah kadran üzerinde tarihi Nürburgring logosu yer alıyor. Orijinal Porsche iç döşeme derisinden üretilen siyah kayış, araç koltukları gibi delikli ve yeşil renkli bir tekstil \"arka yüz\" ile tasarlanmış. Dekoratif dikiş, araca uygun olarak GT gümüşü renginde geliyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
+          "full_text": "Resmi Çin CLTC normlarına göre 919 km menzile sahip olan aracın testte 1.000 km barajını aşması, yalnızca büyük bir bataryadan kaynaklanmıyor. Bu başarı; BMW’nin800V mimarisinedayanan 6. nesil yüksek voltajlı batarya teknolojisinin, yeni elektrikli tahrik sisteminin ve gelişmiş enerji yönetiminin bir sonucu.Tam Boyutta GörYeni batarya teknolojisinin öne çıkan teknik detayları şu şekilde:BMW'nin Seri 9 yüksek nikel kimyasına sahipbüyük silindirik hücreliyapısı, Çin'de üretilen bir BMW modelinde ilk kez kullanılıyor.Modülsüz yapıda tasarlanan batarya paketi, hücreleri doğrudan muhafazaya entegre ederek yapısal fazlalıkları azaltıyor ve alan kullanımını maksimuma çıkarıyor.Yeni hücreler, önceki nesil eDrive sisteminde kullanılan prizmatik hücrelere kıyasla %20 daha yüksek enerji yoğunluğu sunuyor.Tam Boyutta GörDaha önce Qinghai Gölü çevresindeki gerçek yol koşullarında 805 km mesafe kat eden modelin son 1.030 km’lik rekoru, uç sınırların test edildiği özel bir sürüşle elde edildi.BMW’nin bu teknolojik gövde gösterisinin arkasında, Çin pazarındaki yerli üreticilerin oluşturduğu yoğun baskı yatıyor. 2026 yılının ilk yarısında BMW Group’un Çin’deki satışları geçen yılın aynı dönemine göre%20,4 gerileyerek 262.000 adede düştü. Yerel markaların uygun fiyatlı ve lüks donanımlı elektrikli modelleri karşısında BMW, 5 Serisi dâhil pek çok modelin satış fiyatında agresif indirimlere gitmek zorunda kaldı.Bu doğrultuda Neue Klasse iX3, markanın elektrikli gelecekteki rekabet gücü için kritik bir sınav niteliği taşıyor. Chengdu Otomobil Fuarı’nda ön siparişe açılacak olan iX3'ün yanı sıra, Çin'de üretilen2027 BMW X3veM3 40. Yıl Özel Seriside fuarda boy gösterecek.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Resmi Çin CLTC normlarına göre 919 km menzile sahip olan aracın testte 1.000 km barajını aşması, yalnızca büyük bir bataryadan kaynaklanmıyor. Bu başarı; BMW’nin800V mimarisinedayanan 6. nesil yüksek voltajlı batarya teknolojisinin, yeni elektrikli tahrik sisteminin ve gelişmiş enerji yönetiminin bir sonucu. BMW’nin bu teknolojik gövde gösterisinin arkasında, Çin pazarındaki yerli üreticilerin oluşturduğu yoğun baskı yatıyor. 2026 yılının ilk yarısında BMW Group’un Çin’deki satışları geçen yılın aynı dönemine göre%20,4 gerileyerek 262.000 adede düştü. Yerel markaların uygun fiyatlı ve lüks donanımlı elektrikli modelleri karşısında BMW, 5 Serisi dâhil pek çok modelin satış fiyatında agresif indirimlere gitmek zorunda kaldı. Bu doğrultuda Neue Klasse iX3, markanın elektrikli gelecekteki rekabet gücü için kritik bir sınav niteliği taşıyor. Chengdu Otomobil Fuarı’nda ön siparişe açılacak olan iX3'ün yanı sıra, Çin'de üretilen2027 BMW X3veM3 40. Yıl Özel Seriside fuarda boy gösterecek. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/promotion/psp/A8K1PVPFU0PUF https://www.amazon.com.tr/promotion/psp/ASL09E6Q1P342 https://www.amazon.com.tr/promotion/psp/A19WZ1S9AZWVAN https://www.amazon.com.tr/dp/B0G2YF883G https://www.akbank.com/icerik/akbanklinin-odul-kumbarasi-ile-odul-kampanyasi",
+          "post_text_for_card": "Yeni BMW iX3, tek şarjla 1.030 km menzil kat ederek dikkatleri üzerine çekti. Bu rekor, sadece batarya büyüklüğüyle değil; 800V mimarisi ve 6. nesil batarya teknolojisiyle mümkün oldu.\n\nBMW'nin Neue Klasse platformunda yükselen bu elektrikli SUV, Çin'deki iç testlerde sınırları zorlayarak önemli bir başarıya imza attı. Chengdu Otomobil Fuarı'nda ön siparişe açılacak olan yeni iX3, menzil kaygısını tarihe karıştırıyor.\n\nElektrikli otomobil teknolojisi sizi de şaşırtıyor mu?",
           "image_sources": [
             "meta_og",
-            "article_script",
+            "article_img",
             "article_img",
             "article_img"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/Ak3egP/s1/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-            "https://cdn.motor1.com/images/mgl/Ak3egP/s1/4x3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.webp",
-            "https://cdn.motor1.com/images/mgl/nAlYmk/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg",
-            "https://cdn.motor1.com/images/mgl/y2lMpY/s3/porsche-911-gt3-100-jahre-nurburgring-edition-2026.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209492/1200x675tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209492/src/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru209492_3.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209492/src/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru209492_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209492/src/tek-sarjla-1-030-km-yol-kat-etti-yeni-bmw-ix3-ten-menzil-rekoru209492_0.jpg"
           ]
         },
-        "post_text": "Porsche, 911 GT3'e \"Nürburgring 100. Yıl\" etiketi yapıştırmış. Ama asıl olay, bu otomobilin sadece 100 adet üretilecek olması.\n\nNürburgring'in 100. yılı bahane, koleksiyoncuların iştahını kabartmak şahane. Normalde de zor bulunan GT3'ü bu kadar özel kılmak, otomobil tutkunları için bir performans aracı olmaktan çok, bir yatırım aracına dönüştürüyor.\n\nBu, bir araç değil, geleceğin garajında yerini alacak bir \"parça.",
-        "image_path": "/tmp/otoxtra_img_7af6h8fy.jpg",
+        "post_text": "Yeni BMW iX3, tek şarjla 1.030 km menzil kat ederek dikkatleri üzerine çekti. Bu rekor, sadece batarya büyüklüğüyle değil; 800V mimarisi ve 6. nesil batarya teknolojisiyle mümkün oldu.\n\nBMW'nin Neue Klasse platformunda yükselen bu elektrikli SUV, Çin'deki iç testlerde sınırları zorlayarak önemli bir başarıya imza attı. Chengdu Otomobil Fuarı'nda ön siparişe açılacak olan yeni iX3, menzil kaygısını tarihe karıştırıyor.\n\nElektrikli otomobil teknolojisi sizi de şaşırtıyor mu?",
+        "image_path": "/tmp/otoxtra_img_ln00ja3p.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_7af6h8fy.jpg",
-          "/tmp/otoxtra_img_44lfrew1.jpg",
-          "/tmp/otoxtra_img_2uinnry8.jpg",
-          "/tmp/otoxtra_img_y4qw_fwm.jpg"
+          "/tmp/otoxtra_img_ln00ja3p.jpg",
+          "/tmp/otoxtra_img_as9by04o.jpg",
+          "/tmp/otoxtra_img_suwhyq6n.jpg",
+          "/tmp/otoxtra_img_phzcaxyc.jpg"
         ],
         "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-08-19T18:29:47.441938+03:00"
+      "updated_at": "2026-08-19T19:30:34.121482+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122176525112916499",
+        "post_id": "678053852057751_122176532294916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "17968973591943158",
+            "id": "18087884579285762",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1091517320491022",
+            "id": "28103189662676303",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-19T18:30:26.473890+03:00"
+      "updated_at": "2026-08-19T19:31:24.981118+03:00"
     }
   }
 }
