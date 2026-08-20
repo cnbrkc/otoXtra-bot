@@ -1,13 +1,32 @@
 {
-  "run_id": "2026-08-20-17:33",
+  "run_id": "2026-08-20-18:30",
   "status": "completed",
-  "started_at": "2026-08-20T17:33:20.901236+03:00",
-  "updated_at": "2026-08-20T17:39:11.440923+03:00",
+  "started_at": "2026-08-20T18:30:33.442138+03:00",
+  "updated_at": "2026-08-20T18:35:56.855363+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+            "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
+            "published": "2026-08-20T15:00:00+00:00",
+            "summary": "",
+            "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon"
+          },
           {
             "title": "Arabada Stock Ne Demek?",
             "link": "https://shiftdelete.net/arabada-stock-ne-demek",
@@ -24,25 +43,6 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "arabada-demek-stock"
-          },
-          {
-            "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
-            "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiyenin-genc-yetenekleri-kapadokya-rallisinde-5234h",
-            "published": "2026-08-20T14:35:39+00:00",
-            "summary": "Castrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5540.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "castrol-ford-genc-kapadokya-nde-rallisi-team-turkiye-yetenekleri"
           }
         ],
         "count": 2,
@@ -157,13 +157,13 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 4,
+            "count": 6,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 94,
-            "after_keyword": 67,
+            "found": 96,
+            "after_keyword": 69,
             "after_time": 13,
             "after_posted": 2,
             "after_duplicate": 2,
@@ -171,8 +171,8 @@
           }
         },
         "metrics": {
-          "found": 94,
-          "after_keyword": 67,
+          "found": 96,
+          "after_keyword": 69,
           "after_time": 13,
           "after_posted": 2,
           "after_duplicate": 2,
@@ -180,80 +180,80 @@
         }
       },
       "error": null,
-      "updated_at": "2026-08-20T17:38:03.774809+03:00"
+      "updated_at": "2026-08-20T18:34:58.477004+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
-          "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiyenin-genc-yetenekleri-kapadokya-rallisinde-5234h",
-          "published": "2026-08-20T14:35:39+00:00",
-          "summary": "Castrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
+          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
+          "published": "2026-08-20T15:00:00+00:00",
+          "summary": "",
+          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5540.jpg"
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
           ],
           "image_source": "rss",
-          "source_name": "otopodyum",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "castrol-ford-genc-kapadokya-nde-rallisi-team-turkiye-yetenekleri",
+          "trend_bonus": 0,
+          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
           "base_ai_score": 45,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 9,
+            "gundem_gucu": 7,
             "paylasilabilirlik": 5
           },
-          "score": 51,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel ve sporsever niş kitleye hitap eden bir motorsporları haberi; genel sosyal medya kullanıcıları için sınırlı bir paylaşılabilirlik sunar.",
+          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 51,
-        "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
+        "score": 53,
+        "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
         "trend_count": 1,
-        "trend_bonus": 1,
+        "trend_bonus": 0,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 8,
+          "etkilesim_potansiyeli": 12,
+          "benzersizlik": 9,
+          "gundem_gucu": 7,
           "paylasilabilirlik": 5
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Yerel ve sporsever niş kitleye hitap eden bir motorsporları haberi; genel sosyal medya kullanıcıları için sınırlı bir paylaşılabilirlik sunar.",
+        "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
-            "score": 51,
+            "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+            "score": 53,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 8,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 9,
+              "gundem_gucu": 7,
               "paylasilabilirlik": 5
             }
           },
           {
             "title": "Arabada Stock Ne Demek?",
-            "score": 33,
+            "score": 28,
             "score_breakdown": {
-              "guncellik": 15,
+              "guncellik": 9,
               "etkilesim_potansiyeli": 4,
               "benzersizlik": 2,
-              "gundem_gucu": 5,
-              "paylasilabilirlik": 7
+              "gundem_gucu": 4,
+              "paylasilabilirlik": 9
             }
           }
         ],
@@ -262,7 +262,7 @@
           {
             "title": "Arabada Stock Ne Demek?",
             "link": "https://shiftdelete.net/arabada-stock-ne-demek",
-            "score": 33,
+            "score": 28,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
             "topic_fingerprint": "arabada-demek-stock"
@@ -270,139 +270,139 @@
         ]
       },
       "error": null,
-      "updated_at": "2026-08-20T17:38:06.318322+03:00"
+      "updated_at": "2026-08-20T18:35:00.388831+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
-          "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiyenin-genc-yetenekleri-kapadokya-rallisinde-5234h",
-          "published": "2026-08-20T14:35:39+00:00",
-          "summary": "Castrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
+          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
+          "published": "2026-08-20T15:00:00+00:00",
+          "summary": "",
+          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5540.jpg"
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
           ],
           "image_source": "rss",
-          "source_name": "otopodyum",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "castrol-ford-genc-kapadokya-nde-rallisi-team-turkiye-yetenekleri",
+          "trend_bonus": 0,
+          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
           "base_ai_score": 45,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 9,
+            "gundem_gucu": 7,
             "paylasilabilirlik": 5
           },
-          "score": 51,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel ve sporsever niş kitleye hitap eden bir motorsporları haberi; genel sosyal medya kullanıcıları için sınırlı bir paylaşılabilirlik sunar.",
+          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Türkiye’nin en köklü motor sporları takımı Castrol Ford Team Türkiye, 21-23 Ağustos tarihleri arasında Nevşehir’de gerçekleştirilecek Kapadokya Rallisi’nde derece için yarışacak. Türkiye Ralli Şampiyonası’nın dördüncü ayağı olan Kapadokya Rallisi'nde genç yetenekler bölgenin eşsiz doğal güzellikleri ve tarihi dokusu arasındaki toprak etaplarda mücadele edecek. Geçtiğimiz yıl Kapadokya Rallisi’nde Markalar Birinciliği Kupası'nı kazanan Castrol Ford Team Türkiye, bu yıl da Ford Fiesta Rally3 araçlarıyla başarısını daha yukarılara taşımak ve geleceğin şampiyon pilotlarına yarış deneyimi kazandırmak hedefiyle parkura çıkıyor. Kapadokya Rallisi, 300 km'yi geçen toplam uzunluğu, ağustos ayında Nevşehir'in sıcak hava koşulları ve kırıcı toprak zeminiyle özellikle takımın genç isimlerine önemli bir deneyim sağlayacak. Haziran ayında gerçekleştirilen 50. Yeşil Bursa Rallisi’ne genç kadrosuyla katılan ekip, bu yarışın ardından tamamen Kapadokya'nın ikonik ve zorlu etaplarına odaklanmış durumda. Castrol Ford Racing Academy bünyesinde yetişen genç sporcular için önemli bir kilometre taşı niteliği taşıyan bu yarışta takım Can Alakoç- Ivo Pükis ve Kaan Sarıhan-Ersin Ören ikililerinden oluşan 2 farklı ekip ile nefes kesen bir mücadele verecek. Kaan Sarıhan nisan ayında gerçekleşen Bodrum Rallisi’nde genç pilotlar ikinciliğini ve Rally3 sınıfı araçların yarıştığı RC3 sınıfında üçüncülüğü elde etmişti. Ralli kariyerine 14 yaşında Letonya’da başlayan ve kısa sürede Letonya, Estonya ve Litvanya gibi ülkelerde yarışarak uluslararası deneyim kazanan Can Alakoç da bu etapla güçlü bir giriş yapacak. Ekiplerin parkurdaki mücadelesi kadar, arka plandaki stratejik hazırlıkları da büyük önem taşıyor. Castrol Ford Team Türkiye'nin Türk ralli sporunun geleceğine yatırım vizyonu ile hayata geçirdiği Castrol Ford Racing Academy bünyesinde yetişen genç sporculara, yarış boyunca Takım Koçu Murat Bostancı ve Dünya Gençler Ralli Şampiyonası’nda Türkiye'yi temsil eden Ali Türkkan mentorluk yaparak deneyimlerini aktaracak. Ali Türkkan Şili Rallisine Hazırlık Yapıyor Ali Türkkan-Bilge Ayan ikilisi Dünya Ralli Şampiyonası’nın Junior WRC sınıfında son yarış olan Şili Rallisi’ne hazırlıklarını sürdürüyor. Kapadokya Rallisi’nde toprak zeminde testlerini gerçekleştirecek olan ikili ülkemizi 10-13 Eylül Şili Rallisi’nde şampiyonluk hedefi ile temsil edecek ve Türk bayrağını dalgalandırmak için kıyasıya mücadele edecekler. Kapadokya Rallisi, idari ve teknik kontrollerin yapılacağı 21 Ağustos Cuma günü başlayacak ve 23 Ağustos Pazar günü düzenlenecek finiş ve ödül töreniyle son bulacak. Türkiye Ralli Şampiyonası 2026 Takvimi"
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, M2'nin satışlarından oldukça memnun. Haliyle ailenin üzerine daha fazla titremesi de şaşırtıcı değil. BMW içinden bir kaynağa göre M ailesinin en küçük üyesi, yeni bir versiyon almaya hazırlanıyor. Bimmer Post forumlarının M'e yakın bir üyesi, M2'nin hikayesinin xDrive versiyonu ile son bulmayacağını öne sürdü. Bahsi geçen bu yeni versiyon hakkında şimdilik bir bilgi sahibi olmasak da bazı tahminlerimiz var. İlk seçenek, manuel şanzımanlı M2 CS'in dönüşü olabilir. Zaten olağanüstü bir keyif makinesi olanM2, manuel şanzıman ile tadından yenmez hale gelebilir. Fakat tabii ki tek seçenek bu değil. Yine CS ailesine eklemlenecek bir xDrive versiyonu da makul bir tahmin. ZiraM3Sedan, M3 Touring ve M4 Coupe modellerinin tamamının dört çeker CS türevleri mevcut. Yani bulmacanın tüm parçaları hazır. Mühendislere yalnızca bu parçaları birleştirmek kalıyor. Lakin gönlümüzden geçen çok daha farklı bir heyecan: M2 CSL. BMW, M2'yi safkan bir tutku makinesi olarak gördüğünden bu seçenek de akıllarımızın bir köşesinde yer etmiş durumda. M4 CSL gibi arka koltuklarından arınmış ve hafifletilmiş bir model, G87 için muhteşem bir son dokunuş olabilir. Münih en küçük M modelini incelikle işlemeye devam ederken, tam olarak ne bekleyeceğimizi bilmemek bekleyişi daha da heyecanlı kılıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "CASTROL FORD TEAM TÜRKIYE’NIN GENÇ YETENEKLERI,  KAPADOKYA RALLISI’NDE\n\nCastrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "post_text_length": 265,
+        "post_text": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 173,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-20T17:38:10.774898+03:00"
+      "updated_at": "2026-08-20T18:35:03.521791+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Castrol Ford Team Türkiye’nin Genç Yetenekleri,  Kapadokya Rallisi’nde",
-          "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiyenin-genc-yetenekleri-kapadokya-rallisinde-5234h",
-          "published": "2026-08-20T14:35:39+00:00",
-          "summary": "Castrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5540.jpg",
+          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
+          "published": "2026-08-20T15:00:00+00:00",
+          "summary": "",
+          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5540.jpg"
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "otopodyum",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "castrol-ford-genc-kapadokya-nde-rallisi-team-turkiye-yetenekleri",
+          "trend_bonus": 0,
+          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
           "base_ai_score": 45,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 9,
+            "gundem_gucu": 7,
             "paylasilabilirlik": 5
           },
-          "score": 51,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel ve sporsever niş kitleye hitap eden bir motorsporları haberi; genel sosyal medya kullanıcıları için sınırlı bir paylaşılabilirlik sunar.",
+          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Türkiye’nin en köklü motor sporları takımı Castrol Ford Team Türkiye, 21-23 Ağustos tarihleri arasında Nevşehir’de gerçekleştirilecek Kapadokya Rallisi’nde derece için yarışacak. Türkiye Ralli Şampiyonası’nın dördüncü ayağı olan Kapadokya Rallisi'nde genç yetenekler bölgenin eşsiz doğal güzellikleri ve tarihi dokusu arasındaki toprak etaplarda mücadele edecek. Geçtiğimiz yıl Kapadokya Rallisi’nde Markalar Birinciliği Kupası'nı kazanan Castrol Ford Team Türkiye, bu yıl da Ford Fiesta Rally3 araçlarıyla başarısını daha yukarılara taşımak ve geleceğin şampiyon pilotlarına yarış deneyimi kazandırmak hedefiyle parkura çıkıyor. Kapadokya Rallisi, 300 km'yi geçen toplam uzunluğu, ağustos ayında Nevşehir'in sıcak hava koşulları ve kırıcı toprak zeminiyle özellikle takımın genç isimlerine önemli bir deneyim sağlayacak. Haziran ayında gerçekleştirilen 50. Yeşil Bursa Rallisi’ne genç kadrosuyla katılan ekip, bu yarışın ardından tamamen Kapadokya'nın ikonik ve zorlu etaplarına odaklanmış durumda. Castrol Ford Racing Academy bünyesinde yetişen genç sporcular için önemli bir kilometre taşı niteliği taşıyan bu yarışta takım Can Alakoç- Ivo Pükis ve Kaan Sarıhan-Ersin Ören ikililerinden oluşan 2 farklı ekip ile nefes kesen bir mücadele verecek. Kaan Sarıhan nisan ayında gerçekleşen Bodrum Rallisi’nde genç pilotlar ikinciliğini ve Rally3 sınıfı araçların yarıştığı RC3 sınıfında üçüncülüğü elde etmişti. Ralli kariyerine 14 yaşında Letonya’da başlayan ve kısa sürede Letonya, Estonya ve Litvanya gibi ülkelerde yarışarak uluslararası deneyim kazanan Can Alakoç da bu etapla güçlü bir giriş yapacak. Ekiplerin parkurdaki mücadelesi kadar, arka plandaki stratejik hazırlıkları da büyük önem taşıyor. Castrol Ford Team Türkiye'nin Türk ralli sporunun geleceğine yatırım vizyonu ile hayata geçirdiği Castrol Ford Racing Academy bünyesinde yetişen genç sporculara, yarış boyunca Takım Koçu Murat Bostancı ve Dünya Gençler Ralli Şampiyonası’nda Türkiye'yi temsil eden Ali Türkkan mentorluk yaparak deneyimlerini aktaracak. Ali Türkkan Şili Rallisine Hazırlık Yapıyor Ali Türkkan-Bilge Ayan ikilisi Dünya Ralli Şampiyonası’nın Junior WRC sınıfında son yarış olan Şili Rallisi’ne hazırlıklarını sürdürüyor. Kapadokya Rallisi’nde toprak zeminde testlerini gerçekleştirecek olan ikili ülkemizi 10-13 Eylül Şili Rallisi’nde şampiyonluk hedefi ile temsil edecek ve Türk bayrağını dalgalandırmak için kıyasıya mücadele edecekler. Kapadokya Rallisi, idari ve teknik kontrollerin yapılacağı 21 Ağustos Cuma günü başlayacak ve 23 Ağustos Pazar günü düzenlenecek finiş ve ödül töreniyle son bulacak. Türkiye Ralli Şampiyonası 2026 Takvimi",
-          "post_text_for_card": "CASTROL FORD TEAM TÜRKIYE’NIN GENÇ YETENEKLERI,  KAPADOKYA RALLISI’NDE\n\nCastrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, M2'nin satışlarından oldukça memnun. Haliyle ailenin üzerine daha fazla titremesi de şaşırtıcı değil. BMW içinden bir kaynağa göre M ailesinin en küçük üyesi, yeni bir versiyon almaya hazırlanıyor. Bimmer Post forumlarının M'e yakın bir üyesi, M2'nin hikayesinin xDrive versiyonu ile son bulmayacağını öne sürdü. Bahsi geçen bu yeni versiyon hakkında şimdilik bir bilgi sahibi olmasak da bazı tahminlerimiz var. İlk seçenek, manuel şanzımanlı M2 CS'in dönüşü olabilir. Zaten olağanüstü bir keyif makinesi olanM2, manuel şanzıman ile tadından yenmez hale gelebilir. Fakat tabii ki tek seçenek bu değil. Yine CS ailesine eklemlenecek bir xDrive versiyonu da makul bir tahmin. ZiraM3Sedan, M3 Touring ve M4 Coupe modellerinin tamamının dört çeker CS türevleri mevcut. Yani bulmacanın tüm parçaları hazır. Mühendislere yalnızca bu parçaları birleştirmek kalıyor. Lakin gönlümüzden geçen çok daha farklı bir heyecan: M2 CSL. BMW, M2'yi safkan bir tutku makinesi olarak gördüğünden bu seçenek de akıllarımızın bir köşesinde yer etmiş durumda. M4 CSL gibi arka koltuklarından arınmış ve hafifletilmiş bir model, G87 için muhteşem bir son dokunuş olabilir. Münih en küçük M modelini incelikle işlemeye devam ederken, tam olarak ne bekleyeceğimizi bilmemek bekleyişi daha da heyecanlı kılıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
           "image_sources": [
             "meta_og",
+            "article_script",
             "article_img",
-            "article_img",
-            "article_img"
+            "article_script"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.otopodyum.com.tr/news/5540.jpg",
-            "https://cdn.otopodyum.com.tr/news/5441.jpg",
-            "https://cdn.otopodyum.com.tr/news/5445.jpg",
-            "https://cdn.otopodyum.com.tr/news/5459.jpg"
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/s1/bmw-m2-2026-mit-m-xdrive.jpg",
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/0:92:3836:2877/bmw-m2-2026-mit-m-xdrive.webp",
+            "https://cdn.motor1.com/images/mgl/JOVzx4/s3/bmw-m2-cs-2025.jpg",
+            "https://cdn.motor1.com/images/mgl/6Z8rWk/481:92:2877:2877/bmw-m2-2026-mit-m-xdrive.webp"
           ]
         },
-        "post_text": "CASTROL FORD TEAM TÜRKIYE’NIN GENÇ YETENEKLERI,  KAPADOKYA RALLISI’NDE\n\nCastrol Ford Team Türkiye, genç yetenekleriyle 21-23 Ağustos tarihlerinde Nevşehir’de düzenlenecek Kapadokya Rallisi’nde podyum için mücadele edecek.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_o9tcze8n.jpg",
+        "post_text": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_dmos2tos.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_o9tcze8n.jpg",
-          "/tmp/otoxtra_img_0foritq1.jpg",
-          "/tmp/otoxtra_img_pul3fp8s.jpg",
-          "/tmp/otoxtra_img_ju4p1cuy.jpg"
+          "/tmp/otoxtra_img_dmos2tos.jpg",
+          "/tmp/otoxtra_img_954i43td.jpg",
+          "/tmp/otoxtra_img_d9731l8d.jpg",
+          "/tmp/otoxtra_img_bdbeopbn.jpg"
         ],
         "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-08-20T17:38:23.208819+03:00"
+      "updated_at": "2026-08-20T18:35:08.385246+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122176637810916499",
+        "post_id": "678053852057751_122176645502916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18093718232326129",
+            "id": "17910722409458795",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "2228071058042011",
+            "id": "1618428196516249",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-20T17:39:11.440923+03:00"
+      "updated_at": "2026-08-20T18:35:56.855363+03:00"
     }
   }
 }
