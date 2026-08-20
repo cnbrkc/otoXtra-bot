@@ -1,51 +1,34 @@
 {
-  "run_id": "2026-08-20-18:30",
+  "run_id": "2026-08-20-19:32",
   "status": "completed",
-  "started_at": "2026-08-20T18:30:33.442138+03:00",
-  "updated_at": "2026-08-20T18:35:56.855363+03:00",
+  "started_at": "2026-08-20T19:32:10.710087+03:00",
+  "updated_at": "2026-08-20T19:38:22.665722+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
-            "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
-            "published": "2026-08-20T15:00:00+00:00",
-            "summary": "",
-            "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+            "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
+            "link": "https://www.donanimhaber.com/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv--209534",
+            "published": "2026-08-20T16:20:00+00:00",
+            "summary": "Hyundai grubunun lüks markası Genesis, Bentley Bentayga ve Rolls-Royce Cullinan'a rakip olacak devasa elektrikli SUV modeli GV90'ı tanıttı. 648 beygirlik model, B-sütunsuz kapılarıyla dikkat çekiyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
+              "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon"
-          },
-          {
-            "title": "Arabada Stock Ne Demek?",
-            "link": "https://shiftdelete.net/arabada-stock-ne-demek",
-            "published": "2026-08-20T14:20:01+00:00",
-            "summary": "Otomobil dünyasında birçok paket ve kasa çeşidi bulunmaktadır. Araçların fabrika çıkışındaki orijinal halini ifade eden “stock” kelimesi, üretici tarafından belirlenen standart özellikleri koruyan ve sonradan herhangi bir performans veya görünüm değişikliği yapılmamış araç anlamına gelir. Bu rehberde, “arabada stock ne demek?” ve modifiyeli araçları fabrika çıkışı araçlardan ayıran özellikleri karşılaştıracağız. Stock araba, fabrika çıkışındaki orijinal halini […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arabada-demek-stock"
+            "topic_fingerprint": "elektrikli-genesis-gv90-limuzin-luks-suv-ultra"
           }
         ],
-        "count": 2,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -102,10 +85,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "error",
@@ -162,247 +145,227 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 96,
-            "after_keyword": 69,
-            "after_time": 13,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 106,
+            "after_keyword": 75,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 96,
-          "after_keyword": 69,
-          "after_time": 13,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 106,
+          "after_keyword": 75,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-08-20T18:34:58.477004+03:00"
+      "updated_at": "2026-08-20T19:36:29.572542+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
-          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
-          "published": "2026-08-20T15:00:00+00:00",
-          "summary": "",
-          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
+          "link": "https://www.donanimhaber.com/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv--209534",
+          "published": "2026-08-20T16:20:00+00:00",
+          "summary": "Hyundai grubunun lüks markası Genesis, Bentley Bentayga ve Rolls-Royce Cullinan'a rakip olacak devasa elektrikli SUV modeli GV90'ı tanıttı. 648 beygirlik model, B-sütunsuz kapılarıyla dikkat çekiyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
-          "base_ai_score": 45,
+          "trend_bonus": 1,
+          "topic_fingerprint": "elektrikli-genesis-gv90-limuzin-luks-suv-ultra",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 9,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 53,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
+          "score_explanation": "Ultra lüks segmentte Rolls-Royce ve Bentley gibi devlere rakip olması, tasarımı ve gücüyle sosyal medyada büyük yankı uyandıracak bir model.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 53,
-        "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
+        "score": 86,
+        "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
         "trend_count": 1,
-        "trend_bonus": 0,
+        "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 9,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 5
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 18,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 10
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
+        "score_explanation": "Ultra lüks segmentte Rolls-Royce ve Bentley gibi devlere rakip olması, tasarımı ve gücüyle sosyal medyada büyük yankı uyandıracak bir model.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
-            "score": 53,
+            "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
+            "score": 86,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 9,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 5
-            }
-          },
-          {
-            "title": "Arabada Stock Ne Demek?",
-            "score": 28,
-            "score_breakdown": {
-              "guncellik": 9,
-              "etkilesim_potansiyeli": 4,
-              "benzersizlik": 2,
-              "gundem_gucu": 4,
-              "paylasilabilirlik": 9
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 18,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 10
             }
           }
         ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Arabada Stock Ne Demek?",
-            "link": "https://shiftdelete.net/arabada-stock-ne-demek",
-            "score": 28,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "arabada-demek-stock"
-          }
-        ]
+        "scored_count": 1,
+        "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-08-20T18:35:00.388831+03:00"
+      "updated_at": "2026-08-20T19:36:31.807950+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
-          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
-          "published": "2026-08-20T15:00:00+00:00",
-          "summary": "",
-          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
+          "link": "https://www.donanimhaber.com/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv--209534",
+          "published": "2026-08-20T16:20:00+00:00",
+          "summary": "Hyundai grubunun lüks markası Genesis, Bentley Bentayga ve Rolls-Royce Cullinan'a rakip olacak devasa elektrikli SUV modeli GV90'ı tanıttı. 648 beygirlik model, B-sütunsuz kapılarıyla dikkat çekiyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
-          "base_ai_score": 45,
+          "trend_bonus": 1,
+          "topic_fingerprint": "elektrikli-genesis-gv90-limuzin-luks-suv-ultra",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 9,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 53,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
+          "score_explanation": "Ultra lüks segmentte Rolls-Royce ve Bentley gibi devlere rakip olması, tasarımı ve gücüyle sosyal medyada büyük yankı uyandıracak bir model.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, M2'nin satışlarından oldukça memnun. Haliyle ailenin üzerine daha fazla titremesi de şaşırtıcı değil. BMW içinden bir kaynağa göre M ailesinin en küçük üyesi, yeni bir versiyon almaya hazırlanıyor. Bimmer Post forumlarının M'e yakın bir üyesi, M2'nin hikayesinin xDrive versiyonu ile son bulmayacağını öne sürdü. Bahsi geçen bu yeni versiyon hakkında şimdilik bir bilgi sahibi olmasak da bazı tahminlerimiz var. İlk seçenek, manuel şanzımanlı M2 CS'in dönüşü olabilir. Zaten olağanüstü bir keyif makinesi olanM2, manuel şanzıman ile tadından yenmez hale gelebilir. Fakat tabii ki tek seçenek bu değil. Yine CS ailesine eklemlenecek bir xDrive versiyonu da makul bir tahmin. ZiraM3Sedan, M3 Touring ve M4 Coupe modellerinin tamamının dört çeker CS türevleri mevcut. Yani bulmacanın tüm parçaları hazır. Mühendislere yalnızca bu parçaları birleştirmek kalıyor. Lakin gönlümüzden geçen çok daha farklı bir heyecan: M2 CSL. BMW, M2'yi safkan bir tutku makinesi olarak gördüğünden bu seçenek de akıllarımızın bir köşesinde yer etmiş durumda. M4 CSL gibi arka koltuklarından arınmış ve hafifletilmiş bir model, G87 için muhteşem bir son dokunuş olabilir. Münih en küçük M modelini incelikle işlemeye devam ederken, tam olarak ne bekleyeceğimizi bilmemek bekleyişi daha da heyecanlı kılıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Eski Volkswagen Grubu tasarımcısı ve Bentley Bentayga'nın ortak yaratıcısı olan Hyundai Tasarım Başkanı SangYup Lee, GV90’ı \"İlk gerçek ultra lüks otomobilimiz\" olarak nitelendirirken, Genesis’in gelecekteki lüks, performans ve havalı tasarımlarını temsil ettiğini vurguladı.5.3 metrelik elektrikli devTam Boyutta GörNeredeyse5,3 metreuzunluğa ve3.245 mm'lik devasa bir aks mesafesine sahip olan GV90; kardeş modelleri Kia EV9 ve Hyundai Ioniq 9'dan çok daha büyük. Boyutlarıyla Rolls-Royce Cullinan ve Bentley Bentayga EWB ile birebir eşleşen model, Avrupa'da satışa sunulacak en büyük elektrikli otomobil unvanını almaya aday.Aracın öne çıkan tasarım ve mühendislik detayları ise şöyle:En üst seviye Neolun donanımında orta sütun (B-sütunu) bulunmuyor ve arka kapılar geriye doğru açılıyor. Özel menteşe mekanizması sayesinde arka kapılar ön kapılardan bağımsız açılabiliyor. B-sütunu olmadan 5 yıldızlı güvenlik testlerinden geçebilmek için gövde yapısı ekstra takviyelerle donatılmış.Kabin tabanında gerçek ahşap zemin, zemin altı ısıtma, hakiki taş detaylar ve kaşmir yün döşemeler kullanılmış.24 inçlik dev jantlar, kristal görünümlü LED farlar ve tam genişlikte OLED arka stoplar konsept modelden aynen seri üretime aktarılmış.İç mekânda dev sinema ekranı ve dönen koltuklarTam Boyutta Görİç mekânda sürücüyü ve yolcuları özel jet konforu karşılıyor. Konsolun merkezinde Hyundai'nin yeni Pleos bilgi-eğlence sistemini çalıştıran23,6 inçlik bağımsız dokunmatik ekranyer alıyor. Araç park halindeyken bu ekran 90 mm yukarı yükselerek medya içerikleri için24,6 inçlik dev bir sinema ekranınadönüşüyor. Ayrıca sürücü için 25 inçlik devasa bir Head-Up Display sunuluyor.Giriş versiyonlarında 7 koltuklu düzen yer alırken, en üst Neolun paketinde ön koltukları arkaya dönebilen 4 koltuklu VIP yerleşimi tercih edilebiliyor. Boston Symphony Hall ve Wembley Stadyumu gibi mekanların akustik ortamını taklit edebilen 25 hoparlörlüBang & Olufsenses sistemi de kabindeki lüksü tamamlıyor.648 beygir güç, 123.5 kWsa batarya ve 350 kW hızlı ŞarjTam Boyutta GörGenesis'in amiral gemisi modellerine özel olarak tasarladığıeMP (Electric Mobility Prime)mimarisi üzerine yükselen GV90, teknik verileriyle de dikkat çekiyor. Devasa123,5 kWsakapasiteli batarya, araca tek şarjla yaklaşık500 kilometreyevaran sürüş menzili sağlıyor.800V mimarisi sayesinde350 kWşarj hızını destekleyen araç, %10'dan %80 doluluğa sadece22 dakikadaulaşıyor. Ön ve arka aksta yer alan çift motor toplamda648 beygir güç ve 800 Nm torküretiyor. Bu veriler GV90'ı Hyundai Grubu'nun ürettiği en güçlü elektrikli araç yapıyor.Her iki motorda da bağımsız kilitli diferansiyel ve standart olarak sunulanarka tekerlekten yönlendirme (AWS)sistemi bulunuyor. Çift valfli adaptif süspansiyonlar ve havalı körükler sürüş yüksekliğini ve konforunu anlık olarak ayarlıyor. Kabin sessizliğini sağlamak için tüm camlarda 5 mm'den kalın ses yalıtımlı camlar kullanılmış.Önümüzdeki ay Güney Kore'de satışa sunulacak olan Genesis GV90, 2027'nin ilk yarısında Avrupa pazarına giriş yapacak. Fiyatı henüz açıklanmasa da 110.000 euronun bir başlangıç etiketine sahip olması ve markanın en pahalı modeli olması bekleniyor.2027 Genesis GV90 Görselleri(19)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Eski Volkswagen Grubu tasarımcısı ve Bentley Bentayga'nın ortak yaratıcısı olan Hyundai Tasarım Başkanı SangYup Lee, GV90’ı \"İlk gerçek ultra lüks otomobilimiz\" olarak nitelendirirken, Genesis’in gelecekteki lüks, performans ve havalı tasarımlarını temsil ettiğini vurguladı. Aracın öne çıkan tasarım ve mühendislik detayları ise şöyle: Giriş versiyonlarında 7 koltuklu düzen yer alırken, en üst Neolun paketinde ön koltukları arkaya dönebilen 4 koltuklu VIP yerleşimi tercih edilebiliyor. Boston Symphony Hall ve Wembley Stadyumu gibi mekanların akustik ortamını taklit edebilen 25 hoparlörlüBang & Olufsenses sistemi de kabindeki lüksü tamamlıyor. 800V mimarisi sayesinde350 kWşarj hızını destekleyen araç, %10'dan %80 doluluğa sadece22 dakikadaulaşıyor. Ön ve arka aksta yer alan çift motor toplamda648 beygir güç ve 800 Nm torküretiyor. Bu veriler GV90'ı Hyundai Grubu'nun ürettiği en güçlü elektrikli araç yapıyor. Her iki motorda da bağımsız kilitli diferansiyel ve standart olarak sunulanarka tekerlekten yönlendirme (AWS)sistemi bulunuyor. Çift valfli adaptif süspansiyonlar ve havalı körükler sürüş yüksekliğini ve konforunu anlık olarak ayarlıyor. Kabin sessizliğini sağlamak için tüm camlarda 5 mm'den kalın ses yalıtımlı camlar kullanılmış. Önümüzdeki ay Güney Kore'de satışa sunulacak olan Genesis GV90, 2027'nin ilk yarısında Avrupa pazarına giriş yapacak. Fiyatı henüz açıklanmasa da 110.000 euronun bir başlangıç etiketine sahip olması ve markanın en pahalı..."
         },
-        "post_text": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "post_text_length": 173,
+        "post_text": "Genesis GV90 tanıtıldı ama asıl olay \"ultra lüks\" tanımını nasıl yeniden yazacağı.\n\n5.3 metrelik devasa boyutları ve B-sütunsuz kapılarıyla bu elektrikli SUV, Bentley ve Rolls-Royce'a meydan okuyor. Artık mesele sadece motor gücü değil, otomobilin bir yaşam alanı gibi sunduğu o \"havalı tasarım\" ve mühendislik cesareti.\n\nGüvenlikten ödün vermeden bu kadar şık olmak, yeni lüksün ta kendisi.",
+        "post_text_length": 391,
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-20T18:35:03.521791+03:00"
+      "updated_at": "2026-08-20T19:36:35.943362+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BMW, M2'ye yeni bir özel versiyon planlıyor olabilir",
-          "link": "https://tr.motor1.com/news/805598/bmw-m2-yeni-versiyon-iddiasi/",
-          "published": "2026-08-20T15:00:00+00:00",
-          "summary": "",
-          "image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg",
+          "title": "Genesis GV90 tanıtıldı: Limuzin gibi ultra lüks elektrikli SUV!",
+          "link": "https://www.donanimhaber.com/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv--209534",
+          "published": "2026-08-20T16:20:00+00:00",
+          "summary": "Hyundai grubunun lüks markası Genesis, Bentley Bentayga ve Rolls-Royce Cullinan'a rakip olacak devasa elektrikli SUV modeli GV90'ı tanıttı. 648 beygirlik model, B-sütunsuz kapılarıyla dikkat çekiyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/s3/bmw-m2-2026-mit-m-xdrive.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
-          "trend_bonus": 0,
-          "topic_fingerprint": "bmw-olabilir-ozel-planliyor-versiyon",
-          "base_ai_score": 45,
+          "trend_bonus": 1,
+          "topic_fingerprint": "elektrikli-genesis-gv90-limuzin-luks-suv-ultra",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 9,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
           },
-          "score": 53,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Performans odaklı bir model olduğu için otomobil meraklılarının ilgisini çeker ancak henüz bir söylenti düzeyinde.",
+          "score_explanation": "Ultra lüks segmentte Rolls-Royce ve Bentley gibi devlere rakip olması, tasarımı ve gücüyle sosyal medyada büyük yankı uyandıracak bir model.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, M2'nin satışlarından oldukça memnun. Haliyle ailenin üzerine daha fazla titremesi de şaşırtıcı değil. BMW içinden bir kaynağa göre M ailesinin en küçük üyesi, yeni bir versiyon almaya hazırlanıyor. Bimmer Post forumlarının M'e yakın bir üyesi, M2'nin hikayesinin xDrive versiyonu ile son bulmayacağını öne sürdü. Bahsi geçen bu yeni versiyon hakkında şimdilik bir bilgi sahibi olmasak da bazı tahminlerimiz var. İlk seçenek, manuel şanzımanlı M2 CS'in dönüşü olabilir. Zaten olağanüstü bir keyif makinesi olanM2, manuel şanzıman ile tadından yenmez hale gelebilir. Fakat tabii ki tek seçenek bu değil. Yine CS ailesine eklemlenecek bir xDrive versiyonu da makul bir tahmin. ZiraM3Sedan, M3 Touring ve M4 Coupe modellerinin tamamının dört çeker CS türevleri mevcut. Yani bulmacanın tüm parçaları hazır. Mühendislere yalnızca bu parçaları birleştirmek kalıyor. Lakin gönlümüzden geçen çok daha farklı bir heyecan: M2 CSL. BMW, M2'yi safkan bir tutku makinesi olarak gördüğünden bu seçenek de akıllarımızın bir köşesinde yer etmiş durumda. M4 CSL gibi arka koltuklarından arınmış ve hafifletilmiş bir model, G87 için muhteşem bir son dokunuş olabilir. Münih en küçük M modelini incelikle işlemeye devam ederken, tam olarak ne bekleyeceğimizi bilmemek bekleyişi daha da heyecanlı kılıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "full_text": "Eski Volkswagen Grubu tasarımcısı ve Bentley Bentayga'nın ortak yaratıcısı olan Hyundai Tasarım Başkanı SangYup Lee, GV90’ı \"İlk gerçek ultra lüks otomobilimiz\" olarak nitelendirirken, Genesis’in gelecekteki lüks, performans ve havalı tasarımlarını temsil ettiğini vurguladı.5.3 metrelik elektrikli devTam Boyutta GörNeredeyse5,3 metreuzunluğa ve3.245 mm'lik devasa bir aks mesafesine sahip olan GV90; kardeş modelleri Kia EV9 ve Hyundai Ioniq 9'dan çok daha büyük. Boyutlarıyla Rolls-Royce Cullinan ve Bentley Bentayga EWB ile birebir eşleşen model, Avrupa'da satışa sunulacak en büyük elektrikli otomobil unvanını almaya aday.Aracın öne çıkan tasarım ve mühendislik detayları ise şöyle:En üst seviye Neolun donanımında orta sütun (B-sütunu) bulunmuyor ve arka kapılar geriye doğru açılıyor. Özel menteşe mekanizması sayesinde arka kapılar ön kapılardan bağımsız açılabiliyor. B-sütunu olmadan 5 yıldızlı güvenlik testlerinden geçebilmek için gövde yapısı ekstra takviyelerle donatılmış.Kabin tabanında gerçek ahşap zemin, zemin altı ısıtma, hakiki taş detaylar ve kaşmir yün döşemeler kullanılmış.24 inçlik dev jantlar, kristal görünümlü LED farlar ve tam genişlikte OLED arka stoplar konsept modelden aynen seri üretime aktarılmış.İç mekânda dev sinema ekranı ve dönen koltuklarTam Boyutta Görİç mekânda sürücüyü ve yolcuları özel jet konforu karşılıyor. Konsolun merkezinde Hyundai'nin yeni Pleos bilgi-eğlence sistemini çalıştıran23,6 inçlik bağımsız dokunmatik ekranyer alıyor. Araç park halindeyken bu ekran 90 mm yukarı yükselerek medya içerikleri için24,6 inçlik dev bir sinema ekranınadönüşüyor. Ayrıca sürücü için 25 inçlik devasa bir Head-Up Display sunuluyor.Giriş versiyonlarında 7 koltuklu düzen yer alırken, en üst Neolun paketinde ön koltukları arkaya dönebilen 4 koltuklu VIP yerleşimi tercih edilebiliyor. Boston Symphony Hall ve Wembley Stadyumu gibi mekanların akustik ortamını taklit edebilen 25 hoparlörlüBang & Olufsenses sistemi de kabindeki lüksü tamamlıyor.648 beygir güç, 123.5 kWsa batarya ve 350 kW hızlı ŞarjTam Boyutta GörGenesis'in amiral gemisi modellerine özel olarak tasarladığıeMP (Electric Mobility Prime)mimarisi üzerine yükselen GV90, teknik verileriyle de dikkat çekiyor. Devasa123,5 kWsakapasiteli batarya, araca tek şarjla yaklaşık500 kilometreyevaran sürüş menzili sağlıyor.800V mimarisi sayesinde350 kWşarj hızını destekleyen araç, %10'dan %80 doluluğa sadece22 dakikadaulaşıyor. Ön ve arka aksta yer alan çift motor toplamda648 beygir güç ve 800 Nm torküretiyor. Bu veriler GV90'ı Hyundai Grubu'nun ürettiği en güçlü elektrikli araç yapıyor.Her iki motorda da bağımsız kilitli diferansiyel ve standart olarak sunulanarka tekerlekten yönlendirme (AWS)sistemi bulunuyor. Çift valfli adaptif süspansiyonlar ve havalı körükler sürüş yüksekliğini ve konforunu anlık olarak ayarlıyor. Kabin sessizliğini sağlamak için tüm camlarda 5 mm'den kalın ses yalıtımlı camlar kullanılmış.Önümüzdeki ay Güney Kore'de satışa sunulacak olan Genesis GV90, 2027'nin ilk yarısında Avrupa pazarına giriş yapacak. Fiyatı henüz açıklanmasa da 110.000 euronun bir başlangıç etiketine sahip olması ve markanın en pahalı modeli olması bekleniyor.2027 Genesis GV90 Görselleri(19)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Eski Volkswagen Grubu tasarımcısı ve Bentley Bentayga'nın ortak yaratıcısı olan Hyundai Tasarım Başkanı SangYup Lee, GV90’ı \"İlk gerçek ultra lüks otomobilimiz\" olarak nitelendirirken, Genesis’in gelecekteki lüks, performans ve havalı tasarımlarını temsil ettiğini vurguladı. Aracın öne çıkan tasarım ve mühendislik detayları ise şöyle: Giriş versiyonlarında 7 koltuklu düzen yer alırken, en üst Neolun paketinde ön koltukları arkaya dönebilen 4 koltuklu VIP yerleşimi tercih edilebiliyor. Boston Symphony Hall ve Wembley Stadyumu gibi mekanların akustik ortamını taklit edebilen 25 hoparlörlüBang & Olufsenses sistemi de kabindeki lüksü tamamlıyor. 800V mimarisi sayesinde350 kWşarj hızını destekleyen araç, %10'dan %80 doluluğa sadece22 dakikadaulaşıyor. Ön ve arka aksta yer alan çift motor toplamda648 beygir güç ve 800 Nm torküretiyor. Bu veriler GV90'ı Hyundai Grubu'nun ürettiği en güçlü elektrikli araç yapıyor. Her iki motorda da bağımsız kilitli diferansiyel ve standart olarak sunulanarka tekerlekten yönlendirme (AWS)sistemi bulunuyor. Çift valfli adaptif süspansiyonlar ve havalı körükler sürüş yüksekliğini ve konforunu anlık olarak ayarlıyor. Kabin sessizliğini sağlamak için tüm camlarda 5 mm'den kalın ses yalıtımlı camlar kullanılmış. Önümüzdeki ay Güney Kore'de satışa sunulacak olan Genesis GV90, 2027'nin ilk yarısında Avrupa pazarına giriş yapacak. Fiyatı henüz açıklanmasa da 110.000 euronun bir başlangıç etiketine sahip olması ve markanın en pahalı...",
+          "post_text_for_card": "Genesis GV90 tanıtıldı ama asıl olay \"ultra lüks\" tanımını nasıl yeniden yazacağı.\n\n5.3 metrelik devasa boyutları ve B-sütunsuz kapılarıyla bu elektrikli SUV, Bentley ve Rolls-Royce'a meydan okuyor. Artık mesele sadece motor gücü değil, otomobilin bir yaşam alanı gibi sunduğu o \"havalı tasarım\" ve mühendislik cesareti.\n\nGüvenlikten ödün vermeden bu kadar şık olmak, yeni lüksün ta kendisi.",
           "image_sources": [
             "meta_og",
-            "article_script",
             "article_img",
-            "article_script"
+            "article_img",
+            "article_img"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/s1/bmw-m2-2026-mit-m-xdrive.jpg",
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/0:92:3836:2877/bmw-m2-2026-mit-m-xdrive.webp",
-            "https://cdn.motor1.com/images/mgl/JOVzx4/s3/bmw-m2-cs-2025.jpg",
-            "https://cdn.motor1.com/images/mgl/6Z8rWk/481:92:2877:2877/bmw-m2-2026-mit-m-xdrive.webp"
+            "https://www.donanimhaber.com/images/images/haber/209534/1200x675genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9374/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv-9374-1.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9374/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv-9374-10.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9374/genesis-gv90-tanitildi-limuzin-gibi-ultra-luks-elektrikli-suv-9374-12.jpg"
           ]
         },
-        "post_text": "BMW, M2'YE YENI BIR ÖZEL VERSIYON PLANLIYOR OLABILIR\n\nGüncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_dmos2tos.jpg",
+        "post_text": "Genesis GV90 tanıtıldı ama asıl olay \"ultra lüks\" tanımını nasıl yeniden yazacağı.\n\n5.3 metrelik devasa boyutları ve B-sütunsuz kapılarıyla bu elektrikli SUV, Bentley ve Rolls-Royce'a meydan okuyor. Artık mesele sadece motor gücü değil, otomobilin bir yaşam alanı gibi sunduğu o \"havalı tasarım\" ve mühendislik cesareti.\n\nGüvenlikten ödün vermeden bu kadar şık olmak, yeni lüksün ta kendisi.",
+        "image_path": "/tmp/otoxtra_img_gt922qnq.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_dmos2tos.jpg",
-          "/tmp/otoxtra_img_954i43td.jpg",
-          "/tmp/otoxtra_img_d9731l8d.jpg",
-          "/tmp/otoxtra_img_bdbeopbn.jpg"
+          "/tmp/otoxtra_img_gt922qnq.jpg",
+          "/tmp/otoxtra_img_zmudol18.jpg",
+          "/tmp/otoxtra_img_f3w_w0pr.jpg",
+          "/tmp/otoxtra_img_y_uoq43z.jpg"
         ],
         "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-08-20T18:35:08.385246+03:00"
+      "updated_at": "2026-08-20T19:37:38.896393+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122176645502916499",
+        "post_id": "678053852057751_122176649078916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
-            "success": true,
-            "id": "17910722409458795",
-            "error": ""
+            "success": false,
+            "id": "",
+            "error": "publish_failed"
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1618428196516249",
+            "id": "1820884439078557",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-20T18:35:56.855363+03:00"
+      "updated_at": "2026-08-20T19:38:22.665722+03:00"
     }
   }
 }
