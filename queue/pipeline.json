@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-20-14:23",
-  "status": "completed",
-  "started_at": "2026-08-20T14:23:47.945648+03:00",
-  "updated_at": "2026-08-20T14:28:15.558239+03:00",
+  "run_id": "2026-08-20-15:42",
+  "status": "error",
+  "started_at": "2026-08-20T15:42:22.377348+03:00",
+  "updated_at": "2026-08-20T15:47:08.753905+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "BMW XM'in sonu mu geldi?",
-            "link": "https://tr.motor1.com/news/805552/bmw-xm-uretimden-kalkiyor-mu/",
-            "published": "2026-08-20T11:00:00+00:00",
-            "summary": "Sıra dışı SUV zorlanmaya başladı.",
-            "image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-sonu"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,16 +65,16 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
+            "attempts": 3
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/DoluBatarya/rss",
+            "attempts": 3
           },
           "Ahmet Celik": {
             "status": "error",
@@ -145,227 +125,49 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 113,
-            "after_keyword": 76,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 93,
+            "after_keyword": 62,
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 113,
-          "after_keyword": 76,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 93,
+          "after_keyword": 62,
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-20T14:27:22.413994+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-20T15:47:08.753905+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "BMW XM'in sonu mu geldi?",
-          "link": "https://tr.motor1.com/news/805552/bmw-xm-uretimden-kalkiyor-mu/",
-          "published": "2026-08-20T11:00:00+00:00",
-          "summary": "Sıra dışı SUV zorlanmaya başladı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-sonu",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tartışmalı tasarımı ve satış performansıyla merak uyandıran bir model ancak henüz resmi bir iptal kararı olmaması nedeniyle orta seviye bir ilgiye sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 54,
-        "title": "BMW XM'in sonu mu geldi?",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 14,
-          "benzersizlik": 10,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 3
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Tartışmalı tasarımı ve satış performansıyla merak uyandıran bir model ancak henüz resmi bir iptal kararı olmaması nedeniyle orta seviye bir ilgiye sahip.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "BMW XM'in sonu mu geldi?",
-            "score": 54,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 14,
-              "benzersizlik": 10,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T14:27:24.341709+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BMW XM'in sonu mu geldi?",
-          "link": "https://tr.motor1.com/news/805552/bmw-xm-uretimden-kalkiyor-mu/",
-          "published": "2026-08-20T11:00:00+00:00",
-          "summary": "Sıra dışı SUV zorlanmaya başladı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-sonu",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tartışmalı tasarımı ve satış performansıyla merak uyandıran bir model ancak henüz resmi bir iptal kararı olmaması nedeniyle orta seviye bir ilgiye sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW XM, beklenen performansı sergileyemedi. Öyle ki 2025 yılında model, üretimi biten Z4 Roadster'dan bile daha az satarak görülmemiş bir başarıya imza attı. 2026 ise çok daha sert geçecek ve geçtiğimiz yıl ulaşılan 7.000 barajına bile erişilemeyecek gibi görünüyor. Tabii ki Bavyeralı üretici bu durumu göz ardı edebilecek durumda değil. Düşük satış verileri, XM'in üretimden kaldırılma riskini beraberinde getirdi. Automotive News'in haberine göre XM, özellikle Çin'de beklenen satış performansını gösterememesi nedeniyle idam sehpasına çıkmaya başlamış. M logolu bu devasa model dört yıl önce tanıtıldığında, lüks otomobil üreticisi müşterilerinin yüzde 23'ünün Çin'den geleceğini öngörmüştü. Fakat bu durum gerçekleşmedi. Maalesef iddialarıBMW'nin davranışları da doğrudan destekliyor. Şu sıralarda piyasadaki yaşam döngüsünün ortalarında olan XM'in \"makyajlı\" prototiplerinin sokaklarda geziyor olması gerekiyordu. Lakin Alman üreticinin planları arasında bir makyaj operasyonu olmadığı çok açık. Bu iddiaların ardından Neue Klasse platformu ile gelecek bir XM'in de artık imkansız olduğu görüşündeyiz. Bize sorarsanız XM, BMW'nin rafa kaldırdığı modellerden biri olacak. Bavyeralı bu süreçte Z4 ve 8 Serisi üretimini resmen sonlandırdı. Elektrikli SUV kısmında iX5 ve iX7 ile doldurulan ürün gamında iX için yer kalmayacak gibi görünüyor.XMde bu modellerin arasına her an katılabilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "BMW XM'in sonu geliyorsa, bu sadece \"sıra dışı\" olmanın yetmediğini gösterir.\n\nM logolu devasa SUV, Çin pazarında beklenen ilgiyi görmeyince kaderi değişti. Üretici, müşterilerinin dörtte birini Çin'den beklerken, düşük satışlar modeli üretimden kaldırma riskine soktu.\n\nBazen en iddialı tasarımlar bile pazarın gerçekleriyle yüzleşmek zorunda kalır.",
-        "post_text_length": 350,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T14:27:26.392785+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BMW XM'in sonu mu geldi?",
-          "link": "https://tr.motor1.com/news/805552/bmw-xm-uretimden-kalkiyor-mu/",
-          "published": "2026-08-20T11:00:00+00:00",
-          "summary": "Sıra dışı SUV zorlanmaya başladı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbYXQb/s3/2026-bmw-xm-label-exterior-9.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-sonu",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tartışmalı tasarımı ve satış performansıyla merak uyandıran bir model ancak henüz resmi bir iptal kararı olmaması nedeniyle orta seviye bir ilgiye sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW XM, beklenen performansı sergileyemedi. Öyle ki 2025 yılında model, üretimi biten Z4 Roadster'dan bile daha az satarak görülmemiş bir başarıya imza attı. 2026 ise çok daha sert geçecek ve geçtiğimiz yıl ulaşılan 7.000 barajına bile erişilemeyecek gibi görünüyor. Tabii ki Bavyeralı üretici bu durumu göz ardı edebilecek durumda değil. Düşük satış verileri, XM'in üretimden kaldırılma riskini beraberinde getirdi. Automotive News'in haberine göre XM, özellikle Çin'de beklenen satış performansını gösterememesi nedeniyle idam sehpasına çıkmaya başlamış. M logolu bu devasa model dört yıl önce tanıtıldığında, lüks otomobil üreticisi müşterilerinin yüzde 23'ünün Çin'den geleceğini öngörmüştü. Fakat bu durum gerçekleşmedi. Maalesef iddialarıBMW'nin davranışları da doğrudan destekliyor. Şu sıralarda piyasadaki yaşam döngüsünün ortalarında olan XM'in \"makyajlı\" prototiplerinin sokaklarda geziyor olması gerekiyordu. Lakin Alman üreticinin planları arasında bir makyaj operasyonu olmadığı çok açık. Bu iddiaların ardından Neue Klasse platformu ile gelecek bir XM'in de artık imkansız olduğu görüşündeyiz. Bize sorarsanız XM, BMW'nin rafa kaldırdığı modellerden biri olacak. Bavyeralı bu süreçte Z4 ve 8 Serisi üretimini resmen sonlandırdı. Elektrikli SUV kısmında iX5 ve iX7 ile doldurulan ürün gamında iX için yer kalmayacak gibi görünüyor.XMde bu modellerin arasına her an katılabilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "BMW XM'in sonu geliyorsa, bu sadece \"sıra dışı\" olmanın yetmediğini gösterir.\n\nM logolu devasa SUV, Çin pazarında beklenen ilgiyi görmeyince kaderi değişti. Üretici, müşterilerinin dörtte birini Çin'den beklerken, düşük satışlar modeli üretimden kaldırma riskine soktu.\n\nBazen en iddialı tasarımlar bile pazarın gerçekleriyle yüzleşmek zorunda kalır.",
-          "image_sources": [
-            "meta_og",
-            "article_script",
-            "article_img",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/KbYXQb/s1/2026-bmw-xm-label-exterior-9.jpg",
-            "https://cdn.motor1.com/images/mgl/KbYXQb/772:0:4626:3470/2026-bmw-xm-label-exterior-9.webp",
-            "https://cdn.motor1.com/images/mgl/BXymWM/s3/2026-bmw-xm-label-engine-bay.jpg",
-            "https://cdn.motor1.com/images/mgl/KbYXQb/1348:0:3470:3470/2026-bmw-xm-label-exterior-9.webp"
-          ]
-        },
-        "post_text": "BMW XM'in sonu geliyorsa, bu sadece \"sıra dışı\" olmanın yetmediğini gösterir.\n\nM logolu devasa SUV, Çin pazarında beklenen ilgiyi görmeyince kaderi değişti. Üretici, müşterilerinin dörtte birini Çin'den beklerken, düşük satışlar modeli üretimden kaldırma riskine soktu.\n\nBazen en iddialı tasarımlar bile pazarın gerçekleriyle yüzleşmek zorunda kalır.",
-        "image_path": "/tmp/otoxtra_img_km06l8u1.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_km06l8u1.jpg",
-          "/tmp/otoxtra_img_rbjalkuj.jpg",
-          "/tmp/otoxtra_img_kn2533k3.jpg",
-          "/tmp/otoxtra_img_nxa2bywe.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T14:27:31.057637+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176620440916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18129389410736530",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1860395861603148",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T14:28:15.558239+03:00"
+      "updated_at": null
     }
   }
 }
