@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-20-09:40",
-  "status": "completed",
-  "started_at": "2026-08-20T09:40:54.332480+03:00",
-  "updated_at": "2026-08-20T09:46:22.130621+03:00",
+  "run_id": "2026-08-20-10:38",
+  "status": "error",
+  "started_at": "2026-08-20T10:38:25.194959+03:00",
+  "updated_at": "2026-08-20T10:42:11.970807+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-            "link": "https://www.otoajanda.com/temsadan-teknoloji-ihracati-cekyaya-5-mwhlik-batarya-sevketti/",
-            "published": "2026-08-20T05:36:09+00:00",
-            "summary": "Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının […] TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-            "image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-            "image_candidates": [
-              "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "OtoAjanda",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "batarya-cekya-ihracati-lik-mwh-sevketti-teknoloji-temsa"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -85,10 +65,10 @@
             "attempts": 3
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/eozpeynirci/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "Dolu Batarya": {
             "status": "error",
@@ -121,10 +101,10 @@
             "attempts": 3
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
             "status": "error",
@@ -140,223 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 1,
+            "count": 2,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 91,
-            "after_keyword": 62,
-            "after_time": 11,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 112,
+            "after_keyword": 72,
+            "after_time": 13,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 91,
-          "after_keyword": 62,
-          "after_time": 11,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 112,
+          "after_keyword": 72,
+          "after_time": 13,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-20T09:45:35.481381+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-20T10:42:11.970807+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-          "link": "https://www.otoajanda.com/temsadan-teknoloji-ihracati-cekyaya-5-mwhlik-batarya-sevketti/",
-          "published": "2026-08-20T05:36:09+00:00",
-          "summary": "Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının […] TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "batarya-cekya-ihracati-lik-mwh-sevketti-teknoloji-temsa",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 14,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 7
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yerli üreticinin teknoloji ihracatı yapması ulusal gurur ve sanayi başarısı açısından iyi bir paylaşılabilirlik sunuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 64,
-        "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 14,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yerli üreticinin teknoloji ihracatı yapması ulusal gurur ve sanayi başarısı açısından iyi bir paylaşılabilirlik sunuyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-            "score": 64,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 14,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 7
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T09:45:37.055156+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-          "link": "https://www.otoajanda.com/temsadan-teknoloji-ihracati-cekyaya-5-mwhlik-batarya-sevketti/",
-          "published": "2026-08-20T05:36:09+00:00",
-          "summary": "Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının […] TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "batarya-cekya-ihracati-lik-mwh-sevketti-teknoloji-temsa",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 14,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 7
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yerli üreticinin teknoloji ihracatı yapması ulusal gurur ve sanayi başarısı açısından iyi bir paylaşılabilirlik sunuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketiTEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının yanı sıra, şirketin otobüs dışındaki ilk ihracatı olarak tarihi bir eşiği temsil ediyor. Çekya’ya ihracat Škoda Group’un yürüttüğü otobüs projesi kapsamında Ağustos 2026’da tamamlanan tek seferlik sevkiyatla gerçekleşti. Gelişmeyi değerlendirenTEMSA CEO’su Evren Güzel, bu adımın mühendislik ve Ar-Ge altyapılarının somut bir çıktısı olduğunu belirterek, “TEMSA artık yalnızca araç değil, teknoloji de ihraç ediyor” ifadelerini kullandı. Şirket; denizcilik, tarım ve havacılık gibi farklı sektörlere de yerli batarya çözümleri sunmayı sürdürüyor. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak 2. el otomobilde riskli şirketler artıyor E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment."
-        },
-        "post_text": "TEMSA’DAN TEKNOLOJI IHRACATI: ÇEKYA’YA 5 MWH’LIK BATARYA SEVKETTI\n\nZor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "post_text_length": 441,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T09:45:39.969777+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti",
-          "link": "https://www.otoajanda.com/temsadan-teknoloji-ihracati-cekyaya-5-mwhlik-batarya-sevketti/",
-          "published": "2026-08-20T05:36:09+00:00",
-          "summary": "Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının […] TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg"
-          ],
-          "image_source": "article_candidates_field",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "batarya-cekya-ihracati-lik-mwh-sevketti-teknoloji-temsa",
-          "base_ai_score": 58,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 14,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 7
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yerli üreticinin teknoloji ihracatı yapması ulusal gurur ve sanayi başarısı açısından iyi bir paylaşılabilirlik sunuyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Zor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketiTEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne kadarki en yüksek hacimli batarya sevkiyatı olmasının yanı sıra, şirketin otobüs dışındaki ilk ihracatı olarak tarihi bir eşiği temsil ediyor. Çekya’ya ihracat Škoda Group’un yürüttüğü otobüs projesi kapsamında Ağustos 2026’da tamamlanan tek seferlik sevkiyatla gerçekleşti. Gelişmeyi değerlendirenTEMSA CEO’su Evren Güzel, bu adımın mühendislik ve Ar-Ge altyapılarının somut bir çıktısı olduğunu belirterek, “TEMSA artık yalnızca araç değil, teknoloji de ihraç ediyor” ifadelerini kullandı. Şirket; denizcilik, tarım ve havacılık gibi farklı sektörlere de yerli batarya çözümleri sunmayı sürdürüyor. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Otomotivde yeni kriz: Motor yağı darboğazı başladı, araç servis maliyetleri artacak 2. el otomobilde riskli şirketler artıyor E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment.",
-          "post_text_for_card": "TEMSA’DAN TEKNOLOJI IHRACATI: ÇEKYA’YA 5 MWH’LIK BATARYA SEVKETTI\n\nZor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-          "image_sources": [
-            "article_candidates_field"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://www.otoajanda.com/wp-content/uploads/2024/09/TEMSA-fabrika-2024.jpg"
-          ]
-        },
-        "post_text": "TEMSA’DAN TEKNOLOJI IHRACATI: ÇEKYA’YA 5 MWH’LIK BATARYA SEVKETTI\n\nZor günleri çok geride bırakan Sabancı-Skoda Group ortak şirketi TEMSA, araç üretiminin ötesine geçerek teknoloji ihraç eden bir güç haline geldi. Şirket, geliştirdiği 50 adet yüksek voltajlı lityum iyon batarya paketini ve 10 adet güç dağıtım ünitesini Çekya’ya ihraç etti. Yaklaşık 5 MWh kapasiteli bu teslimat, TEMSA’nın bugüne\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
-        "image_path": "/tmp/otoxtra_img_6ghl47xo.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_6ghl47xo.jpg"
-        ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T09:45:41.474747+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176595666916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18137928910567176",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1629711515431180",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-20T09:46:22.130621+03:00"
+      "updated_at": null
     }
   }
 }
