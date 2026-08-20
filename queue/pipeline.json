@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-08-20-15:42",
-  "status": "error",
-  "started_at": "2026-08-20T15:42:22.377348+03:00",
-  "updated_at": "2026-08-20T15:47:08.753905+03:00",
+  "run_id": "2026-08-20-16:43",
+  "status": "completed",
+  "started_at": "2026-08-20T16:43:44.881974+03:00",
+  "updated_at": "2026-08-20T16:49:16.538287+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+            "link": "https://www.donanimhaber.com/aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu--209538",
+            "published": "2026-08-20T13:20:00+00:00",
+            "summary": "ASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aselsan-bulustu-kamikaze-kez-suyla-tufan"
+          },
+          {
+            "title": "Renault, maliyetine rağmen fiziksel tuşlardan vazgeçmeyecek",
+            "link": "https://tr.motor1.com/news/805593/renault-fiziksel-tuslardan-vazgecmeyecek/",
+            "published": "2026-08-20T12:59:01+00:00",
+            "summary": "Fransız marka, bunun \"kurucu ilke\" olduğu görüşünde.",
+            "image_url": "https://cdn.motor1.com/images/mgl/0egLzn/s3/renault-megane-e-tech-2026.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/0egLzn/s3/renault-megane-e-tech-2026.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/0egLzn/s3/renault-megane-e-tech-2026.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "fiziksel-maliyetine-ragmen-renault-tuslardan-vazgecmeyecek"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +165,240 @@
           },
           "_metrics": {
             "found": 93,
-            "after_keyword": 62,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 66,
+            "after_time": 12,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 93,
-          "after_keyword": 62,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 66,
+          "after_time": 12,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-20T15:47:08.753905+03:00"
+      "error": null,
+      "updated_at": "2026-08-20T16:48:12.173180+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+          "link": "https://www.donanimhaber.com/aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu--209538",
+          "published": "2026-08-20T13:20:00+00:00",
+          "summary": "ASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aselsan-bulustu-kamikaze-kez-suyla-tufan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Savunma sanayii ve teknoloji meraklılarının ilgisini çekecek yüksek viral potansiyele sahip yerli bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Savunma sanayii ve teknoloji meraklılarının ilgisini çekecek yüksek viral potansiyele sahip yerli bir gelişme.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Renault, maliyetine rağmen fiziksel tuşlardan vazgeçmeyecek",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 14,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Renault, maliyetine rağmen fiziksel tuşlardan vazgeçmeyecek",
+            "link": "https://tr.motor1.com/news/805593/renault-fiziksel-tuslardan-vazgecmeyecek/",
+            "score": 71,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "fiziksel-maliyetine-ragmen-renault-tuslardan-vazgecmeyecek"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-20T16:48:14.344392+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+          "link": "https://www.donanimhaber.com/aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu--209538",
+          "published": "2026-08-20T13:20:00+00:00",
+          "summary": "ASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aselsan-bulustu-kamikaze-kez-suyla-tufan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Savunma sanayii ve teknoloji meraklılarının ilgisini çekecek yüksek viral potansiyele sahip yerli bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "20-23 Ağustos tarihleri arasında Gölcük Tersanesi Komutanlığı'nda gerçekleştirilenTEKNOFEST Mavi Vatankapsamında TUFAN Kamikaze İDA'nın ilk kez Türkiye sularına indirildiği duyuruldu. Yüzey operasyonları için geliştirilen TUFAN,yüksek infilaklı duyarsız harp başlığıtaşıyabiliyor. Yaklaşık8 metre uzunluğa ve 1,8 metre genişliğesahip olan platform, 50 knot ve üzerindeki maksimum hızıyla yüksek sürat gerektiren görevler için tasarlanıyor. Benzinli motor ve su jeti tahrik sistemi kullanan TUFAN,200 deniz mili seyir menzilisunuyor. Platformun bir diğer önemli özelliği ise tek bir araç olarak görev yapmakla sınırlı kalmaması. TUFAN, görev sırasında alt gruplara ayrılarak farklı görevleri aynı anda gerçekleştirebiliyor ve asimetrik saldırı formasyonları oluşturabiliyor.TUFAN'ın görev kabiliyetlerinin merkezinde gelişmiş otonomi ve durumsal farkındalık sistemleri bulunuyor. Platform, hareketli ve sabit engelleri algılayarak bunlardan kaçınabiliyor, görev koşullarına göre dinamik rota planlayabiliyor ve yapay zeka destekli hedef angajmanı gerçekleştirebiliyor.Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor.Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Benzinli motor ve su jeti tahrik sistemi kullanan TUFAN,200 deniz mili seyir menzilisunuyor. Platformun bir diğer önemli özelliği ise tek bir araç olarak görev yapmakla sınırlı kalmaması. TUFAN, görev sırasında alt gruplara ayrılarak farklı görevleri aynı anda gerçekleştirebiliyor ve asimetrik saldırı formasyonları oluşturabiliyor. TUFAN'ın görev kabiliyetlerinin merkezinde gelişmiş otonomi ve durumsal farkındalık sistemleri bulunuyor. Platform, hareketli ve sabit engelleri algılayarak bunlardan kaçınabiliyor, görev koşullarına göre dinamik rota planlayabiliyor ve yapay zeka destekli hedef angajmanı gerçekleştirebiliyor. Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor.Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor. Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B08HX8M7RQ https://www.amazon.com.tr/dp/B0DHYCP8B9 https://www.amazon.com.tr/promotion/psp/A34NYP6UBFY7AO https://www.amazon.com.tr/dp/B0BXCMJWCD https://moneyclubkart.azureedge.net/mcstage/905-migroskop-web-pdf-639227771657831257.pdf https://anket.qumpara.com/anket?token=01c12873-ff7c-4a3e-a0d8-d403d438a634"
+        },
+        "post_text": "ASELSAN’IN KAMIKAZE İDA’SI TUFAN ILK KEZ SUYLA BULUŞTU\n\nASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "post_text_length": 273,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-20T16:48:18.053397+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Aselsan’ın kamikaze İDA’sı TUFAN ilk kez suyla buluştu",
+          "link": "https://www.donanimhaber.com/aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu--209538",
+          "published": "2026-08-20T13:20:00+00:00",
+          "summary": "ASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aselsan-bulustu-kamikaze-kez-suyla-tufan",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Savunma sanayii ve teknoloji meraklılarının ilgisini çekecek yüksek viral potansiyele sahip yerli bir gelişme.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "20-23 Ağustos tarihleri arasında Gölcük Tersanesi Komutanlığı'nda gerçekleştirilenTEKNOFEST Mavi Vatankapsamında TUFAN Kamikaze İDA'nın ilk kez Türkiye sularına indirildiği duyuruldu. Yüzey operasyonları için geliştirilen TUFAN,yüksek infilaklı duyarsız harp başlığıtaşıyabiliyor. Yaklaşık8 metre uzunluğa ve 1,8 metre genişliğesahip olan platform, 50 knot ve üzerindeki maksimum hızıyla yüksek sürat gerektiren görevler için tasarlanıyor. Benzinli motor ve su jeti tahrik sistemi kullanan TUFAN,200 deniz mili seyir menzilisunuyor. Platformun bir diğer önemli özelliği ise tek bir araç olarak görev yapmakla sınırlı kalmaması. TUFAN, görev sırasında alt gruplara ayrılarak farklı görevleri aynı anda gerçekleştirebiliyor ve asimetrik saldırı formasyonları oluşturabiliyor.TUFAN'ın görev kabiliyetlerinin merkezinde gelişmiş otonomi ve durumsal farkındalık sistemleri bulunuyor. Platform, hareketli ve sabit engelleri algılayarak bunlardan kaçınabiliyor, görev koşullarına göre dinamik rota planlayabiliyor ve yapay zeka destekli hedef angajmanı gerçekleştirebiliyor.Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor.Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Benzinli motor ve su jeti tahrik sistemi kullanan TUFAN,200 deniz mili seyir menzilisunuyor. Platformun bir diğer önemli özelliği ise tek bir araç olarak görev yapmakla sınırlı kalmaması. TUFAN, görev sırasında alt gruplara ayrılarak farklı görevleri aynı anda gerçekleştirebiliyor ve asimetrik saldırı formasyonları oluşturabiliyor. TUFAN'ın görev kabiliyetlerinin merkezinde gelişmiş otonomi ve durumsal farkındalık sistemleri bulunuyor. Platform, hareketli ve sabit engelleri algılayarak bunlardan kaçınabiliyor, görev koşullarına göre dinamik rota planlayabiliyor ve yapay zeka destekli hedef angajmanı gerçekleştirebiliyor. Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor.Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Platformun düşük radar kesit alanı ve düşük termal izi de tespit edilmesini zorlaştıran unsurlar arasında yer alıyor. TUFAN ayrıca GNSS ve iletişim imkanlarının kısıtlı olduğu ortamlarda görevini sürdürebilecek şekilde tasarlanıyor. Haberleşme altyapısında ise farklı iletişim seçenekleri destekleniyor. TUFAN; RF görüş hattı, uydu iletişimi ve 4G/LTE üzerinden haberleşebiliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B08HX8M7RQ https://www.amazon.com.tr/dp/B0DHYCP8B9 https://www.amazon.com.tr/promotion/psp/A34NYP6UBFY7AO https://www.amazon.com.tr/dp/B0BXCMJWCD https://moneyclubkart.azureedge.net/mcstage/905-migroskop-web-pdf-639227771657831257.pdf https://anket.qumpara.com/anket?token=01c12873-ff7c-4a3e-a0d8-d403d438a634",
+          "post_text_for_card": "ASELSAN’IN KAMIKAZE İDA’SI TUFAN ILK KEZ SUYLA BULUŞTU\n\nASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209538/1200x675aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209538/src/aselsan-in-kamikaze-ida-si-tufan-ilk-kez-suyla-bulustu209538_0.jpg"
+          ]
+        },
+        "post_text": "ASELSAN’IN KAMIKAZE İDA’SI TUFAN ILK KEZ SUYLA BULUŞTU\n\nASELSAN tarafından geliştirilen TUFAN Kamikaze İDA ilk kez suya indirildi. 50 knot üzeri hıza ulaşan araç, sürü görevleri ve yapay zeka destekli hedef angajmanı yapabiliyor.\n\nSiz bu gelişme hakkında ne düşünüyorsunuz?",
+        "image_path": "/tmp/otoxtra_img_9e5d5zxl.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_9e5d5zxl.jpg",
+          "/tmp/otoxtra_img_vm9kuyl2.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-20T16:48:34.474374+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176633244916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18434373715131681",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1267236188765578",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-20T16:49:16.538287+03:00"
     }
   }
 }
