@@ -98,13 +98,14 @@ def create_social_card(
 
     title_override / body_override verilirse kart, post metninden türetmek
     yerine bu özel üretilmiş story metinlerini kullanır. Başlık her durumda
-    tek cümleye indirilir.
+    tek cümleye indirilir; alt metin (body_override) 2-4 cümlelik açıklama
+    olabilir (v5.6).
     """
     try:
         title, body = _prepare_text(post_text, title_override, body_override)
 
         font_title = _get_font(62, bold=True)
-        font_body = _get_font(40, bold=False)
+        font_body = _get_font(38, bold=False)
 
         dummy_img = Image.new("RGB", (1, 1))
         dummy_draw = ImageDraw.Draw(dummy_img)

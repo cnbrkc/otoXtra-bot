@@ -52,7 +52,7 @@ otoXtra-bot/
 │   ├── scorer_helpers.py             ← v6.0 — AI cevaplarını makalelerle eşleştirme, puan dökümü
 │   ├── scorer_engine.py              ← v6.0 — Batch puanlama motoru, tazelik/trend bonus hesaplama
 │   │
-│   ├── agent_writer.py               ← v5.5 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
+│   ├── agent_writer.py               ← v5.6 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
 │   │
 │   ├── agent_image.py                ← v9.0 — Görsel işleme ana orkestratör (ANA KÖPRÜ)
 │   ├── image_utils.py                ← v9.0 — Görsel URL doğrulama, limit kontrolü, perceptual hash
@@ -320,6 +320,7 @@ post_writer   → agent_writer.py tarafından kullanılır
 story_card_writer → agent_writer.py tarafından kullanılır
                Story kartı için ÖZEL başlık + alt metin üretimi
                Başlık TEK CÜMLE olmak zorundadır (kod ile de garanti edilir)
+               Alt metin haberi açıklayan 2-4 CÜMLE olabilir (v5.6, ~460 karakter sınırı)
                ÇIKTI: {"baslik": "...", "alt_metin": "..."}
 ```
 ---
