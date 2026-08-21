@@ -6,6 +6,8 @@ agents/agent_image.py - Görsel İşleme Ajanı Ana Köprüsü (v8.9 - DRY Refac
 """
 import os
 from collections import Counter
+from typing import Optional
+
 from core.config_loader import load_config
 from core.logger import log
 from core.state_manager import get_stage, set_stage
@@ -19,9 +21,168 @@ from agents.image_utils import (
 )
 from agents.image_processor import resize_and_crop, add_logo
 from agents.image_scraper import scrape_article_image_urls, _collect_article_candidates
-from agents.image_search import get_duckduckgo_image_candidates, _ai_search_image_url
+from agents.image_search import (
+    get_duckduckgo_image_candidates,
+    _ai_search_image_url,
+    build_image_search_queries,
+    verify_image_relevance,
+)
 
 _DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
+
+# v9.0: Yedek arama görselleri için ortak limitler (tek noktadan yönetim)
+_MAX_SEARCH_QUERIES = 3            # En fazla kaç arama sorgusu denenecek
+_MAX_DDG_CANDIDATES_PER_QUERY = 10 # Sorgu başına DDG aday sayısı
+_MAX_TOTAL_SEARCH_CANDIDATES = 12  # Toplamda denenecek aday URL sayısı
+_MAX_VISION_CHECKS = 8             # Vision doğrulama çağrısı üst sınırı
+
+
+def _finalize_search_image(
+    downloaded: str,
+    feed_image_width: int,
+    feed_image_height: int,
+    resize_limits: dict,
+    should_add_logo: bool,
+    test_mode: bool,
+    article: dict,
+    label: str,
+) -> Optional[str]:
+    """Yedek aramadan inen görseli işler: resize + logo + (test modunda kart).
+
+    v9.0: Eskiden 3 ayrı fallback bloğunda kopyalanmış ortak işleme adımı.
+    Hata durumunda indirilen dosya temizlenir ve None döner.
+    """
+    try:
+        processed = downloaded
+        needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
+        if needs_resize:
+            log(f"{label} gorsel resize: {resize_reason}")
+            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
+        else:
+            log(f"{label} gorsel resize atlandi: {resize_reason}")
+
+        if should_add_logo:
+            processed = add_logo(processed)
+
+        if test_mode:
+            try:
+                from core.image_generator import create_social_card
+                if processed and os.path.exists(processed):
+                    card_path = processed.replace(".jpg", "_card.jpg")
+                    post_text = article.get("post_text_for_card", "Başlık yok")
+                    create_social_card(
+                        post_text=post_text,
+                        image_path=processed,
+                        output_path=card_path,
+                        title_override=article.get("story_card_title") or None,
+                        body_override=article.get("story_card_subtitle") or None,
+                    )
+                    if os.path.exists(card_path):
+                        _safe_unlink(processed)
+                        processed = card_path
+                        log(f"Test Modu: Sosyal medya kartı başarıyla oluşturuldu ({label}).", "INFO")
+            except Exception as exc:
+                log(f"Kart oluşturma adımı atlandı ({label}): {exc}", "WARNING")
+
+        return processed
+    except Exception as exc:
+        log(f"{label} gorsel isleme hatasi: {exc}", "WARNING")
+        _safe_unlink(downloaded)
+        return None
+
+
+def _smart_search_fallback(
+    article: dict,
+    prepared_paths: list,
+    used_sources: list,
+    limits: dict,
+    resize_limits: dict,
+    feed_image_width: int,
+    feed_image_height: int,
+    should_add_logo: bool,
+    test_mode: bool,
+) -> None:
+    """v9.0 AKILLI YEDEK GÖRSEL ARAMASI.
+
+    Eski sistem haber başlığının ilk kelimelerini aratıp İLK inen görseli
+    kabul ediyordu; sonuç: alakasız fotoğraflarla paylaşım.
+
+    Yeni akış:
+      1. AI'dan marka+model odaklı HASSAS arama sorguları üretilir
+         (AI yoksa marka/model sözlüğü ile deterministik çıkarım).
+      2. Tüm sorgulardan gelen adaylar tek havuzda toplanır.
+      3. Her aday indirildikten sonra Gemini VISION ile doğrulanır:
+         farklı marka araç veya konuyla ilgisiz stock fotoğraf -> RED.
+      4. Doğrulamadan geçen İLK görsel kabul edilir.
+      5. Vision kullanılamıyorsa (Gemini yok/hatalı) fail-open: indirilen
+         görsel kabul edilir (bot görselsiz kalmasın).
+
+    Hiçbir aday doğrulamadan geçmezse prepared_paths boş kalır; publisher
+    bu durumda text-only paylaşım yapar (alakasız fotoğraftan iyidir).
+    """
+    log("Haberin kendi gorseli bulunamadi. Akilli yedek gorsel aramasi baslatiliyor...", "INFO")
+
+    search_queries = build_image_search_queries(article)[:_MAX_SEARCH_QUERIES]
+    if not search_queries:
+        log("Akilli arama: sorgu uretilemedi", "WARNING")
+        return
+
+    log(f"Akilli arama sorgulari ({len(search_queries)}): {search_queries}")
+
+    candidate_urls: list = []
+    seen_urls = set()
+    for query in search_queries:
+        for ddg_url in get_duckduckgo_image_candidates(query, max_results=_MAX_DDG_CANDIDATES_PER_QUERY):
+            if ddg_url and ddg_url not in seen_urls:
+                seen_urls.add(ddg_url)
+                candidate_urls.append(ddg_url)
+        if len(candidate_urls) >= _MAX_TOTAL_SEARCH_CANDIDATES:
+            break
+
+    if not candidate_urls:
+        log("Akilli arama: hic aday URL bulunamadi", "WARNING")
+        return
+
+    candidate_urls = candidate_urls[:_MAX_TOTAL_SEARCH_CANDIDATES]
+    log(f"Akilli arama: {len(candidate_urls)} aday URL toplandi")
+
+    vision_checks = 0
+    for ddg_url in candidate_urls:
+        if len(prepared_paths) >= 1:  # Yedek aramadan tek görsel yeter
+            break
+
+        log(f"Akilli arama adayi deneniyor: {ddg_url[:100]}")
+        downloaded, reason = _download_image_with_reason(ddg_url, limits)
+        if not downloaded:
+            log(f"Akilli arama adayi elendi: {reason}", "WARNING")
+            continue
+
+        verdict = None
+        if vision_checks < _MAX_VISION_CHECKS:
+            vision_checks += 1
+            verdict = verify_image_relevance(downloaded, article)
+
+        if verdict is False:
+            log("Akilli arama adayi VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
+            _safe_unlink(downloaded)
+            continue
+
+        if verdict is None:
+            log("Akilli arama: vision dogrulanamadi, aday fail-open kabul ediliyor", "WARNING")
+
+        processed = _finalize_search_image(
+            downloaded, feed_image_width, feed_image_height, resize_limits,
+            should_add_logo, test_mode, article, "smart_search",
+        )
+        if processed:
+            prepared_paths.append(processed)
+            used_sources.append("smart_search")
+            article["image_source"] = "smart_search"
+            log("Akilli arama gorseli dogrulamadan gecti ve kabul edildi!")
+            return
+
+    log("Akilli arama: hicbir aday dogrulamadan gecemedi", "WARNING")
+
 
 def prepare_images(article: dict) -> list[str]:
     settings_config = load_config("settings")
@@ -154,7 +315,13 @@ def prepare_images(article: dict) -> list[str]:
                     if processed and os.path.exists(processed):
                         card_path = processed.replace(".jpg", "_card.jpg")
                         post_text = article.get("post_text_for_card", "Başlık yok")
-                        create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
+                        create_social_card(
+                            post_text=post_text,
+                            image_path=processed,
+                            output_path=card_path,
+                            title_override=article.get("story_card_title") or None,
+                            body_override=article.get("story_card_subtitle") or None,
+                        )
                         if os.path.exists(card_path):
                             _safe_unlink(processed)
                             processed = card_path
@@ -224,7 +391,13 @@ def prepare_images(article: dict) -> list[str]:
                         if processed and os.path.exists(processed):
                             card_path = processed.replace(".jpg", "_card.jpg")
                             post_text = article.get("post_text_for_card", "Başlık yok")
-                            create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
+                            create_social_card(
+                            post_text=post_text,
+                            image_path=processed,
+                            output_path=card_path,
+                            title_override=article.get("story_card_title") or None,
+                            body_override=article.get("story_card_subtitle") or None,
+                        )
                             if os.path.exists(card_path):
                                 _safe_unlink(processed)
                                 processed = card_path
@@ -255,117 +428,48 @@ def prepare_images(article: dict) -> list[str]:
             if path and os.path.exists(path):
                 _safe_unlink(path)
 
+    # ── FALLBACK (v9.0): AKILLI YEDEK GÖRSEL ARAMASI ─────────────────────────
+    # 1) AI marka+model sorguları -> DDG aday havuzu
+    # 2) İndirilen her aday Gemini VISION ile doğrulanır (alakasızsa RED)
     if not prepared_paths:
-        log("Haberin kendi gorseli bulunamadi. DuckDuckGo görsel araması başlatılıyor...", "INFO")
-        ddg_urls = get_duckduckgo_image_candidates(article.get("title", ""), max_results=15)
-        for ddg_url in ddg_urls:
-            if len(prepared_paths) >= max_images_per_news: break
-            log(f"DuckDuckGo adayı deneniyor: {ddg_url[:100]}")
-            downloaded, reason = _download_image_with_reason(ddg_url, limits)
-            if downloaded:
-                try:
-                    processed = downloaded
-                    needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
-                    if needs_resize:
-                        log(f"DDG gorsel resize: {resize_reason}")
-                        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
-                    else:
-                        log(f"DDG gorsel resize atlandi: {resize_reason}")
-                    if should_add_logo:
-                        processed = add_logo(processed)
-                    if test_mode:
-                        try:
-                            from core.image_generator import create_social_card
-                            if processed and os.path.exists(processed):
-                                card_path = processed.replace(".jpg", "_card.jpg")
-                                post_text = article.get("post_text_for_card", "Başlık yok")
-                                create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
-                                if os.path.exists(card_path):
-                                    _safe_unlink(processed)
-                                    processed = card_path
-                                    log("Test Modu: Sosyal medya kartı başarıyla oluşturuldu (DDG).", "INFO")
-                        except Exception as exc:
-                            log(f"Kart oluşturma adımı atlandı (DDG): {exc}", "WARNING")
-                    prepared_paths.append(processed)
-                    used_sources.append("duckduckgo")
-                    article["image_source"] = "duckduckgo"
-                    log("DuckDuckGo gorsel basarili! Gorsel hazirlandi.")
-                    break 
-                except Exception as exc:
-                    log(f"DuckDuckGo gorsel isleme hatasi: {exc}", "WARNING")
-                    _safe_unlink(downloaded)
-            else:
-                log(f"DuckDuckGo adayi elendi: {reason}", "WARNING")
+        _smart_search_fallback(
+            article,
+            prepared_paths,
+            used_sources,
+            limits,
+            resize_limits,
+            feed_image_width,
+            feed_image_height,
+            should_add_logo,
+            test_mode,
+        )
 
-    # Fallback 2: AI görsel arama (daha agresif prompt ile)
+    # FALLBACK 2: AI URL araması (son çare; bu da VISION ile doğrulanır)
     if not prepared_paths:
-        log("DuckDuckGo sonuc vermedi. AI görsel aramasi deneniyor...", "INFO")
+        log("Akilli arama sonuc vermedi. AI URL gorsel aramasi deneniyor...", "INFO")
         ai_url = _ai_search_image_url(article)
         if ai_url:
             log(f"AI gorsel arama: URL bulundu, deneniyor: {ai_url[:80]}...")
             downloaded, reason = _download_image_with_reason(ai_url, limits)
             if downloaded:
-                try:
-                    processed = downloaded
-                    needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
-                    if needs_resize:
-                        log(f"AI gorsel resize: {resize_reason}")
-                        processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
-                    else:
-                        log(f"AI gorsel resize atlandi: {resize_reason}")
-                    if should_add_logo:
-                        processed = add_logo(processed)
-                    if test_mode:
-                        try:
-                            from core.image_generator import create_social_card
-                            if processed and os.path.exists(processed):
-                                card_path = processed.replace(".jpg", "_card.jpg")
-                                post_text = article.get("post_text_for_card", "Başlık yok")
-                                create_social_card(post_text=post_text, image_path=processed, output_path=card_path)
-                                if os.path.exists(card_path):
-                                    _safe_unlink(processed)
-                                    processed = card_path
-                                    log("Test Modu: Sosyal medya kartı başarıyla oluşturuldu (AI).", "INFO")
-                        except Exception as exc:
-                            log(f"Kart oluşturma adımı atlandı (AI): {exc}", "WARNING")
-                    prepared_paths.append(processed)
-                    used_sources.append("ai_search")
-                    article["image_source"] = "ai_search"
-                    log(f"AI gorsel basarili! Gorsel hazirlandi.")
-                except Exception as exc:
-                    log(f"AI gorsel isleme hatasi: {exc}", "WARNING")
+                verdict = verify_image_relevance(downloaded, article)
+                if verdict is False:
+                    log("AI URL gorseli VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
                     _safe_unlink(downloaded)
+                else:
+                    if verdict is None:
+                        log("AI URL: vision dogrulanamadi, fail-open kabul", "WARNING")
+                    processed = _finalize_search_image(
+                        downloaded, feed_image_width, feed_image_height, resize_limits,
+                        should_add_logo, test_mode, article, "ai_search",
+                    )
+                    if processed:
+                        prepared_paths.append(processed)
+                        used_sources.append("ai_search")
+                        article["image_source"] = "ai_search"
+                        log("AI gorsel basarili! Gorsel hazirlandi.")
             else:
                 log(f"AI gorsel indirilemedi: {reason}", "WARNING")
-
-    # Fallback 3: DuckDuckGo'yu genişletilmiş arama ile tekrar dene
-    if not prepared_paths:
-        log("AI da sonuc vermedi. DuckDuckGo genisletilmis arama deneniyor...", "WARNING")
-        title_keywords = article.get("title", "").split()[:5]
-        for keyword_combo in [title_keywords, title_keywords[:3], title_keywords[:2]]:
-            if prepared_paths: break
-            search_query = " ".join(keyword_combo)
-            if len(search_query) < 4: continue
-            log(f"Genisletilmis DDG arama: '{search_query}'")
-            ddg_urls = get_duckduckgo_image_candidates(search_query, max_results=20)
-            for ddg_url in ddg_urls[:5]:
-                if len(prepared_paths) >= max_images_per_news: break
-                downloaded, reason = _download_image_with_reason(ddg_url, limits)
-                if downloaded:
-                    try:
-                        processed = downloaded
-                        needs_resize, resize_reason = _should_resize_for_platform(downloaded, resize_limits)
-                        if needs_resize:
-                            processed = resize_and_crop(downloaded, feed_image_width, feed_image_height)
-                        if should_add_logo:
-                            processed = add_logo(processed)
-                        prepared_paths.append(processed)
-                        used_sources.append("duckduckgo_extended")
-                        article["image_source"] = "duckduckgo_extended"
-                        log(f"Genisletilmis DDG gorsel bulundu: {ddg_url[:80]}")
-                        break
-                    except Exception:
-                        _safe_unlink(downloaded)
 
     if not prepared_paths:
         log("GORSEL YOK: Bu haber icin hicbir gorsel bulunamadi. Text-only paylasim yapilacak.", "WARNING")
@@ -426,6 +530,11 @@ def run() -> bool:
         set_stage("image", "error", error="Write ciktisinda haber yok")
         return False
     article["post_text_for_card"] = post_text
+    # v5.5: Story card özel başlık/alt metin (writer aşamasında üretildi).
+    story_card_title = write_output.get("story_card_title", "")
+    story_card_subtitle = write_output.get("story_card_subtitle", "")
+    article["story_card_title"] = story_card_title
+    article["story_card_subtitle"] = story_card_subtitle
     set_stage("image", "running")
     try:
         image_paths = prepare_images(article)
@@ -433,6 +542,8 @@ def run() -> bool:
         output = {
             "article": article,
             "post_text": post_text,
+            "story_card_title": story_card_title,
+            "story_card_subtitle": story_card_subtitle,
             "image_path": first_image_path,
             "image_paths": image_paths,
             "image_source": article.get("image_source", "unknown"),

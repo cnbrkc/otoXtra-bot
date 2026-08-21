@@ -411,6 +411,112 @@ def _try_huggingface(prompt: str, cfg: Dict[str, Any], max_tokens_override: Opti
     return None
 
 
+# ========== VISION (GÖRSEL DOĞRULAMA) ==========
+GEMINI_MODELS_VISION = [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-2.0-flash-lite",
+]
+
+_VISION_MAX_BYTES = 8 * 1024 * 1024
+
+
+def _load_image_as_jpeg_bytes(image_path: str) -> Optional[bytes]:
+    """Görseli PIL ile açıp JPEG byte'larına çevirir (webp/gif/png normalize edilir)."""
+    try:
+        import io
+        from PIL import Image
+
+        with Image.open(image_path) as img:
+            img = img.convert("RGB")
+            # Vision çağrısı için makul boyuta indir (hız + token tasarrufu)
+            max_side = 1024
+            if max(img.size) > max_side:
+                ratio = max_side / float(max(img.size))
+                img = img.resize(
+                    (max(1, int(img.width * ratio)), max(1, int(img.height * ratio))),
+                    Image.LANCZOS,
+                )
+            buffer = io.BytesIO()
+            img.save(buffer, format="JPEG", quality=85)
+            data = buffer.getvalue()
+        if not data or len(data) > _VISION_MAX_BYTES:
+            return None
+        return data
+    except Exception as exc:
+        log(f"Vision görsel hazırlama hatası: {exc}", "WARNING")
+        return None
+
+
+def ask_ai_with_image(prompt: str, image_path: str, max_tokens: Optional[int] = None) -> str:
+    """Görsel + metin (multimodal) AI çağrısı.
+
+    Görselleri yalnızca Gemini stack desteklediği için diğer provider'lara
+    düşülmez. Hiçbir model doğrulama üretemezse boş string döner; çağıran
+    kod bu durumda 'doğrulanamadı' varsayımıyla ilerler (fail-open).
+    """
+    if not isinstance(prompt, str) or not prompt.strip():
+        return ""
+    if not image_path or not os.path.exists(image_path):
+        return ""
+
+    cfg = _load_ai_config()
+    if not _is_enabled(cfg, "enable_gemini", True):
+        log("Vision çağrısı atlandı: gemini kapalı", "INFO")
+        return ""
+
+    client = _get_gemini_client()
+    if not client:
+        return ""
+
+    image_bytes = _load_image_as_jpeg_bytes(image_path)
+    if not image_bytes:
+        log("Vision çağrısı atlandı: görsel hazırlanamadı", "WARNING")
+        return ""
+
+    try:
+        from google.genai import types
+    except Exception as exc:
+        log(f"Vision types import hatası: {exc}", "WARNING")
+        return ""
+
+    tokens = max_tokens if max_tokens is not None else 400
+    contents = [types.Part.from_bytes(data=image_bytes, mime_type="image/jpeg"), prompt]
+
+    for model_name in GEMINI_MODELS_VISION:
+        try:
+            if _is_thinking_model(model_name):
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=contents,
+                    config=types.GenerateContentConfig(
+                        temperature=0.2,
+                        max_output_tokens=tokens,
+                        thinking_config=types.ThinkingConfig(thinking_budget=0),
+                    ),
+                )
+            else:
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=contents,
+                    config=types.GenerateContentConfig(
+                        temperature=0.2,
+                        max_output_tokens=tokens,
+                    ),
+                )
+            text = (getattr(response, "text", "") or "").strip()
+            if text:
+                log(f"✅ Vision success: {model_name}", "INFO")
+                return text
+        except Exception as exc:
+            log(f"Vision {model_name} hatası: {exc}", "WARNING")
+            continue
+
+    log("Vision: tüm Gemini modelleri başarısız", "WARNING")
+    return ""
+
+
 # ========== MAIN AI CLIENT ==========
 def ask_ai(prompt: str, stage: str = "generic", max_tokens: Optional[int] = None) -> str:
     if not isinstance(prompt, str) or not prompt.strip():

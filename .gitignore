@@ -31,3 +31,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
+# Lokal gelistirme ortami
+.venv/
+__pycache__/
+*.pyc

@@ -30,7 +30,7 @@ otoXtra-bot/
 │   ├── settings.json                 ← Tüm bot ayarları (posting/images/ai/threads)
 │   ├── keywords.json                 ← Dahil/hariç kelime listeleri
 │   ├── scoring.json                  ← YZ puan eşikleri
-│   └── prompts.json                  ← YZ prompt metinleri (viral_scorer + post_writer)
+│   └── prompts.json                  ← YZ prompt metinleri (viral_scorer + post_writer + story_card_writer)
 │
 ├── core/                             ← Ana motor katmanı (iş mantığı burada)
 │   ├── orchestrator.py               ← v4.2 — Tüm ajanları sırayla çalıştırır
@@ -52,16 +52,16 @@ otoXtra-bot/
 │   ├── scorer_helpers.py             ← v6.0 — AI cevaplarını makalelerle eşleştirme, puan dökümü
 │   ├── scorer_engine.py              ← v6.0 — Batch puanlama motoru, tazelik/trend bonus hesaplama
 │   │
-│   ├── agent_writer.py               ← v5.2 — YZ ile Türkçe post yazma + kalite kontrolü
+│   ├── agent_writer.py               ← v5.5 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
 │   │
 │   ├── agent_image.py                ← v9.0 — Görsel işleme ana orkestratör (ANA KÖPRÜ)
 │   ├── image_utils.py                ← v9.0 — Görsel URL doğrulama, limit kontrolü, perceptual hash
 │   ├── image_nitter.py               ← v9.0 — Nitter/Twitter görsel adayları toplama
 │   ├── image_processor.py            ← v9.0 — PIL ile boyutlandırma, logo watermark, fallback üretimi
-│   ├── image_search.py               ← v9.0 — DuckDuckGo ve AI ile yedek görsel arama
+│   ├── image_search.py               ← v2.0 — Akıllı yedek görsel: AI sorguları + VISION doğrulama
 │   ├── image_scraper.py              ← v9.0 — HTML parse, JSON-LD, Script tag içeriğinden aday bulma
 │   │
-│   └── agent_publisher.py            ← v6.1 — Facebook + Threads + IG Story + Telegram yayıncısı
+│   └── agent_publisher.py            ← v6.5 — Facebook + Threads + IG Story + Telegram yayıncısı
 │
 ├── platforms/                        ← Platform API katmanları (karar vermez, sadece API çağrısı yapar)
 │   ├── facebook.py                   ← v3.3 — Graph API v25.0 (tek/çoklu görsel)
@@ -116,7 +116,8 @@ python -m core.orchestrator
          │   ├─ Kalite kontrol: uzunluk, satır sayısı, yabancı alfabe, İngilizce oran
          │   ├─ Başarısız olursa → otomatik onarım denemesi (1 kez)
          │   ├─ O da başarısız olursa → fallback post (başlık + özet)
-         │   └─ Çıktı: pipeline.json → stages.write.output.post_text
+         │   ├─ Story card için ÖZEL başlık + alt metin üretilir (story_card_writer)
+         │   └─ Çıktı: pipeline.json → stages.write.output{post_text, story_card_title, story_card_subtitle}
          │
          ├─ 4. IMAGE — agent_image.py (ve alt modülleri)
          │   ├─ image_scraper.py ile görsel aday listesi derlenir
@@ -125,7 +126,9 @@ python -m core.orchestrator
          │   ├─ Boyut/oran kontrolü (min 738×400, oran 0.7-2.3)
          │   ├─ Perceptual hash ile duplikasyon elenir
          │   ├─ image_processor.py ile Logo watermark eklenir (sağ-alt köşe, %12 boyut)
-         │   ├─ Görsel yoksa image_search.py devreye girer (DuckDuckGo/AI)
+         │   ├─ Görsel yoksa image_search.py devreye girer: AI marka+model sorguları
+         │   │   ile DDG adayları toplanır, her aday Gemini VISION ile doğrulanır;
+         │   │   alakasız görseller REDDEDİLİR, hiç uygun görsel yoksa text-only
          │   ├─ Görsel yine yoksa → image_source="no_image" (publisher text-only geçer)
          │   └─ Çıktı: pipeline.json → stages.image.output{image_path, image_paths[], image_source}
          │
@@ -306,14 +309,18 @@ Hata sınıflandırması:
   ]
 }
 ```
-### config/prompts.json — İki Prompt
+### config/prompts.json — Üç Prompt
 ```
 viral_scorer  → agent_scorer.py tarafından kullanılır
                Haberlerin 0-100 puanlanması, JSON dizisi formatı
                ÇIKTI: [{sira, baslik, puan, gerekce, detay{...}}]
 post_writer   → agent_writer.py tarafından kullanılır
-               Türkçe Facebook post yazma kuralları
+               Türkçe Facebook post yazma kuralları (community/interaktif ton)
                ÇIKTI: Sadece post metni (JSON değil, düz metin)
+story_card_writer → agent_writer.py tarafından kullanılır
+               Story kartı için ÖZEL başlık + alt metin üretimi
+               Başlık TEK CÜMLE olmak zorundadır (kod ile de garanti edilir)
+               ÇIKTI: {"baslik": "...", "alt_metin": "..."}
 ```
 ---
 ## MODÜL DETAYLARI

@@ -1,5 +1,10 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v6.4 - Minimal Telegram UI)
+agents/agent_publisher.py - Yayinci Ajani (v6.5 - Özel Story Card Metni)
+
+v6.5 UPDATE:
+  - Story kartları, writer aşamasında ÖZEL üretilen başlık + alt metin ile
+    oluşturulur (story_card_title / story_card_subtitle). Metin yoksa eski
+    davranışa düşer; başlık her durumda TEK CÜMLEYE indirilir.
 """
 
 import os
@@ -335,7 +340,18 @@ def _send_test_image_to_telegram(image_path: str, article_title: str) -> bool:
         return False
 
 
-def _build_story_card(post_text_content: str, base_image_path: str) -> str | None:
+def _build_story_card(
+    post_text_content: str,
+    base_image_path: str,
+    story_title: str = "",
+    story_subtitle: str = "",
+) -> str | None:
+    """Story kartı üretir.
+
+    v6.5: Writer aşamasında ÖZEL üretilmiş story başlığı/alt metni varsa
+    kartta onlar kullanılır; yoksa eski davranış (post metninin ilk satırı
+    başlık olur, başlık tek cümleye indirilir).
+    """
     if not base_image_path or not os.path.exists(base_image_path):
         return None
 
@@ -343,7 +359,13 @@ def _build_story_card(post_text_content: str, base_image_path: str) -> str | Non
         from core.image_generator import create_social_card
 
         card_path = tempfile.NamedTemporaryFile(suffix="_story_card.png", delete=False).name
-        create_social_card(post_text_content, base_image_path, card_path)
+        create_social_card(
+            post_text_content,
+            base_image_path,
+            card_path,
+            title_override=story_title or None,
+            body_override=story_subtitle or None,
+        )
 
         if not os.path.exists(card_path):
             return None
@@ -366,6 +388,9 @@ def run() -> bool:
     image_output = image_stage.get("output", {})
     article = image_output.get("article", {})
     post_text_content = image_output.get("post_text", "")
+    # v6.5: Story card için özel üretilmiş başlık/alt metin (varsa).
+    story_title = (image_output.get("story_card_title", "") or "").strip()
+    story_subtitle = (image_output.get("story_card_subtitle", "") or "").strip()
     image_source = image_output.get("image_source", "unknown")
     image_paths = _collect_valid_image_paths(image_output)
     image_paths = _prefer_text_only_on_fallback(image_source, image_paths)
@@ -452,7 +477,14 @@ def run() -> bool:
 
         if image_paths and os.path.exists(image_paths[0]):
             log("Story card: olusturma basliyor...")
-            story_card_path = _build_story_card(post_text_content, image_paths[0])
+            if story_title:
+                log(f"Story card OZEL metin: başlık='{story_title[:50]}'")
+            story_card_path = _build_story_card(
+                post_text_content,
+                image_paths[0],
+                story_title=story_title,
+                story_subtitle=story_subtitle,
+            )
             if story_card_path:
                 log(f"Story card hazir: {story_card_path}")
             else:
