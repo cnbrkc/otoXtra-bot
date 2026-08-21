@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-21-15:40",
-  "status": "error",
-  "started_at": "2026-08-21T15:40:53.961250+03:00",
-  "updated_at": "2026-08-21T15:41:55.747378+03:00",
+  "run_id": "2026-08-21-16:42",
+  "status": "completed",
+  "started_at": "2026-08-21T16:42:42.146473+03:00",
+  "updated_at": "2026-08-21T16:44:37.140801+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+            "link": "https://www.log.com.tr/opel-dokunmatik-ekran-yerine-telefon-tutacagi-konumlandirdigi-giris-seviyesi-frontera-starti-almanyada-satisa-sundu/",
+            "published": "2026-08-21T13:14:20+00:00",
+            "summary": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışa sundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor. Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor. Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "almanya-dokunmatik-ekran-frontera-giris-konumlandirdigi-opel-satisa-seviyesi-start-sundu-telefon-tutacagi-yerine"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,221 @@
           },
           "_metrics": {
             "found": 97,
-            "after_keyword": 63,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 64,
+            "after_time": 8,
+            "after_posted": 2,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 97,
-          "after_keyword": 63,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 64,
+          "after_time": 8,
+          "after_posted": 2,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-21T15:41:55.747378+03:00"
+      "error": null,
+      "updated_at": "2026-08-21T16:43:38.728773+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+          "link": "https://www.log.com.tr/opel-dokunmatik-ekran-yerine-telefon-tutacagi-konumlandirdigi-giris-seviyesi-frontera-starti-almanyada-satisa-sundu/",
+          "published": "2026-08-21T13:14:20+00:00",
+          "summary": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışa sundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor. Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor. Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "almanya-dokunmatik-ekran-frontera-giris-konumlandirdigi-opel-satisa-seviyesi-start-sundu-telefon-tutacagi-yerine",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Modern otomotiv trendlerine ters düşen minimalist ve ekonomik yaklaşımıyla sosyal medyada tartışma yaratacak ve etkileşim alacak bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 70,
+        "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Modern otomotiv trendlerine ters düşen minimalist ve ekonomik yaklaşımıyla sosyal medyada tartışma yaratacak ve etkileşim alacak bir haber.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+            "score": 70,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T16:43:40.430594+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+          "link": "https://www.log.com.tr/opel-dokunmatik-ekran-yerine-telefon-tutacagi-konumlandirdigi-giris-seviyesi-frontera-starti-almanyada-satisa-sundu/",
+          "published": "2026-08-21T13:14:20+00:00",
+          "summary": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışa sundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor. Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor. Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "almanya-dokunmatik-ekran-frontera-giris-konumlandirdigi-opel-satisa-seviyesi-start-sundu-telefon-tutacagi-yerine",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Modern otomotiv trendlerine ters düşen minimalist ve ekonomik yaklaşımıyla sosyal medyada tartışma yaratacak ve etkileşim alacak bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışasundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor.Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor."
+        },
+        "post_text": "Otomobilde \"az ama öz\" dönemi resmen başladı.\n\nOpel, Almanya'da Frontera Start'ı 21.990 avroya satışa sundu. Dokunmatik ekran yerine telefon tutacağı, manuel klima ve el freniyle geliyor. 99 beygir, 1.2 litrelik benzinli motor ve elektrik desteği yok. Türkiye'deki Frontera hibrit 1.870.000 TL, elektrikli ise 1.650.000 TL.\n\nBu, \"gereksiz donanım\" tartışmasını bitirecek bir hamle.",
+        "post_text_length": 381,
+        "story_card_title": "OPEL'DEN RADİKAL FRONTERA KARARI!",
+        "story_card_subtitle": "Dokunmatik ekran yerine telefon tutacağıyla gelen model Almanya'da satışta.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T16:43:42.992622+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu",
+          "link": "https://www.log.com.tr/opel-dokunmatik-ekran-yerine-telefon-tutacagi-konumlandirdigi-giris-seviyesi-frontera-starti-almanyada-satisa-sundu/",
+          "published": "2026-08-21T13:14:20+00:00",
+          "summary": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışa sundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor. Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor. Opel, dokunmatik ekran yerine telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da satışa sundu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-21_16-12-34_Iv9vR-660x371.jpg"
+          ],
+          "image_source": "smart_search",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "almanya-dokunmatik-ekran-frontera-giris-konumlandirdigi-opel-satisa-seviyesi-start-sundu-telefon-tutacagi-yerine",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Modern otomotiv trendlerine ters düşen minimalist ve ekonomik yaklaşımıyla sosyal medyada tartışma yaratacak ve etkileşim alacak bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Opel, dokunmatik ekran yerine basit bir telefon tutacağı konumlandırdığı giriş seviyesi Frontera Start’ı Almanya’da 21.990 avro fiyatla satışasundu. 99 beygir güç üreten 1.2 litrelik turbolu üç silindirli benzinli motorun kullanıldığı araçta, herhangi bir elektrik desteği bulunmuyor. Altı ileri manuel şanzımanla sunulan Start, oldukça basit yapıda siyah renkli jantlarla geliyor ve dokunmatik ekranı kaybetmiş olmasına rağmen 10 inçlik dijital gösterge ekranını koruyor. Manuel klima, manuel el freni, arka park sensörü ve şerit takip asistanı gibi özelliklerin yer aldığı Start, Almanya’da Corsa’dan 1.350 avro daha ucuza alınabiliyor.Edition GS donanımlı hibrit Frontera 21 Ağustos itibarıyla Türkiye’de 1 milyon 870 bin TL’den başlıyor. Tamamen elektrikli versiyon ise 1 milyon 650 bin TL’ye alınabiliyor.",
+          "post_text_for_card": "Otomobilde \"az ama öz\" dönemi resmen başladı.\n\nOpel, Almanya'da Frontera Start'ı 21.990 avroya satışa sundu. Dokunmatik ekran yerine telefon tutacağı, manuel klima ve el freniyle geliyor. 99 beygir, 1.2 litrelik benzinli motor ve elektrik desteği yok. Türkiye'deki Frontera hibrit 1.870.000 TL, elektrikli ise 1.650.000 TL.\n\nBu, \"gereksiz donanım\" tartışmasını bitirecek bir hamle.",
+          "story_card_title": "OPEL'DEN RADİKAL FRONTERA KARARI!",
+          "story_card_subtitle": "Dokunmatik ekran yerine telefon tutacağıyla gelen model Almanya'da satışta.",
+          "image_sources": [
+            "smart_search"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "Otomobilde \"az ama öz\" dönemi resmen başladı.\n\nOpel, Almanya'da Frontera Start'ı 21.990 avroya satışa sundu. Dokunmatik ekran yerine telefon tutacağı, manuel klima ve el freniyle geliyor. 99 beygir, 1.2 litrelik benzinli motor ve elektrik desteği yok. Türkiye'deki Frontera hibrit 1.870.000 TL, elektrikli ise 1.650.000 TL.\n\nBu, \"gereksiz donanım\" tartışmasını bitirecek bir hamle.",
+        "story_card_title": "OPEL'DEN RADİKAL FRONTERA KARARI!",
+        "story_card_subtitle": "Dokunmatik ekran yerine telefon tutacağıyla gelen model Almanya'da satışta.",
+        "image_path": "/tmp/otoxtra_img_fxmsggkb.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_fxmsggkb.jpg"
+        ],
+        "image_source": "smart_search",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T16:43:59.080686+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176744382916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18114010594761289",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1576340937272536",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T16:44:37.140801+03:00"
     }
   }
 }
