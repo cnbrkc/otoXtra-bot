@@ -54,12 +54,12 @@ otoXtra-bot/
 │   │
 │   ├── agent_writer.py               ← v5.7 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
 │   │
-│   ├── agent_image.py                ← v9.1 — Görsel işleme ana orkestratör (fail-closed yedek görsel)
+│   ├── agent_image.py                ← v9.2 — Görsel işleme ana orkestratör (fail-closed yedek görsel)
 │   ├── image_utils.py                ← v9.0 — Görsel URL doğrulama, limit kontrolü, perceptual hash
 │   ├── image_nitter.py               ← v9.0 — Nitter/Twitter görsel adayları toplama
 │   ├── image_processor.py            ← v9.0 — PIL ile boyutlandırma, logo watermark, fallback üretimi
-│   ├── image_search.py               ← v3.0 — Akıllı yedek görsel: Wikipedia/Commons/CarAPI + 'marka model yıl' sorguları + VISION kapısı
-│   ├── image_scraper.py              ← v9.0 — HTML parse, JSON-LD, Script tag içeriğinden aday bulma
+│   ├── image_search.py               ← v3.1 — Akıllı yedek görsel: Wikipedia/Commons/CarAPI/Openverse + 'marka model yıl' + VISION kapısı
+│   ├── image_scraper.py              ← v2.1 — HTML parse, JSON-LD, Script tag, retry+header, bg-image aday bulma
 │   │
 │   └── agent_publisher.py            ← v6.5 — Facebook + Threads + IG Story + Telegram yayıncısı
 │
@@ -557,18 +557,27 @@ Konum: settings.json → images.logo_position
 Boyut: Görsel genişliğinin %logo_size_percent'i
 Opaklık: logo_opacity (0.0-1.0)
 ```
-**Yedek görsel araması (haberde görsel yoksa) — v9.1 fail-closed:**
+**Makale sayfasından görsel çekme (öncelik 1) — v2.1:**
 ```
-1) Sorgu: AI / deterministik 'marka model yıl' (yıl, başlık/özetten çıkarılır)
+- Seçilen haberin sayfası scrape edilir: og:/twitter:/article: meta, itemprop,
+  link[rel=image_src], <img> (src + 12 lazy attr + srcset), <source>,
+  JSON-LD, script içi URL'ler, <a href> resim bağları, style background-image
+- HTTP: 2 denemeli retry + browser header'ları (Accept/Accept-Language/Referer)
+- Küçük <img> etiketleri erken elenir; HTTP durumu ve aday sayısı loglanır
+- Teşhis aracı: python tools/diagnose_article_image.py "<haber_url>"
+```
+**Yedek görsel araması (haberde görsel yoksa) — v9.2 fail-closed:**
+```
+1) Sorgu: AI / deterministik 'marka model yıl' (yıl, başlık/özetten çıkarılır);
+   araç dışı haberlerde (batarya, yazılım, vergi...) konu odaklı sorgular
 2) Kaynak sırası: Wikipedia (pageimages) → Wikimedia Commons (dosya+kategori)
-   → CarAPI (marka+model, Wikimedia kaynaklı, ücretsiz) → DuckDuckGo
-3) DDG adayları URL/filename'de marka+model tokeni taşıyanlar önce olacak
-   şekilde sıralanır (sinyal skoru)
-4) Her aday Gemini VISION ile doğrulanır:
+   → CarAPI (yalnızca marka+model) → Openverse (genel konu, ticari lisans)
+   → DuckDuckGo (URL sinyal skoruna göre sıralı)
+3) Her aday Gemini VISION ile doğrulanır:
    - require_vision=true  → yalnızca VISION onayıyla kabul (fail-closed)
    - Vision kullanılamıyorsa görsel REDDEDİLİR → text-only paylaşım
    - require_vision=false → eski fail-open davranış
-5) Ayarlar: settings.json → images.fallback_require_vision (varsayılan true)
+4) Ayarlar: settings.json → images.fallback_require_vision (varsayılan true)
    veya env FALLBACK_REQUIRE_VISION=false
 ```
 ---

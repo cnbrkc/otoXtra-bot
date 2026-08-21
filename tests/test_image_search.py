@@ -14,6 +14,8 @@ from agents.image_search import (
     _commons_api_url,
     _commons_search_params,
     _commons_category_params,
+    _clean_model_token,
+    _openverse_params,
 )
 
 
@@ -57,6 +59,26 @@ class TestBrandModel(unittest.TestCase):
         brand, model = _extract_brand_model("Alfa Romeo Giulietta yenilendi")
         self.assertEqual(brand, "Alfa Romeo")
         self.assertEqual(model, "Giulietta")
+
+    def test_turkish_suffix_stripped(self):
+        # "iX3'ten" -> "iX3", "Start'ı" -> "Start"
+        self.assertEqual(_extract_brand_model("BMW iX3'ten menzil rekoru"), ("BMW", "iX3"))
+        self.assertEqual(_extract_brand_model("Opel Frontera Start'ı Almanya'da sundu"), ("Opel", "Frontera Start"))
+
+    def test_generic_topic_no_brand(self):
+        # Genel haberlerde marka/model zorlaması yok; sorgu konu kelimelerinden kurulur
+        queries = _deterministic_search_queries("Batarya teknolojisinde yeni dönem: Katı hal hücreleri")
+        self.assertTrue(queries)
+        self.assertFalse(any(q.startswith("Katı") and len(q.split()) == 1 for q in queries))
+
+
+class TestModelTokenCleaner(unittest.TestCase):
+    def test_suffixes(self):
+        self.assertEqual(_clean_model_token("iX3'ten"), "iX3")
+        self.assertEqual(_clean_model_token("Start'ı"), "Start")
+        self.assertEqual(_clean_model_token("Taycan'ın"), "Taycan")
+        self.assertEqual(_clean_model_token("Corolla"), "Corolla")
+        self.assertEqual(_clean_model_token("Model 3"), "Model 3")
 
 
 class TestUrlSignal(unittest.TestCase):
@@ -117,6 +139,36 @@ class TestApiBuilders(unittest.TestCase):
         params = _commons_category_params("BMW iX3")
         self.assertEqual(params["cmtitle"], "Category:BMW iX3")
         self.assertEqual(params["cmtype"], "file")
+
+    def test_openverse_params(self):
+        params = _openverse_params("batarya üretim tesisi", 8)
+        self.assertEqual(params["q"], "batarya üretim tesisi")
+        self.assertEqual(params["license_type"], "commercial")
+        self.assertEqual(params["page_size"], 8)
+
+
+class TestStyleBgExtraction(unittest.TestCase):
+    def test_bg_url_regex(self):
+        from agents.image_scraper import _BG_URL_RE, _extract_style_bg_urls
+        from bs4 import BeautifulSoup
+
+        html = """
+        <div style="background-image:url('https://cdn.example.com/hero-2026.jpg')"></div>
+        <div style="background: url(https://cdn.example.com/banner.png) no-repeat;"></div>
+        <div style="color:red"></div>
+        <style>.hero { background-image: url("https://cdn.example.com/kapak.webp"); }</style>
+        """
+        soup = BeautifulSoup(html, "html.parser")
+        urls = _extract_style_bg_urls(soup, "https://example.com/haber")
+        self.assertIn("https://cdn.example.com/hero-2026.jpg", urls)
+        self.assertIn("https://cdn.example.com/kapak.webp", urls)
+
+        # noise filtre: logo içeren bg aday olmamalı
+        html2 = '<div style="background-image:url(https://cdn.example.com/logo.png)"></div>'
+        soup2 = BeautifulSoup(html2, "html.parser")
+        self.assertEqual(_extract_style_bg_urls(soup2, "https://example.com"), [])
+
+        self.assertIsNotNone(_BG_URL_RE.search("url('https://x.com/a.jpg')"))
 
 
 if __name__ == "__main__":

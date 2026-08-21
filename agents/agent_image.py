@@ -1,8 +1,17 @@
 """
-agents/agent_image.py - Görsel İşleme Ajanı Ana Köprüsü (v9.1 - Güvenli Yedek Görsel)
+agents/agent_image.py - Görsel İşleme Ajanı Ana Köprüsü (v9.2 - Güvenli Yedek Görsel)
 1809 satırlık devasa dosya 6 modüle bölündü:
   agent_image (köprü), image_utils (URL/Kontrol), image_nitter (Nitter),
   image_processor (PIL/Logo), image_scraper (HTML Parse), image_search (DDG/AI)
+
+v9.2 UPDATE:
+  - Openverse (genel konu görselleri, ücretsiz/anahtarsız) yapısal kaynak
+    zincirine eklendi: Wikipedia -> Commons -> CarAPI -> Openverse -> DDG.
+    CarAPI yalnızca marka+model haberlerinde çalışır; Openverse batarya,
+    yazılım, vergi, savunma, uzay gibi genel haberleri kapsar.
+  - Makale sayfasından görsel çekme sağlamlaştırıldı (image_scraper v2.1):
+    retry + zengin header, ek meta seçiciler, lazy attr'lar, <a href> resim
+    bağları, style background-image, HTTP durum loglama.
 
 v9.1 UPDATE:
   - Yedek görsel araması artık FAIL-CLOSED: yalnızca Gemini VISION onayı
@@ -38,6 +47,7 @@ from agents.image_search import (
     get_wikipedia_image_candidates,
     get_commons_image_candidates,
     get_carapi_candidate,
+    get_openverse_image_candidates,
     _url_signal_score,
     vision_gate_passed,
 )
@@ -152,7 +162,9 @@ def _smart_search_fallback(
 
     log(f"Akilli arama sorgulari ({len(search_queries)}): {search_queries}")
 
-    # 1) YAPISAL KAYNAKLAR (Wikipedia -> Commons -> CarAPI)
+    # 1) YAPISAL KAYNAKLAR (Wikipedia -> Commons -> CarAPI -> Openverse)
+    #    CarAPI yalnızca marka+model haberlerinde çalışır; Openverse genel
+    #    konuları (batarya, yazılım, vergi, savunma, uzay...) kapsar.
     structured_candidates: list = []
     try:
         structured_candidates += get_wikipedia_image_candidates(
@@ -164,6 +176,9 @@ def _smart_search_fallback(
         carapi = get_carapi_candidate(article.get("title", ""))
         if carapi:
             structured_candidates.insert(0, carapi)  # marka+model birebir eşleşme
+        structured_candidates += get_openverse_image_candidates(
+            search_queries, max_candidates=4,
+        )
     except Exception as exc:
         log(f"Yapisal gorsel kaynak hatasi: {exc}", "WARNING")
     structured_candidates = structured_candidates[:_MAX_STRUCTURED_CANDIDATES]

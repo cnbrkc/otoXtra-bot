@@ -1,5 +1,15 @@
 """
-agents/image_search.py - DuckDuckGo, Yapısal Kaynaklar ve AI Görsel Arama (v3.0)
+agents/image_search.py - DuckDuckGo, Yapısal Kaynaklar ve AI Görsel Arama (v3.1)
+
+v3.1 UPDATE (Genel Haber Desteği):
+  - Openverse API eklendi (ücretsiz/anahtarsız, ticari lisans filtresi):
+    batarya, yazılım, vergi, savunma, uzay gibi araç dışı haberlerde
+    devreye giren genel konu görselleri.
+  - AI sorgu promptu genelleştirildi: araç dışı konularda 'marka model yıl'
+    kalıbı zorlanmıyor; konuyu anlatan somut sorgular üretiliyor.
+  - Deterministik sorgu üretimi: Türkçe çekim ekleri temizleniyor
+    ("iX3'ten" -> "iX3"), yalın ek tokenları (den/dan/sı/si...) ve haber
+    dolgusu (menzil/rekor/versiyonu...) stop-word listesinde.
 
 v3.0 UPDATE (Güvenli Yedek Görsel):
   - YAPISAL KAYNAKLAR: Yedek aramada artık önce Wikipedia (pageimages),
@@ -33,6 +43,7 @@ import requests
 from ddgs import DDGS
 
 from core.logger import log
+from agents.image_utils import _is_probable_image_url
 
 _TR_ASCII_MAP = str.maketrans("çğıöşüÇĞİÖŞÜ", "cgiosuCGIOSU")
 
@@ -47,6 +58,24 @@ _CARAPI_TIMEOUT = 10
 
 # Yapısal kaynaklarda taranacak sorgu sayısı üst sınırı
 _MAX_STRUCTURED_QUERIES = 2
+
+# v3.1: Model tokenlarından temizlenecek Türkçe iyelik/hal ekleri
+# ("iX3'ten", "Frontera Start'ı", "Taycan'ın" -> "iX3", "Frontera Start", "Taycan")
+_MODEL_SUFFIXES = (
+    "'lari", "'leri", "'ten", "'tan", "'den", "'dan", "'nin", "'nun",
+    "'nın", "'in", "'ın", "'un", "'ün", "'si", "'sı", "'su", "'sü",
+    "'lu", "'lü", "'li", "'lı", "'yla", "'yle", "'ye", "'ya",
+    "'de", "'da", "'i", "'ı", "'u", "'ü",
+)
+
+
+def _clean_model_token(token: str) -> str:
+    """Model tokenından Türkçe çekim eklerini ayıklar (küçük harf duyarlı değil)."""
+    low = token.lower()
+    for suffix in _MODEL_SUFFIXES:
+        if low.endswith(suffix):
+            return token[: -len(suffix)]
+    return token
 
 # Sorgularda kullanılmayacak haber dolgu kelimeleri
 _QUERY_STOP_WORDS = {
@@ -66,6 +95,15 @@ _QUERY_STOP_WORDS = {
     "makyajlandi", "makyajlanan", "tanitti", "tanitan", "duyurdu", "sunuldu",
     "sundu", "almanya", "abd", "cini", "girdi", "giriyor", "girecek",
     "satista", "satis", "i", "ı",
+    # v3.1: Haber dolgusu (modeli kirleten yaygın kelimeler)
+    "menzil", "rekor", "rekoru", "tanitildi", "planliyor", "planlanan",
+    "versiyon", "versiyonu", "serisi", "ozel", "guncelleme", "guncellemesi",
+    "yayinlandi", "yayinladi", "geliyor", "sunacak", "bekleniyor", "edecek",
+    "yapti", "kaldi", "kalacak", "dusunuyor", "duşunuyor", "farkli", "yeni",
+    # v3.1: Yalın ek/bağlaç tokenları (apostrofsuz ayrışan parçalar)
+    "den", "dan", "ten", "tan", "sı", "si", "su", "sü", "nın", "nin",
+    # v3.1: Genel haber dolgusu (konu sorgusu kalitesi)
+    "hibrit", "hibriti", "roketi", "okyanusa", "inen", "dev", "donem", "dönem",
 }
 
 # Deterministik sorgu çıkarımı için bilinen otomobil markaları.
@@ -178,18 +216,21 @@ def _extract_brand_model(title: str) -> Tuple[str, str]:
         # _ascii_turkish birebir (1 karakter -> 1 karakter) eşleme yaptığı
         # için index'ler orijinal başlıkta da geçerlidir.
         rest = title[match.end():]
+        # v3.1: Apostrof dahil — "iX3'ten" tek token olur, sonra ek temizlenir
         tokens = re.findall(
-            r"[A-Za-z0-9ÇĞİÖŞÜçğışöü][A-Za-z0-9ÇĞİÖŞÜçğışöü\-+.]*",
+            r"[A-Za-z0-9ÇĞİÖŞÜçğışöü][A-Za-z0-9ÇĞİÖŞÜçğışöü'\-+.]*",
             rest,
         )
         model_parts = []
         for token in tokens[:6]:
             if re.fullmatch(r"\d{4}", token):
                 continue  # yıl tokeni, model değil
-            normalized = _ascii_turkish(token).lower().rstrip("'")
-            if normalized in _QUERY_STOP_WORDS:
+            # v3.1: "iX3'ten", "Start'ı" gibi çekim eklerini temizle
+            cleaned_token = _clean_model_token(token)
+            normalized = _ascii_turkish(cleaned_token).lower().rstrip("'")
+            if normalized in _QUERY_STOP_WORDS or len(normalized) < 2:
                 break
-            model_parts.append(token)
+            model_parts.append(cleaned_token)
             if len(model_parts) == 2:
                 break
         return brand, " ".join(model_parts)
@@ -209,10 +250,20 @@ def _deterministic_search_queries(title: str, summary: str = "") -> List[str]:
         queries.append(brand)
 
     # Genel içerik sorgusu: başlığın dolgu kelimeleri atılmış hali
-    words = re.findall(r"[A-Za-zĞÜŞİÖÇğüşıöç0-9][A-Za-zĞÜŞİÖÇğüşıöç0-9\-]*", title or "")
-    content_words = [w for w in words if _ascii_turkish(w).lower() not in _QUERY_STOP_WORDS]
+    # v3.1: Apostroflu tokenlar tek parça sayılır, çekim ekleri temizlenir
+    words = re.findall(
+        r"[A-Za-z0-9ÇĞİÖŞÜçğışöü][A-Za-z0-9ÇĞİÖŞÜçğışöü'\-+.]*",
+        title or "",
+    )
+    content_words = []
+    for word in words:
+        cleaned = _clean_model_token(word)
+        normalized = _ascii_turkish(cleaned).lower().rstrip("'")
+        if normalized in _QUERY_STOP_WORDS or len(normalized) < 2:
+            continue
+        content_words.append(cleaned)
     if content_words:
-        content_query = " ".join(content_words[:4])
+        content_query = " ".join(content_words[:5])
         if year and year not in content_query:
             content_query = f"{content_query} {year}"
         queries.append(content_query)
@@ -257,6 +308,11 @@ def build_image_search_queries(article: dict) -> List[str]:
         "mutlaka ekle; yıl yoksa 'marka model' yaz.\n"
         "- İkinci sorgu modelin kısa hali (ör. 'BMW iX3'), üçüncüsü gerekirse "
         "biraz daha geniş bir alternatif (ör. 'BMW yeni SUV') olabilir.\n"
+        "- Haber araç dışı bir konuysa (batarya teknolojisi, yazılım/uygulama, "
+        "vergi/ÖTV, marka stratejisi, motorsporları, savunma sanayi, ekonomi, "
+        "uzay vb.) 'marka model yıl' kalıbını ZORLAMA; konuyu en iyi anlatan "
+        "somut 2-5 kelimelik sorgular üret (ör. 'batarya üretim tesisi', "
+        "'Apple CarPlay 17.4', 'Starship roket fırlatma', 'ÖTV düzenlemesi').\n"
         "- Haber belirli bir araç hakkında değilse, konuyu en iyi anlatan "
         "2-4 kelimelik somut sorgular yaz.\n"
         "- Haber fiilleri ve dolgu kelimeleri YASAK: 'son dakika', 'haber', "
@@ -619,6 +675,7 @@ def get_carapi_candidate(title: str) -> Optional[dict]:
     """CarAPI (ücretsiz, anahtarsız): marka+model -> gerçek araç fotoğrafı.
 
     Kaynak Wikimedia Commons olduğu için görsel etiketli ve modelle eşleşiktir.
+    Yalnızca haber marka+model içeriyorsa çalışır; genel haberlerde None döner.
     Hata/sonuç yoksa None döner (akış bozulmaz).
     """
     brand, model = _extract_brand_model(title or "")
@@ -632,6 +689,53 @@ def get_carapi_candidate(title: str) -> Optional[dict]:
         return None
     log(f"CarAPI adayı: {brand} {model} -> {image_url[:80]}", "INFO")
     return {"url": image_url, "source_type": "carapi", "title": f"{brand} {model}"}
+
+
+# ── OPENVERSE (v3.1) ──────────────────────────────────────────────────────────
+# Genel konular için ücretsiz/anahtarsız görsel arama (Flickr, Wikimedia,
+# Smithsonian vb. CC kaynaklar). Otomobil dışı haberlerde (batarya, yazılım,
+# vergi, savunma, uzay...) devreye girer. Ticari kullanıma uygun lisanslar
+# (commercial) tercih edilir; hata olursa boş döner, akış DDG'ye düşer.
+_OPENVERSE_URL = "https://api.openverse.org/v1/images/"
+_OPENVERSE_TIMEOUT = 12
+
+
+def _openverse_params(query: str, limit: int) -> dict:
+    return {
+        "q": query,
+        "page_size": limit,
+        "license_type": "commercial",
+        "format": "json",
+    }
+
+
+def get_openverse_image_candidates(queries: List[str], max_candidates: int = 4) -> List[dict]:
+    """Openverse API'den genel konu görselleri toplar (yalnızca ilk sorgu)."""
+    if not queries:
+        return []
+    query = queries[0]
+    limit = min(max(max_candidates * 2, 4), 10)
+    data = _fetch_json(_OPENVERSE_URL, _openverse_params(query, limit), timeout=_OPENVERSE_TIMEOUT)
+    if not data:
+        return []
+    results: List[dict] = []
+    seen: set = set()
+    for item in data.get("results", []) or []:
+        url = (item.get("url") or "").strip()
+        if not url or not _is_probable_image_url(url.lower()):
+            continue
+        if url in seen:
+            continue
+        seen.add(url)
+        results.append({
+            "url": url,
+            "source_type": "openverse",
+            "title": item.get("title") or "",
+        })
+        if len(results) >= max_candidates:
+            break
+    log(f"Openverse adayları: {len(results)} görsel", "INFO")
+    return results
 
 
 # ── URL SİNYALİ (v3.0) ────────────────────────────────────────────────────────
