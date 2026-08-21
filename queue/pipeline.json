@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-21-07:37",
+  "run_id": "2026-08-21-08:29",
   "status": "error",
-  "started_at": "2026-08-21T07:37:09.268407+03:00",
-  "updated_at": "2026-08-21T07:41:39.898998+03:00",
+  "started_at": "2026-08-21T08:29:26.896315+03:00",
+  "updated_at": "2026-08-21T08:33:45.742666+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -109,7 +109,7 @@
           "VeyselKarani": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
             "attempts": 3
           },
           "Sekizsilindir": {
@@ -127,7 +127,7 @@
           "_metrics": {
             "found": 95,
             "after_keyword": 68,
-            "after_time": 8,
+            "after_time": 7,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
@@ -136,14 +136,14 @@
         "metrics": {
           "found": 95,
           "after_keyword": 68,
-          "after_time": 8,
+          "after_time": 7,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-21T07:41:39.898998+03:00"
+      "updated_at": "2026-08-21T08:33:45.742666+03:00"
     },
     "score": {
       "status": "waiting",
