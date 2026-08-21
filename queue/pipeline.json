@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-21-18:30",
-  "status": "error",
-  "started_at": "2026-08-21T18:30:03.074580+03:00",
-  "updated_at": "2026-08-21T18:30:51.776989+03:00",
+  "run_id": "2026-08-21-19:30",
+  "status": "completed",
+  "started_at": "2026-08-21T19:30:23.978929+03:00",
+  "updated_at": "2026-08-21T19:32:04.935652+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+            "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
+            "published": "2026-08-21T16:00:00+00:00",
+            "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,232 @@
           },
           "_metrics": {
             "found": 97,
-            "after_keyword": 66,
+            "after_keyword": 67,
             "after_time": 9,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 97,
-          "after_keyword": 66,
+          "after_keyword": 67,
           "after_time": 9,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-21T18:30:51.776989+03:00"
+      "error": null,
+      "updated_at": "2026-08-21T19:31:10.024116+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
+          "published": "2026-08-21T16:00:00+00:00",
+          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 11,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 54,
+        "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 11,
+          "benzersizlik": 9,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 5
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+            "score": 54,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 11,
+              "benzersizlik": 9,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 5
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T19:31:11.656006+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
+          "published": "2026-08-21T16:00:00+00:00",
+          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 11,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, ikinci nesil 8 Serisi’nin üretimini Nisan 2026’da sonlandırdı ve ufukta hâlâ net bir halef görünmüyor. Dolayısıyla BMW’nin büyük amiral gemisi coupe modeli için bir Neue Klasse versiyonu beklemek gereksiz olabilir. Automotive News'ekonuşan bir BMW yöneticisi, büyük coupe modelini Neue Klasse ailesine taşımanın\"uygulanabilir olmadığını\"söyledi. Bu da BMW’yi şimdilik bir amiral gemisi grand tourer modelinden yoksun bırakıyor. BMW’nin bu rolü yeniden konumlandırılan Alpina markasına vermeyi de değerlendirdiği, ancak bu planın görünüşe göre rafa kaldırıldığı bildiriliyor. İlk kez Mayıs 2026’da Concorso d’Eleganza Villa d’Este’de tanıtılan ve daha sonra Monterey Car Week kapsamında sergilenen konsept, BMW’nin henüz resmen yanıtlamadığı şu soruya verilmiş bir cevap gibi görünüyor: 8 Serisi’nden sonra ne gelecek? G15 kasa kodlu 8 Serisi Coupe, 2018’de BMW’nin CLAR platformu üzerinde tanıtıldı; ardından G14 Cabrio ve G16 Gran Coupe geldi. CLAR hâlâ BMW ürün gamının büyük bir bölümünün temelini oluşturuyor, ancak Neue Klasse’yi tanımlayanyüksek voltajlı elektrik mimarisive yazılım ağırlıklı sistemler düşünülerek geliştirilmiş bir platform değil. BMW’nin 8 Serisi’ni Neue Klasse’ye taşımanın uygulanabilir olmadığını söylerken kastettiği şey muhtemelen bu. Daha eski bir platformu tamamen farklı bir elektrik ve mekanik mimariye uyarlamak, pratikte en baştan başlamak anlamına gelir. Nispeten düşük adetlerde satılan bir grand tourer için BMW, bu yatırımın ticari karşılığını yeterli görmüyor. BMW XM’in halefi de benzer bir sorunla karşı karşıya gibi görünüyor. Bu da niş amiral gemisi modellerinin BMW’nin yeni nesil mimarisine geçişinin ne kadar zor olduğunu gösteriyor. Vision BMW Alpina’nın ilginçleştiği nokta tam olarak burası. Uzun ve alçak coupe, klasik köpekbalığı burnu ön tasarıma, kaputunun altında birV8 motorave deri, metal ile kristal detaylarla donatılmış bir iç mekâna sahip. Oranları tartışmasız biçimde bir grand tourer’a ait ve eski 8 Serisi Gran Coupe’yi yakından hatırlattığı su götürmez. BMW, konseptin üretime gideceğini söylemiş değil. Resmî açıklamaya göre bu, tek seferlik bir tasarım çalışması. Ancak BMW’nin bu otomobili, çok daha üst seviyede konumlandırılacak bir Alpina GT’ye yönelik ilgiyi ölçmek için kullandığını tahmin ediyoruz. Vision BMW Alpina Tasarım Çalışması Alpina’nın BMW Group içinde resmen bağımsız bir ultra lüks marka hâline gelmesiyle bu ihtimal artık daha anlamlı görünüyor.1 Ocak 2026itibarıyla BMW Alpina, grup içinde ayrı bir yapı olarak faaliyet gösteriyor; otomobilleri BMW tesislerinde üretiliyor ve standart BMW ürün gamının üzerinde konumlandırılıyor. Bu yeni dönemin ilk seri üretim BMW Alpina modelinin 7 Serisi temelli olması ve V8 motor kullanması bekleniyor; lansmanın ise 2027 civarında hedeflendiği bildiriliyor. Eğer bu otomobil Alpina’yı BMW’nin ultra lüks pazara verdiği yanıt olarak konumlandırırsa, Vision konseptini temel alan büyük, Gran Coupe tarzı bir GT oldukça doğal bir sonraki adım gibi görünebilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
+        "post_text_length": 396,
+        "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
+        "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T19:31:15.129635+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
+          "published": "2026-08-21T16:00:00+00:00",
+          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 11,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 5
+          },
+          "score": 54,
+          "score_reason": "ai_scored",
+          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, ikinci nesil 8 Serisi’nin üretimini Nisan 2026’da sonlandırdı ve ufukta hâlâ net bir halef görünmüyor. Dolayısıyla BMW’nin büyük amiral gemisi coupe modeli için bir Neue Klasse versiyonu beklemek gereksiz olabilir. Automotive News'ekonuşan bir BMW yöneticisi, büyük coupe modelini Neue Klasse ailesine taşımanın\"uygulanabilir olmadığını\"söyledi. Bu da BMW’yi şimdilik bir amiral gemisi grand tourer modelinden yoksun bırakıyor. BMW’nin bu rolü yeniden konumlandırılan Alpina markasına vermeyi de değerlendirdiği, ancak bu planın görünüşe göre rafa kaldırıldığı bildiriliyor. İlk kez Mayıs 2026’da Concorso d’Eleganza Villa d’Este’de tanıtılan ve daha sonra Monterey Car Week kapsamında sergilenen konsept, BMW’nin henüz resmen yanıtlamadığı şu soruya verilmiş bir cevap gibi görünüyor: 8 Serisi’nden sonra ne gelecek? G15 kasa kodlu 8 Serisi Coupe, 2018’de BMW’nin CLAR platformu üzerinde tanıtıldı; ardından G14 Cabrio ve G16 Gran Coupe geldi. CLAR hâlâ BMW ürün gamının büyük bir bölümünün temelini oluşturuyor, ancak Neue Klasse’yi tanımlayanyüksek voltajlı elektrik mimarisive yazılım ağırlıklı sistemler düşünülerek geliştirilmiş bir platform değil. BMW’nin 8 Serisi’ni Neue Klasse’ye taşımanın uygulanabilir olmadığını söylerken kastettiği şey muhtemelen bu. Daha eski bir platformu tamamen farklı bir elektrik ve mekanik mimariye uyarlamak, pratikte en baştan başlamak anlamına gelir. Nispeten düşük adetlerde satılan bir grand tourer için BMW, bu yatırımın ticari karşılığını yeterli görmüyor. BMW XM’in halefi de benzer bir sorunla karşı karşıya gibi görünüyor. Bu da niş amiral gemisi modellerinin BMW’nin yeni nesil mimarisine geçişinin ne kadar zor olduğunu gösteriyor. Vision BMW Alpina’nın ilginçleştiği nokta tam olarak burası. Uzun ve alçak coupe, klasik köpekbalığı burnu ön tasarıma, kaputunun altında birV8 motorave deri, metal ile kristal detaylarla donatılmış bir iç mekâna sahip. Oranları tartışmasız biçimde bir grand tourer’a ait ve eski 8 Serisi Gran Coupe’yi yakından hatırlattığı su götürmez. BMW, konseptin üretime gideceğini söylemiş değil. Resmî açıklamaya göre bu, tek seferlik bir tasarım çalışması. Ancak BMW’nin bu otomobili, çok daha üst seviyede konumlandırılacak bir Alpina GT’ye yönelik ilgiyi ölçmek için kullandığını tahmin ediyoruz. Vision BMW Alpina Tasarım Çalışması Alpina’nın BMW Group içinde resmen bağımsız bir ultra lüks marka hâline gelmesiyle bu ihtimal artık daha anlamlı görünüyor.1 Ocak 2026itibarıyla BMW Alpina, grup içinde ayrı bir yapı olarak faaliyet gösteriyor; otomobilleri BMW tesislerinde üretiliyor ve standart BMW ürün gamının üzerinde konumlandırılıyor. Bu yeni dönemin ilk seri üretim BMW Alpina modelinin 7 Serisi temelli olması ve V8 motor kullanması bekleniyor; lansmanın ise 2027 civarında hedeflendiği bildiriliyor. Eğer bu otomobil Alpina’yı BMW’nin ultra lüks pazara verdiği yanıt olarak konumlandırırsa, Vision konseptini temel alan büyük, Gran Coupe tarzı bir GT oldukça doğal bir sonraki adım gibi görünebilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
+          "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
+          "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
+          "image_sources": [
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/AeNQL/s1/bmw-8-series-coupe.jpg",
+            "https://cdn.motor1.com/images/mgl/AeNQL/s1/4x3/bmw-8-series-coupe.webp",
+            "https://cdn.motor1.com/images/mgl/7wXYp/s3/bmw-serie-8-gran-coupe-2020.jpg",
+            "https://cdn.motor1.com/images/mgl/mMzNGB/s3/vision-bmw-alpina-design-study.jpg"
+          ]
+        },
+        "post_text": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
+        "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
+        "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
+        "image_path": "/tmp/otoxtra_img_ttxpd0p2.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_ttxpd0p2.jpg",
+          "/tmp/otoxtra_img_xfokd9d2.jpg",
+          "/tmp/otoxtra_img_i_xvi7_j.jpg",
+          "/tmp/otoxtra_img_40llkoew.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T19:31:18.386201+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176759046916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18621985837013116",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1051388411109163",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T19:32:04.935652+03:00"
     }
   }
 }
