@@ -52,13 +52,13 @@ otoXtra-bot/
 │   ├── scorer_helpers.py             ← v6.0 — AI cevaplarını makalelerle eşleştirme, puan dökümü
 │   ├── scorer_engine.py              ← v6.0 — Batch puanlama motoru, tazelik/trend bonus hesaplama
 │   │
-│   ├── agent_writer.py               ← v5.6 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
+│   ├── agent_writer.py               ← v5.7 — YZ ile Türkçe post yazma + kalite kontrolü + story card metni
 │   │
-│   ├── agent_image.py                ← v9.0 — Görsel işleme ana orkestratör (ANA KÖPRÜ)
+│   ├── agent_image.py                ← v9.1 — Görsel işleme ana orkestratör (fail-closed yedek görsel)
 │   ├── image_utils.py                ← v9.0 — Görsel URL doğrulama, limit kontrolü, perceptual hash
 │   ├── image_nitter.py               ← v9.0 — Nitter/Twitter görsel adayları toplama
 │   ├── image_processor.py            ← v9.0 — PIL ile boyutlandırma, logo watermark, fallback üretimi
-│   ├── image_search.py               ← v2.0 — Akıllı yedek görsel: AI sorguları + VISION doğrulama
+│   ├── image_search.py               ← v3.0 — Akıllı yedek görsel: Wikipedia/Commons/CarAPI + 'marka model yıl' sorguları + VISION kapısı
 │   ├── image_scraper.py              ← v9.0 — HTML parse, JSON-LD, Script tag içeriğinden aday bulma
 │   │
 │   └── agent_publisher.py            ← v6.5 — Facebook + Threads + IG Story + Telegram yayıncısı
@@ -315,12 +315,15 @@ viral_scorer  → agent_scorer.py tarafından kullanılır
                Haberlerin 0-100 puanlanması, JSON dizisi formatı
                ÇIKTI: [{sira, baslik, puan, gerekce, detay{...}}]
 post_writer   → agent_writer.py tarafından kullanılır
-               Türkçe Facebook post yazma kuralları (community/interaktif ton)
+               Türkçe post yazma kuralları (v5.7: tek otoXtra sesi — Threads/X
+               tarzı tartışma üslubu, marka dokunulmazlığı; Facebook + Threads
+               aynı üslup, story aynı sesin kısası)
                ÇIKTI: Sadece post metni (JSON değil, düz metin)
 story_card_writer → agent_writer.py tarafından kullanılır
                Story kartı için ÖZEL başlık + alt metin üretimi
                Başlık TEK CÜMLE olmak zorundadır (kod ile de garanti edilir)
                Alt metin haberi açıklayan 2-4 CÜMLE olabilir (v5.6, ~460 karakter sınırı)
+               Üslup post metniyle AYNI (v5.7: marka dokunulmazlığı + tartışma dili)
                ÇIKTI: {"baslik": "...", "alt_metin": "..."}
 ```
 ---
@@ -553,6 +556,20 @@ Logo: assets/logo.png (şeffaf PNG)
 Konum: settings.json → images.logo_position
 Boyut: Görsel genişliğinin %logo_size_percent'i
 Opaklık: logo_opacity (0.0-1.0)
+```
+**Yedek görsel araması (haberde görsel yoksa) — v9.1 fail-closed:**
+```
+1) Sorgu: AI / deterministik 'marka model yıl' (yıl, başlık/özetten çıkarılır)
+2) Kaynak sırası: Wikipedia (pageimages) → Wikimedia Commons (dosya+kategori)
+   → CarAPI (marka+model, Wikimedia kaynaklı, ücretsiz) → DuckDuckGo
+3) DDG adayları URL/filename'de marka+model tokeni taşıyanlar önce olacak
+   şekilde sıralanır (sinyal skoru)
+4) Her aday Gemini VISION ile doğrulanır:
+   - require_vision=true  → yalnızca VISION onayıyla kabul (fail-closed)
+   - Vision kullanılamıyorsa görsel REDDEDİLİR → text-only paylaşım
+   - require_vision=false → eski fail-open davranış
+5) Ayarlar: settings.json → images.fallback_require_vision (varsayılan true)
+   veya env FALLBACK_REQUIRE_VISION=false
 ```
 ---
 ### agents/agent_publisher.py (v6.1)

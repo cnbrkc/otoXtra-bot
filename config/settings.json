@@ -30,7 +30,8 @@
     "max_candidates_per_article": 20,
     "max_article_scrapes_per_feed": 10,
     "max_images_per_news": 4,
-    "perceptual_hash_threshold": 8
+    "perceptual_hash_threshold": 8,
+    "fallback_require_vision": true
   },
   "news": {
     "max_article_age_hours": 36,
@@ -40,7 +41,7 @@
   },
   "duplicate_detection": {
     "title_similarity_threshold": 0.45,
-    "keyword_overlap_threshold": 0.40
+    "keyword_overlap_threshold": 0.4
   },
   "ai": {
     "temperature": 0.65,

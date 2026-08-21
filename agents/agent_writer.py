@@ -1,5 +1,16 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.6 - Story Card Alt Metin + Profesyonel Ton)
+agents/agent_writer.py - Icerik yazma ajani (v5.7 - Tek Ses: Threads Tarzi + Marka Dokunulmazligi)
+
+v5.7 UPDATE:
+  - TON (post_writer promptu): rls-asist/threads tarzina oturuldu. Sataşma
+    hedefi artik MARKA DEGIL; tartışma, Threads/X'te 'altına yazıp tartışmak'
+    istenen türden kurulur (tüketici psikolojisi, sektör abartisi, fiyat
+    algisi). Marka dokunulmazligi: markalarla is birligi yapilabilir, markaya
+    sataşma/alay/suçlama YASAK.
+  - PLATFORM TUTARLILIĞI: Facebook, Threads ve Instagram Story kartlari AYNI
+    otoXtra sesini kullanir; story_card_writer promptu da ayni üsluba baglandi.
+  - v5.6'nin 'markalara zekice dokundurma' yönü kaldirildi; RAKAM/BIRIM
+    tutarliligi, tek mantik zinciri, 2-4 cumlelik story alt metni korunuyor.
 
 v5.6 UPDATE:
   - STORY CARD ALT METİN: Artık TEK cümleye indirilmiyor. 'story_card_writer'
