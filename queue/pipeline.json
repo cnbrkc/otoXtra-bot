@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-21-12:33",
-  "status": "completed",
-  "started_at": "2026-08-21T12:33:51.286499+03:00",
-  "updated_at": "2026-08-21T12:35:14.948314+03:00",
+  "run_id": "2026-08-21-13:27",
+  "status": "error",
+  "started_at": "2026-08-21T13:27:08.475567+03:00",
+  "updated_at": "2026-08-21T13:28:01.435513+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-            "link": "https://www.otoajanda.com/toyotadan-2026-sonu-stratejisi-dusen-pazarda-pay-artirma-hedefi/",
-            "published": "2026-08-21T09:06:55+00:00",
-            "summary": "Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt, otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılı pazar payını artırarak kapatmayı hedeflediğini vurguladı. 2026 yıl sonu otomotiv pazarı gerileyecek Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan […] Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-            "image_candidates": [
-              "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "OtoAjanda",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-artirma-dusen-hedefi-pay-pazarda-sonu-stratejisi-toyota"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,216 +127,47 @@
           "_metrics": {
             "found": 96,
             "after_keyword": 66,
-            "after_time": 10,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 96,
           "after_keyword": 66,
-          "after_time": 10,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-21T12:34:42.694552+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-21T13:28:01.435513+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-          "link": "https://www.otoajanda.com/toyotadan-2026-sonu-stratejisi-dusen-pazarda-pay-artirma-hedefi/",
-          "published": "2026-08-21T09:06:55+00:00",
-          "summary": "Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt, otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılı pazar payını artırarak kapatmayı hedeflediğini vurguladı. 2026 yıl sonu otomotiv pazarı gerileyecek Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan […] Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-artirma-dusen-hedefi-pay-pazarda-sonu-stratejisi-toyota",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 51,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektörel bir strateji açıklaması olup, genel kitleler yerine daha çok iş ve ekonomi çevrelerinin ilgisini çekecek nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 51,
-        "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Sektörel bir strateji açıklaması olup, genel kitleler yerine daha çok iş ve ekonomi çevrelerinin ilgisini çekecek nitelikte.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-            "score": 51,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T12:34:44.276644+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-          "link": "https://www.otoajanda.com/toyotadan-2026-sonu-stratejisi-dusen-pazarda-pay-artirma-hedefi/",
-          "published": "2026-08-21T09:06:55+00:00",
-          "summary": "Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt, otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılı pazar payını artırarak kapatmayı hedeflediğini vurguladı. 2026 yıl sonu otomotiv pazarı gerileyecek Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan […] Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-artirma-dusen-hedefi-pay-pazarda-sonu-stratejisi-toyota",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 51,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektörel bir strateji açıklaması olup, genel kitleler yerine daha çok iş ve ekonomi çevrelerinin ilgisini çekecek nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt,otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılıpazar payını artırarakkapatmayı hedeflediğini vurguladı. Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan kaybı devam ediyor. Finansmana erişimde yaşanan zorluklar ve artan maliyetlerin perakende talebi üzerinde ciddi bir baskı oluşturduğunu belirtenAli Haydar Bozkurt, sektörün yıl sonu tablosuna dair öngörülerini paylaştı. Yılın ilk 7 ayında 640 bin adet civarında gerçekleşen toplam pazarın, mevcut düşüş ivmesiyle birlikte yıl sonunda 1 milyon 175 bin adet seviyelerine gerileyeceği tahmin ediliyor. Genel pazardaki daralmaya rağmen markanın satış grafiğini değerlendirenBozkurt,ilk 7 ayda 45 bin 939 adetlik toplam satışla %7,2 pazar payına ulaştıklarınıbelirtti. Küresel ölçekte yaşanan araç alokasyon ve tedarik kısıtlarına rağmen markanın Türkiye’deki potansiyelinin yüksek olduğuna dikkat çekildi. Piyasalarda olağanüstü bir değişiklik yaşanmadığı takdirde, daralan pazar içerisinde daha az kayıp yaşayarak pazar payı kazanmayı öngören Toyota, yeterli ürün tedariki sağlandığı takdirde 2026 yılını yaklaşık 85 bin adetlik satışla tamamlamayı planlıyor. Toyota, pazardaki güçlü konumunu desteklemek adına ürün yelpazesini yenilemeye de devam ediyor: Sınırlı kota ve ürün yenilikleri:Pazara yeni sunulanHilux ve son çeyrekte gelecek RAV4Hybrid gibi stratejik modeller için küresel talep yüksekliği nedeniyle ek araç temin çalışmaları sürdürülüyor. GR Yarisyolda:Toyota 2026 modelleritakviminin dikkat çeken üyesi performans odaklı GR Yaris de yılın son çeyreğinde Türkiye’deki meraklılarıyla buluşacak. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Türkiye otomotiv üretimi ve ihracatı yılın ilk 7 ayında kan kaybetti E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment."
-        },
-        "post_text": "Toyota, daralan otomotiv pazarında payını artırma hedefiyle öne çıkıyor. CEO Ali Haydar Bozkurt, finansman zorlukları ve küresel gelişmelerin sektörü etkilediğini belirtti.\n\nPazar küçülürken, markaların bu koşullara nasıl uyum sağladığı büyük önem taşıyor. Toyota’nın 2026 sonu stratejisi, bu zorlu dönemde rekabet avantajı sağlamaya odaklanıyor.\n\nSektördeki bu değişim rüzgarları, diğer markaları nasıl etkileyecek dersiniz?",
-        "post_text_length": 425,
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T12:34:47.088851+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi",
-          "link": "https://www.otoajanda.com/toyotadan-2026-sonu-stratejisi-dusen-pazarda-pay-artirma-hedefi/",
-          "published": "2026-08-21T09:06:55+00:00",
-          "summary": "Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt, otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılı pazar payını artırarak kapatmayı hedeflediğini vurguladı. 2026 yıl sonu otomotiv pazarı gerileyecek Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan […] Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg",
-          "image_candidates": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg"
-          ],
-          "image_source": "article_candidates_field",
-          "source_name": "OtoAjanda",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-artirma-dusen-hedefi-pay-pazarda-sonu-stratejisi-toyota",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 4
-          },
-          "score": 51,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektörel bir strateji açıklaması olup, genel kitleler yerine daha çok iş ve ekonomi çevrelerinin ilgisini çekecek nitelikte.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Toyota Türkiye Pazarlama ve Satış A.Ş. CEO’su Ali Haydar Bozkurt,otomotiv sektöründeki son gelişmeleri ve markanın gelecek dönem hedeflerini açıkladı. Finansmana erişim zorlukları ve küresel gelişmeler nedeniyle pazarın daraldığını belirten Bozkurt, Toyota’nın yılıpazar payını artırarakkapatmayı hedeflediğini vurguladı. Otomotiv pazarında temmuz ayında yaşanan yüzde 25’lik düşüşün ardından kan kaybı devam ediyor. Finansmana erişimde yaşanan zorluklar ve artan maliyetlerin perakende talebi üzerinde ciddi bir baskı oluşturduğunu belirtenAli Haydar Bozkurt, sektörün yıl sonu tablosuna dair öngörülerini paylaştı. Yılın ilk 7 ayında 640 bin adet civarında gerçekleşen toplam pazarın, mevcut düşüş ivmesiyle birlikte yıl sonunda 1 milyon 175 bin adet seviyelerine gerileyeceği tahmin ediliyor. Genel pazardaki daralmaya rağmen markanın satış grafiğini değerlendirenBozkurt,ilk 7 ayda 45 bin 939 adetlik toplam satışla %7,2 pazar payına ulaştıklarınıbelirtti. Küresel ölçekte yaşanan araç alokasyon ve tedarik kısıtlarına rağmen markanın Türkiye’deki potansiyelinin yüksek olduğuna dikkat çekildi. Piyasalarda olağanüstü bir değişiklik yaşanmadığı takdirde, daralan pazar içerisinde daha az kayıp yaşayarak pazar payı kazanmayı öngören Toyota, yeterli ürün tedariki sağlandığı takdirde 2026 yılını yaklaşık 85 bin adetlik satışla tamamlamayı planlıyor. Toyota, pazardaki güçlü konumunu desteklemek adına ürün yelpazesini yenilemeye de devam ediyor: Sınırlı kota ve ürün yenilikleri:Pazara yeni sunulanHilux ve son çeyrekte gelecek RAV4Hybrid gibi stratejik modeller için küresel talep yüksekliği nedeniyle ek araç temin çalışmaları sürdürülüyor. GR Yarisyolda:Toyota 2026 modelleritakviminin dikkat çeken üyesi performans odaklı GR Yaris de yılın son çeyreğinde Türkiye’deki meraklılarıyla buluşacak. Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı Yeni Hyundai Tucson radikal tasarımı ve büyüyen boyutlarıyla sahneye çıktı TEMSA’dan teknoloji ihracatı: Çekya’ya 5 MWh’lik batarya sevketti Toyota’dan biri hemen iki yeni model: Yeni Hilux ve RAV 4 Türkiye’de Türkiye otomotiv üretimi ve ihracatı yılın ilk 7 ayında kan kaybetti E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment.",
-          "post_text_for_card": "Toyota, daralan otomotiv pazarında payını artırma hedefiyle öne çıkıyor. CEO Ali Haydar Bozkurt, finansman zorlukları ve küresel gelişmelerin sektörü etkilediğini belirtti.\n\nPazar küçülürken, markaların bu koşullara nasıl uyum sağladığı büyük önem taşıyor. Toyota’nın 2026 sonu stratejisi, bu zorlu dönemde rekabet avantajı sağlamaya odaklanıyor.\n\nSektördeki bu değişim rüzgarları, diğer markaları nasıl etkileyecek dersiniz?",
-          "image_sources": [
-            "article_candidates_field"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://www.otoajanda.com/wp-content/uploads/2026/08/Ali-Haydar-Bozkurt_Yeni-Toyota-RAV4-Hybrid-Yeni-Toyota-Hilux.jpg"
-          ]
-        },
-        "post_text": "Toyota, daralan otomotiv pazarında payını artırma hedefiyle öne çıkıyor. CEO Ali Haydar Bozkurt, finansman zorlukları ve küresel gelişmelerin sektörü etkilediğini belirtti.\n\nPazar küçülürken, markaların bu koşullara nasıl uyum sağladığı büyük önem taşıyor. Toyota’nın 2026 sonu stratejisi, bu zorlu dönemde rekabet avantajı sağlamaya odaklanıyor.\n\nSektördeki bu değişim rüzgarları, diğer markaları nasıl etkileyecek dersiniz?",
-        "image_path": "/tmp/otoxtra_img_51ivo5cb.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_51ivo5cb.jpg"
-        ],
-        "image_source": "article_candidates_field",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T12:34:47.480347+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176724678916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1061783943010865",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T12:35:14.948314+03:00"
+      "updated_at": null
     }
   }
 }
