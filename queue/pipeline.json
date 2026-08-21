@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-21-21:32",
-  "status": "completed",
-  "started_at": "2026-08-21T21:32:56.000763+03:00",
-  "updated_at": "2026-08-21T21:34:46.084927+03:00",
+  "run_id": "2026-08-21-22:24",
+  "status": "error",
+  "started_at": "2026-08-21T22:24:02.659634+03:00",
+  "updated_at": "2026-08-21T22:24:54.695857+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-            "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
-            "published": "2026-08-21T18:14:02+00:00",
-            "summary": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,222 +127,47 @@
           "_metrics": {
             "found": 97,
             "after_keyword": 68,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 97,
           "after_keyword": 68,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-21T21:33:50.211594+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-21T22:24:54.695857+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-          "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
-          "published": "2026-08-21T18:14:02+00:00",
-          "summary": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 7,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 5
-          },
-          "score": 46,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörüyle doğrudan ilişkisi olmayan bir teknoloji ve ev aletleri incelemesi, bu nedenle otomobil meraklıları için viral potansiyeli düşük.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 46,
-        "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 8,
-          "benzersizlik": 7,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv sektörüyle doğrudan ilişkisi olmayan bir teknoloji ve ev aletleri incelemesi, bu nedenle otomobil meraklıları için viral potansiyeli düşük.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-            "score": 46,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 7,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T21:33:51.852366+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-          "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
-          "published": "2026-08-21T18:14:02+00:00",
-          "summary": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 7,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 5
-          },
-          "score": 46,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörüyle doğrudan ilişkisi olmayan bir teknoloji ve ev aletleri incelemesi, bu nedenle otomobil meraklıları için viral potansiyeli düşük.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda."
-        },
-        "post_text": "Bu yaz sıcaktan bunalanların gözü artık otomobillerde değil.\n\nTCL SaveIN klima, inverter motoru ve uygulama desteğiyle cebi yormadan serinletme vaadi sunuyor. Tasarımı ve performansı kadar, faturayı düşürme iddiası da dikkat çekici.\n\nKlima seçimi, otomobil seçiminden daha stratejik bir karar haline geldi.",
-        "post_text_length": 306,
-        "story_card_title": "BU KLİMA YAZI KURTARDI!",
-        "story_card_subtitle": "TCL'in az yakan inverter klimasıyla serin ve tasarruflu bir yaz geçirin.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T21:33:54.739494+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
-          "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
-          "published": "2026-08-21T18:14:02+00:00",
-          "summary": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi",
-          "base_ai_score": 35,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 7,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 5
-          },
-          "score": 46,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörüyle doğrudan ilişkisi olmayan bir teknoloji ve ev aletleri incelemesi, bu nedenle otomobil meraklıları için viral potansiyeli düşük.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
-          "post_text_for_card": "Bu yaz sıcaktan bunalanların gözü artık otomobillerde değil.\n\nTCL SaveIN klima, inverter motoru ve uygulama desteğiyle cebi yormadan serinletme vaadi sunuyor. Tasarımı ve performansı kadar, faturayı düşürme iddiası da dikkat çekici.\n\nKlima seçimi, otomobil seçiminden daha stratejik bir karar haline geldi.",
-          "story_card_title": "BU KLİMA YAZI KURTARDI!",
-          "story_card_subtitle": "TCL'in az yakan inverter klimasıyla serin ve tasarruflu bir yaz geçirin.",
-          "image_sources": [
-            "meta_og"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
-          ]
-        },
-        "post_text": "Bu yaz sıcaktan bunalanların gözü artık otomobillerde değil.\n\nTCL SaveIN klima, inverter motoru ve uygulama desteğiyle cebi yormadan serinletme vaadi sunuyor. Tasarımı ve performansı kadar, faturayı düşürme iddiası da dikkat çekici.\n\nKlima seçimi, otomobil seçiminden daha stratejik bir karar haline geldi.",
-        "story_card_title": "BU KLİMA YAZI KURTARDI!",
-        "story_card_subtitle": "TCL'in az yakan inverter klimasıyla serin ve tasarruflu bir yaz geçirin.",
-        "image_path": "/tmp/otoxtra_img_0sel9g95.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_0sel9g95.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T21:33:56.940236+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176769582916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18034832444839118",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1337295848219418",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-21T21:34:46.084927+03:00"
+      "updated_at": null
     }
   }
 }
