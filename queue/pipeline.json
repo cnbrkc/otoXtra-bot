@@ -1,34 +1,53 @@
 {
-  "run_id": "2026-08-21-19:30",
+  "run_id": "2026-08-21-20:25",
   "status": "completed",
-  "started_at": "2026-08-21T19:30:23.978929+03:00",
-  "updated_at": "2026-08-21T19:32:04.935652+03:00",
+  "started_at": "2026-08-21T20:25:51.511366+03:00",
+  "updated_at": "2026-08-21T20:28:54.016380+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
-            "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
-            "published": "2026-08-21T16:00:00+00:00",
-            "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
-            "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+            "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
+            "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
+            "published": "2026-08-21T17:03:14+00:00",
+            "summary": "TCL'in uygun fiyatlı lakin inverter motorlu, uygulama destekli, kaba tabirle az yakan SaveIN klimasını inceledik. Tasarımı, kullanışlılığı, soğutma performansı ve tüketimi, detaylar videomuzda.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+              "https://www.donanimhaber.com/images/images/haber/209386/1200x675yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi.jpg"
             ],
             "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi"
+            "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi"
+          },
+          {
+            "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
+            "link": "https://www.donanimhaber.com/elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar--209574",
+            "published": "2026-08-21T16:40:00+00:00",
+            "summary": "Skoda'nın şimdiye kadar ürettiği en büyük model olan tamamen elektrikli Skoda Peaq, markanın Enyaq ve Elroq modelleriyle birlikte Mladá Boleslav fabrikasında üretiliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "kadarki-modelini-simdiye-skoda-uretmeye"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,232 +165,252 @@
           },
           "_metrics": {
             "found": 97,
-            "after_keyword": 67,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 69,
+            "after_time": 8,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 97,
-          "after_keyword": 67,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 69,
+          "after_time": 8,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-08-21T19:31:10.024116+03:00"
+      "updated_at": "2026-08-21T20:26:37.380011+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
-          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
-          "published": "2026-08-21T16:00:00+00:00",
-          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
+          "link": "https://www.donanimhaber.com/elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar--209574",
+          "published": "2026-08-21T16:40:00+00:00",
+          "summary": "Skoda'nın şimdiye kadar ürettiği en büyük model olan tamamen elektrikli Skoda Peaq, markanın Enyaq ve Elroq modelleriyle birlikte Mladá Boleslav fabrikasında üretiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
-          "base_ai_score": 45,
+          "topic_fingerprint": "kadarki-modelini-simdiye-skoda-uretmeye",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 11,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 54,
+          "score": 73,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "score_explanation": "Yeni bir elektrikli modelin üretime geçişi otomobil gündemi için önemli ve merak uyandırıcı bir gelişmedir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 54,
-        "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
+        "score": 73,
+        "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 11,
-          "benzersizlik": 9,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 5
+          "etkilesim_potansiyeli": 16,
+          "benzersizlik": 14,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+        "score_explanation": "Yeni bir elektrikli modelin üretime geçişi otomobil gündemi için önemli ve merak uyandırıcı bir gelişmedir.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
-            "score": 54,
+            "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
+            "score": 73,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 11,
-              "benzersizlik": 9,
-              "gundem_gucu": 9,
+              "etkilesim_potansiyeli": 16,
+              "benzersizlik": 14,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
+            "score": 47,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 6,
+              "gundem_gucu": 6,
               "paylasilabilirlik": 5
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Yazı bu az yakan klimayla geçirdim “TCL SaveIN klima incelemesi”",
+            "link": "https://www.donanimhaber.com/yazi-gecdirdigim-az-yakan-klima-tcl-savein-incelemesi--209386",
+            "score": 47,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "gecirdim-incelemesi-klima-klimayla-savein-tcl-yakan-yazi"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-08-21T19:31:11.656006+03:00"
+      "updated_at": "2026-08-21T20:26:39.614365+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
-          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
-          "published": "2026-08-21T16:00:00+00:00",
-          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
+          "link": "https://www.donanimhaber.com/elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar--209574",
+          "published": "2026-08-21T16:40:00+00:00",
+          "summary": "Skoda'nın şimdiye kadar ürettiği en büyük model olan tamamen elektrikli Skoda Peaq, markanın Enyaq ve Elroq modelleriyle birlikte Mladá Boleslav fabrikasında üretiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
-          "base_ai_score": 45,
+          "topic_fingerprint": "kadarki-modelini-simdiye-skoda-uretmeye",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 11,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 54,
+          "score": 73,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "score_explanation": "Yeni bir elektrikli modelin üretime geçişi otomobil gündemi için önemli ve merak uyandırıcı bir gelişmedir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, ikinci nesil 8 Serisi’nin üretimini Nisan 2026’da sonlandırdı ve ufukta hâlâ net bir halef görünmüyor. Dolayısıyla BMW’nin büyük amiral gemisi coupe modeli için bir Neue Klasse versiyonu beklemek gereksiz olabilir. Automotive News'ekonuşan bir BMW yöneticisi, büyük coupe modelini Neue Klasse ailesine taşımanın\"uygulanabilir olmadığını\"söyledi. Bu da BMW’yi şimdilik bir amiral gemisi grand tourer modelinden yoksun bırakıyor. BMW’nin bu rolü yeniden konumlandırılan Alpina markasına vermeyi de değerlendirdiği, ancak bu planın görünüşe göre rafa kaldırıldığı bildiriliyor. İlk kez Mayıs 2026’da Concorso d’Eleganza Villa d’Este’de tanıtılan ve daha sonra Monterey Car Week kapsamında sergilenen konsept, BMW’nin henüz resmen yanıtlamadığı şu soruya verilmiş bir cevap gibi görünüyor: 8 Serisi’nden sonra ne gelecek? G15 kasa kodlu 8 Serisi Coupe, 2018’de BMW’nin CLAR platformu üzerinde tanıtıldı; ardından G14 Cabrio ve G16 Gran Coupe geldi. CLAR hâlâ BMW ürün gamının büyük bir bölümünün temelini oluşturuyor, ancak Neue Klasse’yi tanımlayanyüksek voltajlı elektrik mimarisive yazılım ağırlıklı sistemler düşünülerek geliştirilmiş bir platform değil. BMW’nin 8 Serisi’ni Neue Klasse’ye taşımanın uygulanabilir olmadığını söylerken kastettiği şey muhtemelen bu. Daha eski bir platformu tamamen farklı bir elektrik ve mekanik mimariye uyarlamak, pratikte en baştan başlamak anlamına gelir. Nispeten düşük adetlerde satılan bir grand tourer için BMW, bu yatırımın ticari karşılığını yeterli görmüyor. BMW XM’in halefi de benzer bir sorunla karşı karşıya gibi görünüyor. Bu da niş amiral gemisi modellerinin BMW’nin yeni nesil mimarisine geçişinin ne kadar zor olduğunu gösteriyor. Vision BMW Alpina’nın ilginçleştiği nokta tam olarak burası. Uzun ve alçak coupe, klasik köpekbalığı burnu ön tasarıma, kaputunun altında birV8 motorave deri, metal ile kristal detaylarla donatılmış bir iç mekâna sahip. Oranları tartışmasız biçimde bir grand tourer’a ait ve eski 8 Serisi Gran Coupe’yi yakından hatırlattığı su götürmez. BMW, konseptin üretime gideceğini söylemiş değil. Resmî açıklamaya göre bu, tek seferlik bir tasarım çalışması. Ancak BMW’nin bu otomobili, çok daha üst seviyede konumlandırılacak bir Alpina GT’ye yönelik ilgiyi ölçmek için kullandığını tahmin ediyoruz. Vision BMW Alpina Tasarım Çalışması Alpina’nın BMW Group içinde resmen bağımsız bir ultra lüks marka hâline gelmesiyle bu ihtimal artık daha anlamlı görünüyor.1 Ocak 2026itibarıyla BMW Alpina, grup içinde ayrı bir yapı olarak faaliyet gösteriyor; otomobilleri BMW tesislerinde üretiliyor ve standart BMW ürün gamının üzerinde konumlandırılıyor. Bu yeni dönemin ilk seri üretim BMW Alpina modelinin 7 Serisi temelli olması ve V8 motor kullanması bekleniyor; lansmanın ise 2027 civarında hedeflendiği bildiriliyor. Eğer bu otomobil Alpina’yı BMW’nin ultra lüks pazara verdiği yanıt olarak konumlandırırsa, Vision konseptini temel alan büyük, Gran Coupe tarzı bir GT oldukça doğal bir sonraki adım gibi görünebilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Dört farklı model aynı üretim hattındaMarkanın Mladá Boleslav’daki üretim hattı, farklı güç aktarma sistemlerine sahip modelleri aynı fabrikada üretebilme esnekliğiyle öne çıkıyor. Enyaq 2020 yılında bu hatta üretilen ilk tamamen elektrikli model olurken, Ocak 2025’te Elroq ve şimdi de Peaq üretime dahil edildi.Tam Boyutta GörBöylece üç tamamen elektrikli model, Octavia Combi ile aynı fabrikadan çıkıyor. Skoda bu üretim yapısıyla pazar talebindeki değişimlere ve küresel tedarik zincirindeki gelişmelere göre üretim adetlerini esnek biçimde ayarlayabiliyor.Elektrikli modellerin Skoda’nın üretimindeki ağırlığı da artmaya devam ediyor. 2026 yılının ilk yarısında markanın Çek Cumhuriyeti’ndeki fabrikalarında üretilen araçların yaklaşık yüzde 23’ünü tamamen elektrikli modeller oluşturdu.Peaq için üretim hattı yeniden düzenlendiTam Boyutta Gör4.87 metre uzunluğa ve yaklaşık üç metrelik aks mesafesine sahip Peaq, Skoda’nın ürettiği en büyük SUV olma özelliğini taşıyor. Modelin mevcut üretim hattına dahil edilmesi için fabrikada çeşitli mühendislik çalışmaları gerçekleştirildi.Üretim sürecinde ergonomiyi ve iş güvenliğini geliştirmek amacıyla daha büyük üretim kızakları devreye alınırken, üçüncü sıra koltukların montajı için yeni bir manipülatör eklendi. Pres, gövde ve boya tesislerinde de Peaq’in üretimine yönelik düzenlemeler yapıldı.640 kilometrenin üzerinde menzil sunuyorTam Boyutta GörSkoda’nın yeni elektrikli amiral gemisi modeli olan Peaq, markanın bugüne kadar bir elektrikli aracında kullandığı en büyük batarya seçeneğini de sunuyor. Mladá Boleslav’da üretilen 91 kWsa kapasiteli batarya,640 kilometrenin üzerinde menzilsağlıyor. Ürün gamında ayrıca 63 kWsa kapasiteli batarya seçeneği de yer alıyor.150 kW ile 220 kW arasında değişen üç farklı güç seçeneğiyle sunulacak Peaq, arkadan itişli veya dört tekerlekten çekişli olarak tercih edilebilecek. Yedi koltuklu kabiniyle markanın en geniş SUV modeli olan Peaq, gövdeyle bütünleşik gizli kapı kolları, Dynamic Shade Control teknolojisine sahip panoramik cam tavan ve çift yönlü şarj gibi Škoda’da ilk kez sunulan teknolojileri de beraberinde getiriyor.Elektrikli Skoda Peaq Görselleri(56)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley1 saat öncedaha korkutucu bişey görmedim Markanın Mladá Boleslav’daki üretim hattı, farklı güç aktarma sistemlerine sahip modelleri aynı fabrikada üretebilme esnekliğiyle öne çıkıyor. Enyaq 2020 yılında bu hatta üretilen ilk tamamen elektrikli model olurken, Ocak 2025’te Elroq ve şimdi de Peaq üretime dahil edildi. Elektrikli modellerin Skoda’nın üretimindeki ağırlığı da artmaya devam ediyor. 2026 yılının ilk yarısında markanın Çek Cumhuriyeti’ndeki fabrikalarında üretilen araçların yaklaşık yüzde 23’ünü tamamen elektrikli modeller oluşturdu. Üretim sürecinde ergonomiyi ve iş güvenliğini geliştirmek amacıyla daha büyük üretim kızakları devreye alınırken, üçüncü sıra koltukların montajı için yeni bir manipülatör eklendi. Pres, gövde ve boya tesislerinde de Peaq’in üretimine yönelik düzenlemeler yapıldı. 150 kW ile 220 kW arasında değişen üç farklı güç seçeneğiyle sunulacak Peaq, arkadan itişli veya dört tekerlekten çekişli olarak tercih edilebilecek. Yedi koltuklu kabiniyle markanın en geniş SUV modeli olan Peaq, gövdeyle bütünleşik gizli kapı kolları, Dynamic Shade Control teknolojisine sahip panoramik cam tavan ve çift yönlü şarj gibi Škoda’da ilk kez sunulan teknolojileri de beraberinde getiriyor. Elektrikli Skoda Peaq Görselleri(56)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley1 saat öncedaha korkutucu bişey görmedim Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/dp/B0FFGZP3WZ?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0G76Q137H https://www.amazon.com.tr/dp/B0DKXY7JT2 https://www.amazon.com.tr/dp/B07JJDLBFB https://app.hb.biz/drYK8xpbxAW7 https://app.hb.biz/QxCH756Lybd5"
         },
-        "post_text": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
-        "post_text_length": 396,
-        "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
-        "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
+        "post_text": "Skoda'nın en büyük elektrikli SUV'u Peaq, fabrika hattından çıktı. Bu, sadece yeni bir modelin yola çıkışı değil.\n\nSkoda, dört farklı modeli aynı hatta üreterek pazarın nabzını tuttuğunu gösteriyor. Otomobil dünyası esnekliği konuşurken, Çekler dersini iyi çalışmış.\n\nArtık mesele sadece elektrikli olmak değil, değişen talebe ne kadar hızlı ayak uydurduğun.",
+        "post_text_length": 358,
+        "story_card_title": "SKODA'DAN YENİ BİR DEV GELİYOR!",
+        "story_card_subtitle": "Markanın şimdiye kadarki en büyük elektrikli modeli Peaq, üretime başladı.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-21T19:31:15.129635+03:00"
+      "updated_at": "2026-08-21T20:26:42.842204+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BMW, 8 Serisi'nin dönüşünü kesin dille reddetti",
-          "link": "https://tr.motor1.com/news/805727/bmw-8serisi-iptal-alpina/",
-          "published": "2026-08-21T16:00:00+00:00",
-          "summary": "Vision Alpina, ürün gamında 8 Serisi'nin yerini alacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg",
+          "title": "Skoda, şimdiye kadarki en büyük modelini üretmeye başladı",
+          "link": "https://www.donanimhaber.com/elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar--209574",
+          "published": "2026-08-21T16:40:00+00:00",
+          "summary": "Skoda'nın şimdiye kadar ürettiği en büyük model olan tamamen elektrikli Skoda Peaq, markanın Enyaq ve Elroq modelleriyle birlikte Mladá Boleslav fabrikasında üretiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/AeNQL/s3/bmw-8-series-coupe.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg"
           ],
           "image_source": "meta_og",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-dille-donusunu-kesin-reddetti-serisi",
-          "base_ai_score": 45,
+          "topic_fingerprint": "kadarki-modelini-simdiye-skoda-uretmeye",
+          "base_ai_score": 68,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 11,
-            "benzersizlik": 9,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 54,
+          "score": 73,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik bir modelin iptal edilmesi ve yerine Vision Alpina'nın gelecek olması otomobil meraklıları için ilgi çekici ancak genel kitle için orta seviyede bir haber.",
+          "score_explanation": "Yeni bir elektrikli modelin üretime geçişi otomobil gündemi için önemli ve merak uyandırıcı bir gelişmedir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW, ikinci nesil 8 Serisi’nin üretimini Nisan 2026’da sonlandırdı ve ufukta hâlâ net bir halef görünmüyor. Dolayısıyla BMW’nin büyük amiral gemisi coupe modeli için bir Neue Klasse versiyonu beklemek gereksiz olabilir. Automotive News'ekonuşan bir BMW yöneticisi, büyük coupe modelini Neue Klasse ailesine taşımanın\"uygulanabilir olmadığını\"söyledi. Bu da BMW’yi şimdilik bir amiral gemisi grand tourer modelinden yoksun bırakıyor. BMW’nin bu rolü yeniden konumlandırılan Alpina markasına vermeyi de değerlendirdiği, ancak bu planın görünüşe göre rafa kaldırıldığı bildiriliyor. İlk kez Mayıs 2026’da Concorso d’Eleganza Villa d’Este’de tanıtılan ve daha sonra Monterey Car Week kapsamında sergilenen konsept, BMW’nin henüz resmen yanıtlamadığı şu soruya verilmiş bir cevap gibi görünüyor: 8 Serisi’nden sonra ne gelecek? G15 kasa kodlu 8 Serisi Coupe, 2018’de BMW’nin CLAR platformu üzerinde tanıtıldı; ardından G14 Cabrio ve G16 Gran Coupe geldi. CLAR hâlâ BMW ürün gamının büyük bir bölümünün temelini oluşturuyor, ancak Neue Klasse’yi tanımlayanyüksek voltajlı elektrik mimarisive yazılım ağırlıklı sistemler düşünülerek geliştirilmiş bir platform değil. BMW’nin 8 Serisi’ni Neue Klasse’ye taşımanın uygulanabilir olmadığını söylerken kastettiği şey muhtemelen bu. Daha eski bir platformu tamamen farklı bir elektrik ve mekanik mimariye uyarlamak, pratikte en baştan başlamak anlamına gelir. Nispeten düşük adetlerde satılan bir grand tourer için BMW, bu yatırımın ticari karşılığını yeterli görmüyor. BMW XM’in halefi de benzer bir sorunla karşı karşıya gibi görünüyor. Bu da niş amiral gemisi modellerinin BMW’nin yeni nesil mimarisine geçişinin ne kadar zor olduğunu gösteriyor. Vision BMW Alpina’nın ilginçleştiği nokta tam olarak burası. Uzun ve alçak coupe, klasik köpekbalığı burnu ön tasarıma, kaputunun altında birV8 motorave deri, metal ile kristal detaylarla donatılmış bir iç mekâna sahip. Oranları tartışmasız biçimde bir grand tourer’a ait ve eski 8 Serisi Gran Coupe’yi yakından hatırlattığı su götürmez. BMW, konseptin üretime gideceğini söylemiş değil. Resmî açıklamaya göre bu, tek seferlik bir tasarım çalışması. Ancak BMW’nin bu otomobili, çok daha üst seviyede konumlandırılacak bir Alpina GT’ye yönelik ilgiyi ölçmek için kullandığını tahmin ediyoruz. Vision BMW Alpina Tasarım Çalışması Alpina’nın BMW Group içinde resmen bağımsız bir ultra lüks marka hâline gelmesiyle bu ihtimal artık daha anlamlı görünüyor.1 Ocak 2026itibarıyla BMW Alpina, grup içinde ayrı bir yapı olarak faaliyet gösteriyor; otomobilleri BMW tesislerinde üretiliyor ve standart BMW ürün gamının üzerinde konumlandırılıyor. Bu yeni dönemin ilk seri üretim BMW Alpina modelinin 7 Serisi temelli olması ve V8 motor kullanması bekleniyor; lansmanın ise 2027 civarında hedeflendiği bildiriliyor. Eğer bu otomobil Alpina’yı BMW’nin ultra lüks pazara verdiği yanıt olarak konumlandırırsa, Vision konseptini temel alan büyük, Gran Coupe tarzı bir GT oldukça doğal bir sonraki adım gibi görünebilir. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
-          "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
-          "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
+          "full_text": "Dört farklı model aynı üretim hattındaMarkanın Mladá Boleslav’daki üretim hattı, farklı güç aktarma sistemlerine sahip modelleri aynı fabrikada üretebilme esnekliğiyle öne çıkıyor. Enyaq 2020 yılında bu hatta üretilen ilk tamamen elektrikli model olurken, Ocak 2025’te Elroq ve şimdi de Peaq üretime dahil edildi.Tam Boyutta GörBöylece üç tamamen elektrikli model, Octavia Combi ile aynı fabrikadan çıkıyor. Skoda bu üretim yapısıyla pazar talebindeki değişimlere ve küresel tedarik zincirindeki gelişmelere göre üretim adetlerini esnek biçimde ayarlayabiliyor.Elektrikli modellerin Skoda’nın üretimindeki ağırlığı da artmaya devam ediyor. 2026 yılının ilk yarısında markanın Çek Cumhuriyeti’ndeki fabrikalarında üretilen araçların yaklaşık yüzde 23’ünü tamamen elektrikli modeller oluşturdu.Peaq için üretim hattı yeniden düzenlendiTam Boyutta Gör4.87 metre uzunluğa ve yaklaşık üç metrelik aks mesafesine sahip Peaq, Skoda’nın ürettiği en büyük SUV olma özelliğini taşıyor. Modelin mevcut üretim hattına dahil edilmesi için fabrikada çeşitli mühendislik çalışmaları gerçekleştirildi.Üretim sürecinde ergonomiyi ve iş güvenliğini geliştirmek amacıyla daha büyük üretim kızakları devreye alınırken, üçüncü sıra koltukların montajı için yeni bir manipülatör eklendi. Pres, gövde ve boya tesislerinde de Peaq’in üretimine yönelik düzenlemeler yapıldı.640 kilometrenin üzerinde menzil sunuyorTam Boyutta GörSkoda’nın yeni elektrikli amiral gemisi modeli olan Peaq, markanın bugüne kadar bir elektrikli aracında kullandığı en büyük batarya seçeneğini de sunuyor. Mladá Boleslav’da üretilen 91 kWsa kapasiteli batarya,640 kilometrenin üzerinde menzilsağlıyor. Ürün gamında ayrıca 63 kWsa kapasiteli batarya seçeneği de yer alıyor.150 kW ile 220 kW arasında değişen üç farklı güç seçeneğiyle sunulacak Peaq, arkadan itişli veya dört tekerlekten çekişli olarak tercih edilebilecek. Yedi koltuklu kabiniyle markanın en geniş SUV modeli olan Peaq, gövdeyle bütünleşik gizli kapı kolları, Dynamic Shade Control teknolojisine sahip panoramik cam tavan ve çift yönlü şarj gibi Škoda’da ilk kez sunulan teknolojileri de beraberinde getiriyor.Elektrikli Skoda Peaq Görselleri(56)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley1 saat öncedaha korkutucu bişey görmedim Markanın Mladá Boleslav’daki üretim hattı, farklı güç aktarma sistemlerine sahip modelleri aynı fabrikada üretebilme esnekliğiyle öne çıkıyor. Enyaq 2020 yılında bu hatta üretilen ilk tamamen elektrikli model olurken, Ocak 2025’te Elroq ve şimdi de Peaq üretime dahil edildi. Elektrikli modellerin Skoda’nın üretimindeki ağırlığı da artmaya devam ediyor. 2026 yılının ilk yarısında markanın Çek Cumhuriyeti’ndeki fabrikalarında üretilen araçların yaklaşık yüzde 23’ünü tamamen elektrikli modeller oluşturdu. Üretim sürecinde ergonomiyi ve iş güvenliğini geliştirmek amacıyla daha büyük üretim kızakları devreye alınırken, üçüncü sıra koltukların montajı için yeni bir manipülatör eklendi. Pres, gövde ve boya tesislerinde de Peaq’in üretimine yönelik düzenlemeler yapıldı. 150 kW ile 220 kW arasında değişen üç farklı güç seçeneğiyle sunulacak Peaq, arkadan itişli veya dört tekerlekten çekişli olarak tercih edilebilecek. Yedi koltuklu kabiniyle markanın en geniş SUV modeli olan Peaq, gövdeyle bütünleşik gizli kapı kolları, Dynamic Shade Control teknolojisine sahip panoramik cam tavan ve çift yönlü şarj gibi Škoda’da ilk kez sunulan teknolojileri de beraberinde getiriyor. Elektrikli Skoda Peaq Görselleri(56)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley1 saat öncedaha korkutucu bişey görmedim Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/dp/B0FFGZP3WZ?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0G76Q137H https://www.amazon.com.tr/dp/B0DKXY7JT2 https://www.amazon.com.tr/dp/B07JJDLBFB https://app.hb.biz/drYK8xpbxAW7 https://app.hb.biz/QxCH756Lybd5",
+          "post_text_for_card": "Skoda'nın en büyük elektrikli SUV'u Peaq, fabrika hattından çıktı. Bu, sadece yeni bir modelin yola çıkışı değil.\n\nSkoda, dört farklı modeli aynı hatta üreterek pazarın nabzını tuttuğunu gösteriyor. Otomobil dünyası esnekliği konuşurken, Çekler dersini iyi çalışmış.\n\nArtık mesele sadece elektrikli olmak değil, değişen talebe ne kadar hızlı ayak uydurduğun.",
+          "story_card_title": "SKODA'DAN YENİ BİR DEV GELİYOR!",
+          "story_card_subtitle": "Markanın şimdiye kadarki en büyük elektrikli modeli Peaq, üretime başladı.",
           "image_sources": [
             "meta_og",
-            "article_script",
+            "article_img",
             "article_img",
             "article_img"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/AeNQL/s1/bmw-8-series-coupe.jpg",
-            "https://cdn.motor1.com/images/mgl/AeNQL/s1/4x3/bmw-8-series-coupe.webp",
-            "https://cdn.motor1.com/images/mgl/7wXYp/s3/bmw-serie-8-gran-coupe-2020.jpg",
-            "https://cdn.motor1.com/images/mgl/mMzNGB/s3/vision-bmw-alpina-design-study.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209574/1200x675elektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260821135407&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F209574%2Felektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar209574_0.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260821135407&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F209574%2Felektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar209574_1.jpg",
+            "https://www.donanimhaber.com/cache-v2/?t=20260821135407&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F209574%2Felektrikli-skoda-peaq-seri-uretime-girdi-iste-detaylar209574_2.jpg"
           ]
         },
-        "post_text": "BMW, 8 Serisi defterini kapatırken Vision Alpina'yı işaret etti. Yani o bildiğimiz büyük coupe havası artık Alpina'dan esecek.\n\nBMW yöneticileri \"uygulanabilir değil\" diyerek Neue Klasse'de 8 Serisi'ne yer olmadığını netleştirdi. Artık 'amiral gemisi coupe' arayanlar başka markalara bakacak ya da Alpina'nın yeni vizyonuna alışacak.\n\nBu, BMW'nin lüks ve performans algısını baştan yazma hamlesi.",
-        "story_card_title": "BMW 8 Serisi Defteri Kapatıldı!",
-        "story_card_subtitle": "Vision Alpina, bu ikonik modelin yerini alacak yeni amiral gemisi coupe.",
-        "image_path": "/tmp/otoxtra_img_ttxpd0p2.jpg",
+        "post_text": "Skoda'nın en büyük elektrikli SUV'u Peaq, fabrika hattından çıktı. Bu, sadece yeni bir modelin yola çıkışı değil.\n\nSkoda, dört farklı modeli aynı hatta üreterek pazarın nabzını tuttuğunu gösteriyor. Otomobil dünyası esnekliği konuşurken, Çekler dersini iyi çalışmış.\n\nArtık mesele sadece elektrikli olmak değil, değişen talebe ne kadar hızlı ayak uydurduğun.",
+        "story_card_title": "SKODA'DAN YENİ BİR DEV GELİYOR!",
+        "story_card_subtitle": "Markanın şimdiye kadarki en büyük elektrikli modeli Peaq, üretime başladı.",
+        "image_path": "/tmp/otoxtra_img_2nhul8wj.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_ttxpd0p2.jpg",
-          "/tmp/otoxtra_img_xfokd9d2.jpg",
-          "/tmp/otoxtra_img_i_xvi7_j.jpg",
-          "/tmp/otoxtra_img_40llkoew.jpg"
+          "/tmp/otoxtra_img_2nhul8wj.jpg",
+          "/tmp/otoxtra_img_0olyv1yc.jpg",
+          "/tmp/otoxtra_img_mr003cmo.jpg",
+          "/tmp/otoxtra_img_z_5kd28p.jpg"
         ],
         "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-08-21T19:31:18.386201+03:00"
+      "updated_at": "2026-08-21T20:28:03.385923+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122176759046916499",
+        "post_id": "678053852057751_122176763252916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18621985837013116",
+            "id": "17888569773435512",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1051388411109163",
+            "id": "1359872059460137",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-21T19:32:04.935652+03:00"
+      "updated_at": "2026-08-21T20:28:54.016380+03:00"
     }
   }
 }
