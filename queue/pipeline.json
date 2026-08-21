@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-21-09:41",
-  "status": "error",
-  "started_at": "2026-08-21T09:41:07.875925+03:00",
-  "updated_at": "2026-08-21T09:45:03.810351+03:00",
+  "run_id": "2026-08-21-10:40",
+  "status": "completed",
+  "started_at": "2026-08-21T10:40:11.365320+03:00",
+  "updated_at": "2026-08-21T10:45:43.684501+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+            "link": "https://www.donanimhaber.com/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu--209556",
+            "published": "2026-08-21T07:22:31+00:00",
+            "summary": "FNSS, TEKNOFEST Mavi Vatan’da İ-ZAHA adlı insansız amfibi aracını tanıttı. 8 tonluk araç, insanlı ZAHA’lardan önce kıyıya ulaşarak en riskli görevleri üstlenecek.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "amfibi-dalgasi-fnss-harek-insansiz-olacak-tin-zaha"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -101,10 +121,10 @@
             "attempts": 3
           },
           "MuratTosun": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
-            "attempts": 1
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
+            "attempts": 3
           },
           "VeyselKarani": {
             "status": "error",
@@ -125,49 +145,227 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 105,
-            "after_keyword": 65,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 95,
+            "after_keyword": 66,
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 105,
-          "after_keyword": 65,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 95,
+          "after_keyword": 66,
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-21T09:45:03.810351+03:00"
+      "error": null,
+      "updated_at": "2026-08-21T10:44:37.931534+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+          "link": "https://www.donanimhaber.com/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu--209556",
+          "published": "2026-08-21T07:22:31+00:00",
+          "summary": "FNSS, TEKNOFEST Mavi Vatan’da İ-ZAHA adlı insansız amfibi aracını tanıttı. 8 tonluk araç, insanlı ZAHA’lardan önce kıyıya ulaşarak en riskli görevleri üstlenecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "amfibi-dalgasi-fnss-harek-insansiz-olacak-tin-zaha",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 21,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 7
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Askeri teknoloji ve savunma sanayiindeki yenilikler sosyal medyada yüksek ilgi ve gurur duygusu uyandırarak hızla yayılıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 80,
+        "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 21,
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Askeri teknoloji ve savunma sanayiindeki yenilikler sosyal medyada yüksek ilgi ve gurur duygusu uyandırarak hızla yayılıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+            "score": 80,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 21,
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 7
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T10:44:39.591252+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+          "link": "https://www.donanimhaber.com/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu--209556",
+          "published": "2026-08-21T07:22:31+00:00",
+          "summary": "FNSS, TEKNOFEST Mavi Vatan’da İ-ZAHA adlı insansız amfibi aracını tanıttı. 8 tonluk araç, insanlı ZAHA’lardan önce kıyıya ulaşarak en riskli görevleri üstlenecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "amfibi-dalgasi-fnss-harek-insansiz-olacak-tin-zaha",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 21,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 7
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Askeri teknoloji ve savunma sanayiindeki yenilikler sosyal medyada yüksek ilgi ve gurur duygusu uyandırarak hızla yayılıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "FNSS tarafından geliştirilen İ-ZAHA, 20-23 Ağustos 2026 tarihleri arasında Gölcük Tersanesi Komutanlığı’nda düzenlenen TEKNOFEST Mavi Vatan’da Milli Savunma Bakanı Yaşar Güler’in katıldığı etkinlikle sergilendi. İ-ZAHA, amfibi hücumunilk temas aşamasını insansızlaştırıyor. Araç, karşı kuvvetin kıyı savunmasıyla insanlı araçlardan önce temas kurarak mayın, engel ve diğer tehditlerin bulunduğu bölgeye öncü unsur olarak gönderilebiliyor. İ-ZAHA,8 tonlukmuharebe ağırlığına sahip bir amfibi platform olarak denizden kıyıya kesintisiz ilerleyebiliyor. Araçsuda 7 knot, karada ise 70 km/sazami hıza ulaşabiliyor.300 beygirlik güç paketi, 37,5 BG/ton güç-ağırlık oranı sağlarken bağımsız süspansiyon sistemi farklı arazi koşullarında hareket kabiliyetini destekliyor. Seçilebilir lastik seçenekleri de farklı zeminlere uyum sağlamasını kolaylaştırıyor. Yapılan açıklamaya göre İ-ZAHA’nın temel görevlerinden biri, insanlı ZAHA’ların kıyıya çıkışını kolaylaştırmak. Bu kapsamda araç, görev tanımına göre mayınları ve kıyıdaki engelleri etkisiz hale getirerek çıkış hattını hazırlayabiliyor. Modüler yapısı sayesinde ilk temasın ardından kıyıbaşının ele geçirilmesi ve güvenli hale getirilmesi gibi sonraki harekât aşamalarında da kullanılabiliyor. İ-ZAHA’nın önemli özelliklerinden biri, farklı görevler içinyaklaşık 40 dakikada değiştirilebilen faydalı yük modülleri.Aynı temel platform, görev ihtiyacına göre ateş desteği, mayın temizleme, istihkam iş makinesi, elektronik harp, keşif, taktik aldatma, dronsavar, seyrüsefer ve işaretleme, lojistik destek veya yaralı tahliye görevlerinden birine uyarlanabiliyor. Atalet seyrüsefer sistemi, uydu sinyalinin kesildiği veya bozulduğu durumlarda aracın konumunu tahmin etmeye devam ediyor. Doğrudan görüş hattındailetişim menzili 3 kilometreolan araç,İHA röle desteğiyledaha uzak mesafelerden kontrol edilebiliyor. İletişim bağlantısının kesilmesi durumunda araç emniyetli duruşa geçiyor. Konfigürasyona bağlı olarak daha sonra kayıtlı rotayı izleyerek başlangıç noktasına otomatik dönebiliyor veya seyrüsefer görevini sürdürebiliyor. İ-ZAHA, kara yolu, demir yolu ve deniz taşımacılığıyla farklı bölgelere sevk edilebiliyor. Hızlı hava nakli gerektiğinde iseCH-47F Chinook, Mil Mi-26, C-130 Hercules, A400M, C-17 Globemaster, C-5 Galaxy, An-124 ve Il-76gibi ağır nakliye helikopterleri ve stratejik nakliye uçaklarıyla taşınabiliyor. Elde edilen bilgiler, bant genişliğinin sınırlı veya iletişimin elektronik olarak zorlandığı ortamlarda düşük gecikmeyle aktarılabilecek şekilde radyo bağlantısı üzerinden iletiliyor. Sistem tespit edilen unsurlarırenkli görseller ve ayrıntılı istihbarat kartlarıylaoperatöre sunuyor. Otomatik hedef tespit ve atış kontrol sistemleriyle birlikte çalışan yapı, öncelikli hedefleri operatöre aktararak angajman sürecini hızlandırıyor ve operatörün sürekli görüntü tarama yükünü azaltıyor. Tespit edilen hedefler takip edilip zaman damgalı olarak kaydedilebiliyor. Sahada yeni bir hedef veya kural tanımlandığında bu bilgi canlı görüntü akışına anında uygulanabiliyor. Elde edilen veriler operatöre ve komuta zincirine aktarılırken sistem, aracın durumuna göre zayıflayan bölgenin korunması, örtü gerisine çekilme, göreve devam edilmesi veya pasif göreve geçilmesi gibi seçeneklerin değerlendirilmesine yardımcı oluyor. İletişim kesildiğinde ise veriler araç üzerinde barındırılıyor ve bağlantı yeniden kurulduğunda komuta sistemlerine aktarılabiliyor.FNSS İ-ZAHA ÖzellikleriPlatform Ağırlığı: 8,000 kgGüç Ağırlık Oranı: 37,5 Bg/tonUzunluk: 5.4 mGenişlik: 2.7 mToplam Yükseklik: 1.8 mAzami Yol Hızı: 70 km/sAzami Yüzme Hızı: 7 KnotAteş Gücü: İhtiyaç Doğrultusunda 40 mm OBA, Ağır veya Orta Kalibre MT, Dron Engelleme, Taaruz Dronu, Anti Tank Füze Sistemleri Entegre Edilebilir.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Elde edilen veriler operatöre ve komuta zincirine aktarılırken sistem, aracın durumuna göre zayıflayan bölgenin korunması, örtü gerisine çekilme, göreve devam edilmesi veya pasif göreve geçilmesi gibi seçeneklerin değerlendirilmesine yardımcı oluyor. İletişim kesildiğinde ise veriler araç üzerinde barındırılıyor ve bağlantı yeniden kurulduğunda komuta sistemlerine aktarılabiliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B0FFGZP3WZ?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0G76Q137H https://www.amazon.com.tr/dp/B0CN4LNF2R https://www.n11.com/urun/schafer-practi-celik-saklama-kabi-3-lu-16-18-20-cm-6-parca-inox-29911794?magaza=schafer https://www.migros.com.tr/maret-dana-kasap-sucuk-400-g-p-d8d1b4?srsltid=AfmBOop0Rj2P2vXTElkG0PPWxuAY3wHz4i7HQStatHX843x77cQDWfGE https://www.ikea.com.tr/urun/tallskar-antrasit-bahce-oturma-grubu-49582501"
+        },
+        "post_text": "Amfibi harekatta ilk dalga artık insansız! 🤖\n\nFNSS'in tanıttığı İ-ZAHA, 8 tonluk devasa gövdesiyle insanlı araçlardan önce kıyıya çıkacak. Mayınları temizleyecek, engelleri aşacak ve en riskli görevleri üstlenecek.\n\nBu teknoloji, askerlerin hayatını riske atmadan operasyon yapma yeteneğini tamamen değiştiriyor. İnsanlı ZAHA'lara güvenli bir yol açmak için sahaya ilk o ayak basacak.\n\nSavaşın yüzü değişiyor, insansız sistemler cephede daha fazla yer bulacak gibi.",
+        "post_text_length": 465,
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T10:44:42.288697+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "FNSS İ-ZAHA tanıtıldı: Amfibi harekâtın ilk dalgası insansız olacak",
+          "link": "https://www.donanimhaber.com/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu--209556",
+          "published": "2026-08-21T07:22:31+00:00",
+          "summary": "FNSS, TEKNOFEST Mavi Vatan’da İ-ZAHA adlı insansız amfibi aracını tanıttı. 8 tonluk araç, insanlı ZAHA’lardan önce kıyıya ulaşarak en riskli görevleri üstlenecek.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "amfibi-dalgasi-fnss-harek-insansiz-olacak-tin-zaha",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 21,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 7
+          },
+          "score": 80,
+          "score_reason": "ai_scored",
+          "score_explanation": "Askeri teknoloji ve savunma sanayiindeki yenilikler sosyal medyada yüksek ilgi ve gurur duygusu uyandırarak hızla yayılıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "FNSS tarafından geliştirilen İ-ZAHA, 20-23 Ağustos 2026 tarihleri arasında Gölcük Tersanesi Komutanlığı’nda düzenlenen TEKNOFEST Mavi Vatan’da Milli Savunma Bakanı Yaşar Güler’in katıldığı etkinlikle sergilendi. İ-ZAHA, amfibi hücumunilk temas aşamasını insansızlaştırıyor. Araç, karşı kuvvetin kıyı savunmasıyla insanlı araçlardan önce temas kurarak mayın, engel ve diğer tehditlerin bulunduğu bölgeye öncü unsur olarak gönderilebiliyor. İ-ZAHA,8 tonlukmuharebe ağırlığına sahip bir amfibi platform olarak denizden kıyıya kesintisiz ilerleyebiliyor. Araçsuda 7 knot, karada ise 70 km/sazami hıza ulaşabiliyor.300 beygirlik güç paketi, 37,5 BG/ton güç-ağırlık oranı sağlarken bağımsız süspansiyon sistemi farklı arazi koşullarında hareket kabiliyetini destekliyor. Seçilebilir lastik seçenekleri de farklı zeminlere uyum sağlamasını kolaylaştırıyor. Yapılan açıklamaya göre İ-ZAHA’nın temel görevlerinden biri, insanlı ZAHA’ların kıyıya çıkışını kolaylaştırmak. Bu kapsamda araç, görev tanımına göre mayınları ve kıyıdaki engelleri etkisiz hale getirerek çıkış hattını hazırlayabiliyor. Modüler yapısı sayesinde ilk temasın ardından kıyıbaşının ele geçirilmesi ve güvenli hale getirilmesi gibi sonraki harekât aşamalarında da kullanılabiliyor. İ-ZAHA’nın önemli özelliklerinden biri, farklı görevler içinyaklaşık 40 dakikada değiştirilebilen faydalı yük modülleri.Aynı temel platform, görev ihtiyacına göre ateş desteği, mayın temizleme, istihkam iş makinesi, elektronik harp, keşif, taktik aldatma, dronsavar, seyrüsefer ve işaretleme, lojistik destek veya yaralı tahliye görevlerinden birine uyarlanabiliyor. Atalet seyrüsefer sistemi, uydu sinyalinin kesildiği veya bozulduğu durumlarda aracın konumunu tahmin etmeye devam ediyor. Doğrudan görüş hattındailetişim menzili 3 kilometreolan araç,İHA röle desteğiyledaha uzak mesafelerden kontrol edilebiliyor. İletişim bağlantısının kesilmesi durumunda araç emniyetli duruşa geçiyor. Konfigürasyona bağlı olarak daha sonra kayıtlı rotayı izleyerek başlangıç noktasına otomatik dönebiliyor veya seyrüsefer görevini sürdürebiliyor. İ-ZAHA, kara yolu, demir yolu ve deniz taşımacılığıyla farklı bölgelere sevk edilebiliyor. Hızlı hava nakli gerektiğinde iseCH-47F Chinook, Mil Mi-26, C-130 Hercules, A400M, C-17 Globemaster, C-5 Galaxy, An-124 ve Il-76gibi ağır nakliye helikopterleri ve stratejik nakliye uçaklarıyla taşınabiliyor. Elde edilen bilgiler, bant genişliğinin sınırlı veya iletişimin elektronik olarak zorlandığı ortamlarda düşük gecikmeyle aktarılabilecek şekilde radyo bağlantısı üzerinden iletiliyor. Sistem tespit edilen unsurlarırenkli görseller ve ayrıntılı istihbarat kartlarıylaoperatöre sunuyor. Otomatik hedef tespit ve atış kontrol sistemleriyle birlikte çalışan yapı, öncelikli hedefleri operatöre aktararak angajman sürecini hızlandırıyor ve operatörün sürekli görüntü tarama yükünü azaltıyor. Tespit edilen hedefler takip edilip zaman damgalı olarak kaydedilebiliyor. Sahada yeni bir hedef veya kural tanımlandığında bu bilgi canlı görüntü akışına anında uygulanabiliyor. Elde edilen veriler operatöre ve komuta zincirine aktarılırken sistem, aracın durumuna göre zayıflayan bölgenin korunması, örtü gerisine çekilme, göreve devam edilmesi veya pasif göreve geçilmesi gibi seçeneklerin değerlendirilmesine yardımcı oluyor. İletişim kesildiğinde ise veriler araç üzerinde barındırılıyor ve bağlantı yeniden kurulduğunda komuta sistemlerine aktarılabiliyor.FNSS İ-ZAHA ÖzellikleriPlatform Ağırlığı: 8,000 kgGüç Ağırlık Oranı: 37,5 Bg/tonUzunluk: 5.4 mGenişlik: 2.7 mToplam Yükseklik: 1.8 mAzami Yol Hızı: 70 km/sAzami Yüzme Hızı: 7 KnotAteş Gücü: İhtiyaç Doğrultusunda 40 mm OBA, Ağır veya Orta Kalibre MT, Dron Engelleme, Taaruz Dronu, Anti Tank Füze Sistemleri Entegre Edilebilir.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtElektrikli dev uçak X1 ilk kez havalandı Elde edilen veriler operatöre ve komuta zincirine aktarılırken sistem, aracın durumuna göre zayıflayan bölgenin korunması, örtü gerisine çekilme, göreve devam edilmesi veya pasif göreve geçilmesi gibi seçeneklerin değerlendirilmesine yardımcı oluyor. İletişim kesildiğinde ise veriler araç üzerinde barındırılıyor ve bağlantı yeniden kurulduğunda komuta sistemlerine aktarılabiliyor. Elektrikli dev uçak X1 ilk kez havalandı https://www.amazon.com.tr/dp/B0FFGZP3WZ?ref=ppx_yo2ov_dt_b_fed_asin_title https://www.amazon.com.tr/dp/B0G76Q137H https://www.amazon.com.tr/dp/B0CN4LNF2R https://www.n11.com/urun/schafer-practi-celik-saklama-kabi-3-lu-16-18-20-cm-6-parca-inox-29911794?magaza=schafer https://www.migros.com.tr/maret-dana-kasap-sucuk-400-g-p-d8d1b4?srsltid=AfmBOop0Rj2P2vXTElkG0PPWxuAY3wHz4i7HQStatHX843x77cQDWfGE https://www.ikea.com.tr/urun/tallskar-antrasit-bahce-oturma-grubu-49582501",
+          "post_text_for_card": "Amfibi harekatta ilk dalga artık insansız! 🤖\n\nFNSS'in tanıttığı İ-ZAHA, 8 tonluk devasa gövdesiyle insanlı araçlardan önce kıyıya çıkacak. Mayınları temizleyecek, engelleri aşacak ve en riskli görevleri üstlenecek.\n\nBu teknoloji, askerlerin hayatını riske atmadan operasyon yapma yeteneğini tamamen değiştiriyor. İnsanlı ZAHA'lara güvenli bir yol açmak için sahaya ilk o ayak basacak.\n\nSavaşın yüzü değişiyor, insansız sistemler cephede daha fazla yer bulacak gibi.",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209556/src/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu209556_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209556/1200x675fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209556/src/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu209556_4.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209556/src/fnss-i-zaha-tanitildi-amfibi-harekatin-ilk-dalgasi-insansiz-oldu209556_0.jpg"
+          ]
+        },
+        "post_text": "Amfibi harekatta ilk dalga artık insansız! 🤖\n\nFNSS'in tanıttığı İ-ZAHA, 8 tonluk devasa gövdesiyle insanlı araçlardan önce kıyıya çıkacak. Mayınları temizleyecek, engelleri aşacak ve en riskli görevleri üstlenecek.\n\nBu teknoloji, askerlerin hayatını riske atmadan operasyon yapma yeteneğini tamamen değiştiriyor. İnsanlı ZAHA'lara güvenli bir yol açmak için sahaya ilk o ayak basacak.\n\nSavaşın yüzü değişiyor, insansız sistemler cephede daha fazla yer bulacak gibi.",
+        "image_path": "/tmp/otoxtra_img_mkyce6gl.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_mkyce6gl.jpg",
+          "/tmp/otoxtra_img_dcvv51sl.jpg",
+          "/tmp/otoxtra_img_f_8089a8.jpg",
+          "/tmp/otoxtra_img_de4al5nh.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T10:44:58.518733+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176713500916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18093083861618642",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1736060324116355",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-21T10:45:43.684501+03:00"
     }
   }
 }
