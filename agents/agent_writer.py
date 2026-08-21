@@ -1,5 +1,14 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.3 - Turkce Karakter Zorunlulugu)
+agents/agent_writer.py - Icerik yazma ajani (v5.5 - Story Card + Community Tone)
+
+v5.5 UPDATE:
+  - STORY CARD: Story kartları artık post metninin ilk satırını kopyalamıyor.
+    'story_card_writer' promptu ile ÖZEL başlık + alt metin üretiliyor.
+    Başlık zorunlu olarak TEK CÜMLE (first_sentence ile garanti edilir).
+  - TONE: post_writer promptu interaktif/community tonuna güncellendi
+    (yorum yaptıran, iddialı kapanış; soru işareti yasak).
+  - Kalıp soru cümleleri ('Siz ne düşünüyorsunuz?') metin sonundan temizlenir.
+  - Fallback post artık boş soru ile değil, iddia cümlesiyle biter.
 
 v5.3 FIXED:
   - Türkçe karakter (ç, ş, ğ, ü, ö, ı) kullanımı prompt ve fallback postlara işlendi.
@@ -21,8 +30,9 @@ v5.0 ULTRA:
 
 import re
 
-from core.ai_client import ask_ai
+from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
+from core.helpers import first_sentence, turkish_upper
 from core.logger import log
 from core.state_manager import get_stage, set_stage
 
@@ -227,7 +237,8 @@ def _fallback_post(article: dict) -> str:
     title = (article.get("title", "") or "").strip()
     summary = (article.get("summary", "") or "").strip()
 
-    safe_title = title.upper()[:90] if title else "OTOMOTİVDE YENİ GELİŞME"
+    # v5.5: Türkçe'ye uygun büyütme (i->İ) için turkish_upper kullanılır.
+    safe_title = turkish_upper(title)[:90] if title else "OTOMOTİVDE YENİ GELİŞME"
     
     # v5.2: Özet kısmını 480 karakter limitini aşmaması için 330'a kırptık.
     # 90 (başlık) + 50 (sabit cümle) + boşluklar = ~150 karakter. 330+150 = 480.
@@ -235,10 +246,12 @@ def _fallback_post(article: dict) -> str:
         "Güncel gelişmeyi sade şekilde aktardık. Net bilgiler geldikçe paylaşacağız."
     )
 
+    # v5.5: Soru yerine iddia cümlesi. Boş 'siz ne düşünüyorsunuz?' kalıbı
+    # community tonu ile çeliştiği için kaldırıldı.
     fallback = (
         f"{safe_title}\n\n"
         f"{body}\n\n"
-        "Siz bu gelişme hakkında ne düşünüyorsunuz?"
+        "Bu gelişme otomobil gündemini bir süre meşgul edecek."
     ).strip()
     
     # Eğer hala 480'i aşarsa zorla kes
@@ -247,6 +260,119 @@ def _fallback_post(article: dict) -> str:
         
     log(f"[WRITER] Using FALLBACK post (len={len(fallback)})", "INFO")
     return fallback
+
+
+# ── SORU TEMİZLEME (v5.5) ─────────────────────────────────────────────────────
+# Community tonunda post, iddia ile bitmeli. Kalıp sorular metni zayıflatır.
+_QUESTION_PATTERNS = [
+    r"siz\s+(bu\s+konuda\s+)?ne\s+düşünüyorsunuz",
+    r"siz\s+ne\s+dersiniz",
+    r"sizce\s+(haklı\s+mı|doğru\s+mu|nasıl)",
+    r"katılıyor\s+musunuz",
+    r"yorumlarda\s+buluşalım",
+    r"fikrinizi\s+(yazın|belirtin)",
+    r"yorumunuzu\s+bekleriz",
+]
+
+
+def _strip_trailing_question(post_text: str) -> str:
+    """Son satır/cümle kalıp bir soru ise metinden atar.
+
+    GÜVENLİ: Çıkan sonuç kalite minimumlarının (80 karakter, 3 satır) altına
+    düşüyorsa ORİJİNAL metni geri döndürür; asla geçersiz metin üretmez.
+    """
+    if not post_text:
+        return post_text
+    lines = post_text.rstrip().split("\n")
+    if not lines:
+        return post_text
+    last = lines[-1].strip()
+    lowered = last.lower()
+    is_question = ("?" in last) or any(re.search(p, lowered) for p in _QUESTION_PATTERNS)
+    if not is_question or len(lines) <= 2:
+        return post_text
+
+    candidate = "\n".join(lines[:-1]).rstrip()
+    candidate_lines = len([ln for ln in candidate.split("\n") if ln.strip()])
+    if len(candidate) >= 80 and candidate_lines >= 3:
+        log(f"[WRITER] Trailing question stripped: '{last[:50]}'", "INFO")
+        return candidate
+    return post_text
+
+
+# ── STORY CARD METNİ (v5.5) ───────────────────────────────────────────────────
+# Story kartları post metninin ilk satırını kopyalamak yerine, kendi promptuyla
+# özel başlık + alt metin üretir. Başlık TEK CÜMLE olmak zorundadır.
+def _clamp_text(text: str, max_chars: int) -> str:
+    text = (text or "").strip()
+    if len(text) <= max_chars:
+        return text
+    cut = text[:max_chars]
+    if " " in cut:
+        cut = cut.rsplit(" ", 1)[0]
+    return cut.rstrip(" ,;:.-")
+
+
+def generate_story_card_text(article: dict, post_text: str) -> dict:
+    """Story card için ÖZEL başlık ve alt metin üretir.
+
+    Returns:
+        {"baslik": str, "alt_metin": str} — herhangi bir hata durumunda,
+        kart üreticisinin eski davranışa (post'un ilk satırı) dönebilmesi
+        için boş string'ler döner.
+    """
+    empty = {"baslik": "", "alt_metin": ""}
+
+    prompts_config = load_config("prompts")
+    story_prompt = prompts_config.get("story_card_writer", "") if isinstance(prompts_config, dict) else ""
+    if not story_prompt:
+        log("[WRITER] story_card_writer promptu bulunamadi, story metni atlanıyor", "WARNING")
+        return empty
+
+    title = (article.get("title", "") or "").strip()
+    summary = (article.get("summary", "") or "").strip()
+
+    input_parts = [
+        f"BAŞLIK: {title}",
+        f"ÖZET: {summary[:300]}",
+        f"POST METNİ: {post_text[:480]}",
+    ]
+
+    full_prompt = (
+        f"{story_prompt}\n\n"
+        "KRİTİK: Başlık TEK CÜMLE olmalı ve iki cümle ASLA yazılmamalı.\n"
+        "SADECE JSON döndür.\n\n"
+        + "\n".join(input_parts)
+    )
+
+    try:
+        response = ask_ai(full_prompt, stage="writing")
+        parsed = parse_ai_json(response) if response else None
+
+        if isinstance(parsed, dict):
+            baslik = str(parsed.get("baslik", "") or parsed.get("başlık", "") or "").strip()
+            alt = str(parsed.get("alt_metin", "") or parsed.get("altmetin", "") or "").strip()
+        else:
+            log("[WRITER] Story card JSON parse edilemedi", "WARNING")
+            return empty
+
+        if not baslik:
+            log("[WRITER] Story card başlık boş", "WARNING")
+            return empty
+
+        # GÜVENCE: Başlık ne gelirse gelsin TEK CÜMLEYE indir.
+        baslik = first_sentence(baslik).strip().rstrip(".")
+        baslik = _clamp_text(baslik, 80)
+        alt = first_sentence(alt).strip()
+        alt = _clamp_text(alt, 140)
+
+        result = {"baslik": baslik, "alt_metin": alt}
+        log(f"[WRITER] Story card metni hazır: başlık='{baslik[:40]}' alt='{alt[:40]}'", "INFO")
+        return result
+
+    except Exception as exc:
+        log(f"[WRITER] Story card metin üretimi hatası: {exc}", "WARNING")
+        return empty
 
 
 def _repair_post_with_ai(post_text: str, article: dict) -> str:
@@ -264,7 +390,7 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
         "- Bilgi uydurma, sadece verilen bilgileri kullan.\n"
         "- 15 satırı geçme.\n"
         "- Clickbait aşırılığına kaçma.\n"
-        "- Son satırda doğal bir soru/çağrı olsun.\n"
+        "- Son cümle NET BİR İDDİA olsun; soru işareti ve 'siz ne düşünüyorsunuz' gibi kalıp sorular KULLANMA.\n"
         "- 'beğen/paylaş/takip et' gibi doğrudan CTA kullanma.\n"
         "- ÖNCELİKLİ KURAL: Toplam karakter sayısı KESİNLİKLE 480'i GEÇMEZ (Threads limiti 500). Gerekirse özeti kısalt.\n\n"
         f"Haber başlığı: {title}\n"
@@ -337,9 +463,10 @@ def generate_post_text(article: dict) -> str:
     log(f"[WRITER] After cleaning: {len(post_text)} chars", "INFO")
 
     ok, reason = _quality_check(post_text)
-    
+
     if ok:
         log("[WRITER] Initial post passed quality check", "INFO")
+        post_text = _strip_trailing_question(post_text)
         return post_text if len(post_text) >= 30 else _fallback_post(article)
 
     log(f"[WRITER] Initial post FAILED quality: {reason}", "WARNING")
@@ -359,6 +486,7 @@ def generate_post_text(article: dict) -> str:
 
     if ok2:
         log("[WRITER] Repaired post passed quality check", "INFO")
+        repaired = _strip_trailing_question(repaired)
         return repaired if len(repaired) >= 30 else _fallback_post(article)
 
     log(f"[WRITER] Repaired post FAILED quality: {reason2}", "WARNING")
@@ -436,10 +564,17 @@ def run() -> bool:
             set_stage("write", "error", error="Post metni uretilemedi")
             return False
 
+        # v5.5: Story card icin OZEL baslik + alt metin uretimi.
+        # Hata durumunda bos doner; publisher eski davranisa (post'un ilk
+        # satiri) duser. Story uretimi post paylasimini asla engellemez.
+        story_text = generate_story_card_text(article, post_text)
+
         output = {
             "article": article,
             "post_text": post_text,
             "post_text_length": len(post_text),
+            "story_card_title": story_text.get("baslik", ""),
+            "story_card_subtitle": story_text.get("alt_metin", ""),
             "skipped": False,
         }
         

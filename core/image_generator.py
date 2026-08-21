@@ -2,6 +2,7 @@ import os
 import re
 from PIL import Image, ImageDraw, ImageFont, ImageFilter, ImageOps
 from core.config_loader import get_project_root
+from core.helpers import first_sentence, turkish_upper
 from core.logger import log
 
 # Story boyutu (IG/Facebook Story standard)
@@ -50,17 +51,43 @@ def _fit_contain(img: Image.Image, max_w: int, max_h: int) -> Image.Image:
     n_h = max(1, int(img.height * ratio))
     return img.resize((n_w, n_h), Image.LANCZOS)
 
-def _prepare_text(post_text: str) -> tuple[str, str]:
+def _prepare_text(
+    post_text: str,
+    title_override: str | None = None,
+    body_override: str | None = None,
+) -> tuple[str, str]:
     lines = [ln.strip() for ln in (post_text or "").split("\n") if ln.strip()]
     title = lines[0] if lines else "OTOXTRA HABER"
     # ✅ FIX: Noktalama işaretlerini KORU (eski regex [^\w\s] tüm noktalama işaretlerini siliyordu!)
     # Şu karakterler ARTIK SİLİNMİYOR: . , ! ? ; : ' " ( ) - /
     # Sadece @ # $ % ^ & * + = < > | \ ~ gibi gereksiz semboller temizlenir
-    title = re.sub(r"[^\w\s.,!?;:'\"()\-/]", "", title).strip().upper()
+    title = re.sub(r"[^\w\s.,!?;:'\"()\-/]", "", title).strip()
+
+    # ✅ KALİTE KURALI: Story başlığı HER ZAMAN tek cümledir.
+    # Post metninin ilk satırı 2 cümle olsa bile karta yalnızca ilki basılır.
+    # Sondaki nokta da görsel olarak kaldırılır ('!' ve '?' kalabilir).
+    title = turkish_upper(first_sentence(title).rstrip(".").strip())
+
     body = "\n".join(lines[1:]) if len(lines) > 1 else ""
+
+    if title_override and title_override.strip():
+        override_title = re.sub(r"[^\w\s.,!?;:'\"()\-/]", "", title_override).strip()
+        override_title = turkish_upper(first_sentence(override_title).rstrip(".").strip())
+        if override_title:
+            title = override_title
+
+    if body_override is not None:
+        body = body_override.strip()
+
     return title, body
 
-def create_social_card(post_text: str, image_path: str, output_path: str) -> str:
+def create_social_card(
+    post_text: str,
+    image_path: str,
+    output_path: str,
+    title_override: str | None = None,
+    body_override: str | None = None,
+) -> str:
     """
     Story kart üretimi:
     - 1080x1920 canvas
@@ -68,9 +95,13 @@ def create_social_card(post_text: str, image_path: str, output_path: str) -> str
     - Ortada net ana görsel
     - Üstte başlık, altta açıklama
     - PNG/JPEG uzantısına göre uygun export
+
+    title_override / body_override verilirse kart, post metninden türetmek
+    yerine bu özel üretilmiş story metinlerini kullanır. Başlık her durumda
+    tek cümleye indirilir.
     """
     try:
-        title, body = _prepare_text(post_text)
+        title, body = _prepare_text(post_text, title_override, body_override)
 
         font_title = _get_font(62, bold=True)
         font_body = _get_font(40, bold=False)

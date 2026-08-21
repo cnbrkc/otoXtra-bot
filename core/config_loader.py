@@ -286,10 +286,16 @@ def _sanitize_scoring(data: Any) -> dict:
 def _sanitize_prompts(data: Any) -> dict:
     if not isinstance(data, dict):
         data = {}
-    return {
+    safe = {
         "viral_scorer": _as_str(data.get("viral_scorer"), ""),
         "post_writer": _as_str(data.get("post_writer"), ""),
     }
+    # Forward-compatible: story_card_writer gibi ek prompt anahtarlarını koru.
+    # Bilinmeyen anahtarlar atılırsa yeni promptlar sessizce devre dışı kalır.
+    for key, value in data.items():
+        if key not in safe:
+            safe[key] = _as_str(value, "")
+    return safe
 
 
 def load_json(filepath: str) -> Any:

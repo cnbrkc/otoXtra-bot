@@ -80,6 +80,30 @@ def clean_html(html_text: str) -> str:
     soup = BeautifulSoup(html_text, "html.parser")
     return soup.get_text(separator=" ", strip=True)
 
+def turkish_upper(text: str) -> str:
+    """Türkçe'ye uygun büyütme: i->İ, ı->I.
+
+    Python'un default .upper() 'Türkiye' -> 'TÜRKIYE' üretir (İ yerine I).
+    Başlık gibi görsel metinlerde bu kalite hatasıdır.
+    """
+    return (text or "").replace("i", "İ").replace("ı", "I").upper()
+
+
+_SENTENCE_SPLIT_RE = re.compile(r"(?<=[.!?…])\s+")
+
+def first_sentence(text: str) -> str:
+    """Metnin yalnızca İLK cümlesini döndürür.
+
+    Story card başlığı gibi tek cümle olması gereken yerlerde kullanılır.
+    'Fiyat açıklandı. Türkiye'de satışta.' -> 'Fiyat açıklandı.'
+    """
+    cleaned = (text or "").strip()
+    if not cleaned:
+        return ""
+    parts = _SENTENCE_SPLIT_RE.split(cleaned)
+    first = parts[0].strip() if parts else ""
+    return first or cleaned
+
 def _normalize_token(text: str) -> str:
     if not text: return ""
     return re.sub(r"[^a-z0-9]", "", text.lower().translate(_TR_MAP))
