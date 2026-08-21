@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-21-08:29",
+  "run_id": "2026-08-21-09:41",
   "status": "error",
-  "started_at": "2026-08-21T08:29:26.896315+03:00",
-  "updated_at": "2026-08-21T08:33:45.742666+03:00",
+  "started_at": "2026-08-21T09:41:07.875925+03:00",
+  "updated_at": "2026-08-21T09:45:03.810351+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -101,15 +101,15 @@
             "attempts": 3
           },
           "MuratTosun": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/murattosunMSE/rss",
-            "attempts": 3
+            "status": "ok",
+            "count": 10,
+            "detail": "",
+            "attempts": 1
           },
           "VeyselKarani": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.net/veysellkaranii/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.net/veysellkaranii/rss",
             "attempts": 3
           },
           "Sekizsilindir": {
@@ -125,8 +125,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 95,
-            "after_keyword": 68,
+            "found": 105,
+            "after_keyword": 65,
             "after_time": 7,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -134,8 +134,8 @@
           }
         },
         "metrics": {
-          "found": 95,
-          "after_keyword": 68,
+          "found": 105,
+          "after_keyword": 65,
           "after_time": 7,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -143,7 +143,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-08-21T08:33:45.742666+03:00"
+      "updated_at": "2026-08-21T09:45:03.810351+03:00"
     },
     "score": {
       "status": "waiting",
