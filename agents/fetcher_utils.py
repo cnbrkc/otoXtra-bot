@@ -111,6 +111,60 @@ def _is_nitter_url(url: str) -> bool:
     host = (urlparse(url).netloc or "").lower()
     return "nitter." in host or host.startswith("nitter")
 
+_DEFAULT_NITTER_INSTANCE_HOSTS = (
+    "nitter.net",        # kaynaklarda yazili olan instance (RSS kapansa bile once o denenir)
+    "xcancel.com",       # 2026 itibariyle RSS destekli, en saglikli instance
+    "nitter.poast.org",  # RSS destekli yedek instance
+    "nitter.privacydev.net",
+)
+
+def _nitter_instance_hosts() -> list:
+    """Nitter RSS instance host listesi (oncelik sirasiyla).
+
+    Sirayla ENV (NITTER_INSTANCES), settings.json (posting.nitter_instances)
+    ve varsayilan liste kullanilir. Bos/yanlis degerler listeye alinmaz.
+    """
+    hosts: List[str] = []
+    raw_env = (os.environ.get("NITTER_INSTANCES", "") or "").strip()
+    if raw_env:
+        hosts = [h.strip().lower() for h in raw_env.split(",")]
+    else:
+        try:
+            from core.config_loader import load_config
+            settings_cfg = load_config("settings")
+            posting_cfg = settings_cfg.get("posting", {}) if isinstance(settings_cfg, dict) else {}
+            configured = posting_cfg.get("nitter_instances", [])
+            if isinstance(configured, list):
+                hosts = [str(h).strip().lower() for h in configured]
+        except Exception:
+            hosts = []
+    hosts = [h for h in hosts if h and "." in h and "/" not in h]
+    if not hosts:
+        hosts = list(_DEFAULT_NITTER_INSTANCE_HOSTS)
+    # Kaynak URL'sindeki host her zaman ilk sirada kalsin (davranis degismesin)
+    return hosts
+
+def _nitter_candidate_urls(feed_url: str) -> list:
+    """Nitter feed URL'si icin denenecek instance aday URL'lerini uretir.
+
+    Ilk aday orijinal URL'dir; sonraki adaylar ayni yol (/kullanici/rss)
+    farkli instance hostlariyla birlestirilerek olusturulur.
+    """
+    parsed = urlparse(feed_url or "")
+    if not parsed.scheme or not parsed.netloc or not parsed.path:
+        return [feed_url] if feed_url else []
+    path = parsed.path
+    query = f"?{parsed.query}" if parsed.query else ""
+    original_host = parsed.netloc.lower()
+
+    candidates = [feed_url]
+    seen = {original_host}
+    for host in _nitter_instance_hosts():
+        if host in seen: continue
+        seen.add(host)
+        candidates.append(f"https://{host}{path}{query}")
+    return candidates
+
 def _nitter_to_twitter_url(nitter_url: str) -> str:
     """Nitter tweet URL'sini orijinal Twitter/x.com URL'sine çevirir."""
     if not nitter_url: return ""

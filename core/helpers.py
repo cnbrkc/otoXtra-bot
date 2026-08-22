@@ -427,19 +427,75 @@ def is_topic_already_posted(fingerprint: str, posted_data: Dict[str, Any], simil
             return True
     return False
 
+def _get_posted_check_thresholds() -> Tuple[float, float]:
+    """Paylasilmis-haber kontrolu icin (title, fingerprint) benzerlik esikleri.
+
+    Eski 0.45/0.45 esikleri 30 gunluk gecmis uzerinde FARKLI haberleri bile
+    'ayni' sayip paylasimi engelliyordu. Ornekler:
+      - 'Yeni Toyota RAV4 Hybrid ... satisa sunulacak' vs
+        'Yeni Peugeot 308 Turkiye'de satisa sunuldu' (kalip basin) -> 0.61/0.56
+      - 'Hyundai IONIQ V Cin'de on satisa acildi' vs
+        'Makyajli Hyundai IONIQ 6 Türkiye fiyatlari' -> title 0.45+
+      - farkli markalarin aylik fiyat listesi haberleri -> fp 0.62
+    22k gercek (birbirinden farkli) paylasilmis-haber ciftinde 0.50 uzeri
+    hic benzerlik gozlenmedi; ayni haberin site-lerarasi kopyalari ise
+    fingerprint'te 0.65-0.83 bandinda yakalaniyor. Bu yuzden gecmis kontrolu
+    icin esikler varsayilan 0.62 (title) / 0.60 (fingerprint) olarak
+    belirlendi.
+    Ayni calisma icindeki duplike haberleri remove_duplicates (batch dedup)
+    zaten 0.45 esigiyle yakalar; bu fonksiyon sadece 30 gunluk gecmise bakar.
+    """
+    title_threshold = 0.62
+    fp_threshold = 0.60
+    try:
+        settings = load_config("settings")
+        dup_settings = settings.get("duplicate_detection", {})
+        t = float(dup_settings.get("posted_title_similarity_threshold", title_threshold))
+        f = float(dup_settings.get("posted_fingerprint_similarity_threshold", fp_threshold))
+        if 0.0 < t <= 1.0:
+            title_threshold = t
+        if 0.0 < f <= 1.0:
+            fp_threshold = f
+    except Exception:
+        pass
+    return title_threshold, fp_threshold
+
 def is_already_posted(url: str, title: str, posted_data: Dict[str, Any]) -> bool:
+    title_threshold, fp_threshold = _get_posted_check_thresholds()
     fingerprint = generate_topic_fingerprint(title)
     for post in posted_data.get("posts", []):
         posted_url = post.get("url", "") or post.get("original_url", "")
         if posted_url and url and posted_url == url: return True
         posted_title = post.get("title", "")
-        if is_similar_title(title, posted_title): return True
+        if posted_title and is_similar_title(title, posted_title, threshold=title_threshold): return True
         posted_fp = post.get("topic_fingerprint", "")
-        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= 0.45: return True
+        if posted_fp and fingerprint and _fingerprint_similarity(fingerprint, posted_fp) >= fp_threshold: return True
     return False
 
 def get_today_post_count(posted_data: Dict[str, Any]) -> int:
     return posted_data.get("daily_counts", {}).get(get_today_str(), 0)
+
+def get_last_post_time(posted_data: Dict[str, Any]) -> Optional[datetime]:
+    """En son basariyla yapilan paylasimin zamanini dondurur.
+
+    Hic paylasim yoksa veya tarih parse edilemezse None doner.
+    Akilli zaman filtresi bu degeri 'gorduk' siniri olarak kullanir:
+    paylasilmamis ama daha once gorulmus haberler tekrar degerlendirmeye
+    girebilsin diye last_check_time yerine son PAYLASIM zamani baz alinir.
+    """
+    last_dt: Optional[datetime] = None
+    for post in posted_data.get("posts", []):
+        post_dt = _parse_dt_safe(post.get("posted_at", ""))
+        if post_dt is None:
+            continue
+        if last_dt is None or post_dt > last_dt:
+            last_dt = post_dt
+    if last_dt is None:
+        return None
+    now = get_turkey_now()
+    if last_dt > now:
+        return now
+    return last_dt
 
 def get_last_check_time(posted_data: Dict[str, Any]) -> datetime:
     default_fallback = get_turkey_now() - timedelta(hours=6)

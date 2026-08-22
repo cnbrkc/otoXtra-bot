@@ -16,7 +16,13 @@
     "nitter_feed_fetch_attempts": 3,
     "nitter_http_attempts": 3,
     "nitter_http_base_wait_seconds": 1.8,
-    "nitter_http_timeout_seconds": 22
+    "nitter_http_timeout_seconds": 22,
+    "nitter_instances": [
+      "nitter.net",
+      "xcancel.com",
+      "nitter.poast.org",
+      "nitter.privacydev.net"
+    ]
   },
   "images": {
     "add_logo": true,
@@ -37,11 +43,14 @@
     "max_article_age_hours": 36,
     "max_articles_per_source": 10,
     "min_summary_length": 30,
-    "shared_variant_cooldown_hours": 48
+    "shared_variant_cooldown_hours": 48,
+    "smart_cutoff_grace_minutes": 90
   },
   "duplicate_detection": {
     "title_similarity_threshold": 0.45,
-    "keyword_overlap_threshold": 0.4
+    "keyword_overlap_threshold": 0.4,
+    "posted_title_similarity_threshold": 0.62,
+    "posted_fingerprint_similarity_threshold": 0.6
   },
   "ai": {
     "temperature": 0.65,

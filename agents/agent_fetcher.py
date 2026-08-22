@@ -15,7 +15,7 @@ from bs4 import BeautifulSoup
 from core.config_loader import load_config
 from core.helpers import (
     _fingerprint_similarity, clean_html, generate_topic_fingerprint,
-    get_last_check_time, get_posted_news, get_turkey_now,
+    get_last_check_time, get_last_post_time, get_posted_news, get_turkey_now,
     is_already_posted, is_duplicate_article, is_shared_variant_in_cooldown,
 )
 from core.logger import log
@@ -27,7 +27,8 @@ from agents.fetcher_utils import (
     _is_test_mode, _safe_int, _safe_float, _safe_int_min, _safe_float_min,
     _coerce_bool, _read_bool_env, _read_int_env, _read_float_env, _turkish_lower,
     _is_nitter_feed, _resolve_nitter_image_url, _normalize_image_url,
-    _thumbnail_to_original_variants, _candidate_key, _request_with_retry
+    _thumbnail_to_original_variants, _candidate_key, _request_with_retry,
+    _nitter_candidate_urls
 )
 from agents.fetcher_scrape import extract_images_from_article, scrape_full_article
 
@@ -148,6 +149,57 @@ def _sleep_between_feeds(feed_name: str, base_delay: float, jitter: float) -> No
     log(f"Feed delay: {feed_name} icin {total_sleep:.2f}s bekleniyor")
     time.sleep(total_sleep)
 
+# ── NITTER INSTANCE FAILOVER ─────────────────────────────────────────────────
+
+def _fetch_nitter_feed_response(feed_url: str, feed_name: str, timeout: int, http_attempts: int, http_base_wait: float):
+    """Nitter feed'ini instance failover ile cekmeye calisir.
+
+    nitter.net'te RSS kapatildigi icin (2026) kaynak URL'siyle sinirli
+    kalmak kaynagi kalici olarak olu hale getiriyordu. Bu fonksiyon aday
+    instance'lari sirayla dener; ENTRY DONDUREN ilk instance kabul edilir.
+
+    Donus: requests.Response (entry'li ya da bos). Tum adaylar HTTP hatasi
+    verirse son hata raise edilir (mevcut hata akisi yakalar).
+    """
+    candidates = _nitter_candidate_urls(feed_url)
+    failover_timeout = _safe_int_min(_read_int_env("NITTER_FAILOVER_TIMEOUT_SECONDS", min(timeout, 12)), 5, 5)
+    last_empty_response = None
+    last_exc: Exception | None = None
+
+    for idx, candidate_url in enumerate(candidates):
+        # Ilk aday (orijinal URL) mevcut davranisi korur; digerleri icin
+        # sure butcesini kisa tutmak adina tek HTTP denemesi yeter.
+        attempts = max(1, min(http_attempts, 2)) if idx == 0 else 1
+        try:
+            response = _request_with_retry(
+                candidate_url, timeout=failover_timeout, attempts=attempts, base_wait_seconds=http_base_wait
+            )
+        except Exception as exc:
+            last_exc = exc
+            if idx < len(candidates) - 1:
+                log(f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {candidate_url} erisilemedi, siradaki instance deneniyor", "WARNING")
+            continue
+
+        probe = None
+        try:
+            probe = feedparser.parse(response.content)
+        except Exception:
+            probe = None
+        if probe is not None and probe.entries:
+            if idx > 0:
+                log(f"Nitter failover BASARILI: {feed_name} -> {candidate_url} uzerinden {len(probe.entries)} entry bulundu")
+            return response
+        last_empty_response = response
+        last_exc = None
+        log(f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {candidate_url} bos feed/RSS kapali, siradaki instance deneniyor", "WARNING")
+
+    if last_empty_response is not None:
+        # En az bir instance yanit verdi ama entry yok -> ana akis 'no_entries' raporlar
+        return last_empty_response
+    if last_exc is not None:
+        raise last_exc
+    raise RuntimeError(f"Nitter failover: {feed_name} icin tum instance'lar basarisiz")
+
 # ── ANA FEED ÇEKME ────────────────────────────────────────────────────────────
 
 def fetch_all_feeds() -> tuple[list[dict], dict]:
@@ -189,6 +241,11 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             continue
 
         fetch_attempts, http_attempts, http_base_wait, timeout = _feed_attempt_config(feed_url)
+        is_nitter_feed = _is_nitter_feed(feed_url)
+        if is_nitter_feed:
+            # Tekrar denemeleri instance failover ustlendigi icin ayni
+            # instance'a defalarca istek atmak yerine tek gecis yapilir.
+            fetch_attempts = 1
 
         if feed_idx > 0:
             _sleep_between_feeds(feed_name, delay_base, delay_jitter)
@@ -201,7 +258,10 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
         for feed_attempt in range(1, fetch_attempts + 1):
             attempt_used = feed_attempt
             try:
-                response = _request_with_retry(feed_url, timeout=timeout, attempts=http_attempts, base_wait_seconds=http_base_wait)
+                if is_nitter_feed:
+                    response = _fetch_nitter_feed_response(feed_url, feed_name, timeout, http_attempts, http_base_wait)
+                else:
+                    response = _request_with_retry(feed_url, timeout=timeout, attempts=http_attempts, base_wait_seconds=http_base_wait)
                 parsed_feed = feedparser.parse(response.content)
                 
                 if parsed_feed.bozo and not parsed_feed.entries:
@@ -334,9 +394,34 @@ def _apply_time_filter_with_hours(articles: list[dict], max_age_hours: int, use_
         cutoff_utc = max_cutoff_utc
     else:
         posted_data = get_posted_news()
-        last_check = get_last_check_time(posted_data)
-        smart_cutoff_utc = (last_check - timedelta(minutes=30)).astimezone(timezone.utc)
+        # AKILLI CUTOFF DUZELTMESI: Kesme noktasi eskiden last_check_time'a
+        # (her calismada guncellenir) bagliydi. Bot calisma basina sadece
+        # 1 haber paylastigi icin, ayni saat diliminde cikan diger taze
+        # haberler 'zaten goruldu' sayilip bir sonraki calismada pencere
+        # disinda kaliyor ve bir daha ASLA paylasilamiyordu (kayip aday).
+        # Simdi kesme noktasi son PAYLASIM zamanina bagli: paylasim yapilmayan
+        # saatlerde pencere otomatik genisler ve kacan haberler tekrar
+        # degerlendirmeye girer. Zaten paylasilmis olanlari is_already_posted
+        # ve duplike filtreleri engeller, tekrar paylasimi olmaz.
+        anchor = get_last_post_time(posted_data)
+        anchor_name = "last_post"
+        if anchor is None:
+            anchor = get_last_check_time(posted_data)
+            anchor_name = "last_check"
+        # Grace (dakika): paylasilan haberden GRACE kadar once yayinlanmis
+        # haberler tekrar degerlendirmeye girebilsin. Bot calisma basina
+        # tek haber paylastigi icin ayni saat diliminde cikan diger haberler
+        # yarista kaybediyordu; 90dk'lik grace, birlikte gelen haber
+        # dalgasinin sonraki calismalarda paylasilmasini saglar.
+        settings_cfg = load_config("settings")
+        news_cfg = settings_cfg.get("news", {}) if isinstance(settings_cfg, dict) else {}
+        grace_minutes = _safe_int_min(
+            _read_int_env("NEWS_SMART_CUTOFF_GRACE_MINUTES", _safe_int(news_cfg.get("smart_cutoff_grace_minutes", 90), 90)),
+            90, 0,
+        )
+        smart_cutoff_utc = (anchor - timedelta(minutes=grace_minutes)).astimezone(timezone.utc)
         cutoff_utc = max(smart_cutoff_utc, max_cutoff_utc)
+        log(f"time_filter anchor: {anchor_name}={anchor.isoformat()} grace={grace_minutes}dk")
 
     passed = []
     fallback_passed = []
