@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-22-23:19",
-  "status": "completed",
-  "started_at": "2026-08-22T23:19:10.196774+03:00",
-  "updated_at": "2026-08-22T23:22:15.140979+03:00",
+  "run_id": "2026-08-23-00:18",
+  "status": "error",
+  "started_at": "2026-08-23T00:18:59.775763+03:00",
+  "updated_at": "2026-08-23T00:19:38.274668+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-            "link": "https://www.log.com.tr/yeni-toyota-rav4-hybrid-turkiyede-son-ceyrekte-satisa-sunulacak/",
-            "published": "2026-08-22T23:19:10.263227+03:00",
-            "summary": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışa sunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.” Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ceyrekte-hybrid-rav4-satisa-sunulacak-toyota-turkiye"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -140,227 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 9,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 99,
-            "after_keyword": 63,
+            "found": 94,
+            "after_keyword": 59,
             "after_time": 5,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 99,
-          "after_keyword": 63,
+          "found": 94,
+          "after_keyword": 59,
           "after_time": 5,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-22T23:19:47.463216+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-23T00:19:38.274668+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-          "link": "https://www.log.com.tr/yeni-toyota-rav4-hybrid-turkiyede-son-ceyrekte-satisa-sunulacak/",
-          "published": "2026-08-22T23:19:10.263227+03:00",
-          "summary": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışa sunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.” Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ceyrekte-hybrid-rav4-satisa-sunulacak-toyota-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model lansman haberi, sektörde çok büyük bir şok veya yenilik barındırmıyor ancak SUV segmentinde popüler bir model olduğu için orta düzeyde ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 52,
-        "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 5
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Standart bir model lansman haberi, sektörde çok büyük bir şok veya yenilik barındırmıyor ancak SUV segmentinde popüler bir model olduğu için orta düzeyde ilgi çekebilir.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-            "score": 52,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-22T23:19:49.074791+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-          "link": "https://www.log.com.tr/yeni-toyota-rav4-hybrid-turkiyede-son-ceyrekte-satisa-sunulacak/",
-          "published": "2026-08-22T23:19:10.263227+03:00",
-          "summary": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışa sunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.” Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ceyrekte-hybrid-rav4-satisa-sunulacak-toyota-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model lansman haberi, sektörde çok büyük bir şok veya yenilik barındırmıyor ancak SUV segmentinde popüler bir model olduğu için orta düzeyde ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışasunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.”"
-        },
-        "post_text": "RAV4 Hybrid son çeyrekte geliyor ama asıl mesele \"hibrit\" algısı.\n\nToyota, yeni nesil RAV4 Hybrid’i en ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle sunacak. Ancak Türkiye’de bu \"ileri teknoloji\" lafı, fiyat etiketiyle karşılaşınca çoğu zaman anlamını yitiriyor.\n\nÖnemli olan, hibritin cüzdana ne kadar dost olacağı.",
-        "post_text_length": 327,
-        "story_card_title": "RAV4 Hybrid: Geleneksel mi, Gerçek Hibrit mi!",
-        "story_card_subtitle": "Toyota, yeni nesil RAV4 Hybrid’i son çeyrekte Türkiye’ye getiriyor. En ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle donatılan araç, hibrit algısını yeniden sorgulatıyor. Asıl merak edilen, bu “ileri teknoloji”nin fiyat etiketiyle ne kadar dost olacağı. Hibritin cüzdana dostluğu, Türkiye pazarında belirleyici olacak.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-22T23:19:53.541235+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak",
-          "link": "https://www.log.com.tr/yeni-toyota-rav4-hybrid-turkiyede-son-ceyrekte-satisa-sunulacak/",
-          "published": "2026-08-22T23:19:10.263227+03:00",
-          "summary": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışa sunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.” Yeni Toyota RAV4 Hybrid, Türkiye’de son çeyrekte satışa sunulacak yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-04-06_16-10-06_nAsNo_FHD-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ceyrekte-hybrid-rav4-satisa-sunulacak-toyota-turkiye",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 5
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model lansman haberi, sektörde çok büyük bir şok veya yenilik barındırmıyor ancak SUV segmentinde popüler bir model olduğu için orta düzeyde ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota tarafından yapılan açıklamaya göre yeni Toyota RAV4 Hybrid modeli Türkiye’ye son çeyrek içerisinde satışasunulacak. Elbette henüz Türkiye fiyatı paylaşılmayan hibrit araç hakkında yapılan açıklama şöyle olmuştu: “Tamamen yenilenen 6. nesil RAV4 Hybrid, cesur bir sayfa açmaya hazırlanıyor. Dikkat çekici premium tasarımı ve ileri teknolojileriyle yakında Türkiye yollarında. Toyota, yeni nesil RAV4 Hybrid modelinde en ileri hibrit teknolojisini sunarak segmentinde çıtayı bir kez daha yükseltiyor. Akıllı dört çeker AWD-i sistemi, 2.5 litrelik motorla kombine edilen tam hibrit teknolojisiyle güçlü ve dengeli bir sürüş deneyimi sunuyor. Toyota’nın en güncel güvenlik teknolojileri ve gelişmiş sürüş destek sistemleri, ilk kez bu modelde sunulacak. Ayrıca yeni nesil multimedya sistemi, daha hızlı bağlantı ve geleceğe hazır teknolojileriyle ön plana çıkacak. Yeni RAV4 Hybrid ile birlikte araç içi dijital deneyim bir üst seviyeye taşınıyor. Yeni RAV4 Hybrid, Toyota’nın bugüne kadarki en gelişmiş multimedya sistemine ev sahipliği yapıyor.”",
-          "post_text_for_card": "RAV4 Hybrid son çeyrekte geliyor ama asıl mesele \"hibrit\" algısı.\n\nToyota, yeni nesil RAV4 Hybrid’i en ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle sunacak. Ancak Türkiye’de bu \"ileri teknoloji\" lafı, fiyat etiketiyle karşılaşınca çoğu zaman anlamını yitiriyor.\n\nÖnemli olan, hibritin cüzdana ne kadar dost olacağı.",
-          "story_card_title": "RAV4 Hybrid: Geleneksel mi, Gerçek Hibrit mi!",
-          "story_card_subtitle": "Toyota, yeni nesil RAV4 Hybrid’i son çeyrekte Türkiye’ye getiriyor. En ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle donatılan araç, hibrit algısını yeniden sorgulatıyor. Asıl merak edilen, bu “ileri teknoloji”nin fiyat etiketiyle ne kadar dost olacağı. Hibritin cüzdana dostluğu, Türkiye pazarında belirleyici olacak.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "RAV4 Hybrid son çeyrekte geliyor ama asıl mesele \"hibrit\" algısı.\n\nToyota, yeni nesil RAV4 Hybrid’i en ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle sunacak. Ancak Türkiye’de bu \"ileri teknoloji\" lafı, fiyat etiketiyle karşılaşınca çoğu zaman anlamını yitiriyor.\n\nÖnemli olan, hibritin cüzdana ne kadar dost olacağı.",
-        "story_card_title": "RAV4 Hybrid: Geleneksel mi, Gerçek Hibrit mi!",
-        "story_card_subtitle": "Toyota, yeni nesil RAV4 Hybrid’i son çeyrekte Türkiye’ye getiriyor. En ileri teknolojiler ve akıllı dört çeker AWD-i sistemiyle donatılan araç, hibrit algısını yeniden sorgulatıyor. Asıl merak edilen, bu “ileri teknoloji”nin fiyat etiketiyle ne kadar dost olacağı. Hibritin cüzdana dostluğu, Türkiye pazarında belirleyici olacak.",
-        "image_path": "/tmp/otoxtra_img_haxl50op.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_haxl50op.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-22T23:21:22.108699+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176890218916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18041922227671535",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2052191672101768",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-22T23:22:15.140979+03:00"
+      "updated_at": null
     }
   }
 }
