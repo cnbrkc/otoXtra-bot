@@ -1,8 +1,26 @@
 """
-agents/agent_image.py - Görsel İşleme Ajanı Ana Köprüsü (v8.9 - DRY Refactoring)
+agents/agent_image.py - Görsel İşleme Ajanı Ana Köprüsü (v9.2 - Güvenli Yedek Görsel)
 1809 satırlık devasa dosya 6 modüle bölündü:
-  agent_image (köprü), image_utils (URL/Kontrol), image_nitter (Nitter), 
+  agent_image (köprü), image_utils (URL/Kontrol), image_nitter (Nitter),
   image_processor (PIL/Logo), image_scraper (HTML Parse), image_search (DDG/AI)
+
+v9.2 UPDATE:
+  - Openverse (genel konu görselleri, ücretsiz/anahtarsız) yapısal kaynak
+    zincirine eklendi: Wikipedia -> Commons -> CarAPI -> Openverse -> DDG.
+    CarAPI yalnızca marka+model haberlerinde çalışır; Openverse batarya,
+    yazılım, vergi, savunma, uzay gibi genel haberleri kapsar.
+  - Makale sayfasından görsel çekme sağlamlaştırıldı (image_scraper v2.1):
+    retry + zengin header, ek meta seçiciler, lazy attr'lar, <a href> resim
+    bağları, style background-image, HTTP durum loglama.
+
+v9.1 UPDATE:
+  - Yedek görsel araması artık FAIL-CLOSED: yalnızca Gemini VISION onayı
+    (verdict=True) ile görsel kabul edilir; Vision kullanılamıyorsa görsel
+    reddedilir ve text-only paylaşım yapılır (alakasız fotoğraf yayınlanmaz).
+  - Yapısal kaynaklar önceliklendirildi: Wikipedia -> Commons -> CarAPI ->
+    DDG (URL sinyaline göre sıralı). Sorgular 'marka model yıl' formatında.
+  - Eski fail-open davranış istenirse: settings images.fallback_require_vision=false
+    veya FALLBACK_REQUIRE_VISION=false.
 """
 import os
 from collections import Counter
@@ -26,15 +44,22 @@ from agents.image_search import (
     _ai_search_image_url,
     build_image_search_queries,
     verify_image_relevance,
+    get_wikipedia_image_candidates,
+    get_commons_image_candidates,
+    get_carapi_candidate,
+    get_openverse_image_candidates,
+    _url_signal_score,
+    vision_gate_passed,
 )
 
 _DEFAULT_PERCEPTUAL_HASH_THRESHOLD = 6
 
-# v9.0: Yedek arama görselleri için ortak limitler (tek noktadan yönetim)
+# v9.1: Yedek arama görselleri için ortak limitler (tek noktadan yönetim)
 _MAX_SEARCH_QUERIES = 3            # En fazla kaç arama sorgusu denenecek
+_MAX_STRUCTURED_CANDIDATES = 8     # Wikipedia/Commons/CarAPI toplam aday üst sınırı
 _MAX_DDG_CANDIDATES_PER_QUERY = 10 # Sorgu başına DDG aday sayısı
-_MAX_TOTAL_SEARCH_CANDIDATES = 12  # Toplamda denenecek aday URL sayısı
-_MAX_VISION_CHECKS = 8             # Vision doğrulama çağrısı üst sınırı
+_MAX_TOTAL_SEARCH_CANDIDATES = 20  # Toplamda denenecek aday URL sayısı
+_MAX_VISION_CHECKS = 12            # Vision doğrulama çağrısı üst sınırı
 
 
 def _finalize_search_image(
@@ -101,26 +126,34 @@ def _smart_search_fallback(
     feed_image_height: int,
     should_add_logo: bool,
     test_mode: bool,
+    require_vision: bool = True,
 ) -> None:
-    """v9.0 AKILLI YEDEK GÖRSEL ARAMASI.
+    """v9.1 AKILLI YEDEK GÖRSEL ARAMASI (fail-closed).
 
     Eski sistem haber başlığının ilk kelimelerini aratıp İLK inen görseli
     kabul ediyordu; sonuç: alakasız fotoğraflarla paylaşım.
 
-    Yeni akış:
-      1. AI'dan marka+model odaklı HASSAS arama sorguları üretilir
-         (AI yoksa marka/model sözlüğü ile deterministik çıkarım).
-      2. Tüm sorgulardan gelen adaylar tek havuzda toplanır.
-      3. Her aday indirildikten sonra Gemini VISION ile doğrulanır:
-         farklı marka araç veya konuyla ilgisiz stock fotoğraf -> RED.
-      4. Doğrulamadan geçen İLK görsel kabul edilir.
-      5. Vision kullanılamıyorsa (Gemini yok/hatalı) fail-open: indirilen
-         görsel kabul edilir (bot görselsiz kalmasın).
+    v9.1 akışı:
+      1. AI'dan 'marka model yıl' odaklı HASSAS arama sorguları üretilir
+         (AI yoksa deterministik marka/model/yıl çıkarımı).
+      2. YAPISAL KAYNAKLAR önce taranır: Wikipedia lead image -> Wikimedia
+         Commons (dosya + kategori) -> CarAPI (marka+model). Bu kaynaklardaki
+         görseller etiketli ve modelle eşleşiktir.
+      3. DDG adayları toplanır ve URL/filename içinde marka+model tokeni
+         taşıyanlar öne alınır (sinyal sıralaması).
+      4. Her aday indirildikten sonra Gemini VISION ile doğrulanır.
+      5. VISION KAPISI (fail-closed): require_vision=True iken yalnızca
+         verdict=True olan görseller kabul edilir. Vision kullanılamıyorsa
+         (None) görsel REDDEDİLİR -> text-only paylaşım. Bu, alakasız
+         fotoğraf yayınlamanın önüne geçer.
+         require_vision=False ise eski fail-open davranış (yalnızca False red).
 
-    Hiçbir aday doğrulamadan geçmezse prepared_paths boş kalır; publisher
-    bu durumda text-only paylaşım yapar (alakasız fotoğraftan iyidir).
+    Hiçbir aday kabul edilmezse prepared_paths boş kalır; publisher text-only
+    paylaşım yapar (alakasız fotoğraftan iyidir).
     """
     log("Haberin kendi gorseli bulunamadi. Akilli yedek gorsel aramasi baslatiliyor...", "INFO")
+    log(f"Yedek gorsel vizyon kapisi: require_vision={require_vision} "
+        f"({'fail-closed' if require_vision else 'fail-open'})", "INFO")
 
     search_queries = build_image_search_queries(article)[:_MAX_SEARCH_QUERIES]
     if not search_queries:
@@ -129,32 +162,68 @@ def _smart_search_fallback(
 
     log(f"Akilli arama sorgulari ({len(search_queries)}): {search_queries}")
 
-    candidate_urls: list = []
-    seen_urls = set()
+    # 1) YAPISAL KAYNAKLAR (Wikipedia -> Commons -> CarAPI -> Openverse)
+    #    CarAPI yalnızca marka+model haberlerinde çalışır; Openverse genel
+    #    konuları (batarya, yazılım, vergi, savunma, uzay...) kapsar.
+    structured_candidates: list = []
+    try:
+        structured_candidates += get_wikipedia_image_candidates(
+            search_queries, max_candidates=4,
+        )
+        structured_candidates += get_commons_image_candidates(
+            search_queries, max_candidates=6,
+        )
+        carapi = get_carapi_candidate(article.get("title", ""))
+        if carapi:
+            structured_candidates.insert(0, carapi)  # marka+model birebir eşleşme
+        structured_candidates += get_openverse_image_candidates(
+            search_queries, max_candidates=4,
+        )
+    except Exception as exc:
+        log(f"Yapisal gorsel kaynak hatasi: {exc}", "WARNING")
+    structured_candidates = structured_candidates[:_MAX_STRUCTURED_CANDIDATES]
+    if structured_candidates:
+        log(f"Yapisal kaynaklardan {len(structured_candidates)} aday toplandi")
+
+    # 2) DDG adayları (URL sinyaline göre sıralı)
+    seen_urls = {c.get("url", "") for c in structured_candidates if c.get("url")}
+    ddg_candidates: list = []
     for query in search_queries:
         for ddg_url in get_duckduckgo_image_candidates(query, max_results=_MAX_DDG_CANDIDATES_PER_QUERY):
             if ddg_url and ddg_url not in seen_urls:
                 seen_urls.add(ddg_url)
-                candidate_urls.append(ddg_url)
-        if len(candidate_urls) >= _MAX_TOTAL_SEARCH_CANDIDATES:
+                ddg_candidates.append(ddg_url)
+        if len(ddg_candidates) + len(structured_candidates) >= _MAX_TOTAL_SEARCH_CANDIDATES:
             break
 
+    # Sinyal sıralaması: URL/filename'de marka+model tokeni olanlar önce
+    ddg_candidates = sorted(
+        ddg_candidates,
+        key=lambda u: _url_signal_score(u, search_queries),
+        reverse=True,
+    )
+    ddg_quota = max(0, _MAX_TOTAL_SEARCH_CANDIDATES - len(structured_candidates))
+    ddg_candidates = ddg_candidates[:ddg_quota]
+
+    candidate_urls = [c.get("url") for c in structured_candidates] + ddg_candidates
+    candidate_urls = [u for u in candidate_urls if u]
     if not candidate_urls:
         log("Akilli arama: hic aday URL bulunamadi", "WARNING")
         return
 
-    candidate_urls = candidate_urls[:_MAX_TOTAL_SEARCH_CANDIDATES]
-    log(f"Akilli arama: {len(candidate_urls)} aday URL toplandi")
+    log(f"Akilli arama: {len(candidate_urls)} aday URL toplandi "
+        f"(yapisal={len(structured_candidates)}, ddg={len(ddg_candidates)})")
 
     vision_checks = 0
-    for ddg_url in candidate_urls:
+    rejected = 0
+    for idx, cand_url in enumerate(candidate_urls, start=1):
         if len(prepared_paths) >= 1:  # Yedek aramadan tek görsel yeter
             break
 
-        log(f"Akilli arama adayi deneniyor: {ddg_url[:100]}")
-        downloaded, reason = _download_image_with_reason(ddg_url, limits)
+        log(f"Yedek arama adayi ({idx}/{len(candidate_urls)}): {cand_url[:100]}")
+        downloaded, reason = _download_image_with_reason(cand_url, limits)
         if not downloaded:
-            log(f"Akilli arama adayi elendi: {reason}", "WARNING")
+            log(f"Yedek arama adayi elendi: {reason}", "WARNING")
             continue
 
         verdict = None
@@ -162,13 +231,14 @@ def _smart_search_fallback(
             vision_checks += 1
             verdict = verify_image_relevance(downloaded, article)
 
-        if verdict is False:
-            log("Akilli arama adayi VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
+        if not vision_gate_passed(verdict, require_vision):
+            rejected += 1
+            if verdict is False:
+                log("Yedek arama adayi VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
+            else:
+                log("Yedek arama adayi vision dogrulanamadigi icin REDDEDILDI (fail-closed)", "WARNING")
             _safe_unlink(downloaded)
             continue
-
-        if verdict is None:
-            log("Akilli arama: vision dogrulanamadi, aday fail-open kabul ediliyor", "WARNING")
 
         processed = _finalize_search_image(
             downloaded, feed_image_width, feed_image_height, resize_limits,
@@ -178,10 +248,10 @@ def _smart_search_fallback(
             prepared_paths.append(processed)
             used_sources.append("smart_search")
             article["image_source"] = "smart_search"
-            log("Akilli arama gorseli dogrulamadan gecti ve kabul edildi!")
+            log("Yedek arama gorseli VISION onayiyla kabul edildi!")
             return
 
-    log("Akilli arama: hicbir aday dogrulamadan gecemedi", "WARNING")
+    log(f"Akilli arama: hicbir aday kabul edilmedi (denenen={len(candidate_urls)}, red={rejected})", "WARNING")
 
 
 def prepare_images(article: dict) -> list[str]:
@@ -197,7 +267,14 @@ def prepare_images(article: dict) -> list[str]:
     if env_selected_article_scrape is not None:
         enable_selected_article_scrape = env_selected_article_scrape
     perceptual_threshold = int(images_settings.get("perceptual_hash_threshold", _DEFAULT_PERCEPTUAL_HASH_THRESHOLD))
-    
+
+    # v9.1: Yedek görsel kabulü için VISION kapısı (fail-closed).
+    # settings: images.fallback_require_vision (varsayılan True)
+    # env: FALLBACK_REQUIRE_VISION=false ile eski fail-open davranış.
+    fallback_require_vision = _read_bool_env("FALLBACK_REQUIRE_VISION")
+    if fallback_require_vision is None:
+        fallback_require_vision = bool(images_settings.get("fallback_require_vision", True))
+
     limits = _get_image_validation_limits()
     resize_limits = _get_platform_resize_limits()
     target_ratio = feed_image_width / feed_image_height
@@ -428,9 +505,11 @@ def prepare_images(article: dict) -> list[str]:
             if path and os.path.exists(path):
                 _safe_unlink(path)
 
-    # ── FALLBACK (v9.0): AKILLI YEDEK GÖRSEL ARAMASI ─────────────────────────
-    # 1) AI marka+model sorguları -> DDG aday havuzu
-    # 2) İndirilen her aday Gemini VISION ile doğrulanır (alakasızsa RED)
+    # ── FALLBACK (v9.1): AKILLI YEDEK GÖRSEL ARAMASI ─────────────────────────
+    # 1) Sorgular: AI / deterministik 'marka model yıl'
+    # 2) Kaynak sırası: Wikipedia -> Commons -> CarAPI -> DDG (sinyal sıralı)
+    # 3) Her aday VISION ile doğrulanır; require_vision=True iken yalnızca
+    #    onaylananlar kabul edilir (fail-closed, alakasız fotoğraf yayınlanmaz)
     if not prepared_paths:
         _smart_search_fallback(
             article,
@@ -442,9 +521,10 @@ def prepare_images(article: dict) -> list[str]:
             feed_image_height,
             should_add_logo,
             test_mode,
+            require_vision=fallback_require_vision,
         )
 
-    # FALLBACK 2: AI URL araması (son çare; bu da VISION ile doğrulanır)
+    # FALLBACK 2: AI URL araması (son çare; aynı VISION kapısından geçer)
     if not prepared_paths:
         log("Akilli arama sonuc vermedi. AI URL gorsel aramasi deneniyor...", "INFO")
         ai_url = _ai_search_image_url(article)
@@ -453,12 +533,13 @@ def prepare_images(article: dict) -> list[str]:
             downloaded, reason = _download_image_with_reason(ai_url, limits)
             if downloaded:
                 verdict = verify_image_relevance(downloaded, article)
-                if verdict is False:
-                    log("AI URL gorseli VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
+                if not vision_gate_passed(verdict, fallback_require_vision):
+                    if verdict is False:
+                        log("AI URL gorseli VISION tarafindan REDDEDILDI (alakasiz gorsel)", "WARNING")
+                    else:
+                        log("AI URL gorseli vision dogrulanamadigi icin REDDEDILDI (fail-closed)", "WARNING")
                     _safe_unlink(downloaded)
                 else:
-                    if verdict is None:
-                        log("AI URL: vision dogrulanamadi, fail-open kabul", "WARNING")
                     processed = _finalize_search_image(
                         downloaded, feed_image_width, feed_image_height, resize_limits,
                         should_add_logo, test_mode, article, "ai_search",

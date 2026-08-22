@@ -1,5 +1,25 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.5 - Story Card + Community Tone)
+agents/agent_writer.py - Icerik yazma ajani (v5.7 - Tek Ses: Threads Tarzi + Marka Dokunulmazligi)
+
+v5.7 UPDATE:
+  - TON (post_writer promptu): rls-asist/threads tarzina oturuldu. Sataşma
+    hedefi artik MARKA DEGIL; tartışma, Threads/X'te 'altına yazıp tartışmak'
+    istenen türden kurulur (tüketici psikolojisi, sektör abartisi, fiyat
+    algisi). Marka dokunulmazligi: markalarla is birligi yapilabilir, markaya
+    sataşma/alay/suçlama YASAK.
+  - PLATFORM TUTARLILIĞI: Facebook, Threads ve Instagram Story kartlari AYNI
+    otoXtra sesini kullanir; story_card_writer promptu da ayni üsluba baglandi.
+  - v5.6'nin 'markalara zekice dokundurma' yönü kaldirildi; RAKAM/BIRIM
+    tutarliligi, tek mantik zinciri, 2-4 cumlelik story alt metni korunuyor.
+
+v5.6 UPDATE:
+  - STORY CARD ALT METİN: Artık TEK cümleye indirilmiyor. 'story_card_writer'
+    promptu haberi açıklayan 2-4 cümlelik alt metin üretir; kod yalnızca
+    uzunluk güvencesi uygular (son TAM cümle noktasından kırpar, yarım cümle
+    bırakmaz). Başlık hâlâ TEK CÜMLE zorunludur.
+  - POST YAZARLIĞI: post_writer promptuna profesyonel akış (tek mantık zinciri),
+    para birimi/birim tutarlılığı ve artırılmış sataşma (alay) dozu kuralları
+    eklendi. Facebook/Threads metinleri kopuk değil, tutarlı anlatı olacak.
 
 v5.5 UPDATE:
   - STORY CARD: Story kartları artık post metninin ilk satırını kopyalamıyor.
@@ -300,9 +320,9 @@ def _strip_trailing_question(post_text: str) -> str:
     return post_text
 
 
-# ── STORY CARD METNİ (v5.5) ───────────────────────────────────────────────────
+# ── STORY CARD METNİ (v5.6) ───────────────────────────────────────────────────
 # Story kartları post metninin ilk satırını kopyalamak yerine, kendi promptuyla
-# özel başlık + alt metin üretir. Başlık TEK CÜMLE olmak zorundadır.
+# özel başlık + alt metin üretir. Başlık TEK CÜMLE, alt metin 2-4 CÜMLE olur.
 def _clamp_text(text: str, max_chars: int) -> str:
     text = (text or "").strip()
     if len(text) <= max_chars:
@@ -311,6 +331,27 @@ def _clamp_text(text: str, max_chars: int) -> str:
     if " " in cut:
         cut = cut.rsplit(" ", 1)[0]
     return cut.rstrip(" ,;:.-")
+
+
+def _clamp_alt_text(text: str, max_chars: int) -> str:
+    """Alt metni uzunluk sınırına çeker; yarım cümle bırakmaz.
+
+    v5.6: Alt metin 2-4 cümle olabildiği için, sınırı aşan metin sınır içindeki
+    SON TAM CÜMLE noktasından kırpılır. İçinde cümle sonu yoksa kelime
+    sınırından keser.
+    """
+    text = (text or "").strip()
+    if len(text) <= max_chars:
+        return text
+    cut = text[:max_chars]
+    best_end = None
+    for match in re.finditer(r"[.!?…](?=\s|$)", cut):
+        best_end = match.end()
+    if best_end:
+        return cut[:best_end].strip()
+    if " " in cut:
+        cut = cut.rsplit(" ", 1)[0]
+    return cut.rstrip(" ,;:-")
 
 
 def generate_story_card_text(article: dict, post_text: str) -> dict:
@@ -341,6 +382,7 @@ def generate_story_card_text(article: dict, post_text: str) -> dict:
     full_prompt = (
         f"{story_prompt}\n\n"
         "KRİTİK: Başlık TEK CÜMLE olmalı ve iki cümle ASLA yazılmamalı.\n"
+        "ALT METİN ise haberi açıklayan 2-4 CÜMLE olmalı; tek cümleye düşürme.\n"
         "SADECE JSON döndür.\n\n"
         + "\n".join(input_parts)
     )
@@ -363,8 +405,10 @@ def generate_story_card_text(article: dict, post_text: str) -> dict:
         # GÜVENCE: Başlık ne gelirse gelsin TEK CÜMLEYE indir.
         baslik = first_sentence(baslik).strip().rstrip(".")
         baslik = _clamp_text(baslik, 80)
-        alt = first_sentence(alt).strip()
-        alt = _clamp_text(alt, 140)
+
+        # v5.6: Alt metin TEK cümleye kısıtlanmaz; haberi açıklayan 2-4 cümle
+        # olabilir. Sadece uzunluk güvencesi uygulanır (cümle sonundan kırpılır).
+        alt = _clamp_alt_text(alt, 460)
 
         result = {"baslik": baslik, "alt_metin": alt}
         log(f"[WRITER] Story card metni hazır: başlık='{baslik[:40]}' alt='{alt[:40]}'", "INFO")
@@ -564,8 +608,8 @@ def run() -> bool:
             set_stage("write", "error", error="Post metni uretilemedi")
             return False
 
-        # v5.5: Story card icin OZEL baslik + alt metin uretimi.
-        # Hata durumunda bos doner; publisher eski davranisa (post'un ilk
+        # v5.6: Story card icin OZEL baslik (tek cümle) + alt metin (2-4 cümle)
+        # uretimi. Hata durumunda bos doner; publisher eski davranisa (post'un ilk
         # satiri) duser. Story uretimi post paylasimini asla engellemez.
         story_text = generate_story_card_text(article, post_text)
 
