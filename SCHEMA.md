@@ -220,7 +220,11 @@ Hata sınıflandırması:
     "nitter_feed_fetch_attempts": 3,    // Nitter feed için tekrar deneme sayısı
     "nitter_http_attempts": 3,          // Nitter HTTP istek deneme sayısı
     "nitter_http_base_wait_seconds": 1.8,
-    "nitter_http_timeout_seconds": 22
+    "nitter_http_timeout_seconds": 22,
+    "nitter_instances": ["nitter.net", "xcancel.com", "nitter.poast.org", "nitter.privacydev.net"]
+    // ↑ Nitter RSS instance failover listesi (öncelik sırasıyla). nitter.net RSS
+    //   kapattığı için entry döndüren İLK instance kullanılır. ENV ile override:
+    //   NITTER_INSTANCES="host1,host2". İlk aday her zaman sources.json'daki hosttur.
   },
   "images": {
     "add_logo": true,                   // Görsele logo watermark eklensin mi?
@@ -240,11 +244,17 @@ Hata sınıflandırması:
     "max_article_age_hours": 24,        // Bu saatten eski haberler elenir
     "max_articles_per_source": 10,      // Kaynak başına maksimum haber sayısı
     "min_summary_length": 30,           // Özet minimum karakter uzunluğu
-    "shared_variant_cooldown_hours": 3  // Aynı konunun varyantı için bekleme süresi
+    "shared_variant_cooldown_hours": 3, // Aynı konunun varyantı için bekleme süresi
+    "smart_cutoff_grace_minutes": 90    // Akıllı zaman filtresi kesme noktası = son PAYLAŞIM - grace.
+                                        // Paylaşım olmayan saatlerde pencere otomatik genişler,
+                                        // yarışta kaybeden taze haberler tekrar değerlendirilir.
   },
   "duplicate_detection": {
-    "title_similarity_threshold": 0.8,  // Başlık benzerlik eşiği (0.0-1.0, 0.8=çok benzer)
-    "keyword_overlap_threshold": 0.7    // Anahtar kelime örtüşme eşiği
+    "title_similarity_threshold": 0.8,  // Başlık benzerlik eşiği (0.0-1.0) — aynı çalışmadaki batch dedup
+    "keyword_overlap_threshold": 0.7,   // Anahtar kelime örtüşme eşiği — batch dedup
+    "posted_title_similarity_threshold": 0.62,      // 30 günlük GEÇMİŞE karşı başlık eşiği (kalıp başlıklar
+    "posted_fingerprint_similarity_threshold": 0.6  // engellenmesin diye batch'ten yüksek; aynı haberin
+                                                    // siteler arası kopyaları 0.65-0.83 bandında yakalanır)
   },
   "ai": {
     "temperature": 0.65,                // YZ yaratıcılık seviyesi (0.0-2.0)
