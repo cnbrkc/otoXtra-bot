@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-08-22-10:29",
-  "status": "error",
-  "started_at": "2026-08-22T10:29:20.378580+03:00",
-  "updated_at": "2026-08-22T10:30:17.505105+03:00",
+  "run_id": "2026-08-22-11:25",
+  "status": "completed",
+  "started_at": "2026-08-22T11:25:47.169655+03:00",
+  "updated_at": "2026-08-22T11:29:21.205710+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "4D radar nedir? Otonom sürüşte radar teknolojisi değişiyor",
+            "link": "https://www.donanimhaber.com/4d-radar-nedir-otonom-suruste-radar-teknolojisi-degisiyor--209610",
+            "published": "2026-08-22T07:45:00+00:00",
+            "summary": "4D radar nedir? Otonom araçlarda kullanılan bu yeni nesil radar, uzun menzil ve yüksek çözünürlük sunarak araçların çevresini daha detaylı algılamasını sağlıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209610/1200x6754d-radar-nedir-otonom-suruste-radar-teknolojisi-degisiyor.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209610/1200x6754d-radar-nedir-otonom-suruste-radar-teknolojisi-degisiyor.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209610/1200x6754d-radar-nedir-otonom-suruste-radar-teknolojisi-degisiyor.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "degisiyor-nedir-otonom-radar-radar-suruste-teknolojisi"
+          },
+          {
+            "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+            "link": "https://www.log.com.tr/porsche-taycan-yakinda-emekliye-ayrilmayacak/",
+            "published": "2026-08-22T07:45:57+00:00",
+            "summary": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayı planlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor. Porsche: “Taycan yakında emekliye ayrılmayacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ayrilmayacak-emekliye-porsche-taycan-yakinda"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +165,241 @@
           },
           "_metrics": {
             "found": 98,
-            "after_keyword": 66,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 69,
+            "after_time": 12,
+            "after_posted": 3,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 98,
-          "after_keyword": 66,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 69,
+          "after_time": 12,
+          "after_posted": 3,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 3
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-22T10:30:17.505105+03:00"
+      "error": null,
+      "updated_at": "2026-08-22T11:26:40.687420+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+          "link": "https://www.log.com.tr/porsche-taycan-yakinda-emekliye-ayrilmayacak/",
+          "published": "2026-08-22T07:45:57+00:00",
+          "summary": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayı planlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor. Porsche: “Taycan yakında emekliye ayrılmayacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ayrilmayacak-emekliye-porsche-taycan-yakinda",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Lüks spor otomobil markası Porsche ve popüler modeli Taycan hakkında doğrudan bir açıklama içerdiği için sosyal medyada otomobil tutkunları arasında tartışma yaratabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 70,
+        "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 12,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Lüks spor otomobil markası Porsche ve popüler modeli Taycan hakkında doğrudan bir açıklama içerdiği için sosyal medyada otomobil tutkunları arasında tartışma yaratabilir.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+            "score": 70,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "4D radar nedir? Otonom sürüşte radar teknolojisi değişiyor",
+            "score": 49,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 9,
+              "benzersizlik": 10,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "4D radar nedir? Otonom sürüşte radar teknolojisi değişiyor",
+            "link": "https://www.donanimhaber.com/4d-radar-nedir-otonom-suruste-radar-teknolojisi-degisiyor--209610",
+            "score": 49,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "degisiyor-nedir-otonom-radar-radar-suruste-teknolojisi"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-22T11:26:48.818370+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+          "link": "https://www.log.com.tr/porsche-taycan-yakinda-emekliye-ayrilmayacak/",
+          "published": "2026-08-22T07:45:57+00:00",
+          "summary": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayı planlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor. Porsche: “Taycan yakında emekliye ayrılmayacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ayrilmayacak-emekliye-porsche-taycan-yakinda",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Lüks spor otomobil markası Porsche ve popüler modeli Taycan hakkında doğrudan bir açıklama içerdiği için sosyal medyada otomobil tutkunları arasında tartışma yaratabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayıplanlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor."
+        },
+        "post_text": "Porsche'nin \"Taycan emekli olmayacak\" açıklaması, asıl tartışmayı başka yere çekiyor.\n\n\"Talep nasıl gelişecek izleyeceğiz\" cümlesi aslında bir itiraf. 2019'da çıkan Taycan, 2023'te zirve yapıp sonra düşüşe geçti. Şirketin beklentilerini karşılayamadığı açık.\n\nBu durum, elektrikli otomobillerde bile \"marka\"nın tek başına yetmediğini gösteriyor.",
+        "post_text_length": 345,
+        "story_card_title": "Porsche'den Taycan Açıklaması Şaşırttı!",
+        "story_card_subtitle": "Ortaya atılan iddialar sonrası şirket sözcüsü net konuştu.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-22T11:27:39.296823+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche: “Taycan yakında emekliye ayrılmayacak”",
+          "link": "https://www.log.com.tr/porsche-taycan-yakinda-emekliye-ayrilmayacak/",
+          "published": "2026-08-22T07:45:57+00:00",
+          "summary": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayı planlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor. Porsche: “Taycan yakında emekliye ayrılmayacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/08/2026-08-15_12-57-44_s0aSN_FHD-660x371.jpg"
+          ],
+          "image_source": "smart_search",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ayrilmayacak-emekliye-porsche-taycan-yakinda",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Lüks spor otomobil markası Porsche ve popüler modeli Taycan hakkında doğrudan bir açıklama içerdiği için sosyal medyada otomobil tutkunları arasında tartışma yaratabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "WirtschaftsWoche, geçtiğimiz hafta “Porsche, tamamen elektrikli spor otomobili Taycan’ı 2030 yılına kadar kademeli olarak üretimden kaldırmayıplanlıyor.” iddiasını ortaya atmıştı. Bu iddialar hakkında bir açıklama yapan şirket sözcüsü, “Taycan’ı kısa vadede üretimden kaldırmaya yönelik herhangi bir planımız bulunmuyor. Modele önemli ölçüde yatırım yaptık ve talebin nasıl gelişeceğini izlemeye devam edeceğiz.” ifadelerini kullandı. Hayatımıza 2019’da giren araç, en yüksek satış rakamına 40.960 adetle 2023’te ulaşmış, 2025’te ise 16.339 adet Taycan satılmıştı. 2026’nın ilk yarısında satışları 6.219 adetle sınırlı kalan araç, şirketin beklediği ilgiyi görmüyor ancak bir süre daha üretimde kalacak gibi görünüyor.",
+          "post_text_for_card": "Porsche'nin \"Taycan emekli olmayacak\" açıklaması, asıl tartışmayı başka yere çekiyor.\n\n\"Talep nasıl gelişecek izleyeceğiz\" cümlesi aslında bir itiraf. 2019'da çıkan Taycan, 2023'te zirve yapıp sonra düşüşe geçti. Şirketin beklentilerini karşılayamadığı açık.\n\nBu durum, elektrikli otomobillerde bile \"marka\"nın tek başına yetmediğini gösteriyor.",
+          "story_card_title": "Porsche'den Taycan Açıklaması Şaşırttı!",
+          "story_card_subtitle": "Ortaya atılan iddialar sonrası şirket sözcüsü net konuştu.",
+          "image_sources": [
+            "smart_search"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "Porsche'nin \"Taycan emekli olmayacak\" açıklaması, asıl tartışmayı başka yere çekiyor.\n\n\"Talep nasıl gelişecek izleyeceğiz\" cümlesi aslında bir itiraf. 2019'da çıkan Taycan, 2023'te zirve yapıp sonra düşüşe geçti. Şirketin beklentilerini karşılayamadığı açık.\n\nBu durum, elektrikli otomobillerde bile \"marka\"nın tek başına yetmediğini gösteriyor.",
+        "story_card_title": "Porsche'den Taycan Açıklaması Şaşırttı!",
+        "story_card_subtitle": "Ortaya atılan iddialar sonrası şirket sözcüsü net konuştu.",
+        "image_path": "/tmp/otoxtra_img_bbxja8gu.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_bbxja8gu.jpg"
+        ],
+        "image_source": "smart_search",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-22T11:28:36.997345+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176826114916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18094440578384146",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1795977914732151",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-22T11:29:21.205710+03:00"
     }
   }
 }
