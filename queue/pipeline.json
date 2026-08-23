@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-08-24-00:18",
-  "status": "completed",
-  "started_at": "2026-08-24T00:18:58.238576+03:00",
-  "updated_at": "2026-08-24T00:20:38.348172+03:00",
+  "run_id": "2026-08-24-01:18",
+  "status": "error",
+  "started_at": "2026-08-24T01:18:32.563870+03:00",
+  "updated_at": "2026-08-24T01:19:11.773817+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-            "link": "https://www.otomobil.com.tr/audi-q3-test-surusu/",
-            "published": "2026-08-23T21:05:36+00:00",
-            "summary": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde […] Sonrası Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans Otomobil ilk ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Otomobilcom",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "150-audi-performans-surusu-test-tfsi-tuketimi-yakit"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -145,214 +127,47 @@
           "_metrics": {
             "found": 92,
             "after_keyword": 60,
-            "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 92,
           "after_keyword": 60,
-          "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-24T00:19:38.971939+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-24T01:19:11.773817+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-          "link": "https://www.otomobil.com.tr/audi-q3-test-surusu/",
-          "published": "2026-08-23T21:05:36+00:00",
-          "summary": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde […] Sonrası Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Otomobilcom",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "150-audi-performans-surusu-test-tfsi-tuketimi-yakit",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 6,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model test sürüşü ve incelemesi. Sosyal medyada büyük bir viral potansiyeli yok, rutinin dışına çıkmıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 53,
-        "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 6,
-          "gundem_gucu": 9,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Standart bir model test sürüşü ve incelemesi. Sosyal medyada büyük bir viral potansiyeli yok, rutinin dışına çıkmıyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-            "score": 53,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 6,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-24T00:19:40.668795+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-          "link": "https://www.otomobil.com.tr/audi-q3-test-surusu/",
-          "published": "2026-08-23T21:05:36+00:00",
-          "summary": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde […] Sonrası Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Otomobilcom",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "150-audi-performans-surusu-test-tfsi-tuketimi-yakit",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 6,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model test sürüşü ve incelemesi. Sosyal medyada büyük bir viral potansiyeli yok, rutinin dışına çıkmıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde 2025 Kasım ayı itibarı ile satışa sunulmuştu. Yeni Audi Q3 1.5 TFSI Yorum ve Test Sürüşü Özet Değerlendirme:Yeni Audi Q3 1.5 TFSI 150 HP S tronic, 4.560.000 TL’lik kampanyalı fiyatı (5.170.000 TL liste fiyatı), yüksek malzeme kalitesi ve dengeli sürüş karakteriyle premium C-SUV segmentinde öne çıkıyor. 2026 Ağustosayı itibari ile ülkemizde sadece1.5 TFSI 110 kW (150 HP)benzinli motor seçeneği ile satılanAudi Q3 SUV’un şu anda başlangıç liste fiyatı 5.170.000 TL olarak gözüküyor. Ancak Ağustos ayı kampanyası kapsamında bayilerde yer alan gerçek fiyat 4.560.000 TL seviyesinde. Daha sportif bir görünüm isteyenler için Sportback gövde tipi de mevcut. Yeni Audi Q3’ünyurtdışında2.0 TFSI204 HP,2.0 TFSI265 HP benzinli,2.0 TDI150 HP dizel,1.5 e-Hybrid (PHEV)272 HP motor seçenekleri de bulunuyor. Test Aracı: Audi Q3 SUV 110 kW S tronic Bu sayfadaki test aracınınilk üretim versiyonu Audi Q3olduğunu ve hâlihazırda bayilerde satılmakta olan Q3’lere göre farklılıkları olduğunu söyleyeyim. Şu andasatılmakta olan Audi Q3’lerde Teknoloji Paketi Pro standartolarak geliyor. Bu kapsamdasönümleme kontrollü süspansiyon sistemi,kırmızı fren kaliperleri,elektrikli ön koltuklarveAsistan Paketi Pro’nun360 derece kamera sistemi,hafızalı park özelliği,adaptif sürüş asistanı plusgibi ekipmanlar standart olarak geliyor. Ancak test aracımız ilk üretim versiyonu olduğu için bu özellikler bulunmuyordu. C-SUVsegmentinde yer alan yeni Audi Q34.531 mmuzunluğa,1.859 mmgenişliğe,1.601 mmyüksekliğe ve2.681 mmdingil mesafesine sahip. Yeni Audi Q3 SUV’un bagaj hacmiileri-geri hareketli kızaklı arka koltuk sırası gerideyken488 litre,ilerideyken575 litreolarak açıklanıyor. Arka koltuklar katlandığındaysa bagaj hacmi1386 litreyeulaşıyor. Önceki nesildebagaj hacmi 530 litre olarak açıklanıyordu. Tıpkı Q3 gibiMQB Evoplatformunu kullanan ve Q3 ile birlikte Audi’nin Macaristan’daki tesislerinde üretilenCupra Terramar ise 508-642 litre bagaj hacmisunuyor. Q3’ün ana rakiplerinden BMW X1 sDrive20i ise (ODMD raporlarında BMW X1 D7 segmenti, yani D-SUV olarak yer alsa da bu otomobil aslında bir C-SUV’dur) 500 litrelik bagaj hacmine sahip. Otomobil yeni tasarımlı genişSingle Frame ön ızgarası, çamurluk çıkıntıları ve yatay aydınlatma gruplarıyla yere sağlam basan bir görünüme sahip. İç mekâna geçtiğimdekalite hissi yüksekbir ön konsol beni karşıladı. Ön konsolun üst kısmı yarı yumuşak malzemeden, iç mekâna yakın kısmıysa Alcantara hissi veren bir malzeme ile kaplanmış. 11,9 inç gösterge tablosukişiselleştirilebiliyor.12,8 inç MMI ekranıise kolay anlaşılır bir ara yüze sahip. Işık, sinyal ve silecek kontrolü içinyeni yerleşim mimarisifarklı tasarımı ile dikkat çekiyor. Bu mimaridegeleneksel sinyal kolu ve silecek kolu yerleşimi yok. Direksiyon kolonunun üst kısmına bir panel yerleştirilmiş ve bu panelin iki ucu, direksiyonu 9:15 pozisyonunda tutarken tam parmak uçlarına gelecek konumda. Sol tarafta silecek, sinyal ve far kumandaları yer alırken, sağ tarafta vites kumandası yer alıyor. Bu arada7 ileri oranlı çift kavramalı şanzımandireksiyonun arkasındaki kulakçıklardanmanuelolarak da kontrol edilebiliyor. Çok kişiye ufak bir detay gibi gelebilir ancak ön koltuklar arasındaki konsolunpiyano siyahı kaplamasıgüneşli günlerde, özellikle güneşin dik geldiği saatlerde yansımaya neden olarak gözü yorabiliyor. Otomobilin ön ve arka koltuklarındadiz-baş mesafesi sorunu yok. Arka koltuk sırasınınileri-geri hareket ettirilebilmesivesırt eğiminin ayarlanabilmesikullanışlılığı arttıran bir etken… Geniş cam tavan açılabiliyor ve elektrikli tavan perdesinin olması da güzel bir detay. Çünkü günümüzde bazı üreticiler bu özelliği sunmuyor. Q3 1.5 TFSI’da, Volkswagen Grubu’nun farklı modellerinden tanıdığımızhafif hibrit teknolojili (MHEV)1.498 cc’lik, 4 silindirli, turbo beslemeli benzinli motor görev yapıyor. Bu motor maksimum gücü olan150 metrik HP’yi 5.000-6.000 d/d aralığında, maksimum torku olan250 Nm’yi 1.500-3.500 d/d aralığında üretiyor. Maksimum torkun 1.500 d/d gibi düşük bir devirden itibaren ortaya çıkması ve bunun geniş bir banda yayılmasıalt ve orta devirlerde etkili bir çekişsağlıyor. 7 ileri oranlı S tronic şanzıman da motorla uyumlu çalışmasının yanı sıra hızlı ve sarsıntısız vites geçişlerine sahip. Sürüş modları “Audi Drive Select” kapsamında dokunmatik ekrandan veya ön konsoldaki “drive select” fiziksel butonu üzerinden “individual, dynamic, comfort ve efficiency” olarak ayarlanabiliyor. Fabrika verilerine göre0-100 km/s hızlanmasını 9,1 saniyedetamamlayanyeni Audi Q3 1.5 TFSI 150 HP S tronic, benimGPS teknolojili profesyonel test cihazıile yaptığım ölçümlerde 2 yön ortalaması olarak9,2 saniyelik 0-100 km/s hızlanma..."
-        },
-        "post_text": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor.\n\nPremium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.\n\nYeni Audi Q3, bu fiyat segmentinde iddialı bir seçenek olarak öne çıkıyor.",
-        "post_text_length": 398,
-        "story_card_title": "AUDI Q3'ÜN FİYATI ŞİMDİ BU SEVİYEDE!",
-        "story_card_subtitle": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor. Premium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-24T00:19:45.329447+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans",
-          "link": "https://www.otomobil.com.tr/audi-q3-test-surusu/",
-          "published": "2026-08-23T21:05:36+00:00",
-          "summary": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde […] Sonrası Audi Q3 1.5 TFSI 150 HP Test Sürüşü: Yakıt Tüketimi ve Performans Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "smart_search",
-          "source_name": "Otomobilcom",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "150-audi-performans-surusu-test-tfsi-tuketimi-yakit",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 6,
-            "gundem_gucu": 9,
-            "paylasilabilirlik": 6
-          },
-          "score": 53,
-          "score_reason": "ai_scored",
-          "score_explanation": "Standart bir model test sürüşü ve incelemesi. Sosyal medyada büyük bir viral potansiyeli yok, rutinin dışına çıkmıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Audi Q3 1.5 TFSI 150 HP Test Sürüşü. Yeni Audi Q3 1.5 TFSI, kaliteli iç mekanı makul bir performansla bir araya getiriyor. İlk nesli 2011 yılında tanıtılan Audi Q3’ün ikinci nesli 2018 yılında yollara çıkmıştı ve 2019’da da ikinci nesil Q3’ün “Sportback” gövde tipi tanıtılmıştı. 2025 yılında FJ kodlu üçüncü nesline geçen Audi Q3 ülkemizde 2025 Kasım ayı itibarı ile satışa sunulmuştu. Yeni Audi Q3 1.5 TFSI Yorum ve Test Sürüşü Özet Değerlendirme:Yeni Audi Q3 1.5 TFSI 150 HP S tronic, 4.560.000 TL’lik kampanyalı fiyatı (5.170.000 TL liste fiyatı), yüksek malzeme kalitesi ve dengeli sürüş karakteriyle premium C-SUV segmentinde öne çıkıyor. 2026 Ağustosayı itibari ile ülkemizde sadece1.5 TFSI 110 kW (150 HP)benzinli motor seçeneği ile satılanAudi Q3 SUV’un şu anda başlangıç liste fiyatı 5.170.000 TL olarak gözüküyor. Ancak Ağustos ayı kampanyası kapsamında bayilerde yer alan gerçek fiyat 4.560.000 TL seviyesinde. Daha sportif bir görünüm isteyenler için Sportback gövde tipi de mevcut. Yeni Audi Q3’ünyurtdışında2.0 TFSI204 HP,2.0 TFSI265 HP benzinli,2.0 TDI150 HP dizel,1.5 e-Hybrid (PHEV)272 HP motor seçenekleri de bulunuyor. Test Aracı: Audi Q3 SUV 110 kW S tronic Bu sayfadaki test aracınınilk üretim versiyonu Audi Q3olduğunu ve hâlihazırda bayilerde satılmakta olan Q3’lere göre farklılıkları olduğunu söyleyeyim. Şu andasatılmakta olan Audi Q3’lerde Teknoloji Paketi Pro standartolarak geliyor. Bu kapsamdasönümleme kontrollü süspansiyon sistemi,kırmızı fren kaliperleri,elektrikli ön koltuklarveAsistan Paketi Pro’nun360 derece kamera sistemi,hafızalı park özelliği,adaptif sürüş asistanı plusgibi ekipmanlar standart olarak geliyor. Ancak test aracımız ilk üretim versiyonu olduğu için bu özellikler bulunmuyordu. C-SUVsegmentinde yer alan yeni Audi Q34.531 mmuzunluğa,1.859 mmgenişliğe,1.601 mmyüksekliğe ve2.681 mmdingil mesafesine sahip. Yeni Audi Q3 SUV’un bagaj hacmiileri-geri hareketli kızaklı arka koltuk sırası gerideyken488 litre,ilerideyken575 litreolarak açıklanıyor. Arka koltuklar katlandığındaysa bagaj hacmi1386 litreyeulaşıyor. Önceki nesildebagaj hacmi 530 litre olarak açıklanıyordu. Tıpkı Q3 gibiMQB Evoplatformunu kullanan ve Q3 ile birlikte Audi’nin Macaristan’daki tesislerinde üretilenCupra Terramar ise 508-642 litre bagaj hacmisunuyor. Q3’ün ana rakiplerinden BMW X1 sDrive20i ise (ODMD raporlarında BMW X1 D7 segmenti, yani D-SUV olarak yer alsa da bu otomobil aslında bir C-SUV’dur) 500 litrelik bagaj hacmine sahip. Otomobil yeni tasarımlı genişSingle Frame ön ızgarası, çamurluk çıkıntıları ve yatay aydınlatma gruplarıyla yere sağlam basan bir görünüme sahip. İç mekâna geçtiğimdekalite hissi yüksekbir ön konsol beni karşıladı. Ön konsolun üst kısmı yarı yumuşak malzemeden, iç mekâna yakın kısmıysa Alcantara hissi veren bir malzeme ile kaplanmış. 11,9 inç gösterge tablosukişiselleştirilebiliyor.12,8 inç MMI ekranıise kolay anlaşılır bir ara yüze sahip. Işık, sinyal ve silecek kontrolü içinyeni yerleşim mimarisifarklı tasarımı ile dikkat çekiyor. Bu mimaridegeleneksel sinyal kolu ve silecek kolu yerleşimi yok. Direksiyon kolonunun üst kısmına bir panel yerleştirilmiş ve bu panelin iki ucu, direksiyonu 9:15 pozisyonunda tutarken tam parmak uçlarına gelecek konumda. Sol tarafta silecek, sinyal ve far kumandaları yer alırken, sağ tarafta vites kumandası yer alıyor. Bu arada7 ileri oranlı çift kavramalı şanzımandireksiyonun arkasındaki kulakçıklardanmanuelolarak da kontrol edilebiliyor. Çok kişiye ufak bir detay gibi gelebilir ancak ön koltuklar arasındaki konsolunpiyano siyahı kaplamasıgüneşli günlerde, özellikle güneşin dik geldiği saatlerde yansımaya neden olarak gözü yorabiliyor. Otomobilin ön ve arka koltuklarındadiz-baş mesafesi sorunu yok. Arka koltuk sırasınınileri-geri hareket ettirilebilmesivesırt eğiminin ayarlanabilmesikullanışlılığı arttıran bir etken… Geniş cam tavan açılabiliyor ve elektrikli tavan perdesinin olması da güzel bir detay. Çünkü günümüzde bazı üreticiler bu özelliği sunmuyor. Q3 1.5 TFSI’da, Volkswagen Grubu’nun farklı modellerinden tanıdığımızhafif hibrit teknolojili (MHEV)1.498 cc’lik, 4 silindirli, turbo beslemeli benzinli motor görev yapıyor. Bu motor maksimum gücü olan150 metrik HP’yi 5.000-6.000 d/d aralığında, maksimum torku olan250 Nm’yi 1.500-3.500 d/d aralığında üretiyor. Maksimum torkun 1.500 d/d gibi düşük bir devirden itibaren ortaya çıkması ve bunun geniş bir banda yayılmasıalt ve orta devirlerde etkili bir çekişsağlıyor. 7 ileri oranlı S tronic şanzıman da motorla uyumlu çalışmasının yanı sıra hızlı ve sarsıntısız vites geçişlerine sahip. Sürüş modları “Audi Drive Select” kapsamında dokunmatik ekrandan veya ön konsoldaki “drive select” fiziksel butonu üzerinden “individual, dynamic, comfort ve efficiency” olarak ayarlanabiliyor. Fabrika verilerine göre0-100 km/s hızlanmasını 9,1 saniyedetamamlayanyeni Audi Q3 1.5 TFSI 150 HP S tronic, benimGPS teknolojili profesyonel test cihazıile yaptığım ölçümlerde 2 yön ortalaması olarak9,2 saniyelik 0-100 km/s hızlanma...",
-          "post_text_for_card": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor.\n\nPremium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.\n\nYeni Audi Q3, bu fiyat segmentinde iddialı bir seçenek olarak öne çıkıyor.",
-          "story_card_title": "AUDI Q3'ÜN FİYATI ŞİMDİ BU SEVİYEDE!",
-          "story_card_subtitle": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor. Premium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor.\n\nPremium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.\n\nYeni Audi Q3, bu fiyat segmentinde iddialı bir seçenek olarak öne çıkıyor.",
-        "story_card_title": "AUDI Q3'ÜN FİYATI ŞİMDİ BU SEVİYEDE!",
-        "story_card_subtitle": "Audi Q3 1.5 TFSI 150 HP test sürüşü sonuçlandı. Otomobilcom'un değerlendirmesine göre yeni Audi Q3, kaliteli iç mekanı makul bir performansla birleştiriyor. Premium C-SUV segmentinde 4.560.000 TL'lik kampanyalı fiyatıyla dikkat çeken araç, tüketicinin markanın prestijinden çok sunduğu özelliklere odaklanmasını sağlıyor.",
-        "image_path": "/tmp/otoxtra_img_2i0zd7xe.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_2i0zd7xe.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-24T00:19:58.589309+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122177008172916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18069518576733688",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27945578591737852",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-24T00:20:38.348172+03:00"
+      "updated_at": null
     }
   }
 }
