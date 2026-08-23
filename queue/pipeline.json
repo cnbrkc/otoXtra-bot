@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-08-23-08:26",
-  "status": "completed",
-  "started_at": "2026-08-23T08:26:16.549796+03:00",
-  "updated_at": "2026-08-23T08:27:39.972687+03:00",
+  "run_id": "2026-08-23-09:36",
+  "status": "error",
+  "started_at": "2026-08-23T09:36:24.821860+03:00",
+  "updated_at": "2026-08-23T09:37:04.530689+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-            "link": "https://shiftdelete.net/dogan-trend-otomotiv-mazda-modellerini-turkiyeye-getirmek",
-            "published": "2026-08-23T05:00:28+00:00",
-            "summary": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aciklama-dogan-donuyor-geri-mazda-trend-turkiye"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,215 +128,46 @@
             "found": 94,
             "after_keyword": 59,
             "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 94,
           "after_keyword": 59,
           "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-23T08:26:55.381292+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-23T09:37:04.530689+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-          "link": "https://shiftdelete.net/dogan-trend-otomotiv-mazda-modellerini-turkiyeye-getirmek",
-          "published": "2026-08-23T05:00:28+00:00",
-          "summary": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-dogan-donuyor-geri-mazda-trend-turkiye",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Mazda gibi hayran kitlesi olan bir markanın Türkiye pazarına dönüş ihtimali, otomobil meraklıları arasında büyük heyecan yaratacak ve yüksek sosyal medya etkileşimi sağlayacak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 81,
-        "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 17,
-          "gundem_gucu": 14,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Mazda gibi hayran kitlesi olan bir markanın Türkiye pazarına dönüş ihtimali, otomobil meraklıları arasında büyük heyecan yaratacak ve yüksek sosyal medya etkileşimi sağlayacak bir gelişmedir.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 17,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T08:26:56.950575+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-          "link": "https://shiftdelete.net/dogan-trend-otomotiv-mazda-modellerini-turkiyeye-getirmek",
-          "published": "2026-08-23T05:00:28+00:00",
-          "summary": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-dogan-donuyor-geri-mazda-trend-turkiye",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Mazda gibi hayran kitlesi olan bir markanın Türkiye pazarına dönüş ihtimali, otomobil meraklıları arasında büyük heyecan yaratacak ve yüksek sosyal medya etkileşimi sağlayacak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Doğan Trend Otomotiv CEO’su Uğur Sakarya, otomobil gazetecisi Özgür Taylan Dil’in programına konuk olarakMazda modellerini Türkiye’ye getirmekiçin yürüttükleri çalışmaları değerlendirdi. Şirketin Japon üretici ile olan iş birliği kapsamında yeni araçların pazara sunulması gündemde yer alıyor. Sakarya, Mazda’nın ürün gamında yer alan Mazda 3 gibi kompakt modellerin ve bazı pick-up seçeneklerinin Türkiye pazarına uygun olduğunu belirtti. Bu modellerin Türkiye’ye getirilmesi konusunda görüşmelerin devam ettiği ifade edildi. Doğan Trend Otomotiv, geçtiğimiz Şubat ayında Mazda Motor Europe ile bir hizmet anlaşması imzalayarak Türkiye’deki servis ağını yönetmeye başlamıştı. Geçiş dönemini başarıyla tamamlayan şirket, mevcut servis ağını 22 farklı hizmet noktasına ulaştırdığını duyurdu. ✏️ “Mazda modellerini Türkiye’ye getirmek için çalışıyoruz. Mazda 3 ve Pick-Up modeli Türkiye’ye gelebilecek koşullara sahip olabilir.” ✏️ “SAIC Grubu’na ait Maxus’un Pick-Up’ını yıl sonunda getireceğiz. Hem 4×2 hem 4×4 çift kabin olarak pazara sunacağız.”✏️ “MG’nin…pic.twitter.com/3Fdkv2hzMC — Taylan Özgür Dil (@taylandil)August 22, 2026 Diğer yandan MG markası için de önemli planlar bulunuyor. MG’nin İspanya’daki fabrikasının devreye girmesiyle birlikte elektrikli modellerin sıfır gümrük vergisiyle Türkiye’ye getirilmesi hedefleniyor. Bu stratejiyle MG’nin yıllık satış adetlerinin yeniden 15-20 bin seviyelerine çıkması öngörülüyor. SAIC Grubu bünyesinde yer alan Maxus markası için de somut adımlar atılıyor. Şirket, Maxus’un pick-up modelini yıl sonunda Türkiye pazarına sunmayı planlıyor. Yeni pick-up modelinin hem 4×2 hem de 4×4 çift kabin seçenekleriyle satışa çıkacağı açıklandı. Otomotiv sektöründeki bu yeni gelişmeler hakkında siz ne düşünüyorsunuz? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
-        },
-        "post_text": "MAZDA TÜRKİYE’YE GERİ Mİ DÖNÜYOR: DOĞAN TREND’DEN AÇIKLAMA\n\nDoğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 246,
-        "story_card_title": "MAZDA TÜRKİYE'YE DÖNÜYOR MU?",
-        "story_card_subtitle": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda'nın Türkiye pazarına dönüşü için görüşmelerin sürdüğünü duyurdu. Bu gelişme, otomotiv sektöründe heyecan yarattı. Yeni MG planlarının da masada olduğu belirtildi.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T08:27:00.595198+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Mazda Türkiye’ye Geri mi Dönüyor: Doğan Trend’den Açıklama",
-          "link": "https://shiftdelete.net/dogan-trend-otomotiv-mazda-modellerini-turkiyeye-getirmek",
-          "published": "2026-08-23T05:00:28+00:00",
-          "summary": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "meta_og",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-dogan-donuyor-geri-mazda-trend-turkiye",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Mazda gibi hayran kitlesi olan bir markanın Türkiye pazarına dönüş ihtimali, otomobil meraklıları arasında büyük heyecan yaratacak ve yüksek sosyal medya etkileşimi sağlayacak bir gelişmedir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Doğan Trend Otomotiv CEO’su Uğur Sakarya, otomobil gazetecisi Özgür Taylan Dil’in programına konuk olarakMazda modellerini Türkiye’ye getirmekiçin yürüttükleri çalışmaları değerlendirdi. Şirketin Japon üretici ile olan iş birliği kapsamında yeni araçların pazara sunulması gündemde yer alıyor. Sakarya, Mazda’nın ürün gamında yer alan Mazda 3 gibi kompakt modellerin ve bazı pick-up seçeneklerinin Türkiye pazarına uygun olduğunu belirtti. Bu modellerin Türkiye’ye getirilmesi konusunda görüşmelerin devam ettiği ifade edildi. Doğan Trend Otomotiv, geçtiğimiz Şubat ayında Mazda Motor Europe ile bir hizmet anlaşması imzalayarak Türkiye’deki servis ağını yönetmeye başlamıştı. Geçiş dönemini başarıyla tamamlayan şirket, mevcut servis ağını 22 farklı hizmet noktasına ulaştırdığını duyurdu. ✏️ “Mazda modellerini Türkiye’ye getirmek için çalışıyoruz. Mazda 3 ve Pick-Up modeli Türkiye’ye gelebilecek koşullara sahip olabilir.” ✏️ “SAIC Grubu’na ait Maxus’un Pick-Up’ını yıl sonunda getireceğiz. Hem 4×2 hem 4×4 çift kabin olarak pazara sunacağız.”✏️ “MG’nin…pic.twitter.com/3Fdkv2hzMC — Taylan Özgür Dil (@taylandil)August 22, 2026 Diğer yandan MG markası için de önemli planlar bulunuyor. MG’nin İspanya’daki fabrikasının devreye girmesiyle birlikte elektrikli modellerin sıfır gümrük vergisiyle Türkiye’ye getirilmesi hedefleniyor. Bu stratejiyle MG’nin yıllık satış adetlerinin yeniden 15-20 bin seviyelerine çıkması öngörülüyor. SAIC Grubu bünyesinde yer alan Maxus markası için de somut adımlar atılıyor. Şirket, Maxus’un pick-up modelini yıl sonunda Türkiye pazarına sunmayı planlıyor. Yeni pick-up modelinin hem 4×2 hem de 4×4 çift kabin seçenekleriyle satışa çıkacağı açıklandı. Otomotiv sektöründeki bu yeni gelişmeler hakkında siz ne düşünüyorsunuz? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "MAZDA TÜRKİYE’YE GERİ Mİ DÖNÜYOR: DOĞAN TREND’DEN AÇIKLAMA\n\nDoğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "MAZDA TÜRKİYE'YE DÖNÜYOR MU?",
-          "story_card_subtitle": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda'nın Türkiye pazarına dönüşü için görüşmelerin sürdüğünü duyurdu. Bu gelişme, otomotiv sektöründe heyecan yarattı. Yeni MG planlarının da masada olduğu belirtildi.",
-          "image_sources": [
-            "meta_og"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/08/mazda-turkiyeye-geri-mi-donuyor-dogan-trendden-aciklama.webp"
-          ]
-        },
-        "post_text": "MAZDA TÜRKİYE’YE GERİ Mİ DÖNÜYOR: DOĞAN TREND’DEN AÇIKLAMA\n\nDoğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda modellerini Türkiye'ye getirmek için görüştüklerini ve yeni MG planlarını açıkladı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "MAZDA TÜRKİYE'YE DÖNÜYOR MU?",
-        "story_card_subtitle": "Doğan Trend Otomotiv CEO'su Uğur Sakarya, Mazda'nın Türkiye pazarına dönüşü için görüşmelerin sürdüğünü duyurdu. Bu gelişme, otomotiv sektöründe heyecan yarattı. Yeni MG planlarının da masada olduğu belirtildi.",
-        "image_path": "/tmp/otoxtra_img_nvn5oerh.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_nvn5oerh.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T08:27:01.498349+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176928438916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18021517970859872",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "27824772990520955",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T08:27:39.972687+03:00"
+      "updated_at": null
     }
   }
 }
