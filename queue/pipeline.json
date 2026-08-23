@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-08-23-21:25",
-  "status": "completed",
-  "started_at": "2026-08-23T21:25:07.303734+03:00",
-  "updated_at": "2026-08-23T21:26:36.389905+03:00",
+  "run_id": "2026-08-23-22:20",
+  "status": "error",
+  "started_at": "2026-08-23T22:20:18.812157+03:00",
+  "updated_at": "2026-08-23T22:20:47.128477+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-            "link": "https://www.donanimhaber.com/kati-hal-bataryalar-once-telefonlarda-yayginlasabilir--209632",
-            "published": "2026-08-23T18:00:00+00:00",
-            "summary": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bataryalar-hal-kati-telefonlarda-yayginlasabilir"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,222 +127,47 @@
           "_metrics": {
             "found": 94,
             "after_keyword": 61,
-            "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 94,
           "after_keyword": 61,
-          "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-23T21:25:38.417909+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-23T22:20:47.128477+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-          "link": "https://www.donanimhaber.com/kati-hal-bataryalar-once-telefonlarda-yayginlasabilir--209632",
-          "published": "2026-08-23T18:00:00+00:00",
-          "summary": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bataryalar-hal-kati-telefonlarda-yayginlasabilir",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasının merakla beklediği katı hal bataryaların önce akıllı telefonlarda kullanılacak olması otomotiv sektörü için hayal kırıklığı yaratsa da teknoloji meraklılarının ilgisini çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 52,
-        "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 12,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 3
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv dünyasının merakla beklediği katı hal bataryaların önce akıllı telefonlarda kullanılacak olması otomotiv sektörü için hayal kırıklığı yaratsa da teknoloji meraklılarının ilgisini çekebilir.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-            "score": 52,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 12,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T21:25:40.032894+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-          "link": "https://www.donanimhaber.com/kati-hal-bataryalar-once-telefonlarda-yayginlasabilir--209632",
-          "published": "2026-08-23T18:00:00+00:00",
-          "summary": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bataryalar-hal-kati-telefonlarda-yayginlasabilir",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasının merakla beklediği katı hal bataryaların önce akıllı telefonlarda kullanılacak olması otomotiv sektörü için hayal kırıklığı yaratsa da teknoloji meraklılarının ilgisini çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı. LGES Kuzey Amerika Başkanı Robert Lee, şirketin Michigan’daki yeni batarya fabrikasında yaptığı açıklamada, katı hal bataryaların yüksek enerji yoğunluğu sunduğunu ancak büyük boyutlu hücrelerin seri üretiminin hala önemli bir engel olduğunu söyledi. Lee, küçük form faktörlü cihazlarda bu teknolojinin daha erken uygulanabileceğini belirterek,“Akıllı telefonlarda elektrikli araçlardan yaklaşık 10 yıl önce görebilirsiniz”ifadelerini kullandı. Katı hal bataryalar, geleneksel lityum iyon pillere kıyasladaha yüksek enerji yoğunluğu, daha hızlı şarj süreleri ve daha güvenli çalışmaözellikleri nedeniyle geleceğin batarya teknolojisi olarak görülüyor. Ancak üretim maliyetleri, malzeme sorunları ve büyük ölçekli üretim süreçleri, teknolojinin otomotiv sektöründe hızla yaygınlaşmasının önündeki en büyük engeller arasında yer alıyor. Buna rağmen birçok şirket katı hal bataryalar üzerinde çalışmalarını sürdürüyor.Mercedes-Benz, Factorial Energytarafından geliştirilen yarı katı hal bataryaya sahip bir prototipEQSmodeliyle yaklaşık1200 km menzileulaşırken,BMWdeSolid Powertarafından geliştirilen katı hal bataryayıi7prototipinde deniyor.StellantisiseDodge Charger Daytona EVüzerinde yarı katı hal batarya teknolojisini test ediyor. Çinli üreticiler ise bu alanda daha agresif bir takvim izliyor.BYD, CATLveGeelygibi şirketler,2027 yılında katı hal bataryalar için pilot üretime başlamayıve teknolojiyi2030'a doğru daha geniş ölçekte kullanıma sunmayıhedefliyor. LGES, katı hal bataryaların yanı sıra mevcut lityum iyon teknolojilerini geliştirmeye de devam ediyor. Şirket, General Motors ile birliktelityum-manganez açısından zengin (LMR) bataryalarüzerinde çalışıyor. Bu yeni nesil hücrelerin daha az nikel ve kobalt kullanarak maliyetleri düşürmesi ve 2028’den itibaren büyük SUV ve kamyonetlerde 650 km'den fazla menzil sağlaması bekleniyor.Şirket ayrıca 46 serisi büyük formatlı lityum iyon hücreler vesodyum iyon bataryalarüzerinde de çalışmalar yürütüyor. LGES, özellikle enerji depolama sistemleri için sodyum iyon bataryalarda pilot üretim hazırlıkları yapıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley2 gün önce1daha korkutucu bişey görmedim LGES, katı hal bataryaların yanı sıra mevcut lityum iyon teknolojilerini geliştirmeye de devam ediyor. Şirket, General Motors ile birliktelityum-manganez açısından zengin (LMR) bataryalarüzerinde çalışıyor. Bu yeni nesil hücrelerin daha az nikel ve kobalt kullanarak maliyetleri düşürmesi ve 2028’den itibaren büyük SUV ve kamyonetlerde 650 km'den fazla menzil sağlaması bekleniyor. Şirket ayrıca 46 serisi büyük formatlı lityum iyon hücreler vesodyum iyon bataryalarüzerinde de çalışmalar yürütüyor. LGES, özellikle enerji depolama sistemleri için sodyum iyon bataryalarda pilot üretim hazırlıkları yapıyor. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/dp/B0BFML3YTT https://www.amazon.com.tr/gp/product/B0G761G9J9 https://www.amazon.com.tr/dp/B0FYQ9CHFS https://www.amazon.com.tr/dp/B00BWJAZTY https://www.trendyol.com/delonghi/magnifica-plus-ecam320-70-tb-tam-otomatik-kahve-makinesi-p-834382493 https://app.hb.biz/Nj9O6pXYUnMF"
-        },
-        "post_text": "Elektrikli otomobilin geleceği katı hal bataryalarda sanıyorduk ama LG Energy Solution’ın dediğine göre bu teknoloji önce cebimize gelecek.\n\nYüksek enerji yoğunluğu ve hızlı şarj vaatleri şimdilik büyük ölçekli üretim zorluklarına takılıyor. Yani otomobillerden önce akıllı telefonlarda görürsek şaşırmayız, hatta 10 yıl kadar önce bile gelebilir.\n\nOtomobiller için beklemeye devam.",
-        "post_text_length": 382,
-        "story_card_title": "BATARYALAR ÖNCE CEBİNİZE GİRİYOR!",
-        "story_card_subtitle": "Elektrikli otomobillerin geleceği olarak görülen katı hal batarya teknolojisi, üretim zorlukları nedeniyle önce akıllı telefonlarda yaygınlaşacak. LG Energy Solution, bu teknolojinin otomobiller için daha uzun yıllar süreceğini belirtti. Bu gelişme, mobil cihazlar için önemli bir sıçrama anlamına geliyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T21:25:43.485044+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Katı hal bataryalar önce telefonlarda yaygınlaşabilir",
-          "link": "https://www.donanimhaber.com/kati-hal-bataryalar-once-telefonlarda-yayginlasabilir--209632",
-          "published": "2026-08-23T18:00:00+00:00",
-          "summary": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bataryalar-hal-kati-telefonlarda-yayginlasabilir",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv dünyasının merakla beklediği katı hal bataryaların önce akıllı telefonlarda kullanılacak olması otomotiv sektörü için hayal kırıklığı yaratsa da teknoloji meraklılarının ilgisini çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Güney Kore merkezli batarya üreticisi LG Energy Solution, katı hal bataryaların büyük ölçekli üretimindeki zorluklar nedeniyle elektrikli araçlarda yaygınlaşmasının zaman alacağını açıkladı. LGES Kuzey Amerika Başkanı Robert Lee, şirketin Michigan’daki yeni batarya fabrikasında yaptığı açıklamada, katı hal bataryaların yüksek enerji yoğunluğu sunduğunu ancak büyük boyutlu hücrelerin seri üretiminin hala önemli bir engel olduğunu söyledi. Lee, küçük form faktörlü cihazlarda bu teknolojinin daha erken uygulanabileceğini belirterek,“Akıllı telefonlarda elektrikli araçlardan yaklaşık 10 yıl önce görebilirsiniz”ifadelerini kullandı. Katı hal bataryalar, geleneksel lityum iyon pillere kıyasladaha yüksek enerji yoğunluğu, daha hızlı şarj süreleri ve daha güvenli çalışmaözellikleri nedeniyle geleceğin batarya teknolojisi olarak görülüyor. Ancak üretim maliyetleri, malzeme sorunları ve büyük ölçekli üretim süreçleri, teknolojinin otomotiv sektöründe hızla yaygınlaşmasının önündeki en büyük engeller arasında yer alıyor. Buna rağmen birçok şirket katı hal bataryalar üzerinde çalışmalarını sürdürüyor.Mercedes-Benz, Factorial Energytarafından geliştirilen yarı katı hal bataryaya sahip bir prototipEQSmodeliyle yaklaşık1200 km menzileulaşırken,BMWdeSolid Powertarafından geliştirilen katı hal bataryayıi7prototipinde deniyor.StellantisiseDodge Charger Daytona EVüzerinde yarı katı hal batarya teknolojisini test ediyor. Çinli üreticiler ise bu alanda daha agresif bir takvim izliyor.BYD, CATLveGeelygibi şirketler,2027 yılında katı hal bataryalar için pilot üretime başlamayıve teknolojiyi2030'a doğru daha geniş ölçekte kullanıma sunmayıhedefliyor. LGES, katı hal bataryaların yanı sıra mevcut lityum iyon teknolojilerini geliştirmeye de devam ediyor. Şirket, General Motors ile birliktelityum-manganez açısından zengin (LMR) bataryalarüzerinde çalışıyor. Bu yeni nesil hücrelerin daha az nikel ve kobalt kullanarak maliyetleri düşürmesi ve 2028’den itibaren büyük SUV ve kamyonetlerde 650 km'den fazla menzil sağlaması bekleniyor.Şirket ayrıca 46 serisi büyük formatlı lityum iyon hücreler vesodyum iyon bataryalarüzerinde de çalışmalar yürütüyor. LGES, özellikle enerji depolama sistemleri için sodyum iyon bataryalarda pilot üretim hazırlıkları yapıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley2 gün önce1daha korkutucu bişey görmedim LGES, katı hal bataryaların yanı sıra mevcut lityum iyon teknolojilerini geliştirmeye de devam ediyor. Şirket, General Motors ile birliktelityum-manganez açısından zengin (LMR) bataryalarüzerinde çalışıyor. Bu yeni nesil hücrelerin daha az nikel ve kobalt kullanarak maliyetleri düşürmesi ve 2028’den itibaren büyük SUV ve kamyonetlerde 650 km'den fazla menzil sağlaması bekleniyor. Şirket ayrıca 46 serisi büyük formatlı lityum iyon hücreler vesodyum iyon bataryalarüzerinde de çalışmalar yürütüyor. LGES, özellikle enerji depolama sistemleri için sodyum iyon bataryalarda pilot üretim hazırlıkları yapıyor. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/dp/B0BFML3YTT https://www.amazon.com.tr/gp/product/B0G761G9J9 https://www.amazon.com.tr/dp/B0FYQ9CHFS https://www.amazon.com.tr/dp/B00BWJAZTY https://www.trendyol.com/delonghi/magnifica-plus-ecam320-70-tb-tam-otomatik-kahve-makinesi-p-834382493 https://app.hb.biz/Nj9O6pXYUnMF",
-          "post_text_for_card": "Elektrikli otomobilin geleceği katı hal bataryalarda sanıyorduk ama LG Energy Solution’ın dediğine göre bu teknoloji önce cebimize gelecek.\n\nYüksek enerji yoğunluğu ve hızlı şarj vaatleri şimdilik büyük ölçekli üretim zorluklarına takılıyor. Yani otomobillerden önce akıllı telefonlarda görürsek şaşırmayız, hatta 10 yıl kadar önce bile gelebilir.\n\nOtomobiller için beklemeye devam.",
-          "story_card_title": "BATARYALAR ÖNCE CEBİNİZE GİRİYOR!",
-          "story_card_subtitle": "Elektrikli otomobillerin geleceği olarak görülen katı hal batarya teknolojisi, üretim zorlukları nedeniyle önce akıllı telefonlarda yaygınlaşacak. LG Energy Solution, bu teknolojinin otomobiller için daha uzun yıllar süreceğini belirtti. Bu gelişme, mobil cihazlar için önemli bir sıçrama anlamına geliyor.",
-          "image_sources": [
-            "meta_og"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209632/1200x675kati-hal-bataryalar-once-telefonlarda-yayginlasabilir.jpg"
-          ]
-        },
-        "post_text": "Elektrikli otomobilin geleceği katı hal bataryalarda sanıyorduk ama LG Energy Solution’ın dediğine göre bu teknoloji önce cebimize gelecek.\n\nYüksek enerji yoğunluğu ve hızlı şarj vaatleri şimdilik büyük ölçekli üretim zorluklarına takılıyor. Yani otomobillerden önce akıllı telefonlarda görürsek şaşırmayız, hatta 10 yıl kadar önce bile gelebilir.\n\nOtomobiller için beklemeye devam.",
-        "story_card_title": "BATARYALAR ÖNCE CEBİNİZE GİRİYOR!",
-        "story_card_subtitle": "Elektrikli otomobillerin geleceği olarak görülen katı hal batarya teknolojisi, üretim zorlukları nedeniyle önce akıllı telefonlarda yaygınlaşacak. LG Energy Solution, bu teknolojinin otomobiller için daha uzun yıllar süreceğini belirtti. Bu gelişme, mobil cihazlar için önemli bir sıçrama anlamına geliyor.",
-        "image_path": "/tmp/otoxtra_img_tv782fpq.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tv782fpq.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T21:25:59.501327+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122176996238916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1259567239557649",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-23T21:26:36.389905+03:00"
+      "updated_at": null
     }
   }
 }
