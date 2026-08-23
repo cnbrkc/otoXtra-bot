@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-08-23-11:25",
-  "status": "error",
-  "started_at": "2026-08-23T11:25:46.094955+03:00",
-  "updated_at": "2026-08-23T11:26:20.885378+03:00",
+  "run_id": "2026-08-23-12:24",
+  "status": "completed",
+  "started_at": "2026-08-23T12:24:31.661747+03:00",
+  "updated_at": "2026-08-23T12:26:00.097060+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+            "link": "https://tr.motor1.com/news/805786/chery-wcwl-etkinligi/",
+            "published": "2026-08-23T09:00:00+00:00",
+            "summary": "Ailelere özel etkinlikler oldukça sevildi.",
+            "image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "chery-etkinlik-musterilerine-ozel-stanbul-zmir"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,232 @@
           },
           "_metrics": {
             "found": 94,
-            "after_keyword": 59,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 58,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 94,
-          "after_keyword": 59,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 58,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-23T11:26:20.885378+03:00"
+      "error": null,
+      "updated_at": "2026-08-23T12:25:04.853877+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+          "link": "https://tr.motor1.com/news/805786/chery-wcwl-etkinligi/",
+          "published": "2026-08-23T09:00:00+00:00",
+          "summary": "Ailelere özel etkinlikler oldukça sevildi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "chery-etkinlik-musterilerine-ozel-stanbul-zmir",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 3,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 36,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerel ve sınırlı bir müşteri etkinliği olduğu için geniş kitleler üzerinde viral veya sektörel bir etki yaratma potansiyeli çok düşük.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 36,
+        "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 5,
+          "benzersizlik": 3,
+          "gundem_gucu": 5,
+          "paylasilabilirlik": 3
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yerel ve sınırlı bir müşteri etkinliği olduğu için geniş kitleler üzerinde viral veya sektörel bir etki yaratma potansiyeli çok düşük.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+            "score": 36,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 5,
+              "benzersizlik": 3,
+              "gundem_gucu": 5,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-23T12:25:06.309265+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+          "link": "https://tr.motor1.com/news/805786/chery-wcwl-etkinligi/",
+          "published": "2026-08-23T09:00:00+00:00",
+          "summary": "Ailelere özel etkinlikler oldukça sevildi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "chery-etkinlik-musterilerine-ozel-stanbul-zmir",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 3,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 36,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerel ve sınırlı bir müşteri etkinliği olduğu için geniş kitleler üzerinde viral veya sektörel bir etki yaratma potansiyeli çok düşük.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Kullanıcılarıyla yalnızca otomobiller üzerinden değil, ortak deneyimler ve samimi anlar üzerinden de bağ kurmayı hedefleyen Chery Türkiye, “With Chery, With Love” (WCWL) çatısı altında düzenlediği Aile Günü etkinlikleriyle ailelerle bir araya geldi. İzmir’de geçtiğimiz hafta sonu, İstanbul’da ise 22 Ağustos Cumartesi günü gerçekleştirilen iki ayrı bayi etkinliği, Chery’nin “Aile İçin” yaklaşımını günlük yaşamın içinden deneyimlerle buluşturdu. Yetkili satıcıların ev sahipliğinde gerçekleştirilen organizasyonlarda aileler birlikte vakit geçirirken, çocuklardan yetişkinlere kadar farklı yaş gruplarına hitap eden aktiviteler ve özel sürprizlerle keyifli bir gün geçirdi. Etkinliklerde katılımcılara “With Chery, With Love” temalı bez çanta, soğutucu çanta, piknik örtüsü, plaj topu ve anahtarlık gibi özel hediyeler de sunuldu. Böylece showroomlar, yalnızca otomobillerin tanıtıldığı noktalar olmanın ötesine geçerek ailelerin bir araya geldiği, sohbet ettiği ve birlikte zaman geçirdiği sıcak buluşma alanlarına dönüştü. Chery’nin daha önce gerçekleştirdiği WCWL etkinliklerinde olduğu gibi bu organizasyonlarda da ziyaretçiler, otomobillerin yanı sıra markanın kullanıcı odaklı yaklaşımını doğrudan deneyimleme fırsatı buldu. Aile günü etkinliklerinin merkezinde, ailelerin birlikte kaliteli zaman geçirebileceği rahat ve samimi bir ortam oluşturma fikri yer aldı. İzmir ve İstanbul’daki buluşmalarda gerçekleştirilen aktiviteler, farklı yaş gruplarındaki kullanıcıların etkinliğe birlikte dahil olmasına olanak sağlarken,Chery’nin aile yaşamına verdiği önemi de günlük bir deneyim üzerinden ortaya koydu. Bu yaklaşım, markanın global iletişim platformlarından biri olan “Aile İçin” anlayışını da yansıttı. Chery, ailelerin yalnızca ihtiyaçlarına cevap veren ürünler geliştirmeyi değil, onların günlük yaşamına dokunan ve birlikte geçirilen zamana değer katan deneyimler oluşturmayı da önemsiyor. Bu doğrultuda gerçekleştirilen Aile Günü etkinlikleri, kullanıcılarla marka arasında daha doğal bir iletişim kurulmasına olanak tanıdı. Ailelerin showroomlarda geçirdiği zaman,araçincelemesinin ötesine taşınırken, yerel bayiler de bu iletişimin önemli bir parçası oldu. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "CHERY'DEN İZMİR VE İSTANBUL'DAKİ MÜŞTERİLERİNE ÖZEL ETKİNLİK\n\nAilelere özel etkinlikler oldukça sevildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 159,
+        "story_card_title": "Chery'den Ailelere Özel Etkinlik Rüzgarı!",
+        "story_card_subtitle": "Chery, İzmir ve İstanbul'daki müşterilerine özel etkinlikler düzenledi. Özellikle ailelerin yoğun ilgi gösterdiği bu etkinlikler, marka ile tüketiciler arasındaki bağı güçlendirmeyi hedefliyor. Bu tarz müşteri odaklı yaklaşımların otomobil gündeminde daha fazla yer bulması bekleniyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-23T12:25:09.926789+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Chery'den İzmir ve İstanbul'daki müşterilerine özel etkinlik",
+          "link": "https://tr.motor1.com/news/805786/chery-wcwl-etkinligi/",
+          "published": "2026-08-23T09:00:00+00:00",
+          "summary": "Ailelere özel etkinlikler oldukça sevildi.",
+          "image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/2N4gNE/s3/chery-wcwl-etkinligi.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "chery-etkinlik-musterilerine-ozel-stanbul-zmir",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 3,
+            "gundem_gucu": 5,
+            "paylasilabilirlik": 3
+          },
+          "score": 36,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yerel ve sınırlı bir müşteri etkinliği olduğu için geniş kitleler üzerinde viral veya sektörel bir etki yaratma potansiyeli çok düşük.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Kullanıcılarıyla yalnızca otomobiller üzerinden değil, ortak deneyimler ve samimi anlar üzerinden de bağ kurmayı hedefleyen Chery Türkiye, “With Chery, With Love” (WCWL) çatısı altında düzenlediği Aile Günü etkinlikleriyle ailelerle bir araya geldi. İzmir’de geçtiğimiz hafta sonu, İstanbul’da ise 22 Ağustos Cumartesi günü gerçekleştirilen iki ayrı bayi etkinliği, Chery’nin “Aile İçin” yaklaşımını günlük yaşamın içinden deneyimlerle buluşturdu. Yetkili satıcıların ev sahipliğinde gerçekleştirilen organizasyonlarda aileler birlikte vakit geçirirken, çocuklardan yetişkinlere kadar farklı yaş gruplarına hitap eden aktiviteler ve özel sürprizlerle keyifli bir gün geçirdi. Etkinliklerde katılımcılara “With Chery, With Love” temalı bez çanta, soğutucu çanta, piknik örtüsü, plaj topu ve anahtarlık gibi özel hediyeler de sunuldu. Böylece showroomlar, yalnızca otomobillerin tanıtıldığı noktalar olmanın ötesine geçerek ailelerin bir araya geldiği, sohbet ettiği ve birlikte zaman geçirdiği sıcak buluşma alanlarına dönüştü. Chery’nin daha önce gerçekleştirdiği WCWL etkinliklerinde olduğu gibi bu organizasyonlarda da ziyaretçiler, otomobillerin yanı sıra markanın kullanıcı odaklı yaklaşımını doğrudan deneyimleme fırsatı buldu. Aile günü etkinliklerinin merkezinde, ailelerin birlikte kaliteli zaman geçirebileceği rahat ve samimi bir ortam oluşturma fikri yer aldı. İzmir ve İstanbul’daki buluşmalarda gerçekleştirilen aktiviteler, farklı yaş gruplarındaki kullanıcıların etkinliğe birlikte dahil olmasına olanak sağlarken,Chery’nin aile yaşamına verdiği önemi de günlük bir deneyim üzerinden ortaya koydu. Bu yaklaşım, markanın global iletişim platformlarından biri olan “Aile İçin” anlayışını da yansıttı. Chery, ailelerin yalnızca ihtiyaçlarına cevap veren ürünler geliştirmeyi değil, onların günlük yaşamına dokunan ve birlikte geçirilen zamana değer katan deneyimler oluşturmayı da önemsiyor. Bu doğrultuda gerçekleştirilen Aile Günü etkinlikleri, kullanıcılarla marka arasında daha doğal bir iletişim kurulmasına olanak tanıdı. Ailelerin showroomlarda geçirdiği zaman,araçincelemesinin ötesine taşınırken, yerel bayiler de bu iletişimin önemli bir parçası oldu. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "CHERY'DEN İZMİR VE İSTANBUL'DAKİ MÜŞTERİLERİNE ÖZEL ETKİNLİK\n\nAilelere özel etkinlikler oldukça sevildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Chery'den Ailelere Özel Etkinlik Rüzgarı!",
+          "story_card_subtitle": "Chery, İzmir ve İstanbul'daki müşterilerine özel etkinlikler düzenledi. Özellikle ailelerin yoğun ilgi gösterdiği bu etkinlikler, marka ile tüketiciler arasındaki bağı güçlendirmeyi hedefliyor. Bu tarz müşteri odaklı yaklaşımların otomobil gündeminde daha fazla yer bulması bekleniyor.",
+          "image_sources": [
+            "meta_og",
+            "article_script",
+            "article_script",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/2N4gNE/s1/chery-wcwl-etkinligi.jpg",
+            "https://cdn.motor1.com/images/mgl/2N4gNE/715:0:4284:3213/chery-wcwl-etkinligi.webp",
+            "https://cdn.motor1.com/images/mgl/2N4gNE/1248:0:3213:3213/chery-wcwl-etkinligi.webp",
+            "https://cdn.motor1.com/images/custom/thumbnail/chery-gorsel-1.JPG"
+          ]
+        },
+        "post_text": "CHERY'DEN İZMİR VE İSTANBUL'DAKİ MÜŞTERİLERİNE ÖZEL ETKİNLİK\n\nAilelere özel etkinlikler oldukça sevildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Chery'den Ailelere Özel Etkinlik Rüzgarı!",
+        "story_card_subtitle": "Chery, İzmir ve İstanbul'daki müşterilerine özel etkinlikler düzenledi. Özellikle ailelerin yoğun ilgi gösterdiği bu etkinlikler, marka ile tüketiciler arasındaki bağı güçlendirmeyi hedefliyor. Bu tarz müşteri odaklı yaklaşımların otomobil gündeminde daha fazla yer bulması bekleniyor.",
+        "image_path": "/tmp/otoxtra_img_p4wficxb.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_p4wficxb.jpg",
+          "/tmp/otoxtra_img_patur52g.jpg",
+          "/tmp/otoxtra_img_uv3cguk0.jpg",
+          "/tmp/otoxtra_img_aonha02n.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-23T12:25:12.787162+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122176947020916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17886326358458122",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "957488594032982",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-23T12:26:00.097060+03:00"
     }
   }
 }
