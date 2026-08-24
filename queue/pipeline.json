@@ -1,13 +1,32 @@
 {
-  "run_id": "2026-08-24-14:24",
+  "run_id": "2026-08-24-15:43",
   "status": "completed",
-  "started_at": "2026-08-24T14:24:58.633874+03:00",
-  "updated_at": "2026-08-24T14:26:25.846200+03:00",
+  "started_at": "2026-08-24T15:43:14.190968+03:00",
+  "updated_at": "2026-08-24T15:44:56.930964+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "35 yıllık efsane! İşte geçmişten günümüze Opel Astra (Galeri)",
+            "link": "https://www.donanimhaber.com/35-yillik-efsane-iste-gecmisten-gunumuze-opel-astra-galeri--209666",
+            "published": "2026-08-24T12:31:00+00:00",
+            "summary": "Alman otomotiv üreticisi Opel’in 35 yıllık Astra hikayesi, modelin ilk nesli Astra F ile başlayan yenilikçi yaklaşımını günümüz teknolojileriyle geleceğe taşıyor. İşte geçmişten günümüze Opel Astra:",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209666/1200x67535-yillik-efsane-iste-gecmisten-gunumuze-opel-astra-galeri.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209666/1200x67535-yillik-efsane-iste-gecmisten-gunumuze-opel-astra-galeri.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209666/1200x67535-yillik-efsane-iste-gecmisten-gunumuze-opel-astra-galeri.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "astra-efsane-galeri-gecmisten-gunumuze-opel-ste-yillik"
+          },
           {
             "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
             "link": "https://www.donanimhaber.com/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi--209661",
@@ -26,25 +45,6 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "aracta-beklentisi-dusuyor-fiyatlar-gercekten-kinci-sonu-yil"
-          },
-          {
-            "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
-            "link": "https://tr.motor1.com/news/805820/vw-ceosu-uyari-aciklamasi/",
-            "published": "2026-08-24T11:00:00+00:00",
-            "summary": "Volkswagen, sıkıntılı dönemlerden geçiyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "calisanlara-ceo-durumumuz-kritik-sundan-uyari"
           },
           {
             "title": "İkinci El Otomobil Fiyatları Düşüyor Mu?",
@@ -195,131 +195,123 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 4,
+            "count": 5,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 94,
-            "after_keyword": 62,
-            "after_time": 9,
+            "found": 95,
+            "after_keyword": 64,
+            "after_time": 11,
             "after_posted": 4,
             "after_duplicate": 4,
             "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
-          "found": 94,
-          "after_keyword": 62,
-          "after_time": 9,
+          "found": 95,
+          "after_keyword": 64,
+          "after_time": 11,
           "after_posted": 4,
           "after_duplicate": 4,
           "after_shared_variant_cooldown": 4
         }
       },
       "error": null,
-      "updated_at": "2026-08-24T14:25:35.839793+03:00"
+      "updated_at": "2026-08-24T15:43:47.027673+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
-          "link": "https://tr.motor1.com/news/805820/vw-ceosu-uyari-aciklamasi/",
-          "published": "2026-08-24T11:00:00+00:00",
-          "summary": "Volkswagen, sıkıntılı dönemlerden geçiyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+          "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
+          "link": "https://www.donanimhaber.com/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi--209661",
+          "published": "2026-08-24T10:43:00+00:00",
+          "summary": "İkinci el araç fiyatları düşecek mi? Cardata'nın değerlendirmesine göre bu sorunun cevabı evet. Şirket, yıl sonuna kadar fiyatlarda yüzde 7 ile 12 aralığında düşüş bekliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "calisanlara-ceo-durumumuz-kritik-sundan-uyari",
-          "base_ai_score": 78,
+          "topic_fingerprint": "aracta-beklentisi-dusuyor-fiyatlar-gercekten-kinci-sonu-yil",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
             "gundem_gucu": 15,
             "paylasilabilirlik": 8
           },
-          "score": 81,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Dünya otomotiv devi Volkswagen'in krizde olması ve CEO'nun sert açıklamaları küresel çapta yüksek etkileşim potansiyeli taşır.",
-          "freshness_bonus": 10,
+          "score_explanation": "Ekonomik belirsizlik döneminde ikinci el araç fiyatları tüketicinin en çok merak ettiği konu, yüksek etkileşim üretir.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 81,
-        "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
+        "score": 71,
+        "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 10,
           "gundem_gucu": 15,
           "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Dünya otomotiv devi Volkswagen'in krizde olması ve CEO'nun sert açıklamaları küresel çapta yüksek etkileşim potansiyeli taşır.",
+        "score_explanation": "Ekonomik belirsizlik döneminde ikinci el araç fiyatları tüketicinin en çok merak ettiği konu, yüksek etkileşim üretir.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
             "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
-            "score": 70,
+            "score": 71,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 18,
               "benzersizlik": 10,
               "gundem_gucu": 15,
-              "paylasilabilirlik": 7
+              "paylasilabilirlik": 8
             }
           },
           {
             "title": "OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi",
-            "score": 66,
+            "score": 67,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 16,
-              "benzersizlik": 12,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 14,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 5
+            }
+          },
+          {
+            "title": "İkinci El Otomobil Fiyatları Düşüyor Mu?",
+            "score": 62,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 8,
               "gundem_gucu": 12,
-              "paylasilabilirlik": 6
+              "paylasilabilirlik": 7
             }
           }
         ],
         "scored_count": 4,
         "cooldown_candidates": [
           {
-            "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
-            "link": "https://www.donanimhaber.com/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi--209661",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "aracta-beklentisi-dusuyor-fiyatlar-gercekten-kinci-sonu-yil"
-          },
-          {
             "title": "OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi",
             "link": "https://www.otoajanda.com/omoda-ve-jaecoo-turkiyede-2-yilinda-50-bin-oldu-yeni-markalari-listesine-ekledi/",
-            "score": 66,
+            "score": 67,
             "score_reason": "ai_scored",
             "source_name": "OtoAjanda",
             "topic_fingerprint": "bin-ekledi-jaecoo-listesine-markalari-omoda-turkiye-yilinda"
@@ -331,143 +323,154 @@
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
             "topic_fingerprint": "dusuyor-fiyatlari-kinci-otomobil"
+          },
+          {
+            "title": "35 yıllık efsane! İşte geçmişten günümüze Opel Astra (Galeri)",
+            "link": "https://www.donanimhaber.com/35-yillik-efsane-iste-gecmisten-gunumuze-opel-astra-galeri--209666",
+            "score": 49,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "astra-efsane-galeri-gecmisten-gunumuze-opel-ste-yillik"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-08-24T14:25:38.760181+03:00"
+      "updated_at": "2026-08-24T15:43:49.802202+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
-          "link": "https://tr.motor1.com/news/805820/vw-ceosu-uyari-aciklamasi/",
-          "published": "2026-08-24T11:00:00+00:00",
-          "summary": "Volkswagen, sıkıntılı dönemlerden geçiyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+          "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
+          "link": "https://www.donanimhaber.com/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi--209661",
+          "published": "2026-08-24T10:43:00+00:00",
+          "summary": "İkinci el araç fiyatları düşecek mi? Cardata'nın değerlendirmesine göre bu sorunun cevabı evet. Şirket, yıl sonuna kadar fiyatlarda yüzde 7 ile 12 aralığında düşüş bekliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "calisanlara-ceo-durumumuz-kritik-sundan-uyari",
-          "base_ai_score": 78,
+          "topic_fingerprint": "aracta-beklentisi-dusuyor-fiyatlar-gercekten-kinci-sonu-yil",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
             "gundem_gucu": 15,
             "paylasilabilirlik": 8
           },
-          "score": 81,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Dünya otomotiv devi Volkswagen'in krizde olması ve CEO'nun sert açıklamaları küresel çapta yüksek etkileşim potansiyeli taşır.",
-          "freshness_bonus": 10,
+          "score_explanation": "Ekonomik belirsizlik döneminde ikinci el araç fiyatları tüketicinin en çok merak ettiği konu, yüksek etkileşim üretir.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Volkswagen, çok sert bir yeniden yapılanma sürecine hazırlanıyor. Acı reçeteyi yazan CEO Oliver Blume, yaşanacak -tabiri caizse- kıyım için çalışanlara \"hazırlıklı olun\" mesajı verdi. Reuters'in ele geçirdiği bu iş yazışmada \"durum sandığınızdan da kritik\" gibi korkutucu ifadeler yer alıor. Blume imzalı bu mektup, şirketin yaşadığı tüm sıkıntılara ışık tutar nitelikte. Blume yalnızca maliyet düşürüp araç satışlarını artırmanın yeterli olmayacağını ifade etmiş. Çinli markaların önlenemez yükselişi, Volkswagen için rekabeti çok daha çetin hale getirmiş. Blume hala maliyetlerin, gelirlerden yüzde 30 oranında daha fazla olduğunun altını çiziyor. Volkswagen'in kar marjının yüzde 4'lere kadar düştüğünü hatırlatan Blume, bu bağlamda zor kararlar almaları gerekeceğini ifade etmiş. Yönetici bunu \"şirketin geleceğinin sürdürülebilir hale gelmesinin\" tek yolu olarak nitelendiriyor. Blume imzalı bu iç yazışmada işten çıkartma konusuna da değinilmiş. Bildiğiniz gibi son birkaç aydır işten çıkartılacak kişi sayısının ikiye katlanabileceği yönünde iddialar ayyuka çıkmış durumda. Blume bunu reddederek \"sıklıkla dile getirilen yaklaşık 50.000 kişilik istihdam rakamı kesinleşmiş bir hedef değildir\" ifadelerini kullanmış. Yöneticiye göre işten çıkartma planlarıVolkswagen'in nihai amacı değil. Blume belirlenen sayıların yalnızca matematiksel veriler olduğunu söylemiş. Yani aslında yönetim katı, Volkswagen'in rakipleri ile arasındaki maliyet farkını kapatabilmek için ne kadar kişinin işine son vermeleri gerektiğini hesaplıyor. Yani asıl amaç; işten çıkartma planlarının aksine, sorunun ne kadar büyük olduğunu herkese gösterebilmek. Alınacak bu \"zor kararlar\" arasında çeşitli tesislerin kapatılmasıfikri de vardı hatırlarsanız. Lakin aynı yazışmada bu dört Alman fabrikasının kapatılmasına yönelik herhangi bir karar çıkmadığının altı çizilmiş. Görünüşe göre Volkswagen ilk adımda model ailesini daraltmanın kendisine ne kadar faydası olacağını görmek istiyor. Ardından işten çıkartmalar ve gerekirse fabrika kapatmaları gelecek. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Cardata’nın İkinci El Araç Fiyat Endeksi, Aralık 2025’te 103,4 seviyesindeyken Haziran 2026’da 102,1’e geriledi. Böylece ikinci el araç fiyatları yılın ilk yarısında nominal olarak yaklaşık yüzde 1,3 düşüş gösterdi. Aynı dönemde tüketici enflasyonunun yaklaşık yüzde 17,7 artmasıyla birlikte ikinci el araçlarda altı aylık reel değer kaybı yüzde 16’yı aştı. Temmuz ayında ise fiyat endeksi 100,4 seviyesine kadar geriledi. Cardata verilerine göre ortalama bir ikinci el araç bugün nominal olarak Aralık 2024 seviyelerine çok yakın bir fiyattan satın alınabiliyor. Aradan geçen 19 ayda ikinci el araç fiyatlarındaki toplam nominal artış yalnızca yüzde 0,4 olurken, aynı dönemde tüketici enflasyonu yüzde 56,9’a ulaştı. Böylece ikinci el otomobillerde Aralık 2024’e kıyasla yaklaşık yüzde 36’lık reel değer kaybı oluştu. Fiyatlardaki aşağı yönlü hareketin son aylarda hızlandığına dikkat çeken Cardata Genel MüdürüHüsamettin Yalçın, “Cardata verilerine göre ikinci el araç fiyatları mart ayında yüzde 0,35, nisanda yüzde 0,46, mayısta yüzde 0,69, haziranda yüzde 1,11 ve temmuzda yüzde 1,60 geriledi. Üst üste beş aydır süren ve giderek güçlenen bu tablo, yaşananların yalnızca mevsimsel bir yavaşlama olmadığını gösteriyor” diye konuştu. Cardata’nın mevcut senaryosuna göre yüksek mevduat faizlerinin devam etmesi, taşıt kredisi koşullarında belirgin bir iyileşme yaşanmaması ve sıfır kilometre araç kampanyalarının sürmesi halinde ikinci el araç fiyatlarında önümüzdeki aylarda aylık ortalamada ortalama yüzde 1,5 ila yüzde 2,5 arasında aylık gerileme görülebilecek. Hüsamettin Yalçın, “Temmuz sonundaki fiyat seviyesini baz aldığımızda bu öngörü, yıl sonuna kadar ikinci el araç fiyatlarında kümülatif olarak yaklaşık yüzde 7 ile yüzde 12 arasında ilave nominal düzeltmeye işaret ediyor. Enflasyonun devam ettiği bir ortamda nominal fiyatların da gerilemesi, ikinci el otomobildeki reel değer kaybını daha da artıracak” açıklamasını yaptı.Premium ve 1-3 yaşındaki araçlarda baskı daha yüksek olacakFiyat hareketinin pazarın bütün segmentlerinde aynı ölçüde gerçekleşmeyeceğini belirtenYalçın, erişilebilir fiyat seviyesindeki, yakıt tüketimi düşük, servis ağı yaygın ve ikinci elde güçlü talep gören modellerin değerini daha iyi koruyacağını söyledi. Buna karşılık yüksek fiyatlı, premium segmentte bulunan, satış hızı düşük ve stok maliyeti yüksek araçlarda fiyat baskısının daha güçlü olacağını ifade edenYalçın, sıfır kilometre kampanyalarıyla doğrudan rekabet eden 1-3 yaşındaki ikinci el araçların da en fazla baskı altında kalacak gruplar arasında bulunduğunu belirtti.Elektrikli araçlarda ise model yenileme hızının yüksek olması, batarya ve menzil teknolojisindeki hızlı gelişim ile sıfır kilometre araçlarda gerçekleştirilen kampanyaların ikinci el değerlerini daha hassas hale getirdiğini vurgulayanYalçın, elektrikli araçlarda marka, model, batarya kapasitesi, menzil ve sıfır araç fiyatındaki değişimin çok daha yakından takip edilmesi gerektiğini söyledi.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley2 gün önce1daha korkutucu bişey görmedim Hüsamettin Yalçın, “Temmuz sonundaki fiyat seviyesini baz aldığımızda bu öngörü, yıl sonuna kadar ikinci el araç fiyatlarında kümülatif olarak yaklaşık yüzde 7 ile yüzde 12 arasında ilave nominal düzeltmeye işaret ediyor. Enflasyonun devam ettiği bir ortamda nominal fiyatların da gerilemesi, ikinci el otomobildeki reel değer kaybını daha da artıracak” açıklamasını yaptı. Fiyat hareketinin pazarın bütün segmentlerinde aynı ölçüde gerçekleşmeyeceğini belirtenYalçın, erişilebilir fiyat seviyesindeki, yakıt tüketimi düşük, servis ağı yaygın ve ikinci elde güçlü talep gören modellerin değerini daha iyi koruyacağını söyledi. Buna karşılık yüksek fiyatlı, premium segmentte bulunan, satış hızı düşük ve stok maliyeti yüksek araçlarda fiyat baskısının daha güçlü olacağını ifade edenYalçın, sıfır kilometre kampanyalarıyla doğrudan rekabet eden 1-3 yaşındaki ikinci el araçların da en fazla baskı altında kalacak gruplar arasında bulunduğunu belirtti. Elektrikli araçlarda ise model yenileme hızının yüksek olması, batarya ve menzil teknolojisindeki hızlı gelişim ile sıfır kilometre araçlarda gerçekleştirilen kampanyaların ikinci el değerlerini daha hassas hale getirdiğini vurgulayanYalçın, elektrikli araçlarda marka, model, batarya kapasitesi, menzil ve sıfır araç fiyatındaki değişimin çok daha yakından takip edilmesi gerektiğini söyledi. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/promotion/psp/A2JYHG3IYS3UMO?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0FRSQ6C5N https://www.amazon.com.tr/dp/B07KYTJLQ5 https://www.amazon.com.tr/promotion/psp/A2JYHG3IYS3UMO..."
         },
-        "post_text": "VW CEO'sunun çalışanlara attığı maildeki ‘durumumuz kritik’ cümlesi, bir endüstrinin sessiz çığlığı.\n\nÇinli markaların yükselişiyle rekabetin bambaşka bir seviyeye geldiğini, maliyetlerin gelirlerden hâlâ %30 fazla olduğunu söyleyen CEO, kâr marjının %4’e düştüğünü belirtiyor. Yani mesele sadece VW değil, tüm markaların bu yeni düzene adapte olmak zorunda kalması.\n\nEski usul artık işlemiyor.",
-        "post_text_length": 394,
-        "story_card_title": "VW CEO'sundan Kritik Uyarı!",
-        "story_card_subtitle": "Volkswagen'in CEO'su, çalışanlarına gönderdiği e-postada şirketin durumunun çok kritik olduğunu belirtti. Çinli markaların rekabeti ve %30'luk maliyet fazlası, kâr marjını %4'e düşürdü. Bu durum, tüm markaların yeni düzene adapte olması gerektiğini gösteriyor.",
+        "post_text": "İkinci el fiyatlarının düşüşü kimseyi şaşırtmadı, asıl mesele bu düşüşün hızı. Cardata, yıl sonuna kadar %7 ila %12 daha gerileme bekliyor.\n\nYani, reel değer kaybı zaten %36’yı aşmışken, bir de üstüne nominal düşüş geliyor. Kimse \"fırsat\" diye koşturmuyor, çünkü herkes asıl fiyatın ne olduğunu çoktan unuttu.\n\nPiyasada birileri hâlâ eski fiyatları savunuyorsa, bu sadece kendi gerçeğini görmezden gelmesidir.",
+        "post_text_length": 409,
+        "story_card_title": "İkinci el fiyatları beklentiyi aşıyor!",
+        "story_card_subtitle": "İkinci el araç piyasasında beklenen düşüş hızlanıyor. Cardata'ya göre, yıl sonuna kadar fiyatlarda %7 ila %12 arasında ek bir gerileme öngörülüyor. Bu durum, reel değer kaybının zaten %36'yı aşmasıyla birlikte, sektördeki nominal düşüş beklentisini de güçlendiriyor. Piyasada hala eski fiyatları savunanlar, gerçeklerden uzak bir tablo çiziyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-08-24T14:25:41.472276+03:00"
+      "updated_at": "2026-08-24T15:43:54.851523+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "VW CEO'sundan çalışanlara uyarı: \"Durumumuz çok kritik\"",
-          "link": "https://tr.motor1.com/news/805820/vw-ceosu-uyari-aciklamasi/",
-          "published": "2026-08-24T11:00:00+00:00",
-          "summary": "Volkswagen, sıkıntılı dönemlerden geçiyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
+          "title": "Fiyatlar gerçekten düşüyor mu? İkinci el araçta yıl sonu beklentisi",
+          "link": "https://www.donanimhaber.com/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi--209661",
+          "published": "2026-08-24T10:43:00+00:00",
+          "summary": "İkinci el araç fiyatları düşecek mi? Cardata'nın değerlendirmesine göre bu sorunun cevabı evet. Şirket, yıl sonuna kadar fiyatlarda yüzde 7 ile 12 aralığında düşüş bekliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
           "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg"
           ],
-          "image_source": "article_candidates_field",
-          "source_name": "Motor1 TR",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "calisanlara-ceo-durumumuz-kritik-sundan-uyari",
-          "base_ai_score": 78,
+          "topic_fingerprint": "aracta-beklentisi-dusuyor-fiyatlar-gercekten-kinci-sonu-yil",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
             "gundem_gucu": 15,
             "paylasilabilirlik": 8
           },
-          "score": 81,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Dünya otomotiv devi Volkswagen'in krizde olması ve CEO'nun sert açıklamaları küresel çapta yüksek etkileşim potansiyeli taşır.",
-          "freshness_bonus": 10,
+          "score_explanation": "Ekonomik belirsizlik döneminde ikinci el araç fiyatları tüketicinin en çok merak ettiği konu, yüksek etkileşim üretir.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Volkswagen, çok sert bir yeniden yapılanma sürecine hazırlanıyor. Acı reçeteyi yazan CEO Oliver Blume, yaşanacak -tabiri caizse- kıyım için çalışanlara \"hazırlıklı olun\" mesajı verdi. Reuters'in ele geçirdiği bu iş yazışmada \"durum sandığınızdan da kritik\" gibi korkutucu ifadeler yer alıor. Blume imzalı bu mektup, şirketin yaşadığı tüm sıkıntılara ışık tutar nitelikte. Blume yalnızca maliyet düşürüp araç satışlarını artırmanın yeterli olmayacağını ifade etmiş. Çinli markaların önlenemez yükselişi, Volkswagen için rekabeti çok daha çetin hale getirmiş. Blume hala maliyetlerin, gelirlerden yüzde 30 oranında daha fazla olduğunun altını çiziyor. Volkswagen'in kar marjının yüzde 4'lere kadar düştüğünü hatırlatan Blume, bu bağlamda zor kararlar almaları gerekeceğini ifade etmiş. Yönetici bunu \"şirketin geleceğinin sürdürülebilir hale gelmesinin\" tek yolu olarak nitelendiriyor. Blume imzalı bu iç yazışmada işten çıkartma konusuna da değinilmiş. Bildiğiniz gibi son birkaç aydır işten çıkartılacak kişi sayısının ikiye katlanabileceği yönünde iddialar ayyuka çıkmış durumda. Blume bunu reddederek \"sıklıkla dile getirilen yaklaşık 50.000 kişilik istihdam rakamı kesinleşmiş bir hedef değildir\" ifadelerini kullanmış. Yöneticiye göre işten çıkartma planlarıVolkswagen'in nihai amacı değil. Blume belirlenen sayıların yalnızca matematiksel veriler olduğunu söylemiş. Yani aslında yönetim katı, Volkswagen'in rakipleri ile arasındaki maliyet farkını kapatabilmek için ne kadar kişinin işine son vermeleri gerektiğini hesaplıyor. Yani asıl amaç; işten çıkartma planlarının aksine, sorunun ne kadar büyük olduğunu herkese gösterebilmek. Alınacak bu \"zor kararlar\" arasında çeşitli tesislerin kapatılmasıfikri de vardı hatırlarsanız. Lakin aynı yazışmada bu dört Alman fabrikasının kapatılmasına yönelik herhangi bir karar çıkmadığının altı çizilmiş. Görünüşe göre Volkswagen ilk adımda model ailesini daraltmanın kendisine ne kadar faydası olacağını görmek istiyor. Ardından işten çıkartmalar ve gerekirse fabrika kapatmaları gelecek. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "VW CEO'sunun çalışanlara attığı maildeki ‘durumumuz kritik’ cümlesi, bir endüstrinin sessiz çığlığı.\n\nÇinli markaların yükselişiyle rekabetin bambaşka bir seviyeye geldiğini, maliyetlerin gelirlerden hâlâ %30 fazla olduğunu söyleyen CEO, kâr marjının %4’e düştüğünü belirtiyor. Yani mesele sadece VW değil, tüm markaların bu yeni düzene adapte olmak zorunda kalması.\n\nEski usul artık işlemiyor.",
-          "story_card_title": "VW CEO'sundan Kritik Uyarı!",
-          "story_card_subtitle": "Volkswagen'in CEO'su, çalışanlarına gönderdiği e-postada şirketin durumunun çok kritik olduğunu belirtti. Çinli markaların rekabeti ve %30'luk maliyet fazlası, kâr marjını %4'e düşürdü. Bu durum, tüm markaların yeni düzene adapte olması gerektiğini gösteriyor.",
+          "full_text": "Cardata’nın İkinci El Araç Fiyat Endeksi, Aralık 2025’te 103,4 seviyesindeyken Haziran 2026’da 102,1’e geriledi. Böylece ikinci el araç fiyatları yılın ilk yarısında nominal olarak yaklaşık yüzde 1,3 düşüş gösterdi. Aynı dönemde tüketici enflasyonunun yaklaşık yüzde 17,7 artmasıyla birlikte ikinci el araçlarda altı aylık reel değer kaybı yüzde 16’yı aştı. Temmuz ayında ise fiyat endeksi 100,4 seviyesine kadar geriledi. Cardata verilerine göre ortalama bir ikinci el araç bugün nominal olarak Aralık 2024 seviyelerine çok yakın bir fiyattan satın alınabiliyor. Aradan geçen 19 ayda ikinci el araç fiyatlarındaki toplam nominal artış yalnızca yüzde 0,4 olurken, aynı dönemde tüketici enflasyonu yüzde 56,9’a ulaştı. Böylece ikinci el otomobillerde Aralık 2024’e kıyasla yaklaşık yüzde 36’lık reel değer kaybı oluştu. Fiyatlardaki aşağı yönlü hareketin son aylarda hızlandığına dikkat çeken Cardata Genel MüdürüHüsamettin Yalçın, “Cardata verilerine göre ikinci el araç fiyatları mart ayında yüzde 0,35, nisanda yüzde 0,46, mayısta yüzde 0,69, haziranda yüzde 1,11 ve temmuzda yüzde 1,60 geriledi. Üst üste beş aydır süren ve giderek güçlenen bu tablo, yaşananların yalnızca mevsimsel bir yavaşlama olmadığını gösteriyor” diye konuştu. Cardata’nın mevcut senaryosuna göre yüksek mevduat faizlerinin devam etmesi, taşıt kredisi koşullarında belirgin bir iyileşme yaşanmaması ve sıfır kilometre araç kampanyalarının sürmesi halinde ikinci el araç fiyatlarında önümüzdeki aylarda aylık ortalamada ortalama yüzde 1,5 ila yüzde 2,5 arasında aylık gerileme görülebilecek. Hüsamettin Yalçın, “Temmuz sonundaki fiyat seviyesini baz aldığımızda bu öngörü, yıl sonuna kadar ikinci el araç fiyatlarında kümülatif olarak yaklaşık yüzde 7 ile yüzde 12 arasında ilave nominal düzeltmeye işaret ediyor. Enflasyonun devam ettiği bir ortamda nominal fiyatların da gerilemesi, ikinci el otomobildeki reel değer kaybını daha da artıracak” açıklamasını yaptı.Premium ve 1-3 yaşındaki araçlarda baskı daha yüksek olacakFiyat hareketinin pazarın bütün segmentlerinde aynı ölçüde gerçekleşmeyeceğini belirtenYalçın, erişilebilir fiyat seviyesindeki, yakıt tüketimi düşük, servis ağı yaygın ve ikinci elde güçlü talep gören modellerin değerini daha iyi koruyacağını söyledi. Buna karşılık yüksek fiyatlı, premium segmentte bulunan, satış hızı düşük ve stok maliyeti yüksek araçlarda fiyat baskısının daha güçlü olacağını ifade edenYalçın, sıfır kilometre kampanyalarıyla doğrudan rekabet eden 1-3 yaşındaki ikinci el araçların da en fazla baskı altında kalacak gruplar arasında bulunduğunu belirtti.Elektrikli araçlarda ise model yenileme hızının yüksek olması, batarya ve menzil teknolojisindeki hızlı gelişim ile sıfır kilometre araçlarda gerçekleştirilen kampanyaların ikinci el değerlerini daha hassas hale getirdiğini vurgulayanYalçın, elektrikli araçlarda marka, model, batarya kapasitesi, menzil ve sıfır araç fiyatındaki değişimin çok daha yakından takip edilmesi gerektiğini söyledi.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley2 gün önce1daha korkutucu bişey görmedim Hüsamettin Yalçın, “Temmuz sonundaki fiyat seviyesini baz aldığımızda bu öngörü, yıl sonuna kadar ikinci el araç fiyatlarında kümülatif olarak yaklaşık yüzde 7 ile yüzde 12 arasında ilave nominal düzeltmeye işaret ediyor. Enflasyonun devam ettiği bir ortamda nominal fiyatların da gerilemesi, ikinci el otomobildeki reel değer kaybını daha da artıracak” açıklamasını yaptı. Fiyat hareketinin pazarın bütün segmentlerinde aynı ölçüde gerçekleşmeyeceğini belirtenYalçın, erişilebilir fiyat seviyesindeki, yakıt tüketimi düşük, servis ağı yaygın ve ikinci elde güçlü talep gören modellerin değerini daha iyi koruyacağını söyledi. Buna karşılık yüksek fiyatlı, premium segmentte bulunan, satış hızı düşük ve stok maliyeti yüksek araçlarda fiyat baskısının daha güçlü olacağını ifade edenYalçın, sıfır kilometre kampanyalarıyla doğrudan rekabet eden 1-3 yaşındaki ikinci el araçların da en fazla baskı altında kalacak gruplar arasında bulunduğunu belirtti. Elektrikli araçlarda ise model yenileme hızının yüksek olması, batarya ve menzil teknolojisindeki hızlı gelişim ile sıfır kilometre araçlarda gerçekleştirilen kampanyaların ikinci el değerlerini daha hassas hale getirdiğini vurgulayanYalçın, elektrikli araçlarda marka, model, batarya kapasitesi, menzil ve sıfır araç fiyatındaki değişimin çok daha yakından takip edilmesi gerektiğini söyledi. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/promotion/psp/A2JYHG3IYS3UMO?ref=psp_aw_cart_collapse https://www.amazon.com.tr/dp/B0FRSQ6C5N https://www.amazon.com.tr/dp/B07KYTJLQ5 https://www.amazon.com.tr/promotion/psp/A2JYHG3IYS3UMO...",
+          "post_text_for_card": "İkinci el fiyatlarının düşüşü kimseyi şaşırtmadı, asıl mesele bu düşüşün hızı. Cardata, yıl sonuna kadar %7 ila %12 daha gerileme bekliyor.\n\nYani, reel değer kaybı zaten %36’yı aşmışken, bir de üstüne nominal düşüş geliyor. Kimse \"fırsat\" diye koşturmuyor, çünkü herkes asıl fiyatın ne olduğunu çoktan unuttu.\n\nPiyasada birileri hâlâ eski fiyatları savunuyorsa, bu sadece kendi gerçeğini görmezden gelmesidir.",
+          "story_card_title": "İkinci el fiyatları beklentiyi aşıyor!",
+          "story_card_subtitle": "İkinci el araç piyasasında beklenen düşüş hızlanıyor. Cardata'ya göre, yıl sonuna kadar fiyatlarda %7 ila %12 arasında ek bir gerileme öngörülüyor. Bu durum, reel değer kaybının zaten %36'yı aşmasıyla birlikte, sektördeki nominal düşüş beklentisini de güçlendiriyor. Piyasada hala eski fiyatları savunanlar, gerçeklerden uzak bir tablo çiziyor.",
           "image_sources": [
-            "article_candidates_field",
+            "meta_og",
+            "article_img",
             "article_img"
           ],
-          "prepared_image_count": 2,
+          "prepared_image_count": 3,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/YnZyr/s3/vw-logo-on-the-roof-of-headquarters-wolfsburg-germany.jpg",
-            "https://cdn.motor1.com/images/mgl/Eb2Mw/s4/volkswagen-wolfsburg.jpg"
+            "https://www.donanimhaber.com/images/images/haber/209661/1200x675fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209661/src/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi209661_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209661/src/fiyatlar-gercekten-dusuyor-mu-ikinci-elde-yil-sonu-beklentisi209661_1.jpg"
           ]
         },
-        "post_text": "VW CEO'sunun çalışanlara attığı maildeki ‘durumumuz kritik’ cümlesi, bir endüstrinin sessiz çığlığı.\n\nÇinli markaların yükselişiyle rekabetin bambaşka bir seviyeye geldiğini, maliyetlerin gelirlerden hâlâ %30 fazla olduğunu söyleyen CEO, kâr marjının %4’e düştüğünü belirtiyor. Yani mesele sadece VW değil, tüm markaların bu yeni düzene adapte olmak zorunda kalması.\n\nEski usul artık işlemiyor.",
-        "story_card_title": "VW CEO'sundan Kritik Uyarı!",
-        "story_card_subtitle": "Volkswagen'in CEO'su, çalışanlarına gönderdiği e-postada şirketin durumunun çok kritik olduğunu belirtti. Çinli markaların rekabeti ve %30'luk maliyet fazlası, kâr marjını %4'e düşürdü. Bu durum, tüm markaların yeni düzene adapte olması gerektiğini gösteriyor.",
-        "image_path": "/tmp/otoxtra_img_kbxx_r2o.jpg",
+        "post_text": "İkinci el fiyatlarının düşüşü kimseyi şaşırtmadı, asıl mesele bu düşüşün hızı. Cardata, yıl sonuna kadar %7 ila %12 daha gerileme bekliyor.\n\nYani, reel değer kaybı zaten %36’yı aşmışken, bir de üstüne nominal düşüş geliyor. Kimse \"fırsat\" diye koşturmuyor, çünkü herkes asıl fiyatın ne olduğunu çoktan unuttu.\n\nPiyasada birileri hâlâ eski fiyatları savunuyorsa, bu sadece kendi gerçeğini görmezden gelmesidir.",
+        "story_card_title": "İkinci el fiyatları beklentiyi aşıyor!",
+        "story_card_subtitle": "İkinci el araç piyasasında beklenen düşüş hızlanıyor. Cardata'ya göre, yıl sonuna kadar fiyatlarda %7 ila %12 arasında ek bir gerileme öngörülüyor. Bu durum, reel değer kaybının zaten %36'yı aşmasıyla birlikte, sektördeki nominal düşüş beklentisini de güçlendiriyor. Piyasada hala eski fiyatları savunanlar, gerçeklerden uzak bir tablo çiziyor.",
+        "image_path": "/tmp/otoxtra_img_xepfkyal.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_kbxx_r2o.jpg",
-          "/tmp/otoxtra_img_5o6sla07.jpg"
+          "/tmp/otoxtra_img_xepfkyal.jpg",
+          "/tmp/otoxtra_img_iow_jqoi.jpg",
+          "/tmp/otoxtra_img_xo9y2apy.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 2
+        "image_source": "meta_og",
+        "image_count": 3
       },
       "error": null,
-      "updated_at": "2026-08-24T14:25:45.175279+03:00"
+      "updated_at": "2026-08-24T15:44:13.082098+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122177070404916499",
+        "post_id": "678053852057751_122177078954916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "17989893588036440",
+            "id": "18081911465695643",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "2149205793146667",
+            "id": "1320579197802421",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-08-24T14:26:25.846200+03:00"
+      "updated_at": "2026-08-24T15:44:56.930964+03:00"
     }
   }
 }
