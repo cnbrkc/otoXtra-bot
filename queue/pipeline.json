@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-08-25-00:25",
-  "status": "completed",
-  "started_at": "2026-08-25T00:25:41.577276+03:00",
-  "updated_at": "2026-08-25T00:29:08.032078+03:00",
+  "run_id": "2026-08-25-01:22",
+  "status": "error",
+  "started_at": "2026-08-25T01:22:50.768561+03:00",
+  "updated_at": "2026-08-25T01:23:22.423571+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-            "link": "https://www.donanimhaber.com/mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil--209685",
-            "published": "2026-08-24T17:19:00+00:00",
-            "summary": "Yeni elektrikli MG 07, Çin'de satışa sunulmasının ardından iki dakikada 10.000 kesin sipariş alarak rekor kırdı. Şık araç, 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle dikkat çekiyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "845-baslangic-bin-dakikada-dolar-fiyati-iki-kesin-kirdi-menzil-rekoru-siparis"
-          },
-          {
-            "title": "Porsche, Taycan'ın veda iddialarını reddetti",
-            "link": "https://tr.motor1.com/news/805899/porsche-taycan-veda-belirsiz/",
-            "published": "2026-08-24T17:00:00+00:00",
-            "summary": "Panamera ürün gamıyla olası örtüşmeyi değerlendirecekler.",
-            "image_url": "https://cdn.motor1.com/images/mgl/eoKe0W/s3/2025-porsche-taycan-4.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/eoKe0W/s3/2025-porsche-taycan-4.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/eoKe0W/s3/2025-porsche-taycan-4.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "iddialarini-porsche-reddetti-taycan-veda"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -166,245 +127,47 @@
           "_metrics": {
             "found": 93,
             "after_keyword": 59,
-            "after_time": 6,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_time": 4,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 93,
           "after_keyword": 59,
-          "after_time": 6,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_time": 4,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-08-25T00:26:20.130119+03:00"
+      "error": "No article found",
+      "updated_at": "2026-08-25T01:23:22.423571+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-          "link": "https://www.donanimhaber.com/mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil--209685",
-          "published": "2026-08-24T17:19:00+00:00",
-          "summary": "Yeni elektrikli MG 07, Çin'de satışa sunulmasının ardından iki dakikada 10.000 kesin sipariş alarak rekor kırdı. Şık araç, 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle dikkat çekiyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "845-baslangic-bin-dakikada-dolar-fiyati-iki-kesin-kirdi-menzil-rekoru-siparis",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz ucuz fiyat, yüksek menzil ve kısa sürede kırılan rekor sosyal medyada büyük ses getirecek nitelikte.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1
-        },
-        "score": 87,
-        "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 4,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "İnanılmaz ucuz fiyat, yüksek menzil ve kısa sürede kırılan rekor sosyal medyada büyük ses getirecek nitelikte.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-            "score": 87,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Porsche, Taycan'ın veda iddialarını reddetti",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 18,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 10,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Porsche, Taycan'ın veda iddialarını reddetti",
-            "link": "https://tr.motor1.com/news/805899/porsche-taycan-veda-belirsiz/",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "iddialarini-porsche-reddetti-taycan-veda"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-25T00:26:22.314964+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-          "link": "https://www.donanimhaber.com/mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil--209685",
-          "published": "2026-08-24T17:19:00+00:00",
-          "summary": "Yeni elektrikli MG 07, Çin'de satışa sunulmasının ardından iki dakikada 10.000 kesin sipariş alarak rekor kırdı. Şık araç, 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle dikkat çekiyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "845-baslangic-bin-dakikada-dolar-fiyati-iki-kesin-kirdi-menzil-rekoru-siparis",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz ucuz fiyat, yüksek menzil ve kısa sürede kırılan rekor sosyal medyada büyük ses getirecek nitelikte.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu başarıyı asıl anlamlı kılan şey, söz konusu siparişlerin istenildiğinde iptal edilebilen rezervasyonlardan ziyadekesin satışolması. MG Genel Müdürü Chen Cui'nin paylaştığı bilgilere göre MG 07, ilk gün 45.000, ertesi gün ise 59.000 rezervasyona ulaştı. Marka, MG4’te yaşananteslimat gecikmelerinintekrarlanmaması için lojistik ve satış ağını güçlendirdi. Çin genelinde yaklaşık 600 satış noktasıyla hizmet veriyor.Tam Boyutta GörŞık tasarım ve üst düzey teknoloji4.88 metrelik uzunluğu, 1.90 metrelik genişliği ve2.82 metrelikaks mesafesiyle heybetli boyutlara sahip MG 07, çerçevesiz kapı camları ve fastback silüetiyleoldukça premiumbir duruş sergiliyor. Modelde5 kademelielektrikli arka spoiler, 168 litrelik ön (frunk) ve 697 litrelik arka bagaj mevcut.Kabinde15.6 inç 2.5Kmultimedya ekranı, Snapdragon 8295P işlemcili bilgi-eğlence sistemi,21 hoparlörlü ses sistemive yolcu tarafında zero-gravity (sıfır yerçekimi) koltuk öne çıkıyor. Üst donanım seviyelerinde ise Momenta ile geliştirilen yarıotonom sürüşsistemi veLiDAR sensörüstandart olarak var.Tam Boyutta Gör845 km menzil ve 800 volt mimarisiMG 07 tamamen elektrikli ve şarj edilebilir hibrit (PHEV) olmak üzere toplam7 farklı versiyonlasatışa sunuluyor. Elektrikli giriş seçeneklerinde67 kWhbatarya ve400 volt mimarikullanılırken, uzun menzilli üst versiyonda CATL üretimi91 kWhbatarya ve800 voltmimari bulunuyor.MG 07'nin 91 kWh bataryaya sahip uzun menzilli versiyonu, CLTC standartlarına göre845 kilometreyekadar menzil sunuyor. 235 kW (320 beygir) gücündeki elektrik motoruyla 0-100 km/s hızlanmasını5.9 saniyedetamamlayan model, 5C hızlı şarj desteği sayesinde bataryasını12 dakikada%30'dan %80'e doldurabiliyor.Tam Boyutta GörDiğer elektrikli versiyonların CLTC menzilleri ise610 ve 650 kilometre. Şarj edilebilir hibrit seçenek,245 kilometretamamen elektrikli menzile sahipken, benzinli motorun desteğiyle toplamda1.745 kilometreyol kat edebiliyor.Fiyatlar şaşırtıyorMG 07, Çin'de lansmana özel indirimlerle 105.900 ile 156.900 yuan (yaklaşık15.750 - 23.340 dolar) arasında değişen fiyatlarla satışa sunuldu. İndirim dönemi sonrasında ise fiyatlar 108.900 ile 159.900 yuan (yaklaşık 16.200 - 23.790 dolar) arasında değişecek.Tam Boyutta Gör10 bini aşan kesin sipariş ve özellikleuzun menzillibataryaya gelen yoğun talep, MG'nin önceliğini değiştirdi. Şirket artık müşteri ikna etmeye değil,üretime yetişmeyeodaklanıyor. Çin pazarında 650 km menzilli başlangıç versiyonunun teslimatlarıAğustos sonunda, 845 km menzilli tepe modelin teslimatları iseEkim ayındabaşlayacak.MG 07 sipariş rekoru kırdı Görselleri(55)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley3 gün önce1daha korkutucu bişey görmedim Bu başarıyı asıl anlamlı kılan şey, söz konusu siparişlerin istenildiğinde iptal edilebilen rezervasyonlardan ziyadekesin satışolması. MG Genel Müdürü Chen Cui'nin paylaştığı bilgilere göre MG 07, ilk gün 45.000, ertesi gün ise 59.000 rezervasyona ulaştı. Marka, MG4’te yaşananteslimat gecikmelerinintekrarlanmaması için lojistik ve satış ağını güçlendirdi. Çin genelinde yaklaşık 600 satış noktasıyla hizmet veriyor. 4.88 metrelik uzunluğu, 1.90 metrelik genişliği ve2.82 metrelikaks mesafesiyle heybetli boyutlara sahip MG 07, çerçevesiz kapı camları ve fastback silüetiyleoldukça premiumbir duruş sergiliyor. Modelde5 kademelielektrikli arka spoiler, 168 litrelik ön (frunk) ve 697 litrelik arka bagaj mevcut. Kabinde15.6 inç 2.5Kmultimedya ekranı, Snapdragon 8295P işlemcili bilgi-eğlence sistemi,21 hoparlörlü ses sistemive yolcu tarafında zero-gravity (sıfır yerçekimi) koltuk öne çıkıyor. Üst donanım seviyelerinde ise Momenta ile geliştirilen yarıotonom sürüşsistemi veLiDAR sensörüstandart olarak var. MG 07 tamamen elektrikli ve şarj edilebilir hibrit (PHEV) olmak üzere toplam7 farklı versiyonlasatışa sunuluyor. Elektrikli giriş seçeneklerinde67 kWhbatarya ve400 volt mimarikullanılırken, uzun menzilli üst versiyonda CATL üretimi91 kWhbatarya ve800 voltmimari bulunuyor. MG 07'nin 91 kWh bataryaya sahip uzun menzilli versiyonu, CLTC standartlarına göre845 kilometreyekadar menzil sunuyor. 235 kW (320 beygir) gücündeki elektrik motoruyla 0-100 km/s hızlanmasını5.9 saniyedetamamlayan model, 5C hızlı şarj desteği sayesinde bataryasını12 dakikada%30'dan %80'e doldurabiliyor. MG 07, Çin'de lansmana özel indirimlerle 105.900 ile 156.900 yuan (yaklaşık15.750 - 23.340 dolar) arasında değişen fiyatlarla satışa sunuldu. İndirim dönemi sonrasında ise fiyatlar 108.900 ile 159.900 yuan (yaklaşık 16.200 - 23.790 dolar) arasında değişecek. MG 07 sipariş rekoru kırdı Görselleri(55)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı..."
-        },
-        "post_text": "İki dakikada 10 bin sipariş, 15 bin dolar fiyat etiketiyle geldi.\n\nMG 07’nin 845 km menzil ve bu fiyatla Çin’de rekor kırması, aslında 'otomobil pahalı' diyenlerin esas derdini ortaya koyuyor. Mesele otomobilin fiyatı değil, ödenen paranın karşılığında ne alındığı.\n\nBu durum, markaların Türkiye pazarındaki algısını da yeniden şekillendirecek.",
-        "post_text_length": 344,
-        "story_card_title": "MG 07'DEN İKİ DAKİKADA REKOR BAŞARI!",
-        "story_card_subtitle": "MG 07, Çin pazarında satışa çıkar çıkmaz iki dakikada 10.000 kesin sipariş alarak dikkatleri üzerine çekti. 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle bu elektrikli araç, otomobil dünyasında yeni bir sayfa açıyor. Bu rekor, otomobil fiyatlarının değil, sunulan değerin önemli olduğunu bir kez daha gösteriyor. MG 07'nin başarısı, Türkiye'deki otomobil algısını da değiştirebilir.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-25T00:26:26.861865+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "MG 07 iki dakikada kesin sipariş rekoru kırdı: 15 bin dolar başlangıç fiyatı, 845 km menzil",
-          "link": "https://www.donanimhaber.com/mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil--209685",
-          "published": "2026-08-24T17:19:00+00:00",
-          "summary": "Yeni elektrikli MG 07, Çin'de satışa sunulmasının ardından iki dakikada 10.000 kesin sipariş alarak rekor kırdı. Şık araç, 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle dikkat çekiyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "845-baslangic-bin-dakikada-dolar-fiyati-iki-kesin-kirdi-menzil-rekoru-siparis",
-          "base_ai_score": 85,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 87,
-          "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz ucuz fiyat, yüksek menzil ve kısa sürede kırılan rekor sosyal medyada büyük ses getirecek nitelikte.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu başarıyı asıl anlamlı kılan şey, söz konusu siparişlerin istenildiğinde iptal edilebilen rezervasyonlardan ziyadekesin satışolması. MG Genel Müdürü Chen Cui'nin paylaştığı bilgilere göre MG 07, ilk gün 45.000, ertesi gün ise 59.000 rezervasyona ulaştı. Marka, MG4’te yaşananteslimat gecikmelerinintekrarlanmaması için lojistik ve satış ağını güçlendirdi. Çin genelinde yaklaşık 600 satış noktasıyla hizmet veriyor.Tam Boyutta GörŞık tasarım ve üst düzey teknoloji4.88 metrelik uzunluğu, 1.90 metrelik genişliği ve2.82 metrelikaks mesafesiyle heybetli boyutlara sahip MG 07, çerçevesiz kapı camları ve fastback silüetiyleoldukça premiumbir duruş sergiliyor. Modelde5 kademelielektrikli arka spoiler, 168 litrelik ön (frunk) ve 697 litrelik arka bagaj mevcut.Kabinde15.6 inç 2.5Kmultimedya ekranı, Snapdragon 8295P işlemcili bilgi-eğlence sistemi,21 hoparlörlü ses sistemive yolcu tarafında zero-gravity (sıfır yerçekimi) koltuk öne çıkıyor. Üst donanım seviyelerinde ise Momenta ile geliştirilen yarıotonom sürüşsistemi veLiDAR sensörüstandart olarak var.Tam Boyutta Gör845 km menzil ve 800 volt mimarisiMG 07 tamamen elektrikli ve şarj edilebilir hibrit (PHEV) olmak üzere toplam7 farklı versiyonlasatışa sunuluyor. Elektrikli giriş seçeneklerinde67 kWhbatarya ve400 volt mimarikullanılırken, uzun menzilli üst versiyonda CATL üretimi91 kWhbatarya ve800 voltmimari bulunuyor.MG 07'nin 91 kWh bataryaya sahip uzun menzilli versiyonu, CLTC standartlarına göre845 kilometreyekadar menzil sunuyor. 235 kW (320 beygir) gücündeki elektrik motoruyla 0-100 km/s hızlanmasını5.9 saniyedetamamlayan model, 5C hızlı şarj desteği sayesinde bataryasını12 dakikada%30'dan %80'e doldurabiliyor.Tam Boyutta GörDiğer elektrikli versiyonların CLTC menzilleri ise610 ve 650 kilometre. Şarj edilebilir hibrit seçenek,245 kilometretamamen elektrikli menzile sahipken, benzinli motorun desteğiyle toplamda1.745 kilometreyol kat edebiliyor.Fiyatlar şaşırtıyorMG 07, Çin'de lansmana özel indirimlerle 105.900 ile 156.900 yuan (yaklaşık15.750 - 23.340 dolar) arasında değişen fiyatlarla satışa sunuldu. İndirim dönemi sonrasında ise fiyatlar 108.900 ile 159.900 yuan (yaklaşık 16.200 - 23.790 dolar) arasında değişecek.Tam Boyutta Gör10 bini aşan kesin sipariş ve özellikleuzun menzillibataryaya gelen yoğun talep, MG'nin önceliğini değiştirdi. Şirket artık müşteri ikna etmeye değil,üretime yetişmeyeodaklanıyor. Çin pazarında 650 km menzilli başlangıç versiyonunun teslimatlarıAğustos sonunda, 845 km menzilli tepe modelin teslimatları iseEkim ayındabaşlayacak.MG 07 sipariş rekoru kırdı Görselleri(55)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley3 gün önce1daha korkutucu bişey görmedim Bu başarıyı asıl anlamlı kılan şey, söz konusu siparişlerin istenildiğinde iptal edilebilen rezervasyonlardan ziyadekesin satışolması. MG Genel Müdürü Chen Cui'nin paylaştığı bilgilere göre MG 07, ilk gün 45.000, ertesi gün ise 59.000 rezervasyona ulaştı. Marka, MG4’te yaşananteslimat gecikmelerinintekrarlanmaması için lojistik ve satış ağını güçlendirdi. Çin genelinde yaklaşık 600 satış noktasıyla hizmet veriyor. 4.88 metrelik uzunluğu, 1.90 metrelik genişliği ve2.82 metrelikaks mesafesiyle heybetli boyutlara sahip MG 07, çerçevesiz kapı camları ve fastback silüetiyleoldukça premiumbir duruş sergiliyor. Modelde5 kademelielektrikli arka spoiler, 168 litrelik ön (frunk) ve 697 litrelik arka bagaj mevcut. Kabinde15.6 inç 2.5Kmultimedya ekranı, Snapdragon 8295P işlemcili bilgi-eğlence sistemi,21 hoparlörlü ses sistemive yolcu tarafında zero-gravity (sıfır yerçekimi) koltuk öne çıkıyor. Üst donanım seviyelerinde ise Momenta ile geliştirilen yarıotonom sürüşsistemi veLiDAR sensörüstandart olarak var. MG 07 tamamen elektrikli ve şarj edilebilir hibrit (PHEV) olmak üzere toplam7 farklı versiyonlasatışa sunuluyor. Elektrikli giriş seçeneklerinde67 kWhbatarya ve400 volt mimarikullanılırken, uzun menzilli üst versiyonda CATL üretimi91 kWhbatarya ve800 voltmimari bulunuyor. MG 07'nin 91 kWh bataryaya sahip uzun menzilli versiyonu, CLTC standartlarına göre845 kilometreyekadar menzil sunuyor. 235 kW (320 beygir) gücündeki elektrik motoruyla 0-100 km/s hızlanmasını5.9 saniyedetamamlayan model, 5C hızlı şarj desteği sayesinde bataryasını12 dakikada%30'dan %80'e doldurabiliyor. MG 07, Çin'de lansmana özel indirimlerle 105.900 ile 156.900 yuan (yaklaşık15.750 - 23.340 dolar) arasında değişen fiyatlarla satışa sunuldu. İndirim dönemi sonrasında ise fiyatlar 108.900 ile 159.900 yuan (yaklaşık 16.200 - 23.790 dolar) arasında değişecek. MG 07 sipariş rekoru kırdı Görselleri(55)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı...",
-          "post_text_for_card": "İki dakikada 10 bin sipariş, 15 bin dolar fiyat etiketiyle geldi.\n\nMG 07’nin 845 km menzil ve bu fiyatla Çin’de rekor kırması, aslında 'otomobil pahalı' diyenlerin esas derdini ortaya koyuyor. Mesele otomobilin fiyatı değil, ödenen paranın karşılığında ne alındığı.\n\nBu durum, markaların Türkiye pazarındaki algısını da yeniden şekillendirecek.",
-          "story_card_title": "MG 07'DEN İKİ DAKİKADA REKOR BAŞARI!",
-          "story_card_subtitle": "MG 07, Çin pazarında satışa çıkar çıkmaz iki dakikada 10.000 kesin sipariş alarak dikkatleri üzerine çekti. 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle bu elektrikli araç, otomobil dünyasında yeni bir sayfa açıyor. Bu rekor, otomobil fiyatlarının değil, sunulan değerin önemli olduğunu bir kez daha gösteriyor. MG 07'nin başarısı, Türkiye'deki otomobil algısını da değiştirebilir.",
-          "image_sources": [
-            "meta_og",
-            "article_img"
-          ],
-          "prepared_image_count": 2,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/209685/1200x675mg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil.jpg",
-            "https://www.donanimhaber.com/cache-v2/?t=20260824184224&width=-1&text=0&path=https%3A%2F%2Fwww.donanimhaber.com%2Fimages%2Fimages%2Fhaber%2F209685%2Fmg-07-kesin-siparis-rekoru-kirdi-845-km-ye-kadar-menzil209685_1.jpg"
-          ]
-        },
-        "post_text": "İki dakikada 10 bin sipariş, 15 bin dolar fiyat etiketiyle geldi.\n\nMG 07’nin 845 km menzil ve bu fiyatla Çin’de rekor kırması, aslında 'otomobil pahalı' diyenlerin esas derdini ortaya koyuyor. Mesele otomobilin fiyatı değil, ödenen paranın karşılığında ne alındığı.\n\nBu durum, markaların Türkiye pazarındaki algısını da yeniden şekillendirecek.",
-        "story_card_title": "MG 07'DEN İKİ DAKİKADA REKOR BAŞARI!",
-        "story_card_subtitle": "MG 07, Çin pazarında satışa çıkar çıkmaz iki dakikada 10.000 kesin sipariş alarak dikkatleri üzerine çekti. 15 bin dolardan başlayan fiyatı ve 845 km'ye varan menziliyle bu elektrikli araç, otomobil dünyasında yeni bir sayfa açıyor. Bu rekor, otomobil fiyatlarının değil, sunulan değerin önemli olduğunu bir kez daha gösteriyor. MG 07'nin başarısı, Türkiye'deki otomobil algısını da değiştirebilir.",
-        "image_path": "/tmp/otoxtra_img_1uvlyuyf.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_1uvlyuyf.jpg",
-          "/tmp/otoxtra_img_ij3h3hoj.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 2
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-25T00:28:23.932625+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122177122580916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18069933860489254",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2586303998456825",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-25T00:29:08.032078+03:00"
+      "updated_at": null
     }
   }
 }
