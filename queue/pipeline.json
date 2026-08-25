@@ -1,13 +1,30 @@
 {
-  "run_id": "2026-08-25-07:35",
-  "status": "error",
-  "started_at": "2026-08-25T07:35:43.628516+03:00",
-  "updated_at": "2026-08-25T07:36:22.972957+03:00",
+  "run_id": "2026-08-25-08:28",
+  "status": "completed",
+  "started_at": "2026-08-25T08:28:59.664632+03:00",
+  "updated_at": "2026-08-25T08:30:27.110845+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+            "link": "https://shiftdelete.net/tesla-cybercab-tanitim-tarihi",
+            "published": "2026-08-25T05:00:46+00:00",
+            "summary": "Tesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aracta-belli-cybercab-direksiyon-tanitim-tarihi-tesla-yok"
+          },
           {
             "title": "En İyi Araba Brandası (Tavsiye)",
             "link": "https://shiftdelete.net/en-iyi-araba-brandasi",
@@ -24,9 +41,28 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "araba-brandasi-tavsiye"
+          },
+          {
+            "title": "Sıcak Havalarda Elektrikli Araçların Menzilini Korumak İçin 4 İpucu",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/sicak-havalarda-elektrikli-araclarin-menzilini-korumak-icin-4-ipucu-5244h",
+            "published": "2026-08-25T05:16:48+00:00",
+            "summary": "Sıcak havalar, elektrikli araçlarda batarya performansını etkileyerek %17’ye varan menzil kaybına yol açabiliyor. Elaris Direktörü Volkan Demir, yaz aylarında menzil kaybını azaltmak için sürücülerin dikkat etmesi gereken 4 hususu paylaştı.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5552.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5552.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5552.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "araclarin-cin-elektrikli-havalarda-korumak-menzilini-pucu-sicak"
           }
         ],
-        "count": 1,
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -138,54 +174,265 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 3,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 93,
-            "after_keyword": 59,
-            "after_time": 5,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 94,
+            "after_keyword": 60,
+            "after_time": 7,
+            "after_posted": 3,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
-          "found": 93,
-          "after_keyword": 59,
-          "after_time": 5,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 94,
+          "after_keyword": 60,
+          "after_time": 7,
+          "after_posted": 3,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-08-25T07:36:21.413824+03:00"
+      "updated_at": "2026-08-25T08:29:35.788582+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold (threshold=30, top_score=23)",
-      "updated_at": "2026-08-25T07:36:22.972957+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+          "link": "https://shiftdelete.net/tesla-cybercab-tanitim-tarihi",
+          "published": "2026-08-25T05:00:46+00:00",
+          "summary": "Tesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aracta-belli-cybercab-direksiyon-tanitim-tarihi-tesla-yok",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
+          },
+          "score": 85,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla ve tamamen otonom, direksiyonsuz araç konsepti sosyal medyada büyük yankı uyandıracak ve yüksek etkileşim alacak bir teknoloji gelişmesidir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 85,
+        "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 11
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Tesla ve tamamen otonom, direksiyonsuz araç konsepti sosyal medyada büyük yankı uyandıracak ve yüksek etkileşim alacak bir teknoloji gelişmesidir.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+            "score": 85,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 11
+            }
+          },
+          {
+            "title": "Sıcak Havalarda Elektrikli Araçların Menzilini Korumak İçin 4 İpucu",
+            "score": 56,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 8,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "En İyi Araba Brandası (Tavsiye)",
+            "score": 17,
+            "score_breakdown": {
+              "guncellik": 3,
+              "etkilesim_potansiyeli": 3,
+              "benzersizlik": 2,
+              "gundem_gucu": 3,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 3,
+        "cooldown_candidates": [
+          {
+            "title": "Sıcak Havalarda Elektrikli Araçların Menzilini Korumak İçin 4 İpucu",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/sicak-havalarda-elektrikli-araclarin-menzilini-korumak-icin-4-ipucu-5244h",
+            "score": 56,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "araclarin-cin-elektrikli-havalarda-korumak-menzilini-pucu-sicak"
+          },
+          {
+            "title": "En İyi Araba Brandası (Tavsiye)",
+            "link": "https://shiftdelete.net/en-iyi-araba-brandasi",
+            "score": 17,
+            "score_reason": "ai_scored",
+            "source_name": "ShiftDelete Otomobil",
+            "topic_fingerprint": "araba-brandasi-tavsiye"
+          }
+        ]
+      },
+      "error": null,
+      "updated_at": "2026-08-25T08:29:38.538451+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+          "link": "https://shiftdelete.net/tesla-cybercab-tanitim-tarihi",
+          "published": "2026-08-25T05:00:46+00:00",
+          "summary": "Tesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aracta-belli-cybercab-direksiyon-tanitim-tarihi-tesla-yok",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
+          },
+          "score": 85,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla ve tamamen otonom, direksiyonsuz araç konsepti sosyal medyada büyük yankı uyandıracak ve yüksek etkileşim alacak bir teknoloji gelişmesidir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tesla, merakla beklenen otonom aracı için resmi adımı attı. Şirket, 3 Eylül tarihinde Austin’de gerçekleşecek olanTesla Cybercab tanıtım tarihiiçin özel bir etkinlik düzenleyeceğini duyurdu. Etkinlik davetiyeleri, katılımcıların tam otonom sürüşün geleceğini deneyimleme fırsatı bulacağını belirtiyor. Tesla, bu etkinliğin sadece davetlilere açık olacağını ancak canlı yayınlanacağını açıkladı. Cybercab, şirketin mevcut Robotaxi uygulaması üzerinden Austin’de kullanıma sunulacak. İki kişilik olarak tasarlanan Cybercab, tamamen sürücüsüz bir araç olduğu için direksiyon veya pedal gibi geleneksel sürüş kontrollerine sahip değil. Bu tasarım tercihi, aracın oldukça hafif bir elektrikli araç olmasını sağlıyor. ABD Çevre Koruma Ajansı’na (EPA) sunulan düzenleyici dosyalara göre, aracın ağırlığı yaklaşık 3.113 pound seviyesinde. Bu değer, aracın en hafif Model 3’ten yaklaşık 700 pound daha hafif olduğu anlamına geliyor. Cybercab, ön kısma yerleştirilmiş 219 beygir gücünde sabit mıknatıslı bir motorla çalışıyor. Araçta bulunan 48 kWh kapasiteli batarya paketi, EPA testlerine göre 418 millik bir menzil sunuyor. Ancak, gerçek dünya koşullarında bu menzilin 290 ila 300 mil arasında olması bekleniyor. Aracın 165 watt-saat/mil verimlilik derecesi, onu şimdiye kadar sertifikalandırılmış en verimli elektrikli araçlardan biri yapıyor. Tesla, Robotaxi hizmetini ilk olarak Haziran 2025’te Austin’de başlatmıştı. Şirket, bu hizmeti hızlı bir şekilde Kaliforniya, Nevada, Arizona ve Florida gibi eyaletlere yaymayı hedefliyor. Şu an itibarıyla Robotaxi hizmetleri sadece Teksas ve Florida’da aktif durumda. Electrek verilerine göre, Tesla’nın aynı anda çalışan 20 ila 30 civarında denetimsiz aracı bulunuyor. Waymo ise 11’den fazla şehirde 3.000 otonom araçla haftalık 500.000’den fazla ücretli yolculuk gerçekleştiriyor. Tesla, operasyonlarını büyütmek için çeşitli adımlar atmaya devam ediyor. Geçtiğimiz hafta Nevada Ulaşım Otoritesi, Tesla’nın Clark County’de ticari robotaksi hizmeti vermesine izin veren izinleri onayladı. Bu izin, Tesla’nın ilk 12 ay içinde 5.000 adede kadar tam otonom araç konuşlandırmasına olanak tanıyor. Ayrıca şirket, Austin’deki servis merkezini robocar yıkama ve şarj istasyonlarıyla genişletmek için planlar sundu. Benzer şekilde, Las Vegas’ta da bir Cybercab araç yıkama tesisi için başvurular yapıldı. Tesla, bu genişleme planları hakkında henüz resmi bir açıklama yapmadı. Sizce tamamen otonom araçlar yakın gelecekte şehir içi ulaşımda geleneksel araçların yerini alabilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+        },
+        "post_text": "BU ARAÇTA DİREKSİYON YOK: TESLA CYBERCAB TANITIM TARİHİ BELLİ OLDU\n\nTesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 261,
+        "story_card_title": "DİREKSİYONSUZ TESLA YOLDA!",
+        "story_card_subtitle": "Tesla'nın direksiyonsuz ve tamamen otonom aracı Cybercab'in tanıtım tarihi netleşti. 3 Eylül'de Austin'de sahne alacak bu devrim niteliğindeki araç, otomotiv dünyasında yeni bir sayfa açmaya hazırlanıyor. Otonom sürüşün geleceği bu tanıtımla şekillenecek.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-25T08:29:42.621524+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Bu Araçta Direksiyon Yok: Tesla Cybercab Tanıtım Tarihi Belli Oldu",
+          "link": "https://shiftdelete.net/tesla-cybercab-tanitim-tarihi",
+          "published": "2026-08-25T05:00:46+00:00",
+          "summary": "Tesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "meta_og",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aracta-belli-cybercab-direksiyon-tanitim-tarihi-tesla-yok",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
+          },
+          "score": 85,
+          "score_reason": "ai_scored",
+          "score_explanation": "Tesla ve tamamen otonom, direksiyonsuz araç konsepti sosyal medyada büyük yankı uyandıracak ve yüksek etkileşim alacak bir teknoloji gelişmesidir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Tesla, merakla beklenen otonom aracı için resmi adımı attı. Şirket, 3 Eylül tarihinde Austin’de gerçekleşecek olanTesla Cybercab tanıtım tarihiiçin özel bir etkinlik düzenleyeceğini duyurdu. Etkinlik davetiyeleri, katılımcıların tam otonom sürüşün geleceğini deneyimleme fırsatı bulacağını belirtiyor. Tesla, bu etkinliğin sadece davetlilere açık olacağını ancak canlı yayınlanacağını açıkladı. Cybercab, şirketin mevcut Robotaxi uygulaması üzerinden Austin’de kullanıma sunulacak. İki kişilik olarak tasarlanan Cybercab, tamamen sürücüsüz bir araç olduğu için direksiyon veya pedal gibi geleneksel sürüş kontrollerine sahip değil. Bu tasarım tercihi, aracın oldukça hafif bir elektrikli araç olmasını sağlıyor. ABD Çevre Koruma Ajansı’na (EPA) sunulan düzenleyici dosyalara göre, aracın ağırlığı yaklaşık 3.113 pound seviyesinde. Bu değer, aracın en hafif Model 3’ten yaklaşık 700 pound daha hafif olduğu anlamına geliyor. Cybercab, ön kısma yerleştirilmiş 219 beygir gücünde sabit mıknatıslı bir motorla çalışıyor. Araçta bulunan 48 kWh kapasiteli batarya paketi, EPA testlerine göre 418 millik bir menzil sunuyor. Ancak, gerçek dünya koşullarında bu menzilin 290 ila 300 mil arasında olması bekleniyor. Aracın 165 watt-saat/mil verimlilik derecesi, onu şimdiye kadar sertifikalandırılmış en verimli elektrikli araçlardan biri yapıyor. Tesla, Robotaxi hizmetini ilk olarak Haziran 2025’te Austin’de başlatmıştı. Şirket, bu hizmeti hızlı bir şekilde Kaliforniya, Nevada, Arizona ve Florida gibi eyaletlere yaymayı hedefliyor. Şu an itibarıyla Robotaxi hizmetleri sadece Teksas ve Florida’da aktif durumda. Electrek verilerine göre, Tesla’nın aynı anda çalışan 20 ila 30 civarında denetimsiz aracı bulunuyor. Waymo ise 11’den fazla şehirde 3.000 otonom araçla haftalık 500.000’den fazla ücretli yolculuk gerçekleştiriyor. Tesla, operasyonlarını büyütmek için çeşitli adımlar atmaya devam ediyor. Geçtiğimiz hafta Nevada Ulaşım Otoritesi, Tesla’nın Clark County’de ticari robotaksi hizmeti vermesine izin veren izinleri onayladı. Bu izin, Tesla’nın ilk 12 ay içinde 5.000 adede kadar tam otonom araç konuşlandırmasına olanak tanıyor. Ayrıca şirket, Austin’deki servis merkezini robocar yıkama ve şarj istasyonlarıyla genişletmek için planlar sundu. Benzer şekilde, Las Vegas’ta da bir Cybercab araç yıkama tesisi için başvurular yapıldı. Tesla, bu genişleme planları hakkında henüz resmi bir açıklama yapmadı. Sizce tamamen otonom araçlar yakın gelecekte şehir içi ulaşımda geleneksel araçların yerini alabilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "BU ARAÇTA DİREKSİYON YOK: TESLA CYBERCAB TANITIM TARİHİ BELLİ OLDU\n\nTesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "DİREKSİYONSUZ TESLA YOLDA!",
+          "story_card_subtitle": "Tesla'nın direksiyonsuz ve tamamen otonom aracı Cybercab'in tanıtım tarihi netleşti. 3 Eylül'de Austin'de sahne alacak bu devrim niteliğindeki araç, otomotiv dünyasında yeni bir sayfa açmaya hazırlanıyor. Otonom sürüşün geleceği bu tanıtımla şekillenecek.",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/08/bu-aracta-direksiyon-yok-tesla-cybercab-tanitim-tarihi-belli-oldu.webp",
+            "https://ares.shiftdelete.net/2026/08/bu-aracta-direksiyon-yok-tesla-cybercab-tanitim-tarihi-belli-oldu-2.webp"
+          ]
+        },
+        "post_text": "BU ARAÇTA DİREKSİYON YOK: TESLA CYBERCAB TANITIM TARİHİ BELLİ OLDU\n\nTesla Cybercab tanıtım tarihi belli oldu. 3 Eylül'de Austin'de gerçekleşecek etkinlikte, direksiyonsuz ve tamamen otonom araç tanıtılacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "DİREKSİYONSUZ TESLA YOLDA!",
+        "story_card_subtitle": "Tesla'nın direksiyonsuz ve tamamen otonom aracı Cybercab'in tanıtım tarihi netleşti. 3 Eylül'de Austin'de sahne alacak bu devrim niteliğindeki araç, otomotiv dünyasında yeni bir sayfa açmaya hazırlanıyor. Otonom sürüşün geleceği bu tanıtımla şekillenecek.",
+        "image_path": "/tmp/otoxtra_img_16o020ko.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_16o020ko.jpg",
+          "/tmp/otoxtra_img_jcwzrn42.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-25T08:29:44.309491+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122177161796916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18017597387924116",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2576849199406969",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-25T08:30:27.110845+03:00"
     }
   }
 }
