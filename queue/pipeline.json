@@ -1,14 +1,32 @@
 {
-  "run_id": "2026-08-25-02:20",
+  "run_id": "2026-08-25-04:06",
   "status": "error",
-  "started_at": "2026-08-25T02:20:02.423547+03:00",
-  "updated_at": "2026-08-25T02:20:41.208851+03:00",
+  "started_at": "2026-08-25T04:06:18.409508+03:00",
+  "updated_at": "2026-08-25T04:07:00.008346+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "En İyi Araba Brandası (Tavsiye)",
+            "link": "https://shiftdelete.net/en-iyi-araba-brandasi",
+            "published": "2026-08-24T23:27:54+00:00",
+            "summary": "Otomobilinizi her türlü hava koşulundan korumak istiyorsanız, kaliteli bir branda almak zorundasınız. Yağmur, kar, güneş ve kuş pisliği gibi arabaların olmazsa olmazı olan bu etkenler araç brandalarıyla rahatlıkla önlenebiliyor. Peki, en iyi araba brandası hangisi? Bu rehberimizde araçlarınız için kalıcı bir çözüm arıyoruz. Piyasada birçok farklı araba brandası bulunuyor. Bu brandalar, farklı kumaş yapılarında ve […]",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "araba-brandasi-tavsiye"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,29 +145,29 @@
           "_metrics": {
             "found": 93,
             "after_keyword": 59,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 5,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 93,
           "after_keyword": 59,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 5,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-25T02:20:41.208851+03:00"
+      "error": null,
+      "updated_at": "2026-08-25T04:06:58.029957+03:00"
     },
     "score": {
-      "status": "waiting",
+      "status": "error",
       "output": null,
-      "error": null,
-      "updated_at": null
+      "error": "No article above threshold (threshold=30, top_score=26)",
+      "updated_at": "2026-08-25T04:07:00.008346+03:00"
     },
     "write": {
       "status": "waiting",
