@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-08-26-12:38",
-  "status": "completed",
-  "started_at": "2026-08-26T12:38:07.989631+03:00",
-  "updated_at": "2026-08-26T12:40:11.314270+03:00",
+  "run_id": "2026-08-26-13:33",
+  "status": "error",
+  "started_at": "2026-08-26T13:33:00.365989+03:00",
+  "updated_at": "2026-08-26T13:33:55.641350+03:00",
   "stages": {
     "fetch": {
       "status": "done",
@@ -26,28 +26,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "detaylari-kamera-max-paylasildi-pro-pro-vivo-x500-x500"
-          },
-          {
-            "title": "Elektrikli Defender 2030'lara ertelendi",
-            "link": "https://tr.motor1.com/news/806079/elektrikli-defender-2030-erteleme/",
-            "published": "2026-08-26T09:00:00+00:00",
-            "summary": "JLR, kısıtlı EV bütçesinde Range Rover Electric'e öncelik veriyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2030-defender-elektrikli-ertelendi-lara"
           }
         ],
-        "count": 2,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -165,252 +146,48 @@
           },
           "_metrics": {
             "found": 96,
-            "after_keyword": 67,
+            "after_keyword": 66,
             "after_time": 10,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 96,
-          "after_keyword": 67,
+          "after_keyword": 66,
           "after_time": 10,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-08-26T12:39:05.977534+03:00"
+      "updated_at": "2026-08-26T13:33:54.038538+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Elektrikli Defender 2030'lara ertelendi",
-          "link": "https://tr.motor1.com/news/806079/elektrikli-defender-2030-erteleme/",
-          "published": "2026-08-26T09:00:00+00:00",
-          "summary": "JLR, kısıtlı EV bütçesinde Range Rover Electric'e öncelik veriyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2030-defender-elektrikli-ertelendi-lara",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Önemli bir arazi aracı modelinin elektrifikasyon sürecinin ertelenmesi, otomobil gündeminde tartışma yaratacak ve etkileşim çekecek bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Elektrikli Defender 2030'lara ertelendi",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 12,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Önemli bir arazi aracı modelinin elektrifikasyon sürecinin ertelenmesi, otomobil gündeminde tartışma yaratacak ve etkileşim çekecek bir gelişme.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Elektrikli Defender 2030'lara ertelendi",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Vivo X500 Pro ve X500 Pro Max için yeni kamera detayları paylaşıldı",
-            "score": 26,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 2,
-              "benzersizlik": 1,
-              "gundem_gucu": 2,
-              "paylasilabilirlik": 1
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Vivo X500 Pro ve X500 Pro Max için yeni kamera detayları paylaşıldı",
-            "link": "https://www.log.com.tr/vivo-x500-pro-ve-x500-pro-max-icin-yeni-kamera-detaylari-paylasildi/",
-            "score": 26,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "detaylari-kamera-max-paylasildi-pro-pro-vivo-x500-x500"
-          }
-        ]
-      },
-      "error": null,
-      "updated_at": "2026-08-26T12:39:07.934024+03:00"
+      "status": "error",
+      "output": null,
+      "error": "No article above threshold (threshold=40, top_score=21)",
+      "updated_at": "2026-08-26T13:33:55.641350+03:00"
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Defender 2030'lara ertelendi",
-          "link": "https://tr.motor1.com/news/806079/elektrikli-defender-2030-erteleme/",
-          "published": "2026-08-26T09:00:00+00:00",
-          "summary": "JLR, kısıtlı EV bütçesinde Range Rover Electric'e öncelik veriyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2030-defender-elektrikli-ertelendi-lara",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Önemli bir arazi aracı modelinin elektrifikasyon sürecinin ertelenmesi, otomobil gündeminde tartışma yaratacak ve etkileşim çekecek bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Jaguar Land Rover, tam elektrikliDefenderiçin kesin bir lansman tarihi vermeyerek bunun yerine benzinli, dizel ve hibrit motor seçenekleriyle yola devam etmeye vurgu yapıyor. Defender’ın zamanlamasına ilişkin yorumlar iseThe Timeshaberi de dahil olmak üzere \"bir erteleme\" olarak ele alınıyor. Raporlara göre Jaguar Land Rover, Defender’ın kapsamlı yenilemesi konusunda daha yavaş bir yaklaşım benimsiyor; bu süreçte,küçük Land Rover Defenderiçin hazırlanan erken planlar ilerlemeye devam ediyor. Land Rover Baby Defender render görselleri Son yatırımcı bilgilendirmeleri, üretime zaten yakın olan araçlara daha sıkı odaklanıldığını ve harcamalarda kesintiye gidildiğini ortaya koyuyor. Bu tablo, Jaguar Land Rover’a olası tedarik görüşmeleriyle ilişkilendirilen AESC’nin Sunderland tesisindeki batarya kapasitesi genişlemesinin ertelenmesiyle de destekleniyor. JLR, Range Rover Electric ve Range Rover Sport Electric modellerinin Modular Longitudinal Architecture platformunu kullanacağını ve Solihull’da üretileceğini doğruladı. Electric Modular Architecture tabanlı ilk SUV ise Halewood’da üretilecek yeni bir Range Rover modeli olacak. Şirket, Range Rover Electric’in 2026’nın ilerleyen dönemlerinde tanıtılacağını açıkladı. Şimdilik Range Rover Electric; EMA tabanlı Range Rover modeli ve yeni Jaguar elektrikli otomobiliyle birlikte kısa vadeli ana elektrikli araç projeleri arasında yer alıyor. Jaguar Land Rover, tam elektrikli Defender’ın bu ürün planına ne zaman dahil olacağına dair kamuya açık bir takvim açıklamadı. Ayrıca ABD’deki ortaklarla Defender ailesi araçları üretmeye yönelik herhangi bir planı doğrulamadı ya da böyle bir düzenlemeye tarih bağlamadı. Mercedes, elektrikli G-Serisi olan G 580 with EQ Technology modelini halihazırda satıyor. Böylece marka, Jaguar Land Rover’ın muadili hâlâ planlama aşamasındayken bayilerde hazır bir elektrikli arazi aracına sahip. Jaguar Land Rover, değişen elektrikli araç takvimlerini yönetmeye çalışan tek üretici değil. Scout’un elektrikli pick-up ve SUV ürün gamı dahaberimizdeaktardığımız üzere 2028–2030 aralığına ötelenmiş durumda. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "Defender’ın elektrikli versiyonu ertelendi ama asıl mesele bu değil. JLR, kısıtlı bütçeyi Range Rover Electric’e ayırıyor.\n\nYani, elektrikli Defender bekleyenler biraz daha benzinli, dizel veya hibrit seçmek zorunda kalacak. Şirket, premium segmente öncelik vererek pazarın nabzını tutuyor.\n\nLüks markaların stratejisi, her zaman kitlesel talepten önce kendi önceliklerini belirler.",
-        "post_text_length": 382,
-        "story_card_title": "Defender elektriğe geçmekte gecikti!",
-        "story_card_subtitle": "JLR'nin elektrikli Defender planları 2030'lara ertelendi. Şirket, kısıtlı EV bütçesini Range Rover Electric'e ayırarak premium segmente öncelik veriyor. Bu strateji, elektrikli Defender bekleyenleri benzinli, dizel veya hibrit seçeneklere yönlendirecek. Lüks markaların kendi önceliklerini belirlemesi, pazarın nabzını tutmanın yeni yolu.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-26T12:39:10.985442+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Defender 2030'lara ertelendi",
-          "link": "https://tr.motor1.com/news/806079/elektrikli-defender-2030-erteleme/",
-          "published": "2026-08-26T09:00:00+00:00",
-          "summary": "JLR, kısıtlı EV bütçesinde Range Rover Electric'e öncelik veriyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/JONpxQ/s3/range-rover-sport-electric-prototype.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2030-defender-elektrikli-ertelendi-lara",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Önemli bir arazi aracı modelinin elektrifikasyon sürecinin ertelenmesi, otomobil gündeminde tartışma yaratacak ve etkileşim çekecek bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Jaguar Land Rover, tam elektrikliDefenderiçin kesin bir lansman tarihi vermeyerek bunun yerine benzinli, dizel ve hibrit motor seçenekleriyle yola devam etmeye vurgu yapıyor. Defender’ın zamanlamasına ilişkin yorumlar iseThe Timeshaberi de dahil olmak üzere \"bir erteleme\" olarak ele alınıyor. Raporlara göre Jaguar Land Rover, Defender’ın kapsamlı yenilemesi konusunda daha yavaş bir yaklaşım benimsiyor; bu süreçte,küçük Land Rover Defenderiçin hazırlanan erken planlar ilerlemeye devam ediyor. Land Rover Baby Defender render görselleri Son yatırımcı bilgilendirmeleri, üretime zaten yakın olan araçlara daha sıkı odaklanıldığını ve harcamalarda kesintiye gidildiğini ortaya koyuyor. Bu tablo, Jaguar Land Rover’a olası tedarik görüşmeleriyle ilişkilendirilen AESC’nin Sunderland tesisindeki batarya kapasitesi genişlemesinin ertelenmesiyle de destekleniyor. JLR, Range Rover Electric ve Range Rover Sport Electric modellerinin Modular Longitudinal Architecture platformunu kullanacağını ve Solihull’da üretileceğini doğruladı. Electric Modular Architecture tabanlı ilk SUV ise Halewood’da üretilecek yeni bir Range Rover modeli olacak. Şirket, Range Rover Electric’in 2026’nın ilerleyen dönemlerinde tanıtılacağını açıkladı. Şimdilik Range Rover Electric; EMA tabanlı Range Rover modeli ve yeni Jaguar elektrikli otomobiliyle birlikte kısa vadeli ana elektrikli araç projeleri arasında yer alıyor. Jaguar Land Rover, tam elektrikli Defender’ın bu ürün planına ne zaman dahil olacağına dair kamuya açık bir takvim açıklamadı. Ayrıca ABD’deki ortaklarla Defender ailesi araçları üretmeye yönelik herhangi bir planı doğrulamadı ya da böyle bir düzenlemeye tarih bağlamadı. Mercedes, elektrikli G-Serisi olan G 580 with EQ Technology modelini halihazırda satıyor. Böylece marka, Jaguar Land Rover’ın muadili hâlâ planlama aşamasındayken bayilerde hazır bir elektrikli arazi aracına sahip. Jaguar Land Rover, değişen elektrikli araç takvimlerini yönetmeye çalışan tek üretici değil. Scout’un elektrikli pick-up ve SUV ürün gamı dahaberimizdeaktardığımız üzere 2028–2030 aralığına ötelenmiş durumda. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "Defender’ın elektrikli versiyonu ertelendi ama asıl mesele bu değil. JLR, kısıtlı bütçeyi Range Rover Electric’e ayırıyor.\n\nYani, elektrikli Defender bekleyenler biraz daha benzinli, dizel veya hibrit seçmek zorunda kalacak. Şirket, premium segmente öncelik vererek pazarın nabzını tutuyor.\n\nLüks markaların stratejisi, her zaman kitlesel talepten önce kendi önceliklerini belirler.",
-          "story_card_title": "Defender elektriğe geçmekte gecikti!",
-          "story_card_subtitle": "JLR'nin elektrikli Defender planları 2030'lara ertelendi. Şirket, kısıtlı EV bütçesini Range Rover Electric'e ayırarak premium segmente öncelik veriyor. Bu strateji, elektrikli Defender bekleyenleri benzinli, dizel veya hibrit seçeneklere yönlendirecek. Lüks markaların kendi önceliklerini belirlemesi, pazarın nabzını tutmanın yeni yolu.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_script"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/JONpxQ/s1/range-rover-sport-electric-prototype.jpg",
-            "https://cdn.motor1.com/images/mgl/y2lOpe/s3/range-rover-sport-electric-prototype.jpg",
-            "https://cdn.motor1.com/images/mgl/nRMm1/s3/land-rover-baby-defender-renderings.jpg",
-            "https://cdn.motor1.com/images/mgl/JONpxQ/s1/1x1/range-rover-sport-electric-prototype.webp"
-          ]
-        },
-        "post_text": "Defender’ın elektrikli versiyonu ertelendi ama asıl mesele bu değil. JLR, kısıtlı bütçeyi Range Rover Electric’e ayırıyor.\n\nYani, elektrikli Defender bekleyenler biraz daha benzinli, dizel veya hibrit seçmek zorunda kalacak. Şirket, premium segmente öncelik vererek pazarın nabzını tutuyor.\n\nLüks markaların stratejisi, her zaman kitlesel talepten önce kendi önceliklerini belirler.",
-        "story_card_title": "Defender elektriğe geçmekte gecikti!",
-        "story_card_subtitle": "JLR'nin elektrikli Defender planları 2030'lara ertelendi. Şirket, kısıtlı EV bütçesini Range Rover Electric'e ayırarak premium segmente öncelik veriyor. Bu strateji, elektrikli Defender bekleyenleri benzinli, dizel veya hibrit seçeneklere yönlendirecek. Lüks markaların kendi önceliklerini belirlemesi, pazarın nabzını tutmanın yeni yolu.",
-        "image_path": "/tmp/otoxtra_img_ed34t3__.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_ed34t3__.jpg",
-          "/tmp/otoxtra_img_q_8bdmy9.jpg",
-          "/tmp/otoxtra_img_7dj1qwc0.jpg",
-          "/tmp/otoxtra_img_94cy6_yy.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-26T12:39:16.328936+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122177307524916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17943318819321697",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2296564494441136",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-08-26T12:40:11.314270+03:00"
+      "updated_at": null
     }
   }
 }
