@@ -1,14 +1,53 @@
 {
-  "run_id": "2026-08-26-08:31",
-  "status": "error",
-  "started_at": "2026-08-26T08:31:53.585096+03:00",
-  "updated_at": "2026-08-26T08:32:42.268772+03:00",
+  "run_id": "2026-08-26-09:43",
+  "status": "completed",
+  "started_at": "2026-08-26T09:43:10.108941+03:00",
+  "updated_at": "2026-08-26T09:44:57.596802+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Güneş santralleri için sıra dışı plan: Dronlar üretimi artıracak",
+            "link": "https://www.donanimhaber.com/gunes-santralleri-icin-sira-disi-plan-dronlar-uretimi-artiracak--209744",
+            "published": "2026-08-26T06:20:00+00:00",
+            "summary": "Türk girişimci tarafından kurulan Meteoric, güneş santrallerinin üzerindeki bulutları otonom dronlarla dağıtarak panellere daha fazla ışık ulaştırmayı ve üretimi yüzde 10-30 artırmayı hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209744/1200x675gunes-santralleri-icin-sira-disi-plan-dronlar-uretimi-artiracak.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209744/1200x675gunes-santralleri-icin-sira-disi-plan-dronlar-uretimi-artiracak.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209744/1200x675gunes-santralleri-icin-sira-disi-plan-dronlar-uretimi-artiracak.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "artiracak-disi-dronlar-gunes-plan-santralleri-sira-uretimi"
+          },
+          {
+            "title": "Avrupa’daki öncü Çinliler kök salıyor",
+            "link": "https://www.otoajanda.com/avrupadaki-oncu-cinliler-kok-saliyor-90-binlik-uretimden-15-milyona-gidiyorlar/",
+            "published": "2026-08-26T05:42:23+00:00",
+            "summary": "Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor. Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık 90.000 adet seviyesinde kalacak. […] Avrupa’daki öncü Çinliler kök salıyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "avrupa-cinliler-kok-oncu-saliyor"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +165,243 @@
           },
           "_metrics": {
             "found": 96,
-            "after_keyword": 70,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 66,
+            "after_time": 9,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 96,
-          "after_keyword": 70,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 66,
+          "after_time": 9,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-08-26T08:32:42.268772+03:00"
+      "error": null,
+      "updated_at": "2026-08-26T09:44:03.304450+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Avrupa’daki öncü Çinliler kök salıyor",
+          "link": "https://www.otoajanda.com/avrupadaki-oncu-cinliler-kok-saliyor-90-binlik-uretimden-15-milyona-gidiyorlar/",
+          "published": "2026-08-26T05:42:23+00:00",
+          "summary": "Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor. Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık 90.000 adet seviyesinde kalacak. […] Avrupa’daki öncü Çinliler kök salıyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-cinliler-kok-oncu-saliyor",
+          "base_ai_score": 74,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 77,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv dünyasının güncel en sıcak gündem maddelerinden biri olan Çinli üreticilerin Avrupa stratejilerini içermesi, sektör profesyonelleri ve otomobil meraklıları arasında yüksek etkileşim yaratır.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 77,
+        "title": "Avrupa’daki öncü Çinliler kök salıyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 14,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Otomotiv dünyasının güncel en sıcak gündem maddelerinden biri olan Çinli üreticilerin Avrupa stratejilerini içermesi, sektör profesyonelleri ve otomobil meraklıları arasında yüksek etkileşim yaratır.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Avrupa’daki öncü Çinliler kök salıyor",
+            "score": 77,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 14,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Güneş santralleri için sıra dışı plan: Dronlar üretimi artıracak",
+            "score": 70,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Güneş santralleri için sıra dışı plan: Dronlar üretimi artıracak",
+            "link": "https://www.donanimhaber.com/gunes-santralleri-icin-sira-disi-plan-dronlar-uretimi-artiracak--209744",
+            "score": 70,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "artiracak-disi-dronlar-gunes-plan-santralleri-sira-uretimi"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T09:44:05.420529+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Avrupa’daki öncü Çinliler kök salıyor",
+          "link": "https://www.otoajanda.com/avrupadaki-oncu-cinliler-kok-saliyor-90-binlik-uretimden-15-milyona-gidiyorlar/",
+          "published": "2026-08-26T05:42:23+00:00",
+          "summary": "Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor. Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık 90.000 adet seviyesinde kalacak. […] Avrupa’daki öncü Çinliler kök salıyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-cinliler-kok-oncu-saliyor",
+          "base_ai_score": 74,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 77,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv dünyasının güncel en sıcak gündem maddelerinden biri olan Çinli üreticilerin Avrupa stratejilerini içermesi, sektör profesyonelleri ve otomobil meraklıları arasında yüksek etkileşim yaratır.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor.Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık90.000 adetseviyesinde kalacak.Ancak bağımsız analistlerin ve pazar araştırma kuruluşuRhodium Groupgibi kuruluşların projeksiyonları, önümüzdeki 10 yıl içerisinde bu rakamın1,5 milyon adedetırmanacağını öngörüyor. Avrupa pazarında kalıcı bir güç olmak isteyenÇinli otomotiv üreticileri, lojistik avantaj ve vergi muafiyetleri elde etmek amacıyla üretim tesislerini Avrupa kıtasına yayıyor. Chery,İspanya’daki eski Nissan fabrikasını devralarak yıllık 200.000 araçlık üretim kapasitesini hedeflerken, Jaecoo ve Omoda modellerini bu tesisten yollara çıkaracak. BYD,Macaristan’da inşa ettiği binek araç fabrikasını önümüzdeki dönemde devreye almaya hazırlanıyor. Leapmotor,ortaklık kurduğu Stellantis grubu ile araçlarını doğrudan Avrupa’daki Stellantis tesislerinde montajlıyor. Geely,XpengveDongfenggibi diğer üreticiler ise Graz (Avusturya) ve Fransa’daki tesislerde anlaşmalı üretim modeliyle yeni döneme hazırlanıyor. Gümrük tarifelerinin getirdiği %35’e varan ek yükler hesaba katıldığında, yerel montaj stratejisi sadece bir tercih değil, pazar payını korumak için zorunlu bir hamle olarak öne çıkıyor. Avrupa Düzenleme Kurulları, yerel üretimin yalnızca montajdan ibaret olmasını engellemeye kararlı.Rhodium Group analisti Gregor Williams’ın vurguladığı üzere bir otomobilin hukuken“Made in Europe”(Avrupa yapımı) kabul edilebilmesi için pil hücreleri ve kritik aktarma organları dahil olmak üzere tedarik zincirinin önemli bir kısmının yerelleşmesi gerekiyor. “Sadece parçaları Çin’den getirip Avrupa’da vida sıkmak etiketi değiştirmeye yetmeyecek. Gerçek bir sanayi dönüşümü için tedarikçilerin de buraya taşınması şart.”—Gregor Williams, Rhodium Group Yıllık üretim sıçraması:Yaklaşık 90.000 adetlik mevcut kapasite, 2030’ların başında 1 milyon sınırını aşacak ve 2035’e gelindiğinde yıllık 1,5 milyon adede dayanacak. Yerel tedarik ağlarının gelişimi:Çinli batarya üreticilerinin (CATL, Gotion vb.) Avrupa’daki fabrika yatırımları ile birlikte yerli tedarik oranı %60’ın üzerine çıkacak. Pazar payı dengesi:Çinli markaların Avrupa toplam otomotiv pazarındaki payı günümüzdeki %9-10 bandından 2030 yılı itibarıyla%20 seviyesineyükselecek. BMW, Mercedes-Benz, Volkswagen, Renault ve Stellantis gibi Avrupalı devler yıllarca Çin pazarında büyüme peşinde koştu. Bugün ise roller değişmiş durumda. Çinli markalar artık yalnızca ucuz fiyat politikasıyla değil, kendi geliştirdikleri teknoloji ve Avrupa’da kurdukları istihdam imkanlarıyla yerel birer oyuncuya dönüşüyor. Geleneksel Avrupa otomotiv sanayii için alarm zilleri çalarken, tüketiciler açısından rekabetin daha cazip fiyatlar ve daha hızlı yenilik anlamına geleceği açık. Ancak asıl soru şu:Avrupa sanayisi, bu yeni yerli rakiplerle kendi evinde kapışmaya ne kadar hazır? Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Volkswagen yeni pickup modeli “Tukan”ı tanıttı Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi Araç muayenede Turka gösterisi örnek istasyonla başladı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment."
+        },
+        "post_text": "Çinli otomobil üreticileri Avrupa'da fabrika kurmaya başladı.\n\nBu durum, Brüksel'in ek gümrük tarifelerini aşmak için zekice bir hamle. Üretim bantlarını Avrupa'ya taşıyarak sadece vergiden kaçmıyor, aynı zamanda lojistik avantaj sağlıyorlar.\n\nBu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona çıkacak. Çin markaları Avrupa pazarında kalıcı olmaya kararlı; bu sadece bir başlangıç.",
+        "post_text_length": 402,
+        "story_card_title": "Çin, Avrupa'yı Üretim Hattıyla Fethetti!",
+        "story_card_subtitle": "Avrupa'nın ek gümrük vergileri Çinli otomotiv devlerine işlemedi. Brüksel'in vergi hamlesini aşmak isteyen markalar, araçları Avrupa'da banttan indirmeye başladı. Bu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona ulaşacak. Çinli üreticiler Avrupa pazarında kalıcı olmaya kararlı.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T09:44:08.125092+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Avrupa’daki öncü Çinliler kök salıyor",
+          "link": "https://www.otoajanda.com/avrupadaki-oncu-cinliler-kok-saliyor-90-binlik-uretimden-15-milyona-gidiyorlar/",
+          "published": "2026-08-26T05:42:23+00:00",
+          "summary": "Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor. Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık 90.000 adet seviyesinde kalacak. […] Avrupa’daki öncü Çinliler kök salıyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg"
+          ],
+          "image_source": "article_candidates_field",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-cinliler-kok-oncu-saliyor",
+          "base_ai_score": 74,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 14,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
+          },
+          "score": 77,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv dünyasının güncel en sıcak gündem maddelerinden biri olan Çinli üreticilerin Avrupa stratejilerini içermesi, sektör profesyonelleri ve otomobil meraklıları arasında yüksek etkileşim yaratır.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "Otoajanda - Otomobilde Neler Oluyor, Önce Siz Öğrenin Brüksel ile Pekin arasındaki ticaret gerilimleri devam ederken, Çinli otomotiv üreticileri strateji değiştiriyor.Avrupa Birliği’nin Çin menşeli elektrikli araçlara uyguladığı ek gümrük tarifelerini doğrudan aşmayı hedefleyen Doğu Asya devleri, araç ihraç etmek yerine banttan indirme kararı aldı. Sektörel verilere göre, Çinli markaların Avrupa topraklarında ürettiği toplam araç sayısı bu yıl yaklaşık90.000 adetseviyesinde kalacak.Ancak bağımsız analistlerin ve pazar araştırma kuruluşuRhodium Groupgibi kuruluşların projeksiyonları, önümüzdeki 10 yıl içerisinde bu rakamın1,5 milyon adedetırmanacağını öngörüyor. Avrupa pazarında kalıcı bir güç olmak isteyenÇinli otomotiv üreticileri, lojistik avantaj ve vergi muafiyetleri elde etmek amacıyla üretim tesislerini Avrupa kıtasına yayıyor. Chery,İspanya’daki eski Nissan fabrikasını devralarak yıllık 200.000 araçlık üretim kapasitesini hedeflerken, Jaecoo ve Omoda modellerini bu tesisten yollara çıkaracak. BYD,Macaristan’da inşa ettiği binek araç fabrikasını önümüzdeki dönemde devreye almaya hazırlanıyor. Leapmotor,ortaklık kurduğu Stellantis grubu ile araçlarını doğrudan Avrupa’daki Stellantis tesislerinde montajlıyor. Geely,XpengveDongfenggibi diğer üreticiler ise Graz (Avusturya) ve Fransa’daki tesislerde anlaşmalı üretim modeliyle yeni döneme hazırlanıyor. Gümrük tarifelerinin getirdiği %35’e varan ek yükler hesaba katıldığında, yerel montaj stratejisi sadece bir tercih değil, pazar payını korumak için zorunlu bir hamle olarak öne çıkıyor. Avrupa Düzenleme Kurulları, yerel üretimin yalnızca montajdan ibaret olmasını engellemeye kararlı.Rhodium Group analisti Gregor Williams’ın vurguladığı üzere bir otomobilin hukuken“Made in Europe”(Avrupa yapımı) kabul edilebilmesi için pil hücreleri ve kritik aktarma organları dahil olmak üzere tedarik zincirinin önemli bir kısmının yerelleşmesi gerekiyor. “Sadece parçaları Çin’den getirip Avrupa’da vida sıkmak etiketi değiştirmeye yetmeyecek. Gerçek bir sanayi dönüşümü için tedarikçilerin de buraya taşınması şart.”—Gregor Williams, Rhodium Group Yıllık üretim sıçraması:Yaklaşık 90.000 adetlik mevcut kapasite, 2030’ların başında 1 milyon sınırını aşacak ve 2035’e gelindiğinde yıllık 1,5 milyon adede dayanacak. Yerel tedarik ağlarının gelişimi:Çinli batarya üreticilerinin (CATL, Gotion vb.) Avrupa’daki fabrika yatırımları ile birlikte yerli tedarik oranı %60’ın üzerine çıkacak. Pazar payı dengesi:Çinli markaların Avrupa toplam otomotiv pazarındaki payı günümüzdeki %9-10 bandından 2030 yılı itibarıyla%20 seviyesineyükselecek. BMW, Mercedes-Benz, Volkswagen, Renault ve Stellantis gibi Avrupalı devler yıllarca Çin pazarında büyüme peşinde koştu. Bugün ise roller değişmiş durumda. Çinli markalar artık yalnızca ucuz fiyat politikasıyla değil, kendi geliştirdikleri teknoloji ve Avrupa’da kurdukları istihdam imkanlarıyla yerel birer oyuncuya dönüşüyor. Geleneksel Avrupa otomotiv sanayii için alarm zilleri çalarken, tüketiciler açısından rekabetin daha cazip fiyatlar ve daha hızlı yenilik anlamına geleceği açık. Ancak asıl soru şu:Avrupa sanayisi, bu yeni yerli rakiplerle kendi evinde kapışmaya ne kadar hazır? Gazeteci, radyo programcısı, TV yorumcusu. 1989 yılında ekonomi gazeteciliğine başladı. 1999 yılında Hürriyet Grubu'nun yayınladığı haftalık Ekonomist Dergisi'nde otomotiv editörü oldu. 2006-2011 yılları arasında Akşam Gazetesi'nde Otovizyon köşesinde otomobil odaklı makaleler yazdı. 2011 yılında Otoajanda.com sitesini kurdu ve halen yayın yönetmeni olarak görev yapıyor. TV yorumculuğu ve radyo programcılığı ise son dönemdeki etkinlikleri arasında öne çıkıyor. OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Volkswagen yeni pickup modeli “Tukan”ı tanıttı Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi Araç muayenede Turka gösterisi örnek istasyonla başladı E-posta hesabınız yayımlanmayacak. Save my name, email, and website in this browser for the next time I comment.",
+          "post_text_for_card": "Çinli otomobil üreticileri Avrupa'da fabrika kurmaya başladı.\n\nBu durum, Brüksel'in ek gümrük tarifelerini aşmak için zekice bir hamle. Üretim bantlarını Avrupa'ya taşıyarak sadece vergiden kaçmıyor, aynı zamanda lojistik avantaj sağlıyorlar.\n\nBu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona çıkacak. Çin markaları Avrupa pazarında kalıcı olmaya kararlı; bu sadece bir başlangıç.",
+          "story_card_title": "Çin, Avrupa'yı Üretim Hattıyla Fethetti!",
+          "story_card_subtitle": "Avrupa'nın ek gümrük vergileri Çinli otomotiv devlerine işlemedi. Brüksel'in vergi hamlesini aşmak isteyen markalar, araçları Avrupa'da banttan indirmeye başladı. Bu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona ulaşacak. Çinli üreticiler Avrupa pazarında kalıcı olmaya kararlı.",
+          "image_sources": [
+            "article_candidates_field"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/08/Avrupadaki-Cinliler-2026.jpeg"
+          ]
+        },
+        "post_text": "Çinli otomobil üreticileri Avrupa'da fabrika kurmaya başladı.\n\nBu durum, Brüksel'in ek gümrük tarifelerini aşmak için zekice bir hamle. Üretim bantlarını Avrupa'ya taşıyarak sadece vergiden kaçmıyor, aynı zamanda lojistik avantaj sağlıyorlar.\n\nBu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona çıkacak. Çin markaları Avrupa pazarında kalıcı olmaya kararlı; bu sadece bir başlangıç.",
+        "story_card_title": "Çin, Avrupa'yı Üretim Hattıyla Fethetti!",
+        "story_card_subtitle": "Avrupa'nın ek gümrük vergileri Çinli otomotiv devlerine işlemedi. Brüksel'in vergi hamlesini aşmak isteyen markalar, araçları Avrupa'da banttan indirmeye başladı. Bu yıl 90 bin adetle sınırlı kalacak üretim, 10 yıl içinde 1,5 milyona ulaşacak. Çinli üreticiler Avrupa pazarında kalıcı olmaya kararlı.",
+        "image_path": "/tmp/otoxtra_img_eecdixdy.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_eecdixdy.jpg"
+        ],
+        "image_source": "article_candidates_field",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T09:44:10.501856+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122177294684916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18028835141675792",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1489550249861639",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T09:44:57.596802+03:00"
     }
   }
 }
