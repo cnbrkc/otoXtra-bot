@@ -1,13 +1,32 @@
 {
-  "run_id": "2026-08-26-14:27",
-  "status": "error",
-  "started_at": "2026-08-26T14:27:05.976154+03:00",
-  "updated_at": "2026-08-26T14:27:58.221977+03:00",
+  "run_id": "2026-08-26-15:46",
+  "status": "completed",
+  "started_at": "2026-08-26T15:46:16.532115+03:00",
+  "updated_at": "2026-08-26T15:48:28.980647+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+            "link": "https://www.donanimhaber.com/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7--209759",
+            "published": "2026-08-26T12:36:00+00:00",
+            "summary": "BYD’nin lüks markası Yangwang, tam elektrikli U7 modelinin 30.000 km’lik zorlu dayanıklılık testini 9 günden kısa sürede tamamladığını ve batarya kapasitesinin %98,7 oranında korunduğunu duyurdu.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "batarya-bin-byd-rekoru-sagligi-yangwang"
+          },
           {
             "title": "Vivo X500 Pro ve X500 Pro Max için yeni kamera detayları paylaşıldı",
             "link": "https://www.log.com.tr/vivo-x500-pro-ve-x500-pro-max-icin-yeni-kamera-detaylari-paylasildi/",
@@ -28,7 +47,7 @@
             "topic_fingerprint": "detaylari-kamera-max-paylasildi-pro-pro-vivo-x500-x500"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,47 +166,251 @@
           "_metrics": {
             "found": 96,
             "after_keyword": 66,
-            "after_time": 10,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 11,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 96,
           "after_keyword": 66,
-          "after_time": 10,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 11,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-08-26T14:27:56.763652+03:00"
+      "updated_at": "2026-08-26T15:47:12.071586+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold (threshold=40, top_score=23)",
-      "updated_at": "2026-08-26T14:27:58.221977+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+          "link": "https://www.donanimhaber.com/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7--209759",
+          "published": "2026-08-26T12:36:00+00:00",
+          "summary": "BYD’nin lüks markası Yangwang, tam elektrikli U7 modelinin 30.000 km’lik zorlu dayanıklılık testini 9 günden kısa sürede tamamladığını ve batarya kapasitesinin %98,7 oranında korunduğunu duyurdu.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "batarya-bin-byd-rekoru-sagligi-yangwang",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç dayanıklılığı ve batarya sağlığı konusunda dikkat çekici bir test başarısı. Otomobil meraklıları arasında etkileşim yaratır ancak genel gündemde sınırlı kalabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 70,
+        "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli araç dayanıklılığı ve batarya sağlığı konusunda dikkat çekici bir test başarısı. Otomobil meraklıları arasında etkileşim yaratır ancak genel gündemde sınırlı kalabilir.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+            "score": 70,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 6
+            }
+          },
+          {
+            "title": "Vivo X500 Pro ve X500 Pro Max için yeni kamera detayları paylaşıldı",
+            "score": 20,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 0,
+              "benzersizlik": 0,
+              "gundem_gucu": 1,
+              "paylasilabilirlik": 0
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Vivo X500 Pro ve X500 Pro Max için yeni kamera detayları paylaşıldı",
+            "link": "https://www.log.com.tr/vivo-x500-pro-ve-x500-pro-max-icin-yeni-kamera-detaylari-paylasildi/",
+            "score": 20,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "detaylari-kamera-max-paylasildi-pro-pro-vivo-x500-x500"
+          }
+        ]
+      },
+      "error": null,
+      "updated_at": "2026-08-26T15:47:14.550058+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+          "link": "https://www.donanimhaber.com/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7--209759",
+          "published": "2026-08-26T12:36:00+00:00",
+          "summary": "BYD’nin lüks markası Yangwang, tam elektrikli U7 modelinin 30.000 km’lik zorlu dayanıklılık testini 9 günden kısa sürede tamamladığını ve batarya kapasitesinin %98,7 oranında korunduğunu duyurdu.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "batarya-bin-byd-rekoru-sagligi-yangwang",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç dayanıklılığı ve batarya sağlığı konusunda dikkat çekici bir test başarısı. Otomobil meraklıları arasında etkileşim yaratır ancak genel gündemde sınırlı kalabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Düzenlenen basın toplantısında konuşan Yangwang Genel Müdürü Hu Xiaoqing, test edilen aracın özel olarak modifiye edilmiş ya da ayarlanmış bir konsept olmadığını, bir bayiden rastgele seçilen standart üretim modeli olduğunu vurguladı. Xiaoqing, aracın güvenilirliğini kanıtlamak adına tüm bağımsız kuruluş ve kişilerin doğrulama testlerine açık olduklarını da sözlerine ekledi.350'den fazla hızlı şarj ve 240 km/s sabit hızTam Boyutta GörTest, Çin’in güneyinde yer alan ve ortalama sıcaklığın36°C’yi, bağıl nemin ise%80’iaştığı son derece zorlu hava şartlarına sahip Nanning şehrinde gerçekleştirildi. Aracın kliması 24°C’de aralıksız çalıştırılırken, pist boyunca240 km/s sabit seyir hızıkorundu.Test süreci boyunca Yangwang U7 toplamda350’den fazla flaş şarj döngüsünemaruz kaldı. Zorlu sürüş koşullarına ve yoğun şarj temposuna rağmen, işlem tamamlandığında aracın batarya kapasite koruma oranının%98,7gibi rekor bir seviyede kaldığı açıklandı. Yetkililer, model henüz pazara sunulmadan önce toplam 758 test aracıyla 10,49 milyon kilometrelik gerçek sürüş mesafesinin geride bırakıldığını belirtti.Çin’deki yeni dayanıklılık standartları odaktaTam Boyutta GörYangwang’ın gerçekleştirdiği bu gövde gösterisi, Çin’de elektrikli araç güvenilirliğine yönelik resmi mevzuatların sıkılaştığı bir döneme denk geliyor. Çin Sanayi ve Enformasyon Teknolojileri Bakanlığı (MIIT), geleneksel araçlar için 30.000 kilometrelik zorunlu güvenilirlik testlerini yürürlüğe koyarken; Temmuz ayında yayımlanan yeni standart taslaklarıyla tamamen elektrikli ve şarj edilebilir hibrit (PHEV) araçların da içten yanmalı modellerle aynı seviyede,en az 30.000 km aralıksız güvenilirlik testinden geçmesizorunlu hale getiriliyor.Sektör uzmanları, yeni enerjili araçlara (NEV) getirilen bu katı standartların artık batarya menzili ve dayanıklılığının otomotiv sektörü için ana bir engel olmaktan çıktığının en somut kanıtı olduğunu vurguluyor. Temmuz ayında 485 adetlik satış rakamına ulaşan ve niş bir lüks segmentte konumlanan Yangwang için bu test, markanın mühendislik kaslarını tüm sektöre sergilediği kritik bir gövde gösterisi anlamı taşıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley4 gün önce1daha korkutucu bişey görmedim Düzenlenen basın toplantısında konuşan Yangwang Genel Müdürü Hu Xiaoqing, test edilen aracın özel olarak modifiye edilmiş ya da ayarlanmış bir konsept olmadığını, bir bayiden rastgele seçilen standart üretim modeli olduğunu vurguladı. Xiaoqing, aracın güvenilirliğini kanıtlamak adına tüm bağımsız kuruluş ve kişilerin doğrulama testlerine açık olduklarını da sözlerine ekledi. Test süreci boyunca Yangwang U7 toplamda350’den fazla flaş şarj döngüsünemaruz kaldı. Zorlu sürüş koşullarına ve yoğun şarj temposuna rağmen, işlem tamamlandığında aracın batarya kapasite koruma oranının%98,7gibi rekor bir seviyede kaldığı açıklandı. Yetkililer, model henüz pazara sunulmadan önce toplam 758 test aracıyla 10,49 milyon kilometrelik gerçek sürüş mesafesinin geride bırakıldığını belirtti. Sektör uzmanları, yeni enerjili araçlara (NEV) getirilen bu katı standartların artık batarya menzili ve dayanıklılığının otomotiv sektörü için ana bir engel olmaktan çıktığının en somut kanıtı olduğunu vurguluyor. Temmuz ayında 485 adetlik satış rakamına ulaşan ve niş bir lüks segmentte konumlanan Yangwang için bu test, markanın mühendislik kaslarını tüm sektöre sergilediği kritik bir gövde gösterisi anlamı taşıyor. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/promotion/psp/A25DCG5FSK1TXC?ref=psp_pc_cart_collapse https://www.amazon.com.tr/dp/B0GX1X8QZS https://www.n11.com/urun/tefal-fresh-kitchen-2li-set-sef-bicagi-15cm-santoku-bicagi-12cm-111972409?magaza=tefal https://www.amazon.com.tr/dp/B0BRNXX744 https://www.migros.com.tr/by-izzet-antep-fistigi-teneke-700-g-p-7b4dfb"
+        },
+        "post_text": "Elektrikli otomobil bataryaları çabuk bitiyor\" diyenler, bu haber size.\n\nBYD Yangwang U7, 30.000 km'lik dayanıklılık testini 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, klima açıkken. Sonuç mu? Batarya sağlığı %98,7.\n\nArtık tartışma batarya ömrü değil, bu performansı kimin yakalayacağı üzerine.",
+        "post_text_length": 328,
+        "story_card_title": "Batarya ömrü tartışması bitti!",
+        "story_card_subtitle": "BYD Yangwang U7, elektrikli otomobil bataryalarının dayanıklılığına dair tüm iddiaları çürütüyor. Araç, 30.000 km'lik zorlu dayanıklılık testini sadece 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, batarya sağlığını %98,7 oranında korudu.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T15:47:19.634186+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD Yangwang U7'den 30 bin km rekoru: Batarya sağlığı %98,7",
+          "link": "https://www.donanimhaber.com/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7--209759",
+          "published": "2026-08-26T12:36:00+00:00",
+          "summary": "BYD’nin lüks markası Yangwang, tam elektrikli U7 modelinin 30.000 km’lik zorlu dayanıklılık testini 9 günden kısa sürede tamamladığını ve batarya kapasitesinin %98,7 oranında korunduğunu duyurdu.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "batarya-bin-byd-rekoru-sagligi-yangwang",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 6
+          },
+          "score": 70,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç dayanıklılığı ve batarya sağlığı konusunda dikkat çekici bir test başarısı. Otomobil meraklıları arasında etkileşim yaratır ancak genel gündemde sınırlı kalabilir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Düzenlenen basın toplantısında konuşan Yangwang Genel Müdürü Hu Xiaoqing, test edilen aracın özel olarak modifiye edilmiş ya da ayarlanmış bir konsept olmadığını, bir bayiden rastgele seçilen standart üretim modeli olduğunu vurguladı. Xiaoqing, aracın güvenilirliğini kanıtlamak adına tüm bağımsız kuruluş ve kişilerin doğrulama testlerine açık olduklarını da sözlerine ekledi.350'den fazla hızlı şarj ve 240 km/s sabit hızTam Boyutta GörTest, Çin’in güneyinde yer alan ve ortalama sıcaklığın36°C’yi, bağıl nemin ise%80’iaştığı son derece zorlu hava şartlarına sahip Nanning şehrinde gerçekleştirildi. Aracın kliması 24°C’de aralıksız çalıştırılırken, pist boyunca240 km/s sabit seyir hızıkorundu.Test süreci boyunca Yangwang U7 toplamda350’den fazla flaş şarj döngüsünemaruz kaldı. Zorlu sürüş koşullarına ve yoğun şarj temposuna rağmen, işlem tamamlandığında aracın batarya kapasite koruma oranının%98,7gibi rekor bir seviyede kaldığı açıklandı. Yetkililer, model henüz pazara sunulmadan önce toplam 758 test aracıyla 10,49 milyon kilometrelik gerçek sürüş mesafesinin geride bırakıldığını belirtti.Çin’deki yeni dayanıklılık standartları odaktaTam Boyutta GörYangwang’ın gerçekleştirdiği bu gövde gösterisi, Çin’de elektrikli araç güvenilirliğine yönelik resmi mevzuatların sıkılaştığı bir döneme denk geliyor. Çin Sanayi ve Enformasyon Teknolojileri Bakanlığı (MIIT), geleneksel araçlar için 30.000 kilometrelik zorunlu güvenilirlik testlerini yürürlüğe koyarken; Temmuz ayında yayımlanan yeni standart taslaklarıyla tamamen elektrikli ve şarj edilebilir hibrit (PHEV) araçların da içten yanmalı modellerle aynı seviyede,en az 30.000 km aralıksız güvenilirlik testinden geçmesizorunlu hale getiriliyor.Sektör uzmanları, yeni enerjili araçlara (NEV) getirilen bu katı standartların artık batarya menzili ve dayanıklılığının otomotiv sektörü için ana bir engel olmaktan çıktığının en somut kanıtı olduğunu vurguluyor. Temmuz ayında 485 adetlik satış rakamına ulaşan ve niş bir lüks segmentte konumlanan Yangwang için bu test, markanın mühendislik kaslarını tüm sektöre sergilediği kritik bir gövde gösterisi anlamı taşıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtRobotlar artık insanlardan kan alacak!JJikoxmarley4 gün önce1daha korkutucu bişey görmedim Düzenlenen basın toplantısında konuşan Yangwang Genel Müdürü Hu Xiaoqing, test edilen aracın özel olarak modifiye edilmiş ya da ayarlanmış bir konsept olmadığını, bir bayiden rastgele seçilen standart üretim modeli olduğunu vurguladı. Xiaoqing, aracın güvenilirliğini kanıtlamak adına tüm bağımsız kuruluş ve kişilerin doğrulama testlerine açık olduklarını da sözlerine ekledi. Test süreci boyunca Yangwang U7 toplamda350’den fazla flaş şarj döngüsünemaruz kaldı. Zorlu sürüş koşullarına ve yoğun şarj temposuna rağmen, işlem tamamlandığında aracın batarya kapasite koruma oranının%98,7gibi rekor bir seviyede kaldığı açıklandı. Yetkililer, model henüz pazara sunulmadan önce toplam 758 test aracıyla 10,49 milyon kilometrelik gerçek sürüş mesafesinin geride bırakıldığını belirtti. Sektör uzmanları, yeni enerjili araçlara (NEV) getirilen bu katı standartların artık batarya menzili ve dayanıklılığının otomotiv sektörü için ana bir engel olmaktan çıktığının en somut kanıtı olduğunu vurguluyor. Temmuz ayında 485 adetlik satış rakamına ulaşan ve niş bir lüks segmentte konumlanan Yangwang için bu test, markanın mühendislik kaslarını tüm sektöre sergilediği kritik bir gövde gösterisi anlamı taşıyor. Robotlar artık insanlardan kan alacak! https://www.amazon.com.tr/promotion/psp/A25DCG5FSK1TXC?ref=psp_pc_cart_collapse https://www.amazon.com.tr/dp/B0GX1X8QZS https://www.n11.com/urun/tefal-fresh-kitchen-2li-set-sef-bicagi-15cm-santoku-bicagi-12cm-111972409?magaza=tefal https://www.amazon.com.tr/dp/B0BRNXX744 https://www.migros.com.tr/by-izzet-antep-fistigi-teneke-700-g-p-7b4dfb",
+          "post_text_for_card": "Elektrikli otomobil bataryaları çabuk bitiyor\" diyenler, bu haber size.\n\nBYD Yangwang U7, 30.000 km'lik dayanıklılık testini 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, klima açıkken. Sonuç mu? Batarya sağlığı %98,7.\n\nArtık tartışma batarya ömrü değil, bu performansı kimin yakalayacağı üzerine.",
+          "story_card_title": "Batarya ömrü tartışması bitti!",
+          "story_card_subtitle": "BYD Yangwang U7, elektrikli otomobil bataryalarının dayanıklılığına dair tüm iddiaları çürütüyor. Araç, 30.000 km'lik zorlu dayanıklılık testini sadece 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, batarya sağlığını %98,7 oranında korudu.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/209759/1200x675byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209759/src/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7209759_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209759/src/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7209759_2.jpg",
+            "https://www.donanimhaber.com/images/images/haber/209759/src/byd-yangwang-u7-den-30-bin-km-rekoru-batarya-sagligi-yuzde-98-7209759_0.jpg"
+          ]
+        },
+        "post_text": "Elektrikli otomobil bataryaları çabuk bitiyor\" diyenler, bu haber size.\n\nBYD Yangwang U7, 30.000 km'lik dayanıklılık testini 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, klima açıkken. Sonuç mu? Batarya sağlığı %98,7.\n\nArtık tartışma batarya ömrü değil, bu performansı kimin yakalayacağı üzerine.",
+        "story_card_title": "Batarya ömrü tartışması bitti!",
+        "story_card_subtitle": "BYD Yangwang U7, elektrikli otomobil bataryalarının dayanıklılığına dair tüm iddiaları çürütüyor. Araç, 30.000 km'lik zorlu dayanıklılık testini sadece 9 günde tamamladı. Üstelik 350'den fazla hızlı şarj ve 240 km/s sabit hızla, batarya sağlığını %98,7 oranında korudu.",
+        "image_path": "/tmp/otoxtra_img_zbc8e0u0.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_zbc8e0u0.jpg",
+          "/tmp/otoxtra_img_dnr3vqkf.jpg",
+          "/tmp/otoxtra_img_1zvnm1sv.jpg",
+          "/tmp/otoxtra_img_jksf9i8m.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T15:47:37.552013+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122177323238916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18172488730449548",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1218340620480271",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-08-26T15:48:28.980647+03:00"
     }
   }
 }
