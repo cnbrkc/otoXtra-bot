@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-09-01-01:25",
-  "status": "completed",
-  "started_at": "2026-09-01T01:25:57.018376+03:00",
-  "updated_at": "2026-09-01T01:27:58.425483+03:00",
+  "run_id": "2026-09-01-04:37",
+  "status": "error",
+  "started_at": "2026-09-01T04:37:32.877526+03:00",
+  "updated_at": "2026-09-01T04:38:23.549262+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "BMW’ye göre fiziksel tuşların kaybolması gençlerin suçu",
-            "link": "https://www.donanimhaber.com/bmw-ye-gore-fiziksel-tuslarin-kaybolmasi-genclerin-sucu--209946",
-            "published": "2026-08-31T19:00:00+00:00",
-            "summary": "BMW, yeni otomobillerde fiziksel düğmelerin azalmasını genç kullanıcıların tercihlerine bağlıyor. Şirket, 45 yaş altındaki müşterilerin dokunmatik ekran ve sesli komutları benimsediğini savunuyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/209946/1200x675bmw-ye-gore-fiziksel-tuslarin-kaybolmasi-genclerin-sucu.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/209946/1200x675bmw-ye-gore-fiziksel-tuslarin-kaybolmasi-genclerin-sucu.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/209946/1200x675bmw-ye-gore-fiziksel-tuslarin-kaybolmasi-genclerin-sucu.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-fiziksel-genclerin-kaybolmasi-sucu-tuslarin"
-          },
-          {
-            "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-            "link": "https://www.log.com.tr/reuters-iddiasi-turkiye-varlik-fonu-togga-ortak-olacak-vestel-ve-anadolu-grubu-ortakliktan-ayrilacak/",
-            "published": "2026-09-01T01:25:57.063261+03:00",
-            "summary": "Geçtiğimiz saatlerde 2027’de satışa sunulacak yeni modeli T6X ile ses getiren Togg, bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF)  satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor. Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "anadolu-ayrilacak-fonu-grubu-iddiasi-olacak-ortak-ortakliktan-reuters-togg-turkiye-varlik-vestel"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -166,240 +127,47 @@
           "_metrics": {
             "found": 94,
             "after_keyword": 60,
-            "after_time": 6,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 94,
           "after_keyword": 60,
-          "after_time": 6,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-01T01:26:44.187582+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-01T04:38:23.549262+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-          "link": "https://www.log.com.tr/reuters-iddiasi-turkiye-varlik-fonu-togga-ortak-olacak-vestel-ve-anadolu-grubu-ortakliktan-ayrilacak/",
-          "published": "2026-09-01T01:25:57.063261+03:00",
-          "summary": "Geçtiğimiz saatlerde 2027’de satışa sunulacak yeni modeli T6X ile ses getiren Togg, bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF)  satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor. Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "anadolu-ayrilacak-fonu-grubu-iddiasi-olacak-ortak-ortakliktan-reuters-togg-turkiye-varlik-vestel",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'nin yerli otomobili Togg ile ilgili dev ortaklık yapısı değişikliği iddiası, ulusal gündemde birinci sıraya oturacak ve ekonomi çevrelerinde çok konuşulacak bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 18,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye'nin yerli otomobili Togg ile ilgili dev ortaklık yapısı değişikliği iddiası, ulusal gündemde birinci sıraya oturacak ve ekonomi çevrelerinde çok konuşulacak bir gelişme.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 18,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "BMW’ye göre fiziksel tuşların kaybolması gençlerin suçu",
-            "score": 79,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "BMW’ye göre fiziksel tuşların kaybolması gençlerin suçu",
-            "link": "https://www.donanimhaber.com/bmw-ye-gore-fiziksel-tuslarin-kaybolmasi-genclerin-sucu--209946",
-            "score": 79,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "bmw-fiziksel-genclerin-kaybolmasi-sucu-tuslarin"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-01T01:26:46.522950+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-          "link": "https://www.log.com.tr/reuters-iddiasi-turkiye-varlik-fonu-togga-ortak-olacak-vestel-ve-anadolu-grubu-ortakliktan-ayrilacak/",
-          "published": "2026-09-01T01:25:57.063261+03:00",
-          "summary": "Geçtiğimiz saatlerde 2027’de satışa sunulacak yeni modeli T6X ile ses getiren Togg, bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF)  satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor. Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "anadolu-ayrilacak-fonu-grubu-iddiasi-olacak-ortak-ortakliktan-reuters-togg-turkiye-varlik-vestel",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'nin yerli otomobili Togg ile ilgili dev ortaklık yapısı değişikliği iddiası, ulusal gündemde birinci sıraya oturacak ve ekonomi çevrelerinde çok konuşulacak bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Geçtiğimiz saatlerde 2027’de satışa sunulacakyeni modeli T6X ile ses getirenTogg,bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF) satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor."
-        },
-        "post_text": "TVF'nin Togg'a ortak olacağı iddiası, sadece bir finansal hamle değil.\n\nReuters'ın haberine göre Vestel ve Anadolu Grubu hisselerini satıyor, TVF ve Turkcell devreye giriyor. Bu, yerli otomobilin yol haritasında yeni bir dönüm noktası olabilir.\n\nTogg'un ortaklık yapısındaki bu potansiyel değişim, şirketin geleceğine dair önemli sinyaller veriyor.",
-        "post_text_length": 348,
-        "story_card_title": "TOGG'DA BÜYÜK DEĞİŞİM YOLDA!",
-        "story_card_subtitle": "Reuters'ın iddiasına göre Türkiye Varlık Fonu, Togg'a ortak oluyor. Bu gelişmeyle birlikte Vestel ve Anadolu Grubu'nun ortaklıktan ayrılacağı öne sürüldü. Yeni ortaklık yapısının Togg'un geleceğini nasıl şekillendireceği merak konusu.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-01T01:27:06.555655+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak”",
-          "link": "https://www.log.com.tr/reuters-iddiasi-turkiye-varlik-fonu-togga-ortak-olacak-vestel-ve-anadolu-grubu-ortakliktan-ayrilacak/",
-          "published": "2026-09-01T01:25:57.063261+03:00",
-          "summary": "Geçtiğimiz saatlerde 2027’de satışa sunulacak yeni modeli T6X ile ses getiren Togg, bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF)  satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor. Reuters iddiası: “Türkiye Varlık Fonu Togg’a ortak olacak, Vestel ve Anadolu Grubu ortaklıktan ayrılacak” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/09/1758802015_Togg_T10X_T10F-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "anadolu-ayrilacak-fonu-grubu-iddiasi-olacak-ortak-ortakliktan-reuters-togg-turkiye-varlik-vestel",
-          "base_ai_score": 84,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye'nin yerli otomobili Togg ile ilgili dev ortaklık yapısı değişikliği iddiası, ulusal gündemde birinci sıraya oturacak ve ekonomi çevrelerinde çok konuşulacak bir gelişme.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Geçtiğimiz saatlerde 2027’de satışa sunulacakyeni modeli T6X ile ses getirenTogg,bu kez Reuters’ın iddiasıyla gündeme geldi. Reuters, Türkiye Varlık Fonu’nun (TVF) yerli elektrikli araç üreticisinin ortaklık yapısına dahil olmaya hazırlandığını öne sürdü. Konuya yakın üç kaynağın verdiği bilgiye göre Vestel ile Anadolu Grubu şirketteki hisselerini satmaya hazırlanıyor. İki kaynak, Vestel ve Anadolu Grubu’nun elindeki hisseleri Turkcell ile Türkiye Varlık Fonu’nun (TVF) satın alacağını belirtirken, nihai anlaşmanın yakında yapılacağı iddia ediliyor. Togg’un mevcut ortaklık yapısında Vestel, Anadolu Grubu, Turkcell ve BMC Otomotiv’in her biri %23 oranında paya sahip. Şirketin kalan %8’lik hissesi ise Türkiye Odalar ve Borsalar Birliğinin (TOBB) elinde bulunuyor.",
-          "post_text_for_card": "TVF'nin Togg'a ortak olacağı iddiası, sadece bir finansal hamle değil.\n\nReuters'ın haberine göre Vestel ve Anadolu Grubu hisselerini satıyor, TVF ve Turkcell devreye giriyor. Bu, yerli otomobilin yol haritasında yeni bir dönüm noktası olabilir.\n\nTogg'un ortaklık yapısındaki bu potansiyel değişim, şirketin geleceğine dair önemli sinyaller veriyor.",
-          "story_card_title": "TOGG'DA BÜYÜK DEĞİŞİM YOLDA!",
-          "story_card_subtitle": "Reuters'ın iddiasına göre Türkiye Varlık Fonu, Togg'a ortak oluyor. Bu gelişmeyle birlikte Vestel ve Anadolu Grubu'nun ortaklıktan ayrılacağı öne sürüldü. Yeni ortaklık yapısının Togg'un geleceğini nasıl şekillendireceği merak konusu.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "TVF'nin Togg'a ortak olacağı iddiası, sadece bir finansal hamle değil.\n\nReuters'ın haberine göre Vestel ve Anadolu Grubu hisselerini satıyor, TVF ve Turkcell devreye giriyor. Bu, yerli otomobilin yol haritasında yeni bir dönüm noktası olabilir.\n\nTogg'un ortaklık yapısındaki bu potansiyel değişim, şirketin geleceğine dair önemli sinyaller veriyor.",
-        "story_card_title": "TOGG'DA BÜYÜK DEĞİŞİM YOLDA!",
-        "story_card_subtitle": "Reuters'ın iddiasına göre Türkiye Varlık Fonu, Togg'a ortak oluyor. Bu gelişmeyle birlikte Vestel ve Anadolu Grubu'nun ortaklıktan ayrılacağı öne sürüldü. Yeni ortaklık yapısının Togg'un geleceğini nasıl şekillendireceği merak konusu.",
-        "image_path": "/tmp/otoxtra_img_08oe_i88.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_08oe_i88.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-01T01:27:14.774655+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122177889968916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18147923431527766",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1624858092419606",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-01T01:27:58.425483+03:00"
+      "updated_at": null
     }
   }
 }
