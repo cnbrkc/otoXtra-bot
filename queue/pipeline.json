@@ -1,34 +1,49 @@
 {
-  "run_id": "2026-09-02-03:58",
+  "run_id": "2026-09-02-08:35",
   "status": "completed",
-  "started_at": "2026-09-02T03:58:19.246627+03:00",
-  "updated_at": "2026-09-02T03:59:54.183415+03:00",
+  "started_at": "2026-09-02T08:35:47.768558+03:00",
+  "updated_at": "2026-09-02T08:40:53.693186+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Range Rover Electric, 536 km menzille geldi!",
-            "link": "https://tr.motor1.com/news/806760/range-rover-electric-resmen-tanitildi/",
-            "published": "2026-09-01T23:20:00+00:00",
-            "summary": "Tüm detaylar ortaya çıktı.",
-            "image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
+            "link": "https://shiftdelete.net/volkswagen-passat-pro-tanitildi-iste-fiyati-ve-ozellikleri",
+            "published": "2026-09-02T04:34:52+00:00",
+            "summary": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan […]",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "536-electric-menzille-range-rover"
+            "topic_fingerprint": "fiyati-ozellikleri-passat-pro-ste-volkswagen"
+          },
+          {
+            "title": "Dizel Araçta Siyah Duman Nasıl Kesilir?",
+            "link": "https://shiftdelete.net/dizel-aracta-siyah-duman-nasil-kesilir",
+            "published": "2026-09-02T04:08:53+00:00",
+            "summary": "Dizel araçlarda oldukça yaygın bir şekilde meydana gelen siyah duman sorunu, dizel araç sahiplerinin merak ettiği konuların başında gelmektedir. Bu rehberde, Dizel araçta siyah duman nasıl kesilir? Sorusuna cevap arayacağız. Siyah duman genellikle yakıtın tam yanmamasıyla oluşur. Motora yeterli hava girmemesi, fazla yakıt veya yanma sistemindeki sorunlar buna neden olabilir. Hava filtresi, EGR, turbo ve […]",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aracta-dizel-duman-kesilir-nasil-siyah"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,232 +161,246 @@
           },
           "_metrics": {
             "found": 97,
-            "after_keyword": 55,
-            "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 56,
+            "after_time": 8,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 97,
-          "after_keyword": 55,
-          "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 56,
+          "after_time": 8,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-09-02T03:59:06.762363+03:00"
+      "updated_at": "2026-09-02T08:36:44.349547+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Range Rover Electric, 536 km menzille geldi!",
-          "link": "https://tr.motor1.com/news/806760/range-rover-electric-resmen-tanitildi/",
-          "published": "2026-09-01T23:20:00+00:00",
-          "summary": "Tüm detaylar ortaya çıktı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
+          "link": "https://shiftdelete.net/volkswagen-passat-pro-tanitildi-iste-fiyati-ve-ozellikleri",
+          "published": "2026-09-02T04:34:52+00:00",
+          "summary": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "536-electric-menzille-range-rover",
-          "base_ai_score": 76,
+          "topic_fingerprint": "fiyati-ozellikleri-passat-pro-ste-volkswagen",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
           },
-          "score": 79,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Lüks elektrikli SUV segmentinde önemli bir modelin menzil ve detaylarının netleşmesi yüksek ilgi ve etkileşim potansiyeli taşıyor.",
+          "score_explanation": "Passat gibi popüler bir modelin yeni versiyonunun tanıtılması otomobil meraklılarının ilgisini çeker ve yüksek etkileşim potansiyeli taşır.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 79,
-        "title": "Range Rover Electric, 536 km menzille geldi!",
+        "score": 71,
+        "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 15,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 8
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 14,
+          "paylasilabilirlik": 7
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Lüks elektrikli SUV segmentinde önemli bir modelin menzil ve detaylarının netleşmesi yüksek ilgi ve etkileşim potansiyeli taşıyor.",
+        "score_explanation": "Passat gibi popüler bir modelin yeni versiyonunun tanıtılması otomobil meraklılarının ilgisini çeker ve yüksek etkileşim potansiyeli taşır.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Range Rover Electric, 536 km menzille geldi!",
-            "score": 79,
+            "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
+            "score": 71,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 8
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 14,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "Dizel Araçta Siyah Duman Nasıl Kesilir?",
+            "score": 46,
+            "score_breakdown": {
+              "guncellik": 15,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 5,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 7
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Dizel Araçta Siyah Duman Nasıl Kesilir?",
+            "link": "https://shiftdelete.net/dizel-aracta-siyah-duman-nasil-kesilir",
+            "score": 46,
+            "score_reason": "ai_scored",
+            "source_name": "ShiftDelete Otomobil",
+            "topic_fingerprint": "aracta-dizel-duman-kesilir-nasil-siyah"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-09-02T03:59:08.585375+03:00"
+      "updated_at": "2026-09-02T08:37:45.122594+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Range Rover Electric, 536 km menzille geldi!",
-          "link": "https://tr.motor1.com/news/806760/range-rover-electric-resmen-tanitildi/",
-          "published": "2026-09-01T23:20:00+00:00",
-          "summary": "Tüm detaylar ortaya çıktı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
+          "link": "https://shiftdelete.net/volkswagen-passat-pro-tanitildi-iste-fiyati-ve-ozellikleri",
+          "published": "2026-09-02T04:34:52+00:00",
+          "summary": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "536-electric-menzille-range-rover",
-          "base_ai_score": 76,
+          "topic_fingerprint": "fiyati-ozellikleri-passat-pro-ste-volkswagen",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
           },
-          "score": 79,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Lüks elektrikli SUV segmentinde önemli bir modelin menzil ve detaylarının netleşmesi yüksek ilgi ve etkileşim potansiyeli taşıyor.",
+          "score_explanation": "Passat gibi popüler bir modelin yeni versiyonunun tanıtılması otomobil meraklılarının ilgisini çeker ve yüksek etkileşim potansiyeli taşır.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Range Rover, Land Rover'dan kısmi olarak koparak özerkliğini ilan etti. Artık kendi yolunu izlemek isteyen marka, kendi adını taşıyan amiral gemisi modelinin tam elektrikli versiyonu üzerinde bir süredir çalışıyordu. İşte o model sonunda resmen tanıtıldı. Land Rover tarihinin de ilk tam elektrikli modeli, özenle geliştirildi. Üretici ilk kez 2025 yılında gösterdiği Range Rover Electric'in üretim versiyonu için tam 14 aydır özel olarak çalıştı. Range Rover yetkilileri bu modelin her anlamda \"gerçek bir Range\" olarak üretildiğinin altını çiziyor. Bu isim ile özdeşleşen arazi kabiliyeti, konfor ve lüks \"electric\" takısıyla da olsa bozulmadan korunacak. Bu durum doğrudan tasarıma da yansıyor. Görsel anlamda bu elektrikli SUV'yi standart kardeşinden ayırmak çok kolay değil. Fakat fotoğraflara yakından bakmaya başladığınızda temel değişimler gözünüzün önüne gelmeye başlıyor. Örneğin bir elektriklilerin olmazsa olmazı kapalı ızgara tasarımı modelin anında kendini ele vermesine sebep oluyor. Jant tasarımları da benzer şekilde, aerodinamik yapıyı güçlendirmek adına özel olarak tasarlanmış. Tabii bu değişimler modelin arazi yeteneklerini sınırlandırmıyor. Bataryalı olmasına rağmen model, 900 mm'ye varan bir sudan geçme derinliğine sahip. Kabinde ise anahtar kelimeler lüks ve konfor. İçten yanmalı motorun olmaması, Range mühendisleri için \"daha sessiz\" bir yaşam alanı hayalini kurdurmuş. Yalıtım güçlendirilerek kabinde duyulacak ses neredeyse sıfıra indirgenmiş. Lakin araçlarında ses duymak isteyenler de düşünülerek özel olarak geliştirilen yapay motor sesleri de denkleme eklenmiş. İstediğiniz an bu seçeneği açıp kapatabileceksiniz. Kurulum ise standart Range Rover modellerinden farklı değil. Orta konsolda yatay olarak yerleştirilmiş multimedya ekranı aracın tüm kontrollerini gözden geçirebilmenizi sağlıyor. Direksiyonun hemen arkasında da dijital gösterge paneli her türlü bilginin kullanıcıya sunulmasına olanak sunuyor. Dediğim gibi, Range mühendisleri bu modelin geleneksel kardeşinden ayırt edilmesini pek istememiş. O yüzden Range Rover Electric de kabininin ortasında, gerçek bir şanzımana sahip olmasa da, bir vites topuzuna sahip. Model aynı zamanda her ayarını kontrol edebileceğiniz bir mobil uygulama ile senkronlu olarak çalışacak. Motor Seçenekleri ve Sürüş Teknolojileri Dört tekerlekten çekişi olmayan bir Range Rover düşünülemez. Vites topuzuna kadar düşünen İngiliz üretici bu konuda da bir istisna yapmamış. Tam elektrikli lüks SUV, biri ön biri de arka aksta yer almak üzere iki elektromotor ile geliyor. Her iki motor da kombine şekilde 405 kW yani 550PS güç ve 850 Nm tork çıkışı sunabiliyor. Motorlar gücünü 800V mimarisine sahip 118.5 kWh'lik bir bataryadan alacak. Ağırlığı 2.5 tonu aşan bu heybetli SUV, 0-100 km/s hızlanmasını 4.5 saniyede tamamlayabiliyor. EPA yani ABD standartlarına göre model 536 km menzile sahip olacak. 800V altyapısı sayesinde model 350 kW'a kadar DC hızlı şarj desteği sunabilecek. Bu daRange Rover Electric'in yüzde 10-80 aralığını yaklaşık 22 dakikada şarj edebilmesi demek. Sadece 10 dakikalık şarj 220 km menzil sağlayabilecek. Range RoverElectric, \"Entegre Çekiş Sistemi\" adı verilen yeni bir sürüş sistemi ile geliyor. Bu sistem özellikle arazi sürüşlerinde tekerlerin kaymasını engellemesi için tasarlanmış. Sistem 50 milisaniye gibi oldukça kısa bir sürede tekerleklere müdahale edebiliyor. Akıllı tork yönlendirme sistemi ile gelecek Range Rover Electric, 45 dereceye kadar olan eğimlerin üstesinden de tek pedal modu ile gelebilecek. Evet, tek pedal. Range Rover Electric an itibariyle Avrupa'da ön siparişe açıldı. Almanya sitesine göre model 163.500 euro gibi bir fiyat etiketine sahip olacak. Ülkemizde hiç vergi olmasa, hiç ÖTV ödemesek bile günümüz kuruyla modelin fiyatı 9 milyon TL'yi aşıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan model, özellikle iç mekandaki ekran deneyimi ve motor seçenekleriyle segmentindeki iddiasını koruyor. Yeni model, genel tasarım çizgisini korurken bazı kritik görsel iyileştirmelerle geliyor. Aracın ön yüzünde IQ.Light matrix LED farlar ve karartılmış geniş hava giriş ızgarası yer alıyor. Arka bölümde ise boydan boya uzanan stop lambalarına aydınlatmalı Volkswagen logosu eşlik ediyor. Geleneksel mekanik kapı kollarını muhafaza eden araç; Bit Gray, Super Black, Laser White ve Momentary White olmak üzere dört farklı renk seçeneği ve yeni çift renkli alaşım jant tasarımıyla tüketicilerin karşısına çıkıyor. İç mekanda ise teknolojik donanımlar bir adım öne çıkıyor. Üst donanım paketlerinde sürücü odaklı 15 inçlik devasa multimedya ekranına ek olarak yolcu tarafında 11.6 inçlik bağımsız eğlence ekranı yer alıyor. Konfor tarafında ise ısıtmalı ve havalandırmalı ön koltuklar, 360 derece çevre görüş ve şeffaf şasi sistemi, 10 adet hava yastığı, Harman Kardon ses sistemi ile elektrikli bagaj kapağı gibi zengin donanımlar dikkat çekiyor. 2027 model Passat Pro, tamamen içten yanmalı motor mimarisini sürdürerek elektrikli modellere geçiş döneminde geleneksel güç ünitelerini tercih eden kullanıcılara hitap ediyor. SAIC-Volkswagen, model için resmi liste fiyatını 172.000 ile 239.900 yuan aralığında açıkladı. Ancak lansmana özel sınırlı süreli indirimle birlikte araç, 139.900 ile 209.900 yuan (yaklaşık 19.600 – 29.500 dolar) arasında değişen fiyat etiketiyle alıcı buluyor. Satış paketi kapsamında güç aktarma organları için ömür boyu garanti ve takas destekleri de sunuluyor. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
         },
-        "post_text": "Range Rover Electric geldi ama elektrikli otomobil tartışması menzilden ibaret değil.\n\n536 km menzille yola çıkan bu dev, \"elektrikli lüks\" tanımını yeniden yazıyor. Asıl mesele, Range Rover'ın o bildik arazi yeteneği ve konforunu elektrikli formda nasıl koruduğu.\n\nMarka, sadece menzil değil, elektrikli otomobillerin ruhunu da dönüştürüyor.",
-        "post_text_length": 342,
-        "story_card_title": "RANGE ROVER'DAN YENİ LÜKS HAMLESİ!",
-        "story_card_subtitle": "536 km menzille tanıtılan elektrikli Range Rover, lüks SUV segmentinde yeni bir döneme hazırlanıyor. Geleneksel arazi yetenekleri ve konforundan ödün vermeyen bu dev, elektrikli otomobil dünyasına iddialı bir giriş yapıyor. Marka, sadece menzili değil, elektrikli araç algısını da yeniden şekillendiriyor.",
+        "post_text": "Otomobil dünyasında asıl mesele bazen teknoloji değil, algı yönetimidir.\n\nVolkswagen Passat Pro, benzinli motoruyla piyasaya çıktı. Gelişmiş dijital kokpit ve yenilenen tasarım detayları konuşuluyor. Ancak asıl soru şu: Bu fiyatla, markanın gücünden çok, sunduğu değer mi öne çıkacak?\n\nPiyasada 'yeni model' denince akla gelen ilk şey, artık sadece motor gücü değil, fiyat etiketinin karşılığı.",
+        "post_text_length": 394,
+        "story_card_title": "Passat Pro: Benzinli Devrim mi, Son Dans mı?",
+        "story_card_subtitle": "Volkswagen Passat Pro, 2027 model yılıyla resmi olarak tanıtıldı. SAIC-Volkswagen ortaklığıyla geliştirilen model, saf benzinli motor seçeneklerini koruyarak dijital kokpit teknolojileriyle öne çıkıyor. Bu hamle, markanın orta segmentteki iddialı duruşunu sürdürme çabası olarak yorumlanıyor. Ancak piyasa dinamikleri göz önüne alındığında, bu tercih Passat'ın geleceğini nasıl şekillendirecek?",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-09-02T03:59:10.734459+03:00"
+      "updated_at": "2026-09-02T08:39:41.404886+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Range Rover Electric, 536 km menzille geldi!",
-          "link": "https://tr.motor1.com/news/806760/range-rover-electric-resmen-tanitildi/",
-          "published": "2026-09-01T23:20:00+00:00",
-          "summary": "Tüm detaylar ortaya çıktı.",
-          "image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/koKpQQ/s3/range-rover-electric.jpg"
-          ],
+          "title": "Volkswagen Passat Pro Tanıtıldı: İşte Fiyatı ve Özellikleri",
+          "link": "https://shiftdelete.net/volkswagen-passat-pro-tanitildi-iste-fiyati-ve-ozellikleri",
+          "published": "2026-09-02T04:34:52+00:00",
+          "summary": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan […]",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
           "image_source": "meta_og",
-          "source_name": "Motor1 TR",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "536-electric-menzille-range-rover",
-          "base_ai_score": 76,
+          "topic_fingerprint": "fiyati-ozellikleri-passat-pro-ste-volkswagen",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 8
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 14,
+            "paylasilabilirlik": 7
           },
-          "score": 79,
+          "score": 71,
           "score_reason": "ai_scored",
-          "score_explanation": "Lüks elektrikli SUV segmentinde önemli bir modelin menzil ve detaylarının netleşmesi yüksek ilgi ve etkileşim potansiyeli taşıyor.",
+          "score_explanation": "Passat gibi popüler bir modelin yeni versiyonunun tanıtılması otomobil meraklılarının ilgisini çeker ve yüksek etkileşim potansiyeli taşır.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Range Rover, Land Rover'dan kısmi olarak koparak özerkliğini ilan etti. Artık kendi yolunu izlemek isteyen marka, kendi adını taşıyan amiral gemisi modelinin tam elektrikli versiyonu üzerinde bir süredir çalışıyordu. İşte o model sonunda resmen tanıtıldı. Land Rover tarihinin de ilk tam elektrikli modeli, özenle geliştirildi. Üretici ilk kez 2025 yılında gösterdiği Range Rover Electric'in üretim versiyonu için tam 14 aydır özel olarak çalıştı. Range Rover yetkilileri bu modelin her anlamda \"gerçek bir Range\" olarak üretildiğinin altını çiziyor. Bu isim ile özdeşleşen arazi kabiliyeti, konfor ve lüks \"electric\" takısıyla da olsa bozulmadan korunacak. Bu durum doğrudan tasarıma da yansıyor. Görsel anlamda bu elektrikli SUV'yi standart kardeşinden ayırmak çok kolay değil. Fakat fotoğraflara yakından bakmaya başladığınızda temel değişimler gözünüzün önüne gelmeye başlıyor. Örneğin bir elektriklilerin olmazsa olmazı kapalı ızgara tasarımı modelin anında kendini ele vermesine sebep oluyor. Jant tasarımları da benzer şekilde, aerodinamik yapıyı güçlendirmek adına özel olarak tasarlanmış. Tabii bu değişimler modelin arazi yeteneklerini sınırlandırmıyor. Bataryalı olmasına rağmen model, 900 mm'ye varan bir sudan geçme derinliğine sahip. Kabinde ise anahtar kelimeler lüks ve konfor. İçten yanmalı motorun olmaması, Range mühendisleri için \"daha sessiz\" bir yaşam alanı hayalini kurdurmuş. Yalıtım güçlendirilerek kabinde duyulacak ses neredeyse sıfıra indirgenmiş. Lakin araçlarında ses duymak isteyenler de düşünülerek özel olarak geliştirilen yapay motor sesleri de denkleme eklenmiş. İstediğiniz an bu seçeneği açıp kapatabileceksiniz. Kurulum ise standart Range Rover modellerinden farklı değil. Orta konsolda yatay olarak yerleştirilmiş multimedya ekranı aracın tüm kontrollerini gözden geçirebilmenizi sağlıyor. Direksiyonun hemen arkasında da dijital gösterge paneli her türlü bilginin kullanıcıya sunulmasına olanak sunuyor. Dediğim gibi, Range mühendisleri bu modelin geleneksel kardeşinden ayırt edilmesini pek istememiş. O yüzden Range Rover Electric de kabininin ortasında, gerçek bir şanzımana sahip olmasa da, bir vites topuzuna sahip. Model aynı zamanda her ayarını kontrol edebileceğiniz bir mobil uygulama ile senkronlu olarak çalışacak. Motor Seçenekleri ve Sürüş Teknolojileri Dört tekerlekten çekişi olmayan bir Range Rover düşünülemez. Vites topuzuna kadar düşünen İngiliz üretici bu konuda da bir istisna yapmamış. Tam elektrikli lüks SUV, biri ön biri de arka aksta yer almak üzere iki elektromotor ile geliyor. Her iki motor da kombine şekilde 405 kW yani 550PS güç ve 850 Nm tork çıkışı sunabiliyor. Motorlar gücünü 800V mimarisine sahip 118.5 kWh'lik bir bataryadan alacak. Ağırlığı 2.5 tonu aşan bu heybetli SUV, 0-100 km/s hızlanmasını 4.5 saniyede tamamlayabiliyor. EPA yani ABD standartlarına göre model 536 km menzile sahip olacak. 800V altyapısı sayesinde model 350 kW'a kadar DC hızlı şarj desteği sunabilecek. Bu daRange Rover Electric'in yüzde 10-80 aralığını yaklaşık 22 dakikada şarj edebilmesi demek. Sadece 10 dakikalık şarj 220 km menzil sağlayabilecek. Range RoverElectric, \"Entegre Çekiş Sistemi\" adı verilen yeni bir sürüş sistemi ile geliyor. Bu sistem özellikle arazi sürüşlerinde tekerlerin kaymasını engellemesi için tasarlanmış. Sistem 50 milisaniye gibi oldukça kısa bir sürede tekerleklere müdahale edebiliyor. Akıllı tork yönlendirme sistemi ile gelecek Range Rover Electric, 45 dereceye kadar olan eğimlerin üstesinden de tek pedal modu ile gelebilecek. Evet, tek pedal. Range Rover Electric an itibariyle Avrupa'da ön siparişe açıldı. Almanya sitesine göre model 163.500 euro gibi bir fiyat etiketine sahip olacak. Ülkemizde hiç vergi olmasa, hiç ÖTV ödemesek bile günümüz kuruyla modelin fiyatı 9 milyon TL'yi aşıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "Range Rover Electric geldi ama elektrikli otomobil tartışması menzilden ibaret değil.\n\n536 km menzille yola çıkan bu dev, \"elektrikli lüks\" tanımını yeniden yazıyor. Asıl mesele, Range Rover'ın o bildik arazi yeteneği ve konforunu elektrikli formda nasıl koruduğu.\n\nMarka, sadece menzil değil, elektrikli otomobillerin ruhunu da dönüştürüyor.",
-          "story_card_title": "RANGE ROVER'DAN YENİ LÜKS HAMLESİ!",
-          "story_card_subtitle": "536 km menzille tanıtılan elektrikli Range Rover, lüks SUV segmentinde yeni bir döneme hazırlanıyor. Geleneksel arazi yetenekleri ve konforundan ödün vermeyen bu dev, elektrikli otomobil dünyasına iddialı bir giriş yapıyor. Marka, sadece menzili değil, elektrikli araç algısını da yeniden şekillendiriyor.",
+          "full_text": "Orta segment sedan pazarının en popüler modellerinden biri olan Volkswagen Passat Pro, 2027 model yılı güncellemesiyle resmi olarak vitrine çıktı. SAIC-Volkswagen ortaklığıyla geliştirilen ve saf benzinli motor seçeneklerini korumaya devam eden yeni Passat Pro; gelişmiş dijital kokpit teknolojileri, yenilenen tasarım detayları ve cazip lansman fiyatıyla dikkat çekiyor. Çin pazarında beş farklı donanım seviyesiyle satışa sunulan model, özellikle iç mekandaki ekran deneyimi ve motor seçenekleriyle segmentindeki iddiasını koruyor. Yeni model, genel tasarım çizgisini korurken bazı kritik görsel iyileştirmelerle geliyor. Aracın ön yüzünde IQ.Light matrix LED farlar ve karartılmış geniş hava giriş ızgarası yer alıyor. Arka bölümde ise boydan boya uzanan stop lambalarına aydınlatmalı Volkswagen logosu eşlik ediyor. Geleneksel mekanik kapı kollarını muhafaza eden araç; Bit Gray, Super Black, Laser White ve Momentary White olmak üzere dört farklı renk seçeneği ve yeni çift renkli alaşım jant tasarımıyla tüketicilerin karşısına çıkıyor. İç mekanda ise teknolojik donanımlar bir adım öne çıkıyor. Üst donanım paketlerinde sürücü odaklı 15 inçlik devasa multimedya ekranına ek olarak yolcu tarafında 11.6 inçlik bağımsız eğlence ekranı yer alıyor. Konfor tarafında ise ısıtmalı ve havalandırmalı ön koltuklar, 360 derece çevre görüş ve şeffaf şasi sistemi, 10 adet hava yastığı, Harman Kardon ses sistemi ile elektrikli bagaj kapağı gibi zengin donanımlar dikkat çekiyor. 2027 model Passat Pro, tamamen içten yanmalı motor mimarisini sürdürerek elektrikli modellere geçiş döneminde geleneksel güç ünitelerini tercih eden kullanıcılara hitap ediyor. SAIC-Volkswagen, model için resmi liste fiyatını 172.000 ile 239.900 yuan aralığında açıkladı. Ancak lansmana özel sınırlı süreli indirimle birlikte araç, 139.900 ile 209.900 yuan (yaklaşık 19.600 – 29.500 dolar) arasında değişen fiyat etiketiyle alıcı buluyor. Satış paketi kapsamında güç aktarma organları için ömür boyu garanti ve takas destekleri de sunuluyor. Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "Otomobil dünyasında asıl mesele bazen teknoloji değil, algı yönetimidir.\n\nVolkswagen Passat Pro, benzinli motoruyla piyasaya çıktı. Gelişmiş dijital kokpit ve yenilenen tasarım detayları konuşuluyor. Ancak asıl soru şu: Bu fiyatla, markanın gücünden çok, sunduğu değer mi öne çıkacak?\n\nPiyasada 'yeni model' denince akla gelen ilk şey, artık sadece motor gücü değil, fiyat etiketinin karşılığı.",
+          "story_card_title": "Passat Pro: Benzinli Devrim mi, Son Dans mı?",
+          "story_card_subtitle": "Volkswagen Passat Pro, 2027 model yılıyla resmi olarak tanıtıldı. SAIC-Volkswagen ortaklığıyla geliştirilen model, saf benzinli motor seçeneklerini koruyarak dijital kokpit teknolojileriyle öne çıkıyor. Bu hamle, markanın orta segmentteki iddialı duruşunu sürdürme çabası olarak yorumlanıyor. Ancak piyasa dinamikleri göz önüne alındığında, bu tercih Passat'ın geleceğini nasıl şekillendirecek?",
           "image_sources": [
             "meta_og",
             "article_img",
-            "article_script",
+            "article_img",
             "article_img"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/koKpQQ/s1/range-rover-electric.jpg",
-            "https://cdn.motor1.com/images/mgl/9m8Y6m/s3/range-rover-electric.jpg",
-            "https://cdn.motor1.com/images/mgl/koKpQQ/0:241:1920:1439/range-rover-electric.webp",
-            "https://cdn.motor1.com/images/mgl/lEG9zg/s3/range-rover-electric.jpg"
+            "https://ares.shiftdelete.net/2026/09/Volkswagen-Passat-Pro-4.webp",
+            "https://ares.shiftdelete.net/2026/09/Volkswagen-Passat-Pro-3.webp",
+            "https://ares.shiftdelete.net/2026/09/Volkswagen-Passat-Pro-6.webp",
+            "https://ares.shiftdelete.net/2026/09/Volkswagen-Passat-Pro-2.webp"
           ]
         },
-        "post_text": "Range Rover Electric geldi ama elektrikli otomobil tartışması menzilden ibaret değil.\n\n536 km menzille yola çıkan bu dev, \"elektrikli lüks\" tanımını yeniden yazıyor. Asıl mesele, Range Rover'ın o bildik arazi yeteneği ve konforunu elektrikli formda nasıl koruduğu.\n\nMarka, sadece menzil değil, elektrikli otomobillerin ruhunu da dönüştürüyor.",
-        "story_card_title": "RANGE ROVER'DAN YENİ LÜKS HAMLESİ!",
-        "story_card_subtitle": "536 km menzille tanıtılan elektrikli Range Rover, lüks SUV segmentinde yeni bir döneme hazırlanıyor. Geleneksel arazi yetenekleri ve konforundan ödün vermeyen bu dev, elektrikli otomobil dünyasına iddialı bir giriş yapıyor. Marka, sadece menzili değil, elektrikli araç algısını da yeniden şekillendiriyor.",
-        "image_path": "/tmp/otoxtra_img_v6p58wsb.jpg",
+        "post_text": "Otomobil dünyasında asıl mesele bazen teknoloji değil, algı yönetimidir.\n\nVolkswagen Passat Pro, benzinli motoruyla piyasaya çıktı. Gelişmiş dijital kokpit ve yenilenen tasarım detayları konuşuluyor. Ancak asıl soru şu: Bu fiyatla, markanın gücünden çok, sunduğu değer mi öne çıkacak?\n\nPiyasada 'yeni model' denince akla gelen ilk şey, artık sadece motor gücü değil, fiyat etiketinin karşılığı.",
+        "story_card_title": "Passat Pro: Benzinli Devrim mi, Son Dans mı?",
+        "story_card_subtitle": "Volkswagen Passat Pro, 2027 model yılıyla resmi olarak tanıtıldı. SAIC-Volkswagen ortaklığıyla geliştirilen model, saf benzinli motor seçeneklerini koruyarak dijital kokpit teknolojileriyle öne çıkıyor. Bu hamle, markanın orta segmentteki iddialı duruşunu sürdürme çabası olarak yorumlanıyor. Ancak piyasa dinamikleri göz önüne alındığında, bu tercih Passat'ın geleceğini nasıl şekillendirecek?",
+        "image_path": "/tmp/otoxtra_img_0y4wfcym.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_v6p58wsb.jpg",
-          "/tmp/otoxtra_img_6yiciue5.jpg",
-          "/tmp/otoxtra_img_w5mtdvvu.jpg",
-          "/tmp/otoxtra_img_cu5cjp2e.jpg"
+          "/tmp/otoxtra_img_0y4wfcym.jpg",
+          "/tmp/otoxtra_img_y7oo25hh.jpg",
+          "/tmp/otoxtra_img_4ijqycoq.jpg",
+          "/tmp/otoxtra_img_os8k8gv3.jpg"
         ],
         "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-09-02T03:59:16.017749+03:00"
+      "updated_at": "2026-09-02T08:39:46.535716+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122178013814916499",
+        "post_id": "678053852057751_122178036800916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
+            "success": true,
+            "id": "18369607753208467",
+            "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1114890277879308",
+            "id": "4599307580297497",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-09-02T03:59:54.183415+03:00"
+      "updated_at": "2026-09-02T08:40:53.693186+03:00"
     }
   }
 }
