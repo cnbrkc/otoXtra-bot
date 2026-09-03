@@ -1,136 +1,22 @@
 {
-  "run_id": "2026-09-03-15:35",
+  "run_id": "2026-09-03-19:55",
   "status": "completed",
-  "started_at": "2026-09-03T15:35:29.361363+03:00",
-  "updated_at": "2026-09-03T15:38:20.925015+03:00",
+  "started_at": "2026-09-03T19:55:25.750130+03:00",
+  "updated_at": "2026-09-03T20:06:45.234231+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
-            "link": "https://www.donanimhaber.com/volkswagen-seat-markasinin-fisini-cekiyor--210062",
-            "published": "2026-09-03T11:45:03+00:00",
-            "summary": "Alman otomotiv devi Volkswagen Group, maliyetleri azaltmak ve marka yapısını sadeleştirmek amacıyla İspanyol Seat markasını 2029’a kadar portföyden çıkarmayı değerlendiriyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
+            "title": "BMW, i4'ün yerini coupe ve cabriolet modeller ile doldurabilir",
+            "link": "https://tr.motor1.com/news/807029/bmw-yeni-coupe-cabriolet-plani/",
+            "published": "2026-09-03T15:00:00+00:00",
+            "summary": "i4 Gran Coupe gidiyor, çok daha \"özel\" modeller geliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg",
             "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cekiyor-dunyasinda-fisini-gelisme-markasinin-otomotiv-seat-sok-volkswagen"
-          },
-          {
-            "title": "Çinli GAC'ın Land Cruiser rakibi Yue 7'si 24 bin dolara ön satışta",
-            "link": "https://www.donanimhaber.com/24-bin-dolara-land-cruiser-rakibi-cinli-gac-yue-7-on-satista--210054",
-            "published": "2026-09-03T11:25:00+00:00",
-            "summary": "GAC Trumpchi, \"kutu\" tasarım felsefesiyle geliştirdiği ilk arazi SUV’u Yue 7’yi ön satışa çıkardı. Model, 544 beygirlik gücü ve 10.000 Nm tekerlek torkuyla arazi performansında iddialı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210054/1200x67524-bin-dolara-land-cruiser-rakibi-cinli-gac-yue-7-on-satista.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210054/1200x67524-bin-dolara-land-cruiser-rakibi-cinli-gac-yue-7-on-satista.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210054/1200x67524-bin-dolara-land-cruiser-rakibi-cinli-gac-yue-7-on-satista.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bin-cinli-cruiser-dolara-gac-land-rakibi-satista-yue"
-          },
-          {
-            "title": "Dünyanın en büyük EV batarya araştırması: İşte bataryası en sağlam modeller",
-            "link": "https://www.donanimhaber.com/elektrikli-araclarda-bataryasi-en-saglam-ve-en-zayif-modeller--210056",
-            "published": "2026-09-03T11:03:00+00:00",
-            "summary": "Dünyanın en büyük bağımsız EV batarya araştırması, küçük bataryalı modellerin daha hızlı yıprandığını ortaya koydu. Araştırmada zirvede ise Mercedes-Benz EQA yer aldı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210056/1200x675elektrikli-araclarda-bataryasi-en-saglam-ve-en-zayif-modeller.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210056/1200x675elektrikli-araclarda-bataryasi-en-saglam-ve-en-zayif-modeller.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210056/1200x675elektrikli-araclarda-bataryasi-en-saglam-ve-en-zayif-modeller.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arastirmasi-batarya-bataryasi-dunyanin-modeller-saglam-ste"
-          },
-          {
-            "title": "Amazon Prime Video'da yeni dönem: Abonelikler ile Lionsgate+, MUBI, MGM+ gibi platformlar da izlenebilecek",
-            "link": "https://www.donanimhaber.com/amazon-prime-video-de-artik-baska-platformlar-da-izlenebilecek--210048",
-            "published": "2026-09-03T09:09:00+00:00",
-            "summary": "Amazon yeni bir özelliği daha Türkiye'de kullanıma sundu. Amazon Prime Video'ya eklenen Abonelikler sekmesinden Lionsgate+, MGM+, NBA League Pass, MUBI gibi platformlara da abone olunabiliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210048/1200x675amazon-prime-video-de-artik-baska-platformlar-da-izlenebilecek.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210048/1200x675amazon-prime-video-de-artik-baska-platformlar-da-izlenebilecek.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210048/1200x675amazon-prime-video-de-artik-baska-platformlar-da-izlenebilecek.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "abonelikler-amazon-donem-izlenebilecek-lionsgate-mgm-mubi-platformlar-prime-video"
-          },
-          {
-            "title": "Adobe, popüler araçlarını Slack’e getirdi",
-            "link": "https://www.log.com.tr/adobe-populer-araclarini-slacke-getirdi/",
-            "published": "2026-09-03T12:35:29+00:00",
-            "summary": "Adobe, bugün Slack Business+ ve Enterprise+ ekipleri için “Adobe for Slack” entegrasyonunu kullanıma sundu. Yeni entegrasyon sayesinde Firefly, Express, Photoshop, Premiere, Acrobat, InDesign, Illustrator, Stock ve Lightroom’un da aralarında bulunduğu 70’ten fazla profesyonel araç ve sistem doğrudan Slack içerisinde kullanılabilir hale geliyor. Bu altyapıyla birlikte kullanıcılar yapmak istediklerini doğrudan Slack’in yerleşik kişisel yapay zeka asistanı Slackbot’a yazılı olarak anlatabiliyor. Slackbot, isteğe uygun Adobe aracını devreye alarak kullanıcının fikrini hayata geçirmesine yardımcı oluyor. Kullanıcılar ayrıca Slackbot’tan konuşmalar, dosyalar, kanallar ve Canvas’lardaki bilgileri bağlama dahil etmesini de isteyebiliyor. Böylece sistem içerik üretirken Slack içindeki içeriklerden de yararlanarak daha doğru sonuçlar ortaya koyabiliyor. Doğrudan Slack içinde çalışma imkanı sunarak ciddi zaman tasarrufu vadeden sisteme, “@Adobe Bu tabloyu bir PDF ürün kataloğuna dönüştür” gibi komutlar verilebiliyor. Adobe, popüler araçlarını Slack’e getirdi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-29-29_CgelC-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-29-29_CgelC-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-29-29_CgelC-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "adobe-araclarini-getirdi-populer-slack"
-          },
-          {
-            "title": "Skoda’nın Epiq ve Peaq modellerinin Türkiye satış tarihleri belli oldu",
-            "link": "https://www.log.com.tr/skodanin-epiq-ve-peaq-modellerinin-turkiye-satis-tarihleri-belli-oldu/",
-            "published": "2026-09-03T09:06:12+00:00",
-            "summary": "Otomobil gazetecisi Emre Özpeynirci’nin paylaşımına göre Skoda’nın detaylarına burada yer verdiğimiz tamamen elektrikli modeli “Epiq” 2027’nin mayıs ayında, detaylarına burada yer verdiğimiz tamamen elektrikli “Peaq” modeli ise 2028’in ilk çeyreğinde Türkiye’de satışa sunulacak. Epiq Mayıs 2027’de Türkiye’de satışa sunulacakmış. Satış hedefleri 2027 yılı için minimum 2.500 adet. Peaq ise 2028 ilk çeyrekte geliyor. Yorum sizin… https://t.co/TZuPqlN0yT — Emre Özpeynirci (@eozpeynirci) September 3, 2026 Skoda’nın Epiq ve Peaq modellerinin Türkiye satış tarihleri belli oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_12-01-47_d3Kdc-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_12-01-47_d3Kdc-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_12-01-47_d3Kdc-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "belli-epiq-modellerinin-peaq-satis-skoda-tarihleri-turkiye"
-          },
-          {
-            "title": "Mitsubishi Pajero, piyasanın zirvesine tırmanmaya hazır!",
-            "link": "https://tr.motor1.com/news/806950/mitsubishi-pajero-2027-resmi/",
-            "published": "2026-09-03T09:00:00+00:00",
-            "summary": "Mitsubishi’nin efsanevi arazi aracı, pickup temelli platformu ve ciddi 4WD donanımıyla döndü.",
-            "image_url": "https://cdn.motor1.com/images/mgl/8A3Q22/s3/2027-mitsubishi-pajero.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/8A3Q22/s3/2027-mitsubishi-pajero.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/8A3Q22/s3/2027-mitsubishi-pajero.jpg"
+              "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -139,7 +25,26 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "hazir-mitsubishi-pajero-piyasanin-tirmanmaya-zirvesine"
+            "topic_fingerprint": "bmw-cabriolet-coupe-doldurabilir-modeller-yerini"
+          },
+          {
+            "title": "Nissan'dan Eylül'e özel fırsatlar!",
+            "link": "https://tr.motor1.com/news/807028/nissan-eylul-2026-kampanyalari/",
+            "published": "2026-09-03T14:00:00+00:00",
+            "summary": "Tüm modellerde geçerli fırsatlar sizleri bekliyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "eylul-firsatlar-nissan-ozel"
           },
           {
             "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
@@ -159,43 +64,47 @@
             "topic_fingerprint": "devrede-guncelleme-kritik-manifold-model-sedasiz-sessiz-super-tesla"
           },
           {
-            "title": "APP Plaka Değişimi Nasıl Yapılır?",
-            "link": "https://shiftdelete.net/app-plaka-degisimi",
-            "published": "2026-09-03T09:56:06+00:00",
-            "summary": "APP plaka değişimi, standart dışı plaka kullanan araç sahiplerinin son dönemde en çok araştırdığı konulardan biridir. Farklı yazı tipi ve tasarıma sahip olan APP plakalar, aracın daha dikkat çekici görünmesini sağlamaktadır. Lakin trafik denetimlerinde sorun oluşturduğu için cezası da bulunuyor. Peki, APP plaka nasıl değiştirilir? Bu rehberde anlatıyoruz. APP plakalar standart dışı tasarıma sahip olabilir […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "title": "Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli",
+            "link": "https://www.otoajanda.com/yeni-jeep-avenger-turkiye-yollarinda-2008-ve-mokka-ile-kardes-elektrikli/",
+            "published": "2026-09-03T12:36:57+00:00",
+            "summary": "Jeep markası, tarihsel olarak geniş coğrafyalar, yüksek arazi yetenekleri ve Amerikan otomotiv kültürünün tavizsiz tasarımıyla tanınır. Ancak Avrupa’da tasarlanan, Stellantis’in Polonya’daki Tychy fabrikasında üretilen ve Grubun eCMP platformunu paylaşan yeni Jeep Avenger, bu köklü mirası kentsel dinamiklerle buluşturan stratejik bir dönüşümü simgeliyor. Peugeot 2008, Opel Mokka ve Fiat 600 gibi grup kardeşleriyle aynı teknik altyapıyı […] Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "app-degisimi-nasil-plaka-yapilir"
+            "topic_fingerprint": "2008-avenger-elektrikli-jeep-kardes-mokka-turkiye-yollarinda"
           },
           {
-            "title": "Hurda Teşviki ile Alınabilecek Araçlar (2026)",
-            "link": "https://shiftdelete.net/hurda-tesviki-ile-alinabilecek-araclar",
-            "published": "2026-09-03T09:33:50+00:00",
-            "summary": "Hurda teşviki ile alınabilecek araçlar, yasanın kesinleşmesiyle birlikte daha hesaplı bir şekilde alıcılarına kavuşacak. Yeni nesil otomobil sahibi olmak isteyen vatandaşların yakından takip ettiği konular arasında yer alan hurda teşviki, eski aracını hurdaya ayıran kişilere yeni araç alımında ÖTV avantajı sağlayacak. Yasa TBMM’ye taşındı ancak düzenlemenin kapsamı ve hangi araçların teşvikten yararlanabileceği henüz kesinleşmiş değil. […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+            "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
+            "published": "2026-09-03T19:55:25.910809+03:00",
+            "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "LogDergisi",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "2026-alinabilecek-araclar-hurda-tesviki"
+            "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen"
           },
           {
             "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
             "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-            "published": "2026-09-03T15:35:29.453236+03:00",
+            "published": "2026-09-03T19:55:25.910809+03:00",
             "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
@@ -212,14 +121,14 @@
             "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv"
           },
           {
-            "title": "Škoda Peaq Tek Şarjla 936 Kilometre Yol Aldı",
-            "link": "https://otopodyum.com.tr/elektriklihybrid-otolar/skoda-peaq-tek-sarjla-936-kilometre-yol-aldi-5265h",
-            "published": "2026-09-03T10:22:22+00:00",
-            "summary": "Škoda’nın Çek Cumhuriyeti’ndeki Mladá Boleslav merkezinden Hollanda’ya uzanan yolculuğu boyunca şarj edilmeyen Peaq, 100 kilometrede yalnızca 9.2 kWh ortalama enerji tüketimi gerçekleştirerek menzil rekoru kırdı.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5575.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5575.jpg",
+            "title": "6 Dev Markadan Kredi, İndirim ve Takas Kampanyaları",
+            "link": "https://otopodyum.com.tr/kampanyalar/6-dev-markadan-kredi-indirim-ve-takas-kampanyalari-5266h",
+            "published": "2026-09-03T14:43:08+00:00",
+            "summary": "Otomotiv markaları eylül ayına özel kampanyalarını açıkladı. Binek, SUV ve hafif ticari segmentlerinde nakit indirimleri, sıfır faizli kredi olanakları, %80 ÖTV avantajları ve takas destekleri öne çıkıyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5576.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5576.jpg",
             "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5575.jpg"
+              "https://cdn.otopodyum.com.tr/news/5576.jpg"
             ],
             "image_source": "rss",
             "source_name": "otopodyum",
@@ -228,10 +137,10 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "936-aldi-kilometre-koda-peaq-sarjla-tek-yol"
+            "topic_fingerprint": "dev-kampanyalari-kredi-markadan-ndirim-takas"
           }
         ],
-        "count": 12,
+        "count": 7,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -343,166 +252,126 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 7,
+            "count": 8,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 97,
-            "after_keyword": 64,
-            "after_time": 22,
-            "after_posted": 12,
-            "after_duplicate": 12,
-            "after_shared_variant_cooldown": 12
+            "found": 98,
+            "after_keyword": 59,
+            "after_time": 15,
+            "after_posted": 7,
+            "after_duplicate": 7,
+            "after_shared_variant_cooldown": 7
           }
         },
         "metrics": {
-          "found": 97,
-          "after_keyword": 64,
-          "after_time": 22,
-          "after_posted": 12,
-          "after_duplicate": 12,
-          "after_shared_variant_cooldown": 12
+          "found": 98,
+          "after_keyword": 59,
+          "after_time": 15,
+          "after_posted": 7,
+          "after_duplicate": 7,
+          "after_shared_variant_cooldown": 7
         }
       },
       "error": null,
-      "updated_at": "2026-09-03T15:36:22.134100+03:00"
+      "updated_at": "2026-09-03T19:56:25.921369+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
-          "link": "https://www.donanimhaber.com/volkswagen-seat-markasinin-fisini-cekiyor--210062",
-          "published": "2026-09-03T11:45:03+00:00",
-          "summary": "Alman otomotiv devi Volkswagen Group, maliyetleri azaltmak ve marka yapısını sadeleştirmek amacıyla İspanyol Seat markasını 2029’a kadar portföyden çıkarmayı değerlendiriyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
+          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
+          "published": "2026-09-03T19:55:25.910809+03:00",
+          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekiyor-dunyasinda-fisini-gelisme-markasinin-otomotiv-seat-sok-volkswagen",
-          "base_ai_score": 88,
+          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
+          "base_ai_score": 74,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 91,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir otomobil markasının tamamen kapatılması veya portföyden çıkarılması sektörü sarsacak büyüklükte bir haber ve sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 91,
-        "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
+        "score": 78,
+        "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 17,
-          "gundem_gucu": 19,
-          "paylasilabilirlik": 12
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 15,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Köklü bir otomobil markasının tamamen kapatılması veya portföyden çıkarılması sektörü sarsacak büyüklükte bir haber ve sosyal medyada büyük yankı uyandırır.",
+        "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
-            "score": 91,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 17,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 12
-            }
-          },
-          {
-            "title": "Dünyanın en büyük EV batarya araştırması: İşte bataryası en sağlam modeller",
-            "score": 86,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 16,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 12
-            }
-          },
-          {
-            "title": "Çinli GAC'ın Land Cruiser rakibi Yue 7'si 24 bin dolara ön satışta",
-            "score": 80,
+            "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+            "score": 78,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 20,
               "benzersizlik": 15,
               "gundem_gucu": 15,
-              "paylasilabilirlik": 10
+              "paylasilabilirlik": 8
             }
-          }
-        ],
-        "scored_count": 12,
-        "cooldown_candidates": [
-          {
-            "title": "Dünyanın en büyük EV batarya araştırması: İşte bataryası en sağlam modeller",
-            "link": "https://www.donanimhaber.com/elektrikli-araclarda-bataryasi-en-saglam-ve-en-zayif-modeller--210056",
-            "score": 86,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "arastirmasi-batarya-bataryasi-dunyanin-modeller-saglam-ste"
-          },
-          {
-            "title": "Çinli GAC'ın Land Cruiser rakibi Yue 7'si 24 bin dolara ön satışta",
-            "link": "https://www.donanimhaber.com/24-bin-dolara-land-cruiser-rakibi-cinli-gac-yue-7-on-satista--210054",
-            "score": 80,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "bin-cinli-cruiser-dolara-gac-land-rakibi-satista-yue"
-          },
-          {
-            "title": "Škoda Peaq Tek Şarjla 936 Kilometre Yol Aldı",
-            "link": "https://otopodyum.com.tr/elektriklihybrid-otolar/skoda-peaq-tek-sarjla-936-kilometre-yol-aldi-5265h",
-            "score": 79,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "936-aldi-kilometre-koda-peaq-sarjla-tek-yol"
           },
           {
             "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 16,
+              "benzersizlik": 14,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
+            "score": 65,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 7,
+        "cooldown_candidates": [
+          {
+            "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
             "link": "https://shiftdelete.net/tesla-model-y-icin-sessiz-sedasiz-kritik-guncelleme-super-manifold-v2-devrede",
-            "score": 73,
+            "score": 71,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
             "topic_fingerprint": "devrede-guncelleme-kritik-manifold-model-sedasiz-sessiz-super-tesla"
-          },
-          {
-            "title": "Hurda Teşviki ile Alınabilecek Araçlar (2026)",
-            "link": "https://shiftdelete.net/hurda-tesviki-ile-alinabilecek-araclar",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "2026-alinabilecek-araclar-hurda-tesviki"
-          },
-          {
-            "title": "Mitsubishi Pajero, piyasanın zirvesine tırmanmaya hazır!",
-            "link": "https://tr.motor1.com/news/806950/mitsubishi-pajero-2027-resmi/",
-            "score": 69,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "hazir-mitsubishi-pajero-piyasanin-tirmanmaya-zirvesine"
           },
           {
             "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
@@ -513,176 +382,168 @@
             "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv"
           },
           {
-            "title": "Skoda’nın Epiq ve Peaq modellerinin Türkiye satış tarihleri belli oldu",
-            "link": "https://www.log.com.tr/skodanin-epiq-ve-peaq-modellerinin-turkiye-satis-tarihleri-belli-oldu/",
-            "score": 60,
+            "title": "Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli",
+            "link": "https://www.otoajanda.com/yeni-jeep-avenger-turkiye-yollarinda-2008-ve-mokka-ile-kardes-elektrikli/",
+            "score": 57,
             "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "belli-epiq-modellerinin-peaq-satis-skoda-tarihleri-turkiye"
+            "source_name": "OtoAjanda",
+            "topic_fingerprint": "2008-avenger-elektrikli-jeep-kardes-mokka-turkiye-yollarinda"
           },
           {
-            "title": "APP Plaka Değişimi Nasıl Yapılır?",
-            "link": "https://shiftdelete.net/app-plaka-degisimi",
-            "score": 50,
+            "title": "BMW, i4'ün yerini coupe ve cabriolet modeller ile doldurabilir",
+            "link": "https://tr.motor1.com/news/807029/bmw-yeni-coupe-cabriolet-plani/",
+            "score": 53,
             "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "app-degisimi-nasil-plaka-yapilir"
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "bmw-cabriolet-coupe-doldurabilir-modeller-yerini"
           },
           {
-            "title": "Amazon Prime Video'da yeni dönem: Abonelikler ile Lionsgate+, MUBI, MGM+ gibi platformlar da izlenebilecek",
-            "link": "https://www.donanimhaber.com/amazon-prime-video-de-artik-baska-platformlar-da-izlenebilecek--210048",
-            "score": 27,
+            "title": "6 Dev Markadan Kredi, İndirim ve Takas Kampanyaları",
+            "link": "https://otopodyum.com.tr/kampanyalar/6-dev-markadan-kredi-indirim-ve-takas-kampanyalari-5266h",
+            "score": 28,
             "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "abonelikler-amazon-donem-izlenebilecek-lionsgate-mgm-mubi-platformlar-prime-video"
+            "source_name": "otopodyum",
+            "topic_fingerprint": "dev-kampanyalari-kredi-markadan-ndirim-takas"
           },
           {
-            "title": "Adobe, popüler araçlarını Slack’e getirdi",
-            "link": "https://www.log.com.tr/adobe-populer-araclarini-slacke-getirdi/",
-            "score": 26,
+            "title": "Nissan'dan Eylül'e özel fırsatlar!",
+            "link": "https://tr.motor1.com/news/807028/nissan-eylul-2026-kampanyalari/",
+            "score": 23,
             "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "adobe-araclarini-getirdi-populer-slack"
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "eylul-firsatlar-nissan-ozel"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-09-03T15:36:46.256560+03:00"
+      "updated_at": "2026-09-03T19:56:29.947941+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
-          "link": "https://www.donanimhaber.com/volkswagen-seat-markasinin-fisini-cekiyor--210062",
-          "published": "2026-09-03T11:45:03+00:00",
-          "summary": "Alman otomotiv devi Volkswagen Group, maliyetleri azaltmak ve marka yapısını sadeleştirmek amacıyla İspanyol Seat markasını 2029’a kadar portföyden çıkarmayı değerlendiriyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
+          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
+          "published": "2026-09-03T19:55:25.910809+03:00",
+          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekiyor-dunyasinda-fisini-gelisme-markasinin-otomotiv-seat-sok-volkswagen",
-          "base_ai_score": 88,
+          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
+          "base_ai_score": 74,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 91,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir otomobil markasının tamamen kapatılması veya portföyden çıkarılması sektörü sarsacak büyüklükte bir haber ve sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Volkswagen Group’unSeatmarkasını2029yılına kadar kademeli olarak sonlandırmayı planladığı bildirildi. Alman basınında yer alan iddialara göre öneri, Volkswagen yönetim kurulu tarafından onaylandı ve4 Eylül Cumagünü denetim kurulunun değerlendirmesine sunulacak. Planın kabul edilmesi halinde Seat,bu on yılın sonundaVolkswagen Group’un marka portföyünden çıkarılacak. Bunun yerine İspanyol grubundaki finansal ve stratejik kaynakların önemli bölümü 2018’de bağımsız bir marka haline getirilenCupra’ya yönlendirilecek. Volkswagen Grubu, haberlere konu olan karar hakkında resmi olarak yorum yapmayı reddetti. Şirket sözcüsü, şirket içi belgelerin ilgili kurullar tarafından görüşülüp onaylandığını ve bu süreç tamamlanmadan karar hakkında yorum yapılamayacağını söyledi. Seat Cupra UK de Autocar’a yaptığı açıklamadaiddiaları yalanlamadı. Şirket, Volkswagen Group ve Seat S.A. dahil olmak üzere otomotiv sektörünün elektrifikasyonun etkisiyle kapsamlı bir dönüşümden geçtiğini belirtti. Volkswagen Group’un tüm grup faaliyetlerinin rekabet gücünü ve verimliliğini artırmak için birdönüşüm planı üzerinde çalıştığı, amaçlardan birinin de şirketleridaha yalın ve verimlihale getirmek olduğu ifade edildi. Açıklamada Seat’ın geleceğini doğrudan etkileyen herhangi bir kararın ise henüz alınmadığı vurgulandı. Seat’ın geleceğiyle ilgili tartışmaların arkasındaki en önemli nedenlerden biri iki marka arasındakisatış farkının hızla Cupra lehine değişmesi. Cupra, 2026’nın ilk yarısında 170.100 araç satarak tarihindeki en yüksek ilk yarı performansına ulaştı. Aynı dönemde Seat’ın teslimatları 129.600 adet olarak gerçekleşti. Cupra’nın satışları geçen yıl yüzde 32,5 artarak 328.800 adede çıkarken Seat’ın teslimatları yüzde 17 düşüşle 257.400 adette kaldı. Volkswagen Group, Cupra’yı Şubat 2018’de bağımsız bir marka haline getirdi. Bu hamle, grubun Alfa Romeo’yu satın alma girişimlerinin başarısız olmasının ardından İspanyol markanın sportif kimliğinden daha yüksek kâr elde etme stratejisinin bir parçası olarak şekillenmişti. İlk yıllarında Seat modellerinden büyük ölçüde yararlanan ve ortak bayiler kullanan Cupra, zaman içerisinde Volkswagen Group tarafından farklı bir yöne taşındı. Markaya kendine özgü modeller, ayrı bir tasarım dili ve farklı bir pazar konumlandırması kazandırıldı.Bu strateji, Seat’ın sportif mirasından daha yüksek kâr elde etmek amacıyla başlatılan girişimin zaman içinde kendi başına daha değerli bir markaya dönüşmesini sağladı.Aradan geçen zaman içinde ise kaçınılmaz olarak Seat ve Cupra aynı müşteri kitlesine hitap etmeye başladı. Volkswagen Group’un CEO Oliver Blume yönetiminde son yılların en kapsamlı yeniden yapılanma programlarından birinin yönetildiği bu dönemde aynı kitleye erişen iki farklı markanın yaşatılması pek mümkün görünmüyor.Alman Bild gazetesinin aktardığı şirket içi belgelere göre grubun değerlendirmesi de bu noktaya dayanıyor. Belgelerde Seat’ın mevcut yapısıyla devam etmesinin ilave kaynak gerektireceği, buna karşın marka grubunun stratejik gelişimindeodağın Cupra üzerinde yoğunlaştırılacağıbelirtiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil İlk yıllarında Seat modellerinden büyük ölçüde yararlanan ve ortak bayiler kullanan Cupra, zaman içerisinde Volkswagen Group tarafından farklı bir yöne taşındı. Markaya kendine özgü modeller, ayrı bir tasarım dili ve farklı bir pazar konumlandırması kazandırıldı. Bu strateji, Seat’ın sportif mirasından daha yüksek kâr elde etmek amacıyla başlatılan girişimin zaman içinde kendi başına daha değerli bir markaya dönüşmesini sağladı. Aradan geçen zaman içinde ise kaçınılmaz olarak Seat ve Cupra aynı müşteri kitlesine hitap etmeye başladı. Volkswagen Group’un CEO Oliver Blume yönetiminde son yılların en kapsamlı yeniden yapılanma programlarından birinin yönetildiği bu dönemde aynı kitleye erişen iki farklı markanın yaşatılması pek mümkün görünmüyor. Alman Bild gazetesinin aktardığı şirket içi belgelere göre grubun değerlendirmesi de bu noktaya dayanıyor. Belgelerde Seat’ın mevcut yapısıyla devam etmesinin ilave kaynak gerektireceği, buna karşın marka grubunun stratejik gelişimindeodağın Cupra üzerinde yoğunlaştırılacağıbelirtiliyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B0F6XJ7W9M https://www.amazon.com.tr/dp/B01D5P6H4Y https://www.amazon.com.tr/Lenovo-i7-13645HX-144Hz-FreeDOS-83JE01BETR/dp/B0H6NGNXQC https://www.amazon.com.tr/dp/B0FFT5QSV2 https://www.migros.com.tr/homebasix-oto-guneslik-ht-2003-60-x-130-cm-p-2a72c6c https://www.migros.com.tr/homebasix-metalize-oto-cam-gunesligi-a191026-130-x-60-cm-p-2a751c7"
+          "full_text": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyideğerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor."
         },
-        "post_text": "Herkes Seat'ın fişinin çekilmesini konuşuyor ama asıl mesele bu değil.\n\nVolkswagen, maliyetleri kısmak için Seat'ı 2029'a kadar portföyden çıkarıp Cupra'ya odaklanacak. Bu karar, markaların duygusal bağdan çok, kârlılığa göre hareket ettiğini gösteriyor.\n\nOtomotiv dünyasında vefa değil, verimlilik kazanıyor.",
-        "post_text_length": 309,
-        "story_card_title": "Veda Vakti: Volkswagen, Seat'ı Bitiriyor!",
-        "story_card_subtitle": "Volkswagen Group, maliyetleri düşürmek ve marka yapısını sadeleştirmek adına önemli bir karar aldı. İspanyol Seat markası, 2029 yılına kadar portföyden çıkarılarak yerini Cupra'ya bırakacak. Bu stratejik hamle, otomotiv sektöründe kârlılığın, duygusal bağların önüne geçtiğini bir kez daha kanıtlıyor.",
+        "post_text": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+        "post_text_length": 342,
+        "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
+        "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-09-03T15:37:13.150285+03:00"
+      "updated_at": "2026-09-03T19:56:59.867760+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Otomotiv dünyasında şok gelişme! Volkswagen, Seat markasının fişini çekiyor",
-          "link": "https://www.donanimhaber.com/volkswagen-seat-markasinin-fisini-cekiyor--210062",
-          "published": "2026-09-03T11:45:03+00:00",
-          "summary": "Alman otomotiv devi Volkswagen Group, maliyetleri azaltmak ve marka yapısını sadeleştirmek amacıyla İspanyol Seat markasını 2029’a kadar portföyden çıkarmayı değerlendiriyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg",
+          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
+          "published": "2026-09-03T19:55:25.910809+03:00",
+          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
           ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
+          "image_source": "smart_search",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekiyor-dunyasinda-fisini-gelisme-markasinin-otomotiv-seat-sok-volkswagen",
-          "base_ai_score": 88,
+          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
+          "base_ai_score": 74,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 12
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 91,
+          "score": 78,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir otomobil markasının tamamen kapatılması veya portföyden çıkarılması sektörü sarsacak büyüklükte bir haber ve sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Volkswagen Group’unSeatmarkasını2029yılına kadar kademeli olarak sonlandırmayı planladığı bildirildi. Alman basınında yer alan iddialara göre öneri, Volkswagen yönetim kurulu tarafından onaylandı ve4 Eylül Cumagünü denetim kurulunun değerlendirmesine sunulacak. Planın kabul edilmesi halinde Seat,bu on yılın sonundaVolkswagen Group’un marka portföyünden çıkarılacak. Bunun yerine İspanyol grubundaki finansal ve stratejik kaynakların önemli bölümü 2018’de bağımsız bir marka haline getirilenCupra’ya yönlendirilecek. Volkswagen Grubu, haberlere konu olan karar hakkında resmi olarak yorum yapmayı reddetti. Şirket sözcüsü, şirket içi belgelerin ilgili kurullar tarafından görüşülüp onaylandığını ve bu süreç tamamlanmadan karar hakkında yorum yapılamayacağını söyledi. Seat Cupra UK de Autocar’a yaptığı açıklamadaiddiaları yalanlamadı. Şirket, Volkswagen Group ve Seat S.A. dahil olmak üzere otomotiv sektörünün elektrifikasyonun etkisiyle kapsamlı bir dönüşümden geçtiğini belirtti. Volkswagen Group’un tüm grup faaliyetlerinin rekabet gücünü ve verimliliğini artırmak için birdönüşüm planı üzerinde çalıştığı, amaçlardan birinin de şirketleridaha yalın ve verimlihale getirmek olduğu ifade edildi. Açıklamada Seat’ın geleceğini doğrudan etkileyen herhangi bir kararın ise henüz alınmadığı vurgulandı. Seat’ın geleceğiyle ilgili tartışmaların arkasındaki en önemli nedenlerden biri iki marka arasındakisatış farkının hızla Cupra lehine değişmesi. Cupra, 2026’nın ilk yarısında 170.100 araç satarak tarihindeki en yüksek ilk yarı performansına ulaştı. Aynı dönemde Seat’ın teslimatları 129.600 adet olarak gerçekleşti. Cupra’nın satışları geçen yıl yüzde 32,5 artarak 328.800 adede çıkarken Seat’ın teslimatları yüzde 17 düşüşle 257.400 adette kaldı. Volkswagen Group, Cupra’yı Şubat 2018’de bağımsız bir marka haline getirdi. Bu hamle, grubun Alfa Romeo’yu satın alma girişimlerinin başarısız olmasının ardından İspanyol markanın sportif kimliğinden daha yüksek kâr elde etme stratejisinin bir parçası olarak şekillenmişti. İlk yıllarında Seat modellerinden büyük ölçüde yararlanan ve ortak bayiler kullanan Cupra, zaman içerisinde Volkswagen Group tarafından farklı bir yöne taşındı. Markaya kendine özgü modeller, ayrı bir tasarım dili ve farklı bir pazar konumlandırması kazandırıldı.Bu strateji, Seat’ın sportif mirasından daha yüksek kâr elde etmek amacıyla başlatılan girişimin zaman içinde kendi başına daha değerli bir markaya dönüşmesini sağladı.Aradan geçen zaman içinde ise kaçınılmaz olarak Seat ve Cupra aynı müşteri kitlesine hitap etmeye başladı. Volkswagen Group’un CEO Oliver Blume yönetiminde son yılların en kapsamlı yeniden yapılanma programlarından birinin yönetildiği bu dönemde aynı kitleye erişen iki farklı markanın yaşatılması pek mümkün görünmüyor.Alman Bild gazetesinin aktardığı şirket içi belgelere göre grubun değerlendirmesi de bu noktaya dayanıyor. Belgelerde Seat’ın mevcut yapısıyla devam etmesinin ilave kaynak gerektireceği, buna karşın marka grubunun stratejik gelişimindeodağın Cupra üzerinde yoğunlaştırılacağıbelirtiliyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil İlk yıllarında Seat modellerinden büyük ölçüde yararlanan ve ortak bayiler kullanan Cupra, zaman içerisinde Volkswagen Group tarafından farklı bir yöne taşındı. Markaya kendine özgü modeller, ayrı bir tasarım dili ve farklı bir pazar konumlandırması kazandırıldı. Bu strateji, Seat’ın sportif mirasından daha yüksek kâr elde etmek amacıyla başlatılan girişimin zaman içinde kendi başına daha değerli bir markaya dönüşmesini sağladı. Aradan geçen zaman içinde ise kaçınılmaz olarak Seat ve Cupra aynı müşteri kitlesine hitap etmeye başladı. Volkswagen Group’un CEO Oliver Blume yönetiminde son yılların en kapsamlı yeniden yapılanma programlarından birinin yönetildiği bu dönemde aynı kitleye erişen iki farklı markanın yaşatılması pek mümkün görünmüyor. Alman Bild gazetesinin aktardığı şirket içi belgelere göre grubun değerlendirmesi de bu noktaya dayanıyor. Belgelerde Seat’ın mevcut yapısıyla devam etmesinin ilave kaynak gerektireceği, buna karşın marka grubunun stratejik gelişimindeodağın Cupra üzerinde yoğunlaştırılacağıbelirtiliyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B0F6XJ7W9M https://www.amazon.com.tr/dp/B01D5P6H4Y https://www.amazon.com.tr/Lenovo-i7-13645HX-144Hz-FreeDOS-83JE01BETR/dp/B0H6NGNXQC https://www.amazon.com.tr/dp/B0FFT5QSV2 https://www.migros.com.tr/homebasix-oto-guneslik-ht-2003-60-x-130-cm-p-2a72c6c https://www.migros.com.tr/homebasix-metalize-oto-cam-gunesligi-a191026-130-x-60-cm-p-2a751c7",
-          "post_text_for_card": "Herkes Seat'ın fişinin çekilmesini konuşuyor ama asıl mesele bu değil.\n\nVolkswagen, maliyetleri kısmak için Seat'ı 2029'a kadar portföyden çıkarıp Cupra'ya odaklanacak. Bu karar, markaların duygusal bağdan çok, kârlılığa göre hareket ettiğini gösteriyor.\n\nOtomotiv dünyasında vefa değil, verimlilik kazanıyor.",
-          "story_card_title": "Veda Vakti: Volkswagen, Seat'ı Bitiriyor!",
-          "story_card_subtitle": "Volkswagen Group, maliyetleri düşürmek ve marka yapısını sadeleştirmek adına önemli bir karar aldı. İspanyol Seat markası, 2029 yılına kadar portföyden çıkarılarak yerini Cupra'ya bırakacak. Bu stratejik hamle, otomotiv sektöründe kârlılığın, duygusal bağların önüne geçtiğini bir kez daha kanıtlıyor.",
+          "full_text": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyideğerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor.",
+          "post_text_for_card": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+          "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
+          "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
           "image_sources": [
-            "article_img",
-            "article_img",
-            "meta_og"
+            "smart_search"
           ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/210062/src/volkswagen-seat-markasinin-fisini-cekiyor210062_1.jpg",
-            "https://www.donanimhaber.com/images/images/haber/210062/src/volkswagen-seat-markasinin-fisini-cekiyor210062_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/210062/1200x675volkswagen-seat-markasinin-fisini-cekiyor.jpg"
-          ]
+          "prepared_image_count": 1,
+          "original_image_urls": []
         },
-        "post_text": "Herkes Seat'ın fişinin çekilmesini konuşuyor ama asıl mesele bu değil.\n\nVolkswagen, maliyetleri kısmak için Seat'ı 2029'a kadar portföyden çıkarıp Cupra'ya odaklanacak. Bu karar, markaların duygusal bağdan çok, kârlılığa göre hareket ettiğini gösteriyor.\n\nOtomotiv dünyasında vefa değil, verimlilik kazanıyor.",
-        "story_card_title": "Veda Vakti: Volkswagen, Seat'ı Bitiriyor!",
-        "story_card_subtitle": "Volkswagen Group, maliyetleri düşürmek ve marka yapısını sadeleştirmek adına önemli bir karar aldı. İspanyol Seat markası, 2029 yılına kadar portföyden çıkarılarak yerini Cupra'ya bırakacak. Bu stratejik hamle, otomotiv sektöründe kârlılığın, duygusal bağların önüne geçtiğini bir kez daha kanıtlıyor.",
-        "image_path": "/tmp/otoxtra_img_t1m3yf2a.jpg",
+        "post_text": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+        "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
+        "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+        "image_path": "/tmp/otoxtra_img_acqmsvys.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_t1m3yf2a.jpg",
-          "/tmp/otoxtra_img_epbw3i0d.jpg",
-          "/tmp/otoxtra_img_qthcsd5q.jpg"
+          "/tmp/otoxtra_img_acqmsvys.jpg"
         ],
-        "image_source": "article_img",
-        "image_count": 3
+        "image_source": "smart_search",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-09-03T15:37:39.192202+03:00"
+      "updated_at": "2026-09-03T20:05:56.351801+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122178190724916499",
+        "post_id": "678053852057751_122178210662916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18105068714591969",
+            "id": "18145373245519258",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "4785064645097848",
+            "id": "1702057420896248",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-09-03T15:38:20.925015+03:00"
+      "updated_at": "2026-09-03T20:06:45.234231+03:00"
     }
   }
 }
