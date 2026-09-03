@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-09-03-02:50",
-  "status": "completed",
-  "started_at": "2026-09-03T02:50:46.029809+03:00",
-  "updated_at": "2026-09-03T02:52:43.907485+03:00",
+  "run_id": "2026-09-03-05:54",
+  "status": "error",
+  "started_at": "2026-09-03T05:54:21.885880+03:00",
+  "updated_at": "2026-09-03T05:55:15.771468+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-            "link": "https://www.log.com.tr/fiat-abarth-ve-lancianin-yeni-ceosu-arnaud-belloni-oldu/",
-            "published": "2026-09-03T02:50:46.086049+03:00",
-            "summary": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü […] FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "abarth-arnaud-belloni-ceo-fiat-lancia"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -148,219 +128,46 @@
             "found": 95,
             "after_keyword": 59,
             "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 95,
           "after_keyword": 59,
           "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-03T02:51:40.454074+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-03T05:55:15.771468+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-          "link": "https://www.log.com.tr/fiat-abarth-ve-lancianin-yeni-ceosu-arnaud-belloni-oldu/",
-          "published": "2026-09-03T02:50:46.086049+03:00",
-          "summary": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü […] FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "abarth-arnaud-belloni-ceo-fiat-lancia",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Üst düzey yönetici ataması endüstri için önemli olsa da, geniş kitleler ve sosyal medya kullanıcıları nezdinde yüksek bir viral veya etkileşim potansiyeli taşımamaktadır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 48,
-        "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 8,
-          "benzersizlik": 10,
-          "gundem_gucu": 7,
-          "paylasilabilirlik": 3
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Üst düzey yönetici ataması endüstri için önemli olsa da, geniş kitleler ve sosyal medya kullanıcıları nezdinde yüksek bir viral veya etkileşim potansiyeli taşımamaktadır.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-            "score": 48,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 10,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 3
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-03T02:51:42.044671+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-          "link": "https://www.log.com.tr/fiat-abarth-ve-lancianin-yeni-ceosu-arnaud-belloni-oldu/",
-          "published": "2026-09-03T02:50:46.086049+03:00",
-          "summary": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü […] FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "abarth-arnaud-belloni-ceo-fiat-lancia",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Üst düzey yönetici ataması endüstri için önemli olsa da, geniş kitleler ve sosyal medya kullanıcıları nezdinde yüksek bir viral veya etkileşim potansiyeli taşımamaktadır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü yönetti. Belloni’nin liderliğinde Citroën, Avrupa’da 8 yıl üst üste satışlarını artırırken Fransa’nın en çok tercih edilen otomotiv markası oldu. Belloni, Kasım 2020’den itibaren Global Pazarlama Direktörü, Mayıs 2023’ten itibaren ise grubun tüm markalarından sorumlu Marka Direktörü olarak görev yaptığı Renault Group’tan Stellantis’e geri dönüyor.” ifadelerine yer verildi."
-        },
-        "post_text": "FIAT, ABARTH VE LANCİA’NIN YENİ CEO’SU ARNAUD BELLONİ OLDU\n\nGelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise soruns\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 445,
-        "story_card_title": "FIAT-Abarth-Lancia üçlüsüne tek patron!",
-        "story_card_subtitle": "Stellantis, FIAT, Abarth ve Lancia markalarının CEO'su olarak Arnaud Belloni'yi atadı. Belloni, aynı zamanda Avrupa Pazarlama Direktörlüğü görevini de üstlenecek. Bu karar, Stellantis'in üç markayı tek çatı altında yönetme stratejisinin bir parçası olarak değerlendiriliyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-03T02:51:46.023471+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu",
-          "link": "https://www.log.com.tr/fiat-abarth-ve-lancianin-yeni-ceosu-arnaud-belloni-oldu/",
-          "published": "2026-09-03T02:50:46.086049+03:00",
-          "summary": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü […] FIAT, Abarth ve Lancia’nın yeni CEO’su Arnaud Belloni oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-02_15-51-01_Vh1dk-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "abarth-arnaud-belloni-ceo-fiat-lancia",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 7,
-            "paylasilabilirlik": 3
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Üst düzey yönetici ataması endüstri için önemli olsa da, geniş kitleler ve sosyal medya kullanıcıları nezdinde yüksek bir viral veya etkileşim potansiyeli taşımamaktadır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Gelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise sorunsuz bir görev geçişinin sağlanması amacıyla ekim ayı ortasına kadar Belloni’ye destek olacak ve sonrasında Stellantis’e Şirket Stratejik Danışmanı olarak katkı sunmaya devam edecek. Daha önce İtalyan ve Fransız markalarının pazarlama stratejilerine liderlik eden Arnaud Belloni, 16 yıl boyunca görev yaptığı Stellantis’e geri dönüyor. Belloni, bu süre boyunca FIAT ve Lancia Marka Pazarlama Direktörlüğü, Lancia Fransa Genel Müdürlüğü ve Asya Pasifik Pazarlamadan Sorumlu Başkan Yardımcılığı gibi çeşitli görevler üstlendi. 2015-2020 yılları arasında Citroën Global İletişim ve Spor Pazarlama Direktörü olarak görev yapan Belloni, “Citroën – Inspired by You” marka stratejisini hayata geçirdi; “la maison Citroën” gibi dijital ve perakende konseptleriyle müşteri deneyiminin dönüşümüne öncülük etti ve geniş kapsamlı bir ürün lansman portföyünü yönetti. Belloni’nin liderliğinde Citroën, Avrupa’da 8 yıl üst üste satışlarını artırırken Fransa’nın en çok tercih edilen otomotiv markası oldu. Belloni, Kasım 2020’den itibaren Global Pazarlama Direktörü, Mayıs 2023’ten itibaren ise grubun tüm markalarından sorumlu Marka Direktörü olarak görev yaptığı Renault Group’tan Stellantis’e geri dönüyor.” ifadelerine yer verildi.",
-          "post_text_for_card": "FIAT, ABARTH VE LANCİA’NIN YENİ CEO’SU ARNAUD BELLONİ OLDU\n\nGelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise soruns\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "FIAT-Abarth-Lancia üçlüsüne tek patron!",
-          "story_card_subtitle": "Stellantis, FIAT, Abarth ve Lancia markalarının CEO'su olarak Arnaud Belloni'yi atadı. Belloni, aynı zamanda Avrupa Pazarlama Direktörlüğü görevini de üstlenecek. Bu karar, Stellantis'in üç markayı tek çatı altında yönetme stratejisinin bir parçası olarak değerlendiriliyor.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "FIAT, ABARTH VE LANCİA’NIN YENİ CEO’SU ARNAUD BELLONİ OLDU\n\nGelişme hakkında Stellantis’ten yapılan açıklamada, “Şirket, Arnaud Belloni’nin FIAT, Abarth ve Lancia markalarının CEO’su ve Avrupa Pazarlama Direktörü olarak atandığını duyurdu. Arnaud Belloni, şirketin Genişletilmiş Avrupa Operasyon Direktörü (COO) Emanuele Cappellano’ya bağlı olarak görev yapacak. Olivier François ise soruns\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "FIAT-Abarth-Lancia üçlüsüne tek patron!",
-        "story_card_subtitle": "Stellantis, FIAT, Abarth ve Lancia markalarının CEO'su olarak Arnaud Belloni'yi atadı. Belloni, aynı zamanda Avrupa Pazarlama Direktörlüğü görevini de üstlenecek. Bu karar, Stellantis'in üç markayı tek çatı altında yönetme stratejisinin bir parçası olarak değerlendiriliyor.",
-        "image_path": "/tmp/otoxtra_img_yx1t0kks.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_yx1t0kks.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-03T02:51:56.851926+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178124388916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17930341146145866",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1747947789664107",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-03T02:52:43.907485+03:00"
+      "updated_at": null
     }
   }
 }
