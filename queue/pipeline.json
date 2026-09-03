@@ -1,22 +1,41 @@
 {
-  "run_id": "2026-09-03-19:55",
+  "run_id": "2026-09-03-22:38",
   "status": "completed",
-  "started_at": "2026-09-03T19:55:25.750130+03:00",
-  "updated_at": "2026-09-03T20:06:45.234231+03:00",
+  "started_at": "2026-09-03T22:38:15.641016+03:00",
+  "updated_at": "2026-09-03T22:40:09.917796+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "BMW, i4'ün yerini coupe ve cabriolet modeller ile doldurabilir",
-            "link": "https://tr.motor1.com/news/807029/bmw-yeni-coupe-cabriolet-plani/",
-            "published": "2026-09-03T15:00:00+00:00",
-            "summary": "i4 Gran Coupe gidiyor, çok daha \"özel\" modeller geliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg",
+            "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
+            "link": "https://www.donanimhaber.com/norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor--210069",
+            "published": "2026-09-03T18:00:00+00:00",
+            "summary": "Meta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
             "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/y29bZm/s3/bmw-i4-coupe-2027-rendering.jpg"
+              "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "buyuyor-gozluklerine-kamerali-meta-norvec-olabilir-tepki-ulke-yasaklayan"
+          },
+          {
+            "title": "V8 motorlu Mythos AMG CLE nasıl görünecek?",
+            "link": "https://tr.motor1.com/news/807057/v8-mythos-amg-cle-render/",
+            "published": "2026-09-03T17:10:08+00:00",
+            "summary": "650 bg üstü güç sunan, düz kranklı bir motor taşıyacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/7ZEqZV/s3/mercedes-amg-cle-63-mythos-2027-il-render-di-motor1.com.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/7ZEqZV/s3/mercedes-amg-cle-63-mythos-2027-il-render-di-motor1.com.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/7ZEqZV/s3/mercedes-amg-cle-63-mythos-2027-il-render-di-motor1.com.jpg"
             ],
             "image_source": "rss",
             "source_name": "Motor1 TR",
@@ -25,86 +44,12 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-cabriolet-coupe-doldurabilir-modeller-yerini"
-          },
-          {
-            "title": "Nissan'dan Eylül'e özel fırsatlar!",
-            "link": "https://tr.motor1.com/news/807028/nissan-eylul-2026-kampanyalari/",
-            "published": "2026-09-03T14:00:00+00:00",
-            "summary": "Tüm modellerde geçerli fırsatlar sizleri bekliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/W8Kgp3/s3/nissan-qashqai-e-power.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "eylul-firsatlar-nissan-ozel"
-          },
-          {
-            "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
-            "link": "https://shiftdelete.net/tesla-model-y-icin-sessiz-sedasiz-kritik-guncelleme-super-manifold-v2-devrede",
-            "published": "2026-09-03T11:20:11+00:00",
-            "summary": "Tesla, popüler SUV modeli Model Y için kritik bir donanım revizyonuna imza atıyor. Almanya’daki Gigafactory Berlin tesislerinde üretilen Model Y modellerine, markanın yeni nesil termal yönetim mimarisi olan Super Manifold V2 entegre edilmeye başlandı. 27 Ağustos çıkışlı “Coastal Blue” renkli bir Model Y Standard modelinde ilk kez tespit edilen bu donanım değişimi; kış aylarındaki menzil […]",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "devrede-guncelleme-kritik-manifold-model-sedasiz-sessiz-super-tesla"
-          },
-          {
-            "title": "Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli",
-            "link": "https://www.otoajanda.com/yeni-jeep-avenger-turkiye-yollarinda-2008-ve-mokka-ile-kardes-elektrikli/",
-            "published": "2026-09-03T12:36:57+00:00",
-            "summary": "Jeep markası, tarihsel olarak geniş coğrafyalar, yüksek arazi yetenekleri ve Amerikan otomotiv kültürünün tavizsiz tasarımıyla tanınır. Ancak Avrupa’da tasarlanan, Stellantis’in Polonya’daki Tychy fabrikasında üretilen ve Grubun eCMP platformunu paylaşan yeni Jeep Avenger, bu köklü mirası kentsel dinamiklerle buluşturan stratejik bir dönüşümü simgeliyor. Peugeot 2008, Opel Mokka ve Fiat 600 gibi grup kardeşleriyle aynı teknik altyapıyı […] Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
-            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif",
-            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif",
-            "image_candidates": [
-              "https://www.otoajanda.com/wp-content/uploads/2026/09/Yeni-Jeep-Avenger-1-800x533.avif"
-            ],
-            "image_source": "rss",
-            "source_name": "OtoAjanda",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2008-avenger-elektrikli-jeep-kardes-mokka-turkiye-yollarinda"
-          },
-          {
-            "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
-            "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
-            "published": "2026-09-03T19:55:25.910809+03:00",
-            "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen"
+            "topic_fingerprint": "amg-cle-gorunecek-motorlu-mythos-nasil"
           },
           {
             "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
             "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-            "published": "2026-09-03T19:55:25.910809+03:00",
+            "published": "2026-09-03T22:38:15.712018+03:00",
             "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
@@ -119,28 +64,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv"
-          },
-          {
-            "title": "6 Dev Markadan Kredi, İndirim ve Takas Kampanyaları",
-            "link": "https://otopodyum.com.tr/kampanyalar/6-dev-markadan-kredi-indirim-ve-takas-kampanyalari-5266h",
-            "published": "2026-09-03T14:43:08+00:00",
-            "summary": "Otomotiv markaları eylül ayına özel kampanyalarını açıkladı. Binek, SUV ve hafif ticari segmentlerinde nakit indirimleri, sıfır faizli kredi olanakları, %80 ÖTV avantajları ve takas destekleri öne çıkıyor.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5576.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5576.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5576.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "dev-kampanyalari-kredi-markadan-ndirim-takas"
           }
         ],
-        "count": 7,
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -258,292 +184,265 @@
           },
           "_metrics": {
             "found": 98,
-            "after_keyword": 59,
-            "after_time": 15,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "after_keyword": 61,
+            "after_time": 11,
+            "after_posted": 3,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 98,
-          "after_keyword": 59,
-          "after_time": 15,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "after_keyword": 61,
+          "after_time": 11,
+          "after_posted": 3,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-09-03T19:56:25.921369+03:00"
+      "updated_at": "2026-09-03T22:39:03.014621+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
-          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
-          "published": "2026-09-03T19:55:25.910809+03:00",
-          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
+          "link": "https://www.donanimhaber.com/norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor--210069",
+          "published": "2026-09-03T18:00:00+00:00",
+          "summary": "Meta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
-          "base_ai_score": 74,
+          "topic_fingerprint": "buyuyor-gozluklerine-kamerali-meta-norvec-olabilir-tepki-ulke-yasaklayan",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 8
           },
-          "score": 78,
+          "score": 82,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
-          "freshness_bonus": 10,
+          "score_explanation": "Mahremiyet ve yasal yasaklama tehdidi içermesi nedeniyle sosyal medyada yüksek tartışma ve etkileşim yaratacak bir teknoloji/otomotiv-tekno gündemi.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 78,
-        "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
+        "score": 82,
+        "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 15,
-          "gundem_gucu": 15,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
           "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
+        "score_explanation": "Mahremiyet ve yasal yasaklama tehdidi içermesi nedeniyle sosyal medyada yüksek tartışma ve etkileşim yaratacak bir teknoloji/otomotiv-tekno gündemi.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
-            "score": 78,
+            "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
+            "score": 82,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
               "paylasilabilirlik": 8
             }
           },
           {
-            "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
-            "score": 71,
+            "title": "V8 motorlu Mythos AMG CLE nasıl görünecek?",
+            "score": 60,
             "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 16,
-              "benzersizlik": 14,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 8
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 10,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 5
             }
           },
           {
             "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-            "score": 65,
+            "score": 52,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 12,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 6
+              "etkilesim_potansiyeli": 11,
+              "benzersizlik": 9,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 3
             }
           }
         ],
-        "scored_count": 7,
+        "scored_count": 3,
         "cooldown_candidates": [
           {
-            "title": "Tesla Model Y için Sessiz Sedasız Kritik Güncelleme: Super Manifold V2 Devrede!",
-            "link": "https://shiftdelete.net/tesla-model-y-icin-sessiz-sedasiz-kritik-guncelleme-super-manifold-v2-devrede",
-            "score": 71,
+            "title": "V8 motorlu Mythos AMG CLE nasıl görünecek?",
+            "link": "https://tr.motor1.com/news/807057/v8-mythos-amg-cle-render/",
+            "score": 60,
             "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "devrede-guncelleme-kritik-manifold-model-sedasiz-sessiz-super-tesla"
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "amg-cle-gorunecek-motorlu-mythos-nasil"
           },
           {
             "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
             "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-            "score": 65,
+            "score": 52,
             "score_reason": "ai_scored",
             "source_name": "LogDergisi",
             "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv"
-          },
-          {
-            "title": "Yeni Jeep Avenger Türkiye yollarında: 2008 ve Mokka ile kardeş elektrikli",
-            "link": "https://www.otoajanda.com/yeni-jeep-avenger-turkiye-yollarinda-2008-ve-mokka-ile-kardes-elektrikli/",
-            "score": 57,
-            "score_reason": "ai_scored",
-            "source_name": "OtoAjanda",
-            "topic_fingerprint": "2008-avenger-elektrikli-jeep-kardes-mokka-turkiye-yollarinda"
-          },
-          {
-            "title": "BMW, i4'ün yerini coupe ve cabriolet modeller ile doldurabilir",
-            "link": "https://tr.motor1.com/news/807029/bmw-yeni-coupe-cabriolet-plani/",
-            "score": 53,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "bmw-cabriolet-coupe-doldurabilir-modeller-yerini"
-          },
-          {
-            "title": "6 Dev Markadan Kredi, İndirim ve Takas Kampanyaları",
-            "link": "https://otopodyum.com.tr/kampanyalar/6-dev-markadan-kredi-indirim-ve-takas-kampanyalari-5266h",
-            "score": 28,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "dev-kampanyalari-kredi-markadan-ndirim-takas"
-          },
-          {
-            "title": "Nissan'dan Eylül'e özel fırsatlar!",
-            "link": "https://tr.motor1.com/news/807028/nissan-eylul-2026-kampanyalari/",
-            "score": 23,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "eylul-firsatlar-nissan-ozel"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-09-03T19:56:29.947941+03:00"
+      "updated_at": "2026-09-03T22:39:05.513121+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
-          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
-          "published": "2026-09-03T19:55:25.910809+03:00",
-          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
+          "link": "https://www.donanimhaber.com/norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor--210069",
+          "published": "2026-09-03T18:00:00+00:00",
+          "summary": "Meta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
-          "base_ai_score": 74,
+          "topic_fingerprint": "buyuyor-gozluklerine-kamerali-meta-norvec-olabilir-tepki-ulke-yasaklayan",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 8
           },
-          "score": 78,
+          "score": 82,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
-          "freshness_bonus": 10,
+          "score_explanation": "Mahremiyet ve yasal yasaklama tehdidi içermesi nedeniyle sosyal medyada yüksek tartışma ve etkileşim yaratacak bir teknoloji/otomotiv-tekno gündemi.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyideğerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor."
+          "full_text": "HatırlarsanızAlmanya'dabazı siyasetçilerin Meta Ray-Ban gözlüklerini yasaklatmak için çalışmalara başladığını kısa süre önce sizinlepaylaşmıştık. Şimdi onların yanınaNorveç'i de yazabiliriz. Üstelik Norveç bu konuda çok daha somut adımlar atıyor.Norveç Teknoloji Bakanı Karianne Tung, Meta ve Snap gibi şirketler tarafından geliştirilen kameralı gözlüklere ve benzer özelliklere sahip diğer giyilebilir cihazlara yönelik yeni bir düzenleme üzerinde çalıştıklarını açıkladı. Kamera veya mikrofon ile donatılmış akıllı gözlük tarzı cihazların yapay zekâyla giderek daha fazla entegre hâle geldiğine dikkat çeken Karianne Tung,bu cihazların başkalarını gözlemek için kullanılmaması için önlem alınması gerektiğinibelirtti. Tung'un burada yapay zekâ tarafına dikkat çekmesi boşuna değil. Zira bu tarz akıllı gözlüklerin yapay zekâ özellikleri geliştikçe, gerçek zamanlı yüz tanıma ve kimlik belirleme gibi özelliklere kavuşmalarının da önü açılıyor. Bu da günlük hayatta kuralsızca kullanılmaları konusunda endişeleri artırıyor. Norveç teknoloji bakanının yaptığı açıklamalar, bu gözlüklere yönelik bir yasak uygulayacak ilk ülkenin Norveç olabileceğini gösteriyor. Ancak son dönemde artan tepkilere bakılırsa, bu konuda uzun süre yalnız kalmayacaklar. Avrupa Birliği de Bu Gözlükleri İnceliyorAvrupa Birliği veri koruma kurumları da bu cihazların mevcut gizlilik kurallarıyla ne ölçüde uyumlu olduğunu incelemeye başlamış durumda. Avrupa Veri Koruma Kurulu'nun (EDPB) akıllı gözlüklerle ilgilikapsamlı değerlendirme raporunu yaz sonunda yayımlaması bekleniyor.Hazırlanacak bu raporun, gelecekte Avrupa genelinde uygulanabilecek yeni düzenlemeler açısından önemli bir referans olması bekleniyor.Öte yandan Meta,kullanıcı verilerinin işlenme şekli nedeniyle de eleştiriliyor.Mart ayında İsveç basınında yer alan haberlerde, Meta'nın gözlükler aracılığıyla kaydedilen bazı görüntüleriyapay zekâ eğitiminde kullanılmak üzere Kenya'daki bir taşeron şirkete gönderdiğiöne sürülmüştü. Bu durum, kullanıcıların farkında olmadan son derece kişisel görüntülerinin üçüncü taraf çalışanlar tarafından incelenmiş olabileceği yönünde tartışmaları beraberinde getirdi. Yani bu gözlüklere yönelik eleştiriler, gizli çekim yapmanın da ötesine uzanıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Avrupa Birliği veri koruma kurumları da bu cihazların mevcut gizlilik kurallarıyla ne ölçüde uyumlu olduğunu incelemeye başlamış durumda. Avrupa Veri Koruma Kurulu'nun (EDPB) akıllı gözlüklerle ilgilikapsamlı değerlendirme raporunu yaz sonunda yayımlaması bekleniyor.Hazırlanacak bu raporun, gelecekte Avrupa genelinde uygulanabilecek yeni düzenlemeler açısından önemli bir referans olması bekleniyor. Öte yandan Meta,kullanıcı verilerinin işlenme şekli nedeniyle de eleştiriliyor.Mart ayında İsveç basınında yer alan haberlerde, Meta'nın gözlükler aracılığıyla kaydedilen bazı görüntüleriyapay zekâ eğitiminde kullanılmak üzere Kenya'daki bir taşeron şirkete gönderdiğiöne sürülmüştü. Bu durum, kullanıcıların farkında olmadan son derece kişisel görüntülerinin üçüncü taraf çalışanlar tarafından incelenmiş olabileceği yönünde tartışmaları beraberinde getirdi. Yani bu gözlüklere yönelik eleştiriler, gizli çekim yapmanın da ötesine uzanıyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B07BSZQMG2 https://www.amazon.com.tr/dp/B0DYFB6NVL https://www.amazon.com.tr/dp/B0DGJ2V822 https://www.n11.com/urun/7go-7gmg5-isitmali-masaj-tabancasi-6-baslikli-5-modlu-20-kademeli-lcd-ekranli-titresimli-masaj-siyah-120941729?magaza=7go https://www.migros.com.tr/palmolive-aroma-sensations-feel-the-glow-dus-jeli-2-x-500-ml-p-20c8249 https://www.migros.com.tr/cheddar-ithal-lye-cross-olgunlastirilmis-kg-p-9ec0b6"
         },
-        "post_text": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
-        "post_text_length": 342,
-        "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
-        "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+        "post_text": "META'NIN KAMERALI GÖZLÜKLERİNE TEPKİ BÜYÜYOR: NORVEÇ, YASAKLAYAN İLK ÜLKE OLABİLİR\n\nMeta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 316,
+        "story_card_title": "Meta Gözlükleri Yasaklanıyor mu!",
+        "story_card_subtitle": "Meta'nın yapay zekâ destekli akıllı gözlükleri, \"sapık gözlüğü\" damgasıyla büyük tepki topluyor. Bu durum, ürünün itibarına ciddi zarar verdi ve Norveç, ülke genelinde yasaklama kararı alabilecek ilk ülke olmaya hazırlanıyor. Gözlüklerin geleceği, bu tartışmalarla şekillenecek gibi görünüyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-09-03T19:56:59.867760+03:00"
+      "updated_at": "2026-09-03T22:39:10.994177+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "“Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor”",
-          "link": "https://www.log.com.tr/volkswagen-seati-piyasadan-cekmeyi-degerlendiriyor/",
-          "published": "2026-09-03T19:55:25.910809+03:00",
-          "summary": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor. “Volkswagen, Seat’ı piyasadan çekmeyi değerlendiriyor” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg",
+          "title": "Meta'nın kameralı gözlüklerine tepki büyüyor: Norveç, yasaklayan ilk ülke olabilir",
+          "link": "https://www.donanimhaber.com/norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor--210069",
+          "published": "2026-09-03T18:00:00+00:00",
+          "summary": "Meta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_15-48-25_UM9gi-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg"
           ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cekmeyi-degerlendiriyor-piyasadan-seat-volkswagen",
-          "base_ai_score": 74,
+          "topic_fingerprint": "buyuyor-gozluklerine-kamerali-meta-norvec-olabilir-tepki-ulke-yasaklayan",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 8
           },
-          "score": 78,
+          "score": 82,
           "score_reason": "ai_scored",
-          "score_explanation": "Köklü bir markanın geleceğiyle ilgili büyük bir iddia barındırdığı için otomobil dünyasında geniş yankı uyandırır ve yüksek etkileşim çeker.",
-          "freshness_bonus": 10,
+          "score_explanation": "Mahremiyet ve yasal yasaklama tehdidi içermesi nedeniyle sosyal medyada yüksek tartışma ve etkileşim yaratacak bir teknoloji/otomotiv-tekno gündemi.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "İşleri yoluna koymak adına büyük bir yeniden yapılanmaya giren Volkswagen, aktarıldığı kadarıyla ciddi satış rakamlarına ulaşan Cupra’ya daha fazla odaklanmak amacıyla Seat markasını piyasadan çekmeyideğerlendiriyor. 2029 yılına işaret eden bu hamle çok da büyük bir sürpriz değil çünkü Seat zaten uzun yıllardır çok fazla öne çıkarılmıyor. İddialı tasarımlara sahip Cupra modelleriyle özellikle gençleri etkilemeyi başaran Volkswagen, bugün bir kez daha Avrupa merkezli dört farklı fabrikasını kapatacağı ve buna bağlı olarak en az 100 bin kişiyi işten çıkaracağı yönündeki gelişmeyle de gündemde yer alıyor.",
-          "post_text_for_card": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
-          "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
-          "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
+          "full_text": "HatırlarsanızAlmanya'dabazı siyasetçilerin Meta Ray-Ban gözlüklerini yasaklatmak için çalışmalara başladığını kısa süre önce sizinlepaylaşmıştık. Şimdi onların yanınaNorveç'i de yazabiliriz. Üstelik Norveç bu konuda çok daha somut adımlar atıyor.Norveç Teknoloji Bakanı Karianne Tung, Meta ve Snap gibi şirketler tarafından geliştirilen kameralı gözlüklere ve benzer özelliklere sahip diğer giyilebilir cihazlara yönelik yeni bir düzenleme üzerinde çalıştıklarını açıkladı. Kamera veya mikrofon ile donatılmış akıllı gözlük tarzı cihazların yapay zekâyla giderek daha fazla entegre hâle geldiğine dikkat çeken Karianne Tung,bu cihazların başkalarını gözlemek için kullanılmaması için önlem alınması gerektiğinibelirtti. Tung'un burada yapay zekâ tarafına dikkat çekmesi boşuna değil. Zira bu tarz akıllı gözlüklerin yapay zekâ özellikleri geliştikçe, gerçek zamanlı yüz tanıma ve kimlik belirleme gibi özelliklere kavuşmalarının da önü açılıyor. Bu da günlük hayatta kuralsızca kullanılmaları konusunda endişeleri artırıyor. Norveç teknoloji bakanının yaptığı açıklamalar, bu gözlüklere yönelik bir yasak uygulayacak ilk ülkenin Norveç olabileceğini gösteriyor. Ancak son dönemde artan tepkilere bakılırsa, bu konuda uzun süre yalnız kalmayacaklar. Avrupa Birliği de Bu Gözlükleri İnceliyorAvrupa Birliği veri koruma kurumları da bu cihazların mevcut gizlilik kurallarıyla ne ölçüde uyumlu olduğunu incelemeye başlamış durumda. Avrupa Veri Koruma Kurulu'nun (EDPB) akıllı gözlüklerle ilgilikapsamlı değerlendirme raporunu yaz sonunda yayımlaması bekleniyor.Hazırlanacak bu raporun, gelecekte Avrupa genelinde uygulanabilecek yeni düzenlemeler açısından önemli bir referans olması bekleniyor.Öte yandan Meta,kullanıcı verilerinin işlenme şekli nedeniyle de eleştiriliyor.Mart ayında İsveç basınında yer alan haberlerde, Meta'nın gözlükler aracılığıyla kaydedilen bazı görüntüleriyapay zekâ eğitiminde kullanılmak üzere Kenya'daki bir taşeron şirkete gönderdiğiöne sürülmüştü. Bu durum, kullanıcıların farkında olmadan son derece kişisel görüntülerinin üçüncü taraf çalışanlar tarafından incelenmiş olabileceği yönünde tartışmaları beraberinde getirdi. Yani bu gözlüklere yönelik eleştiriler, gizli çekim yapmanın da ötesine uzanıyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Avrupa Birliği veri koruma kurumları da bu cihazların mevcut gizlilik kurallarıyla ne ölçüde uyumlu olduğunu incelemeye başlamış durumda. Avrupa Veri Koruma Kurulu'nun (EDPB) akıllı gözlüklerle ilgilikapsamlı değerlendirme raporunu yaz sonunda yayımlaması bekleniyor.Hazırlanacak bu raporun, gelecekte Avrupa genelinde uygulanabilecek yeni düzenlemeler açısından önemli bir referans olması bekleniyor. Öte yandan Meta,kullanıcı verilerinin işlenme şekli nedeniyle de eleştiriliyor.Mart ayında İsveç basınında yer alan haberlerde, Meta'nın gözlükler aracılığıyla kaydedilen bazı görüntüleriyapay zekâ eğitiminde kullanılmak üzere Kenya'daki bir taşeron şirkete gönderdiğiöne sürülmüştü. Bu durum, kullanıcıların farkında olmadan son derece kişisel görüntülerinin üçüncü taraf çalışanlar tarafından incelenmiş olabileceği yönünde tartışmaları beraberinde getirdi. Yani bu gözlüklere yönelik eleştiriler, gizli çekim yapmanın da ötesine uzanıyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B07BSZQMG2 https://www.amazon.com.tr/dp/B0DYFB6NVL https://www.amazon.com.tr/dp/B0DGJ2V822 https://www.n11.com/urun/7go-7gmg5-isitmali-masaj-tabancasi-6-baslikli-5-modlu-20-kademeli-lcd-ekranli-titresimli-masaj-siyah-120941729?magaza=7go https://www.migros.com.tr/palmolive-aroma-sensations-feel-the-glow-dus-jeli-2-x-500-ml-p-20c8249 https://www.migros.com.tr/cheddar-ithal-lye-cross-olgunlastirilmis-kg-p-9ec0b6",
+          "post_text_for_card": "META'NIN KAMERALI GÖZLÜKLERİNE TEPKİ BÜYÜYOR: NORVEÇ, YASAKLAYAN İLK ÜLKE OLABİLİR\n\nMeta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Meta Gözlükleri Yasaklanıyor mu!",
+          "story_card_subtitle": "Meta'nın yapay zekâ destekli akıllı gözlükleri, \"sapık gözlüğü\" damgasıyla büyük tepki topluyor. Bu durum, ürünün itibarına ciddi zarar verdi ve Norveç, ülke genelinde yasaklama kararı alabilecek ilk ülke olmaya hazırlanıyor. Gözlüklerin geleceği, bu tartışmalarla şekillenecek gibi görünüyor.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/210069/1200x675norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor.jpg",
+            "https://www.donanimhaber.com/images/images/haber/210069/src/norvec-meta-nin-kamerali-gozluklerini-yasaklamayi-dusunuyor210069_0.jpg"
+          ]
         },
-        "post_text": "Volkswagen, Seat’ı gözden çıkardıysa asıl şaşırılacak şey bu değil.\n\nMarkanın Cupra’ya odaklanma kararı, otomotivde ‘duygusal bağ’ devrinin bittiğinin ilanı. Tüketici artık sadece isme değil, doğrudan heyecana ve yeniye yöneliyor.\n\n2029’a kadar Seat’ın fişi çekilirse, bu pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
-        "story_card_title": "VW, Seat'a 2029'da veda ediyor!",
-        "story_card_subtitle": "Volkswagen, Cupra markasına daha fazla odaklanmak adına Seat'ı piyasadan çekmeyi değerlendiriyor. 2029 yılına işaret eden bu hamle, otomotiv sektöründe 'duygusal bağ' devrinin sonu olarak yorumlanıyor. Tüketicilerin artık sadece isme değil, doğrudan heyecana ve yeniliğe yönelmesi bu kararın temelini oluşturuyor. Bu durum, pazarın bir markayı değil, bir deneyimi satın aldığının kanıtı olacak.",
-        "image_path": "/tmp/otoxtra_img_acqmsvys.jpg",
+        "post_text": "META'NIN KAMERALI GÖZLÜKLERİNE TEPKİ BÜYÜYOR: NORVEÇ, YASAKLAYAN İLK ÜLKE OLABİLİR\n\nMeta'nın yapay zekâ destekli akıllı gözlüklerinin \"sapık gözlüğü\" damgası yemesi, ürünün itibarına büyük zarar verdi. Öyle ki şimdi ülke genelinde yasaklar konuşulmaya başlandı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Meta Gözlükleri Yasaklanıyor mu!",
+        "story_card_subtitle": "Meta'nın yapay zekâ destekli akıllı gözlükleri, \"sapık gözlüğü\" damgasıyla büyük tepki topluyor. Bu durum, ürünün itibarına ciddi zarar verdi ve Norveç, ülke genelinde yasaklama kararı alabilecek ilk ülke olmaya hazırlanıyor. Gözlüklerin geleceği, bu tartışmalarla şekillenecek gibi görünüyor.",
+        "image_path": "/tmp/otoxtra_img_gu2k99dy.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_acqmsvys.jpg"
+          "/tmp/otoxtra_img_gu2k99dy.jpg",
+          "/tmp/otoxtra_img_evf_xcex.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 2
       },
       "error": null,
-      "updated_at": "2026-09-03T20:05:56.351801+03:00"
+      "updated_at": "2026-09-03T22:39:28.218003+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122178210662916499",
+        "post_id": "678053852057751_122178224450916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18145373245519258",
+            "id": "18120612724913951",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1702057420896248",
+            "id": "27227234233619812",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-09-03T20:06:45.234231+03:00"
+      "updated_at": "2026-09-03T22:40:09.917796+03:00"
     }
   }
 }
