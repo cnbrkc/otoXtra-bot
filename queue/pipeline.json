@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-09-04-03:45",
-  "status": "completed",
-  "started_at": "2026-09-04T03:45:13.511670+03:00",
-  "updated_at": "2026-09-04T03:46:51.333977+03:00",
+  "run_id": "2026-09-04-08:28",
+  "status": "error",
+  "started_at": "2026-09-04T08:28:50.300087+03:00",
+  "updated_at": "2026-09-04T08:29:45.524715+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-            "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-            "published": "2026-09-04T03:45:13.584087+03:00",
-            "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,220 +127,47 @@
           "_metrics": {
             "found": 95,
             "after_keyword": 60,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 95,
           "after_keyword": 60,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-04T03:46:02.692739+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-04T08:29:45.524715+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-          "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-          "published": "2026-09-04T03:45:13.584087+03:00",
-          "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Arka camının olmaması gibi radikal tasarım detaylarına sahip olsa da, standart bir model lansmanı olması nedeniyle orta seviye bir ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 52,
-        "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 10,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Arka camının olmaması gibi radikal tasarım detaylarına sahip olsa da, standart bir model lansmanı olması nedeniyle orta seviye bir ilgi çekebilir.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-            "score": 52,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 10,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-04T03:46:04.183577+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-          "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-          "published": "2026-09-04T03:45:13.584087+03:00",
-          "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Arka camının olmaması gibi radikal tasarım detaylarına sahip olsa da, standart bir model lansmanı olması nedeniyle orta seviye bir ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Tamamen elektrikli Polestar 4 SUV,2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getirenstandart 4’ün daha kullanışlı bir versiyonu olarakkarşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek modeller arasında yer alıyor."
-        },
-        "post_text": "Polestar 4 SUV, arka camı geri getirdi ama asıl tartışma burada değil.\n\nGeçen yılın o cesur, camsız tasarımı \"çok iyi geri dönüşler\" almayınca, marka mecburen geri adım attı. Tek motorlu 629 km, çift motorlu 600 km menzil sunan bu araç Türkiye'ye gelmeyecek.\n\nDemek ki bazen \"farklı olmak\", \"kullanışlı olmak\" kadar önemli değilmiş.",
-        "post_text_length": 332,
-        "story_card_title": "Polestar 4 SUV: Geri Adım Atıldı!",
-        "story_card_subtitle": "Geçen yılın cesur, arka camsız Polestar 4 tasarımı beklenen ilgiyi görmedi. Volvo çatısı altındaki marka, yeni SUV versiyonunda standart bir arka cama yer verdi. Tek motorlu versiyon 629 km, çift motorlu versiyon ise 600 km menzil sunacak. Ancak bu model Türkiye pazarına sunulmayacak.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-04T03:46:07.092786+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Polestar 4 SUV görücüye çıkarıldı",
-          "link": "https://www.log.com.tr/elektrikli-polestar-4-suv-gorucuye-cikarildi/",
-          "published": "2026-09-04T03:45:13.584087+03:00",
-          "summary": "Tamamen elektrikli Polestar 4 SUV, 2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getiren standart 4’ün daha kullanışlı bir versiyonu olarak karşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek […] Elektrikli Polestar 4 SUV görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-03_10-06-13_xzqNd-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cikarildi-elektrikli-gorucuye-polestar-suv",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 52,
-          "score_reason": "ai_scored",
-          "score_explanation": "Arka camının olmaması gibi radikal tasarım detaylarına sahip olsa da, standart bir model lansmanı olması nedeniyle orta seviye bir ilgi çekebilir.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Tamamen elektrikli Polestar 4 SUV,2023’te tanıtılan ve arka cama sahip olmamasıyla çok ses getirenstandart 4’ün daha kullanışlı bir versiyonu olarakkarşımızda. Önceki tasarımın çok iyi geri dönüşler almaması üzerine yeni modelde standart bir arka cama yer veren Volvo çatısı altındaki marka Polestar, arka yolculara ekstra 25 mm baş mesafesi sunan yeni modeli için iki farklı versiyon listeliyor. Tek motorlu versiyon 268 beygir güç ve 343 Nm tork üretiyor; 0’dan 100 km/sa hıza 7,3 saniyede çıkabiliyor ve 629 km menzil vadediyor. Çift motorlu versiyon ise 536 beygir güç ve 686 Nm tork üretiyor; 0’dan 100 km/sa hıza 3,9 saniyede çıkabiliyor ve yaklaşık 600 km menzil vadediyor. Çift ekranlı, sade bir konsolun yer aldığı Polestar 4 SUV’un 100 kWh kapasiteli bataryası, 200 kW’a kadar DC şarj desteğiyle geliyor. Brembo frenler, Pirelli P Zero lastikler ve daha gelişmiş bir süspansiyon sistemi sunan “Performance” paketi de bulunan araç, Türkiye’ye resmi olarak getirilmeyecek modeller arasında yer alıyor.",
-          "post_text_for_card": "Polestar 4 SUV, arka camı geri getirdi ama asıl tartışma burada değil.\n\nGeçen yılın o cesur, camsız tasarımı \"çok iyi geri dönüşler\" almayınca, marka mecburen geri adım attı. Tek motorlu 629 km, çift motorlu 600 km menzil sunan bu araç Türkiye'ye gelmeyecek.\n\nDemek ki bazen \"farklı olmak\", \"kullanışlı olmak\" kadar önemli değilmiş.",
-          "story_card_title": "Polestar 4 SUV: Geri Adım Atıldı!",
-          "story_card_subtitle": "Geçen yılın cesur, arka camsız Polestar 4 tasarımı beklenen ilgiyi görmedi. Volvo çatısı altındaki marka, yeni SUV versiyonunda standart bir arka cama yer verdi. Tek motorlu versiyon 629 km, çift motorlu versiyon ise 600 km menzil sunacak. Ancak bu model Türkiye pazarına sunulmayacak.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "Polestar 4 SUV, arka camı geri getirdi ama asıl tartışma burada değil.\n\nGeçen yılın o cesur, camsız tasarımı \"çok iyi geri dönüşler\" almayınca, marka mecburen geri adım attı. Tek motorlu 629 km, çift motorlu 600 km menzil sunan bu araç Türkiye'ye gelmeyecek.\n\nDemek ki bazen \"farklı olmak\", \"kullanışlı olmak\" kadar önemli değilmiş.",
-        "story_card_title": "Polestar 4 SUV: Geri Adım Atıldı!",
-        "story_card_subtitle": "Geçen yılın cesur, arka camsız Polestar 4 tasarımı beklenen ilgiyi görmedi. Volvo çatısı altındaki marka, yeni SUV versiyonunda standart bir arka cama yer verdi. Tek motorlu versiyon 629 km, çift motorlu versiyon ise 600 km menzil sunacak. Ancak bu model Türkiye pazarına sunulmayacak.",
-        "image_path": "/tmp/otoxtra_img_79244upf.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_79244upf.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-04T03:46:15.445102+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178242954916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2255832818500910",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-04T03:46:51.333977+03:00"
+      "updated_at": null
     }
   }
 }
