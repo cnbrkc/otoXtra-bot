@@ -1,53 +1,14 @@
 {
-  "run_id": "2026-09-05-20:08",
-  "status": "completed",
-  "started_at": "2026-09-05T20:08:03.572756+03:00",
-  "updated_at": "2026-09-05T20:10:05.970169+03:00",
+  "run_id": "2026-09-05-22:55",
+  "status": "error",
+  "started_at": "2026-09-05T22:55:19.588316+03:00",
+  "updated_at": "2026-09-05T22:56:14.811224+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-            "link": "https://www.donanimhaber.com/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir--210122",
-            "published": "2026-09-05T15:35:18+00:00",
-            "summary": "Güneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "araclar-felakete-firtinalari-gunes-neden-olabilir-otonom"
-          },
-          {
-            "title": "OpenAI ajanları, bir Alman sitesini ele geçirdi",
-            "link": "https://www.donanimhaber.com/openai-ajanlari-bir-alman-sitesini-ele-gecirdi--210139",
-            "published": "2026-09-05T15:00:00+00:00",
-            "summary": "OpenAI ajanlarının Alman DseWiki sitesinde 15 binden fazla düzenleme yaptığı ve kısıtlamaları aşma yöntemleri paylaştığı iddiası, otonom yapay zekâ güvenliği için yeni sorular doğurdu.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210139/1200x675openai-ajanlari-bir-alman-sitesini-ele-gecirdi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210139/1200x675openai-ajanlari-bir-alman-sitesini-ele-gecirdi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210139/1200x675openai-ajanlari-bir-alman-sitesini-ele-gecirdi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ajanlari-alman-ele-gecirdi-openai-sitesini"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -165,249 +126,48 @@
           },
           "_metrics": {
             "found": 90,
-            "after_keyword": 55,
-            "after_time": 8,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 53,
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 90,
-          "after_keyword": 55,
-          "after_time": 8,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 53,
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-05T20:08:56.919870+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-05T22:56:14.811224+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-          "link": "https://www.donanimhaber.com/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir--210122",
-          "published": "2026-09-05T15:35:18+00:00",
-          "summary": "Güneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-felakete-firtinalari-gunes-neden-olabilir-otonom",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojisi ve doğa olaylarının tehlikeli kombinasyonu, sosyal medyada yüksek merak ve korku uyandıracak bir viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 81,
-        "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 17,
-          "gundem_gucu": 14,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otonom sürüş teknolojisi ve doğa olaylarının tehlikeli kombinasyonu, sosyal medyada yüksek merak ve korku uyandıracak bir viral potansiyele sahip.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 17,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "OpenAI ajanları, bir Alman sitesini ele geçirdi",
-            "score": 49,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 10,
-              "gundem_gucu": 5,
-              "paylasilabilirlik": 2
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "OpenAI ajanları, bir Alman sitesini ele geçirdi",
-            "link": "https://www.donanimhaber.com/openai-ajanlari-bir-alman-sitesini-ele-gecirdi--210139",
-            "score": 49,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "ajanlari-alman-ele-gecirdi-openai-sitesini"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-05T20:08:59.035116+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-          "link": "https://www.donanimhaber.com/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir--210122",
-          "published": "2026-09-05T15:35:18+00:00",
-          "summary": "Güneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-felakete-firtinalari-gunes-neden-olabilir-otonom",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojisi ve doğa olaylarının tehlikeli kombinasyonu, sosyal medyada yüksek merak ve korku uyandıracak bir viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Geophysical Research Letters dergisinde yayımlanan yeni araştırmada bilim insanları, söz konusu jeomanyetik fırtınanın küresel navigasyon sistemleri üzerindeki etkisini inceledi. ABD ve Kanada'daki GPS alıcılarından elde edilen veriler ile kutup ışığı kameralarının gözlemlerini bir araya getiren araştırmacılar, fırtına sırasındaGPS konumlandırmasında 10 metreden fazla sapmameydana geldiğini belirledi. Bu seviyedeki sapmalar, özellikle yüksek hassasiyet gerektiren tarım uygulamaları ve otonom araçlar açısından önemli sonuçlar doğurabiliyor. Güneş fırtınaları sırasında Güneş, Dünya'yayüksek miktardaradyasyon ve yüklü parçacıkgönderiyor. Bu parçacıklar, Dünya'nın üst atmosferinde bulunan iyonosferi etkileyerek GPS radyo sinyallerinin buradan geçişiniyavaşlatabiliyor ve yönünü değiştirebiliyor. Bu etkiler normalde ekvator ve kutup bölgelerinde daha belirgin görülüyor. Ancak çok güçlü jeomanyetik fırtınalar sırasında orta enlemlere kadar yayılabiliyor. Kasım 2025'teki olay da bu durumun belirgin örneklerinden biri. Araştırmacılar, fırtına boyunca iyonosferdeki yüksek enerjili elektronların yoğunluğunu, GPS sinyallerindeki dalgalanmaları ve konumlandırma hatalarını haritaladı. Fırtına güçlendikçe elektronların Dünya'nın manyetik alanı boyunca aşağı doğru hareket ettiği ve üst atmosferdeki gazlarla çarpıştığı gözlendi. Araştırmaya göre güçlü GPS sinyal dalgalanmaları ABD genelinde görüldü. Bozulmalar Batı Yakası'ndan Doğu Yakası'na kadar uzanırken güneyde Florida'ya kadar ulaştı. İyonosferde oluşan düzensizlikler, uydu sinyallerinin saatler boyunca dalgalanmasına neden oldu. Bunun sonucunda GPS tabanlı konumlandırma sistemlerinde yaklaşık 10 metreden fazla sapmalar ortaya çıktı. Araştırmacılar, benzer bir fırtınanın tarım sezonunda ABD'yi vurması halinde ekonomik sonuçların ciddi olabileceğine dikkat çekti. Mayıs 2024'te yaşanan daha şiddetli bir jeomanyetik fırtınanın ABD'nin Orta Batı bölgesindeki çiftçilere 500 milyon dolardan fazla zarar verdiği bildirildi.GPS sinyallerindeki sapma aynı zamanda otonom sürüş sistemleri açısından da risk oluşturuyor. Araştırmacılara göre meydana gelen konumlandırma hataları, kendi kendine hareket eden araçlarınrotasından sapmasına yetecek kadar büyüktü. İlerleyen yıllardarobotaksilerintrafikteki sayısının çok daha fazla artacağı düşünüldüğünde GPS bozulmalarının yollarda ciddi sorunlara neden olabileceği düşünülüyor.Fırtınaları önceden tahmin etmek kolay değilGüneş fırtınalarının oluşturduğu riskin önemli bir nedeni de bu olayların zamanlamasının ve şiddetinin kesin şekilde öngörülememesi. Güneş yaklaşık 11 yıllık bir aktivite döngüsünden geçiyor ve bu süreçte yüksek ve düşük aktivite dönemleri yaşanıyor.Bilim insanları, Güneş'in maksimum aktivite dönemlerinde patlama ihtimalinin arttığını tahmin edebiliyor. Ancak bir patlamanın tam olarak ne zaman gerçekleşeceğini ve ne kadar güçlü olacağını önceden belirlemek oldukça zor.Araştırmacılar, güneş fırtınalarını daha hızlı ve doğru şekilde tahmin edebilmek için yeni yöntemler üzerinde çalışıyor. Yeni çalışma ise farklı gözlem sistemlerinden elde edilen verilerin bir arada kullanılmasının önemini ortaya koyuyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Araştırmacılar, benzer bir fırtınanın tarım sezonunda ABD'yi vurması halinde ekonomik sonuçların ciddi olabileceğine dikkat çekti. Mayıs 2024'te yaşanan daha şiddetli bir jeomanyetik fırtınanın ABD'nin Orta Batı bölgesindeki çiftçilere 500 milyon dolardan fazla zarar verdiği bildirildi. GPS sinyallerindeki sapma aynı zamanda otonom sürüş sistemleri açısından da risk oluşturuyor. Araştırmacılara göre meydana gelen konumlandırma hataları, kendi kendine hareket eden araçlarınrotasından sapmasına yetecek kadar büyüktü. İlerleyen yıllardarobotaksilerintrafikteki sayısının çok daha fazla artacağı düşünüldüğünde GPS bozulmalarının yollarda ciddi sorunlara neden olabileceği düşünülüyor. Güneş fırtınalarının oluşturduğu riskin önemli bir nedeni de bu olayların zamanlamasının ve şiddetinin kesin şekilde öngörülememesi. Güneş yaklaşık 11 yıllık bir aktivite döngüsünden geçiyor ve bu süreçte yüksek ve düşük aktivite dönemleri yaşanıyor. Bilim insanları, Güneş'in maksimum aktivite dönemlerinde patlama ihtimalinin arttığını tahmin edebiliyor. Ancak bir patlamanın tam olarak ne zaman gerçekleşeceğini ve ne kadar güçlü olacağını önceden belirlemek oldukça zor. Araştırmacılar, güneş fırtınalarını daha hızlı ve doğru şekilde tahmin edebilmek için yeni yöntemler üzerinde çalışıyor. Yeni çalışma ise farklı gözlem sistemlerinden elde edilen verilerin bir arada kullanılmasının önemini ortaya koyuyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/promotion/psp/AJFVMVCFHP5YA..."
-        },
-        "post_text": "GÜNEŞ FIRTINALARI OTONOM ARAÇLAR İÇİN FELAKETE NEDEN OLABİLİR\n\nGüneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 301,
-        "story_card_title": "GÜNEŞ FIRTINASI OTONOM SÜRÜŞÜ BİTİRECEK!",
-        "story_card_subtitle": "Güneş'ten yayılan devasa jeomanyetik fırtına, en hassas teknolojileri bile çökertme potansiyeli taşıyor. GPS sinyallerindeki metrelerce sapma, otonom araçların güvenliğini doğrudan tehdit ediyor. Bu durum, sürücüsüz otomobillerin geleceği hakkında ciddi soru işaretleri doğuruyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-05T20:09:04.050273+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Güneş fırtınaları otonom araçlar için felakete neden olabilir",
-          "link": "https://www.donanimhaber.com/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir--210122",
-          "published": "2026-09-05T15:35:18+00:00",
-          "summary": "Güneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "araclar-felakete-firtinalari-gunes-neden-olabilir-otonom",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 17,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otonom sürüş teknolojisi ve doğa olaylarının tehlikeli kombinasyonu, sosyal medyada yüksek merak ve korku uyandıracak bir viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Geophysical Research Letters dergisinde yayımlanan yeni araştırmada bilim insanları, söz konusu jeomanyetik fırtınanın küresel navigasyon sistemleri üzerindeki etkisini inceledi. ABD ve Kanada'daki GPS alıcılarından elde edilen veriler ile kutup ışığı kameralarının gözlemlerini bir araya getiren araştırmacılar, fırtına sırasındaGPS konumlandırmasında 10 metreden fazla sapmameydana geldiğini belirledi. Bu seviyedeki sapmalar, özellikle yüksek hassasiyet gerektiren tarım uygulamaları ve otonom araçlar açısından önemli sonuçlar doğurabiliyor. Güneş fırtınaları sırasında Güneş, Dünya'yayüksek miktardaradyasyon ve yüklü parçacıkgönderiyor. Bu parçacıklar, Dünya'nın üst atmosferinde bulunan iyonosferi etkileyerek GPS radyo sinyallerinin buradan geçişiniyavaşlatabiliyor ve yönünü değiştirebiliyor. Bu etkiler normalde ekvator ve kutup bölgelerinde daha belirgin görülüyor. Ancak çok güçlü jeomanyetik fırtınalar sırasında orta enlemlere kadar yayılabiliyor. Kasım 2025'teki olay da bu durumun belirgin örneklerinden biri. Araştırmacılar, fırtına boyunca iyonosferdeki yüksek enerjili elektronların yoğunluğunu, GPS sinyallerindeki dalgalanmaları ve konumlandırma hatalarını haritaladı. Fırtına güçlendikçe elektronların Dünya'nın manyetik alanı boyunca aşağı doğru hareket ettiği ve üst atmosferdeki gazlarla çarpıştığı gözlendi. Araştırmaya göre güçlü GPS sinyal dalgalanmaları ABD genelinde görüldü. Bozulmalar Batı Yakası'ndan Doğu Yakası'na kadar uzanırken güneyde Florida'ya kadar ulaştı. İyonosferde oluşan düzensizlikler, uydu sinyallerinin saatler boyunca dalgalanmasına neden oldu. Bunun sonucunda GPS tabanlı konumlandırma sistemlerinde yaklaşık 10 metreden fazla sapmalar ortaya çıktı. Araştırmacılar, benzer bir fırtınanın tarım sezonunda ABD'yi vurması halinde ekonomik sonuçların ciddi olabileceğine dikkat çekti. Mayıs 2024'te yaşanan daha şiddetli bir jeomanyetik fırtınanın ABD'nin Orta Batı bölgesindeki çiftçilere 500 milyon dolardan fazla zarar verdiği bildirildi.GPS sinyallerindeki sapma aynı zamanda otonom sürüş sistemleri açısından da risk oluşturuyor. Araştırmacılara göre meydana gelen konumlandırma hataları, kendi kendine hareket eden araçlarınrotasından sapmasına yetecek kadar büyüktü. İlerleyen yıllardarobotaksilerintrafikteki sayısının çok daha fazla artacağı düşünüldüğünde GPS bozulmalarının yollarda ciddi sorunlara neden olabileceği düşünülüyor.Fırtınaları önceden tahmin etmek kolay değilGüneş fırtınalarının oluşturduğu riskin önemli bir nedeni de bu olayların zamanlamasının ve şiddetinin kesin şekilde öngörülememesi. Güneş yaklaşık 11 yıllık bir aktivite döngüsünden geçiyor ve bu süreçte yüksek ve düşük aktivite dönemleri yaşanıyor.Bilim insanları, Güneş'in maksimum aktivite dönemlerinde patlama ihtimalinin arttığını tahmin edebiliyor. Ancak bir patlamanın tam olarak ne zaman gerçekleşeceğini ve ne kadar güçlü olacağını önceden belirlemek oldukça zor.Araştırmacılar, güneş fırtınalarını daha hızlı ve doğru şekilde tahmin edebilmek için yeni yöntemler üzerinde çalışıyor. Yeni çalışma ise farklı gözlem sistemlerinden elde edilen verilerin bir arada kullanılmasının önemini ortaya koyuyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Araştırmacılar, benzer bir fırtınanın tarım sezonunda ABD'yi vurması halinde ekonomik sonuçların ciddi olabileceğine dikkat çekti. Mayıs 2024'te yaşanan daha şiddetli bir jeomanyetik fırtınanın ABD'nin Orta Batı bölgesindeki çiftçilere 500 milyon dolardan fazla zarar verdiği bildirildi. GPS sinyallerindeki sapma aynı zamanda otonom sürüş sistemleri açısından da risk oluşturuyor. Araştırmacılara göre meydana gelen konumlandırma hataları, kendi kendine hareket eden araçlarınrotasından sapmasına yetecek kadar büyüktü. İlerleyen yıllardarobotaksilerintrafikteki sayısının çok daha fazla artacağı düşünüldüğünde GPS bozulmalarının yollarda ciddi sorunlara neden olabileceği düşünülüyor. Güneş fırtınalarının oluşturduğu riskin önemli bir nedeni de bu olayların zamanlamasının ve şiddetinin kesin şekilde öngörülememesi. Güneş yaklaşık 11 yıllık bir aktivite döngüsünden geçiyor ve bu süreçte yüksek ve düşük aktivite dönemleri yaşanıyor. Bilim insanları, Güneş'in maksimum aktivite dönemlerinde patlama ihtimalinin arttığını tahmin edebiliyor. Ancak bir patlamanın tam olarak ne zaman gerçekleşeceğini ve ne kadar güçlü olacağını önceden belirlemek oldukça zor. Araştırmacılar, güneş fırtınalarını daha hızlı ve doğru şekilde tahmin edebilmek için yeni yöntemler üzerinde çalışıyor. Yeni çalışma ise farklı gözlem sistemlerinden elde edilen verilerin bir arada kullanılmasının önemini ortaya koyuyor. Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/promotion/psp/AJFVMVCFHP5YA...",
-          "post_text_for_card": "GÜNEŞ FIRTINALARI OTONOM ARAÇLAR İÇİN FELAKETE NEDEN OLABİLİR\n\nGüneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "GÜNEŞ FIRTINASI OTONOM SÜRÜŞÜ BİTİRECEK!",
-          "story_card_subtitle": "Güneş'ten yayılan devasa jeomanyetik fırtına, en hassas teknolojileri bile çökertme potansiyeli taşıyor. GPS sinyallerindeki metrelerce sapma, otonom araçların güvenliğini doğrudan tehdit ediyor. Bu durum, sürücüsüz otomobillerin geleceği hakkında ciddi soru işaretleri doğuruyor.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/210122/1200x675gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir.jpg",
-            "https://www.donanimhaber.com/images/images/haber/210122/src/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir210122_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/210122/src/gunes-firtinalari-otonom-araclar-icin-felakete-neden-olabilir210122_1.jpg"
-          ]
-        },
-        "post_text": "GÜNEŞ FIRTINALARI OTONOM ARAÇLAR İÇİN FELAKETE NEDEN OLABİLİR\n\nGüneş'te yaşanan güçlü patlamaların tetiklediği jeomanyetik fırtına, GPS sinyallerini bozarak konumlamada metrelerce sapmaya yol açtı. Otonom araçların risk altında olduğu bildirildi.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "GÜNEŞ FIRTINASI OTONOM SÜRÜŞÜ BİTİRECEK!",
-        "story_card_subtitle": "Güneş'ten yayılan devasa jeomanyetik fırtına, en hassas teknolojileri bile çökertme potansiyeli taşıyor. GPS sinyallerindeki metrelerce sapma, otonom araçların güvenliğini doğrudan tehdit ediyor. Bu durum, sürücüsüz otomobillerin geleceği hakkında ciddi soru işaretleri doğuruyor.",
-        "image_path": "/tmp/otoxtra_img_dwfhqzsr.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_dwfhqzsr.jpg",
-          "/tmp/otoxtra_img_2kmickcq.jpg",
-          "/tmp/otoxtra_img_req8y76v.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-05T20:09:21.462578+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178428288916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1438783138173577",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-05T20:10:05.970169+03:00"
+      "updated_at": null
     }
   }
 }
