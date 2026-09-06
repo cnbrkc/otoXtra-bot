@@ -1,14 +1,70 @@
 {
-  "run_id": "2026-09-06-10:37",
-  "status": "error",
-  "started_at": "2026-09-06T10:37:33.235922+03:00",
-  "updated_at": "2026-09-06T10:38:36.762715+03:00",
+  "run_id": "2026-09-06-14:56",
+  "status": "completed",
+  "started_at": "2026-09-06T14:56:45.236041+03:00",
+  "updated_at": "2026-09-06T14:59:31.014630+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+            "link": "https://www.donanimhaber.com/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati--210151",
+            "published": "2026-09-06T11:16:25+00:00",
+            "summary": "Hyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "avrupa-elektrikli-fiyati-hyundai-menzili-satisa-staria-ste"
+          },
+          {
+            "title": "Renault Master yenilenerek geri döndü!",
+            "link": "https://tr.motor1.com/news/807276/renault-master-2026-turkiye/",
+            "published": "2026-09-06T11:00:00+00:00",
+            "summary": "Açık kasa kamyonet ve minibüs versiyonları geldi.",
+            "image_url": "https://cdn.motor1.com/images/mgl/ko8Y24/s3/renault-master.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/ko8Y24/s3/renault-master.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/ko8Y24/s3/renault-master.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "dondu-geri-master-renault-yenilenerek"
+          },
+          {
+            "title": "Otomotiv ihracatı ağustosta düştü, döviz enflasyon farkı korkuttu",
+            "link": "https://www.otoajanda.com/otomotiv-ihracati-agustosta-dustu-doviz-enflasyon-farki-korkuttu/",
+            "published": "2026-09-06T10:58:00+00:00",
+            "summary": "Otomotiv Endüstrisi İhracatçıları Birliği (OİB) verilerine göre, Türkiye ihracatının lideri otomotiv endüstrisinin ağustos ayı ihracatı 2 milyar 791 milyon dolar olarak gerçekleşti. Türkiye ihracatında birinci sıradaki yerini koruyan endüstrinin toplam ihracattan aldığı pay yüzde 11,9 oldu. Yılın ilk sekiz ayında otomotiv endüstrisi ihracatı ise 27,2 milyar dolar barajını aştı. OİB Yönetim Kurulu Başkanı Kemal Yazıcı, […] Otomotiv ihracatı ağustosta düştü, döviz enflasyon farkı korkuttu yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "OtoAjanda",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "agustosta-doviz-dustu-enflasyon-farki-ihracati-korkuttu-otomotiv"
+          }
+        ],
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,47 +183,270 @@
           "_metrics": {
             "found": 87,
             "after_keyword": 50,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 9,
+            "after_posted": 4,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
           "found": 87,
           "after_keyword": 50,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 9,
+          "after_posted": 4,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 4
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-09-06T10:38:36.762715+03:00"
+      "error": null,
+      "updated_at": "2026-09-06T14:57:36.902092+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+          "link": "https://www.donanimhaber.com/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati--210151",
+          "published": "2026-09-06T11:16:25+00:00",
+          "summary": "Hyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-elektrikli-fiyati-hyundai-menzili-satisa-staria-ste",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir modelin elektrikli versiyonunun çıkışı ve fiyat/menzil merak uyandırması sosyal medyada etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 71,
+        "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 13,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Popüler bir modelin elektrikli versiyonunun çıkışı ve fiyat/menzil merak uyandırması sosyal medyada etkileşim yaratır.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Otomotiv ihracatı ağustosta düştü, döviz enflasyon farkı korkuttu",
+            "score": 57,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 9,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 5
+            }
+          },
+          {
+            "title": "Renault Master yenilenerek geri döndü!",
+            "score": 47,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 6,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 3,
+        "cooldown_candidates": [
+          {
+            "title": "Otomotiv ihracatı ağustosta düştü, döviz enflasyon farkı korkuttu",
+            "link": "https://www.otoajanda.com/otomotiv-ihracati-agustosta-dustu-doviz-enflasyon-farki-korkuttu/",
+            "score": 57,
+            "score_reason": "ai_scored",
+            "source_name": "OtoAjanda",
+            "topic_fingerprint": "agustosta-doviz-dustu-enflasyon-farki-ihracati-korkuttu-otomotiv"
+          },
+          {
+            "title": "Renault Master yenilenerek geri döndü!",
+            "link": "https://tr.motor1.com/news/807276/renault-master-2026-turkiye/",
+            "score": 47,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "dondu-geri-master-renault-yenilenerek"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-06T14:57:39.505826+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+          "link": "https://www.donanimhaber.com/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati--210151",
+          "published": "2026-09-06T11:16:25+00:00",
+          "summary": "Hyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-elektrikli-fiyati-hyundai-menzili-satisa-staria-ste",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir modelin elektrikli versiyonunun çıkışı ve fiyat/menzil merak uyandırması sosyal medyada etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Yeni Hyundai Staria Electric, minivan segmentinde pek sık rastlanmayan800 voltlukşarj mimarisine sahip. Markanın popüler Ioniq serisinden miras alınan bu teknolojiye84 kWhkapasiteli batarya ve218 beygirgüç üreten elektrik motoru eşlik ediyor. WLTP döngüsüne göre430 kilometreyekadar menzil sunan Staria Electric, DC hızlı şarjla yaklaşık20 dakikada %10'dan %80'eşarj edilebiliyor.Tam Boyutta Gör2 ton çekme kapasitesi ve V2LElektrikli Staria, ticari araçların önemli pratik özelliklerini koruyor. Birçok dizel rakibiyle rekabet edebilecek şekilde2 tona kadarçekme kapasitesi sunabildiği belirtilmiş. Araçta ayrıca Vehicle-to-Load (V2L) teknolojisi bulunuyor. Bu özellik sayesindeelektrikli aletlerve elektronik cihazlara doğrudan aracın bataryasından güç sağlanabiliyor.Tam Boyutta GörHyundai mühendisleri, elektrik motorunun getirdiği doğal sessizliği daha da ileri taşımak için gövdeyiek ses yalıtım malzemeleriylegüçlendirdi. Bataryanın ek ağırlığını dengelemek ve daha sarsıntısız bir sürüş sunmak amacıylasüspansiyon sistemide yeniden optimize edildi.Tam Boyutta Görİç mekan ve Avrupa fiyatıİç mekanda uzun aks mesafesi ve devasa cam yüzeylerferah bir atmosfersunmaya devam ediyor. Ön konsolda iki adet12.3 inçekran yer alırken, klima ayarları için fiziksel tuşların korunduğunu görüyoruz. Bu düzen sürücünün temel kontrollere daha kolay erişmesini sağlayarakkullanım ergonomisinidestekliyor.Tam Boyutta GörAvrupa pazarına giriş yapan Hyundai Staria Electric'in giriş seviyesindeki Trend donanım paketi57.500 eurofiyat etiketine sahip. Modelin en üst seviyedeki amiral gemisi Calligraphy versiyonunun fiyatı ise67.000eurodan başlıyor. Bunlara ek olarak sürüş destek paketi ve üst düzey donanımlar içeren paket için2.100'er euro, panoramik paket için ise1.300 euroek ücret talep ediliyor.Elektrikli Hyundai Staria Görselleri(20)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Yeni Hyundai Staria Electric, minivan segmentinde pek sık rastlanmayan800 voltlukşarj mimarisine sahip. Markanın popüler Ioniq serisinden miras alınan bu teknolojiye84 kWhkapasiteli batarya ve218 beygirgüç üreten elektrik motoru eşlik ediyor. WLTP döngüsüne göre430 kilometreyekadar menzil sunan Staria Electric, DC hızlı şarjla yaklaşık20 dakikada %10'dan %80'eşarj edilebiliyor. Elektrikli Staria, ticari araçların önemli pratik özelliklerini koruyor. Birçok dizel rakibiyle rekabet edebilecek şekilde2 tona kadarçekme kapasitesi sunabildiği belirtilmiş. Araçta ayrıca Vehicle-to-Load (V2L) teknolojisi bulunuyor. Bu özellik sayesindeelektrikli aletlerve elektronik cihazlara doğrudan aracın bataryasından güç sağlanabiliyor. İç mekanda uzun aks mesafesi ve devasa cam yüzeylerferah bir atmosfersunmaya devam ediyor. Ön konsolda iki adet12.3 inçekran yer alırken, klima ayarları için fiziksel tuşların korunduğunu görüyoruz. Bu düzen sürücünün temel kontrollere daha kolay erişmesini sağlayarakkullanım ergonomisinidestekliyor. Elektrikli Hyundai Staria Görselleri(20)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B0CRQ8GWQ3 https://www.amazon.com.tr/dp/B0FGDNZZBT https://www.amazon.com.tr/gp/product/B0DV5PWWJX/ref=ox_sc_act_title_1?smid=A1UNQM1SR2CHM&th=1 https://www.n11.com/urun/koton-suet-gorunumlu-ceket-slim-fit-cep-detayli-dugmeli-kahverengi-4wam20199hw-4wam20199hw517-48312162 https://www.teknosa.com/kampanyalar/TeknoClub-Migros/TeknoClub-Migros https://www.migros.com.tr/naturakoy-kahverengi-l-buyuk-boy-yumurta-20li-63-72-g-p-1313121"
+        },
+        "post_text": "ELEKTRİKLİ HYUNDAİ STARİA, AVRUPA'DA SATIŞA ÇIKTI: İŞTE FİYATI VE MENZİLİ\n\nHyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 324,
+        "story_card_title": "Staria Elektrikli!",
+        "story_card_subtitle": "Hyundai, dikkat çekici Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. 800V mimarisi ve 2 tona kadar çekme kapasitesiyle öne çıkan bu minivan, otomobil gündemini meşgul edecek. Fiyatı ve menzili ise beklentilerin çok üzerinde!",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-06T14:57:44.441218+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Elektrikli Hyundai Staria, Avrupa'da satışa çıktı: İşte fiyatı ve menzili",
+          "link": "https://www.donanimhaber.com/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati--210151",
+          "published": "2026-09-06T11:16:25+00:00",
+          "summary": "Hyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "avrupa-elektrikli-fiyati-hyundai-menzili-satisa-staria-ste",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Popüler bir modelin elektrikli versiyonunun çıkışı ve fiyat/menzil merak uyandırması sosyal medyada etkileşim yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Yeni Hyundai Staria Electric, minivan segmentinde pek sık rastlanmayan800 voltlukşarj mimarisine sahip. Markanın popüler Ioniq serisinden miras alınan bu teknolojiye84 kWhkapasiteli batarya ve218 beygirgüç üreten elektrik motoru eşlik ediyor. WLTP döngüsüne göre430 kilometreyekadar menzil sunan Staria Electric, DC hızlı şarjla yaklaşık20 dakikada %10'dan %80'eşarj edilebiliyor.Tam Boyutta Gör2 ton çekme kapasitesi ve V2LElektrikli Staria, ticari araçların önemli pratik özelliklerini koruyor. Birçok dizel rakibiyle rekabet edebilecek şekilde2 tona kadarçekme kapasitesi sunabildiği belirtilmiş. Araçta ayrıca Vehicle-to-Load (V2L) teknolojisi bulunuyor. Bu özellik sayesindeelektrikli aletlerve elektronik cihazlara doğrudan aracın bataryasından güç sağlanabiliyor.Tam Boyutta GörHyundai mühendisleri, elektrik motorunun getirdiği doğal sessizliği daha da ileri taşımak için gövdeyiek ses yalıtım malzemeleriylegüçlendirdi. Bataryanın ek ağırlığını dengelemek ve daha sarsıntısız bir sürüş sunmak amacıylasüspansiyon sistemide yeniden optimize edildi.Tam Boyutta Görİç mekan ve Avrupa fiyatıİç mekanda uzun aks mesafesi ve devasa cam yüzeylerferah bir atmosfersunmaya devam ediyor. Ön konsolda iki adet12.3 inçekran yer alırken, klima ayarları için fiziksel tuşların korunduğunu görüyoruz. Bu düzen sürücünün temel kontrollere daha kolay erişmesini sağlayarakkullanım ergonomisinidestekliyor.Tam Boyutta GörAvrupa pazarına giriş yapan Hyundai Staria Electric'in giriş seviyesindeki Trend donanım paketi57.500 eurofiyat etiketine sahip. Modelin en üst seviyedeki amiral gemisi Calligraphy versiyonunun fiyatı ise67.000eurodan başlıyor. Bunlara ek olarak sürüş destek paketi ve üst düzey donanımlar içeren paket için2.100'er euro, panoramik paket için ise1.300 euroek ücret talep ediliyor.Elektrikli Hyundai Staria Görselleri(20)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Yeni Hyundai Staria Electric, minivan segmentinde pek sık rastlanmayan800 voltlukşarj mimarisine sahip. Markanın popüler Ioniq serisinden miras alınan bu teknolojiye84 kWhkapasiteli batarya ve218 beygirgüç üreten elektrik motoru eşlik ediyor. WLTP döngüsüne göre430 kilometreyekadar menzil sunan Staria Electric, DC hızlı şarjla yaklaşık20 dakikada %10'dan %80'eşarj edilebiliyor. Elektrikli Staria, ticari araçların önemli pratik özelliklerini koruyor. Birçok dizel rakibiyle rekabet edebilecek şekilde2 tona kadarçekme kapasitesi sunabildiği belirtilmiş. Araçta ayrıca Vehicle-to-Load (V2L) teknolojisi bulunuyor. Bu özellik sayesindeelektrikli aletlerve elektronik cihazlara doğrudan aracın bataryasından güç sağlanabiliyor. İç mekanda uzun aks mesafesi ve devasa cam yüzeylerferah bir atmosfersunmaya devam ediyor. Ön konsolda iki adet12.3 inçekran yer alırken, klima ayarları için fiziksel tuşların korunduğunu görüyoruz. Bu düzen sürücünün temel kontrollere daha kolay erişmesini sağlayarakkullanım ergonomisinidestekliyor. Elektrikli Hyundai Staria Görselleri(20)AçYorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTükettiğinden çok elektrik üreten elektrikli otomobil Tükettiğinden çok elektrik üreten elektrikli otomobil https://www.amazon.com.tr/dp/B0CRQ8GWQ3 https://www.amazon.com.tr/dp/B0FGDNZZBT https://www.amazon.com.tr/gp/product/B0DV5PWWJX/ref=ox_sc_act_title_1?smid=A1UNQM1SR2CHM&th=1 https://www.n11.com/urun/koton-suet-gorunumlu-ceket-slim-fit-cep-detayli-dugmeli-kahverengi-4wam20199hw-4wam20199hw517-48312162 https://www.teknosa.com/kampanyalar/TeknoClub-Migros/TeknoClub-Migros https://www.migros.com.tr/naturakoy-kahverengi-l-buyuk-boy-yumurta-20li-63-72-g-p-1313121",
+          "post_text_for_card": "ELEKTRİKLİ HYUNDAİ STARİA, AVRUPA'DA SATIŞA ÇIKTI: İŞTE FİYATI VE MENZİLİ\n\nHyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Staria Elektrikli!",
+          "story_card_subtitle": "Hyundai, dikkat çekici Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. 800V mimarisi ve 2 tona kadar çekme kapasitesiyle öne çıkan bu minivan, otomobil gündemini meşgul edecek. Fiyatı ve menzili ise beklentilerin çok üzerinde!",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/210151/src/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati210151_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/210151/1200x675elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9403/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati-ve-menzili-9403-1.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9403/elektrikli-hyundai-staria-avrupa-da-satisa-cikti-iste-fiyati-ve-menzili-9403-10.jpg"
+          ]
+        },
+        "post_text": "ELEKTRİKLİ HYUNDAİ STARİA, AVRUPA'DA SATIŞA ÇIKTI: İŞTE FİYATI VE MENZİLİ\n\nHyundai dikkat çekici tasarımıyla öne çıkan popüler minivan modeli Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. Araç, 800V mimarisi ve 2 tona kadar çekme kapasitesi sunuyor.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Staria Elektrikli!",
+        "story_card_subtitle": "Hyundai, dikkat çekici Staria'nın tamamen elektrikli versiyonunu Avrupa'da satışa sundu. 800V mimarisi ve 2 tona kadar çekme kapasitesiyle öne çıkan bu minivan, otomobil gündemini meşgul edecek. Fiyatı ve menzili ise beklentilerin çok üzerinde!",
+        "image_path": "/tmp/otoxtra_img_47mt5w86.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_47mt5w86.jpg",
+          "/tmp/otoxtra_img_8c9f3b57.jpg",
+          "/tmp/otoxtra_img_28b2b_ns.jpg",
+          "/tmp/otoxtra_img_uzptud0e.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-06T14:58:46.061710+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122178517328916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17993994243041555",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1499451478867092",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-06T14:59:31.014630+03:00"
     }
   }
 }
