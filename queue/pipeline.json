@@ -1,34 +1,14 @@
 {
-  "run_id": "2026-09-08-02:58",
-  "status": "completed",
-  "started_at": "2026-09-08T02:58:58.701854+03:00",
-  "updated_at": "2026-09-08T03:05:59.950853+03:00",
+  "run_id": "2026-09-08-07:16",
+  "status": "error",
+  "started_at": "2026-09-08T07:16:37.613684+03:00",
+  "updated_at": "2026-09-08T07:17:30.392015+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-            "link": "https://www.log.com.tr/elektrikli-audi-a2-e-tron-resmi-tanitim-oncesinde-sizdirildi/",
-            "published": "2026-09-08T02:58:58.804296+03:00",
-            "summary": "Bugün sızdırılan fotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir. Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "audi-elektrikli-oncesinde-resmi-sizdirildi-tanitim-tron"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -147,216 +127,47 @@
           "_metrics": {
             "found": 92,
             "after_keyword": 58,
-            "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 92,
           "after_keyword": 58,
-          "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-08T02:59:57.970364+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-08T07:17:30.392015+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-          "link": "https://www.log.com.tr/elektrikli-audi-a2-e-tron-resmi-tanitim-oncesinde-sizdirildi/",
-          "published": "2026-09-08T02:58:58.804296+03:00",
-          "summary": "Bugün sızdırılan fotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir. Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "audi-elektrikli-oncesinde-resmi-sizdirildi-tanitim-tron",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin sızıntı haberi her zaman otomobil meraklılarının ilgisini çeker ve sosyal medyada tartışma yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 15,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yeni bir modelin sızıntı haberi her zaman otomobil meraklılarının ilgisini çeker ve sosyal medyada tartışma yaratır.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 15,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-08T03:00:09.475557+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-          "link": "https://www.log.com.tr/elektrikli-audi-a2-e-tron-resmi-tanitim-oncesinde-sizdirildi/",
-          "published": "2026-09-08T02:58:58.804296+03:00",
-          "summary": "Bugün sızdırılan fotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir. Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-07_11-22-38_thxuo-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "audi-elektrikli-oncesinde-resmi-sizdirildi-tanitim-tron",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin sızıntı haberi her zaman otomobil meraklılarının ilgisini çeker ve sosyal medyada tartışma yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Bugün sızdırılanfotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir."
-        },
-        "post_text": "🚗 BU HABERDE ASIL MESELE OTOMOBİL DEĞİL.\n\nAudi'nin A2 e-tron'u sızdı, ama asıl tartışma verimlilik iddiasında. 600 km menzil öngörüsüyle yola çıkan araç, \"tüm zamanların en verimli Audi\" sıfatını kapmaya hazırlanıyor.\n\nPeki, kağıt üzerindeki bu iddialar, elektrikli otomobillerin Türkiye pazarındaki gerçek kullanımında ne kadar karşılık bulacak?",
-        "post_text_length": 346,
-        "story_card_title": "AUDI'NIN YENİ ELEKTRİKLİSİ KANITLADI!",
-        "story_card_subtitle": "Audi A2 e-tron'un resmi tanıtımı öncesi sızdırılan görselleri, otomobil dünyasında büyük yankı uyandırdı. Elektrikli Volkswagen ID.3 Neo ile aynı platformu paylaşan model, 600 km'lik menzil iddiasıyla dikkat çekiyor. Bu iddialı rakam, aracın 'tüm zamanların en verimli Audi'si olacağının sinyalini veriyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-08T03:01:45.862472+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı",
-          "link": "https://www.log.com.tr/elektrikli-audi-a2-e-tron-resmi-tanitim-oncesinde-sizdirildi/",
-          "published": "2026-09-08T02:58:58.804296+03:00",
-          "summary": "Bugün sızdırılan fotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir. Elektrikli Audi A2 e-tron, resmi tanıtım öncesinde sızdırıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "audi-elektrikli-oncesinde-resmi-sizdirildi-tanitim-tron",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir modelin sızıntı haberi her zaman otomobil meraklılarının ilgisini çeker ve sosyal medyada tartışma yaratır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Bugün sızdırılanfotoğraflarla gündeme gelen tamamen elektrikli Audi A2 e-tron için ilk resmi duyuru, geçtiğimiz aylarda ikonik rozeti geleceğe taşıyacak aracı gösteren bir görselle birlikte yapılmıştı. Çok yakında resmi olarak tanıtılacak A2 e-tron, elektrikli Volkswagen ID.3 Neo ile aynı platformu temel alıyor. “Tüm zamanların en verimli Audi modeli” olarak öne çıkarılan araç, daha önce yapılan resmi açıklamaya göre 61 kWh kapasiteli (58 kWh kullanılabilir) bir “LFP” bataryayı temel alıyor. 188 beygir güç üreten “APP350” kodlu yeni bir elektrik motorunun kullanıldığı model (arkaya konumlandırılmış), halen resmi bir WLTP menzil verisine sahip değil. 100 kilometrede 12,8 kWh tüketim değerine ve 0,24’lük sürtünme katsayısına sahip olduğu açıklanan aracın, tam dolu bataryayla 600 km civarında, hatta bunun biraz daha üzerinde yol alabileceği öngörülüyor. 2027’de Türkiye’de de satışa sunulması beklenen A2 e-tron, çok yüksek satış rakamlarına ulaşabilir.",
-          "post_text_for_card": "🚗 BU HABERDE ASIL MESELE OTOMOBİL DEĞİL.\n\nAudi'nin A2 e-tron'u sızdı, ama asıl tartışma verimlilik iddiasında. 600 km menzil öngörüsüyle yola çıkan araç, \"tüm zamanların en verimli Audi\" sıfatını kapmaya hazırlanıyor.\n\nPeki, kağıt üzerindeki bu iddialar, elektrikli otomobillerin Türkiye pazarındaki gerçek kullanımında ne kadar karşılık bulacak?",
-          "story_card_title": "AUDI'NIN YENİ ELEKTRİKLİSİ KANITLADI!",
-          "story_card_subtitle": "Audi A2 e-tron'un resmi tanıtımı öncesi sızdırılan görselleri, otomobil dünyasında büyük yankı uyandırdı. Elektrikli Volkswagen ID.3 Neo ile aynı platformu paylaşan model, 600 km'lik menzil iddiasıyla dikkat çekiyor. Bu iddialı rakam, aracın 'tüm zamanların en verimli Audi'si olacağının sinyalini veriyor.",
-          "image_sources": [
-            "no_image"
-          ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
-        },
-        "post_text": "🚗 BU HABERDE ASIL MESELE OTOMOBİL DEĞİL.\n\nAudi'nin A2 e-tron'u sızdı, ama asıl tartışma verimlilik iddiasında. 600 km menzil öngörüsüyle yola çıkan araç, \"tüm zamanların en verimli Audi\" sıfatını kapmaya hazırlanıyor.\n\nPeki, kağıt üzerindeki bu iddialar, elektrikli otomobillerin Türkiye pazarındaki gerçek kullanımında ne kadar karşılık bulacak?",
-        "story_card_title": "AUDI'NIN YENİ ELEKTRİKLİSİ KANITLADI!",
-        "story_card_subtitle": "Audi A2 e-tron'un resmi tanıtımı öncesi sızdırılan görselleri, otomobil dünyasında büyük yankı uyandırdı. Elektrikli Volkswagen ID.3 Neo ile aynı platformu paylaşan model, 600 km'lik menzil iddiasıyla dikkat çekiyor. Bu iddialı rakam, aracın 'tüm zamanların en verimli Audi'si olacağının sinyalini veriyor.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-08T03:05:38.885603+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178673646916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-08T03:05:59.950853+03:00"
+      "updated_at": null
     }
   }
 }
