@@ -1,14 +1,165 @@
 {
-  "run_id": "2026-09-09-06:02",
-  "status": "error",
-  "started_at": "2026-09-09T06:02:47.583237+03:00",
-  "updated_at": "2026-09-09T06:03:36.967464+03:00",
+  "run_id": "2026-09-09-11:36",
+  "status": "completed",
+  "started_at": "2026-09-09T11:36:28.777839+03:00",
+  "updated_at": "2026-09-09T11:38:13.128935+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Portronics yeni lastik kompresörünü tanıttı",
+            "link": "https://www.donanimhaber.com/portronics-vayu-hybrid-tanitildi-iste-ozellikleri-ve-fiyati--210247",
+            "published": "2026-09-09T07:17:00+00:00",
+            "summary": "Portronics Vayu Hybrid lastik kompresörü hem lastik şişiriyor hem hurçların havasını alıyor hem şişme havuzlarınızı şişiriyor hem de acil durumlarda el feneri oluyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/210247/1200x675portronics-vayu-hybrid-tanitildi-iste-ozellikleri-ve-fiyati.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210247/1200x675portronics-vayu-hybrid-tanitildi-iste-ozellikleri-ve-fiyati.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/210247/1200x675portronics-vayu-hybrid-tanitildi-iste-ozellikleri-ve-fiyati.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "kompresorunu-lastik-portronics-tanitti"
+          },
+          {
+            "title": "GWM Tank 700 LWB ortaya çıktı: 5,44 metre gövde, 6 koltuk ve 190 km elektrikli menzil",
+            "link": "https://otomobilkolik.com/gwm-tank-700-lwb-6-koltuk-190-km-elektrikli-menzil/",
+            "published": "2026-09-09T08:01:42+00:00",
+            "summary": "MIIT belgeleriyle ortaya çıkan GWM Tank 700 LWB, 5.445 mm gövdesi ve altı koltuklu düzeniyle Yangwang U8L'ye rakip oluyor. GWM Tank 700 LWB ortaya çıktı: 5,44 metre gövde, 6 koltuk ve 190 km elektrikli menzil yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "otomobilkolik",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "190-700-elektrikli-govde-gwm-koltuk-lwb-menzil-metre-ortaya-tank"
+          },
+          {
+            "title": "Microsoft, son güncellemeyle Windows’taki tam 723 güvenlik açığını kapattı",
+            "link": "https://www.log.com.tr/microsoft-son-guncellemeyle-windowstaki-tam-723-guvenlik-acigini-kapatti/",
+            "published": "2026-09-09T07:36:10+00:00",
+            "summary": "Microsoft, bu hafta çeşitli ürün ve hizmetlerine gönderdiği güncellemelerle 900’den fazla güvenlik açığını kapattı. Şirket, spefisik olarak Windows işletim sisteminde 723 adet, Office ailesinde 222 adet, SQL’de 62 adet, Developer Tools’da 22 adet, SharePoint Server’da 16 adet, Azure’da 12 adet, Skype for Business’ta 10 adet ve Exchange Server’da ise 9 farklı güvenlik açığını ortadan kaldırdı. Kapatılan açıklar arasında CVE-2026-85880 ve CVE-2026-81963 olarak geçen iki farklı sıfır gün güvenlik açığının yer aldığı da açıklandı. today's Patch Tuesday is even bigger than I expected. 974 Microsoft CVEs in total, with 723 alone for Windows 🤯 https://t.co/FQZbZzwhQm pic.twitter.com/jnrTcVkVWw — Tom Warren (@tomwarren) September 8, 2026 Microsoft, son güncellemeyle Windows’taki tam 723 güvenlik açığını kapattı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/microsoft-iddiaya-gore-yapay-zeka-icin-bir-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/microsoft-iddiaya-gore-yapay-zeka-icin-bir-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/05/microsoft-iddiaya-gore-yapay-zeka-icin-bir-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "723-acigini-guncellemeyle-guvenlik-kapatti-microsoft-tam-windows"
+          },
+          {
+            "title": "OpenAI, yeni görsel sistemi ChatGPT Images 2.5’i kullanıma sundu",
+            "link": "https://www.log.com.tr/openai-yeni-gorsel-sistemi-chatgpt-images-2-5i-kullanima-sundu/",
+            "published": "2026-09-09T06:18:40+00:00",
+            "summary": "OpenAI bugün çıtayı daha da yükselten yeni görsel oluşturma sistemi ChatGPT Images 2.5’i kullanıma sundu. Şirketin açıklamasına göre yeni sürüm 2K çözünürlükte çıktı verebiliyor, farklı en boy oranlarını destekliyor ve güncel bilgilerden yararlanmak için web araştırması yapabiliyor. Instant ve Thinking olmak üzere iki farklı zeka seviyesiyle gelen Images 2.5, daha keskin ayrıntılar, daha hızlı üretim, daha hassas düzenleme ve yeni gelişmiş düzenleme araçlarıyla öne çıkıyor. OpenAI, Images 2.5’in daha doğal ışıklandırma ile daha zengin dokular sunduğunu, referans fotoğraflardaki kişileri ve nesneleri daha iyi koruduğunu ve çok aşamalı düzenlemelerde verilen talimatları daha güvenilir bir şekilde izlediğini belirtiyor. Bölgesel düzenleme desteği de bulunan yeni sistem, “Sketch” adlı bir özellikle geliyor. Bu özellik, çok basit çizimleri gerçekçi fotoğraflara dönüştürebiliyor. OpenAI, yeni görsel sistemi ChatGPT Images 2.5’i kullanıma sundu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-09_09-16-43_urqNY-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-09_09-16-43_urqNY-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-09_09-16-43_urqNY-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "chatgpt-gorsel-images-kullanima-openai-sistemi-sundu"
+          },
+          {
+            "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+            "link": "https://tr.motor1.com/news/807590/ferrari-enzo-matte-nero-opaco/",
+            "published": "2026-09-09T08:00:00+00:00",
+            "summary": "Kraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "ariyor-enzo-ferrari-mat-renkte-sahibini-siyah-tek-uretilen"
+          },
+          {
+            "title": "İçten yanmalı BMW 3 Serisi, hibrit seçeneklerle geliyor!",
+            "link": "https://tr.motor1.com/news/807587/bmw-m350-xdrive-teaser/",
+            "published": "2026-09-09T07:00:00+00:00",
+            "summary": "Serinin zirvesinde, 6 silindirli hafif hibrit \"M350 xDrive\" yer alıyor.",
+            "image_url": "https://cdn.motor1.com/images/mgl/Rqbq69/s3/2027-bmw-3-series-camouflaged-prototype-of-m350-xdrive.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/Rqbq69/s3/2027-bmw-3-series-camouflaged-prototype-of-m350-xdrive.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/Rqbq69/s3/2027-bmw-3-series-camouflaged-prototype-of-m350-xdrive.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bmw-cten-geliyor-hibrit-seceneklerle-serisi-yanmali"
+          },
+          {
+            "title": "OMODA | JAECOO E-spor Ruhunu OMODA 4 ile Yollara Taşıyor",
+            "link": "https://otopodyum.com.tr/elektriklihybrid-otolar/omoda-jaecoo-e-spor-ruhunu-omoda-4-ile-yollara-tasiyor-5280h",
+            "published": "2026-09-09T06:13:16+00:00",
+            "summary": "“BE THE ONE” felsefesiyle gençleri kendi yollarını çizmeye davet eden marka, mobiliteyi de kişisel ifade alanının bir parçası olarak konumlandırıyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5590.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5590.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5590.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "jaecoo-omoda-omoda-ruhunu-spor-tasiyor-yollara"
+          },
+          {
+            "title": "Honda, FIA Yol Güvenliği Endeksi’nde  5 Yıldız Alan İlk Şirket Oldu",
+            "link": "https://otopodyum.com.tr/firmalar-dernekler/honda-fia-yol-guvenligi-endeksinde-5-yildiz-alan-ilk-sirket-oldu-5279h",
+            "published": "2026-09-09T06:07:40+00:00",
+            "summary": "FIA tarafından şirket ve kuruluşların yol güvenliği alanındaki performanslarını değerlendirmeye yönelik olarak geliştirilen Endeks, 3 yıldızdan 5 yıldıza genişletildi.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5589.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5589.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5589.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "alan-endeksi-fia-guvenligi-honda-nde-sirket-yildiz-yol"
+          }
+        ],
+        "count": 8,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -120,54 +271,317 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 5,
+            "count": 7,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 95,
-            "after_keyword": 60,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 97,
+            "after_keyword": 61,
+            "after_time": 14,
+            "after_posted": 8,
+            "after_duplicate": 8,
+            "after_shared_variant_cooldown": 8
           }
         },
         "metrics": {
-          "found": 95,
-          "after_keyword": 60,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 97,
+          "after_keyword": 61,
+          "after_time": 14,
+          "after_posted": 8,
+          "after_duplicate": 8,
+          "after_shared_variant_cooldown": 8
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-09-09T06:03:36.967464+03:00"
+      "error": null,
+      "updated_at": "2026-09-09T11:37:18.420532+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+          "link": "https://tr.motor1.com/news/807590/ferrari-enzo-matte-nero-opaco/",
+          "published": "2026-09-09T08:00:00+00:00",
+          "summary": "Kraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ariyor-enzo-ferrari-mat-renkte-sahibini-siyah-tek-uretilen",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Nadir bulunan mat siyah Enzo ve kraliyet geçmişi, otomobil tutkunları arasında yüksek etkileşim ve viralite yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 18,
+          "gundem_gucu": 13,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Nadir bulunan mat siyah Enzo ve kraliyet geçmişi, otomobil tutkunları arasında yüksek etkileşim ve viralite yaratır.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 18,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 10
+            }
+          },
+          {
+            "title": "GWM Tank 700 LWB ortaya çıktı: 5,44 metre gövde, 6 koltuk ve 190 km elektrikli menzil",
+            "score": 68,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 12,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "İçten yanmalı BMW 3 Serisi, hibrit seçeneklerle geliyor!",
+            "score": 67,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 10,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 8,
+        "cooldown_candidates": [
+          {
+            "title": "GWM Tank 700 LWB ortaya çıktı: 5,44 metre gövde, 6 koltuk ve 190 km elektrikli menzil",
+            "link": "https://otomobilkolik.com/gwm-tank-700-lwb-6-koltuk-190-km-elektrikli-menzil/",
+            "score": 68,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "190-700-elektrikli-govde-gwm-koltuk-lwb-menzil-metre-ortaya-tank"
+          },
+          {
+            "title": "İçten yanmalı BMW 3 Serisi, hibrit seçeneklerle geliyor!",
+            "link": "https://tr.motor1.com/news/807587/bmw-m350-xdrive-teaser/",
+            "score": 67,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "bmw-cten-geliyor-hibrit-seceneklerle-serisi-yanmali"
+          },
+          {
+            "title": "Honda, FIA Yol Güvenliği Endeksi’nde  5 Yıldız Alan İlk Şirket Oldu",
+            "link": "https://otopodyum.com.tr/firmalar-dernekler/honda-fia-yol-guvenligi-endeksinde-5-yildiz-alan-ilk-sirket-oldu-5279h",
+            "score": 60,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "alan-endeksi-fia-guvenligi-honda-nde-sirket-yildiz-yol"
+          },
+          {
+            "title": "OMODA | JAECOO E-spor Ruhunu OMODA 4 ile Yollara Taşıyor",
+            "link": "https://otopodyum.com.tr/elektriklihybrid-otolar/omoda-jaecoo-e-spor-ruhunu-omoda-4-ile-yollara-tasiyor-5280h",
+            "score": 49,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "jaecoo-omoda-omoda-ruhunu-spor-tasiyor-yollara"
+          },
+          {
+            "title": "Portronics yeni lastik kompresörünü tanıttı",
+            "link": "https://www.donanimhaber.com/portronics-vayu-hybrid-tanitildi-iste-ozellikleri-ve-fiyati--210247",
+            "score": 44,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "kompresorunu-lastik-portronics-tanitti"
+          },
+          {
+            "title": "Microsoft, son güncellemeyle Windows’taki tam 723 güvenlik açığını kapattı",
+            "link": "https://www.log.com.tr/microsoft-son-guncellemeyle-windowstaki-tam-723-guvenlik-acigini-kapatti/",
+            "score": 28,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "723-acigini-guncellemeyle-guvenlik-kapatti-microsoft-tam-windows"
+          },
+          {
+            "title": "OpenAI, yeni görsel sistemi ChatGPT Images 2.5’i kullanıma sundu",
+            "link": "https://www.log.com.tr/openai-yeni-gorsel-sistemi-chatgpt-images-2-5i-kullanima-sundu/",
+            "score": 26,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "chatgpt-gorsel-images-kullanima-openai-sistemi-sundu"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-09T11:37:22.931306+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+          "link": "https://tr.motor1.com/news/807590/ferrari-enzo-matte-nero-opaco/",
+          "published": "2026-09-09T08:00:00+00:00",
+          "summary": "Kraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ariyor-enzo-ferrari-mat-renkte-sahibini-siyah-tek-uretilen",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Nadir bulunan mat siyah Enzo ve kraliyet geçmişi, otomobil tutkunları arasında yüksek etkileşim ve viralite yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Maranello’danMatte Nero Opacorengiyle çıkan tek Ferrari Enzo yeniden satışa sunuluyor. RM Sotheby's, 2004 model hiper otomobili bir kez daha özel Sealed platformu üzerinde listeliyor; bu nedenle bu kez ulaşacağı fiyat kamuya açıklanmayacak. Otomobil ilk olarak Brunei kraliyet ailesinin bir üyesi tarafından özel sipariş edilmişti. Bu detay, hem sıra dışı gövde rengini hem de arkasındaki 6 haneli restorasyon faturasını açıklıyor. Yaklaşık 400 adet üretilen Enzo içinde bu otomobil, standart Rosso Corsa, Giallo Modena ya da parlak Nero yerine fabrikadan mat boya ile çıkan tek örnek. Mat boya, mevcut bir siparişe sonradan eklenmiş tek seferlik bir tercih değildi.RM Sotheby'sverilerine göre Ferrari, otomobili 2004 yılında baştan bu renkle üretti; dış ve iç tasarımın bilinçli bir bütünlük oluşturması için Nero deri kabin ve Rosso göstergelerle eşleştirdi. Boyanın altında Enzo, dönemin Ferrari amiral gemisi olmasını sağlayan tanıdık donanımı taşıyor: atmosferik V12 motor ve Ken Okuyama imzalı Pininfarina karoser. Bu şasiyi farklı kılan unsur mekanik yapıdan çok kondisyonu. Otomobilin fabrikadan çıktığı günden bu yana yaptığı mesafe yalnızca5.740 km. Bu düşük kilometreye belgelenmiş bir bakım geçmişi eşlik ediyor. Ferrari’nin Icona serisi otomobilleri ve Tailor-Made programı için de çalıştığı Carrozzeria Zanasi, 2022’de Enzo’yu127.000 $maliyetle elden geçirdi; gereken parçaları değiştirdi ve otomobili orijinal Nero Opaco rengine yeniden boyadı. O tarihten bu yana otomobilin bakımları Ron Tonkin Gran Turismo ve Ferrari of Vancouver tarafından yapıldı. 2024’te debriyaj, her iki yakıt pompası ve sol taraftaki supap kapağı contası yenilendi. Ferrari Enzo değerleri bugün donanıma ve özelliklere bağlı olarak7,7 milyon ile 13 milyon $arasında değişiyor. Nadir boya rengi peşindeki alıcılar ise genellikle bu aralığın üst sınırına yaklaşıyor; tıpkınadir bir renge sahip Ferrari 250 GTOörneğinde olduğu gibi özel bir ilgi görüyor. Matte Nero Opaco renginde 2004 Ferrari Enzo Brunei kraliyet ailesinin Avrupalı üreticilerden özel otomobiller sipariş etme konusunda uzun bir geçmişi var ve bu Enzo da başından itibaren bu geleneğe uyuyor. Otomobilin, klasik süper otomobil rotalarında dolaşmak yerine ailenin Londra’daki konutunda tutulması amaçlanmıştı. Yine de zaman zaman ortaya çıktı; daha sonra Asya-Pasifik bölgesine gönderilmeden önce Hampstead, Mayfair ve Knightsbridge çevresinde görüldü. Bu karşılaşmalar, rengi ne olursa olsun dikkat çekerdi; ancak mat siyah kaplama, otomobili daha parlak renklere sahip Enzo’ların yanında ayırt edilir kılıyor. Otomobil, Zanasi’deki restorasyon süreci için 2022’de Avrupa’ya döndü, ardından Kanada’ya geçti ve o zamandan beri iyi şartlarda korundu. Bu rota,Monterey’de satılan nadir Ferrari 288 GTOgibi özel Ferrari’leri standart piyasa karşılaştırmalarının epey ötesine taşıyan belgeli, kıtalar arası geçmiş türünü yansıtıyor. Satışın RM Sotheby's Sealed platformu üzerinden yapılması, teklif sahiplerinin canlı bir müzayede salonu yerine özel olarak pazarlık edeceği ve nihai rakamın yayımlanmayacağı anlamına geliyor. Kıyas açısından, Rosso iç mekânla eşleştirilmiş parlak Nero D.S. renkli 2003 model bir Enzo, geçtiğimiz ağustos ayında Broad Arrow’un The Quail müzayedesinde10.675.000 $'asatılmıştı. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "MAT SİYAH RENKTE ÜRETİLEN TEK FERRARİ ENZO YENİ SAHİBİNİ ARIYOR\n\nKraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 205,
+        "story_card_title": "Tek Mat Siyah Enzo Satışta!",
+        "story_card_subtitle": "Ferrari'nin ikonik modeli Enzo'nun mat siyah renkte üretilen tek örneği, yeni sahibini bekliyor. Kraliyet geçmişi ve oldukça düşük kilometresiyle bu eşsiz araç, kapalı bir müzayedede alıcısını bulacak. Otomobil dünyasında büyük yankı uyandıran bu satış, koleksiyoncuların radarında.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-09T11:37:26.560966+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mat siyah renkte üretilen tek Ferrari Enzo yeni sahibini arıyor",
+          "link": "https://tr.motor1.com/news/807590/ferrari-enzo-matte-nero-opaco/",
+          "published": "2026-09-09T08:00:00+00:00",
+          "summary": "Kraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/0epeW2/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "ariyor-enzo-ferrari-mat-renkte-sahibini-siyah-tek-uretilen",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 18,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 10
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Nadir bulunan mat siyah Enzo ve kraliyet geçmişi, otomobil tutkunları arasında yüksek etkileşim ve viralite yaratır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Maranello’danMatte Nero Opacorengiyle çıkan tek Ferrari Enzo yeniden satışa sunuluyor. RM Sotheby's, 2004 model hiper otomobili bir kez daha özel Sealed platformu üzerinde listeliyor; bu nedenle bu kez ulaşacağı fiyat kamuya açıklanmayacak. Otomobil ilk olarak Brunei kraliyet ailesinin bir üyesi tarafından özel sipariş edilmişti. Bu detay, hem sıra dışı gövde rengini hem de arkasındaki 6 haneli restorasyon faturasını açıklıyor. Yaklaşık 400 adet üretilen Enzo içinde bu otomobil, standart Rosso Corsa, Giallo Modena ya da parlak Nero yerine fabrikadan mat boya ile çıkan tek örnek. Mat boya, mevcut bir siparişe sonradan eklenmiş tek seferlik bir tercih değildi.RM Sotheby'sverilerine göre Ferrari, otomobili 2004 yılında baştan bu renkle üretti; dış ve iç tasarımın bilinçli bir bütünlük oluşturması için Nero deri kabin ve Rosso göstergelerle eşleştirdi. Boyanın altında Enzo, dönemin Ferrari amiral gemisi olmasını sağlayan tanıdık donanımı taşıyor: atmosferik V12 motor ve Ken Okuyama imzalı Pininfarina karoser. Bu şasiyi farklı kılan unsur mekanik yapıdan çok kondisyonu. Otomobilin fabrikadan çıktığı günden bu yana yaptığı mesafe yalnızca5.740 km. Bu düşük kilometreye belgelenmiş bir bakım geçmişi eşlik ediyor. Ferrari’nin Icona serisi otomobilleri ve Tailor-Made programı için de çalıştığı Carrozzeria Zanasi, 2022’de Enzo’yu127.000 $maliyetle elden geçirdi; gereken parçaları değiştirdi ve otomobili orijinal Nero Opaco rengine yeniden boyadı. O tarihten bu yana otomobilin bakımları Ron Tonkin Gran Turismo ve Ferrari of Vancouver tarafından yapıldı. 2024’te debriyaj, her iki yakıt pompası ve sol taraftaki supap kapağı contası yenilendi. Ferrari Enzo değerleri bugün donanıma ve özelliklere bağlı olarak7,7 milyon ile 13 milyon $arasında değişiyor. Nadir boya rengi peşindeki alıcılar ise genellikle bu aralığın üst sınırına yaklaşıyor; tıpkınadir bir renge sahip Ferrari 250 GTOörneğinde olduğu gibi özel bir ilgi görüyor. Matte Nero Opaco renginde 2004 Ferrari Enzo Brunei kraliyet ailesinin Avrupalı üreticilerden özel otomobiller sipariş etme konusunda uzun bir geçmişi var ve bu Enzo da başından itibaren bu geleneğe uyuyor. Otomobilin, klasik süper otomobil rotalarında dolaşmak yerine ailenin Londra’daki konutunda tutulması amaçlanmıştı. Yine de zaman zaman ortaya çıktı; daha sonra Asya-Pasifik bölgesine gönderilmeden önce Hampstead, Mayfair ve Knightsbridge çevresinde görüldü. Bu karşılaşmalar, rengi ne olursa olsun dikkat çekerdi; ancak mat siyah kaplama, otomobili daha parlak renklere sahip Enzo’ların yanında ayırt edilir kılıyor. Otomobil, Zanasi’deki restorasyon süreci için 2022’de Avrupa’ya döndü, ardından Kanada’ya geçti ve o zamandan beri iyi şartlarda korundu. Bu rota,Monterey’de satılan nadir Ferrari 288 GTOgibi özel Ferrari’leri standart piyasa karşılaştırmalarının epey ötesine taşıyan belgeli, kıtalar arası geçmiş türünü yansıtıyor. Satışın RM Sotheby's Sealed platformu üzerinden yapılması, teklif sahiplerinin canlı bir müzayede salonu yerine özel olarak pazarlık edeceği ve nihai rakamın yayımlanmayacağı anlamına geliyor. Kıyas açısından, Rosso iç mekânla eşleştirilmiş parlak Nero D.S. renkli 2003 model bir Enzo, geçtiğimiz ağustos ayında Broad Arrow’un The Quail müzayedesinde10.675.000 $'asatılmıştı. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "MAT SİYAH RENKTE ÜRETİLEN TEK FERRARİ ENZO YENİ SAHİBİNİ ARIYOR\n\nKraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Tek Mat Siyah Enzo Satışta!",
+          "story_card_subtitle": "Ferrari'nin ikonik modeli Enzo'nun mat siyah renkte üretilen tek örneği, yeni sahibini bekliyor. Kraliyet geçmişi ve oldukça düşük kilometresiyle bu eşsiz araç, kapalı bir müzayedede alıcısını bulacak. Otomobil dünyasında büyük yankı uyandıran bu satış, koleksiyoncuların radarında.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_script"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/0epeW2/s1/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+            "https://cdn.motor1.com/images/mgl/ko8olN/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+            "https://cdn.motor1.com/images/mgl/9mWm41/s3/2004-ferrari-enzo-in-matte-nero-opaco.jpg",
+            "https://cdn.motor1.com/images/mgl/0epeW2/s1/1x1/2004-ferrari-enzo-in-matte-nero-opaco.webp"
+          ]
+        },
+        "post_text": "MAT SİYAH RENKTE ÜRETİLEN TEK FERRARİ ENZO YENİ SAHİBİNİ ARIYOR\n\nKraliyet geçmişi ve düşük kilometrenin getirdiği değerle kapalı müzayedeye sunulacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Tek Mat Siyah Enzo Satışta!",
+        "story_card_subtitle": "Ferrari'nin ikonik modeli Enzo'nun mat siyah renkte üretilen tek örneği, yeni sahibini bekliyor. Kraliyet geçmişi ve oldukça düşük kilometresiyle bu eşsiz araç, kapalı bir müzayedede alıcısını bulacak. Otomobil dünyasında büyük yankı uyandıran bu satış, koleksiyoncuların radarında.",
+        "image_path": "/tmp/otoxtra_img_370rssvy.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_370rssvy.jpg",
+          "/tmp/otoxtra_img__i_fc6dq.jpg",
+          "/tmp/otoxtra_img_61xzlapt.jpg",
+          "/tmp/otoxtra_img_fmazuvmk.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-09T11:37:30.766512+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122178834902916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17899196127369302",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2056362501651433",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-09T11:38:13.128935+03:00"
     }
   }
 }
