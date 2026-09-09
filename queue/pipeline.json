@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-09-09-02:49",
-  "status": "completed",
-  "started_at": "2026-09-09T02:49:07.581534+03:00",
-  "updated_at": "2026-09-09T02:50:54.234858+03:00",
+  "run_id": "2026-09-09-06:02",
+  "status": "error",
+  "started_at": "2026-09-09T06:02:47.583237+03:00",
+  "updated_at": "2026-09-09T06:03:36.967464+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-            "link": "https://otomobilkolik.com/toyota-land-cruiser-300-hibrit-guc-fiyat/",
-            "published": "2026-09-08T21:31:02+00:00",
-            "summary": "Toyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "otomobilkolik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "300-457-beygirle-cruiser-geciyor-guclu-hibrit-land-line-oluyor-toyota"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -145,214 +127,47 @@
           "_metrics": {
             "found": 95,
             "after_keyword": 60,
-            "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 95,
           "after_keyword": 60,
-          "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-09T02:49:56.197004+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-09T06:03:36.967464+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-          "link": "https://otomobilkolik.com/toyota-land-cruiser-300-hibrit-guc-fiyat/",
-          "published": "2026-09-08T21:31:02+00:00",
-          "summary": "Toyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "300-457-beygirle-cruiser-geciyor-guclu-hibrit-land-line-oluyor-toyota",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi bir modelin yüksek güçlü hibrit versiyona geçmesi off-road ve SUV tutkunları arasında büyük heyecan yaratacak bir gelişme.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 81,
-        "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 15,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Efsanevi bir modelin yüksek güçlü hibrit versiyona geçmesi off-road ve SUV tutkunları arasında büyük heyecan yaratacak bir gelişme.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 10
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-09T02:49:57.623652+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-          "link": "https://otomobilkolik.com/toyota-land-cruiser-300-hibrit-guc-fiyat/",
-          "published": "2026-09-08T21:31:02+00:00",
-          "summary": "Toyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "300-457-beygirle-cruiser-geciyor-guclu-hibrit-land-line-oluyor-toyota",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi bir modelin yüksek güçlü hibrit versiyona geçmesi off-road ve SUV tutkunları arasında büyük heyecan yaratacak bir gelişme.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota’nın amiral gemisi arazi aracı Land Cruiser 300, güncellenmiş haliyle 16 Eylül’de Japonya’da tanıtılıyor. Elektrik desteği bulunmayan benzinli V6 ürün gamından çıkarken yerini Lexus LX700h’den alınan i-Force Max hibrit sistem alıyor. 457 beygir güç ve 790 Nm tork üreten bu ünite, bugüne kadar üretilen tüm Land Cruiser modelleri arasındaki en yüksek değerlere sahip. Japonya, bu yılın başlarında Orta Doğu, Doğu Avrupa ve Avustralya’da satışa sunulan güncellenmiş Land Cruiser 300’ü bekleyen son büyük pazar konumundaydı. Japon yayın kuruluşu Creative Trend’in aktardığına göre marka, benzinli V6’dan vazgeçmenin yanı sıra donanımı iyileştirecek ve yeni bir giriş seviyesi versiyonla dizel ürün gamını genişletecek. Land Cruiser 300 Serisi 2021’de tanıtılmış, 2025’in başlarında teknoloji ve multimedya tarafında küçük iyileştirmeler almıştı. Bu nedenle yeni güncelleme, modelin bugüne kadarki en kapsamlı yeniliği olarak öne çıkıyor. Toyota’nın hibrit hamlesi diğer modellerde de sürüyor; markaCrown’u da yeni hibrit sistemle güncellemişti. 2027 model yılındaki en büyük yenilik, Lexus LX700h’den alınan i-Force Max hibrit güç ünitesi. Sistem, çift turbo beslemeli 3,5 litrelik V6 motoru ve on ileri otomatik şanzımana yerleştirilen tek bir elektrik motorunu kullanıyor. Toplam güç 457 beygir (336 kW), tork ise 790 Nm. Bagaj bölümünün altına yerleştirilen batarya, yakıt deposu kapasitesini 80 litreden 68 litreye düşürüyor. Hibrit sistem, yerini aldığı benzinli V6’ya kıyasla aracın ağırlığını 170 kilogram artırıyor. Buna rağmen Toyota, batarya paketini su geçirmez hâle getirerek modelin 700 milimetrelik su geçiş derinliğini korumayı başardı. Japonya’da hibrit güç ünitesi yalnızca ZX ve GR Sport donanım seviyelerinde sunulacak. Amiral gemisi ZX; yeniden tasarlanan hava girişlerine sahip ön tampon alt bölümü ve 20 inç alaşım jantlarla ayrışıyor. GR Sport ise önceki modelin dayanıklı gövde kitini, mat gri 18 inç jantlarını, çift diferansiyel kilidini ve E-KDSS süspansiyonunu koruyor. Dikkat çeken bir ayrıntı: yenilenen ön bölüm yalnızca hibrit versiyonda kullanılacak; dizel ZX eski dış tasarımını sürdürecek. Her iki hibrit versiyonda da üç sıra koltuklu yedi kişilik düzen, 12,3 inç dijital gösterge paneli, 12,3 inç multimedya ekranı, head-up display, JBL ses sistemi, ısıtmalı ve havalandırmalı koltuklar ile 100 V / 1.500 W AC elektrik çıkışı standart olarak sunuluyor. Mekanik tarafta hibrit modeller elektrik destekli direksiyona (EPS) geçerken, Toyota Safety Sense paketine Proaktif Sürüş Desteği (PDA) ekleniyor. Elektrik destekli direksiyon hibrit versiyonlara özel kalıyor; dizel modellerde sunulmuyor. Benzinli V6 gamdan çıkarılırken hibrite, mevcut çift turbo beslemeli 3,3 litrelik V6 dizel motor eşlik edecek. Bu ünite 304 beygir (227 kW) güç ve 700 Nm tork üretiyor. Dizel gamının dikkat çekici üyesi, Land Cruiser 300’e ulaşmanın en uygun yolu hâline gelen yeni GX. Beş koltuklu modelde kumaş döşeme, 7 inç dijital gösterge paneli, 8 inç multimedya ekranı, altı hoparlör ve 18 inç alaşım jantlar bulunuyor. Dizel motoru tercih edenler ZX ve GR Sport versiyonlarına da geçebilecek; ancak her iki model de yedi yerine beş koltuklu olacak. Sızdırılan rakamlara göre giriş seviyesindeki GX Diesel 6.300.800 yenden (yaklaşık 39.500 dolar) başlayacak. Hibrit tarafta ZX’in 9.801.000 yen (yaklaşık 61.400 dolar) olması bekleniyor; bu rakam üretimden kaldırılan benzinli ZX’e göre 2,36 milyon yenlik (yaklaşık 14.800 dolar) bir artış anlamına geliyor. Bu fiyatların Toyota tarafından henüz resmen açıklanmadığını, sızdırılan bilgilere dayandığını belirtelim. Kesin rakamlar 16 Eylül’deki tanıtımla netleşecek. Güncellenen Land Cruiser 300’ün Türkiye’ye gelip gelmeyeceğine dair bir açıklama bulunmuyor. Markanın Türkiye’deki merdiven şasili modeliyeni Hilux ise ağustos ayında satışa çıkmıştı. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin."
-        },
-        "post_text": "TOYOTA LAND CRUİSER 300 HİBRİT OLUYOR: 457 BEYGİRLE EN GÜÇLÜ HÂLİNE GEÇİYOR\n\nToyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üze\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 462,
-        "story_card_title": "Land Cruiser Hibrit: Beklenenden Daha Güçlü!",
-        "story_card_subtitle": "Toyota Land Cruiser 300, 16 Eylül'de hibrit sistemle Japonya'da tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi, 457 beygir güç ve 790 Nm tork üretiyor. Bu yeni versiyon, Land Cruiser'ın bugüne kadarki en güçlü ve iddialı modeli olarak dikkat çekiyor. Otomobil gündemini uzun süre meşgul edecek bu gelişmeyi kaçırmayın.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-09T02:50:02.170215+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor",
-          "link": "https://otomobilkolik.com/toyota-land-cruiser-300-hibrit-guc-fiyat/",
-          "published": "2026-09-08T21:31:02+00:00",
-          "summary": "Toyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "smart_search",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "300-457-beygirle-cruiser-geciyor-guclu-hibrit-land-line-oluyor-toyota",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Efsanevi bir modelin yüksek güçlü hibrit versiyona geçmesi off-road ve SUV tutkunları arasında büyük heyecan yaratacak bir gelişme.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota’nın amiral gemisi arazi aracı Land Cruiser 300, güncellenmiş haliyle 16 Eylül’de Japonya’da tanıtılıyor. Elektrik desteği bulunmayan benzinli V6 ürün gamından çıkarken yerini Lexus LX700h’den alınan i-Force Max hibrit sistem alıyor. 457 beygir güç ve 790 Nm tork üreten bu ünite, bugüne kadar üretilen tüm Land Cruiser modelleri arasındaki en yüksek değerlere sahip. Japonya, bu yılın başlarında Orta Doğu, Doğu Avrupa ve Avustralya’da satışa sunulan güncellenmiş Land Cruiser 300’ü bekleyen son büyük pazar konumundaydı. Japon yayın kuruluşu Creative Trend’in aktardığına göre marka, benzinli V6’dan vazgeçmenin yanı sıra donanımı iyileştirecek ve yeni bir giriş seviyesi versiyonla dizel ürün gamını genişletecek. Land Cruiser 300 Serisi 2021’de tanıtılmış, 2025’in başlarında teknoloji ve multimedya tarafında küçük iyileştirmeler almıştı. Bu nedenle yeni güncelleme, modelin bugüne kadarki en kapsamlı yeniliği olarak öne çıkıyor. Toyota’nın hibrit hamlesi diğer modellerde de sürüyor; markaCrown’u da yeni hibrit sistemle güncellemişti. 2027 model yılındaki en büyük yenilik, Lexus LX700h’den alınan i-Force Max hibrit güç ünitesi. Sistem, çift turbo beslemeli 3,5 litrelik V6 motoru ve on ileri otomatik şanzımana yerleştirilen tek bir elektrik motorunu kullanıyor. Toplam güç 457 beygir (336 kW), tork ise 790 Nm. Bagaj bölümünün altına yerleştirilen batarya, yakıt deposu kapasitesini 80 litreden 68 litreye düşürüyor. Hibrit sistem, yerini aldığı benzinli V6’ya kıyasla aracın ağırlığını 170 kilogram artırıyor. Buna rağmen Toyota, batarya paketini su geçirmez hâle getirerek modelin 700 milimetrelik su geçiş derinliğini korumayı başardı. Japonya’da hibrit güç ünitesi yalnızca ZX ve GR Sport donanım seviyelerinde sunulacak. Amiral gemisi ZX; yeniden tasarlanan hava girişlerine sahip ön tampon alt bölümü ve 20 inç alaşım jantlarla ayrışıyor. GR Sport ise önceki modelin dayanıklı gövde kitini, mat gri 18 inç jantlarını, çift diferansiyel kilidini ve E-KDSS süspansiyonunu koruyor. Dikkat çeken bir ayrıntı: yenilenen ön bölüm yalnızca hibrit versiyonda kullanılacak; dizel ZX eski dış tasarımını sürdürecek. Her iki hibrit versiyonda da üç sıra koltuklu yedi kişilik düzen, 12,3 inç dijital gösterge paneli, 12,3 inç multimedya ekranı, head-up display, JBL ses sistemi, ısıtmalı ve havalandırmalı koltuklar ile 100 V / 1.500 W AC elektrik çıkışı standart olarak sunuluyor. Mekanik tarafta hibrit modeller elektrik destekli direksiyona (EPS) geçerken, Toyota Safety Sense paketine Proaktif Sürüş Desteği (PDA) ekleniyor. Elektrik destekli direksiyon hibrit versiyonlara özel kalıyor; dizel modellerde sunulmuyor. Benzinli V6 gamdan çıkarılırken hibrite, mevcut çift turbo beslemeli 3,3 litrelik V6 dizel motor eşlik edecek. Bu ünite 304 beygir (227 kW) güç ve 700 Nm tork üretiyor. Dizel gamının dikkat çekici üyesi, Land Cruiser 300’e ulaşmanın en uygun yolu hâline gelen yeni GX. Beş koltuklu modelde kumaş döşeme, 7 inç dijital gösterge paneli, 8 inç multimedya ekranı, altı hoparlör ve 18 inç alaşım jantlar bulunuyor. Dizel motoru tercih edenler ZX ve GR Sport versiyonlarına da geçebilecek; ancak her iki model de yedi yerine beş koltuklu olacak. Sızdırılan rakamlara göre giriş seviyesindeki GX Diesel 6.300.800 yenden (yaklaşık 39.500 dolar) başlayacak. Hibrit tarafta ZX’in 9.801.000 yen (yaklaşık 61.400 dolar) olması bekleniyor; bu rakam üretimden kaldırılan benzinli ZX’e göre 2,36 milyon yenlik (yaklaşık 14.800 dolar) bir artış anlamına geliyor. Bu fiyatların Toyota tarafından henüz resmen açıklanmadığını, sızdırılan bilgilere dayandığını belirtelim. Kesin rakamlar 16 Eylül’deki tanıtımla netleşecek. Güncellenen Land Cruiser 300’ün Türkiye’ye gelip gelmeyeceğine dair bir açıklama bulunmuyor. Markanın Türkiye’deki merdiven şasili modeliyeni Hilux ise ağustos ayında satışa çıkmıştı. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin.",
-          "post_text_for_card": "TOYOTA LAND CRUİSER 300 HİBRİT OLUYOR: 457 BEYGİRLE EN GÜÇLÜ HÂLİNE GEÇİYOR\n\nToyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üze\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "Land Cruiser Hibrit: Beklenenden Daha Güçlü!",
-          "story_card_subtitle": "Toyota Land Cruiser 300, 16 Eylül'de hibrit sistemle Japonya'da tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi, 457 beygir güç ve 790 Nm tork üretiyor. Bu yeni versiyon, Land Cruiser'ın bugüne kadarki en güçlü ve iddialı modeli olarak dikkat çekiyor. Otomobil gündemini uzun süre meşgul edecek bu gelişmeyi kaçırmayın.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "TOYOTA LAND CRUİSER 300 HİBRİT OLUYOR: 457 BEYGİRLE EN GÜÇLÜ HÂLİNE GEÇİYOR\n\nToyota Land Cruiser 300, 16 Eylül'de Japonya'da hibrit sistemle tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi 457 beygir güç ve 790 Nm tork üreterek modelin bugüne kadarki en güçlü versiyonunu oluşturuyor. Toyota Land Cruiser 300 hibrit oluyor: 457 beygirle en güçlü hâline geçiyor yazısı ilk önce otomobilkolik üze\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "Land Cruiser Hibrit: Beklenenden Daha Güçlü!",
-        "story_card_subtitle": "Toyota Land Cruiser 300, 16 Eylül'de hibrit sistemle Japonya'da tanıtılıyor. Benzinli V6'nın yerini alan i-Force Max ünitesi, 457 beygir güç ve 790 Nm tork üretiyor. Bu yeni versiyon, Land Cruiser'ın bugüne kadarki en güçlü ve iddialı modeli olarak dikkat çekiyor. Otomobil gündemini uzun süre meşgul edecek bu gelişmeyi kaçırmayın.",
-        "image_path": "/tmp/otoxtra_img_b6fsy8ke.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_b6fsy8ke.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-09T02:50:08.954388+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178786896916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1690139539301344",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-09T02:50:54.234858+03:00"
+      "updated_at": null
     }
   }
 }
