@@ -1,18 +1,6 @@
 {
   "posts": [
     {
-      "title": "ŞAKA MI? AYLIK ABONELİK 4990 TL ‼️ Arabada bunları kullanmak için ayda 4990 TL ödemek gerekecekmiş. 1 yılda 60.000 TL.",
-      "url": "https://nitter.net/murattosunMSE/status/2087257951023005751#m",
-      "topic_fingerprint": "000-4990-4990-aboneli-arabada-ayda-aylik-bunlari-gerekecekmis-kullanmak-odemek-saka-yilda",
-      "source": "MuratTosun",
-      "score": 92,
-      "trend_count": 1,
-      "posted_at": "2026-08-11T23:02:58.968986+03:00",
-      "fb_post_id": "678053852057751_122175602510916499",
-      "image_source": "nitter_still",
-      "image_count": 1
-    },
-    {
       "title": "OMODA & JAECOO, 2027'nin ilk 7 ayında 450.000'e yakın araç sattı",
       "url": "https://tr.motor1.com/news/804587/omoda-jaecoo-2026-satis-verileri/",
       "topic_fingerprint": "000-2027-450-arac-ayinda-jaecoo-omoda-satti-yakin",
@@ -2471,10 +2459,21 @@
       "fb_post_id": "678053852057751_122178994124916499",
       "image_source": "meta_og",
       "image_count": 1
+    },
+    {
+      "title": "Mercedes-AMG CLE 646 Spezialanfertigung Tanıtıldı: 30 Adetlik Pist Canavarı",
+      "url": "https://otomobilkolik.com/mercedes-amg-cle-646-spezialanfertigung-tanitildi/",
+      "topic_fingerprint": "646-adetlik-amg-canavari-cle-mercedes-pist-spezialanfertigung",
+      "source": "otomobilkolik",
+      "score": 80,
+      "trend_count": 1,
+      "posted_at": "2026-09-11T00:24:28.647383+03:00",
+      "fb_post_id": "678053852057751_122179007492916499",
+      "image_source": "smart_search",
+      "image_count": 1
     }
   ],
   "daily_counts": {
-    "2026-08-11": 10,
     "2026-08-12": 8,
     "2026-08-13": 9,
     "2026-08-14": 10,
@@ -2504,12 +2503,12 @@
     "2026-09-07": 3,
     "2026-09-08": 5,
     "2026-09-09": 6,
-    "2026-09-10": 4
+    "2026-09-10": 4,
+    "2026-09-11": 1
   },
-  "last_check_time": "2026-09-10T21:06:41.819547+03:00",
+  "last_check_time": "2026-09-11T00:25:12.103445+03:00",
   "stats": {
     "daily_actions": {
-      "2026-08-11": 17,
       "2026-08-12": 16,
       "2026-08-13": 16,
       "2026-08-14": 17,
@@ -2539,7 +2538,8 @@
       "2026-09-07": 5,
       "2026-09-08": 6,
       "2026-09-09": 7,
-      "2026-09-10": 6
+      "2026-09-10": 6,
+      "2026-09-11": 1
     },
     "weekly": {
       "2026-W22": {
@@ -2757,8 +2757,8 @@
         "report_sent_at": "2026-09-07T01:40:47.449744+03:00"
       },
       "2026-W37": {
-        "actions": 24,
-        "shares": 18,
+        "actions": 25,
+        "shares": 19,
         "error_total": 0,
         "errors": {},
         "skip_total": 6,
@@ -2771,5 +2771,15 @@
       }
     }
   },
-  "shared_variant_cooldowns": {}
+  "shared_variant_cooldowns": {
+    "fp:adeta-boreal-niagara-pickup-renault-versiyonu": {
+      "title": "Yeni Renault Niagara tanıtıldı: Adeta Boreal'in pickup versiyonu",
+      "url": "https://www.donanimhaber.com/yeni-renault-niagara-pickup-tanitildi-iste-tasarimi--210345",
+      "score": 63,
+      "reason": "shared_variant",
+      "matched_post_title": "Mercedes-AMG CLE 646 Spezialanfertigung Tanıtıldı: 30 Adetlik Pist Canavarı",
+      "matched_post_url": "https://otomobilkolik.com/mercedes-amg-cle-646-spezialanfertigung-tanitildi/",
+      "cooldown_at": "2026-09-11T00:24:28.671210+03:00"
+    }
+  }
 }
