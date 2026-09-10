@@ -1,32 +1,14 @@
 {
-  "run_id": "2026-09-10-01:54",
-  "status": "completed",
-  "started_at": "2026-09-10T01:54:44.443361+03:00",
-  "updated_at": "2026-09-10T01:57:09.666991+03:00",
+  "run_id": "2026-09-10-03:49",
+  "status": "error",
+  "started_at": "2026-09-10T03:49:47.291027+03:00",
+  "updated_at": "2026-09-10T03:50:44.664288+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-            "link": "https://otomobilkolik.com/opel-vivaro-kamyonet-iaa-transportation-2026/",
-            "published": "2026-09-09T21:46:44+00:00",
-            "summary": "Tofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "otomobilkolik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-aliyor-iaa-kamyonet-opel-sahne-tofas-transportation-uretimi-vivaro"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -146,213 +128,46 @@
             "found": 95,
             "after_keyword": 57,
             "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 95,
           "after_keyword": 57,
           "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-10T01:55:44.018969+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-10T03:50:44.664288+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-          "link": "https://otomobilkolik.com/opel-vivaro-kamyonet-iaa-transportation-2026/",
-          "published": "2026-09-09T21:46:44+00:00",
-          "summary": "Tofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-aliyor-iaa-kamyonet-opel-sahne-tofas-transportation-uretimi-vivaro",
-          "base_ai_score": 48,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 11,
-            "gundem_gucu": 10,
-            "paylasilabilirlik": 6
-          },
-          "score": 56,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tofaş üretimi olması yerel basında ilgi çekebilir ancak ticari araç odaklı ve 2026 gibi uzak bir tarihi kapsadığı için viral etkisi orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 56,
-        "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 11,
-          "gundem_gucu": 10,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Tofaş üretimi olması yerel basında ilgi çekebilir ancak ticari araç odaklı ve 2026 gibi uzak bir tarihi kapsadığı için viral etkisi orta seviyede kalıyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-            "score": 56,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 11,
-              "gundem_gucu": 10,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-10T01:55:45.732629+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-          "link": "https://otomobilkolik.com/opel-vivaro-kamyonet-iaa-transportation-2026/",
-          "published": "2026-09-09T21:46:44+00:00",
-          "summary": "Tofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-aliyor-iaa-kamyonet-opel-sahne-tofas-transportation-uretimi-vivaro",
-          "base_ai_score": 48,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 11,
-            "gundem_gucu": 10,
-            "paylasilabilirlik": 6
-          },
-          "score": 56,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tofaş üretimi olması yerel basında ilgi çekebilir ancak ticari araç odaklı ve 2026 gibi uzak bir tarihi kapsadığı için viral etkisi orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Opel’in Türkiye’de Tofaş tarafından üretilen Vivaro Kamyonet modeli, 14-20 Eylül 2026 tarihlerinde Hannover’de düzenlenecek IAA Transportation 2026’da ilk kez uluslararası bir fuarda sergilenecek. Yaklaşık 1.200 kilogram taşıma kapasitesine sahip Opel Vivaro Kamyonet, Stellantis Pro One standında ziyaretçilerle buluşacak. Hafif ticari araç pazarının en büyük buluşmalarından biri olan IAA Transportation, bu yıl Türkiye’de üretilen bir modeli de ağırlıyor. Opel, fuarda küçük elektrikli şehir içi çözümlerinden büyük panelvanlara uzanan ürün gamını sergilerken, Bursa’da üretilen Vivaro Kamyonet markanın standındaki en dikkat çekici yerli imzayı taşıyacak. Stellantis’in Türkiye üretimine yaptığı yatırımlarıPeugeot Rifter’ın Bursa üretimi haberimizdede aktarmıştık. Vivaro Kamyonet, yaklaşık 1.200 kilogram taşıma kapasitesi ve yaklaşık 2.754 mm yükleme alanı uzunluğuyla farklı sektörlerin ihtiyaçlarına yönelik bir çözüm olarak konumlanıyor. Kasa yapısında çelik konstrüksiyon, alüminyum kasa kanatları ve dayanıklılığı artıran plywood kaplama kullanılıyor. Tabandaki 8 yükleme kancası, kasa altında sunulan 220 litrelik bagaj alanı, camlı ara bölme ve 2+1 oturma düzeni aracın günlük iş hayatındaki kullanım kabiliyetini artırıyor. Aynı platformu paylaşan ve yine Tofaş’ta üretilenFIAT Scudo Kamyonet’idaha önce haberleştirmiştik. Açık yükleme alanına üç taraftan erişilebilmesi, farklı malzemelerin kolay biçimde yüklenip boşaltılmasına olanak tanıyor. Bu yapısıyla model; lojistikten saha operasyonlarına, yapı ve inşaat sektöründen çeşitli hizmet alanlarına kadar geniş bir kullanım yelpazesine hitap ediyor. Opel, Vivaro’nun farklı üstyapı ve taşıma ihtiyaçlarına uyarlanabilen yapısını Hannover’de uluslararası ziyaretçilere gösterecek. Global ürün gamındaki Vivaro Kamyonet, iş odaklı yapısını standart donanım listesiyle tamamlıyor. Güvenlik tarafında Elektronik Stabilite Programı, ABS, Elektronik Fren Gücü Dağılımı, Yokuşta Kalkış Desteği, şerit takip sistemi, trafik işareti tespit sistemi, sürücü yorgunluk tespit sistemi, çarpışma uyarısı, acil durum fren sistemi ve lastik basıncı izleme sistemi bulunuyor. Konfor tarafında ise geri görüş kamerası, hız sabitleyici, klima, yağmur ve far sensörü, ısıtmalı ve katlanır yan aynalar, dijital gösterge paneli ile Bluetooth bağlantısı yer alıyor. Bu donanımların Türkiye’de sunulan versiyonda hangi seviyelerde standart olduğu ise ayrıca duyurulacak. Marka, fuarda Vivaro Kamyonet’in yanı sıra farklı ticari kullanım senaryolarına yönelik üç modeli daha sergileyecek. Movano Crew Cab ekip ve malzemenin birlikte taşındığı operasyonlara, Combo Tech kompakt ticari kullanıma, tamamen elektrikli Rocks ise şehir içi teslimatlara odaklanıyor. Opel, fuarda içten yanmalı motorlardan tamamen elektrikli seçeneklere uzanan farklı güç aktarma sistemlerini bir arada sunacak. Markanın Türkiye’deki ticari araç fiyat ve finansman koşullarınıeylül 2026 kampanyası haberimizdepaylaşmıştık. Fuar, 14 Eylül Pazartesi günü basın günüyle başlıyor. Opel modelleri ve Stellantis Pro One çözümleri, 14-20 Eylül tarihleri boyunca Hannover Messe’de 13’üncü salon C41 numaralı stantta ziyaret edilebilecek. 1899 yılında Almanya’da otomobil üretimine başlayan Opel, bugün Stellantis bünyesinde faaliyet gösteriyor. Çoklu enerji platformu yaklaşımıyla tüm modellerinde tamamen elektrikli sürüş seçeneği sunabilen ilk Alman otomobil üreticisi olan marka, Birleşik Krallık’taki kardeş markası Vauxhall ile birlikte 60’tan fazla ülkede satış yapıyor. Opel Vivaro Kamyonet’in Türkiye dışındaki pazarlarda hangi tarihte satışa sunulacağı ise henüz açıklanmadı. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin."
-        },
-        "post_text": "TOFAŞ ÜRETİMİ OPEL VİVARO KAMYONET IAA TRANSPORTATİON 2026’DA SAHNE ALIYOR\n\nTofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 407,
-        "story_card_title": "Tofaş Üretimi Vivaro Dünya Sahnesinde!",
-        "story_card_subtitle": "Tofaş'ın Bursa'da ürettiği Opel Vivaro Kamyonet, uluslararası arenaya çıkıyor. Araç, 14-20 Eylül tarihleri arasında Hannover'deki IAA Transportation 2026'da ilk kez sergilenecek. Bu önemli adım, Tofaş'ın üretim gücünü ve Türkiye'nin otomotivdeki yerini bir kez daha gözler önüne seriyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-10T01:55:50.158258+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor",
-          "link": "https://otomobilkolik.com/opel-vivaro-kamyonet-iaa-transportation-2026/",
-          "published": "2026-09-09T21:46:44+00:00",
-          "summary": "Tofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "smart_search",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-aliyor-iaa-kamyonet-opel-sahne-tofas-transportation-uretimi-vivaro",
-          "base_ai_score": 48,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 11,
-            "gundem_gucu": 10,
-            "paylasilabilirlik": 6
-          },
-          "score": 56,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tofaş üretimi olması yerel basında ilgi çekebilir ancak ticari araç odaklı ve 2026 gibi uzak bir tarihi kapsadığı için viral etkisi orta seviyede kalıyor.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Opel’in Türkiye’de Tofaş tarafından üretilen Vivaro Kamyonet modeli, 14-20 Eylül 2026 tarihlerinde Hannover’de düzenlenecek IAA Transportation 2026’da ilk kez uluslararası bir fuarda sergilenecek. Yaklaşık 1.200 kilogram taşıma kapasitesine sahip Opel Vivaro Kamyonet, Stellantis Pro One standında ziyaretçilerle buluşacak. Hafif ticari araç pazarının en büyük buluşmalarından biri olan IAA Transportation, bu yıl Türkiye’de üretilen bir modeli de ağırlıyor. Opel, fuarda küçük elektrikli şehir içi çözümlerinden büyük panelvanlara uzanan ürün gamını sergilerken, Bursa’da üretilen Vivaro Kamyonet markanın standındaki en dikkat çekici yerli imzayı taşıyacak. Stellantis’in Türkiye üretimine yaptığı yatırımlarıPeugeot Rifter’ın Bursa üretimi haberimizdede aktarmıştık. Vivaro Kamyonet, yaklaşık 1.200 kilogram taşıma kapasitesi ve yaklaşık 2.754 mm yükleme alanı uzunluğuyla farklı sektörlerin ihtiyaçlarına yönelik bir çözüm olarak konumlanıyor. Kasa yapısında çelik konstrüksiyon, alüminyum kasa kanatları ve dayanıklılığı artıran plywood kaplama kullanılıyor. Tabandaki 8 yükleme kancası, kasa altında sunulan 220 litrelik bagaj alanı, camlı ara bölme ve 2+1 oturma düzeni aracın günlük iş hayatındaki kullanım kabiliyetini artırıyor. Aynı platformu paylaşan ve yine Tofaş’ta üretilenFIAT Scudo Kamyonet’idaha önce haberleştirmiştik. Açık yükleme alanına üç taraftan erişilebilmesi, farklı malzemelerin kolay biçimde yüklenip boşaltılmasına olanak tanıyor. Bu yapısıyla model; lojistikten saha operasyonlarına, yapı ve inşaat sektöründen çeşitli hizmet alanlarına kadar geniş bir kullanım yelpazesine hitap ediyor. Opel, Vivaro’nun farklı üstyapı ve taşıma ihtiyaçlarına uyarlanabilen yapısını Hannover’de uluslararası ziyaretçilere gösterecek. Global ürün gamındaki Vivaro Kamyonet, iş odaklı yapısını standart donanım listesiyle tamamlıyor. Güvenlik tarafında Elektronik Stabilite Programı, ABS, Elektronik Fren Gücü Dağılımı, Yokuşta Kalkış Desteği, şerit takip sistemi, trafik işareti tespit sistemi, sürücü yorgunluk tespit sistemi, çarpışma uyarısı, acil durum fren sistemi ve lastik basıncı izleme sistemi bulunuyor. Konfor tarafında ise geri görüş kamerası, hız sabitleyici, klima, yağmur ve far sensörü, ısıtmalı ve katlanır yan aynalar, dijital gösterge paneli ile Bluetooth bağlantısı yer alıyor. Bu donanımların Türkiye’de sunulan versiyonda hangi seviyelerde standart olduğu ise ayrıca duyurulacak. Marka, fuarda Vivaro Kamyonet’in yanı sıra farklı ticari kullanım senaryolarına yönelik üç modeli daha sergileyecek. Movano Crew Cab ekip ve malzemenin birlikte taşındığı operasyonlara, Combo Tech kompakt ticari kullanıma, tamamen elektrikli Rocks ise şehir içi teslimatlara odaklanıyor. Opel, fuarda içten yanmalı motorlardan tamamen elektrikli seçeneklere uzanan farklı güç aktarma sistemlerini bir arada sunacak. Markanın Türkiye’deki ticari araç fiyat ve finansman koşullarınıeylül 2026 kampanyası haberimizdepaylaşmıştık. Fuar, 14 Eylül Pazartesi günü basın günüyle başlıyor. Opel modelleri ve Stellantis Pro One çözümleri, 14-20 Eylül tarihleri boyunca Hannover Messe’de 13’üncü salon C41 numaralı stantta ziyaret edilebilecek. 1899 yılında Almanya’da otomobil üretimine başlayan Opel, bugün Stellantis bünyesinde faaliyet gösteriyor. Çoklu enerji platformu yaklaşımıyla tüm modellerinde tamamen elektrikli sürüş seçeneği sunabilen ilk Alman otomobil üreticisi olan marka, Birleşik Krallık’taki kardeş markası Vauxhall ile birlikte 60’tan fazla ülkede satış yapıyor. Opel Vivaro Kamyonet’in Türkiye dışındaki pazarlarda hangi tarihte satışa sunulacağı ise henüz açıklanmadı. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin.",
-          "post_text_for_card": "TOFAŞ ÜRETİMİ OPEL VİVARO KAMYONET IAA TRANSPORTATİON 2026’DA SAHNE ALIYOR\n\nTofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "Tofaş Üretimi Vivaro Dünya Sahnesinde!",
-          "story_card_subtitle": "Tofaş'ın Bursa'da ürettiği Opel Vivaro Kamyonet, uluslararası arenaya çıkıyor. Araç, 14-20 Eylül tarihleri arasında Hannover'deki IAA Transportation 2026'da ilk kez sergilenecek. Bu önemli adım, Tofaş'ın üretim gücünü ve Türkiye'nin otomotivdeki yerini bir kez daha gözler önüne seriyor.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "TOFAŞ ÜRETİMİ OPEL VİVARO KAMYONET IAA TRANSPORTATİON 2026’DA SAHNE ALIYOR\n\nTofaş’ın Türkiye’de ürettiği Opel Vivaro Kamyonet, 14-20 Eylül’de Hannover’deki IAA Transportation 2026’da ilk kez uluslararası fuarda sergilenecek. Tofaş üretimi Opel Vivaro Kamyonet IAA Transportation 2026’da sahne alıyor yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "Tofaş Üretimi Vivaro Dünya Sahnesinde!",
-        "story_card_subtitle": "Tofaş'ın Bursa'da ürettiği Opel Vivaro Kamyonet, uluslararası arenaya çıkıyor. Araç, 14-20 Eylül tarihleri arasında Hannover'deki IAA Transportation 2026'da ilk kez sergilenecek. Bu önemli adım, Tofaş'ın üretim gücünü ve Türkiye'nin otomotivdeki yerini bir kez daha gözler önüne seriyor.",
-        "image_path": "/tmp/otoxtra_img_456whx_d.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_456whx_d.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-10T01:56:23.006964+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122178900494916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1377650741184926",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-10T01:57:09.666991+03:00"
+      "updated_at": null
     }
   }
 }
