@@ -1,66 +1,14 @@
 {
-  "run_id": "2026-09-11-02:42",
-  "status": "completed",
-  "started_at": "2026-09-11T02:42:22.771315+03:00",
-  "updated_at": "2026-09-11T02:44:27.233799+03:00",
+  "run_id": "2026-09-11-05:58",
+  "status": "error",
+  "started_at": "2026-09-11T05:58:40.308318+03:00",
+  "updated_at": "2026-09-11T05:59:28.857850+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Volkswagen Amarok Dark Label Tanıtıldı: İngiltere’de Satışa Çıktı",
-            "link": "https://otomobilkolik.com/volkswagen-amarok-dark-label-tanitildi/",
-            "published": "2026-09-10T21:16:47+00:00",
-            "summary": "Volkswagen, İngiltere'de Amarok Dark Label özel serisini tanıttı. 240 PS güç ve 4MOTION dört çeker sunan modelin fiyatı 47.870 sterlinden başlıyor. Volkswagen Amarok Dark Label Tanıtıldı: İngiltere’de Satışa Çıktı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "otomobilkolik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "amarok-dark-label-ngiltere-satisa-volkswagen"
-          },
-          {
-            "title": "Volvo XC40, EX40 ve EC40 Yenilendi: Google Gemini ve Yeni Güvenlik Donanımı",
-            "link": "https://otomobilkolik.com/volvo-40-serisi-yenilendi-google-gemini-guvenlik/",
-            "published": "2026-09-10T20:16:42+00:00",
-            "summary": "Volvo, en çok satan modelleri arasında yer alan XC40, EX40 ve EC40’ı kapsamlı bir güncellemeden geçirdi. Yenilenen 40… Volvo XC40, EX40 ve EC40 Yenilendi: Google Gemini ve Yeni Güvenlik Donanımı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "otomobilkolik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "donanimi-ec40-ex40-gemini-google-guvenlik-volvo-xc40-yenilendi"
-          },
-          {
-            "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-            "link": "https://otomobilkolik.com/bmw-ix5-hydrogen-testleri-uretim-hazirligi/",
-            "published": "2026-09-10T20:05:03+00:00",
-            "summary": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir… BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "otomobilkolik",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-gercek-hazirligi-hydrogen-ix5-kosullarinda-surus-test-uretim"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -179,253 +127,47 @@
           "_metrics": {
             "found": 93,
             "after_keyword": 57,
-            "after_time": 10,
-            "after_posted": 3,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 3
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 93,
           "after_keyword": 57,
-          "after_time": 10,
-          "after_posted": 3,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 3
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-11T02:43:16.340137+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-11T05:59:28.857850+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-          "link": "https://otomobilkolik.com/bmw-ix5-hydrogen-testleri-uretim-hazirligi/",
-          "published": "2026-09-10T20:05:03+00:00",
-          "summary": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir… BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-gercek-hazirligi-hydrogen-ix5-kosullarinda-surus-test-uretim",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 15,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Hidrojen teknolojisinin geleceği açısından sektörde merakla takip edilen bir konu, ancak henüz seri üretimde olmaması nedeniyle viral gücü sınırlı.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 4,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 14,
-          "benzersizlik": 15,
-          "gundem_gucu": 14,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Hidrojen teknolojisinin geleceği açısından sektörde merakla takip edilen bir konu, ancak henüz seri üretimde olmaması nedeniyle viral gücü sınırlı.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 14,
-              "benzersizlik": 15,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "Volvo XC40, EX40 ve EC40 Yenilendi: Google Gemini ve Yeni Güvenlik Donanımı",
-            "score": 67,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 14,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 6
-            }
-          },
-          {
-            "title": "Volkswagen Amarok Dark Label Tanıtıldı: İngiltere’de Satışa Çıktı",
-            "score": 46,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 6,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "Volvo XC40, EX40 ve EC40 Yenilendi: Google Gemini ve Yeni Güvenlik Donanımı",
-            "link": "https://otomobilkolik.com/volvo-40-serisi-yenilendi-google-gemini-guvenlik/",
-            "score": 67,
-            "score_reason": "ai_scored",
-            "source_name": "otomobilkolik",
-            "topic_fingerprint": "donanimi-ec40-ex40-gemini-google-guvenlik-volvo-xc40-yenilendi"
-          },
-          {
-            "title": "Volkswagen Amarok Dark Label Tanıtıldı: İngiltere’de Satışa Çıktı",
-            "link": "https://otomobilkolik.com/volkswagen-amarok-dark-label-tanitildi/",
-            "score": 46,
-            "score_reason": "ai_scored",
-            "source_name": "otomobilkolik",
-            "topic_fingerprint": "amarok-dark-label-ngiltere-satisa-volkswagen"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-11T02:43:19.199523+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-          "link": "https://otomobilkolik.com/bmw-ix5-hydrogen-testleri-uretim-hazirligi/",
-          "published": "2026-09-10T20:05:03+00:00",
-          "summary": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir… BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-gercek-hazirligi-hydrogen-ix5-kosullarinda-surus-test-uretim",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 15,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Hidrojen teknolojisinin geleceği açısından sektörde merakla takip edilen bir konu, ancak henüz seri üretimde olmaması nedeniyle viral gücü sınırlı.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1,
-          "full_text": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir test programından geçerken, üçüncü nesil yakıt hücresi sisteminin montaj süreci Münih’te yeni bir aşamaya girdi; BMW Group’un Avusturya’daki Steyr fabrikasında ise seri üretime hazırlık çalışmaları başladı. iX5 Hydrogen,geçtiğimiz aylarda tanıttığımız yeni nesil BMW X5 ailesininhidrojen yakıt hücreli üyesi. BMW, yeni X5’te elektrikli, plug-in hibrit, benzinli, dizel ve hidrojen yakıt hücreli seçenekleri aynı platformda bir araya getirmeyi planlıyor. Bugün paylaşılan güncelleme, bu beşinci güç ünitesinin seri üretime ne kadar yaklaştığını gösteriyor. Mevcut test programı, zorlu çevre ve kullanım koşullarında tüm sistemin doğrulanmasına odaklanıyor. Geliştirme ekipleri, yakıt hücresi sistemi, elektrik motoru, yüksek voltajlı batarya, BMW Hidrojen Düz Depolama sistemi ve yüksek voltaj sisteminin merkezi kontrol birimi olan Energy Master arasındaki uyumlu çalışmayı doğruluyor. Yenilikçi yüksek voltajlı batarya ve Energy Master, daha yüksek rejeneratif frenleme performansı sağlayarak sistemin genel verimliliğini artırıyor. Hedef, sürüş performansını standart BMW iX5 ile eşdeğer seviyeye taşımak; 0-100 km/s hızlanmanın 5 saniyenin altına inmesi hedefleniyor. BMW Group Hidrojenli Araçlar Birimi Başkanı Josef Hochreiter, “iX5 Hydrogen için hedefimiz net: Sheer Driving Pleasure’a sahip gerçek bir BMW” açıklamasını yaptı. Araç testleriyle eş zamanlı olarak, üçüncü nesil yakıt hücresi sisteminin bir sonraki prototip montaj aşaması Münih’teki Hidrojen Yetkinlik Merkezi’nde başladı. Bu aşamanın odağında test metodolojisinin kesinleştirilmesi ve doğrulanması ile sanayileşme hazırlıkları yer alıyor. Önceki prototip aşaması bileşenlerin üretilebilirliğine ve tedarikçilerin temel yeterlilik onayına odaklanmıştı. BMW Group Teknoloji Geliştirme ve Yakıt Hücresi Prototip Montajı Başkanı Claudia Stephan, her aşamanın süreçleri optimize etmelerine ve edindikleri deneyimi Steyr’deki ekiplerle paylaşmalarına yardımcı olduğunu belirtiyor. Yakıt hücresi sisteminin seri üretimi ileride Avusturya’daki BMW Group Steyr fabrikasında gerçekleştirilecek; fabrikada ilk test tezgahları ve üretim ekipmanları kurulmuş, çalışanların eğitimi kademeli olarak sürüyor. Sistemin bazı bileşenleri ise BMW’nin Landshut tesisinde üretiliyor. Bu üçüncü nesil yakıt hücresi sistemi,Toyota’nın ağır ticari araçlar için Scania ile test ettiği sistemle aynı kökten geliyor; BMW ve Toyota, bu teknolojiyi ortaklaşa geliştiriyor. İki markanın hidrojen dışındaki alternatif yakıt iş birliği iseyenilenebilir yakıt testindesürüyor. BMW, iX5 Hydrogen için WLTP döngüsünde 750 kilometreye kadar menzil hedeflediğini açıklıyor. Dolum süresinin ise 5 dakikanın altında kalması planlanıyor. Şirket, hidrojen teknolojisini batarya elektrikli araçların yerine değil onları tamamlayan bir seçenek olarak konumlandırıyor; yüksek menzil, kısa dolum süresi ve geniş kullanım esnekliği gerektiren durumlarda devreye girmesi hedefleniyor. *Araç henüz geliştirme aşamasındaki bir prototip olduğu için bağlayıcı WLTP tüketim ve menzil rakamları resmi olarak açıklanmadı. BMW, pilot filonun küresel çapta yürütülen testlerini başarıyla tamamladıktan sonra iX5 Hydrogen’i BMW Group’un piyasaya sürülecek ilk hidrojen yakıt hücreli seri üretim modeli yapmayı planlıyor. Bu adımla birlikte yeni X5 ailesi, müşterilere batarya elektrikli, plug-in hibrit, benzinli, dizel ve hidrojen yakıt hücreli motor seçenekleri arasında tercih yapma imkânı sunacak. Projenin Almanya Federal Ulaştırma Bakanlığı (BMV) tarafından HyPowerDrive kapsamında, IPCEI Hy2Move çerçevesinde desteklendiğini de belirtelim; federal hükümet 191 milyon avro, Bavyera eyaleti ise 82 milyon avroluk finansman sağlıyor. BMW, iX5 Hydrogen’in seri üretim tarihine, Türkiye dahil hangi pazarlarda satışa sunulacağına ya da fiyatlandırmaya dair henüz bir açıklama yapmadı. Model hâlâ prototip ve endüstrileşme hazırlığı aşamasında olduğu için bu detayların üretim takvimine yaklaşıldıkça netleşmesi bekleniyor. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin."
-        },
-        "post_text": "BMW iX5 Hydrogen, seri üretime hazırlanıyor. Asıl mesele, markanın hem elektrikli hem de hidrojenli araçları aynı anda geliştirmesi değil.\n\nBurada konuşulması gereken, tek bir enerji türüne takılıp kalmanın anlamsızlığı. BMW, geleceğin tek bir yakıtta olmadığını çoktan anladı.\n\nDiğerleri hâlâ hangi elektrikli aracın daha iyi menzil sunduğunu tartışırken, BMW çoktan bir sonraki adımı attı.",
-        "post_text_length": 391,
-        "story_card_title": "BMW Geleceği Hızla Yakalıyor!",
-        "story_card_subtitle": "BMW, ilk seri üretim hidrojenli modeli iX5 Hydrogen ile geliştirme sürecinde önemli bir eşiği geçti. Kapsamlı testlerle gerçek sürüş koşullarında performansı kanıtlanan prototipler, seri üretim için hazır. Marka, tek bir enerji türüne bağlı kalmadan geleceğin ulaşım çözümlerini aynı anda geliştiriyor. Diğerleri elektrikli araç menzilini tartışırken, BMW bir adım öteye gidiyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-11T02:43:22.285800+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı",
-          "link": "https://otomobilkolik.com/bmw-ix5-hydrogen-testleri-uretim-hazirligi/",
-          "published": "2026-09-10T20:05:03+00:00",
-          "summary": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir… BMW iX5 Hydrogen: Gerçek Sürüş Koşullarında Test ve Üretim Hazırlığı yazısı ilk önce otomobilkolik üzerinde ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "smart_search",
-          "source_name": "otomobilkolik",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "bmw-gercek-hazirligi-hydrogen-ix5-kosullarinda-surus-test-uretim",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 14,
-            "benzersizlik": 15,
-            "gundem_gucu": 14,
-            "paylasilabilirlik": 8
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Hidrojen teknolojisinin geleceği açısından sektörde merakla takip edilen bir konu, ancak henüz seri üretimde olmaması nedeniyle viral gücü sınırlı.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1,
-          "full_text": "BMW’nin ilk seri üretim hidrojenli modeli olacak iX5 Hydrogen, geliştirme sürecinde yeni bir eşiği geçti. Prototipler kapsamlı bir test programından geçerken, üçüncü nesil yakıt hücresi sisteminin montaj süreci Münih’te yeni bir aşamaya girdi; BMW Group’un Avusturya’daki Steyr fabrikasında ise seri üretime hazırlık çalışmaları başladı. iX5 Hydrogen,geçtiğimiz aylarda tanıttığımız yeni nesil BMW X5 ailesininhidrojen yakıt hücreli üyesi. BMW, yeni X5’te elektrikli, plug-in hibrit, benzinli, dizel ve hidrojen yakıt hücreli seçenekleri aynı platformda bir araya getirmeyi planlıyor. Bugün paylaşılan güncelleme, bu beşinci güç ünitesinin seri üretime ne kadar yaklaştığını gösteriyor. Mevcut test programı, zorlu çevre ve kullanım koşullarında tüm sistemin doğrulanmasına odaklanıyor. Geliştirme ekipleri, yakıt hücresi sistemi, elektrik motoru, yüksek voltajlı batarya, BMW Hidrojen Düz Depolama sistemi ve yüksek voltaj sisteminin merkezi kontrol birimi olan Energy Master arasındaki uyumlu çalışmayı doğruluyor. Yenilikçi yüksek voltajlı batarya ve Energy Master, daha yüksek rejeneratif frenleme performansı sağlayarak sistemin genel verimliliğini artırıyor. Hedef, sürüş performansını standart BMW iX5 ile eşdeğer seviyeye taşımak; 0-100 km/s hızlanmanın 5 saniyenin altına inmesi hedefleniyor. BMW Group Hidrojenli Araçlar Birimi Başkanı Josef Hochreiter, “iX5 Hydrogen için hedefimiz net: Sheer Driving Pleasure’a sahip gerçek bir BMW” açıklamasını yaptı. Araç testleriyle eş zamanlı olarak, üçüncü nesil yakıt hücresi sisteminin bir sonraki prototip montaj aşaması Münih’teki Hidrojen Yetkinlik Merkezi’nde başladı. Bu aşamanın odağında test metodolojisinin kesinleştirilmesi ve doğrulanması ile sanayileşme hazırlıkları yer alıyor. Önceki prototip aşaması bileşenlerin üretilebilirliğine ve tedarikçilerin temel yeterlilik onayına odaklanmıştı. BMW Group Teknoloji Geliştirme ve Yakıt Hücresi Prototip Montajı Başkanı Claudia Stephan, her aşamanın süreçleri optimize etmelerine ve edindikleri deneyimi Steyr’deki ekiplerle paylaşmalarına yardımcı olduğunu belirtiyor. Yakıt hücresi sisteminin seri üretimi ileride Avusturya’daki BMW Group Steyr fabrikasında gerçekleştirilecek; fabrikada ilk test tezgahları ve üretim ekipmanları kurulmuş, çalışanların eğitimi kademeli olarak sürüyor. Sistemin bazı bileşenleri ise BMW’nin Landshut tesisinde üretiliyor. Bu üçüncü nesil yakıt hücresi sistemi,Toyota’nın ağır ticari araçlar için Scania ile test ettiği sistemle aynı kökten geliyor; BMW ve Toyota, bu teknolojiyi ortaklaşa geliştiriyor. İki markanın hidrojen dışındaki alternatif yakıt iş birliği iseyenilenebilir yakıt testindesürüyor. BMW, iX5 Hydrogen için WLTP döngüsünde 750 kilometreye kadar menzil hedeflediğini açıklıyor. Dolum süresinin ise 5 dakikanın altında kalması planlanıyor. Şirket, hidrojen teknolojisini batarya elektrikli araçların yerine değil onları tamamlayan bir seçenek olarak konumlandırıyor; yüksek menzil, kısa dolum süresi ve geniş kullanım esnekliği gerektiren durumlarda devreye girmesi hedefleniyor. *Araç henüz geliştirme aşamasındaki bir prototip olduğu için bağlayıcı WLTP tüketim ve menzil rakamları resmi olarak açıklanmadı. BMW, pilot filonun küresel çapta yürütülen testlerini başarıyla tamamladıktan sonra iX5 Hydrogen’i BMW Group’un piyasaya sürülecek ilk hidrojen yakıt hücreli seri üretim modeli yapmayı planlıyor. Bu adımla birlikte yeni X5 ailesi, müşterilere batarya elektrikli, plug-in hibrit, benzinli, dizel ve hidrojen yakıt hücreli motor seçenekleri arasında tercih yapma imkânı sunacak. Projenin Almanya Federal Ulaştırma Bakanlığı (BMV) tarafından HyPowerDrive kapsamında, IPCEI Hy2Move çerçevesinde desteklendiğini de belirtelim; federal hükümet 191 milyon avro, Bavyera eyaleti ise 82 milyon avroluk finansman sağlıyor. BMW, iX5 Hydrogen’in seri üretim tarihine, Türkiye dahil hangi pazarlarda satışa sunulacağına ya da fiyatlandırmaya dair henüz bir açıklama yapmadı. Model hâlâ prototip ve endüstrileşme hazırlığı aşamasında olduğu için bu detayların üretim takvimine yaklaşıldıkça netleşmesi bekleniyor. E-posta adresiniz yayınlanmayacak.Gerekli alanlar*ile işaretlenmişlerdir Daha sonraki yorumlarımda kullanılması için adım, e-posta adresim ve site adresim bu tarayıcıya kaydedilsin.",
-          "post_text_for_card": "BMW iX5 Hydrogen, seri üretime hazırlanıyor. Asıl mesele, markanın hem elektrikli hem de hidrojenli araçları aynı anda geliştirmesi değil.\n\nBurada konuşulması gereken, tek bir enerji türüne takılıp kalmanın anlamsızlığı. BMW, geleceğin tek bir yakıtta olmadığını çoktan anladı.\n\nDiğerleri hâlâ hangi elektrikli aracın daha iyi menzil sunduğunu tartışırken, BMW çoktan bir sonraki adımı attı.",
-          "story_card_title": "BMW Geleceği Hızla Yakalıyor!",
-          "story_card_subtitle": "BMW, ilk seri üretim hidrojenli modeli iX5 Hydrogen ile geliştirme sürecinde önemli bir eşiği geçti. Kapsamlı testlerle gerçek sürüş koşullarında performansı kanıtlanan prototipler, seri üretim için hazır. Marka, tek bir enerji türüne bağlı kalmadan geleceğin ulaşım çözümlerini aynı anda geliştiriyor. Diğerleri elektrikli araç menzilini tartışırken, BMW bir adım öteye gidiyor.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "BMW iX5 Hydrogen, seri üretime hazırlanıyor. Asıl mesele, markanın hem elektrikli hem de hidrojenli araçları aynı anda geliştirmesi değil.\n\nBurada konuşulması gereken, tek bir enerji türüne takılıp kalmanın anlamsızlığı. BMW, geleceğin tek bir yakıtta olmadığını çoktan anladı.\n\nDiğerleri hâlâ hangi elektrikli aracın daha iyi menzil sunduğunu tartışırken, BMW çoktan bir sonraki adımı attı.",
-        "story_card_title": "BMW Geleceği Hızla Yakalıyor!",
-        "story_card_subtitle": "BMW, ilk seri üretim hidrojenli modeli iX5 Hydrogen ile geliştirme sürecinde önemli bir eşiği geçti. Kapsamlı testlerle gerçek sürüş koşullarında performansı kanıtlanan prototipler, seri üretim için hazır. Marka, tek bir enerji türüne bağlı kalmadan geleceğin ulaşım çözümlerini aynı anda geliştiriyor. Diğerleri elektrikli araç menzilini tartışırken, BMW bir adım öteye gidiyor.",
-        "image_path": "/tmp/otoxtra_img_xgh7zqdy.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_xgh7zqdy.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-11T02:43:33.012319+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122179016090916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1763892124616101",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-11T02:44:27.233799+03:00"
+      "updated_at": null
     }
   }
 }
