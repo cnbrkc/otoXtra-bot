@@ -1,14 +1,68 @@
 {
-  "run_id": "2026-09-11-05:58",
-  "status": "error",
-  "started_at": "2026-09-11T05:58:40.308318+03:00",
-  "updated_at": "2026-09-11T05:59:28.857850+03:00",
+  "run_id": "2026-09-11-10:56",
+  "status": "completed",
+  "started_at": "2026-09-11T10:56:48.119785+03:00",
+  "updated_at": "2026-09-11T10:58:37.551567+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+            "link": "https://tr.motor1.com/news/807879/hyundai-tucson-n-350bg-iddia/",
+            "published": "2026-09-11T07:00:00+00:00",
+            "summary": "İddiaya göre güç odaklı bir hibrit motor taşıyacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "350-donusturebilir-hyundai-lik-performans-sine-suv-tucson"
+          },
+          {
+            "title": "Yeni Renault Niagara Tanıtıldı: Yeni Kompakt Pickup Modeli",
+            "link": "https://shiftdelete.net/renault-niagara-tanitildi",
+            "published": "2026-09-11T06:00:22+00:00",
+            "summary": "Renault'nun yeni kompakt pickup modeli Niagara, şık tasarımı ve Google destekli bilgi-eğlence sistemiyle otomobil dünyasına giriş yaptı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "kompakt-modeli-niagara-pickup-renault"
+          },
+          {
+            "title": "Arabada Enjeksiyonu Kontrol Ettirin Ne Demek?",
+            "link": "https://shiftdelete.net/enjeksiyonu-kontrol-ettirin-ne-demek",
+            "published": "2026-09-11T03:08:23+00:00",
+            "summary": "Arabada “Enjeksiyonu kontrol ettirin” uyarısı, motor kontrol ünitesinin yakıt enjeksiyonu veya motorun çalışmasıyla ilgili bir problem olduğu anlamına gelir. En basit şekilde ifade edecek olursak; yeterli hava ve yakıt karışımı bulunmayan araçlarda enjeksiyon arızası muhtemeldir. Araç yeterli hava ve yakıt karışımına ulaşamazsa, enjeksiyonu kontrol ettirin uyarısı sık sık görülebilir. Ancak uyarının yanması doğrudan enjektörlerin arızalı […]",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "arabada-demek-enjeksiyonu-ettirin-kontrol"
+          }
+        ],
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -120,54 +174,277 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 3,
+            "count": 4,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 93,
-            "after_keyword": 57,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 94,
+            "after_keyword": 56,
+            "after_time": 9,
+            "after_posted": 3,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
-          "found": 93,
-          "after_keyword": 57,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 94,
+          "after_keyword": 56,
+          "after_time": 9,
+          "after_posted": 3,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 3
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-09-11T05:59:28.857850+03:00"
+      "error": null,
+      "updated_at": "2026-09-11T10:57:39.672634+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+          "link": "https://tr.motor1.com/news/807879/hyundai-tucson-n-350bg-iddia/",
+          "published": "2026-09-11T07:00:00+00:00",
+          "summary": "İddiaya göre güç odaklı bir hibrit motor taşıyacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "350-donusturebilir-hyundai-lik-performans-sine-suv-tucson",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yüksek performanslı SUV beklentisi otomobil tutkunları arasında heyecan yaratır ve sosyal medyada etkileşim çeker.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 71,
+        "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 14,
+          "gundem_gucu": 12,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yüksek performanslı SUV beklentisi otomobil tutkunları arasında heyecan yaratır ve sosyal medyada etkileşim çeker.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+            "score": 71,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 14,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "Yeni Renault Niagara Tanıtıldı: Yeni Kompakt Pickup Modeli",
+            "score": 63,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 12,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 6
+            }
+          },
+          {
+            "title": "Arabada Enjeksiyonu Kontrol Ettirin Ne Demek?",
+            "score": 30,
+            "score_breakdown": {
+              "guncellik": 9,
+              "etkilesim_potansiyeli": 5,
+              "benzersizlik": 3,
+              "gundem_gucu": 5,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 3,
+        "cooldown_candidates": [
+          {
+            "title": "Yeni Renault Niagara Tanıtıldı: Yeni Kompakt Pickup Modeli",
+            "link": "https://shiftdelete.net/renault-niagara-tanitildi",
+            "score": 63,
+            "score_reason": "ai_scored",
+            "source_name": "ShiftDelete Otomobil",
+            "topic_fingerprint": "kompakt-modeli-niagara-pickup-renault"
+          },
+          {
+            "title": "Arabada Enjeksiyonu Kontrol Ettirin Ne Demek?",
+            "link": "https://shiftdelete.net/enjeksiyonu-kontrol-ettirin-ne-demek",
+            "score": 30,
+            "score_reason": "ai_scored",
+            "source_name": "ShiftDelete Otomobil",
+            "topic_fingerprint": "arabada-demek-enjeksiyonu-ettirin-kontrol"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-11T10:57:42.064855+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+          "link": "https://tr.motor1.com/news/807879/hyundai-tucson-n-350bg-iddia/",
+          "published": "2026-09-11T07:00:00+00:00",
+          "summary": "İddiaya göre güç odaklı bir hibrit motor taşıyacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "350-donusturebilir-hyundai-lik-performans-sine-suv-tucson",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yüksek performanslı SUV beklentisi otomobil tutkunları arasında heyecan yaratır ve sosyal medyada etkileşim çeker.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Hyundai son dönemde ivme kazanmış durumda. Koreli üretici, geniş bir model yelpazesi sunuyor; hibrit modeller markanın birçok satış rekoruna ulaşmasına öncülük ediyor. Yeni model atağının içinde, markanın en çok satan modeli olan tamamen yeni Tucson da yer alacak. Yeni bir rapora göre bu model, daha güçlü birN versiyonunada kavuşacak. Auto Express, Hyundai’nin bir Tucson N üzerinde çalıştığını bildiriyor. Yüksek performanslı SUV, yakıt verimliliğinden ödün vermeden gücü artıran bir hibrit güç ünitesine sahip olacak. Hyundai N Management Group Başkan Yardımcısı Joon Park, yayına şu açıklamayı yaptı: 'Kendimizi elektrikli araçlarla sınırlamıyoruz. İçten yanmalı otomobillerde de daha ileri gideceğiz; bu yolculuğumuzun sonu değil. Size tam olarak ne olduğunu söyleyemem ama daha hafif, daha çevik, daha kıvrak ve daha heyecan verici... Yöneldiğimiz temel unsurlar bunlar.' Hyundai'ninTucson N’de hangi motoru kullanacağı henüz net değil. Mevcut modelden daha büyük olacak yeni nesil crossover, biri hibrit olmak üzere 2 farklı turboşarjlı 1.6 litrelik motorla sunuluyor. Hibrit versiyon242 bggüç ve380 Nmtork üretiyor. Performans versiyonunun muhtemelen300 bg veya üzeribir güç sunması bekleniyor; hatta350 bgseviyesine kadar çıkması mümkün. Zira yeniHyundai Palisade Hybrid, iki elektromotoruyla birlikte toplam320 bggüç üreten 2.5 litrelik 4 silindirli bir hibrit sisteme sahip; bu da kulağa oldukça rekabetçi geliyor. MevcutTucsonbile 2.5 litrelik 4 silindirli bir motoru sığdıracak alana sahip. Yeni model daha büyük olduğu için Hyundai’ye, eğer bu güç ünitesini tercih ederse, ek hibrit donanımlar için daha fazla alan sağlayacaktır. Hyundai’nin hibrit modelleri şu sıralar oldukça güçlü satış rakamlarına ulaşıyor. Bu nedenle hâlâ yakıt verimliliğini koruyan performans odaklı bir Tucson, markanın mevcut planlarıyla uyumlu görünüyor. Üretici şu anda hibritlerini 2 farklı verimlilik stratejisine göre ayarlıyor ancak N modellerinde bu yaklaşım değişecek. Park’a göre Hyundai’nin N otomobillerindeki hibrit sistemler daha fazla güç sunmaya odaklanacak. Üreticinin ayrıca adaptif süspansiyon ve daha güçlü frenler kullanması da muhtemel. Hyundai Tucson N için yeşil ışık yakarsa, Toyota RAV4 GR Sport ile rekabet edecek. Bu model, toplam320 bggüç üreten 2.5 litrelik şarj edilebilir hibrit motora sahip; bu da onu Hyundai ile doğrudan karşı karşıya getirebilir. Dodge da GLH adını taşıyan yeni bir crossover geliştiriyor ve bu modelin bir SRT versiyonu sunması planlanıyor. Yeni Dodge’un kolaylıkla300 bg üzerigüç sunması ve gelecekteki bir karşılaştırma testinde Tucson N’in karşısına çıkması mümkün. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "HYUNDAİ, TUCSON'U 350 BG'LİK BİR PERFORMANS SUV'SİNE DÖNÜŞTÜREBİLİR\n\nİddiaya göre güç odaklı bir hibrit motor taşıyacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 175,
+        "story_card_title": "Tucson, 350 BG ile SUV sınıfına meydan okuyor!",
+        "story_card_subtitle": "Hyundai, sevilen SUV modeli Tucson'u performans odaklı bir canavara dönüştürmeye hazırlanıyor. İddialara göre 350 beygir gücünde hibrit bir motorla gelecek olan bu yeni model, SUV segmentindeki dengeleri değiştirebilir. Bu hamle, Hyundai'nin performans otomobilleri konusundaki iddialı duruşunu bir kez daha gözler önüne seriyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-11T10:57:46.638054+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Hyundai, Tucson'u 350 bg'lik bir performans SUV'sine dönüştürebilir",
+          "link": "https://tr.motor1.com/news/807879/hyundai-tucson-n-350bg-iddia/",
+          "published": "2026-09-11T07:00:00+00:00",
+          "summary": "İddiaya göre güç odaklı bir hibrit motor taşıyacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/pbJVyo/s3/2027-hyundai-tucson.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "350-donusturebilir-hyundai-lik-performans-sine-suv-tucson",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 7
+          },
+          "score": 71,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yüksek performanslı SUV beklentisi otomobil tutkunları arasında heyecan yaratır ve sosyal medyada etkileşim çeker.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Hyundai son dönemde ivme kazanmış durumda. Koreli üretici, geniş bir model yelpazesi sunuyor; hibrit modeller markanın birçok satış rekoruna ulaşmasına öncülük ediyor. Yeni model atağının içinde, markanın en çok satan modeli olan tamamen yeni Tucson da yer alacak. Yeni bir rapora göre bu model, daha güçlü birN versiyonunada kavuşacak. Auto Express, Hyundai’nin bir Tucson N üzerinde çalıştığını bildiriyor. Yüksek performanslı SUV, yakıt verimliliğinden ödün vermeden gücü artıran bir hibrit güç ünitesine sahip olacak. Hyundai N Management Group Başkan Yardımcısı Joon Park, yayına şu açıklamayı yaptı: 'Kendimizi elektrikli araçlarla sınırlamıyoruz. İçten yanmalı otomobillerde de daha ileri gideceğiz; bu yolculuğumuzun sonu değil. Size tam olarak ne olduğunu söyleyemem ama daha hafif, daha çevik, daha kıvrak ve daha heyecan verici... Yöneldiğimiz temel unsurlar bunlar.' Hyundai'ninTucson N’de hangi motoru kullanacağı henüz net değil. Mevcut modelden daha büyük olacak yeni nesil crossover, biri hibrit olmak üzere 2 farklı turboşarjlı 1.6 litrelik motorla sunuluyor. Hibrit versiyon242 bggüç ve380 Nmtork üretiyor. Performans versiyonunun muhtemelen300 bg veya üzeribir güç sunması bekleniyor; hatta350 bgseviyesine kadar çıkması mümkün. Zira yeniHyundai Palisade Hybrid, iki elektromotoruyla birlikte toplam320 bggüç üreten 2.5 litrelik 4 silindirli bir hibrit sisteme sahip; bu da kulağa oldukça rekabetçi geliyor. MevcutTucsonbile 2.5 litrelik 4 silindirli bir motoru sığdıracak alana sahip. Yeni model daha büyük olduğu için Hyundai’ye, eğer bu güç ünitesini tercih ederse, ek hibrit donanımlar için daha fazla alan sağlayacaktır. Hyundai’nin hibrit modelleri şu sıralar oldukça güçlü satış rakamlarına ulaşıyor. Bu nedenle hâlâ yakıt verimliliğini koruyan performans odaklı bir Tucson, markanın mevcut planlarıyla uyumlu görünüyor. Üretici şu anda hibritlerini 2 farklı verimlilik stratejisine göre ayarlıyor ancak N modellerinde bu yaklaşım değişecek. Park’a göre Hyundai’nin N otomobillerindeki hibrit sistemler daha fazla güç sunmaya odaklanacak. Üreticinin ayrıca adaptif süspansiyon ve daha güçlü frenler kullanması da muhtemel. Hyundai Tucson N için yeşil ışık yakarsa, Toyota RAV4 GR Sport ile rekabet edecek. Bu model, toplam320 bggüç üreten 2.5 litrelik şarj edilebilir hibrit motora sahip; bu da onu Hyundai ile doğrudan karşı karşıya getirebilir. Dodge da GLH adını taşıyan yeni bir crossover geliştiriyor ve bu modelin bir SRT versiyonu sunması planlanıyor. Yeni Dodge’un kolaylıkla300 bg üzerigüç sunması ve gelecekteki bir karşılaştırma testinde Tucson N’in karşısına çıkması mümkün. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "HYUNDAİ, TUCSON'U 350 BG'LİK BİR PERFORMANS SUV'SİNE DÖNÜŞTÜREBİLİR\n\nİddiaya göre güç odaklı bir hibrit motor taşıyacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Tucson, 350 BG ile SUV sınıfına meydan okuyor!",
+          "story_card_subtitle": "Hyundai, sevilen SUV modeli Tucson'u performans odaklı bir canavara dönüştürmeye hazırlanıyor. İddialara göre 350 beygir gücünde hibrit bir motorla gelecek olan bu yeni model, SUV segmentindeki dengeleri değiştirebilir. Bu hamle, Hyundai'nin performans otomobilleri konusundaki iddialı duruşunu bir kez daha gözler önüne seriyor.",
+          "image_sources": [
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/pbJVyo/s1/2027-hyundai-tucson.jpg",
+            "https://cdn.motor1.com/images/mgl/pbJVyo/s1/4x3/2027-hyundai-tucson.webp",
+            "https://cdn.motor1.com/images/mgl/vx8REv/s3/2027-hyundai-tucson.jpg",
+            "https://cdn.motor1.com/images/mgl/zxJPZL/s3/2027-hyundai-tucson.jpg"
+          ]
+        },
+        "post_text": "HYUNDAİ, TUCSON'U 350 BG'LİK BİR PERFORMANS SUV'SİNE DÖNÜŞTÜREBİLİR\n\nİddiaya göre güç odaklı bir hibrit motor taşıyacak.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Tucson, 350 BG ile SUV sınıfına meydan okuyor!",
+        "story_card_subtitle": "Hyundai, sevilen SUV modeli Tucson'u performans odaklı bir canavara dönüştürmeye hazırlanıyor. İddialara göre 350 beygir gücünde hibrit bir motorla gelecek olan bu yeni model, SUV segmentindeki dengeleri değiştirebilir. Bu hamle, Hyundai'nin performans otomobilleri konusundaki iddialı duruşunu bir kez daha gözler önüne seriyor.",
+        "image_path": "/tmp/otoxtra_img_596p5kfk.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_596p5kfk.jpg",
+          "/tmp/otoxtra_img_w4rmp32j.jpg",
+          "/tmp/otoxtra_img_7jobsnrh.jpg",
+          "/tmp/otoxtra_img_o_4zvq07.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-11T10:57:52.363021+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122179056248916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17982925266099317",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2275372036615574",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-11T10:58:37.551567+03:00"
     }
   }
 }
