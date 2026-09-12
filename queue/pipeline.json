@@ -1,51 +1,14 @@
 {
-  "run_id": "2026-09-12-21:56",
-  "status": "completed",
-  "started_at": "2026-09-12T21:56:18.148468+03:00",
-  "updated_at": "2026-09-12T21:59:59.052037+03:00",
+  "run_id": "2026-09-13-00:15",
+  "status": "error",
+  "started_at": "2026-09-13T00:15:36.892010+03:00",
+  "updated_at": "2026-09-13T00:16:23.289836+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Motorola Razr Fold için 3D cam ve kırışıksız ekran planı gündemde",
-            "link": "https://www.donanimhaber.com/motorola-razr-fold-icin-3d-cam-ve-kirisiksiz-ekran-plani-gundemde--210397",
-            "published": "2026-09-12T17:00:00+00:00",
-            "summary": "Motorola Razr Fold için sızdırılan konsept çizimleri, 3D cam ve çerçevesiz kapak ekranı hedefini ortaya koyarken kırışıksız iç ekran planına da işaret ediyor. İşte detaylar:",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210397/1200x675motorola-razr-fold-icin-3d-cam-ve-kirisiksiz-ekran-plani-gundemde.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210397/1200x675motorola-razr-fold-icin-3d-cam-ve-kirisiksiz-ekran-plani-gundemde.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210397/1200x675motorola-razr-fold-icin-3d-cam-ve-kirisiksiz-ekran-plani-gundemde.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cam-ekran-fold-gundemde-kirisiksiz-motorola-plani-razr"
-          },
-          {
-            "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-            "link": "https://shiftdelete.net/volvo-es90-turkiye-satisi",
-            "published": "2026-09-12T16:00:23+00:00",
-            "summary": "Yeni elektrikli Volvo sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. İşte 800V mimarisi ve yüksek menzil sunan aracın detayları.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "elektrikli-es90-geliyor-sedani-turkiye-volvo"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -66,9 +29,9 @@
             "attempts": 1
           },
           "Log": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='www.log.com.tr', port=443): Read timed out. (read timeout=20)",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1
           },
           "Motor1 TR": {
@@ -90,9 +53,9 @@
             "attempts": 1
           },
           "LogDergisi": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='www.log.com.tr', port=443): Read timed out. (read timeout=20)",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1
           },
           "TeknoTags": {
@@ -157,252 +120,54 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 6,
+            "count": 5,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 76,
-            "after_keyword": 52,
-            "after_time": 2,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "found": 95,
+            "after_keyword": 60,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 76,
-          "after_keyword": 52,
-          "after_time": 2,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "found": 95,
+          "after_keyword": 60,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-12T21:59:13.318700+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-13T00:16:23.289836+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-          "link": "https://shiftdelete.net/volvo-es90-turkiye-satisi",
-          "published": "2026-09-12T16:00:23+00:00",
-          "summary": "Yeni elektrikli Volvo sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. İşte 800V mimarisi ve yüksek menzil sunan aracın detayları.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-es90-geliyor-sedani-turkiye-volvo",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin Türkiye pazarına gelecek olması otomotiv meraklıları ve potansiyel alıcılar için ilgi çekici ve paylaşılabilir bir gelişme",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 12,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yeni bir elektrikli modelin Türkiye pazarına gelecek olması otomotiv meraklıları ve potansiyel alıcılar için ilgi çekici ve paylaşılabilir bir gelişme",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Motorola Razr Fold için 3D cam ve kırışıksız ekran planı gündemde",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 10,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Motorola Razr Fold için 3D cam ve kırışıksız ekran planı gündemde",
-            "link": "https://www.donanimhaber.com/motorola-razr-fold-icin-3d-cam-ve-kirisiksiz-ekran-plani-gundemde--210397",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "cam-ekran-fold-gundemde-kirisiksiz-motorola-plani-razr"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-12T21:59:15.227614+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-          "link": "https://shiftdelete.net/volvo-es90-turkiye-satisi",
-          "published": "2026-09-12T16:00:23+00:00",
-          "summary": "Yeni elektrikli Volvo sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. İşte 800V mimarisi ve yüksek menzil sunan aracın detayları.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-es90-geliyor-sedani-turkiye-volvo",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin Türkiye pazarına gelecek olması otomotiv meraklıları ve potansiyel alıcılar için ilgi çekici ve paylaşılabilir bir gelişme",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Volvo Türkiye, sosyal medya platformu Instagram üzerinden paylaştığı reklamlar ileyeni elektrikli Volvo sedanmodeli ES90’ın çok yakında Türkiye’de satışa sunulacağını duyurdu. Bu gelişme, markanın elektrikli araç portföyünü genişletme stratejisinin önemli bir parçası olarak dikkat çekiyor. Henüz Türkiye fiyatı resmi olarak açıklanmayan ES90, modern tasarım çizgileriyle dikkatleri üzerine çekiyor. Özellikle arka camın yanlarına konumlandırılan büyük LED aydınlatma grubu, aracın dış tasarımındaki en belirgin detaylardan biri olarak öne çıkıyor. ES90, Volvo’nun SPA2 platformunu temel alarak geliştirilen bir model olarak karşımıza çıkıyor. Araç, 800V mimarisi sayesinde oldukça hızlı şarj imkanları sunuyor ve 350 kW güç sağlayabilen istasyonlarda sadece 10 dakikalık şarj ile 300 kilometre menzil kazanabiliyor. Modelin üç farklı versiyonu bulunuyor ve her biri farklı performans ihtiyaçlarına hitap ediyor. Tek motorlu ve arkadan çekişli versiyon, 245 beygir güç üreten motoru ve 92 kWh bataryasıyla yaklaşık 640 kilometre menzil vadediyor. Daha fazla güç arayanlar için sunulan çift motorlu versiyon ise ön ve arka akslarda bulunan motorlarıyla toplam 442 beygir güç üretiyor. 106 kWh batarya kapasitesine sahip bu seçenek, yaklaşık 700 kilometre menzil sunarak uzun yolculuklarda kullanıcılarına kolaylık sağlıyor. Serinin en üstünde ise ES90 Twin Motor Performance versiyonu yer alıyor. 106 kWh bataryasıyla 700 kilometre menzil sunmaya devam eden bu model, toplam 670 beygir güç üreterek 0’dan 100 km/s hıza sadece 3,9 saniyede ulaşabiliyor. Aracın iç mekanında, yeni nesil Volvo modellerinden aşina olduğumuz çift ekranlı güncel konsol tasarımı yer alıyor. Ses deneyimi konusunda iddialı olan sedan, 25 hoparlörlü Bowers & Wilkins stereo ses sistemiyle donatılmış durumda. Yazılım tarafında ise Google’ın araçlar için özel olarak geliştirdiği Android sürümü temel alınıyor. Bu sistem, kullanıcıların araç içindeki dijital deneyimini daha akıcı ve entegre bir hale getirmeyi amaçlıyor. Batarya güvenliği ve verimliliği için Breathe Battery Technologies tarafından sağlanan özel bir yönetim yazılımı kullanılıyor. Ayrıca araç, yüksek ısıya karşı özel olarak tasarlanmış yeni nesil bir altyapıyla destekleniyor. Sürdürülebilirlik odaklı üretim anlayışıyla geliştirilen ES90, geri dönüştürülmüş materyallerden faydalanıyor. Üretim sürecinde alüminyumun yüzde 29’u, polimerlerin yüzde 16’sı ve çeliğin yüzde 18’i geri dönüştürülmüş kaynaklardan elde ediliyor. Güvenlik ve sürüş destek sistemleri için iki adet Nvidia Drive AGX Orin işlemci birimi kullanılıyor. Bu donanım, aracın karmaşık sürüş verilerini hızlı bir şekilde işlemesine olanak tanıyor. Volvo’nun bu yeni elektrikli sedan modeli hakkındaki düşünceleriniz nelerdir? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
-        },
-        "post_text": "Volvo ES90 geliyor diye heyecanlananlar durulsun. Asıl mesele, bu elektrikli sedanın sadece bir otomobil olmaması.\n\n800V mimarisi, 300 km menzili 10 dakikada doldurma vaadiyle teknolojiye tapanları kendine çekecek. Ama kimse bu özelliklerin Türkiye pazarında ne anlama geldiğini konuşmuyor.\n\nFiyatı açıklanmamış bir otomobilin \"çok yakında\" gelmesi, beklentileri yönetmekten çok, bir test sürüşü gibi. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-        "post_text_length": 476,
-        "story_card_title": "Volvo ES90: Teknoloji mi, Cüzdan mı!",
-        "story_card_subtitle": "Volvo'nun yeni elektrikli sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. 800V mimarisi ve yüksek menzil vaadiyle dikkat çeken bu otomobil, 10 dakikada 300 km menzil doldurma iddiasında. Ancak henüz fiyatı açıklanmayan ES90'ın Türkiye pazarındaki gerçek potansiyeli merak konusu. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-12T21:59:18.810173+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volvo’nun Yeni Elektrikli Sedanı ES90 Türkiye’ye Geliyor",
-          "link": "https://shiftdelete.net/volvo-es90-turkiye-satisi",
-          "published": "2026-09-12T16:00:23+00:00",
-          "summary": "Yeni elektrikli Volvo sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. İşte 800V mimarisi ve yüksek menzil sunan aracın detayları.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "article_img",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-es90-geliyor-sedani-turkiye-volvo",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 7
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir elektrikli modelin Türkiye pazarına gelecek olması otomotiv meraklıları ve potansiyel alıcılar için ilgi çekici ve paylaşılabilir bir gelişme",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Volvo Türkiye, sosyal medya platformu Instagram üzerinden paylaştığı reklamlar ileyeni elektrikli Volvo sedanmodeli ES90’ın çok yakında Türkiye’de satışa sunulacağını duyurdu. Bu gelişme, markanın elektrikli araç portföyünü genişletme stratejisinin önemli bir parçası olarak dikkat çekiyor. Henüz Türkiye fiyatı resmi olarak açıklanmayan ES90, modern tasarım çizgileriyle dikkatleri üzerine çekiyor. Özellikle arka camın yanlarına konumlandırılan büyük LED aydınlatma grubu, aracın dış tasarımındaki en belirgin detaylardan biri olarak öne çıkıyor. ES90, Volvo’nun SPA2 platformunu temel alarak geliştirilen bir model olarak karşımıza çıkıyor. Araç, 800V mimarisi sayesinde oldukça hızlı şarj imkanları sunuyor ve 350 kW güç sağlayabilen istasyonlarda sadece 10 dakikalık şarj ile 300 kilometre menzil kazanabiliyor. Modelin üç farklı versiyonu bulunuyor ve her biri farklı performans ihtiyaçlarına hitap ediyor. Tek motorlu ve arkadan çekişli versiyon, 245 beygir güç üreten motoru ve 92 kWh bataryasıyla yaklaşık 640 kilometre menzil vadediyor. Daha fazla güç arayanlar için sunulan çift motorlu versiyon ise ön ve arka akslarda bulunan motorlarıyla toplam 442 beygir güç üretiyor. 106 kWh batarya kapasitesine sahip bu seçenek, yaklaşık 700 kilometre menzil sunarak uzun yolculuklarda kullanıcılarına kolaylık sağlıyor. Serinin en üstünde ise ES90 Twin Motor Performance versiyonu yer alıyor. 106 kWh bataryasıyla 700 kilometre menzil sunmaya devam eden bu model, toplam 670 beygir güç üreterek 0’dan 100 km/s hıza sadece 3,9 saniyede ulaşabiliyor. Aracın iç mekanında, yeni nesil Volvo modellerinden aşina olduğumuz çift ekranlı güncel konsol tasarımı yer alıyor. Ses deneyimi konusunda iddialı olan sedan, 25 hoparlörlü Bowers & Wilkins stereo ses sistemiyle donatılmış durumda. Yazılım tarafında ise Google’ın araçlar için özel olarak geliştirdiği Android sürümü temel alınıyor. Bu sistem, kullanıcıların araç içindeki dijital deneyimini daha akıcı ve entegre bir hale getirmeyi amaçlıyor. Batarya güvenliği ve verimliliği için Breathe Battery Technologies tarafından sağlanan özel bir yönetim yazılımı kullanılıyor. Ayrıca araç, yüksek ısıya karşı özel olarak tasarlanmış yeni nesil bir altyapıyla destekleniyor. Sürdürülebilirlik odaklı üretim anlayışıyla geliştirilen ES90, geri dönüştürülmüş materyallerden faydalanıyor. Üretim sürecinde alüminyumun yüzde 29’u, polimerlerin yüzde 16’sı ve çeliğin yüzde 18’i geri dönüştürülmüş kaynaklardan elde ediliyor. Güvenlik ve sürüş destek sistemleri için iki adet Nvidia Drive AGX Orin işlemci birimi kullanılıyor. Bu donanım, aracın karmaşık sürüş verilerini hızlı bir şekilde işlemesine olanak tanıyor. Volvo’nun bu yeni elektrikli sedan modeli hakkındaki düşünceleriniz nelerdir? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "Volvo ES90 geliyor diye heyecanlananlar durulsun. Asıl mesele, bu elektrikli sedanın sadece bir otomobil olmaması.\n\n800V mimarisi, 300 km menzili 10 dakikada doldurma vaadiyle teknolojiye tapanları kendine çekecek. Ama kimse bu özelliklerin Türkiye pazarında ne anlama geldiğini konuşmuyor.\n\nFiyatı açıklanmamış bir otomobilin \"çok yakında\" gelmesi, beklentileri yönetmekten çok, bir test sürüşü gibi. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-          "story_card_title": "Volvo ES90: Teknoloji mi, Cüzdan mı!",
-          "story_card_subtitle": "Volvo'nun yeni elektrikli sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. 800V mimarisi ve yüksek menzil vaadiyle dikkat çeken bu otomobil, 10 dakikada 300 km menzil doldurma iddiasında. Ancak henüz fiyatı açıklanmayan ES90'ın Türkiye pazarındaki gerçek potansiyeli merak konusu. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-          "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/09/volvonun-yeni-elektrikli-sedani-es90-turkiyeye-geliyor-2.webp",
-            "https://ares.shiftdelete.net/2026/09/volvonun-yeni-elektrikli-sedani-es90-turkiyeye-geliyor.webp",
-            "https://ares.shiftdelete.net/2026/09/volvonun-yeni-elektrikli-sedani-es90-turkiyeye-geliyor-4.webp",
-            "https://ares.shiftdelete.net/2026/09/volvonun-yeni-elektrikli-sedani-es90-turkiyeye-geliyor-3.webp"
-          ]
-        },
-        "post_text": "Volvo ES90 geliyor diye heyecanlananlar durulsun. Asıl mesele, bu elektrikli sedanın sadece bir otomobil olmaması.\n\n800V mimarisi, 300 km menzili 10 dakikada doldurma vaadiyle teknolojiye tapanları kendine çekecek. Ama kimse bu özelliklerin Türkiye pazarında ne anlama geldiğini konuşmuyor.\n\nFiyatı açıklanmamış bir otomobilin \"çok yakında\" gelmesi, beklentileri yönetmekten çok, bir test sürüşü gibi. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-        "story_card_title": "Volvo ES90: Teknoloji mi, Cüzdan mı!",
-        "story_card_subtitle": "Volvo'nun yeni elektrikli sedan modeli ES90, Türkiye yollarına çıkmaya hazırlanıyor. 800V mimarisi ve yüksek menzil vaadiyle dikkat çeken bu otomobil, 10 dakikada 300 km menzil doldurma iddiasında. Ancak henüz fiyatı açıklanmayan ES90'ın Türkiye pazarındaki gerçek potansiyeli merak konusu. Bakalım teknolojiye olan inanç mı, yoksa cüzdanın gerçekleri mi kazanacak.",
-        "image_path": "/tmp/otoxtra_img_y3q1ry_4.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_y3q1ry_4.jpg",
-          "/tmp/otoxtra_img_v945pkkm.jpg",
-          "/tmp/otoxtra_img_2swinypf.jpg",
-          "/tmp/otoxtra_img_e8lcq74f.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-12T21:59:20.114342+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122179217120916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18061526483786968",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1072428478828932",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-12T21:59:59.052037+03:00"
+      "updated_at": null
     }
   }
 }
