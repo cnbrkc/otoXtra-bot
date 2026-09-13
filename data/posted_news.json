@@ -2330,7 +2330,6 @@
     }
   ],
   "daily_counts": {
-    "2026-08-14": 10,
     "2026-08-15": 10,
     "2026-08-16": 8,
     "2026-08-17": 10,
@@ -2362,10 +2361,9 @@
     "2026-09-12": 7,
     "2026-09-13": 3
   },
-  "last_check_time": "2026-09-13T23:20:24.860268+03:00",
+  "last_check_time": "2026-09-14T01:52:38.774833+03:00",
   "stats": {
     "daily_actions": {
-      "2026-08-14": 17,
       "2026-08-15": 23,
       "2026-08-16": 23,
       "2026-08-17": 23,
@@ -2395,7 +2393,8 @@
       "2026-09-10": 6,
       "2026-09-11": 7,
       "2026-09-12": 7,
-      "2026-09-13": 6
+      "2026-09-13": 6,
+      "2026-09-14": 1
     },
     "weekly": {
       "2026-W22": {
@@ -2622,20 +2621,22 @@
           "no_article_above_threshold": 2,
           "no_article_found": 8
         },
+        "report_sent": true,
+        "report_sent_at": "2026-09-14T01:51:47.953427+03:00"
+      },
+      "2026-W38": {
+        "actions": 1,
+        "shares": 0,
+        "error_total": 0,
+        "errors": {},
+        "skip_total": 1,
+        "skips": {
+          "no_article_found": 1
+        },
         "report_sent": false,
         "report_sent_at": null
       }
     }
   },
-  "shared_variant_cooldowns": {
-    "fp:adeta-boreal-niagara-pickup-renault-versiyonu": {
-      "title": "Yeni Renault Niagara tanıtıldı: Adeta Boreal'in pickup versiyonu",
-      "url": "https://www.donanimhaber.com/yeni-renault-niagara-pickup-tanitildi-iste-tasarimi--210345",
-      "score": 63,
-      "reason": "shared_variant",
-      "matched_post_title": "Mercedes-AMG CLE 646 Spezialanfertigung Tanıtıldı: 30 Adetlik Pist Canavarı",
-      "matched_post_url": "https://otomobilkolik.com/mercedes-amg-cle-646-spezialanfertigung-tanitildi/",
-      "cooldown_at": "2026-09-11T00:24:28.671210+03:00"
-    }
-  }
+  "shared_variant_cooldowns": {}
 }
