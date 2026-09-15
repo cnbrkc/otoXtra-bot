@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-09-15-03:16",
+  "run_id": "2026-09-15-08:47",
   "status": "completed",
-  "started_at": "2026-09-15T03:16:18.313525+03:00",
-  "updated_at": "2026-09-15T03:17:43.490891+03:00",
+  "started_at": "2026-09-15T08:47:51.692435+03:00",
+  "updated_at": "2026-09-15T08:49:12.032772+03:00",
   "stages": {
     "fetch": {
       "status": "done",
@@ -210,6 +210,44 @@
             "topic_fingerprint": "100-158-efficiency-kwh-mission-rekor-tuketimle-volkswagen"
           },
           {
+            "title": "\"BYD'den tazminat bekliyorduk, tazminatı biz ödeyeceğiz\"",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/bydden-tazminat-bekliyorduk-tazminati-biz-odeyecegiz-5296h",
+            "published": "2026-09-15T05:14:10+00:00",
+            "summary": "Yeni Partili Yavuzyılmaz'ın iddiasına göre, BYD’ye sağlanan yatırım teşvikleri tartışılırken DTÖ'den gelen karar sonrası, Türkiye’nin Çin’in uğradığı zararı tazmin etmesi ya da eşdeğer ticari yaptırımlarla karşılaşması gündemde.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5607.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5607.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5607.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bekliyorduk-biz-byd-odeyecegiz-tazminat-tazminati"
+          },
+          {
+            "title": "\"Ağır Kusurlu\" olmayın; Değişenler ve aracınızda bulunması gerekenler",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/agir-kusurlu-olmayin-degisenler-ve-aracinizda-bulunmasi-gerekenler-5295h",
+            "published": "2026-09-15T05:03:00+00:00",
+            "summary": "Karayolları Trafik Kanunu kapsamında yapılan düzenlemeyle araçlarda bulundurulması gereken güvenlik ekipmanları güncellendi.  Araç muayenesinde ağır kusur sayılmamanız için gerekli olanları derledik. Haberimizde...",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5606.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5606.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5606.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "agir-aracinizda-bulunmasi-degisenler-gerekenler-kusurlu-olmayin"
+          },
+          {
             "title": "OMODA | JAECOO, OMODA 4 ve Super AI Cockpit ile Paris’te sahne alıyor",
             "link": "https://otopodyum.com.tr/abc-segmenti-otolar/omoda-jaecoo-omoda-4-ve-super-ai-cockpit-ile-pariste-sahne-aliyor-5293h",
             "published": "2026-09-14T14:51:01+00:00",
@@ -229,7 +267,7 @@
             "topic_fingerprint": "aliyor-cockpit-jaecoo-omoda-omoda-paris-sahne-super"
           }
         ],
-        "count": 12,
+        "count": 14,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -341,124 +379,142 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 8,
+            "count": 10,
             "detail": "",
             "attempts": 1
           },
           "_metrics": {
-            "found": 98,
-            "after_keyword": 61,
-            "after_time": 25,
-            "after_posted": 18,
-            "after_duplicate": 12,
-            "after_shared_variant_cooldown": 18
+            "found": 100,
+            "after_keyword": 63,
+            "after_time": 28,
+            "after_posted": 21,
+            "after_duplicate": 14,
+            "after_shared_variant_cooldown": 21
           }
         },
         "metrics": {
-          "found": 98,
-          "after_keyword": 61,
-          "after_time": 25,
-          "after_posted": 18,
-          "after_duplicate": 12,
-          "after_shared_variant_cooldown": 18
+          "found": 100,
+          "after_keyword": 63,
+          "after_time": 28,
+          "after_posted": 21,
+          "after_duplicate": 14,
+          "after_shared_variant_cooldown": 21
         }
       },
       "error": null,
-      "updated_at": "2026-09-15T03:17:05.773153+03:00"
+      "updated_at": "2026-09-15T08:48:37.209364+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
-          "link": "https://www.otomobil.com.tr/volkswagen-mission-efficiency/",
-          "published": "2026-09-14T16:17:09+00:00",
-          "summary": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor. Volkswagen, elektrikli otomobillerde aerodinamik ve enerji verimliliğine odaklanan Mission Efficiency konseptini tanıttı. MEB+ platformu üzerine geliştirilen ve önden çekişli altyapıya sahip olan araç, Volkswagen’in açıklamasına göre resmi testlerde üç dünya rekoruna imza attı. Satışa sunulmayacak olan Mission Efficiency, seri üretime yakın bir konsept […] Sonrası Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Otomobilcom",
+          "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
+          "link": "https://tr.motor1.com/news/808262/tesla-semi-avrupa-geldi/",
+          "published": "2026-09-14T22:04:47+00:00",
+          "summary": "IAA Transportation'da sergilenecek.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-158-efficiency-kwh-mission-rekor-tuketimle-volkswagen",
-          "base_ai_score": 85,
+          "topic_fingerprint": "aciliyor-avrupa-nihayet-pazarina-semi-tesla",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 19,
             "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
+            "benzersizlik": 15,
             "gundem_gucu": 16,
-            "paylasilabilirlik": 12
+            "paylasilabilirlik": 8
           },
-          "score": 87,
+          "score": 80,
           "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz aerodinamik ve tüketim rekorları, elektrikli araç dünyasında büyük ses getirecek ve çok paylaşılacak.",
+          "score_explanation": "Tesla markasının gücü ve elektrikli tırların Avrupa pazarına giriş yapacak olması yüksek viral potansiyel taşıyor.",
           "freshness_bonus": 1,
           "trend_bonus_raw": 1
         },
-        "score": 87,
-        "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
+        "score": 80,
+        "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 1,
         "score_breakdown": {
           "guncellik": 19,
           "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
+          "benzersizlik": 15,
           "gundem_gucu": 16,
-          "paylasilabilirlik": 12
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "İnanılmaz aerodinamik ve tüketim rekorları, elektrikli araç dünyasında büyük ses getirecek ve çok paylaşılacak.",
+        "score_explanation": "Tesla markasının gücü ve elektrikli tırların Avrupa pazarına giriş yapacak olması yüksek viral potansiyel taşıyor.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
-            "score": 87,
+            "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
+            "score": 80,
             "score_breakdown": {
               "guncellik": 19,
               "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
+              "benzersizlik": 15,
               "gundem_gucu": 16,
-              "paylasilabilirlik": 12
+              "paylasilabilirlik": 8
             }
           },
           {
-            "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
-            "score": 78,
+            "title": "\"BYD'den tazminat bekliyorduk, tazminatı biz ödeyeceğiz\"",
+            "score": 79,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
+              "etkilesim_potansiyeli": 22,
               "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 8
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 6
             }
           },
           {
-            "title": "Yeni nesil Kia Sportage'ın tasarımı sızıntılarla şekillendi: İşte görüntüler",
-            "score": 67,
+            "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
+            "score": 75,
             "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 8
+              "guncellik": 14,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 17,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 9
             }
           }
         ],
-        "scored_count": 12,
+        "scored_count": 14,
         "cooldown_candidates": [
           {
-            "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
-            "link": "https://tr.motor1.com/news/808262/tesla-semi-avrupa-geldi/",
-            "score": 78,
+            "title": "\"BYD'den tazminat bekliyorduk, tazminatı biz ödeyeceğiz\"",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/bydden-tazminat-bekliyorduk-tazminati-biz-odeyecegiz-5296h",
+            "score": 79,
             "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "aciliyor-avrupa-nihayet-pazarina-semi-tesla"
+            "source_name": "otopodyum",
+            "topic_fingerprint": "bekliyorduk-biz-byd-odeyecegiz-tazminat-tazminati"
+          },
+          {
+            "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
+            "link": "https://www.otomobil.com.tr/volkswagen-mission-efficiency/",
+            "score": 75,
+            "score_reason": "ai_scored",
+            "source_name": "Otomobilcom",
+            "topic_fingerprint": "100-158-efficiency-kwh-mission-rekor-tuketimle-volkswagen"
+          },
+          {
+            "title": "Chery AiMOGA’nın İlk İnsansı Ev Robotu Mobo Tanıtıldı",
+            "link": "https://otomobilkolik.com/chery-aimoga-mobo-robotu-tanitildi/",
+            "score": 71,
+            "score_reason": "ai_scored",
+            "source_name": "otomobilkolik",
+            "topic_fingerprint": "aimoga-chery-mobo-nsansi-robotu"
           },
           {
             "title": "Yeni nesil Kia Sportage'ın tasarımı sızıntılarla şekillendi: İşte görüntüler",
@@ -469,68 +525,60 @@
             "topic_fingerprint": "goruntuler-kia-nesil-sekillendi-sizintilarla-sportage-ste-tasarimi"
           },
           {
-            "title": "OMODA | JAECOO, OMODA 4 ve Super AI Cockpit ile Paris’te sahne alıyor",
-            "link": "https://otopodyum.com.tr/abc-segmenti-otolar/omoda-jaecoo-omoda-4-ve-super-ai-cockpit-ile-pariste-sahne-aliyor-5293h",
-            "score": 62,
+            "title": "\"Ağır Kusurlu\" olmayın; Değişenler ve aracınızda bulunması gerekenler",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/agir-kusurlu-olmayin-degisenler-ve-aracinizda-bulunmasi-gerekenler-5295h",
+            "score": 64,
             "score_reason": "ai_scored",
             "source_name": "otopodyum",
-            "topic_fingerprint": "aliyor-cockpit-jaecoo-omoda-omoda-paris-sahne-super"
-          },
-          {
-            "title": "Chery AiMOGA’nın İlk İnsansı Ev Robotu Mobo Tanıtıldı",
-            "link": "https://otomobilkolik.com/chery-aimoga-mobo-robotu-tanitildi/",
-            "score": 60,
-            "score_reason": "ai_scored",
-            "source_name": "otomobilkolik",
-            "topic_fingerprint": "aimoga-chery-mobo-nsansi-robotu"
+            "topic_fingerprint": "agir-aracinizda-bulunmasi-degisenler-gerekenler-kusurlu-olmayin"
           },
           {
             "title": "BYD’den 600 km menzile sahip yeni elektrikli çekici: “ETT 44”",
             "link": "https://www.log.com.tr/byd-den-600-km-menzile-sahip-yeni-elektrikli-cekici-ett-44/",
-            "score": 54,
+            "score": 57,
             "score_reason": "ai_scored",
             "source_name": "Log",
             "topic_fingerprint": "600-byd-cekici-elektrikli-ett-menzile-sahip"
           },
           {
-            "title": "Volkswagen’den yüksek verime odaklanan özel elektrikli: “Mission Efficiency”",
-            "link": "https://www.log.com.tr/volkswagenden-yuksek-verime-odaklanan-ozel-elektrikli-mission-efficiency/",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "efficiency-elektrikli-mission-odaklanan-ozel-verime-volkswagen-yuksek"
-          },
-          {
             "title": "Toyota WRC’de Üst Üste 6’ncı Kez Şampiyon Oldu",
             "link": "https://otomobilkolik.com/toyota-wrc-6-kez-ust-uste-sampiyon-oldu/",
-            "score": 50,
+            "score": 54,
             "score_reason": "ai_scored",
             "source_name": "otomobilkolik",
             "topic_fingerprint": "kez-nci-sampiyon-toyota-ust-uste-wrc"
           },
           {
-            "title": "Otomotiv Sanayii Derneği, yılın ilk 8 aylık verilerini açıkladı",
-            "link": "https://tr.motor1.com/news/808156/osd-agustos-2026-verileri/",
-            "score": 43,
+            "title": "Volkswagen’den yüksek verime odaklanan özel elektrikli: “Mission Efficiency”",
+            "link": "https://www.log.com.tr/volkswagenden-yuksek-verime-odaklanan-ozel-elektrikli-mission-efficiency/",
+            "score": 52,
             "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "acikladi-aylik-dernegi-otomotiv-sanayii-verilerini-yilin"
+            "source_name": "Log",
+            "topic_fingerprint": "efficiency-elektrikli-mission-odaklanan-ozel-verime-volkswagen-yuksek"
           },
           {
             "title": "Yeni Caddy ve Yeni Multivan Hannover’de Tanıtıldı",
             "link": "https://otomobilkolik.com/yeni-caddy-yeni-multivan-iaa-tanitildi-2/",
-            "score": 42,
+            "score": 47,
             "score_reason": "ai_scored",
             "source_name": "otomobilkolik",
             "topic_fingerprint": "caddy-hannover-multivan"
           },
           {
-            "title": "Fiat Professional'dan Eylül'e özel kampanyalar!",
-            "link": "https://tr.motor1.com/news/808188/fiat-professional-eylul-2026-kampanya/",
-            "score": 27,
+            "title": "OMODA | JAECOO, OMODA 4 ve Super AI Cockpit ile Paris’te sahne alıyor",
+            "link": "https://otopodyum.com.tr/abc-segmenti-otolar/omoda-jaecoo-omoda-4-ve-super-ai-cockpit-ile-pariste-sahne-aliyor-5293h",
+            "score": 42,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "aliyor-cockpit-jaecoo-omoda-omoda-paris-sahne-super"
+          },
+          {
+            "title": "Otomotiv Sanayii Derneği, yılın ilk 8 aylık verilerini açıkladı",
+            "link": "https://tr.motor1.com/news/808156/osd-agustos-2026-verileri/",
+            "score": 31,
             "score_reason": "ai_scored",
             "source_name": "Motor1 TR",
-            "topic_fingerprint": "eylul-fiat-kampanyalar-ozel-professional"
+            "topic_fingerprint": "acikladi-aylik-dernegi-otomotiv-sanayii-verilerini-yilin"
           },
           {
             "title": "Microsoft: “Yapay zeka insana hizmet eden, insan kontrolünde kalan bir araç olmalı.”",
@@ -539,109 +587,132 @@
             "score_reason": "ai_scored",
             "source_name": "Log",
             "topic_fingerprint": "arac-eden-hizmet-insan-insana-kalan-kontrolunde-microsoft-olmali-yapay-zeka"
+          },
+          {
+            "title": "Fiat Professional'dan Eylül'e özel kampanyalar!",
+            "link": "https://tr.motor1.com/news/808188/fiat-professional-eylul-2026-kampanya/",
+            "score": 12,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "eylul-fiat-kampanyalar-ozel-professional"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-09-15T03:17:15.165493+03:00"
+      "updated_at": "2026-09-15T08:48:47.876048+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
-          "link": "https://www.otomobil.com.tr/volkswagen-mission-efficiency/",
-          "published": "2026-09-14T16:17:09+00:00",
-          "summary": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor. Volkswagen, elektrikli otomobillerde aerodinamik ve enerji verimliliğine odaklanan Mission Efficiency konseptini tanıttı. MEB+ platformu üzerine geliştirilen ve önden çekişli altyapıya sahip olan araç, Volkswagen’in açıklamasına göre resmi testlerde üç dünya rekoruna imza attı. Satışa sunulmayacak olan Mission Efficiency, seri üretime yakın bir konsept […] Sonrası Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "Otomobilcom",
+          "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
+          "link": "https://tr.motor1.com/news/808262/tesla-semi-avrupa-geldi/",
+          "published": "2026-09-14T22:04:47+00:00",
+          "summary": "IAA Transportation'da sergilenecek.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-158-efficiency-kwh-mission-rekor-tuketimle-volkswagen",
-          "base_ai_score": 85,
+          "topic_fingerprint": "aciliyor-avrupa-nihayet-pazarina-semi-tesla",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 19,
             "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
+            "benzersizlik": 15,
             "gundem_gucu": 16,
-            "paylasilabilirlik": 12
+            "paylasilabilirlik": 8
           },
-          "score": 87,
+          "score": 80,
           "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz aerodinamik ve tüketim rekorları, elektrikli araç dünyasında büyük ses getirecek ve çok paylaşılacak.",
+          "score_explanation": "Tesla markasının gücü ve elektrikli tırların Avrupa pazarına giriş yapacak olması yüksek viral potansiyel taşıyor.",
           "freshness_bonus": 1,
           "trend_bonus_raw": 1,
-          "full_text": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor. Volkswagen, elektrikli otomobillerde aerodinamik ve enerji verimliliğine odaklanan Mission Efficiency konseptini tanıttı. MEB+ platformu üzerine geliştirilen ve önden çekişli altyapıya sahip olan araç, Volkswagen’in açıklamasına göre resmi testlerde üç dünya rekoruna imza attı.Satışa sunulmayacakolanMissionEfficiency, seri üretime yakın bir konsept olarak geliştirildi. Mission Efficiency’nin dikkat çeken özelliklerinden biri ise seri üretim modellerinde kullanılan bazı bileşenlere yer verilmesi. Volkswagen Mission Efficiency Teknik Öne Çıkanlar Mission Efficiency’ninilk rekoru aerodinamik alandageldi. Araç,0,158 Cdhava sürtünme katsayısıyla yol onaylı otomobiller arasında yeni bir rekora ulaştı. 2,08 m²’lik ön kesit alanıyla birlikte bu değer; damla formundaki gövde, aktif soğutma kanatları, kapalı arka tekerlekler ve tamamen kapalı alt gövde gibi çözümlerle elde edildi. İkinci rekor, ideal sürüş koşullarındaki enerji tüketimiyle ilgili. Sabit 68 km/s hızda, klima kapalı ve tırmanış içermeyen testte Mission Efficiency6,48 kWh/100 kmtüketim değerine ulaştı. Üçüncü rekorise Volkswagen’in tanımına göre kendi sınıfındakien ekonomik seri üretime yakın elektrikli otomobilolması. Bu kapsamda gerçekleştirilen resmi tüketim testinde Mission Efficiency, Wolfsburg’daki Volkswagen Geliştirme Merkezi’nden başlayarak Poznań ve Olomouc üzerinden Viyana’ya uzanan1.278,36 kilometrelik güzergâhıortalama 67,72 km/s hızla tamamladı. Test sırasında ulaşılan maksimum hız 138 km/s oldu. Araç bu yolculuktaşarj kayıpları hariç 6,89 kWh/100 km, şarj kayıpları dâhil ise 7,51 kWh/100 km ortalama enerji tüketti. 54,9 kWh net batarya kapasitesi yolculuk boyunca yalnızca bir kez şarj edildi ve Viyana’ya ulaşıldığında araçta 164 km menzil kaldı. Testte kullanılan54,9 kWh’lık netkullanılabilir enerji, seri üretim koşullarındaki 52,0 kWh’lık kullanılabilir kapasitenin yazılım yoluyla artırılmasıyla elde edildi. Volkswagen, seri üretim araçlarda bataryanın kullanım ömrünü korumak amacıyla maksimum enerji kapasitesinin tamamının kullanılmadığını belirtiyor. Bu nedenle 54,9 kWh’lık değer, sınırlı kullanım için hazırlanan rekor aracına özgü bir uygulama. Mission Efficiency’de özel geliştirilmiş çözümlerle birlikte seri üretim modellerinde kullanılan bileşenlerden de yararlanılıyor. Araçta, yakında satışa sunulacakID. Polomodelinde de kullanılacak 99 kW (135 PS) gücündeki elektrik motoru ve yüksek voltajlı batarya sistemi bulunuyor. Mission Efficiency’nin kendisi satışa sunulmayacak olsa da kullanılanmotor ve batarya sistemiVolkswagen’inMEB+ platformundaki önden çekişli seri üretim modelleriyle ortakteknolojiye dayanıyor. Mission Efficiency,4.775 mmuzunluğunda ve1.392 mmyüksekliğinde bir gövdeye sahip. 2+2 koltuk düzenindeki aracın bagaj hacmi 481 litre olarak açıklanıyor. Arka koltuklar yaklaşık 1,60 metreye kadar olan yolcular için tasarlandı. Gövde yapısında kendindentaşıyıcı alüminyum yapıile birliktekarbon fiber takviyeli polimer (CFRP)ve aramid kompozit bileşenler kullanılıyor. Aerodinamik yapı özellikle yüksek hızlarda enerji tüketimini azaltıyor. Volkswagen’in verilerine göre Mission Efficiency, 80 km/s üzerindeki hızlarda standart ID. Polo’ya kıyasla yüzde 30’dan fazla daha düşük enerji tüketimine sahip. Araç 140 km/s hızla ilerlerken ihtiyaç duyduğu enerji, standart ID. Polo’nun 100 km/s hızdaki enerji tüketimine yaklaşık denk geliyor. Mission Efficiency’nin aerodinamik verimliliğinde jant ve lastik tasarımı da önemli rol oynuyor. Jantların iç kısmında kullanılan patentli hava yönlendiriciler, jant içine hava girişini ve buna bağlı türbülansı azaltıyor. Jantların dış tarafındaki düz ve akışa uygun kapaklar da hava akışının iyileştirilmesine katkı sağlıyor. Volkswagen, Continental ile birlikteEcoContact 7serisini temel alan konsept lastikler geliştirdi. Lastiklerin 4,9 kg/ton yuvarlanma direnci, AB lastik etiketindeki A sınıfı için belirlenen sınırın yaklaşık yüzde 25 altında bulunuyor. Ön aksta ID. Polo’dan alınan MacPherson süspansiyon ve hidrolik fren sistemi kullanılırken, arka aksta Volkswagen’in AUMOVIO ile birlikte geliştirdiği elektromekanik fren sistemi görev yapıyor. Bu sistem sürtünme kayıplarını azaltırken fren kuvvetinin değişken şekilde dağıtılmasına olanak sağlıyor. Böylece reküperasyonu desteklerken virajlarda stabiliteye de katkıda bulunuyor. Cam tavan ve bagaj kapağına entegre edilen370 W gücündeki fotovoltaik panel sistemi, aracın elektrik sistemindeki tüketicilere enerji sağlıyor. Volkswagen’e göre sistem; mevsim, bölge ve hava koşullarına bağlı olarak gerçek kullanımda menzilegünde 30 kilometreye kadarkatkı sağlayabiliyor. Mission Efficiency’nin iç mekânında da ağırlığı azaltmaya yönelik çözümler kullanılıyor. Bilgi-eğlence sistemi ekranı yerine akıllı telefon veya tablet kullanılmasını sağlayan“Bring Your Own Device” (BYOD)yaklaşımı benimseniyor. Sabit hoparlör sistemi yerine ise taşınabilir bir Bluetooth hoparlör kullanılıyor...."
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tesla'nınilk olarak 2016 yılında gündeme getirdiği ve çeşitli aksaklıkların ardından 2022'de müşteri teslimatlarına başladığı Semi, ağır sınıf tır segmentine elektrikli bir soluk getirmeyi hedefliyordu. Sürücüyü kokpitin merkezine yerleştiren ve fütüristik donanımlarıyla çokça konuşulan Semi, Kuzey Amerika yollarında geçirdiği yılların ardından Avrupa pazarına açılıyor. Amerikalı üretici, Almanya'nın Hannover kentinde düzenlenen IAA Transportation Fuarı kapsamında elektrikli tırın Avrupa konfigürasyonunu ve iyileştirilen teknik özelliklerini paylaştı. Arka aksta üç elektromotorlu bir düzen taşıyan Tesla Semi, toplamda 1.100 bg seviyesinde güç üretiyor ve römorksuz kupa hâliyle 5 saniyede 0'dan 100 km/s'e hızlanabiliyor. 548 kWh kapasiteli bir bataryayla yola çıkanSemi, 1 kWh/km yakıt tüketimiyle tam şarjda 550 km seviyesinde bir menzil vadediyor. Uzun mesafeleri katederken şarj molalarında mümkün olduğunca az zaman kaybedilmesi için geliştirilen Megacharging altyapısı, 1.2 MW desteğiyle yalnızca 30 dakikada bataryanın %60'ını doldurabiliyor. Boş ağırlığı 9.1 ton seviyesinde olan elektrikli tır, toplamda 40 ton yük taşıyabiliyor. Semi'nin bakım ve yakıt maliyetlerinin dizel rakiplerinden çok daha avantajlı olduğunu vurgulayan Tesla, bu yıl itibarıyla yılda 50.000 Semi üretmesi için Giga Nevada fabrikasına güveniyor. Avrupa teslimatlarının da önümüzdeki aylarda açıklanacak takvime göre 2027 yılı içerisinde başlaması planlanıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "Volkswagen’in rekor denemesi, elektrikli otomobillerde menzil takıntısının ne kadar saçma olduğunu bir kez daha gösterdi.\n\n0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran Mission Efficiency, seri üretime girmeyecek bir konsept. Yani Volkswagen, \"istersek yaparız\" mesajını veriyor.\n\nAsıl mesele, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
-        "post_text_length": 389,
-        "story_card_title": "VW'den Menzi̇l Takıntısına Kapak!",
-        "story_card_subtitle": "Volkswagen, Mission Efficiency konseptiyle elektrikli otomobillerde menzil takıntısının anlamsızlığını gösterdi. 0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran bu konsept, seri üretime girmese de 'istersek yaparız' mesajını veriyor. Asıl soru, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
+        "post_text": "Tesla Semi'nin Avrupa'ya gelmesi, elektrikli tır devrimini bekleyenlerin değil, “nereden çıktı şimdi bu” diyenlerin de gündemi.\n\nKuzey Amerika'da yıllarca test edilen ve şimdi Avrupa konfigürasyonuyla IAA'da sergilenen bu 1100 bg'lik dev, 550 km menziliyle uzun yollar için iddialı. Ama asıl mesele, elektrikli tırın sadece menzil ve gücünden ibaret olmadığı.\n\nBu tır, lojistik sektörünün ezberini bozmaya geliyor.",
+        "post_text_length": 414,
+        "story_card_title": "Tesla Semi Avrupa'ya Geldi, Gelin Bakalım!",
+        "story_card_subtitle": "Tesla Semi, yıllar süren bekleyişin ardından Avrupa pazarına adım atıyor ve IAA Transportation'da sergilenecek. Kuzey Amerika'da test edilen bu 1100 bg'lik elektrikli dev, 550 km menziliyle uzun yol lojistiğini baştan yazmaya hazırlanıyor. Elektrikli tır devrimi, sadece menzil ve güçle sınırlı değil; lojistik sektörünün tüm ezberini bozacak bir değişimin kapısını aralıyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-09-15T03:17:18.427503+03:00"
+      "updated_at": "2026-09-15T08:48:51.142960+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor",
-          "link": "https://www.otomobil.com.tr/volkswagen-mission-efficiency/",
-          "published": "2026-09-14T16:17:09+00:00",
-          "summary": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor. Volkswagen, elektrikli otomobillerde aerodinamik ve enerji verimliliğine odaklanan Mission Efficiency konseptini tanıttı. MEB+ platformu üzerine geliştirilen ve önden çekişli altyapıya sahip olan araç, Volkswagen’in açıklamasına göre resmi testlerde üç dünya rekoruna imza attı. Satışa sunulmayacak olan Mission Efficiency, seri üretime yakın bir konsept […] Sonrası Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor Otomobil ilk ortaya çıktı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "smart_search",
-          "source_name": "Otomobilcom",
+          "title": "Tesla Semi nihayet Avrupa pazarına açılıyor!",
+          "link": "https://tr.motor1.com/news/808262/tesla-semi-avrupa-geldi/",
+          "published": "2026-09-14T22:04:47+00:00",
+          "summary": "IAA Transportation'da sergilenecek.",
+          "image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/AkOKo2/s3/semi_86.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "100-158-efficiency-kwh-mission-rekor-tuketimle-volkswagen",
-          "base_ai_score": 85,
+          "topic_fingerprint": "aciliyor-avrupa-nihayet-pazarina-semi-tesla",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 19,
             "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
+            "benzersizlik": 15,
             "gundem_gucu": 16,
-            "paylasilabilirlik": 12
+            "paylasilabilirlik": 8
           },
-          "score": 87,
+          "score": 80,
           "score_reason": "ai_scored",
-          "score_explanation": "İnanılmaz aerodinamik ve tüketim rekorları, elektrikli araç dünyasında büyük ses getirecek ve çok paylaşılacak.",
+          "score_explanation": "Tesla markasının gücü ve elektrikli tırların Avrupa pazarına giriş yapacak olması yüksek viral potansiyel taşıyor.",
           "freshness_bonus": 1,
           "trend_bonus_raw": 1,
-          "full_text": "Volkswagen Mission Efficiency: 0,158 Cd ve 6,89 kWh/100 km tüketimle üç rekor. Volkswagen, elektrikli otomobillerde aerodinamik ve enerji verimliliğine odaklanan Mission Efficiency konseptini tanıttı. MEB+ platformu üzerine geliştirilen ve önden çekişli altyapıya sahip olan araç, Volkswagen’in açıklamasına göre resmi testlerde üç dünya rekoruna imza attı.Satışa sunulmayacakolanMissionEfficiency, seri üretime yakın bir konsept olarak geliştirildi. Mission Efficiency’nin dikkat çeken özelliklerinden biri ise seri üretim modellerinde kullanılan bazı bileşenlere yer verilmesi. Volkswagen Mission Efficiency Teknik Öne Çıkanlar Mission Efficiency’ninilk rekoru aerodinamik alandageldi. Araç,0,158 Cdhava sürtünme katsayısıyla yol onaylı otomobiller arasında yeni bir rekora ulaştı. 2,08 m²’lik ön kesit alanıyla birlikte bu değer; damla formundaki gövde, aktif soğutma kanatları, kapalı arka tekerlekler ve tamamen kapalı alt gövde gibi çözümlerle elde edildi. İkinci rekor, ideal sürüş koşullarındaki enerji tüketimiyle ilgili. Sabit 68 km/s hızda, klima kapalı ve tırmanış içermeyen testte Mission Efficiency6,48 kWh/100 kmtüketim değerine ulaştı. Üçüncü rekorise Volkswagen’in tanımına göre kendi sınıfındakien ekonomik seri üretime yakın elektrikli otomobilolması. Bu kapsamda gerçekleştirilen resmi tüketim testinde Mission Efficiency, Wolfsburg’daki Volkswagen Geliştirme Merkezi’nden başlayarak Poznań ve Olomouc üzerinden Viyana’ya uzanan1.278,36 kilometrelik güzergâhıortalama 67,72 km/s hızla tamamladı. Test sırasında ulaşılan maksimum hız 138 km/s oldu. Araç bu yolculuktaşarj kayıpları hariç 6,89 kWh/100 km, şarj kayıpları dâhil ise 7,51 kWh/100 km ortalama enerji tüketti. 54,9 kWh net batarya kapasitesi yolculuk boyunca yalnızca bir kez şarj edildi ve Viyana’ya ulaşıldığında araçta 164 km menzil kaldı. Testte kullanılan54,9 kWh’lık netkullanılabilir enerji, seri üretim koşullarındaki 52,0 kWh’lık kullanılabilir kapasitenin yazılım yoluyla artırılmasıyla elde edildi. Volkswagen, seri üretim araçlarda bataryanın kullanım ömrünü korumak amacıyla maksimum enerji kapasitesinin tamamının kullanılmadığını belirtiyor. Bu nedenle 54,9 kWh’lık değer, sınırlı kullanım için hazırlanan rekor aracına özgü bir uygulama. Mission Efficiency’de özel geliştirilmiş çözümlerle birlikte seri üretim modellerinde kullanılan bileşenlerden de yararlanılıyor. Araçta, yakında satışa sunulacakID. Polomodelinde de kullanılacak 99 kW (135 PS) gücündeki elektrik motoru ve yüksek voltajlı batarya sistemi bulunuyor. Mission Efficiency’nin kendisi satışa sunulmayacak olsa da kullanılanmotor ve batarya sistemiVolkswagen’inMEB+ platformundaki önden çekişli seri üretim modelleriyle ortakteknolojiye dayanıyor. Mission Efficiency,4.775 mmuzunluğunda ve1.392 mmyüksekliğinde bir gövdeye sahip. 2+2 koltuk düzenindeki aracın bagaj hacmi 481 litre olarak açıklanıyor. Arka koltuklar yaklaşık 1,60 metreye kadar olan yolcular için tasarlandı. Gövde yapısında kendindentaşıyıcı alüminyum yapıile birliktekarbon fiber takviyeli polimer (CFRP)ve aramid kompozit bileşenler kullanılıyor. Aerodinamik yapı özellikle yüksek hızlarda enerji tüketimini azaltıyor. Volkswagen’in verilerine göre Mission Efficiency, 80 km/s üzerindeki hızlarda standart ID. Polo’ya kıyasla yüzde 30’dan fazla daha düşük enerji tüketimine sahip. Araç 140 km/s hızla ilerlerken ihtiyaç duyduğu enerji, standart ID. Polo’nun 100 km/s hızdaki enerji tüketimine yaklaşık denk geliyor. Mission Efficiency’nin aerodinamik verimliliğinde jant ve lastik tasarımı da önemli rol oynuyor. Jantların iç kısmında kullanılan patentli hava yönlendiriciler, jant içine hava girişini ve buna bağlı türbülansı azaltıyor. Jantların dış tarafındaki düz ve akışa uygun kapaklar da hava akışının iyileştirilmesine katkı sağlıyor. Volkswagen, Continental ile birlikteEcoContact 7serisini temel alan konsept lastikler geliştirdi. Lastiklerin 4,9 kg/ton yuvarlanma direnci, AB lastik etiketindeki A sınıfı için belirlenen sınırın yaklaşık yüzde 25 altında bulunuyor. Ön aksta ID. Polo’dan alınan MacPherson süspansiyon ve hidrolik fren sistemi kullanılırken, arka aksta Volkswagen’in AUMOVIO ile birlikte geliştirdiği elektromekanik fren sistemi görev yapıyor. Bu sistem sürtünme kayıplarını azaltırken fren kuvvetinin değişken şekilde dağıtılmasına olanak sağlıyor. Böylece reküperasyonu desteklerken virajlarda stabiliteye de katkıda bulunuyor. Cam tavan ve bagaj kapağına entegre edilen370 W gücündeki fotovoltaik panel sistemi, aracın elektrik sistemindeki tüketicilere enerji sağlıyor. Volkswagen’e göre sistem; mevsim, bölge ve hava koşullarına bağlı olarak gerçek kullanımda menzilegünde 30 kilometreye kadarkatkı sağlayabiliyor. Mission Efficiency’nin iç mekânında da ağırlığı azaltmaya yönelik çözümler kullanılıyor. Bilgi-eğlence sistemi ekranı yerine akıllı telefon veya tablet kullanılmasını sağlayan“Bring Your Own Device” (BYOD)yaklaşımı benimseniyor. Sabit hoparlör sistemi yerine ise taşınabilir bir Bluetooth hoparlör kullanılıyor....",
-          "post_text_for_card": "Volkswagen’in rekor denemesi, elektrikli otomobillerde menzil takıntısının ne kadar saçma olduğunu bir kez daha gösterdi.\n\n0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran Mission Efficiency, seri üretime girmeyecek bir konsept. Yani Volkswagen, \"istersek yaparız\" mesajını veriyor.\n\nAsıl mesele, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
-          "story_card_title": "VW'den Menzi̇l Takıntısına Kapak!",
-          "story_card_subtitle": "Volkswagen, Mission Efficiency konseptiyle elektrikli otomobillerde menzil takıntısının anlamsızlığını gösterdi. 0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran bu konsept, seri üretime girmese de 'istersek yaparız' mesajını veriyor. Asıl soru, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tesla'nınilk olarak 2016 yılında gündeme getirdiği ve çeşitli aksaklıkların ardından 2022'de müşteri teslimatlarına başladığı Semi, ağır sınıf tır segmentine elektrikli bir soluk getirmeyi hedefliyordu. Sürücüyü kokpitin merkezine yerleştiren ve fütüristik donanımlarıyla çokça konuşulan Semi, Kuzey Amerika yollarında geçirdiği yılların ardından Avrupa pazarına açılıyor. Amerikalı üretici, Almanya'nın Hannover kentinde düzenlenen IAA Transportation Fuarı kapsamında elektrikli tırın Avrupa konfigürasyonunu ve iyileştirilen teknik özelliklerini paylaştı. Arka aksta üç elektromotorlu bir düzen taşıyan Tesla Semi, toplamda 1.100 bg seviyesinde güç üretiyor ve römorksuz kupa hâliyle 5 saniyede 0'dan 100 km/s'e hızlanabiliyor. 548 kWh kapasiteli bir bataryayla yola çıkanSemi, 1 kWh/km yakıt tüketimiyle tam şarjda 550 km seviyesinde bir menzil vadediyor. Uzun mesafeleri katederken şarj molalarında mümkün olduğunca az zaman kaybedilmesi için geliştirilen Megacharging altyapısı, 1.2 MW desteğiyle yalnızca 30 dakikada bataryanın %60'ını doldurabiliyor. Boş ağırlığı 9.1 ton seviyesinde olan elektrikli tır, toplamda 40 ton yük taşıyabiliyor. Semi'nin bakım ve yakıt maliyetlerinin dizel rakiplerinden çok daha avantajlı olduğunu vurgulayan Tesla, bu yıl itibarıyla yılda 50.000 Semi üretmesi için Giga Nevada fabrikasına güveniyor. Avrupa teslimatlarının da önümüzdeki aylarda açıklanacak takvime göre 2027 yılı içerisinde başlaması planlanıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "Tesla Semi'nin Avrupa'ya gelmesi, elektrikli tır devrimini bekleyenlerin değil, “nereden çıktı şimdi bu” diyenlerin de gündemi.\n\nKuzey Amerika'da yıllarca test edilen ve şimdi Avrupa konfigürasyonuyla IAA'da sergilenen bu 1100 bg'lik dev, 550 km menziliyle uzun yollar için iddialı. Ama asıl mesele, elektrikli tırın sadece menzil ve gücünden ibaret olmadığı.\n\nBu tır, lojistik sektörünün ezberini bozmaya geliyor.",
+          "story_card_title": "Tesla Semi Avrupa'ya Geldi, Gelin Bakalım!",
+          "story_card_subtitle": "Tesla Semi, yıllar süren bekleyişin ardından Avrupa pazarına adım atıyor ve IAA Transportation'da sergilenecek. Kuzey Amerika'da test edilen bu 1100 bg'lik elektrikli dev, 550 km menziliyle uzun yol lojistiğini baştan yazmaya hazırlanıyor. Elektrikli tır devrimi, sadece menzil ve güçle sınırlı değil; lojistik sektörünün tüm ezberini bozacak bir değişimin kapısını aralıyor.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_script"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/AkOKo2/s1/semi_86.jpg",
+            "https://cdn.motor1.com/images/mgl/AkOKo2/501:0:2998:2250/semi_86.webp",
+            "https://cdn.motor1.com/images/mgl/P3VoEW/s3/semi_83.jpg",
+            "https://cdn.motor1.com/images/mgl/AkOKo2/875:0:2250:2250/semi_86.webp"
+          ]
         },
-        "post_text": "Volkswagen’in rekor denemesi, elektrikli otomobillerde menzil takıntısının ne kadar saçma olduğunu bir kez daha gösterdi.\n\n0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran Mission Efficiency, seri üretime girmeyecek bir konsept. Yani Volkswagen, \"istersek yaparız\" mesajını veriyor.\n\nAsıl mesele, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
-        "story_card_title": "VW'den Menzi̇l Takıntısına Kapak!",
-        "story_card_subtitle": "Volkswagen, Mission Efficiency konseptiyle elektrikli otomobillerde menzil takıntısının anlamsızlığını gösterdi. 0,158 Cd sürtünme katsayısı ve 6,89 kWh/100 km tüketimle üç dünya rekoru kıran bu konsept, seri üretime girmese de 'istersek yaparız' mesajını veriyor. Asıl soru, markaların bu verimliliği günlük hayatta ne kadar sunabildiği.",
-        "image_path": "/tmp/otoxtra_img_a5q4nk21.jpg",
+        "post_text": "Tesla Semi'nin Avrupa'ya gelmesi, elektrikli tır devrimini bekleyenlerin değil, “nereden çıktı şimdi bu” diyenlerin de gündemi.\n\nKuzey Amerika'da yıllarca test edilen ve şimdi Avrupa konfigürasyonuyla IAA'da sergilenen bu 1100 bg'lik dev, 550 km menziliyle uzun yollar için iddialı. Ama asıl mesele, elektrikli tırın sadece menzil ve gücünden ibaret olmadığı.\n\nBu tır, lojistik sektörünün ezberini bozmaya geliyor.",
+        "story_card_title": "Tesla Semi Avrupa'ya Geldi, Gelin Bakalım!",
+        "story_card_subtitle": "Tesla Semi, yıllar süren bekleyişin ardından Avrupa pazarına adım atıyor ve IAA Transportation'da sergilenecek. Kuzey Amerika'da test edilen bu 1100 bg'lik elektrikli dev, 550 km menziliyle uzun yol lojistiğini baştan yazmaya hazırlanıyor. Elektrikli tır devrimi, sadece menzil ve güçle sınırlı değil; lojistik sektörünün tüm ezberini bozacak bir değişimin kapısını aralıyor.",
+        "image_path": "/tmp/otoxtra_img_zsa8omld.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_a5q4nk21.jpg"
+          "/tmp/otoxtra_img_zsa8omld.jpg",
+          "/tmp/otoxtra_img_gglc6zf7.jpg",
+          "/tmp/otoxtra_img_19zjnkni.jpg",
+          "/tmp/otoxtra_img_x1e7z98n.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-09-15T03:17:28.192980+03:00"
+      "updated_at": "2026-09-15T08:48:55.815023+03:00"
     },
     "publish": {
       "status": "done",
@@ -652,9 +723,9 @@
           "instagram": {
             "enabled": true,
             "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "publish_failed"
+            "success": true,
+            "id": "18034585946653937",
+            "error": ""
           },
           "facebook": {
             "enabled": true,
@@ -666,7 +737,7 @@
         }
       },
       "error": null,
-      "updated_at": "2026-09-15T03:17:43.490891+03:00"
+      "updated_at": "2026-09-15T08:49:12.032772+03:00"
     }
   }
 }
