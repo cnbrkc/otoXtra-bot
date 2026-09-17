@@ -1,20 +1,29 @@
 """
-core/image_uploader.py - Ortak Gorsel Yukleme Servisleri (v2.0 - GitHub Ban Fix)
+core/image_uploader.py - Ortak Gorsel Yukleme Servisleri (v2.1 - Instagram JPEG Fix)
 Instagram ve Threads platformlari icin ortak upload fonksiyonlari.
 - 0x0.st (iflas etti) kaldirildi.
 - tmpfiles.org ve freeimage.host (API keysiz) eklendi.
 - Catbox ve ImgBB icin User-Agent guncellemesi yapildi (GitHub IP ban'i asmak icin).
+- v2.1: Instagram Graph API sadece JPEG kabul ettigi icin, upload'tan once
+  PNG/diger formatlar otomatik JPEG'e cevriliyor (Story publish hatasi fix).
 """
 
 import base64
 import json
 import mimetypes
 import os
+import tempfile
 from typing import Optional
 
 import requests
 
 from core.logger import log
+
+try:
+    from PIL import Image
+    _PIL_AVAILABLE = True
+except ImportError:
+    _PIL_AVAILABLE = False
 
 
 _IMGBB_API_URL = "https://api.imgbb.com/1/upload"
@@ -55,6 +64,35 @@ def _is_http_url(value: str) -> bool:
 def _guess_content_type(path: str) -> str:
     ctype, _ = mimetypes.guess_type(path)
     return ctype or "application/octet-stream"
+
+
+def _ensure_jpeg(image_path: str) -> str:
+    """
+    Instagram Graph API sadece JPEG destekliyor. PNG/diger formatlari
+    JPEG'e cevirir; zaten JPEG ise dokunmadan orijinal path'i doner.
+    Donusturme basarisiz olursa orijinal path'e geri doner (fail-safe).
+    """
+    ext = os.path.splitext(image_path)[1].lower()
+    if ext in (".jpg", ".jpeg"):
+        return image_path
+
+    if not _PIL_AVAILABLE:
+        log("Image: Pillow (PIL) yuklu degil, JPEG donusumu atlanıyor", "WARNING")
+        return image_path
+
+    try:
+        img = Image.open(image_path)
+        if img.mode in ("RGBA", "P", "LA"):
+            img = img.convert("RGB")
+
+        fd, jpeg_path = tempfile.mkstemp(suffix=".jpg")
+        os.close(fd)
+        img.save(jpeg_path, "JPEG", quality=90)
+        log(f"Image: {ext} -> JPEG donusturuldu ({jpeg_path})")
+        return jpeg_path
+    except Exception as exc:
+        log(f"Image: JPEG donusturme hatasi: {exc}", "WARNING")
+        return image_path
 
 
 def upload_imgbb(image_path: str) -> Optional[str]:
@@ -159,7 +197,7 @@ def upload_tmpfiles(image_path: str) -> Optional[str]:
             if _is_http_url(url):
                 log(f"tmpfiles: Basarili! URL={url}")
                 return url
-        
+
         log(f"tmpfiles: Basarisiz status={resp.status_code}", "WARNING")
         return None
 
@@ -246,10 +284,15 @@ def get_public_url_fallback(image_path: str, platform_name: str = "Platform") ->
     """
     Local dosyayi public URL'ye cevirir (fallback zinciri).
     Github banlarini asan yeni guvenilir servis oncelikli calisir.
+    Instagram gibi sadece JPEG kabul eden platformlar icin, upload'tan
+    once dosya otomatik JPEG'e cevrilir.
     """
     if not _is_valid_file(image_path):
         log(f"{platform_name} Upload: Dosya yok/gecersiz", "ERROR")
         return None
+
+    # Instagram (ve genel uyumluluk icin) sadece JPEG kabul ediyor.
+    image_path = _ensure_jpeg(image_path)
 
     file_size = _safe_size(image_path)
     if file_size <= 0:
