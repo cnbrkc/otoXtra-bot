@@ -1,10 +1,14 @@
 """
-platforms/instagram.py - Instagram Graph API katmani (v1.4 - DRY Refactoring Fix)
+platforms/instagram.py - Instagram Graph API katmani (v1.5 - Multi-host Retry Fix)
   - Story (Hikaye) paylasimi yapar.
   - API Host URL graph.instagram.com olarak guncellendi (Instagram Login tokenlari icin).
   - media_type STORIES olarak duzeltilmis (Meta dokumaninda belirtildigi uzere).
   - v1.3: Gorsel yukleme fonksiyonlari core/image_uploader.py'a tasindi (DRY)
   - v1.4: Tekrar eden upload fonksiyonlari kaldirildi, merkezi modül kullaniliyor.
+  - v1.5: Meta'nin bazi upload servislerinden (ozellikle ImgBB) gorseli
+    cekemedigi ("Media download has failed") durumlar icin, container
+    olusturma basarisiz olursa otomatik olarak bir sonraki public URL
+    servisi denenir (en fazla 3 farkli host).
 """
 
 import os
@@ -13,12 +17,13 @@ import requests
 from typing import Optional
 
 from core.logger import log
-from core.image_uploader import get_public_url_fallback
+from core.image_uploader import get_public_url_with_host
 
 # ── Instagram API Sabitleri ──────────────────────────────────────────────────
 _IG_API_VERSION = "v21.0"
 _BASE_URL = f"https://graph.instagram.com/{_IG_API_VERSION}"
 _REQUEST_TIMEOUT = 60
+_MAX_HOST_ATTEMPTS = 3  # kac farkli upload servisi denenecek
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CREDENTIALS & HELPERS
@@ -46,6 +51,48 @@ def _get_credentials():
 
     return user_id, token
 
+
+def _create_story_container(ig_user_id: str, token: str, public_url: str):
+    """
+    Instagram'da STORIES container olusturmayi dener.
+    Donus: (container_id, is_media_fetch_error)
+      - container_id: basarili ise ID, degilse None
+      - is_media_fetch_error: Meta'nin gorseli cekemedigi (retry edilebilir)
+        bir hata mi, yoksa baska/kalici bir hata mi
+    """
+    container_url = f"{_BASE_URL}/{ig_user_id}/media"
+    container_data = {
+        "media_type": "STORIES",
+        "image_url": public_url,
+        "access_token": token,
+    }
+
+    try:
+        resp = requests.post(container_url, data=container_data, timeout=_REQUEST_TIMEOUT)
+        result = resp.json()
+
+        if resp.status_code == 200 and "id" in result:
+            return result["id"], False
+
+        error = result.get("error", result)
+        log(f"IG Story Container hatasi: {error}", "ERROR")
+
+        # Meta'nin gorseli cekemedigi hatalar (retry edilebilir):
+        #   code=9004, error_subcode=2207052, "Media download has failed"
+        error_subcode = error.get("error_subcode") if isinstance(error, dict) else None
+        error_msg = str(error.get("message", "")) if isinstance(error, dict) else ""
+        is_fetch_error = (
+            error_subcode == 2207052
+            or "media download has failed" in error_msg.lower()
+            or "could not be fetched" in str(error.get("error_user_msg", "")).lower()
+        )
+        return None, is_fetch_error
+
+    except Exception as e:
+        log(f"IG Story Container request hatasi: {e}", "ERROR")
+        return None, False
+
+
 # ═══════════════════════════════════════════════════════════════════════════════
 # INSTAGRAM STORY PUBLISH
 # ═══════════════════════════════════════════════════════════════════════════════
@@ -53,6 +100,8 @@ def _get_credentials():
 def post_story(image_path: str) -> str | None:
     """
     Verilen yerel gorseli Instagram'a Hikaye (Story) olarak yukler.
+    Meta bir upload servisinin (ornegin ImgBB) verdigi URL'den gorseli
+    cekemezse, otomatik olarak baska bir servisle tekrar dener.
     """
     ig_user_id, token = _get_credentials()
     if not ig_user_id or not token:
@@ -62,46 +111,48 @@ def post_story(image_path: str) -> str | None:
         log(f"IG Story: Gorsel bulunamadi: {image_path}", "ERROR")
         return None
 
-    # 1. Görseli Public URL'ye çevir (merkezi modülden)
-    public_url = get_public_url_fallback(image_path, platform_name="Instagram")
-    if not public_url:
-        log("IG Story: Tum upload servisleri basarisiz oldu. Story atilamadi.", "ERROR")
-        return None
+    container_id = None
+    tried_hosts: set = set()
 
-    # 2. Container Oluştur (media_type=STORIES - Dokümana göre düzeltildi)
-    container_url = f"{_BASE_URL}/{ig_user_id}/media"
-    container_data = {
-        "media_type": "STORIES", # Dokümanda STORIES olarak geçiyor.
-        "image_url": public_url,
-        "access_token": token,
-    }
-
-    log("IG Story: Container olusturuluyor (media_type=STORIES)...")
-    try:
-        resp = requests.post(container_url, data=container_data, timeout=_REQUEST_TIMEOUT)
-        result = resp.json()
-        
-        if resp.status_code != 200 or "id" not in result:
-            log(f"IG Story Container hatasi: {result.get('error', result)}", "ERROR")
+    for attempt in range(1, _MAX_HOST_ATTEMPTS + 1):
+        # 1. Görseli Public URL'ye çevir (daha once denenmemis bir servisle)
+        result = get_public_url_with_host(image_path, platform_name="Instagram", exclude=tried_hosts)
+        if not result:
+            log("IG Story: Tum upload servisleri basarisiz oldu. Story atilamadi.", "ERROR")
             return None
-            
-        container_id = result["id"]
-        log(f"IG Story: Container olusturuldu! ID={container_id}")
-    except Exception as e:
-        log(f"IG Story Container request hatasi: {e}", "ERROR")
+
+        public_url, host_name = result
+        tried_hosts.add(host_name)
+
+        log(f"IG Story: Container olusturuluyor (media_type=STORIES, host={host_name}, deneme={attempt}/{_MAX_HOST_ATTEMPTS})...")
+        container_id, is_fetch_error = _create_story_container(ig_user_id, token, public_url)
+
+        if container_id:
+            log(f"IG Story: Container olusturuldu! ID={container_id} (host={host_name})")
+            break
+
+        if is_fetch_error and attempt < _MAX_HOST_ATTEMPTS:
+            log(f"IG Story: {host_name} Meta tarafindan reddedildi, baska host deneniyor...", "WARNING")
+            continue
+
+        # Fetch-disi bir hata (ornegin token/izin sorunu) ise tekrar denemenin anlami yok
         return None
 
-    # 3. Instagram'ın Görseli İşlemesini Bekle (Polling)
+    if not container_id:
+        log("IG Story: Tum host denemeleri basarisiz oldu.", "ERROR")
+        return None
+
+    # 2. Instagram'ın Görseli İşlemesini Bekle (Polling)
     log("IG Story: Instagram islem tamamlana kadar bekleniyor...")
     status_url = f"{_BASE_URL}/{container_id}?fields=status_code&access_token={token}"
-    
-    for attempt in range(1, 11): # Max 10 deneme (yaklasik 30 saniye)
+
+    for attempt in range(1, 11):  # Max 10 deneme (yaklasik 30 saniye)
         time.sleep(3)
         try:
             status_resp = requests.get(status_url, timeout=10)
             status_data = status_resp.json()
             status = status_data.get("status_code")
-            
+
             if status == "FINISHED":
                 log("IG Story: Islem tamamlandi (FINISHED).")
                 break
@@ -116,7 +167,7 @@ def post_story(image_path: str) -> str | None:
         log("IG Story: Islem zaman asimina ugradi.", "ERROR")
         return None
 
-    # 4. Yayınla (Publish)
+    # 3. Yayınla (Publish)
     publish_url = f"{_BASE_URL}/{ig_user_id}/media_publish"
     publish_data = {
         "creation_id": container_id,
@@ -127,7 +178,7 @@ def post_story(image_path: str) -> str | None:
     try:
         publish_resp = requests.post(publish_url, data=publish_data, timeout=_REQUEST_TIMEOUT)
         publish_result = publish_resp.json()
-        
+
         if publish_resp.status_code == 200 and "id" in publish_result:
             story_id = publish_result["id"]
             log(f"IG Story BASARIYLA yayinlandi! Story ID={story_id}")
