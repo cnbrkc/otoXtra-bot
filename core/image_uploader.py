@@ -280,12 +280,17 @@ def upload_telegraph(image_path: str) -> Optional[str]:
         return None
 
 
-def get_public_url_fallback(image_path: str, platform_name: str = "Platform") -> Optional[str]:
+def _upload_with_host_tracking(
+    image_path: str,
+    platform_name: str = "Platform",
+    exclude: Optional[set] = None,
+) -> Optional[tuple[str, str]]:
     """
-    Local dosyayi public URL'ye cevirir (fallback zinciri).
-    Github banlarini asan yeni guvenilir servis oncelikli calisir.
-    Instagram gibi sadece JPEG kabul eden platformlar icin, upload'tan
-    once dosya otomatik JPEG'e cevrilir.
+    Local dosyayi public URL'ye cevirir (fallback zinciri) ve hangi
+    servisin kullanildigini da doner. `exclude` icindeki servis isimleri
+    atlanir - bu sayede bir servisin verdigi URL uzak platform tarafindan
+    (ornegin Instagram) reddedilirse, cagiran kod ayni servisi tekrar
+    denemeden bir sonrakine gecebilir.
     """
     if not _is_valid_file(image_path):
         log(f"{platform_name} Upload: Dosya yok/gecersiz", "ERROR")
@@ -299,6 +304,8 @@ def get_public_url_fallback(image_path: str, platform_name: str = "Platform") ->
         log(f"{platform_name} Upload: Dosya boyutu okunamadi", "ERROR")
         return None
 
+    exclude = exclude or set()
+
     upload_services = [
         ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
         ("tmpfiles", upload_tmpfiles, 50 * 1024 * 1024),
@@ -308,13 +315,37 @@ def get_public_url_fallback(image_path: str, platform_name: str = "Platform") ->
     ]
 
     for name, fn, limit in upload_services:
+        if name in exclude:
+            continue
         if file_size > limit:
             continue
 
         log(f"{platform_name} Upload: {name} deneniyor...")
         url = fn(image_path)
         if _is_http_url(url):
-            return url
+            return (url, name)
 
-    log(f"{platform_name} Upload: Tum servisler basarisiz", "ERROR")
+    log(f"{platform_name} Upload: Tum servisler basarisiz (exclude={exclude})", "ERROR")
     return None
+
+
+def get_public_url_fallback(image_path: str, platform_name: str = "Platform") -> Optional[str]:
+    """
+    Geriye-donuk uyumluluk icin: sadece URL doner (Threads vb. mevcut
+    kullanimlar icin degismedi).
+    """
+    result = _upload_with_host_tracking(image_path, platform_name=platform_name)
+    return result[0] if result else None
+
+
+def get_public_url_with_host(
+    image_path: str,
+    platform_name: str = "Platform",
+    exclude: Optional[set] = None,
+) -> Optional[tuple[str, str]]:
+    """
+    (url, servis_adi) tuple'i doner. Bir servisin verdigi URL hedef
+    platform tarafindan reddedilirse, servis adini `exclude` setine
+    ekleyip tekrar cagirarak bir sonraki servisi deneyebilirsiniz.
+    """
+    return _upload_with_host_tracking(image_path, platform_name=platform_name, exclude=exclude)
