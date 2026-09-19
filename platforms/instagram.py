@@ -23,7 +23,7 @@ from core.image_uploader import get_public_url_with_host
 _IG_API_VERSION = "v21.0"
 _BASE_URL = f"https://graph.instagram.com/{_IG_API_VERSION}"
 _REQUEST_TIMEOUT = 60
-_MAX_HOST_ATTEMPTS = 3  # kac farkli upload servisi denenecek
+_MAX_HOST_ATTEMPTS = 5  # kac farkli upload servisi denenecek (mevcut tum servisler)
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # CREDENTIALS & HELPERS
@@ -77,14 +77,18 @@ def _create_story_container(ig_user_id: str, token: str, public_url: str):
         error = result.get("error", result)
         log(f"IG Story Container hatasi: {error}", "ERROR")
 
-        # Meta'nin gorseli cekemedigi hatalar (retry edilebilir):
-        #   code=9004, error_subcode=2207052, "Media download has failed"
-        error_subcode = error.get("error_subcode") if isinstance(error, dict) else None
+        # Meta'nin gorseli cekemedigi/kabul etmedigi hatalar (retry edilebilir).
+        # code=9004 Meta'nin "medya" hata ailesi - farkli subcode'lar farkli
+        # sebeplerle gelebilir (2207052=fetch basarisiz, 2207083=format
+        # desteklenmiyor, vb.) ama hepsi host degistirerek cozulebilir.
+        error_code = error.get("code") if isinstance(error, dict) else None
         error_msg = str(error.get("message", "")) if isinstance(error, dict) else ""
+        error_user_msg = str(error.get("error_user_msg", "")) if isinstance(error, dict) else ""
         is_fetch_error = (
-            error_subcode == 2207052
+            error_code == 9004
             or "media download has failed" in error_msg.lower()
-            or "could not be fetched" in str(error.get("error_user_msg", "")).lower()
+            or "could not be fetched" in error_user_msg.lower()
+            or "format is not supported" in error_msg.lower()
         )
         return None, is_fetch_error
 
