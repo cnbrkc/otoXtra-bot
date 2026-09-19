@@ -66,6 +66,40 @@ def _guess_content_type(path: str) -> str:
     return ctype or "application/octet-stream"
 
 
+def _url_returns_image(url: str) -> bool:
+    """
+    URL'nin gercekten bir gorsel dondurup dondurmedigini kontrol eder
+    (Content-Type basliginin image/ ile basladigini dogrular). Bazi
+    servisler (ornegin tmpfiles.org) direkt dosya yerine bir HTML
+    onizleme sayfasi dondurebiliyor; bu Meta tarafinda "format desteklenmiyor"
+    hatasina yol aciyor. Bu kontrol o durumu erken (Instagram'a gondermeden)
+    yakalar.
+    """
+    try:
+        resp = requests.head(
+            url,
+            headers={"User-Agent": _UPLOAD_USER_AGENT},
+            timeout=15,
+            allow_redirects=True,
+        )
+        ctype = resp.headers.get("Content-Type", "")
+        if resp.status_code == 200 and ctype.lower().startswith("image/"):
+            return True
+
+        # Bazi sunucular HEAD'e duzgun cevap vermiyor, GET ile tekrar dene
+        resp = requests.get(
+            url,
+            headers={"User-Agent": _UPLOAD_USER_AGENT},
+            timeout=15,
+            stream=True,
+        )
+        ctype = resp.headers.get("Content-Type", "")
+        return resp.status_code == 200 and ctype.lower().startswith("image/")
+    except Exception as exc:
+        log(f"Image: URL dogrulama hatasi ({url[:60]}...): {exc}", "WARNING")
+        return False
+
+
 def _ensure_jpeg(image_path: str) -> str:
     """
     Instagram Graph API sadece JPEG destekliyor. PNG/diger formatlari
@@ -306,12 +340,15 @@ def _upload_with_host_tracking(
 
     exclude = exclude or set()
 
+    # Siralama: Meta'nin gorsel cekme konusunda daha guvenilir bulundugu
+    # servisler once denenir. tmpfiles.org direkt image yerine HTML
+    # onizleme sayfasi dondurebildigi icin en sona alindi.
     upload_services = [
-        ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
-        ("tmpfiles", upload_tmpfiles, 50 * 1024 * 1024),
-        ("freeimage", upload_freeimage, 30 * 1024 * 1024),
         ("Catbox", upload_catbox, _CATBOX_MAX_FILE_SIZE),
+        ("freeimage", upload_freeimage, 30 * 1024 * 1024),
+        ("ImgBB", upload_imgbb, _IMGBB_MAX_FILE_SIZE),
         ("Telegraph", upload_telegraph, _TELEGRAPH_MAX_FILE_SIZE),
+        ("tmpfiles", upload_tmpfiles, 50 * 1024 * 1024),
     ]
 
     for name, fn, limit in upload_services:
@@ -322,8 +359,14 @@ def _upload_with_host_tracking(
 
         log(f"{platform_name} Upload: {name} deneniyor...")
         url = fn(image_path)
-        if _is_http_url(url):
-            return (url, name)
+        if not _is_http_url(url):
+            continue
+
+        if not _url_returns_image(url):
+            log(f"{platform_name} Upload: {name} gorsel degil (HTML/redirect donduruyor), atlaniyor", "WARNING")
+            continue
+
+        return (url, name)
 
     log(f"{platform_name} Upload: Tum servisler basarisiz (exclude={exclude})", "ERROR")
     return None
