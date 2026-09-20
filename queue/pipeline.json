@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-09-20-03:39",
+  "run_id": "2026-09-20-08:41",
   "status": "error",
-  "started_at": "2026-09-20T03:39:06.875843+03:00",
-  "updated_at": "2026-09-20T03:40:57.979498+03:00",
+  "started_at": "2026-09-20T08:41:59.104061+03:00",
+  "updated_at": "2026-09-20T08:42:46.937838+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -83,9 +83,9 @@
             "attempts": 1
           },
           "Otomobilcom": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 522 Server Error: <none> for url: https://www.otomobil.com.tr/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1
           },
           "TaylanOzgurDil": {
@@ -125,8 +125,8 @@
             "attempts": 1
           },
           "_metrics": {
-            "found": 78,
-            "after_keyword": 48,
+            "found": 88,
+            "after_keyword": 55,
             "after_time": 8,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -134,8 +134,8 @@
           }
         },
         "metrics": {
-          "found": 78,
-          "after_keyword": 48,
+          "found": 88,
+          "after_keyword": 55,
           "after_time": 8,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -143,7 +143,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-09-20T03:40:57.979498+03:00"
+      "updated_at": "2026-09-20T08:42:46.937838+03:00"
     },
     "score": {
       "status": "waiting",
