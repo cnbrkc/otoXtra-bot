@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-09-20-08:41",
-  "status": "error",
-  "started_at": "2026-09-20T08:41:59.104061+03:00",
-  "updated_at": "2026-09-20T08:42:46.937838+03:00",
+  "run_id": "2026-09-20-13:36",
+  "status": "completed",
+  "started_at": "2026-09-20T13:36:42.134540+03:00",
+  "updated_at": "2026-09-20T13:38:31.478613+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+            "link": "https://www.donanimhaber.com/20-eylul-bim-aktuel-katalogunda-neler-var--210684",
+            "published": "2026-09-20T09:30:00+00:00",
+            "summary": "20 Eylül BİM aktüel teknoloji ürünleri arasında Baseus markasına ait Enfill FC31 powerbank modeli ve özelliklerle Nokia 105 tuşlu telefon modeli yer alıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "105-baseus-dahili-kablolu-marketlerde-nokia-powerbank-telefon-var"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -126,48 +146,226 @@
           },
           "_metrics": {
             "found": 88,
-            "after_keyword": 55,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 54,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 88,
-          "after_keyword": 55,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 54,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-09-20T08:42:46.937838+03:00"
+      "error": null,
+      "updated_at": "2026-09-20T13:37:27.385645+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+          "link": "https://www.donanimhaber.com/20-eylul-bim-aktuel-katalogunda-neler-var--210684",
+          "published": "2026-09-20T09:30:00+00:00",
+          "summary": "20 Eylül BİM aktüel teknoloji ürünleri arasında Baseus markasına ait Enfill FC31 powerbank modeli ve özelliklerle Nokia 105 tuşlu telefon modeli yer alıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "105-baseus-dahili-kablolu-marketlerde-nokia-powerbank-telefon-var",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 3
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv sektörüyle hiçbir ilgisi olmayan, perakende market aktüel ürünleri içeren niş ve otomobil severler için ilgisiz bir teknoloji haberi.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1
+        },
+        "score": 33,
+        "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 7,
+        "score_breakdown": {
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 5,
+          "benzersizlik": 2,
+          "gundem_gucu": 4,
+          "paylasilabilirlik": 3
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Otomotiv sektörüyle hiçbir ilgisi olmayan, perakende market aktüel ürünleri içeren niş ve otomobil severler için ilgisiz bir teknoloji haberi.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+            "score": 33,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 5,
+              "benzersizlik": 2,
+              "gundem_gucu": 4,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-20T13:37:29.012896+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+          "link": "https://www.donanimhaber.com/20-eylul-bim-aktuel-katalogunda-neler-var--210684",
+          "published": "2026-09-20T09:30:00+00:00",
+          "summary": "20 Eylül BİM aktüel teknoloji ürünleri arasında Baseus markasına ait Enfill FC31 powerbank modeli ve özelliklerle Nokia 105 tuşlu telefon modeli yer alıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "105-baseus-dahili-kablolu-marketlerde-nokia-powerbank-telefon-var",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 3
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv sektörüyle hiçbir ilgisi olmayan, perakende market aktüel ürünleri içeren niş ve otomobil severler için ilgisiz bir teknoloji haberi.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "20 Eylül BİM aktüelteknoloji ürünleri Baseus markasına ait Enfill FC31 powerbank modeli yer alıyor. Son dönemde popüler olan dahili şarj kablosu trendine katılan modelde iki adet USB Tip-C kablosu bulunuyor. 45W çift yönlü hızlı şarj destekleyen model toplamda 4 adet porta sahip. LCD bilgi ekranı da olan powerbank modeli 1490TL fiyat etiketine sahip. Diğer taraftan 1.8 inçlik QQVGA ekran, 1000mAh batarya ile günlerce kullanım, FM radyo, sadece 2G ağlarına destek, çift SIM yuvası, S30+ kullanıcı arayüzü, el feneri, mini oyunlar gibi özelliklerle Nokia 105 tuşlu telefon da 2190TL fiyat etiketine sahip. Güneş enerjisiyle şarj olabilen elektrikli traktör https://www.amazon.com.tr/promotion/psp/A24DM9RVNJS61 https://www.amazon.com.tr/dp/B09VXTD6Z3 https://www.amazon.com.tr/dp/B08WHCGVLF https://www.amazon.com.tr/dp/B0D9H9F29S https://tr.hisense.com/kampanyalar/hisense_tv_tod_kampanyasi"
+        },
+        "post_text": "BİM'deki teknoloji ürünleri, aslında ne istediğimizi çok iyi gösteriyor.\n\nDahili kablolu Baseus powerbank 1490 TL, Nokia 105 tuşlu telefon ise 2190 TL. Bir yanda 45W hızlı şarj, diğer yanda günlerce giden batarya.\n\nAkıllı telefon çağında, bazen \"sadece arama yapsın\" diyenlerin tercihi, pahalı telefonların karmaşasından daha mantıklı görünüyor.",
+        "post_text_length": 345,
+        "story_card_title": "BİM'in Teknoloji Tercihleri Şaşırtıyor!",
+        "story_card_subtitle": "BİM, 20 Eylül itibarıyla teknoloji raflarına Baseus Enfill FC31 powerbank ve Nokia 105 tuşlu telefonu ekliyor. Dahili kablolu Baseus powerbank 1490 TL, Nokia 105 ise 2190 TL fiyatla sunuluyor. Bu ürünler, tüketicilerin basitlik ve fonksiyonellik arayışını fiyat performans dengesiyle karşılıyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-20T13:37:33.163056+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BİM marketlerde Baseus dahili kablolu powerbank ve Nokia 105 telefon var",
+          "link": "https://www.donanimhaber.com/20-eylul-bim-aktuel-katalogunda-neler-var--210684",
+          "published": "2026-09-20T09:30:00+00:00",
+          "summary": "20 Eylül BİM aktüel teknoloji ürünleri arasında Baseus markasına ait Enfill FC31 powerbank modeli ve özelliklerle Nokia 105 tuşlu telefon modeli yer alıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "105-baseus-dahili-kablolu-marketlerde-nokia-powerbank-telefon-var",
+          "base_ai_score": 25,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 5,
+            "benzersizlik": 2,
+            "gundem_gucu": 4,
+            "paylasilabilirlik": 3
+          },
+          "score": 33,
+          "score_reason": "ai_scored",
+          "score_explanation": "Otomotiv sektörüyle hiçbir ilgisi olmayan, perakende market aktüel ürünleri içeren niş ve otomobil severler için ilgisiz bir teknoloji haberi.",
+          "freshness_bonus": 7,
+          "trend_bonus_raw": 1,
+          "full_text": "20 Eylül BİM aktüelteknoloji ürünleri Baseus markasına ait Enfill FC31 powerbank modeli yer alıyor. Son dönemde popüler olan dahili şarj kablosu trendine katılan modelde iki adet USB Tip-C kablosu bulunuyor. 45W çift yönlü hızlı şarj destekleyen model toplamda 4 adet porta sahip. LCD bilgi ekranı da olan powerbank modeli 1490TL fiyat etiketine sahip. Diğer taraftan 1.8 inçlik QQVGA ekran, 1000mAh batarya ile günlerce kullanım, FM radyo, sadece 2G ağlarına destek, çift SIM yuvası, S30+ kullanıcı arayüzü, el feneri, mini oyunlar gibi özelliklerle Nokia 105 tuşlu telefon da 2190TL fiyat etiketine sahip. Güneş enerjisiyle şarj olabilen elektrikli traktör https://www.amazon.com.tr/promotion/psp/A24DM9RVNJS61 https://www.amazon.com.tr/dp/B09VXTD6Z3 https://www.amazon.com.tr/dp/B08WHCGVLF https://www.amazon.com.tr/dp/B0D9H9F29S https://tr.hisense.com/kampanyalar/hisense_tv_tod_kampanyasi",
+          "post_text_for_card": "BİM'deki teknoloji ürünleri, aslında ne istediğimizi çok iyi gösteriyor.\n\nDahili kablolu Baseus powerbank 1490 TL, Nokia 105 tuşlu telefon ise 2190 TL. Bir yanda 45W hızlı şarj, diğer yanda günlerce giden batarya.\n\nAkıllı telefon çağında, bazen \"sadece arama yapsın\" diyenlerin tercihi, pahalı telefonların karmaşasından daha mantıklı görünüyor.",
+          "story_card_title": "BİM'in Teknoloji Tercihleri Şaşırtıyor!",
+          "story_card_subtitle": "BİM, 20 Eylül itibarıyla teknoloji raflarına Baseus Enfill FC31 powerbank ve Nokia 105 tuşlu telefonu ekliyor. Dahili kablolu Baseus powerbank 1490 TL, Nokia 105 ise 2190 TL fiyatla sunuluyor. Bu ürünler, tüketicilerin basitlik ve fonksiyonellik arayışını fiyat performans dengesiyle karşılıyor.",
+          "image_sources": [
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 2,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/210684/1200x67520-eylul-bim-aktuel-katalogunda-neler-var.jpg",
+            "https://www.donanimhaber.com/images/images/haber/210684/src/20-eylul-bim-aktuel-katalogunda-neler-var210684_0.jpg"
+          ]
+        },
+        "post_text": "BİM'deki teknoloji ürünleri, aslında ne istediğimizi çok iyi gösteriyor.\n\nDahili kablolu Baseus powerbank 1490 TL, Nokia 105 tuşlu telefon ise 2190 TL. Bir yanda 45W hızlı şarj, diğer yanda günlerce giden batarya.\n\nAkıllı telefon çağında, bazen \"sadece arama yapsın\" diyenlerin tercihi, pahalı telefonların karmaşasından daha mantıklı görünüyor.",
+        "story_card_title": "BİM'in Teknoloji Tercihleri Şaşırtıyor!",
+        "story_card_subtitle": "BİM, 20 Eylül itibarıyla teknoloji raflarına Baseus Enfill FC31 powerbank ve Nokia 105 tuşlu telefonu ekliyor. Dahili kablolu Baseus powerbank 1490 TL, Nokia 105 ise 2190 TL fiyatla sunuluyor. Bu ürünler, tüketicilerin basitlik ve fonksiyonellik arayışını fiyat performans dengesiyle karşılıyor.",
+        "image_path": "/tmp/otoxtra_img_1_clxiap.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_1_clxiap.jpg",
+          "/tmp/otoxtra_img_vnbtgjdn.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 2
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-20T13:37:50.314603+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122180068646916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17997539199041015",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1089805223630194",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-20T13:38:31.478613+03:00"
     }
   }
 }
