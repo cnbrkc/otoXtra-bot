@@ -1,76 +1,14 @@
 {
-  "run_id": "2026-09-27-20:29",
-  "status": "completed",
-  "started_at": "2026-09-27T20:29:00.970129+03:00",
-  "updated_at": "2026-09-27T20:30:35.939783+03:00",
+  "run_id": "2026-09-27-23:52",
+  "status": "error",
+  "started_at": "2026-09-27T23:52:18.766322+03:00",
+  "updated_at": "2026-09-27T23:53:07.750010+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Oyun Fuarında Sadece Oyun Yok! | GIST 2026",
-            "link": "https://www.donanimhaber.com/oyun-fuarinda-sadece-oyun-yok-gist-2026--210841",
-            "published": "2026-09-27T15:00:48+00:00",
-            "summary": "Bu videoda GIST 2026'da ilgi çekici bulduğumuz Monster Notebook, yerli elektrikli otomobil Karea Fit ve Padok Club standlarını gezdik. Katılımcılar bu standlarda oldukça mutluydu. İyi seyirler.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_0.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_1.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_2.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_3.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_4.jpg",
-              "https://www.donanimhaber.com/images/images/haber/210841/1200x675oyun-fuarinda-sadece-oyun-yok-gist-2026_5.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-fuarinda-gist-oyun-oyun-yok"
-          },
-          {
-            "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-            "link": "https://tr.motor1.com/news/809723/tesla-roadster-tanitim-oncesi-teaser/",
-            "published": "2026-09-27T17:00:00+00:00",
-            "summary": "Teaser görseli LED ışık şeridine odaklanıyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ayindaki-ekim-gosterdi-kez-oncesinde-roadster-tanitim-tesla"
-          },
-          {
-            "title": "Yenilenen Renault Megane E-Tech’in Fiyatı Belli Oldu",
-            "link": "https://shiftdelete.net/renault-megane-e-tech-fiyat-ozellikler",
-            "published": "2026-09-27T14:00:39+00:00",
-            "summary": "Yeni LFP bataryasıyla 501 km menzil sunan Renault Megane E-Tech'in Avrupa fiyatları ve güncellenen donanım özellikleri belli oldu.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "belli-fiyati-megane-renault-tech-yenilenen"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -188,268 +126,48 @@
           },
           "_metrics": {
             "found": 89,
-            "after_keyword": 55,
-            "after_time": 10,
-            "after_posted": 3,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 3
+            "after_keyword": 54,
+            "after_time": 7,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 89,
-          "after_keyword": 55,
-          "after_time": 10,
-          "after_posted": 3,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 3
+          "after_keyword": 54,
+          "after_time": 7,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-09-27T20:29:45.764583+03:00"
+      "error": "No article found",
+      "updated_at": "2026-09-27T23:53:07.750010+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-          "link": "https://tr.motor1.com/news/809723/tesla-roadster-tanitim-oncesi-teaser/",
-          "published": "2026-09-27T17:00:00+00:00",
-          "summary": "Teaser görseli LED ışık şeridine odaklanıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ayindaki-ekim-gosterdi-kez-oncesinde-roadster-tanitim-tesla",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tesla Roadster merakla beklenen bir model ve teaser paylaşımları sosyal medyada hızla yayılarak yüksek etkileşim yaratıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 81,
-        "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Tesla Roadster merakla beklenen bir model ve teaser paylaşımları sosyal medyada hızla yayılarak yüksek etkileşim yaratıyor.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-            "score": 81,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "Yenilenen Renault Megane E-Tech’in Fiyatı Belli Oldu",
-            "score": 69,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 11,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Oyun Fuarında Sadece Oyun Yok! | GIST 2026",
-            "score": 48,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "Yenilenen Renault Megane E-Tech’in Fiyatı Belli Oldu",
-            "link": "https://shiftdelete.net/renault-megane-e-tech-fiyat-ozellikler",
-            "score": 69,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "belli-fiyati-megane-renault-tech-yenilenen"
-          },
-          {
-            "title": "Oyun Fuarında Sadece Oyun Yok! | GIST 2026",
-            "link": "https://www.donanimhaber.com/oyun-fuarinda-sadece-oyun-yok-gist-2026--210841",
-            "score": 48,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "2026-fuarinda-gist-oyun-oyun-yok"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-27T20:29:48.560242+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-          "link": "https://tr.motor1.com/news/809723/tesla-roadster-tanitim-oncesi-teaser/",
-          "published": "2026-09-27T17:00:00+00:00",
-          "summary": "Teaser görseli LED ışık şeridine odaklanıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ayindaki-ekim-gosterdi-kez-oncesinde-roadster-tanitim-tesla",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tesla Roadster merakla beklenen bir model ve teaser paylaşımları sosyal medyada hızla yayılarak yüksek etkileşim yaratıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tesla, uzun yıllardır beklenen 2. nesilRoadsteriçin yeni bir teaser yayınladı. Kısa klip, yapması gerekeni yapıyor ve yanıt vermeden soru işaretleri yaratıyor... Teaser, 1 Ekim’de Teksas’ta tanıtılması beklenen modelin ön bölümdekiboydan boya uzanan LED ışık şeridineodaklanıyor. Zamanlama tesadüf değil. Tesla ayrıca, ilk kez tanıtıldığı 2017’den bu yana sözünü verdiği önemli bir eşik olanSemi tır çekicilerinin seri üretiminebaşladığını da doğruladı. Birbirinden çok farklı 2 ürün, Tesla’nın üretim çeşitliliğine vurgu yapıyor. Teaser, teknik ayrıntıdan çok atmosfere odaklanıyor. Önceden doğrulandığı üzereTesla’nın resmî lansmanı 1 Ekim için planlanıyorve iç mekân düzeni, batarya kapasitesi ya da nihai tasarım hakkında bilgiler etkinliğe saklanıyor. Musk’ın dile getirdiği bir özellik herhangi bir tasarım detayından daha sıra dışı. Zira kendisi, Roadster için SpaceX imzalısoğuk gaz iticilerindensöz etmişti. İddialara göre normalde arka koltukların bulunacağı alana yaklaşık 10 itici yerleştirilecek ve bunlar hava akışını ve ağırlık transferini yönlendirerek hızlanma ile viraj performansına katkı sağlayacak. Bunların hiçbirinin üretime hazır olduğu doğrulanmış değil. Musk, geçtiğimiz yıl boyunca itici konseptinden kamuoyu önünde söz etti; ancak Tesla bu özellikle bağlantılı teknik veriler, fiyat ya da teslimat takvimi yayımlamadı. Şimdilik bunu açıklanmış bir hedef olarak görmek gerekiyor. Tesla’nın netleştirdiği tek rakam ise sıraya girmek için gereken bedel: Kısa bir aranın ardından yeniden açılaniade edilebilir 50.000 $'lık kapora. Şu anda otomobille ilgili tanıtım tarihi dışında eldeki tek somut rakam bu. Tesla Roadster tanıtım ekran görüntüsü Reuters'agöre Tesla, 24 Eylül 2026 haftasında Semi çekicilerini ilk müşteri grubuna teslim etmeye başladı. Lansman etkinliğinde Musk, Semi’yi “devrim niteliğinde” olarak nitelendirdi ve “tır formunda bir spor otomobil” diye tanımladı. Musk, bu çıkışı ABD’de rekor seviyelere çıkan dizel fiyatlarıyla ilişkilendirerek filo müşterileri açısından ekonomik hesabın anlamlı hâle geldiğini söyledi. Tesla, Nevada’daki yaklaşık167.000 metrekareliktesisinde yılda50.000 Semiüretme hedefini yineledi; ancak şirket etkinlikte gerçek üretim adetlerini ya da fiyatlandırmayı açıklamadı. İsveçli lojistik şirketi Einride AB, 500 adet Semi siparişi verdi bile. Bu sipariş kapsamında 2026 sonuna kadar 75 aracın teslim edilmesi bekleniyor. Bu da Tesla’nın teslimat vaatlerini büyük ölçekte yerine getirip getiremeyeceğine dair erken bir gerçek kullanım testi olacak. Semi, Tesla’nın Megacharger ağına erişebiliyor ve şirketin “çok yakın gelecekte” kullanıma sunulacağını söylediği otonom sürüş özelliklerini de önceden barındırıyor. Morgan Stanley analisti Andrew Percoco, iyimser senaryoda Semi programının Tesla’nın piyasa değerine yaklaşık80 milyar $ekleyebileceğini tahmin etti. Bu öngörü, doğrulanmış sipariş defterlerinden çok taşımacılık ekonomisine dayanıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "Roadster'ın yeniden gündeme gelmesi, Tesla'nın sürekli ertelediği vaatlerini hatırlatıyor. 2017'den beri beklenen bu model, şimdiye kadar sadece bir LED şeridiyle karşımıza çıktı.\n\nAsıl mesele, Tesla'nın sadece atmosfer yaratıp somut bilgi vermemesi değil. Bu durum, markanın 'yakında' söyleminin ne kadar esnek olduğunu gösteriyor.\n\n1 Ekim'deki tanıtımda da sadece ışık şeridini değil, gerçek bir otomobili görmeyi beklemek hayalcilik olabilir.",
-        "post_text_length": 445,
-        "story_card_title": "Tesla yine sözünü tutmadı!",
-        "story_card_subtitle": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'dan yeni bir görsel paylaştı. Ancak paylaşılan görselde, 2017'den beri beklenen modelin sadece LED ışık şeridi görünüyor. Markanın sürekli ertelediği vaatlerini hatırlatan bu durum, 1 Ekim'deki tanıtım için beklentileri düşürüyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-27T20:29:50.747448+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'ı bir kez daha gösterdi",
-          "link": "https://tr.motor1.com/news/809723/tesla-roadster-tanitim-oncesi-teaser/",
-          "published": "2026-09-27T17:00:00+00:00",
-          "summary": "Teaser görseli LED ışık şeridine odaklanıyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg"
-          ],
-          "image_source": "article_candidates_field",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "ayindaki-ekim-gosterdi-kez-oncesinde-roadster-tanitim-tesla",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 81,
-          "score_reason": "ai_scored",
-          "score_explanation": "Tesla Roadster merakla beklenen bir model ve teaser paylaşımları sosyal medyada hızla yayılarak yüksek etkileşim yaratıyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Tesla, uzun yıllardır beklenen 2. nesilRoadsteriçin yeni bir teaser yayınladı. Kısa klip, yapması gerekeni yapıyor ve yanıt vermeden soru işaretleri yaratıyor... Teaser, 1 Ekim’de Teksas’ta tanıtılması beklenen modelin ön bölümdekiboydan boya uzanan LED ışık şeridineodaklanıyor. Zamanlama tesadüf değil. Tesla ayrıca, ilk kez tanıtıldığı 2017’den bu yana sözünü verdiği önemli bir eşik olanSemi tır çekicilerinin seri üretiminebaşladığını da doğruladı. Birbirinden çok farklı 2 ürün, Tesla’nın üretim çeşitliliğine vurgu yapıyor. Teaser, teknik ayrıntıdan çok atmosfere odaklanıyor. Önceden doğrulandığı üzereTesla’nın resmî lansmanı 1 Ekim için planlanıyorve iç mekân düzeni, batarya kapasitesi ya da nihai tasarım hakkında bilgiler etkinliğe saklanıyor. Musk’ın dile getirdiği bir özellik herhangi bir tasarım detayından daha sıra dışı. Zira kendisi, Roadster için SpaceX imzalısoğuk gaz iticilerindensöz etmişti. İddialara göre normalde arka koltukların bulunacağı alana yaklaşık 10 itici yerleştirilecek ve bunlar hava akışını ve ağırlık transferini yönlendirerek hızlanma ile viraj performansına katkı sağlayacak. Bunların hiçbirinin üretime hazır olduğu doğrulanmış değil. Musk, geçtiğimiz yıl boyunca itici konseptinden kamuoyu önünde söz etti; ancak Tesla bu özellikle bağlantılı teknik veriler, fiyat ya da teslimat takvimi yayımlamadı. Şimdilik bunu açıklanmış bir hedef olarak görmek gerekiyor. Tesla’nın netleştirdiği tek rakam ise sıraya girmek için gereken bedel: Kısa bir aranın ardından yeniden açılaniade edilebilir 50.000 $'lık kapora. Şu anda otomobille ilgili tanıtım tarihi dışında eldeki tek somut rakam bu. Tesla Roadster tanıtım ekran görüntüsü Reuters'agöre Tesla, 24 Eylül 2026 haftasında Semi çekicilerini ilk müşteri grubuna teslim etmeye başladı. Lansman etkinliğinde Musk, Semi’yi “devrim niteliğinde” olarak nitelendirdi ve “tır formunda bir spor otomobil” diye tanımladı. Musk, bu çıkışı ABD’de rekor seviyelere çıkan dizel fiyatlarıyla ilişkilendirerek filo müşterileri açısından ekonomik hesabın anlamlı hâle geldiğini söyledi. Tesla, Nevada’daki yaklaşık167.000 metrekareliktesisinde yılda50.000 Semiüretme hedefini yineledi; ancak şirket etkinlikte gerçek üretim adetlerini ya da fiyatlandırmayı açıklamadı. İsveçli lojistik şirketi Einride AB, 500 adet Semi siparişi verdi bile. Bu sipariş kapsamında 2026 sonuna kadar 75 aracın teslim edilmesi bekleniyor. Bu da Tesla’nın teslimat vaatlerini büyük ölçekte yerine getirip getiremeyeceğine dair erken bir gerçek kullanım testi olacak. Semi, Tesla’nın Megacharger ağına erişebiliyor ve şirketin “çok yakın gelecekte” kullanıma sunulacağını söylediği otonom sürüş özelliklerini de önceden barındırıyor. Morgan Stanley analisti Andrew Percoco, iyimser senaryoda Semi programının Tesla’nın piyasa değerine yaklaşık80 milyar $ekleyebileceğini tahmin etti. Bu öngörü, doğrulanmış sipariş defterlerinden çok taşımacılık ekonomisine dayanıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "Roadster'ın yeniden gündeme gelmesi, Tesla'nın sürekli ertelediği vaatlerini hatırlatıyor. 2017'den beri beklenen bu model, şimdiye kadar sadece bir LED şeridiyle karşımıza çıktı.\n\nAsıl mesele, Tesla'nın sadece atmosfer yaratıp somut bilgi vermemesi değil. Bu durum, markanın 'yakında' söyleminin ne kadar esnek olduğunu gösteriyor.\n\n1 Ekim'deki tanıtımda da sadece ışık şeridini değil, gerçek bir otomobili görmeyi beklemek hayalcilik olabilir.",
-          "story_card_title": "Tesla yine sözünü tutmadı!",
-          "story_card_subtitle": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'dan yeni bir görsel paylaştı. Ancak paylaşılan görselde, 2017'den beri beklenen modelin sadece LED ışık şeridi görünüyor. Markanın sürekli ertelediği vaatlerini hatırlatan bu durum, 1 Ekim'deki tanıtım için beklentileri düşürüyor.",
-          "image_sources": [
-            "article_candidates_field",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/OoZ09L/s3/tesla-roadster-teaser-screenshot.jpg",
-            "https://cdn.motor1.com/images/mgl/8A0nMq/s4/tesla-cybercab.jpg",
-            "https://cdn.motor1.com/images/mgl/AkOKo2/s4/semi_86.jpg"
-          ]
-        },
-        "post_text": "Roadster'ın yeniden gündeme gelmesi, Tesla'nın sürekli ertelediği vaatlerini hatırlatıyor. 2017'den beri beklenen bu model, şimdiye kadar sadece bir LED şeridiyle karşımıza çıktı.\n\nAsıl mesele, Tesla'nın sadece atmosfer yaratıp somut bilgi vermemesi değil. Bu durum, markanın 'yakında' söyleminin ne kadar esnek olduğunu gösteriyor.\n\n1 Ekim'deki tanıtımda da sadece ışık şeridini değil, gerçek bir otomobili görmeyi beklemek hayalcilik olabilir.",
-        "story_card_title": "Tesla yine sözünü tutmadı!",
-        "story_card_subtitle": "Tesla, Ekim ayındaki tanıtım öncesinde Roadster'dan yeni bir görsel paylaştı. Ancak paylaşılan görselde, 2017'den beri beklenen modelin sadece LED ışık şeridi görünüyor. Markanın sürekli ertelediği vaatlerini hatırlatan bu durum, 1 Ekim'deki tanıtım için beklentileri düşürüyor.",
-        "image_path": "/tmp/otoxtra_img_tt2aqloy.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tt2aqloy.jpg",
-          "/tmp/otoxtra_img_kzknxy7p.jpg",
-          "/tmp/otoxtra_img_698gko0q.jpg"
-        ],
-        "image_source": "article_candidates_field",
-        "image_count": 3
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-27T20:29:53.418533+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122181165152916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18344601331283601",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1622554809663611",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-09-27T20:30:35.939783+03:00"
+      "updated_at": null
     }
   }
 }
