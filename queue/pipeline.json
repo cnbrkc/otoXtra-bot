@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-09-28-02:38",
-  "status": "error",
-  "started_at": "2026-09-28T02:38:12.003543+03:00",
-  "updated_at": "2026-09-28T02:38:59.335461+03:00",
+  "run_id": "2026-09-28-06:36",
+  "status": "completed",
+  "started_at": "2026-09-28T06:36:55.827287+03:00",
+  "updated_at": "2026-09-28T06:38:35.482957+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+            "link": "https://www.otoajanda.com/yeni-uretecegi-arac-oncesi-musteri-markalarin-ceolariyla-masaya-oturdu/",
+            "published": "2026-09-28T00:30:51+00:00",
+            "summary": "Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci […] Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "arac-ceo-lariyla-markalarin-masaya-musteri-oncesi-oturdu-uretecegi"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -127,47 +147,222 @@
           "_metrics": {
             "found": 83,
             "after_keyword": 48,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 83,
           "after_keyword": 48,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-09-28T02:38:59.335461+03:00"
+      "error": null,
+      "updated_at": "2026-09-28T06:37:50.007568+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+          "link": "https://www.otoajanda.com/yeni-uretecegi-arac-oncesi-musteri-markalarin-ceolariyla-masaya-oturdu/",
+          "published": "2026-09-28T00:30:51+00:00",
+          "summary": "Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci […] Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-ceo-lariyla-markalarin-masaya-musteri-oncesi-oturdu-uretecegi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Üretim ve strateji odaklı önemli bir gelişme ancak genel tüketici kitlesi için viral veya sosyal medyada yüksek etkileşim yaratacak düzeyde çarpıcı değil.",
+          "freshness_bonus": 4,
+          "trend_bonus_raw": 1
+        },
+        "score": 50,
+        "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 4,
+        "score_breakdown": {
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 10,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 4
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Üretim ve strateji odaklı önemli bir gelişme ancak genel tüketici kitlesi için viral veya sosyal medyada yüksek etkileşim yaratacak düzeyde çarpıcı değil.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+            "score": 50,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 10,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-28T06:37:51.782919+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+          "link": "https://www.otoajanda.com/yeni-uretecegi-arac-oncesi-musteri-markalarin-ceolariyla-masaya-oturdu/",
+          "published": "2026-09-28T00:30:51+00:00",
+          "summary": "Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci […] Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif"
+          ],
+          "image_source": "rss",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-ceo-lariyla-markalarin-masaya-musteri-oncesi-oturdu-uretecegi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Üretim ve strateji odaklı önemli bir gelişme ancak genel tüketici kitlesi için viral veya sosyal medyada yüksek etkileşim yaratacak düzeyde çarpıcı değil.",
+          "freshness_bonus": 4,
+          "trend_bonus_raw": 1,
+          "full_text": "Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Hidrojenle çalışan Toyota Hilux çöle çıkıyor B sınıfı e-Power hibrit Nissan Kick Türkiye ve Avrupa için gelecek TEMSA’dan yeni milat: 26 bininci otobüs banttan indi EPDK’dan elektrikli araç sahiplerine müjde: Bayramlarda şarj kuyrukları son bulacak Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Toyota Türkiye 4 milyonuncu aracını banttan indirdi Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Elektrikli MINI Countryman üst vergi dilimine geçince fiyatını da donanımını da yükseltti Ford Kuga 1.5 ST-Line test sürüşü: Gerçekten sınıfının en eğlencelisi mi? OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Hidrojenle çalışan Toyota Hilux çöle çıkıyor B sınıfı e-Power hibrit Nissan Kick Türkiye ve Avrupa için gelecek TEMSA’dan yeni milat: 26 bininci otobüs banttan indi Otomotiv ihracatı nisanda yüzde 15 artış gösterdi Yeni Opel Grandland: Elektrikli geleceğe doğru 2024 Nissan Qashqai Avrupa için yenilendi Yeni Passat hangi motorlarla ülkemize geldi TV’de son durumu anlattık: 0 ve 2. el oto fiyatları düşüyor mu? Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi 2026 ilk 8 ayında Türkiye otomobil üretimi yüzde 19 düştü Lüks sedan sınıfında Neue Klasse devrimi: Yeni BMW 7 Serisi Türkiye’de Çinli markalar Almanya’yı fetheti ama sadece o segmentlere giremediler Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci hafif ticari araç modelinin üretimine başlıyor. Küresel otomotiv sanayi elektrikli ulaşım noktasında hızlı bir dönüşüm yaşarken, Türkiye bu işin merkezinde kalmaya devam ediyor. Stellantis bünyesinde satıştan üretime geniş bir sorumluluk alanı üstlenen Tofaş, Bursa fabrikasında çok markalı üretimini artırırken küresel yönetimin de odağında yer alıyor. Tofaş CEO’su Cengiz Eroldu’nun son dönemdeki yoğun diplomasisi, Bursa’nın Stellantis dünyasındaki ağırlığının yalnızca bir montaj hattından ibaret olmadığını, aynı zamanda mühendislik ve Ar-Ge tarafında da stratejik bir karar merkezi haline geldiğini gösteriyor. Eroldu’nun temas trafiğinin ilk ayağı Bursa’da gerçekleşti. Citroën CEO’su Xavier Chardon, Tofaş CEO’su Cengiz Eroldu’nun ev sahipliğinde Bursa Fabrikası’nı ziyaret ederek yerinde incelemelerde bulundu. Ziyaretin ana gündem maddesini, fabrikanın üretim altyapısı ve K9 projesi kapsamındaki yeni dönem hazırlıkları oluşturdu. Citroën Jumpy ve SpaceTourer modellerinin üretimiyle başlayan süreçte, markanın simge modellerinden Berlingo’nun da çok kısa süre içinde Bursa’da üretilmeye başlanacağı duyuruldu. Ziyaret esnasında Türkiye pazarındaki performansa da dikkat çeken Citroën CEO’su Xavier Chardon, Türkiye’nin 2025 yılında Citroën’in dünya genelindeki 2’nci büyük pazarı konumuna ulaştığını ve 2026’nın ilk 8 ayında %5,2 ile rekor pazar payını koruduğunu vurguladı. Tofaş CEO’su Cengiz Eroldu ise Türkiye’deki pazar başarısının üretim tarafındaki yeni projelerle desteklenmesinin önemine işaret ederek şu değerlendirmede bulundu: “Stellantis’in global ölçekte önemli üretim merkezlerinden biri olan Tofaş’ta Citroën CEO’su Xavier Chardon’ı ağırlamaktan büyük memnuniyet duyduk. Jumpy ve SpaceTourer ile başlayan Citroën üretiminin Berlingo ile genişlemesi bunun somut göstergelerinden biri. Çok markalı üretim yapımız ve mühendislik kabiliyetimizle Bursa’nın rolünü güçlendirmeye devam edeceğiz.” Bursa’daki ev sahipliğinin ardından Cengiz Eroldu, rotasını Almanya’ya çevirdi. Opel’in Rüsselsheim’daki Genel Merkezi’ni ziyaret eden Eroldu, Opel CEO’su Florian Huettl ve markanın üst yönetimiyle masaya oturdu. Görüşmelerde elektrifikasyon süreçleri, küresel pazarlardaki dönüşüm ve Türkiye’nin Opel ekosistemindeki yeri ele alındı. Türkiye, Opel’in dünya genelindeki en büyük 3’üncü iç pazarı konumunda bulunuyor. Ziyaretin üretim ayağında ise Tofaş’ın üstlendiği kritik rol bir kez daha teyit edildi. Halihazırda Opel Zafira, Vivaro ve Vivaro Kamyonet modellerine ev sahipliği yapan Bursa Fabrikası, K9 projesi kapsamında hafif ticari araç ailesinin başarılı temsilcisi Opel Combo’nun da seri üretimine geçmeye hazırlanıyor. Rüsselsheim programı kapsamında Opel’in Astra üretim hattını da yerinde inceleyen Cengiz Eroldu, verimlilik ve kalite süreçleri üzerine değerlendirmelerde bulundu. Opel CEO’su..."
+        },
+        "post_text": "YENİ ÜRETECEĞİ ARAÇ ÖNCESİ MÜŞTERİ MARKALARIN CEO’LARIYLA MASAYA OTURDU\n\nTofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan in\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 458,
+        "story_card_title": "Tofaş, Stellantis'in merkezinde!",
+        "story_card_subtitle": "Tofaş CEO'su Cengiz Eroldu, yeni üreteceği araç öncesi önemli bir adım attı. Eroldu, Stellantis'in merkezinde Citroën ve Opel CEO'larıyla bir araya geldi. Bu görüşmeler, Bursa'daki üretim üssünün gelecekteki stratejik rolünü pekiştirecek.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-28T06:37:56.002288+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu",
+          "link": "https://www.otoajanda.com/yeni-uretecegi-arac-oncesi-musteri-markalarin-ceolariyla-masaya-oturdu/",
+          "published": "2026-09-28T00:30:51+00:00",
+          "summary": "Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci […] Yeni üreteceği araç öncesi müşteri markaların CEO’larıyla masaya oturdu yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif",
+          "image_candidates": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif"
+          ],
+          "image_source": "article_candidates_field",
+          "source_name": "OtoAjanda",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-ceo-lariyla-markalarin-masaya-musteri-oncesi-oturdu-uretecegi",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
+          },
+          "score": 50,
+          "score_reason": "ai_scored",
+          "score_explanation": "Üretim ve strateji odaklı önemli bir gelişme ancak genel tüketici kitlesi için viral veya sosyal medyada yüksek etkileşim yaratacak düzeyde çarpıcı değil.",
+          "freshness_bonus": 4,
+          "trend_bonus_raw": 1,
+          "full_text": "Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Hidrojenle çalışan Toyota Hilux çöle çıkıyor B sınıfı e-Power hibrit Nissan Kick Türkiye ve Avrupa için gelecek TEMSA’dan yeni milat: 26 bininci otobüs banttan indi EPDK’dan elektrikli araç sahiplerine müjde: Bayramlarda şarj kuyrukları son bulacak Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Toyota Türkiye 4 milyonuncu aracını banttan indirdi Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Elektrikli MINI Countryman üst vergi dilimine geçince fiyatını da donanımını da yükseltti Ford Kuga 1.5 ST-Line test sürüşü: Gerçekten sınıfının en eğlencelisi mi? OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Toyota’dan 2026 sonu stratejisi: Düşen pazarda pay artırma hedefi Bentley Torcal: Markanın ilk elektrikli otomobili tanıtıldı Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi Hidrojenle çalışan Toyota Hilux çöle çıkıyor B sınıfı e-Power hibrit Nissan Kick Türkiye ve Avrupa için gelecek TEMSA’dan yeni milat: 26 bininci otobüs banttan indi Otomotiv ihracatı nisanda yüzde 15 artış gösterdi Yeni Opel Grandland: Elektrikli geleceğe doğru 2024 Nissan Qashqai Avrupa için yenilendi Yeni Passat hangi motorlarla ülkemize geldi TV’de son durumu anlattık: 0 ve 2. el oto fiyatları düşüyor mu? Yeni Mercedes-Benz EQS Türkiye’ye 818 km menzil ve Steer-by-Wire devrimiyle geldi 2026 ilk 8 ayında Türkiye otomobil üretimi yüzde 19 düştü Lüks sedan sınıfında Neue Klasse devrimi: Yeni BMW 7 Serisi Türkiye’de Çinli markalar Almanya’yı fetheti ama sadece o segmentlere giremediler Tofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan inecek yeni projeler öncesinde değerlendirmelerde bulundu. Tofaş, grup çatısı altındaki 4 marka için ikinci hafif ticari araç modelinin üretimine başlıyor. Küresel otomotiv sanayi elektrikli ulaşım noktasında hızlı bir dönüşüm yaşarken, Türkiye bu işin merkezinde kalmaya devam ediyor. Stellantis bünyesinde satıştan üretime geniş bir sorumluluk alanı üstlenen Tofaş, Bursa fabrikasında çok markalı üretimini artırırken küresel yönetimin de odağında yer alıyor. Tofaş CEO’su Cengiz Eroldu’nun son dönemdeki yoğun diplomasisi, Bursa’nın Stellantis dünyasındaki ağırlığının yalnızca bir montaj hattından ibaret olmadığını, aynı zamanda mühendislik ve Ar-Ge tarafında da stratejik bir karar merkezi haline geldiğini gösteriyor. Eroldu’nun temas trafiğinin ilk ayağı Bursa’da gerçekleşti. Citroën CEO’su Xavier Chardon, Tofaş CEO’su Cengiz Eroldu’nun ev sahipliğinde Bursa Fabrikası’nı ziyaret ederek yerinde incelemelerde bulundu. Ziyaretin ana gündem maddesini, fabrikanın üretim altyapısı ve K9 projesi kapsamındaki yeni dönem hazırlıkları oluşturdu. Citroën Jumpy ve SpaceTourer modellerinin üretimiyle başlayan süreçte, markanın simge modellerinden Berlingo’nun da çok kısa süre içinde Bursa’da üretilmeye başlanacağı duyuruldu. Ziyaret esnasında Türkiye pazarındaki performansa da dikkat çeken Citroën CEO’su Xavier Chardon, Türkiye’nin 2025 yılında Citroën’in dünya genelindeki 2’nci büyük pazarı konumuna ulaştığını ve 2026’nın ilk 8 ayında %5,2 ile rekor pazar payını koruduğunu vurguladı. Tofaş CEO’su Cengiz Eroldu ise Türkiye’deki pazar başarısının üretim tarafındaki yeni projelerle desteklenmesinin önemine işaret ederek şu değerlendirmede bulundu: “Stellantis’in global ölçekte önemli üretim merkezlerinden biri olan Tofaş’ta Citroën CEO’su Xavier Chardon’ı ağırlamaktan büyük memnuniyet duyduk. Jumpy ve SpaceTourer ile başlayan Citroën üretiminin Berlingo ile genişlemesi bunun somut göstergelerinden biri. Çok markalı üretim yapımız ve mühendislik kabiliyetimizle Bursa’nın rolünü güçlendirmeye devam edeceğiz.” Bursa’daki ev sahipliğinin ardından Cengiz Eroldu, rotasını Almanya’ya çevirdi. Opel’in Rüsselsheim’daki Genel Merkezi’ni ziyaret eden Eroldu, Opel CEO’su Florian Huettl ve markanın üst yönetimiyle masaya oturdu. Görüşmelerde elektrifikasyon süreçleri, küresel pazarlardaki dönüşüm ve Türkiye’nin Opel ekosistemindeki yeri ele alındı. Türkiye, Opel’in dünya genelindeki en büyük 3’üncü iç pazarı konumunda bulunuyor. Ziyaretin üretim ayağında ise Tofaş’ın üstlendiği kritik rol bir kez daha teyit edildi. Halihazırda Opel Zafira, Vivaro ve Vivaro Kamyonet modellerine ev sahipliği yapan Bursa Fabrikası, K9 projesi kapsamında hafif ticari araç ailesinin başarılı temsilcisi Opel Combo’nun da seri üretimine geçmeye hazırlanıyor. Rüsselsheim programı kapsamında Opel’in Astra üretim hattını da yerinde inceleyen Cengiz Eroldu, verimlilik ve kalite süreçleri üzerine değerlendirmelerde bulundu. Opel CEO’su...",
+          "post_text_for_card": "YENİ ÜRETECEĞİ ARAÇ ÖNCESİ MÜŞTERİ MARKALARIN CEO’LARIYLA MASAYA OTURDU\n\nTofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan in\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Tofaş, Stellantis'in merkezinde!",
+          "story_card_subtitle": "Tofaş CEO'su Cengiz Eroldu, yeni üreteceği araç öncesi önemli bir adım attı. Eroldu, Stellantis'in merkezinde Citroën ve Opel CEO'larıyla bir araya geldi. Bu görüşmeler, Bursa'daki üretim üssünün gelecekteki stratejik rolünü pekiştirecek.",
+          "image_sources": [
+            "article_candidates_field"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": [
+            "https://www.otoajanda.com/wp-content/uploads/2026/09/Tofas-CEOsu-Cengiz-Eroldu-Citroen-CEOsu-Xavier-Chardon-800x533.avif"
+          ]
+        },
+        "post_text": "YENİ ÜRETECEĞİ ARAÇ ÖNCESİ MÜŞTERİ MARKALARIN CEO’LARIYLA MASAYA OTURDU\n\nTofaş CEO’su Cengiz Eroldu, küresel otomotiv devi Stellantis entegrasyonunun ardından Bursa’daki üretim üssünün stratejik rolünü pekiştirecek adımlar atmaya devam ediyor. Bursa’dan Rüsselsheim’a uzanan temas trafiğinde Eroldu; Citroën CEO’su Xavier Chardon ve Opel CEO’su Florian Huettl ile bir araya gelerek, fabrikada banttan in\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Tofaş, Stellantis'in merkezinde!",
+        "story_card_subtitle": "Tofaş CEO'su Cengiz Eroldu, yeni üreteceği araç öncesi önemli bir adım attı. Eroldu, Stellantis'in merkezinde Citroën ve Opel CEO'larıyla bir araya geldi. Bu görüşmeler, Bursa'daki üretim üssünün gelecekteki stratejik rolünü pekiştirecek.",
+        "image_path": "/tmp/otoxtra_img_p38qi5uu.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_p38qi5uu.jpg"
+        ],
+        "image_source": "article_candidates_field",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-28T06:37:57.222156+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122181220844916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17932493898144682",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1102103572298402",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-09-28T06:38:35.482957+03:00"
     }
   }
 }
