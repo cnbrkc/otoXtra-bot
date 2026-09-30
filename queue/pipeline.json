@@ -1,32 +1,13 @@
 {
-  "run_id": "2026-09-30-17:44",
+  "run_id": "2026-09-30-22:48",
   "status": "completed",
-  "started_at": "2026-09-30T17:44:31.915080+03:00",
-  "updated_at": "2026-09-30T17:46:34.257689+03:00",
+  "started_at": "2026-09-30T22:48:56.226157+03:00",
+  "updated_at": "2026-09-30T22:51:00.862956+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
-          {
-            "title": "ChatGPT, ofis yazılımı oluyor: Space, Pages ve Slides geliyor",
-            "link": "https://www.donanimhaber.com/chatgpt-ofis-yazilimi-oluyor-space-pages-ve-slides-geliyor--211061",
-            "published": "2026-09-30T12:39:00+00:00",
-            "summary": "OpenAI, ChatGPT’yi iş dünyasına taşıyan yeni araçlarını duyurdu. Space, Pages ve Slides özellikleri ile ekipler belge, sunum ve yapay zeka ajanlarıyla ortak çalışma yapabilecek.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/211061/1200x675chatgpt-ofis-yazilimi-oluyor-space-pages-ve-slides-geliyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211061/1200x675chatgpt-ofis-yazilimi-oluyor-space-pages-ve-slides-geliyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/211061/1200x675chatgpt-ofis-yazilimi-oluyor-space-pages-ve-slides-geliyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "chatgpt-geliyor-ofis-oluyor-pages-slides-space-yazilimi"
-          },
           {
             "title": "WhatsApp, gençlere yönelik ebeveyn kontrollerini kullanıma sundu",
             "link": "https://www.log.com.tr/whatsapp-genclere-yonelik-ebeveyn-kontrollerini-kullanima-sundu/",
@@ -45,6 +26,25 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "ebeveyn-genclere-kontrollerini-kullanima-sundu-whatsapp-yonelik"
+          },
+          {
+            "title": "Mazda, daha fazla Çin üretimi model sunmayı planlıyor",
+            "link": "https://tr.motor1.com/news/810282/mazda-daha-fazla-cin-uretimi/",
+            "published": "2026-09-30T15:00:00+00:00",
+            "summary": "EV ürün gamını genişletmek adına, 6e ve CX-6e'nin yanına yeni modeller katılabilir.",
+            "image_url": "https://cdn.motor1.com/images/mgl/W87ePN/s3/mazda-6e-la-prova-su-strada-in-spagna.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/W87ePN/s3/mazda-6e-la-prova-su-strada-in-spagna.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/W87ePN/s3/mazda-6e-la-prova-su-strada-in-spagna.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cin-fazla-mazda-model-planliyor-sunmayi-uretimi"
           },
           {
             "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
@@ -66,66 +66,9 @@
             "topic_fingerprint": "adini-alfa-cuorerosso-otomobiline-romeo-sonraki-verecek"
           },
           {
-            "title": "Mazda, Rotary motordan vazgeçmeye hazır değil!",
-            "link": "https://tr.motor1.com/news/810238/mazda-rotary-motor-yeni-sistem/",
-            "published": "2026-09-30T11:35:35+00:00",
-            "summary": "Yeni bir sistem yolda.",
-            "image_url": "https://cdn.motor1.com/images/mgl/40xA3K/s3/mazda-mx-30-e-skyactiv-r-ev-2025-im-test.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/40xA3K/s3/mazda-mx-30-e-skyactiv-r-ev-2025-im-test.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/40xA3K/s3/mazda-mx-30-e-skyactiv-r-ev-2025-im-test.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "degil-hazir-mazda-motordan-rotary-vazgecmeye"
-          },
-          {
-            "title": "BMW, i3'ün \"en güçlü\" M60 versiyonunu tanıttı",
-            "link": "https://tr.motor1.com/news/810203/bmw-i3-m60-resmi/",
-            "published": "2026-09-30T07:57:27+00:00",
-            "summary": "Sürprizin kalitesi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/9mW43G/s3/2027-bmw-i3-m60.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/9mW43G/s3/2027-bmw-i3-m60.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/9mW43G/s3/2027-bmw-i3-m60.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-guclu-m60-tanitti-versiyonunu"
-          },
-          {
-            "title": "Yeni BMW 3 Serisi: Dizelsiz yeni sayfa!",
-            "link": "https://tr.motor1.com/news/810176/g50-bmw-3-serisi-resmi/",
-            "published": "2026-09-30T07:07:20+00:00",
-            "summary": "Tarihin en güçlü 3 Serisi, dizel motor seçeneklerine veda etti.",
-            "image_url": "https://cdn.motor1.com/images/mgl/qk8Mpq/s3/bmw-m350-xdrive-2027.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/qk8Mpq/s3/bmw-m350-xdrive-2027.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/qk8Mpq/s3/bmw-m350-xdrive-2027.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bmw-dizelsiz-sayfa-serisi"
-          },
-          {
             "title": "Hyundai, iddiaya göre IONIQ 4 ve IONIQ 7 üzerinde çalışıyor",
             "link": "https://www.log.com.tr/hyundai-iddiaya-gore-ioniq-4-ve-ioniq-7-uzerinde-calisiyor/",
-            "published": "2026-09-30T17:44:32.095196+03:00",
+            "published": "2026-09-30T22:48:56.290488+03:00",
             "summary": "Hyundai, bugün gündeme getirilen iddialara göre tamamen elektrikli IONIQ 4 ve IONIQ 7 modelleri üzerinde de çalışıyor. B segment SUV modeli IONIQ 4’ü Türkiye’de üretilen IONIQ 3 ile uzun süredir satışta olan IONIQ 5’in arasına, IONIQ 7’yi ise IONIQ 5 ile amiral gemisi IONIQ 9’un arasına konumlandırmak istediği öne sürülen şirket, elektrikli ürün gamını daha geniş bir kullanıcı kitlesine hitap edecek modellerle büyütmeyi hedefliyor. Henüz kesinleşmiş detaylar bulunmuyor ancak IONIQ 4’ün yaklaşık 344 ve 497 km menzil sunan 42 kWh ve 61 kWh kapasiteli bataryalarla pazara çıkarılması bekleniyor. IONIQ 7’de ise 800V mimari üzerinden yaklaşık 640 km menzil sunulabileceği düşünülüyor. Bu araçların önümüzdeki 12 ila 18 ay içinde resmi olarak görücüye çıkarılması bekleniyor. Hyundai, iddiaya göre IONIQ 4 ve IONIQ 7 üzerinde çalışıyor yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-30_09-57-57_zlHVE-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-30_09-57-57_zlHVE-660x371.jpg",
@@ -142,28 +85,9 @@
             "topic_fingerprint": "calisiyor-hyundai-iddiaya-ioniq-ioniq-uzerinde"
           },
           {
-            "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
-            "link": "https://www.log.com.tr/geely-cinde-2-250-kwlik-bes-farkli-sarj-istasyonu-devreye-aldi/",
-            "published": "2026-09-30T17:44:32.095196+03:00",
-            "summary": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu. Bugün öğrendiğimiz kadarıyla şirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor. Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "250-aldi-bes-cin-devreye-farkli-geely-istasyonu-lik-sarj"
-          },
-          {
             "title": "Citroën CEO’su Xavier Chardon, Tofaş’ın Bursa’daki üretim üssünü ziyaret etti",
             "link": "https://www.log.com.tr/citroen-ceosu-xavier-chardon-tofasin-bursadaki-uretim-ussunu-ziyaret-etti/",
-            "published": "2026-09-30T17:44:32.095196+03:00",
+            "published": "2026-09-30T22:48:56.290488+03:00",
             "summary": "Bu ziyaret hakkında yapılan resmi açıklamada, “Tofaş, Stellantis’in global marka yönetimlerini Bursa’daki üretim üssünde ağırlamaya devam ediyor. Citroën CEO’su Xavier Chardon, Tofaş CEO’su Cengiz Eroldu’nun ev sahipliğinde gerçekleştirdiği Bursa Fabrikası ziyaretinde üretim süreçlerini, fabrikanın teknolojik ve mühendislik yetkinliklerini ve Tofaş’ın yeni dönem projelerini yerinde inceledi. Citroën CEO’su Xavier Chardon’ın Tofaş Bursa Fabrikası’nı ziyareti, K9 projesi kapsamında başlayan yeni üretim döneminin de yerinde incelenmesine sahne oldu. Chardon, üretim hattında K9 projesi kapsamındaki araçları ve üretim süreçlerini yakından inceleyerek Tofaş’ın çok markalı üretim yapısı, mühendislik yetkinlikleri ve yeni dönem üretim kapasitesi hakkında bilgi aldı. Ziyaret, K9 projesiyle birlikte Tofaş Bursa Fabrikası’nın Citroën ve Stellantis’in üretim yapılanmasında üstlendiği yeni rolü de gözler önüne serdi.” ifadelerine yer verildi. Citroën’in Türkiye’de ulaştığı güçlü konuma dikkat çeken Citroën CEO’su Xavier Chardon, şu değerlendirmede bulundu: “Türkiye’nin 2025 yılında Citroën’in dünya genelindeki 2’nci büyük pazarı konumuna ulaşması ve 2026’nın ilk 8 ayında markanın rekor pazar payı olan 5,2%’yi […] Citroën CEO’su Xavier Chardon, Tofaş’ın Bursa’daki üretim üssünü ziyaret etti yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-28_15-44-23_1vNok-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-28_15-44-23_1vNok-660x371.jpg",
@@ -178,28 +102,9 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "bursa-ceo-chardon-citro-etti-tofas-uretim-ussunu-xavier-ziyaret"
-          },
-          {
-            "title": "OtoArena’dan tüketicilere özel, yeni nesil ikinci el araç açık artırması",
-            "link": "https://otopodyum.com.tr/ikinci-el-otolar/otoarenadan-tuketicilere-ozel-yeni-nesil-ikinci-el-arac-acik-artirmasi-5338h",
-            "published": "2026-09-30T10:10:07+00:00",
-            "summary": "OtoArena ve 2.el araç sektörünün uzman kuruluşlarından OtoSOR, Türkiye’de ilk defa tüketicilere özel, şeffaf, güvenilir ticaret sunan ikinci el araç açık artırma organizasyonunu sunuculu ve yüz yüze bir şekilde hayata geçiriyor.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5653.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5653.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5653.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acik-arac-artirmasi-ikinci-nesil-otoarena-ozel-tuketicilere"
           }
         ],
-        "count": 10,
+        "count": 5,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -317,181 +222,141 @@
           },
           "_metrics": {
             "found": 88,
-            "after_keyword": 53,
-            "after_time": 16,
-            "after_posted": 10,
-            "after_duplicate": 10,
-            "after_shared_variant_cooldown": 10
+            "after_keyword": 51,
+            "after_time": 11,
+            "after_posted": 5,
+            "after_duplicate": 5,
+            "after_shared_variant_cooldown": 5
           }
         },
         "metrics": {
           "found": 88,
-          "after_keyword": 53,
-          "after_time": 16,
-          "after_posted": 10,
-          "after_duplicate": 10,
-          "after_shared_variant_cooldown": 10
+          "after_keyword": 51,
+          "after_time": 11,
+          "after_posted": 5,
+          "after_duplicate": 5,
+          "after_shared_variant_cooldown": 5
         }
       },
       "error": null,
-      "updated_at": "2026-09-30T17:45:17.863607+03:00"
+      "updated_at": "2026-09-30T22:49:54.103465+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
-          "link": "https://www.log.com.tr/geely-cinde-2-250-kwlik-bes-farkli-sarj-istasyonu-devreye-aldi/",
-          "published": "2026-09-30T17:44:32.095196+03:00",
-          "summary": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu. Bugün öğrendiğimiz kadarıyla şirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor. Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
+          "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
+          "link": "https://tr.motor1.com/news/810260/alfa-romeo-cuorerosso-isim-teaser/",
+          "published": "2026-09-30T14:00:00+00:00",
+          "summary": "2026 Paris Otomobil Fuarı'nda tanıtılacak",
+          "image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg"
+            "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "250-aldi-bes-cin-devreye-farkli-geely-istasyonu-lik-sarj",
-          "base_ai_score": 62,
+          "topic_fingerprint": "adini-alfa-cuorerosso-otomobiline-romeo-sonraki-verecek",
+          "base_ai_score": 64,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 16,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 71,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Devasa şarj gücü kapasitesiyle elektrikli araç altyapısı meraklılarının dikkatini çekecek teknolojik bir gelişme.",
-          "freshness_bonus": 10,
+          "score_explanation": "Alfa Romeo tutkunlarını ve spor otomobil meraklılarını heyecanlandıracak yeni model ismi ve lansman tarihi detayları içeriyor.",
+          "freshness_bonus": 4,
           "trend_bonus_raw": 1
         },
-        "score": 71,
-        "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
+        "score": 69,
+        "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 4,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 16,
-          "benzersizlik": 12,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 10
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 5
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Devasa şarj gücü kapasitesiyle elektrikli araç altyapısı meraklılarının dikkatini çekecek teknolojik bir gelişme.",
+        "score_explanation": "Alfa Romeo tutkunlarını ve spor otomobil meraklılarını heyecanlandıracak yeni model ismi ve lansman tarihi detayları içeriyor.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
-            "score": 71,
+            "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
+            "score": 69,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 16,
-              "benzersizlik": 12,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
-            "title": "Yeni BMW 3 Serisi: Dizelsiz yeni sayfa!",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 15,
-              "etkilesim_potansiyeli": 17,
-              "benzersizlik": 14,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 9
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 5
             }
           },
           {
             "title": "Citroën CEO’su Xavier Chardon, Tofaş’ın Bursa’daki üretim üssünü ziyaret etti",
-            "score": 69,
+            "score": 65,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 15,
               "benzersizlik": 14,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 7
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 5
+            }
+          },
+          {
+            "title": "Mazda, daha fazla Çin üretimi model sunmayı planlıyor",
+            "score": 63,
+            "score_breakdown": {
+              "guncellik": 18,
+              "etkilesim_potansiyeli": 15,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 6
             }
           }
         ],
-        "scored_count": 10,
+        "scored_count": 5,
         "cooldown_candidates": [
-          {
-            "title": "Yeni BMW 3 Serisi: Dizelsiz yeni sayfa!",
-            "link": "https://tr.motor1.com/news/810176/g50-bmw-3-serisi-resmi/",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "bmw-dizelsiz-sayfa-serisi"
-          },
           {
             "title": "Citroën CEO’su Xavier Chardon, Tofaş’ın Bursa’daki üretim üssünü ziyaret etti",
             "link": "https://www.log.com.tr/citroen-ceosu-xavier-chardon-tofasin-bursadaki-uretim-ussunu-ziyaret-etti/",
-            "score": 69,
+            "score": 65,
             "score_reason": "ai_scored",
             "source_name": "LogDergisi",
             "topic_fingerprint": "bursa-ceo-chardon-citro-etti-tofas-uretim-ussunu-xavier-ziyaret"
           },
           {
-            "title": "BMW, i3'ün \"en güçlü\" M60 versiyonunu tanıttı",
-            "link": "https://tr.motor1.com/news/810203/bmw-i3-m60-resmi/",
-            "score": 66,
+            "title": "Mazda, daha fazla Çin üretimi model sunmayı planlıyor",
+            "link": "https://tr.motor1.com/news/810282/mazda-daha-fazla-cin-uretimi/",
+            "score": 63,
             "score_reason": "ai_scored",
             "source_name": "Motor1 TR",
-            "topic_fingerprint": "bmw-guclu-m60-tanitti-versiyonunu"
-          },
-          {
-            "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
-            "link": "https://tr.motor1.com/news/810260/alfa-romeo-cuorerosso-isim-teaser/",
-            "score": 65,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "adini-alfa-cuorerosso-otomobiline-romeo-sonraki-verecek"
-          },
-          {
-            "title": "Mazda, Rotary motordan vazgeçmeye hazır değil!",
-            "link": "https://tr.motor1.com/news/810238/mazda-rotary-motor-yeni-sistem/",
-            "score": 56,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "degil-hazir-mazda-motordan-rotary-vazgecmeye"
+            "topic_fingerprint": "cin-fazla-mazda-model-planliyor-sunmayi-uretimi"
           },
           {
             "title": "Hyundai, iddiaya göre IONIQ 4 ve IONIQ 7 üzerinde çalışıyor",
             "link": "https://www.log.com.tr/hyundai-iddiaya-gore-ioniq-4-ve-ioniq-7-uzerinde-calisiyor/",
-            "score": 56,
+            "score": 58,
             "score_reason": "ai_scored",
             "source_name": "LogDergisi",
             "topic_fingerprint": "calisiyor-hyundai-iddiaya-ioniq-ioniq-uzerinde"
           },
           {
-            "title": "OtoArena’dan tüketicilere özel, yeni nesil ikinci el araç açık artırması",
-            "link": "https://otopodyum.com.tr/ikinci-el-otolar/otoarenadan-tuketicilere-ozel-yeni-nesil-ikinci-el-arac-acik-artirmasi-5338h",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "acik-arac-artirmasi-ikinci-nesil-otoarena-ozel-tuketicilere"
-          },
-          {
-            "title": "ChatGPT, ofis yazılımı oluyor: Space, Pages ve Slides geliyor",
-            "link": "https://www.donanimhaber.com/chatgpt-ofis-yazilimi-oluyor-space-pages-ve-slides-geliyor--211061",
-            "score": 26,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "chatgpt-geliyor-ofis-oluyor-pages-slides-space-yazilimi"
-          },
-          {
             "title": "WhatsApp, gençlere yönelik ebeveyn kontrollerini kullanıma sundu",
             "link": "https://www.log.com.tr/whatsapp-genclere-yonelik-ebeveyn-kontrollerini-kullanima-sundu/",
-            "score": 23,
+            "score": 47,
             "score_reason": "ai_scored",
             "source_name": "Log",
             "topic_fingerprint": "ebeveyn-genclere-kontrollerini-kullanima-sundu-whatsapp-yonelik"
@@ -499,130 +364,145 @@
         ]
       },
       "error": null,
-      "updated_at": "2026-09-30T17:45:34.463948+03:00"
+      "updated_at": "2026-09-30T22:49:57.215147+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
-          "link": "https://www.log.com.tr/geely-cinde-2-250-kwlik-bes-farkli-sarj-istasyonu-devreye-aldi/",
-          "published": "2026-09-30T17:44:32.095196+03:00",
-          "summary": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu. Bugün öğrendiğimiz kadarıyla şirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor. Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg",
+          "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
+          "link": "https://tr.motor1.com/news/810260/alfa-romeo-cuorerosso-isim-teaser/",
+          "published": "2026-09-30T14:00:00+00:00",
+          "summary": "2026 Paris Otomobil Fuarı'nda tanıtılacak",
+          "image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/09/2026-09-29_15-42-29_6iccK-660x371.jpg"
+            "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "250-aldi-bes-cin-devreye-farkli-geely-istasyonu-lik-sarj",
-          "base_ai_score": 62,
+          "topic_fingerprint": "adini-alfa-cuorerosso-otomobiline-romeo-sonraki-verecek",
+          "base_ai_score": 64,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 16,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 71,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Devasa şarj gücü kapasitesiyle elektrikli araç altyapısı meraklılarının dikkatini çekecek teknolojik bir gelişme.",
-          "freshness_bonus": 10,
+          "score_explanation": "Alfa Romeo tutkunlarını ve spor otomobil meraklılarını heyecanlandıracak yeni model ismi ve lansman tarihi detayları içeriyor.",
+          "freshness_bonus": 4,
           "trend_bonus_raw": 1,
-          "full_text": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu.Bugün öğrendiğimiz kadarıylaşirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor."
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Alfa Romeo Cuorerossoile tanışmaya hazırlanın. İtalyan üreticinin2026 Paris Otomobil Fuarı’nda tanıtacağı yeni konsept bu adı taşıyacak. Markanın vurguladığı üzere bu isim: \"Markanın en derin özünü, kimliğinde köklü şekilde yer alan 2 sembolü bir araya getirerek yansıtıyor:Alfa Romeodünyasının tutkusunu ve ayırt edici imzasını temsil eden Kırmızı (Rosso) ile bu enerjinin kaynağı olan ve Biscione’nin her yaratımıyla onu kullanan kişi arasındaki içten bağı simgeleyen Kalp (Cuore). Cuorerosso’da bu 2 unsur aynı ritimde atıyor; yalnızca bir ismin ötesine geçen, geleceğin otomobiline dair öncelikle duygulara hitap etmeyi amaçlayan bir niyet beyanına dönüşüyor.\" Cuorerosso adı,sosyal medyada yayımlanan kısa bir videoile duyuruldu. Videoda konsept otomobil, gövdesine ait bazı detaylar üzerinden kısa anlarla gösteriliyor; ancak modelin tamamı henüz ortaya çıkarılmıyor. İlk dikkat çeken bölümön aydınlatmalar. Kısa görüntülerden anlaşıldığı kadarıyla bu farlar, yeni konseptin ruhunu kısmen devralması beklenen Alfa Romeo 33 Stradale’i hatırlatıyor. 2026 Paris Otomobil Fuarı’nda sergilenecek prototipin, Alfa Romeo’nun bir sonraki sınırlı üretim spor otomobiline ön izleme niteliği taşıması bekleniyor. Bu proje, Biscione ve Maserati’ye özel kişiselleştirme departmanı olanBottegaFuoriserie imzalıolacak. Aynı ekip, 33 Stradale Perla Nera’nın yaratım sürecinde de görev almıştı. Alfa Romeo 33 Stradale Perla Nera Alfa Romeo Cuorerosso'dan bir detay Dolayısıyla büyük olasılıkla karşımızdaarkadan itişli, 2 koltuklu bir spor otomobilolacak.33 Stradale’dekullanılançift turbolu V6motorun, mevcut630 bgseviyesinin üzerine çıkarılmış bir güçle görev yapması da ihtimaller arasında. Tasarımın geçmişteki bir modelden mi ilham alacağı yoksa tamamen kendine özgü bir stile mi sahip olacağı şimdilik belirsiz. Ancak bunlar şu aşamada yalnızca spekülasyona dayalı ayrıntılar ve muhtemelen2026 Paris Otomobil Fuarı’nın ilk günü olan 12 Ekim’e kadar daha fazlasını öğrenemeyeceğiz. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "Elektrikli otomobil dünyası, şarj istasyonlarının gücünü tartıştıkça Geely bu tartışmayı bitiriyor. Çinli dev, 2.250 kW’lık istasyonlarını beş farklı şehirde devreye aldı.\n\nBu güçle araçlar %10’dan %70’e 4,5 dakikada ulaşıyor. Batarya sağlığı için yapay zeka ve bulut tabanlı simülasyonlar kullanılması, bu hızın sadece bir gösteri olmadığını kanıtlıyor.\n\nŞimdi sıra, bu teknolojinin sadece \"Çin'e özel\" kalıp kalmayacağında.",
-        "post_text_length": 425,
-        "story_card_title": "Geely, Şarj Hızında Oyunu Değiştirdi!",
-        "story_card_subtitle": "Çinli otomobil devi Geely, \"Smart Charging C12\" adını verdiği 2.250 kW gücündeki yeni şarj istasyonlarını Çin'de devreye aldı. Bu yüksek güç sayesinde elektrikli araçlar, batarya sağlığı korunarak %10’dan %70’e sadece 4,5 dakikada şarj olabiliyor. Yapay zeka ve bulut tabanlı simülasyonlarla desteklenen bu teknoloji, elektrikli araç şarjını bambaşka bir seviyeye taşıyor. Şimdi gözler, bu devrimin Çin dışına ne zaman yayılacağında.",
+        "post_text": "ALFA ROMEO, BİR SONRAKİ OTOMOBİLİNE \"CUOREROSSO\" ADINI VERECEK!\n\n2026 Paris Otomobil Fuarı'nda tanıtılacak\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 161,
+        "story_card_title": "Alfa Romeo'dan İtalyan Tutkusu: Cuorerosso!",
+        "story_card_subtitle": "Alfa Romeo, yeni modelinin adını Cuorerosso olarak duyurdu. 'Kırmızı Kalp' anlamına gelen bu isim, markanın tutkulu mirasını yansıtıyor. Yeni model, 2026 Paris Otomobil Fuarı'nda otomobilseverlerle buluşacak.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-09-30T17:45:37.392040+03:00"
+      "updated_at": "2026-09-30T22:50:10.861521+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı",
-          "link": "https://www.log.com.tr/geely-cinde-2-250-kwlik-bes-farkli-sarj-istasyonu-devreye-aldi/",
-          "published": "2026-09-30T17:44:32.095196+03:00",
-          "summary": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu. Bugün öğrendiğimiz kadarıyla şirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor. Geely, Çin’de 2.250 kW’lık beş farklı şarj istasyonu devreye aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
+          "title": "Alfa Romeo, bir sonraki otomobiline \"Cuorerosso\" adını verecek!",
+          "link": "https://tr.motor1.com/news/810260/alfa-romeo-cuorerosso-isim-teaser/",
+          "published": "2026-09-30T14:00:00+00:00",
+          "summary": "2026 Paris Otomobil Fuarı'nda tanıtılacak",
+          "image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/NG6gxX/s3/alfa-romeo-cuorerosso.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "250-aldi-bes-cin-devreye-farkli-geely-istasyonu-lik-sarj",
-          "base_ai_score": 62,
+          "topic_fingerprint": "adini-alfa-cuorerosso-otomobiline-romeo-sonraki-verecek",
+          "base_ai_score": 64,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 16,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 5
           },
-          "score": 71,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Devasa şarj gücü kapasitesiyle elektrikli araç altyapısı meraklılarının dikkatini çekecek teknolojik bir gelişme.",
-          "freshness_bonus": 10,
+          "score_explanation": "Alfa Romeo tutkunlarını ve spor otomobil meraklılarını heyecanlandıracak yeni model ismi ve lansman tarihi detayları içeriyor.",
+          "freshness_bonus": 4,
           "trend_bonus_raw": 1,
-          "full_text": "Volvo’nun da sahibi olan Çinli otomobil devlerinden Geely, geçtiğimiz hafta yeni akıllı şarj istasyonlarında tam 2.250 kW (2,25 megavat) seviyesinde şarj gücü sunabileceğini duyurmuştu.Bugün öğrendiğimiz kadarıylaşirket, “Smart Charging C12” adı verilen bu yüksek güçlü istasyonları şimdiden Çin’in beş farklı şehrinde (Hangzhou, Şanghay, Ningbo, Jiaxing ve Xi’an) hayata geçirdi. Geely’nin açıklamasına göre bu sistemde desteklenen araçların bataryaları yüzde 10’dan yüzde 70’e yalnızca 4,5 dakikada şarj edilebiliyor. Yüzde 10’dan yüzde 97 doluluk seviyesine ulaşmak ise 8 dakika 40 saniye kadar sürüyor. Yüksek hızlı şarjın güvenli bir şekilde gerçekleştirilmesi için yapay zekadan yardım alan üretici, aktarıldığı kadarıyla batarya sağlığını izlemek, termal kontrolü yönetmek ve olası tehlikeleri ortaya çıkmadan önce tespit etmek amacıyla bulut tabanlı özel simülasyonları doğrudan elektrikli araç üzerinde çalıştırılan derin öğrenme modelleriyle birlikte kullanıyor.",
-          "post_text_for_card": "Elektrikli otomobil dünyası, şarj istasyonlarının gücünü tartıştıkça Geely bu tartışmayı bitiriyor. Çinli dev, 2.250 kW’lık istasyonlarını beş farklı şehirde devreye aldı.\n\nBu güçle araçlar %10’dan %70’e 4,5 dakikada ulaşıyor. Batarya sağlığı için yapay zeka ve bulut tabanlı simülasyonlar kullanılması, bu hızın sadece bir gösteri olmadığını kanıtlıyor.\n\nŞimdi sıra, bu teknolojinin sadece \"Çin'e özel\" kalıp kalmayacağında.",
-          "story_card_title": "Geely, Şarj Hızında Oyunu Değiştirdi!",
-          "story_card_subtitle": "Çinli otomobil devi Geely, \"Smart Charging C12\" adını verdiği 2.250 kW gücündeki yeni şarj istasyonlarını Çin'de devreye aldı. Bu yüksek güç sayesinde elektrikli araçlar, batarya sağlığı korunarak %10’dan %70’e sadece 4,5 dakikada şarj olabiliyor. Yapay zeka ve bulut tabanlı simülasyonlarla desteklenen bu teknoloji, elektrikli araç şarjını bambaşka bir seviyeye taşıyor. Şimdi gözler, bu devrimin Çin dışına ne zaman yayılacağında.",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Alfa Romeo Cuorerossoile tanışmaya hazırlanın. İtalyan üreticinin2026 Paris Otomobil Fuarı’nda tanıtacağı yeni konsept bu adı taşıyacak. Markanın vurguladığı üzere bu isim: \"Markanın en derin özünü, kimliğinde köklü şekilde yer alan 2 sembolü bir araya getirerek yansıtıyor:Alfa Romeodünyasının tutkusunu ve ayırt edici imzasını temsil eden Kırmızı (Rosso) ile bu enerjinin kaynağı olan ve Biscione’nin her yaratımıyla onu kullanan kişi arasındaki içten bağı simgeleyen Kalp (Cuore). Cuorerosso’da bu 2 unsur aynı ritimde atıyor; yalnızca bir ismin ötesine geçen, geleceğin otomobiline dair öncelikle duygulara hitap etmeyi amaçlayan bir niyet beyanına dönüşüyor.\" Cuorerosso adı,sosyal medyada yayımlanan kısa bir videoile duyuruldu. Videoda konsept otomobil, gövdesine ait bazı detaylar üzerinden kısa anlarla gösteriliyor; ancak modelin tamamı henüz ortaya çıkarılmıyor. İlk dikkat çeken bölümön aydınlatmalar. Kısa görüntülerden anlaşıldığı kadarıyla bu farlar, yeni konseptin ruhunu kısmen devralması beklenen Alfa Romeo 33 Stradale’i hatırlatıyor. 2026 Paris Otomobil Fuarı’nda sergilenecek prototipin, Alfa Romeo’nun bir sonraki sınırlı üretim spor otomobiline ön izleme niteliği taşıması bekleniyor. Bu proje, Biscione ve Maserati’ye özel kişiselleştirme departmanı olanBottegaFuoriserie imzalıolacak. Aynı ekip, 33 Stradale Perla Nera’nın yaratım sürecinde de görev almıştı. Alfa Romeo 33 Stradale Perla Nera Alfa Romeo Cuorerosso'dan bir detay Dolayısıyla büyük olasılıkla karşımızdaarkadan itişli, 2 koltuklu bir spor otomobilolacak.33 Stradale’dekullanılançift turbolu V6motorun, mevcut630 bgseviyesinin üzerine çıkarılmış bir güçle görev yapması da ihtimaller arasında. Tasarımın geçmişteki bir modelden mi ilham alacağı yoksa tamamen kendine özgü bir stile mi sahip olacağı şimdilik belirsiz. Ancak bunlar şu aşamada yalnızca spekülasyona dayalı ayrıntılar ve muhtemelen2026 Paris Otomobil Fuarı’nın ilk günü olan 12 Ekim’e kadar daha fazlasını öğrenemeyeceğiz. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "ALFA ROMEO, BİR SONRAKİ OTOMOBİLİNE \"CUOREROSSO\" ADINI VERECEK!\n\n2026 Paris Otomobil Fuarı'nda tanıtılacak\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "Alfa Romeo'dan İtalyan Tutkusu: Cuorerosso!",
+          "story_card_subtitle": "Alfa Romeo, yeni modelinin adını Cuorerosso olarak duyurdu. 'Kırmızı Kalp' anlamına gelen bu isim, markanın tutkulu mirasını yansıtıyor. Yeni model, 2026 Paris Otomobil Fuarı'nda otomobilseverlerle buluşacak.",
           "image_sources": [
-            "no_image"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_script"
           ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/NG6gxX/s1/alfa-romeo-cuorerosso.jpg",
+            "https://cdn.motor1.com/images/mgl/xqOnjv/s3/alfa-romeo-33-stradale-perla-nera.jpg",
+            "https://cdn.motor1.com/images/mgl/ZnlM32/s3/alfa-romeo-mostra-un-dettaglio-del-nuovo-concept-di-parigi.jpg",
+            "https://cdn.motor1.com/images/mgl/NG6gxX/s1/1x1/alfa-romeo-cuorerosso.webp"
+          ]
         },
-        "post_text": "Elektrikli otomobil dünyası, şarj istasyonlarının gücünü tartıştıkça Geely bu tartışmayı bitiriyor. Çinli dev, 2.250 kW’lık istasyonlarını beş farklı şehirde devreye aldı.\n\nBu güçle araçlar %10’dan %70’e 4,5 dakikada ulaşıyor. Batarya sağlığı için yapay zeka ve bulut tabanlı simülasyonlar kullanılması, bu hızın sadece bir gösteri olmadığını kanıtlıyor.\n\nŞimdi sıra, bu teknolojinin sadece \"Çin'e özel\" kalıp kalmayacağında.",
-        "story_card_title": "Geely, Şarj Hızında Oyunu Değiştirdi!",
-        "story_card_subtitle": "Çinli otomobil devi Geely, \"Smart Charging C12\" adını verdiği 2.250 kW gücündeki yeni şarj istasyonlarını Çin'de devreye aldı. Bu yüksek güç sayesinde elektrikli araçlar, batarya sağlığı korunarak %10’dan %70’e sadece 4,5 dakikada şarj olabiliyor. Yapay zeka ve bulut tabanlı simülasyonlarla desteklenen bu teknoloji, elektrikli araç şarjını bambaşka bir seviyeye taşıyor. Şimdi gözler, bu devrimin Çin dışına ne zaman yayılacağında.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
+        "post_text": "ALFA ROMEO, BİR SONRAKİ OTOMOBİLİNE \"CUOREROSSO\" ADINI VERECEK!\n\n2026 Paris Otomobil Fuarı'nda tanıtılacak\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "Alfa Romeo'dan İtalyan Tutkusu: Cuorerosso!",
+        "story_card_subtitle": "Alfa Romeo, yeni modelinin adını Cuorerosso olarak duyurdu. 'Kırmızı Kalp' anlamına gelen bu isim, markanın tutkulu mirasını yansıtıyor. Yeni model, 2026 Paris Otomobil Fuarı'nda otomobilseverlerle buluşacak.",
+        "image_path": "/tmp/otoxtra_img_j_ihf4dh.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_j_ihf4dh.jpg",
+          "/tmp/otoxtra_img_uq29w92k.jpg",
+          "/tmp/otoxtra_img_q673u_cd.jpg",
+          "/tmp/otoxtra_img_i1dk9146.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-09-30T17:46:17.066554+03:00"
+      "updated_at": "2026-09-30T22:50:15.677615+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122181573962916499",
+        "post_id": "678053852057751_122181607010916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
+            "success": true,
+            "id": "18151404190548392",
+            "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
+            "success": true,
+            "id": "1081444461196863",
+            "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-09-30T17:46:34.257689+03:00"
+      "updated_at": "2026-09-30T22:51:00.862956+03:00"
     }
   }
 }
