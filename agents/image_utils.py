@@ -16,6 +16,12 @@ import requests
 from PIL import Image
 
 from core.logger import log
+# Nitter host tespiti fetcher_utils'teki ortak tanimi kullaniyor: instance
+# havuzundaki 'shitter.thepixora.com', 'nt.vern.cc', 'x.n0g.xyz' gibi 'nitter'
+# ile baslamayan host'lar eski kontrolde taninmiyordu ve gorsel pipeline'i
+# nitter dalina (tweet sayfasi + FxTwitter fallback) hic girmiyordu.
+# Tek tanim -> havuz guncellendiginde iki taraf da otomatik guncel kalir.
+from agents.fetcher_utils import _is_nitter_url
 
 _USER_AGENT = (
     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
@@ -97,10 +103,6 @@ def _safe_unlink(path: str) -> None:
 
 def _is_test_mode() -> bool:
     return _read_bool_env("IMAGE_TEST_MODE") == True
-
-def _is_nitter_url(url: str) -> bool:
-    host = (urlparse(url).netloc or "").lower()
-    return "nitter." in host or host.startswith("nitter")
 
 def _is_profile_image_url(url: str) -> bool:
     lower = url.lower()

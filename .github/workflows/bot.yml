@@ -149,8 +149,15 @@ jobs:
           FEED_HTTP_TIMEOUT_SECONDS: '20'
           NITTER_FEED_FETCH_ATTEMPTS: '3'
           NITTER_HTTP_ATTEMPTS: '3'
-          NITTER_HTTP_BASE_WAIT_SECONDS: '1.8'
-          NITTER_HTTP_TIMEOUT_SECONDS: '22'
+          NITTER_HTTP_BASE_WAIT_SECONDS: '2.5'
+          NITTER_HTTP_TIMEOUT_SECONDS: '25'
+          # Instance havuzu, rotasyon modu, circuit-breaker ve bekleme ayarlari
+          # tek kaynaktan (config/settings.json -> posting.nitter_*) yonetilir.
+          # Buraya ENV eklerseniz settings.json'u GOLGELEYECEGINI unutmayin:
+          #   nitter_instances, nitter_instance_rotation (sequential|random|sticky),
+          #   nitter_max_instances_per_feed, nitter_instance_block_minutes,
+          #   nitter_feed_delay_seconds, nitter_instance_delay_seconds,
+          #   nitter_canonicalize_links, nitter_health_state
         run: |
           set +e
           export WORKFLOW_STARTED_AT_UTC="$(date -u +'%Y-%m-%d %H:%M:%S')"

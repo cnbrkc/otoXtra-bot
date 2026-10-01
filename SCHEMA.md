@@ -75,6 +75,7 @@ otoXtra-bot/
 │
 ├── data/
 │   ├── posted_news.json              ← ⚠️ ELLE DOKUNMA — Paylaşılan haberler + istatistikler
+│   ├── nitter_health.json            ← ⚠️ ELLE DOKUNMA — Nitter instance sağlık/ban durumu (run'lar arası)
 │   └── telegram_updates_state.json   ← ⚠️ ELLE DOKUNMA — Telegram güncelleme durumu
 │
 ├── assets/
@@ -95,7 +96,7 @@ python -m core.orchestrator
          │
          ├─ 1. FETCH — agent_fetcher.py (ve alt modülleri)
          │   ├─ sources.json → RSS feed'leri çek (feedparser)
-         │   ├─ Nitter feed'leri özel işlenir (fetcher_nitter.py ile FxTwitter API)
+         │   ├─ Nitter feed'leri özel işlenir (instance rotasyonu + failover, fetcher_nitter.py ile FxTwitter API)
          │   ├─ Zaman filtresi (max_article_age_hours)
          │   ├─ Keyword filtresi (include/exclude keywords)
          │   ├─ Tekrar kontrolü (URL + başlık benzerliği + topic fingerprint)
@@ -219,12 +220,31 @@ Hata sınıflandırması:
     "feed_http_timeout_seconds": 20,    // HTTP istek timeout
     "nitter_feed_fetch_attempts": 3,    // Nitter feed için tekrar deneme sayısı
     "nitter_http_attempts": 3,          // Nitter HTTP istek deneme sayısı
-    "nitter_http_base_wait_seconds": 1.8,
-    "nitter_http_timeout_seconds": 22,
-    "nitter_instances": ["nitter.net", "xcancel.com", "nitter.poast.org", "nitter.privacydev.net"]
-    // ↑ Nitter RSS instance failover listesi (öncelik sırasıyla). nitter.net RSS
-    //   kapattığı için entry döndüren İLK instance kullanılır. ENV ile override:
-    //   NITTER_INSTANCES="host1,host2". İlk aday her zaman sources.json'daki hosttur.
+    "nitter_http_base_wait_seconds": 2.5,
+    "nitter_http_timeout_seconds": 25,
+    "nitter_instances": [
+      "nitter.kareem.one", "nitter.meowing.monster", "nitter.netbub.com",
+      "shitter.thepixora.com", "nitter.jaydenha.uk", "nitter.zebes.info",
+      "nitter.kabii.moe", "nitter.wisq.net", "nt.vern.cc", "nitter.anoxinon.de",
+      "nitter.freedit.eu", "x.n0g.xyz", "tw.eir-nya.gay"
+    ],
+    // ↑ Nitter RSS instance havuzu (son doğrulama: 2026-10-01, status.d420.de +
+    //   canlı /rss probu). Entry döndüren İLK instance kullanılır. ENV override:
+    //   NITTER_INSTANCES="host1,host2". sources.json'daki host havuzdaysa veya
+    //   emekli listesindeyse (nitter.cf, nitter.net, xcancel.com ...) aday olarak
+    //   DENENMEZ; sadece havuz dışı self-host instance'lar ilk sırada korunur.
+    "nitter_instance_rotation": "sequential",  // sequential (round-robin) | random | sticky
+    // ↑ Yükün tek instance'a yığılmasını engeller (public instance'lar scrape
+    //   istemiyor; sık istek ban/rate-limit/bot-challenge getiriyor).
+    "nitter_max_instances_per_feed": 5,        // Feed başına denenecek maksimum instance
+    "nitter_instance_failure_threshold": 2,    // Kaç ardışık hatada instance sona atılsın (degraded)
+    "nitter_instance_block_minutes": 60,       // 429/403/bot-challenge sonrası devre dışı süresi
+    "nitter_health_state": true,               // Durumu data/nitter_health.json'a yaz (run'lar arası hafıza)
+    "nitter_canonicalize_links": true,         // Tweet linklerini x.com'a kanonikleştir
+    "nitter_feed_delay_seconds": 2.0,          // Nitter feed'ine istek atmadan önce bekleme
+    "nitter_feed_delay_jitter_seconds": 2.5,   // ↑ buna eklenen rastgele jitter
+    "nitter_instance_delay_seconds": 1.5,      // Failover'da instance'lar arası bekleme
+    "nitter_instance_delay_jitter_seconds": 2.0
   },
   "images": {
     "add_logo": true,                   // Görsele logo watermark eklensin mi?
@@ -300,8 +320,11 @@ Hata sınıflandırması:
       "enabled": true                  // false = feed atlanır
     }
     // Nitter feed örneği:
-    // { "name": "Emre Ozpeynirci", "url": "https://nitter.net/eozpeynirci/rss", ... }
-    // Nitter feed'ler otomatik tanınır, FxTwitter API ile görsel çekilir
+    // { "name": "Emre Ozpeynirci", "url": "https://nitter.kareem.one/eozpeynirci/rss", ... }
+    // Nitter feed'ler otomatik tanınır (host havuzdan), instance rotasyonuyla çekilir,
+    // görseller RSS içeriğinden + Nitter tweet sayfasından + FxTwitter API'den alınır.
+    // NOT: Buradaki host sadece /kullanici/rss yolunu taşır; hangi instance'ın
+    // deneneceğine posting.nitter_instances + rotasyon karar verir.
   ]
 }
 ```
@@ -426,20 +449,41 @@ GEMINI_MODELS = [
    - Keyword filtresi (include/exclude)
    - Tekrar/benzerlik kontrolü
    - Görsel URL adayları toplanır (`image_candidates[]`)
-4. Nitter feed'ler → `fetcher_nitter.py` içindeki FxTwitter API (`api.fxtwitter.com`) ile görsel çekilir
-5. Tweet URL çevirisi: `nitter.net/user/status/ID` → `x.com/user/status/ID`
+4. Nitter feed'ler → instance havuzundan **rotasyonla** çekilir (`_fetch_nitter_feed_response`):
+   - `nitter_instances` havuzu `sequential` (round-robin) / `random` / `sticky` modda döndürülür
+   - emekli instance'lar (nitter.cf, nitter.net, xcancel.com, nitter.catsarch.com, nuku.trabun.org,
+     nitter.privacyredirect.com, shi.meowing.de, nitter.tiekoetter.com ...) hiç denenmez
+   - instance'lar arasına jitter'lı bekleme konur (`nitter_instance_delay_seconds`)
+   - 403/429/bot-challenge (Anubis, Cloudflare) / "no auth tokens" gören instance
+     `nitter_instance_block_minutes` boyunca devre dışı (durum: `data/nitter_health.json`)
+   - entry döndüren İLK instance kazanır; boş feed dönerse sıradaki denenir
+5. Tweet URL çevirisi: `<instance>/user/status/ID` → `x.com/user/status/ID`
+   (kanonik link; nitter sayfası `nitter_url` alanında ayrıca taşınır)
+6. Görsel: RSS içeriğindeki `pbs.twimg.com` URL'leri → gerekirse Nitter tweet sayfası
+   (instance failover ile) → `fetcher_nitter.py` / `image_nitter.py` içindeki FxTwitter API
 **Çevre değişkenleri:**
 ```
 FEED_FETCH_DELAY_SECONDS        → Feed'ler arası bekleme
 FEED_HTTP_ATTEMPTS              → HTTP istek deneme sayısı
 NITTER_FEED_FETCH_ATTEMPTS      → Nitter için tekrar deneme
-TEST_MODE=true                  → Filtreleri gevşetir, test için
+NITTER_FAILOVER_TIMEOUT_SECONDS → Instance başına zaman aşımı (varsayılan: min(timeout, 15))
+NITTER_INSTANCES                → Instance havuzunu override et ("host1,host2")
+NITTER_INSTANCE_ROTATION        → sequential | random | sticky
+NITTER_MAX_INSTANCES_PER_FEED   → Feed başına maksimum instance denemesi
+NITTER_INSTANCE_BLOCK_MINUTES   → Rate-limit/challenge sonrası devre dışı süresi
+NITTER_HEALTH_STATE             → false = data/nitter_health.json'a yazma
+NITTER_CANONICALIZE_LINKS       → false = linkleri x.com'a çevirme
+NITTER_FEED_DELAY_SECONDS       → Nitter feed öncesi bekleme
+NITTER_INSTANCE_DELAY_SECONDS   → Instance'lar arası bekleme
+TEST_MODE=true                  → Filtreleri gevşetir, beklemeleri kapatır
 ```
 **Makale dict yapısı (çıktı):**
 ```python
 {
     "title": str,
-    "link": str,                    # Haber URL
+    "link": str,                    # Haber URL (nitter tweet'lerinde kanonik x.com linki)
+    "nitter_url": str,              # Tweet'in geldiği nitter sayfası (görsel/metin scrape için)
+    "source_instance": str,         # Feed'i servis eden nitter instance host'u (log/teşhis)
     "summary": str,                 # Temizlenmiş özet (HTML tag'leri kaldırıldı)
     "published_at": datetime,       # Yayın tarihi
     "source_name": str,             # Feed adı (sources.json'daki "name")
@@ -546,7 +590,9 @@ En-boy oranı: 0.7 — 2.3
 ```
 **Nitter/Twitter görsel çekimi:**
 ```
-Nitter tweet URL → FxTwitter API → JSON → media.photos[].url
+Nitter tweet URL → RSS içeriğindeki pbs.twimg.com URL'leri (birincil kaynak)
+  Boşsa → Nitter tweet sayfası (aynı havuzdan en fazla 3 instance denenir)
+  Boşsa → FxTwitter API → JSON → media.photos[].url
   Profil fotosu URL'leri (/profile_images/, /profile_banners/) FİLTRELENİR
   Başarısız olursa → x.com HTML scrape (son çare)
 ```
@@ -763,7 +809,10 @@ IMAGE_TEST_MODE       → agent_image: Sadece test kartı üretir, gerçek görs
 | Günlük post sayısını artır      | settings.json  | posting.max_daily_posts         |
 | Puan eşiğini düşür              | scoring.json   | thresholds.publish_score (35→20) |
 | Yeni RSS kaynağı ekle           | sources.json   | feeds[] dizisine yeni obje ekle |
-| Nitter kaynağı ekle             | sources.json   | url = "https://nitter.net/kullanici/rss" |
+| Nitter kaynağı ekle             | sources.json   | url = "https://nitter.kareem.one/kullanici/rss" |
+| Nitter instance havuzunu güncelle | settings.json | posting.nitter_instances (ölü instance'ları değiştir) |
+| Nitter rotasyon modunu değiştir | settings.json  | posting.nitter_instance_rotation (sequential/random/sticky) |
+| Nitter isteklerini yavaşlat     | settings.json  | posting.nitter_feed_delay_seconds + nitter_instance_delay_seconds |
 | Kelime filtresi ekle            | keywords.json  | exclude_keywords listesine ekle |
 | Yazım üslubunu değiştir         | prompts.json   | post_writer promptunu düzenle   |
 | Görsel devre dışı bırak         | settings.json  | images.add_logo: false          |
@@ -796,7 +845,10 @@ Token süresi    → FB_ACCESS_TOKEN 60 günde bir yenilenmeli! Takvime hatırla
 | Hiç haber paylaşmıyor          | scoring.json → publish_score değerini düşür (35→20)              |
 | Çok fazla paylaşıyor           | settings.json → max_daily_posts değerini düşür                   |
 | Actions çalışmıyor             | Settings → Actions → "Read and write permissions" seç            |
-| Görsel gelmiyor                | image_nitter.py FxTwitter API deniyor, Nitter artık boş dönüyor |
+| Görsel gelmiyor                | image_nitter.py instance failover + FxTwitter API deniyor, Nitter boş dönüyorsa x.com scrape |
+| Nitter kaynakları boş/error    | settings.json → posting.nitter_instances güncel mi? (status.d420.de) Log'da "Nitter instance havuzu" ve "sağlık durumu" satırlarına bak |
+| Nitter rate-limit/ban yiyor    | nitter_feed_delay_seconds / nitter_instance_delay_seconds artır, nitter_instance_rotation "random" yap |
+| Sürekli aynı instance deniyor  | data/nitter_health.json'a bak; NITTER_INSTANCE_ROTATION=sequential mi? |
 | İngilizce metin geldi          | agent_writer.py v5.1 engelliyor, fallback devreye giriyor        |
 | Groq "quota exceeded"          | ai_client.py otomatik OpenRouter/HF'e geçiyor                    |
 | Gemini "thinking" metni geldi  | ai_client.py v5.3'te thinking_budget=0 ile düzeltildi            |

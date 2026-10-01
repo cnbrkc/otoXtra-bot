@@ -7,8 +7,10 @@ import os
 import time
 import random
 import feedparser
+import requests
 from datetime import datetime, timezone, timedelta
 from calendar import timegm
+from urllib.parse import urlparse
 from dateutil import parser as dateutil_parser
 from bs4 import BeautifulSoup
 
@@ -26,9 +28,12 @@ from agents.fetcher_utils import (
     _USER_AGENT, _PRIORITY_ORDER, _TREND_BONUSES, _TREND_FINGERPRINT_THRESHOLD,
     _is_test_mode, _safe_int, _safe_float, _safe_int_min, _safe_float_min,
     _coerce_bool, _read_bool_env, _read_int_env, _read_float_env, _turkish_lower,
-    _is_nitter_feed, _resolve_nitter_image_url, _normalize_image_url,
+    _is_nitter_feed, _is_nitter_url, _resolve_nitter_image_url, _normalize_image_url,
     _thumbnail_to_original_variants, _candidate_key, _request_with_retry,
-    _nitter_candidate_urls
+    _nitter_candidate_urls, _normalize_instance_host, _nitter_rotation_mode,
+    _nitter_instance_hosts, _nitter_health_summary, _record_nitter_instance_result,
+    _detect_nitter_block_reason, _should_block_nitter_instance, _canonicalize_nitter_link,
+    _rotation_state
 )
 from agents.fetcher_scrape import extract_images_from_article, scrape_full_article
 
@@ -126,6 +131,23 @@ def _feed_delay_config() -> tuple[float, float]:
     jitter = _safe_float_min(_read_float_env("FEED_FETCH_DELAY_JITTER_SECONDS", _safe_float(posting_cfg.get("feed_fetch_delay_jitter_seconds", 0.4), 0.4)), 0.0)
     return base_delay, jitter
 
+def _nitter_delay_config() -> tuple[float, float, float, float]:
+    """Nitter'a ozel bekleme ayarlari (feed oncesi + instance'lar arasi).
+
+    Public nitter instance'lari yuksek frekansli istekte ban/rate-limit/bot
+    challenge donduruyor. Bu yuzden nitter kaynaklari normal RSS kaynaklarindan
+    belirgin sekilde daha yavas ve jitter'li cekilir.
+
+    Donus: (feed_delay, feed_jitter, instance_delay, instance_jitter)
+    """
+    settings_cfg = load_config("settings")
+    posting_cfg = settings_cfg.get("posting", {}) if isinstance(settings_cfg, dict) else {}
+    feed_delay = _safe_float_min(_read_float_env("NITTER_FEED_DELAY_SECONDS", _safe_float(posting_cfg.get("nitter_feed_delay_seconds", 2.0), 2.0)), 0.0)
+    feed_jitter = _safe_float_min(_read_float_env("NITTER_FEED_DELAY_JITTER_SECONDS", _safe_float(posting_cfg.get("nitter_feed_delay_jitter_seconds", 2.5), 2.5)), 0.0)
+    instance_delay = _safe_float_min(_read_float_env("NITTER_INSTANCE_DELAY_SECONDS", _safe_float(posting_cfg.get("nitter_instance_delay_seconds", 1.5), 1.5)), 0.0)
+    instance_jitter = _safe_float_min(_read_float_env("NITTER_INSTANCE_DELAY_JITTER_SECONDS", _safe_float(posting_cfg.get("nitter_instance_delay_jitter_seconds", 2.0), 2.0)), 0.0)
+    return feed_delay, feed_jitter, instance_delay, instance_jitter
+
 def _feed_attempt_config(feed_url: str) -> tuple[int, int, float, int]:
     settings_cfg = load_config("settings")
     posting_cfg = settings_cfg.get("posting", {}) if isinstance(settings_cfg, dict) else {}
@@ -133,8 +155,8 @@ def _feed_attempt_config(feed_url: str) -> tuple[int, int, float, int]:
     if is_nitter:
         fetch_attempts = _safe_int_min(_read_int_env("NITTER_FEED_FETCH_ATTEMPTS", _safe_int(posting_cfg.get("nitter_feed_fetch_attempts", 3), 3)), 1, 1)
         http_attempts = _safe_int_min(_read_int_env("NITTER_HTTP_ATTEMPTS", _safe_int(posting_cfg.get("nitter_http_attempts", 3), 3)), 1, 1)
-        base_wait = _safe_float_min(_read_float_env("NITTER_HTTP_BASE_WAIT_SECONDS", _safe_float(posting_cfg.get("nitter_http_base_wait_seconds", 1.8), 1.8)), 0.1)
-        timeout = _safe_int_min(_read_int_env("NITTER_HTTP_TIMEOUT_SECONDS", _safe_int(posting_cfg.get("nitter_http_timeout_seconds", 22), 22)), 5, 1)
+        base_wait = _safe_float_min(_read_float_env("NITTER_HTTP_BASE_WAIT_SECONDS", _safe_float(posting_cfg.get("nitter_http_base_wait_seconds", 2.5), 2.5)), 0.1)
+        timeout = _safe_int_min(_read_int_env("NITTER_HTTP_TIMEOUT_SECONDS", _safe_int(posting_cfg.get("nitter_http_timeout_seconds", 25), 25)), 5, 1)
         return fetch_attempts, http_attempts, base_wait, timeout
     fetch_attempts = _safe_int_min(_read_int_env("FEED_FETCH_ATTEMPTS", _safe_int(posting_cfg.get("feed_fetch_attempts", 1), 1)), 1, 1)
     http_attempts = _safe_int_min(_read_int_env("FEED_HTTP_ATTEMPTS", _safe_int(posting_cfg.get("feed_http_attempts", 3), 3)), 1, 1)
@@ -142,42 +164,125 @@ def _feed_attempt_config(feed_url: str) -> tuple[int, int, float, int]:
     timeout = _safe_int_min(_read_int_env("FEED_HTTP_TIMEOUT_SECONDS", _safe_int(posting_cfg.get("feed_http_timeout_seconds", 20), 20)), 5, 1)
     return fetch_attempts, http_attempts, base_wait, timeout
 
-def _sleep_between_feeds(feed_name: str, base_delay: float, jitter: float) -> None:
+def _sleep_between_feeds(feed_name: str, base_delay: float, jitter: float, is_nitter: bool = False) -> None:
     if _is_test_mode(): return
     total_sleep = base_delay + (random.uniform(0, jitter) if jitter > 0 else 0.0)
+    if is_nitter:
+        nitter_delay, nitter_jitter, _, _ = _nitter_delay_config()
+        total_sleep += nitter_delay + (random.uniform(0, nitter_jitter) if nitter_jitter > 0 else 0.0)
     if total_sleep <= 0: return
-    log(f"Feed delay: {feed_name} icin {total_sleep:.2f}s bekleniyor")
+    log(f"Feed delay: {feed_name} icin {total_sleep:.2f}s bekleniyor{' (nitter ek bekleme dahil)' if is_nitter else ''}")
+    time.sleep(total_sleep)
+
+def _sleep_between_instances(feed_name: str, host: str) -> None:
+    """Ayni feed icin bir sonraki instance'a gecmeden once bekle (ban korumasi)."""
+    if _is_test_mode(): return
+    _, _, base_delay, jitter = _nitter_delay_config()
+    total_sleep = base_delay + (random.uniform(0, jitter) if jitter > 0 else 0.0)
+    if total_sleep <= 0: return
+    log(f"Nitter instance delay: {feed_name} -> {host} istegi oncesi {total_sleep:.2f}s bekleniyor")
     time.sleep(total_sleep)
 
 # ── NITTER INSTANCE FAILOVER ─────────────────────────────────────────────────
 
-def _fetch_nitter_feed_response(feed_url: str, feed_name: str, timeout: int, http_attempts: int, http_base_wait: float):
-    """Nitter feed'ini instance failover ile cekmeye calisir.
+_NITTER_RSS_ACCEPT = "application/rss+xml, application/xml;q=0.9, text/xml;q=0.8, */*;q=0.7"
 
-    nitter.net'te RSS kapatildigi icin (2026) kaynak URL'siyle sinirli
-    kalmak kaynagi kalici olarak olu hale getiriyordu. Bu fonksiyon aday
-    instance'lari sirayla dener; ENTRY DONDUREN ilk instance kabul edilir.
+def _log_nitter_pool_once(candidate_count: int) -> None:
+    """Ilk nitter feed'inde havuz/rotasyon bilgisini bir kez loglar."""
+    mode = _nitter_rotation_mode()
+    if _rotation_state.get("logged_mode"): return
+    _rotation_state["logged_mode"] = mode
+    pool = _nitter_instance_hosts()
+    log(f"Nitter instance havuzu: {len(pool)} instance, rotasyon={mode}, feed basina max aday={candidate_count}")
+    summary = _nitter_health_summary()
+    if summary:
+        log(f"Nitter instance saglik durumu: {summary}")
+
+def _fetch_nitter_feed_response(feed_url: str, feed_name: str, timeout: int, http_attempts: int, http_base_wait: float):
+    """Nitter feed'ini instance failover + rotasyon ile cekmeye calisir.
+
+    Public instance'larin cogu 2026 itibariyle kapali, rate-limit'li ya da bot
+    challenge (Anubis/Cloudflare) arkasinda. Bu yuzden:
+      * adaylar havuzdan ROTASYONLA secilir (sequential round-robin / random),
+        boylece yuk tek instance'a yigilmaz,
+      * emekli instance'lar (nitter.cf, nitter.net, xcancel.com...) hic denenmez,
+      * instance'lar arasina jitter'li bekleme konur,
+      * 403/429/bot-challenge/RSS-kapali gorulen instance gecici olarak
+        devre disi birakilir (circuit breaker, data/nitter_health.json),
+      * ENTRY DONDUREN ilk instance kabul edilir.
 
     Donus: requests.Response (entry'li ya da bos). Tum adaylar HTTP hatasi
     verirse son hata raise edilir (mevcut hata akisi yakalar).
     """
     candidates = _nitter_candidate_urls(feed_url)
-    failover_timeout = _safe_int_min(_read_int_env("NITTER_FAILOVER_TIMEOUT_SECONDS", min(timeout, 12)), 5, 5)
+    _log_nitter_pool_once(len(candidates))
+    failover_timeout = _safe_int_min(_read_int_env("NITTER_FAILOVER_TIMEOUT_SECONDS", min(timeout, 15)), 5, 5)
+    rotation_mode = _nitter_rotation_mode()
     last_empty_response = None
     last_exc: Exception | None = None
+    attempted = 0
 
     for idx, candidate_url in enumerate(candidates):
-        # Ilk aday (orijinal URL) mevcut davranisi korur; digerleri icin
-        # sure butcesini kisa tutmak adina tek HTTP denemesi yeter.
+        host = _normalize_instance_host(urlparse(candidate_url).netloc)
+        if attempted > 0:
+            # Ayni feed icin instance degistirirken bekleme: ardisik istekler
+            # tek instance'a ya da arka arkaya baska instance'lara yigilmasin.
+            _sleep_between_instances(feed_name, host)
+        attempted += 1
+        # Ilk aday icin kisitli tekrar denemesi yeter; digerleri icin tek deneme
+        # (tekrar denemeleri zaten instance failover ustleniyor).
         attempts = max(1, min(http_attempts, 2)) if idx == 0 else 1
+        response = None
         try:
             response = _request_with_retry(
-                candidate_url, timeout=failover_timeout, attempts=attempts, base_wait_seconds=http_base_wait
+                candidate_url, timeout=failover_timeout, attempts=attempts,
+                base_wait_seconds=http_base_wait, extra_headers={"Accept": _NITTER_RSS_ACCEPT}
             )
+        except requests.exceptions.HTTPError as exc:
+            failed_response = getattr(exc, "response", None)
+            status_code = getattr(failed_response, "status_code", None)
+            body = ""
+            try:
+                body = (getattr(failed_response, "text", "") or "")[:2000]
+            except Exception:
+                body = ""
+            reason = _detect_nitter_block_reason(body, status_code) or f"http_{status_code or 'error'}"
+            blocked = _should_block_nitter_instance(reason)
+            state = _record_nitter_instance_result(host, success=False, reason=reason, status_code=status_code, blocked=blocked)
+            last_exc = exc
+            log(
+                f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {host} HTTP {status_code} -> {reason}"
+                f" (durum={state}), siradaki instance deneniyor", "WARNING"
+            )
+            continue
         except Exception as exc:
             last_exc = exc
+            state = _record_nitter_instance_result(host, success=False, reason=type(exc).__name__.lower())
             if idx < len(candidates) - 1:
-                log(f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {candidate_url} erisilemedi, siradaki instance deneniyor", "WARNING")
+                log(
+                    f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {host} erisilemedi ({type(exc).__name__}, durum={state}),"
+                    f" siradaki instance deneniyor", "WARNING"
+                )
+            continue
+
+        status_code = getattr(response, "status_code", None)
+        body_preview = ""
+        try:
+            body_preview = (getattr(response, "content", b"") or b"")[:4096].decode("utf-8", errors="ignore")
+        except Exception:
+            body_preview = ""
+
+        # HTTP 200 ama govde challenge/rate-limit sayfasi olabilir (Anubis, Cloudflare,
+        # "Instance has no auth tokens", "XCancel service is suspended" ...).
+        block_reason = _detect_nitter_block_reason(body_preview, status_code)
+        if block_reason:
+            blocked = _should_block_nitter_instance(block_reason)
+            state = _record_nitter_instance_result(host, success=False, reason=block_reason, status_code=status_code, blocked=blocked)
+            last_exc = None
+            log(
+                f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {host} yanit verdi ama kullanilamaz"
+                f" ({block_reason}, durum={state}), siradaki instance deneniyor", "WARNING"
+            )
             continue
 
         probe = None
@@ -186,15 +291,25 @@ def _fetch_nitter_feed_response(feed_url: str, feed_name: str, timeout: int, htt
         except Exception:
             probe = None
         if probe is not None and probe.entries:
-            if idx > 0:
-                log(f"Nitter failover BASARILI: {feed_name} -> {candidate_url} uzerinden {len(probe.entries)} entry bulundu")
+            state = _record_nitter_instance_result(host, success=True, reason="ok")
+            log(
+                f"Nitter failover BASARILI: {feed_name} -> {host} uzerinden {len(probe.entries)} entry"
+                f" (aday {idx + 1}/{len(candidates)}, rotasyon={rotation_mode}, durum={state})"
+            )
             return response
+
+        # Instance ayakta ama bu kullanici icin entry yok (RSS kapali / hesap bulunamadi).
+        _record_nitter_instance_result(host, success=False, reason="empty_feed")
         last_empty_response = response
         last_exc = None
-        log(f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {candidate_url} bos feed/RSS kapali, siradaki instance deneniyor", "WARNING")
+        log(
+            f"Nitter failover ({idx + 1}/{len(candidates)}) {feed_name}: {host} bos feed/RSS kapali,"
+            f" siradaki instance deneniyor", "WARNING"
+        )
 
     if last_empty_response is not None:
         # En az bir instance yanit verdi ama entry yok -> ana akis 'no_entries' raporlar
+        log(f"Nitter: {feed_name} icin hicbir instance entry dondurmedi (denenen={attempted})", "WARNING")
         return last_empty_response
     if last_exc is not None:
         raise last_exc
@@ -248,12 +363,13 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
             fetch_attempts = 1
 
         if feed_idx > 0:
-            _sleep_between_feeds(feed_name, delay_base, delay_jitter)
+            _sleep_between_feeds(feed_name, delay_base, delay_jitter, is_nitter=is_nitter_feed)
 
         last_error_detail = ""
         final_entry_count = 0
         success = False
         attempt_used = 0
+        feed_instance = ""
 
         for feed_attempt in range(1, fetch_attempts + 1):
             attempt_used = feed_attempt
@@ -289,12 +405,21 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                     link = entry.get("link", "")
                     if not title or not link: continue
 
+                    # Nitter instance rotasyonu yapildigi icin ayni tweet her calismada
+                    # farkli instance host'undan (bazen http:// olarak) gelir. Link
+                    # kanoniklestirilir (x.com) ki duplike tespiti ve posted_news
+                    # kayitlari instance'a bagimli olmasin; nitter sayfasi ayrica
+                    # saklanir ki gorsel/metin scrape'i hala nitter uzerinden yuruyebilsin.
+                    canonical_link, nitter_page_url = _canonicalize_nitter_link(link)
+                    canonical_link = canonical_link or link
+                    served_instance = _normalize_instance_host(urlparse(link).netloc) if _is_nitter_url(link) else ""
+
                     summary_raw = entry.get("summary", "") or entry.get("description", "") or ""
                     summary = clean_html(summary_raw).strip()
                     if len(summary) < 10: summary = ""
 
                     rss_image_url = _extract_image_from_entry(entry)
-                    normalized_rss_image = _normalize_image_url(rss_image_url, link) if rss_image_url else ""
+                    normalized_rss_image = _normalize_image_url(rss_image_url, nitter_page_url or link) if rss_image_url else ""
 
                     article_image_candidates = []
                     
@@ -326,7 +451,9 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
 
                     article = {
                         "title": title,
-                        "link": link,
+                        "link": canonical_link,
+                        "nitter_url": nitter_page_url or "",
+                        "source_instance": served_instance,
                         "published": _extract_published_date(entry, now_iso),
                         "summary": summary,
                         "image_url": primary_image or "",
@@ -343,6 +470,8 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                     }
                     all_articles.append(article)
                     entry_count += 1
+                    if served_instance and not feed_instance:
+                        feed_instance = served_instance
 
                 final_entry_count = entry_count
                 success = True
@@ -357,11 +486,11 @@ def fetch_all_feeds() -> tuple[list[dict], dict]:
                 time.sleep(pause)
 
         if success:
-            source_health[feed_name] = {"status": "ok", "count": final_entry_count, "detail": "", "attempts": attempt_used}
+            source_health[feed_name] = {"status": "ok", "count": final_entry_count, "detail": "", "attempts": attempt_used, "instance": feed_instance}
         else:
             detail = "Feed has no entries" if last_error_detail == "no_entries" else (last_error_detail or "fetch_failed")
             status = "no_entries" if last_error_detail == "no_entries" else "error"
-            source_health[feed_name] = {"status": status, "count": 0, "detail": detail, "attempts": attempt_used}
+            source_health[feed_name] = {"status": status, "count": 0, "detail": detail, "attempts": attempt_used, "instance": feed_instance}
 
     return all_articles, source_health
 
