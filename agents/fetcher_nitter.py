@@ -2,6 +2,8 @@
 agents/fetcher_nitter.py - Nitter ve Twitter Görsel Çekme İşlemleri
 FxTwitter API, Nitter HTML parse ve x.com og:image fallback fonksiyonları burada.
 v1.1: Spesifik hata yakalama (RequestException, JSONDecodeError) eklendi.
+v1.2: Nitter tweet sayfasi da instance failover ile cekiliyor (RSS ile ayni havuz,
+      ayni saglik takibi); rate-limit/bot-challenge gorulen instance devre disi.
 """
 import json
 import requests
@@ -10,8 +12,13 @@ from urllib.parse import urlparse
 from core.logger import log
 from agents.fetcher_utils import (
     _USER_AGENT, _is_nitter_url, _nitter_to_twitter_url,
-    _is_profile_image_url, _resolve_nitter_image_url, _request_with_retry
+    _is_profile_image_url, _resolve_nitter_image_url, _request_with_retry,
+    _nitter_candidate_urls, _normalize_instance_host, _record_nitter_instance_result,
+    _detect_nitter_block_reason, _should_block_nitter_instance
 )
+
+# Tweet sayfasi icin denenecek maksimum instance sayisi (FxTwitter API zaten yedek).
+_NITTER_IMAGE_INSTANCE_LIMIT = 3
 
 def _extract_tweet_images_via_fxtwitter(tweet_url: str, timeout: int = 20) -> list[str]:
     if not tweet_url: return []
@@ -79,19 +86,35 @@ def _extract_twitter_og_image(tweet_url: str, timeout: int = 20) -> list[str]:
         log(f"Twitter og:image beklenmedik hata: {tweet_url[:80]} -> {exc}", "WARNING")
     return results
 
-def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) -> list[str]:
-    if not tweet_url or not _is_nitter_url(tweet_url): return []
+def _extract_nitter_images_from_instance(tweet_url: str, timeout: int = 20) -> list[str]:
+    """Tek bir nitter instance'indan tweet sayfasi gorsellerini cikarir (saglik kaydi ile)."""
+    host = _normalize_instance_host(urlparse(tweet_url).netloc)
     parsed = urlparse(tweet_url)
     nitter_base = f"{parsed.scheme}://{parsed.netloc}"
     try:
-        response = _request_with_retry(tweet_url, timeout=timeout, attempts=3, base_wait_seconds=1.8)
+        response = _request_with_retry(tweet_url, timeout=timeout, attempts=2, base_wait_seconds=1.8)
         response.encoding = response.apparent_encoding or "utf-8"
+        block_reason = _detect_nitter_block_reason(response.text or "", getattr(response, "status_code", None))
+        if block_reason:
+            state = _record_nitter_instance_result(
+                host, success=False, reason=block_reason,
+                status_code=getattr(response, "status_code", None),
+                blocked=_should_block_nitter_instance(block_reason),
+            )
+            log(f"Nitter tweet sayfasi kullanilamaz: {host} -> {block_reason} (durum={state})", "WARNING")
+            return []
         soup = BeautifulSoup(response.text, "html.parser")
     except requests.exceptions.RequestException as exc:
-        log(f"Nitter tweet sayfasi HTTP hatasi: {tweet_url[:80]} -> {exc}", "WARNING")
+        status_code = getattr(getattr(exc, "response", None), "status_code", None)
+        state = _record_nitter_instance_result(
+            host, success=False, reason=f"http_{status_code or type(exc).__name__.lower()}",
+            status_code=status_code, blocked=_should_block_nitter_instance(f"http_{status_code or ''}"),
+        )
+        log(f"Nitter tweet sayfasi HTTP hatasi: {host} (durum={state}) -> {exc}", "WARNING")
         return []
     except Exception as exc:
-        log(f"Nitter tweet sayfasi beklenmedik hata: {tweet_url[:80]} -> {exc}", "WARNING")
+        state = _record_nitter_instance_result(host, success=False, reason=type(exc).__name__.lower())
+        log(f"Nitter tweet sayfasi beklenmedik hata: {host} (durum={state}) -> {exc}", "WARNING")
         return []
 
     results = []
@@ -134,8 +157,30 @@ def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) ->
             resolved = _resolve_nitter_image_url(href, nitter_base)
             if resolved: _add(resolved)
 
-    log(f"Nitter tweet sayfasindan {len(results)} gorsel bulundu: {tweet_url[:80]}")
+    if results:
+        _record_nitter_instance_result(host, success=True, reason="ok")
+        log(f"Nitter tweet sayfasindan {len(results)} gorsel bulundu ({host}): {tweet_url[:80]}")
+    else:
+        _record_nitter_instance_result(host, success=False, reason="no_images")
+        log(f"Nitter tweet sayfasinda gorsel yok ({host}): {tweet_url[:80]}", "WARNING")
+    return results
 
+def _extract_nitter_images_from_tweet_page(tweet_url: str, timeout: int = 20) -> list[str]:
+    """Tweet sayfasi gorsellerini instance failover ile toplar.
+
+    Link hangi instance'tan geldiyse o host'u tasir; instance rate-limit'e
+    girmis olabilir. Ayni yol havuzdaki diger instance'larda da denenir, hepsi
+    bos donerse FxTwitter API / x.com og:image fallback'i devreye girer.
+    """
+    if not tweet_url or not _is_nitter_url(tweet_url): return []
+    candidates = _nitter_candidate_urls(tweet_url, max_candidates=_NITTER_IMAGE_INSTANCE_LIMIT)
+    results: list[str] = []
+    for idx, candidate_url in enumerate(candidates):
+        results = _extract_nitter_images_from_instance(candidate_url, timeout=timeout)
+        if results:
+            if idx > 0:
+                log(f"Nitter gorsel failover BASARILI: {candidate_url[:80]} ({len(results)} gorsel)")
+            return results
     if not results:
         twitter_url = _nitter_to_twitter_url(tweet_url)
         if twitter_url:

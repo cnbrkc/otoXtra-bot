@@ -294,7 +294,11 @@ def prepare_images(article: dict) -> list[str]:
 
     article_title = article.get("title", "")[:120]
     article_link = article.get("link", "")
-    is_nitter_article = _is_nitter_url(article_link)
+    # Link kanoniklestirildigi icin (x.com) nitter sayfasi ayrica tasinir:
+    # gorsel scrape'i tweet metnini/gorsellerini nitter HTML'inden alir.
+    nitter_page_url = article.get("nitter_url", "") or ""
+    scrape_url = nitter_page_url or article_link
+    is_nitter_article = _is_nitter_url(scrape_url)
     effective_scrape = True  
 
     log("-" * 40)
@@ -307,9 +311,9 @@ def prepare_images(article: dict) -> list[str]:
     used_sources = []
 
     candidate_pool = _collect_article_candidates(article, effective_try_limit)
-    if effective_scrape and article.get("can_scrape_image", True) and article_link:
+    if effective_scrape and article.get("can_scrape_image", True) and scrape_url:
         log(f"Secilen haber icin sayfa gorsel scrape aktif (nitter={is_nitter_article})")
-        for c in scrape_article_image_urls(article_link, max_candidates=effective_try_limit):
+        for c in scrape_article_image_urls(scrape_url, max_candidates=effective_try_limit):
             _upsert_candidate(candidate_pool, c)
     elif not effective_scrape:
         log("Secilen haber sayfa gorsel scrape kapali", "INFO")

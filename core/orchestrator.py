@@ -139,6 +139,23 @@ def _log_source_health() -> None:
             f"Source health: ok={ok_count}, error={err_count}, "
             f"empty={empty_count}, disabled={disabled_count}"
         )
+
+        # Nitter kaynaklari icin hangi instance'in calistigini logla: instance
+        # havuzu donduruldugu icin 'kim cevap verdi' bilgisi teshis kolaylastirir.
+        used_instances = [
+            (name, info.get("instance", ""))
+            for name, info in source_health.items()
+            if isinstance(info, dict) and info.get("instance")
+        ]
+        if used_instances:
+            log("Nitter instance kullanimi: " + ", ".join(f"{name}->{host}" for name, host in used_instances))
+        try:
+            from agents.fetcher_utils import _nitter_health_summary
+            summary = _nitter_health_summary()
+            if summary:
+                log(f"Nitter instance saglik durumu (run sonu): {summary}")
+        except Exception:
+            pass
     except Exception:
         pass
 

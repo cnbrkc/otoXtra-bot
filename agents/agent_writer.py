@@ -552,7 +552,8 @@ def _set_write_skipped(skip_reason: str) -> bool:
 
 
 def _try_attach_full_text(article: dict) -> None:
-    article_url = article.get("link", "")
+    # Kanonik link x.com olabilir; tam metin scrape'i icin nitter sayfasi tercih edilir.
+    article_url = article.get("nitter_url", "") or article.get("link", "")
     if not article_url:
         log("[WRITER] No article URL for full text scraping", "INFO")
         return
