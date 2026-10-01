@@ -1,0 +1,12 @@
+name = "otoxtra-github-scheduler"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+
+[triggers]
+# Cloudflare cron UTC ile çalışır; Worker sadece hedef Türkiye saatlerinde dispatch eder.
+crons = ["0 * * * *"]
+
+[vars]
+GITHUB_REPOSITORY = "cnbrkc/otoXtra-bot"
+GITHUB_WORKFLOW = "bot.yml"
+GITHUB_REF = "main"
