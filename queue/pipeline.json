@@ -1,13 +1,34 @@
 {
-  "run_id": "2026-10-02-13:01",
+  "run_id": "2026-10-02-15:01",
   "status": "completed",
-  "started_at": "2026-10-02T13:01:50.693613+03:00",
-  "updated_at": "2026-10-02T13:04:06.550667+03:00",
+  "started_at": "2026-10-02T15:01:41.983296+03:00",
+  "updated_at": "2026-10-02T15:04:15.295212+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "VW destekli Gotion katı hal bataryada çıtayı yükseltti: Hedef fiyat açıklandı",
+            "link": "https://www.donanimhaber.com/vw-destekli-gotion-kati-hal-bataryada-citayi-yukseltti--211150",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-02T11:58:00+00:00",
+            "summary": "Volkswagen destekli Gotion, katı hal bataryalarda enerji yoğunluğunu 400 Wh/kg seviyesine çıkarmayı ve uzun vadede maliyeti 150 dolar/kWh seviyesine indirmeyi hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/211150/1200x675vw-destekli-gotion-kati-hal-bataryada-citayi-yukseltti.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211150/1200x675vw-destekli-gotion-kati-hal-bataryada-citayi-yukseltti.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/211150/1200x675vw-destekli-gotion-kati-hal-bataryada-citayi-yukseltti.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bataryada-citayi-destekli-fiyat-gotion-hal-hedef-kati-yukseltti"
+          },
           {
             "title": "Tesla Model Y Türkiye’de zamlandı: İşte yeni fiyatlar",
             "link": "https://www.donanimhaber.com/tesla-model-y-turkiye-de-zamlandi-iste-yeni-fiyatlar--211152",
@@ -28,27 +49,6 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "fiyatlar-model-ste-tesla-turkiye-zamlandi"
-          },
-          {
-            "title": "Boston Dynamics, Atlas için geliştirdiği yeni eli tanıttı [Video]",
-            "link": "https://www.log.com.tr/boston-dynamics-atlas-icin-gelistirdigi-yeni-eli-tanitti-video/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-02T07:03:06+00:00",
-            "summary": "Hyundai’nin satın alarak bünyesine kattığı Boston Dynamics, gelişmiş insansı robotu Atlas için yeni bir “el” sistemi geliştirdi. Hassas fiziksel işler için sıfırdan tasarlandığı aktarılan yeni el, 13 serbestlik derecesine (DOF) sahip. Yüksek doğruluklu simülasyonlara uygun olarak geliştirilen el, açıklamaya göre simülasyonda eğitilen pekiştirmeli öğrenme modellerinin gerçek dünyaya aktarılmasını (sim-to-real RL) kolaylaştırmayı hedefliyor. Hyundai, yeni eliyle daha da kullanışlı hale gelen Atlas’ı fabrikalarında, yani otomobil üretim sürecinde görevlendirmek adına uzun süredir önemli çalışmalar gerçekleştiriyor. Boston Dynamics, Atlas için geliştirdiği yeni eli tanıttı [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-02_10-01-18_zUkl2-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-02_10-01-18_zUkl2-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-02_10-01-18_zUkl2-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "atlas-boston-dynamics-eli-gelistirdigi-tanitti-video"
           },
           {
             "title": "Ford, 2028'de WRC'ye geri dönüyor!",
@@ -72,27 +72,6 @@
             "topic_fingerprint": "2028-donuyor-ford-geri-wrc"
           },
           {
-            "title": "Türkiye otomobil ve hafif ticari pazarı düşmeye devam ediyor!",
-            "link": "https://tr.motor1.com/news/810535/odmd-eylul-2026-verileri/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-02T07:00:15+00:00",
-            "summary": "Serbest düşüş sürüyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/ojyBo0/s3/arabam.com-cover.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/ojyBo0/s3/arabam.com-cover.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/ojyBo0/s3/arabam.com-cover.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "devam-dusmeye-ediyor-hafif-otomobil-pazari-ticari-turkiye"
-          },
-          {
             "title": "Tesla’dan Yeni Patent: Otomobilin Altına Elektrikli Fanlar Yerleştirilecek",
             "link": "https://shiftdelete.net/tesla-elektrikli-fan-sistemi-patenti",
             "nitter_url": "",
@@ -112,23 +91,25 @@
             "topic_fingerprint": "altina-elektrikli-fanlar-otomobilin-patent-tesla-yerlestirilecek"
           },
           {
-            "title": "Yapay Zeka Otomobil Sürdü: Hangi Model Başarılı Oldu?",
-            "link": "https://shiftdelete.net/toyota-corolla-yapay-zeka-surus-deneyi",
+            "title": "Toplamda ve otomobilde Renault, hafif ticaride Ford önde gidiyor",
+            "link": "https://www.otoajanda.com/toplamda-ve-otomobilde-renault-hafif-ticaride-ford-onde-gidiyor/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-02T07:30:23+00:00",
-            "summary": "DrivingBench araştırmacıları, yapay zeka modelleri ile Toyota Corolla üzerinde sürüş testi gerçekleştirdi. Hangi model parkuru tamamladı?",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "published": "2026-10-02T09:29:52+00:00",
+            "summary": "Otomotiv pazarı bu yıl zorlu bir süreçten geçiyor. Ocak-Eylül döneminde toplam pazar yüzde 13,39 oranında daraldı. 9. ayda da küçülmeye devam eden otomotiv pazarında markaların performansı ne durumda? Toplam pazarda Renault açık ara ilk sırada. Ancak hafif ticari tarafta tablo tamamen değişiyor; Ford 41.390 adet ve %23,59 payla, Fiat ise 36.111 adet ve %20,58 payla […] Toplamda ve otomobilde Renault, hafif ticaride Ford önde gidiyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/10/Ekran-Resmi-2026-10-02-12.17.02-800x444.avif",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/10/Ekran-Resmi-2026-10-02-12.17.02-800x444.avif",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2026/10/Ekran-Resmi-2026-10-02-12.17.02-800x444.avif"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "basarili-hangi-model-otomobil-surdu-yapay-zeka"
+            "topic_fingerprint": "ford-gidiyor-hafif-onde-otomobilde-renault-ticaride-toplamda"
           },
           {
             "title": "2026 Eylül otomotiv satışlarında son durum : Küçülmeye devam",
@@ -154,7 +135,7 @@
             "link": "https://www.log.com.tr/kia-seltos-turkiyede-satisa-sunuldu/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-02T13:01:50.730961+03:00",
+            "published": "2026-10-02T15:01:42.063216+03:00",
             "summary": "Geleceği uzun süre önce açıklanan Kia Seltos, bugün itibarıyla Türkiye’de 2 milyon 349 bin TL’den (1.6L 180 PS DCT Otomatik Cool) satışa sunuldu. Yalnızca benzinli olarak sunulan aracın “1.6L 180 PS DCT Otomatik Elegance” versiyonu için 2.965.000 TL, en üstteki “1.6L 180 PS DCT Otomatik X-Line” versiyonu içinse 3 milyon 149 bin TL kampanyalı satış fiyatı listeleniyor. Çift ekranlı standart bir Kia konsoluna sahip olan model, “Kia Connect” desteğiyle geliyor. Kia Seltos, Türkiye’de satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-02_08-42-10_BIuPj-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-02_08-42-10_BIuPj-660x371.jpg",
@@ -171,121 +152,58 @@
             "topic_fingerprint": "kia-satisa-seltos-sunuldu-turkiye"
           },
           {
-            "title": "Çinlilerin Türkiye’deki payı %4’ün altına indi‼️ Çinli markaların pazar payı ocakta %11,8’e çıkmıştı. Eylülde ise %3,87’ye geriledi. Ocakta 7.202 adet olan satış, eylülde 2.468 adede düştü. Ama burada önemli bir ayrıntı var; Bu düşüş talep kaynaklı değil, otomobil bulunamamasından kaynaklanıyor. BYD yılın başından beri yeni araç getiremiyor; yıl boyunca elindeki stokları sattı. Nitekim ocakta 3.866 adet satan BYD’nin eylül satışı sadece 8 adet. Çinli markalar arasında satışlarını sürdürebilen Chery ile Omoda & Jaecoo’nun avantajı ise sübvansiyonlu içten yanmalı modeller getirebilmeleri. Sonuçta Çinli markalar 9 ayda 36.245 adet satış ve %5,77 pazar payında kaldı. Yani Türkiye’de Çinlilerin önündeki asıl sorun müşteri bulmak değil, satacak otomobil bulmak. @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105938246840549396",
-            "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105938246840549396#m",
-            "source_instance": "nitter.gravitywell.xyz",
-            "published": "2026-10-02T08:29:39+00:00",
-            "summary": "Çinlilerin Türkiye’deki payı %4’ün altına indi‼️ Çinli markaların pazar payı ocakta %11,8’e çıkmıştı. Eylülde ise %3,87’ye geriledi. Ocakta 7.202 adet olan satış, eylülde 2.468 adede düştü. Ama burada önemli bir ayrıntı var; Bu düşüş talep kaynaklı değil, otomobil bulunamamasından kaynaklanıyor. BYD yılın başından beri yeni araç getiremiyor; yıl boyunca elindeki stokları sattı. Nitekim ocakta 3.866 adet satan BYD’nin eylül satışı sadece 8 adet. Çinli markalar arasında satışlarını sürdürebilen Chery ile Omoda & Jaecoo’nun avantajı ise sübvansiyonlu içten yanmalı modeller getirebilmeleri. Sonuçta Çinli markalar 9 ayda 36.245 adet satış ve %5,77 pazar payında kaldı. Yani Türkiye’de Çinlilerin önündeki asıl sorun müşteri bulmak değil, satacak otomobil bulmak. @erolsahin_ebs @ODMDOtomotiv",
-            "image_url": "https://pbs.twimg.com/media/HTnLqd7XwAEp8CB.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HTnLqd7XwAEp8CB.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HTnLqd7XwAEp8CB.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "202-245-468-866-adede-adet-adet-adet-adet-altina-arac-asil-avantaji-ayda-ayrinti-basindan-beri-boyunca-bulmak-bulmak-bulunamamasindan-burada-byd-byd-chery-cikmisti-cinli-cinli-cinli-cinlilerin-cinlilerin-degil-degil-dustu-dusus-ebs-elindeki-erolsahin-eylul-eylulde-eylulde-geriledi-getirebilmeleri-getiremiyor-icten-indi-ise-ise-jaecoo-kaldi-kaynaklaniyor-kaynakli-markalar-markalar-markalarin-modeller-musteri-nitekim-ocakta-ocakta-ocakta-odmdotomotiv-omoda-onemli-onundeki-otomobil-otomobil-payi-payi-payinda-pazar-pazar-satacak-satan-satis-satis-satisi-satislarini-satti-sonucta-sorun-stoklari-subvansiyonlu-surdurebilen-talep-turkiye-turkiye-var-yani-yanmali-yil-yilin"
-          },
-          {
-            "title": "Mercedes farkı açıyor, Volvo 3’üncülüğü sevdi‼️ Premium otomobil pazarında Mercedes liderliğini giderek sağlamlaştırırken, Volvo da 3’üncülüğe iyice yerleşti. 💢İlk 9 ay sonunda sıralama; Mercedes 21.028, BMW 16.408, Volvo 13.239, Audi 12.259, MINI 8.624 adet. 💢Eylülde de Mercedes 3.269 adetle açık ara lider. BMW 1.626 adetle ikinci, Volvo 1.585 adetle üçüncü. BMW ile Volvo arasında sadece 41 adet var. 💢Model sıralamasında ise ilk yarının etkisi hala görülüyor. MINI Countryman 8.417 adetle 9 ayın lideri, Volvo EX30 5.566 adetle ikinci, BMW X1 5.329 adetle üçüncü. Ancak Countryman ve X1’in bu sıralamadaki yeri büyük ölçüde yılın ilk yarısındaki güçlü satışlarından geliyor. Eylülde Countryman sadece 63, X1 ise 76 adet satarken, EX30 532 adede ulaştı. Yani 9 aylık toplam başka, son aylardaki satış temposu bambaşka bir tablo gösteriyor. (ÖTV etkisi) @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105930466914140295",
-            "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105930466914140295#m",
-            "source_instance": "nitter.gravitywell.xyz",
-            "published": "2026-10-02T07:58:44+00:00",
-            "summary": "Mercedes farkı açıyor, Volvo 3’üncülüğü sevdi‼️ Premium otomobil pazarında Mercedes liderliğini giderek sağlamlaştırırken, Volvo da 3’üncülüğe iyice yerleşti. 💢İlk 9 ay sonunda sıralama; Mercedes 21.028, BMW 16.408, Volvo 13.239, Audi 12.259, MINI 8.624 adet. 💢Eylülde de Mercedes 3.269 adetle açık ara lider. BMW 1.626 adetle ikinci, Volvo 1.585 adetle üçüncü. BMW ile Volvo arasında sadece 41 adet var. 💢Model sıralamasında ise ilk yarının etkisi hala görülüyor. MINI Countryman 8.417 adetle 9 ayın lideri, Volvo EX30 5.566 adetle ikinci, BMW X1 5.329 adetle üçüncü. Ancak Countryman ve X1’in bu sıralamadaki yeri büyük ölçüde yılın ilk yarısındaki güçlü satışlarından geliyor. Eylülde Countryman sadece 63, X1 ise 76 adet satarken, EX30 532 adede ulaştı. Yani 9 aylık toplam başka, son aylardaki satış temposu bambaşka bir tablo gösteriyor. (ÖTV etkisi) @erolsahin_ebs @ODMDOtomotiv",
-            "image_url": "https://pbs.twimg.com/media/HTnEexgXwAAFxip.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HTnEexgXwAAFxip.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HTnEexgXwAAFxip.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "028-239-259-269-329-408-417-532-566-585-624-626-acik-aciyor-adede-adet-adet-adet-adetle-adetle-adetle-adetle-adetle-adetle-ara-audi-ayin-aylardaki-aylik-bambaska-baska-bmw-bmw-bmw-bmw-countryman-countryman-countryman-ebs-erolsahin-etkisi-etkisi-ex30-ex30-eylulde-eylulde-farki-geliyor-giderek-goruluyor-gosteriyor-guclu-hala-ikinci-ikinci-ise-ise-iyice-lider-lideri-liderligini-mercedes-mercedes-mercedes-mercedes-mini-mini-model-odmdotomotiv-olcude-otomobil-otv-pazarinda-premium-saglamlastirirken-satarken-satis-satislarindan-sevdi-siralama-siralamadaki-siralamasinda-sonunda-tablo-temposu-toplam-ucuncu-ucuncu-ulasti-unculuge-unculugu-var-volvo-volvo-volvo-volvo-volvo-volvo-yani-yarinin-yarisindaki-yeri-yerlesti-yilin"
-          },
-          {
-            "title": "SUV artık tercih değil, pazarın kendisi‼️ Türkiye’de otomobil pazarında SUV hakimiyeti giderek güçleniyor. Eylül ayında satılan 63.736 otomobilin 44.062’si SUV oldu. Böylece SUV’ların payı %69,13’e ulaştı. Yani satılan her 10 otomobilden 7’si SUV. Eylülün en çok satan SUV’ları... 1) Togg T10X: 4.237 2) Renault Boreal: 3.220 3) Renault Duster: 2.305 4) Tesla Model Y: 1.725 adet 5) Kia Sportage: 1.591 adet İlk 9 ayda da tablo değişmiyor. SUV satışları 415.909 adede, otomobil pazarındaki payı ise %66,23’e ulaştı. 9 ayın SUV liderleri... 1)Togg T10X: 22.020 2) Renault Duster: 19.774 3) Toyota C-HR: 17.952 4) Volkswagen Taigo: 16.507 5) Peugeot 2008: 14.768 T10X hem eylülün hem de ilk 9 ayın en çok satan SUV’u. Yeni Renault Boreal ise eylülde 3.220 adetle doğrudan 2’nciliğe yerleşmiş durumda. @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105921524716757153",
-            "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105921524716757153#m",
-            "source_instance": "nitter.gravitywell.xyz",
-            "published": "2026-10-02T07:23:12+00:00",
-            "summary": "SUV artık tercih değil, pazarın kendisi‼️ Türkiye’de otomobil pazarında SUV hakimiyeti giderek güçleniyor. Eylül ayında satılan 63.736 otomobilin 44.062’si SUV oldu. Böylece SUV’ların payı %69,13’e ulaştı. Yani satılan her 10 otomobilden 7’si SUV. Eylülün en çok satan SUV’ları... 1) Togg T10X: 4.237 2) Renault Boreal: 3.220 3) Renault Duster: 2.305 4) Tesla Model Y: 1.725 adet 5) Kia Sportage: 1.591 adet İlk 9 ayda da tablo değişmiyor. SUV satışları 415.909 adede, otomobil pazarındaki payı ise %66,23’e ulaştı. 9 ayın SUV liderleri... 1)Togg T10X: 22.020 2) Renault Duster: 19.774 3) Toyota C-HR: 17.952 4) Volkswagen Taigo: 16.507 5) Peugeot 2008: 14.768 T10X hem eylülün hem de ilk 9 ayın en çok satan SUV’u. Yeni Renault Boreal ise eylülde 3.220 adetle doğrudan 2’nciliğe yerleşmiş durumda. @erolsahin_ebs @ODMDOtomotiv",
-            "image_url": "https://pbs.twimg.com/media/HTm8E-0WYAAYwWR.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HTm8E-0WYAAYwWR.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HTm8E-0WYAAYwWR.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "020-062-2008-220-220-237-305-415-507-591-725-736-768-774-909-952-adede-adet-adet-adetle-ayda-ayin-ayin-ayinda-boreal-boreal-boylece-degil-degismiyor-dogrudan-durumda-duster-duster-ebs-erolsahin-eylul-eylulde-eylulun-eylulun-giderek-gucleniyor-hakimiyeti-hem-hem-ise-ise-kendisi-kia-lari-larin-liderleri-model-ncilige-odmdotomotiv-otomobil-otomobil-otomobilden-otomobilin-payi-payi-pazarin-pazarinda-pazarindaki-peugeot-renault-renault-renault-renault-satan-satan-satilan-satilan-satislari-sportage-suv-suv-suv-suv-suv-suv-suv-suv-suv-t10x-t10x-t10x-tablo-taigo-tercih-tesla-togg-togg-toyota-turkiye-ulasti-ulasti-volkswagen-yani-yerlesmis"
-          },
-          {
-            "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105909499903029710",
-            "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105909499903029710#m",
-            "source_instance": "nitter.gravitywell.xyz",
-            "published": "2026-10-02T06:35:25+00:00",
-            "summary": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-            "image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "074-237-255-382-451-455-692-adede-adede-adede-adetle-adetle-adetten-adetten-artarak-ayina-ayni-bakinca-bakista-buyudu-buyume-buyumenin-cikarirken-daralacakti-degisiyor-detayina-ebs-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-erolsahin-eylulde-eylulde-eylulde-eylulde-gecen-geriledi-gorunuyor-guclu-haric-haric-inci-kaynagi-kuculdu-modelin-nci-neredeyse-odmdotomotiv-olmasaydi-otomobil-otomobil-otomobilden-ozetle-payi-pazari-pazari-pazari-pazarinda-satilan-satislari-satislarini-t10f-t10x-tablo-tamamen-tek-togg-togg-togg-togg-togg-togg-togg-toplam-turkiye-turkiye-ustelik-var-yaklasik-yaklasik-yani-yilin"
-          },
-          {
-            "title": "Araba nerede? 😄 . Haberin başlığı bu: Yeni Volvo ES90, İstanbul’da Tanıtıldı.",
-            "link": "https://x.com/murattosunMSE/status/2105927459375923686",
-            "nitter_url": "https://shitter.thepixora.com/murattosunMSE/status/2105927459375923686#m",
+            "title": "Koç otomobilde geriledi, hafif ticaride ağırlığını artırdı‼️ Eylül ayında otomobil satışlarında dikkat çekici bir tablo ortaya çıktı. Sadece 3 markalı Oyak Grubu 12.027 adet, 9 markalı Doğuş Grubu 10.110 adet otomobil satarken, 10 markalı Koç Grubu 7.449 adette kaldı. Böylece otomobilde Koç Grubu’nu hem Oyak hem de Doğuş geçti. Ama hafif ticari tarafta tablo tam tersi. Tofaş’ta K9 ailesinin üretime başlaması ve yeni modellerin devreye girmesiyle Koç Grubu gücünü daha da artırdı. Eylülde satılan 19.733 hafif ticari aracın 14.029’unu Koç Grubu sattı. Yani pazar payı tam %71,1. Bu güç sayesinde Koç, otomobildeki gerilemeye rağmen toplam pazarda 21.478 adet ve %25,7 payla eylül ayını yine açık ara önde tamamladı. 9 aylık tabloda ise Koç Grubu’nun toplam pazar payı hala %31,2. Yani Türkiye’de satılan her 3 araçtan yaklaşık 1’i Koç Grubu’ndan. @erolsahin_ebs",
+            "link": "https://x.com/eozpeynirci/status/2105989968849969238",
+            "nitter_url": "https://shitter.thepixora.com/eozpeynirci/status/2105989968849969238#m",
             "source_instance": "shitter.thepixora.com",
-            "published": "2026-10-02T07:46:47+00:00",
-            "summary": "Araba nerede? 😄 . Haberin başlığı bu: Yeni Volvo ES90, İstanbul’da Tanıtıldı.",
-            "image_url": "https://pbs.twimg.com/media/HTnBiw6WEAAejan.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HTnBiw6WEAAejan.jpg",
+            "published": "2026-10-02T11:55:10+00:00",
+            "summary": "Koç otomobilde geriledi, hafif ticaride ağırlığını artırdı‼️ Eylül ayında otomobil satışlarında dikkat çekici bir tablo ortaya çıktı. Sadece 3 markalı Oyak Grubu 12.027 adet, 9 markalı Doğuş Grubu 10.110 adet otomobil satarken, 10 markalı Koç Grubu 7.449 adette kaldı. Böylece otomobilde Koç Grubu’nu hem Oyak hem de Doğuş geçti. Ama hafif ticari tarafta tablo tam tersi. Tofaş’ta K9 ailesinin üretime başlaması ve yeni modellerin devreye girmesiyle Koç Grubu gücünü daha da artırdı. Eylülde satılan 19.733 hafif ticari aracın 14.029’unu Koç Grubu sattı. Yani pazar payı tam %71,1. Bu güç sayesinde Koç, otomobildeki gerilemeye rağmen toplam pazarda 21.478 adet ve %25,7 payla eylül ayını yine açık ara önde tamamladı. 9 aylık tabloda ise Koç Grubu’nun toplam pazar payı hala %31,2. Yani Türkiye’de satılan her 3 araçtan yaklaşık 1’i Koç Grubu’ndan. @erolsahin_ebs",
+            "image_url": "https://pbs.twimg.com/media/HTn6tjgXgAEkRRK.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HTn6tjgXgAEkRRK.jpg",
             "image_candidates": [
-              "https://pbs.twimg.com/media/HTnBiw6WEAAejan.jpg"
+              "https://pbs.twimg.com/media/HTn6tjgXgAEkRRK.jpg"
             ],
             "image_source": "rss",
-            "source_name": "MuratTosun",
+            "source_name": "Emre Ozpeynirci",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "araba-basligi-es90-haberin-nerede-stanbul-volvo"
+            "topic_fingerprint": "027-029-110-449-478-733-acik-adet-adet-adet-adette-agirligini-ailesinin-ara-aracin-aractan-artirdi-artirdi-ayinda-ayini-aylik-baslamasi-boylece-cekici-devreye-dikkat-dogus-dogus-ebs-erolsahin-eylul-eylul-eylulde-gecti-geriledi-gerilemeye-girmesiyle-grubu-grubu-grubu-grubu-grubu-grubu-grubu-grubu-guc-gucunu-hafif-hafif-hafif-hala-hem-hem-ise-kaldi-koc-koc-koc-koc-koc-koc-koc-koc-markali-markali-markali-modellerin-ndan-onde-ortaya-otomobil-otomobil-otomobilde-otomobilde-otomobildeki-oyak-oyak-payi-payi-payla-pazar-pazar-pazarda-ragmen-satarken-satilan-satilan-satislarinda-satti-sayesinde-tablo-tablo-tabloda-tam-tam-tamamladi-tarafta-tersi-ticari-ticari-ticaride-tofas-toplam-toplam-turkiye-unu-uretime-yaklasik-yani-yani-yine"
           },
           {
-            "title": "Kia Şimşek Otomotiv, Ekim ayı fiyatlarını açıkladı. Bazı modellerin \"bayi avantajlı\" fiyatları şu şekilde: Picanto: 1.300.000 TL Sportage Live: 2.099.000 TL Sportage Vision: 2.375.000 TL (ÖTV avantajlı) EV2: 1.699.000 TL EV3: 2.485.000 TL Seltos: 2.349.000 TL",
-            "link": "https://x.com/veysellkaranii/status/2105933172319907845",
-            "nitter_url": "https://shitter.thepixora.com/veysellkaranii/status/2105933172319907845#m",
+            "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+            "link": "https://x.com/eozpeynirci/status/2105988408891895959",
+            "nitter_url": "https://shitter.thepixora.com/eozpeynirci/status/2105988408891895959#m",
             "source_instance": "shitter.thepixora.com",
-            "published": "2026-10-02T08:09:29+00:00",
-            "summary": "Kia Şimşek Otomotiv, Ekim ayı fiyatlarını açıkladı. Bazı modellerin \"bayi avantajlı\" fiyatları şu şekilde: Picanto: 1.300.000 TL Sportage Live: 2.099.000 TL Sportage Vision: 2.375.000 TL (ÖTV avantajlı) EV2: 1.699.000 TL EV3: 2.485.000 TL Seltos: 2.349.000 TL",
-            "image_url": "https://pbs.twimg.com/media/HTnHDkoXsAAqOX-.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HTnHDkoXsAAqOX-.jpg",
+            "published": "2026-10-02T11:48:58+00:00",
+            "summary": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+            "image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
             "image_candidates": [
-              "https://pbs.twimg.com/media/HTnHDkoXsAAqOX-.jpg"
+              "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "101-114-157-174-193-380-520-710-766-962-adedi-adet-adet-adet-adet-adet-adet-adetle-adetle-adetlerde-adetlik-artirabilen-artiran-asil-ayda-bazinda-buna-bunlarin-bunyesinde-buyudu-cekici-cekici-citroen-dagilmamasi-daralirken-dikkat-dikkat-dusen-dusuk-ebs-erolsahin-esit-fazla-fazla-fazla-fiat-ford-geliyor-geriledi-grubu-grubu-ikinci-ise-ise-karsilik-kaybin-kayipta-koc-koc-kuculmenin-kuculuyor-marka-marka-marka-marka-markadan-markalar-markalar-markalari-markanin-markanin-nis-onemli-opel-otomobil-otomobil-otomobil-pazar-pazari-pazarinda-pazarindaki-peugeot-renault-satis-satisini-satisini-satislari-satislari-sayisi-sinin-sirada-tablonun-tarafi-togg-toplam-turkiye-turkiye-ustelik-yani-yapan"
+          },
+          {
+            "title": "Citroen, Ekim ayı fiyat listesini açıkladı. e-C3 83 kW Max: 1.605.000 TL C3 Aircross 1.2 Hybrid Max: 2.200.000 TL e-C3 Aircross 83 kW Max: 1.875.000 TL C4 1.2 Hybrid You: 2.140.000 TL e-C4 115 kW Max: 2.150.000 TL C4 X 1.2 Hybrid Max: 2.345.000 TL C5 Aircross 1.2 Hybrid Plus: 2.714.000 TL e-C5 Aircross 157 kW Plus: 2.430.000 TL",
+            "link": "https://x.com/veysellkaranii/status/2105988960820265453",
+            "nitter_url": "https://shitter.thepixora.com/veysellkaranii/status/2105988960820265453#m",
+            "source_instance": "shitter.thepixora.com",
+            "published": "2026-10-02T11:51:10+00:00",
+            "summary": "Citroen, Ekim ayı fiyat listesini açıkladı. e-C3 83 kW Max: 1.605.000 TL C3 Aircross 1.2 Hybrid Max: 2.200.000 TL e-C3 Aircross 83 kW Max: 1.875.000 TL C4 1.2 Hybrid You: 2.140.000 TL e-C4 115 kW Max: 2.150.000 TL C4 X 1.2 Hybrid Max: 2.345.000 TL C5 Aircross 1.2 Hybrid Plus: 2.714.000 TL e-C5 Aircross 157 kW Plus: 2.430.000 TL",
+            "image_url": "https://pbs.twimg.com/media/HTn5y4YXQAAkDJ3.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HTn5y4YXQAAkDJ3.jpg",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HTn5y4YXQAAkDJ3.jpg"
             ],
             "image_source": "rss",
             "source_name": "VeyselKarani",
@@ -294,10 +212,52 @@
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "000-000-000-000-000-000-099-300-349-375-485-699-acikladi-avantajli-avantajli-ayi-bayi-bazi-ekim-ev2-ev3-fiyatlari-fiyatlarini-kia-live-modellerin-otomotiv-otv-picanto-sekilde-seltos-simsek-sportage-sportage-vision"
+            "topic_fingerprint": "000-000-000-000-000-000-000-000-115-140-150-157-200-345-430-605-714-875-acikladi-aircross-aircross-aircross-aircross-ayi-citroen-ekim-fiyat-hybrid-hybrid-hybrid-hybrid-listesini-max-max-max-max-max-plus-plus-you"
+          },
+          {
+            "title": "Eylül ayında Türkiye’de en çok satan elektrikli sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Togg T10F : 2.455 3-Tesla Model Y : 1.725 4-Kia EV2 : 809 5-Volvo EX30 : 532 6-Kia EV3 : 479 7-Hyundai Ioniq 5 : 470 8-Volvo EX40 : 452 9-Mercedes GLC : 359 10-Skoda Elroq : 343",
+            "link": "https://x.com/veysellkaranii/status/2105969612831519056",
+            "nitter_url": "https://shitter.thepixora.com/veysellkaranii/status/2105969612831519056#m",
+            "source_instance": "shitter.thepixora.com",
+            "published": "2026-10-02T10:34:17+00:00",
+            "summary": "Eylül ayında Türkiye’de en çok satan elektrikli sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Togg T10F : 2.455 3-Tesla Model Y : 1.725 4-Kia EV2 : 809 5-Volvo EX30 : 532 6-Kia EV3 : 479 7-Hyundai Ioniq 5 : 470 8-Volvo EX40 : 452 9-Mercedes GLC : 359 10-Skoda Elroq : 343",
+            "image_url": "https://pbs.twimg.com/media/HTnoMwXXcAAeF3f.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HTnoMwXXcAAeF3f.jpg",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HTnoMwXXcAAeF3f.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "VeyselKarani",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "237-343-359-452-455-470-479-532-725-809-ayinda-elektrikli-elroq-ev2-ev3-ex30-ex40-eylul-glc-hyundai-ioniq-kia-kia-mercedes-model-otomobiller-satan-sifir-skoda-t10f-t10x-tesla-togg-togg-turkiye-volvo-volvo"
+          },
+          {
+            "title": "Türkiye’de Eylül ayında en çok satan sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Renault Boreal : 3.220 3-Renault Megane Sedan : 2.830 4-Toyota Corolla Sedan : 2.486 5-Togg T10F : 2.455 6-Renault Duster : 2.305 7-Renault Clio : 1.993 8-Tesla Model Y : 1.725 9-Hyundai i20 : 1.649 10-Kia Sportage : 1.591",
+            "link": "https://x.com/veysellkaranii/status/2105963923803365792",
+            "nitter_url": "https://shitter.thepixora.com/veysellkaranii/status/2105963923803365792#m",
+            "source_instance": "shitter.thepixora.com",
+            "published": "2026-10-02T10:11:41+00:00",
+            "summary": "Türkiye’de Eylül ayında en çok satan sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Renault Boreal : 3.220 3-Renault Megane Sedan : 2.830 4-Toyota Corolla Sedan : 2.486 5-Togg T10F : 2.455 6-Renault Duster : 2.305 7-Renault Clio : 1.993 8-Tesla Model Y : 1.725 9-Hyundai i20 : 1.649 10-Kia Sportage : 1.591",
+            "image_url": "https://pbs.twimg.com/media/HTnjA8rWQAAaHKA.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HTnjA8rWQAAaHKA.jpg",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HTnjA8rWQAAaHKA.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "VeyselKarani",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "220-237-305-455-486-591-649-725-830-993-ayinda-boreal-clio-corolla-duster-eylul-hyundai-i20-kia-megane-model-otomobiller-renault-renault-renault-renault-satan-sedan-sedan-sifir-sportage-t10f-t10x-tesla-togg-togg-toyota-turkiye"
           }
         ],
-        "count": 14,
+        "count": 12,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -358,7 +318,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -367,19 +327,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "shitter.thepixora.com"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "shitter.thepixora.com"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://x.n0g.xyz/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -434,39 +394,39 @@
           },
           "_metrics": {
             "found": 148,
-            "after_keyword": 92,
-            "after_time": 27,
-            "after_posted": 17,
-            "after_duplicate": 14,
-            "after_shared_variant_cooldown": 17
+            "after_keyword": 90,
+            "after_time": 19,
+            "after_posted": 13,
+            "after_duplicate": 12,
+            "after_shared_variant_cooldown": 13
           }
         },
         "metrics": {
           "found": 148,
-          "after_keyword": 92,
-          "after_time": 27,
-          "after_posted": 17,
-          "after_duplicate": 14,
-          "after_shared_variant_cooldown": 17
+          "after_keyword": 90,
+          "after_time": 19,
+          "after_posted": 13,
+          "after_duplicate": 12,
+          "after_shared_variant_cooldown": 13
         }
       },
       "error": null,
-      "updated_at": "2026-10-02T13:03:11.837420+03:00"
+      "updated_at": "2026-10-02T15:03:09.793367+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "link": "https://x.com/eozpeynirci/status/2105909499903029710",
-          "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105909499903029710#m",
-          "source_instance": "nitter.gravitywell.xyz",
-          "published": "2026-10-02T06:35:25+00:00",
-          "summary": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
+          "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "link": "https://x.com/eozpeynirci/status/2105988408891895959",
+          "nitter_url": "https://shitter.thepixora.com/eozpeynirci/status/2105988408891895959#m",
+          "source_instance": "shitter.thepixora.com",
+          "published": "2026-10-02T11:48:58+00:00",
+          "summary": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg"
           ],
           "image_source": "rss",
           "source_name": "Emre Ozpeynirci",
@@ -475,134 +435,126 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "074-237-255-382-451-455-692-adede-adede-adede-adetle-adetle-adetten-adetten-artarak-ayina-ayni-bakinca-bakista-buyudu-buyume-buyumenin-cikarirken-daralacakti-degisiyor-detayina-ebs-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-erolsahin-eylulde-eylulde-eylulde-eylulde-gecen-geriledi-gorunuyor-guclu-haric-haric-inci-kaynagi-kuculdu-modelin-nci-neredeyse-odmdotomotiv-olmasaydi-otomobil-otomobil-otomobilden-ozetle-payi-pazari-pazari-pazari-pazarinda-satilan-satislari-satislarini-t10f-t10x-tablo-tamamen-tek-togg-togg-togg-togg-togg-togg-togg-toplam-turkiye-turkiye-ustelik-var-yaklasik-yaklasik-yani-yilin",
-          "base_ai_score": 82,
+          "topic_fingerprint": "101-114-157-174-193-380-520-710-766-962-adedi-adet-adet-adet-adet-adet-adet-adetle-adetle-adetlerde-adetlik-artirabilen-artiran-asil-ayda-bazinda-buna-bunlarin-bunyesinde-buyudu-cekici-cekici-citroen-dagilmamasi-daralirken-dikkat-dikkat-dusen-dusuk-ebs-erolsahin-esit-fazla-fazla-fazla-fiat-ford-geliyor-geriledi-grubu-grubu-ikinci-ise-ise-karsilik-kaybin-kayipta-koc-koc-kuculmenin-kuculuyor-marka-marka-marka-marka-markadan-markalar-markalar-markalari-markanin-markanin-nis-onemli-opel-otomobil-otomobil-otomobil-pazar-pazari-pazarinda-pazarindaki-peugeot-renault-satis-satisini-satisini-satislari-satislari-sayisi-sinin-sirada-tablonun-tarafi-togg-toplam-turkiye-turkiye-ustelik-yani-yapan",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
+            "benzersizlik": 18,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 11
           },
-          "score": 85,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Togg'un elektrikli pazarına olan doğrudan etkisini çarpıcı rakamlarla ortaya koyan, sosyal medyada çok tartışılacak bir analiz.",
-          "freshness_bonus": 4,
+          "score_explanation": "Pazarın daralması, dev markaların büyük kayıpları ve Togg'un liderliği gibi sektörü sarsacak çarpıcı veriler içerdiği için viral potansiyeli çok yüksek.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 85,
-        "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
+        "score": 91,
+        "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 4,
+        "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
           "etkilesim_potansiyeli": 23,
-          "benzersizlik": 17,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 8
+          "benzersizlik": 18,
+          "gundem_gucu": 19,
+          "paylasilabilirlik": 11
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Togg'un elektrikli pazarına olan doğrudan etkisini çarpıcı rakamlarla ortaya koyan, sosyal medyada çok tartışılacak bir analiz.",
+        "score_explanation": "Pazarın daralması, dev markaların büyük kayıpları ve Togg'un liderliği gibi sektörü sarsacak çarpıcı veriler içerdiği için viral potansiyeli çok yüksek.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-            "score": 85,
+            "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+            "score": 91,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 23,
-              "benzersizlik": 17,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 8
+              "benzersizlik": 18,
+              "gundem_gucu": 19,
+              "paylasilabilirlik": 11
             }
           },
           {
-            "title": "Çinlilerin Türkiye’deki payı %4’ün altına indi‼️ Çinli markaların pazar payı ocakta %11,8’e çıkmıştı. Eylülde ise %3,87’ye geriledi. Ocakta 7.202 adet olan satış, eylülde 2.468 adede düştü. Ama burada önemli bir ayrıntı var; Bu düşüş talep kaynaklı değil, otomobil bulunamamasından kaynaklanıyor. BYD yılın başından beri yeni araç getiremiyor; yıl boyunca elindeki stokları sattı. Nitekim ocakta 3.866 adet satan BYD’nin eylül satışı sadece 8 adet. Çinli markalar arasında satışlarını sürdürebilen Chery ile Omoda & Jaecoo’nun avantajı ise sübvansiyonlu içten yanmalı modeller getirebilmeleri. Sonuçta Çinli markalar 9 ayda 36.245 adet satış ve %5,77 pazar payında kaldı. Yani Türkiye’de Çinlilerin önündeki asıl sorun müşteri bulmak değil, satacak otomobil bulmak. @erolsahin_ebs @ODMDOtomotiv",
-            "score": 81,
+            "title": "Türkiye’de Eylül ayında en çok satan sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Renault Boreal : 3.220 3-Renault Megane Sedan : 2.830 4-Toyota Corolla Sedan : 2.486 5-Togg T10F : 2.455 6-Renault Duster : 2.305 7-Renault Clio : 1.993 8-Tesla Model Y : 1.725 9-Hyundai i20 : 1.649 10-Kia Sportage : 1.591",
+            "score": 85,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 22,
               "benzersizlik": 16,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 7
+              "gundem_gucu": 17,
+              "paylasilabilirlik": 10
             }
           },
           {
-            "title": "SUV artık tercih değil, pazarın kendisi‼️ Türkiye’de otomobil pazarında SUV hakimiyeti giderek güçleniyor. Eylül ayında satılan 63.736 otomobilin 44.062’si SUV oldu. Böylece SUV’ların payı %69,13’e ulaştı. Yani satılan her 10 otomobilden 7’si SUV. Eylülün en çok satan SUV’ları... 1) Togg T10X: 4.237 2) Renault Boreal: 3.220 3) Renault Duster: 2.305 4) Tesla Model Y: 1.725 adet 5) Kia Sportage: 1.591 adet İlk 9 ayda da tablo değişmiyor. SUV satışları 415.909 adede, otomobil pazarındaki payı ise %66,23’e ulaştı. 9 ayın SUV liderleri... 1)Togg T10X: 22.020 2) Renault Duster: 19.774 3) Toyota C-HR: 17.952 4) Volkswagen Taigo: 16.507 5) Peugeot 2008: 14.768 T10X hem eylülün hem de ilk 9 ayın en çok satan SUV’u. Yeni Renault Boreal ise eylülde 3.220 adetle doğrudan 2’nciliğe yerleşmiş durumda. @erolsahin_ebs @ODMDOtomotiv",
-            "score": 79,
+            "title": "Eylül ayında Türkiye’de en çok satan elektrikli sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Togg T10F : 2.455 3-Tesla Model Y : 1.725 4-Kia EV2 : 809 5-Volvo EX30 : 532 6-Kia EV3 : 479 7-Hyundai Ioniq 5 : 470 8-Volvo EX40 : 452 9-Mercedes GLC : 359 10-Skoda Elroq : 343",
+            "score": 81,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 21,
-              "benzersizlik": 14,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 15,
               "gundem_gucu": 16,
-              "paylasilabilirlik": 8
+              "paylasilabilirlik": 10
             }
           }
         ],
-        "scored_count": 14,
+        "scored_count": 12,
         "cooldown_candidates": [
           {
-            "title": "Çinlilerin Türkiye’deki payı %4’ün altına indi‼️ Çinli markaların pazar payı ocakta %11,8’e çıkmıştı. Eylülde ise %3,87’ye geriledi. Ocakta 7.202 adet olan satış, eylülde 2.468 adede düştü. Ama burada önemli bir ayrıntı var; Bu düşüş talep kaynaklı değil, otomobil bulunamamasından kaynaklanıyor. BYD yılın başından beri yeni araç getiremiyor; yıl boyunca elindeki stokları sattı. Nitekim ocakta 3.866 adet satan BYD’nin eylül satışı sadece 8 adet. Çinli markalar arasında satışlarını sürdürebilen Chery ile Omoda & Jaecoo’nun avantajı ise sübvansiyonlu içten yanmalı modeller getirebilmeleri. Sonuçta Çinli markalar 9 ayda 36.245 adet satış ve %5,77 pazar payında kaldı. Yani Türkiye’de Çinlilerin önündeki asıl sorun müşteri bulmak değil, satacak otomobil bulmak. @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105938246840549396",
+            "title": "Türkiye’de Eylül ayında en çok satan sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Renault Boreal : 3.220 3-Renault Megane Sedan : 2.830 4-Toyota Corolla Sedan : 2.486 5-Togg T10F : 2.455 6-Renault Duster : 2.305 7-Renault Clio : 1.993 8-Tesla Model Y : 1.725 9-Hyundai i20 : 1.649 10-Kia Sportage : 1.591",
+            "link": "https://x.com/veysellkaranii/status/2105963923803365792",
+            "score": 85,
+            "score_reason": "ai_scored",
+            "source_name": "VeyselKarani",
+            "topic_fingerprint": "220-237-305-455-486-591-649-725-830-993-ayinda-boreal-clio-corolla-duster-eylul-hyundai-i20-kia-megane-model-otomobiller-renault-renault-renault-renault-satan-sedan-sedan-sifir-sportage-t10f-t10x-tesla-togg-togg-toyota-turkiye"
+          },
+          {
+            "title": "Eylül ayında Türkiye’de en çok satan elektrikli sıfır otomobiller ilk 10 1-Togg T10X : 4.237 2-Togg T10F : 2.455 3-Tesla Model Y : 1.725 4-Kia EV2 : 809 5-Volvo EX30 : 532 6-Kia EV3 : 479 7-Hyundai Ioniq 5 : 470 8-Volvo EX40 : 452 9-Mercedes GLC : 359 10-Skoda Elroq : 343",
+            "link": "https://x.com/veysellkaranii/status/2105969612831519056",
             "score": 81,
             "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "202-245-468-866-adede-adet-adet-adet-adet-altina-arac-asil-avantaji-ayda-ayrinti-basindan-beri-boyunca-bulmak-bulmak-bulunamamasindan-burada-byd-byd-chery-cikmisti-cinli-cinli-cinli-cinlilerin-cinlilerin-degil-degil-dustu-dusus-ebs-elindeki-erolsahin-eylul-eylulde-eylulde-geriledi-getirebilmeleri-getiremiyor-icten-indi-ise-ise-jaecoo-kaldi-kaynaklaniyor-kaynakli-markalar-markalar-markalarin-modeller-musteri-nitekim-ocakta-ocakta-ocakta-odmdotomotiv-omoda-onemli-onundeki-otomobil-otomobil-payi-payi-payinda-pazar-pazar-satacak-satan-satis-satis-satisi-satislarini-satti-sonucta-sorun-stoklari-subvansiyonlu-surdurebilen-talep-turkiye-turkiye-var-yani-yanmali-yil-yilin"
-          },
-          {
-            "title": "SUV artık tercih değil, pazarın kendisi‼️ Türkiye’de otomobil pazarında SUV hakimiyeti giderek güçleniyor. Eylül ayında satılan 63.736 otomobilin 44.062’si SUV oldu. Böylece SUV’ların payı %69,13’e ulaştı. Yani satılan her 10 otomobilden 7’si SUV. Eylülün en çok satan SUV’ları... 1) Togg T10X: 4.237 2) Renault Boreal: 3.220 3) Renault Duster: 2.305 4) Tesla Model Y: 1.725 adet 5) Kia Sportage: 1.591 adet İlk 9 ayda da tablo değişmiyor. SUV satışları 415.909 adede, otomobil pazarındaki payı ise %66,23’e ulaştı. 9 ayın SUV liderleri... 1)Togg T10X: 22.020 2) Renault Duster: 19.774 3) Toyota C-HR: 17.952 4) Volkswagen Taigo: 16.507 5) Peugeot 2008: 14.768 T10X hem eylülün hem de ilk 9 ayın en çok satan SUV’u. Yeni Renault Boreal ise eylülde 3.220 adetle doğrudan 2’nciliğe yerleşmiş durumda. @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105921524716757153",
-            "score": 79,
-            "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "020-062-2008-220-220-237-305-415-507-591-725-736-768-774-909-952-adede-adet-adet-adetle-ayda-ayin-ayin-ayinda-boreal-boreal-boylece-degil-degismiyor-dogrudan-durumda-duster-duster-ebs-erolsahin-eylul-eylulde-eylulun-eylulun-giderek-gucleniyor-hakimiyeti-hem-hem-ise-ise-kendisi-kia-lari-larin-liderleri-model-ncilige-odmdotomotiv-otomobil-otomobil-otomobilden-otomobilin-payi-payi-pazarin-pazarinda-pazarindaki-peugeot-renault-renault-renault-renault-satan-satan-satilan-satilan-satislari-sportage-suv-suv-suv-suv-suv-suv-suv-suv-suv-t10x-t10x-t10x-tablo-taigo-tercih-tesla-togg-togg-toyota-turkiye-ulasti-ulasti-volkswagen-yani-yerlesmis"
-          },
-          {
-            "title": "Boston Dynamics, Atlas için geliştirdiği yeni eli tanıttı [Video]",
-            "link": "https://www.log.com.tr/boston-dynamics-atlas-icin-gelistirdigi-yeni-eli-tanitti-video/",
-            "score": 76,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "atlas-boston-dynamics-eli-gelistirdigi-tanitti-video"
-          },
-          {
-            "title": "Tesla’dan Yeni Patent: Otomobilin Altına Elektrikli Fanlar Yerleştirilecek",
-            "link": "https://shiftdelete.net/tesla-elektrikli-fan-sistemi-patenti",
-            "score": 71,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "altina-elektrikli-fanlar-otomobilin-patent-tesla-yerlestirilecek"
-          },
-          {
-            "title": "Mercedes farkı açıyor, Volvo 3’üncülüğü sevdi‼️ Premium otomobil pazarında Mercedes liderliğini giderek sağlamlaştırırken, Volvo da 3’üncülüğe iyice yerleşti. 💢İlk 9 ay sonunda sıralama; Mercedes 21.028, BMW 16.408, Volvo 13.239, Audi 12.259, MINI 8.624 adet. 💢Eylülde de Mercedes 3.269 adetle açık ara lider. BMW 1.626 adetle ikinci, Volvo 1.585 adetle üçüncü. BMW ile Volvo arasında sadece 41 adet var. 💢Model sıralamasında ise ilk yarının etkisi hala görülüyor. MINI Countryman 8.417 adetle 9 ayın lideri, Volvo EX30 5.566 adetle ikinci, BMW X1 5.329 adetle üçüncü. Ancak Countryman ve X1’in bu sıralamadaki yeri büyük ölçüde yılın ilk yarısındaki güçlü satışlarından geliyor. Eylülde Countryman sadece 63, X1 ise 76 adet satarken, EX30 532 adede ulaştı. Yani 9 aylık toplam başka, son aylardaki satış temposu bambaşka bir tablo gösteriyor. (ÖTV etkisi) @erolsahin_ebs @ODMDOtomotiv",
-            "link": "https://x.com/eozpeynirci/status/2105930466914140295",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Emre Ozpeynirci",
-            "topic_fingerprint": "028-239-259-269-329-408-417-532-566-585-624-626-acik-aciyor-adede-adet-adet-adet-adetle-adetle-adetle-adetle-adetle-adetle-ara-audi-ayin-aylardaki-aylik-bambaska-baska-bmw-bmw-bmw-bmw-countryman-countryman-countryman-ebs-erolsahin-etkisi-etkisi-ex30-ex30-eylulde-eylulde-farki-geliyor-giderek-goruluyor-gosteriyor-guclu-hala-ikinci-ikinci-ise-ise-iyice-lider-lideri-liderligini-mercedes-mercedes-mercedes-mercedes-mini-mini-model-odmdotomotiv-olcude-otomobil-otv-pazarinda-premium-saglamlastirirken-satarken-satis-satislarindan-sevdi-siralama-siralamadaki-siralamasinda-sonunda-tablo-temposu-toplam-ucuncu-ucuncu-ulasti-unculuge-unculugu-var-volvo-volvo-volvo-volvo-volvo-volvo-yani-yarinin-yarisindaki-yeri-yerlesti-yilin"
+            "source_name": "VeyselKarani",
+            "topic_fingerprint": "237-343-359-452-455-470-479-532-725-809-ayinda-elektrikli-elroq-ev2-ev3-ex30-ex40-eylul-glc-hyundai-ioniq-kia-kia-mercedes-model-otomobiller-satan-sifir-skoda-t10f-t10x-tesla-togg-togg-turkiye-volvo-volvo"
           },
           {
             "title": "Tesla Model Y Türkiye’de zamlandı: İşte yeni fiyatlar",
             "link": "https://www.donanimhaber.com/tesla-model-y-turkiye-de-zamlandi-iste-yeni-fiyatlar--211152",
-            "score": 68,
+            "score": 76,
             "score_reason": "ai_scored",
             "source_name": "Donanimhaber",
             "topic_fingerprint": "fiyatlar-model-ste-tesla-turkiye-zamlandi"
           },
           {
-            "title": "Yapay Zeka Otomobil Sürdü: Hangi Model Başarılı Oldu?",
-            "link": "https://shiftdelete.net/toyota-corolla-yapay-zeka-surus-deneyi",
-            "score": 62,
+            "title": "Tesla’dan Yeni Patent: Otomobilin Altına Elektrikli Fanlar Yerleştirilecek",
+            "link": "https://shiftdelete.net/tesla-elektrikli-fan-sistemi-patenti",
+            "score": 72,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "basarili-hangi-model-otomobil-surdu-yapay-zeka"
+            "topic_fingerprint": "altina-elektrikli-fanlar-otomobilin-patent-tesla-yerlestirilecek"
+          },
+          {
+            "title": "VW destekli Gotion katı hal bataryada çıtayı yükseltti: Hedef fiyat açıklandı",
+            "link": "https://www.donanimhaber.com/vw-destekli-gotion-kati-hal-bataryada-citayi-yukseltti--211150",
+            "score": 70,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "bataryada-citayi-destekli-fiyat-gotion-hal-hedef-kati-yukseltti"
+          },
+          {
+            "title": "Koç otomobilde geriledi, hafif ticaride ağırlığını artırdı‼️ Eylül ayında otomobil satışlarında dikkat çekici bir tablo ortaya çıktı. Sadece 3 markalı Oyak Grubu 12.027 adet, 9 markalı Doğuş Grubu 10.110 adet otomobil satarken, 10 markalı Koç Grubu 7.449 adette kaldı. Böylece otomobilde Koç Grubu’nu hem Oyak hem de Doğuş geçti. Ama hafif ticari tarafta tablo tam tersi. Tofaş’ta K9 ailesinin üretime başlaması ve yeni modellerin devreye girmesiyle Koç Grubu gücünü daha da artırdı. Eylülde satılan 19.733 hafif ticari aracın 14.029’unu Koç Grubu sattı. Yani pazar payı tam %71,1. Bu güç sayesinde Koç, otomobildeki gerilemeye rağmen toplam pazarda 21.478 adet ve %25,7 payla eylül ayını yine açık ara önde tamamladı. 9 aylık tabloda ise Koç Grubu’nun toplam pazar payı hala %31,2. Yani Türkiye’de satılan her 3 araçtan yaklaşık 1’i Koç Grubu’ndan. @erolsahin_ebs",
+            "link": "https://x.com/eozpeynirci/status/2105989968849969238",
+            "score": 63,
+            "score_reason": "ai_scored",
+            "source_name": "Emre Ozpeynirci",
+            "topic_fingerprint": "027-029-110-449-478-733-acik-adet-adet-adet-adette-agirligini-ailesinin-ara-aracin-aractan-artirdi-artirdi-ayinda-ayini-aylik-baslamasi-boylece-cekici-devreye-dikkat-dogus-dogus-ebs-erolsahin-eylul-eylul-eylulde-gecti-geriledi-gerilemeye-girmesiyle-grubu-grubu-grubu-grubu-grubu-grubu-grubu-grubu-guc-gucunu-hafif-hafif-hafif-hala-hem-hem-ise-kaldi-koc-koc-koc-koc-koc-koc-koc-koc-markali-markali-markali-modellerin-ndan-onde-ortaya-otomobil-otomobil-otomobilde-otomobilde-otomobildeki-oyak-oyak-payi-payi-payla-pazar-pazar-pazarda-ragmen-satarken-satilan-satilan-satislarinda-satti-sayesinde-tablo-tablo-tabloda-tam-tam-tamamladi-tarafta-tersi-ticari-ticari-ticaride-tofas-toplam-toplam-turkiye-unu-uretime-yaklasik-yani-yani-yine"
           },
           {
             "title": "Kia Seltos, Türkiye’de satışa sunuldu",
             "link": "https://www.log.com.tr/kia-seltos-turkiyede-satisa-sunuldu/",
-            "score": 58,
+            "score": 60,
             "score_reason": "ai_scored",
             "source_name": "LogDergisi",
             "topic_fingerprint": "kia-satisa-seltos-sunuldu-turkiye"
@@ -616,56 +568,48 @@
             "topic_fingerprint": "2028-donuyor-ford-geri-wrc"
           },
           {
-            "title": "Türkiye otomobil ve hafif ticari pazarı düşmeye devam ediyor!",
-            "link": "https://tr.motor1.com/news/810535/odmd-eylul-2026-verileri/",
+            "title": "Toplamda ve otomobilde Renault, hafif ticaride Ford önde gidiyor",
+            "link": "https://www.otoajanda.com/toplamda-ve-otomobilde-renault-hafif-ticaride-ford-onde-gidiyor/",
             "score": 49,
             "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "devam-dusmeye-ediyor-hafif-otomobil-pazari-ticari-turkiye"
+            "source_name": "OtoAjanda",
+            "topic_fingerprint": "ford-gidiyor-hafif-onde-otomobilde-renault-ticaride-toplamda"
+          },
+          {
+            "title": "Citroen, Ekim ayı fiyat listesini açıkladı. e-C3 83 kW Max: 1.605.000 TL C3 Aircross 1.2 Hybrid Max: 2.200.000 TL e-C3 Aircross 83 kW Max: 1.875.000 TL C4 1.2 Hybrid You: 2.140.000 TL e-C4 115 kW Max: 2.150.000 TL C4 X 1.2 Hybrid Max: 2.345.000 TL C5 Aircross 1.2 Hybrid Plus: 2.714.000 TL e-C5 Aircross 157 kW Plus: 2.430.000 TL",
+            "link": "https://x.com/veysellkaranii/status/2105988960820265453",
+            "score": 48,
+            "score_reason": "ai_scored",
+            "source_name": "VeyselKarani",
+            "topic_fingerprint": "000-000-000-000-000-000-000-000-115-140-150-157-200-345-430-605-714-875-acikladi-aircross-aircross-aircross-aircross-ayi-citroen-ekim-fiyat-hybrid-hybrid-hybrid-hybrid-listesini-max-max-max-max-max-plus-plus-you"
           },
           {
             "title": "2026 Eylül otomotiv satışlarında son durum : Küçülmeye devam",
             "link": "https://www.otoajanda.com/2026-eylul-otomotiv-satislarinda-son-durum-kuculmeye-devam/",
-            "score": 45,
+            "score": 44,
             "score_reason": "ai_scored",
             "source_name": "OtoAjanda",
             "topic_fingerprint": "2026-devam-durum-eylul-kuculmeye-otomotiv-satislarinda"
-          },
-          {
-            "title": "Kia Şimşek Otomotiv, Ekim ayı fiyatlarını açıkladı. Bazı modellerin \"bayi avantajlı\" fiyatları şu şekilde: Picanto: 1.300.000 TL Sportage Live: 2.099.000 TL Sportage Vision: 2.375.000 TL (ÖTV avantajlı) EV2: 1.699.000 TL EV3: 2.485.000 TL Seltos: 2.349.000 TL",
-            "link": "https://x.com/veysellkaranii/status/2105933172319907845",
-            "score": 43,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "000-000-000-000-000-000-099-300-349-375-485-699-acikladi-avantajli-avantajli-ayi-bayi-bazi-ekim-ev2-ev3-fiyatlari-fiyatlarini-kia-live-modellerin-otomotiv-otv-picanto-sekilde-seltos-simsek-sportage-sportage-vision"
-          },
-          {
-            "title": "Araba nerede? 😄 . Haberin başlığı bu: Yeni Volvo ES90, İstanbul’da Tanıtıldı.",
-            "link": "https://x.com/murattosunMSE/status/2105927459375923686",
-            "score": 23,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "araba-basligi-es90-haberin-nerede-stanbul-volvo"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-10-02T13:03:24.111738+03:00"
+      "updated_at": "2026-10-02T15:03:30.661512+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "link": "https://x.com/eozpeynirci/status/2105909499903029710",
-          "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105909499903029710#m",
-          "source_instance": "nitter.gravitywell.xyz",
-          "published": "2026-10-02T06:35:25+00:00",
-          "summary": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
+          "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "link": "https://x.com/eozpeynirci/status/2105988408891895959",
+          "nitter_url": "https://shitter.thepixora.com/eozpeynirci/status/2105988408891895959#m",
+          "source_instance": "shitter.thepixora.com",
+          "published": "2026-10-02T11:48:58+00:00",
+          "summary": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg"
           ],
           "image_source": "rss",
           "source_name": "Emre Ozpeynirci",
@@ -674,45 +618,44 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "074-237-255-382-451-455-692-adede-adede-adede-adetle-adetle-adetten-adetten-artarak-ayina-ayni-bakinca-bakista-buyudu-buyume-buyumenin-cikarirken-daralacakti-degisiyor-detayina-ebs-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-erolsahin-eylulde-eylulde-eylulde-eylulde-gecen-geriledi-gorunuyor-guclu-haric-haric-inci-kaynagi-kuculdu-modelin-nci-neredeyse-odmdotomotiv-olmasaydi-otomobil-otomobil-otomobilden-ozetle-payi-pazari-pazari-pazari-pazarinda-satilan-satislari-satislarini-t10f-t10x-tablo-tamamen-tek-togg-togg-togg-togg-togg-togg-togg-toplam-turkiye-turkiye-ustelik-var-yaklasik-yaklasik-yani-yilin",
-          "base_ai_score": 82,
+          "topic_fingerprint": "101-114-157-174-193-380-520-710-766-962-adedi-adet-adet-adet-adet-adet-adet-adetle-adetle-adetlerde-adetlik-artirabilen-artiran-asil-ayda-bazinda-buna-bunlarin-bunyesinde-buyudu-cekici-cekici-citroen-dagilmamasi-daralirken-dikkat-dikkat-dusen-dusuk-ebs-erolsahin-esit-fazla-fazla-fazla-fiat-ford-geliyor-geriledi-grubu-grubu-ikinci-ise-ise-karsilik-kaybin-kayipta-koc-koc-kuculmenin-kuculuyor-marka-marka-marka-marka-markadan-markalar-markalar-markalari-markanin-markanin-nis-onemli-opel-otomobil-otomobil-otomobil-pazar-pazari-pazarinda-pazarindaki-peugeot-renault-satis-satisini-satisini-satislari-satislari-sayisi-sinin-sirada-tablonun-tarafi-togg-toplam-turkiye-turkiye-ustelik-yani-yapan",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
+            "benzersizlik": 18,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 11
           },
-          "score": 85,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Togg'un elektrikli pazarına olan doğrudan etkisini çarpıcı rakamlarla ortaya koyan, sosyal medyada çok tartışılacak bir analiz.",
-          "freshness_bonus": 4,
-          "trend_bonus_raw": 1,
-          "full_text": "Anubis could not load its JavaScript. The server may be overloaded. Please reload the page to try again. You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress."
+          "score_explanation": "Pazarın daralması, dev markaların büyük kayıpları ve Togg'un liderliği gibi sektörü sarsacak çarpıcı veriler içerdiği için viral potansiyeli çok yüksek.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
         },
-        "post_text": "Türkiye elektrikli pazarında büyüme mi var, illüzyon mu?\n\nRakamlar eylülde %18,6 artışı gösterse de Togg'u denklemden çıkarınca tablo tersine dönüyor. Togg hariç elektrikli otomobil satışları %20 daralmış.\n\nPazarın neredeyse yarısı Togg'dan ibaretken, bu büyüme aslında tek bir markanın sırtında yükseliyor. Gerçek rekabet tablosu bambaşka.",
-        "post_text_length": 340,
-        "story_card_title": "Elektrikli Pazarının Tek Kaynağı Togg!",
-        "story_card_subtitle": "Eylül ayında elektrikli otomobil satışları %18,6 artışla 15.074 adede ulaştı. Ancak bu büyümenin ardında ilginç bir detay yatıyor. Togg hariç elektrikli pazarının %20 küçüldüğü gözlemlendi. Satılan her iki elektrikli otomobilden biri Togg'dan oluşuyor.",
+        "post_text": "Türkiye otomobil pazarı küçülüyor ama asıl mesele daralmanın markalar arasında hiç de eşit dağılmaması.\n\n9 ayda %15,5 düşüş yaşanırken, 45'ten fazla markanın 27'si kayıpta. Satışını artırabilen sadece 16 marka var ve bunların 6'sı niş oyuncular.\n\nPazardaki 114.710 adetlik kaybın 61.193 adedi sadece 5 Koç Grubu markasından geliyor. Buna karşılık Togg 14.101, Renault 10.766 adetle yükselişte. Pazarın genel resmi, markaların performansını gizliyor.",
+        "post_text_length": 449,
+        "story_card_title": "Pazardaki Daralma Markaları Eşit Vurmuyor!",
+        "story_card_subtitle": "Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45'ten fazla markanın 27'si satış kaybı yaşadı. Sadece 16 marka büyüyebildi, bunların 6'sı niş oyuncular. Pazardaki 114.710 adetlik kaybın 61.193 adedi 5 Koç Grubu markasından gelirken, Togg ve Renault yükselişte.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-02T13:03:26.429467+03:00"
+      "updated_at": "2026-10-02T15:03:33.026951+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "link": "https://x.com/eozpeynirci/status/2105909499903029710",
-          "nitter_url": "https://nitter.gravitywell.xyz/eozpeynirci/status/2105909499903029710#m",
-          "source_instance": "nitter.gravitywell.xyz",
-          "published": "2026-10-02T06:35:25+00:00",
-          "summary": "Elektriklide büyümenin tek kaynağı Togg‼️ Türkiye’de elektrikli otomobil satışları eylülde geçen yılın aynı ayına göre %18,6 artarak 15.074 adede çıktı. İlk bakışta elektrikli pazarında güçlü büyüme var gibi görünüyor. Ama detayına bakınca tablo tamamen değişiyor. Togg eylülde satışlarını 2.255 adetten 6.692 adede çıkarırken, Togg hariç elektrikli otomobil pazarı 10.451 adetten 8.382 adede geriledi. Yani Togg hariç elektrikli pazarı yaklaşık %20 küçüldü. Üstelik Togg, T10X ile 4.237 adetle 1’inci, T10F ile 2.455 adetle 2’nci. İki modelin toplam payı %44,4. Eylülde Türkiye’de satılan neredeyse her 2 elektrikli otomobilden 1’i Togg. Özetle elektrikli pazarı eylülde %18,6 büyüdü ama Togg olmasaydı yaklaşık %20 daralacaktı. @erolsahin_ebs @ODMDOtomotiv",
-          "image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
+          "title": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "link": "https://x.com/eozpeynirci/status/2105988408891895959",
+          "nitter_url": "https://shitter.thepixora.com/eozpeynirci/status/2105988408891895959#m",
+          "source_instance": "shitter.thepixora.com",
+          "published": "2026-10-02T11:48:58+00:00",
+          "summary": "Önemli‼️‼️‼️ Otomobil pazarında 27 marka kayıpta, sadece 16 marka büyüdü‼️ Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45’ten fazla markanın 27’sinin satışları geriledi. 💢Satışını artırabilen marka sayısı sadece 16. Üstelik bunların 6’sı düşük adetlerde satış yapan niş markalar. Tablonun en dikkat çekici tarafı ise Koç Grubu markaları... Satışları adet bazında en fazla düşen ilk 7 markanın 5’i Koç Grubu bünyesinde. 💢Fiat: –23.157 adet 💢Ford: –12.174 adet 💢Opel: –10.380 adet 💢Peugeot: –7.962 adet 💢Citroen: –7.520 adet Yani Türkiye otomobil pazarındaki 114.710 adetlik toplam kaybın 61.193 adedi sadece bu 5 markadan geliyor. Buna karşılık satışını en fazla artıran marka 14.101 adetle Togg, 10.766 adetle Renault ise ikinci sırada. Pazar küçülüyor ama asıl dikkat çekici olan, küçülmenin markalar arasında hiç de eşit dağılmaması. @erolsahin_ebs",
+          "image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg"
           ],
           "image_source": "nitter_still",
           "source_name": "Emre Ozpeynirci",
@@ -721,72 +664,68 @@
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "074-237-255-382-451-455-692-adede-adede-adede-adetle-adetle-adetten-adetten-artarak-ayina-ayni-bakinca-bakista-buyudu-buyume-buyumenin-cikarirken-daralacakti-degisiyor-detayina-ebs-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektrikli-elektriklide-erolsahin-eylulde-eylulde-eylulde-eylulde-gecen-geriledi-gorunuyor-guclu-haric-haric-inci-kaynagi-kuculdu-modelin-nci-neredeyse-odmdotomotiv-olmasaydi-otomobil-otomobil-otomobilden-ozetle-payi-pazari-pazari-pazari-pazarinda-satilan-satislari-satislarini-t10f-t10x-tablo-tamamen-tek-togg-togg-togg-togg-togg-togg-togg-toplam-turkiye-turkiye-ustelik-var-yaklasik-yaklasik-yani-yilin",
-          "base_ai_score": 82,
+          "topic_fingerprint": "101-114-157-174-193-380-520-710-766-962-adedi-adet-adet-adet-adet-adet-adet-adetle-adetle-adetlerde-adetlik-artirabilen-artiran-asil-ayda-bazinda-buna-bunlarin-bunyesinde-buyudu-cekici-cekici-citroen-dagilmamasi-daralirken-dikkat-dikkat-dusen-dusuk-ebs-erolsahin-esit-fazla-fazla-fazla-fiat-ford-geliyor-geriledi-grubu-grubu-ikinci-ise-ise-karsilik-kaybin-kayipta-koc-koc-kuculmenin-kuculuyor-marka-marka-marka-marka-markadan-markalar-markalar-markalari-markanin-markanin-nis-onemli-opel-otomobil-otomobil-otomobil-pazar-pazari-pazarinda-pazarindaki-peugeot-renault-satis-satisini-satisini-satislari-satislari-sayisi-sinin-sirada-tablonun-tarafi-togg-toplam-turkiye-turkiye-ustelik-yani-yapan",
+          "base_ai_score": 88,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 8
+            "benzersizlik": 18,
+            "gundem_gucu": 19,
+            "paylasilabilirlik": 11
           },
-          "score": 85,
+          "score": 91,
           "score_reason": "ai_scored",
-          "score_explanation": "Togg'un elektrikli pazarına olan doğrudan etkisini çarpıcı rakamlarla ortaya koyan, sosyal medyada çok tartışılacak bir analiz.",
-          "freshness_bonus": 4,
+          "score_explanation": "Pazarın daralması, dev markaların büyük kayıpları ve Togg'un liderliği gibi sektörü sarsacak çarpıcı veriler içerdiği için viral potansiyeli çok yüksek.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Anubis could not load its JavaScript. The server may be overloaded. Please reload the page to try again. You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress.",
-          "post_text_for_card": "Türkiye elektrikli pazarında büyüme mi var, illüzyon mu?\n\nRakamlar eylülde %18,6 artışı gösterse de Togg'u denklemden çıkarınca tablo tersine dönüyor. Togg hariç elektrikli otomobil satışları %20 daralmış.\n\nPazarın neredeyse yarısı Togg'dan ibaretken, bu büyüme aslında tek bir markanın sırtında yükseliyor. Gerçek rekabet tablosu bambaşka.",
-          "story_card_title": "Elektrikli Pazarının Tek Kaynağı Togg!",
-          "story_card_subtitle": "Eylül ayında elektrikli otomobil satışları %18,6 artışla 15.074 adede ulaştı. Ancak bu büyümenin ardında ilginç bir detay yatıyor. Togg hariç elektrikli pazarının %20 küçüldüğü gözlemlendi. Satılan her iki elektrikli otomobilden biri Togg'dan oluşuyor.",
+          "post_text_for_card": "Türkiye otomobil pazarı küçülüyor ama asıl mesele daralmanın markalar arasında hiç de eşit dağılmaması.\n\n9 ayda %15,5 düşüş yaşanırken, 45'ten fazla markanın 27'si kayıpta. Satışını artırabilen sadece 16 marka var ve bunların 6'sı niş oyuncular.\n\nPazardaki 114.710 adetlik kaybın 61.193 adedi sadece 5 Koç Grubu markasından geliyor. Buna karşılık Togg 14.101, Renault 10.766 adetle yükselişte. Pazarın genel resmi, markaların performansını gizliyor.",
+          "story_card_title": "Pazardaki Daralma Markaları Eşit Vurmuyor!",
+          "story_card_subtitle": "Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45'ten fazla markanın 27'si satış kaybı yaşadı. Sadece 16 marka büyüyebildi, bunların 6'sı niş oyuncular. Pazardaki 114.710 adetlik kaybın 61.193 adedi 5 Koç Grubu markasından gelirken, Togg ve Renault yükselişte.",
           "image_sources": [
-            "nitter_still",
             "nitter_still"
           ],
-          "prepared_image_count": 2,
+          "prepared_image_count": 1,
           "original_image_urls": [
-            "https://pbs.twimg.com/media/HTmxaUpWwAAUUlV.jpg?format=jpg&name=large",
-            "https://pbs.twimg.com/media/HTmxf9gWgAAokbb.jpg?format=jpg&name=large"
+            "https://pbs.twimg.com/media/HTn5StTXsAA6FqV.jpg?format=jpg&name=large"
           ]
         },
-        "post_text": "Türkiye elektrikli pazarında büyüme mi var, illüzyon mu?\n\nRakamlar eylülde %18,6 artışı gösterse de Togg'u denklemden çıkarınca tablo tersine dönüyor. Togg hariç elektrikli otomobil satışları %20 daralmış.\n\nPazarın neredeyse yarısı Togg'dan ibaretken, bu büyüme aslında tek bir markanın sırtında yükseliyor. Gerçek rekabet tablosu bambaşka.",
-        "story_card_title": "Elektrikli Pazarının Tek Kaynağı Togg!",
-        "story_card_subtitle": "Eylül ayında elektrikli otomobil satışları %18,6 artışla 15.074 adede ulaştı. Ancak bu büyümenin ardında ilginç bir detay yatıyor. Togg hariç elektrikli pazarının %20 küçüldüğü gözlemlendi. Satılan her iki elektrikli otomobilden biri Togg'dan oluşuyor.",
-        "image_path": "/tmp/otoxtra_img_iaosheti.jpg",
+        "post_text": "Türkiye otomobil pazarı küçülüyor ama asıl mesele daralmanın markalar arasında hiç de eşit dağılmaması.\n\n9 ayda %15,5 düşüş yaşanırken, 45'ten fazla markanın 27'si kayıpta. Satışını artırabilen sadece 16 marka var ve bunların 6'sı niş oyuncular.\n\nPazardaki 114.710 adetlik kaybın 61.193 adedi sadece 5 Koç Grubu markasından geliyor. Buna karşılık Togg 14.101, Renault 10.766 adetle yükselişte. Pazarın genel resmi, markaların performansını gizliyor.",
+        "story_card_title": "Pazardaki Daralma Markaları Eşit Vurmuyor!",
+        "story_card_subtitle": "Türkiye otomobil pazarı 9 ayda %15,5 daralırken, 45'ten fazla markanın 27'si satış kaybı yaşadı. Sadece 16 marka büyüyebildi, bunların 6'sı niş oyuncular. Pazardaki 114.710 adetlik kaybın 61.193 adedi 5 Koç Grubu markasından gelirken, Togg ve Renault yükselişte.",
+        "image_path": "/tmp/otoxtra_img_5b8pjsr0.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_iaosheti.jpg",
-          "/tmp/otoxtra_img_6i019xs4.jpg"
+          "/tmp/otoxtra_img_5b8pjsr0.jpg"
         ],
         "image_source": "nitter_still",
-        "image_count": 2
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-10-02T13:03:30.460946+03:00"
+      "updated_at": "2026-10-02T15:03:41.059884+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122181841658916499",
+        "post_id": "678053852057751_122181855770916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18383868097230723",
+            "id": "17977621088917881",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1125554523867561",
+            "id": "1579008883552774",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-02T13:04:06.550667+03:00"
+      "updated_at": "2026-10-02T15:04:15.295212+03:00"
     }
   }
 }
