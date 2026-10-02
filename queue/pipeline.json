@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-10-02-07:01",
-  "status": "completed",
-  "started_at": "2026-10-02T07:01:47.625375+03:00",
-  "updated_at": "2026-10-02T07:05:46.503134+03:00",
+  "run_id": "2026-10-02-08:01",
+  "status": "error",
+  "started_at": "2026-10-02T08:01:42.952656+03:00",
+  "updated_at": "2026-10-02T08:03:25.750857+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-            "link": "https://www.log.com.tr/ford-2028de-fia-dunya-ralli-sampiyonasina-geri-donecek/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-02T07:01:47.722882+03:00",
-            "summary": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğini duyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi. Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi: “Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.” Ford Racing Küresel Direktörü Mark Rushbrook ise şunları […] Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2028-donecek-dunya-fia-ford-geri-ralli-sampiyonasi"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://shitter.thepixora.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -100,7 +78,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "shitter.thepixora.com"
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -112,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -135,14 +113,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.gravitywell.xyz"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.gravitywell.xyz"
           },
           "VeyselKarani": {
             "status": "ok",
@@ -168,226 +146,47 @@
           "_metrics": {
             "found": 147,
             "after_keyword": 84,
-            "after_time": 5,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 147,
           "after_keyword": 84,
-          "after_time": 5,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-02T07:04:29.965479+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-02T08:03:25.750857+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-          "link": "https://www.log.com.tr/ford-2028de-fia-dunya-ralli-sampiyonasina-geri-donecek/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-02T07:01:47.722882+03:00",
-          "summary": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğini duyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi. Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi: “Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.” Ford Racing Küresel Direktörü Mark Rushbrook ise şunları […] Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-donecek-dunya-fia-ford-geri-ralli-sampiyonasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 74,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motorsporları dünyası ve Ford hayranları için önemli bir gelişme olsa da, 2028 gibi uzak bir tarih anlık viral etkiyi ve gündem gücünü bir miktar düşürüyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 74,
-        "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 15,
-          "benzersizlik": 15,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 9
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Motorsporları dünyası ve Ford hayranları için önemli bir gelişme olsa da, 2028 gibi uzak bir tarih anlık viral etkiyi ve gündem gücünü bir miktar düşürüyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-            "score": 74,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 9
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-02T07:04:31.548750+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-          "link": "https://www.log.com.tr/ford-2028de-fia-dunya-ralli-sampiyonasina-geri-donecek/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-02T07:01:47.722882+03:00",
-          "summary": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğini duyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi. Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi: “Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.” Ford Racing Küresel Direktörü Mark Rushbrook ise şunları […] Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-donecek-dunya-fia-ford-geri-ralli-sampiyonasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 74,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motorsporları dünyası ve Ford hayranları için önemli bir gelişme olsa da, 2028 gibi uzak bir tarih anlık viral etkiyi ve gündem gücünü bir miktar düşürüyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğiniduyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi.Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi:“Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.”Ford Racing Küresel Direktörü Mark Rushbrook ise şunları aktardı:“Şirket olarak 125. yılımızı kutlarken, WRC’deki 50 yıllık mirasımız en büyük gurur kaynaklarımızdan biri. Çünkü, ürettiğimiz eğlenceli ve heyecan verici otomobiller bu mirasla doğrudan bağlantılı. 2028 ve sonrasında ralli parkurlarında yeniden yarışmak için sabırsızlanıyoruz.”"
-        },
-        "post_text": "Ford'un 2028'de WRC'ye dönüşü, sadece bir ralli haberi değil.\n\nBu karar, markaların motor sporları üzerinden günlük araçlarına \"ralli DNA'sı\" ekleme iddiasının ne kadar daha süreceğinin de bir göstergesi.\n\nŞampiyonaya fabrika takımı olarak dönmeleri, \"ralli ruhu\" pazarlamasının daha da kızışacağını işaret ediyor.",
-        "post_text_length": 314,
-        "story_card_title": "Ford'un Ralli Dönüşü Çok Şey Değiştirecek!",
-        "story_card_subtitle": "Ford, 2028'den itibaren tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası'na geri döneceğini duyurdu. Bu hamle, markanın 50 yıllık ralli geçmişinden aldığı güçle 'ralli DNA'sı' pazarlamasını yeniden canlandıracak. Sektörde 'ralli ruhu' iddiaları ise bu dönüşle birlikte daha da kızışacak gibi görünüyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-02T07:04:48.819167+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek",
-          "link": "https://www.log.com.tr/ford-2028de-fia-dunya-ralli-sampiyonasina-geri-donecek/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-02T07:01:47.722882+03:00",
-          "summary": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğini duyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi. Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi: “Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.” Ford Racing Küresel Direktörü Mark Rushbrook ise şunları […] Ford, 2028’de FIA Dünya Ralli Şampiyonası’na geri dönecek yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-01_16-34-05_MEoSH-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2028-donecek-dunya-fia-ford-geri-ralli-sampiyonasi",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 15,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 74,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motorsporları dünyası ve Ford hayranları için önemli bir gelişme olsa da, 2028 gibi uzak bir tarih anlık viral etkiyi ve gündem gücünü bir miktar düşürüyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ford bugün başarılarla dolu 50 yıllık ralli geçmişinden aldığı güçle 2028’den itibaren Ford Racing çatısı altında, tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası’na (World Rally Championship) geri döneceğiniduyurdu. Gelişme hakkında yapılan resmi açıklamada, “Ford’un WRC’de yer alması, yeni nesil Avrupa binek araç serisini de günlük yolculukları heyecan dolu keşiflere dönüştürecek ralli DNA’sı ile şekillendirecek. Ford Racing, 2029’da ise yepyeni bir WRC aracını sahneye çıkarmak için uzun yıllardır iş ortağı olan M-Sport Ltd ile birlikte çalışacak.” ifadelerine yer verildi.Ford Avrupa Başkanı Jim Baumbick konuyla ilgili değerlendirmesinde şunları söyledi:“Ford’un karakterinin en zorlu sınavdan geçtiği rallide, Ford severler nesillerdir bir otomobilin imkansıza nasıl meydan okuduğunu görme heyecanını paylaşıyor. Avrupalı yeni nesil araçlarımızın işte tam da bu cesur ruhu taşımasını, insanların her gün kullandıkları yollarda anında tepki veren, güven aşılayan ve her sürüşü keyfe dönüştüren bir karaktere sahip olmasını istiyoruz.”Ford Racing Küresel Direktörü Mark Rushbrook ise şunları aktardı:“Şirket olarak 125. yılımızı kutlarken, WRC’deki 50 yıllık mirasımız en büyük gurur kaynaklarımızdan biri. Çünkü, ürettiğimiz eğlenceli ve heyecan verici otomobiller bu mirasla doğrudan bağlantılı. 2028 ve sonrasında ralli parkurlarında yeniden yarışmak için sabırsızlanıyoruz.”",
-          "post_text_for_card": "Ford'un 2028'de WRC'ye dönüşü, sadece bir ralli haberi değil.\n\nBu karar, markaların motor sporları üzerinden günlük araçlarına \"ralli DNA'sı\" ekleme iddiasının ne kadar daha süreceğinin de bir göstergesi.\n\nŞampiyonaya fabrika takımı olarak dönmeleri, \"ralli ruhu\" pazarlamasının daha da kızışacağını işaret ediyor.",
-          "story_card_title": "Ford'un Ralli Dönüşü Çok Şey Değiştirecek!",
-          "story_card_subtitle": "Ford, 2028'den itibaren tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası'na geri döneceğini duyurdu. Bu hamle, markanın 50 yıllık ralli geçmişinden aldığı güçle 'ralli DNA'sı' pazarlamasını yeniden canlandıracak. Sektörde 'ralli ruhu' iddiaları ise bu dönüşle birlikte daha da kızışacak gibi görünüyor.",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "Ford'un 2028'de WRC'ye dönüşü, sadece bir ralli haberi değil.\n\nBu karar, markaların motor sporları üzerinden günlük araçlarına \"ralli DNA'sı\" ekleme iddiasının ne kadar daha süreceğinin de bir göstergesi.\n\nŞampiyonaya fabrika takımı olarak dönmeleri, \"ralli ruhu\" pazarlamasının daha da kızışacağını işaret ediyor.",
-        "story_card_title": "Ford'un Ralli Dönüşü Çok Şey Değiştirecek!",
-        "story_card_subtitle": "Ford, 2028'den itibaren tam destekli bir fabrika takımı olarak FIA Dünya Ralli Şampiyonası'na geri döneceğini duyurdu. Bu hamle, markanın 50 yıllık ralli geçmişinden aldığı güçle 'ralli DNA'sı' pazarlamasını yeniden canlandıracak. Sektörde 'ralli ruhu' iddiaları ise bu dönüşle birlikte daha da kızışacak gibi görünüyor.",
-        "image_path": "/tmp/otoxtra_img_laofosx8.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_laofosx8.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-02T07:05:04.161402+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122181804482916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18112536206109784",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2106569866615767",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-02T07:05:46.503134+03:00"
+      "updated_at": null
     }
   }
 }
