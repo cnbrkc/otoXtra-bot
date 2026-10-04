@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-10-04-09:02",
-  "status": "completed",
-  "started_at": "2026-10-04T09:02:08.400149+03:00",
-  "updated_at": "2026-10-04T09:05:08.519976+03:00",
+  "run_id": "2026-10-04-11:01",
+  "status": "error",
+  "started_at": "2026-10-04T11:01:43.680756+03:00",
+  "updated_at": "2026-10-04T11:03:23.454593+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-            "link": "https://otopodyum.com.tr/oto-test/fransizlar-c-suvda-oyunu-degistiriyor-5347h",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-04T04:47:00+00:00",
-            "summary": "Azami menzil testleri genelde sürüş teknikleri konusunda uzman kişilere yaptırılır. Bu aracın da menzili 1.064 km olarak tespit edilmiş. Ama ben iddia ediyorum: Gaz pedalına nazik davranıldığında Ali Bey de, Ayşe Hanım da 1.000 km menzili aşar.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5662.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "degistiriyor-fransizlar-oyunu-suv"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -100,14 +78,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.gravitywell.xyz"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.meowing.monster"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -169,236 +147,46 @@
             "found": 145,
             "after_keyword": 83,
             "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 145,
           "after_keyword": 83,
           "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-04T09:03:58.288692+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-04T11:03:23.454593+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-          "link": "https://otopodyum.com.tr/oto-test/fransizlar-c-suvda-oyunu-degistiriyor-5347h",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-04T04:47:00+00:00",
-          "summary": "Azami menzil testleri genelde sürüş teknikleri konusunda uzman kişilere yaptırılır. Bu aracın da menzili 1.064 km olarak tespit edilmiş. Ama ben iddia ediyorum: Gaz pedalına nazik davranıldığında Ali Bey de, Ayşe Hanım da 1.000 km menzili aşar.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5662.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "otopodyum",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "degistiriyor-fransizlar-oyunu-suv",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "C-SUV segmentinde 1.064 km menzil iddiası oldukça dikkat çekici ve sosyal medyada tartışma yaratabilecek bir konu.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 71,
-        "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 15,
-          "gundem_gucu": 12,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "C-SUV segmentinde 1.064 km menzil iddiası oldukça dikkat çekici ve sosyal medyada tartışma yaratabilecek bir konu.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-            "score": 71,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 15,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T09:03:59.908782+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-          "link": "https://otopodyum.com.tr/oto-test/fransizlar-c-suvda-oyunu-degistiriyor-5347h",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-04T04:47:00+00:00",
-          "summary": "Azami menzil testleri genelde sürüş teknikleri konusunda uzman kişilere yaptırılır. Bu aracın da menzili 1.064 km olarak tespit edilmiş. Ama ben iddia ediyorum: Gaz pedalına nazik davranıldığında Ali Bey de, Ayşe Hanım da 1.000 km menzili aşar.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5662.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "otopodyum",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "degistiriyor-fransizlar-oyunu-suv",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "C-SUV segmentinde 1.064 km menzil iddiası oldukça dikkat çekici ve sosyal medyada tartışma yaratabilecek bir konu.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu seferki test konuğumuz, Renault'nun Türkiye'de ürettiği yeni C-SUV modeli:Boreal. Yeni Renault Boreal'in bence en öne çıkarılması gereken özelliği menzili. Çünkü, akaryakıt zamlarıyla boğuştuğumuz şu günlerde yakıt sarfiyatı 1 numaralı gündem maddesi haline geldi. Bu otomobil, şehir içi sürüşlerinin%80'ine kadar olan kısmınıtamamen elektrikli motorla yapabiliyor ve elektrik modunda110 km/s hızakadar ulaşabiliyor. Can alıcı bir girişten sonra aracı daha yakından tanıyalım. Renault, Boreal ile tasarım konusunda klasik çizgilerden biraz uzaklaşmış. 4,56 metrelik gövdesi, güçlü kaput yapısı, karakteristik LED imzası ve 19 inç jantlarıyla Boreal, ilk bakışta “Ben artık sadece aile SUV'si değilim” mesajı veriyor. Ama Boreal'in asıl merak edilen tarafı kaputun altında. Çünkü test aracımızda1.8 litrelik benzinli motor, iki elektrik motoru ve çok modlu otomatik şanzımandan oluşan full hybrid E-Tech sistemibulunuyor. Toplam güç160 hp, maksimum tork ise270 Nm. Üstelik priz aramaya da gerek yok. Sistem, frenleme ve sürüş sırasında enerjiyi geri kazanarak bataryayı kendi kendine şarj ediyor. Boreal, ...mış gibi değil, ölçüleriyle de tam bir SUV Boreal'e önden baktığınızda Renault'nun son dönemdeki tasarım değişimini net şekilde görüyorsunuz. Geniş gövde, yüksek omuz çizgisi, keskin LED aydınlatmalar ve güçlü ön bölüm Boreal'e oldukça iddialı bir görünüm kazandırıyor. Üstelik 4,56 metrelik uzunluk ve222 mm'lik yerden yükseklik, otomobile SUV karakterini sadece görüntüde değil, ölçülerde de veriyor. Kısacası Boreal için “SUV gibi görünen otomobil” demek biraz haksızlık olur. Bu arkadaş SUV olduğunu belli etmek için ekstra çaba harcıyor! Boreal'in en önemli yeniliği, full hybrid E-Tech güç ünitesi. Sistemin merkezinde1.8 litrelik benzinli motorbulunuyor. Buna iki elektrik motoru ve çok modlu otomatik şanzıman eşlik ediyor. Toplam sistem gücü160 hp, maksimum tork ise270 Nm. Elektrikli motorun düşük hızlarda devreye girmesi sayesinde Boreal özellikle şehir içinde oldukça akıcı bir karakter ortaya koyuyor. Renault, sistemin şehir içindeki sürüşlerin önemli bölümünü elektrik desteğiyle gerçekleştirebildiğini ve 110 km/s'ye kadar elektrikli sürüş sağlayabildiğini belirtiyor. Prizden şarj edilmeyen sistemin en güzel taraflarından biri de bu. Şarj istasyonu aramıyorsunuz; otomobil kendi enerjisini kendi topluyor. Ancak Boreal'in karakteri bir performans SUV'sinden çokkonfor, akıcılık ve verimliliküzerine kurulmuş. Bu nedenle 160 beygirin verdiği performans günlük kullanım için yeterli olsa da Boreal sizi her virajda “hadi biraz daha basalım” diye kışkırtan bir otomobil değil. Full hybrid sistemin en belirgin avantajlarından biri sessizlik. Özellikle düşük hızlarda elektrik motorunun devrede olduğu anlarda Boreal oldukça rafine bir sürüş sunuyor. Şehir içinde sık dur-kalk yaptığınızda elektrikli sürüşün avantajını daha fazla hissediyorsunuz. Gaz pedalına dokunduğunuzda otomobilin sessizce hareket etmesi, klasik benzinli SUV'lardan ayrıldığı önemli noktalardan biri. Üstelik frenleme sırasında enerji geri kazanımı da sisteme katkı sağlıyor. Burada bizim testimizde özellikle dikkat edeceğimiz konu ise hibrit sisteminbenzinli motor ile elektrikli motor arasındaki geçişleri ne kadar pürüzsüz yaptığıolacak. Çünkü hibritte mesele sadece az yakmak değil. “Az yakarken kafayı da yormamak” gerekiyor. Boreal'in sürüş karakteri ilk kilometrelerden itibaren konfor tarafına daha yakın olduğunu hissettiriyor. Yüksek gövde yapısına rağmen yol tutuş konusunda güven veren bir karakter bekliyoruz. Ancak asıl değerlendirmeyi şehir içi, bozuk asfalt, yüksek hız ve virajlı yollarda yaptığımız testin ardından yapacağız. Direksiyonun tepkileri, fren pedalının dozajı ve süspansiyonların kasislerdeki davranışı Boreal'in günlük kullanım karakterini belirleyecek en önemli noktalar arasında. ÖzellikleC-SUV sınıfında konfor ile gövde kontrolü arasındaki denge, Boreal'in rakipleri karşısındaki önemli sınavlarından biri. Boreal'in içine geçtiğinizde ise Renault'nun teknoloji yaklaşımı hemen kendisini gösteriyor. Kokpitin merkezinde10 inçlik dokunmatik ekran, sürücünün önünde ise dijital gösterge ekranı bulunuyor. Renault ayrıca Google entegreopenR linkmultimedya sistemini sunuyor. Google Haritalar, Google Play ve Waze gibi servislerin yanı sıra çok sayıda uygulamaya erişim sağlanabiliyor. Bu sistemin en önemli avantajlarından biri, telefonunuzu her seferinde otomobilin navigasyon sistemine dönüştürmek zorunda kalmamanız. Google zaten otomobilin içinde. Dolayısıyla navigasyon için “Telefon nerede, şarjı kaç, bağlantı koptu mu?” üçgeninden kurtuluyorsunuz. Geniş kabin, 630 litrelik bagaj Boreal'in 4,56 metrelik gövdesi iç mekânda da avantaj sağlıyor. Özellikle aile kullanımında arka koltukların sunduğu diz ve baş mesafesi önemli. Ancak Boreal'in en güçlü kozlarından biri kuşkusuz bagaj. 630 litrelik bagaj hacmi, C-SUV sınıfında günlük kullanım açısından oldukça iddialı bir değer. Arka koltuklar yatırıldığında maksimum bagaj hacmi1.868 litreyeulaşıyor. Yani..."
-        },
-        "post_text": "Fransızlar C-SUV'da oyunu değiştirdi mi, yoksa biz mi abartıyoruz?\n\nYeni Renault Boreal, 1.064 km menzille geldi. Ama asıl mesele, bu menzilin uzmanlara mı ait olduğu yoksa Ali Bey'in de, Ayşe Hanım'ın da gaza nazik davranarak bu rakamlara ulaşabileceği mi.\n\nBenzin zammı bahanesiyle menzil takıntısı yaratıldı. Oysa hibrit Boreal şehir içi sürüşlerinin %80'ini elektrikle yapıyor. Priz aramadan 110 km/s hıza kadar elektrikle gitmek varken, 1.000 km menzil peşinde koşmak garip.",
-        "post_text_length": 479,
-        "story_card_title": "FRANSIZLAR C-SUV'DA OYUNU DEĞİŞTİRİYOR!",
-        "story_card_subtitle": "Yeni Renault Boreal, 1.064 km menziliyle testlerde öne çıktı. Ancak asıl soru, bu rekor rakamın sıradan sürücüler tarafından da yakalanıp yakalanamayacağı. Hibrit Boreal, şehir içi sürüşlerin büyük kısmını elektrikle tamamlarken, 110 km/s hıza kadar priz gerektirmeden yol alabiliyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T09:04:05.755300+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Fransızlar C-SUV'da Oyunu Değiştiriyor!",
-          "link": "https://otopodyum.com.tr/oto-test/fransizlar-c-suvda-oyunu-degistiriyor-5347h",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-04T04:47:00+00:00",
-          "summary": "Azami menzil testleri genelde sürüş teknikleri konusunda uzman kişilere yaptırılır. Bu aracın da menzili 1.064 km olarak tespit edilmiş. Ama ben iddia ediyorum: Gaz pedalına nazik davranıldığında Ali Bey de, Ayşe Hanım da 1.000 km menzili aşar.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5662.jpg",
-          "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5662.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "otopodyum",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "degistiriyor-fransizlar-oyunu-suv",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 15,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 71,
-          "score_reason": "ai_scored",
-          "score_explanation": "C-SUV segmentinde 1.064 km menzil iddiası oldukça dikkat çekici ve sosyal medyada tartışma yaratabilecek bir konu.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Bu seferki test konuğumuz, Renault'nun Türkiye'de ürettiği yeni C-SUV modeli:Boreal. Yeni Renault Boreal'in bence en öne çıkarılması gereken özelliği menzili. Çünkü, akaryakıt zamlarıyla boğuştuğumuz şu günlerde yakıt sarfiyatı 1 numaralı gündem maddesi haline geldi. Bu otomobil, şehir içi sürüşlerinin%80'ine kadar olan kısmınıtamamen elektrikli motorla yapabiliyor ve elektrik modunda110 km/s hızakadar ulaşabiliyor. Can alıcı bir girişten sonra aracı daha yakından tanıyalım. Renault, Boreal ile tasarım konusunda klasik çizgilerden biraz uzaklaşmış. 4,56 metrelik gövdesi, güçlü kaput yapısı, karakteristik LED imzası ve 19 inç jantlarıyla Boreal, ilk bakışta “Ben artık sadece aile SUV'si değilim” mesajı veriyor. Ama Boreal'in asıl merak edilen tarafı kaputun altında. Çünkü test aracımızda1.8 litrelik benzinli motor, iki elektrik motoru ve çok modlu otomatik şanzımandan oluşan full hybrid E-Tech sistemibulunuyor. Toplam güç160 hp, maksimum tork ise270 Nm. Üstelik priz aramaya da gerek yok. Sistem, frenleme ve sürüş sırasında enerjiyi geri kazanarak bataryayı kendi kendine şarj ediyor. Boreal, ...mış gibi değil, ölçüleriyle de tam bir SUV Boreal'e önden baktığınızda Renault'nun son dönemdeki tasarım değişimini net şekilde görüyorsunuz. Geniş gövde, yüksek omuz çizgisi, keskin LED aydınlatmalar ve güçlü ön bölüm Boreal'e oldukça iddialı bir görünüm kazandırıyor. Üstelik 4,56 metrelik uzunluk ve222 mm'lik yerden yükseklik, otomobile SUV karakterini sadece görüntüde değil, ölçülerde de veriyor. Kısacası Boreal için “SUV gibi görünen otomobil” demek biraz haksızlık olur. Bu arkadaş SUV olduğunu belli etmek için ekstra çaba harcıyor! Boreal'in en önemli yeniliği, full hybrid E-Tech güç ünitesi. Sistemin merkezinde1.8 litrelik benzinli motorbulunuyor. Buna iki elektrik motoru ve çok modlu otomatik şanzıman eşlik ediyor. Toplam sistem gücü160 hp, maksimum tork ise270 Nm. Elektrikli motorun düşük hızlarda devreye girmesi sayesinde Boreal özellikle şehir içinde oldukça akıcı bir karakter ortaya koyuyor. Renault, sistemin şehir içindeki sürüşlerin önemli bölümünü elektrik desteğiyle gerçekleştirebildiğini ve 110 km/s'ye kadar elektrikli sürüş sağlayabildiğini belirtiyor. Prizden şarj edilmeyen sistemin en güzel taraflarından biri de bu. Şarj istasyonu aramıyorsunuz; otomobil kendi enerjisini kendi topluyor. Ancak Boreal'in karakteri bir performans SUV'sinden çokkonfor, akıcılık ve verimliliküzerine kurulmuş. Bu nedenle 160 beygirin verdiği performans günlük kullanım için yeterli olsa da Boreal sizi her virajda “hadi biraz daha basalım” diye kışkırtan bir otomobil değil. Full hybrid sistemin en belirgin avantajlarından biri sessizlik. Özellikle düşük hızlarda elektrik motorunun devrede olduğu anlarda Boreal oldukça rafine bir sürüş sunuyor. Şehir içinde sık dur-kalk yaptığınızda elektrikli sürüşün avantajını daha fazla hissediyorsunuz. Gaz pedalına dokunduğunuzda otomobilin sessizce hareket etmesi, klasik benzinli SUV'lardan ayrıldığı önemli noktalardan biri. Üstelik frenleme sırasında enerji geri kazanımı da sisteme katkı sağlıyor. Burada bizim testimizde özellikle dikkat edeceğimiz konu ise hibrit sisteminbenzinli motor ile elektrikli motor arasındaki geçişleri ne kadar pürüzsüz yaptığıolacak. Çünkü hibritte mesele sadece az yakmak değil. “Az yakarken kafayı da yormamak” gerekiyor. Boreal'in sürüş karakteri ilk kilometrelerden itibaren konfor tarafına daha yakın olduğunu hissettiriyor. Yüksek gövde yapısına rağmen yol tutuş konusunda güven veren bir karakter bekliyoruz. Ancak asıl değerlendirmeyi şehir içi, bozuk asfalt, yüksek hız ve virajlı yollarda yaptığımız testin ardından yapacağız. Direksiyonun tepkileri, fren pedalının dozajı ve süspansiyonların kasislerdeki davranışı Boreal'in günlük kullanım karakterini belirleyecek en önemli noktalar arasında. ÖzellikleC-SUV sınıfında konfor ile gövde kontrolü arasındaki denge, Boreal'in rakipleri karşısındaki önemli sınavlarından biri. Boreal'in içine geçtiğinizde ise Renault'nun teknoloji yaklaşımı hemen kendisini gösteriyor. Kokpitin merkezinde10 inçlik dokunmatik ekran, sürücünün önünde ise dijital gösterge ekranı bulunuyor. Renault ayrıca Google entegreopenR linkmultimedya sistemini sunuyor. Google Haritalar, Google Play ve Waze gibi servislerin yanı sıra çok sayıda uygulamaya erişim sağlanabiliyor. Bu sistemin en önemli avantajlarından biri, telefonunuzu her seferinde otomobilin navigasyon sistemine dönüştürmek zorunda kalmamanız. Google zaten otomobilin içinde. Dolayısıyla navigasyon için “Telefon nerede, şarjı kaç, bağlantı koptu mu?” üçgeninden kurtuluyorsunuz. Geniş kabin, 630 litrelik bagaj Boreal'in 4,56 metrelik gövdesi iç mekânda da avantaj sağlıyor. Özellikle aile kullanımında arka koltukların sunduğu diz ve baş mesafesi önemli. Ancak Boreal'in en güçlü kozlarından biri kuşkusuz bagaj. 630 litrelik bagaj hacmi, C-SUV sınıfında günlük kullanım açısından oldukça iddialı bir değer. Arka koltuklar yatırıldığında maksimum bagaj hacmi1.868 litreyeulaşıyor. Yani...",
-          "post_text_for_card": "Fransızlar C-SUV'da oyunu değiştirdi mi, yoksa biz mi abartıyoruz?\n\nYeni Renault Boreal, 1.064 km menzille geldi. Ama asıl mesele, bu menzilin uzmanlara mı ait olduğu yoksa Ali Bey'in de, Ayşe Hanım'ın da gaza nazik davranarak bu rakamlara ulaşabileceği mi.\n\nBenzin zammı bahanesiyle menzil takıntısı yaratıldı. Oysa hibrit Boreal şehir içi sürüşlerinin %80'ini elektrikle yapıyor. Priz aramadan 110 km/s hıza kadar elektrikle gitmek varken, 1.000 km menzil peşinde koşmak garip.",
-          "story_card_title": "FRANSIZLAR C-SUV'DA OYUNU DEĞİŞTİRİYOR!",
-          "story_card_subtitle": "Yeni Renault Boreal, 1.064 km menziliyle testlerde öne çıktı. Ancak asıl soru, bu rekor rakamın sıradan sürücüler tarafından da yakalanıp yakalanamayacağı. Hibrit Boreal, şehir içi sürüşlerin büyük kısmını elektrikle tamamlarken, 110 km/s hıza kadar priz gerektirmeden yol alabiliyor.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.otopodyum.com.tr/news/5662.jpg",
-            "https://cdn.otopodyum.com.tr/other/2026/10/03/renault-boreal-bagaj.webp",
-            "https://cdn.otopodyum.com.tr/other/2026/10/03/renault-boreal-kabin.webp",
-            "https://cdn.otopodyum.com.tr/other/2026/10/03/renault-boreal-kokpit.jpg"
-          ]
-        },
-        "post_text": "Fransızlar C-SUV'da oyunu değiştirdi mi, yoksa biz mi abartıyoruz?\n\nYeni Renault Boreal, 1.064 km menzille geldi. Ama asıl mesele, bu menzilin uzmanlara mı ait olduğu yoksa Ali Bey'in de, Ayşe Hanım'ın da gaza nazik davranarak bu rakamlara ulaşabileceği mi.\n\nBenzin zammı bahanesiyle menzil takıntısı yaratıldı. Oysa hibrit Boreal şehir içi sürüşlerinin %80'ini elektrikle yapıyor. Priz aramadan 110 km/s hıza kadar elektrikle gitmek varken, 1.000 km menzil peşinde koşmak garip.",
-        "story_card_title": "FRANSIZLAR C-SUV'DA OYUNU DEĞİŞTİRİYOR!",
-        "story_card_subtitle": "Yeni Renault Boreal, 1.064 km menziliyle testlerde öne çıktı. Ancak asıl soru, bu rekor rakamın sıradan sürücüler tarafından da yakalanıp yakalanamayacağı. Hibrit Boreal, şehir içi sürüşlerin büyük kısmını elektrikle tamamlarken, 110 km/s hıza kadar priz gerektirmeden yol alabiliyor.",
-        "image_path": "/tmp/otoxtra_img_mamyftq2.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_mamyftq2.jpg",
-          "/tmp/otoxtra_img_wot3rgp4.jpg",
-          "/tmp/otoxtra_img_ob6mts4c.jpg",
-          "/tmp/otoxtra_img_8f8hh35u.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T09:04:24.324867+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122182115294916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17910368589511588",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1719799355757108",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T09:05:08.519976+03:00"
+      "updated_at": null
     }
   }
 }
