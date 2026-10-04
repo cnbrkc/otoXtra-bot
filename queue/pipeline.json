@@ -1,57 +1,14 @@
 {
-  "run_id": "2026-10-04-06:01",
-  "status": "completed",
-  "started_at": "2026-10-04T06:01:43.020903+03:00",
-  "updated_at": "2026-10-04T06:04:09.557290+03:00",
+  "run_id": "2026-10-04-07:01",
+  "status": "error",
+  "started_at": "2026-10-04T07:01:58.967004+03:00",
+  "updated_at": "2026-10-04T07:04:17.009684+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Stellantis CEO'su: Uygun fiyatlı otomobiller büyük bir fırsat",
-            "link": "https://tr.motor1.com/news/810690/stellantis-uygun-fiyat-buyuk-firsat/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-03T17:00:00+00:00",
-            "summary": "40.000 $'ın altında 9 yeni model geliştiriliyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/xqPL1y/s3/ram-rampage-2026---rebel.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/xqPL1y/s3/ram-rampage-2026---rebel.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/xqPL1y/s3/ram-rampage-2026---rebel.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ceo-firsat-fiyatli-otomobiller-stellantis-uygun"
-          },
-          {
-            "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-            "link": "https://x.com/DoluBatarya/status/2106437012488110398",
-            "nitter_url": "https://nitter.meowing.monster/DoluBatarya/status/2106437012488110398#m",
-            "source_instance": "nitter.meowing.monster",
-            "published": "2026-10-03T17:31:34+00:00",
-            "summary": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-            "image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Dolu Batarya",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "078-183-330-528-725-744-810-acilirsa-araclar-avrupa-avrupa-birinci-cin-danimarka-eylulde-fransa-gecebilir-hollanda-icerisinde-ise-ithalatin-kiriyor-model-model-model-model-model-norvec-oldugu-onu-otomobiller-oturdu-rekoru-rlanda-satan-satilan-satis-satislari-spanya-spanya-svec-svicre-tesla-tesla-tesla-tesla-turkiye-turkiye-ulkeler-ulkesinde-yukselise-zirveye-zlanda"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -112,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/teknotagstr/rss",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -121,14 +78,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kabii.moe"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kabii.moe"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -149,21 +106,21 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kabii.moe"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kabii.moe"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kabii.moe"
           },
           "VeyselKarani": {
             "status": "ok",
@@ -189,248 +146,47 @@
           "_metrics": {
             "found": 144,
             "after_keyword": 82,
-            "after_time": 10,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_time": 8,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 144,
           "after_keyword": 82,
-          "after_time": 10,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_time": 8,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-04T06:03:23.458320+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-04T07:04:17.009684+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "link": "https://x.com/DoluBatarya/status/2106437012488110398",
-          "nitter_url": "https://nitter.meowing.monster/DoluBatarya/status/2106437012488110398#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-03T17:31:34+00:00",
-          "summary": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "078-183-330-528-725-744-810-acilirsa-araclar-avrupa-avrupa-birinci-cin-danimarka-eylulde-fransa-gecebilir-hollanda-icerisinde-ise-ithalatin-kiriyor-model-model-model-model-model-norvec-oldugu-onu-otomobiller-oturdu-rekoru-rlanda-satan-satilan-satis-satislari-spanya-spanya-svec-svicre-tesla-tesla-tesla-tesla-turkiye-turkiye-ulkeler-ulkesinde-yukselise-zirveye-zlanda",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çarpıcı satış rakamları, pazar liderliği verileri ve sosyal medyada etkileşim yaratacak ülke karşılaştırmaları içeriyor.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 78,
-        "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 18,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 15,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 9
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Çarpıcı satış rakamları, pazar liderliği verileri ve sosyal medyada etkileşim yaratacak ülke karşılaştırmaları içeriyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-            "score": 78,
-            "score_breakdown": {
-              "guncellik": 18,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 9
-            }
-          },
-          {
-            "title": "Stellantis CEO'su: Uygun fiyatlı otomobiller büyük bir fırsat",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 13,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 9,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 7
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Stellantis CEO'su: Uygun fiyatlı otomobiller büyük bir fırsat",
-            "link": "https://tr.motor1.com/news/810690/stellantis-uygun-fiyat-buyuk-firsat/",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "ceo-firsat-fiyatli-otomobiller-stellantis-uygun"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T06:03:25.653576+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "link": "https://x.com/DoluBatarya/status/2106437012488110398",
-          "nitter_url": "https://nitter.meowing.monster/DoluBatarya/status/2106437012488110398#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-03T17:31:34+00:00",
-          "summary": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "078-183-330-528-725-744-810-acilirsa-araclar-avrupa-avrupa-birinci-cin-danimarka-eylulde-fransa-gecebilir-hollanda-icerisinde-ise-ithalatin-kiriyor-model-model-model-model-model-norvec-oldugu-onu-otomobiller-oturdu-rekoru-rlanda-satan-satilan-satis-satislari-spanya-spanya-svec-svicre-tesla-tesla-tesla-tesla-turkiye-turkiye-ulkeler-ulkesinde-yukselise-zirveye-zlanda",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çarpıcı satış rakamları, pazar liderliği verileri ve sosyal medyada etkileşim yaratacak ülke karşılaştırmaları içeriyor.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress."
-        },
-        "post_text": "Tesla Avrupa'da zirvede, Türkiye'de ise 3. sırada.\n\nModel Y'nin 8 Avrupa ülkesinde en çok satan model olması, elektrikli otomobil algısının değiştiğini gösteriyor. Artık sadece teknoloji meraklıları değil, geniş kitleler de bu araçları tercih ediyor.\n\nTürkiye'de 1.725 adetlik satışla 3. sıraya yerleşmesi ise ilginç. Çin'den ithalatın kapısı açılırsa bu tablo tamamen değişebilir.\n\nBu durum, fiyat ve erişilebilirliğin markadan daha önemli hale geldiğinin bir kanıtı.",
-        "post_text_length": 468,
-        "story_card_title": "TESLA AVRUPA'DA EZDİ GEÇTİ!",
-        "story_card_subtitle": "Tesla, Avrupa'da Eylül ayında satış rekoru kırdı. Sekiz farklı ülkede, tüm otomobiller arasında en çok satılan model unvanını elde eden Tesla Model Y, elektrikli araçların artık ana akım haline geldiğini kanıtladı. İspanya'da ise Model 3 zirveye yerleşerek gücünü gösterdi. Türkiye'de 1.725 adetle üçüncü sırada yer alan Tesla'nın, Çin'den ithalatın önünün açılmasıyla bu tabloyu tamamen değiştirebileceği konuşuluyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T06:03:29.355021+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "link": "https://x.com/DoluBatarya/status/2106437012488110398",
-          "nitter_url": "https://nitter.meowing.monster/DoluBatarya/status/2106437012488110398#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-03T17:31:34+00:00",
-          "summary": "Tesla Avrupa'da satış rekoru kırıyor. Eylülde 8 Avrupa ülkesinde tüm araçlar içerisinde en çok satılan model Tesla Model Y oldu. İspanya'da ise Model 3 zirveye oturdu. Çin'den ithalatın önü açılırsa Tesla'nın Türkiye'de de satışları yükselişe geçebilir. Tesla Model Y/3'ün tüm otomobiller arasında birinci olduğu ülkeler: 🇫🇷 Fransa: 8,183 🇳🇴 Norveç: 4,810 🇪🇸 İspanya: 2,528 (Model 3) 🇸🇪 İsveç: 2,330 🇳🇱 Hollanda: 2,078 🇮🇪 İrlanda: 744 🇩🇰 Danimarka: — 🇨🇭 İsviçre: — 🇮🇸 İzlanda: — --------------- 🇹🇷 Türkiye: 1.725 (en çok satan 3.)",
-          "image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "Dolu Batarya",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "078-183-330-528-725-744-810-acilirsa-araclar-avrupa-avrupa-birinci-cin-danimarka-eylulde-fransa-gecebilir-hollanda-icerisinde-ise-ithalatin-kiriyor-model-model-model-model-model-norvec-oldugu-onu-otomobiller-oturdu-rekoru-rlanda-satan-satilan-satis-satislari-spanya-spanya-svec-svicre-tesla-tesla-tesla-tesla-turkiye-turkiye-ulkeler-ulkesinde-yukselise-zirveye-zlanda",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 18,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 9
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Çarpıcı satış rakamları, pazar liderliği verileri ve sosyal medyada etkileşim yaratacak ülke karşılaştırmaları içeriyor.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress.",
-          "post_text_for_card": "Tesla Avrupa'da zirvede, Türkiye'de ise 3. sırada.\n\nModel Y'nin 8 Avrupa ülkesinde en çok satan model olması, elektrikli otomobil algısının değiştiğini gösteriyor. Artık sadece teknoloji meraklıları değil, geniş kitleler de bu araçları tercih ediyor.\n\nTürkiye'de 1.725 adetlik satışla 3. sıraya yerleşmesi ise ilginç. Çin'den ithalatın kapısı açılırsa bu tablo tamamen değişebilir.\n\nBu durum, fiyat ve erişilebilirliğin markadan daha önemli hale geldiğinin bir kanıtı.",
-          "story_card_title": "TESLA AVRUPA'DA EZDİ GEÇTİ!",
-          "story_card_subtitle": "Tesla, Avrupa'da Eylül ayında satış rekoru kırdı. Sekiz farklı ülkede, tüm otomobiller arasında en çok satılan model unvanını elde eden Tesla Model Y, elektrikli araçların artık ana akım haline geldiğini kanıtladı. İspanya'da ise Model 3 zirveye yerleşerek gücünü gösterdi. Türkiye'de 1.725 adetle üçüncü sırada yer alan Tesla'nın, Çin'den ithalatın önünün açılmasıyla bu tabloyu tamamen değiştirebileceği konuşuluyor.",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HTuRS5GXIAARW0N.jpg?name=orig"
-          ]
-        },
-        "post_text": "Tesla Avrupa'da zirvede, Türkiye'de ise 3. sırada.\n\nModel Y'nin 8 Avrupa ülkesinde en çok satan model olması, elektrikli otomobil algısının değiştiğini gösteriyor. Artık sadece teknoloji meraklıları değil, geniş kitleler de bu araçları tercih ediyor.\n\nTürkiye'de 1.725 adetlik satışla 3. sıraya yerleşmesi ise ilginç. Çin'den ithalatın kapısı açılırsa bu tablo tamamen değişebilir.\n\nBu durum, fiyat ve erişilebilirliğin markadan daha önemli hale geldiğinin bir kanıtı.",
-        "story_card_title": "TESLA AVRUPA'DA EZDİ GEÇTİ!",
-        "story_card_subtitle": "Tesla, Avrupa'da Eylül ayında satış rekoru kırdı. Sekiz farklı ülkede, tüm otomobiller arasında en çok satılan model unvanını elde eden Tesla Model Y, elektrikli araçların artık ana akım haline geldiğini kanıtladı. İspanya'da ise Model 3 zirveye yerleşerek gücünü gösterdi. Türkiye'de 1.725 adetle üçüncü sırada yer alan Tesla'nın, Çin'den ithalatın önünün açılmasıyla bu tabloyu tamamen değiştirebileceği konuşuluyor.",
-        "image_path": "/tmp/otoxtra_img_e5j7p8h9.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_e5j7p8h9.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T06:03:33.534172+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122182097864916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18049715132811648",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1410119467452520",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-04T06:04:09.557290+03:00"
+      "updated_at": null
     }
   }
 }
