@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-05-07:01",
+  "run_id": "2026-10-05-08:01",
   "status": "error",
-  "started_at": "2026-10-05T07:01:32.875932+03:00",
-  "updated_at": "2026-10-05T07:03:45.434867+03:00",
+  "started_at": "2026-10-05T08:01:32.805853+03:00",
+  "updated_at": "2026-10-05T08:02:58.437896+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/teknotagstr/rss",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -78,19 +78,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.kabii.moe"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.kabii.moe"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://shitter.thepixora.com/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -106,14 +106,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.kabii.moe"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.kabii.moe"
           },
           "MuratTosun": {
             "status": "ok",
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-05T07:03:45.434867+03:00"
+      "updated_at": "2026-10-05T08:02:58.437896+03:00"
     },
     "score": {
       "status": "waiting",
