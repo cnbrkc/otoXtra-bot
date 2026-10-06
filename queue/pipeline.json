@@ -1,31 +1,33 @@
 {
-  "run_id": "2026-10-06-08:01",
+  "run_id": "2026-10-06-09:02",
   "status": "completed",
-  "started_at": "2026-10-06T08:01:42.533106+03:00",
-  "updated_at": "2026-10-06T08:04:12.307999+03:00",
+  "started_at": "2026-10-06T09:02:12.376401+03:00",
+  "updated_at": "2026-10-06T09:06:03.411173+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
-            "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
+            "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
+            "link": "https://otopodyum.com.tr/firmalar-dernekler/5-japon-otomotiv-ureticisi-maliyetler-icin-guc-birligine-gitti-5353h",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-06T04:30:19+00:00",
-            "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "published": "2026-10-06T05:12:54+00:00",
+            "summary": "Toyota, üretim maliyetlerini azaltmak ve Japon otomotiv tedarik zincirinin verimliliğini artırmak amacıyla Honda, Mazda, Suzuki ve Mitsubishi ile ortak çalışma yürütüyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5667.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada"
+            "topic_fingerprint": "birligine-gitti-guc-japon-maliyetler-otomotiv-ureticisi"
           }
         ],
         "count": 1,
@@ -89,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -98,14 +100,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "nitter.gravitywell.xyz"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "shitter.thepixora.com"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -158,93 +160,95 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 5,
+            "count": 6,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 145,
+            "found": 146,
             "after_keyword": 84,
-            "after_time": 9,
+            "after_time": 11,
             "after_posted": 1,
             "after_duplicate": 1,
             "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 145,
+          "found": 146,
           "after_keyword": 84,
-          "after_time": 9,
+          "after_time": 11,
           "after_posted": 1,
           "after_duplicate": 1,
           "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-10-06T08:03:28.059032+03:00"
+      "updated_at": "2026-10-06T09:05:02.534341+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
-          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
+          "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/5-japon-otomotiv-ureticisi-maliyetler-icin-guc-birligine-gitti-5353h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T04:30:19+00:00",
-          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
+          "published": "2026-10-06T05:12:54+00:00",
+          "summary": "Toyota, üretim maliyetlerini azaltmak ve Japon otomotiv tedarik zincirinin verimliliğini artırmak amacıyla Honda, Mazda, Suzuki ve Mitsubishi ile ortak çalışma yürütüyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5667.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
-          "base_ai_score": 65,
+          "topic_fingerprint": "birligine-gitti-guc-japon-maliyetler-otomotiv-ureticisi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
           },
-          "score": 70,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
+          "score_explanation": "Japon otomotiv sektörünün dev isimlerinin maliyet krizi nedeniyle güç birliği yapması küresel ölçekte büyük yankı uyandıracak stratejik bir hamledir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 70,
-        "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+        "score": 81,
+        "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
           "etkilesim_potansiyeli": 18,
-          "benzersizlik": 10,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 7
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 11
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
+        "score_explanation": "Japon otomotiv sektörünün dev isimlerinin maliyet krizi nedeniyle güç birliği yapması küresel ölçekte büyük yankı uyandıracak stratejik bir hamledir.",
         "skipped": false,
-        "threshold": 30,
+        "threshold": 40,
         "top_articles": [
           {
-            "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
-            "score": 70,
+            "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
+            "score": 81,
             "score_breakdown": {
               "guncellik": 20,
               "etkilesim_potansiyeli": 18,
-              "benzersizlik": 10,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 7
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 11
             }
           }
         ],
@@ -252,142 +256,149 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-10-06T08:03:29.538593+03:00"
+      "updated_at": "2026-10-06T09:05:04.411636+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
-          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
+          "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/5-japon-otomotiv-ureticisi-maliyetler-icin-guc-birligine-gitti-5353h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T04:30:19+00:00",
-          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
+          "published": "2026-10-06T05:12:54+00:00",
+          "summary": "Toyota, üretim maliyetlerini azaltmak ve Japon otomotiv tedarik zincirinin verimliliğini artırmak amacıyla Honda, Mazda, Suzuki ve Mitsubishi ile ortak çalışma yürütüyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5667.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
-          "base_ai_score": 65,
+          "topic_fingerprint": "birligine-gitti-guc-japon-maliyetler-otomotiv-ureticisi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
           },
-          "score": 70,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
+          "score_explanation": "Japon otomotiv sektörünün dev isimlerinin maliyet krizi nedeniyle güç birliği yapması küresel ölçekte büyük yankı uyandıracak stratejik bir hamledir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Sigortacılık ve Özel Emeklilik Düzenleme ve Denetleme Kurumu (SEDDK), vatandaşların sigorta işlemlerine dair verilere daha kolay ulaşabilmesi adına önemli bir adım attı. Bu kapsamda e-Devlet üzerinden sigorta takibi hizmeti genişletilerek kullanıcıların erişimine sunulan yeni özellikler devreye alındı. Kurum tarafından yapılan açıklamada, “Özel Sigortalarım” hizmetinin ikinci aşamasının başarıyla tamamlandığı duyuruldu. Yapılan bu güncellemelerle birlikte sigorta süreçlerine dair dijital altyapı daha kapsamlı bir hale getirildi. Yeni aşama ile birlikte sigortalılar, yaşadıkları bir hasar sonrasında sürece ilişkin tüm detaylara dijital ortamdan ulaşma imkanına kavuştu. Özellikleeksper tarafından hazırlanan raporlar, kaza tespit tutanakları ve kazadaki kusur oranları artık e-Devlet üzerinden incelenebiliyor. Bu yenilik, hasar süreçlerinde ihtiyaç duyulan belgelere ulaşmak için farklı kanallara başvurma zorunluluğunu ortadan kaldırıyor. Vatandaşlar, sigorta şirketleri ile olan süreçlerini tek bir platform üzerinden şeffaf bir şekilde takip edebiliyor. Sistem, yalnızca güncel hasar dosyalarını değil, aynı zamanda geçmişe dönük verileri de kapsıyor. Sigortalılar, mevcut poliçelerinin yanı sıra geçmişte sahip oldukları poliçelerin ayrıntılarını da sistem üzerinden görüntüleyebiliyor. Bu genişletilmiş hizmet, sigorta branşları arasındaki veri akışını daha düzenli hale getirmeyi amaçlıyor. Kullanıcılar, farklı sigorta türlerine ait tüm geçmiş verilerini tek bir ekranda toplayarak sigorta geçmişlerini daha rahat kontrol edebiliyor. Platforma eklenen bir diğer önemli özellik ise poliçe sürelerinin takibini kolaylaştıran yenileme uyarıları oldu. Sigortanın yenilenme zamanı yaklaştığında, kullanıcılar e-Devlet üzerinden bilgilendirilecek. Bu uyarı sistemi, poliçe bitiş tarihlerinin takibini kolaylaştırarak sigortasız kalma riskini azaltmayı hedefliyor. Kullanıcılar, yenileme zamanı gelen poliçelerini zamanında takip ederek gerekli işlemlerini hızlıca gerçekleştirebilecek. Projenin geliştirilme sürecinde SEDDK’nın yanı sıra Siber Güvenlik Başkanlığı ve Sigorta Bilgi ve Gözetim Merkezi (SBM) de aktif rol aldı. Çalışmanın temel amacı, vatandaşların sigorta uygulamalarına daha hızlı, güncel ve kapsamlı şekilde erişebilmesini sağlamak olarak açıklandı. Kurum, dijitalleşme vizyonu doğrultusunda sigorta sektöründeki bürokratik süreçleri azaltmaya devam ediyor. Vatandaşların sigorta işlemlerini dijital ortamda yönetebilmesi, hem zaman tasarrufu sağlıyor hem de bilgiye erişimi hızlandırıyor. Sizce e-Devlet üzerinden sunulan bu yeni sigorta takip özellikleri, sigorta işlemlerinizi yönetmenizi kolaylaştıracak mı? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+          "full_text": "Temmuz ayının sonunda Toyota’nın Tahara fabrikasında düzenlenen toplantıya 100’ü aşkın sektör profesyoneli katılırken görüşmeler, şirketin 2017’den beri uyguladığı Smart Standard Activity (SSA) programına odaklandı. Japon otomotiv üreticileri, işlevselliği etkilemeyen kozmetik kusurlar nedeniyle parçaların hurdaya ayrılmasını azaltarak tedarik süreçlerinde daha esnek bir yaklaşım geliştirmeyi hedefliyor. Japon Otomotiv Üreticileri Parça Kalite Standartlarını Yeniden Değerlendiriyor Toyota’nın Tahara fabrikasında gerçekleştirilen toplantı, Japon otomotiv sektörünün üretim maliyetlerini kontrol altına alma çabalarının yeni bir aşamasını oluşturdu. ToyotaTimes’ın aktardığına göre Honda, Mazda, Suzuki ve Mitsubishi temsilcileri, üretim süreçlerinde karşılaşılan sorunları somut parçalar üzerinden değerlendirdi. Toplantının merkezinde, araçların güvenliğini veya kullanım performansını etkilemeyen küçük görünüm kusurlarının üretim sürecinde nasıl ele alınacağı yer aldı. Örneğin arka koltuk klima havalandırma kanatlarında bulunan ince çizikler, sürücünün veya yolcunun normal kullanım sırasında fark edemeyeceği seviyede olsa bile parçanın reddedilmesine neden olabiliyor. Toyota’nın yürüttüğü SSA programı, bu tür kalite değerlendirmelerinde işlevsel gerekliliklerle görsel beklentiler arasındaki sınırın yeniden ele alınmasını amaçlıyor. Üreticiler, müşterinin göremediği veya araç performansını etkilemeyen kusurlar nedeniyle kullanılabilir parçaların atılmasını önleyerek malzeme israfını azaltmayı planlıyor. Japon üreticilerin ortak çalışması, yalnızca fabrikalardaki kalite kontrol uygulamalarını değil, tedarikçilerin üretim maliyetlerini de ilgilendiriyor. Parça kabul kriterlerinin gereğinden katı tutulması, tedarikçilerin üretim kayıplarını artırırken otomobil üreticilerinin parça temin sürelerini de olumsuz etkileyebiliyor. Toplantıda şirketlerin fiyatlandırma, teknoloji veya doğrudan rekabetle ilgili ticari konuları gündeme almadığı, görüşmelerin üretim süreçleri ve görünüm kalitesiyle sınırlandırıldığı bildirildi. Bu yaklaşım, rakip üreticilerin ticari sırlarını paylaşmadan ortak tedarik sorunlarına çözüm aramasını sağlıyor. Toyota açısından üretim verimliliği, Çinli otomobil üreticilerinin maliyet avantajı karşısında önem kazanan stratejik konular arasında bulunuyor. Şirket, tedarik zincirindeki gereksiz kalite kayıplarını azaltmanın Japon otomotiv sektörünün rekabet gücünü korumasına katkı sağlayacağını değerlendiriyor."
         },
-        "post_text": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
-        "post_text_length": 374,
-        "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
-        "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
+        "post_text": "Japon markalar maliyetleri kısmak için bir araya geldi ama burada asıl mesele başka.\n\nToyota liderliğinde Honda, Mazda, Suzuki ve Mitsubishi’nin ortak çalışma kararı, 'kusursuz' algısının ne kadar pamuk ipliğine bağlı olduğunu gösteriyor. Ufak kozmetik kusurlar yüzünden hurdaya ayrılan parçalar, artık kimsenin gözüne batmayacak.\n\nDemek ki, kalite algısı bile ekonomik koşullara göre esneyebiliyor.",
+        "post_text_length": 399,
+        "story_card_title": "JAPON DEVLERİ KÜÇÜLDÜ!",
+        "story_card_subtitle": "Toyota, Honda, Mazda, Suzuki ve Mitsubishi, maliyetleri düşürmek için el ele verdi. Üretimdeki ufak kusurların artık göz ardı edileceği bu işbirliği, otomotiv devlerinin bile ekonomik gerçeklere boyun eğdiğini kanıtlıyor. Kalite algısı bile değişiyor, kim ne derse desin.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-06T08:03:36.133173+03:00"
+      "updated_at": "2026-10-06T09:05:07.308288+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
-          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
+          "title": "5 Japon otomotiv üreticisi maliyetler için güç birliğine gitti",
+          "link": "https://otopodyum.com.tr/firmalar-dernekler/5-japon-otomotiv-ureticisi-maliyetler-icin-guc-birligine-gitti-5353h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T04:30:19+00:00",
-          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
+          "published": "2026-10-06T05:12:54+00:00",
+          "summary": "Toyota, üretim maliyetlerini azaltmak ve Japon otomotiv tedarik zincirinin verimliliğini artırmak amacıyla Honda, Mazda, Suzuki ve Mitsubishi ile ortak çalışma yürütüyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5667.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5667.jpg"
+          ],
           "image_source": "meta_og",
-          "source_name": "ShiftDelete Otomobil",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
-          "base_ai_score": 65,
+          "topic_fingerprint": "birligine-gitti-guc-japon-maliyetler-otomotiv-ureticisi",
+          "base_ai_score": 76,
           "score_breakdown": {
             "guncellik": 20,
             "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 11
           },
-          "score": 70,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
+          "score_explanation": "Japon otomotiv sektörünün dev isimlerinin maliyet krizi nedeniyle güç birliği yapması küresel ölçekte büyük yankı uyandıracak stratejik bir hamledir.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Sigortacılık ve Özel Emeklilik Düzenleme ve Denetleme Kurumu (SEDDK), vatandaşların sigorta işlemlerine dair verilere daha kolay ulaşabilmesi adına önemli bir adım attı. Bu kapsamda e-Devlet üzerinden sigorta takibi hizmeti genişletilerek kullanıcıların erişimine sunulan yeni özellikler devreye alındı. Kurum tarafından yapılan açıklamada, “Özel Sigortalarım” hizmetinin ikinci aşamasının başarıyla tamamlandığı duyuruldu. Yapılan bu güncellemelerle birlikte sigorta süreçlerine dair dijital altyapı daha kapsamlı bir hale getirildi. Yeni aşama ile birlikte sigortalılar, yaşadıkları bir hasar sonrasında sürece ilişkin tüm detaylara dijital ortamdan ulaşma imkanına kavuştu. Özellikleeksper tarafından hazırlanan raporlar, kaza tespit tutanakları ve kazadaki kusur oranları artık e-Devlet üzerinden incelenebiliyor. Bu yenilik, hasar süreçlerinde ihtiyaç duyulan belgelere ulaşmak için farklı kanallara başvurma zorunluluğunu ortadan kaldırıyor. Vatandaşlar, sigorta şirketleri ile olan süreçlerini tek bir platform üzerinden şeffaf bir şekilde takip edebiliyor. Sistem, yalnızca güncel hasar dosyalarını değil, aynı zamanda geçmişe dönük verileri de kapsıyor. Sigortalılar, mevcut poliçelerinin yanı sıra geçmişte sahip oldukları poliçelerin ayrıntılarını da sistem üzerinden görüntüleyebiliyor. Bu genişletilmiş hizmet, sigorta branşları arasındaki veri akışını daha düzenli hale getirmeyi amaçlıyor. Kullanıcılar, farklı sigorta türlerine ait tüm geçmiş verilerini tek bir ekranda toplayarak sigorta geçmişlerini daha rahat kontrol edebiliyor. Platforma eklenen bir diğer önemli özellik ise poliçe sürelerinin takibini kolaylaştıran yenileme uyarıları oldu. Sigortanın yenilenme zamanı yaklaştığında, kullanıcılar e-Devlet üzerinden bilgilendirilecek. Bu uyarı sistemi, poliçe bitiş tarihlerinin takibini kolaylaştırarak sigortasız kalma riskini azaltmayı hedefliyor. Kullanıcılar, yenileme zamanı gelen poliçelerini zamanında takip ederek gerekli işlemlerini hızlıca gerçekleştirebilecek. Projenin geliştirilme sürecinde SEDDK’nın yanı sıra Siber Güvenlik Başkanlığı ve Sigorta Bilgi ve Gözetim Merkezi (SBM) de aktif rol aldı. Çalışmanın temel amacı, vatandaşların sigorta uygulamalarına daha hızlı, güncel ve kapsamlı şekilde erişebilmesini sağlamak olarak açıklandı. Kurum, dijitalleşme vizyonu doğrultusunda sigorta sektöründeki bürokratik süreçleri azaltmaya devam ediyor. Vatandaşların sigorta işlemlerini dijital ortamda yönetebilmesi, hem zaman tasarrufu sağlıyor hem de bilgiye erişimi hızlandırıyor. Sizce e-Devlet üzerinden sunulan bu yeni sigorta takip özellikleri, sigorta işlemlerinizi yönetmenizi kolaylaştıracak mı? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
-          "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
-          "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
+          "full_text": "Temmuz ayının sonunda Toyota’nın Tahara fabrikasında düzenlenen toplantıya 100’ü aşkın sektör profesyoneli katılırken görüşmeler, şirketin 2017’den beri uyguladığı Smart Standard Activity (SSA) programına odaklandı. Japon otomotiv üreticileri, işlevselliği etkilemeyen kozmetik kusurlar nedeniyle parçaların hurdaya ayrılmasını azaltarak tedarik süreçlerinde daha esnek bir yaklaşım geliştirmeyi hedefliyor. Japon Otomotiv Üreticileri Parça Kalite Standartlarını Yeniden Değerlendiriyor Toyota’nın Tahara fabrikasında gerçekleştirilen toplantı, Japon otomotiv sektörünün üretim maliyetlerini kontrol altına alma çabalarının yeni bir aşamasını oluşturdu. ToyotaTimes’ın aktardığına göre Honda, Mazda, Suzuki ve Mitsubishi temsilcileri, üretim süreçlerinde karşılaşılan sorunları somut parçalar üzerinden değerlendirdi. Toplantının merkezinde, araçların güvenliğini veya kullanım performansını etkilemeyen küçük görünüm kusurlarının üretim sürecinde nasıl ele alınacağı yer aldı. Örneğin arka koltuk klima havalandırma kanatlarında bulunan ince çizikler, sürücünün veya yolcunun normal kullanım sırasında fark edemeyeceği seviyede olsa bile parçanın reddedilmesine neden olabiliyor. Toyota’nın yürüttüğü SSA programı, bu tür kalite değerlendirmelerinde işlevsel gerekliliklerle görsel beklentiler arasındaki sınırın yeniden ele alınmasını amaçlıyor. Üreticiler, müşterinin göremediği veya araç performansını etkilemeyen kusurlar nedeniyle kullanılabilir parçaların atılmasını önleyerek malzeme israfını azaltmayı planlıyor. Japon üreticilerin ortak çalışması, yalnızca fabrikalardaki kalite kontrol uygulamalarını değil, tedarikçilerin üretim maliyetlerini de ilgilendiriyor. Parça kabul kriterlerinin gereğinden katı tutulması, tedarikçilerin üretim kayıplarını artırırken otomobil üreticilerinin parça temin sürelerini de olumsuz etkileyebiliyor. Toplantıda şirketlerin fiyatlandırma, teknoloji veya doğrudan rekabetle ilgili ticari konuları gündeme almadığı, görüşmelerin üretim süreçleri ve görünüm kalitesiyle sınırlandırıldığı bildirildi. Bu yaklaşım, rakip üreticilerin ticari sırlarını paylaşmadan ortak tedarik sorunlarına çözüm aramasını sağlıyor. Toyota açısından üretim verimliliği, Çinli otomobil üreticilerinin maliyet avantajı karşısında önem kazanan stratejik konular arasında bulunuyor. Şirket, tedarik zincirindeki gereksiz kalite kayıplarını azaltmanın Japon otomotiv sektörünün rekabet gücünü korumasına katkı sağlayacağını değerlendiriyor.",
+          "post_text_for_card": "Japon markalar maliyetleri kısmak için bir araya geldi ama burada asıl mesele başka.\n\nToyota liderliğinde Honda, Mazda, Suzuki ve Mitsubishi’nin ortak çalışma kararı, 'kusursuz' algısının ne kadar pamuk ipliğine bağlı olduğunu gösteriyor. Ufak kozmetik kusurlar yüzünden hurdaya ayrılan parçalar, artık kimsenin gözüne batmayacak.\n\nDemek ki, kalite algısı bile ekonomik koşullara göre esneyebiliyor.",
+          "story_card_title": "JAPON DEVLERİ KÜÇÜLDÜ!",
+          "story_card_subtitle": "Toyota, Honda, Mazda, Suzuki ve Mitsubishi, maliyetleri düşürmek için el ele verdi. Üretimdeki ufak kusurların artık göz ardı edileceği bu işbirliği, otomotiv devlerinin bile ekonomik gerçeklere boyun eğdiğini kanıtlıyor. Kalite algısı bile değişiyor, kim ne derse desin.",
           "image_sources": [
             "meta_og",
             "article_img",
+            "article_img",
             "article_img"
           ],
-          "prepared_image_count": 3,
+          "prepared_image_count": 4,
           "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor.webp",
-            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor-2.webp",
-            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor-3.webp"
+            "https://cdn.otopodyum.com.tr/news/5667.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/10/06/toyota-tahara-fabrika2.webp",
+            "https://cdn.otopodyum.com.tr/news/5643.jpg",
+            "https://cdn.otopodyum.com.tr/news/5645.jpg"
           ]
         },
-        "post_text": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
-        "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
-        "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
-        "image_path": "/tmp/otoxtra_img_2w3r1_pa.jpg",
+        "post_text": "Japon markalar maliyetleri kısmak için bir araya geldi ama burada asıl mesele başka.\n\nToyota liderliğinde Honda, Mazda, Suzuki ve Mitsubishi’nin ortak çalışma kararı, 'kusursuz' algısının ne kadar pamuk ipliğine bağlı olduğunu gösteriyor. Ufak kozmetik kusurlar yüzünden hurdaya ayrılan parçalar, artık kimsenin gözüne batmayacak.\n\nDemek ki, kalite algısı bile ekonomik koşullara göre esneyebiliyor.",
+        "story_card_title": "JAPON DEVLERİ KÜÇÜLDÜ!",
+        "story_card_subtitle": "Toyota, Honda, Mazda, Suzuki ve Mitsubishi, maliyetleri düşürmek için el ele verdi. Üretimdeki ufak kusurların artık göz ardı edileceği bu işbirliği, otomotiv devlerinin bile ekonomik gerçeklere boyun eğdiğini kanıtlıyor. Kalite algısı bile değişiyor, kim ne derse desin.",
+        "image_path": "/tmp/otoxtra_img_hgjrq04n.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_2w3r1_pa.jpg",
-          "/tmp/otoxtra_img_w3i4iuee.jpg",
-          "/tmp/otoxtra_img_vae7ock3.jpg"
+          "/tmp/otoxtra_img_hgjrq04n.jpg",
+          "/tmp/otoxtra_img_ykxvkcpw.jpg",
+          "/tmp/otoxtra_img_otss4_jf.jpg",
+          "/tmp/otoxtra_img_j4rexy9y.jpg"
         ],
         "image_source": "meta_og",
-        "image_count": 3
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-10-06T08:03:37.283541+03:00"
+      "updated_at": "2026-10-06T09:05:20.280068+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122182405076916499",
+        "post_id": "678053852057751_122182411838916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18134109955638681",
+            "id": "18030400001900078",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "2300532734045564",
+            "id": "1550704276744849",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-06T08:04:12.307999+03:00"
+      "updated_at": "2026-10-06T09:06:03.411173+03:00"
     }
   }
 }
