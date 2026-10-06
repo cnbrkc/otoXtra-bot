@@ -1,33 +1,31 @@
 {
-  "run_id": "2026-10-06-07:01",
+  "run_id": "2026-10-06-08:01",
   "status": "completed",
-  "started_at": "2026-10-06T07:01:36.433228+03:00",
-  "updated_at": "2026-10-06T07:06:35.844091+03:00",
+  "started_at": "2026-10-06T08:01:42.533106+03:00",
+  "updated_at": "2026-10-06T08:04:12.307999+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
-            "link": "https://www.log.com.tr/angelelli-automobiliden-yeni-super-otomobil-ailesi-tipo-829-terra-strada-ve-pista/",
+            "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+            "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-06T07:01:36.654752+03:00",
-            "summary": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerek hazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek. Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
+            "published": "2026-10-06T04:30:19+00:00",
+            "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "829-ailesi-angelelli-automobili-otomobil-pista-strada-super-terra-tipo"
+            "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada"
           }
         ],
         "count": 1,
@@ -100,19 +98,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kabii.moe"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.kabii.moe"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -124,39 +122,39 @@
             "instance": ""
           },
           "TaylanOzgurDil": {
-            "status": "error",
-            "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "shitter.thepixora.com"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "shitter.thepixora.com"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "shitter.thepixora.com"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "shitter.thepixora.com"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "shitter.thepixora.com"
           },
           "otopodyum": {
             "status": "ok",
@@ -166,89 +164,87 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 135,
-            "after_keyword": 78,
-            "after_time": 8,
+            "found": 145,
+            "after_keyword": 84,
+            "after_time": 9,
             "after_posted": 1,
             "after_duplicate": 1,
             "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 135,
-          "after_keyword": 78,
-          "after_time": 8,
+          "found": 145,
+          "after_keyword": 84,
+          "after_time": 9,
           "after_posted": 1,
           "after_duplicate": 1,
           "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-10-06T07:04:50.449457+03:00"
+      "updated_at": "2026-10-06T08:03:28.059032+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
-          "link": "https://www.log.com.tr/angelelli-automobiliden-yeni-super-otomobil-ailesi-tipo-829-terra-strada-ve-pista/",
+          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T07:01:36.654752+03:00",
-          "summary": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerek hazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek. Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
+          "published": "2026-10-06T04:30:19+00:00",
+          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "829-ailesi-angelelli-automobili-otomobil-pista-strada-super-terra-tipo",
-          "base_ai_score": 45,
+          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 7
           },
-          "score": 51,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir süper otomobil ailesi duyurusu ilgi çekici olsa da, Angelelli Automobili henüz geniş kitlelerce bilinen ana akım bir marka olmadığı için sosyal medyada sınırlı bir yankı uyandırır.",
+          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 51,
-        "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
+        "score": 70,
+        "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 12,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 3
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 10,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 7
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Yeni bir süper otomobil ailesi duyurusu ilgi çekici olsa da, Angelelli Automobili henüz geniş kitlelerce bilinen ana akım bir marka olmadığı için sosyal medyada sınırlı bir yankı uyandırır.",
+        "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
-            "score": 51,
+            "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+            "score": 70,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 12,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 10,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 7
             }
           }
         ],
@@ -256,138 +252,142 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-10-06T07:04:54.202875+03:00"
+      "updated_at": "2026-10-06T08:03:29.538593+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
-          "link": "https://www.log.com.tr/angelelli-automobiliden-yeni-super-otomobil-ailesi-tipo-829-terra-strada-ve-pista/",
+          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T07:01:36.654752+03:00",
-          "summary": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerek hazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek. Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
+          "published": "2026-10-06T04:30:19+00:00",
+          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "829-ailesi-angelelli-automobili-otomobil-pista-strada-super-terra-tipo",
-          "base_ai_score": 45,
+          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 7
           },
-          "score": 51,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir süper otomobil ailesi duyurusu ilgi çekici olsa da, Angelelli Automobili henüz geniş kitlelerce bilinen ana akım bir marka olmadığı için sosyal medyada sınırlı bir yankı uyandırır.",
+          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımızaçıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerekhazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek."
+          "full_text": "Sigortacılık ve Özel Emeklilik Düzenleme ve Denetleme Kurumu (SEDDK), vatandaşların sigorta işlemlerine dair verilere daha kolay ulaşabilmesi adına önemli bir adım attı. Bu kapsamda e-Devlet üzerinden sigorta takibi hizmeti genişletilerek kullanıcıların erişimine sunulan yeni özellikler devreye alındı. Kurum tarafından yapılan açıklamada, “Özel Sigortalarım” hizmetinin ikinci aşamasının başarıyla tamamlandığı duyuruldu. Yapılan bu güncellemelerle birlikte sigorta süreçlerine dair dijital altyapı daha kapsamlı bir hale getirildi. Yeni aşama ile birlikte sigortalılar, yaşadıkları bir hasar sonrasında sürece ilişkin tüm detaylara dijital ortamdan ulaşma imkanına kavuştu. Özellikleeksper tarafından hazırlanan raporlar, kaza tespit tutanakları ve kazadaki kusur oranları artık e-Devlet üzerinden incelenebiliyor. Bu yenilik, hasar süreçlerinde ihtiyaç duyulan belgelere ulaşmak için farklı kanallara başvurma zorunluluğunu ortadan kaldırıyor. Vatandaşlar, sigorta şirketleri ile olan süreçlerini tek bir platform üzerinden şeffaf bir şekilde takip edebiliyor. Sistem, yalnızca güncel hasar dosyalarını değil, aynı zamanda geçmişe dönük verileri de kapsıyor. Sigortalılar, mevcut poliçelerinin yanı sıra geçmişte sahip oldukları poliçelerin ayrıntılarını da sistem üzerinden görüntüleyebiliyor. Bu genişletilmiş hizmet, sigorta branşları arasındaki veri akışını daha düzenli hale getirmeyi amaçlıyor. Kullanıcılar, farklı sigorta türlerine ait tüm geçmiş verilerini tek bir ekranda toplayarak sigorta geçmişlerini daha rahat kontrol edebiliyor. Platforma eklenen bir diğer önemli özellik ise poliçe sürelerinin takibini kolaylaştıran yenileme uyarıları oldu. Sigortanın yenilenme zamanı yaklaştığında, kullanıcılar e-Devlet üzerinden bilgilendirilecek. Bu uyarı sistemi, poliçe bitiş tarihlerinin takibini kolaylaştırarak sigortasız kalma riskini azaltmayı hedefliyor. Kullanıcılar, yenileme zamanı gelen poliçelerini zamanında takip ederek gerekli işlemlerini hızlıca gerçekleştirebilecek. Projenin geliştirilme sürecinde SEDDK’nın yanı sıra Siber Güvenlik Başkanlığı ve Sigorta Bilgi ve Gözetim Merkezi (SBM) de aktif rol aldı. Çalışmanın temel amacı, vatandaşların sigorta uygulamalarına daha hızlı, güncel ve kapsamlı şekilde erişebilmesini sağlamak olarak açıklandı. Kurum, dijitalleşme vizyonu doğrultusunda sigorta sektöründeki bürokratik süreçleri azaltmaya devam ediyor. Vatandaşların sigorta işlemlerini dijital ortamda yönetebilmesi, hem zaman tasarrufu sağlıyor hem de bilgiye erişimi hızlandırıyor. Sizce e-Devlet üzerinden sunulan bu yeni sigorta takip özellikleri, sigorta işlemlerinizi yönetmenizi kolaylaştıracak mı? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
         },
-        "post_text": "ANGELELLİ AUTOMOBİLİ’DEN YENİ SÜPER OTOMOBİL AİLESİ: “TİPO 829 TERRA, STRADA VE PİSTA”\n\nİtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "post_text_length": 472,
-        "story_card_title": "ANGELELLİ'DEN YEDİ YILLIK SÜPER OTOMOBİL SÜRPRİZİ!",
-        "story_card_subtitle": "İtalyan Angelelli Automobili, yedi yıllık çalışmanın ardından Tipo 829 ailesini tanıttı. Yeni modeller Terra, Strada ve Pista, 3.4 litrelik V6 motorun farklı güç versiyonlarıyla yollara çıkıyor. Bu seri, otomobil dünyasında uzun süre konuşulacak bir gelişme.",
+        "post_text": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
+        "post_text_length": 374,
+        "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
+        "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-06T07:05:00.883136+03:00"
+      "updated_at": "2026-10-06T08:03:36.133173+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista”",
-          "link": "https://www.log.com.tr/angelelli-automobiliden-yeni-super-otomobil-ailesi-tipo-829-terra-strada-ve-pista/",
+          "title": "Araç Sahipleri Dikkat: Sigortada Yeni Dönem Başlıyor",
+          "link": "https://shiftdelete.net/sigortada-yeni-donem-hasar-ve-kusur-bilgileri-artik-e-devlette",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-06T07:01:36.654752+03:00",
-          "summary": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerek hazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek. Angelelli Automobili’den yeni süper otomobil ailesi: “Tipo 829 Terra, Strada ve Pista” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-05_16-07-36_9NXn8-660x371.jpg"
-          ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
+          "published": "2026-10-06T04:30:19+00:00",
+          "summary": "e-Devlet üzerinden sigorta takibi kolaylaştı. Hasar raporları, kusur oranları ve poliçe bilgilerinize artık e-Devlet ile hızlıca ulaşabilirsiniz.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "meta_og",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "829-ailesi-angelelli-automobili-otomobil-pista-strada-super-terra-tipo",
-          "base_ai_score": 45,
+          "topic_fingerprint": "arac-basliyor-dikkat-donem-sahipleri-sigortada",
+          "base_ai_score": 65,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 12,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 10,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 7
           },
-          "score": 51,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni bir süper otomobil ailesi duyurusu ilgi çekici olsa da, Angelelli Automobili henüz geniş kitlelerce bilinen ana akım bir marka olmadığı için sosyal medyada sınırlı bir yankı uyandırır.",
+          "score_explanation": "Tüm araç sahiplerini doğrudan ilgilendiren yasal ve pratik bir gelişme olduğundan e-Devlet entegrasyonu yüksek etkileşim yaratır.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "İtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımızaçıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli Strada, standart yol sürüşü düşünülerekhazırlanmış. Oldukça etkileyici bir direksiyon simidine sahip olan Pista’yı doğrudan pist sürüşüne odaklayan şirket, Terra’yı “ralli” mantığıyla farklı zeminlerde yüksek performans sergileyebilecek bir otomobil olarak geliştirmiş. Fiyatına dair henüz net bir açıklama yapılmayan aile, özel sipariş üzerine üretilecek.",
-          "post_text_for_card": "ANGELELLİ AUTOMOBİLİ’DEN YENİ SÜPER OTOMOBİL AİLESİ: “TİPO 829 TERRA, STRADA VE PİSTA”\n\nİtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-          "story_card_title": "ANGELELLİ'DEN YEDİ YILLIK SÜPER OTOMOBİL SÜRPRİZİ!",
-          "story_card_subtitle": "İtalyan Angelelli Automobili, yedi yıllık çalışmanın ardından Tipo 829 ailesini tanıttı. Yeni modeller Terra, Strada ve Pista, 3.4 litrelik V6 motorun farklı güç versiyonlarıyla yollara çıkıyor. Bu seri, otomobil dünyasında uzun süre konuşulacak bir gelişme.",
+          "full_text": "Sigortacılık ve Özel Emeklilik Düzenleme ve Denetleme Kurumu (SEDDK), vatandaşların sigorta işlemlerine dair verilere daha kolay ulaşabilmesi adına önemli bir adım attı. Bu kapsamda e-Devlet üzerinden sigorta takibi hizmeti genişletilerek kullanıcıların erişimine sunulan yeni özellikler devreye alındı. Kurum tarafından yapılan açıklamada, “Özel Sigortalarım” hizmetinin ikinci aşamasının başarıyla tamamlandığı duyuruldu. Yapılan bu güncellemelerle birlikte sigorta süreçlerine dair dijital altyapı daha kapsamlı bir hale getirildi. Yeni aşama ile birlikte sigortalılar, yaşadıkları bir hasar sonrasında sürece ilişkin tüm detaylara dijital ortamdan ulaşma imkanına kavuştu. Özellikleeksper tarafından hazırlanan raporlar, kaza tespit tutanakları ve kazadaki kusur oranları artık e-Devlet üzerinden incelenebiliyor. Bu yenilik, hasar süreçlerinde ihtiyaç duyulan belgelere ulaşmak için farklı kanallara başvurma zorunluluğunu ortadan kaldırıyor. Vatandaşlar, sigorta şirketleri ile olan süreçlerini tek bir platform üzerinden şeffaf bir şekilde takip edebiliyor. Sistem, yalnızca güncel hasar dosyalarını değil, aynı zamanda geçmişe dönük verileri de kapsıyor. Sigortalılar, mevcut poliçelerinin yanı sıra geçmişte sahip oldukları poliçelerin ayrıntılarını da sistem üzerinden görüntüleyebiliyor. Bu genişletilmiş hizmet, sigorta branşları arasındaki veri akışını daha düzenli hale getirmeyi amaçlıyor. Kullanıcılar, farklı sigorta türlerine ait tüm geçmiş verilerini tek bir ekranda toplayarak sigorta geçmişlerini daha rahat kontrol edebiliyor. Platforma eklenen bir diğer önemli özellik ise poliçe sürelerinin takibini kolaylaştıran yenileme uyarıları oldu. Sigortanın yenilenme zamanı yaklaştığında, kullanıcılar e-Devlet üzerinden bilgilendirilecek. Bu uyarı sistemi, poliçe bitiş tarihlerinin takibini kolaylaştırarak sigortasız kalma riskini azaltmayı hedefliyor. Kullanıcılar, yenileme zamanı gelen poliçelerini zamanında takip ederek gerekli işlemlerini hızlıca gerçekleştirebilecek. Projenin geliştirilme sürecinde SEDDK’nın yanı sıra Siber Güvenlik Başkanlığı ve Sigorta Bilgi ve Gözetim Merkezi (SBM) de aktif rol aldı. Çalışmanın temel amacı, vatandaşların sigorta uygulamalarına daha hızlı, güncel ve kapsamlı şekilde erişebilmesini sağlamak olarak açıklandı. Kurum, dijitalleşme vizyonu doğrultusunda sigorta sektöründeki bürokratik süreçleri azaltmaya devam ediyor. Vatandaşların sigorta işlemlerini dijital ortamda yönetebilmesi, hem zaman tasarrufu sağlıyor hem de bilgiye erişimi hızlandırıyor. Sizce e-Devlet üzerinden sunulan bu yeni sigorta takip özellikleri, sigorta işlemlerinizi yönetmenizi kolaylaştıracak mı? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
+          "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
+          "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 3,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor.webp",
+            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor-2.webp",
+            "https://ares.shiftdelete.net/2026/10/arac-sahipleri-dikkat-sigortada-yeni-donem-basliyor-3.webp"
+          ]
         },
-        "post_text": "ANGELELLİ AUTOMOBİLİ’DEN YENİ SÜPER OTOMOBİL AİLESİ: “TİPO 829 TERRA, STRADA VE PİSTA”\n\nİtalya merkezli otomobil üreticisi Angelelli Automobili, bu kez yedi yıllık bir çalışmanın ürünü olan Tipo 829 Terra, Tipo 829 Strada ve Tipo 829 Pista modelleriyle karşımıza çıkıyor. 3,4 litrelik altı silindirli motoru temel alan yeni seri, farklı güç seviyelerini ve yol koşullarını hedefliyor. Ailenin 500 beygirlik ana modeli\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
-        "story_card_title": "ANGELELLİ'DEN YEDİ YILLIK SÜPER OTOMOBİL SÜRPRİZİ!",
-        "story_card_subtitle": "İtalyan Angelelli Automobili, yedi yıllık çalışmanın ardından Tipo 829 ailesini tanıttı. Yeni modeller Terra, Strada ve Pista, 3.4 litrelik V6 motorun farklı güç versiyonlarıyla yollara çıkıyor. Bu seri, otomobil dünyasında uzun süre konuşulacak bir gelişme.",
-        "image_path": "/tmp/otoxtra_img_8oivc4jt.jpg",
+        "post_text": "E-Devlet'e sigorta bilgileri geldi diye sevinmek biraz erken. Asıl mesele, şeffaflık beklentisiyle birlikte gelen yeni yükümlülükler.\n\nArtık hasar raporları, kusur oranları ve poliçe detayları tek tıkla önünüzde. Bu durum, sigorta şirketlerinin işini kolaylaştırırken, araç sahiplerinin de her detayı anında görmesini sağlıyor.\n\nYani artık \"benim haberim yoktu\" devri bitti.",
+        "story_card_title": "SİGORTADA YENİ DÖNEM BAŞLIYOR!",
+        "story_card_subtitle": "Araç sahipleri için sigorta takibi artık çok daha kolay. e-Devlet üzerinden hasar raporları, kusur oranları ve poliçe bilgilerinize saniyeler içinde ulaşabileceksiniz. Bu şeffaflık, sigorta şirketlerini de daha dikkatli olmaya itecek.",
+        "image_path": "/tmp/otoxtra_img_2w3r1_pa.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_8oivc4jt.jpg"
+          "/tmp/otoxtra_img_2w3r1_pa.jpg",
+          "/tmp/otoxtra_img_w3i4iuee.jpg",
+          "/tmp/otoxtra_img_vae7ock3.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 3
       },
       "error": null,
-      "updated_at": "2026-10-06T07:05:11.939389+03:00"
+      "updated_at": "2026-10-06T08:03:37.283541+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122182398116916499",
+        "post_id": "678053852057751_122182405076916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18126590635871163",
+            "id": "18134109955638681",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1450865340287885",
+            "id": "2300532734045564",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-06T07:06:35.844091+03:00"
+      "updated_at": "2026-10-06T08:04:12.307999+03:00"
     }
   }
 }
