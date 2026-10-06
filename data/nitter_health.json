@@ -1,30 +1,30 @@
 {
   "instances": {
     "nitter.zebes.info": {
-      "failures": 9,
+      "failures": 10,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-10-06T04:04:32+00:00",
+      "last_change": "2026-10-06T08:03:07+00:00",
       "last_status": 429
     },
     "nitter.kabii.moe": {
-      "failures": 2,
+      "failures": 3,
       "successes": 35,
       "state": "degraded",
-      "reason": "http_404",
+      "reason": "no_images",
       "blocked_until": 0.0,
-      "last_change": "2026-10-06T06:02:52+00:00",
+      "last_change": "2026-10-06T08:04:57+00:00",
       "last_status": 404
     },
     "nitter.wisq.net": {
-      "failures": 3,
+      "failures": 4,
       "successes": 0,
-      "state": "degraded",
-      "reason": "readtimeout",
-      "blocked_until": 0.0,
-      "last_change": "2026-10-05T12:03:02+00:00",
+      "state": "blocked",
+      "reason": "http_429",
+      "blocked_until": 1791277498.5527985,
+      "last_change": "2026-10-06T08:04:58+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
@@ -40,8 +40,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1791270213.3910537,
-      "last_change": "2026-10-06T06:03:33+00:00",
+      "blocked_until": 1791277337.7030969,
+      "last_change": "2026-10-06T08:02:17+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,8 +49,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1791270147.108028,
-      "last_change": "2026-10-06T06:02:27+00:00",
+      "blocked_until": 1791277323.165083,
+      "last_change": "2026-10-06T08:02:03+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
@@ -67,26 +67,26 @@
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1791270197.8678524,
-      "last_change": "2026-10-06T06:03:17+00:00",
+      "blocked_until": 1791277327.8321557,
+      "last_change": "2026-10-06T08:02:07+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
-      "failures": 6,
+      "failures": 7,
       "successes": 9,
       "state": "degraded",
       "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-10-06T06:03:56+00:00",
+      "last_change": "2026-10-06T08:02:40+00:00",
       "last_status": 404
     },
     "nitter.meowing.monster": {
-      "failures": 11,
+      "failures": 12,
       "successes": 107,
       "state": "degraded",
       "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-10-06T06:03:59+00:00",
+      "last_change": "2026-10-06T08:02:44+00:00",
       "last_status": 404
     },
     "nitter.netbub.com": {
@@ -94,26 +94,26 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1791270200.9768162,
-      "last_change": "2026-10-06T06:03:20+00:00",
+      "blocked_until": 1791277330.7854507,
+      "last_change": "2026-10-06T08:02:10+00:00",
       "last_status": 403
     },
     "shitter.thepixora.com": {
-      "failures": 0,
-      "successes": 79,
-      "state": "ok",
-      "reason": "",
-      "blocked_until": 0.0,
-      "last_change": "2026-10-06T06:05:00+00:00",
-      "last_status": 404
+      "failures": 1,
+      "successes": 86,
+      "state": "blocked",
+      "reason": "http_403",
+      "blocked_until": 1791277495.2195625,
+      "last_change": "2026-10-06T08:04:55+00:00",
+      "last_status": 403
     },
     "nitter.jaydenha.uk": {
-      "failures": 40,
+      "failures": 41,
       "successes": 4,
       "state": "degraded",
       "reason": "empty_feed",
       "blocked_until": 0.0,
-      "last_change": "2026-10-06T05:02:29+00:00",
+      "last_change": "2026-10-06T08:02:48+00:00",
       "last_status": 404
     },
     "nitter.gravitywell.xyz": {
@@ -126,5 +126,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-10-06T06:05:00+00:00"
+  "updated_at": "2026-10-06T08:04:58+00:00"
 }
