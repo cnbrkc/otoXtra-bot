@@ -113,10 +113,14 @@ python -m core.orchestrator
          │
          ├─ 3. WRITE — agent_writer.py
          │   ├─ En yüksek puanlı haber seçilir
-         │   ├─ YZ'ye Türkçe Facebook postu yazdırılır (post_writer promptu)
+         │   ├─ YZ'ye post yazdırılır (post_writer promptu = otoXtra'nın TEK sesi:
+         │   │    Threads/X dili; Facebook'ta da AYNI metin, AYNI dil yayınlanır)
+         │   ├─ Prompta son 3 paylaşımın açılış cümlesi eklenir (tekrar kırma)
          │   ├─ Kalite kontrol: uzunluk, satır sayısı, yabancı alfabe, İngilizce oran
-         │   ├─ Başarısız olursa → otomatik onarım denemesi (1 kez)
-         │   ├─ O da başarısız olursa → fallback post (başlık + özet)
+         │   ├─ Ezber açılış kalıbı ('asıl mesele' vb.) varsa → 1 kez yeniden yazım
+         │   │    (başarısızsa ORİJİNAL metin korunur, paylaşım durmaz)
+         │   ├─ Başarısız olursa → otomatik onarım denemesi (1 kez, aynı Threads sesi)
+         │   ├─ O da başarısız olursa → fallback post (başlık + özet + iddia kapanışı)
          │   ├─ Story card için ÖZEL başlık + alt metin üretilir (story_card_writer)
          │   └─ Çıktı: pipeline.json → stages.write.output{post_text, story_card_title, story_card_subtitle}
          │
@@ -348,9 +352,18 @@ viral_scorer  → agent_scorer.py tarafından kullanılır
                Haberlerin 0-100 puanlanması, JSON dizisi formatı
                ÇIKTI: [{sira, baslik, puan, gerekce, detay{...}}]
 post_writer   → agent_writer.py tarafından kullanılır
-               Türkçe post yazma kuralları (v5.7: tek otoXtra sesi — Threads/X
-               tarzı tartışma üslubu, marka dokunulmazlığı; Facebook + Threads
-               aynı üslup, story aynı sesin kısası)
+               Türkçe post yazma kuralları (v5.8: dil = otoXtra'nın Threads/X
+               dili; Facebook'ta da aynı metin aynı dille çıkar, ayrı bir
+               Facebook üslubu YOK)
+               Bölümler:
+                 • SALT BİLGİ ÇEKİRDEĞİ — haberin somut verisi (kim/ne/kaç/ne
+                   zaman) metnin omurgası; en az 2 somut veri korunur, rakam ve
+                   birim kaynaktaki gibi yazılır
+                 • KANCA BANKASI — 7 farklı açılış yolu, aynı iskeletin her
+                   postta tekrarlanması yasak
+                 • KLİŞE YASAĞI — 'asıl mesele' tarzı ezber açılışlar yasak
+                   (kod tarafında _enforce_hook_freshness ile de denetlenir)
+                 • MARKA DOKUNULMAZLIĞI + tartışma dili (v5.7'den korunuyor)
                ÇIKTI: Sadece post metni (JSON değil, düz metin)
 story_card_writer → agent_writer.py tarafından kullanılır
                Story kartı için ÖZEL başlık + alt metin üretimi

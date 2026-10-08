@@ -1,5 +1,29 @@
 """
-agents/agent_writer.py - Icerik yazma ajani (v5.7 - Tek Ses: Threads Tarzi + Marka Dokunulmazligi)
+agents/agent_writer.py - Icerik yazma ajani (v5.8 - Facebook = Threads Dili + Salt Bilgi Cekirdegi)
+
+v5.8 UPDATE:
+  - FACEBOOK ACIKLAMASI = THREADS DILI: post_writer promptu artik "Threads/X
+    editörü" olarak tanimlaniyor; Facebook icin ayri bir dil/yumusatma yok.
+    Prompt basinda "tek bir dil var: otoXtra'nin Threads dili" kurali sabitlendi.
+  - 'ASIL MESELE' KALIBI TEMIZLENDI: Promptun icindeki 3 "asil mesele" gondermesi
+    ve ORNEK TON'daki "BU HABERDE ASIL MESELE OTOMOBIL DEGIL" basligi kaldirildi.
+    (Ornek, modeli o kaliba kilitleyen en guclu citaydi.) Kalip artik yalnizca
+    yasak listesinde, tek kez geciyor.
+  - SALT BILGI CEKIRDEGI: Haberin somut verisi (kim/ne/kac/ne zaman) metnin
+    omurgasi olmak zorunda; en az 2 somut veri korunur, rakam/birim/model adi
+    kaynaktaki gibi yazilir. Yorum bilginin icine oturur, bilgiyi yutmaz.
+  - KANCA BANKASI: 7 farkli acilis yolu (rakamla gir, kesin yargi, konsensuse
+    ters, iki taraf, beklenti kirilmasi, gorunmeyen etki, zaman vurgusu).
+    Ayni iskeletin her postta tekrarlanmasi yasak.
+  - KOD TARAFI GUVENCELER:
+      * _find_cliches() + _enforce_hook_freshness(): ezber kalip tespit edilirse
+        metin 1 kez yeniden yazdirilir; yeniden yazim basarisizsa ORIJINAL metin
+        korunur (yayin asla bu yuzden durmaz).
+      * _recent_post_hooks(): son 3 paylasimin acilis cumlesi prompta eklenir,
+        "bu yapilari tekrarlama" denir (kayit yoksa davranis eski haliyle ayni).
+      * _repair_post_with_ai(): "Facebook postunu duzelt" dili birakildi; onarim
+        da ayni Threads/X sesi + salt bilgi kuraliyla calisiyor.
+      * _fallback_post(): tek sabit kapanis cumlesi yerine 3'lü rotasyon.
 
 v5.7 UPDATE:
   - TON (post_writer promptu): rls-asist/threads tarzina oturuldu. Sataşma
@@ -52,7 +76,7 @@ import re
 
 from core.ai_client import ask_ai, parse_ai_json
 from core.config_loader import load_config
-from core.helpers import first_sentence, turkish_upper
+from core.helpers import first_sentence, get_posted_news, turkish_upper
 from core.logger import log
 from core.state_manager import get_stage, set_stage
 
@@ -253,6 +277,109 @@ def _quality_check(post_text: str) -> tuple[bool, str]:
     return True, "ok"
 
 
+# ── EZBER KALIŞ (KLİŞE) KORUMASI (v5.8) ──────────────────────────────────────
+# Botun Facebook/Threads metinlerinde en çok tekrarladığı hata, hazır bir açılış
+# iskeleti bulup her habere onu yapıştırmaktı ('asıl mesele' kalıbı). Prompt artık
+# bu kalıbı üretmiyor; ayrıca kod tarafında tek bir yeniden yazım güvencesi var.
+# YENİDEN YAZIM BAŞARISIZ OLURSA ORİJİNAL METİN KORUNUR: paylaşım bu yüzden asla
+# durmaz veya fallback'e düşmez.
+_CLICHE_PHRASES = (
+    "asıl mesele",
+    "asil mesele",
+    "asıl konu şu",
+    "işin aslı",
+)
+
+
+def _find_cliches(post_text: str) -> list[str]:
+    """Metinde geçen ezber açılış kalıplarını döndürür (boş liste = temiz)."""
+    lowered = (post_text or "").lower()
+    return [phrase for phrase in _CLICHE_PHRASES if phrase in lowered]
+
+
+def _rewrite_cliche_post(post_text: str, article: dict, cliches: list[str]) -> str:
+    """Ezber kalıp içeren metni Threads dilinde bir kez yeniden yazdırır.
+
+    Bilgi korunur: rakam/birim/model adı değiştirilmez, yeni bilgi eklenmez.
+    Yalnızca açılış iskeleti ve kalıp tekrarları temizlenir.
+    """
+    title = article.get("title", "")
+    summary = article.get("summary", "")
+    source = article.get("source_name", "")
+
+    rewrite_prompt = (
+        "Aşağıdaki otoXtra post metnini, AYNI Threads/X dilinde kalacak şekilde yeniden yaz.\n"
+        "SORUN: Metin ezber bir açılış kalıbına yaslanıyor ("
+        + ", ".join(f"'{c}'" for c in cliches)
+        + "). Bu kalıbı ve benzerlerini metinden TAMAMEN çıkar.\n\n"
+        "KURALLAR:\n"
+        "- Haberin SOMUT verisini (rakam, birim, model adı, tarih) AYNEN koru; hiçbir bilgiyi değiştirme, yuvarlama veya ekleme.\n"
+        "- Yeni açılış cümlesi haberin somut detayından doğsun: rakamla gir, kesin bir yargı kur ya da beklentiyi kır. Hazır iskelet kullanma.\n"
+        "- Ton değişmesin: kendinden emin, kısa ve kesik cümleler. Soru işareti YOK, 'beğen/paylaş/takip et' çağrısı YOK.\n"
+        "- Markaya, modele veya üreticiye sataşma YOK.\n"
+        "- MUTLAKA TÜRKÇE yaz ve Türkçe karakterleri (ç, ş, ğ, ü, ö, ı) kullan; İngilizce kelime kullanma.\n"
+        "- En az 3 satır, toplam uzunluk KESİNLİKLE 480 karakteri GEÇMESİN.\n\n"
+        f"Haber başlığı: {title}\n"
+        f"Kaynak: {source}\n"
+        f"Özet: {summary[:300]}\n\n"
+        "Yeniden yazılacak metin:\n"
+        f"{post_text}\n\n"
+        "SADECE yeniden yazılmış Türkçe post metnini döndür, başka hiçbir şey ekleme."
+    )
+
+    log(f"[WRITER] Cliche rewrite denemesi: {cliches}", "INFO")
+    rewritten = ask_ai(rewrite_prompt, stage="writing_repair")
+    if not rewritten:
+        log("[WRITER] Cliche rewrite bos dondu", "WARNING")
+        return ""
+    return _clean_non_turkish_chars(_strip_wrapper_artifacts(rewritten))
+
+
+def _enforce_hook_freshness(post_text: str, article: dict) -> str:
+    """Ezber kalıp varsa tek bir yeniden yazım dener; olmazsa ORİJİNALİ döndürür."""
+    cliches = _find_cliches(post_text)
+    if not cliches:
+        return post_text
+
+    log(f"[WRITER] Ezber kalip tespit edildi: {cliches} — yeniden yazim deneniyor", "WARNING")
+    candidate = _rewrite_cliche_post(post_text, article, cliches)
+
+    if not candidate:
+        log("[WRITER] Yeniden yazim bos, orijinal metin korunuyor", "WARNING")
+        return post_text
+
+    remaining = _find_cliches(candidate)
+    if remaining:
+        log(f"[WRITER] Yeniden yazimda da kalip var: {remaining}, orijinal korunuyor", "WARNING")
+        return post_text
+
+    ok, reason = _quality_check(candidate)
+    if not ok:
+        log(f"[WRITER] Yeniden yazilan metin kalite kontrolunden gecmedi: {reason}, orijinal korunuyor", "WARNING")
+        return post_text
+
+    candidate = _strip_trailing_question(candidate)
+    log("[WRITER] Ezber kalip temizlendi, yeniden yazilan metin kullaniliyor", "INFO")
+    return candidate
+
+
+# v5.8: Fallback kapanışı da tek sabit cümleye kilitlenmesin (her postta aynı
+# kapanış = bot hissi). Başlığa göre deterministik seçim yapılır; soru ve CTA yok.
+_FALLBACK_CLOSINGS = (
+    "Bu gelişme otomobil gündemini bir süre meşgul edecek.",
+    "Rakamlar ortada, tartışma da tam buradan yürüyor.",
+    "Bu başlık otomobil gündeminde kolay kapanmayacak.",
+)
+
+
+def _stable_choice(text: str, options: tuple) -> str:
+    """Metne göre sabit (process'ler arası tekrarlanabilir) bir seçenek döndürür."""
+    if not options:
+        return ""
+    digest = sum(ord(char) for char in (text or ""))
+    return options[digest % len(options)]
+
+
 def _fallback_post(article: dict) -> str:
     title = (article.get("title", "") or "").strip()
     summary = (article.get("summary", "") or "").strip()
@@ -268,10 +395,11 @@ def _fallback_post(article: dict) -> str:
 
     # v5.5: Soru yerine iddia cümlesi. Boş 'siz ne düşünüyorsunuz?' kalıbı
     # community tonu ile çeliştiği için kaldırıldı.
+    # v5.8: Kapanış cümlesi başlığa göre seçilir; her postta aynı cümle çıkmaz.
     fallback = (
         f"{safe_title}\n\n"
         f"{body}\n\n"
-        "Bu gelişme otomobil gündemini bir süre meşgul edecek."
+        f"{_stable_choice(safe_title, _FALLBACK_CLOSINGS)}"
     ).strip()
     
     # Eğer hala 480'i aşarsa zorla kes
@@ -424,16 +552,21 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
     summary = article.get("summary", "")
     source = article.get("source_name", "")
 
+    # v5.8: Onarım da otoXtra'nın Threads/X sesinde çalışır. Eski "Aşağıdaki
+    # Facebook postunu düzelt" dili metni haber bültenine çekiyordu; Facebook'ta
+    # yayınlanan metin de Threads metninin aynısı olduğu için ses tek kalır.
     repair_prompt = (
-        "Aşağıdaki Facebook postunu düzelt.\n"
+        "Aşağıdaki otoXtra post metnini düzelt. Bu metin Threads ve Facebook'ta AYNI dille yayınlanıyor.\n"
         "KRİTİK KURALLAR:\n"
         "- MUTLAKA TAMAMEN TÜRKÇE YAZ. Hiçbir İngilizce kelime kullanma.\n"
         "- TÜRKÇE KARAKTERLERİ (ç, ş, ğ, ü, ö, ı, Ç, Ş, Ğ, Ü, Ö, İ) MUTLAKA KULLAN. ASLA 'c, s, g, u, o, i' gibi İngilizce ASCII karakterlerle yazma.\n"
+        "- SES: otoXtra'nın Threads/X sesi — kendinden emin, kısa ve kesik cümleler, iddialı açılış. Haber spikeri / basın bülteni diline çekme.\n"
+        "- SALT BİLGİ: Haberin somut verisini (rakam, birim, model adı, tarih) AYNEN koru; bilgi ekleme, yuvarlama veya uydurma.\n"
+        "- AÇILIŞ: İlk cümle hazır bir iskelet olmasın; açılışı haberin somut detayı (rakam, model adı, tarih) kursun. Ezber açılış kalıbı KULLANMA.\n"
         "- PARANTEZ içinde açıklama/yorum yapma.\n"
         "- Meta-instruction verme ('format it like', 'rewrite as' gibi).\n"
-        "- Bilgi uydurma, sadece verilen bilgileri kullan.\n"
-        "- 15 satırı geçme.\n"
-        "- Clickbait aşırılığına kaçma.\n"
+        "- En az 3 satır, 15 satırı geçme.\n"
+        "- Ucuz clickbait ('son dakika', 'şok', 'bomba') kullanma.\n"
         "- Son cümle NET BİR İDDİA olsun; soru işareti ve 'siz ne düşünüyorsunuz' gibi kalıp sorular KULLANMA.\n"
         "- 'beğen/paylaş/takip et' gibi doğrudan CTA kullanma.\n"
         "- ÖNCELİKLİ KURAL: Toplam karakter sayısı KESİNLİKLE 480'i GEÇMEZ (Threads limiti 500). Gerekirse özeti kısalt.\n\n"
@@ -456,7 +589,35 @@ def _repair_post_with_ai(post_text: str, article: dict) -> str:
     return repaired or ""
 
 
-def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
+def _recent_post_hooks(limit: int = 3) -> list[str]:
+    """Son paylaşımların açılış cümlelerini döndürür (yeniden eskiye).
+
+    v5.8: Aynı açılış iskeletinin her postta tekrarlanmasını önlemek için YZ'ye
+    "bu yapıları tekrarlama" listesi verilir. Kayıt yoksa boş liste döner ve
+    davranış eski hâliyle aynı kalır (yayın akışını etkilemez).
+    """
+    try:
+        posted_data = get_posted_news()
+        posts = posted_data.get("posts", []) if isinstance(posted_data, dict) else []
+        if not isinstance(posts, list):
+            return []
+
+        hooks: list[str] = []
+        for post in reversed(posts):
+            if not isinstance(post, dict):
+                continue
+            hook = str(post.get("hook", "") or "").strip()
+            if hook and hook not in hooks:
+                hooks.append(hook)
+            if len(hooks) >= limit:
+                break
+        return hooks
+    except Exception as exc:
+        log(f"[WRITER] Son acilislar okunamadi: {exc}", "WARNING")
+        return []
+
+
+def _build_writer_prompt(article: dict, writer_prompt: str, recent_hooks: list[str] | None = None) -> str:
     title = article.get("title", "")
     summary = article.get("summary", "")
     full_text = article.get("full_text", "")
@@ -470,13 +631,24 @@ def _build_writer_prompt(article: dict, writer_prompt: str) -> str:
     if full_text:
         input_parts.append(f"TAM_METİN: {full_text[:1000]}")
 
+    anti_repeat_block = ""
+    if recent_hooks:
+        anti_repeat_block = (
+            "SON PAYLAŞIMLARIN AÇILIŞ CÜMLELERİ — BU CÜMLE YAPILARINI VE VURGU KELİMELERİNİ TEKRARLAMA:\n"
+            + "\n".join(f"- {hook}" for hook in recent_hooks)
+            + "\n\n"
+        )
+
     return (
         f"{writer_prompt}\n\n"
-        "KRİTİK ÇIKTI KURALLARI:\n"
+        + anti_repeat_block
+        + "KRİTİK ÇIKTI KURALLARI:\n"
         "- SADECE Türkçe post metni dön. İngilizce kelime kullanma.\n"
         "- TÜRKÇE KARAKTERLERİ (ç, ş, ğ, ü, ö, ı) MUTLAKA KULLAN. ASLA ASCII KARAKTER (c, s, g) YAZMA.\n"
         "- Parantez içinde meta-açıklama yapma.\n"
         "- 'Wait', 'let's', 'format', 'rewrite' gibi instruction verme.\n"
+        "- Haberin somut bilgisini (rakam, birim, model adı, tarih) metinde net biçimde ver; yorum bu bilginin üzerine otursun.\n"
+        "- Açılış cümlesi ezber bir kalıp olmasın; haberin kendi somut detayından doğsun.\n"
         "- Maksimum 15 satır\n"
         "- Boş satırlar dahil düzenli format\n"
         "- EN ÖNEMLİ KURAL: Toplam karakter sayısı KESİNLİKLE 480'i GEÇMEZ. (Threads platform limiti 500'dur). Haberin tüm önemli detayını bu 480 karakter içinde ver, gereksiz uzatma.\n"
@@ -495,8 +667,14 @@ def generate_post_text(article: dict) -> str:
         log("[WRITER] ERROR: post_writer promptu bulunamadi", "ERROR")
         return ""
 
+    # v5.8: Son paylaşımların açılışları prompta eklenir; aynı iskeletin her
+    # postta tekrarlanması (ör. ezber kalıplar) böylece kırılır.
+    recent_hooks = _recent_post_hooks()
+    if recent_hooks:
+        log(f"[WRITER] Anti-tekrar: {len(recent_hooks)} son acilis prompta eklendi", "INFO")
+
     log("[WRITER] Calling AI for initial post generation (stage=writing)", "INFO")
-    post_text = ask_ai(_build_writer_prompt(article, writer_prompt), stage="writing")
+    post_text = ask_ai(_build_writer_prompt(article, writer_prompt, recent_hooks), stage="writing")
     
     if not post_text:
         log("[WRITER] AI returned empty response", "ERROR")
@@ -511,7 +689,9 @@ def generate_post_text(article: dict) -> str:
     if ok:
         log("[WRITER] Initial post passed quality check", "INFO")
         post_text = _strip_trailing_question(post_text)
-        return post_text if len(post_text) >= 30 else _fallback_post(article)
+        if len(post_text) < 30:
+            return _fallback_post(article)
+        return _enforce_hook_freshness(post_text, article)
 
     log(f"[WRITER] Initial post FAILED quality: {reason}", "WARNING")
     
@@ -531,7 +711,9 @@ def generate_post_text(article: dict) -> str:
     if ok2:
         log("[WRITER] Repaired post passed quality check", "INFO")
         repaired = _strip_trailing_question(repaired)
-        return repaired if len(repaired) >= 30 else _fallback_post(article)
+        if len(repaired) < 30:
+            return _fallback_post(article)
+        return _enforce_hook_freshness(repaired, article)
 
     log(f"[WRITER] Repaired post FAILED quality: {reason2}", "WARNING")
     log("[WRITER] Using fallback post", "INFO")
