@@ -1,5 +1,11 @@
 """
-agents/agent_publisher.py - Yayinci Ajani (v6.5 - Özel Story Card Metni)
+agents/agent_publisher.py - Yayinci Ajani (v6.6 - Paylasim Kaydina Acilis Cümlesi)
+
+v6.6 UPDATE:
+  - Paylasilan her postun ACILIS cümlesi (hook) posted_news kaydina yazilir.
+    agent_writer bu kaydi okuyup son 3 acilisi prompta ekler; ayni ezber
+    acilis iskeletinin her postta tekrarlanmasi boylece kirilir. Kayit alani
+    ek (additive) oldugu icin eski state dosyalari sorunsuz okunur.
 
 v6.5 UPDATE:
   - Story kartları, writer aşamasında ÖZEL üretilen başlık + alt metin ile
@@ -121,7 +127,26 @@ def _check_skip_probability(score: int = 0) -> tuple[bool, str]:
     return True, ""
 
 
-def _build_new_post_record(article: dict, post_id: str, image_source: str, image_count: int) -> dict:
+def _extract_hook(post_text: str) -> str:
+    """Post metninin açılış satırını (kanca) kısa biçimde döndürür.
+
+    v6.6: Writer, son paylaşımların açılışlarını görüp aynı iskeleti
+    tekrarlamamak için bu alanı okur (agents/agent_writer._recent_post_hooks).
+    """
+    for line in (post_text or "").split("\n"):
+        line = line.strip()
+        if line:
+            return line[:120]
+    return ""
+
+
+def _build_new_post_record(
+    article: dict,
+    post_id: str,
+    image_source: str,
+    image_count: int,
+    hook: str = "",
+) -> dict:
     fingerprint = article.get("topic_fingerprint", "") or generate_topic_fingerprint(article.get("title", ""))
     return {
         "title": article.get("title", "Baslik yok"),
@@ -134,10 +159,11 @@ def _build_new_post_record(article: dict, post_id: str, image_source: str, image
         "fb_post_id": post_id,
         "image_source": image_source,
         "image_count": image_count,
+        "hook": (hook or "")[:120] if isinstance(hook, str) else "",
     }
 
 
-def _record_posted(article: dict, post_id: str, image_source: str, image_count: int) -> None:
+def _record_posted(article: dict, post_id: str, image_source: str, image_count: int, hook: str = "") -> None:
     if not _is_persist_state_enabled():
         return
     try:
@@ -145,7 +171,7 @@ def _record_posted(article: dict, post_id: str, image_source: str, image_count: 
         today_str = get_today_str()
         posts_list = posted_data.get("posts", [])
         daily_counts = posted_data.get("daily_counts", {})
-        posts_list.append(_build_new_post_record(article, post_id, image_source, image_count))
+        posts_list.append(_build_new_post_record(article, post_id, image_source, image_count, hook=hook))
         daily_counts[today_str] = daily_counts.get(today_str, 0) + 1
         posted_data["posts"] = posts_list
         posted_data["daily_counts"] = daily_counts
@@ -452,7 +478,7 @@ def run() -> bool:
                 fb_success = True
                 final_image_source = article.get("image_source", image_source)
                 final_image_count = len(image_paths)
-                _record_posted(article, fb_post_id, final_image_source, final_image_count)
+                _record_posted(article, fb_post_id, final_image_source, final_image_count, hook=_extract_hook(post_text_content))
                 _record_shared_variant_cooldowns(article)
             else:
                 log("[PUBLISH] Facebook paylasimi basarisiz!", "ERROR")
