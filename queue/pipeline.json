@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-10-10-19:02",
-  "status": "completed",
-  "started_at": "2026-10-10T19:02:49.353253+03:00",
-  "updated_at": "2026-10-10T19:05:53.716201+03:00",
+  "run_id": "2026-10-10-20:02",
+  "status": "error",
+  "started_at": "2026-10-10T20:02:41.027203+03:00",
+  "updated_at": "2026-10-10T20:04:34.341322+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-            "link": "https://tr.motor1.com/news/811428/bmw-ix3-m60-resmi/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-10T15:00:00+00:00",
-            "summary": "0'dan 100 km/s hıza 3,9 saniyede çıkıyor ve 754 km'ye kadar menzil sunuyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "612-bmw-guce-ix3-logosuyla-ulasiyor"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/teknotagstr/rss",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -168,237 +146,47 @@
           "_metrics": {
             "found": 148,
             "after_keyword": 92,
-            "after_time": 10,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_time": 9,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 148,
           "after_keyword": 92,
-          "after_time": 10,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_time": 9,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-10T19:05:06.504668+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-10T20:04:34.341322+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-          "link": "https://tr.motor1.com/news/811428/bmw-ix3-m60-resmi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-10T15:00:00+00:00",
-          "summary": "0'dan 100 km/s hıza 3,9 saniyede çıkıyor ve 754 km'ye kadar menzil sunuyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "612-bmw-guce-ix3-logosuyla-ulasiyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 11
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, etkileyici menzil ve M performans logosu gibi detaylar elektrikli araç meraklılarının ilgisini çekecek yüksek viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 15,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 11
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yüksek beygir gücü, etkileyici menzil ve M performans logosu gibi detaylar elektrikli araç meraklılarının ilgisini çekecek yüksek viral potansiyele sahip.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 15,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 11
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-10T19:05:08.205009+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-          "link": "https://tr.motor1.com/news/811428/bmw-ix3-m60-resmi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-10T15:00:00+00:00",
-          "summary": "0'dan 100 km/s hıza 3,9 saniyede çıkıyor ve 754 km'ye kadar menzil sunuyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "612-bmw-guce-ix3-logosuyla-ulasiyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 11
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, etkileyici menzil ve M performans logosu gibi detaylar elektrikli araç meraklılarının ilgisini çekecek yüksek viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW,elektrikli iX3’ünen güçlü versiyonunu tanıttı.iX3 M60 xDriveadını taşıyan model, coupé-SUV gövdeli X4 M60 xDrive ile birlikte Neue Klasse platformunu temel alan ilk M Performance modellerinden biri olarak konumlanıyor. Toplam612 bgve 875 Nm tork üreten lüks SUV, 0’dan 100 km/s hıza3,9 saniyedeulaşıyor ve 240 km/s azami hıza çıkabiliyor. Siparişlerin Ocak 2027 sonunda başlaması, üretimin ise ilkbaharda Macaristan’daki Debrecen tesisinde başlaması planlanıyor. BMW iX3 M60 xDrive, her aks üzerinde birer elektromotor kullanıyor. Yeni nesil arka motor, performansa belirgin katkı sağlıyor. Yüksek voltajlı batarya108,7 kWhkullanılabilir kapasite sunuyor ve WLTP döngüsünde, henüz kesinleşmemiş verilere göre754 kmyekadar menzil vadediyor. Şarj tarafında800 voltmimari, DC istasyonlarında400 kW'akadar şarj gücüne imkân tanıyor; ideal şartlarda 10 dakikada 340 kilometreye kadar menzil elde ediliyor. AC şarjda azami şarj gücü ise 22 kW. Açıklanan tüketim değeri 100 km’de 17,6 ile 20,5 kWh arasında değişiyor. M60 xDrive, standart olarak elektronik kontrollü amortisörlere sahipAdaptive M süspansiyon, değişken oranlı sportif direksiyon ve elektronik kontrollü M Sport arka diferansiyel ile geliyor. Bu donanımlar, sürüş verilerini milisaniyeler içinde işleyen Heart of Joy sistemi ve BMW M Dynamic Performance Control ile birlikte çalışarak daha doğrudan ve hassas tepkiler sunmayı hedefliyor. BMW iX3 M60 (2027): sportif ayar Sürücü, direksiyon arkasındaki kulakçıklar üzerinden güç aktarma sisteminin tepkilerine de müdahale edebiliyor. M Sport ve M Sport Plus adlı özel sürüş modlarının yanı sıra M Sport fren sistemi de donanımlar arasında yer alıyor. Dış tasarımda M versiyonu; yarış dünyasından ilham alan yeni M Yellow Lights farları, BMW böbrek ızgaralarının yanlarındaki aydınlatmalı detaylar ve arkadaki M60 rozetiyle ayırt ediliyor. Standart olarak21 inç jantlarsunulurken, 22 inç jantlar opsiyon listesinde yer alıyor. Modele özel spoiler ve siyah difüzör de tasarımın diğer parçaları. Kabinde elektrikli ayarlara ve masaj fonksiyonuna sahip M Sport koltuklar, kırmızı \"saat 12\" işareti bulunan M direksiyon ve Boost ile M modlarına özel düğmeler öne çıkıyor. 17,9 inçlik merkezi ekrana sahipBMW Panoramic iDrivemultimedya sistemi, sürücü odaklı iç mekânı tamamlıyor. Boyutlar ise standart iX3 ile aynı kalıyor: 4,78 metre uzunluk, yaklaşık 1,90 metre genişlik ve 2,90 metrelik aks mesafesi. BMW iX3’ün bu versiyonu, markanın ilk Neue Klasse SUV modelinin ürün gamını üst seviyede tamamlıyor; M modellerine özgü performansı, günlük kullanım ve uzun yolculuklar için tasarlanan menzil ve şarj süreleriyle bir araya getiriyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "612 BEYGİRLİK GÜÇ VE 754 KM MENZİL, ARTIK SEKTÖRDE YENİSTANDART.\n\nYeni BMW iX3 M60 xDrive, 612 bg güç ve 875 Nm torkla geliyor. 0'dan 100 km/s hıza 3,9 saniyede ulaşan model, 754 km menzil sunuyor.\n\nBu rakamlar, elektrikli SUV segmentinde beklentileri yeniden şekillendiriyor.\n\nÜretimin ilkbaharda Macaristan'daki Debrecen tesisinde başlaması planlanıyor.",
-        "post_text_length": 355,
-        "story_card_title": "BMW'DEN YENİ ELEKTRİKLİ CANAVAR!",
-        "story_card_subtitle": "Yeni BMW iX3 M60 xDrive, tam 612 beygir gücüyle yollara çıkıyor. Bu elektrikli SUV, 0'dan 100 km/s hıza sadece 3,9 saniyede ulaşıyor. Üstelik 754 km'lik menziliyle şarj derdini de ortadan kaldırıyor. Üretiminin Macaristan'da başlaması bekleniyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-10T19:05:11.759941+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Yeni BMW iX3, M logosuyla 612 bg güce ulaşıyor!",
-          "link": "https://tr.motor1.com/news/811428/bmw-ix3-m60-resmi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-10T15:00:00+00:00",
-          "summary": "0'dan 100 km/s hıza 3,9 saniyede çıkıyor ve 754 km'ye kadar menzil sunuyor.",
-          "image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/P3VMYr/s3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "612-bmw-guce-ix3-logosuyla-ulasiyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 11
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek beygir gücü, etkileyici menzil ve M performans logosu gibi detaylar elektrikli araç meraklılarının ilgisini çekecek yüksek viral potansiyele sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. BMW,elektrikli iX3’ünen güçlü versiyonunu tanıttı.iX3 M60 xDriveadını taşıyan model, coupé-SUV gövdeli X4 M60 xDrive ile birlikte Neue Klasse platformunu temel alan ilk M Performance modellerinden biri olarak konumlanıyor. Toplam612 bgve 875 Nm tork üreten lüks SUV, 0’dan 100 km/s hıza3,9 saniyedeulaşıyor ve 240 km/s azami hıza çıkabiliyor. Siparişlerin Ocak 2027 sonunda başlaması, üretimin ise ilkbaharda Macaristan’daki Debrecen tesisinde başlaması planlanıyor. BMW iX3 M60 xDrive, her aks üzerinde birer elektromotor kullanıyor. Yeni nesil arka motor, performansa belirgin katkı sağlıyor. Yüksek voltajlı batarya108,7 kWhkullanılabilir kapasite sunuyor ve WLTP döngüsünde, henüz kesinleşmemiş verilere göre754 kmyekadar menzil vadediyor. Şarj tarafında800 voltmimari, DC istasyonlarında400 kW'akadar şarj gücüne imkân tanıyor; ideal şartlarda 10 dakikada 340 kilometreye kadar menzil elde ediliyor. AC şarjda azami şarj gücü ise 22 kW. Açıklanan tüketim değeri 100 km’de 17,6 ile 20,5 kWh arasında değişiyor. M60 xDrive, standart olarak elektronik kontrollü amortisörlere sahipAdaptive M süspansiyon, değişken oranlı sportif direksiyon ve elektronik kontrollü M Sport arka diferansiyel ile geliyor. Bu donanımlar, sürüş verilerini milisaniyeler içinde işleyen Heart of Joy sistemi ve BMW M Dynamic Performance Control ile birlikte çalışarak daha doğrudan ve hassas tepkiler sunmayı hedefliyor. BMW iX3 M60 (2027): sportif ayar Sürücü, direksiyon arkasındaki kulakçıklar üzerinden güç aktarma sisteminin tepkilerine de müdahale edebiliyor. M Sport ve M Sport Plus adlı özel sürüş modlarının yanı sıra M Sport fren sistemi de donanımlar arasında yer alıyor. Dış tasarımda M versiyonu; yarış dünyasından ilham alan yeni M Yellow Lights farları, BMW böbrek ızgaralarının yanlarındaki aydınlatmalı detaylar ve arkadaki M60 rozetiyle ayırt ediliyor. Standart olarak21 inç jantlarsunulurken, 22 inç jantlar opsiyon listesinde yer alıyor. Modele özel spoiler ve siyah difüzör de tasarımın diğer parçaları. Kabinde elektrikli ayarlara ve masaj fonksiyonuna sahip M Sport koltuklar, kırmızı \"saat 12\" işareti bulunan M direksiyon ve Boost ile M modlarına özel düğmeler öne çıkıyor. 17,9 inçlik merkezi ekrana sahipBMW Panoramic iDrivemultimedya sistemi, sürücü odaklı iç mekânı tamamlıyor. Boyutlar ise standart iX3 ile aynı kalıyor: 4,78 metre uzunluk, yaklaşık 1,90 metre genişlik ve 2,90 metrelik aks mesafesi. BMW iX3’ün bu versiyonu, markanın ilk Neue Klasse SUV modelinin ürün gamını üst seviyede tamamlıyor; M modellerine özgü performansı, günlük kullanım ve uzun yolculuklar için tasarlanan menzil ve şarj süreleriyle bir araya getiriyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "612 BEYGİRLİK GÜÇ VE 754 KM MENZİL, ARTIK SEKTÖRDE YENİSTANDART.\n\nYeni BMW iX3 M60 xDrive, 612 bg güç ve 875 Nm torkla geliyor. 0'dan 100 km/s hıza 3,9 saniyede ulaşan model, 754 km menzil sunuyor.\n\nBu rakamlar, elektrikli SUV segmentinde beklentileri yeniden şekillendiriyor.\n\nÜretimin ilkbaharda Macaristan'daki Debrecen tesisinde başlaması planlanıyor.",
-          "story_card_title": "BMW'DEN YENİ ELEKTRİKLİ CANAVAR!",
-          "story_card_subtitle": "Yeni BMW iX3 M60 xDrive, tam 612 beygir gücüyle yollara çıkıyor. Bu elektrikli SUV, 0'dan 100 km/s hıza sadece 3,9 saniyede ulaşıyor. Üstelik 754 km'lik menziliyle şarj derdini de ortadan kaldırıyor. Üretiminin Macaristan'da başlaması bekleniyor.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_script",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/P3VMYr/s1/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.jpg",
-            "https://cdn.motor1.com/images/mgl/zx0B7K/s3/2027-bmw-ix3-m60.jpg",
-            "https://cdn.motor1.com/images/mgl/P3VMYr/s1/4x3/bmw-ix3-m60-xdrive-mit-ausgeschaltetem-abblendlicht.webp",
-            "https://cdn.motor1.com/images/mgl/OoZMgX/s3/2027-bmw-ix3-m60.jpg"
-          ]
-        },
-        "post_text": "612 BEYGİRLİK GÜÇ VE 754 KM MENZİL, ARTIK SEKTÖRDE YENİSTANDART.\n\nYeni BMW iX3 M60 xDrive, 612 bg güç ve 875 Nm torkla geliyor. 0'dan 100 km/s hıza 3,9 saniyede ulaşan model, 754 km menzil sunuyor.\n\nBu rakamlar, elektrikli SUV segmentinde beklentileri yeniden şekillendiriyor.\n\nÜretimin ilkbaharda Macaristan'daki Debrecen tesisinde başlaması planlanıyor.",
-        "story_card_title": "BMW'DEN YENİ ELEKTRİKLİ CANAVAR!",
-        "story_card_subtitle": "Yeni BMW iX3 M60 xDrive, tam 612 beygir gücüyle yollara çıkıyor. Bu elektrikli SUV, 0'dan 100 km/s hıza sadece 3,9 saniyede ulaşıyor. Üstelik 754 km'lik menziliyle şarj derdini de ortadan kaldırıyor. Üretiminin Macaristan'da başlaması bekleniyor.",
-        "image_path": "/tmp/otoxtra_img_1vsjhicl.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_1vsjhicl.jpg",
-          "/tmp/otoxtra_img_gwl8psoe.jpg",
-          "/tmp/otoxtra_img_5_eyx00k.jpg",
-          "/tmp/otoxtra_img_enk00gkb.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-10T19:05:16.443958+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122183214536916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18150343342526695",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2543189189479212",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-10T19:05:53.716201+03:00"
+      "updated_at": null
     }
   }
 }
