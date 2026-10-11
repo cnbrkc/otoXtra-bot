@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-11-08:02",
+  "run_id": "2026-10-11-09:02",
   "status": "error",
-  "started_at": "2026-10-11T08:02:09.155487+03:00",
-  "updated_at": "2026-10-11T08:03:46.909505+03:00",
+  "started_at": "2026-10-11T09:02:10.921836+03:00",
+  "updated_at": "2026-10-11T09:04:07.815340+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: Nitter failover: Ahmet Celik icin tum instance'lar basarisiz",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-11T08:03:46.909505+03:00"
+      "updated_at": "2026-10-11T09:04:07.815340+03:00"
     },
     "score": {
       "status": "waiting",
