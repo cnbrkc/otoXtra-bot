@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-10-11-09:02",
-  "status": "error",
-  "started_at": "2026-10-11T09:02:10.921836+03:00",
-  "updated_at": "2026-10-11T09:04:07.815340+03:00",
+  "run_id": "2026-10-11-11:02",
+  "status": "completed",
+  "started_at": "2026-10-11T11:02:26.761979+03:00",
+  "updated_at": "2026-10-11T11:05:02.452561+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+            "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T08:00:21+00:00",
+            "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +89,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: Nitter failover: TeknoTags icin tum instance'lar basarisiz",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +110,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://x.n0g.xyz/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -145,48 +165,232 @@
           },
           "_metrics": {
             "found": 147,
-            "after_keyword": 90,
-            "after_time": 7,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 89,
+            "after_time": 8,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 147,
-          "after_keyword": 90,
-          "after_time": 7,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 89,
+          "after_time": 8,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-11T09:04:07.815340+03:00"
+      "error": null,
+      "updated_at": "2026-10-11T11:04:10.470365+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T08:00:21+00:00",
+          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
+          "base_ai_score": 85,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 86,
+        "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 23,
+          "benzersizlik": 17,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+            "score": 86,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 17,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 10
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T11:04:14.186125+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T08:00:21+00:00",
+          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
+          "base_ai_score": 85,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "BMW, tamamen elektrikli yeni SUV coupe modeli olanyeni BMW iX4aracını resmen tanıttı. Neue Klasse platformu üzerine inşa edilen bu üçüncü model, yüksek menzil değerleri ve hızlı şarj kapasitesiyle dikkat çekiyor. Otomobil, 828 kilometreye ulaşan WLTP menzili, 400 kW hızlı şarj desteği ve 612 beygire kadar çıkan motor gücüyle geliyor. Üç farklı versiyonla gelen modelin teknik özellikleri ve donanım seçenekleri de detaylandırıldı. BMW iX4 serisinde iX4 40 xDrive, iX4 50 xDrive ve performans odaklı iX4 M60 xDrive olmak üzere üç seçenek bulunuyor. Giriş seviyesindeki 40 xDrive modeli, çift elektrik motoruyla 374 beygir güç ve 520 Nm tork üretiyor. Dört tekerlekten çekiş sistemine sahip bu versiyon, 0’dan 100 km/sa hıza 5,6 saniyede ulaşıyor. 82,6 kWh kapasiteli bataryasıyla WLTP ölçümlerine göre 638 kilometre menzil sunuyor. Orta seviyedeki 50 xDrive modeli ise 469 beygir güç ve 645 Nm tork ile geliyor. Bu versiyon 0-100 km/sa hızlanmasını 4,9 saniyede tamamlıyor ve 828 kilometreye kadar menzil vadediyor. Serinin en güçlüsü olan M60 xDrive, 612 beygir güç ve 875 Nm tork üreten çift motorlu bir sistem kullanıyor. Bu model 0’dan 100 km/sa hıza 3,9 saniyede çıkarken 777 kilometreye kadar WLTP menzili sunabiliyor. Yeni elektrik altyapısı 800 volt mimarisini temel alıyor. 50 xDrive ve M60 xDrive versiyonları 400 kW DC hızlı şarj desteğiyle 10 dakikada 387 kilometreye kadar ek menzil kazanabiliyor. Otomobilin tasarımında Neue Klasse ailesinin yeni ön yüzü ve aktif hava kapakçıkları yer alıyor. Aerodinamik çalışmalar sonucunda 0,23 Cd sürtünme katsayısına ulaşıldı. İç mekânda ön camın alt bölümüne yayılan BMW Panoramic Vision ekranı bulunuyor. Bu ekrana 17,9 inç büyüklüğündeki merkezi dokunmatik ekran eşlik ediyor. Android Açık Kaynak Projesi temelli BMW Operating System X işletim sistemi, kişiselleştirilebilir ekranlar ve dijital hizmetleri destekliyor. Amazon Alexa tabanlı BMW Intelligent Personal Assistant ise doğal dilde verilen komutlarla araç işlevlerini yönetiyor. Bagaj hacmi 490 litre olarak açıklanan modelde, arka koltuklar katlandığında bu alan 1.600 litreye çıkıyor. Ön kaputun altında ise 58 litrelik ek bir saklama alanı bulunuyor. BMW iX4’ün üretimi, Macaristan’ın Debrecen kentindeki fabrikada gerçekleştirilecek. Avrupa pazarındaki teslimatların Mart 2027 tarihinde başlaması planlanıyor. İngiltere pazarında 40 xDrive için 60.170 sterlin, 50 xDrive için ise 66.075 sterlin başlangıç fiyatı belirlendi. ABD’de 50 xDrive modelinin başlangıç fiyatı 66.200 dolar olarak açıklandı. Türkiye satış fiyatı ve yerel satış takvimi henüz duyurulmadı. Sizce yeni BMW iX4’ün sunduğu menzil ve şarj performansı elektrikli otomobil pazarındaki dengeleri değiştirebilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+        },
+        "post_text": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
+        "post_text_length": 439,
+        "story_card_title": "828 km menzil: Bu bir meydan okuma!",
+        "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T11:04:17.364963+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T08:00:21+00:00",
+          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
+          "base_ai_score": 85,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "BMW, tamamen elektrikli yeni SUV coupe modeli olanyeni BMW iX4aracını resmen tanıttı. Neue Klasse platformu üzerine inşa edilen bu üçüncü model, yüksek menzil değerleri ve hızlı şarj kapasitesiyle dikkat çekiyor. Otomobil, 828 kilometreye ulaşan WLTP menzili, 400 kW hızlı şarj desteği ve 612 beygire kadar çıkan motor gücüyle geliyor. Üç farklı versiyonla gelen modelin teknik özellikleri ve donanım seçenekleri de detaylandırıldı. BMW iX4 serisinde iX4 40 xDrive, iX4 50 xDrive ve performans odaklı iX4 M60 xDrive olmak üzere üç seçenek bulunuyor. Giriş seviyesindeki 40 xDrive modeli, çift elektrik motoruyla 374 beygir güç ve 520 Nm tork üretiyor. Dört tekerlekten çekiş sistemine sahip bu versiyon, 0’dan 100 km/sa hıza 5,6 saniyede ulaşıyor. 82,6 kWh kapasiteli bataryasıyla WLTP ölçümlerine göre 638 kilometre menzil sunuyor. Orta seviyedeki 50 xDrive modeli ise 469 beygir güç ve 645 Nm tork ile geliyor. Bu versiyon 0-100 km/sa hızlanmasını 4,9 saniyede tamamlıyor ve 828 kilometreye kadar menzil vadediyor. Serinin en güçlüsü olan M60 xDrive, 612 beygir güç ve 875 Nm tork üreten çift motorlu bir sistem kullanıyor. Bu model 0’dan 100 km/sa hıza 3,9 saniyede çıkarken 777 kilometreye kadar WLTP menzili sunabiliyor. Yeni elektrik altyapısı 800 volt mimarisini temel alıyor. 50 xDrive ve M60 xDrive versiyonları 400 kW DC hızlı şarj desteğiyle 10 dakikada 387 kilometreye kadar ek menzil kazanabiliyor. Otomobilin tasarımında Neue Klasse ailesinin yeni ön yüzü ve aktif hava kapakçıkları yer alıyor. Aerodinamik çalışmalar sonucunda 0,23 Cd sürtünme katsayısına ulaşıldı. İç mekânda ön camın alt bölümüne yayılan BMW Panoramic Vision ekranı bulunuyor. Bu ekrana 17,9 inç büyüklüğündeki merkezi dokunmatik ekran eşlik ediyor. Android Açık Kaynak Projesi temelli BMW Operating System X işletim sistemi, kişiselleştirilebilir ekranlar ve dijital hizmetleri destekliyor. Amazon Alexa tabanlı BMW Intelligent Personal Assistant ise doğal dilde verilen komutlarla araç işlevlerini yönetiyor. Bagaj hacmi 490 litre olarak açıklanan modelde, arka koltuklar katlandığında bu alan 1.600 litreye çıkıyor. Ön kaputun altında ise 58 litrelik ek bir saklama alanı bulunuyor. BMW iX4’ün üretimi, Macaristan’ın Debrecen kentindeki fabrikada gerçekleştirilecek. Avrupa pazarındaki teslimatların Mart 2027 tarihinde başlaması planlanıyor. İngiltere pazarında 40 xDrive için 60.170 sterlin, 50 xDrive için ise 66.075 sterlin başlangıç fiyatı belirlendi. ABD’de 50 xDrive modelinin başlangıç fiyatı 66.200 dolar olarak açıklandı. Türkiye satış fiyatı ve yerel satış takvimi henüz duyurulmadı. Sizce yeni BMW iX4’ün sunduğu menzil ve şarj performansı elektrikli otomobil pazarındaki dengeleri değiştirebilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
+          "story_card_title": "828 km menzil: Bu bir meydan okuma!",
+          "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-3.webp",
+            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati.webp",
+            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-2.webp",
+            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-4.webp"
+          ]
+        },
+        "post_text": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
+        "story_card_title": "828 km menzil: Bu bir meydan okuma!",
+        "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
+        "image_path": "/tmp/otoxtra_img_71ey9djr.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_71ey9djr.jpg",
+          "/tmp/otoxtra_img_lxipmo6w.jpg",
+          "/tmp/otoxtra_img_34o3bh_7.jpg",
+          "/tmp/otoxtra_img_riec_l77.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T11:04:21.730962+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122183316824916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18192643402396097",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1469008255083781",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T11:05:02.452561+03:00"
     }
   }
 }
