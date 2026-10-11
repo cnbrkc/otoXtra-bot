@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-10-10-20:02",
-  "status": "error",
-  "started_at": "2026-10-10T20:02:41.027203+03:00",
-  "updated_at": "2026-10-10T20:04:34.341322+03:00",
+  "run_id": "2026-10-11-06:02",
+  "status": "completed",
+  "started_at": "2026-10-11T06:02:11.764582+03:00",
+  "updated_at": "2026-10-11T06:04:57.051716+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+            "link": "https://tr.motor1.com/news/811429/porsche-missions-redline-teaser/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-10T17:00:00+00:00",
+            "summary": "Yakında çıkacak halo model, 911'in üzerinde konumlanacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "000-cevirecek-devir-hiper-otomobili-porsche"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: Nitter failover: TeknoTags icin tum instance'lar basarisiz",
             "attempts": 1,
             "instance": ""
           },
@@ -78,19 +100,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://x.n0g.xyz/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -106,87 +128,277 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "shitter.thepixora.com"
           },
           "otopodyum": {
             "status": "ok",
-            "count": 8,
+            "count": 7,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 148,
-            "after_keyword": 92,
-            "after_time": 9,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 147,
+            "after_keyword": 90,
+            "after_time": 10,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 148,
-          "after_keyword": 92,
-          "after_time": 9,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 147,
+          "after_keyword": 90,
+          "after_time": 10,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-10T20:04:34.341322+03:00"
+      "error": null,
+      "updated_at": "2026-10-11T06:04:04.630689+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+          "link": "https://tr.motor1.com/news/811429/porsche-missions-redline-teaser/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-10T17:00:00+00:00",
+          "summary": "Yakında çıkacak halo model, 911'in üzerinde konumlanacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "000-cevirecek-devir-hiper-otomobili-porsche",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche'nin yeni bir hiper otomobil duyurusu ve yüksek devirli motor detayı otomotiv dünyasında büyük heyecan yaratacak ve yüksek etkileşim alacak bir konudur.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1
+        },
+        "score": 84,
+        "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 1,
+        "score_breakdown": {
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 17,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Porsche'nin yeni bir hiper otomobil duyurusu ve yüksek devirli motor detayı otomotiv dünyasında büyük heyecan yaratacak ve yüksek etkileşim alacak bir konudur.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+            "score": 84,
+            "score_breakdown": {
+              "guncellik": 19,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 17,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 10
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T06:04:06.206319+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+          "link": "https://tr.motor1.com/news/811429/porsche-missions-redline-teaser/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-10T17:00:00+00:00",
+          "summary": "Yakında çıkacak halo model, 911'in üzerinde konumlanacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "000-cevirecek-devir-hiper-otomobili-porsche",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche'nin yeni bir hiper otomobil duyurusu ve yüksek devirli motor detayı otomotiv dünyasında büyük heyecan yaratacak ve yüksek etkileşim alacak bir konudur.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche’nin yeni hiper otomobili şimdiden özel bir şey olabileceğinin sinyallerini veriyor. Son paylaşılan teaser videosu da bizlerigerçektenheyecanlandırıyor. Otomobil üreticisi bugün, Mission S modeli için sosyal medyada yeni bir teaser videosu yayımladı. Video çok fazla şey göstermese de özellikle dikkat çekici bir ayrıntıyı ortaya koyuyor:8.000 rpm seviyesine tırmanan bir devir göstergesi. AyrıcaLexus F modellerindekinebenzer şekilde analog göstergeler de görüyoruz. Porsche'ninproje hakkında şimdiye kadar söyledikleri düşünüldüğünde, bu kadarı bile dikkatimizi çekmeye yetiyor. Porsche, bu hafta başındadoğruladığı üzere, 911’in üzerinde konumlanacak yeni bir ortadan motorlu \"hiper otomobil platformu\" geliştiriyor. Marka, bu mimarinin ileride tam bir model ailesine temel oluşturabileceğini ve yeni bir üst seviye performans ailesi kazandırabileceğini belirtiyor. Bu proje, Porsche’nin hiper otomobil segmentine dönüşü anlamına geliyor. Markanın son gerçek amiral gemisi, atmosferik V8 motoru elektromotorlarla birleştirerek887 bggüç üreten 918 Spyder’dı. Ondan önce efsanevi Carrera GT, daha öncesinde ise 959 gelmişti. Porsche, Mission S’in güç ünitesi hakkında henüz resmi bir açıklama yapmadı ve teaser’da gösterilenlerin ötesinde çok fazla teknik ayrıntı bilmiyoruz. Yine de şirketin net biçimde ortaya koyduğu bir nokta var: Bu yeni platform, Porsche ürün gamında911’in üzerindeyer alacak. Motor1 imzalı 2028 Porsche süper otomobil render'ı Bazı erken raporlar, Porsche için türünün ilk örneği olacak yeni birboxer 8 silindirli motorkullanacağını öne sürüyor. Bu video, motorun hızlı vites değiştiren bir PDK şanzımanla eşleştirileceğine işaret ediyor; ayrıca neredeyse kesin olarak turboşarjlı olacağını söyleyebiliriz. Olası hibrit destek konusunda hâlâ soru işaretleri var, ancak böyle bir seçim görürsek şaşırmayız. 918 Spyder bir PHEV'di ve Porsche’nin güncel Carrera GTS ile Turbo S'te kullandığı T-Hybrid teknolojisi araç sahipleri tarafından olumlu yorumlar topluyor. Porsche Mission S’in15 Ekimtarihindeki tanıtımıyla birlikte çok daha fazlasını öğreneceğiz. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "8.000 DEVİR, PORSCHE İÇİN BİLE ARTIK FARKLI BİR VİTES.\n\nPorsche'nin yeni hiper otomobili, 911'in üzerinde konumlanacak. İlk sızan videoda 8.000 devire çıkan bir gösterge var. Bu, markanın gelecekteki performans ailesi için yeni bir platform demek.\n\nElektrikli araçların devirsiz gücüne alışanlar için bu rakamın hâlâ bir anlamı var.\n\nGeleneksel motor devirleri artık sadece performans değil, aynı zamanda bir duruş meselesi.",
+        "post_text_length": 424,
+        "story_card_title": "Porsche'nin Devir Sınırı Yeniden Yazılıyor!",
+        "story_card_subtitle": "Porsche'nin yeni hiper otomobili, 911'in üzerinde konumlanarak markanın performans çıtasını yükseltiyor. Sızan ilk videoda aracın 8.000 devire ulaştığı görülüyor. Bu, elektrikli araçların devirsiz gücüne alışanlar için bile dikkat çekici bir rakam.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T06:04:09.004786+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche'nin yeni hiper otomobili 8.000 devir çevirecek!",
+          "link": "https://tr.motor1.com/news/811429/porsche-missions-redline-teaser/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-10T17:00:00+00:00",
+          "summary": "Yakında çıkacak halo model, 911'in üzerinde konumlanacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/eoW7ZE/s3/porsche-hypercar-redline-teaser-video.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "000-cevirecek-devir-hiper-otomobili-porsche",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche'nin yeni bir hiper otomobil duyurusu ve yüksek devirli motor detayı otomotiv dünyasında büyük heyecan yaratacak ve yüksek etkileşim alacak bir konudur.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche’nin yeni hiper otomobili şimdiden özel bir şey olabileceğinin sinyallerini veriyor. Son paylaşılan teaser videosu da bizlerigerçektenheyecanlandırıyor. Otomobil üreticisi bugün, Mission S modeli için sosyal medyada yeni bir teaser videosu yayımladı. Video çok fazla şey göstermese de özellikle dikkat çekici bir ayrıntıyı ortaya koyuyor:8.000 rpm seviyesine tırmanan bir devir göstergesi. AyrıcaLexus F modellerindekinebenzer şekilde analog göstergeler de görüyoruz. Porsche'ninproje hakkında şimdiye kadar söyledikleri düşünüldüğünde, bu kadarı bile dikkatimizi çekmeye yetiyor. Porsche, bu hafta başındadoğruladığı üzere, 911’in üzerinde konumlanacak yeni bir ortadan motorlu \"hiper otomobil platformu\" geliştiriyor. Marka, bu mimarinin ileride tam bir model ailesine temel oluşturabileceğini ve yeni bir üst seviye performans ailesi kazandırabileceğini belirtiyor. Bu proje, Porsche’nin hiper otomobil segmentine dönüşü anlamına geliyor. Markanın son gerçek amiral gemisi, atmosferik V8 motoru elektromotorlarla birleştirerek887 bggüç üreten 918 Spyder’dı. Ondan önce efsanevi Carrera GT, daha öncesinde ise 959 gelmişti. Porsche, Mission S’in güç ünitesi hakkında henüz resmi bir açıklama yapmadı ve teaser’da gösterilenlerin ötesinde çok fazla teknik ayrıntı bilmiyoruz. Yine de şirketin net biçimde ortaya koyduğu bir nokta var: Bu yeni platform, Porsche ürün gamında911’in üzerindeyer alacak. Motor1 imzalı 2028 Porsche süper otomobil render'ı Bazı erken raporlar, Porsche için türünün ilk örneği olacak yeni birboxer 8 silindirli motorkullanacağını öne sürüyor. Bu video, motorun hızlı vites değiştiren bir PDK şanzımanla eşleştirileceğine işaret ediyor; ayrıca neredeyse kesin olarak turboşarjlı olacağını söyleyebiliriz. Olası hibrit destek konusunda hâlâ soru işaretleri var, ancak böyle bir seçim görürsek şaşırmayız. 918 Spyder bir PHEV'di ve Porsche’nin güncel Carrera GTS ile Turbo S'te kullandığı T-Hybrid teknolojisi araç sahipleri tarafından olumlu yorumlar topluyor. Porsche Mission S’in15 Ekimtarihindeki tanıtımıyla birlikte çok daha fazlasını öğreneceğiz. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "8.000 DEVİR, PORSCHE İÇİN BİLE ARTIK FARKLI BİR VİTES.\n\nPorsche'nin yeni hiper otomobili, 911'in üzerinde konumlanacak. İlk sızan videoda 8.000 devire çıkan bir gösterge var. Bu, markanın gelecekteki performans ailesi için yeni bir platform demek.\n\nElektrikli araçların devirsiz gücüne alışanlar için bu rakamın hâlâ bir anlamı var.\n\nGeleneksel motor devirleri artık sadece performans değil, aynı zamanda bir duruş meselesi.",
+          "story_card_title": "Porsche'nin Devir Sınırı Yeniden Yazılıyor!",
+          "story_card_subtitle": "Porsche'nin yeni hiper otomobili, 911'in üzerinde konumlanarak markanın performans çıtasını yükseltiyor. Sızan ilk videoda aracın 8.000 devire ulaştığı görülüyor. Bu, elektrikli araçların devirsiz gücüne alışanlar için bile dikkat çekici bir rakam.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_script",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/eoW7ZE/s1/porsche-hypercar-redline-teaser-video.jpg",
+            "https://cdn.motor1.com/images/mgl/JOB9pE/s3/porsche-electric-hypercar-rendering.jpg",
+            "https://cdn.motor1.com/images/mgl/eoW7ZE/s1/4x3/porsche-hypercar-redline-teaser-video.webp",
+            "https://cdn.motor1.com/images/mgl/ZRz2o/s4/2018-porsche-718-boxster-gts-first-drive.jpg"
+          ]
+        },
+        "post_text": "8.000 DEVİR, PORSCHE İÇİN BİLE ARTIK FARKLI BİR VİTES.\n\nPorsche'nin yeni hiper otomobili, 911'in üzerinde konumlanacak. İlk sızan videoda 8.000 devire çıkan bir gösterge var. Bu, markanın gelecekteki performans ailesi için yeni bir platform demek.\n\nElektrikli araçların devirsiz gücüne alışanlar için bu rakamın hâlâ bir anlamı var.\n\nGeleneksel motor devirleri artık sadece performans değil, aynı zamanda bir duruş meselesi.",
+        "story_card_title": "Porsche'nin Devir Sınırı Yeniden Yazılıyor!",
+        "story_card_subtitle": "Porsche'nin yeni hiper otomobili, 911'in üzerinde konumlanarak markanın performans çıtasını yükseltiyor. Sızan ilk videoda aracın 8.000 devire ulaştığı görülüyor. Bu, elektrikli araçların devirsiz gücüne alışanlar için bile dikkat çekici bir rakam.",
+        "image_path": "/tmp/otoxtra_img_b_2q9y9i.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_b_2q9y9i.jpg",
+          "/tmp/otoxtra_img_05hmf70l.jpg",
+          "/tmp/otoxtra_img_le9duoji.jpg",
+          "/tmp/otoxtra_img_0tmd80wn.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T06:04:13.436894+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122183284664916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17911844955487796",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "983681877357662",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T06:04:57.051716+03:00"
     }
   }
 }
