@@ -1,14 +1,55 @@
 {
-  "run_id": "2026-10-11-17:02",
-  "status": "error",
-  "started_at": "2026-10-11T17:02:57.030715+03:00",
-  "updated_at": "2026-10-11T17:04:26.059286+03:00",
+  "run_id": "2026-10-11-19:03",
+  "status": "completed",
+  "started_at": "2026-10-11T19:03:23.458744+03:00",
+  "updated_at": "2026-10-11T19:05:53.839213+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Sony, akıllı telefonlar için Eclipsa Audio sertifikalı mikrofonunu tanıttı",
+            "link": "https://www.donanimhaber.com/sony-ecm-ax10-usb-c-mikrofon-iste-fiyati-ve-ozellikleri--211486",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T14:30:00+00:00",
+            "summary": "Sony, akıllı telefonlarda 48 kHz/32-bit float'a kadar ambisonic, binaural ve stereo ses kaydı yapmayı sağlayan dört mikrofonlu kompakt USB-C mikrofon ECM-AX10'u tanıttı.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/211486/1200x675sony-ecm-ax10-usb-c-mikrofon-iste-fiyati-ve-ozellikleri.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211486/1200x675sony-ecm-ax10-usb-c-mikrofon-iste-fiyati-ve-ozellikleri.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/211486/1200x675sony-ecm-ax10-usb-c-mikrofon-iste-fiyati-ve-ozellikleri.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "akilli-audio-eclipsa-mikrofonunu-sertifikali-sony-tanitti-telefonlar"
+          },
+          {
+            "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+            "link": "https://shiftdelete.net/skoda-1-7-milyon-arac-geri-cagirma",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T16:00:21+00:00",
+            "summary": "Skoda, direksiyon sistemindeki bir cıvata sorunu nedeniyle 1.7 milyondan fazla aracını geri çağırma kararı aldı. Detaylar haberimizde.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "arac-cagirma-cagrildi-dev-geri-milyon-servise-skoda"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -145,48 +186,249 @@
           },
           "_metrics": {
             "found": 147,
-            "after_keyword": 91,
-            "after_time": 10,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 90,
+            "after_time": 12,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 147,
-          "after_keyword": 91,
-          "after_time": 10,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 90,
+          "after_time": 12,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-11T17:04:26.059286+03:00"
+      "error": null,
+      "updated_at": "2026-10-11T19:04:59.414982+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+          "link": "https://shiftdelete.net/skoda-1-7-milyon-arac-geri-cagirma",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T16:00:21+00:00",
+          "summary": "Skoda, direksiyon sistemindeki bir cıvata sorunu nedeniyle 1.7 milyondan fazla aracını geri çağırma kararı aldı. Detaylar haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-cagirma-cagrildi-dev-geri-milyon-servise-skoda",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 79,
+          "score_reason": "ai_scored",
+          "score_explanation": "Milyonlarca aracı etkileyen büyük çaplı geri çağırma krizi, yüksek güvenlik endişesi ve sosyal medyada hızla yayılma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 79,
+        "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 15,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Milyonlarca aracı etkileyen büyük çaplı geri çağırma krizi, yüksek güvenlik endişesi ve sosyal medyada hızla yayılma potansiyeli taşıyor.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+            "score": 79,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 15,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 9
+            }
+          },
+          {
+            "title": "Sony, akıllı telefonlar için Eclipsa Audio sertifikalı mikrofonunu tanıttı",
+            "score": 30,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 4,
+              "benzersizlik": 3,
+              "gundem_gucu": 2,
+              "paylasilabilirlik": 1
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Sony, akıllı telefonlar için Eclipsa Audio sertifikalı mikrofonunu tanıttı",
+            "link": "https://www.donanimhaber.com/sony-ecm-ax10-usb-c-mikrofon-iste-fiyati-ve-ozellikleri--211486",
+            "score": 30,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "akilli-audio-eclipsa-mikrofonunu-sertifikali-sony-tanitti-telefonlar"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T19:05:01.487640+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+          "link": "https://shiftdelete.net/skoda-1-7-milyon-arac-geri-cagirma",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T16:00:21+00:00",
+          "summary": "Skoda, direksiyon sistemindeki bir cıvata sorunu nedeniyle 1.7 milyondan fazla aracını geri çağırma kararı aldı. Detaylar haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-cagirma-cagrildi-dev-geri-milyon-servise-skoda",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 79,
+          "score_reason": "ai_scored",
+          "score_explanation": "Milyonlarca aracı etkileyen büyük çaplı geri çağırma krizi, yüksek güvenlik endişesi ve sosyal medyada hızla yayılma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Skoda, dünya genelinde 1.7 milyondan fazla aracını ilgilendiren devasa bir geri çağırma operasyonu başlattı. Bu kapsamlıSkoda geri çağırmasüreci, direksiyon sisteminde tespit edilen teknik bir arıza nedeniyle zorunlu hale geldi. Söz konusu operasyon, Volkswagen Grubu bünyesinde Dieselgate skandalından bu yana gerçekleştirilen en büyük geri çağırma işlemlerinden biri olarak kayıtlara geçti. Şirket tarihinde ilk kez teslimatının üzerinden henüz üç ay geçmemiş olan araçlar da bu kapsamda servislere davet edildi. Teknik incelemeler sonucunda sorunun, direksiyon kutusunu ön aks alt şasisine sabitleyen altıgen başlı cıvatadaki bir kusurdan kaynaklandığı tespit edildi. Avrupa piyasasında yaklaşık 6 euro maliyeti olan bu küçük parça, nem ve yollarda kullanılan tuz gibi kimyasalların etkisiyle zamanla korozyona uğruyor. Korozyon süreci, bağlantının zamanla gevşemesine ve cıvatanın tamamen kırılmasına yol açabiliyor. Cıvatanın kırılması durumunda direksiyon kutusu yalnızca tek bir bağlantı noktasına sabitlenmiş olarak kalıyor. Bu durum, özellikle yüksek yük altında direksiyon hakimiyetinin kaybedilmesine ve aracın yolda savrulmasına neden olabiliyor. Yetkili servislerde, söz konusu cıvata korozyona karşı çok daha dayanıklı olan yeni bir cıvatayla tamamen ücretsiz bir şekilde değiştirilecek. Geri çağırma işlemi, Kasım 2015 ile Ağustos 2026 tarihleri arasında üretilmiş olan Octavia, Superb, Karoq ve Kodiaq modellerini kapsıyor. Araç sahiplerinin güvenlikleri adına en yakın yetkili servise başvurmaları büyük önem taşıyor. Bu teknik arıza, aracın temel sürüş dinamiklerini doğrudan etkileyen bir bileşen olduğu için ciddiyetle ele alınıyor. Servis ekipleri, cıvata değişimi sırasında direksiyon kutusunun bağlantı noktalarını da detaylı bir şekilde kontrol ediyor. Yaşanan bu gelişme, aslında Volkswagen Grubu genelinde aynı arıza riski nedeniyle yürütülen çok daha geniş kapsamlı bir sürecin sadece bir parçası. Daha önce Volkswagen, Audi ve SEAT markaları da aynı teknik sorun nedeniyle araçlarını geri çağırmıştı. Skoda’nın da bu sürece dahil olmasıyla birlikte, grup genelinde geri çağrılan toplam araç sayısı yaklaşık 4.6 milyona ulaştı. Sorun ilk olarak 2024 yılında tek bir araçta paslanmış cıvata tespit edilmesiyle ortaya çıkmıştı. Benzer vakaların sonrasında da görülmesine rağmen, Volkswagen ve Audi kapsamlı geri çağırma sürecini Eylül 2026 tarihinde başlatmıştı. Skoda ise bu adımı bir ay sonra, yani Ekim 2026’da atmayı tercih etti. Finansal sıkıntılarla boğuşan Volkswagen Grubu için bu gelişme, şirket itibarı üzerindeki baskıyı daha da artırmış durumda. Sizce otomobil üreticilerinin bu tür küçük parça hataları nedeniyle dünya genelinde milyonlarca aracı geri çağırması, marka güvenilirliğini nasıl etkiliyor? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+        },
+        "post_text": "1.7 milyon araç geri çağrılıyor. 6 euroluk bir cıvata korozyon sorununa yol açtı.\n\nSkoda, direksiyon kutusunu sabitleyen parçadaki sorun nedeniyle 1.7 milyondan fazla aracını servise çağırdı. Teslimatın üzerinden 3 ay geçmeyen araçlar bile listede.\n\nBu, Dieselgate'ten sonra VW Grubu'nun en büyük geri çağırması.",
+        "post_text_length": 312,
+        "story_card_title": "Direksiyonu Tutamayan Skoda'lar Geri Çağrılıyor!",
+        "story_card_subtitle": "Skoda, direksiyon kutusunu sabitleyen parçadaki korozyon sorununu tespit etti. Bu durum, markanın 1.7 milyondan fazla aracını servise çağırmasına neden oldu. Teslimatın üzerinden sadece 3 ay geçen araçlar bile geri çağırma listesinde yer alıyor. Bu, Dieselgate skandalından sonra VW Grubu'nun en büyük geri çağırma operasyonu olarak dikkat çekiyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T19:05:06.521961+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Skoda’dan Dev Geri Çağırma: 1.7 Milyon Araç Servise Çağrıldı",
+          "link": "https://shiftdelete.net/skoda-1-7-milyon-arac-geri-cagirma",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T16:00:21+00:00",
+          "summary": "Skoda, direksiyon sistemindeki bir cıvata sorunu nedeniyle 1.7 milyondan fazla aracını geri çağırma kararı aldı. Detaylar haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "arac-cagirma-cagrildi-dev-geri-milyon-servise-skoda",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 15,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 79,
+          "score_reason": "ai_scored",
+          "score_explanation": "Milyonlarca aracı etkileyen büyük çaplı geri çağırma krizi, yüksek güvenlik endişesi ve sosyal medyada hızla yayılma potansiyeli taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Skoda, dünya genelinde 1.7 milyondan fazla aracını ilgilendiren devasa bir geri çağırma operasyonu başlattı. Bu kapsamlıSkoda geri çağırmasüreci, direksiyon sisteminde tespit edilen teknik bir arıza nedeniyle zorunlu hale geldi. Söz konusu operasyon, Volkswagen Grubu bünyesinde Dieselgate skandalından bu yana gerçekleştirilen en büyük geri çağırma işlemlerinden biri olarak kayıtlara geçti. Şirket tarihinde ilk kez teslimatının üzerinden henüz üç ay geçmemiş olan araçlar da bu kapsamda servislere davet edildi. Teknik incelemeler sonucunda sorunun, direksiyon kutusunu ön aks alt şasisine sabitleyen altıgen başlı cıvatadaki bir kusurdan kaynaklandığı tespit edildi. Avrupa piyasasında yaklaşık 6 euro maliyeti olan bu küçük parça, nem ve yollarda kullanılan tuz gibi kimyasalların etkisiyle zamanla korozyona uğruyor. Korozyon süreci, bağlantının zamanla gevşemesine ve cıvatanın tamamen kırılmasına yol açabiliyor. Cıvatanın kırılması durumunda direksiyon kutusu yalnızca tek bir bağlantı noktasına sabitlenmiş olarak kalıyor. Bu durum, özellikle yüksek yük altında direksiyon hakimiyetinin kaybedilmesine ve aracın yolda savrulmasına neden olabiliyor. Yetkili servislerde, söz konusu cıvata korozyona karşı çok daha dayanıklı olan yeni bir cıvatayla tamamen ücretsiz bir şekilde değiştirilecek. Geri çağırma işlemi, Kasım 2015 ile Ağustos 2026 tarihleri arasında üretilmiş olan Octavia, Superb, Karoq ve Kodiaq modellerini kapsıyor. Araç sahiplerinin güvenlikleri adına en yakın yetkili servise başvurmaları büyük önem taşıyor. Bu teknik arıza, aracın temel sürüş dinamiklerini doğrudan etkileyen bir bileşen olduğu için ciddiyetle ele alınıyor. Servis ekipleri, cıvata değişimi sırasında direksiyon kutusunun bağlantı noktalarını da detaylı bir şekilde kontrol ediyor. Yaşanan bu gelişme, aslında Volkswagen Grubu genelinde aynı arıza riski nedeniyle yürütülen çok daha geniş kapsamlı bir sürecin sadece bir parçası. Daha önce Volkswagen, Audi ve SEAT markaları da aynı teknik sorun nedeniyle araçlarını geri çağırmıştı. Skoda’nın da bu sürece dahil olmasıyla birlikte, grup genelinde geri çağrılan toplam araç sayısı yaklaşık 4.6 milyona ulaştı. Sorun ilk olarak 2024 yılında tek bir araçta paslanmış cıvata tespit edilmesiyle ortaya çıkmıştı. Benzer vakaların sonrasında da görülmesine rağmen, Volkswagen ve Audi kapsamlı geri çağırma sürecini Eylül 2026 tarihinde başlatmıştı. Skoda ise bu adımı bir ay sonra, yani Ekim 2026’da atmayı tercih etti. Finansal sıkıntılarla boğuşan Volkswagen Grubu için bu gelişme, şirket itibarı üzerindeki baskıyı daha da artırmış durumda. Sizce otomobil üreticilerinin bu tür küçük parça hataları nedeniyle dünya genelinde milyonlarca aracı geri çağırması, marka güvenilirliğini nasıl etkiliyor? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "1.7 milyon araç geri çağrılıyor. 6 euroluk bir cıvata korozyon sorununa yol açtı.\n\nSkoda, direksiyon kutusunu sabitleyen parçadaki sorun nedeniyle 1.7 milyondan fazla aracını servise çağırdı. Teslimatın üzerinden 3 ay geçmeyen araçlar bile listede.\n\nBu, Dieselgate'ten sonra VW Grubu'nun en büyük geri çağırması.",
+          "story_card_title": "Direksiyonu Tutamayan Skoda'lar Geri Çağrılıyor!",
+          "story_card_subtitle": "Skoda, direksiyon kutusunu sabitleyen parçadaki korozyon sorununu tespit etti. Bu durum, markanın 1.7 milyondan fazla aracını servise çağırmasına neden oldu. Teslimatın üzerinden sadece 3 ay geçen araçlar bile geri çağırma listesinde yer alıyor. Bu, Dieselgate skandalından sonra VW Grubu'nun en büyük geri çağırma operasyonu olarak dikkat çekiyor.",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 3,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/10/skodadan-dev-geri-cagirma-1-7-milyon-arac-servise-cagrildi-2.webp",
+            "https://ares.shiftdelete.net/2026/10/skodadan-dev-geri-cagirma-1-7-milyon-arac-servise-cagrildi.webp",
+            "https://ares.shiftdelete.net/2026/10/skodadan-dev-geri-cagirma-1-7-milyon-arac-servise-cagrildi-3.webp"
+          ]
+        },
+        "post_text": "1.7 milyon araç geri çağrılıyor. 6 euroluk bir cıvata korozyon sorununa yol açtı.\n\nSkoda, direksiyon kutusunu sabitleyen parçadaki sorun nedeniyle 1.7 milyondan fazla aracını servise çağırdı. Teslimatın üzerinden 3 ay geçmeyen araçlar bile listede.\n\nBu, Dieselgate'ten sonra VW Grubu'nun en büyük geri çağırması.",
+        "story_card_title": "Direksiyonu Tutamayan Skoda'lar Geri Çağrılıyor!",
+        "story_card_subtitle": "Skoda, direksiyon kutusunu sabitleyen parçadaki korozyon sorununu tespit etti. Bu durum, markanın 1.7 milyondan fazla aracını servise çağırmasına neden oldu. Teslimatın üzerinden sadece 3 ay geçen araçlar bile geri çağırma listesinde yer alıyor. Bu, Dieselgate skandalından sonra VW Grubu'nun en büyük geri çağırma operasyonu olarak dikkat çekiyor.",
+        "image_path": "/tmp/otoxtra_img_4y_rsc6h.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_4y_rsc6h.jpg",
+          "/tmp/otoxtra_img_i69agdwp.jpg",
+          "/tmp/otoxtra_img__pnwepsg.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 3
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T19:05:10.688200+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122183371790916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18078528437716093",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "2642790112843213",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-11T19:05:53.839213+03:00"
     }
   }
 }
