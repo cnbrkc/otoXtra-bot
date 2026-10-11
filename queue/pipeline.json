@@ -1,57 +1,14 @@
 {
-  "run_id": "2026-10-11-15:02",
-  "status": "completed",
-  "started_at": "2026-10-11T15:02:17.227258+03:00",
-  "updated_at": "2026-10-11T15:04:46.834487+03:00",
+  "run_id": "2026-10-11-17:02",
+  "status": "error",
+  "started_at": "2026-10-11T17:02:57.030715+03:00",
+  "updated_at": "2026-10-11T17:04:26.059286+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-            "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-11T11:00:00+00:00",
-            "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen"
-          },
-          {
-            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
-            "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-11T09:30:00+00:00",
-            "summary": "15 Ekim A101 aktüel teknoloji ürünleri arasında Weigo markasına ait elektrikli çocuk motosikleti ve Volta markasına ait VG2 elektrikli golf arabası yer alıyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -188,258 +145,48 @@
           },
           "_metrics": {
             "found": 147,
-            "after_keyword": 90,
-            "after_time": 11,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 91,
+            "after_time": 10,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 147,
-          "after_keyword": 90,
-          "after_time": 11,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 91,
+          "after_time": 10,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-11T15:03:47.368816+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-11T17:04:26.059286+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-11T11:00:00+00:00",
-          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 18,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 9
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 18,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 9
-            }
-          },
-          {
-            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
-            "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-11T15:03:49.672699+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-11T11:00:00+00:00",
-          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu.Tam Boyutta Gör160 derecede 50 taklaSıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı.Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti.Tam Boyutta GörAncak testin en çarpıcı sonucu güvenlik veyürüyen aksamtarafında görüldü.Yolcu kabiniyapısal bütünlüğünü korurken, yüksek voltajlı bataryaalev almadı. Dışarıdan bakıldığında belirgin bir yıpranma göze çarpsa da ID. AURA T6 maruz kaldığı tüm bu zorlu koşullara rağmenkendi motor gücüylehareket ederek alandan uzaklaşmayı başardı.Tam Boyutta GörTest amacına ulaştıVolkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı.Tam Boyutta GörÇin pazarı için özel olarak üretilen ID. AURA T6, markanınLiDAR sensörüyledonatılmış ilk SUV modeli olma unvanını taşıyor. Yerel olarak geliştirilen China Electronic Architecture (CEA) platformu üzerinde yükselen elektrikli araç, 129.900 yuan (yaklaşık19.410 dolar) başlangıç fiyatıyla satışa sunuluyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu. Sıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı. Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti. Volkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/dp/B0F1X63V96 https://www.amazon.com.tr/dp/B0DSWHD594 https://www.amazon.com.tr/dp/B001U50DB0 https://store.steampowered.com/app/4045720/Squadron_42 https://www.avantajix.com/tr/teknosa"
-        },
-        "post_text": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
-        "post_text_length": 419,
-        "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
-        "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-11T15:03:53.214211+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
-          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-11T11:00:00+00:00",
-          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Donanimhaber",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 9
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu.Tam Boyutta Gör160 derecede 50 taklaSıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı.Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti.Tam Boyutta GörAncak testin en çarpıcı sonucu güvenlik veyürüyen aksamtarafında görüldü.Yolcu kabiniyapısal bütünlüğünü korurken, yüksek voltajlı bataryaalev almadı. Dışarıdan bakıldığında belirgin bir yıpranma göze çarpsa da ID. AURA T6 maruz kaldığı tüm bu zorlu koşullara rağmenkendi motor gücüylehareket ederek alandan uzaklaşmayı başardı.Tam Boyutta GörTest amacına ulaştıVolkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı.Tam Boyutta GörÇin pazarı için özel olarak üretilen ID. AURA T6, markanınLiDAR sensörüyledonatılmış ilk SUV modeli olma unvanını taşıyor. Yerel olarak geliştirilen China Electronic Architecture (CEA) platformu üzerinde yükselen elektrikli araç, 129.900 yuan (yaklaşık19.410 dolar) başlangıç fiyatıyla satışa sunuluyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu. Sıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı. Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti. Volkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/dp/B0F1X63V96 https://www.amazon.com.tr/dp/B0DSWHD594 https://www.amazon.com.tr/dp/B001U50DB0 https://store.steampowered.com/app/4045720/Squadron_42 https://www.avantajix.com/tr/teknosa",
-          "post_text_for_card": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
-          "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
-          "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
-            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_3.jpg",
-            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_2.jpg"
-          ]
-        },
-        "post_text": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
-        "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
-        "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
-        "image_path": "/tmp/otoxtra_img_g2sb2ugx.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_g2sb2ugx.jpg",
-          "/tmp/otoxtra_img_jz7zh51h.jpg",
-          "/tmp/otoxtra_img_tlt2xekq.jpg",
-          "/tmp/otoxtra_img_c1lir5fu.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-11T15:04:09.467609+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122183346632916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18098277458652082",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1158178526870812",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-11T15:04:46.834487+03:00"
+      "updated_at": null
     }
   }
 }
