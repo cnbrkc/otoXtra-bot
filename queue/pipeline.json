@@ -1,34 +1,57 @@
 {
-  "run_id": "2026-10-11-11:02",
+  "run_id": "2026-10-11-13:03",
   "status": "completed",
-  "started_at": "2026-10-11T11:02:26.761979+03:00",
-  "updated_at": "2026-10-11T11:05:02.452561+03:00",
+  "started_at": "2026-10-11T13:03:03.329043+03:00",
+  "updated_at": "2026-10-11T13:05:50.154276+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
-            "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
+            "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-11T08:00:21+00:00",
-            "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
+            "published": "2026-10-11T09:30:00+00:00",
+            "summary": "15 Ekim A101 aktüel teknoloji ürünleri arasında Weigo markasına ait elektrikli çocuk motosikleti ve Volta markasına ait VG2 elektrikli golf arabası yer alıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/211476/1200x67515-ekim-a101-aktuel-katalogunda-neler-var.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste"
+            "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
+          },
+          {
+            "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+            "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T09:25:37+00:00",
+            "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -89,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: Nitter failover: TeknoTags icin tum instance'lar basarisiz",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -110,7 +133,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://x.n0g.xyz/ahmetcelik2016/rss",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -165,232 +188,247 @@
           },
           "_metrics": {
             "found": 147,
-            "after_keyword": 89,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_keyword": 90,
+            "after_time": 11,
+            "after_posted": 3,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 147,
-          "after_keyword": 89,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_keyword": 90,
+          "after_time": 11,
+          "after_posted": 3,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-10-11T11:04:10.470365+03:00"
+      "updated_at": "2026-10-11T13:04:58.361517+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
-          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T08:00:21+00:00",
-          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
+          "published": "2026-10-11T09:25:37+00:00",
+          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
-          "base_ai_score": 85,
+          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 86,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 86,
-        "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
+        "score": 81,
+        "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 23,
-          "benzersizlik": 17,
-          "gundem_gucu": 16,
-          "paylasilabilirlik": 10
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+        "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
-            "score": 86,
+            "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+            "score": 81,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 23,
-              "benzersizlik": 17,
-              "gundem_gucu": 16,
-              "paylasilabilirlik": 10
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
+            "score": 51,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 10,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 3
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
+            "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
+            "score": 51,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-10-11T11:04:14.186125+03:00"
+      "updated_at": "2026-10-11T13:05:00.204411+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
-          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T08:00:21+00:00",
-          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
+          "published": "2026-10-11T09:25:37+00:00",
+          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
-          "base_ai_score": 85,
+          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 86,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "BMW, tamamen elektrikli yeni SUV coupe modeli olanyeni BMW iX4aracını resmen tanıttı. Neue Klasse platformu üzerine inşa edilen bu üçüncü model, yüksek menzil değerleri ve hızlı şarj kapasitesiyle dikkat çekiyor. Otomobil, 828 kilometreye ulaşan WLTP menzili, 400 kW hızlı şarj desteği ve 612 beygire kadar çıkan motor gücüyle geliyor. Üç farklı versiyonla gelen modelin teknik özellikleri ve donanım seçenekleri de detaylandırıldı. BMW iX4 serisinde iX4 40 xDrive, iX4 50 xDrive ve performans odaklı iX4 M60 xDrive olmak üzere üç seçenek bulunuyor. Giriş seviyesindeki 40 xDrive modeli, çift elektrik motoruyla 374 beygir güç ve 520 Nm tork üretiyor. Dört tekerlekten çekiş sistemine sahip bu versiyon, 0’dan 100 km/sa hıza 5,6 saniyede ulaşıyor. 82,6 kWh kapasiteli bataryasıyla WLTP ölçümlerine göre 638 kilometre menzil sunuyor. Orta seviyedeki 50 xDrive modeli ise 469 beygir güç ve 645 Nm tork ile geliyor. Bu versiyon 0-100 km/sa hızlanmasını 4,9 saniyede tamamlıyor ve 828 kilometreye kadar menzil vadediyor. Serinin en güçlüsü olan M60 xDrive, 612 beygir güç ve 875 Nm tork üreten çift motorlu bir sistem kullanıyor. Bu model 0’dan 100 km/sa hıza 3,9 saniyede çıkarken 777 kilometreye kadar WLTP menzili sunabiliyor. Yeni elektrik altyapısı 800 volt mimarisini temel alıyor. 50 xDrive ve M60 xDrive versiyonları 400 kW DC hızlı şarj desteğiyle 10 dakikada 387 kilometreye kadar ek menzil kazanabiliyor. Otomobilin tasarımında Neue Klasse ailesinin yeni ön yüzü ve aktif hava kapakçıkları yer alıyor. Aerodinamik çalışmalar sonucunda 0,23 Cd sürtünme katsayısına ulaşıldı. İç mekânda ön camın alt bölümüne yayılan BMW Panoramic Vision ekranı bulunuyor. Bu ekrana 17,9 inç büyüklüğündeki merkezi dokunmatik ekran eşlik ediyor. Android Açık Kaynak Projesi temelli BMW Operating System X işletim sistemi, kişiselleştirilebilir ekranlar ve dijital hizmetleri destekliyor. Amazon Alexa tabanlı BMW Intelligent Personal Assistant ise doğal dilde verilen komutlarla araç işlevlerini yönetiyor. Bagaj hacmi 490 litre olarak açıklanan modelde, arka koltuklar katlandığında bu alan 1.600 litreye çıkıyor. Ön kaputun altında ise 58 litrelik ek bir saklama alanı bulunuyor. BMW iX4’ün üretimi, Macaristan’ın Debrecen kentindeki fabrikada gerçekleştirilecek. Avrupa pazarındaki teslimatların Mart 2027 tarihinde başlaması planlanıyor. İngiltere pazarında 40 xDrive için 60.170 sterlin, 50 xDrive için ise 66.075 sterlin başlangıç fiyatı belirlendi. ABD’de 50 xDrive modelinin başlangıç fiyatı 66.200 dolar olarak açıklandı. Türkiye satış fiyatı ve yerel satış takvimi henüz duyurulmadı. Sizce yeni BMW iX4’ün sunduğu menzil ve şarj performansı elektrikli otomobil pazarındaki dengeleri değiştirebilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+          "full_text": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerindenortaya çıkanBYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir."
         },
-        "post_text": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
-        "post_text_length": 439,
-        "story_card_title": "828 km menzil: Bu bir meydan okuma!",
-        "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
+        "post_text": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
+        "post_text_length": 453,
+        "story_card_title": "BYD'nin robotu beklenenden farklı!",
+        "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-11T11:04:17.364963+03:00"
+      "updated_at": "2026-10-11T13:05:03.289238+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yeni BMW iX4 Tanıtıldı: İşte Menzili ve Fiyatı",
-          "link": "https://shiftdelete.net/yeni-bmw-ix4-tanitildi",
+          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T08:00:21+00:00",
-          "summary": "Yeni BMW iX4, 828 km menzili ve 400 kW hızlı şarj desteğiyle tanıtıldı. Neue Klasse platformlu SUV coupe modelinin tüm teknik detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "article_img",
-          "source_name": "ShiftDelete Otomobil",
+          "published": "2026-10-11T09:25:37+00:00",
+          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+          ],
+          "image_source": "smart_search",
+          "source_name": "Log",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "bmw-fiyati-ix4-menzili-ste",
-          "base_ai_score": 85,
+          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
+          "base_ai_score": 78,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 23,
-            "benzersizlik": 17,
-            "gundem_gucu": 16,
-            "paylasilabilirlik": 10
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 8
           },
-          "score": 86,
+          "score": 81,
           "score_reason": "ai_scored",
-          "score_explanation": "Yeni nesil elektrikli SUV coupe modelinin sunduğu 828 km gibi etkileyici menzil ve hızlı şarj desteği, otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
+          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "BMW, tamamen elektrikli yeni SUV coupe modeli olanyeni BMW iX4aracını resmen tanıttı. Neue Klasse platformu üzerine inşa edilen bu üçüncü model, yüksek menzil değerleri ve hızlı şarj kapasitesiyle dikkat çekiyor. Otomobil, 828 kilometreye ulaşan WLTP menzili, 400 kW hızlı şarj desteği ve 612 beygire kadar çıkan motor gücüyle geliyor. Üç farklı versiyonla gelen modelin teknik özellikleri ve donanım seçenekleri de detaylandırıldı. BMW iX4 serisinde iX4 40 xDrive, iX4 50 xDrive ve performans odaklı iX4 M60 xDrive olmak üzere üç seçenek bulunuyor. Giriş seviyesindeki 40 xDrive modeli, çift elektrik motoruyla 374 beygir güç ve 520 Nm tork üretiyor. Dört tekerlekten çekiş sistemine sahip bu versiyon, 0’dan 100 km/sa hıza 5,6 saniyede ulaşıyor. 82,6 kWh kapasiteli bataryasıyla WLTP ölçümlerine göre 638 kilometre menzil sunuyor. Orta seviyedeki 50 xDrive modeli ise 469 beygir güç ve 645 Nm tork ile geliyor. Bu versiyon 0-100 km/sa hızlanmasını 4,9 saniyede tamamlıyor ve 828 kilometreye kadar menzil vadediyor. Serinin en güçlüsü olan M60 xDrive, 612 beygir güç ve 875 Nm tork üreten çift motorlu bir sistem kullanıyor. Bu model 0’dan 100 km/sa hıza 3,9 saniyede çıkarken 777 kilometreye kadar WLTP menzili sunabiliyor. Yeni elektrik altyapısı 800 volt mimarisini temel alıyor. 50 xDrive ve M60 xDrive versiyonları 400 kW DC hızlı şarj desteğiyle 10 dakikada 387 kilometreye kadar ek menzil kazanabiliyor. Otomobilin tasarımında Neue Klasse ailesinin yeni ön yüzü ve aktif hava kapakçıkları yer alıyor. Aerodinamik çalışmalar sonucunda 0,23 Cd sürtünme katsayısına ulaşıldı. İç mekânda ön camın alt bölümüne yayılan BMW Panoramic Vision ekranı bulunuyor. Bu ekrana 17,9 inç büyüklüğündeki merkezi dokunmatik ekran eşlik ediyor. Android Açık Kaynak Projesi temelli BMW Operating System X işletim sistemi, kişiselleştirilebilir ekranlar ve dijital hizmetleri destekliyor. Amazon Alexa tabanlı BMW Intelligent Personal Assistant ise doğal dilde verilen komutlarla araç işlevlerini yönetiyor. Bagaj hacmi 490 litre olarak açıklanan modelde, arka koltuklar katlandığında bu alan 1.600 litreye çıkıyor. Ön kaputun altında ise 58 litrelik ek bir saklama alanı bulunuyor. BMW iX4’ün üretimi, Macaristan’ın Debrecen kentindeki fabrikada gerçekleştirilecek. Avrupa pazarındaki teslimatların Mart 2027 tarihinde başlaması planlanıyor. İngiltere pazarında 40 xDrive için 60.170 sterlin, 50 xDrive için ise 66.075 sterlin başlangıç fiyatı belirlendi. ABD’de 50 xDrive modelinin başlangıç fiyatı 66.200 dolar olarak açıklandı. Türkiye satış fiyatı ve yerel satış takvimi henüz duyurulmadı. Sizce yeni BMW iX4’ün sunduğu menzil ve şarj performansı elektrikli otomobil pazarındaki dengeleri değiştirebilir mi? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
-          "story_card_title": "828 km menzil: Bu bir meydan okuma!",
-          "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
+          "full_text": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerindenortaya çıkanBYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir.",
+          "post_text_for_card": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
+          "story_card_title": "BYD'nin robotu beklenenden farklı!",
+          "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
           "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img",
-            "article_img"
+            "smart_search"
           ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-3.webp",
-            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati.webp",
-            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-2.webp",
-            "https://ares.shiftdelete.net/2026/10/yeni-bmw-ix4-tanitildi-iste-menzili-ve-fiyati-4.webp"
-          ]
+          "prepared_image_count": 1,
+          "original_image_urls": []
         },
-        "post_text": "828 KİLOMETRE MENZİL, KAĞIT ÜZERİNDE BİLE ÇOK İDDİALI.\n\nYeni BMW iX4, tanıtımında 828 km WLTP menziliyle öne çıktı. Bu rakam, aynı platformdaki 638 km menzilli giriş seviyesi versiyonun neredeyse 200 km üstünde.\n\nBMW, şarj hızını 400 kW olarak açıklarken, bu menzilin gerçek kullanımda ne kadar korunacağı merak konusu.\n\nŞarj süresi kısaldıkça, menzil endişesi yerini \"bu kadar menzile gerçekten ihtiyacımız var mı\" tartışmasına bırakıyor.",
-        "story_card_title": "828 km menzil: Bu bir meydan okuma!",
-        "story_card_subtitle": "Yeni BMW iX4, tanıtımında 828 km WLTP menziliyle iddialı bir giriş yaptı. Neue Klasse platformundaki SUV coupe, 400 kW hızlı şarj desteğiyle de dikkat çekiyor. Menzil endişesini ortadan kaldırmayı hedefleyen bu rakam, elektrikli otomobil dünyasında yeni bir tartışma başlatıyor.",
-        "image_path": "/tmp/otoxtra_img_71ey9djr.jpg",
+        "post_text": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
+        "story_card_title": "BYD'nin robotu beklenenden farklı!",
+        "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
+        "image_path": "/tmp/otoxtra_img_9v6zjttu.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_71ey9djr.jpg",
-          "/tmp/otoxtra_img_lxipmo6w.jpg",
-          "/tmp/otoxtra_img_34o3bh_7.jpg",
-          "/tmp/otoxtra_img_riec_l77.jpg"
+          "/tmp/otoxtra_img_9v6zjttu.jpg"
         ],
-        "image_source": "article_img",
-        "image_count": 4
+        "image_source": "smart_search",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-10-11T11:04:21.730962+03:00"
+      "updated_at": "2026-10-11T13:05:15.426086+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122183316824916499",
+        "post_id": "678053852057751_122183333198916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18192643402396097",
+            "id": "18027870386909300",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1469008255083781",
+            "id": "1430393502369271",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-11T11:05:02.452561+03:00"
+      "updated_at": "2026-10-11T13:05:50.154276+03:00"
     }
   }
 }
