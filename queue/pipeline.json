@@ -1,13 +1,34 @@
 {
-  "run_id": "2026-10-11-13:03",
+  "run_id": "2026-10-11-15:02",
   "status": "completed",
-  "started_at": "2026-10-11T13:03:03.329043+03:00",
-  "updated_at": "2026-10-11T13:05:50.154276+03:00",
+  "started_at": "2026-10-11T15:02:17.227258+03:00",
+  "updated_at": "2026-10-11T15:04:46.834487+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
+            "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T11:00:00+00:00",
+            "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen"
+          },
           {
             "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
             "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
@@ -28,27 +49,6 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
-          },
-          {
-            "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
-            "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-11T09:25:37+00:00",
-            "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi"
           }
         ],
         "count": 2,
@@ -112,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://shitter.thepixora.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -133,7 +133,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -190,97 +190,97 @@
             "found": 147,
             "after_keyword": 90,
             "after_time": 11,
-            "after_posted": 3,
+            "after_posted": 2,
             "after_duplicate": 2,
-            "after_shared_variant_cooldown": 3
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 147,
           "after_keyword": 90,
           "after_time": 11,
-          "after_posted": 3,
+          "after_posted": 2,
           "after_duplicate": 2,
-          "after_shared_variant_cooldown": 3
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-10-11T13:04:58.361517+03:00"
+      "updated_at": "2026-10-11T15:03:47.368816+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
-          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
+          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
+          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T09:25:37+00:00",
-          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "published": "2026-10-11T11:00:00+00:00",
+          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Log",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
             "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "paylasilabilirlik": 9
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
+          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 81,
-        "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
+        "score": 85,
+        "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
+          "etkilesim_potansiyeli": 23,
+          "benzersizlik": 18,
           "gundem_gucu": 15,
-          "paylasilabilirlik": 8
+          "paylasilabilirlik": 9
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
+        "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
         "skipped": false,
-        "threshold": 30,
+        "threshold": 40,
         "top_articles": [
           {
-            "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
-            "score": 81,
+            "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
+            "score": 85,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 18,
               "gundem_gucu": 15,
-              "paylasilabilirlik": 8
+              "paylasilabilirlik": 9
             }
           },
           {
             "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
-            "score": 51,
+            "score": 70,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 10,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 8
             }
           }
         ],
@@ -289,7 +289,7 @@
           {
             "title": "A101 marketler elektrikli çocuk motosikleti ve elektrikli golf arabası satacak",
             "link": "https://www.donanimhaber.com/15-ekim-a101-aktuel-katalogunda-neler-var--211476",
-            "score": 51,
+            "score": 70,
             "score_reason": "ai_scored",
             "source_name": "Donanimhaber",
             "topic_fingerprint": "a101-arabasi-cocuk-elektrikli-elektrikli-golf-marketler-motosikleti-satacak"
@@ -297,138 +297,149 @@
         ]
       },
       "error": null,
-      "updated_at": "2026-10-11T13:05:00.204411+03:00"
+      "updated_at": "2026-10-11T15:03:49.672699+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
-          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
+          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
+          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T09:25:37+00:00",
-          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "published": "2026-10-11T11:00:00+00:00",
+          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Log",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
             "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "paylasilabilirlik": 9
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
+          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerindenortaya çıkanBYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir."
+          "full_text": "Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu.Tam Boyutta Gör160 derecede 50 taklaSıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı.Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti.Tam Boyutta GörAncak testin en çarpıcı sonucu güvenlik veyürüyen aksamtarafında görüldü.Yolcu kabiniyapısal bütünlüğünü korurken, yüksek voltajlı bataryaalev almadı. Dışarıdan bakıldığında belirgin bir yıpranma göze çarpsa da ID. AURA T6 maruz kaldığı tüm bu zorlu koşullara rağmenkendi motor gücüylehareket ederek alandan uzaklaşmayı başardı.Tam Boyutta GörTest amacına ulaştıVolkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı.Tam Boyutta GörÇin pazarı için özel olarak üretilen ID. AURA T6, markanınLiDAR sensörüyledonatılmış ilk SUV modeli olma unvanını taşıyor. Yerel olarak geliştirilen China Electronic Architecture (CEA) platformu üzerinde yükselen elektrikli araç, 129.900 yuan (yaklaşık19.410 dolar) başlangıç fiyatıyla satışa sunuluyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu. Sıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı. Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti. Volkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/dp/B0F1X63V96 https://www.amazon.com.tr/dp/B0DSWHD594 https://www.amazon.com.tr/dp/B001U50DB0 https://store.steampowered.com/app/4045720/Squadron_42 https://www.avantajix.com/tr/teknosa"
         },
-        "post_text": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
-        "post_text_length": 453,
-        "story_card_title": "BYD'nin robotu beklenenden farklı!",
-        "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
+        "post_text": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
+        "post_text_length": 419,
+        "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
+        "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-11T13:05:03.289238+03:00"
+      "updated_at": "2026-10-11T15:03:53.214211+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı",
-          "link": "https://www.log.com.tr/bydnin-tasarladigi-ilk-insansi-robot-modeli-ortaya-cikti/",
+          "title": "Volkswagen yeni elektrikli otomobilini dev mısır patlatma makinesinde pişirdi: İşte sonuç",
+          "link": "https://www.donanimhaber.com/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc--211485",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-11T09:25:37+00:00",
-          "summary": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerinden ortaya çıkan BYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir. BYD’nin tasarladığı ilk insansı robot modeli ortaya çıktı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg",
+          "published": "2026-10-11T11:00:00+00:00",
+          "summary": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı sıra dışı bir dayanıklılık testine tabi tuttu. Araç dev bir tamburun içinde 160 derece sıcaklığa maruz bırakılarak 50 kez çevrildi.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-11_12-17-00_WOlYl-660x371.jpg"
+            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg"
           ],
-          "image_source": "smart_search",
-          "source_name": "Log",
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "byd-insansi-modeli-ortaya-robot-tasarladigi",
-          "base_ai_score": 78,
+          "topic_fingerprint": "dev-elektrikli-makinesinde-misir-otomobilini-patlatma-pisirdi-sonuc-ste-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
             "gundem_gucu": 15,
-            "paylasilabilirlik": 8
+            "paylasilabilirlik": 9
           },
-          "score": 81,
+          "score": 85,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devlerinin teknoloji ve robotik alanındaki hamleleri büyük merak uyandırıyor, yüksek etkileşim potansiyeline sahip.",
-          "freshness_bonus": 10,
+          "score_explanation": "Sıradışı ve eğlenceli test videosu sosyal medyada yüksek etkileşim ve paylaşım potansiyeline sahip.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Çinli otomobil devi BYD, geçtiğimiz aylarda birçok rakibi gibi insansı robot modelleri üzerinde de çalıştığını resmi olarak doğrulamıştı. Geliştirdiği ilk insansı robotun tasarımı alınan patentler üzerindenortaya çıkanBYD, otomotiv tarafı için geliştirilen pek çok altyapının robotik teknolojileriyle aynı temeli paylaştığını belirtmiş ve bu alanda “açık” bir yapıyı benimseyeceğini açıklamıştı. Elde edilen bazı bilgilere göre Xiao Di adının verilebileceği robotun boyu 1 metre 65 cm, ağırlığı ise 58,5 kg seviyesinde yer alıyor. Sektördeki diğer şirketlerle ortaklık kurabileceğinin işaretini veren firma, insansı robotlarını hem kendi otomobil fabrikalarında kullanabilir hem de ticari olarak satışa sunabilir.",
-          "post_text_for_card": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
-          "story_card_title": "BYD'nin robotu beklenenden farklı!",
-          "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
+          "full_text": "Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu.Tam Boyutta Gör160 derecede 50 taklaSıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı.Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti.Tam Boyutta GörAncak testin en çarpıcı sonucu güvenlik veyürüyen aksamtarafında görüldü.Yolcu kabiniyapısal bütünlüğünü korurken, yüksek voltajlı bataryaalev almadı. Dışarıdan bakıldığında belirgin bir yıpranma göze çarpsa da ID. AURA T6 maruz kaldığı tüm bu zorlu koşullara rağmenkendi motor gücüylehareket ederek alandan uzaklaşmayı başardı.Tam Boyutta GörTest amacına ulaştıVolkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı.Tam Boyutta GörÇin pazarı için özel olarak üretilen ID. AURA T6, markanınLiDAR sensörüyledonatılmış ilk SUV modeli olma unvanını taşıyor. Yerel olarak geliştirilen China Electronic Architecture (CEA) platformu üzerinde yükselen elektrikli araç, 129.900 yuan (yaklaşık19.410 dolar) başlangıç fiyatıyla satışa sunuluyor.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Öncelikle şuna açıklık getirelim. Çin'deki geleneksel mısır patlatma makineleri bizim bildiklerimizdenoldukça farklı. Basınçlı bir hazneye benzeyen bu düzeneklerde mısır, yüksek sıcaklık altında süreklidönen bir tamburdapatlatılıyor. FAW-Volkswagen de ID. AURA T6'yı tam olarak böyle bir sistemin içine yerleştirerekdayanıklılık testinetabi tuttu. Sıra dışı test kapsamında yepyeni bir ID. AURA T6,fırın gibi ısıtılandev bir siyah silindirin içine yerleştirildi. Açık alevlerle yaklaşık160 dereceyekadar ısıtılan tamburun içinde araç tam50 kezdöndürülerek takla attırıldı. Ağır fırınlama ve takla atma sürecinin ardından, yüksek ısı ve mekanik kuvvetlerin etkisiyle aracıncamlarında çatlaklar, baştatavanolmak üzere dış gövdesinde iseciddi hasarlaroluştu. Buna karşın plastik aksamların, kapı kollarının ve farlarınerimemesi, lastiklerin ise aşırı sıcağa direnmesi dikkat çekti. Volkswagen, gerçekleştirdiği bu ekstrem dayanıklılık testiyle batarya teknolojisinin ve mühendislik çözümlerininen ağır stres koşullarındabile güvenliğini koruyabildiğini gözler önüne serdi. Sıra dışı tanıtım çalışmasının amacı,ID. AURA T6'nın tavan ezilmesine ve devrilmeye karşı korumasını (rollover protection)eğlenceli bir yöntemlesergilemek ve gövde dayanıklılığını ortaya koymaktı. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/dp/B0F1X63V96 https://www.amazon.com.tr/dp/B0DSWHD594 https://www.amazon.com.tr/dp/B001U50DB0 https://store.steampowered.com/app/4045720/Squadron_42 https://www.avantajix.com/tr/teknosa",
+          "post_text_for_card": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
+          "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
+          "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/211485/1200x675volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc.jpg",
+            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_3.jpg",
+            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_0.jpg",
+            "https://www.donanimhaber.com/images/images/haber/211485/src/volkswagen-yeni-elektrikli-otomobilini-firinda-pisirdi-iste-sonuc211485_2.jpg"
+          ]
         },
-        "post_text": "İNSANSI ROBOT PAZARINDA BYD'NİN İLK ADIMI BEKLENENDEN FARKLI.\n\nOtomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 cm boyunda ve 58,5 kg ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanıyor.\n\nBYD, bu alanda \"açık\" bir yapı benimseyeceğini söyledi; yani robotlarını kendi fabrikalarında kullanabilir veya ticari olarak satabilir.\n\nAncak burada asıl soru, otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu.",
-        "story_card_title": "BYD'nin robotu beklenenden farklı!",
-        "story_card_subtitle": "Çinli otomotiv devi BYD, ilk insansı robotunun tasarım patentini aldı. 1 metre 65 santimetre boyunda ve 58,5 kilogram ağırlığındaki bu robot, şirketin otomotiv altyapısını kullanacak. BYD, robotlarını kendi fabrikalarında kullanmanın yanı sıra ticari olarak da satmayı planlıyor. Ancak otomotiv teknolojilerinin robotik için ne kadar yeterli olduğu tartışma konusu.",
-        "image_path": "/tmp/otoxtra_img_9v6zjttu.jpg",
+        "post_text": "VOLKSWAGEN'İN BU TESTİ, ARTIK PAZARLAMA STRATEJİSİ.\n\nID. AURA T6, Çin'deki dev mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürüldü. Camlar çatladı, gövdede hasarlar oluştu.\n\nPlastik aksamlar ve lastikler erimedi. Bu, dayanıklılık testi değil, markanın yeni modelini farklı bir açıyla duyurma çabası.\n\nTüketici, otomobilin ne kadar dayanıklı olduğundan çok, neden böyle bir teste sokulduğunu merak ediyor.",
+        "story_card_title": "Volkswagen'in dayanıklılık testi mi, şov mu!",
+        "story_card_subtitle": "Volkswagen, yeni elektrikli SUV modeli ID. AURA T6'yı Çin'de dev bir mısır patlatma makinesinde 160 derece sıcaklıkta 50 kez döndürdü. Camlar çatladı, gövdede hasarlar oluşurken, plastik aksamlar ve lastikler erimedi. Bu sıra dışı test, markanın yeni modelini farklı bir pazarlama stratejisiyle duyurma çabası olarak yorumlanıyor. Tüketiciler, otomobilin dayanıklılığından çok, neden böyle bir teste sokulduğunu merak ediyor.",
+        "image_path": "/tmp/otoxtra_img_g2sb2ugx.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_9v6zjttu.jpg"
+          "/tmp/otoxtra_img_g2sb2ugx.jpg",
+          "/tmp/otoxtra_img_jz7zh51h.jpg",
+          "/tmp/otoxtra_img_tlt2xekq.jpg",
+          "/tmp/otoxtra_img_c1lir5fu.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-10-11T13:05:15.426086+03:00"
+      "updated_at": "2026-10-11T15:04:09.467609+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122183333198916499",
+        "post_id": "678053852057751_122183346632916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18027870386909300",
+            "id": "18098277458652082",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1430393502369271",
+            "id": "1158178526870812",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-11T13:05:50.154276+03:00"
+      "updated_at": "2026-10-11T15:04:46.834487+03:00"
     }
   }
 }
