@@ -1,13 +1,34 @@
 {
-  "run_id": "2026-10-11-20:02",
-  "status": "error",
-  "started_at": "2026-10-11T20:02:45.972068+03:00",
-  "updated_at": "2026-10-11T20:04:35.578775+03:00",
+  "run_id": "2026-10-12-06:02",
+  "status": "completed",
+  "started_at": "2026-10-12T06:02:32.067510+03:00",
+  "updated_at": "2026-10-12T06:07:49.712724+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
+          {
+            "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+            "link": "https://www.donanimhaber.com/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli--211490",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-11T20:50:00+00:00",
+            "summary": "Bugüne kadar 400 binden fazla elektrikli araç satan Mahindra Last Mile Mobility, hem Hindistan'da ciddi bir sorun olan hava kirliliğine çözüm oluyor, hem de sürücülerin gelirini artırıyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aliyor-araclar-cevre-dusmani-elektrikli-hem-hem-hindistan-rli-temiz-tuk-tuklarin-yerini"
+          },
           {
             "title": "WhatsApp iOS güncellemesi, Liquid Glass sohbet tasarımını yeniliyor",
             "link": "https://www.donanimhaber.com/whatsapp-guncellemesi-liquid-glass-sohbet-tasarimini-yeniliyor--211481",
@@ -28,9 +49,51 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "glass-guncellemesi-ios-liquid-sohbet-tasarimini-whatsapp-yeniliyor"
+          },
+          {
+            "title": "Yorumsuz\nParis Otomobil Fuarı 2026",
+            "link": "https://x.com/murattosunMSE/status/2109384170539557353",
+            "nitter_url": "https://nitter.kabii.moe/murattosunMSE/status/2109384170539557353#m",
+            "source_instance": "nitter.kabii.moe",
+            "published": "2026-10-11T20:42:31+00:00",
+            "summary": "Yorumsuz Paris Otomobil Fuarı 2026",
+            "image_url": "https://pbs.twimg.com/media/HUYJstoWEAACwOs.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HUYJstoWEAACwOs.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HUYJstoWEAACwOs.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "MuratTosun",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2026-fuari-otomobil-paris-yorumsuz"
+          },
+          {
+            "title": "1987 Volkswagen Scirocco 1.8",
+            "link": "https://x.com/veysellkaranii/status/2109333100509413587",
+            "nitter_url": "https://nitter.kabii.moe/veysellkaranii/status/2109333100509413587#m",
+            "source_instance": "nitter.kabii.moe",
+            "published": "2026-10-11T17:19:35+00:00",
+            "summary": "1987 Volkswagen Scirocco 1.8",
+            "image_url": "https://pbs.twimg.com/media/HUXbRYdWAAAOPzL.jpg?format=jpg&name=large",
+            "rss_image_url": "https://pbs.twimg.com/media/HUXbRYdWAAAOPzL.jpg?format=jpg&name=large",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HUXbRYdWAAAOPzL.jpg?format=jpg&name=large"
+            ],
+            "image_source": "rss",
+            "source_name": "VeyselKarani",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "1987-scirocco-volkswagen"
           }
         ],
-        "count": 1,
+        "count": 4,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,23 +154,23 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/teknotagstr/rss",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 503 Server Error: Service Unavailable for url: https://nitter.kareem.one/eozpeynirci/rss",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": ""
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kareem.one"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -128,87 +191,321 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kareem.one"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kabii.moe"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kabii.moe"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kabii.moe"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "shitter.thepixora.com"
+            "instance": "nitter.kabii.moe"
           },
           "otopodyum": {
             "status": "ok",
-            "count": 7,
+            "count": 2,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 147,
-            "after_keyword": 90,
-            "after_time": 9,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 132,
+            "after_keyword": 79,
+            "after_time": 13,
+            "after_posted": 4,
+            "after_duplicate": 4,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
-          "found": 147,
-          "after_keyword": 90,
-          "after_time": 9,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 132,
+          "after_keyword": 79,
+          "after_time": 13,
+          "after_posted": 4,
+          "after_duplicate": 4,
+          "after_shared_variant_cooldown": 4
         }
       },
       "error": null,
-      "updated_at": "2026-10-11T20:04:34.012084+03:00"
+      "updated_at": "2026-10-12T06:06:45.266708+03:00"
     },
     "score": {
-      "status": "error",
-      "output": null,
-      "error": "No article above threshold (threshold=40, top_score=31)",
-      "updated_at": "2026-10-11T20:04:35.578775+03:00"
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+          "link": "https://www.donanimhaber.com/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli--211490",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T20:50:00+00:00",
+          "summary": "Bugüne kadar 400 binden fazla elektrikli araç satan Mahindra Last Mile Mobility, hem Hindistan'da ciddi bir sorun olan hava kirliliğine çözüm oluyor, hem de sürücülerin gelirini artırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aliyor-araclar-cevre-dusmani-elektrikli-hem-hem-hindistan-rli-temiz-tuk-tuklarin-yerini",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 13,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 47,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli dönüşüm ve çevre teması ilgi çekici olsa da bölgesel bir pazar haberi ve küresel sosyal medya viral potansiyeli sınırlı.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1
+        },
+        "score": 47,
+        "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 1,
+        "score_breakdown": {
+          "guncellik": 13,
+          "etkilesim_potansiyeli": 10,
+          "benzersizlik": 9,
+          "gundem_gucu": 9,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli dönüşüm ve çevre teması ilgi çekici olsa da bölgesel bir pazar haberi ve küresel sosyal medya viral potansiyeli sınırlı.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+            "score": 47,
+            "score_breakdown": {
+              "guncellik": 13,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 9,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 6
+            }
+          },
+          {
+            "title": "1987 Volkswagen Scirocco 1.8",
+            "score": 37,
+            "score_breakdown": {
+              "guncellik": 6,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 8,
+              "gundem_gucu": 6,
+              "paylasilabilirlik": 7
+            }
+          },
+          {
+            "title": "Yorumsuz\nParis Otomobil Fuarı 2026",
+            "score": 32,
+            "score_breakdown": {
+              "guncellik": 11,
+              "etkilesim_potansiyeli": 5,
+              "benzersizlik": 5,
+              "gundem_gucu": 8,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 4,
+        "cooldown_candidates": [
+          {
+            "title": "1987 Volkswagen Scirocco 1.8",
+            "link": "https://x.com/veysellkaranii/status/2109333100509413587",
+            "score": 37,
+            "score_reason": "ai_scored",
+            "source_name": "VeyselKarani",
+            "topic_fingerprint": "1987-scirocco-volkswagen"
+          },
+          {
+            "title": "Yorumsuz\nParis Otomobil Fuarı 2026",
+            "link": "https://x.com/murattosunMSE/status/2109384170539557353",
+            "score": 32,
+            "score_reason": "ai_scored",
+            "source_name": "MuratTosun",
+            "topic_fingerprint": "2026-fuari-otomobil-paris-yorumsuz"
+          },
+          {
+            "title": "WhatsApp iOS güncellemesi, Liquid Glass sohbet tasarımını yeniliyor",
+            "link": "https://www.donanimhaber.com/whatsapp-guncellemesi-liquid-glass-sohbet-tasarimini-yeniliyor--211481",
+            "score": 17,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "glass-guncellemesi-ios-liquid-sohbet-tasarimini-whatsapp-yeniliyor"
+          }
+        ]
+      },
+      "error": null,
+      "updated_at": "2026-10-12T06:06:47.648565+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+          "link": "https://www.donanimhaber.com/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli--211490",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T20:50:00+00:00",
+          "summary": "Bugüne kadar 400 binden fazla elektrikli araç satan Mahindra Last Mile Mobility, hem Hindistan'da ciddi bir sorun olan hava kirliliğine çözüm oluyor, hem de sürücülerin gelirini artırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aliyor-araclar-cevre-dusmani-elektrikli-hem-hem-hindistan-rli-temiz-tuk-tuklarin-yerini",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 13,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 47,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli dönüşüm ve çevre teması ilgi çekici olsa da bölgesel bir pazar haberi ve küresel sosyal medya viral potansiyeli sınırlı.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Kısa sürede Hindistan'ın en büyük üç tekerlekli araç üreticilerinden birine dönüşen şirket, şimdiye kadar 400 binden fazla elektrikli tuk-tuk satarak bu alanda önemli bir eşiği geride bıraktı.Üstelik şirketin yaklaşımı yalnızca elektrikli araç üretmekle sınırlı değil. Mahindra Last Mile Mobility, satış ve servis ağından finansman seçeneklerine kadar uzanan bir sistem kurarak elektrikli araçları geçimini bu araçlarla sağlayan sürücüler için daha cazip hâle getiriyor. Zaten kısa sürede 400 bin satışa ulaşılmasının arkasında da bu çok yönlü yaklaşım yatıyor. Sürücüler çevreye katkı olsun diye değil, finansal olarak da daha kârlı olduğu için bu elektrikli alternatiflere yöneliyor. Elektrikli araçların işletme maliyetlerinin daha düşük olması, sürücülerin bu giderlerden tasarruf ederek daha fazla gelir elde etmesini sağlayabiliyor. Şirketin verilerine göreelektrikli araç kullanan sürücülerin eve götürdükleri net gelir yüzde 25 ila 30 arasında artabiliyor. Özellikle tticari araçlarını her gün uzun saatler boyunca kullanan sürücüler açısından işletme maliyetlerindeki düşüş, elektrikli modellere geçişi ekonomik açıdan epey cazip hâle getiriyor. Hindistan'ın kalabalık şehirlerinde tuk-tuklar ve küçük ticari vanlar, ulaşımın ve taşımacılığın önemli bir parçasını oluşturuyor. İnsanları işlerine götüren, yolcuları toplu taşıma duraklarına ulaştıran ve ürünleri evlere teslim eden bu araçlar,şehirlerdeki günlük yaşamın adeta bel kemiğini oluşturuyor. Ancak tam da bu yüzden ülkedeki hava kirliliğinin de en büyük sorumluları arasında yer alıyor. Mahindra Last Mile Mobility de tam olarak bu noktaya odaklanıyor. Şirket, elektrikli tuk-tuklar ve küçük ticari araçlar üretereksürücülerin fosil yakıtlardan uzaklaşmasını sağlamayı amaçlıyor.Ancak bunu yaparken yalnızca araçların teknik özelliklerine ve çevreye katkılarına değil, sürücülerin bu araçlara nasıl erişebileceğine ve günlük kullanımda ne kadar tasarruf edebileceğine de önem veriyor. Bu bağlamda şirketin iş birliği yaptığı finansman kuruluşları, elektrikli araç satın almak isteyen sürücülerin ödeme seçeneklerine erişmesine yardımcı oluyor. Bu da kullanıcılar için elektrikli modellere geçişi kolaylaştırıyor. Şirketin açıklamasına göresatılan araçlar, toplamda 180 bin metrik tondan fazla karbondioksit salımının önlenmesine katkıda bulundu.Mahindra Last Mile Mobility'nin etkisi, yalnızca kendi satış rakamlarıyla da sınırlı değil. Zira şirketin başarısı başka girişimleri de harekete geçirmiş durumda. Şirketin paylaştığı verilere göreHindistan'da yeni satılan tuk-tukların yarısından fazlası artık elektrikli modellerden oluşuyor.Bu oran, elektrikli araçların ülkede belirli bir ticari araç sınıfında geleneksel yakıtlı modellerin önüne geçmeye başladığını gösteriyor. Şirket,elektrikli araçların yaygınlaşmasını kolaylaştırmak için daha geniş bir altyapı da oluşturmuş durumda. Ülke genelindeki 900'den fazla satış ve servis noktası, sürücülerin araç satın almasını ve bakım hizmetlerine erişmesini kolaylaştırıyor.Kullanıcılar 10 binden fazla halka açık şarj noktasından yararlanabiliyor. Şirket, kullanım ömrünü tamamlayan bataryaların sorumlu biçimde geri dönüştürülmesine yönelik planlar da yürütüyor. Mahindra Last Mile Mobility'ningelecek planlarıarasında finansman seçeneklerini daha erişilebilir hâle getirmek, şehirler ve elektrik dağıtım kuruluşları arasında şarj altyapısına yönelik iş birlikleri geliştirmek veAsya ile Afrika'daki faaliyetlerini genişletmekbulunuyor. Şirket ayrıca 2031 yılına kadar Hindistan yollarındaki elektrikli araç sayısını bir milyona ulaştırmayı hedefliyor. Şimdi Earthshot Ödülleri'nde finalistler arasına girmesi, yatırımcılar açısından da şirketin görünürülüğünü artırarak bu hedeflerine ulaşmasına yardımcı olabilir.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Mahindra Last Mile Mobility'ningelecek planlarıarasında finansman seçeneklerini daha erişilebilir hâle getirmek, şehirler ve elektrik dağıtım kuruluşları arasında şarj altyapısına yönelik iş birlikleri geliştirmek veAsya ile Afrika'daki faaliyetlerini genişletmekbulunuyor. Şirket ayrıca 2031 yılına kadar Hindistan yollarındaki elektrikli araç sayısını bir milyona ulaştırmayı hedefliyor. Şimdi Earthshot Ödülleri'nde finalistler arasına girmesi, yatırımcılar açısından da şirketin görünürülüğünü artırarak bu hedeflerine ulaşmasına yardımcı olabilir. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/s?srs=214982634031&bbn=214982634031&rh=n%3A214982634031%2Cp_98%3A21345978031%2Cp_36%3A-20000&pf_rd_p=e4563c39-d316-411e-b48d-f7c80ab76dab&pf_rd_r=34ZHAZ7W530ND7SF0CRJ&ref=tr-selection-price https://www.amazon.com.tr/promotion/psp/A2I81JVYGGNSJ0 https://www.amazon.com.tr/dp/B0DWFY226S..."
+        },
+        "post_text": "ÇEVRE DOSTU OLMAK İÇİN DEĞİL, DAHA ÇOK KAZANMAK İÇİN ELEKTRİKLİ.\n\nHindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 arasında artırıyor.\n\nBu rakam tek bir şey anlatıyor: Değişim, cüzdana dokunduğunda hızlanıyor.\n\nSırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden az.",
+        "post_text_length": 388,
+        "story_card_title": "Tuk-tuklar çevre için değil, para için elektrikli!",
+        "story_card_subtitle": "Hindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 oranında artırıyor. Bu rakam tek bir şeyi kanıtlıyor: Değişim, cüzdana dokunduğunda hızlanıyor. Sırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden her zaman az kalacaktır.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-12T06:06:51.437916+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Hindistan'da çevre düşmanı tuk-tukların yerini elektrikli araçlar alıyor: Hem temiz, hem kârlı",
+          "link": "https://www.donanimhaber.com/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli--211490",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-11T20:50:00+00:00",
+          "summary": "Bugüne kadar 400 binden fazla elektrikli araç satan Mahindra Last Mile Mobility, hem Hindistan'da ciddi bir sorun olan hava kirliliğine çözüm oluyor, hem de sürücülerin gelirini artırıyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aliyor-araclar-cevre-dusmani-elektrikli-hem-hem-hindistan-rli-temiz-tuk-tuklarin-yerini",
+          "base_ai_score": 45,
+          "score_breakdown": {
+            "guncellik": 13,
+            "etkilesim_potansiyeli": 10,
+            "benzersizlik": 9,
+            "gundem_gucu": 9,
+            "paylasilabilirlik": 6
+          },
+          "score": 47,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli dönüşüm ve çevre teması ilgi çekici olsa da bölgesel bir pazar haberi ve küresel sosyal medya viral potansiyeli sınırlı.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Kısa sürede Hindistan'ın en büyük üç tekerlekli araç üreticilerinden birine dönüşen şirket, şimdiye kadar 400 binden fazla elektrikli tuk-tuk satarak bu alanda önemli bir eşiği geride bıraktı.Üstelik şirketin yaklaşımı yalnızca elektrikli araç üretmekle sınırlı değil. Mahindra Last Mile Mobility, satış ve servis ağından finansman seçeneklerine kadar uzanan bir sistem kurarak elektrikli araçları geçimini bu araçlarla sağlayan sürücüler için daha cazip hâle getiriyor. Zaten kısa sürede 400 bin satışa ulaşılmasının arkasında da bu çok yönlü yaklaşım yatıyor. Sürücüler çevreye katkı olsun diye değil, finansal olarak da daha kârlı olduğu için bu elektrikli alternatiflere yöneliyor. Elektrikli araçların işletme maliyetlerinin daha düşük olması, sürücülerin bu giderlerden tasarruf ederek daha fazla gelir elde etmesini sağlayabiliyor. Şirketin verilerine göreelektrikli araç kullanan sürücülerin eve götürdükleri net gelir yüzde 25 ila 30 arasında artabiliyor. Özellikle tticari araçlarını her gün uzun saatler boyunca kullanan sürücüler açısından işletme maliyetlerindeki düşüş, elektrikli modellere geçişi ekonomik açıdan epey cazip hâle getiriyor. Hindistan'ın kalabalık şehirlerinde tuk-tuklar ve küçük ticari vanlar, ulaşımın ve taşımacılığın önemli bir parçasını oluşturuyor. İnsanları işlerine götüren, yolcuları toplu taşıma duraklarına ulaştıran ve ürünleri evlere teslim eden bu araçlar,şehirlerdeki günlük yaşamın adeta bel kemiğini oluşturuyor. Ancak tam da bu yüzden ülkedeki hava kirliliğinin de en büyük sorumluları arasında yer alıyor. Mahindra Last Mile Mobility de tam olarak bu noktaya odaklanıyor. Şirket, elektrikli tuk-tuklar ve küçük ticari araçlar üretereksürücülerin fosil yakıtlardan uzaklaşmasını sağlamayı amaçlıyor.Ancak bunu yaparken yalnızca araçların teknik özelliklerine ve çevreye katkılarına değil, sürücülerin bu araçlara nasıl erişebileceğine ve günlük kullanımda ne kadar tasarruf edebileceğine de önem veriyor. Bu bağlamda şirketin iş birliği yaptığı finansman kuruluşları, elektrikli araç satın almak isteyen sürücülerin ödeme seçeneklerine erişmesine yardımcı oluyor. Bu da kullanıcılar için elektrikli modellere geçişi kolaylaştırıyor. Şirketin açıklamasına göresatılan araçlar, toplamda 180 bin metrik tondan fazla karbondioksit salımının önlenmesine katkıda bulundu.Mahindra Last Mile Mobility'nin etkisi, yalnızca kendi satış rakamlarıyla da sınırlı değil. Zira şirketin başarısı başka girişimleri de harekete geçirmiş durumda. Şirketin paylaştığı verilere göreHindistan'da yeni satılan tuk-tukların yarısından fazlası artık elektrikli modellerden oluşuyor.Bu oran, elektrikli araçların ülkede belirli bir ticari araç sınıfında geleneksel yakıtlı modellerin önüne geçmeye başladığını gösteriyor. Şirket,elektrikli araçların yaygınlaşmasını kolaylaştırmak için daha geniş bir altyapı da oluşturmuş durumda. Ülke genelindeki 900'den fazla satış ve servis noktası, sürücülerin araç satın almasını ve bakım hizmetlerine erişmesini kolaylaştırıyor.Kullanıcılar 10 binden fazla halka açık şarj noktasından yararlanabiliyor. Şirket, kullanım ömrünü tamamlayan bataryaların sorumlu biçimde geri dönüştürülmesine yönelik planlar da yürütüyor. Mahindra Last Mile Mobility'ningelecek planlarıarasında finansman seçeneklerini daha erişilebilir hâle getirmek, şehirler ve elektrik dağıtım kuruluşları arasında şarj altyapısına yönelik iş birlikleri geliştirmek veAsya ile Afrika'daki faaliyetlerini genişletmekbulunuyor. Şirket ayrıca 2031 yılına kadar Hindistan yollarındaki elektrikli araç sayısını bir milyona ulaştırmayı hedefliyor. Şimdi Earthshot Ödülleri'nde finalistler arasına girmesi, yatırımcılar açısından da şirketin görünürülüğünü artırarak bu hedeflerine ulaşmasına yardımcı olabilir.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtTerminatör 2 filmindeki sahne gerçek oldu Mahindra Last Mile Mobility'ningelecek planlarıarasında finansman seçeneklerini daha erişilebilir hâle getirmek, şehirler ve elektrik dağıtım kuruluşları arasında şarj altyapısına yönelik iş birlikleri geliştirmek veAsya ile Afrika'daki faaliyetlerini genişletmekbulunuyor. Şirket ayrıca 2031 yılına kadar Hindistan yollarındaki elektrikli araç sayısını bir milyona ulaştırmayı hedefliyor. Şimdi Earthshot Ödülleri'nde finalistler arasına girmesi, yatırımcılar açısından da şirketin görünürülüğünü artırarak bu hedeflerine ulaşmasına yardımcı olabilir. Terminatör 2 filmindeki sahne gerçek oldu https://www.amazon.com.tr/s?srs=214982634031&bbn=214982634031&rh=n%3A214982634031%2Cp_98%3A21345978031%2Cp_36%3A-20000&pf_rd_p=e4563c39-d316-411e-b48d-f7c80ab76dab&pf_rd_r=34ZHAZ7W530ND7SF0CRJ&ref=tr-selection-price https://www.amazon.com.tr/promotion/psp/A2I81JVYGGNSJ0 https://www.amazon.com.tr/dp/B0DWFY226S...",
+          "post_text_for_card": "ÇEVRE DOSTU OLMAK İÇİN DEĞİL, DAHA ÇOK KAZANMAK İÇİN ELEKTRİKLİ.\n\nHindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 arasında artırıyor.\n\nBu rakam tek bir şey anlatıyor: Değişim, cüzdana dokunduğunda hızlanıyor.\n\nSırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden az.",
+          "story_card_title": "Tuk-tuklar çevre için değil, para için elektrikli!",
+          "story_card_subtitle": "Hindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 oranında artırıyor. Bu rakam tek bir şeyi kanıtlıyor: Değişim, cüzdana dokunduğunda hızlanıyor. Sırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden her zaman az kalacaktır.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 3,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/haber/211490/1200x675hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli.jpg",
+            "https://www.donanimhaber.com/images/images/haber/211490/src/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli211490_1.jpg",
+            "https://www.donanimhaber.com/images/images/haber/211490/src/hindistan-da-elektrikli-arac-devrimi-hem-temiz-hem-kazancli211490_0.jpg"
+          ]
+        },
+        "post_text": "ÇEVRE DOSTU OLMAK İÇİN DEĞİL, DAHA ÇOK KAZANMAK İÇİN ELEKTRİKLİ.\n\nHindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 arasında artırıyor.\n\nBu rakam tek bir şey anlatıyor: Değişim, cüzdana dokunduğunda hızlanıyor.\n\nSırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden az.",
+        "story_card_title": "Tuk-tuklar çevre için değil, para için elektrikli!",
+        "story_card_subtitle": "Hindistan'da 400 binden fazla elektrikli tuk-tuk satıldı. Mahindra'nın bu hamlesi hava kirliliğini azaltırken, sürücülerin gelirini %25 ila %30 oranında artırıyor. Bu rakam tek bir şeyi kanıtlıyor: Değişim, cüzdana dokunduğunda hızlanıyor. Sırf çevre için elektrikli araca geçenlerin sayısı, kârlı olduğu için geçenden her zaman az kalacaktır.",
+        "image_path": "/tmp/otoxtra_img_82lf9eug.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_82lf9eug.jpg",
+          "/tmp/otoxtra_img__jz3vdtb.jpg",
+          "/tmp/otoxtra_img_380v8ilh.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 3
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-12T06:07:12.316043+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122183435282916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18109994984582628",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1576621467827912",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-12T06:07:49.712724+03:00"
     }
   }
 }
