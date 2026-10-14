@@ -5,17 +5,17 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1791914658.879154,
-      "last_change": "2026-10-13T17:04:18+00:00",
+      "blocked_until": 1791950548.5372074,
+      "last_change": "2026-10-14T03:02:28+00:00",
       "last_status": 429
     },
     "nitter.kabii.moe": {
-      "failures": 2,
-      "successes": 282,
-      "state": "degraded",
-      "reason": "http_404",
+      "failures": 0,
+      "successes": 285,
+      "state": "ok",
+      "reason": "",
       "blocked_until": 0.0,
-      "last_change": "2026-10-13T17:04:20+00:00",
+      "last_change": "2026-10-14T03:04:57+00:00",
       "last_status": 404
     },
     "nitter.wisq.net": {
@@ -40,8 +40,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1791914634.1631792,
-      "last_change": "2026-10-13T17:03:54+00:00",
+      "blocked_until": 1791950512.148461,
+      "last_change": "2026-10-14T03:01:52+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,53 +49,53 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1791914636.6762245,
-      "last_change": "2026-10-13T17:03:56+00:00",
+      "blocked_until": 1791950514.533885,
+      "last_change": "2026-10-14T03:01:54+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
-      "failures": 3,
-      "successes": 87,
-      "state": "blocked",
-      "reason": "bot_challenge",
-      "blocked_until": 1791914812.38827,
-      "last_change": "2026-10-13T17:06:52+00:00",
-      "last_status": 200
+      "failures": 2,
+      "successes": 89,
+      "state": "degraded",
+      "reason": "http_404",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-14T03:02:36+00:00",
+      "last_status": 404
     },
     "tw.eir-nya.gay": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1791914626.0318785,
-      "last_change": "2026-10-13T17:03:46+00:00",
+      "blocked_until": 1791950519.5050755,
+      "last_change": "2026-10-14T03:01:59+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
-      "failures": 7,
+      "failures": 9,
       "successes": 15,
       "state": "degraded",
       "reason": "http_503",
       "blocked_until": 0.0,
-      "last_change": "2026-10-13T14:04:48+00:00",
+      "last_change": "2026-10-14T03:03:22+00:00",
       "last_status": 503
     },
     "nitter.meowing.monster": {
-      "failures": 1,
-      "successes": 296,
-      "state": "blocked",
-      "reason": "bot_challenge",
-      "blocked_until": 1791914809.141158,
-      "last_change": "2026-10-13T17:06:49+00:00",
-      "last_status": 200
+      "failures": 0,
+      "successes": 299,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-14T03:03:51+00:00",
+      "last_status": 404
     },
     "nitter.netbub.com": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1791914653.3765333,
-      "last_change": "2026-10-13T17:04:13+00:00",
+      "blocked_until": 1791950542.8241115,
+      "last_change": "2026-10-14T03:02:22+00:00",
       "last_status": 403
     },
     "shitter.thepixora.com": {
@@ -103,17 +103,17 @@
       "successes": 171,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1791914655.7617416,
-      "last_change": "2026-10-13T17:04:15+00:00",
+      "blocked_until": 1791950545.3032134,
+      "last_change": "2026-10-14T03:02:25+00:00",
       "last_status": 403
     },
     "nitter.jaydenha.uk": {
-      "failures": 81,
+      "failures": 82,
       "successes": 4,
       "state": "degraded",
       "reason": "empty_feed",
       "blocked_until": 0.0,
-      "last_change": "2026-10-13T14:04:20+00:00",
+      "last_change": "2026-10-14T03:03:24+00:00",
       "last_status": 404
     },
     "nitter.gravitywell.xyz": {
@@ -126,5 +126,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-10-13T17:06:52+00:00"
+  "updated_at": "2026-10-14T03:04:57+00:00"
 }
