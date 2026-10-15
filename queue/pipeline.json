@@ -1,33 +1,33 @@
 {
-  "run_id": "2026-10-15-07:01",
+  "run_id": "2026-10-15-08:01",
   "status": "completed",
-  "started_at": "2026-10-15T07:01:11.868250+03:00",
-  "updated_at": "2026-10-15T07:04:13.016067+03:00",
+  "started_at": "2026-10-15T08:01:06.716780+03:00",
+  "updated_at": "2026-10-15T08:04:00.505309+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
-            "link": "https://www.log.com.tr/ford-turkiye-elektrikli-arac-sahiplerine-yonelik-ford-ev-club-platformunu-duyurdu/",
+            "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/alisan-lojistik-sakaryada-lityum-iyon-pil-depolama-tesisi-kurdu-5388h",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-15T07:01:11.990334+03:00",
-            "summary": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunu duyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem […] Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
+            "published": "2026-10-15T04:51:55+00:00",
+            "summary": "Alışan Lojistik, elektrikli araç (EV) bataryaları başta olmak üzere yeni nesil enerji teknolojilerinde kullanılan lityum-iyon bataryaların güvenli depolanmasına yönelik stratejik yatırımını Sakarya'da hayata geçirdi.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
             "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg"
+              "https://cdn.otopodyum.com.tr/news/5702.jpg"
             ],
             "image_source": "rss",
-            "source_name": "LogDergisi",
+            "source_name": "otopodyum",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "arac-club-duyurdu-elektrikli-ford-ford-platformunu-sahiplerine-turkiye-yonelik"
+            "topic_fingerprint": "alisan-depolama-iyon-kurdu-lityum-lojistik-pil-sakarya-tesisi"
           }
         ],
         "count": 1,
@@ -112,7 +112,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://x.n0g.xyz/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -124,11 +124,11 @@
             "instance": ""
           },
           "TaylanOzgurDil": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.zebes.info/taylandil/rss",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": ""
           },
           "HakanDOgu": {
             "status": "ok",
@@ -166,89 +166,89 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 150,
-            "after_keyword": 96,
-            "after_time": 8,
+            "found": 140,
+            "after_keyword": 91,
+            "after_time": 10,
             "after_posted": 1,
             "after_duplicate": 1,
             "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 150,
-          "after_keyword": 96,
-          "after_time": 8,
+          "found": 140,
+          "after_keyword": 91,
+          "after_time": 10,
           "after_posted": 1,
           "after_duplicate": 1,
           "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-10-15T07:02:58.553402+03:00"
+      "updated_at": "2026-10-15T08:03:08.649359+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
-          "link": "https://www.log.com.tr/ford-turkiye-elektrikli-arac-sahiplerine-yonelik-ford-ev-club-platformunu-duyurdu/",
+          "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/alisan-lojistik-sakaryada-lityum-iyon-pil-depolama-tesisi-kurdu-5388h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-15T07:01:11.990334+03:00",
-          "summary": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunu duyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem […] Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
+          "published": "2026-10-15T04:51:55+00:00",
+          "summary": "Alışan Lojistik, elektrikli araç (EV) bataryaları başta olmak üzere yeni nesil enerji teknolojilerinde kullanılan lityum-iyon bataryaların güvenli depolanmasına yönelik stratejik yatırımını Sakarya'da hayata geçirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg"
+            "https://cdn.otopodyum.com.tr/news/5702.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-club-duyurdu-elektrikli-ford-ford-platformunu-sahiplerine-turkiye-yonelik",
-          "base_ai_score": 45,
+          "topic_fingerprint": "alisan-depolama-iyon-kurdu-lityum-lojistik-pil-sakarya-tesisi",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
           },
-          "score": 51,
+          "score": 49,
           "score_reason": "ai_scored",
-          "score_explanation": "Marka sadakatini artıran ve kullanıcı deneyimine odaklanan faydalı bir adım olsa da, genel sosyal medya kitlesi için yüksek viral potansiyel taşımayan, daha çok niş bir kitleye ve marka sahiplerine hitap eden kurumsal bir gelişme.",
+          "score_explanation": "Lojistik ve enerji altyapısı açısından önemli bir yatırım olsa da, geniş kitleler için sıradan bir kurumsal gelişme düzeyinde kalıyor ve yüksek viral etkileşim potansiyeli taşımıyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 51,
-        "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
+        "score": 49,
+        "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 8,
-          "paylasilabilirlik": 5
+          "etkilesim_potansiyeli": 8,
+          "benzersizlik": 10,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 4
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Marka sadakatini artıran ve kullanıcı deneyimine odaklanan faydalı bir adım olsa da, genel sosyal medya kitlesi için yüksek viral potansiyel taşımayan, daha çok niş bir kitleye ve marka sahiplerine hitap eden kurumsal bir gelişme.",
+        "score_explanation": "Lojistik ve enerji altyapısı açısından önemli bir yatırım olsa da, geniş kitleler için sıradan bir kurumsal gelişme düzeyinde kalıyor ve yüksek viral etkileşim potansiyeli taşımıyor.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
-            "score": 51,
+            "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
+            "score": 49,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 5
+              "etkilesim_potansiyeli": 8,
+              "benzersizlik": 10,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 4
             }
           }
         ],
@@ -256,138 +256,149 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-10-15T07:03:02.128221+03:00"
+      "updated_at": "2026-10-15T08:03:10.150746+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
-          "link": "https://www.log.com.tr/ford-turkiye-elektrikli-arac-sahiplerine-yonelik-ford-ev-club-platformunu-duyurdu/",
+          "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/alisan-lojistik-sakaryada-lityum-iyon-pil-depolama-tesisi-kurdu-5388h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-15T07:01:11.990334+03:00",
-          "summary": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunu duyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem […] Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
+          "published": "2026-10-15T04:51:55+00:00",
+          "summary": "Alışan Lojistik, elektrikli araç (EV) bataryaları başta olmak üzere yeni nesil enerji teknolojilerinde kullanılan lityum-iyon bataryaların güvenli depolanmasına yönelik stratejik yatırımını Sakarya'da hayata geçirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg"
+            "https://cdn.otopodyum.com.tr/news/5702.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-club-duyurdu-elektrikli-ford-ford-platformunu-sahiplerine-turkiye-yonelik",
-          "base_ai_score": 45,
+          "topic_fingerprint": "alisan-depolama-iyon-kurdu-lityum-lojistik-pil-sakarya-tesisi",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
           },
-          "score": 51,
+          "score": 49,
           "score_reason": "ai_scored",
-          "score_explanation": "Marka sadakatini artıran ve kullanıcı deneyimine odaklanan faydalı bir adım olsa da, genel sosyal medya kitlesi için yüksek viral potansiyel taşımayan, daha çok niş bir kitleye ve marka sahiplerine hitap eden kurumsal bir gelişme.",
+          "score_explanation": "Lojistik ve enerji altyapısı açısından önemli bir yatırım olsa da, geniş kitleler için sıradan bir kurumsal gelişme düzeyinde kalıyor ve yüksek viral etkileşim potansiyeli taşımıyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunuduyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem içinde zenginleştirmeyi amaçlıyor.” Bir bilgi, deneyim ve etkileşim platformu olarak kullanıcılarını tamamen elektrikli mobilite odağında bir araya getiren Ford EV Club, ilk etapta üyelerine günlük yaşamı pratikleştiren cazip ayrıcalıklar sunmayı hedefliyor. Bu kapsamda platform üyeleri, anlaşmalı şarj istasyonlarında gerçekleştirecekleri şarj işlemlerinde anında indirim olanaklarına ek olarak ücretsiz otopark hakkına da sahip oluyor. Günlük ulaşım çözümleriyle beraber kullanıcılarına keyifli deneyimler de yaşatmayı hedefleyen EV Club, uygulamadan kod oluşturan üyelerine Turkcell Platinum Park’ta Ford Ranger ile offroad deneyimini de ücretsiz olarak sunuyor.Ford Hesabım uygulaması içerisinde yer alan Ford EV Club,kullanıcılarına elektrikli araç deneyimini kolaylaştıran birçok avantaj sunarken, topluluğun organik şekilde büyümesine paralel olarak yeni iş birlikleri ve deneyimlerle gelişmeye devam edecek. Ford EV Club, menzil ve şarj yönetimi gibi başlıkların yanı sıra merak edilen teknik detaylarla ilgili düzenli haftalık içeriklerle kullanıcı deneyimini sürekli zenginleştirmeyi amaçlıyor. Elektrikli araç kullanımını daha keyifli hale getiren Ford EV Club’ın önümüzdeki dönemde yeni iş birlikleri ve deneyim odaklı etkinliklerle daha da zenginleştirilmesi hedefleniyor. Platform, üyelerinin talep ve beklentileri doğrultusunda sürekli geliştirilerek kullanıcıların hayatına değer katacak.” ifadelerine yer verildi."
+          "full_text": "Kimya ve tehlikeli madde lojistiğindeki 40 yılı aşkın deneyimini yeni nesil enerji teknolojilerine taşıyan Alışan Lojistik, Sakarya'nın Arifiye bölgesinde kurduğu yeni batarya depolama tesisini hizmete açtı. 210 Milyon TL tutarında yatırımla hayata geçirilen ve 20 kişiye doğrudan istihdam sağlayan tesis, elektrikli araç üreticilerinden enerji depolama sistemleri geliştiricilerine kadar geniş bir ekosistemin özel lojistik ihtiyaçlarına yanıt vermek üzere tasarlandı. Elektrikli araç üretiminin, yenilenebilir enerji yatırımlarının ve batarya teknolojilerinin dünya genelinde hızla gelişmesi, bataryaların güvenli depolanmasını küresel tedarik zincirlerinin öncelikli ihtiyaçlarından biri haline getiriyor. Yanıcılık, ısıya duyarlılık ve özel elleçleme gereklilikleri nedeniyle uzmanlaşmış çözümler gerektiren bu alanda Alışan Lojistik, yeni yatırımıyla Türkiye'nin enerji dönüşümünü destekleyen kritik lojistik altyapının gelişimine katkı sağlıyor. Uluslararası standartları esas alan çok katmanlı güvenlik altyapısı Toplam 9.000 metrekarelik depolama alanı ve 9.000 palet kapasitesine sahip tesis, lityum-iyon bataryaların kendine özgü riskleri dikkate alınarak özel olarak tasarlandı. Tesiste güvenlik yaklaşımı, yalnızca olası bir yangına müdahaleyi değil, risklerin erken aşamada tespit edilmesini, izlenmesini ve kontrol altına alınmasını da kapsıyor. Bu kapsamda termal görüntüleme teknolojisiyle desteklenen erken uyarı sistemleri, havalandırma ve yangın güvenliği altyapısıyla entegre çalışan gaz algılama sistemleri veNFPA (National Fire Protection Association / Ulusal Yangından Korunma Birliği) standartları esas alınarak tasarlanan özel yangın söndürme çözümleribir arada kullanılıyor. Yangın kompartımanlarına ayrılmış depolama alanları ve farklı risk senaryolarına yönelik acil müdahale ekipmanlarıyla desteklenen tesisin güvenlik altyapısı, NFPA Uluslararası yangından korunma standartları ve EV batarya depolamaya teknik uygunluk kriterleri doğrultusunda yapılandırıldı. Bataryalar, güvenli depolama koşullarına uygun olarak yüzde 50–60 şarj seviyesi (State of Charge – SoC) aralığında tesise kabul ediliyor ve depolama süresince izleniyor. Özel algılama ve havalandırma sistemleriyle donatılmış alanlarda, risklerin önleyici yaklaşımla yönetilmesi esas alınıyor. Tesisin taşıma ve sevkiyatla bağlantılı elleçleme süreçlerinde, tehlikeli maddelerin karayoluyla uluslararası taşınmasını düzenleyen ADR Anlaşması'nın ilgili hükümleri dikkate alınıyor. ADR kapsamında Sınıf 9 tehlikeli maddeler arasında yer alan lityum-iyon bataryalar için, tek başına taşınan bataryaları tanımlayan UN3480 ve ekipman içerisinde bulunan veya ekipmanla birlikte taşınan bataryaları tanımlayan UN3481 sınıflandırmalarına uygun sevkiyat prosedürleri uygulanıyor. Depolamadan tersine lojistiğe uçtan uca çözüm Alışan Lojistik'in Sakarya yatırımı, yalnızca özel koşullarda depolama hizmeti sunan bir tesis olmanın ötesinde, batarya tedarik zincirinin farklı aşamalarını kapsayan entegre bir hizmet modelinin parçasını oluşturuyor. Şirket; tehlikeli madde taşımacılığı, gümrük süreçleri, özel depolama ve tersine lojistik hizmetlerini bir arada sunarak elektrikli araç üreticileri, enerji depolama sistemleri geliştiricileri ve elektronik sektöründeki kuruluşlar için bütünleşik lojistik çözümler sağlıyor. Hasarlı veya geri çağrılan bataryaların özel prosedürlerle yönetilmesini de kapsayan bu yaklaşım, batarya yaşam döngüsünün farklı aşamalarında güvenlik, izlenebilirlik ve operasyonel sürekliliğin sağlanmasına katkıda bulunuyor. Damla Alışan: “Enerji dönüşümünün geleceği, onu taşıyabilecek altyapıyı bugünden kurabilenlerin elinde şekillenecek” Yatırıma ilişkin değerlendirmelerde bulunan Alışan Lojistik CEO'su Damla Alışan, lojistik sektörünün enerji dönüşümündeki rolünün giderek daha stratejik bir nitelik kazandığını belirterek şunları söyledi: “Dünya, enerji üretiminden ulaşıma, sanayiden günlük yaşama kadar köklü bir dönüşümden geçiyor. Elektrikli mobilite ve enerji depolama teknolojileri bu dönüşümün merkezinde yer alırken, bu teknolojilerin yaygınlaşabilmesi için onları destekleyecek güvenli ve güçlü tedarik zincirlerine ihtiyaç duyuluyor. Biz Alışan Lojistik olarak lojistiğin rolünü yalnızca bugünün ihtiyaçlarına yanıt vermekle sınırlı görmüyoruz. Geleceğin endüstrilerinin hangi altyapılara ihtiyaç duyacağını bugünden öngörmenin ve bu alanlarda sorumluluk üstlenmenin sektörümüzün en önemli görevlerinden biri olduğuna inanıyoruz. Sakarya'da hayata geçirdiğimiz bu yatırım, tam da bu vizyonun bir sonucu. Türkiye'de önemli bir ihtiyaca yanıt verirken, uluslararası güvenlik standartlarını esas alan, teknoloji odaklı bir altyapı oluşturduk. Çünkü söz konusu EV bataryaları ve diğer lityum-iyon enerji depolama teknolojileri olduğunda lojistik, yalnızca bir depolama veya taşıma operasyonu değil; insan güvenliğini, çevresel sorumluluğu ve üretim sürekliliğini birlikte ele almayı gerektiren kritik bir uzmanlık alanı. Tehlikeli madde lojistiğinde edindiğimiz köklü deneyimi, PSA..."
         },
-        "post_text": "Ford Türkiye, elektrikli araç sahiplerini \"Ford EV Club\" çatısı altında topluyor.\n\nBinek ve ticari elektrikli araç kullanıcılarına yönelik platform, günlük kullanımda maliyet ve zaman avantajı sağlıyor.\n\nÜyeler özel içerik ve topluluk ekosisteminden yararlanıyor. \"Ford Hesabım\" ile entegre sistem, sürücülerin temel ihtiyaçlarına odaklanıyor.\n\nFord EV Club, elektrikli mobiliteye geçişi kolaylaştırıyor.",
-        "post_text_length": 404,
-        "story_card_title": "FORD'DAN ELEKTRİKLİ ARAÇ SAHİPLERİNE YENİ PLATFORM!",
-        "story_card_subtitle": "Ford Türkiye, elektrikli araç kullanıcıları için özel olarak tasarlanan yeni platformu Ford EV Club'ı duyurdu. Bu yenilikçi platform, hem binek hem de ticari elektrikli araç sahiplerine yönelik olup, günlük kullanımda önemli maliyet ve zaman avantajları sunmayı hedefliyor. Üyeler ayrıca özel içeriklere ve güçlü bir topluluk ekosistemine erişim sağlayacak.",
+        "post_text": "LİTYUM-İYON PİL DEPOLAMAK SADECE BİR DEPO KURMAK DEĞİL.\n\nAlışan Lojistik, Sakarya Arifiye'de 210 milyon TL yatırımla yeni batarya depolama tesisini açtı. Tesis, özellikle elektrikli araç bataryaları için tasarlandı.\n\nBu yatırım, \"batarya üretimi artıyor\" söyleminin arka planındaki asıl ihtiyacı gösteriyor. Yanıcılık ve ısıya duyarlılık, bu pillerin standart bir depoda tutulamayacağını netleştiriyor.\n\nYeni nesil enerji, yeni nesil lojistik şartları demek.",
+        "post_text_length": 458,
+        "story_card_title": "LİTYUM DEPOLAMAK DEV BİR RİSK!",
+        "story_card_subtitle": "Alışan Lojistik, Sakarya'da tam 210 milyon TL'lik dev bir lityum-iyon pil depolama tesisi kurdu. Bu yatırım, elektrikli araç bataryalarının güvenli bir şekilde saklanması için kritik öneme sahip. Çünkü yanıcılık ve ısıya duyarlılık, bu pillerin standart depolarda tutulamayacağını net bir şekilde ortaya koyuyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-15T07:03:05.678316+03:00"
+      "updated_at": "2026-10-15T08:03:13.161165+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu",
-          "link": "https://www.log.com.tr/ford-turkiye-elektrikli-arac-sahiplerine-yonelik-ford-ev-club-platformunu-duyurdu/",
+          "title": "Alışan Lojistik, Sakarya’da lityum-iyon pil depolama tesisi kurdu",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/alisan-lojistik-sakaryada-lityum-iyon-pil-depolama-tesisi-kurdu-5388h",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-15T07:01:11.990334+03:00",
-          "summary": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunu duyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem […] Ford Türkiye, elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu duyurdu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg",
+          "published": "2026-10-15T04:51:55+00:00",
+          "summary": "Alışan Lojistik, elektrikli araç (EV) bataryaları başta olmak üzere yeni nesil enerji teknolojilerinde kullanılan lityum-iyon bataryaların güvenli depolanmasına yönelik stratejik yatırımını Sakarya'da hayata geçirdi.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5702.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-13_12-00-15_eHYRp-660x371.jpg"
+            "https://cdn.otopodyum.com.tr/news/5702.jpg"
           ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "arac-club-duyurdu-elektrikli-ford-ford-platformunu-sahiplerine-turkiye-yonelik",
-          "base_ai_score": 45,
+          "topic_fingerprint": "alisan-depolama-iyon-kurdu-lityum-lojistik-pil-sakarya-tesisi",
+          "base_ai_score": 42,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 8,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 4
           },
-          "score": 51,
+          "score": 49,
           "score_reason": "ai_scored",
-          "score_explanation": "Marka sadakatini artıran ve kullanıcı deneyimine odaklanan faydalı bir adım olsa da, genel sosyal medya kitlesi için yüksek viral potansiyel taşımayan, daha çok niş bir kitleye ve marka sahiplerine hitap eden kurumsal bir gelişme.",
+          "score_explanation": "Lojistik ve enerji altyapısı açısından önemli bir yatırım olsa da, geniş kitleler için sıradan bir kurumsal gelişme düzeyinde kalıyor ve yüksek viral etkileşim potansiyeli taşımıyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Ford Türkiye bugün elektrikli araç sahiplerine yönelik “Ford EV Club” platformunu kullanıma sunduğunuduyurdu. Gelişme hakkında şirketten yapılan paylaşımda, “Binek ve ticari elektrikli araç kullanıcılarına özel olarak hazırlanan platform, günlük kullanımda maliyet ve zaman avantajı sağlayan somut ayrıcalıkların yanı sıra üyelerine özel deneyimler, içerikler ve zengin bir topluluk ekosistemi sunmayı hedefliyor. Elektrikli mobilite dünyasına adım atan kullanıcıların beklentileri doğrultusunda tasarlanan sistem, sürücülerin yolculuklarındaki temel ihtiyaçlara odaklanıyor. Markanın “Ford Hesabım” uygulamasıyla tamamen entegre bir yapıda kullanıma sunulan Ford EV Club sayesinde elektrikli araç kullanıcıları, markanın kendilerine sunduğu tüm ayrıcalıklara tek bir dijital platform üzerinden hızlı ve kolay bir şekilde erişebiliyor. Ford Türkiye, kaliteyi müşterilerinin markayla ilk temasından satış sonrası hizmetlere kadar uzanan kesintisiz bir yolculuk olarak tanımlarken, bu bütüncül yaklaşımı değişen beklentilerine tutarlı ve kapsamlı şekilde yanıt vermenin temeli olarak görüyor. Bu doğrultuda geliştirilen Ford EV Club, kullanıcıların elektrikli araç deneyimini donanım, yazılım ve hizmetlerle desteklenen uçtan uca entegre bir ekosistem içinde zenginleştirmeyi amaçlıyor.” Bir bilgi, deneyim ve etkileşim platformu olarak kullanıcılarını tamamen elektrikli mobilite odağında bir araya getiren Ford EV Club, ilk etapta üyelerine günlük yaşamı pratikleştiren cazip ayrıcalıklar sunmayı hedefliyor. Bu kapsamda platform üyeleri, anlaşmalı şarj istasyonlarında gerçekleştirecekleri şarj işlemlerinde anında indirim olanaklarına ek olarak ücretsiz otopark hakkına da sahip oluyor. Günlük ulaşım çözümleriyle beraber kullanıcılarına keyifli deneyimler de yaşatmayı hedefleyen EV Club, uygulamadan kod oluşturan üyelerine Turkcell Platinum Park’ta Ford Ranger ile offroad deneyimini de ücretsiz olarak sunuyor.Ford Hesabım uygulaması içerisinde yer alan Ford EV Club,kullanıcılarına elektrikli araç deneyimini kolaylaştıran birçok avantaj sunarken, topluluğun organik şekilde büyümesine paralel olarak yeni iş birlikleri ve deneyimlerle gelişmeye devam edecek. Ford EV Club, menzil ve şarj yönetimi gibi başlıkların yanı sıra merak edilen teknik detaylarla ilgili düzenli haftalık içeriklerle kullanıcı deneyimini sürekli zenginleştirmeyi amaçlıyor. Elektrikli araç kullanımını daha keyifli hale getiren Ford EV Club’ın önümüzdeki dönemde yeni iş birlikleri ve deneyim odaklı etkinliklerle daha da zenginleştirilmesi hedefleniyor. Platform, üyelerinin talep ve beklentileri doğrultusunda sürekli geliştirilerek kullanıcıların hayatına değer katacak.” ifadelerine yer verildi.",
-          "post_text_for_card": "Ford Türkiye, elektrikli araç sahiplerini \"Ford EV Club\" çatısı altında topluyor.\n\nBinek ve ticari elektrikli araç kullanıcılarına yönelik platform, günlük kullanımda maliyet ve zaman avantajı sağlıyor.\n\nÜyeler özel içerik ve topluluk ekosisteminden yararlanıyor. \"Ford Hesabım\" ile entegre sistem, sürücülerin temel ihtiyaçlarına odaklanıyor.\n\nFord EV Club, elektrikli mobiliteye geçişi kolaylaştırıyor.",
-          "story_card_title": "FORD'DAN ELEKTRİKLİ ARAÇ SAHİPLERİNE YENİ PLATFORM!",
-          "story_card_subtitle": "Ford Türkiye, elektrikli araç kullanıcıları için özel olarak tasarlanan yeni platformu Ford EV Club'ı duyurdu. Bu yenilikçi platform, hem binek hem de ticari elektrikli araç sahiplerine yönelik olup, günlük kullanımda önemli maliyet ve zaman avantajları sunmayı hedefliyor. Üyeler ayrıca özel içeriklere ve güçlü bir topluluk ekosistemine erişim sağlayacak.",
+          "full_text": "Kimya ve tehlikeli madde lojistiğindeki 40 yılı aşkın deneyimini yeni nesil enerji teknolojilerine taşıyan Alışan Lojistik, Sakarya'nın Arifiye bölgesinde kurduğu yeni batarya depolama tesisini hizmete açtı. 210 Milyon TL tutarında yatırımla hayata geçirilen ve 20 kişiye doğrudan istihdam sağlayan tesis, elektrikli araç üreticilerinden enerji depolama sistemleri geliştiricilerine kadar geniş bir ekosistemin özel lojistik ihtiyaçlarına yanıt vermek üzere tasarlandı. Elektrikli araç üretiminin, yenilenebilir enerji yatırımlarının ve batarya teknolojilerinin dünya genelinde hızla gelişmesi, bataryaların güvenli depolanmasını küresel tedarik zincirlerinin öncelikli ihtiyaçlarından biri haline getiriyor. Yanıcılık, ısıya duyarlılık ve özel elleçleme gereklilikleri nedeniyle uzmanlaşmış çözümler gerektiren bu alanda Alışan Lojistik, yeni yatırımıyla Türkiye'nin enerji dönüşümünü destekleyen kritik lojistik altyapının gelişimine katkı sağlıyor. Uluslararası standartları esas alan çok katmanlı güvenlik altyapısı Toplam 9.000 metrekarelik depolama alanı ve 9.000 palet kapasitesine sahip tesis, lityum-iyon bataryaların kendine özgü riskleri dikkate alınarak özel olarak tasarlandı. Tesiste güvenlik yaklaşımı, yalnızca olası bir yangına müdahaleyi değil, risklerin erken aşamada tespit edilmesini, izlenmesini ve kontrol altına alınmasını da kapsıyor. Bu kapsamda termal görüntüleme teknolojisiyle desteklenen erken uyarı sistemleri, havalandırma ve yangın güvenliği altyapısıyla entegre çalışan gaz algılama sistemleri veNFPA (National Fire Protection Association / Ulusal Yangından Korunma Birliği) standartları esas alınarak tasarlanan özel yangın söndürme çözümleribir arada kullanılıyor. Yangın kompartımanlarına ayrılmış depolama alanları ve farklı risk senaryolarına yönelik acil müdahale ekipmanlarıyla desteklenen tesisin güvenlik altyapısı, NFPA Uluslararası yangından korunma standartları ve EV batarya depolamaya teknik uygunluk kriterleri doğrultusunda yapılandırıldı. Bataryalar, güvenli depolama koşullarına uygun olarak yüzde 50–60 şarj seviyesi (State of Charge – SoC) aralığında tesise kabul ediliyor ve depolama süresince izleniyor. Özel algılama ve havalandırma sistemleriyle donatılmış alanlarda, risklerin önleyici yaklaşımla yönetilmesi esas alınıyor. Tesisin taşıma ve sevkiyatla bağlantılı elleçleme süreçlerinde, tehlikeli maddelerin karayoluyla uluslararası taşınmasını düzenleyen ADR Anlaşması'nın ilgili hükümleri dikkate alınıyor. ADR kapsamında Sınıf 9 tehlikeli maddeler arasında yer alan lityum-iyon bataryalar için, tek başına taşınan bataryaları tanımlayan UN3480 ve ekipman içerisinde bulunan veya ekipmanla birlikte taşınan bataryaları tanımlayan UN3481 sınıflandırmalarına uygun sevkiyat prosedürleri uygulanıyor. Depolamadan tersine lojistiğe uçtan uca çözüm Alışan Lojistik'in Sakarya yatırımı, yalnızca özel koşullarda depolama hizmeti sunan bir tesis olmanın ötesinde, batarya tedarik zincirinin farklı aşamalarını kapsayan entegre bir hizmet modelinin parçasını oluşturuyor. Şirket; tehlikeli madde taşımacılığı, gümrük süreçleri, özel depolama ve tersine lojistik hizmetlerini bir arada sunarak elektrikli araç üreticileri, enerji depolama sistemleri geliştiricileri ve elektronik sektöründeki kuruluşlar için bütünleşik lojistik çözümler sağlıyor. Hasarlı veya geri çağrılan bataryaların özel prosedürlerle yönetilmesini de kapsayan bu yaklaşım, batarya yaşam döngüsünün farklı aşamalarında güvenlik, izlenebilirlik ve operasyonel sürekliliğin sağlanmasına katkıda bulunuyor. Damla Alışan: “Enerji dönüşümünün geleceği, onu taşıyabilecek altyapıyı bugünden kurabilenlerin elinde şekillenecek” Yatırıma ilişkin değerlendirmelerde bulunan Alışan Lojistik CEO'su Damla Alışan, lojistik sektörünün enerji dönüşümündeki rolünün giderek daha stratejik bir nitelik kazandığını belirterek şunları söyledi: “Dünya, enerji üretiminden ulaşıma, sanayiden günlük yaşama kadar köklü bir dönüşümden geçiyor. Elektrikli mobilite ve enerji depolama teknolojileri bu dönüşümün merkezinde yer alırken, bu teknolojilerin yaygınlaşabilmesi için onları destekleyecek güvenli ve güçlü tedarik zincirlerine ihtiyaç duyuluyor. Biz Alışan Lojistik olarak lojistiğin rolünü yalnızca bugünün ihtiyaçlarına yanıt vermekle sınırlı görmüyoruz. Geleceğin endüstrilerinin hangi altyapılara ihtiyaç duyacağını bugünden öngörmenin ve bu alanlarda sorumluluk üstlenmenin sektörümüzün en önemli görevlerinden biri olduğuna inanıyoruz. Sakarya'da hayata geçirdiğimiz bu yatırım, tam da bu vizyonun bir sonucu. Türkiye'de önemli bir ihtiyaca yanıt verirken, uluslararası güvenlik standartlarını esas alan, teknoloji odaklı bir altyapı oluşturduk. Çünkü söz konusu EV bataryaları ve diğer lityum-iyon enerji depolama teknolojileri olduğunda lojistik, yalnızca bir depolama veya taşıma operasyonu değil; insan güvenliğini, çevresel sorumluluğu ve üretim sürekliliğini birlikte ele almayı gerektiren kritik bir uzmanlık alanı. Tehlikeli madde lojistiğinde edindiğimiz köklü deneyimi, PSA...",
+          "post_text_for_card": "LİTYUM-İYON PİL DEPOLAMAK SADECE BİR DEPO KURMAK DEĞİL.\n\nAlışan Lojistik, Sakarya Arifiye'de 210 milyon TL yatırımla yeni batarya depolama tesisini açtı. Tesis, özellikle elektrikli araç bataryaları için tasarlandı.\n\nBu yatırım, \"batarya üretimi artıyor\" söyleminin arka planındaki asıl ihtiyacı gösteriyor. Yanıcılık ve ısıya duyarlılık, bu pillerin standart bir depoda tutulamayacağını netleştiriyor.\n\nYeni nesil enerji, yeni nesil lojistik şartları demek.",
+          "story_card_title": "LİTYUM DEPOLAMAK DEV BİR RİSK!",
+          "story_card_subtitle": "Alışan Lojistik, Sakarya'da tam 210 milyon TL'lik dev bir lityum-iyon pil depolama tesisi kurdu. Bu yatırım, elektrikli araç bataryalarının güvenli bir şekilde saklanması için kritik öneme sahip. Çünkü yanıcılık ve ısıya duyarlılık, bu pillerin standart depolarda tutulamayacağını net bir şekilde ortaya koyuyor.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5702.jpg",
+            "https://cdn.otopodyum.com.tr/news/5689.jpg",
+            "https://cdn.otopodyum.com.tr/news/5690.jpg",
+            "https://cdn.otopodyum.com.tr/news/5694.jpg"
+          ]
         },
-        "post_text": "Ford Türkiye, elektrikli araç sahiplerini \"Ford EV Club\" çatısı altında topluyor.\n\nBinek ve ticari elektrikli araç kullanıcılarına yönelik platform, günlük kullanımda maliyet ve zaman avantajı sağlıyor.\n\nÜyeler özel içerik ve topluluk ekosisteminden yararlanıyor. \"Ford Hesabım\" ile entegre sistem, sürücülerin temel ihtiyaçlarına odaklanıyor.\n\nFord EV Club, elektrikli mobiliteye geçişi kolaylaştırıyor.",
-        "story_card_title": "FORD'DAN ELEKTRİKLİ ARAÇ SAHİPLERİNE YENİ PLATFORM!",
-        "story_card_subtitle": "Ford Türkiye, elektrikli araç kullanıcıları için özel olarak tasarlanan yeni platformu Ford EV Club'ı duyurdu. Bu yenilikçi platform, hem binek hem de ticari elektrikli araç sahiplerine yönelik olup, günlük kullanımda önemli maliyet ve zaman avantajları sunmayı hedefliyor. Üyeler ayrıca özel içeriklere ve güçlü bir topluluk ekosistemine erişim sağlayacak.",
-        "image_path": "/tmp/otoxtra_img_p3z2avny.jpg",
+        "post_text": "LİTYUM-İYON PİL DEPOLAMAK SADECE BİR DEPO KURMAK DEĞİL.\n\nAlışan Lojistik, Sakarya Arifiye'de 210 milyon TL yatırımla yeni batarya depolama tesisini açtı. Tesis, özellikle elektrikli araç bataryaları için tasarlandı.\n\nBu yatırım, \"batarya üretimi artıyor\" söyleminin arka planındaki asıl ihtiyacı gösteriyor. Yanıcılık ve ısıya duyarlılık, bu pillerin standart bir depoda tutulamayacağını netleştiriyor.\n\nYeni nesil enerji, yeni nesil lojistik şartları demek.",
+        "story_card_title": "LİTYUM DEPOLAMAK DEV BİR RİSK!",
+        "story_card_subtitle": "Alışan Lojistik, Sakarya'da tam 210 milyon TL'lik dev bir lityum-iyon pil depolama tesisi kurdu. Bu yatırım, elektrikli araç bataryalarının güvenli bir şekilde saklanması için kritik öneme sahip. Çünkü yanıcılık ve ısıya duyarlılık, bu pillerin standart depolarda tutulamayacağını net bir şekilde ortaya koyuyor.",
+        "image_path": "/tmp/otoxtra_img_27m8h3go.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_p3z2avny.jpg"
+          "/tmp/otoxtra_img_27m8h3go.jpg",
+          "/tmp/otoxtra_img_80nra3rk.jpg",
+          "/tmp/otoxtra_img_shf1j5by.jpg",
+          "/tmp/otoxtra_img_os8oo_g1.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-10-15T07:03:26.904027+03:00"
+      "updated_at": "2026-10-15T08:03:20.765131+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122183834894916499",
+        "post_id": "678053852057751_122183839580916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18418077379153287",
+            "id": "18142075819625648",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1492140636120514",
+            "id": "972807409224802",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-15T07:04:13.016067+03:00"
+      "updated_at": "2026-10-15T08:04:00.505309+03:00"
     }
   }
 }
