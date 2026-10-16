@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-10-16-07:01",
-  "status": "error",
-  "started_at": "2026-10-16T07:01:08.206765+03:00",
-  "updated_at": "2026-10-16T07:02:56.279205+03:00",
+  "run_id": "2026-10-16-08:01",
+  "status": "completed",
+  "started_at": "2026-10-16T08:01:13.850852+03:00",
+  "updated_at": "2026-10-16T08:04:29.785748+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+            "link": "https://otopodyum.com.tr/premium-otolar/alfa-romeo-cuorerosso-dunya-promiyerini-pariste-yapti-5393h",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-16T04:59:00+00:00",
+            "summary": "İtalyan tasarım kültürü, sportiflik ve kırmızı rengin simgelediği tutkuyu bir araya getiren Cuorerosso, Alfa Romeo’nun “Bellezza Necessaria” (Saf ve İşlevsel Güzellik) olarak adlandırdığı yeni tasarım felsefesini temsil ediyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5709.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "alfa-cuorerosso-dunya-paris-promiyerini-romeo-yapti"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -90,7 +112,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.netbub.com/ahmetcelik2016/rss",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -138,55 +160,245 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 9,
+            "count": 10,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 149,
-            "after_keyword": 89,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 150,
+            "after_keyword": 88,
+            "after_time": 9,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 149,
-          "after_keyword": 89,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 150,
+          "after_keyword": 88,
+          "after_time": 9,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-16T07:02:56.279205+03:00"
+      "error": null,
+      "updated_at": "2026-10-16T08:03:22.171440+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+          "link": "https://otopodyum.com.tr/premium-otolar/alfa-romeo-cuorerosso-dunya-promiyerini-pariste-yapti-5393h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-16T04:59:00+00:00",
+          "summary": "İtalyan tasarım kültürü, sportiflik ve kırmızı rengin simgelediği tutkuyu bir araya getiren Cuorerosso, Alfa Romeo’nun “Bellezza Necessaria” (Saf ve İşlevsel Güzellik) olarak adlandırdığı yeni tasarım felsefesini temsil ediyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5709.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "alfa-cuorerosso-dunya-paris-promiyerini-romeo-yapti",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 6
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Alfa Romeo'nun yeni modeli tasarımı ve Paris gibi önemli bir sahnede tanıtılmasıyla otomobil meraklılarının ilgisini çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 68,
+        "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 16,
+          "benzersizlik": 14,
+          "gundem_gucu": 12,
+          "paylasilabilirlik": 6
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Alfa Romeo'nun yeni modeli tasarımı ve Paris gibi önemli bir sahnede tanıtılmasıyla otomobil meraklılarının ilgisini çekecek nitelikte.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+            "score": 68,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 16,
+              "benzersizlik": 14,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-16T08:03:25.054946+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+          "link": "https://otopodyum.com.tr/premium-otolar/alfa-romeo-cuorerosso-dunya-promiyerini-pariste-yapti-5393h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-16T04:59:00+00:00",
+          "summary": "İtalyan tasarım kültürü, sportiflik ve kırmızı rengin simgelediği tutkuyu bir araya getiren Cuorerosso, Alfa Romeo’nun “Bellezza Necessaria” (Saf ve İşlevsel Güzellik) olarak adlandırdığı yeni tasarım felsefesini temsil ediyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5709.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "alfa-cuorerosso-dunya-paris-promiyerini-romeo-yapti",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 6
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Alfa Romeo'nun yeni modeli tasarımı ve Paris gibi önemli bir sahnede tanıtılmasıyla otomobil meraklılarının ilgisini çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Alfa Romeo, 2026 Paris Otomobil Fuarı’nda tanıttığı Cuorerosso konsept otomobiliyle 116 yıllık sportif otomobil mirasını geleceğin teknolojileriyle birleştiriyor. Markanın tasarım, performans ve sürüş keyfine yaklaşımını yeniden yorumlayan Cuorerosso, Alfa Romeo'nun elektrifikasyon çağında da kendine özgü karakterini koruma kararlılığını ortaya koyuyor. Doğrudan bir seri üretim modelinin ön gösterimi olmaktan ziyade, Alfa Romeo'nun gelecekteki otomobillerine yön verecek tasarım ve teknoloji fikirlerini bünyesinde barındıran Cuorerosso, markanın yeni dönem vizyonunu somutlaştırıyor. İtalyan estetiğini, sportif karakteri ve sürücüyle kurulan duygusal bağı merkezine alan Cuorerosso, Alfa Romeo'nun Stellantis bünyesindeki premium sportif marka konumunu güçlendirecek gelecek stratejisinin önemli bir yansımasını oluşturuyor. İtalyancada “kırmızı kalp” anlamını taşıyan Cuorerosso ismi, markanın kimliğini oluşturan iki temel kavramı birleştiriyor. Duyguları simgeleyen kalp ve performans tutkusunu temsil eden kırmızı, konsept otomobilin hem tasarımında hem de teknolojik yaklaşımında belirleyici rol oynuyor. Cuorerosso, Alfa Romeo'nun yeni dönem ürün stratejisinin de ipuçlarını veriyor. Marka, farklı kullanıcı ihtiyaçlarına yanıt verecek çoklu enerji platformlarıyla, pazarın temel segmentlerini kapsayan ve uzunluğu 4,70 metreye kadar ulaşan modeller geliştirmeyi hedefliyor. Bu yaklaşım kapsamında tamamen elektrikli, şarj edilebilir hibrit, hafif hibrit ve tam hibrit motor seçeneklerinin değerlendirilmesi öngörülüyor. Gelecekteki ürün gamında Quadrifoglio versiyonlarına da yer açabilecek bu esnek yapı, motor teknolojisi ne olursa olsun Alfa Romeo'ya özgü sürüş karakterinin korunmasını amaçlıyor. Alfa Romeo ve Maserati CEO'su Santo Ficili, Cuorerosso konsept otomobilinin markanın geleceği açısından taşıdığı önemi şu sözlerle değerlendirdi: “Alfa Romeo her zaman insanları yalnızca bir noktadan diğerine ulaştırmakla kalmayan, aynı zamanda onlarda duygular uyandıran otomobiller tasarladı. İtalyan ruhu, sportiflik ve tutkuyu bir araya getiren benzersiz kültürümüzden beslenen insan ve makine arasındaki bu bağ, otomobillerimizin her birini gerçek bir Alfa Romeo haline getiriyor. Cuorerosso ile bu kimliğimizi geleceğe taşıyoruz. Farklı enerji çözümlerine açık olan bu gelecekte teknoloji, işlevsellik ve kalite her zaman duyguların ve sürüş keyfinin hizmetinde olacak. Bizim 'Bellezza Necessaria' vizyonumuz da tam olarak bunu ifade ediyor: Otomobil kullanmayı sevenler için tasarlanmış, yaşadığı dönemin ruhunu yansıtırken birer ikona dönüşebilecek otomobiller yaratmak.” “Bellezza Necessaria”: Gereksiz her detaydan arındırılmış saf İtalyan tasarımı! Alfa Romeo Cuorerosso'nun tasarımının temelinde, markanın “Bellezza Necessaria” yani “Saf ve İşlevsel Güzellik” olarak tanımladığı yaklaşım bulunuyor. Estetik, işlevsellik, teknoloji ve kaliteyi birbirinden ayrılmaz unsurlar olarak değerlendiren bu felsefe, gereksiz detayları ortadan kaldırarak her bileşene belirli bir işlev kazandırmayı hedefliyor. İtalyan heykel sanatından ilham alan bu anlayış, güzelliğin malzemenin içerisinde zaten var olduğu ve tasarımcının görevinin onu ortaya çıkarmak olduğu düşüncesine dayanıyor. Alfa Romeo Tasarım Merkezi Centro Stile, Cuorerosso'nun geliştirilmesinde de bu felsefeyi benimsedi. İlk eskiz çalışmalarının yalnızca bir veya iki hafta içerisinde tamamlanmasının ardından ekip, doğrudan üç boyutlu modelleme aşamasına geçti. Başlangıçta tekerleklerden, camlardan, aydınlatma elemanlarından ve diğer otomotiv detaylarından arındırılmış tek parça bir heykel olarak ele alınan Cuorerosso, gereksiz unsurların aşamalı olarak çıkarılmasıyla bugünkü formuna kavuştu. Ortaya çıkan tasarımda kesintisiz yüzeyler, akıcı hatlar ve adeta sıvı metalden şekillendirilmiş gibi görünen gövde yapısı dikkat çekiyor. Bu yaklaşım sayesinde Cuorerosso, hareketsiz durumdayken dahi dinamizm ve güç hissi veren bir karakter ortaya koyuyor. Gran Turismo zarafeti ile süper spor otomobil karakteri bir arada! Alfa Romeo Cuorerosso, 2+2 kişilik koltuk düzeni ve sportif coupe mimarisiyle markanın performans odaklı tasarım anlayışını yeni bir boyuta taşıyor. Gran Turismo modellerinin zarafetini süper spor otomobillerin etkileyici duruşuyla birleştiren bu konsept otomobil, dengeli oranları ve aerodinamik gövde yapısıyla öne çıkıyor. Yeni konsept otomobilin teknik ölçüleri de bu sportif karakteri destekliyor. Cuorerosso'nun aerodinamik verimliliğinde üç temel unsur belirleyici rol oynuyor. Kesintisiz ve yalın gövde silüeti, Alfa Romeo tarihinin karakteristik tasarım öğelerinden “Coda Tronca” olarak bilinen kesik arka tasarım ve gövdeye entegre arka difüzör, 0,28'lik aerodinamik sürtünme katsayısına ulaşılmasını sağlıyor. Otomobilin yan profilinde önden arkaya uzanan kama biçimli karakter çizgisi, gövdeye güçlü ve dinamik bir görünüm kazandırırken, arka bölümdeki Coda Tronca tasarımı markanın aerodinamik mirasına gönderme yapıyor. İkonik Scudetto ve Trilobo tasarımı yeniden yorumlandı!..."
+        },
+        "post_text": "2026'YA KADAR KENDİNE HAS BİR ALFA ROMEO TASARIMI GÖRMEK ZOR.\n\nAlfa Romeo, Cuorerosso konseptini Paris'te tanıttı. Marka bunu \"Saf ve İşlevsel Güzellik\" olarak tanımlıyor.\n\nBu bir seri üretim modeli değil, markanın gelecekteki tasarım felsefesini gösteriyor. Ancak 2026 Paris Otomobil Fuarı'na kadar bu felsefeyi yollarda görmemiz zor.\n\nKonsept otomobillerin seri üretime ne kadar uzak kaldığı, markaların kendi vizyonlarını ne kadar geciktirdiğinin bir göstergesi.",
+        "post_text_length": 465,
+        "story_card_title": "ALFA ROMEO'NUN YENİ YÜZÜ 2026'DAN ÖNCE YOLDA DEĞİL!",
+        "story_card_subtitle": "Alfa Romeo, Paris'te tanıttığı Cuorerosso konseptiyle gelecekteki tasarım dilini gözler önüne serdi. Markanın 'Saf ve İşlevsel Güzellik' olarak tanımladığı bu yeni felsefe, seri üretime geçmeden önce uzun bir yolculuk yapacak. Bu çarpıcı konsepti yollarda görebilmek için ise 2026 Paris Otomobil Fuarı'nı beklemek gerekecek.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-16T08:03:28.029512+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Alfa Romeo Cuorerosso dünya prömiyerini Paris'te yaptı",
+          "link": "https://otopodyum.com.tr/premium-otolar/alfa-romeo-cuorerosso-dunya-promiyerini-pariste-yapti-5393h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-16T04:59:00+00:00",
+          "summary": "İtalyan tasarım kültürü, sportiflik ve kırmızı rengin simgelediği tutkuyu bir araya getiren Cuorerosso, Alfa Romeo’nun “Bellezza Necessaria” (Saf ve İşlevsel Güzellik) olarak adlandırdığı yeni tasarım felsefesini temsil ediyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5709.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5709.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "alfa-cuorerosso-dunya-paris-promiyerini-romeo-yapti",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 16,
+            "benzersizlik": 14,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 6
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Alfa Romeo'nun yeni modeli tasarımı ve Paris gibi önemli bir sahnede tanıtılmasıyla otomobil meraklılarının ilgisini çekecek nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Alfa Romeo, 2026 Paris Otomobil Fuarı’nda tanıttığı Cuorerosso konsept otomobiliyle 116 yıllık sportif otomobil mirasını geleceğin teknolojileriyle birleştiriyor. Markanın tasarım, performans ve sürüş keyfine yaklaşımını yeniden yorumlayan Cuorerosso, Alfa Romeo'nun elektrifikasyon çağında da kendine özgü karakterini koruma kararlılığını ortaya koyuyor. Doğrudan bir seri üretim modelinin ön gösterimi olmaktan ziyade, Alfa Romeo'nun gelecekteki otomobillerine yön verecek tasarım ve teknoloji fikirlerini bünyesinde barındıran Cuorerosso, markanın yeni dönem vizyonunu somutlaştırıyor. İtalyan estetiğini, sportif karakteri ve sürücüyle kurulan duygusal bağı merkezine alan Cuorerosso, Alfa Romeo'nun Stellantis bünyesindeki premium sportif marka konumunu güçlendirecek gelecek stratejisinin önemli bir yansımasını oluşturuyor. İtalyancada “kırmızı kalp” anlamını taşıyan Cuorerosso ismi, markanın kimliğini oluşturan iki temel kavramı birleştiriyor. Duyguları simgeleyen kalp ve performans tutkusunu temsil eden kırmızı, konsept otomobilin hem tasarımında hem de teknolojik yaklaşımında belirleyici rol oynuyor. Cuorerosso, Alfa Romeo'nun yeni dönem ürün stratejisinin de ipuçlarını veriyor. Marka, farklı kullanıcı ihtiyaçlarına yanıt verecek çoklu enerji platformlarıyla, pazarın temel segmentlerini kapsayan ve uzunluğu 4,70 metreye kadar ulaşan modeller geliştirmeyi hedefliyor. Bu yaklaşım kapsamında tamamen elektrikli, şarj edilebilir hibrit, hafif hibrit ve tam hibrit motor seçeneklerinin değerlendirilmesi öngörülüyor. Gelecekteki ürün gamında Quadrifoglio versiyonlarına da yer açabilecek bu esnek yapı, motor teknolojisi ne olursa olsun Alfa Romeo'ya özgü sürüş karakterinin korunmasını amaçlıyor. Alfa Romeo ve Maserati CEO'su Santo Ficili, Cuorerosso konsept otomobilinin markanın geleceği açısından taşıdığı önemi şu sözlerle değerlendirdi: “Alfa Romeo her zaman insanları yalnızca bir noktadan diğerine ulaştırmakla kalmayan, aynı zamanda onlarda duygular uyandıran otomobiller tasarladı. İtalyan ruhu, sportiflik ve tutkuyu bir araya getiren benzersiz kültürümüzden beslenen insan ve makine arasındaki bu bağ, otomobillerimizin her birini gerçek bir Alfa Romeo haline getiriyor. Cuorerosso ile bu kimliğimizi geleceğe taşıyoruz. Farklı enerji çözümlerine açık olan bu gelecekte teknoloji, işlevsellik ve kalite her zaman duyguların ve sürüş keyfinin hizmetinde olacak. Bizim 'Bellezza Necessaria' vizyonumuz da tam olarak bunu ifade ediyor: Otomobil kullanmayı sevenler için tasarlanmış, yaşadığı dönemin ruhunu yansıtırken birer ikona dönüşebilecek otomobiller yaratmak.” “Bellezza Necessaria”: Gereksiz her detaydan arındırılmış saf İtalyan tasarımı! Alfa Romeo Cuorerosso'nun tasarımının temelinde, markanın “Bellezza Necessaria” yani “Saf ve İşlevsel Güzellik” olarak tanımladığı yaklaşım bulunuyor. Estetik, işlevsellik, teknoloji ve kaliteyi birbirinden ayrılmaz unsurlar olarak değerlendiren bu felsefe, gereksiz detayları ortadan kaldırarak her bileşene belirli bir işlev kazandırmayı hedefliyor. İtalyan heykel sanatından ilham alan bu anlayış, güzelliğin malzemenin içerisinde zaten var olduğu ve tasarımcının görevinin onu ortaya çıkarmak olduğu düşüncesine dayanıyor. Alfa Romeo Tasarım Merkezi Centro Stile, Cuorerosso'nun geliştirilmesinde de bu felsefeyi benimsedi. İlk eskiz çalışmalarının yalnızca bir veya iki hafta içerisinde tamamlanmasının ardından ekip, doğrudan üç boyutlu modelleme aşamasına geçti. Başlangıçta tekerleklerden, camlardan, aydınlatma elemanlarından ve diğer otomotiv detaylarından arındırılmış tek parça bir heykel olarak ele alınan Cuorerosso, gereksiz unsurların aşamalı olarak çıkarılmasıyla bugünkü formuna kavuştu. Ortaya çıkan tasarımda kesintisiz yüzeyler, akıcı hatlar ve adeta sıvı metalden şekillendirilmiş gibi görünen gövde yapısı dikkat çekiyor. Bu yaklaşım sayesinde Cuorerosso, hareketsiz durumdayken dahi dinamizm ve güç hissi veren bir karakter ortaya koyuyor. Gran Turismo zarafeti ile süper spor otomobil karakteri bir arada! Alfa Romeo Cuorerosso, 2+2 kişilik koltuk düzeni ve sportif coupe mimarisiyle markanın performans odaklı tasarım anlayışını yeni bir boyuta taşıyor. Gran Turismo modellerinin zarafetini süper spor otomobillerin etkileyici duruşuyla birleştiren bu konsept otomobil, dengeli oranları ve aerodinamik gövde yapısıyla öne çıkıyor. Yeni konsept otomobilin teknik ölçüleri de bu sportif karakteri destekliyor. Cuorerosso'nun aerodinamik verimliliğinde üç temel unsur belirleyici rol oynuyor. Kesintisiz ve yalın gövde silüeti, Alfa Romeo tarihinin karakteristik tasarım öğelerinden “Coda Tronca” olarak bilinen kesik arka tasarım ve gövdeye entegre arka difüzör, 0,28'lik aerodinamik sürtünme katsayısına ulaşılmasını sağlıyor. Otomobilin yan profilinde önden arkaya uzanan kama biçimli karakter çizgisi, gövdeye güçlü ve dinamik bir görünüm kazandırırken, arka bölümdeki Coda Tronca tasarımı markanın aerodinamik mirasına gönderme yapıyor. İkonik Scudetto ve Trilobo tasarımı yeniden yorumlandı!...",
+          "post_text_for_card": "2026'YA KADAR KENDİNE HAS BİR ALFA ROMEO TASARIMI GÖRMEK ZOR.\n\nAlfa Romeo, Cuorerosso konseptini Paris'te tanıttı. Marka bunu \"Saf ve İşlevsel Güzellik\" olarak tanımlıyor.\n\nBu bir seri üretim modeli değil, markanın gelecekteki tasarım felsefesini gösteriyor. Ancak 2026 Paris Otomobil Fuarı'na kadar bu felsefeyi yollarda görmemiz zor.\n\nKonsept otomobillerin seri üretime ne kadar uzak kaldığı, markaların kendi vizyonlarını ne kadar geciktirdiğinin bir göstergesi.",
+          "story_card_title": "ALFA ROMEO'NUN YENİ YÜZÜ 2026'DAN ÖNCE YOLDA DEĞİL!",
+          "story_card_subtitle": "Alfa Romeo, Paris'te tanıttığı Cuorerosso konseptiyle gelecekteki tasarım dilini gözler önüne serdi. Markanın 'Saf ve İşlevsel Güzellik' olarak tanımladığı bu yeni felsefe, seri üretime geçmeden önce uzun bir yolculuk yapacak. Bu çarpıcı konsepti yollarda görebilmek için ise 2026 Paris Otomobil Fuarı'nı beklemek gerekecek.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5709.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/10/16/alfa-romeo-cuorerosso-3.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/10/16/alfa-romeo-cuorerosso-5.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/10/16/alfa-romeo-cuorerosso-2.jpeg"
+          ]
+        },
+        "post_text": "2026'YA KADAR KENDİNE HAS BİR ALFA ROMEO TASARIMI GÖRMEK ZOR.\n\nAlfa Romeo, Cuorerosso konseptini Paris'te tanıttı. Marka bunu \"Saf ve İşlevsel Güzellik\" olarak tanımlıyor.\n\nBu bir seri üretim modeli değil, markanın gelecekteki tasarım felsefesini gösteriyor. Ancak 2026 Paris Otomobil Fuarı'na kadar bu felsefeyi yollarda görmemiz zor.\n\nKonsept otomobillerin seri üretime ne kadar uzak kaldığı, markaların kendi vizyonlarını ne kadar geciktirdiğinin bir göstergesi.",
+        "story_card_title": "ALFA ROMEO'NUN YENİ YÜZÜ 2026'DAN ÖNCE YOLDA DEĞİL!",
+        "story_card_subtitle": "Alfa Romeo, Paris'te tanıttığı Cuorerosso konseptiyle gelecekteki tasarım dilini gözler önüne serdi. Markanın 'Saf ve İşlevsel Güzellik' olarak tanımladığı bu yeni felsefe, seri üretime geçmeden önce uzun bir yolculuk yapacak. Bu çarpıcı konsepti yollarda görebilmek için ise 2026 Paris Otomobil Fuarı'nı beklemek gerekecek.",
+        "image_path": "/tmp/otoxtra_img_sud5fy4x.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_sud5fy4x.jpg",
+          "/tmp/otoxtra_img_bqljpsf1.jpg",
+          "/tmp/otoxtra_img_7fgmrqr2.jpg",
+          "/tmp/otoxtra_img_og6bbxvh.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-16T08:03:45.853507+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122183961512916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18111323837130999",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "929745703312646",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-16T08:04:29.785748+03:00"
     }
   }
 }
