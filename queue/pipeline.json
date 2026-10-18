@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-18-07:01",
+  "run_id": "2026-10-18-08:01",
   "status": "error",
-  "started_at": "2026-10-18T07:01:15.449126+03:00",
-  "updated_at": "2026-10-18T07:02:53.317935+03:00",
+  "started_at": "2026-10-18T08:01:14.158283+03:00",
+  "updated_at": "2026-10-18T08:03:09.793819+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: Nitter failover: Ahmet Celik icin tum instance'lar basarisiz",
+            "detail": "parse_error: <unknown>:2:11: not well-formed (invalid token)",
             "attempts": 1,
             "instance": ""
           },
@@ -123,11 +123,11 @@
             "instance": "nitter.kabii.moe"
           },
           "VeyselKarani": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/veysellkaranii/rss",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": ""
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -144,8 +144,8 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 148,
-            "after_keyword": 82,
+            "found": 138,
+            "after_keyword": 74,
             "after_time": 3,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -153,8 +153,8 @@
           }
         },
         "metrics": {
-          "found": 148,
-          "after_keyword": 82,
+          "found": 138,
+          "after_keyword": 74,
           "after_time": 3,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-18T07:02:53.317935+03:00"
+      "updated_at": "2026-10-18T08:03:09.793819+03:00"
     },
     "score": {
       "status": "waiting",
