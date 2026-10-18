@@ -1,57 +1,36 @@
 {
-  "run_id": "2026-10-18-17:01",
+  "run_id": "2026-10-18-19:01",
   "status": "completed",
-  "started_at": "2026-10-18T17:01:27.215212+03:00",
-  "updated_at": "2026-10-18T17:03:59.573600+03:00",
+  "started_at": "2026-10-18T19:01:20.618512+03:00",
+  "updated_at": "2026-10-18T19:04:02.496864+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
-            "link": "https://x.com/murattosunMSE/status/2111792077679870255",
-            "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2111792077679870255#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-18T12:10:41+00:00",
-            "summary": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar. Murat Tosun (@murattosunMSE) DİZEL VE BENZİNLİ SEVENLERE MÜJDE! Almanya ve Fransa anlaştı. İçten yanmalı motorların (benzin, dizel) yasağı esnetildi! 2035 sonrasında da satılacaklar! — http://nitter.jaydenha.uk/murattosunMSE/status/2111428933300134176#m",
-            "image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
+            "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
+            "link": "https://tr.motor1.com/news/812349/porsche-missions-manuel-sunabilir/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-18T15:00:00+00:00",
+            "summary": "Seri üretime taşınacak özellikler müşteri talebine bağlı.",
+            "image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
             "image_candidates": [
-              "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large"
+              "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg"
             ],
             "image_source": "rss",
-            "source_name": "MuratTosun",
+            "source_name": "Motor1 TR",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "binada-binasi-bitmesi-egea-genel-haber-herkese-kesistigi-mudurluk-selamlar-sonunda-tofas-uretiminin-uzucu-uzucu-yikiliyor-yil-yolumun-zincirlikuyu"
-          },
-          {
-            "title": "Ferrari’nin ezber bozan SUV modeli Purosangue, yeni özel mavi renk tonuyla zarafetin tanımını yeniden yapıyor.",
-            "link": "https://x.com/veysellkaranii/status/2111777218548609377",
-            "nitter_url": "https://nitter.jaydenha.uk/veysellkaranii/status/2111777218548609377#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-18T11:11:38+00:00",
-            "summary": "Ferrari’nin ezber bozan SUV modeli Purosangue, yeni özel mavi renk tonuyla zarafetin tanımını yeniden yapıyor.",
-            "image_url": "https://pbs.twimg.com/media/HU6KLmgX0AACQaN.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HU6KLmgX0AACQaN.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HU6KLmgX0AACQaN.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bozan-ezber-ferrari-mavi-modeli-ozel-purosangue-renk-suv-tanimini-tonuyla-yapiyor-yeniden-zarafetin"
+            "topic_fingerprint": "isterse-manuel-mission-musteriler-opsiyonuyla-porsche-sunabilir"
           }
         ],
-        "count": 2,
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -112,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -133,7 +112,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -188,247 +167,238 @@
           },
           "_metrics": {
             "found": 150,
-            "after_keyword": 88,
-            "after_time": 6,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 85,
+            "after_time": 4,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 150,
-          "after_keyword": 88,
-          "after_time": 6,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 85,
+          "after_time": 4,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-10-18T17:03:12.636923+03:00"
+      "updated_at": "2026-10-18T19:03:08.037066+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
-          "link": "https://x.com/murattosunMSE/status/2111792077679870255",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2111792077679870255#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-18T12:10:41+00:00",
-          "summary": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar. Murat Tosun (@murattosunMSE) DİZEL VE BENZİNLİ SEVENLERE MÜJDE! Almanya ve Fransa anlaştı. İçten yanmalı motorların (benzin, dizel) yasağı esnetildi! 2035 sonrasında da satılacaklar! — http://nitter.jaydenha.uk/murattosunMSE/status/2111428933300134176#m",
-          "image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
+          "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
+          "link": "https://tr.motor1.com/news/812349/porsche-missions-manuel-sunabilir/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-18T15:00:00+00:00",
+          "summary": "Seri üretime taşınacak özellikler müşteri talebine bağlı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg"
           ],
           "image_source": "rss",
-          "source_name": "MuratTosun",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "binada-binasi-bitmesi-egea-genel-haber-herkese-kesistigi-mudurluk-selamlar-sonunda-tofas-uretiminin-uzucu-uzucu-yikiliyor-yil-yolumun-zincirlikuyu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "isterse-manuel-mission-musteriler-opsiyonuyla-porsche-sunabilir",
+          "base_ai_score": 45,
           "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 71,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörünün simge yapılarından birinin yıkılacak olması yerli otomobil severler ve sektör çalışanları arasında yüksek duygusal bağ ve etkileşim yaratacaktır.",
+          "score_explanation": "Elektrikli bir modelde manuel vites opsiyonu ihtimali otomobil meraklıları arasında tartışma yaratabilir ancak şimdilik tamamen spekülatif bir müşteri talebine bağlı.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 71,
-        "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
+        "score": 53,
+        "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 7,
         "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 15,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 5
+          "guncellik": 19,
+          "etkilesim_potansiyeli": 14,
+          "benzersizlik": 10,
+          "gundem_gucu": 7,
+          "paylasilabilirlik": 3
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv sektörünün simge yapılarından birinin yıkılacak olması yerli otomobil severler ve sektör çalışanları arasında yüksek duygusal bağ ve etkileşim yaratacaktır.",
+        "score_explanation": "Elektrikli bir modelde manuel vites opsiyonu ihtimali otomobil meraklıları arasında tartışma yaratabilir ancak şimdilik tamamen spekülatif bir müşteri talebine bağlı.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
-            "score": 71,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 15,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 5
-            }
-          },
-          {
-            "title": "Ferrari’nin ezber bozan SUV modeli Purosangue, yeni özel mavi renk tonuyla zarafetin tanımını yeniden yapıyor.",
+            "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
             "score": 53,
             "score_breakdown": {
               "guncellik": 19,
               "etkilesim_potansiyeli": 14,
-              "benzersizlik": 6,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
+              "benzersizlik": 10,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 3
             }
           }
         ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "Ferrari’nin ezber bozan SUV modeli Purosangue, yeni özel mavi renk tonuyla zarafetin tanımını yeniden yapıyor.",
-            "link": "https://x.com/veysellkaranii/status/2111777218548609377",
-            "score": 53,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "bozan-ezber-ferrari-mavi-modeli-ozel-purosangue-renk-suv-tanimini-tonuyla-yapiyor-yeniden-zarafetin"
-          }
-        ]
+        "scored_count": 1,
+        "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-10-18T17:03:14.537000+03:00"
+      "updated_at": "2026-10-18T19:03:09.588021+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
-          "link": "https://x.com/murattosunMSE/status/2111792077679870255",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2111792077679870255#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-18T12:10:41+00:00",
-          "summary": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar. Murat Tosun (@murattosunMSE) DİZEL VE BENZİNLİ SEVENLERE MÜJDE! Almanya ve Fransa anlaştı. İçten yanmalı motorların (benzin, dizel) yasağı esnetildi! 2035 sonrasında da satılacaklar! — http://nitter.jaydenha.uk/murattosunMSE/status/2111428933300134176#m",
-          "image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
+          "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
+          "link": "https://tr.motor1.com/news/812349/porsche-missions-manuel-sunabilir/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-18T15:00:00+00:00",
+          "summary": "Seri üretime taşınacak özellikler müşteri talebine bağlı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg"
           ],
           "image_source": "rss",
-          "source_name": "MuratTosun",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "binada-binasi-bitmesi-egea-genel-haber-herkese-kesistigi-mudurluk-selamlar-sonunda-tofas-uretiminin-uzucu-uzucu-yikiliyor-yil-yolumun-zincirlikuyu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "isterse-manuel-mission-musteriler-opsiyonuyla-porsche-sunabilir",
+          "base_ai_score": 45,
           "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 71,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörünün simge yapılarından birinin yıkılacak olması yerli otomobil severler ve sektör çalışanları arasında yüksek duygusal bağ ve etkileşim yaratacaktır.",
+          "score_explanation": "Elektrikli bir modelde manuel vites opsiyonu ihtimali otomobil meraklıları arasında tartışma yaratabilir ancak şimdilik tamamen spekülatif bir müşteri talebine bağlı.",
           "freshness_bonus": 7,
-          "trend_bonus_raw": 1
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche Mission S, bir konsept otomobilden çok daha fazlası. Bu güzellik abidesi, ürün gamında 911’in üzerinde kalıcı bir isim olması planlanan yeni amiral gemisinin ilk ipuçlarını veriyor. Üstelik Porsche CEO’suna göre, müşteri talebi olursa bu platformmanuel şanzımanıda destekleyebilir. Road and Track’in aktardığına göre Porsche CEO’su Michael Leiters, bu haftaki tanıtım etkinliğinde platformun güç üniteleri açısından esnekliğine dikkat çekti ve manuel şanzıman ihtimaline de değindi. Leiters şunları söyledi: “Bu platformda ne üreteceğimizi müşteri talebi belirleyecek.” Porsche, Mission S konseptinin ne zaman seri üretim bir modele dönüşeceğine dair henüz bir takvim paylaşmadı. Şimdilik kesin olarak bildiğimiz tek şey, bu yeni platformdaki otomobillerin911’inüzerinde konumlanacağı, daha yüksek bir fiyat etiketine sahip olacağı ve çok daha yüksek performans sunacağı. Mission S, içte ve dıştaPorschekimliğini açıkça taşıyor. Konseptte “Floating Volumes” adı verilen, gövde panellerinin otomobilin üzerinde adeta süzülüyormuş gibi göründüğü bir tasarım anlayışı kullanılıyor. Uzun, alçak ve geniş görünen otomobilde orta motorlu yerleşim, Mission S’e oldukça etkileyici oranlar kazandırıyor. Araçtaaktif arka kanat, 917’den ilham alan soğutma fanları ve hafif jantlar yer alıyor. Kabinde ise Mission S, modern iç mekânlara hâkim olan büyük ekranlardan uzak duruyor. Bunun yerine dijital ekranların önünde 5 adet yuvarlak analog gösterge bulunuyor. Gösterge panelindeki telefon tutucu multimedya ekranının yerini alırken, fiziksel kontroller korunuyor. Porsche Mission S Concept İç Mekânı Porsche, otomobille ilgili henüz ayrıntılı bilgi paylaşmadı.Teknik özellikler, performans verileri ve fiyatşimdilik tamamen belirsizliğini koruyor. Seri üretime ne zaman gireceğini de bilmiyoruz. Mission S, şu aşamada Porsche’nin gelecekte neler sunabileceğine dair bir ön gösterim niteliği taşıyor ve deneyimlemek için sabırsızlanacağımız etkileyici bir gelecek vizyon ortaya koyuyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "TOFAŞ'ın Zincirlikuyu'daki binası yıl sonunda yıkılıyor. Egea'nın üretimi bitti, şimdi de trụ sở yıkılıyor.\n\nBu bina, Tofaş'ın Türkiye'deki otomotiv serüveninde önemli bir yere sahipti.\n\nBu yıkım, bir dönemin kapanışı gibi.",
-        "post_text_length": 223,
-        "story_card_title": "Bir Devir Kapanıyor: Tofaş Binası Yıkılıyor!",
-        "story_card_subtitle": "Tofaş'ın Zincirlikuyu'daki Genel Müdürlük binası yıl sonunda yıkılıyor. Egea'nın üretiminin bitmesinin ardından gelen bu haber, şirketin Türkiye'deki uzun soluklu serüveninde önemli bir dönemin sonunu işaret ediyor. Bu yıkım, otomotiv dünyasında bir devrin kapanışı olarak yorumlanıyor.",
+        "post_text": "BU MODELİN MANUEL ŞANZIMANLA GELMESİ, PORSCHE İÇİN BİR İDDİA DEĞİL, BİR TEST.\n\nMission S konsepti, 911'in üzerinde konumlanacak yeni amiral gemisinin ilk ipuçlarını veriyor. Porsche CEO'su, müşteri isterse bu platformun manuel şanzımanı destekleyebileceğini söyledi.\n\nBu kadar yüksek performanslı bir otomobilde manuel vites, \"sürücü odaklılık\" tanımını yeniden sorgulatıyor.\n\nMüşteri talebi gelirse manuel şanzıman konulacak, ama asıl soru kimin isteyeceği.",
+        "post_text_length": 458,
+        "story_card_title": "Porsche, manuel vitese yeşil ışık yaktı!",
+        "story_card_subtitle": "Porsche'nin yeni amiral gemisi Mission S konsepti, heyecan verici detaylarla geliyor. Şirket CEO'su, müşteri talebi halinde bu yüksek performanslı modelde manuel şanzıman opsiyonunun sunulabileceğini açıkladı. Bu durum, 'sürücü odaklılık' anlayışını yeniden tartışmaya açıyor ve kimlerin bu seçeneği tercih edeceği merak konusu.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-18T17:03:18.172501+03:00"
+      "updated_at": "2026-10-18T19:03:16.882037+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar.",
-          "link": "https://x.com/murattosunMSE/status/2111792077679870255",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2111792077679870255#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-18T12:10:41+00:00",
-          "summary": "ÜZÜCÜ HABER Zincirlikuyu'daki Tofaş Genel Müdürlük binası yıl sonunda yıkılıyor. En az Egea'nın üretiminin bitmesi kadar üzücü. Bu binada yolumun kesiştiği herkese selamlar. Murat Tosun (@murattosunMSE) DİZEL VE BENZİNLİ SEVENLERE MÜJDE! Almanya ve Fransa anlaştı. İçten yanmalı motorların (benzin, dizel) yasağı esnetildi! 2035 sonrasında da satılacaklar! — http://nitter.jaydenha.uk/murattosunMSE/status/2111428933300134176#m",
-          "image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large",
+          "title": "Porsche, Mission S'i \"müşteriler isterse\" manuel opsiyonuyla sunabilir",
+          "link": "https://tr.motor1.com/news/812349/porsche-missions-manuel-sunabilir/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-18T15:00:00+00:00",
+          "summary": "Seri üretime taşınacak özellikler müşteri talebine bağlı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg",
           "image_candidates": [
-            "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/JO6y9n/s3/hoffman-project0338-2_copy.jpg"
           ],
-          "image_source": "nitter_still",
-          "source_name": "MuratTosun",
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "binada-binasi-bitmesi-egea-genel-haber-herkese-kesistigi-mudurluk-selamlar-sonunda-tofas-uretiminin-uzucu-uzucu-yikiliyor-yil-yolumun-zincirlikuyu",
-          "base_ai_score": 65,
+          "topic_fingerprint": "isterse-manuel-mission-musteriler-opsiyonuyla-porsche-sunabilir",
+          "base_ai_score": 45,
           "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 15,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "guncellik": 19,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 10,
+            "gundem_gucu": 7,
+            "paylasilabilirlik": 3
           },
-          "score": 71,
+          "score": 53,
           "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv sektörünün simge yapılarından birinin yıkılacak olması yerli otomobil severler ve sektör çalışanları arasında yüksek duygusal bağ ve etkileşim yaratacaktır.",
+          "score_explanation": "Elektrikli bir modelde manuel vites opsiyonu ihtimali otomobil meraklıları arasında tartışma yaratabilir ancak şimdilik tamamen spekülatif bir müşteri talebine bağlı.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "post_text_for_card": "TOFAŞ'ın Zincirlikuyu'daki binası yıl sonunda yıkılıyor. Egea'nın üretimi bitti, şimdi de trụ sở yıkılıyor.\n\nBu bina, Tofaş'ın Türkiye'deki otomotiv serüveninde önemli bir yere sahipti.\n\nBu yıkım, bir dönemin kapanışı gibi.",
-          "story_card_title": "Bir Devir Kapanıyor: Tofaş Binası Yıkılıyor!",
-          "story_card_subtitle": "Tofaş'ın Zincirlikuyu'daki Genel Müdürlük binası yıl sonunda yıkılıyor. Egea'nın üretiminin bitmesinin ardından gelen bu haber, şirketin Türkiye'deki uzun soluklu serüveninde önemli bir dönemin sonunu işaret ediyor. Bu yıkım, otomotiv dünyasında bir devrin kapanışı olarak yorumlanıyor.",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche Mission S, bir konsept otomobilden çok daha fazlası. Bu güzellik abidesi, ürün gamında 911’in üzerinde kalıcı bir isim olması planlanan yeni amiral gemisinin ilk ipuçlarını veriyor. Üstelik Porsche CEO’suna göre, müşteri talebi olursa bu platformmanuel şanzımanıda destekleyebilir. Road and Track’in aktardığına göre Porsche CEO’su Michael Leiters, bu haftaki tanıtım etkinliğinde platformun güç üniteleri açısından esnekliğine dikkat çekti ve manuel şanzıman ihtimaline de değindi. Leiters şunları söyledi: “Bu platformda ne üreteceğimizi müşteri talebi belirleyecek.” Porsche, Mission S konseptinin ne zaman seri üretim bir modele dönüşeceğine dair henüz bir takvim paylaşmadı. Şimdilik kesin olarak bildiğimiz tek şey, bu yeni platformdaki otomobillerin911’inüzerinde konumlanacağı, daha yüksek bir fiyat etiketine sahip olacağı ve çok daha yüksek performans sunacağı. Mission S, içte ve dıştaPorschekimliğini açıkça taşıyor. Konseptte “Floating Volumes” adı verilen, gövde panellerinin otomobilin üzerinde adeta süzülüyormuş gibi göründüğü bir tasarım anlayışı kullanılıyor. Uzun, alçak ve geniş görünen otomobilde orta motorlu yerleşim, Mission S’e oldukça etkileyici oranlar kazandırıyor. Araçtaaktif arka kanat, 917’den ilham alan soğutma fanları ve hafif jantlar yer alıyor. Kabinde ise Mission S, modern iç mekânlara hâkim olan büyük ekranlardan uzak duruyor. Bunun yerine dijital ekranların önünde 5 adet yuvarlak analog gösterge bulunuyor. Gösterge panelindeki telefon tutucu multimedya ekranının yerini alırken, fiziksel kontroller korunuyor. Porsche Mission S Concept İç Mekânı Porsche, otomobille ilgili henüz ayrıntılı bilgi paylaşmadı.Teknik özellikler, performans verileri ve fiyatşimdilik tamamen belirsizliğini koruyor. Seri üretime ne zaman gireceğini de bilmiyoruz. Mission S, şu aşamada Porsche’nin gelecekte neler sunabileceğine dair bir ön gösterim niteliği taşıyor ve deneyimlemek için sabırsızlanacağımız etkileyici bir gelecek vizyon ortaya koyuyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "BU MODELİN MANUEL ŞANZIMANLA GELMESİ, PORSCHE İÇİN BİR İDDİA DEĞİL, BİR TEST.\n\nMission S konsepti, 911'in üzerinde konumlanacak yeni amiral gemisinin ilk ipuçlarını veriyor. Porsche CEO'su, müşteri isterse bu platformun manuel şanzımanı destekleyebileceğini söyledi.\n\nBu kadar yüksek performanslı bir otomobilde manuel vites, \"sürücü odaklılık\" tanımını yeniden sorgulatıyor.\n\nMüşteri talebi gelirse manuel şanzıman konulacak, ama asıl soru kimin isteyeceği.",
+          "story_card_title": "Porsche, manuel vitese yeşil ışık yaktı!",
+          "story_card_subtitle": "Porsche'nin yeni amiral gemisi Mission S konsepti, heyecan verici detaylarla geliyor. Şirket CEO'su, müşteri talebi halinde bu yüksek performanslı modelde manuel şanzıman opsiyonunun sunulabileceğini açıkladı. Bu durum, 'sürücü odaklılık' anlayışını yeniden tartışmaya açıyor ve kimlerin bu seçeneği tercih edeceği merak konusu.",
           "image_sources": [
-            "nitter_still"
+            "meta_og",
+            "article_script",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
+          "prepared_image_count": 4,
           "original_image_urls": [
-            "https://pbs.twimg.com/media/HU6XsjdWYAAxFKr.jpg?format=jpg&name=large"
+            "https://cdn.motor1.com/images/mgl/JO6y9n/s1/hoffman-project0338-2_copy.jpg",
+            "https://cdn.motor1.com/images/mgl/JO6y9n/s1/4x3/hoffman-project0338-2_copy.webp",
+            "https://cdn.motor1.com/images/mgl/2N9JAn/s3/cc27x05id0021_srgb_072dpi.jpg",
+            "https://cdn.motor1.com/images/mgl/ojEnB4/s3/cc27x05ix0006_srgb_072dpi.jpg"
           ]
         },
-        "post_text": "TOFAŞ'ın Zincirlikuyu'daki binası yıl sonunda yıkılıyor. Egea'nın üretimi bitti, şimdi de trụ sở yıkılıyor.\n\nBu bina, Tofaş'ın Türkiye'deki otomotiv serüveninde önemli bir yere sahipti.\n\nBu yıkım, bir dönemin kapanışı gibi.",
-        "story_card_title": "Bir Devir Kapanıyor: Tofaş Binası Yıkılıyor!",
-        "story_card_subtitle": "Tofaş'ın Zincirlikuyu'daki Genel Müdürlük binası yıl sonunda yıkılıyor. Egea'nın üretiminin bitmesinin ardından gelen bu haber, şirketin Türkiye'deki uzun soluklu serüveninde önemli bir dönemin sonunu işaret ediyor. Bu yıkım, otomotiv dünyasında bir devrin kapanışı olarak yorumlanıyor.",
-        "image_path": "/tmp/otoxtra_img_z108ej2d.jpg",
+        "post_text": "BU MODELİN MANUEL ŞANZIMANLA GELMESİ, PORSCHE İÇİN BİR İDDİA DEĞİL, BİR TEST.\n\nMission S konsepti, 911'in üzerinde konumlanacak yeni amiral gemisinin ilk ipuçlarını veriyor. Porsche CEO'su, müşteri isterse bu platformun manuel şanzımanı destekleyebileceğini söyledi.\n\nBu kadar yüksek performanslı bir otomobilde manuel vites, \"sürücü odaklılık\" tanımını yeniden sorgulatıyor.\n\nMüşteri talebi gelirse manuel şanzıman konulacak, ama asıl soru kimin isteyeceği.",
+        "story_card_title": "Porsche, manuel vitese yeşil ışık yaktı!",
+        "story_card_subtitle": "Porsche'nin yeni amiral gemisi Mission S konsepti, heyecan verici detaylarla geliyor. Şirket CEO'su, müşteri talebi halinde bu yüksek performanslı modelde manuel şanzıman opsiyonunun sunulabileceğini açıkladı. Bu durum, 'sürücü odaklılık' anlayışını yeniden tartışmaya açıyor ve kimlerin bu seçeneği tercih edeceği merak konusu.",
+        "image_path": "/tmp/otoxtra_img_33ifrx9m.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_z108ej2d.jpg"
+          "/tmp/otoxtra_img_33ifrx9m.jpg",
+          "/tmp/otoxtra_img_rh3vfujo.jpg",
+          "/tmp/otoxtra_img_1_d1fkn3.jpg",
+          "/tmp/otoxtra_img__w6q1wn2.jpg"
         ],
-        "image_source": "nitter_still",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-10-18T17:03:22.566602+03:00"
+      "updated_at": "2026-10-18T19:03:20.240820+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122184305630916499",
+        "post_id": "678053852057751_122184315098916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "17917707429462274",
+            "id": "18102655097623824",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "29570520752545966",
+            "id": "1711084336658586",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-18T17:03:59.573600+03:00"
+      "updated_at": "2026-10-18T19:04:02.496864+03:00"
     }
   }
 }
