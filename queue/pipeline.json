@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-19-07:00",
+  "run_id": "2026-10-19-08:00",
   "status": "error",
-  "started_at": "2026-10-19T07:00:41.884441+03:00",
-  "updated_at": "2026-10-19T07:03:29.418154+03:00",
+  "started_at": "2026-10-19T08:00:48.394267+03:00",
+  "updated_at": "2026-10-19T08:02:58.749393+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/eozpeynirci/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.meowing.monster"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.meowing.monster"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -106,21 +106,21 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.meowing.monster"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.meowing.monster"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.meowing.monster"
           },
           "VeyselKarani": {
             "status": "ok",
@@ -134,7 +134,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.gravitywell.xyz"
           },
           "otopodyum": {
             "status": "ok",
@@ -144,8 +144,8 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 136,
-            "after_keyword": 71,
+            "found": 146,
+            "after_keyword": 79,
             "after_time": 3,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -153,8 +153,8 @@
           }
         },
         "metrics": {
-          "found": 136,
-          "after_keyword": 71,
+          "found": 146,
+          "after_keyword": 79,
           "after_time": 3,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-19T07:03:29.418154+03:00"
+      "updated_at": "2026-10-19T08:02:58.749393+03:00"
     },
     "score": {
       "status": "waiting",
