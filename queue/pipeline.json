@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-10-19-08:00",
-  "status": "error",
-  "started_at": "2026-10-19T08:00:48.394267+03:00",
-  "updated_at": "2026-10-19T08:02:58.749393+03:00",
+  "run_id": "2026-10-19-09:01",
+  "status": "completed",
+  "started_at": "2026-10-19T09:01:00.582024+03:00",
+  "updated_at": "2026-10-19T09:05:01.800565+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+            "link": "https://x.com/eozpeynirci/status/2112052569493164278",
+            "nitter_url": "https://nitter.kareem.one/eozpeynirci/status/2112052569493164278#m",
+            "source_instance": "nitter.kareem.one",
+            "published": "2026-10-19T05:25:47+00:00",
+            "summary": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️ Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
+            "image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Emre Ozpeynirci",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "719827h-acik-almanya-avrupa-avrupa-avrupa-avrupa-ayagina-ayagina-belirsiz-belirsizlikte-birakti-biri-birligi-birligi-bruksel-bulunan-cin-com-detaylar-europe-ford-fransa-gazetepencere-gazetepencere-gelecegi-gumruk-hala-https-kendi-kendi-korumak-kurallarini-made-merkezlerinden-onemli-otomotiv-sanayisini-sekillendiriyor-sikiyor-sikiyor-toyota-turkiye-turkiye-uretim-uyari-uzlasmasi-www-yazarlar-yeniden-yildir"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -78,19 +100,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/ahmetcelik2016/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -134,7 +156,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.gravitywell.xyz"
+            "instance": "nitter.meowing.monster"
           },
           "otopodyum": {
             "status": "ok",
@@ -145,48 +167,225 @@
           },
           "_metrics": {
             "found": 146,
-            "after_keyword": 79,
-            "after_time": 3,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 74,
+            "after_time": 4,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 146,
-          "after_keyword": 79,
-          "after_time": 3,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 74,
+          "after_time": 4,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-19T08:02:58.749393+03:00"
+      "error": null,
+      "updated_at": "2026-10-19T09:04:03.268937+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+          "link": "https://x.com/eozpeynirci/status/2112052569493164278",
+          "nitter_url": "https://nitter.kareem.one/eozpeynirci/status/2112052569493164278#m",
+          "source_instance": "nitter.kareem.one",
+          "published": "2026-10-19T05:25:47+00:00",
+          "summary": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️ Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
+          "image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "719827h-acik-almanya-avrupa-avrupa-avrupa-avrupa-ayagina-ayagina-belirsiz-belirsizlikte-birakti-biri-birligi-birligi-bruksel-bulunan-cin-com-detaylar-europe-ford-fransa-gazetepencere-gazetepencere-gelecegi-gumruk-hala-https-kendi-kendi-korumak-kurallarini-made-merkezlerinden-onemli-otomotiv-sanayisini-sekillendiriyor-sikiyor-sikiyor-toyota-turkiye-turkiye-uretim-uyari-uzlasmasi-www-yazarlar-yeniden-yildir",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Jeopolitik ve ekonomik boyutlarıyla sektörü doğrudan etkileyen büyük bir kriz ve Türkiye otomotiv pazarı için yüksek viral potansiyel taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 15,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Jeopolitik ve ekonomik boyutlarıyla sektörü doğrudan etkileyen büyük bir kriz ve Türkiye otomotiv pazarı için yüksek viral potansiyel taşıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 15,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-19T09:04:05.056441+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+          "link": "https://x.com/eozpeynirci/status/2112052569493164278",
+          "nitter_url": "https://nitter.kareem.one/eozpeynirci/status/2112052569493164278#m",
+          "source_instance": "nitter.kareem.one",
+          "published": "2026-10-19T05:25:47+00:00",
+          "summary": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️ Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
+          "image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "719827h-acik-almanya-avrupa-avrupa-avrupa-avrupa-ayagina-ayagina-belirsiz-belirsizlikte-birakti-biri-birligi-birligi-bruksel-bulunan-cin-com-detaylar-europe-ford-fransa-gazetepencere-gazetepencere-gelecegi-gumruk-hala-https-kendi-kendi-korumak-kurallarini-made-merkezlerinden-onemli-otomotiv-sanayisini-sekillendiriyor-sikiyor-sikiyor-toyota-turkiye-turkiye-uretim-uyari-uzlasmasi-www-yazarlar-yeniden-yildir",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Jeopolitik ve ekonomik boyutlarıyla sektörü doğrudan etkileyen büyük bir kriz ve Türkiye otomotiv pazarı için yüksek viral potansiyel taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "post_text": "AVRUPA'NIN 'MADE IN EUROPE' KURALI TÜRKİYE'Yİ BELİRSİZLİKTE BIRAKTI.\n\nAB, Çin'e karşı otomotiv sektörünü korumak için 'Made in Europe' kurallarını güncelliyor. Ancak 30 yıldır Gümrük Birliği'nde olan Türkiye'nin durumu net değil.\n\nFord ve Toyota'dan Brüksel'e uyarı geldi: Bu durum sektörde belirsizlik yaratıyor.\n\nFransa ve Almanya'nın uzlaşması, Türkiye'nin geleceğini riske atıyor.",
+        "post_text_length": 384,
+        "story_card_title": "AVRUPA'NIN YENİ KURALI OTOMOTİVİ VURACAK!",
+        "story_card_subtitle": "Avrupa Birliği, Çin'e karşı kendi otomotiv sanayisini korumak için 'Made in Europe' kurallarını yeniden şekillendiriyor. Ancak bu değişiklik, 30 yıldır Gümrük Birliği'nde olan Türkiye'yi belirsizliğe sürükledi. Ford ve Toyota gibi devlerden Brüksel'e gelen açık uyarılar, durumun ciddiyetini gözler önüne seriyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-19T09:04:07.282360+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️   Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-kendi-ayagina-mi-sikiyor-719827h",
+          "link": "https://x.com/eozpeynirci/status/2112052569493164278",
+          "nitter_url": "https://nitter.kareem.one/eozpeynirci/status/2112052569493164278#m",
+          "source_instance": "nitter.kareem.one",
+          "published": "2026-10-19T05:25:47+00:00",
+          "summary": "AVRUPA KENDİ AYAĞINA MI SIKIYOR⁉️ Fransa ve Almanya'nın uzlaşması Türkiye'yi belirsizlikte bıraktı; Ford ve Toyota'dan Brüksel'e açık uyarı geldi 💢Avrupa Birliği, Çin'e karşı otomotiv sanayisini korumak için ‘Made in Europe’ kurallarını yeniden şekillendiriyor. 💢Ancak 30 yıldır Gümrük Birliği içinde bulunan ve Avrupa'nın en önemli üretim merkezlerinden biri olan Türkiye'nin geleceği hala belirsiz. Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
+          "image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "rss_image_url": "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg",
+          "image_candidates": [
+            "https://pbs.twimg.com/media/HU-EnBZWcAAlvva.jpg"
+          ],
+          "image_source": "smart_search",
+          "source_name": "Emre Ozpeynirci",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "719827h-acik-almanya-avrupa-avrupa-avrupa-avrupa-ayagina-ayagina-belirsiz-belirsizlikte-birakti-biri-birligi-birligi-bruksel-bulunan-cin-com-detaylar-europe-ford-fransa-gazetepencere-gazetepencere-gelecegi-gumruk-hala-https-kendi-kendi-korumak-kurallarini-made-merkezlerinden-onemli-otomotiv-sanayisini-sekillendiriyor-sikiyor-sikiyor-toyota-turkiye-turkiye-uretim-uyari-uzlasmasi-www-yazarlar-yeniden-yildir",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "Jeopolitik ve ekonomik boyutlarıyla sektörü doğrudan etkileyen büyük bir kriz ve Türkiye otomotiv pazarı için yüksek viral potansiyel taşıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "post_text_for_card": "AVRUPA'NIN 'MADE IN EUROPE' KURALI TÜRKİYE'Yİ BELİRSİZLİKTE BIRAKTI.\n\nAB, Çin'e karşı otomotiv sektörünü korumak için 'Made in Europe' kurallarını güncelliyor. Ancak 30 yıldır Gümrük Birliği'nde olan Türkiye'nin durumu net değil.\n\nFord ve Toyota'dan Brüksel'e uyarı geldi: Bu durum sektörde belirsizlik yaratıyor.\n\nFransa ve Almanya'nın uzlaşması, Türkiye'nin geleceğini riske atıyor.",
+          "story_card_title": "AVRUPA'NIN YENİ KURALI OTOMOTİVİ VURACAK!",
+          "story_card_subtitle": "Avrupa Birliği, Çin'e karşı kendi otomotiv sanayisini korumak için 'Made in Europe' kurallarını yeniden şekillendiriyor. Ancak bu değişiklik, 30 yıldır Gümrük Birliği'nde olan Türkiye'yi belirsizliğe sürükledi. Ford ve Toyota gibi devlerden Brüksel'e gelen açık uyarılar, durumun ciddiyetini gözler önüne seriyor.",
+          "image_sources": [
+            "smart_search"
+          ],
+          "prepared_image_count": 1,
+          "original_image_urls": []
+        },
+        "post_text": "AVRUPA'NIN 'MADE IN EUROPE' KURALI TÜRKİYE'Yİ BELİRSİZLİKTE BIRAKTI.\n\nAB, Çin'e karşı otomotiv sektörünü korumak için 'Made in Europe' kurallarını güncelliyor. Ancak 30 yıldır Gümrük Birliği'nde olan Türkiye'nin durumu net değil.\n\nFord ve Toyota'dan Brüksel'e uyarı geldi: Bu durum sektörde belirsizlik yaratıyor.\n\nFransa ve Almanya'nın uzlaşması, Türkiye'nin geleceğini riske atıyor.",
+        "story_card_title": "AVRUPA'NIN YENİ KURALI OTOMOTİVİ VURACAK!",
+        "story_card_subtitle": "Avrupa Birliği, Çin'e karşı kendi otomotiv sanayisini korumak için 'Made in Europe' kurallarını yeniden şekillendiriyor. Ancak bu değişiklik, 30 yıldır Gümrük Birliği'nde olan Türkiye'yi belirsizliğe sürükledi. Ford ve Toyota gibi devlerden Brüksel'e gelen açık uyarılar, durumun ciddiyetini gözler önüne seriyor.",
+        "image_path": "/tmp/otoxtra_img_sbsw_fmt.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_sbsw_fmt.jpg"
+        ],
+        "image_source": "smart_search",
+        "image_count": 1
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-19T09:04:25.627221+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122184384638916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17979487128133184",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1416013664070972",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-19T09:05:01.800565+03:00"
     }
   }
 }
