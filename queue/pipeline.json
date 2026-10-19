@@ -1,36 +1,55 @@
 {
-  "run_id": "2026-10-18-20:01",
+  "run_id": "2026-10-19-06:00",
   "status": "completed",
-  "started_at": "2026-10-18T20:01:23.244953+03:00",
-  "updated_at": "2026-10-18T20:04:13.923138+03:00",
+  "started_at": "2026-10-19T06:00:48.517973+03:00",
+  "updated_at": "2026-10-19T06:04:06.851225+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
-            "link": "https://tr.motor1.com/news/812353/yeni-tesla-roadster-neden-benzemiyor/",
+            "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
+            "link": "https://www.otoajanda.com/yeni-mercedes-amg-gt-suv-tanitildi-ozellikleri-ve-fiyati/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-18T17:00:00+00:00",
-            "summary": "Geçen 9 yılda daha köşeli bir tasarıma geçildi.",
-            "image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
+            "published": "2026-10-18T17:35:46+00:00",
+            "summary": "Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeni Mercedes-AMG […] Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "OtoAjanda",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "benzemiyor-konsepte-neden-roadster-tesla"
+            "topic_fingerprint": "169-amg-gucundeki-mercedes-sporcu-suv-suv"
+          },
+          {
+            "title": "Spor otomobili DNA’sına sahip yüksek teknolojili SUV",
+            "link": "https://otopodyum.com.tr/premium-otolar/spor-otomobili-dnasina-sahip-yuksek-teknolojili-suv-5403h",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-18T20:34:48+00:00",
+            "summary": "Yeni Mercedes-AMG GT SUV, AMG.EA yüksek performans mimarisi temelinde geliştirilen ikinci model olarak büyük boy bir SUV’nin güçlü duruşunu bir spor otomobilin heyecan verici sürüş deneyimiyle bir araya getiriyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5719.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5719.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5719.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "dna-otomobili-sahip-sina-spor-suv-teknolojili-yuksek"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +110,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.netbub.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -112,7 +131,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.meowing.monster', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -160,239 +179,248 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 10,
+            "count": 6,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 150,
-            "after_keyword": 84,
-            "after_time": 5,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 146,
+            "after_keyword": 79,
+            "after_time": 6,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
-          "found": 150,
-          "after_keyword": 84,
-          "after_time": 5,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 146,
+          "after_keyword": 79,
+          "after_time": 6,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-10-18T20:03:28.496349+03:00"
+      "updated_at": "2026-10-19T06:02:56.107950+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
-          "link": "https://tr.motor1.com/news/812353/yeni-tesla-roadster-neden-benzemiyor/",
+          "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
+          "link": "https://www.otoajanda.com/yeni-mercedes-amg-gt-suv-tanitildi-ozellikleri-ve-fiyati/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-18T17:00:00+00:00",
-          "summary": "Geçen 9 yılda daha köşeli bir tasarıma geçildi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "published": "2026-10-18T17:35:46+00:00",
+          "summary": "Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeni Mercedes-AMG […] Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "OtoAjanda",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "benzemiyor-konsepte-neden-roadster-tesla",
-          "base_ai_score": 45,
+          "topic_fingerprint": "169-amg-gucundeki-mercedes-sporcu-suv-suv",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 8
           },
-          "score": 56,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Tesla'nın uzun süredir yılan hikayesine dönen Roadster modeli hakkında bilinen bir detayı irdeliyor, ancak yeni bir flaş gelişme içermiyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "1.169 beygir gibi ekstrem bir güç değerine sahip olması ve markanın tarihinde ilk kez sıfırdan büyük boy bir SUV geliştirmesi sosyal medyada ve otomobil dünyasında büyük yankı uyandıracak, yüksek etkileşim potansiyeli taşıyan bir gelişme.",
+          "freshness_bonus": 1,
           "trend_bonus_raw": 1
         },
-        "score": 56,
-        "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
+        "score": 86,
+        "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 10,
+        "freshness_bonus": 1,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 8,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 5
+          "etkilesim_potansiyeli": 23,
+          "benzersizlik": 18,
+          "gundem_gucu": 17,
+          "paylasilabilirlik": 8
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Tesla'nın uzun süredir yılan hikayesine dönen Roadster modeli hakkında bilinen bir detayı irdeliyor, ancak yeni bir flaş gelişme içermiyor.",
+        "score_explanation": "1.169 beygir gibi ekstrem bir güç değerine sahip olması ve markanın tarihinde ilk kez sıfırdan büyük boy bir SUV geliştirmesi sosyal medyada ve otomobil dünyasında büyük yankı uyandıracak, yüksek etkileşim potansiyeli taşıyan bir gelişme.",
         "skipped": false,
-        "threshold": 40,
+        "threshold": 30,
         "top_articles": [
           {
-            "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
-            "score": 56,
+            "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
+            "score": 86,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 8,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 5
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 18,
+              "gundem_gucu": 17,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Spor otomobili DNA’sına sahip yüksek teknolojili SUV",
+            "score": 60,
+            "score_breakdown": {
+              "guncellik": 16,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 6
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Spor otomobili DNA’sına sahip yüksek teknolojili SUV",
+            "link": "https://otopodyum.com.tr/premium-otolar/spor-otomobili-dnasina-sahip-yuksek-teknolojili-suv-5403h",
+            "score": 60,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "dna-otomobili-sahip-sina-spor-suv-teknolojili-yuksek"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-10-18T20:03:30.009081+03:00"
+      "updated_at": "2026-10-19T06:02:58.205159+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
-          "link": "https://tr.motor1.com/news/812353/yeni-tesla-roadster-neden-benzemiyor/",
+          "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
+          "link": "https://www.otoajanda.com/yeni-mercedes-amg-gt-suv-tanitildi-ozellikleri-ve-fiyati/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-18T17:00:00+00:00",
-          "summary": "Geçen 9 yılda daha köşeli bir tasarıma geçildi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
+          "published": "2026-10-18T17:35:46+00:00",
+          "summary": "Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeni Mercedes-AMG […] Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "OtoAjanda",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "benzemiyor-konsepte-neden-roadster-tesla",
-          "base_ai_score": 45,
+          "topic_fingerprint": "169-amg-gucundeki-mercedes-sporcu-suv-suv",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 8
           },
-          "score": 56,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Tesla'nın uzun süredir yılan hikayesine dönen Roadster modeli hakkında bilinen bir detayı irdeliyor, ancak yeni bir flaş gelişme içermiyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "1.169 beygir gibi ekstrem bir güç değerine sahip olması ve markanın tarihinde ilk kez sıfırdan büyük boy bir SUV geliştirmesi sosyal medyada ve otomobil dünyasında büyük yankı uyandıracak, yüksek etkileşim potansiyeli taşıyan bir gelişme.",
+          "freshness_bonus": 1,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şimdiye kadar yeni Tesla Roadster'ın sınırları zorlayan performans iddialarını, sıra dışı gösterilerini ve dudak uçuklatan fiyat etiketini muhtemelen görmüşsünüzdür. Konuşacak çok şey var ancak bizim asıl ilgimizi çeken, elektrikli süper otomobilin tasarımının 2017'deki ilk gösteriminden bu yana ne kadar değiştiği. Aradan dokuz yıl geçti; dolayısıyla bazı güncellemeler kaçınılmazdı. Yine de ilk konseptin akıcı hatlarını daha köşeli, Cybertruck'ı andıran bir görünüme bırakan baştan aşağı bir yeniden tasarım beklediğimizi söyleyemeyiz. Neredeyse her açıdan radikal biçimde farklı; bu da uzun süredir geciken seri üretim modelinin ön gösterimi olması beklenen otomobilden ciddi bir kopuş anlamına geliyor. Tesla, ikinci nesil Roadster'ı Kasım 2017'de tanıttığında konsept; akıcı kıvrımları, yere yakın profili ve bugün bile dikkat çekici derecede güncel duran sade tasarımıyla gerçek bir süper otomobil gibi görünüyordu. Keskin çizgilerde ya da gereksiz görsel dramatizmde aşırıya kaçmadan, geleneksel spor otomobile fütüristik bir yorum getiriyordu. Ekim 2026'ya geldiğimizde ise seri üretime yaklaşan prototip, sanki tamamen farklı bir tasarım stüdyosundan çıkmış gibi görünüyor. Yeni Roadster, keskin açıları ve belirgin biçimde havacılıktan ilham alan görünümüyle çok daha agresif, kama formunda bir siluete sahip. Ön ve arka aydınlatmalar da kaçınılmaz şekilde ışık barlarına dönüşmüş; daha karmaşık aerodinamik unsurlar ise otomobile belirgin ölçüde daha teknik bir görünüm kazandırmış. Elbette otomotiv endüstrisinde dokuz yıl uzun bir süre. Tasarım trendleri değişir, mühendislik gereksinimleri evrilir ve üreticiler konseptleri seri üretime geçmeden önce düzenli olarak revize eder. Tesla'nın 2017'deki her detayı aynen korumasını beklemek gerçekçi olmazdı. Ancak eski bir tasarımı rafine etmekle, fiilen baştan başlamak farklı şeyler. Orijinal ikinci nesil Roadster konsepti yuvarlak yüzeylere ve geleneksel süper otomobil oranlarına sahipken, son versiyon Tesla'nın daha yeni ürünleriyle özdeşleşen köşeli tasarım dilini benimsiyor. Cybertruck'ın etkisi, yeni otomobilin keskin kenarlı estetiğinde özellikle belirgin. Tesla, Roadster'ın SR-71 Blackbird ve F-35 savaş uçağı gibi hava araçlarından ilham aldığını söylüyor. Şirketin iddialı performans hedefleri ve SpaceX ile iş birliği düşünüldüğünde bu havacılık etkisi mantıklı görünüyor. Yine de bu durum, yeni otomobilin selefinden neden bu kadar farklı göründüğünü de açıklıyor. İşin ironik yanı, 2017 konseptinin öne çıkmak için zaten yeterince fütüristik görünmesiydi. Tesla'nın Roadster'ı 2026'da özel hissettirmek için görünümünü tamamen yeniden icat etmesi şart değildi. Dikkatle seçilmiş birkaç güncelleme, ilk tasarımı cazip kılan özelliklerden ödün vermeden onu güncel tutabilirdi. Tasarım değişimi hikâyenin yalnızca bir kısmı. Tesla,Roadster'ınorijinal formülünü de değiştirdi; 2+2 yerleşimden,kablolu direksiyon (steer-by-wire)kontrollerine, aktif aerodinamiğe ve bir dizi deneysel teknolojiye sahip daha odaklı, iki koltuklu bir otomobile geçiş yaptı. Üretimin şu anda 2028 için planlandığı belirtiliyor; ancak proje halihazırda yıllarca süren gecikmeler yaşadı. Bu da 2017'de depozito yatıran müşterilerin, başta sipariş verdiklerinden belirgin biçimde farklı görünen bir otomobil için neredeyse on yıl beklediği anlamına geliyor. Tesla onlara kesinlikle daha radikal bir şey sunmuş durumda; ancak nihai seri üretim modelinin bu tasarım ve mühendislik detaylarının tamamını koruyup korumayacağı şimdilik belirsiz. Şimdilik net olan bir şey var: Yeni Roadster, 2017 konseptinin yalnızca modernize edilmiş bir versiyonu değil. Orijinal vizyondan tamamen uzaklaşarak, pürüzsüz ve sade süper otomobil stilini;Cybertruckile birlikte Tesla'nın giderek daha alışılmadık hâle gelen ürün gamına katılmaya hazır görünen köşeli bir tasarımla değiştiriyor. Bana kalırsa hâlâ 2017'deki orijinal konsepti tercih ediyorum. Akıcı hatları ve klasik süper otomobil oranları zamanın testini iyi geçti; Tesla'nın bu tasarımın daha fazlasını korumasını görmek isterdim. Bununla birlikte, şirketin dokuz yıl sonra neden değişiklik yapma ihtiyacı hissettiğini de anlayabiliyorum. Otomotiv dünyası değişti, Tesla'nın tasarım dili evrildi ve seri üretim bir otomobilin gereksinimleri, fuarlarda dikkat çekmek için hazırlanan bir konseptten farklı. Yine de bir tasarımı güncellemekle sıfırdan başlamak aynı şey değil; yeni Roadster da kesinlikle ikinci kategoriye giriyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+          "full_text": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı Yeni Toyota Hilux BEV’e eski test Elektrikli MINI Countryman üst vergi dilimine geçince fiyatını da donanımını da yükseltti Ford Kuga 1.5 ST-Line test sürüşü: Gerçekten sınıfının en eğlencelisi mi? OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Otomotiv ihracatı nisanda yüzde 15 artış gösterdi Yeni Opel Grandland: Elektrikli geleceğe doğru 2024 Nissan Qashqai Avrupa için yenilendi Yeni Passat hangi motorlarla ülkemize geldi TV’de son durumu anlattık: 0 ve 2. el oto fiyatları düşüyor mu? Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Paris’te sürpriz hamle: AB, Çinli hibrit otomobiller için “acil fren” butonuna bastı Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeniMercedes-AMG GT SUV, markanın kendi bünyesinde geliştirdiği ilk büyük boy SUV olma özelliğini taşıyor. Güçlü duruşu, sportif oturma pozisyonu ve düşük ağırlık merkeziyle dikkat çeken model; performans, konfor ve günlük kullanım özelliklerini kusursuz bir dengeyle buluşturuyor. Yeni Mercedes-AMG GT SUV, motor seçeneklerine bağlı olarak üstün güç aktarım konseptleri sunuyor: Mercedes-AMG GT 63 SUV:Üç adet eksenli akılı motoruyla860 kW (1.169 bg)güç üretiyor ve en üst versiyonda 0’dan 100 km/s hıza yalnızca2,5 saniyedeulaşıyor. Maksimum hızı ise Sürücü Paketi ile 270 km/s. Mercedes-AMG GT 55 SUV:600 kW (816 bg) güç sunuyor. Mercedes-AMG GT 53 SUV:Ön ve arka aksta yer alan iki güçlü senkron motoruyla toplam400 kW (544 bg)güç üretiyor. Formula 1’den ilham alanAMG Yüksek Performanslı Elektrikli Batarya, doğrudan soğutmalı silindirik hücreleriyle dikkat çekiyor. 710 kW’a varan ultra hızlı DC şarj gücüsayesinde 128 kWh’lik batarya, 10 dakikalık şarjla WLTP standartlarına göre450 kilometreye varan menzilsunuyor. Şarj seviyesinin yüzde 10’dan yüzde 80’e çıkması ise sadece 12 dakika sürüyor. Araçta ilk kez yer alan aktif salınım ve yalpalama stabilizasyonuna sahipAMG ACTIVE RIDE CONTROL+ süspansiyon, sportif hassasiyet ile üst düzey seyahat konforunu bir araya getiriyor. Ayrıca aktif arka aks yönlendirme sistemi (6 dereceye kadar), düşük hızlarda çevikliği artırırken yüksek hızlarda sürüş stabilitesini maksimum seviyeye çıkarıyor. Müşteriler Mercedes-AMG GT 63 SUV, AMG GT 55 SUV ve AMG GT 53 SUV modelleri arasından seçim yapabilecekler. Serinin giriş seviyesi versiyonu için ön siparişler20 Ekimitibarıyla başlarken, AMG GT 63 ve 55 SUV modelleri2027 ilkbaharındasatışa sunulacak. Ismimi, e-postamı ve web sitemi bir dahaki sefere bu tarayıcıya kaydet. © Otoajanda. Tüm Hakları Saklıdır."
         },
-        "post_text": "9 yıl sonra yeni Tesla Roadster karşımızda.\n\n2017 konsepti akıcıydı. Şimdi daha köşeli, Cybertruck'a yakın bir tasarım var.\n\nTanıtım ile üretim arasında geçen bu süre, tasarımda radikal bir değişime yol açtı. Tesla, nedenini açıklamadı. Bu, beklenti yönetimi sorunudur.",
-        "post_text_length": 269,
-        "story_card_title": "9 yıl sonra Roadster şaşırttı!",
-        "story_card_subtitle": "Tesla'nın uzun süredir beklenen Roadster modelinin tasarımı, tanıtılan konseptten oldukça farklı. 2017'deki akıcı hatlar yerini daha köşeli, Cybertruck'a yakın bir görünüme bıraktı. Bu radikal değişim, şirket tarafından henüz açıklanmadı ve beklentileri yönetme konusunda soru işaretleri yarattı.",
+        "post_text": "1.169 HP GÜÇTE BİR SUV, YALNIZCA BİR RAKAM DEĞİL.\n\nMercedes-AMG, 59 yıllık tarihinde ilk kez sıfırdan büyük bir SUV geliştirdi. Yeni GT SUV, AMG.EA mimarisiyle geldi ve bu gücü lüks bir gövdede sunuyor.\n\nSpor otomobil dinamikleriyle SUV gövdesini birleştiren bu araç, sınırları zorlama merakının bir göstergesi.\n\nBu kadar yüksek gücü günlük hayatta gerçekten kullanabilmek, markanın kendisinden çok alıcının tercihiyle ilgili.",
+        "post_text_length": 426,
+        "story_card_title": "1.169 HP GÜÇLÜ SUV Mİ GELİYOR!",
+        "story_card_subtitle": "Mercedes-AMG tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modelini tanıttı. AMG.EA yüksek performans mimarisine sahip bu araç, 1.169 hp gücüyle spor otomobil dinamiklerini lüks bir SUV gövdesinde sunuyor. Bu devrim niteliğindeki araç, sınırları zorlama merakının somut bir kanıtı olarak karşımıza çıkıyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-18T20:03:33.242645+03:00"
+      "updated_at": "2026-10-19T06:03:02.783890+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yeni Tesla Roadster, neden konsepte benzemiyor?",
-          "link": "https://tr.motor1.com/news/812353/yeni-tesla-roadster-neden-benzemiyor/",
+          "title": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV",
+          "link": "https://www.otoajanda.com/yeni-mercedes-amg-gt-suv-tanitildi-ozellikleri-ve-fiyati/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-18T17:00:00+00:00",
-          "summary": "Geçen 9 yılda daha köşeli bir tasarıma geçildi.",
-          "image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg"
-          ],
-          "image_source": "article_candidates_field",
-          "source_name": "Motor1 TR",
+          "published": "2026-10-18T17:35:46+00:00",
+          "summary": "Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeni Mercedes-AMG […] Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "smart_search",
+          "source_name": "OtoAjanda",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "benzemiyor-konsepte-neden-roadster-tesla",
-          "base_ai_score": 45,
+          "topic_fingerprint": "169-amg-gucundeki-mercedes-sporcu-suv-suv",
+          "base_ai_score": 85,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 8,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 5
+            "etkilesim_potansiyeli": 23,
+            "benzersizlik": 18,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 8
           },
-          "score": 56,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Tesla'nın uzun süredir yılan hikayesine dönen Roadster modeli hakkında bilinen bir detayı irdeliyor, ancak yeni bir flaş gelişme içermiyor.",
-          "freshness_bonus": 10,
+          "score_explanation": "1.169 beygir gibi ekstrem bir güç değerine sahip olması ve markanın tarihinde ilk kez sıfırdan büyük boy bir SUV geliştirmesi sosyal medyada ve otomobil dünyasında büyük yankı uyandıracak, yüksek etkileşim potansiyeli taşıyan bir gelişme.",
+          "freshness_bonus": 1,
           "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Şimdiye kadar yeni Tesla Roadster'ın sınırları zorlayan performans iddialarını, sıra dışı gösterilerini ve dudak uçuklatan fiyat etiketini muhtemelen görmüşsünüzdür. Konuşacak çok şey var ancak bizim asıl ilgimizi çeken, elektrikli süper otomobilin tasarımının 2017'deki ilk gösteriminden bu yana ne kadar değiştiği. Aradan dokuz yıl geçti; dolayısıyla bazı güncellemeler kaçınılmazdı. Yine de ilk konseptin akıcı hatlarını daha köşeli, Cybertruck'ı andıran bir görünüme bırakan baştan aşağı bir yeniden tasarım beklediğimizi söyleyemeyiz. Neredeyse her açıdan radikal biçimde farklı; bu da uzun süredir geciken seri üretim modelinin ön gösterimi olması beklenen otomobilden ciddi bir kopuş anlamına geliyor. Tesla, ikinci nesil Roadster'ı Kasım 2017'de tanıttığında konsept; akıcı kıvrımları, yere yakın profili ve bugün bile dikkat çekici derecede güncel duran sade tasarımıyla gerçek bir süper otomobil gibi görünüyordu. Keskin çizgilerde ya da gereksiz görsel dramatizmde aşırıya kaçmadan, geleneksel spor otomobile fütüristik bir yorum getiriyordu. Ekim 2026'ya geldiğimizde ise seri üretime yaklaşan prototip, sanki tamamen farklı bir tasarım stüdyosundan çıkmış gibi görünüyor. Yeni Roadster, keskin açıları ve belirgin biçimde havacılıktan ilham alan görünümüyle çok daha agresif, kama formunda bir siluete sahip. Ön ve arka aydınlatmalar da kaçınılmaz şekilde ışık barlarına dönüşmüş; daha karmaşık aerodinamik unsurlar ise otomobile belirgin ölçüde daha teknik bir görünüm kazandırmış. Elbette otomotiv endüstrisinde dokuz yıl uzun bir süre. Tasarım trendleri değişir, mühendislik gereksinimleri evrilir ve üreticiler konseptleri seri üretime geçmeden önce düzenli olarak revize eder. Tesla'nın 2017'deki her detayı aynen korumasını beklemek gerçekçi olmazdı. Ancak eski bir tasarımı rafine etmekle, fiilen baştan başlamak farklı şeyler. Orijinal ikinci nesil Roadster konsepti yuvarlak yüzeylere ve geleneksel süper otomobil oranlarına sahipken, son versiyon Tesla'nın daha yeni ürünleriyle özdeşleşen köşeli tasarım dilini benimsiyor. Cybertruck'ın etkisi, yeni otomobilin keskin kenarlı estetiğinde özellikle belirgin. Tesla, Roadster'ın SR-71 Blackbird ve F-35 savaş uçağı gibi hava araçlarından ilham aldığını söylüyor. Şirketin iddialı performans hedefleri ve SpaceX ile iş birliği düşünüldüğünde bu havacılık etkisi mantıklı görünüyor. Yine de bu durum, yeni otomobilin selefinden neden bu kadar farklı göründüğünü de açıklıyor. İşin ironik yanı, 2017 konseptinin öne çıkmak için zaten yeterince fütüristik görünmesiydi. Tesla'nın Roadster'ı 2026'da özel hissettirmek için görünümünü tamamen yeniden icat etmesi şart değildi. Dikkatle seçilmiş birkaç güncelleme, ilk tasarımı cazip kılan özelliklerden ödün vermeden onu güncel tutabilirdi. Tasarım değişimi hikâyenin yalnızca bir kısmı. Tesla,Roadster'ınorijinal formülünü de değiştirdi; 2+2 yerleşimden,kablolu direksiyon (steer-by-wire)kontrollerine, aktif aerodinamiğe ve bir dizi deneysel teknolojiye sahip daha odaklı, iki koltuklu bir otomobile geçiş yaptı. Üretimin şu anda 2028 için planlandığı belirtiliyor; ancak proje halihazırda yıllarca süren gecikmeler yaşadı. Bu da 2017'de depozito yatıran müşterilerin, başta sipariş verdiklerinden belirgin biçimde farklı görünen bir otomobil için neredeyse on yıl beklediği anlamına geliyor. Tesla onlara kesinlikle daha radikal bir şey sunmuş durumda; ancak nihai seri üretim modelinin bu tasarım ve mühendislik detaylarının tamamını koruyup korumayacağı şimdilik belirsiz. Şimdilik net olan bir şey var: Yeni Roadster, 2017 konseptinin yalnızca modernize edilmiş bir versiyonu değil. Orijinal vizyondan tamamen uzaklaşarak, pürüzsüz ve sade süper otomobil stilini;Cybertruckile birlikte Tesla'nın giderek daha alışılmadık hâle gelen ürün gamına katılmaya hazır görünen köşeli bir tasarımla değiştiriyor. Bana kalırsa hâlâ 2017'deki orijinal konsepti tercih ediyorum. Akıcı hatları ve klasik süper otomobil oranları zamanın testini iyi geçti; Tesla'nın bu tasarımın daha fazlasını korumasını görmek isterdim. Bununla birlikte, şirketin dokuz yıl sonra neden değişiklik yapma ihtiyacı hissettiğini de anlayabiliyorum. Otomotiv dünyası değişti, Tesla'nın tasarım dili evrildi ve seri üretim bir otomobilin gereksinimleri, fuarlarda dikkat çekmek için hazırlanan bir konseptten farklı. Yine de bir tasarımı güncellemekle sıfırdan başlamak aynı şey değil; yeni Roadster da kesinlikle ikinci kategoriye giriyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "9 yıl sonra yeni Tesla Roadster karşımızda.\n\n2017 konsepti akıcıydı. Şimdi daha köşeli, Cybertruck'a yakın bir tasarım var.\n\nTanıtım ile üretim arasında geçen bu süre, tasarımda radikal bir değişime yol açtı. Tesla, nedenini açıklamadı. Bu, beklenti yönetimi sorunudur.",
-          "story_card_title": "9 yıl sonra Roadster şaşırttı!",
-          "story_card_subtitle": "Tesla'nın uzun süredir beklenen Roadster modelinin tasarımı, tanıtılan konseptten oldukça farklı. 2017'deki akıcı hatlar yerini daha köşeli, Cybertruck'a yakın bir görünüme bıraktı. Bu radikal değişim, şirket tarafından henüz açıklanmadı ve beklentileri yönetme konusunda soru işaretleri yarattı.",
+          "full_text": "Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı Yeni Toyota Hilux BEV’e eski test Elektrikli MINI Countryman üst vergi dilimine geçince fiyatını da donanımını da yükseltti Ford Kuga 1.5 ST-Line test sürüşü: Gerçekten sınıfının en eğlencelisi mi? OMODA ve JAECOO Türkiye’de 2. yılında 50 bin oldu, yeni markaları listesine ekledi Yeni Mercedes-AMG GT SUV tanıtıldı: 1.169 hp gücündeki sporcu SUV Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu 2028 Tesla Roadster sahnede: Uçabilen, takla atabilen yeni otomobil Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Otomotiv ihracatı nisanda yüzde 15 artış gösterdi Yeni Opel Grandland: Elektrikli geleceğe doğru 2024 Nissan Qashqai Avrupa için yenilendi Yeni Passat hangi motorlarla ülkemize geldi TV’de son durumu anlattık: 0 ve 2. el oto fiyatları düşüyor mu? Yeni Audi Q4 e-tron 2 batarya, 2 gövde seçeneği ile Türkiye’de satışa sunuldu Dünyada elektrikli araç satışlarında şaşırtıcı düşüş: Marka marka elektrikli araç pazarı 2026 Paris Otomobil Fuarı’nda üç markadan biri Çinli Paris’te sürpriz hamle: AB, Çinli hibrit otomobiller için “acil fren” butonuna bastı Mercedes-AMG, 59 yıllık tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modeli olan yeni Mercedes-AMG GT SUV’yi tanıttı. AMG.EA yüksek performans mimarisini temel alan bu devrim niteliğindeki araç, bir spor otomobilin heyecan verici sürüş dinamiklerini lüks bir SUV gövdesinde sunuyor. Mercedes-Benz, elektrikli performans segmentinde tüm dengeleri değiştirmeye hazırlanıyor. Affalterbach doğumlu yeniMercedes-AMG GT SUV, markanın kendi bünyesinde geliştirdiği ilk büyük boy SUV olma özelliğini taşıyor. Güçlü duruşu, sportif oturma pozisyonu ve düşük ağırlık merkeziyle dikkat çeken model; performans, konfor ve günlük kullanım özelliklerini kusursuz bir dengeyle buluşturuyor. Yeni Mercedes-AMG GT SUV, motor seçeneklerine bağlı olarak üstün güç aktarım konseptleri sunuyor: Mercedes-AMG GT 63 SUV:Üç adet eksenli akılı motoruyla860 kW (1.169 bg)güç üretiyor ve en üst versiyonda 0’dan 100 km/s hıza yalnızca2,5 saniyedeulaşıyor. Maksimum hızı ise Sürücü Paketi ile 270 km/s. Mercedes-AMG GT 55 SUV:600 kW (816 bg) güç sunuyor. Mercedes-AMG GT 53 SUV:Ön ve arka aksta yer alan iki güçlü senkron motoruyla toplam400 kW (544 bg)güç üretiyor. Formula 1’den ilham alanAMG Yüksek Performanslı Elektrikli Batarya, doğrudan soğutmalı silindirik hücreleriyle dikkat çekiyor. 710 kW’a varan ultra hızlı DC şarj gücüsayesinde 128 kWh’lik batarya, 10 dakikalık şarjla WLTP standartlarına göre450 kilometreye varan menzilsunuyor. Şarj seviyesinin yüzde 10’dan yüzde 80’e çıkması ise sadece 12 dakika sürüyor. Araçta ilk kez yer alan aktif salınım ve yalpalama stabilizasyonuna sahipAMG ACTIVE RIDE CONTROL+ süspansiyon, sportif hassasiyet ile üst düzey seyahat konforunu bir araya getiriyor. Ayrıca aktif arka aks yönlendirme sistemi (6 dereceye kadar), düşük hızlarda çevikliği artırırken yüksek hızlarda sürüş stabilitesini maksimum seviyeye çıkarıyor. Müşteriler Mercedes-AMG GT 63 SUV, AMG GT 55 SUV ve AMG GT 53 SUV modelleri arasından seçim yapabilecekler. Serinin giriş seviyesi versiyonu için ön siparişler20 Ekimitibarıyla başlarken, AMG GT 63 ve 55 SUV modelleri2027 ilkbaharındasatışa sunulacak. Ismimi, e-postamı ve web sitemi bir dahaki sefere bu tarayıcıya kaydet. © Otoajanda. Tüm Hakları Saklıdır.",
+          "post_text_for_card": "1.169 HP GÜÇTE BİR SUV, YALNIZCA BİR RAKAM DEĞİL.\n\nMercedes-AMG, 59 yıllık tarihinde ilk kez sıfırdan büyük bir SUV geliştirdi. Yeni GT SUV, AMG.EA mimarisiyle geldi ve bu gücü lüks bir gövdede sunuyor.\n\nSpor otomobil dinamikleriyle SUV gövdesini birleştiren bu araç, sınırları zorlama merakının bir göstergesi.\n\nBu kadar yüksek gücü günlük hayatta gerçekten kullanabilmek, markanın kendisinden çok alıcının tercihiyle ilgili.",
+          "story_card_title": "1.169 HP GÜÇLÜ SUV Mİ GELİYOR!",
+          "story_card_subtitle": "Mercedes-AMG tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modelini tanıttı. AMG.EA yüksek performans mimarisine sahip bu araç, 1.169 hp gücüyle spor otomobil dinamiklerini lüks bir SUV gövdesinde sunuyor. Bu devrim niteliğindeki araç, sınırları zorlama merakının somut bir kanıtı olarak karşımıza çıkıyor.",
           "image_sources": [
-            "article_candidates_field",
-            "article_img"
+            "smart_search"
           ],
-          "prepared_image_count": 2,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/KbZovN/s3/2017-tesla-roadster-concept-and-2018-tesla-roadster-production-car.jpg",
-            "https://cdn.motor1.com/images/mgl/AkOKo2/s4/semi_86.jpg"
-          ]
+          "prepared_image_count": 1,
+          "original_image_urls": []
         },
-        "post_text": "9 yıl sonra yeni Tesla Roadster karşımızda.\n\n2017 konsepti akıcıydı. Şimdi daha köşeli, Cybertruck'a yakın bir tasarım var.\n\nTanıtım ile üretim arasında geçen bu süre, tasarımda radikal bir değişime yol açtı. Tesla, nedenini açıklamadı. Bu, beklenti yönetimi sorunudur.",
-        "story_card_title": "9 yıl sonra Roadster şaşırttı!",
-        "story_card_subtitle": "Tesla'nın uzun süredir beklenen Roadster modelinin tasarımı, tanıtılan konseptten oldukça farklı. 2017'deki akıcı hatlar yerini daha köşeli, Cybertruck'a yakın bir görünüme bıraktı. Bu radikal değişim, şirket tarafından henüz açıklanmadı ve beklentileri yönetme konusunda soru işaretleri yarattı.",
-        "image_path": "/tmp/otoxtra_img_6s0jd3j8.jpg",
+        "post_text": "1.169 HP GÜÇTE BİR SUV, YALNIZCA BİR RAKAM DEĞİL.\n\nMercedes-AMG, 59 yıllık tarihinde ilk kez sıfırdan büyük bir SUV geliştirdi. Yeni GT SUV, AMG.EA mimarisiyle geldi ve bu gücü lüks bir gövdede sunuyor.\n\nSpor otomobil dinamikleriyle SUV gövdesini birleştiren bu araç, sınırları zorlama merakının bir göstergesi.\n\nBu kadar yüksek gücü günlük hayatta gerçekten kullanabilmek, markanın kendisinden çok alıcının tercihiyle ilgili.",
+        "story_card_title": "1.169 HP GÜÇLÜ SUV Mİ GELİYOR!",
+        "story_card_subtitle": "Mercedes-AMG tarihinde bir ilke imza atarak sıfırdan geliştirdiği ilk büyük boy SUV modelini tanıttı. AMG.EA yüksek performans mimarisine sahip bu araç, 1.169 hp gücüyle spor otomobil dinamiklerini lüks bir SUV gövdesinde sunuyor. Bu devrim niteliğindeki araç, sınırları zorlama merakının somut bir kanıtı olarak karşımıza çıkıyor.",
+        "image_path": "/tmp/otoxtra_img_2d2sx59l.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_6s0jd3j8.jpg",
-          "/tmp/otoxtra_img_jzrz06w1.jpg"
+          "/tmp/otoxtra_img_2d2sx59l.jpg"
         ],
-        "image_source": "article_candidates_field",
-        "image_count": 2
+        "image_source": "smart_search",
+        "image_count": 1
       },
       "error": null,
-      "updated_at": "2026-10-18T20:03:36.267992+03:00"
+      "updated_at": "2026-10-19T06:03:27.797542+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122184319412916499",
+        "post_id": "678053852057751_122184368612916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18158366215526886",
+            "id": "17920480818245118",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "2466619117200298",
+            "id": "2133158434258047",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-18T20:04:13.923138+03:00"
+      "updated_at": "2026-10-19T06:04:06.851225+03:00"
     }
   }
 }
