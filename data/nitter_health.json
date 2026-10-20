@@ -5,26 +5,26 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1792472507.3018942,
-      "last_change": "2026-10-20T04:01:47+00:00",
+      "blocked_until": 1792476125.1437166,
+      "last_change": "2026-10-20T05:02:05+00:00",
       "last_status": 429
     },
     "nitter.kabii.moe": {
-      "failures": 4,
+      "failures": 6,
       "successes": 582,
       "state": "degraded",
       "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-10-20T04:02:13+00:00",
+      "last_change": "2026-10-20T05:02:08+00:00",
       "last_status": 404
     },
     "nitter.wisq.net": {
-      "failures": 35,
+      "failures": 36,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-10-20T04:02:31+00:00",
+      "last_change": "2026-10-20T05:02:27+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
@@ -40,8 +40,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1792472497.7680306,
-      "last_change": "2026-10-20T04:01:37+00:00",
+      "blocked_until": 1792476103.7594259,
+      "last_change": "2026-10-20T05:01:43+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,53 +49,53 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1792472500.880693,
-      "last_change": "2026-10-20T04:01:40+00:00",
+      "blocked_until": 1792476106.1696842,
+      "last_change": "2026-10-20T05:01:46+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
-      "failures": 1,
+      "failures": 3,
       "successes": 106,
-      "state": "ok",
-      "reason": "http_404",
-      "blocked_until": 0.0,
-      "last_change": "2026-10-20T04:02:44+00:00",
-      "last_status": 404
+      "state": "blocked",
+      "reason": "http_429",
+      "blocked_until": 1792476228.3801868,
+      "last_change": "2026-10-20T05:03:48+00:00",
+      "last_status": 429
     },
     "tw.eir-nya.gay": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1792472504.5585356,
-      "last_change": "2026-10-20T04:01:44+00:00",
+      "blocked_until": 1792476116.5927162,
+      "last_change": "2026-10-20T05:01:56+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
       "failures": 3,
       "successes": 22,
-      "state": "blocked",
-      "reason": "http_403",
-      "blocked_until": 1792468992.9382071,
-      "last_change": "2026-10-20T03:03:12+00:00",
-      "last_status": 403
+      "state": "degraded",
+      "reason": "http_404",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-20T05:03:51+00:00",
+      "last_status": 404
     },
     "nitter.meowing.monster": {
-      "failures": 1,
-      "successes": 368,
-      "state": "blocked",
-      "reason": "bot_challenge",
-      "blocked_until": 1792468991.6485102,
-      "last_change": "2026-10-20T03:03:11+00:00",
-      "last_status": 200
+      "failures": 0,
+      "successes": 374,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-20T05:04:02+00:00",
+      "last_status": 404
     },
     "nitter.netbub.com": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1792472516.8524861,
-      "last_change": "2026-10-20T04:01:56+00:00",
+      "blocked_until": 1792476217.377869,
+      "last_change": "2026-10-20T05:03:37+00:00",
       "last_status": 403
     },
     "shitter.thepixora.com": {
@@ -103,18 +103,18 @@
       "successes": 171,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1792472518.8638184,
-      "last_change": "2026-10-20T04:01:58+00:00",
+      "blocked_until": 1792476219.4418013,
+      "last_change": "2026-10-20T05:03:39+00:00",
       "last_status": 403
     },
     "nitter.jaydenha.uk": {
-      "failures": 0,
+      "failures": 2,
       "successes": 40,
-      "state": "ok",
-      "reason": "",
-      "blocked_until": 0.0,
-      "last_change": "2026-10-20T04:03:11+00:00",
-      "last_status": 404
+      "state": "blocked",
+      "reason": "http_429",
+      "blocked_until": 1792476091.201325,
+      "last_change": "2026-10-20T05:01:31+00:00",
+      "last_status": 429
     },
     "nitter.gravitywell.xyz": {
       "failures": 0,
@@ -126,5 +126,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-10-20T04:03:11+00:00"
+  "updated_at": "2026-10-20T05:04:02+00:00"
 }
