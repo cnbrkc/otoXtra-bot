@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-10-20-08:00",
-  "status": "error",
-  "started_at": "2026-10-20T08:00:55.154185+03:00",
-  "updated_at": "2026-10-20T08:04:03.386540+03:00",
+  "run_id": "2026-10-20-09:00",
+  "status": "completed",
+  "started_at": "2026-10-20T09:00:41.530565+03:00",
+  "updated_at": "2026-10-20T09:04:25.052185+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+            "link": "https://www.log.com.tr/apple-yapay-zeka-odakli-samplabi-satin-aldi/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-20T05:59:00+00:00",
+            "summary": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satın aldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişim Sonera’yı bünyesine katmıştı. Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor. Apple, yapay zeka odaklı Samplab’ı satın aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aldi-apple-odakli-samplab-satin-yapay-zeka"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -78,7 +100,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.jaydenha.uk"
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -123,11 +145,11 @@
             "instance": "nitter.meowing.monster"
           },
           "VeyselKarani": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/veysellkaranii/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.meowing.monster"
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -138,55 +160,230 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 7,
+            "count": 9,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 137,
-            "after_keyword": 75,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 149,
+            "after_keyword": 84,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 137,
-          "after_keyword": 75,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 149,
+          "after_keyword": 84,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-20T08:04:03.386540+03:00"
+      "error": null,
+      "updated_at": "2026-10-20T09:03:21.584747+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+          "link": "https://www.log.com.tr/apple-yapay-zeka-odakli-samplabi-satin-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-20T05:59:00+00:00",
+          "summary": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satın aldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişim Sonera’yı bünyesine katmıştı. Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor. Apple, yapay zeka odaklı Samplab’ı satın aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-apple-odakli-samplab-satin-yapay-zeka",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 4
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Apple gibi dev bir teknoloji şirketinin yapay zeka alanında yaptığı satın almalar her zaman büyük ilgi görür, ancak otomotiv odaklı olmasa da teknoloji gündemini meşgul etmektedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 68,
+        "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 4
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Apple gibi dev bir teknoloji şirketinin yapay zeka alanında yaptığı satın almalar her zaman büyük ilgi görür, ancak otomotiv odaklı olmasa da teknoloji gündemini meşgul etmektedir.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+            "score": 68,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-20T09:03:22.854792+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+          "link": "https://www.log.com.tr/apple-yapay-zeka-odakli-samplabi-satin-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-20T05:59:00+00:00",
+          "summary": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satın aldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişim Sonera’yı bünyesine katmıştı. Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor. Apple, yapay zeka odaklı Samplab’ı satın aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_08-53-22_jvpWH-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-apple-odakli-samplab-satin-yapay-zeka",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 4
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Apple gibi dev bir teknoloji şirketinin yapay zeka alanında yaptığı satın almalar her zaman büyük ilgi görür, ancak otomotiv odaklı olmasa da teknoloji gündemini meşgul etmektedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satınaldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişimSonera’yı bünyesine katmıştı.Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor."
+        },
+        "post_text": "YAPAY ZEKA ŞİRKETİ ALMAK ARTIK HABER DEĞİL, STRATEJİ.\n\nApple, haziran ayında yapay zeka destekli müzik düzenleme şirketi Samplab'ı satın aldı. Bu bilgi Avrupa Komisyonu'nun resmi sayfasında yayımlandı.\n\nŞirket daha önce de ABD merkezli Sonera'yı bünyesine katmıştı.\n\nBeklenti, Samplab teknolojisinin Logic Pro ve GarageBand'e entegre edilmesi. Bu küçük adımlar, Apple'ın yapay zeka yarışında geri kalmadığını gösteriyor.",
+        "post_text_length": 420,
+        "story_card_title": "APPLE'DAN BÜYÜK HAMLE: MÜZİK YOL HARİTASI DEĞİŞİYOR!",
+        "story_card_subtitle": "Apple, yapay zeka destekli müzik düzenleme şirketi Samplab'ı bünyesine kattı. Avrupa Komisyonu'nun resmi duyurusuyla kesinleşen bu satın alma, teknoloji devinin yapay zeka stratejisinin bir parçası. Samplab'ın teknolojisinin Logic Pro ve GarageBand gibi popüler uygulamalara entegre edilmesi bekleniyor. Bu hamle, Apple'ın yapay zeka alanındaki rekabette ne kadar iddialı olduğunu bir kez daha gösteriyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-20T09:03:26.058986+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Apple, yapay zeka odaklı Samplab’ı satın aldı",
+          "link": "https://www.log.com.tr/apple-yapay-zeka-odakli-samplabi-satin-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-20T05:59:00+00:00",
+          "summary": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satın aldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişim Sonera’yı bünyesine katmıştı. Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor. Apple, yapay zeka odaklı Samplab’ı satın aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "no_image",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-apple-odakli-samplab-satin-yapay-zeka",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 4
+          },
+          "score": 68,
+          "score_reason": "ai_scored",
+          "score_explanation": "Apple gibi dev bir teknoloji şirketinin yapay zeka alanında yaptığı satın almalar her zaman büyük ilgi görür, ancak otomotiv odaklı olmasa da teknoloji gündemini meşgul etmektedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Avrupa Komisyonu’nun resmi sayfasında bugün yayımlanan bilgilere göre Apple, yapay zeka destekli müzik düzenleme sistemleri/araçları geliştiren Samplab’ı satınaldı. Alımı resmi olarak haziran ayında gerçekleştirdiği belirtilen şirket, bundan önce ABD merkezli girişimSonera’yı bünyesine katmıştı.Samplab’ın teknolojilerini Logic Pro ve GarageBand’e taşıması beklenen teknoloji devi, yapay zeka alanında geleceğe yönelik küçük ama kritik yatırımlarını sürdürüyor.",
+          "post_text_for_card": "YAPAY ZEKA ŞİRKETİ ALMAK ARTIK HABER DEĞİL, STRATEJİ.\n\nApple, haziran ayında yapay zeka destekli müzik düzenleme şirketi Samplab'ı satın aldı. Bu bilgi Avrupa Komisyonu'nun resmi sayfasında yayımlandı.\n\nŞirket daha önce de ABD merkezli Sonera'yı bünyesine katmıştı.\n\nBeklenti, Samplab teknolojisinin Logic Pro ve GarageBand'e entegre edilmesi. Bu küçük adımlar, Apple'ın yapay zeka yarışında geri kalmadığını gösteriyor.",
+          "story_card_title": "APPLE'DAN BÜYÜK HAMLE: MÜZİK YOL HARİTASI DEĞİŞİYOR!",
+          "story_card_subtitle": "Apple, yapay zeka destekli müzik düzenleme şirketi Samplab'ı bünyesine kattı. Avrupa Komisyonu'nun resmi duyurusuyla kesinleşen bu satın alma, teknoloji devinin yapay zeka stratejisinin bir parçası. Samplab'ın teknolojisinin Logic Pro ve GarageBand gibi popüler uygulamalara entegre edilmesi bekleniyor. Bu hamle, Apple'ın yapay zeka alanındaki rekabette ne kadar iddialı olduğunu bir kez daha gösteriyor.",
+          "image_sources": [
+            "no_image"
+          ],
+          "prepared_image_count": 0,
+          "original_image_urls": []
+        },
+        "post_text": "YAPAY ZEKA ŞİRKETİ ALMAK ARTIK HABER DEĞİL, STRATEJİ.\n\nApple, haziran ayında yapay zeka destekli müzik düzenleme şirketi Samplab'ı satın aldı. Bu bilgi Avrupa Komisyonu'nun resmi sayfasında yayımlandı.\n\nŞirket daha önce de ABD merkezli Sonera'yı bünyesine katmıştı.\n\nBeklenti, Samplab teknolojisinin Logic Pro ve GarageBand'e entegre edilmesi. Bu küçük adımlar, Apple'ın yapay zeka yarışında geri kalmadığını gösteriyor.",
+        "story_card_title": "APPLE'DAN BÜYÜK HAMLE: MÜZİK YOL HARİTASI DEĞİŞİYOR!",
+        "story_card_subtitle": "Apple, yapay zeka destekli müzik düzenleme şirketi Samplab'ı bünyesine kattı. Avrupa Komisyonu'nun resmi duyurusuyla kesinleşen bu satın alma, teknoloji devinin yapay zeka stratejisinin bir parçası. Samplab'ın teknolojisinin Logic Pro ve GarageBand gibi popüler uygulamalara entegre edilmesi bekleniyor. Bu hamle, Apple'ın yapay zeka alanındaki rekabette ne kadar iddialı olduğunu bir kez daha gösteriyor.",
+        "image_path": "",
+        "image_paths": [],
+        "image_source": "no_image",
+        "image_count": 0
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-20T09:04:11.458249+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122184513632916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-20T09:04:25.052185+03:00"
     }
   }
 }
