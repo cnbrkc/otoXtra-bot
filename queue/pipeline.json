@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-10-21-07:00",
-  "status": "completed",
-  "started_at": "2026-10-21T07:00:43.236734+03:00",
-  "updated_at": "2026-10-21T07:03:24.096331+03:00",
+  "run_id": "2026-10-21-08:00",
+  "status": "error",
+  "started_at": "2026-10-21T08:00:48.511544+03:00",
+  "updated_at": "2026-10-21T08:02:54.662776+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-            "link": "https://www.log.com.tr/ticaret-bakanligi-made-in-eu-konusunda-yeni-aciklama-paylasti/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-21T07:00:43.341507+03:00",
-            "summary": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklama paylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), […] Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aciklama-bakanligi-konusunda-made-paylasti-ticaret"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -112,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 530 Server Error: <none> for url: https://nitter.kareem.one/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -169,221 +147,46 @@
             "found": 150,
             "after_keyword": 89,
             "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 150,
           "after_keyword": 89,
           "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-21T07:02:27.254814+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-21T08:02:54.662776+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-          "link": "https://www.log.com.tr/ticaret-bakanligi-made-in-eu-konusunda-yeni-aciklama-paylasti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-21T07:00:43.341507+03:00",
-          "summary": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklama paylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), […] Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-bakanligi-konusunda-made-paylasti-ticaret",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör profesyonellerini ilgilendiren resmi bir gelişme olsa da, geniş kitlelerin sosyal medyada etkileşime gireceği viral potansiyele sahip değil.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 50,
-        "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 8,
-          "benzersizlik": 10,
-          "gundem_gucu": 8,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Sektör profesyonellerini ilgilendiren resmi bir gelişme olsa da, geniş kitlelerin sosyal medyada etkileşime gireceği viral potansiyele sahip değil.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 10,
-              "gundem_gucu": 8,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-21T07:02:29.017024+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-          "link": "https://www.log.com.tr/ticaret-bakanligi-made-in-eu-konusunda-yeni-aciklama-paylasti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-21T07:00:43.341507+03:00",
-          "summary": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklama paylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), […] Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-20_09-03-26_vjhJF-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-bakanligi-konusunda-made-paylasti-ticaret",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör profesyonellerini ilgilendiren resmi bir gelişme olsa da, geniş kitlelerin sosyal medyada etkileşime gireceği viral potansiyele sahip değil.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklamapaylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), Otomotiv İhracatçıları Birliği (OİB), Otomotiv Sanayi Derneği (OSD), Taşıt Araçları Tedarik Sanayicileri Derneği (TAYSAD) başkanları ve üst yönetimi katılım sağlamıştır. Toplantıda, AB içinde ortaya konulan nihai çalışmanın Türkiye ile AB arasındaki köklü sanayi entegrasyonunu gözetecek bir yönde sonuçlanması için hem üye ülkelerin pozisyonlarına hem de AB Konseyi, Parlamentosu ve Komisyonunun çalışmalarına yansıtılmasına dönük çabaların kararlılıkla devam ettirilmesi hususunda mutabık kalınmıştır. Otomotiv sektörünün 1996 yılı başında yürürlüğe giren Gümrük Birliği ilişkisinin ortaya koyduğu entegrasyonun en başarılı alanlarından birisi olduğu ve sanayi entegrasyonumuzun omurgasını teşkil ettiği; ortaya konulacak her yaklaşımın Gümrük Birliği’nin oluşturduğu ekonomik bütünleşmeyi dikkate alması, ortak üretim, yatırım ve tedarik ağlarımızı göz önüne alması gerektiği bir kez daha güçlü şekilde ifade edilmiştir. Avrupa sanayisinin rekabet gücünü artırmayı amaçlayan bir düzenlemenin, bizzat Avrupalı üreticilerin yatırımlarını ve mevcut üretim ağlarını olumsuz etkileyecek sonuçlar doğurmaması gerektiği hususu, AB içerisindeki tüm paydaşlarla, üye ülkelerle, başta Avrupa Birliği Parlamentosu, AB Bakanlar Konseyi ve AB Komisyonu üyeleri olmak üzere resmi karar alıcılarla ve tüm özel sektör paydaşlarıyla bir yıla yakındır sürdürülen ticaret diplomasisinin de temel vurgusu olmuştur. Avrupalı otomotiv üreticileri ve sektör temsilcileri de mevcut üretim ve tedarik zincirlerinin olumsuz etkilenmemesi için Türkiye’deki üretim ve yatırımların Avrupa otomotiv ekosistemi açısından taşıdığı stratejik önemi AB’deki karar alıcılara aktarmaktadır. Tüm çalışmalarımız, karşılıklı pazar erişimini daraltan uygulamalar yerine AB ile ortak üretim kapasitemizi ve küresel rekabet gücümüzü birlikte geliştirmeyi; Gümrük Birliği’nin hukuki ve ekonomik gerçeklerini dikkate alan kapsayıcı bir yaklaşımın AB içerisinde benimsenmesini sağlamayı amaçlamaktadır. Bu doğrultuda, AB kurumları, üye ülkeler ve özel sektörle girişimlerimizi ve temaslarımızı her düzeyde kararlılıkla sürdüreceğiz. Kamuoyuna saygıyla duyurulur.” Otomotiv sektörümüzün çatı kuruluşları ile Ticaret Bakanlığımızda bir araya geldik. (20.10.2026)pic.twitter.com/s7cPXy7QxW — T.C. Ticaret Bakanlığı (@ticaret)October 20, 2026"
-        },
-        "post_text": "Made in EU\" planı Türkiye'yi sıkıştırıyor.\n\nTicaret Bakanlığı, AB'nin Sanayi Hızlandırma Yasası Taslağı'ndaki \"Made in EU\" politikasının Gümrük Birliği'ni gözetmesi gerektiğini net söyledi.\n\nBu politika, Türkiye'nin AB'deki ortak üretim ve tedarik zincirlerini etkileyebilir.\n\nBakanlık, tüm kurumlarla koordineli şekilde AB nezdinde temaslarını sürdürüyor.",
-        "post_text_length": 356,
-        "story_card_title": "AB'NİN 'MADE IN EU' OYUNU BOZULUYOR!",
-        "story_card_subtitle": "Avrupa'nın 'Made in EU' planı Türkiye'yi sıkıştırmak üzereydi. Ticaret Bakanlığı, Gümrük Birliği'ni hatırlatarak AB'ye net bir mesaj verdi. Bu gelişme, Türkiye'nin AB tedarik zincirlerindeki yerini belirleyecek. Bakanlık, tüm kurumlarla koordineli olarak temaslarını sürdürüyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-21T07:02:31.350369+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı",
-          "link": "https://www.log.com.tr/ticaret-bakanligi-made-in-eu-konusunda-yeni-aciklama-paylasti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-21T07:00:43.341507+03:00",
-          "summary": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklama paylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), […] Ticaret Bakanlığı, “Made in EU” konusunda yeni açıklama paylaştı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "aciklama-bakanligi-konusunda-made-paylasti-ticaret",
-          "base_ai_score": 45,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 8,
-            "paylasilabilirlik": 4
-          },
-          "score": 50,
-          "score_reason": "ai_scored",
-          "score_explanation": "Sektör profesyonellerini ilgilendiren resmi bir gelişme olsa da, geniş kitlelerin sosyal medyada etkileşime gireceği viral potansiyele sahip değil.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Ticaret Bakanlığı, gündemden düşmeyen Avrupa’nın “Made in EU” planı hakkında yeni bir açıklamapaylaştı. Dün bu konuda otomotiv sektörünün çatı kuruluşları ile bir araya gelen bakanlık şunları söyledi: “Avrupa Birliği’nde görüşülmekte olan Sanayi Hızlandırma Yasası Taslağı (IAA) kapsamında öngörülen “Made in EU” politikasının, Türkiye ile AB arasında Gümrük Birliği temelinde oluşturulan güçlü ekonomik bütünleşmeyi ve ortak üretim ve tedarik zincirlerini gözetmesi temel önceliğimizdir. Bu doğrultuda, ilgili tüm kurumlarımızla koordinasyon içerisinde sürecin en başından itibaren AB kurumları, üye ülkeler ve AB sektör temsilcileri nezdinde sayısız temas gerçekleştirilerek ülkemizin görüş, beklenti ve hassasiyetleri her düzeyde kararlılıkla dile getirilmektedir. Özel sektörümüz de çok sayıda girişimle görüş ve beklentilerimizi muhataplarına aktarmakta, tam bir koordinasyon içerisinde çalışmalar sürdürülmektedir. Bu kapsamda, bugün Ticaret Bakanımız Ömer Bolat başkanlığında, Ticaret Bakanlığında ilgili Bakanlıklarımız, kurumlarımız ve otomotiv sektörümüzün temsilcileri ile kapsamlı bir toplantı daha yapılmış ve toplantıda son gelişmeler ve müteakip adımlar gözden geçirilmiştir. Toplantıya, Türkiye İhracatçılar Meclisi (TİM), Otomotiv İhracatçıları Birliği (OİB), Otomotiv Sanayi Derneği (OSD), Taşıt Araçları Tedarik Sanayicileri Derneği (TAYSAD) başkanları ve üst yönetimi katılım sağlamıştır. Toplantıda, AB içinde ortaya konulan nihai çalışmanın Türkiye ile AB arasındaki köklü sanayi entegrasyonunu gözetecek bir yönde sonuçlanması için hem üye ülkelerin pozisyonlarına hem de AB Konseyi, Parlamentosu ve Komisyonunun çalışmalarına yansıtılmasına dönük çabaların kararlılıkla devam ettirilmesi hususunda mutabık kalınmıştır. Otomotiv sektörünün 1996 yılı başında yürürlüğe giren Gümrük Birliği ilişkisinin ortaya koyduğu entegrasyonun en başarılı alanlarından birisi olduğu ve sanayi entegrasyonumuzun omurgasını teşkil ettiği; ortaya konulacak her yaklaşımın Gümrük Birliği’nin oluşturduğu ekonomik bütünleşmeyi dikkate alması, ortak üretim, yatırım ve tedarik ağlarımızı göz önüne alması gerektiği bir kez daha güçlü şekilde ifade edilmiştir. Avrupa sanayisinin rekabet gücünü artırmayı amaçlayan bir düzenlemenin, bizzat Avrupalı üreticilerin yatırımlarını ve mevcut üretim ağlarını olumsuz etkileyecek sonuçlar doğurmaması gerektiği hususu, AB içerisindeki tüm paydaşlarla, üye ülkelerle, başta Avrupa Birliği Parlamentosu, AB Bakanlar Konseyi ve AB Komisyonu üyeleri olmak üzere resmi karar alıcılarla ve tüm özel sektör paydaşlarıyla bir yıla yakındır sürdürülen ticaret diplomasisinin de temel vurgusu olmuştur. Avrupalı otomotiv üreticileri ve sektör temsilcileri de mevcut üretim ve tedarik zincirlerinin olumsuz etkilenmemesi için Türkiye’deki üretim ve yatırımların Avrupa otomotiv ekosistemi açısından taşıdığı stratejik önemi AB’deki karar alıcılara aktarmaktadır. Tüm çalışmalarımız, karşılıklı pazar erişimini daraltan uygulamalar yerine AB ile ortak üretim kapasitemizi ve küresel rekabet gücümüzü birlikte geliştirmeyi; Gümrük Birliği’nin hukuki ve ekonomik gerçeklerini dikkate alan kapsayıcı bir yaklaşımın AB içerisinde benimsenmesini sağlamayı amaçlamaktadır. Bu doğrultuda, AB kurumları, üye ülkeler ve özel sektörle girişimlerimizi ve temaslarımızı her düzeyde kararlılıkla sürdüreceğiz. Kamuoyuna saygıyla duyurulur.” Otomotiv sektörümüzün çatı kuruluşları ile Ticaret Bakanlığımızda bir araya geldik. (20.10.2026)pic.twitter.com/s7cPXy7QxW — T.C. Ticaret Bakanlığı (@ticaret)October 20, 2026",
-          "post_text_for_card": "Made in EU\" planı Türkiye'yi sıkıştırıyor.\n\nTicaret Bakanlığı, AB'nin Sanayi Hızlandırma Yasası Taslağı'ndaki \"Made in EU\" politikasının Gümrük Birliği'ni gözetmesi gerektiğini net söyledi.\n\nBu politika, Türkiye'nin AB'deki ortak üretim ve tedarik zincirlerini etkileyebilir.\n\nBakanlık, tüm kurumlarla koordineli şekilde AB nezdinde temaslarını sürdürüyor.",
-          "story_card_title": "AB'NİN 'MADE IN EU' OYUNU BOZULUYOR!",
-          "story_card_subtitle": "Avrupa'nın 'Made in EU' planı Türkiye'yi sıkıştırmak üzereydi. Ticaret Bakanlığı, Gümrük Birliği'ni hatırlatarak AB'ye net bir mesaj verdi. Bu gelişme, Türkiye'nin AB tedarik zincirlerindeki yerini belirleyecek. Bakanlık, tüm kurumlarla koordineli olarak temaslarını sürdürüyor.",
-          "image_sources": [
-            "no_image"
-          ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
-        },
-        "post_text": "Made in EU\" planı Türkiye'yi sıkıştırıyor.\n\nTicaret Bakanlığı, AB'nin Sanayi Hızlandırma Yasası Taslağı'ndaki \"Made in EU\" politikasının Gümrük Birliği'ni gözetmesi gerektiğini net söyledi.\n\nBu politika, Türkiye'nin AB'deki ortak üretim ve tedarik zincirlerini etkileyebilir.\n\nBakanlık, tüm kurumlarla koordineli şekilde AB nezdinde temaslarını sürdürüyor.",
-        "story_card_title": "AB'NİN 'MADE IN EU' OYUNU BOZULUYOR!",
-        "story_card_subtitle": "Avrupa'nın 'Made in EU' planı Türkiye'yi sıkıştırmak üzereydi. Ticaret Bakanlığı, Gümrük Birliği'ni hatırlatarak AB'ye net bir mesaj verdi. Bu gelişme, Türkiye'nin AB tedarik zincirlerindeki yerini belirleyecek. Bakanlık, tüm kurumlarla koordineli olarak temaslarını sürdürüyor.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-21T07:03:08.397495+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122184626702916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-21T07:03:24.096331+03:00"
+      "updated_at": null
     }
   }
 }
