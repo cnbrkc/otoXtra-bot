@@ -1,14 +1,57 @@
 {
-  "run_id": "2026-10-21-08:00",
-  "status": "error",
-  "started_at": "2026-10-21T08:00:48.511544+03:00",
-  "updated_at": "2026-10-21T08:02:54.662776+03:00",
+  "run_id": "2026-10-21-09:00",
+  "status": "completed",
+  "started_at": "2026-10-21T09:00:48.427140+03:00",
+  "updated_at": "2026-10-21T09:04:10.370818+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/uzmanlardan-uyari-su-cekildi-diye-kontagi-cevirmeyin-5415h",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-21T05:30:04+00:00",
+            "summary": "Sel ve su baskınlarında zarar gören araçlarda, su çekildikten sonra yapılan ilk müdahale hasarın boyutunu değiştirebiliyor.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5730.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cekildi-cevirmeyin-diye-kontagi-uyari-uzmanlardan"
+          },
+          {
+            "title": "Otomotiv sektöründen AB'ye \"Made with Europe\" çağrısı",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/otomotiv-sektorunden-abye-made-with-europe-cagrisi-5414h",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-21T05:26:37+00:00",
+            "summary": "AB’nin Sanayi Hızlandırma Yasası hazırlıklarına, iş dünyasından gelen tepkiler büyüyor. Ticaret Bakanı Ömer Bolat ile dün bir araya gelen otomotiv sektör temsilcileri, “Made with Europe” çağrısı yaptı.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5729.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5729.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5729.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cagrisi-europe-made-otomotiv-sektorunden-with"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -90,7 +133,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -146,47 +189,257 @@
           "_metrics": {
             "found": 150,
             "after_keyword": 89,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 8,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 150,
           "after_keyword": 89,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 8,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-21T08:02:54.662776+03:00"
+      "error": null,
+      "updated_at": "2026-10-21T09:02:54.392709+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/uzmanlardan-uyari-su-cekildi-diye-kontagi-cevirmeyin-5415h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-21T05:30:04+00:00",
+          "summary": "Sel ve su baskınlarında zarar gören araçlarda, su çekildikten sonra yapılan ilk müdahale hasarın boyutunu değiştirebiliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5730.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "cekildi-cevirmeyin-diye-kontagi-uyari-uzmanlardan",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 78,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğal afet dönemlerinde sürücülerin doğrudan ilgisini çeken, hayat kurtarıcı ve yüksek paylaşılabilirlik potansiyeline sahip pratik bir uyarı haberi.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 78,
+        "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 15,
+          "gundem_gucu": 13,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Doğal afet dönemlerinde sürücülerin doğrudan ilgisini çeken, hayat kurtarıcı ve yüksek paylaşılabilirlik potansiyeline sahip pratik bir uyarı haberi.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+            "score": 78,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 15,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Otomotiv sektöründen AB'ye \"Made with Europe\" çağrısı",
+            "score": 52,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 12,
+              "gundem_gucu": 7,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Otomotiv sektöründen AB'ye \"Made with Europe\" çağrısı",
+            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/otomotiv-sektorunden-abye-made-with-europe-cagrisi-5414h",
+            "score": 52,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "cagrisi-europe-made-otomotiv-sektorunden-with"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-21T09:03:15.781046+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/uzmanlardan-uyari-su-cekildi-diye-kontagi-cevirmeyin-5415h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-21T05:30:04+00:00",
+          "summary": "Sel ve su baskınlarında zarar gören araçlarda, su çekildikten sonra yapılan ilk müdahale hasarın boyutunu değiştirebiliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5730.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "cekildi-cevirmeyin-diye-kontagi-uyari-uzmanlardan",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 78,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğal afet dönemlerinde sürücülerin doğrudan ilgisini çeken, hayat kurtarıcı ve yüksek paylaşılabilirlik potansiyeline sahip pratik bir uyarı haberi.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Selin hemen ardından araç sahiplerinin ilk refleksi, otomobillerinin çalışıp çalışmadığını kontrol etmek oluyor. Ancak bu deneme, onarılabilecek bir hasarı daha ağır bir tabloya dönüştürebiliyor.Hasar onarım süreçlerinde birçok otomobil üreticisine de teknik eğitim veren Met Teknik Akademi’nin Başkanı Mustafa Tütünoğlu, sel hasarında önceliğin can güvenliği olduğunu vurgulayarak, araç sahiplerinin tehlike devam ederken otomobillerini kurtarmaya çalışmaması, su çekildikten sonra da teknik kontrol yapılmadan kontağı çevirmemesi gerektiğini söyledi. Bir marş denemesi motor hasarını büyütebiliyor Özellikle suyun içinde stop eden araçlarda yeniden çalıştırma girişiminin ciddi risk taşıdığını belirten Tütünoğlu“Motorun hava emiş hattından silindirlere su girmiş olabilir. Silindirdeki su pistonun hareketini engelleyerek biyel kolları ve diğer motor parçalarında ağır hasara yol açabilir. Bu nedenle ‘Bir kez deneyelim, çalışırsa sorun yoktur’ yaklaşımı doğru değil. Marşa basmak, akü takviyesi yapmak ya da aracı iterek çalıştırmaya uğraşmak hasarı büyütebilir. Araç, üreticinin taşıma talimatlarına uygun şekilde profesyonel çekiciyle servise ulaştırılmalı.”uyarısında bulundu. Suyun ulaştığı seviye ve araç içinde kaldığı sürenin servis değerlendirmesi için önemli olduğunu ifade eden Tütünoğlu, güvenli koşullarda çekilebilen fotoğrafların ve olayla ilgili bilgilerin teknik ekiple paylaşılmasını önerdi. Döşeme kurusa dahi elektronik sistemlerde risk sürebilir Sel hasarının her zaman ilk gün belirti vermediğine dikkat çeken Tütünoğlu,“Taban halısı yüzeyi kurumuş görünürken altındaki yalıtım malzemeleri nemli olabilir. Kablo bağlantılarında, soketlerde ve elektronik kontrol ünitelerinde kalan nem ile kir, zamanla korozyona ve arızaya neden olabilir. Araç bugün çalışırken haftalar sonra elektriksel sorunlar ortaya çıkabilir. Bu yüzden yalnızca iç temizlik yaptırıp aracı kullanmaya devam etmek yeterli değildir.”değerlendirmesinde bulundu. Tütünoğlu, suya maruz kalan bölgelerin uzmanlarca incelenmesi; gerekli söküm, temizlik, kurutma ve parça değişimlerinin üreticinin onarım prosedürlerine göre yapılması gerektiğini söyledi. Özellikle tuzlu su temasının korozyon açısından daha ağır sonuçlar doğurabileceğini hatırlattı. Hava yastıkları ve emniyet kemerleri de değerlendirilmeli Kontrolün motor ve konfor donanımlarıyla sınırlı kalmaması gerektiğini vurgulayan Tütünoğlu,“Hava yastıkları, emniyet kemerleri ve kemer gergi mekanizmaları ile bunları yöneten elektronik sistemler de suya maruziyet açısından değerlendirilmeli. Su altında kalan hava yastıklarını kurutup yeniden kullanmak güvenli bir onarım yöntemi değildir. Güvenlik parçalarında kontrol ve değişim kararı, üreticinin ilgili araç için belirlediği kurallara göre verilmeli. Gösterge panelinde uyarı görülmemesi, tek başına bu sistemlerin sağlıklı olduğunu kanıtlamaz.”dedi. Tütünoğlu ayrıca motor, şanzıman ve diferansiyel yağlarına su karışması ihtimalinin; frenlerde ve yürüyen aksamda çamur, tortu veya hasar bulunup bulunmadığının kontrol edilmesi gerektiğini belirtti. Elektrikli ve hibrit araçlarda müdahale uzmanlık gerektiriyor Elektrikli ve hibrit araçların yüksek gerilim sistemleri nedeniyle ayrı bir değerlendirmeye ihtiyaç duyduğunu belirten Tütünoğlu“Sel hasarı şüphesi bulunan elektrikli araç çalıştırılmamalı, şarj edilebilen modeller kontrol tamamlanmadan şarja bağlanmamalı. Yüksek gerilim bataryasına, turuncu kablolara ve elektrik bağlantılarına kullanıcı müdahale etmemeli. Kontağın kapalı olması, yüksek gerilim sisteminde enerji kalmadığı anlamına gelmez. Kontrol, uygun eğitim ve ekipmana sahip teknisyenlerce yapılmalı.”bilgisini paylaştı. Batarya hasarı şüphesinde taşıma ve bekletme koşullarının da uzman ekip tarafından belirlenmesi gerektiğini söyleyen Tütünoğlu, hasarlı aracın kapalı garaja alınmaması ve yapılardan, diğer araçlardan, yanıcı malzemelerden uzakta tutulması gerektiğini vurguladı. Araçta duman, olağan dışı ısınma veya tıslama benzeri sesle karşılaşılması halinde uzaklaşılması ve 112’ye haber verilmesi çağrısında bulundu. Her su teması aynı hasarı oluşturmaz Hasarın kapsamının suyun seviyesi, temas süresi, suyun niteliği ve etkilenen parçalara göre değiştiğini ifade eden Tütünoğlu,“Her suya maruz kalan araç için aynı onarım kararı verilemez. Ancak yüzeydeki çamurun temizlenmesi de bütün risklerin giderildiğini göstermez. Araç sahibi, teknik inceleme ve sigorta hasar değerlendirmesi için ilgili kuruluşlarla iletişime geçmeli; yapılan işlemlerin ve değişen parçaların kayıtlarını saklamalı. Onarımda esas alınacak ölçüt sadece aracın yeniden hareket edebiliyor olması olamaz. Tüm sistemlerin, donanımların ve güvenlik unsurlarının doğru çalıştığının üretici prosedürlerine göre raporlanması gerekir.”açıklamasını yaptı."
+        },
+        "post_text": "SU ÇEKİLDİ DİYE DİREKT KONTAĞI ÇEVİRMEK, HASARI BÜYÜTÜYOR.\n\nSelden sonra aracın çalışıp çalışmadığını denemek, onarılabilecek bir arızayı daha büyük bir tabloya çeviriyor. Met Teknik Akademi Başkanı Mustafa Tütünoğlu, motorun hava emiş hattından silindirlere su girebileceğini belirtiyor.\n\nSu, piston hareketini engelleyip biyel kollarına ve diğer motor parçalarına ağır hasar veriyor.\n\nBu yüzden 'bir kez deneyelim' yaklaşımı, maliyetleri katlıyor.",
+        "post_text_length": 449,
+        "story_card_title": "SU ÇEKİLDİ DİYE KONTROL İÇİN ÇEVİRME!",
+        "story_card_subtitle": "Sel sonrası aracınızın kontağını çevirmeden önce iki kez düşünün. Su çekildi zannedip yapılan ilk kontrol, hasarı katlayabilir. Met Teknik Akademi Başkanı Mustafa Tütünoğlu'na göre, motorun hava emiş hattından su silindirlere ulaşırsa, piston hareketini engelleyerek biyel kolları ve diğer parçalarda onarılamaz hasara yol açabiliyor. Bu 'deneme', maliyetleri ciddi oranda artırıyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-21T09:03:19.732398+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Uzmanlardan Uyarı: Su Çekildi Diye Kontağı Çevirmeyin!",
+          "link": "https://otopodyum.com.tr/yasamsektor-haberleri/uzmanlardan-uyari-su-cekildi-diye-kontagi-cevirmeyin-5415h",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-21T05:30:04+00:00",
+          "summary": "Sel ve su baskınlarında zarar gören araçlarda, su çekildikten sonra yapılan ilk müdahale hasarın boyutunu değiştirebiliyor.",
+          "image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5730.jpg",
+          "image_candidates": [
+            "https://cdn.otopodyum.com.tr/news/5730.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "otopodyum",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "cekildi-cevirmeyin-diye-kontagi-uyari-uzmanlardan",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 15,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 8
+          },
+          "score": 78,
+          "score_reason": "ai_scored",
+          "score_explanation": "Doğal afet dönemlerinde sürücülerin doğrudan ilgisini çeken, hayat kurtarıcı ve yüksek paylaşılabilirlik potansiyeline sahip pratik bir uyarı haberi.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Selin hemen ardından araç sahiplerinin ilk refleksi, otomobillerinin çalışıp çalışmadığını kontrol etmek oluyor. Ancak bu deneme, onarılabilecek bir hasarı daha ağır bir tabloya dönüştürebiliyor.Hasar onarım süreçlerinde birçok otomobil üreticisine de teknik eğitim veren Met Teknik Akademi’nin Başkanı Mustafa Tütünoğlu, sel hasarında önceliğin can güvenliği olduğunu vurgulayarak, araç sahiplerinin tehlike devam ederken otomobillerini kurtarmaya çalışmaması, su çekildikten sonra da teknik kontrol yapılmadan kontağı çevirmemesi gerektiğini söyledi. Bir marş denemesi motor hasarını büyütebiliyor Özellikle suyun içinde stop eden araçlarda yeniden çalıştırma girişiminin ciddi risk taşıdığını belirten Tütünoğlu“Motorun hava emiş hattından silindirlere su girmiş olabilir. Silindirdeki su pistonun hareketini engelleyerek biyel kolları ve diğer motor parçalarında ağır hasara yol açabilir. Bu nedenle ‘Bir kez deneyelim, çalışırsa sorun yoktur’ yaklaşımı doğru değil. Marşa basmak, akü takviyesi yapmak ya da aracı iterek çalıştırmaya uğraşmak hasarı büyütebilir. Araç, üreticinin taşıma talimatlarına uygun şekilde profesyonel çekiciyle servise ulaştırılmalı.”uyarısında bulundu. Suyun ulaştığı seviye ve araç içinde kaldığı sürenin servis değerlendirmesi için önemli olduğunu ifade eden Tütünoğlu, güvenli koşullarda çekilebilen fotoğrafların ve olayla ilgili bilgilerin teknik ekiple paylaşılmasını önerdi. Döşeme kurusa dahi elektronik sistemlerde risk sürebilir Sel hasarının her zaman ilk gün belirti vermediğine dikkat çeken Tütünoğlu,“Taban halısı yüzeyi kurumuş görünürken altındaki yalıtım malzemeleri nemli olabilir. Kablo bağlantılarında, soketlerde ve elektronik kontrol ünitelerinde kalan nem ile kir, zamanla korozyona ve arızaya neden olabilir. Araç bugün çalışırken haftalar sonra elektriksel sorunlar ortaya çıkabilir. Bu yüzden yalnızca iç temizlik yaptırıp aracı kullanmaya devam etmek yeterli değildir.”değerlendirmesinde bulundu. Tütünoğlu, suya maruz kalan bölgelerin uzmanlarca incelenmesi; gerekli söküm, temizlik, kurutma ve parça değişimlerinin üreticinin onarım prosedürlerine göre yapılması gerektiğini söyledi. Özellikle tuzlu su temasının korozyon açısından daha ağır sonuçlar doğurabileceğini hatırlattı. Hava yastıkları ve emniyet kemerleri de değerlendirilmeli Kontrolün motor ve konfor donanımlarıyla sınırlı kalmaması gerektiğini vurgulayan Tütünoğlu,“Hava yastıkları, emniyet kemerleri ve kemer gergi mekanizmaları ile bunları yöneten elektronik sistemler de suya maruziyet açısından değerlendirilmeli. Su altında kalan hava yastıklarını kurutup yeniden kullanmak güvenli bir onarım yöntemi değildir. Güvenlik parçalarında kontrol ve değişim kararı, üreticinin ilgili araç için belirlediği kurallara göre verilmeli. Gösterge panelinde uyarı görülmemesi, tek başına bu sistemlerin sağlıklı olduğunu kanıtlamaz.”dedi. Tütünoğlu ayrıca motor, şanzıman ve diferansiyel yağlarına su karışması ihtimalinin; frenlerde ve yürüyen aksamda çamur, tortu veya hasar bulunup bulunmadığının kontrol edilmesi gerektiğini belirtti. Elektrikli ve hibrit araçlarda müdahale uzmanlık gerektiriyor Elektrikli ve hibrit araçların yüksek gerilim sistemleri nedeniyle ayrı bir değerlendirmeye ihtiyaç duyduğunu belirten Tütünoğlu“Sel hasarı şüphesi bulunan elektrikli araç çalıştırılmamalı, şarj edilebilen modeller kontrol tamamlanmadan şarja bağlanmamalı. Yüksek gerilim bataryasına, turuncu kablolara ve elektrik bağlantılarına kullanıcı müdahale etmemeli. Kontağın kapalı olması, yüksek gerilim sisteminde enerji kalmadığı anlamına gelmez. Kontrol, uygun eğitim ve ekipmana sahip teknisyenlerce yapılmalı.”bilgisini paylaştı. Batarya hasarı şüphesinde taşıma ve bekletme koşullarının da uzman ekip tarafından belirlenmesi gerektiğini söyleyen Tütünoğlu, hasarlı aracın kapalı garaja alınmaması ve yapılardan, diğer araçlardan, yanıcı malzemelerden uzakta tutulması gerektiğini vurguladı. Araçta duman, olağan dışı ısınma veya tıslama benzeri sesle karşılaşılması halinde uzaklaşılması ve 112’ye haber verilmesi çağrısında bulundu. Her su teması aynı hasarı oluşturmaz Hasarın kapsamının suyun seviyesi, temas süresi, suyun niteliği ve etkilenen parçalara göre değiştiğini ifade eden Tütünoğlu,“Her suya maruz kalan araç için aynı onarım kararı verilemez. Ancak yüzeydeki çamurun temizlenmesi de bütün risklerin giderildiğini göstermez. Araç sahibi, teknik inceleme ve sigorta hasar değerlendirmesi için ilgili kuruluşlarla iletişime geçmeli; yapılan işlemlerin ve değişen parçaların kayıtlarını saklamalı. Onarımda esas alınacak ölçüt sadece aracın yeniden hareket edebiliyor olması olamaz. Tüm sistemlerin, donanımların ve güvenlik unsurlarının doğru çalıştığının üretici prosedürlerine göre raporlanması gerekir.”açıklamasını yaptı.",
+          "post_text_for_card": "SU ÇEKİLDİ DİYE DİREKT KONTAĞI ÇEVİRMEK, HASARI BÜYÜTÜYOR.\n\nSelden sonra aracın çalışıp çalışmadığını denemek, onarılabilecek bir arızayı daha büyük bir tabloya çeviriyor. Met Teknik Akademi Başkanı Mustafa Tütünoğlu, motorun hava emiş hattından silindirlere su girebileceğini belirtiyor.\n\nSu, piston hareketini engelleyip biyel kollarına ve diğer motor parçalarına ağır hasar veriyor.\n\nBu yüzden 'bir kez deneyelim' yaklaşımı, maliyetleri katlıyor.",
+          "story_card_title": "SU ÇEKİLDİ DİYE KONTROL İÇİN ÇEVİRME!",
+          "story_card_subtitle": "Sel sonrası aracınızın kontağını çevirmeden önce iki kez düşünün. Su çekildi zannedip yapılan ilk kontrol, hasarı katlayabilir. Met Teknik Akademi Başkanı Mustafa Tütünoğlu'na göre, motorun hava emiş hattından su silindirlere ulaşırsa, piston hareketini engelleyerek biyel kolları ve diğer parçalarda onarılamaz hasara yol açabiliyor. Bu 'deneme', maliyetleri ciddi oranda artırıyor.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.otopodyum.com.tr/news/5730.jpg",
+            "https://cdn.otopodyum.com.tr/other/2026/10/21/met-teknik-rs-nem-gorsel.jpg",
+            "https://cdn.otopodyum.com.tr/news/5714.jpg",
+            "https://cdn.otopodyum.com.tr/news/5717.jpg"
+          ]
+        },
+        "post_text": "SU ÇEKİLDİ DİYE DİREKT KONTAĞI ÇEVİRMEK, HASARI BÜYÜTÜYOR.\n\nSelden sonra aracın çalışıp çalışmadığını denemek, onarılabilecek bir arızayı daha büyük bir tabloya çeviriyor. Met Teknik Akademi Başkanı Mustafa Tütünoğlu, motorun hava emiş hattından silindirlere su girebileceğini belirtiyor.\n\nSu, piston hareketini engelleyip biyel kollarına ve diğer motor parçalarına ağır hasar veriyor.\n\nBu yüzden 'bir kez deneyelim' yaklaşımı, maliyetleri katlıyor.",
+        "story_card_title": "SU ÇEKİLDİ DİYE KONTROL İÇİN ÇEVİRME!",
+        "story_card_subtitle": "Sel sonrası aracınızın kontağını çevirmeden önce iki kez düşünün. Su çekildi zannedip yapılan ilk kontrol, hasarı katlayabilir. Met Teknik Akademi Başkanı Mustafa Tütünoğlu'na göre, motorun hava emiş hattından su silindirlere ulaşırsa, piston hareketini engelleyerek biyel kolları ve diğer parçalarda onarılamaz hasara yol açabiliyor. Bu 'deneme', maliyetleri ciddi oranda artırıyor.",
+        "image_path": "/tmp/otoxtra_img_kd7u_gjv.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_kd7u_gjv.jpg",
+          "/tmp/otoxtra_img_c0sobj7v.jpg",
+          "/tmp/otoxtra_img_q8doobw3.jpg",
+          "/tmp/otoxtra_img_br8i44g4.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-21T09:03:28.704062+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122184636368916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17958888798254703",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "4661544997455486",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-21T09:04:10.370818+03:00"
     }
   }
 }
