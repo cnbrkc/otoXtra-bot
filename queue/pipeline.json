@@ -1,57 +1,14 @@
 {
-  "run_id": "2026-10-25-19:00",
-  "status": "completed",
-  "started_at": "2026-10-25T19:00:38.270835+03:00",
-  "updated_at": "2026-10-25T19:03:29.677139+03:00",
+  "run_id": "2026-10-25-20:00",
+  "status": "error",
+  "started_at": "2026-10-25T20:00:34.422938+03:00",
+  "updated_at": "2026-10-25T20:02:47.748990+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-            "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-25T15:00:00+00:00",
-            "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
-            "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar"
-          },
-          {
-            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
-            "link": "https://tr.motor1.com/news/813162/omoda-jaecoo-gelecek-hedefleri-2027/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-25T13:00:00+00:00",
-            "summary": "Pek çok yeni modelle yeni pazarlara açılacak.",
-            "image_url": "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "hedef-jaecoo-model-omoda-pazar"
-          }
-        ],
-        "count": 2,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -112,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.jaydenha.uk/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -133,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.zebes.info/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -188,258 +145,48 @@
           },
           "_metrics": {
             "found": 150,
-            "after_keyword": 94,
-            "after_time": 7,
-            "after_posted": 2,
-            "after_duplicate": 2,
-            "after_shared_variant_cooldown": 2
+            "after_keyword": 93,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 150,
-          "after_keyword": 94,
-          "after_time": 7,
-          "after_posted": 2,
-          "after_duplicate": 2,
-          "after_shared_variant_cooldown": 2
+          "after_keyword": 93,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-25T19:02:42.960116+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-25T20:02:47.748990+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-25T15:00:00+00:00",
-          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
-          "base_ai_score": 64,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 6
-          },
-          "score": 69,
-          "score_reason": "ai_scored",
-          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1
-        },
-        "score": 69,
-        "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 7,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 12,
-          "gundem_gucu": 13,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
-        "skipped": false,
-        "threshold": 40,
-        "top_articles": [
-          {
-            "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-            "score": 69,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 6
-            }
-          },
-          {
-            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
-            "score": 50,
-            "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 9,
-              "gundem_gucu": 10,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 2,
-        "cooldown_candidates": [
-          {
-            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
-            "link": "https://tr.motor1.com/news/813162/omoda-jaecoo-gelecek-hedefleri-2027/",
-            "score": 50,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "hedef-jaecoo-model-omoda-pazar"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T19:02:44.974543+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-25T15:00:00+00:00",
-          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
-          "base_ai_score": 64,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 6
-          },
-          "score": 69,
-          "score_reason": "ai_scored",
-          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Audi, ABD'deki varlığını güçlendirerek ülkedeki ilk üretim tesisini kurmayı planlıyor. Alman premium marka, Georgia eyaletinde inşa edeceği yeni fabrika için4 milyar $'lıkyatırım yapıyor; bu yatırım, Kuzey Amerika operasyonlarının büyük ölçekli genişlemesi kapsamında4.500 yeni istihdamyaratacak. İnşaat gelecek yıl başlayacak ve tesisin yıllık üretim kapasitesi200.000 araçolacak. Bu yatırım,Audi’yeABD’de kendine ait bir üretim üssü kazandıracak. Böylece marka, araçlarını Atlantik’in diğer kıyısından sevk etmek yerine müşterilerine daha yakın bir noktada üretebilecek. Bu durum, yeni tesiste üretilecek araçlarda ithalat vergilerinden kaçınmasına yardımcı olabilir; ancak yerel tedarikli parçalar ve ticaretle bağlantılı diğer maliyetler yine etkisini koruyacak. Audi, yeni montaj hattından inecek modellerin adını henüz resmî olarak açıklamadı ancak “Kuzey Amerikalı müşterilere özel premium SUV’ler” üretmeyi planlıyor. Büyük olasılıkla bu yılın başlarında tanıtılan yeni nesil Q7 ve markanın ilk Q9 modelinden söz ediyoruz. Bu büyük lüks SUV’ler, yeni fabrika 2030’ların başında üretime geçmeden önce ilk etapta Slovakya’daki Bratislava tesisinden sevk edilecek. Georgia tesisi en az 5 yıl boyunca faaliyete geçmeyeceği için Audi’nin burada Q7 ve Q9’un makyajlı versiyonlarını üretmesi muhtemel görünüyor. Şirket kısa süre önce Q8’in bir nesil daha yola devam edeceğini doğrulamıştı; bu nedenle coupe-SUV formundaki model de“Made in USA”etiketini alabilir. Bu tercih mantıklı olur; zira Q8, Q7 ile aynı platformu paylaşıyor ve temelde daha eğimli tavan çizgisine sahip aynı SUV karakterini taşıyor, diğer unsurların büyük bölümü ise korunuyor. Bu açıklamanın dikkat çekici bir yönü daha var. VW Grubu, yeni kurulanScout Motorsiçin Güney Carolina’nın Blythewood kentinde halihazırda bir fabrika inşa ediyor ve bu proje için2 milyar $'lıkyatırım planlanıyor. Tesis, Scout Traveler SUV ve Terra pick-up modellerini üretecek; yıllık kapasitenin200.000 aracakadar çıkması hedefleniyor. Her 2 fabrikanın da ABD’nin güneydoğusunda yer alacağı düşünüldüğünde, VW’nin Audi SUV’lerini de kapsayacak şekilde Scout tesisini neden genişletmediğini sorgulamak makul. Nitekim Scout, Güney Carolina’daki tesisin VW Grubu içindeki markalar dahil olmak üzere diğer otomobil üreticileri için de potansiyel olarak araç üretebileceğini belirtmişti. Bu da Audi’nin Georgia’da ayrı bir fabrika kurma kararının, Scout tesisinde başka modellerin üretilmesi ihtimalini tamamen ortadan kaldırmadığı anlamına geliyor. Şimdilik operasyonları ayrı tutmak için üretim gereksinimleri, ürün konumlandırması, lojistik ve uzun vadeli kapasite planlaması gibi geçerli nedenler olabilir. Audi’nin yeni fabrikası, markanın gelecekteki üretim ihtiyaçlarına özel olarak tasarlanacak; Scout ise daha farklı bir amaca hizmet eden, dayanıklı ve merdiven şasili araçlar geliştiriyor. Yine de verimliliği artırma konusunda ciddi baskı altında olan bir grubun operasyonları tek çatı altında toplamak yerine ayrı bir tesis için4 milyar $ek bütçe ayırması ilgi çekici. Aslında bu yatırım,VW Grubu’nundevam eden kapsamlı maliyet düşürme hamlesiyle birlikte değerlendirildiğinde daha da öne çıkıyor. Alman otomotiv devi, özellikle Çin’de artan rekabet baskısı altında giderleri azaltmanın, operasyonları sadeleştirmenin ve kârlılığı yeniden güçlendirmenin yollarını arıyor. Audi, Kuzey Amerika’da daha fazla araç satmak istiyor ve yerel üretim, markaya yerleşik lüks rakipleri karşısında daha rekabetçi bir zemin sağlıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
-        },
-        "post_text": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
-        "post_text_length": 448,
-        "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
-        "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T19:02:48.017726+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
-          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-25T15:00:00+00:00",
-          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
-          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
-          "image_candidates": [
-            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "Motor1 TR",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
-          "base_ai_score": 64,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 12,
-            "gundem_gucu": 13,
-            "paylasilabilirlik": 6
-          },
-          "score": 69,
-          "score_reason": "ai_scored",
-          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
-          "freshness_bonus": 7,
-          "trend_bonus_raw": 1,
-          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Audi, ABD'deki varlığını güçlendirerek ülkedeki ilk üretim tesisini kurmayı planlıyor. Alman premium marka, Georgia eyaletinde inşa edeceği yeni fabrika için4 milyar $'lıkyatırım yapıyor; bu yatırım, Kuzey Amerika operasyonlarının büyük ölçekli genişlemesi kapsamında4.500 yeni istihdamyaratacak. İnşaat gelecek yıl başlayacak ve tesisin yıllık üretim kapasitesi200.000 araçolacak. Bu yatırım,Audi’yeABD’de kendine ait bir üretim üssü kazandıracak. Böylece marka, araçlarını Atlantik’in diğer kıyısından sevk etmek yerine müşterilerine daha yakın bir noktada üretebilecek. Bu durum, yeni tesiste üretilecek araçlarda ithalat vergilerinden kaçınmasına yardımcı olabilir; ancak yerel tedarikli parçalar ve ticaretle bağlantılı diğer maliyetler yine etkisini koruyacak. Audi, yeni montaj hattından inecek modellerin adını henüz resmî olarak açıklamadı ancak “Kuzey Amerikalı müşterilere özel premium SUV’ler” üretmeyi planlıyor. Büyük olasılıkla bu yılın başlarında tanıtılan yeni nesil Q7 ve markanın ilk Q9 modelinden söz ediyoruz. Bu büyük lüks SUV’ler, yeni fabrika 2030’ların başında üretime geçmeden önce ilk etapta Slovakya’daki Bratislava tesisinden sevk edilecek. Georgia tesisi en az 5 yıl boyunca faaliyete geçmeyeceği için Audi’nin burada Q7 ve Q9’un makyajlı versiyonlarını üretmesi muhtemel görünüyor. Şirket kısa süre önce Q8’in bir nesil daha yola devam edeceğini doğrulamıştı; bu nedenle coupe-SUV formundaki model de“Made in USA”etiketini alabilir. Bu tercih mantıklı olur; zira Q8, Q7 ile aynı platformu paylaşıyor ve temelde daha eğimli tavan çizgisine sahip aynı SUV karakterini taşıyor, diğer unsurların büyük bölümü ise korunuyor. Bu açıklamanın dikkat çekici bir yönü daha var. VW Grubu, yeni kurulanScout Motorsiçin Güney Carolina’nın Blythewood kentinde halihazırda bir fabrika inşa ediyor ve bu proje için2 milyar $'lıkyatırım planlanıyor. Tesis, Scout Traveler SUV ve Terra pick-up modellerini üretecek; yıllık kapasitenin200.000 aracakadar çıkması hedefleniyor. Her 2 fabrikanın da ABD’nin güneydoğusunda yer alacağı düşünüldüğünde, VW’nin Audi SUV’lerini de kapsayacak şekilde Scout tesisini neden genişletmediğini sorgulamak makul. Nitekim Scout, Güney Carolina’daki tesisin VW Grubu içindeki markalar dahil olmak üzere diğer otomobil üreticileri için de potansiyel olarak araç üretebileceğini belirtmişti. Bu da Audi’nin Georgia’da ayrı bir fabrika kurma kararının, Scout tesisinde başka modellerin üretilmesi ihtimalini tamamen ortadan kaldırmadığı anlamına geliyor. Şimdilik operasyonları ayrı tutmak için üretim gereksinimleri, ürün konumlandırması, lojistik ve uzun vadeli kapasite planlaması gibi geçerli nedenler olabilir. Audi’nin yeni fabrikası, markanın gelecekteki üretim ihtiyaçlarına özel olarak tasarlanacak; Scout ise daha farklı bir amaca hizmet eden, dayanıklı ve merdiven şasili araçlar geliştiriyor. Yine de verimliliği artırma konusunda ciddi baskı altında olan bir grubun operasyonları tek çatı altında toplamak yerine ayrı bir tesis için4 milyar $ek bütçe ayırması ilgi çekici. Aslında bu yatırım,VW Grubu’nundevam eden kapsamlı maliyet düşürme hamlesiyle birlikte değerlendirildiğinde daha da öne çıkıyor. Alman otomotiv devi, özellikle Çin’de artan rekabet baskısı altında giderleri azaltmanın, operasyonları sadeleştirmenin ve kârlılığı yeniden güçlendirmenin yollarını arıyor. Audi, Kuzey Amerika’da daha fazla araç satmak istiyor ve yerel üretim, markaya yerleşik lüks rakipleri karşısında daha rekabetçi bir zemin sağlıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
-          "post_text_for_card": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
-          "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
-          "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
-          "image_sources": [
-            "meta_og",
-            "article_script",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://cdn.motor1.com/images/mgl/6ZO1yl/s1/audi-usa.jpg",
-            "https://cdn.motor1.com/images/mgl/6ZO1yl/s1/4x3/audi-usa.webp",
-            "https://cdn.motor1.com/images/mgl/vx8l1q/s3/2027-audi-q7.jpg",
-            "https://cdn.motor1.com/images/mgl/7ZEXJP/s3/2027-audi-q7.jpg"
-          ]
-        },
-        "post_text": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
-        "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
-        "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
-        "image_path": "/tmp/otoxtra_img_m1djqewe.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_m1djqewe.jpg",
-          "/tmp/otoxtra_img_0bplpn3o.jpg",
-          "/tmp/otoxtra_img_e6_52mdd.jpg",
-          "/tmp/otoxtra_img_b7drsuop.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T19:02:51.359858+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122185261826916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18128446924633232",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1624623299162949",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T19:03:29.677139+03:00"
+      "updated_at": null
     }
   }
 }
