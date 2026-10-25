@@ -1,74 +1,14 @@
 {
-  "run_id": "2026-10-25-06:00",
-  "status": "completed",
-  "started_at": "2026-10-25T06:00:39.525661+03:00",
-  "updated_at": "2026-10-25T06:02:56.510551+03:00",
+  "run_id": "2026-10-25-07:00",
+  "status": "error",
+  "started_at": "2026-10-25T07:00:36.429048+03:00",
+  "updated_at": "2026-10-25T07:02:34.446430+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "PHP'de yeni bir güvenlik açığı daha ortaya çıktı: PHP2Shell'den iki gün sonra yeni uyarı",
-            "link": "https://www.donanimhaber.com/php-de-yeni-bir-kritik-guvenlik-acigi-daha-ortaya-cikti--212051",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-24T19:30:00+00:00",
-            "summary": "PHP2Shell açıkları için yayımlanan acil yamalardan iki gün sonra yeni bir güvenlik açığı daha ortaya çıktı. PHP, güncelleme yayınlamak yerine bu kez farklı bir yol izliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212051/1200x675php-de-yeni-bir-kritik-guvenlik-acigi-daha-ortaya-cikti.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212051/1200x675php-de-yeni-bir-kritik-guvenlik-acigi-daha-ortaya-cikti.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212051/1200x675php-de-yeni-bir-kritik-guvenlik-acigi-daha-ortaya-cikti.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acigi-gun-guvenlik-iki-ortaya-php-php2shell-uyari"
-          },
-          {
-            "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-            "link": "https://shiftdelete.net/yeni-nesil-ds-n7-turkiyede-satisa-sunuldu",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-24T18:00:36+00:00",
-            "summary": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. Hibrit motorlu premium SUV modelinin tüm detayları haberimizde.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "belli-fiyati-turkiye"
-          },
-          {
-            "title": "Renault’dan Tasarım Değişikliği: Gelecekteki Modeller Nasıl Görünecek?",
-            "link": "https://shiftdelete.net/renault-yeni-tasarim-dili-stratejisi",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-24T16:00:12+00:00",
-            "summary": "Renault yeni tasarım dili ile gelecekteki modellerinde daha ölçülü çizgiler ve güçlü bir aile benzerliği hedefliyor. İşte yeni stratejinin detayları.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "degisikligi-gelecekteki-gorunecek-modeller-nasil-renault-tasarim"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -129,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by NameResoluti",
             "attempts": 1,
             "instance": ""
           },
@@ -206,270 +146,47 @@
           "_metrics": {
             "found": 150,
             "after_keyword": 95,
-            "after_time": 9,
-            "after_posted": 3,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 3
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 150,
           "after_keyword": 95,
-          "after_time": 9,
-          "after_posted": 3,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 3
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-25T06:02:03.775209+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-25T07:02:34.446430+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-          "link": "https://shiftdelete.net/yeni-nesil-ds-n7-turkiyede-satisa-sunuldu",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-24T18:00:36+00:00",
-          "summary": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. Hibrit motorlu premium SUV modelinin tüm detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "belli-fiyati-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Lüks SUV sınıfında yeni bir modelin Türkiye fiyatının açıklanması yerel pazarda merak uyandırır ve yüksek etkileşim alır.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 64,
-        "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 10,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Lüks SUV sınıfında yeni bir modelin Türkiye fiyatının açıklanması yerel pazarda merak uyandırır ve yüksek etkileşim alır.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-            "score": 64,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 10,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          },
-          {
-            "title": "Renault’dan Tasarım Değişikliği: Gelecekteki Modeller Nasıl Görünecek?",
-            "score": 47,
-            "score_breakdown": {
-              "guncellik": 15,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 9,
-              "gundem_gucu": 7,
-              "paylasilabilirlik": 4
-            }
-          },
-          {
-            "title": "PHP'de yeni bir güvenlik açığı daha ortaya çıktı: PHP2Shell'den iki gün sonra yeni uyarı",
-            "score": 17,
-            "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 0,
-              "benzersizlik": 0,
-              "gundem_gucu": 1,
-              "paylasilabilirlik": 0
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "Renault’dan Tasarım Değişikliği: Gelecekteki Modeller Nasıl Görünecek?",
-            "link": "https://shiftdelete.net/renault-yeni-tasarim-dili-stratejisi",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "degisikligi-gelecekteki-gorunecek-modeller-nasil-renault-tasarim"
-          },
-          {
-            "title": "PHP'de yeni bir güvenlik açığı daha ortaya çıktı: PHP2Shell'den iki gün sonra yeni uyarı",
-            "link": "https://www.donanimhaber.com/php-de-yeni-bir-kritik-guvenlik-acigi-daha-ortaya-cikti--212051",
-            "score": 17,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "acigi-gun-guvenlik-iki-ortaya-php-php2shell-uyari"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T06:02:06.064528+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-          "link": "https://shiftdelete.net/yeni-nesil-ds-n7-turkiyede-satisa-sunuldu",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-24T18:00:36+00:00",
-          "summary": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. Hibrit motorlu premium SUV modelinin tüm detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "none",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "belli-fiyati-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Lüks SUV sınıfında yeni bir modelin Türkiye fiyatının açıklanması yerel pazarda merak uyandırır ve yüksek etkileşim alır.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Yeni nesil DS N°7, Türkiye pazarında satışa sunularak premium SUV segmentindeki yerini aldı. Araç, markanın lüks ve konfor anlayışını yansıtan modern özellikleriyle dikkat çekiyor. Türkiye’de PALLAS ve ÉTOILE donanım seviyeleriyle tercih edilebilen modelin başlangıç fiyatı 3 milyon 700 bin TL olarak belirlendi. Bu yeni model, zarafet ve ileri teknolojiyi bir araya getirerek markanın konumunu güçlendirmeyi hedefliyor. Yeni nesil DS N°7, 145 BG sistem gücü üreten hibrit bir güç ünitesiyle donatıldı. Sistem, 6 ileri oranlı çift kavramalı otomatik şanzımanla desteklenerek sürüş kalitesini artırıyor. Araçta yer alan 21 kW gücündeki elektrik motoru, şehir içi sürüşlerde performansın yüzde 50’sine kadar elektrikli modda ilerleyebilmesine olanak tanıyor. Bu hibrit yapı, yakıt tüketimini ve emisyon değerlerini optimize etmek için özel olarak geliştirildi. Karma koşullarda 5,4 lt/100 km yakıt tüketimi sunan araç, 122 g/km CO₂ emisyon değeriyle verimlilik sağlıyor. Performans ve ekonomi arasındaki bu denge, günlük kullanımdaki sürüş deneyimini iyileştiren temel unsurlar arasında yer alıyor. DS Automobiles, bu modelle birlikte premium SUV segmentindeki iddiasını daha da ileriye taşımayı amaçlıyor. Marka, sürüş sırasında konfor ve sessizliğe odaklanan özel bir seyahat anlayışı sunuyor. Yeni nesil DS N°7, 4,66 metre uzunluğa, 1,90 metre genişliğe ve 1,63 metre yüksekliğe sahip. Aracın dış tasarımı, dengeli çizgileri ve uzatılmış silüetiyle ilk bakışta fark ediliyor. Güçlü gövde yapısını destekleyen 19 inç jantlar ve 740 mm çapındaki tekerlekler, yolda sağlam bir duruş sergiliyor. Tasarımda aerodinamik verimliliğe de büyük önem verildiği görülüyor. Modelin 0,26 Cx sürtünme katsayısı, sınıfının en iyi değerlerinden biri olarak öne çıkıyor. Bu aerodinamik başarı, hem aracın performansına hem de yakıt tüketimine doğrudan katkı sağlıyor. DS Automobiles Marka Direktörü Selim Eskinazi, yeni modelin markanın seyahat anlayışını yansıttığını belirtiyor. Eskinazi, “Dünyayı sessize alın” mesajıyla yolculukların daha huzurlu bir deneyime dönüşmesini önemsediklerini ifade ediyor. DS 7 modelinin Türkiye’deki kullanıcılar için marka ile güçlü bir bağ kuran bir araç olduğunu vurguluyor. Yeni nesil modelle bu bağın daha da güçlendirilmesi hedefleniyor. Günlük hayatın yoğunluğu içerisinde otomobilin kişisel bir rahatlama alanına dönüşmesi amaçlanıyor. Kullanıcılar, bu yeni premium SUV modelini yakından tanımaya ve konforunu bizzat deneyimlemeye davet ediliyor. Sizce yeni nesil DS N°7’nin sunduğu hibrit teknolojisi ve tasarım detayları, premium SUV segmentindeki rekabette nasıl bir fark yaratacak? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
-        },
-        "post_text": "DS N°7'NİN 3.7 MİLYON TL'LİK BAŞLANGIÇ FİYATI ARTIK KİMSENİN DİLİNE DOLANMIYOR.\n\nYeni nesil DS N°7, Türkiye'de PALLAS ve ÉTOILE donanımlarıyla 3 milyon 700 bin TL'den listeye girdi. Hibrit motoruyla şehir içi sürüşün %50'sini elektrikli yapabiliyor.\n\nBu rakamlar karşısında \"premium\" tanımı bile yetersiz kalıyor.\n\nAlıcının artık fiyata değil, bu fiyatla ne kadar ayrıcalık hissedeceğine odaklandığı bir döneme girdik.",
-        "post_text_length": 418,
-        "story_card_title": "DS N°7 Fiyatı: Premium'un Yeni Tanımı!",
-        "story_card_subtitle": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. PALLAS ve ÉTOILE donanımlarıyla gelen hibrit SUV, şehir içi sürüşün yarısını elektrikli yapıyor. Bu fiyat etiketi, premium otomobil algısını tamamen değiştiriyor. Alıcılar artık sadece fiyata değil, bu bedelle sunulan ayrıcalığa odaklanıyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T06:02:09.563390+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "DS N°7 için Türkiye Fiyatı Belli Oldu",
-          "link": "https://shiftdelete.net/yeni-nesil-ds-n7-turkiyede-satisa-sunuldu",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-10-24T18:00:36+00:00",
-          "summary": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. Hibrit motorlu premium SUV modelinin tüm detayları haberimizde.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "article_img",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "belli-fiyati-turkiye",
-          "base_ai_score": 62,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 64,
-          "score_reason": "ai_scored",
-          "score_explanation": "Lüks SUV sınıfında yeni bir modelin Türkiye fiyatının açıklanması yerel pazarda merak uyandırır ve yüksek etkileşim alır.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Yeni nesil DS N°7, Türkiye pazarında satışa sunularak premium SUV segmentindeki yerini aldı. Araç, markanın lüks ve konfor anlayışını yansıtan modern özellikleriyle dikkat çekiyor. Türkiye’de PALLAS ve ÉTOILE donanım seviyeleriyle tercih edilebilen modelin başlangıç fiyatı 3 milyon 700 bin TL olarak belirlendi. Bu yeni model, zarafet ve ileri teknolojiyi bir araya getirerek markanın konumunu güçlendirmeyi hedefliyor. Yeni nesil DS N°7, 145 BG sistem gücü üreten hibrit bir güç ünitesiyle donatıldı. Sistem, 6 ileri oranlı çift kavramalı otomatik şanzımanla desteklenerek sürüş kalitesini artırıyor. Araçta yer alan 21 kW gücündeki elektrik motoru, şehir içi sürüşlerde performansın yüzde 50’sine kadar elektrikli modda ilerleyebilmesine olanak tanıyor. Bu hibrit yapı, yakıt tüketimini ve emisyon değerlerini optimize etmek için özel olarak geliştirildi. Karma koşullarda 5,4 lt/100 km yakıt tüketimi sunan araç, 122 g/km CO₂ emisyon değeriyle verimlilik sağlıyor. Performans ve ekonomi arasındaki bu denge, günlük kullanımdaki sürüş deneyimini iyileştiren temel unsurlar arasında yer alıyor. DS Automobiles, bu modelle birlikte premium SUV segmentindeki iddiasını daha da ileriye taşımayı amaçlıyor. Marka, sürüş sırasında konfor ve sessizliğe odaklanan özel bir seyahat anlayışı sunuyor. Yeni nesil DS N°7, 4,66 metre uzunluğa, 1,90 metre genişliğe ve 1,63 metre yüksekliğe sahip. Aracın dış tasarımı, dengeli çizgileri ve uzatılmış silüetiyle ilk bakışta fark ediliyor. Güçlü gövde yapısını destekleyen 19 inç jantlar ve 740 mm çapındaki tekerlekler, yolda sağlam bir duruş sergiliyor. Tasarımda aerodinamik verimliliğe de büyük önem verildiği görülüyor. Modelin 0,26 Cx sürtünme katsayısı, sınıfının en iyi değerlerinden biri olarak öne çıkıyor. Bu aerodinamik başarı, hem aracın performansına hem de yakıt tüketimine doğrudan katkı sağlıyor. DS Automobiles Marka Direktörü Selim Eskinazi, yeni modelin markanın seyahat anlayışını yansıttığını belirtiyor. Eskinazi, “Dünyayı sessize alın” mesajıyla yolculukların daha huzurlu bir deneyime dönüşmesini önemsediklerini ifade ediyor. DS 7 modelinin Türkiye’deki kullanıcılar için marka ile güçlü bir bağ kuran bir araç olduğunu vurguluyor. Yeni nesil modelle bu bağın daha da güçlendirilmesi hedefleniyor. Günlük hayatın yoğunluğu içerisinde otomobilin kişisel bir rahatlama alanına dönüşmesi amaçlanıyor. Kullanıcılar, bu yeni premium SUV modelini yakından tanımaya ve konforunu bizzat deneyimlemeye davet ediliyor. Sizce yeni nesil DS N°7’nin sunduğu hibrit teknolojisi ve tasarım detayları, premium SUV segmentindeki rekabette nasıl bir fark yaratacak? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
-          "post_text_for_card": "DS N°7'NİN 3.7 MİLYON TL'LİK BAŞLANGIÇ FİYATI ARTIK KİMSENİN DİLİNE DOLANMIYOR.\n\nYeni nesil DS N°7, Türkiye'de PALLAS ve ÉTOILE donanımlarıyla 3 milyon 700 bin TL'den listeye girdi. Hibrit motoruyla şehir içi sürüşün %50'sini elektrikli yapabiliyor.\n\nBu rakamlar karşısında \"premium\" tanımı bile yetersiz kalıyor.\n\nAlıcının artık fiyata değil, bu fiyatla ne kadar ayrıcalık hissedeceğine odaklandığı bir döneme girdik.",
-          "story_card_title": "DS N°7 Fiyatı: Premium'un Yeni Tanımı!",
-          "story_card_subtitle": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. PALLAS ve ÉTOILE donanımlarıyla gelen hibrit SUV, şehir içi sürüşün yarısını elektrikli yapıyor. Bu fiyat etiketi, premium otomobil algısını tamamen değiştiriyor. Alıcılar artık sadece fiyata değil, bu bedelle sunulan ayrıcalığa odaklanıyor.",
-          "image_sources": [
-            "article_img",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://ares.shiftdelete.net/2026/10/ds-n7-icin-turkiye-fiyati-belli-oldu-2.webp",
-            "https://ares.shiftdelete.net/2026/10/ds-n7-icin-turkiye-fiyati-belli-oldu-3.webp",
-            "https://ares.shiftdelete.net/2026/10/ds-n7-icin-turkiye-fiyati-belli-oldu-4.webp",
-            "https://ares.shiftdelete.net/2026/10/ds-n7-icin-turkiye-fiyati-belli-oldu-5.webp"
-          ]
-        },
-        "post_text": "DS N°7'NİN 3.7 MİLYON TL'LİK BAŞLANGIÇ FİYATI ARTIK KİMSENİN DİLİNE DOLANMIYOR.\n\nYeni nesil DS N°7, Türkiye'de PALLAS ve ÉTOILE donanımlarıyla 3 milyon 700 bin TL'den listeye girdi. Hibrit motoruyla şehir içi sürüşün %50'sini elektrikli yapabiliyor.\n\nBu rakamlar karşısında \"premium\" tanımı bile yetersiz kalıyor.\n\nAlıcının artık fiyata değil, bu fiyatla ne kadar ayrıcalık hissedeceğine odaklandığı bir döneme girdik.",
-        "story_card_title": "DS N°7 Fiyatı: Premium'un Yeni Tanımı!",
-        "story_card_subtitle": "Yeni nesil DS N°7, Türkiye'de 3 milyon 700 bin TL başlangıç fiyatıyla satışa sunuldu. PALLAS ve ÉTOILE donanımlarıyla gelen hibrit SUV, şehir içi sürüşün yarısını elektrikli yapıyor. Bu fiyat etiketi, premium otomobil algısını tamamen değiştiriyor. Alıcılar artık sadece fiyata değil, bu bedelle sunulan ayrıcalığa odaklanıyor.",
-        "image_path": "/tmp/otoxtra_img_6jenduoy.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_6jenduoy.jpg",
-          "/tmp/otoxtra_img_vm5b49n8.jpg",
-          "/tmp/otoxtra_img_iuv0nglj.jpg",
-          "/tmp/otoxtra_img_h2161ucc.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T06:02:11.000343+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122185160744916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18449942920127288",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "958154623610012",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-25T06:02:56.510551+03:00"
+      "updated_at": null
     }
   }
 }
