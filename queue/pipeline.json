@@ -1,36 +1,57 @@
 {
-  "run_id": "2026-10-25-17:00",
+  "run_id": "2026-10-25-19:00",
   "status": "completed",
-  "started_at": "2026-10-25T17:00:52.043979+03:00",
-  "updated_at": "2026-10-25T17:04:15.423172+03:00",
+  "started_at": "2026-10-25T19:00:38.270835+03:00",
+  "updated_at": "2026-10-25T19:03:29.677139+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
-            "link": "https://otopodyum.com.tr/motor-sporlari/cumhuriyet-rallisinin-galibi-cigdem-cengiz-kabatepe-5440h",
+            "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
+            "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-10-25T10:58:00+00:00",
-            "summary": "Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
+            "published": "2026-10-25T15:00:00+00:00",
+            "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
             "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5755.jpg"
+              "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
             ],
             "image_source": "rss",
-            "source_name": "otopodyum",
+            "source_name": "Motor1 TR",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "cengiz-cigdem-cumhuriyet-galibi-kabatepe-rallisi"
+            "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar"
+          },
+          {
+            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
+            "link": "https://tr.motor1.com/news/813162/omoda-jaecoo-gelecek-hedefleri-2027/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-25T13:00:00+00:00",
+            "summary": "Pek çok yeni modelle yeni pazarlara açılacak.",
+            "image_url": "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/vx7PkA/s3/jaecoo-5.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "hedef-jaecoo-model-omoda-pazar"
           }
         ],
-        "count": 1,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/teknotagstr/rss",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.jaydenha.uk/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -112,7 +133,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -167,238 +188,258 @@
           },
           "_metrics": {
             "found": 150,
-            "after_keyword": 92,
+            "after_keyword": 94,
             "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 150,
-          "after_keyword": 92,
+          "after_keyword": 94,
           "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-10-25T17:02:49.969276+03:00"
+      "updated_at": "2026-10-25T19:02:42.960116+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
-          "link": "https://otopodyum.com.tr/motor-sporlari/cumhuriyet-rallisinin-galibi-cigdem-cengiz-kabatepe-5440h",
+          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
+          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-25T10:58:00+00:00",
-          "summary": "Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
+          "published": "2026-10-25T15:00:00+00:00",
+          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5755.jpg"
+            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
           ],
           "image_source": "rss",
-          "source_name": "otopodyum",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cengiz-cigdem-cumhuriyet-galibi-kabatepe-rallisi",
-          "base_ai_score": 38,
+          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 16,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
           },
-          "score": 43,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil etkinlikleri niş bir kitleye hitap ediyor ve sosyal medyada genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 4,
+          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 43,
-        "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
+        "score": 69,
+        "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 4,
+        "freshness_bonus": 7,
         "score_breakdown": {
-          "guncellik": 16,
-          "etkilesim_potansiyeli": 8,
-          "benzersizlik": 10,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 3
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 13,
+          "paylasilabilirlik": 6
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Klasik otomobil etkinlikleri niş bir kitleye hitap ediyor ve sosyal medyada genel kitle için viral potansiyeli sınırlı.",
+        "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
-            "score": 43,
+            "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
+            "score": 69,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 13,
+              "paylasilabilirlik": 6
+            }
+          },
+          {
+            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
+            "score": 50,
             "score_breakdown": {
               "guncellik": 16,
-              "etkilesim_potansiyeli": 8,
-              "benzersizlik": 10,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 3
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 9,
+              "gundem_gucu": 10,
+              "paylasilabilirlik": 5
             }
           }
         ],
-        "scored_count": 1,
-        "cooldown_candidates": []
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "OMODA | JAECOO’da hedef 99 pazar ve 13 yeni model!",
+            "link": "https://tr.motor1.com/news/813162/omoda-jaecoo-gelecek-hedefleri-2027/",
+            "score": 50,
+            "score_reason": "ai_scored",
+            "source_name": "Motor1 TR",
+            "topic_fingerprint": "hedef-jaecoo-model-omoda-pazar"
+          }
+        ]
       },
       "error": null,
-      "updated_at": "2026-10-25T17:02:52.242245+03:00"
+      "updated_at": "2026-10-25T19:02:44.974543+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
-          "link": "https://otopodyum.com.tr/motor-sporlari/cumhuriyet-rallisinin-galibi-cigdem-cengiz-kabatepe-5440h",
+          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
+          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-25T10:58:00+00:00",
-          "summary": "Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
+          "published": "2026-10-25T15:00:00+00:00",
+          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5755.jpg"
+            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
           ],
           "image_source": "rss",
-          "source_name": "otopodyum",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cengiz-cigdem-cumhuriyet-galibi-kabatepe-rallisi",
-          "base_ai_score": 38,
+          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 16,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
           },
-          "score": 43,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil etkinlikleri niş bir kitleye hitap ediyor ve sosyal medyada genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 4,
+          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "FIVA ( Uluslararası Antika Araçlar Federasyonu) ve TOSFED’e (Türkiye Otomobil Sporları Federasyonu) bağlı, KLASİK OTOMOBİL KULÜBÜ’nün, 2026 senesi yarış takvimine akredite olan ve KLASİK OTOMOBİL SEZONU’nun son yarışı kardeşlik, mutluluk ve cumhuriyet coşkusu ile tamamlandı. Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu. Klasik Otomobil Kültürü Gelecek Nesillere Taşınıyor Klasik Otomobil Spor Kulübü, düzenlediği organizasyonlarla klasik otomobillerin korunmasını, otomobil kültürünün yaşatılmasını ve bu tutkunun gelecek nesillere aktarılmasını amaçlıyor. Cumhuriyet Rallisi, sportif rekabetin yanı sıra klasik otomobil tutkunlarının dostluklarını pekiştirdiği, ortak değerler etrafında buluştuğu ve otomobil kültürünü yaşattığı özel bir organizasyon olma özelliği taşıyor. Klasik Otomobil Spor Kulübü (KOK), geleneksel Cumhuriyet Rallisi ile klasik otomobil tutkunlarını bir kez daha bir araya getirdi. 23–24 Ekim tarihlerinde gerçekleştirilen organizasyona, en eskisi 1954, en yenisi 1989 model olmak üzere toplam 47 klasik otomobil katıldı. İki gün boyunca İstanbul’un tarihi dokusu, doğal güzellikleri ve sonbaharın renkleri eşliğinde yol alan klasikler, Cumhuriyet coşkusunu şehrin caddelerine taşıdı. Cumhuriyet Rallisi Swissôtel’den start aldı. Rallinin ilk günü 23 Ekim Cuma, Swissôtel’de düzenlenen kahvaltı ve yarışmacı brifinginin ardından saat 10.00’da start verildi. Sabah saatlerinde yer yer açan güneş, Sarıyer sırtlarında yerini yağmura bıraksa da, yarışmacıların keyfini kaçırmadı. İstanbul’un eşsiz manzaraları ve doğayla iç içe yollarında gerçekleştirilen etapların ardından yarışmacılar, Sarıyer bölgesindeki Laurel Restoran’da öğle yemeği molası verdi. Öğle yemeği sonrasında yeniden yola çıkan klasik otomobiller, günün ikinci bölümündeki etapları tamamlayarak Florentia Village’da birinci günün finişine geldiler. İkinci Günde Rekabet ve Heyecan Arttı. 24 Ekim Cumartesi sabahı saat 11.00’de Florentia Village’da yeniden start alan 47 klasik otomobil, rallinin son etaplarında mücadele etti. Trafik kuralları ve hız limitleri içinde yarışan yarışmacıların bu gündeki tek zorluğu ise, İstanbul trafiği oldu. Dikkat, konsantrasyon ve sürüş disiplininin ön plana çıktığı etaplarda ekipler, belirlenen rotaları başarıyla tamamlayarak finiş çizgisine ulaştılar. Birol Altınkılıç’ın Hatırası Özel Bir Etapta Yaşatıldı. Bu yılki Cumhuriyet Rallisi, anlamlı bir vefa örneğine de sahne oldu. Yıllardır Klasik Otomobil Spor Kulübü’ne destek veren Altınmarka (Kahve Dünyası) ailesinin kurucusu, kulübün değerli üyelerinden Kaan Altınkılıç’ın kıymetli babası merhum Birol Altınkılıç’ın adı, ralli etaplarından birine verildi. “Birol Altınkılıç Anı Etabı” ile kendisinin aziz hatırası yaşatılırken, kulübe yıllar boyunca sunduğu kıymetli katkılar, desteği ve dostluğu saygı ve minnetle anıldı. Cumhuriyet Coşkusu Gala Gecesindeki Ödül Töreni ile devam etti. İki gün süren Cumhuriyet Rallisi, 24 Ekim Cumartesi akşamı Swissôtel’de düzenlenen gala programıyla sona erdi. Rallide dereceye giren ekiplerin ödüllendirildiği gecede, kulüp üyeleri ve davetliler Cumhuriyet coşkusunu hep birlikte yaşadı. KLASİK OTOMOBİL KULÜBÜ CUMHURİYET RALLİSİ Genel Klasman lideri ise, deneyimli yarışmacılar Çiğdem-Cengiz KABATEPE oldu."
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Audi, ABD'deki varlığını güçlendirerek ülkedeki ilk üretim tesisini kurmayı planlıyor. Alman premium marka, Georgia eyaletinde inşa edeceği yeni fabrika için4 milyar $'lıkyatırım yapıyor; bu yatırım, Kuzey Amerika operasyonlarının büyük ölçekli genişlemesi kapsamında4.500 yeni istihdamyaratacak. İnşaat gelecek yıl başlayacak ve tesisin yıllık üretim kapasitesi200.000 araçolacak. Bu yatırım,Audi’yeABD’de kendine ait bir üretim üssü kazandıracak. Böylece marka, araçlarını Atlantik’in diğer kıyısından sevk etmek yerine müşterilerine daha yakın bir noktada üretebilecek. Bu durum, yeni tesiste üretilecek araçlarda ithalat vergilerinden kaçınmasına yardımcı olabilir; ancak yerel tedarikli parçalar ve ticaretle bağlantılı diğer maliyetler yine etkisini koruyacak. Audi, yeni montaj hattından inecek modellerin adını henüz resmî olarak açıklamadı ancak “Kuzey Amerikalı müşterilere özel premium SUV’ler” üretmeyi planlıyor. Büyük olasılıkla bu yılın başlarında tanıtılan yeni nesil Q7 ve markanın ilk Q9 modelinden söz ediyoruz. Bu büyük lüks SUV’ler, yeni fabrika 2030’ların başında üretime geçmeden önce ilk etapta Slovakya’daki Bratislava tesisinden sevk edilecek. Georgia tesisi en az 5 yıl boyunca faaliyete geçmeyeceği için Audi’nin burada Q7 ve Q9’un makyajlı versiyonlarını üretmesi muhtemel görünüyor. Şirket kısa süre önce Q8’in bir nesil daha yola devam edeceğini doğrulamıştı; bu nedenle coupe-SUV formundaki model de“Made in USA”etiketini alabilir. Bu tercih mantıklı olur; zira Q8, Q7 ile aynı platformu paylaşıyor ve temelde daha eğimli tavan çizgisine sahip aynı SUV karakterini taşıyor, diğer unsurların büyük bölümü ise korunuyor. Bu açıklamanın dikkat çekici bir yönü daha var. VW Grubu, yeni kurulanScout Motorsiçin Güney Carolina’nın Blythewood kentinde halihazırda bir fabrika inşa ediyor ve bu proje için2 milyar $'lıkyatırım planlanıyor. Tesis, Scout Traveler SUV ve Terra pick-up modellerini üretecek; yıllık kapasitenin200.000 aracakadar çıkması hedefleniyor. Her 2 fabrikanın da ABD’nin güneydoğusunda yer alacağı düşünüldüğünde, VW’nin Audi SUV’lerini de kapsayacak şekilde Scout tesisini neden genişletmediğini sorgulamak makul. Nitekim Scout, Güney Carolina’daki tesisin VW Grubu içindeki markalar dahil olmak üzere diğer otomobil üreticileri için de potansiyel olarak araç üretebileceğini belirtmişti. Bu da Audi’nin Georgia’da ayrı bir fabrika kurma kararının, Scout tesisinde başka modellerin üretilmesi ihtimalini tamamen ortadan kaldırmadığı anlamına geliyor. Şimdilik operasyonları ayrı tutmak için üretim gereksinimleri, ürün konumlandırması, lojistik ve uzun vadeli kapasite planlaması gibi geçerli nedenler olabilir. Audi’nin yeni fabrikası, markanın gelecekteki üretim ihtiyaçlarına özel olarak tasarlanacak; Scout ise daha farklı bir amaca hizmet eden, dayanıklı ve merdiven şasili araçlar geliştiriyor. Yine de verimliliği artırma konusunda ciddi baskı altında olan bir grubun operasyonları tek çatı altında toplamak yerine ayrı bir tesis için4 milyar $ek bütçe ayırması ilgi çekici. Aslında bu yatırım,VW Grubu’nundevam eden kapsamlı maliyet düşürme hamlesiyle birlikte değerlendirildiğinde daha da öne çıkıyor. Alman otomotiv devi, özellikle Çin’de artan rekabet baskısı altında giderleri azaltmanın, operasyonları sadeleştirmenin ve kârlılığı yeniden güçlendirmenin yollarını arıyor. Audi, Kuzey Amerika’da daha fazla araç satmak istiyor ve yerel üretim, markaya yerleşik lüks rakipleri karşısında daha rekabetçi bir zemin sağlıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
         },
-        "post_text": "BİR RALLİDE 'KAZANAN' KELİMESİ TARTIŞMALI OLABİLİR.\n\nCumhuriyet Rallisi'nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu rallide, rekabetten çok dostluk ve kültür ön plandaydı.\n\nBu tarz etkinliklerde asıl zafer, klasik otomobil ruhunu yaşatmaktan geliyor. Fiyatı, menzili veya hızı konuşulan bir otomobil dünyasında, bu ralli başka bir değerin peşinde.",
-        "post_text_length": 413,
-        "story_card_title": "Rallide kazanmak ne demek!",
-        "story_card_subtitle": "Klasik Otomobil Spor Kulübü’nün Cumhuriyet Rallisi’nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu etkinlikte, rekabetten çok dostluk ve klasik otomobil ruhu ön plandaydı. Fiyat, menzil veya hız gibi modern ölçütlerin dışına çıkan bu ralli, aslında başka bir zaferin peşinde. Asıl zafer, klasik otomobil kültürünü yaşatmaktan geliyor.",
+        "post_text": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
+        "post_text_length": 448,
+        "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
+        "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-10-25T17:02:56.736236+03:00"
+      "updated_at": "2026-10-25T19:02:48.017726+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Cumhuriyet Rallisi’nin galibi Çiğdem-Cengiz KABATEPE",
-          "link": "https://otopodyum.com.tr/motor-sporlari/cumhuriyet-rallisinin-galibi-cigdem-cengiz-kabatepe-5440h",
+          "title": "Audi, Amerika fabrikası için 4 milyar $ harcayacak!",
+          "link": "https://tr.motor1.com/news/813169/audi-amerika-fabrikas%C4%B1-4milyar-dolar/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-10-25T10:58:00+00:00",
-          "summary": "Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu.",
-          "image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
-          "rss_image_url": "https://cdn.otopodyum.com.tr/news/5755.jpg",
+          "published": "2026-10-25T15:00:00+00:00",
+          "summary": "Georgia tesisi 4.500 istihdam yaratacak ve 2030'ların başında üretime başlayacak.",
+          "image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg",
           "image_candidates": [
-            "https://cdn.otopodyum.com.tr/news/5755.jpg"
+            "https://cdn.motor1.com/images/mgl/6ZO1yl/s3/audi-usa.jpg"
           ],
-          "image_source": "article_img",
-          "source_name": "otopodyum",
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "cengiz-cigdem-cumhuriyet-galibi-kabatepe-rallisi",
-          "base_ai_score": 38,
+          "topic_fingerprint": "amerika-audi-fabrikasi-harcayacak-milyar",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 16,
-            "etkilesim_potansiyeli": 8,
-            "benzersizlik": 10,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 3
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 13,
+            "paylasilabilirlik": 6
           },
-          "score": 43,
+          "score": 69,
           "score_reason": "ai_scored",
-          "score_explanation": "Klasik otomobil etkinlikleri niş bir kitleye hitap ediyor ve sosyal medyada genel kitle için viral potansiyeli sınırlı.",
-          "freshness_bonus": 4,
+          "score_explanation": "Büyük yatırım rakamı ve istihdam etkisi nedeniyle ekonomi ve otomotiv gündeminde dikkat çeker.",
+          "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "FIVA ( Uluslararası Antika Araçlar Federasyonu) ve TOSFED’e (Türkiye Otomobil Sporları Federasyonu) bağlı, KLASİK OTOMOBİL KULÜBÜ’nün, 2026 senesi yarış takvimine akredite olan ve KLASİK OTOMOBİL SEZONU’nun son yarışı kardeşlik, mutluluk ve cumhuriyet coşkusu ile tamamlandı. Klasik Otomobil Spor Kulübü tarafından düzenlenen Cumhuriyet Rallisi, 23–24 Ekim 2026 tarihlerinde 1954 ile 1989 model yılları arasındaki 47 klasik otomobil, İstanbul’un eşsiz manzaraları ve sonbaharın renkleriyle buluştu. Klasik Otomobil Kültürü Gelecek Nesillere Taşınıyor Klasik Otomobil Spor Kulübü, düzenlediği organizasyonlarla klasik otomobillerin korunmasını, otomobil kültürünün yaşatılmasını ve bu tutkunun gelecek nesillere aktarılmasını amaçlıyor. Cumhuriyet Rallisi, sportif rekabetin yanı sıra klasik otomobil tutkunlarının dostluklarını pekiştirdiği, ortak değerler etrafında buluştuğu ve otomobil kültürünü yaşattığı özel bir organizasyon olma özelliği taşıyor. Klasik Otomobil Spor Kulübü (KOK), geleneksel Cumhuriyet Rallisi ile klasik otomobil tutkunlarını bir kez daha bir araya getirdi. 23–24 Ekim tarihlerinde gerçekleştirilen organizasyona, en eskisi 1954, en yenisi 1989 model olmak üzere toplam 47 klasik otomobil katıldı. İki gün boyunca İstanbul’un tarihi dokusu, doğal güzellikleri ve sonbaharın renkleri eşliğinde yol alan klasikler, Cumhuriyet coşkusunu şehrin caddelerine taşıdı. Cumhuriyet Rallisi Swissôtel’den start aldı. Rallinin ilk günü 23 Ekim Cuma, Swissôtel’de düzenlenen kahvaltı ve yarışmacı brifinginin ardından saat 10.00’da start verildi. Sabah saatlerinde yer yer açan güneş, Sarıyer sırtlarında yerini yağmura bıraksa da, yarışmacıların keyfini kaçırmadı. İstanbul’un eşsiz manzaraları ve doğayla iç içe yollarında gerçekleştirilen etapların ardından yarışmacılar, Sarıyer bölgesindeki Laurel Restoran’da öğle yemeği molası verdi. Öğle yemeği sonrasında yeniden yola çıkan klasik otomobiller, günün ikinci bölümündeki etapları tamamlayarak Florentia Village’da birinci günün finişine geldiler. İkinci Günde Rekabet ve Heyecan Arttı. 24 Ekim Cumartesi sabahı saat 11.00’de Florentia Village’da yeniden start alan 47 klasik otomobil, rallinin son etaplarında mücadele etti. Trafik kuralları ve hız limitleri içinde yarışan yarışmacıların bu gündeki tek zorluğu ise, İstanbul trafiği oldu. Dikkat, konsantrasyon ve sürüş disiplininin ön plana çıktığı etaplarda ekipler, belirlenen rotaları başarıyla tamamlayarak finiş çizgisine ulaştılar. Birol Altınkılıç’ın Hatırası Özel Bir Etapta Yaşatıldı. Bu yılki Cumhuriyet Rallisi, anlamlı bir vefa örneğine de sahne oldu. Yıllardır Klasik Otomobil Spor Kulübü’ne destek veren Altınmarka (Kahve Dünyası) ailesinin kurucusu, kulübün değerli üyelerinden Kaan Altınkılıç’ın kıymetli babası merhum Birol Altınkılıç’ın adı, ralli etaplarından birine verildi. “Birol Altınkılıç Anı Etabı” ile kendisinin aziz hatırası yaşatılırken, kulübe yıllar boyunca sunduğu kıymetli katkılar, desteği ve dostluğu saygı ve minnetle anıldı. Cumhuriyet Coşkusu Gala Gecesindeki Ödül Töreni ile devam etti. İki gün süren Cumhuriyet Rallisi, 24 Ekim Cumartesi akşamı Swissôtel’de düzenlenen gala programıyla sona erdi. Rallide dereceye giren ekiplerin ödüllendirildiği gecede, kulüp üyeleri ve davetliler Cumhuriyet coşkusunu hep birlikte yaşadı. KLASİK OTOMOBİL KULÜBÜ CUMHURİYET RALLİSİ Genel Klasman lideri ise, deneyimli yarışmacılar Çiğdem-Cengiz KABATEPE oldu.",
-          "post_text_for_card": "BİR RALLİDE 'KAZANAN' KELİMESİ TARTIŞMALI OLABİLİR.\n\nCumhuriyet Rallisi'nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu rallide, rekabetten çok dostluk ve kültür ön plandaydı.\n\nBu tarz etkinliklerde asıl zafer, klasik otomobil ruhunu yaşatmaktan geliyor. Fiyatı, menzili veya hızı konuşulan bir otomobil dünyasında, bu ralli başka bir değerin peşinde.",
-          "story_card_title": "Rallide kazanmak ne demek!",
-          "story_card_subtitle": "Klasik Otomobil Spor Kulübü’nün Cumhuriyet Rallisi’nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu etkinlikte, rekabetten çok dostluk ve klasik otomobil ruhu ön plandaydı. Fiyat, menzil veya hız gibi modern ölçütlerin dışına çıkan bu ralli, aslında başka bir zaferin peşinde. Asıl zafer, klasik otomobil kültürünü yaşatmaktan geliyor.",
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Audi, ABD'deki varlığını güçlendirerek ülkedeki ilk üretim tesisini kurmayı planlıyor. Alman premium marka, Georgia eyaletinde inşa edeceği yeni fabrika için4 milyar $'lıkyatırım yapıyor; bu yatırım, Kuzey Amerika operasyonlarının büyük ölçekli genişlemesi kapsamında4.500 yeni istihdamyaratacak. İnşaat gelecek yıl başlayacak ve tesisin yıllık üretim kapasitesi200.000 araçolacak. Bu yatırım,Audi’yeABD’de kendine ait bir üretim üssü kazandıracak. Böylece marka, araçlarını Atlantik’in diğer kıyısından sevk etmek yerine müşterilerine daha yakın bir noktada üretebilecek. Bu durum, yeni tesiste üretilecek araçlarda ithalat vergilerinden kaçınmasına yardımcı olabilir; ancak yerel tedarikli parçalar ve ticaretle bağlantılı diğer maliyetler yine etkisini koruyacak. Audi, yeni montaj hattından inecek modellerin adını henüz resmî olarak açıklamadı ancak “Kuzey Amerikalı müşterilere özel premium SUV’ler” üretmeyi planlıyor. Büyük olasılıkla bu yılın başlarında tanıtılan yeni nesil Q7 ve markanın ilk Q9 modelinden söz ediyoruz. Bu büyük lüks SUV’ler, yeni fabrika 2030’ların başında üretime geçmeden önce ilk etapta Slovakya’daki Bratislava tesisinden sevk edilecek. Georgia tesisi en az 5 yıl boyunca faaliyete geçmeyeceği için Audi’nin burada Q7 ve Q9’un makyajlı versiyonlarını üretmesi muhtemel görünüyor. Şirket kısa süre önce Q8’in bir nesil daha yola devam edeceğini doğrulamıştı; bu nedenle coupe-SUV formundaki model de“Made in USA”etiketini alabilir. Bu tercih mantıklı olur; zira Q8, Q7 ile aynı platformu paylaşıyor ve temelde daha eğimli tavan çizgisine sahip aynı SUV karakterini taşıyor, diğer unsurların büyük bölümü ise korunuyor. Bu açıklamanın dikkat çekici bir yönü daha var. VW Grubu, yeni kurulanScout Motorsiçin Güney Carolina’nın Blythewood kentinde halihazırda bir fabrika inşa ediyor ve bu proje için2 milyar $'lıkyatırım planlanıyor. Tesis, Scout Traveler SUV ve Terra pick-up modellerini üretecek; yıllık kapasitenin200.000 aracakadar çıkması hedefleniyor. Her 2 fabrikanın da ABD’nin güneydoğusunda yer alacağı düşünüldüğünde, VW’nin Audi SUV’lerini de kapsayacak şekilde Scout tesisini neden genişletmediğini sorgulamak makul. Nitekim Scout, Güney Carolina’daki tesisin VW Grubu içindeki markalar dahil olmak üzere diğer otomobil üreticileri için de potansiyel olarak araç üretebileceğini belirtmişti. Bu da Audi’nin Georgia’da ayrı bir fabrika kurma kararının, Scout tesisinde başka modellerin üretilmesi ihtimalini tamamen ortadan kaldırmadığı anlamına geliyor. Şimdilik operasyonları ayrı tutmak için üretim gereksinimleri, ürün konumlandırması, lojistik ve uzun vadeli kapasite planlaması gibi geçerli nedenler olabilir. Audi’nin yeni fabrikası, markanın gelecekteki üretim ihtiyaçlarına özel olarak tasarlanacak; Scout ise daha farklı bir amaca hizmet eden, dayanıklı ve merdiven şasili araçlar geliştiriyor. Yine de verimliliği artırma konusunda ciddi baskı altında olan bir grubun operasyonları tek çatı altında toplamak yerine ayrı bir tesis için4 milyar $ek bütçe ayırması ilgi çekici. Aslında bu yatırım,VW Grubu’nundevam eden kapsamlı maliyet düşürme hamlesiyle birlikte değerlendirildiğinde daha da öne çıkıyor. Alman otomotiv devi, özellikle Çin’de artan rekabet baskısı altında giderleri azaltmanın, operasyonları sadeleştirmenin ve kârlılığı yeniden güçlendirmenin yollarını arıyor. Audi, Kuzey Amerika’da daha fazla araç satmak istiyor ve yerel üretim, markaya yerleşik lüks rakipleri karşısında daha rekabetçi bir zemin sağlıyor. Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
+          "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
+          "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
           "image_sources": [
-            "article_img",
             "meta_og",
+            "article_script",
             "article_img",
             "article_img"
           ],
           "prepared_image_count": 4,
           "original_image_urls": [
-            "https://cdn.otopodyum.com.tr/news/5682.jpg",
-            "https://cdn.otopodyum.com.tr/news/5755.jpg",
-            "https://cdn.otopodyum.com.tr/other/2026/10/25/cumhuriyet-rallisi-7.jpeg",
-            "https://cdn.otopodyum.com.tr/other/2026/10/25/cumhuriyet-rallisi-9.jpeg"
+            "https://cdn.motor1.com/images/mgl/6ZO1yl/s1/audi-usa.jpg",
+            "https://cdn.motor1.com/images/mgl/6ZO1yl/s1/4x3/audi-usa.webp",
+            "https://cdn.motor1.com/images/mgl/vx8l1q/s3/2027-audi-q7.jpg",
+            "https://cdn.motor1.com/images/mgl/7ZEXJP/s3/2027-audi-q7.jpg"
           ]
         },
-        "post_text": "BİR RALLİDE 'KAZANAN' KELİMESİ TARTIŞMALI OLABİLİR.\n\nCumhuriyet Rallisi'nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu rallide, rekabetten çok dostluk ve kültür ön plandaydı.\n\nBu tarz etkinliklerde asıl zafer, klasik otomobil ruhunu yaşatmaktan geliyor. Fiyatı, menzili veya hızı konuşulan bir otomobil dünyasında, bu ralli başka bir değerin peşinde.",
-        "story_card_title": "Rallide kazanmak ne demek!",
-        "story_card_subtitle": "Klasik Otomobil Spor Kulübü’nün Cumhuriyet Rallisi’nde Çiğdem-Cengiz Kabatepe ekibi birinci oldu. 23-24 Ekim 2026 tarihlerinde 47 klasik otomobilin katıldığı bu etkinlikte, rekabetten çok dostluk ve klasik otomobil ruhu ön plandaydı. Fiyat, menzil veya hız gibi modern ölçütlerin dışına çıkan bu ralli, aslında başka bir zaferin peşinde. Asıl zafer, klasik otomobil kültürünü yaşatmaktan geliyor.",
-        "image_path": "/tmp/otoxtra_img__yy8pqw8.jpg",
+        "post_text": "4 MİLYAR DOLARLIK YATIRIMLA AUDİ'NİN AMERİKA'DA İŞİ KOLAY DEĞİL.\n\nAudi, ilk ABD tesisini Georgia'da kurmak için 4 milyar $ harcayacak. 4.500 kişiye istihdam sağlayacak fabrika, 2030'ların başında yıllık 200.000 araç kapasitesiyle üretime başlayacak.\n\nBu yatırımın temelinde ithalat vergilerinden kaçmak var. Ancak yerel tedarik ve diğer maliyetler yine de belirleyici olacak.\n\nMarka, Amerika pazarında kendine özel modeller üretmek zorunda kalacak.",
+        "story_card_title": "AUDİ AMERİKA'YA 4 MİLYAR DOLAR GÖMÜYOR!",
+        "story_card_subtitle": "Audi, ABD'deki ilk fabrikası için Georgia'ya tam 4 milyar dolar yatırıyor. 2030'ların başında üretime geçecek tesiste 4.500 kişi istihdam edilecek. Bu dev yatırımın arkasında ithalat vergilerinden kaçma stratejisi yatıyor. Audi'nin Amerika pazarında tutunabilmesi için yerel tedarik ve maliyetler kritik önem taşıyor.",
+        "image_path": "/tmp/otoxtra_img_m1djqewe.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img__yy8pqw8.jpg",
-          "/tmp/otoxtra_img_sjg8w8mj.jpg",
-          "/tmp/otoxtra_img_sdfre9jp.jpg",
-          "/tmp/otoxtra_img_eoh9rwy9.jpg"
+          "/tmp/otoxtra_img_m1djqewe.jpg",
+          "/tmp/otoxtra_img_0bplpn3o.jpg",
+          "/tmp/otoxtra_img_e6_52mdd.jpg",
+          "/tmp/otoxtra_img_b7drsuop.jpg"
         ],
-        "image_source": "article_img",
+        "image_source": "meta_og",
         "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-10-25T17:03:22.314313+03:00"
+      "updated_at": "2026-10-25T19:02:51.359858+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122185251962916499",
+        "post_id": "678053852057751_122185261826916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "17864598702694775",
+            "id": "18128446924633232",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1626231545901938",
+            "id": "1624623299162949",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-10-25T17:04:15.423172+03:00"
+      "updated_at": "2026-10-25T19:03:29.677139+03:00"
     }
   }
 }
