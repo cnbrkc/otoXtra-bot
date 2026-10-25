@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-25-08:00",
+  "run_id": "2026-10-25-09:00",
   "status": "error",
-  "started_at": "2026-10-25T08:00:40.148644+03:00",
-  "updated_at": "2026-10-25T08:02:33.970638+03:00",
+  "started_at": "2026-10-25T09:00:42.785268+03:00",
+  "updated_at": "2026-10-25T09:02:39.789991+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kabii.moe/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
             "attempts": 1,
             "instance": ""
           },
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-25T08:02:33.970638+03:00"
+      "updated_at": "2026-10-25T09:02:39.789991+03:00"
     },
     "score": {
       "status": "waiting",
