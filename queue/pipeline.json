@@ -1,14 +1,34 @@
 {
-  "run_id": "2026-10-25-09:00",
-  "status": "error",
-  "started_at": "2026-10-25T09:00:42.785268+03:00",
-  "updated_at": "2026-10-25T09:02:39.789991+03:00",
+  "run_id": "2026-10-25-11:00",
+  "status": "completed",
+  "started_at": "2026-10-25T11:00:43.178373+03:00",
+  "updated_at": "2026-10-25T11:03:01.440576+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+            "link": "https://shiftdelete.net/mg4-akilli-telefonla-kontrol-ismart-turkiye",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-10-25T08:00:44+00:00",
+            "summary": "MG4 akıllı telefonla kontrol edilebilen iSMART hizmeti Türkiye'de. Şarj yönetimi ve klima kontrolü sunan sistemin detayları ve fiyatı haberimizde.",
+            "image_url": "",
+            "rss_image_url": "",
+            "image_candidates": [],
+            "image_source": "none",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "akilli-edilebiliyor-ismart-kontrol-mg4-telefonla-turkiye"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +89,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.netbub.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +110,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
             "attempts": 1,
             "instance": ""
           },
@@ -145,48 +165,229 @@
           },
           "_metrics": {
             "found": 150,
-            "after_keyword": 95,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 94,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
           "found": 150,
-          "after_keyword": 95,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 94,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-10-25T09:02:39.789991+03:00"
+      "error": null,
+      "updated_at": "2026-10-25T11:02:10.766030+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+          "link": "https://shiftdelete.net/mg4-akilli-telefonla-kontrol-ismart-turkiye",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-25T08:00:44+00:00",
+          "summary": "MG4 akıllı telefonla kontrol edilebilen iSMART hizmeti Türkiye'de. Şarj yönetimi ve klima kontrolü sunan sistemin detayları ve fiyatı haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "akilli-edilebiliyor-ismart-kontrol-mg4-telefonla-turkiye",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 64,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin ilgisini çekecek teknolojik bir yenilik ancak etki alanı belirli bir marka ve modelle sınırlı.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 64,
+        "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 14,
+          "benzersizlik": 12,
+          "gundem_gucu": 11,
+          "paylasilabilirlik": 7
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Elektrikli araç sahiplerinin ilgisini çekecek teknolojik bir yenilik ancak etki alanı belirli bir marka ve modelle sınırlı.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+            "score": 64,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 14,
+              "benzersizlik": 12,
+              "gundem_gucu": 11,
+              "paylasilabilirlik": 7
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-25T11:02:12.267133+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+          "link": "https://shiftdelete.net/mg4-akilli-telefonla-kontrol-ismart-turkiye",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-25T08:00:44+00:00",
+          "summary": "MG4 akıllı telefonla kontrol edilebilen iSMART hizmeti Türkiye'de. Şarj yönetimi ve klima kontrolü sunan sistemin detayları ve fiyatı haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "none",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "akilli-edilebiliyor-ismart-kontrol-mg4-telefonla-turkiye",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 64,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin ilgisini çekecek teknolojik bir yenilik ancak etki alanı belirli bir marka ve modelle sınırlı.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "MG4 akıllı telefonla kontrol edilebilen yeni iSMART bağlantı hizmeti, Türkiye pazarında kullanıma sunuldu. Ekim 2026 itibarıyla erişime açılan bu sistem, kullanıcıların araçlarının çeşitli özelliklerini mobil cihazları üzerinden uzaktan yönetmelerine olanak tanıyor. Sistem; şarj yönetimi, klima kontrolü, araç konumunun görüntülenmesi ve dijital anahtar gibi işlevleri tek bir platformda birleştiriyor. MG4 modelinin tüm versiyonlarını kapsayan bu hizmet, Doğan Trend Otomotiv temsilciliğinde Türkiye’deki kullanıcılarla buluşuyor. MG iSMART, iOS ve Android işletim sistemleri için geliştirilen mobil uygulama üzerinden çalışıyor. Uygulamayı App Store veya Google Play’den indiren kullanıcıların, bir hesap oluşturarak araçlarını sistemle eşleştirmeleri yeterli oluyor. Uzaktan gerçekleştirilen tüm işlemler, belirlenen güvenlik PIN kodu ile korunuyor. Uygulamanın sunduğu temel özellikler arasında araç kapılarının kilitlenmesi veya açılması, klima sisteminin yönetilmesi ve batarya durumunun anlık takibi yer alıyor. Dijital anahtar desteğisayesinde kullanıcılar, fiziksel bir anahtara ihtiyaç duymadan araç kapılarını kontrol edebiliyor ve anahtarsız çalıştırma işlevinden faydalanabiliyor. Ayrıca aracın harita üzerindeki konumu da uygulama üzerinden görüntülenebiliyor. Kullanıcılar, kalabalık otoparklarda araçlarını daha kolay bulabilmek için korna ve farları uzaktan çalıştırabiliyor. Uygulama, kapıların kilit durumunun yanı sıra bagaj ve kaputun kapalı olup olmadığını da gösterebiliyor. Sistem üzerinden lastik basınçları, elektrikli direksiyon sistemi, hava yastıkları, batarya voltajı ve kabin sıcaklığı gibi teknik veriler de takip edilebiliyor. Bu sayede kullanıcılar, araçlarının genel durumunu fiziksel olarak araca gitmeden kontrol edebiliyor. Elektrikli otomobiller için kritik öneme sahip olan şarj yönetimi de iSMART ile kolaylaşıyor. MG4 kullanıcıları, bataryanın mevcut doluluk oranını ve aracın tahmini kalan menzilini uygulama üzerinden görebiliyor. Araç bir şarj istasyonuna bağlı olduğunda, şarj işleminin uzaktan başlatılması mümkün hale geliyor. Şarj sırasında anlık şarj gücü ve işlemin tamamlanmasına kalan tahmini süre gibi bilgiler de ekrana yansıtılıyor. Klima sistemi, yolculuk öncesinde uzaktan çalıştırılarak kabin sıcaklığı ayarlanabiliyor. Bu özellik, sıcak havalarda aracın soğutulması veya soğuk havalarda ısıtılması için konfor sağlıyor. MG iSMART hizmetinden yararlanmak isteyen kullanıcıların, Türkiye genelindeki MG yetkili satış veya servis noktalarına başvurmaları gerekiyor. Aktivasyon işleminin ardından mobil uygulama üzerinden hesap eşleştirmesi tamamlanarak sistem aktif hale getiriliyor. Hizmet, Türkiye’de ücretli bir abonelik modeliyle sunuluyor. Şirketin duyurduğu kampanya kapsamında, 30 Kasım 2026 tarihine kadar başvuru yapan MG4 kullanıcıları, bir yıllık hizmeti dokuz aylık bedel olan 2.250 TL karşılığında alabiliyor. Kampanya sonrasındaki standart abonelik bedeli veya sonraki yıllara ilişkin yenileme ücretleri hakkında henüz resmi bir açıklama bulunmuyor. Bu nedenle kullanıcıların aktivasyon öncesinde güncel abonelik koşullarını yetkili servislerden teyit etmeleri öneriliyor. MG4 sahipleri için sunulan bu yeni bağlantı özellikleri, günlük kullanımda önemli bir kolaylık vadediyor. Sizce elektrikli otomobillerde bu tür uzaktan kontrol özellikleri ne kadar gerekli, görüşlerinizi bizimle paylaşır mısınız? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak."
+        },
+        "post_text": "Ekim 2026'ya kadar ücretsiz. MG4 için iSMART sistemi Türkiye'de.\n\nAkıllı telefondan şarj ve klima kontrolü. Sonrası için fiyatlandırma henüz belli değil.\n\nÜreticiler, bu \"ekstra\" özelliklerin bedelini alıcıya ödetiyor. Standart donanım algısı değişmeli.",
+        "post_text_length": 253,
+        "story_card_title": "MG4, Telefonunuzla Daha Akıllı!",
+        "story_card_subtitle": "MG4 sahipleri artık araçlarını akıllı telefonlarından kontrol edebilecek. iSMART sistemi Türkiye'de devreye girdi ve uzaktan şarj yönetimi ile klima kontrolü gibi özellikler sunuyor. Bu özellikler Ekim 2026'ya kadar ücretsiz olacak; sonrası için fiyatlandırma henüz açıklanmadı.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-25T11:02:16.228107+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "MG4 Artık Akıllı Telefonla Kontrol Edilebiliyor: iSMART Türkiye’de",
+          "link": "https://shiftdelete.net/mg4-akilli-telefonla-kontrol-ismart-turkiye",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-10-25T08:00:44+00:00",
+          "summary": "MG4 akıllı telefonla kontrol edilebilen iSMART hizmeti Türkiye'de. Şarj yönetimi ve klima kontrolü sunan sistemin detayları ve fiyatı haberimizde.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "akilli-edilebiliyor-ismart-kontrol-mg4-telefonla-turkiye",
+          "base_ai_score": 58,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 14,
+            "benzersizlik": 12,
+            "gundem_gucu": 11,
+            "paylasilabilirlik": 7
+          },
+          "score": 64,
+          "score_reason": "ai_scored",
+          "score_explanation": "Elektrikli araç sahiplerinin ilgisini çekecek teknolojik bir yenilik ancak etki alanı belirli bir marka ve modelle sınırlı.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "MG4 akıllı telefonla kontrol edilebilen yeni iSMART bağlantı hizmeti, Türkiye pazarında kullanıma sunuldu. Ekim 2026 itibarıyla erişime açılan bu sistem, kullanıcıların araçlarının çeşitli özelliklerini mobil cihazları üzerinden uzaktan yönetmelerine olanak tanıyor. Sistem; şarj yönetimi, klima kontrolü, araç konumunun görüntülenmesi ve dijital anahtar gibi işlevleri tek bir platformda birleştiriyor. MG4 modelinin tüm versiyonlarını kapsayan bu hizmet, Doğan Trend Otomotiv temsilciliğinde Türkiye’deki kullanıcılarla buluşuyor. MG iSMART, iOS ve Android işletim sistemleri için geliştirilen mobil uygulama üzerinden çalışıyor. Uygulamayı App Store veya Google Play’den indiren kullanıcıların, bir hesap oluşturarak araçlarını sistemle eşleştirmeleri yeterli oluyor. Uzaktan gerçekleştirilen tüm işlemler, belirlenen güvenlik PIN kodu ile korunuyor. Uygulamanın sunduğu temel özellikler arasında araç kapılarının kilitlenmesi veya açılması, klima sisteminin yönetilmesi ve batarya durumunun anlık takibi yer alıyor. Dijital anahtar desteğisayesinde kullanıcılar, fiziksel bir anahtara ihtiyaç duymadan araç kapılarını kontrol edebiliyor ve anahtarsız çalıştırma işlevinden faydalanabiliyor. Ayrıca aracın harita üzerindeki konumu da uygulama üzerinden görüntülenebiliyor. Kullanıcılar, kalabalık otoparklarda araçlarını daha kolay bulabilmek için korna ve farları uzaktan çalıştırabiliyor. Uygulama, kapıların kilit durumunun yanı sıra bagaj ve kaputun kapalı olup olmadığını da gösterebiliyor. Sistem üzerinden lastik basınçları, elektrikli direksiyon sistemi, hava yastıkları, batarya voltajı ve kabin sıcaklığı gibi teknik veriler de takip edilebiliyor. Bu sayede kullanıcılar, araçlarının genel durumunu fiziksel olarak araca gitmeden kontrol edebiliyor. Elektrikli otomobiller için kritik öneme sahip olan şarj yönetimi de iSMART ile kolaylaşıyor. MG4 kullanıcıları, bataryanın mevcut doluluk oranını ve aracın tahmini kalan menzilini uygulama üzerinden görebiliyor. Araç bir şarj istasyonuna bağlı olduğunda, şarj işleminin uzaktan başlatılması mümkün hale geliyor. Şarj sırasında anlık şarj gücü ve işlemin tamamlanmasına kalan tahmini süre gibi bilgiler de ekrana yansıtılıyor. Klima sistemi, yolculuk öncesinde uzaktan çalıştırılarak kabin sıcaklığı ayarlanabiliyor. Bu özellik, sıcak havalarda aracın soğutulması veya soğuk havalarda ısıtılması için konfor sağlıyor. MG iSMART hizmetinden yararlanmak isteyen kullanıcıların, Türkiye genelindeki MG yetkili satış veya servis noktalarına başvurmaları gerekiyor. Aktivasyon işleminin ardından mobil uygulama üzerinden hesap eşleştirmesi tamamlanarak sistem aktif hale getiriliyor. Hizmet, Türkiye’de ücretli bir abonelik modeliyle sunuluyor. Şirketin duyurduğu kampanya kapsamında, 30 Kasım 2026 tarihine kadar başvuru yapan MG4 kullanıcıları, bir yıllık hizmeti dokuz aylık bedel olan 2.250 TL karşılığında alabiliyor. Kampanya sonrasındaki standart abonelik bedeli veya sonraki yıllara ilişkin yenileme ücretleri hakkında henüz resmi bir açıklama bulunmuyor. Bu nedenle kullanıcıların aktivasyon öncesinde güncel abonelik koşullarını yetkili servislerden teyit etmeleri öneriliyor. MG4 sahipleri için sunulan bu yeni bağlantı özellikleri, günlük kullanımda önemli bir kolaylık vadediyor. Sizce elektrikli otomobillerde bu tür uzaktan kontrol özellikleri ne kadar gerekli, görüşlerinizi bizimle paylaşır mısınız? Yorumunuz gönderildi,onaylandıktan sonra yayımlanacak.",
+          "post_text_for_card": "Ekim 2026'ya kadar ücretsiz. MG4 için iSMART sistemi Türkiye'de.\n\nAkıllı telefondan şarj ve klima kontrolü. Sonrası için fiyatlandırma henüz belli değil.\n\nÜreticiler, bu \"ekstra\" özelliklerin bedelini alıcıya ödetiyor. Standart donanım algısı değişmeli.",
+          "story_card_title": "MG4, Telefonunuzla Daha Akıllı!",
+          "story_card_subtitle": "MG4 sahipleri artık araçlarını akıllı telefonlarından kontrol edebilecek. iSMART sistemi Türkiye'de devreye girdi ve uzaktan şarj yönetimi ile klima kontrolü gibi özellikler sunuyor. Bu özellikler Ekim 2026'ya kadar ücretsiz olacak; sonrası için fiyatlandırma henüz açıklanmadı.",
+          "image_sources": [
+            "article_img",
+            "meta_og",
+            "article_img"
+          ],
+          "prepared_image_count": 3,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/2026/10/mg4-artik-akilli-telefonla-kontrol-edilebiliyor-ismart-turkiyede-2.webp",
+            "https://ares.shiftdelete.net/2026/10/mg4-artik-akilli-telefonla-kontrol-edilebiliyor-ismart-turkiyede.webp",
+            "https://ares.shiftdelete.net/2026/10/mg4-artik-akilli-telefonla-kontrol-edilebiliyor-ismart-turkiyede-3.webp"
+          ]
+        },
+        "post_text": "Ekim 2026'ya kadar ücretsiz. MG4 için iSMART sistemi Türkiye'de.\n\nAkıllı telefondan şarj ve klima kontrolü. Sonrası için fiyatlandırma henüz belli değil.\n\nÜreticiler, bu \"ekstra\" özelliklerin bedelini alıcıya ödetiyor. Standart donanım algısı değişmeli.",
+        "story_card_title": "MG4, Telefonunuzla Daha Akıllı!",
+        "story_card_subtitle": "MG4 sahipleri artık araçlarını akıllı telefonlarından kontrol edebilecek. iSMART sistemi Türkiye'de devreye girdi ve uzaktan şarj yönetimi ile klima kontrolü gibi özellikler sunuyor. Bu özellikler Ekim 2026'ya kadar ücretsiz olacak; sonrası için fiyatlandırma henüz açıklanmadı.",
+        "image_path": "/tmp/otoxtra_img_t4w4jfit.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_t4w4jfit.jpg",
+          "/tmp/otoxtra_img_r5px_xi3.jpg",
+          "/tmp/otoxtra_img__c_uki76.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 3
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-25T11:02:19.421902+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122185184384916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18116730814993856",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1136541309105892",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-10-25T11:03:01.440576+03:00"
     }
   }
 }
