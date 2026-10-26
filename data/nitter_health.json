@@ -5,26 +5,26 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1793026938.0974417,
-      "last_change": "2026-10-26T14:02:18+00:00",
+      "blocked_until": 1793034076.9565089,
+      "last_change": "2026-10-26T16:01:16+00:00",
       "last_status": 429
     },
     "nitter.kabii.moe": {
-      "failures": 1,
-      "successes": 725,
-      "state": "blocked",
-      "reason": "http_429",
-      "blocked_until": 1793026957.1817067,
-      "last_change": "2026-10-26T14:02:37+00:00",
-      "last_status": 429
+      "failures": 0,
+      "successes": 727,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-26T16:01:47+00:00",
+      "last_status": 404
     },
     "nitter.wisq.net": {
-      "failures": 3,
+      "failures": 2,
       "successes": 0,
-      "state": "blocked",
-      "reason": "http_429",
-      "blocked_until": 1793027044.29359,
-      "last_change": "2026-10-26T14:04:04+00:00",
+      "state": "degraded",
+      "reason": "readtimeout",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-26T16:02:23+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
@@ -40,8 +40,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1793026944.8123715,
-      "last_change": "2026-10-26T14:02:24+00:00",
+      "blocked_until": 1793034100.6874866,
+      "last_change": "2026-10-26T16:01:40+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,8 +49,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1793026947.5306833,
-      "last_change": "2026-10-26T14:02:27+00:00",
+      "blocked_until": 1793034145.643054,
+      "last_change": "2026-10-26T16:02:25+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
@@ -67,8 +67,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1793026885.225306,
-      "last_change": "2026-10-26T14:01:25+00:00",
+      "blocked_until": 1793034153.604131,
+      "last_change": "2026-10-26T16:02:33+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
@@ -81,40 +81,40 @@
       "last_status": 404
     },
     "nitter.meowing.monster": {
-      "failures": 1,
-      "successes": 635,
-      "state": "blocked",
-      "reason": "bot_challenge",
-      "blocked_until": 1793027041.7158937,
-      "last_change": "2026-10-26T14:04:01+00:00",
-      "last_status": 200
+      "failures": 0,
+      "successes": 640,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-26T16:03:15+00:00",
+      "last_status": 404
     },
     "nitter.netbub.com": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1793026893.6222217,
-      "last_change": "2026-10-26T14:01:33+00:00",
+      "blocked_until": 1793034162.0548635,
+      "last_change": "2026-10-26T16:02:42+00:00",
       "last_status": 403
     },
     "shitter.thepixora.com": {
-      "failures": 1,
+      "failures": 0,
       "successes": 171,
-      "state": "blocked",
-      "reason": "http_403",
-      "blocked_until": 1793026895.7076254,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
       "last_change": "2026-10-26T14:01:35+00:00",
       "last_status": 403
     },
     "nitter.jaydenha.uk": {
       "failures": 1,
       "successes": 72,
-      "state": "blocked",
-      "reason": "http_403",
-      "blocked_until": 1793026898.9701319,
-      "last_change": "2026-10-26T14:01:38+00:00",
-      "last_status": 403
+      "state": "ok",
+      "reason": "http_404",
+      "blocked_until": 0.0,
+      "last_change": "2026-10-26T16:01:13+00:00",
+      "last_status": 404
     },
     "nitter.gravitywell.xyz": {
       "failures": 0,
@@ -126,5 +126,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-10-26T14:04:08+00:00"
+  "updated_at": "2026-10-26T16:03:15+00:00"
 }
