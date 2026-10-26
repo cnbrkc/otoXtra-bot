@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-10-26-08:00",
-  "status": "completed",
-  "started_at": "2026-10-26T08:00:40.208239+03:00",
-  "updated_at": "2026-10-26T08:03:27.132883+03:00",
+  "run_id": "2026-10-26-09:00",
+  "status": "error",
+  "started_at": "2026-10-26T09:00:40.045138+03:00",
+  "updated_at": "2026-10-26T09:05:38.297611+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-            "link": "https://x.com/eozpeynirci/status/2114579028916977859",
-            "nitter_url": "https://nitter.meowing.monster/eozpeynirci/status/2114579028916977859#m",
-            "source_instance": "nitter.meowing.monster",
-            "published": "2026-10-26T04:45:02+00:00",
-            "summary": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
-            "image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "Emre Ozpeynirci",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "720763h-arasindayiz-arasindayiz-ates-ates-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-biz-buyudu-buyumek-buyurken-buyurken-buyurken-buyuyecegiz-buyuyor-buyuyor-com-daraldi-derinlesiyor-detaylar-donemde-elektrikli-europe-europe-gazetepencere-gazetepencere-https-ihracatinda-iki-ise-kayiplar-kuculdu-kuculen-made-made-nasil-otomobil-otomobil-otomobil-otomobilde-otomotiv-pazarda-pazarda-pazari-pazari-pazari-peki-plani-rekabet-sanayimizin-simdi-surekli-tam-tartismalari-tehdidi-tehdidi-turkiye-turkiye-turkiye-turkiye-ustelik-var-www-yaratiyor-yazarlar"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by NameResoluti",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /eozpeynirci/rss (Caused by NameResoluti",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": ""
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -128,7 +106,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "HakanDOgu": {
             "status": "ok",
@@ -142,7 +120,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "VeyselKarani": {
             "status": "ok",
@@ -156,7 +134,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.kareem.one"
           },
           "otopodyum": {
             "status": "ok",
@@ -166,228 +144,49 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 150,
-            "after_keyword": 94,
-            "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "found": 140,
+            "after_keyword": 85,
+            "after_time": 4,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 150,
-          "after_keyword": 94,
-          "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "found": 140,
+          "after_keyword": 85,
+          "after_time": 4,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-26T08:02:29.444988+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-26T09:05:38.297611+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-          "link": "https://x.com/eozpeynirci/status/2114579028916977859",
-          "nitter_url": "https://nitter.meowing.monster/eozpeynirci/status/2114579028916977859#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-26T04:45:02+00:00",
-          "summary": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
-          "image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "720763h-arasindayiz-arasindayiz-ates-ates-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-biz-buyudu-buyumek-buyurken-buyurken-buyurken-buyuyecegiz-buyuyor-buyuyor-com-daraldi-derinlesiyor-detaylar-donemde-elektrikli-europe-europe-gazetepencere-gazetepencere-https-ihracatinda-iki-ise-kayiplar-kuculdu-kuculen-made-made-nasil-otomobil-otomobil-otomobil-otomobilde-otomotiv-pazarda-pazarda-pazari-pazari-pazari-peki-plani-rekabet-sanayimizin-simdi-surekli-tam-tartismalari-tehdidi-tehdidi-turkiye-turkiye-turkiye-turkiye-ustelik-var-www-yaratiyor-yazarlar",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 9
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye otomotiv pazarındaki daralmayı ve ihracat tehditlerini çarpıcı rakamlarla ele alıyor, sosyal medyada ekonomik kaygılar nedeniyle yüksek etkileşim ve tartışma yaratma potansiyeli çok yüksek.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 83,
-        "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 15,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 9
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Türkiye otomotiv pazarındaki daralmayı ve ihracat tehditlerini çarpıcı rakamlarla ele alıyor, sosyal medyada ekonomik kaygılar nedeniyle yüksek etkileşim ve tartışma yaratma potansiyeli çok yüksek.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-            "score": 83,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 15,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 9
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-26T08:02:31.409886+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-          "link": "https://x.com/eozpeynirci/status/2114579028916977859",
-          "nitter_url": "https://nitter.meowing.monster/eozpeynirci/status/2114579028916977859#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-26T04:45:02+00:00",
-          "summary": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
-          "image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "720763h-arasindayiz-arasindayiz-ates-ates-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-biz-buyudu-buyumek-buyurken-buyurken-buyurken-buyuyecegiz-buyuyor-buyuyor-com-daraldi-derinlesiyor-detaylar-donemde-elektrikli-europe-europe-gazetepencere-gazetepencere-https-ihracatinda-iki-ise-kayiplar-kuculdu-kuculen-made-made-nasil-otomobil-otomobil-otomobil-otomobilde-otomotiv-pazarda-pazarda-pazari-pazari-pazari-peki-plani-rekabet-sanayimizin-simdi-surekli-tam-tartismalari-tehdidi-tehdidi-turkiye-turkiye-turkiye-turkiye-ustelik-var-www-yaratiyor-yazarlar",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 9
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye otomotiv pazarındaki daralmayı ve ihracat tehditlerini çarpıcı rakamlarla ele alıyor, sosyal medyada ekonomik kaygılar nedeniyle yüksek etkileşim ve tartışma yaratma potansiyeli çok yüksek.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress."
-        },
-        "post_text": "%15,5 KÜÇÜLEN BİR PAZARDA BÜYÜMEK İDDİASI ZOR.\n\nAvrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye aynı dönemde %15,5 daraldı. Elektrikli otomobilde de Avrupa %41,9 büyürken biz %9,1 geriledik.\n\nMade in Europe tartışmalarıyla birlikte ihracat cephesinde yeni bir rekabet var. İç pazarda büyüme hedefi bu ortamda daha da karmaşıklaşıyor.\n\nRakamlar ortadayken sektörün A planı bu kadar iddialı olmamalı.",
-        "post_text_length": 406,
-        "story_card_title": "AVRUPA BÜYÜRKEN TÜRKİYE KÜÇÜLÜYOR!",
-        "story_card_subtitle": "Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye'de kayıplar %15,5'e ulaştı. Elektrikli otomobilde Avrupa %41,9'luk büyüme kaydederken, Türkiye %9,1 daralma yaşadı. Bu tablo, 'Made in Europe' tartışmalarıyla birleşince ihracat cephesinde yeni bir rekabet tehdidi oluşturuyor. Sektörün 'iç pazarda büyüme' planı bu koşullarda ne kadar gerçekçi?",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-26T08:02:35.209444+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere'de 👇 https://www.gazetepencere.com/yazarlar/avrupa-otomobil-pazari-buyuyor-biz-iki-ates-arasindayiz-720763h",
-          "link": "https://x.com/eozpeynirci/status/2114579028916977859",
-          "nitter_url": "https://nitter.meowing.monster/eozpeynirci/status/2114579028916977859#m",
-          "source_instance": "nitter.meowing.monster",
-          "published": "2026-10-26T04:45:02+00:00",
-          "summary": "AVRUPA BÜYÜYOR, BİZ İKİ ATEŞ ARASINDAYIZ‼️ Avrupa otomobil pazarı büyürken Türkiye'de kayıplar derinleşiyor. Şimdi bir de 'Made in Europe' tehdidi var Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye %15,5 küçüldü. Elektrikli otomobilde Avrupa %41,9 büyüdü, Türkiye %9,1 daraldı. Üstelik tam bu dönemde 'Made in Europe' tartışmaları, Türkiye'nin Avrupa'ya ihracatında yeni bir rekabet tehdidi yaratıyor. Otomotiv sanayimizin A planı ise iç pazarda büyümek. Peki Avrupa büyürken sürekli küçülen bir pazarda nasıl büyüyeceğiz? Detaylar @gazetepencere 'de 👇 gazetepencere.com/yazarlar/a…",
-          "image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVh8fzcWEAA2Mub.jpg?format=jpg&name=large"
-          ],
-          "image_source": "smart_search",
-          "source_name": "Emre Ozpeynirci",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "720763h-arasindayiz-arasindayiz-ates-ates-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-avrupa-ayda-biz-buyudu-buyumek-buyurken-buyurken-buyurken-buyuyecegiz-buyuyor-buyuyor-com-daraldi-derinlesiyor-detaylar-donemde-elektrikli-europe-europe-gazetepencere-gazetepencere-https-ihracatinda-iki-ise-kayiplar-kuculdu-kuculen-made-made-nasil-otomobil-otomobil-otomobil-otomobilde-otomotiv-pazarda-pazarda-pazari-pazari-pazari-peki-plani-rekabet-sanayimizin-simdi-surekli-tam-tartismalari-tehdidi-tehdidi-turkiye-turkiye-turkiye-turkiye-ustelik-var-www-yaratiyor-yazarlar",
-          "base_ai_score": 78,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 9
-          },
-          "score": 83,
-          "score_reason": "ai_scored",
-          "score_explanation": "Türkiye otomotiv pazarındaki daralmayı ve ihracat tehditlerini çarpıcı rakamlarla ele alıyor, sosyal medyada ekonomik kaygılar nedeniyle yüksek etkileşim ve tartışma yaratma potansiyeli çok yüksek.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "You are seeing this because the administrator of this website has set up Anubis to protect the server against the scourge of AI companies aggressively scraping websites. This can and does cause downtime for the websites, which makes their resources inaccessible for everyone. Anubis is a compromise. Anubis uses a Proof-of-Work scheme in the vein of Hashcash, a proposed proof-of-work scheme for reducing email spam. The idea is that at individual scales the additional load is ignorable, but at mass scraper levels it adds up and makes scraping much more expensive. Ultimately, this is a placeholder solution so that more time can be spent on fingerprinting and identifying headless browsers (EG: via how they do font rendering) so that the challenge proof of work page doesn't need to be presented to users that are much more likely to be legitimate. Please note that Anubis requires the use of modern JavaScript features that plugins like JShelter will disable. Please disable JShelter or other such plugins for this domain. Sadly, you must enable JavaScript to get past this challenge. This is required because AI companies have changed the social contract around how website hosting works. A no-JS solution is a work-in-progress.",
-          "post_text_for_card": "%15,5 KÜÇÜLEN BİR PAZARDA BÜYÜMEK İDDİASI ZOR.\n\nAvrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye aynı dönemde %15,5 daraldı. Elektrikli otomobilde de Avrupa %41,9 büyürken biz %9,1 geriledik.\n\nMade in Europe tartışmalarıyla birlikte ihracat cephesinde yeni bir rekabet var. İç pazarda büyüme hedefi bu ortamda daha da karmaşıklaşıyor.\n\nRakamlar ortadayken sektörün A planı bu kadar iddialı olmamalı.",
-          "story_card_title": "AVRUPA BÜYÜRKEN TÜRKİYE KÜÇÜLÜYOR!",
-          "story_card_subtitle": "Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye'de kayıplar %15,5'e ulaştı. Elektrikli otomobilde Avrupa %41,9'luk büyüme kaydederken, Türkiye %9,1 daralma yaşadı. Bu tablo, 'Made in Europe' tartışmalarıyla birleşince ihracat cephesinde yeni bir rekabet tehdidi oluşturuyor. Sektörün 'iç pazarda büyüme' planı bu koşullarda ne kadar gerçekçi?",
-          "image_sources": [
-            "smart_search"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
-        },
-        "post_text": "%15,5 KÜÇÜLEN BİR PAZARDA BÜYÜMEK İDDİASI ZOR.\n\nAvrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye aynı dönemde %15,5 daraldı. Elektrikli otomobilde de Avrupa %41,9 büyürken biz %9,1 geriledik.\n\nMade in Europe tartışmalarıyla birlikte ihracat cephesinde yeni bir rekabet var. İç pazarda büyüme hedefi bu ortamda daha da karmaşıklaşıyor.\n\nRakamlar ortadayken sektörün A planı bu kadar iddialı olmamalı.",
-        "story_card_title": "AVRUPA BÜYÜRKEN TÜRKİYE KÜÇÜLÜYOR!",
-        "story_card_subtitle": "Avrupa otomobil pazarı ilk 9 ayda %6,3 büyürken Türkiye'de kayıplar %15,5'e ulaştı. Elektrikli otomobilde Avrupa %41,9'luk büyüme kaydederken, Türkiye %9,1 daralma yaşadı. Bu tablo, 'Made in Europe' tartışmalarıyla birleşince ihracat cephesinde yeni bir rekabet tehdidi oluşturuyor. Sektörün 'iç pazarda büyüme' planı bu koşullarda ne kadar gerçekçi?",
-        "image_path": "/tmp/otoxtra_img_tog4da25.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tog4da25.jpg"
-        ],
-        "image_source": "smart_search",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-26T08:02:50.997678+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122185324082916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18096806648440424",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1548953987260300",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-26T08:03:27.132883+03:00"
+      "updated_at": null
     }
   }
 }
