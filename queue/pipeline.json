@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-25-20:00",
+  "run_id": "2026-10-26-06:00",
   "status": "error",
-  "started_at": "2026-10-25T20:00:34.422938+03:00",
-  "updated_at": "2026-10-25T20:02:47.748990+03:00",
+  "started_at": "2026-10-26T06:00:39.393097+03:00",
+  "updated_at": "2026-10-26T06:02:40.419751+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.zebes.info/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.zebes.info/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -146,7 +146,7 @@
           "_metrics": {
             "found": 150,
             "after_keyword": 93,
-            "after_time": 6,
+            "after_time": 7,
             "after_posted": 0,
             "after_duplicate": 0,
             "after_shared_variant_cooldown": 0
@@ -155,14 +155,14 @@
         "metrics": {
           "found": 150,
           "after_keyword": 93,
-          "after_time": 6,
+          "after_time": 7,
           "after_posted": 0,
           "after_duplicate": 0,
           "after_shared_variant_cooldown": 0
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-25T20:02:47.748990+03:00"
+      "updated_at": "2026-10-26T06:02:40.419751+03:00"
     },
     "score": {
       "status": "waiting",
