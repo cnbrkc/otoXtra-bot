@@ -11,29 +11,29 @@
     },
     "nitter.kabii.moe": {
       "failures": 0,
-      "successes": 731,
+      "successes": 738,
       "state": "ok",
       "reason": "",
       "blocked_until": 0.0,
-      "last_change": "2026-10-27T16:05:21+00:00",
-      "last_status": 429
+      "last_change": "2026-10-27T17:02:29+00:00",
+      "last_status": 404
     },
     "nitter.wisq.net": {
-      "failures": 2,
+      "failures": 4,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-10-27T16:03:14+00:00",
+      "last_change": "2026-10-27T17:02:01+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
-      "failures": 140,
+      "failures": 142,
       "successes": 0,
       "state": "degraded",
       "reason": "sslerror",
       "blocked_until": 0.0,
-      "last_change": "2026-10-27T08:02:22+00:00"
+      "last_change": "2026-10-27T17:02:03+00:00"
     },
     "nitter.anoxinon.de": {
       "failures": 1,
@@ -54,12 +54,12 @@
       "last_status": 403
     },
     "x.n0g.xyz": {
-      "failures": 47,
+      "failures": 49,
       "successes": 111,
       "state": "degraded",
       "reason": "connectionerror",
       "blocked_until": 0.0,
-      "last_change": "2026-10-27T10:03:07+00:00",
+      "last_change": "2026-10-27T17:02:05+00:00",
       "last_status": 200
     },
     "tw.eir-nya.gay": {
@@ -81,12 +81,12 @@
       "last_status": 404
     },
     "nitter.meowing.monster": {
-      "failures": 0,
+      "failures": 2,
       "successes": 704,
-      "state": "ok",
-      "reason": "",
+      "state": "degraded",
+      "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-10-27T16:05:13+00:00",
+      "last_change": "2026-10-27T17:01:42+00:00",
       "last_status": 404
     },
     "nitter.netbub.com": {
@@ -126,5 +126,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-10-27T16:05:21+00:00"
+  "updated_at": "2026-10-27T17:02:29+00:00"
 }
