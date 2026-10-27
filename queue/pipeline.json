@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-27-08:00",
+  "run_id": "2026-10-27-09:00",
   "status": "error",
-  "started_at": "2026-10-27T08:00:40.773808+03:00",
-  "updated_at": "2026-10-27T08:02:44.741222+03:00",
+  "started_at": "2026-10-27T09:00:37.322032+03:00",
+  "updated_at": "2026-10-27T09:03:04.740673+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -145,7 +145,7 @@
           },
           "_metrics": {
             "found": 147,
-            "after_keyword": 92,
+            "after_keyword": 90,
             "after_time": 5,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -154,7 +154,7 @@
         },
         "metrics": {
           "found": 147,
-          "after_keyword": 92,
+          "after_keyword": 90,
           "after_time": 5,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-27T08:02:44.741222+03:00"
+      "updated_at": "2026-10-27T09:03:04.740673+03:00"
     },
     "score": {
       "status": "waiting",
