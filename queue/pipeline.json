@@ -1,141 +1,14 @@
 {
-  "run_id": "2026-10-28-06:00",
-  "status": "completed",
-  "started_at": "2026-10-28T06:00:44.308168+03:00",
-  "updated_at": "2026-10-28T06:03:19.012396+03:00",
+  "run_id": "2026-10-28-07:00",
+  "status": "error",
+  "started_at": "2026-10-28T07:00:46.864223+03:00",
+  "updated_at": "2026-10-28T07:03:02.019437+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Mazda CX-70'in boşluğunu 5 koltuklu CX-90'a bırakıyor",
-            "link": "https://tr.motor1.com/news/813453/mazda-cx70-yerine-cx90/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-10-27T18:00:00+00:00",
-            "summary": "Mazda, 2027 için CX-70 model adını sona erdiriyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/OoZ8MY/s3/mazda-cx-90.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/OoZ8MY/s3/mazda-cx-90.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/OoZ8MY/s3/mazda-cx-90.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "birakiyor-boslugunu-koltuklu-mazda"
-          },
-          {
-            "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2115176582742507912",
-            "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115176582742507912#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-27T20:19:30+00:00",
-            "summary": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım. — http://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-            "image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "340-400-620-660-810-810-arkadan-awd-awd-ayinin-batarya-cikiyor-dakikada-desteklenerek-ediyor-elde-electric-electric-electric-elektrikli-ex60-ex60-garantisi-guven-guzeli-haber-hizli-ise-istasyonlarinda-itisli-kasim-katiyor-kilometreye-kilometreye-kilometreye-kilometreye-kilometreye-menzil-menzil-menzil-menzil-menzil-mesafesi-olcumlenen-p10-p12-performanslari-sagliyor-sarj-satisa-sunarken-sunuyor-sunuyor-surus-suruse-tanitim-uzun-vadeli-versiyonu-versiyonu-versiyonu-volvo-yalnizca-yil"
-          },
-          {
-            "title": "CHERY TIGGO X7 NASIL OLMUŞ? Özlediğim tasarım detayları 2027'de çoğu markada karşımıza çıkacak. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2115168259762782584",
-            "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115168259762782584#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-27T19:46:25+00:00",
-            "summary": "CHERY TIGGO X7 NASIL OLMUŞ? Özlediğim tasarım detayları 2027'de çoğu markada karşımıza çıkacak. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım. — http://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-            "image_url": "https://pbs.twimg.com/media/HVqWSM5XgAAqVip.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVqWSM5XgAAqVip.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVqWSM5XgAAqVip.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2027-chery-cikacak-cogu-detaylari-haber-karsimiza-markada-nasil-olmus-ozledigim-tanitim-tasarim-tiggo"
-          },
-          {
-            "title": "Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2115160951561371818",
-            "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-27T19:17:23+00:00",
-            "summary": "Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım.",
-            "image_url": "https://pbs.twimg.com/media/HVqPo-uXIAAe_Pq.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVqPo-uXIAAe_Pq.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVqPo-uXIAAe_Pq.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "abartidak-haber-hibrit-sey-tanitim-tasarim-ustelik-uzak-yerinde-yerli-zamansiz"
-          },
-          {
-            "title": "Çinli Great Wall Motor şirketi, Ora 5 kompakt SUV modelini Bulgaristan'da üretecek. Fabrika yıllık 50.000 araç üretim kapasitesine sahip olacak. Üretimin 2027 yılının ilk çeyreğinde başlaması planlanıyor. Ora 5, Avrupa'da elektrikli, hibrit ve benzinli versiyonlarıyla satışa sunuluyor.",
-            "link": "https://x.com/veysellkaranii/status/2115118800529936714",
-            "nitter_url": "https://nitter.jaydenha.uk/veysellkaranii/status/2115118800529936714#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-27T16:29:53+00:00",
-            "summary": "Çinli Great Wall Motor şirketi, Ora 5 kompakt SUV modelini Bulgaristan'da üretecek. Fabrika yıllık 50.000 araç üretim kapasitesine sahip olacak. Üretimin 2027 yılının ilk çeyreğinde başlaması planlanıyor. Ora 5, Avrupa'da elektrikli, hibrit ve benzinli versiyonlarıyla satışa sunuluyor.",
-            "image_url": "https://pbs.twimg.com/media/HVppR4RXMAA_-TR.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVppR4RXMAA_-TR.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVppR4RXMAA_-TR.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-2027-arac-avrupa-baslamasi-benzinli-bulgaristan-ceyreginde-cinli-elektrikli-fabrika-great-hibrit-kapasitesine-kompakt-modelini-motor-olacak-ora-ora-planlaniyor-sahip-satisa-sirketi-sunuluyor-suv-uretecek-uretim-uretimin-versiyonlariyla-wall-yilinin-yillik"
-          },
-          {
-            "title": "Yeni Mercedes-Benz C-Serisi Plug-in Hybrid (PHEV), 100 kilometreyi bulan saf elektrikli sürüş menzili ve gelişmiş yapay zeka destekli işletim sistemiyle tanıtıldı .",
-            "link": "https://x.com/veysellkaranii/status/2115106679125840155",
-            "nitter_url": "https://nitter.jaydenha.uk/veysellkaranii/status/2115106679125840155#m",
-            "source_instance": "nitter.jaydenha.uk",
-            "published": "2026-10-27T15:41:43+00:00",
-            "summary": "Yeni Mercedes-Benz C-Serisi Plug-in Hybrid (PHEV), 100 kilometreyi bulan saf elektrikli sürüş menzili ve gelişmiş yapay zeka destekli işletim sistemiyle tanıtıldı .",
-            "image_url": "https://pbs.twimg.com/media/HVpeTscXkAA3wCJ.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HVpeTscXkAA3wCJ.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HVpeTscXkAA3wCJ.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "100-benz-bulan-destekli-elektrikli-gelismis-hybrid-isletim-kilometreyi-menzili-mercedes-phev-plug-saf-serisi-sistemiyle-surus-yapay-zeka"
-          }
-        ],
-        "count": 6,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -196,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.netbub.com/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/eozpeynirci/rss",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": ""
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -233,35 +106,35 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "otopodyum": {
             "status": "ok",
@@ -271,300 +144,49 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 147,
-            "after_keyword": 86,
-            "after_time": 10,
-            "after_posted": 6,
-            "after_duplicate": 6,
-            "after_shared_variant_cooldown": 6
+            "found": 137,
+            "after_keyword": 79,
+            "after_time": 4,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 147,
-          "after_keyword": 86,
-          "after_time": 10,
-          "after_posted": 6,
-          "after_duplicate": 6,
-          "after_shared_variant_cooldown": 6
+          "found": 137,
+          "after_keyword": 79,
+          "after_time": 4,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-10-28T06:02:24.376248+03:00"
+      "error": "No article found",
+      "updated_at": "2026-10-28T07:03:02.019437+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2115176582742507912",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115176582742507912#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-27T20:19:30+00:00",
-          "summary": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım. — http://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-          "image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "340-400-620-660-810-810-arkadan-awd-awd-ayinin-batarya-cikiyor-dakikada-desteklenerek-ediyor-elde-electric-electric-electric-elektrikli-ex60-ex60-garantisi-guven-guzeli-haber-hizli-ise-istasyonlarinda-itisli-kasim-katiyor-kilometreye-kilometreye-kilometreye-kilometreye-kilometreye-menzil-menzil-menzil-menzil-menzil-mesafesi-olcumlenen-p10-p12-performanslari-sagliyor-sarj-satisa-sunarken-sunuyor-sunuyor-surus-suruse-tanitim-uzun-vadeli-versiyonu-versiyonu-versiyonu-volvo-yalnizca-yil",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek menzil, hızlı şarj ve 10 yıl batarya garantisi gibi dikkat çekici elektrikli araç özellikleri nedeniyle sosyal medyada yüksek etkileşim üretir.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 78,
-        "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 15,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yüksek menzil, hızlı şarj ve 10 yıl batarya garantisi gibi dikkat çekici elektrikli araç özellikleri nedeniyle sosyal medyada yüksek etkileşim üretir.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-            "score": 78,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Yeni Mercedes-Benz C-Serisi Plug-in Hybrid (PHEV), 100 kilometreyi bulan saf elektrikli sürüş menzili ve gelişmiş yapay zeka destekli işletim sistemiyle tanıtıldı .",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 18,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Çinli Great Wall Motor şirketi, Ora 5 kompakt SUV modelini Bulgaristan'da üretecek. Fabrika yıllık 50.000 araç üretim kapasitesine sahip olacak. Üretimin 2027 yılının ilk çeyreğinde başlaması planlanıyor. Ora 5, Avrupa'da elektrikli, hibrit ve benzinli versiyonlarıyla satışa sunuluyor.",
-            "score": 64,
-            "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 16,
-              "benzersizlik": 14,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 5
-            }
-          }
-        ],
-        "scored_count": 6,
-        "cooldown_candidates": [
-          {
-            "title": "Yeni Mercedes-Benz C-Serisi Plug-in Hybrid (PHEV), 100 kilometreyi bulan saf elektrikli sürüş menzili ve gelişmiş yapay zeka destekli işletim sistemiyle tanıtıldı .",
-            "link": "https://x.com/veysellkaranii/status/2115106679125840155",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "100-benz-bulan-destekli-elektrikli-gelismis-hybrid-isletim-kilometreyi-menzili-mercedes-phev-plug-saf-serisi-sistemiyle-surus-yapay-zeka"
-          },
-          {
-            "title": "Çinli Great Wall Motor şirketi, Ora 5 kompakt SUV modelini Bulgaristan'da üretecek. Fabrika yıllık 50.000 araç üretim kapasitesine sahip olacak. Üretimin 2027 yılının ilk çeyreğinde başlaması planlanıyor. Ora 5, Avrupa'da elektrikli, hibrit ve benzinli versiyonlarıyla satışa sunuluyor.",
-            "link": "https://x.com/veysellkaranii/status/2115118800529936714",
-            "score": 64,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "000-2027-arac-avrupa-baslamasi-benzinli-bulgaristan-ceyreginde-cinli-elektrikli-fabrika-great-hibrit-kapasitesine-kompakt-modelini-motor-olacak-ora-ora-planlaniyor-sahip-satisa-sirketi-sunuluyor-suv-uretecek-uretim-uretimin-versiyonlariyla-wall-yilinin-yillik"
-          },
-          {
-            "title": "CHERY TIGGO X7 NASIL OLMUŞ? Özlediğim tasarım detayları 2027'de çoğu markada karşımıza çıkacak. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2115168259762782584",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "2027-chery-cikacak-cogu-detaylari-haber-karsimiza-markada-nasil-olmus-ozledigim-tanitim-tasarim-tiggo"
-          },
-          {
-            "title": "Mazda CX-70'in boşluğunu 5 koltuklu CX-90'a bırakıyor",
-            "link": "https://tr.motor1.com/news/813453/mazda-cx70-yerine-cx90/",
-            "score": 40,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "birakiyor-boslugunu-koltuklu-mazda"
-          },
-          {
-            "title": "Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2115160951561371818",
-            "score": 22,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "abartidak-haber-hibrit-sey-tanitim-tasarim-ustelik-uzak-yerinde-yerli-zamansiz"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-28T06:02:28.227318+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2115176582742507912",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115176582742507912#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-27T20:19:30+00:00",
-          "summary": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım. — http://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-          "image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "340-400-620-660-810-810-arkadan-awd-awd-ayinin-batarya-cikiyor-dakikada-desteklenerek-ediyor-elde-electric-electric-electric-elektrikli-ex60-ex60-garantisi-guven-guzeli-haber-hizli-ise-istasyonlarinda-itisli-kasim-katiyor-kilometreye-kilometreye-kilometreye-kilometreye-kilometreye-menzil-menzil-menzil-menzil-menzil-mesafesi-olcumlenen-p10-p12-performanslari-sagliyor-sarj-satisa-sunarken-sunuyor-sunuyor-surus-suruse-tanitim-uzun-vadeli-versiyonu-versiyonu-versiyonu-volvo-yalnizca-yil",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek menzil, hızlı şarj ve 10 yıl batarya garantisi gibi dikkat çekici elektrikli araç özellikleri nedeniyle sosyal medyada yüksek etkileşim üretir.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "post_text": "810 KİLOMETRE MENZİL, ASIL İDDİASI BU DEĞİL.\n\nVolvo EX60, Kasım'da satışa çıkıyor. P12 AWD Electric versiyonu 810 km menzil sunarken, 400 kW hızlı şarjda 10 dakikada 340 km'ye kadar menzil vaat ediyor.\n\nBuradaki asıl iddia, 10 yıllık batarya garantisi.\n\nMenzil rakamları yüksek evet, ama Volvo bu kez güveni rakamla değil, süreyle satıyor.",
-        "post_text_length": 339,
-        "story_card_title": "VOLVO EX60 İDDİASINI MENZİLLE DEĞİL, GARANTİYLE YAPIYOR!",
-        "story_card_subtitle": "Kasım ayında satışa çıkacak yeni Volvo EX60, elektrikli otomobillerdeki en büyük endişelerden birine noktayı koyuyor. En uzun menzilli versiyonu 810 kilometreye ulaşırken, asıl dikkat çeken nokta 10 yıllık batarya garantisi. Bu cömert garanti, elektrikli sürüşe geçmek isteyenler için önemli bir güven unsuru oluşturuyor. Hızlı şarj istasyonlarında 10 dakikada 340 kilometre menzil kazanma imkanı da cabası.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-28T06:02:32.609784+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2115176582742507912",
-          "nitter_url": "https://nitter.jaydenha.uk/murattosunMSE/status/2115176582742507912#m",
-          "source_instance": "nitter.jaydenha.uk",
-          "published": "2026-10-27T20:19:30+00:00",
-          "summary": "KASIM AYININ İLK GÜZELİ! VOLVO EX60 SATIŞA ÇIKIYOR! 810 kilometreye kadar menzil sunuyor! . EX60, 400 kW hızlı şarj istasyonlarında yalnızca 10 dakikada, 340 kilometreye kadar menzil elde ediyor. P12 AWD Electric versiyonu 810 kilometreye kadar menzil sunarken, P10 AWD Electric versiyonu 660 kilometreye kadar sürüş mesafesi sağlıyor. Arkadan itişli P6 Electric versiyonu ise 620 kilometreye kadar menzil sunuyor. Ölçümlenen menzil performansları 10 yıl batarya garantisi ile desteklenerek elektrikli sürüşe uzun vadeli güven katıyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Her şey yerli yerinde. Abartıdak uzak, zamansız tasarım. Üstelik hibrit. . Haber, tanıtım. — http://nitter.jaydenha.uk/murattosunMSE/status/2115160951561371818#m",
-          "image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "rss_image_url": "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "340-400-620-660-810-810-arkadan-awd-awd-ayinin-batarya-cikiyor-dakikada-desteklenerek-ediyor-elde-electric-electric-electric-elektrikli-ex60-ex60-garantisi-guven-guzeli-haber-hizli-ise-istasyonlarinda-itisli-kasim-katiyor-kilometreye-kilometreye-kilometreye-kilometreye-kilometreye-menzil-menzil-menzil-menzil-menzil-mesafesi-olcumlenen-p10-p12-performanslari-sagliyor-sarj-satisa-sunarken-sunuyor-sunuyor-surus-suruse-tanitim-uzun-vadeli-versiyonu-versiyonu-versiyonu-volvo-yalnizca-yil",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 78,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek menzil, hızlı şarj ve 10 yıl batarya garantisi gibi dikkat çekici elektrikli araç özellikleri nedeniyle sosyal medyada yüksek etkileşim üretir.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "post_text_for_card": "810 KİLOMETRE MENZİL, ASIL İDDİASI BU DEĞİL.\n\nVolvo EX60, Kasım'da satışa çıkıyor. P12 AWD Electric versiyonu 810 km menzil sunarken, 400 kW hızlı şarjda 10 dakikada 340 km'ye kadar menzil vaat ediyor.\n\nBuradaki asıl iddia, 10 yıllık batarya garantisi.\n\nMenzil rakamları yüksek evet, ama Volvo bu kez güveni rakamla değil, süreyle satıyor.",
-          "story_card_title": "VOLVO EX60 İDDİASINI MENZİLLE DEĞİL, GARANTİYLE YAPIYOR!",
-          "story_card_subtitle": "Kasım ayında satışa çıkacak yeni Volvo EX60, elektrikli otomobillerdeki en büyük endişelerden birine noktayı koyuyor. En uzun menzilli versiyonu 810 kilometreye ulaşırken, asıl dikkat çeken nokta 10 yıllık batarya garantisi. Bu cömert garanti, elektrikli sürüşe geçmek isteyenler için önemli bir güven unsuru oluşturuyor. Hızlı şarj istasyonlarında 10 dakikada 340 kilometre menzil kazanma imkanı da cabası.",
-          "image_sources": [
-            "nitter_still",
-            "nitter_still",
-            "nitter_still",
-            "nitter_still"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HVqPqhgW0AAKNj-.jpg?format=jpg&name=large",
-            "https://pbs.twimg.com/media/HVqPpdCWsAAt6Ve.jpg?format=jpg&name=large",
-            "https://pbs.twimg.com/media/HVqd3dsWQAAZYPs.jpg?format=jpg&name=large",
-            "https://pbs.twimg.com/media/HVqd37XXgAABdhE.jpg?format=jpg&name=large"
-          ]
-        },
-        "post_text": "810 KİLOMETRE MENZİL, ASIL İDDİASI BU DEĞİL.\n\nVolvo EX60, Kasım'da satışa çıkıyor. P12 AWD Electric versiyonu 810 km menzil sunarken, 400 kW hızlı şarjda 10 dakikada 340 km'ye kadar menzil vaat ediyor.\n\nBuradaki asıl iddia, 10 yıllık batarya garantisi.\n\nMenzil rakamları yüksek evet, ama Volvo bu kez güveni rakamla değil, süreyle satıyor.",
-        "story_card_title": "VOLVO EX60 İDDİASINI MENZİLLE DEĞİL, GARANTİYLE YAPIYOR!",
-        "story_card_subtitle": "Kasım ayında satışa çıkacak yeni Volvo EX60, elektrikli otomobillerdeki en büyük endişelerden birine noktayı koyuyor. En uzun menzilli versiyonu 810 kilometreye ulaşırken, asıl dikkat çeken nokta 10 yıllık batarya garantisi. Bu cömert garanti, elektrikli sürüşe geçmek isteyenler için önemli bir güven unsuru oluşturuyor. Hızlı şarj istasyonlarında 10 dakikada 340 kilometre menzil kazanma imkanı da cabası.",
-        "image_path": "/tmp/otoxtra_img_03ark_6t.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_03ark_6t.jpg",
-          "/tmp/otoxtra_img_cbt0504u.jpg",
-          "/tmp/otoxtra_img_h8hsqku4.jpg",
-          "/tmp/otoxtra_img_4v0hoeyb.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-28T06:02:38.783985+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122185547432916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18123199078928448",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "982605234312059",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-10-28T06:03:19.012396+03:00"
+      "updated_at": null
     }
   }
 }
