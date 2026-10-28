@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-28-07:00",
+  "run_id": "2026-10-28-08:00",
   "status": "error",
-  "started_at": "2026-10-28T07:00:46.864223+03:00",
-  "updated_at": "2026-10-28T07:03:02.019437+03:00",
+  "started_at": "2026-10-28T08:00:41.374966+03:00",
+  "updated_at": "2026-10-28T08:02:35.532531+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -74,11 +74,11 @@
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/eozpeynirci/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.meowing.monster"
           },
           "Dolu Batarya": {
             "status": "ok",
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
             "attempts": 1,
             "instance": ""
           },
@@ -144,8 +144,8 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 137,
-            "after_keyword": 79,
+            "found": 147,
+            "after_keyword": 86,
             "after_time": 4,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -153,8 +153,8 @@
           }
         },
         "metrics": {
-          "found": 137,
-          "after_keyword": 79,
+          "found": 147,
+          "after_keyword": 86,
           "after_time": 4,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-28T07:03:02.019437+03:00"
+      "updated_at": "2026-10-28T08:02:35.532531+03:00"
     },
     "score": {
       "status": "waiting",
