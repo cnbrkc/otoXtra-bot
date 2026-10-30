@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-10-30-07:01",
+  "run_id": "2026-10-30-08:01",
   "status": "error",
-  "started_at": "2026-10-30T07:01:30.646375+03:00",
-  "updated_at": "2026-10-30T07:03:12.109308+03:00",
+  "started_at": "2026-10-30T08:01:22.561009+03:00",
+  "updated_at": "2026-10-30T08:06:25.458025+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /eozpeynirci/rss (Caused by NameResoluti",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": ""
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": ""
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.meowing.monster/ahmetcelik2016/rss",
+            "detail": "unknown_error: 503 Server Error: Service Unavailable for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -106,35 +106,35 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.kareem.one"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.kareem.one"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.kareem.one"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.kareem.one"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "otopodyum": {
             "status": "no_entries",
@@ -144,8 +144,8 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 140,
-            "after_keyword": 83,
+            "found": 120,
+            "after_keyword": 74,
             "after_time": 8,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -153,8 +153,8 @@
           }
         },
         "metrics": {
-          "found": 140,
-          "after_keyword": 83,
+          "found": 120,
+          "after_keyword": 74,
           "after_time": 8,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-10-30T07:03:12.109308+03:00"
+      "updated_at": "2026-10-30T08:06:25.458025+03:00"
     },
     "score": {
       "status": "waiting",
