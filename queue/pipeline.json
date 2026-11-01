@@ -1,34 +1,13 @@
 {
-  "run_id": "2026-11-01-19:00",
+  "run_id": "2026-11-01-20:00",
   "status": "completed",
-  "started_at": "2026-11-01T19:00:57.729416+03:00",
-  "updated_at": "2026-11-01T19:05:12.941499+03:00",
+  "started_at": "2026-11-01T20:00:55.572682+03:00",
+  "updated_at": "2026-11-01T20:04:28.291486+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
-          {
-            "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
-            "link": "https://www.log.com.tr/chery-international-baskani-zhang-guibing-cinli-otomobil-ureticilerinin-yaklasik-yuzde-90i-zarar-ediyor/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-01T13:56:06+00:00",
-            "summary": "Avustralya basınına konuşan Chery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor. Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor. Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "baskani-chery-cinli-ediyor-guibing-international-otomobil-ureticilerinin-yaklasik-yuzde-zarar-zhang"
-          },
           {
             "title": "Elektrikli Araç Şarj Ücretleri Kasım 2026: Evde ve İstasyonda Maliyet",
             "link": "https://shiftdelete.net/elektrikli-otomobil-sarj-ucretleri-2025",
@@ -49,6 +28,27 @@
             "trend_count": 1,
             "trend_bonus": 0,
             "topic_fingerprint": "2026-arac-elektrikli-evde-kasim-maliyet-sarj-stasyonda-ucretleri"
+          },
+          {
+            "title": "Çinli otomobil üreticilerinin yüzde 90'ı zararda",
+            "link": "https://shiftdelete.net/cinli-otomobil-ureticileri-zarar-ediyor",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-01T14:53:58+00:00",
+            "summary": "Chery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90'ının zarar ettiğini açıkladı. Artan geliştirme maliyetleri birçok markanın sonunu getirebilir.",
+            "image_url": "https://ares.shiftdelete.net/static/sdnweb-haberbotu/hb/d7d38aaa09058441414d5796851bf7b221f292ff.webp",
+            "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-haberbotu/hb/d7d38aaa09058441414d5796851bf7b221f292ff.webp",
+            "image_candidates": [
+              "https://ares.shiftdelete.net/static/sdnweb-haberbotu/hb/d7d38aaa09058441414d5796851bf7b221f292ff.webp"
+            ],
+            "image_source": "rss",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cinli-otomobil-ureticilerinin-yuzde-zararda"
           },
           {
             "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
@@ -133,7 +133,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.kareem.one', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -154,7 +154,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.zebes.info/ahmetcelik2016/rss",
+            "detail": "unknown_error: 503 Server Error: Service Unavailable for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -198,7 +198,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kabii.moe"
+            "instance": "nitter.meowing.monster"
           },
           "otopodyum": {
             "status": "ok",
@@ -209,127 +209,127 @@
           },
           "_metrics": {
             "found": 145,
-            "after_keyword": 92,
-            "after_time": 11,
-            "after_posted": 5,
+            "after_keyword": 91,
+            "after_time": 9,
+            "after_posted": 3,
             "after_duplicate": 3,
-            "after_shared_variant_cooldown": 5
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
           "found": 145,
-          "after_keyword": 92,
-          "after_time": 11,
-          "after_posted": 5,
+          "after_keyword": 91,
+          "after_time": 9,
+          "after_posted": 3,
           "after_duplicate": 3,
-          "after_shared_variant_cooldown": 5
+          "after_shared_variant_cooldown": 3
         }
       },
       "error": null,
-      "updated_at": "2026-11-01T19:04:02.084416+03:00"
+      "updated_at": "2026-11-01T20:02:57.157621+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
-          "link": "https://www.log.com.tr/chery-international-baskani-zhang-guibing-cinli-otomobil-ureticilerinin-yaklasik-yuzde-90i-zarar-ediyor/",
+          "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
+          "link": "https://shiftdelete.net/volkswagen-turkiye-montaj-cin-modelleri-iddia",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T13:56:06+00:00",
-          "summary": "Avustralya basınına konuşan Chery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor. Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor. Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
+          "published": "2026-11-01T14:38:36+00:00",
+          "summary": "Volkswagen Türkiye montaj sürecinde Çin'de geliştirilen modellerin kit halinde getirilip monte edilebileceği iddia edildi. Doğuş Otomotiv niyet mektubunu geçen günlerde imzalamıştı.",
+          "image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg"
+            "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp"
           ],
           "image_source": "rss",
-          "source_name": "Log",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "baskani-chery-cinli-ediyor-guibing-international-otomobil-ureticilerinin-yaklasik-yuzde-zarar-zhang",
-          "base_ai_score": 85,
+          "topic_fingerprint": "cin-modellerini-turkiye-uretebilir-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
+            "etkilesim_potansiyeli": 23,
             "benzersizlik": 17,
-            "gundem_gucu": 19,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 10
           },
-          "score": 88,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Sektörün içinden bir ismin yaptığı bu çarpıcı itiraf, küresel otomotiv pazarındaki rekabeti gözler önüne serdiği için sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Hem Volkswagen markasının gücü hem de Türkiye otomotiv pazarı için stratejik ve sürpriz bir gelişme barındırdığı için çok yüksek paylaşılabilirlik ve gündem gücüne sahip.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1
         },
-        "score": 88,
-        "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
+        "score": 86,
+        "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 7,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
+          "etkilesim_potansiyeli": 23,
           "benzersizlik": 17,
-          "gundem_gucu": 19,
+          "gundem_gucu": 16,
           "paylasilabilirlik": 10
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Sektörün içinden bir ismin yaptığı bu çarpıcı itiraf, küresel otomotiv pazarındaki rekabeti gözler önüne serdiği için sosyal medyada büyük yankı uyandırır.",
+        "score_explanation": "Hem Volkswagen markasının gücü hem de Türkiye otomotiv pazarı için stratejik ve sürpriz bir gelişme barındırdığı için çok yüksek paylaşılabilirlik ve gündem gücüne sahip.",
         "skipped": false,
         "threshold": 40,
         "top_articles": [
           {
-            "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
-            "score": 88,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 17,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 10
-            }
-          },
-          {
             "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
-            "score": 82,
+            "score": 86,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 16,
+              "etkilesim_potansiyeli": 23,
+              "benzersizlik": 17,
               "gundem_gucu": 16,
               "paylasilabilirlik": 10
             }
           },
           {
-            "title": "Elektrikli Araç Şarj Ücretleri Kasım 2026: Evde ve İstasyonda Maliyet",
-            "score": 66,
+            "title": "Çinli otomobil üreticilerinin yüzde 90'ı zararda",
+            "score": 83,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 14,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 18,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Elektrikli Araç Şarj Ücretleri Kasım 2026: Evde ve İstasyonda Maliyet",
+            "score": 68,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
               "benzersizlik": 10,
               "gundem_gucu": 13,
-              "paylasilabilirlik": 9
+              "paylasilabilirlik": 5
             }
           }
         ],
         "scored_count": 3,
         "cooldown_candidates": [
           {
-            "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
-            "link": "https://shiftdelete.net/volkswagen-turkiye-montaj-cin-modelleri-iddia",
-            "score": 82,
+            "title": "Çinli otomobil üreticilerinin yüzde 90'ı zararda",
+            "link": "https://shiftdelete.net/cinli-otomobil-ureticileri-zarar-ediyor",
+            "score": 83,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "cin-modellerini-turkiye-uretebilir-volkswagen"
+            "topic_fingerprint": "cinli-otomobil-ureticilerinin-yuzde-zararda"
           },
           {
             "title": "Elektrikli Araç Şarj Ücretleri Kasım 2026: Evde ve İstasyonda Maliyet",
             "link": "https://shiftdelete.net/elektrikli-otomobil-sarj-ucretleri-2025",
-            "score": 66,
+            "score": 68,
             "score_reason": "ai_scored",
             "source_name": "ShiftDelete Otomobil",
             "topic_fingerprint": "2026-arac-elektrikli-evde-kasim-maliyet-sarj-stasyonda-ucretleri"
@@ -337,138 +337,149 @@
         ]
       },
       "error": null,
-      "updated_at": "2026-11-01T19:04:07.013234+03:00"
+      "updated_at": "2026-11-01T20:03:35.743054+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
-          "link": "https://www.log.com.tr/chery-international-baskani-zhang-guibing-cinli-otomobil-ureticilerinin-yaklasik-yuzde-90i-zarar-ediyor/",
+          "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
+          "link": "https://shiftdelete.net/volkswagen-turkiye-montaj-cin-modelleri-iddia",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T13:56:06+00:00",
-          "summary": "Avustralya basınına konuşan Chery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor. Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor. Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
+          "published": "2026-11-01T14:38:36+00:00",
+          "summary": "Volkswagen Türkiye montaj sürecinde Çin'de geliştirilen modellerin kit halinde getirilip monte edilebileceği iddia edildi. Doğuş Otomotiv niyet mektubunu geçen günlerde imzalamıştı.",
+          "image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg"
+            "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp"
           ],
           "image_source": "rss",
-          "source_name": "Log",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "baskani-chery-cinli-ediyor-guibing-international-otomobil-ureticilerinin-yaklasik-yuzde-zarar-zhang",
-          "base_ai_score": 85,
+          "topic_fingerprint": "cin-modellerini-turkiye-uretebilir-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
+            "etkilesim_potansiyeli": 23,
             "benzersizlik": 17,
-            "gundem_gucu": 19,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 10
           },
-          "score": 88,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Sektörün içinden bir ismin yaptığı bu çarpıcı itiraf, küresel otomotiv pazarındaki rekabeti gözler önüne serdiği için sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Hem Volkswagen markasının gücü hem de Türkiye otomotiv pazarı için stratejik ve sürpriz bir gelişme barındırdığı için çok yüksek paylaşılabilirlik ve gündem gücüne sahip.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Avustralya basınına konuşanChery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor.Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor."
+          "full_text": "Volkswagen Türkiye montaj planında Çin'de geliştirilen modellerin parçalara ayrılmış kitlerle Doğuş Otomotiv eliyle birleştirilebileceği iddia edildi. Volkswagen Türkiye montaj planına dair yeni iddialar ortaya çıktı. Doğuş Otomotiv, geçtiğimiz günlerde Volkswagen ile Türkiye'de binek otomobil üretimine yönelik bir niyet mektubu imzalamıştı. Ancak sürecin nasıl işleyeceği şimdiye kadar belirsizdi. Bu nedenle gelen yeni bilgiler ilgi çekti. Automobilwoche'nin iddiasına göre süreç şöyle ilerleyebilir. Çin'de geliştirilen bazıVolkswagenmodelleri, parçalarına ayrılmış kitler halinde hazırlanacak. Ardından bu kitler Türkiye'de monte edilecek. Yani araçlar bitmiş ürün olarak değil, parça seti olarak gelecek. Bu yöntemde araç tamamen üretilmiş halde gelmiyor. Çünkü parçalar ülkeye ayrı ayrı getiriliyor ve burada birleştiriliyor. Dolayısıyla tam ölçekli bir fabrika yatırımından farklı bir model söz konusu. Öte yandan Volkswagen Türkiye montaj iddiası, henüz açıklanmış bir üretim takvimine bağlı değil. Başka bir yayına açıklama yapan Volkswagen, çok fazla detay vermedi. Ancak Avrupa dışındaki üretim tesislerinden kısmen monte edilmiş halde çıkacak araçların Türkiye pazarına gönderilmesi seçeneğinin incelendiğini doğruladı. Bu nedenle iddianın ana çerçevesi şirket tarafından da teyit edilmiş oldu. Doğuş Otomotiv'in resmi açıklaması ise şu ifadeleri içeriyordu. Şirket ile Volkswagen Grup Şirketleri arasında, binek otomobillerin Türkiye'de üretilebilmesine yönelik seçeneklerin değerlendirilmesi amacıyla niyet mektubu imzalandı. Üstelik gelişme, Kamuyu Aydınlatma Platformu (KAP) üzerinden de paylaşıldı. Açıklamaya göre işbirliğiyle Türkiye pazarına katma değerli ve yeni teknolojilere uygun ürünler sunulması öngörülüyor. Ayrıca ülkenin otomotiv sektörünün gelişimine katkı sağlanması hedefleniyor. Bu hedefler, Volkswagen Türkiye montaj tartışmasının resmi çerçevesini oluşturuyor. Volkswagen'in Türkiye ile geçmişte de bir fabrika planı vardı. Şirket, Manisa'da kurmayı planladığı fabrika projesini 1 Temmuz 2020 tarihinde resmi olarak iptal etmişti. Bu yüzden yeni gelişme sektörde ayrıca ilgiyle karşılanıyor. Şu an için elde yalnızca bir niyet mektubu ve iddialar var. Ancak Doğuş Otomotiv, sürece ilişkin yeni gelişmeleri ilgili mevzuat ve kamuyu aydınlatma yükümlülükleri doğrultusunda paylaşacağını duyurdu. Üretim takvimi ve model bilgileri ise henüz açıklanmadı. Bu nedenle Volkswagen Türkiye montaj planının ayrıntıları için yeni açıklamalar bekleniyor. Haberde hata mı var?Bize bildirin Sen Volkswagen'in Türkiye'de Çin'de geliştirilen modelleri kit olarak monte etmesine sıcak mı bakarsın, yoksa yerli üretim için tam fabrika beklemeyi mi tercih ederdin? Eskisi kadar araba satamayan Wolkswagen aslında Çin'de üretilen araçları Türkiye'de üretmiş gibi gösterip montaj yaparak yüksek gümrük vergisinden kurtulacak. Üllemize katma değeri olmayan, sadece kendi faydalarına olan bir yatırım. Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
         },
-        "post_text": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN HİKAYESİ YENİ BAŞLIYOR.\n\nChery International Başkanı Zhang Guibing, Çinli otomobil markalarının yaklaşık %90'ının zarar ettiğini açıkladı. Geliştirme maliyetleri yüzünden birçok üretici ayakta kalamayacak.\n\nAlixPartners raporuna göre 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr etti. 2030'a kadar sadece 7'si zarardan kurtulabilecek.\n\nBu durum, Çin dışına açılan markaların rekabeti nasıl yöneteceğini gösterecek.",
-        "post_text_length": 470,
-        "story_card_title": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN SONU GELDİ!",
-        "story_card_subtitle": "Chery International Başkanı Zhang Guibing'den ezber bozan açıklamalar geldi. Çinli otomobil markalarının yaklaşık %90'ının zarar ettiği ve geliştirme maliyetlerinin birçok üreticiyi ayakta tutamayacağı ortaya çıktı. AlixPartners'ın raporu ise bu tabloyu daha da netleştiriyor: 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr ederken, 2030'a kadar bu sayının 7'ye ulaşması bekleniyor.",
+        "post_text": "TÜRKİYE'DE ÜRETİLECEK VOLKSWAGEN'LERİN ÇİN'DEN GELECEK OLMASI YENİ BİR TARTIŞMA BAŞLATACAK.\n\nDoğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için iddia net: Çin'de geliştirilen araçlar, kit halinde Türkiye'ye gelip burada monte edilecek.\n\nYani tam teşekküllü fabrika yerine montaj hattı kurulacak. Bu durum, \"yerli üretim\" algısını baştan sorgulatır.\n\nTürkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
+        "post_text_length": 454,
+        "story_card_title": "Volkswagen Türkiye'de Çin mi üretecek!",
+        "story_card_subtitle": "Doğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için bomba bir iddia ortaya atıldı. Çin'de geliştirilen araçların kit halinde Türkiye'ye gelip burada monte edileceği konuşuluyor. Bu durum, \"yerli üretim\" algısını baştan sorgulatacak. Türkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-11-01T19:04:10.337383+03:00"
+      "updated_at": "2026-11-01T20:03:39.170716+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.”",
-          "link": "https://www.log.com.tr/chery-international-baskani-zhang-guibing-cinli-otomobil-ureticilerinin-yaklasik-yuzde-90i-zarar-ediyor/",
+          "title": "Volkswagen Türkiye'de Çin modellerini üretebilir",
+          "link": "https://shiftdelete.net/volkswagen-turkiye-montaj-cin-modelleri-iddia",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T13:56:06+00:00",
-          "summary": "Avustralya basınına konuşan Chery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor. Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor. Chery International Başkanı Zhang Guibing: “Çinli otomobil üreticilerinin yaklaşık yüzde 90’ı zarar ediyor.” yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg",
+          "published": "2026-11-01T14:38:36+00:00",
+          "summary": "Volkswagen Türkiye montaj sürecinde Çin'de geliştirilen modellerin kit halinde getirilip monte edilebileceği iddia edildi. Doğuş Otomotiv niyet mektubunu geçen günlerde imzalamıştı.",
+          "image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2025/11/Yeni-Chery-TIGGO8-3-660x371.jpg"
+            "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp"
           ],
-          "image_source": "smart_search",
-          "source_name": "Log",
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "baskani-chery-cinli-ediyor-guibing-international-otomobil-ureticilerinin-yaklasik-yuzde-zarar-zhang",
-          "base_ai_score": 85,
+          "topic_fingerprint": "cin-modellerini-turkiye-uretebilir-volkswagen",
+          "base_ai_score": 82,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
+            "etkilesim_potansiyeli": 23,
             "benzersizlik": 17,
-            "gundem_gucu": 19,
+            "gundem_gucu": 16,
             "paylasilabilirlik": 10
           },
-          "score": 88,
+          "score": 86,
           "score_reason": "ai_scored",
-          "score_explanation": "Sektörün içinden bir ismin yaptığı bu çarpıcı itiraf, küresel otomotiv pazarındaki rekabeti gözler önüne serdiği için sosyal medyada büyük yankı uyandırır.",
+          "score_explanation": "Hem Volkswagen markasının gücü hem de Türkiye otomotiv pazarı için stratejik ve sürpriz bir gelişme barındırdığı için çok yüksek paylaşılabilirlik ve gündem gücüne sahip.",
           "freshness_bonus": 7,
           "trend_bonus_raw": 1,
-          "full_text": "Avustralya basınına konuşanChery International Başkanı Zhang Guibing, Çinli otomobil üreticilerinin yaklaşık yüzde 90’ının zarar ettiğini ve artan geliştirme maliyetleri nedeniyle birçok üreticinin hayatta kalamayacağını söyledi. AlixPartners’ın Haziran 2026 tarihli Küresel Otomotiv Görünümü raporuna göre 2025’te, elektrikli / elektrik destekli araçlardan oluşan yeni enerjili araç (new energy vehicles) segmentine odaklanan 30 Çinli üreticiden yalnızca üçü yılı genel olarak kârla kapatabildi. AlixPartners, bu 30 üreticiden sadece yedisinin 2030’a kadar zarardan kurtulabileceğini, zayıf şirketlerin ise piyasadan çekileceğini ya da satın alma hedefi haline geleceğini öngörüyor.Daha fazla müşteriye ulaşmak adına Çin dışındaki satışlarına büyük ağırlık vermeye başlayan Çinli üreticiler, geçtiğimiz yıl yaklaşık 35 milyon araç üretimi gerçekleştirdi. Ülkedeki toplam yıllık üretim kapasitesinin yaklaşık 55 milyon olduğu hesaplanıyor.",
-          "post_text_for_card": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN HİKAYESİ YENİ BAŞLIYOR.\n\nChery International Başkanı Zhang Guibing, Çinli otomobil markalarının yaklaşık %90'ının zarar ettiğini açıkladı. Geliştirme maliyetleri yüzünden birçok üretici ayakta kalamayacak.\n\nAlixPartners raporuna göre 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr etti. 2030'a kadar sadece 7'si zarardan kurtulabilecek.\n\nBu durum, Çin dışına açılan markaların rekabeti nasıl yöneteceğini gösterecek.",
-          "story_card_title": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN SONU GELDİ!",
-          "story_card_subtitle": "Chery International Başkanı Zhang Guibing'den ezber bozan açıklamalar geldi. Çinli otomobil markalarının yaklaşık %90'ının zarar ettiği ve geliştirme maliyetlerinin birçok üreticiyi ayakta tutamayacağı ortaya çıktı. AlixPartners'ın raporu ise bu tabloyu daha da netleştiriyor: 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr ederken, 2030'a kadar bu sayının 7'ye ulaşması bekleniyor.",
+          "full_text": "Volkswagen Türkiye montaj planında Çin'de geliştirilen modellerin parçalara ayrılmış kitlerle Doğuş Otomotiv eliyle birleştirilebileceği iddia edildi. Volkswagen Türkiye montaj planına dair yeni iddialar ortaya çıktı. Doğuş Otomotiv, geçtiğimiz günlerde Volkswagen ile Türkiye'de binek otomobil üretimine yönelik bir niyet mektubu imzalamıştı. Ancak sürecin nasıl işleyeceği şimdiye kadar belirsizdi. Bu nedenle gelen yeni bilgiler ilgi çekti. Automobilwoche'nin iddiasına göre süreç şöyle ilerleyebilir. Çin'de geliştirilen bazıVolkswagenmodelleri, parçalarına ayrılmış kitler halinde hazırlanacak. Ardından bu kitler Türkiye'de monte edilecek. Yani araçlar bitmiş ürün olarak değil, parça seti olarak gelecek. Bu yöntemde araç tamamen üretilmiş halde gelmiyor. Çünkü parçalar ülkeye ayrı ayrı getiriliyor ve burada birleştiriliyor. Dolayısıyla tam ölçekli bir fabrika yatırımından farklı bir model söz konusu. Öte yandan Volkswagen Türkiye montaj iddiası, henüz açıklanmış bir üretim takvimine bağlı değil. Başka bir yayına açıklama yapan Volkswagen, çok fazla detay vermedi. Ancak Avrupa dışındaki üretim tesislerinden kısmen monte edilmiş halde çıkacak araçların Türkiye pazarına gönderilmesi seçeneğinin incelendiğini doğruladı. Bu nedenle iddianın ana çerçevesi şirket tarafından da teyit edilmiş oldu. Doğuş Otomotiv'in resmi açıklaması ise şu ifadeleri içeriyordu. Şirket ile Volkswagen Grup Şirketleri arasında, binek otomobillerin Türkiye'de üretilebilmesine yönelik seçeneklerin değerlendirilmesi amacıyla niyet mektubu imzalandı. Üstelik gelişme, Kamuyu Aydınlatma Platformu (KAP) üzerinden de paylaşıldı. Açıklamaya göre işbirliğiyle Türkiye pazarına katma değerli ve yeni teknolojilere uygun ürünler sunulması öngörülüyor. Ayrıca ülkenin otomotiv sektörünün gelişimine katkı sağlanması hedefleniyor. Bu hedefler, Volkswagen Türkiye montaj tartışmasının resmi çerçevesini oluşturuyor. Volkswagen'in Türkiye ile geçmişte de bir fabrika planı vardı. Şirket, Manisa'da kurmayı planladığı fabrika projesini 1 Temmuz 2020 tarihinde resmi olarak iptal etmişti. Bu yüzden yeni gelişme sektörde ayrıca ilgiyle karşılanıyor. Şu an için elde yalnızca bir niyet mektubu ve iddialar var. Ancak Doğuş Otomotiv, sürece ilişkin yeni gelişmeleri ilgili mevzuat ve kamuyu aydınlatma yükümlülükleri doğrultusunda paylaşacağını duyurdu. Üretim takvimi ve model bilgileri ise henüz açıklanmadı. Bu nedenle Volkswagen Türkiye montaj planının ayrıntıları için yeni açıklamalar bekleniyor. Haberde hata mı var?Bize bildirin Sen Volkswagen'in Türkiye'de Çin'de geliştirilen modelleri kit olarak monte etmesine sıcak mı bakarsın, yoksa yerli üretim için tam fabrika beklemeyi mi tercih ederdin? Eskisi kadar araba satamayan Wolkswagen aslında Çin'de üretilen araçları Türkiye'de üretmiş gibi gösterip montaj yaparak yüksek gümrük vergisinden kurtulacak. Üllemize katma değeri olmayan, sadece kendi faydalarına olan bir yatırım. Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
+          "post_text_for_card": "TÜRKİYE'DE ÜRETİLECEK VOLKSWAGEN'LERİN ÇİN'DEN GELECEK OLMASI YENİ BİR TARTIŞMA BAŞLATACAK.\n\nDoğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için iddia net: Çin'de geliştirilen araçlar, kit halinde Türkiye'ye gelip burada monte edilecek.\n\nYani tam teşekküllü fabrika yerine montaj hattı kurulacak. Bu durum, \"yerli üretim\" algısını baştan sorgulatır.\n\nTürkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
+          "story_card_title": "Volkswagen Türkiye'de Çin mi üretecek!",
+          "story_card_subtitle": "Doğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için bomba bir iddia ortaya atıldı. Çin'de geliştirilen araçların kit halinde Türkiye'ye gelip burada monte edileceği konuşuluyor. Bu durum, \"yerli üretim\" algısını baştan sorgulatacak. Türkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
           "image_sources": [
-            "smart_search"
+            "article_img",
+            "article_img",
+            "meta_og",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://shiftdelete.net/static/img/content/26-11/01/whatsapp-image-2026-11-01-at-174317-1.jpeg",
+            "https://ares.shiftdelete.net/2025/02/Elektrikli-otomobil-sarj-ucretleri-2.png",
+            "https://ares.shiftdelete.net/2026/10/volkswagen-2027-yilinda-uc-yeni-elektrikli-modelini-turkiye-ye-getirecek.webp",
+            "https://ares.shiftdelete.net/static/sdnweb-haberbotu/hb/3bf8b7e09937254612d5e72f8b066ae40e2f2763.webp"
+          ]
         },
-        "post_text": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN HİKAYESİ YENİ BAŞLIYOR.\n\nChery International Başkanı Zhang Guibing, Çinli otomobil markalarının yaklaşık %90'ının zarar ettiğini açıkladı. Geliştirme maliyetleri yüzünden birçok üretici ayakta kalamayacak.\n\nAlixPartners raporuna göre 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr etti. 2030'a kadar sadece 7'si zarardan kurtulabilecek.\n\nBu durum, Çin dışına açılan markaların rekabeti nasıl yöneteceğini gösterecek.",
-        "story_card_title": "YÜZDE 90 ZARAR EDEN ÇİNLİ ÜRETİCİLERİN SONU GELDİ!",
-        "story_card_subtitle": "Chery International Başkanı Zhang Guibing'den ezber bozan açıklamalar geldi. Çinli otomobil markalarının yaklaşık %90'ının zarar ettiği ve geliştirme maliyetlerinin birçok üreticiyi ayakta tutamayacağı ortaya çıktı. AlixPartners'ın raporu ise bu tabloyu daha da netleştiriyor: 2025'te 30 Çinli elektrikli araç üreticisinden sadece 3'ü kâr ederken, 2030'a kadar bu sayının 7'ye ulaşması bekleniyor.",
-        "image_path": "/tmp/otoxtra_img_qkt5vb3u.jpg",
+        "post_text": "TÜRKİYE'DE ÜRETİLECEK VOLKSWAGEN'LERİN ÇİN'DEN GELECEK OLMASI YENİ BİR TARTIŞMA BAŞLATACAK.\n\nDoğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için iddia net: Çin'de geliştirilen araçlar, kit halinde Türkiye'ye gelip burada monte edilecek.\n\nYani tam teşekküllü fabrika yerine montaj hattı kurulacak. Bu durum, \"yerli üretim\" algısını baştan sorgulatır.\n\nTürkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
+        "story_card_title": "Volkswagen Türkiye'de Çin mi üretecek!",
+        "story_card_subtitle": "Doğuş Otomotiv'in niyet mektubu imzaladığı Volkswagen modelleri için bomba bir iddia ortaya atıldı. Çin'de geliştirilen araçların kit halinde Türkiye'ye gelip burada monte edileceği konuşuluyor. Bu durum, \"yerli üretim\" algısını baştan sorgulatacak. Türkiye'de üretilen otomobilin \"nereli\" olduğu tanımı, artık eskisi kadar basit değil.",
+        "image_path": "/tmp/otoxtra_img_6zww7hoi.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_qkt5vb3u.jpg"
+          "/tmp/otoxtra_img_6zww7hoi.jpg",
+          "/tmp/otoxtra_img_qzh0gvz0.jpg",
+          "/tmp/otoxtra_img_ond6c9nf.jpg",
+          "/tmp/otoxtra_img_tc5xt4cu.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "article_img",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-11-01T19:04:37.907846+03:00"
+      "updated_at": "2026-11-01T20:03:40.865692+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122186144534916499",
+        "post_id": "678053852057751_122186149628916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18022140941944459",
+            "id": "18126509668917459",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "2140608619872858",
+            "id": "1445672831040275",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-11-01T19:05:12.941499+03:00"
+      "updated_at": "2026-11-01T20:04:28.291486+03:00"
     }
   }
 }
