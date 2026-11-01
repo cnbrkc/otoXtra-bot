@@ -1,33 +1,33 @@
 {
-  "run_id": "2026-11-01-08:00",
+  "run_id": "2026-11-01-09:00",
   "status": "completed",
-  "started_at": "2026-11-01T08:00:49.402599+03:00",
-  "updated_at": "2026-11-01T08:05:18.621395+03:00",
+  "started_at": "2026-11-01T09:00:49.022774+03:00",
+  "updated_at": "2026-11-01T09:05:30.675200+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
-            "link": "https://www.log.com.tr/yilin-ilk-9-ayinda-turkiyede-en-cok-satilan-skoda-modeli-kamiq-oldu/",
+            "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
+            "link": "https://shiftdelete.net/leapmotor-a10-tayland-tanitildi",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-11-01T08:00:49.436015+03:00",
-            "summary": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1 artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz […] Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
+            "published": "2026-11-01T05:45:02+00:00",
+            "summary": "Leapmotor A10, 30 Ekim'de Bangkok'ta düzenlenen etkinlikle Tayland pazarına giriş yaptı. Küçük elektrikli SUV, 450 km NEDC menzil ve 133 kW'a kadar hızlı şarj sunuyor.",
+            "image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
+            "rss_image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
             "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg"
+              "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg"
             ],
             "image_source": "rss",
-            "source_name": "LogDergisi",
+            "source_name": "ShiftDelete Otomobil",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "ayinda-kamiq-modeli-satilan-skoda-turkiye-yilin"
+            "topic_fingerprint": "450-a10-dakikada-leapmotor-menzil-sarj-tayland"
           }
         ],
         "count": 1,
@@ -91,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -100,19 +100,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.meowing.monster"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.meowing.monster"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -168,7 +168,7 @@
           "_metrics": {
             "found": 145,
             "after_keyword": 89,
-            "after_time": 8,
+            "after_time": 9,
             "after_posted": 1,
             "after_duplicate": 1,
             "after_shared_variant_cooldown": 1
@@ -177,77 +177,77 @@
         "metrics": {
           "found": 145,
           "after_keyword": 89,
-          "after_time": 8,
+          "after_time": 9,
           "after_posted": 1,
           "after_duplicate": 1,
           "after_shared_variant_cooldown": 1
         }
       },
       "error": null,
-      "updated_at": "2026-11-01T08:04:17.336672+03:00"
+      "updated_at": "2026-11-01T09:03:00.491807+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
-          "link": "https://www.log.com.tr/yilin-ilk-9-ayinda-turkiyede-en-cok-satilan-skoda-modeli-kamiq-oldu/",
+          "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
+          "link": "https://shiftdelete.net/leapmotor-a10-tayland-tanitildi",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T08:00:49.436015+03:00",
-          "summary": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1 artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz […] Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
+          "published": "2026-11-01T05:45:02+00:00",
+          "summary": "Leapmotor A10, 30 Ekim'de Bangkok'ta düzenlenen etkinlikle Tayland pazarına giriş yaptı. Küçük elektrikli SUV, 450 km NEDC menzil ve 133 kW'a kadar hızlı şarj sunuyor.",
+          "image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
+          "rss_image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg"
+            "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "ayinda-kamiq-modeli-satilan-skoda-turkiye-yilin",
-          "base_ai_score": 42,
+          "topic_fingerprint": "450-a10-dakikada-leapmotor-menzil-sarj-tayland",
+          "base_ai_score": 48,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 10,
+            "gundem_gucu": 9,
             "paylasilabilirlik": 4
           },
-          "score": 49,
+          "score": 55,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel pazar satış verileri, standart marka performansı ve rutin istatistikler olduğu için viral potansiyeli sınırlı.",
+          "score_explanation": "Yeni bir elektrikli modelin tanıtımı ve hızlı şarj gibi teknik detaylar içermesine rağmen, Çinli üreticinin bölgesel bir lansmanı olması küresel sosyal medya için orta düzeyde ilgi çekiyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 49,
-        "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
+        "score": 55,
+        "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
         "trend_count": 1,
         "trend_bonus": 1,
         "freshness_bonus": 10,
         "score_breakdown": {
           "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 7,
+          "etkilesim_potansiyeli": 12,
+          "benzersizlik": 10,
+          "gundem_gucu": 9,
           "paylasilabilirlik": 4
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Yerel pazar satış verileri, standart marka performansı ve rutin istatistikler olduğu için viral potansiyeli sınırlı.",
+        "score_explanation": "Yeni bir elektrikli modelin tanıtımı ve hızlı şarj gibi teknik detaylar içermesine rağmen, Çinli üreticinin bölgesel bir lansmanı olması küresel sosyal medya için orta düzeyde ilgi çekiyor.",
         "skipped": false,
-        "threshold": 30,
+        "threshold": 40,
         "top_articles": [
           {
-            "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
-            "score": 49,
+            "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
+            "score": 55,
             "score_breakdown": {
               "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 7,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 10,
+              "gundem_gucu": 9,
               "paylasilabilirlik": 4
             }
           }
@@ -256,138 +256,149 @@
         "cooldown_candidates": []
       },
       "error": null,
-      "updated_at": "2026-11-01T08:04:18.712212+03:00"
+      "updated_at": "2026-11-01T09:03:02.033291+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
-          "link": "https://www.log.com.tr/yilin-ilk-9-ayinda-turkiyede-en-cok-satilan-skoda-modeli-kamiq-oldu/",
+          "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
+          "link": "https://shiftdelete.net/leapmotor-a10-tayland-tanitildi",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T08:00:49.436015+03:00",
-          "summary": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1 artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz […] Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
+          "published": "2026-11-01T05:45:02+00:00",
+          "summary": "Leapmotor A10, 30 Ekim'de Bangkok'ta düzenlenen etkinlikle Tayland pazarına giriş yaptı. Küçük elektrikli SUV, 450 km NEDC menzil ve 133 kW'a kadar hızlı şarj sunuyor.",
+          "image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
+          "rss_image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg"
+            "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg"
           ],
           "image_source": "rss",
-          "source_name": "LogDergisi",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "ayinda-kamiq-modeli-satilan-skoda-turkiye-yilin",
-          "base_ai_score": 42,
+          "topic_fingerprint": "450-a10-dakikada-leapmotor-menzil-sarj-tayland",
+          "base_ai_score": 48,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 10,
+            "gundem_gucu": 9,
             "paylasilabilirlik": 4
           },
-          "score": 49,
+          "score": 55,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel pazar satış verileri, standart marka performansı ve rutin istatistikler olduğu için viral potansiyeli sınırlı.",
+          "score_explanation": "Yeni bir elektrikli modelin tanıtımı ve hızlı şarj gibi teknik detaylar içermesine rağmen, Çinli üreticinin bölgesel bir lansmanı olması küresel sosyal medya için orta düzeyde ilgi çekiyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz ayında 29 bin 494 adetlik satış gerçekleştiren marka, geçen yılın aynı dönemine göre pazar payını yaklaşık 1 puan artırarak yüzde 4,7 seviyesine yükseltti.Bu dönemde şirketin Türkiye’de en çok tercih edilen modeli 7 bin 713 adetlik satışla Kamiq oldu.Kamiq’i 6 bin 750 adetle Octavia ve 6 bin 626 adetle Superb takip etti. Yılın ilk dokuz ayında Kodiaq 2 bin 156 adetlik satışa ulaşırken, Scala 1.777, Karoq 1.729 ve Fabia 856 adetlik satışla markanın pazar payı artışına katkı sağladı. Bu dönemde Elroq ve Enyaq modellerinden ise 1.851 adetlik satış gerçekleşti."
+          "full_text": "Leapmotor A10, Tayland'da 19 bayide satış ağına girdi. Uzun menzilli sürüm 450 km NEDC menzil ve 133 kW DC şarj desteği sunuyor. Leapmotor A10, Tayland'da resmen tanıtıldı. Çinli üretici, küçük elektrikli SUV modelini 30 Ekim Cuma günü Bangkok'ta düzenlenen bir etkinlikle görücüye çıkardı. Model, uluslararası pazarlarda B03X adıyla biliniyor. Araç, Tayland'da şimdiden 19 bayide yerini aldı. Ancak şirket fiyatları ve teslimatların ne zaman başlayacağını henüz açıklamadı. Bu nedenle ülkedeki kullanıcıların fiyat için biraz daha beklemesi gerekecek. Yine de model, bayilerde görülebilecek durumda. Leapmotor A10, markanın Tayland'da daha önce sunduğu C10 ve B10 modellerinin ardından geliyor. Böylece şirket, ülkedeki ürün gamını küçük SUV sınıfıyla genişletiyor. Modelin uzun menzilli sürümü, NEDC ölçümüne göre 450 km menzil sunuyor. NEDC, araçların menzilini laboratuvar koşullarında ölçen ve gerçek kullanıma göre daha iyimser sonuç veren bir test döngüsü. Dolayısıyla günlük kullanımda menzil bir miktar düşük çıkabilir. Hızlı şarj tarafında ise araç 133 kW'a kadar DC şarjı, yani doğrudan akımla hızlı şarjı destekliyor. Belirli koşullarda batarya, yüzde 30'dan yüzde 80'e en kısa 16 dakikada dolabiliyor. Ancak batarya kapasitesi ve araç ölçüleri paylaşılmadı. Dolayısıyla Leapmotor A10'un Tayland sürümüne ait teknik tablonun tamamı için resmî fiyat listesini beklemek gerekiyor. Kabinin merkezinde 14,6 inçlik, 2.5K çözünürlüklü dokunmatik ekran bulunuyor. Ekran, Apple CarPlay ve Android Auto desteğiyle geliyor. Ayrıca araçta birden fazla sürüş destek özelliği yer alıyor. Ancak bu sistemlerin ayrıntıları henüz açıklanmadı. Pratik kullanım için de bir detay öne çıkıyor. Zemin altında 106 litrelik, yıkanabilir bir saklama bölmesi var. Böylece kirli ya da ıslak eşyalar kabinden ayrı taşınabiliyor. Üstelik bölme yıkanabildiği için temizliği de kolay. Leapmotor, Tayland'da yıl sonuna kadar satış ve servis noktası sayısını 30'a çıkarmayı hedefliyor. Bunun yanı sıra ülkede yerel bir yedek parça deposu ve teknik servis merkezi kurulacak. Şirket, güncellenen C10'u da 2026 içinde Tayland'da satışa sunmayı planlıyor. Markanın ülkedeki geçmişi de oldukça yeni. Nitekim C10, 2024'te Tayland'a gelmişti. B10 ise Ekim 2025'te satışa çıkmıştı. Ardından şirket, pazarın talebine göre yeni modeller getirmeye devam edeceğini açıkladı. İhracat tarafında da rakamlar dikkat çekici. Leapmotor, Eylül 2026'da yıllık yüzde 298,58 artışla 27.454 araç ihraç etti. İlk dokuz aydaki ihracat ise yüzde 322,46 artışla 159.572 adede ulaştı. Şirketin küresel teslimatları da eylülde 105.656 adetle rekor kırdı. İlk dokuz aydaki toplam teslimat ise yüzde 68,52 artışla 666.539 oldu. Öte yandan Çin dışındaki satış ve üretim hakları, yüzde 51'i Stellantis'e ait Leapmotor International'da bulunuyor. Dolayısıyla Leapmotor A10'un Tayland'daki satış süreci de bu ortaklık üzerinden yürüyor. Haberde hata mı var?Bize bildirin Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
         },
-        "post_text": "SKODA'NIN DÜNYA GENELİNDEKİ LİDERİ OCTAVIA OLSA DA TÜRKİYE'DE İŞLER DEĞİŞİYOR.\n\nSkoda, 2026'nın ilk 9 ayında dünya genelinde 812 bin 400 araç satışı yaptı; Octavia 138 bin adetle zirvede. Türkiye'de ise pazar daralmasına rağmen en çok satılan model Kamiq oldu.\n\nRakamlar global tercihlerle yerel dinamiklerin aynı olmadığını bir kez daha gösteriyor.\n\nPazar şartları, modelin kullanıcıya ne hissettirdiğinden daha belirleyici olabiliyor.",
-        "post_text_length": 436,
-        "story_card_title": "TÜRKİYE'DE SKODA'NIN KAHRAMANI KAMIQ ÇIKTI!",
-        "story_card_subtitle": "Skoda'nın yılın ilk dokuz ayındaki satış verileri Türkiye'de şaşırtıcı bir tablo ortaya koydu. Dünya genelinde Octavia liderken, Türkiye'de en çok tercih edilen model Kamiq oldu. Bu durum, global eğilimlerle yerel pazar dinamiklerinin ne kadar farklılaşabildiğini gözler önüne seriyor.",
+        "post_text": "450 KM MENZİL ARTIK TEK BAŞINA YETERLİ BİR SATIŞ ARGÜMANI DEĞİL.\n\nLeapmotor A10, Tayland'da tanıtıldı. 450 km NEDC menzili ve 133 kW hızlı şarjıyla dikkat çekiyor. Ama asıl soru şu: Bu menzilin günlük kullanımda ne kadarı kalacak?\n\nNEDC ölçümü laboratuvar ortamı için iyi, gerçek dünya için değil. Alıcı, kağıt üstündeki menzil yerine şarj istasyonunda geçireceği süreyi hesaplıyor.\n\nHızlı şarj süresi, menzilden daha çok konuşuluyor.",
+        "post_text_length": 434,
+        "story_card_title": "450 KM MENZİL ARTIK KİMSE İÇİN YETERLİ DEĞİL!",
+        "story_card_subtitle": "Leapmotor A10 Tayland'da sahneye çıktı ve kağıt üzerinde 450 km menzil sunduğunu iddia ediyor. Ancak asıl olay 16 dakikada şarj olması değil, bu menzilin gerçek hayatta ne kadar vaatlerini yerine getireceği. NEDC ölçümlerinin gerçeği yansıtmadığı ortadayken, hızlı şarj süreleri daha çok öne çıkıyor. Alıcıların gözü artık menzilden çok, şarj istasyonunda geçirilecek sürede.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-11-01T08:04:21.443532+03:00"
+      "updated_at": "2026-11-01T09:04:45.123596+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu",
-          "link": "https://www.log.com.tr/yilin-ilk-9-ayinda-turkiyede-en-cok-satilan-skoda-modeli-kamiq-oldu/",
+          "title": "Leapmotor A10 Tayland'da Tanıtıldı: 450 km Menzil, 16 Dakikada Şarj",
+          "link": "https://shiftdelete.net/leapmotor-a10-tayland-tanitildi",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-01T08:00:49.436015+03:00",
-          "summary": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1 artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz […] Yılın ilk 9 ayında Türkiye’de en çok satılan Skoda modeli Kamiq oldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg",
+          "published": "2026-11-01T05:45:02+00:00",
+          "summary": "Leapmotor A10, 30 Ekim'de Bangkok'ta düzenlenen etkinlikle Tayland pazarına giriş yaptı. Küçük elektrikli SUV, 450 km NEDC menzil ve 133 kW'a kadar hızlı şarj sunuyor.",
+          "image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
+          "rss_image_url": "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
           "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/10/2026-10-31_09-34-39_6tqiJ-660x371.jpg"
+            "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg"
           ],
-          "image_source": "smart_search",
-          "source_name": "LogDergisi",
+          "image_source": "meta_og",
+          "source_name": "ShiftDelete Otomobil",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "ayinda-kamiq-modeli-satilan-skoda-turkiye-yilin",
-          "base_ai_score": 42,
+          "topic_fingerprint": "450-a10-dakikada-leapmotor-menzil-sarj-tayland",
+          "base_ai_score": 48,
           "score_breakdown": {
             "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 7,
+            "etkilesim_potansiyeli": 12,
+            "benzersizlik": 10,
+            "gundem_gucu": 9,
             "paylasilabilirlik": 4
           },
-          "score": 49,
+          "score": 55,
           "score_reason": "ai_scored",
-          "score_explanation": "Yerel pazar satış verileri, standart marka performansı ve rutin istatistikler olduğu için viral potansiyeli sınırlı.",
+          "score_explanation": "Yeni bir elektrikli modelin tanıtımı ve hızlı şarj gibi teknik detaylar içermesine rağmen, Çinli üreticinin bölgesel bir lansmanı olması küresel sosyal medya için orta düzeyde ilgi çekiyor.",
           "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Skoda, 2026 yılının ilk dokuz ayına yönelik veriler paylaştı. Ocak-Eylül döneminde dünya genelinde 812 bin 400 aracı müşterileriyle buluşturan marka, teslimatlarını geçen yılın aynı dönemine göre yüzde 6.1artırdı. Avrupa’da 666 bin 798 adetlik satışa ulaşan şirket, Avrupa’nın en çok satan ikinci otomobil markası konumunu güçlendirdi. Şirketin satış gelirleri yüzde 3.5 oranında yükselirken, faaliyet karı yüzde 7.4 arttı. Marka, yılın ilk dokuz ayında dünya genelinde 203 bin 100 adet tamamen elektrikli ve plug-in hibrit araç satışı gerçekleştirerek bu alandaki satışlarını yüzde 34.7 artırdı. Avrupa’da ise tamamen elektrikli modellerin satışları yüzde 41.3 artışla 167 bin 400 adede ulaştı. Yılın ilk dokuz ayında 138 bin adetle Octavia, markanın dünya genelinde en çok tercih edilen otomobili olmayı sürdürdü. Octavia’yı 107 bin 800 adetle Kodiaq, 92 bin 200 adetle Kamiq ve Elroq takip ederken, Fabia’nın satışları 88 bin 100 adet olarak gerçekleşti. Skoda, Türkiye’de daralan otomotiv pazarına rağmen pazar payını artırdı. Yılın ilk dokuz ayında 29 bin 494 adetlik satış gerçekleştiren marka, geçen yılın aynı dönemine göre pazar payını yaklaşık 1 puan artırarak yüzde 4,7 seviyesine yükseltti.Bu dönemde şirketin Türkiye’de en çok tercih edilen modeli 7 bin 713 adetlik satışla Kamiq oldu.Kamiq’i 6 bin 750 adetle Octavia ve 6 bin 626 adetle Superb takip etti. Yılın ilk dokuz ayında Kodiaq 2 bin 156 adetlik satışa ulaşırken, Scala 1.777, Karoq 1.729 ve Fabia 856 adetlik satışla markanın pazar payı artışına katkı sağladı. Bu dönemde Elroq ve Enyaq modellerinden ise 1.851 adetlik satış gerçekleşti.",
-          "post_text_for_card": "SKODA'NIN DÜNYA GENELİNDEKİ LİDERİ OCTAVIA OLSA DA TÜRKİYE'DE İŞLER DEĞİŞİYOR.\n\nSkoda, 2026'nın ilk 9 ayında dünya genelinde 812 bin 400 araç satışı yaptı; Octavia 138 bin adetle zirvede. Türkiye'de ise pazar daralmasına rağmen en çok satılan model Kamiq oldu.\n\nRakamlar global tercihlerle yerel dinamiklerin aynı olmadığını bir kez daha gösteriyor.\n\nPazar şartları, modelin kullanıcıya ne hissettirdiğinden daha belirleyici olabiliyor.",
-          "story_card_title": "TÜRKİYE'DE SKODA'NIN KAHRAMANI KAMIQ ÇIKTI!",
-          "story_card_subtitle": "Skoda'nın yılın ilk dokuz ayındaki satış verileri Türkiye'de şaşırtıcı bir tablo ortaya koydu. Dünya genelinde Octavia liderken, Türkiye'de en çok tercih edilen model Kamiq oldu. Bu durum, global eğilimlerle yerel pazar dinamiklerinin ne kadar farklılaşabildiğini gözler önüne seriyor.",
+          "full_text": "Leapmotor A10, Tayland'da 19 bayide satış ağına girdi. Uzun menzilli sürüm 450 km NEDC menzil ve 133 kW DC şarj desteği sunuyor. Leapmotor A10, Tayland'da resmen tanıtıldı. Çinli üretici, küçük elektrikli SUV modelini 30 Ekim Cuma günü Bangkok'ta düzenlenen bir etkinlikle görücüye çıkardı. Model, uluslararası pazarlarda B03X adıyla biliniyor. Araç, Tayland'da şimdiden 19 bayide yerini aldı. Ancak şirket fiyatları ve teslimatların ne zaman başlayacağını henüz açıklamadı. Bu nedenle ülkedeki kullanıcıların fiyat için biraz daha beklemesi gerekecek. Yine de model, bayilerde görülebilecek durumda. Leapmotor A10, markanın Tayland'da daha önce sunduğu C10 ve B10 modellerinin ardından geliyor. Böylece şirket, ülkedeki ürün gamını küçük SUV sınıfıyla genişletiyor. Modelin uzun menzilli sürümü, NEDC ölçümüne göre 450 km menzil sunuyor. NEDC, araçların menzilini laboratuvar koşullarında ölçen ve gerçek kullanıma göre daha iyimser sonuç veren bir test döngüsü. Dolayısıyla günlük kullanımda menzil bir miktar düşük çıkabilir. Hızlı şarj tarafında ise araç 133 kW'a kadar DC şarjı, yani doğrudan akımla hızlı şarjı destekliyor. Belirli koşullarda batarya, yüzde 30'dan yüzde 80'e en kısa 16 dakikada dolabiliyor. Ancak batarya kapasitesi ve araç ölçüleri paylaşılmadı. Dolayısıyla Leapmotor A10'un Tayland sürümüne ait teknik tablonun tamamı için resmî fiyat listesini beklemek gerekiyor. Kabinin merkezinde 14,6 inçlik, 2.5K çözünürlüklü dokunmatik ekran bulunuyor. Ekran, Apple CarPlay ve Android Auto desteğiyle geliyor. Ayrıca araçta birden fazla sürüş destek özelliği yer alıyor. Ancak bu sistemlerin ayrıntıları henüz açıklanmadı. Pratik kullanım için de bir detay öne çıkıyor. Zemin altında 106 litrelik, yıkanabilir bir saklama bölmesi var. Böylece kirli ya da ıslak eşyalar kabinden ayrı taşınabiliyor. Üstelik bölme yıkanabildiği için temizliği de kolay. Leapmotor, Tayland'da yıl sonuna kadar satış ve servis noktası sayısını 30'a çıkarmayı hedefliyor. Bunun yanı sıra ülkede yerel bir yedek parça deposu ve teknik servis merkezi kurulacak. Şirket, güncellenen C10'u da 2026 içinde Tayland'da satışa sunmayı planlıyor. Markanın ülkedeki geçmişi de oldukça yeni. Nitekim C10, 2024'te Tayland'a gelmişti. B10 ise Ekim 2025'te satışa çıkmıştı. Ardından şirket, pazarın talebine göre yeni modeller getirmeye devam edeceğini açıkladı. İhracat tarafında da rakamlar dikkat çekici. Leapmotor, Eylül 2026'da yıllık yüzde 298,58 artışla 27.454 araç ihraç etti. İlk dokuz aydaki ihracat ise yüzde 322,46 artışla 159.572 adede ulaştı. Şirketin küresel teslimatları da eylülde 105.656 adetle rekor kırdı. İlk dokuz aydaki toplam teslimat ise yüzde 68,52 artışla 666.539 oldu. Öte yandan Çin dışındaki satış ve üretim hakları, yüzde 51'i Stellantis'e ait Leapmotor International'da bulunuyor. Dolayısıyla Leapmotor A10'un Tayland'daki satış süreci de bu ortaklık üzerinden yürüyor. Haberde hata mı var?Bize bildirin Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
+          "post_text_for_card": "450 KM MENZİL ARTIK TEK BAŞINA YETERLİ BİR SATIŞ ARGÜMANI DEĞİL.\n\nLeapmotor A10, Tayland'da tanıtıldı. 450 km NEDC menzili ve 133 kW hızlı şarjıyla dikkat çekiyor. Ama asıl soru şu: Bu menzilin günlük kullanımda ne kadarı kalacak?\n\nNEDC ölçümü laboratuvar ortamı için iyi, gerçek dünya için değil. Alıcı, kağıt üstündeki menzil yerine şarj istasyonunda geçireceği süreyi hesaplıyor.\n\nHızlı şarj süresi, menzilden daha çok konuşuluyor.",
+          "story_card_title": "450 KM MENZİL ARTIK KİMSE İÇİN YETERLİ DEĞİL!",
+          "story_card_subtitle": "Leapmotor A10 Tayland'da sahneye çıktı ve kağıt üzerinde 450 km menzil sunduğunu iddia ediyor. Ancak asıl olay 16 dakikada şarj olması değil, bu menzilin gerçek hayatta ne kadar vaatlerini yerine getireceği. NEDC ölçümlerinin gerçeği yansıtmadığı ortadayken, hızlı şarj süreleri daha çok öne çıkıyor. Alıcıların gözü artık menzilden çok, şarj istasyonunda geçirilecek sürede.",
           "image_sources": [
-            "smart_search"
+            "meta_og",
+            "article_img",
+            "article_img",
+            "article_img"
           ],
-          "prepared_image_count": 1,
-          "original_image_urls": []
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://ares.shiftdelete.net/static/img/content/26-11/01/bilim_leapmotor-a10-gorsel-1920.jpg",
+            "https://ares.shiftdelete.net/static/sdnweb-haberbotu/hb/7ed13f1471819c5e37786f2d4150c32c58e07d89.webp",
+            "https://ares.shiftdelete.net/2026/10/7e76ca42-330a-4418-a7d4-3f2b3e83e826-768x432.webp",
+            "https://ares.shiftdelete.net/2026/10/85d75e1c-420e-4e1a-9e40-a54b76ef841a-768x432.webp"
+          ]
         },
-        "post_text": "SKODA'NIN DÜNYA GENELİNDEKİ LİDERİ OCTAVIA OLSA DA TÜRKİYE'DE İŞLER DEĞİŞİYOR.\n\nSkoda, 2026'nın ilk 9 ayında dünya genelinde 812 bin 400 araç satışı yaptı; Octavia 138 bin adetle zirvede. Türkiye'de ise pazar daralmasına rağmen en çok satılan model Kamiq oldu.\n\nRakamlar global tercihlerle yerel dinamiklerin aynı olmadığını bir kez daha gösteriyor.\n\nPazar şartları, modelin kullanıcıya ne hissettirdiğinden daha belirleyici olabiliyor.",
-        "story_card_title": "TÜRKİYE'DE SKODA'NIN KAHRAMANI KAMIQ ÇIKTI!",
-        "story_card_subtitle": "Skoda'nın yılın ilk dokuz ayındaki satış verileri Türkiye'de şaşırtıcı bir tablo ortaya koydu. Dünya genelinde Octavia liderken, Türkiye'de en çok tercih edilen model Kamiq oldu. Bu durum, global eğilimlerle yerel pazar dinamiklerinin ne kadar farklılaşabildiğini gözler önüne seriyor.",
-        "image_path": "/tmp/otoxtra_img_1rbkdtbh.jpg",
+        "post_text": "450 KM MENZİL ARTIK TEK BAŞINA YETERLİ BİR SATIŞ ARGÜMANI DEĞİL.\n\nLeapmotor A10, Tayland'da tanıtıldı. 450 km NEDC menzili ve 133 kW hızlı şarjıyla dikkat çekiyor. Ama asıl soru şu: Bu menzilin günlük kullanımda ne kadarı kalacak?\n\nNEDC ölçümü laboratuvar ortamı için iyi, gerçek dünya için değil. Alıcı, kağıt üstündeki menzil yerine şarj istasyonunda geçireceği süreyi hesaplıyor.\n\nHızlı şarj süresi, menzilden daha çok konuşuluyor.",
+        "story_card_title": "450 KM MENZİL ARTIK KİMSE İÇİN YETERLİ DEĞİL!",
+        "story_card_subtitle": "Leapmotor A10 Tayland'da sahneye çıktı ve kağıt üzerinde 450 km menzil sunduğunu iddia ediyor. Ancak asıl olay 16 dakikada şarj olması değil, bu menzilin gerçek hayatta ne kadar vaatlerini yerine getireceği. NEDC ölçümlerinin gerçeği yansıtmadığı ortadayken, hızlı şarj süreleri daha çok öne çıkıyor. Alıcıların gözü artık menzilden çok, şarj istasyonunda geçirilecek sürede.",
+        "image_path": "/tmp/otoxtra_img_sct7p3dv.jpg",
         "image_paths": [
-          "/tmp/otoxtra_img_1rbkdtbh.jpg"
+          "/tmp/otoxtra_img_sct7p3dv.jpg",
+          "/tmp/otoxtra_img_p3s4ytsl.jpg",
+          "/tmp/otoxtra_img_nmkp8d24.jpg",
+          "/tmp/otoxtra_img_ghc8wh71.jpg"
         ],
-        "image_source": "smart_search",
-        "image_count": 1
+        "image_source": "meta_og",
+        "image_count": 4
       },
       "error": null,
-      "updated_at": "2026-11-01T08:04:45.532781+03:00"
+      "updated_at": "2026-11-01T09:04:46.732453+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122186078204916499",
+        "post_id": "678053852057751_122186083100916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "18118336279997727",
+            "id": "18603086755066898",
             "error": ""
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
             "success": true,
-            "id": "1653338593093838",
+            "id": "1091869793656263",
             "error": ""
           }
         }
       },
       "error": null,
-      "updated_at": "2026-11-01T08:05:18.621395+03:00"
+      "updated_at": "2026-11-01T09:05:30.675200+03:00"
     }
   }
 }
