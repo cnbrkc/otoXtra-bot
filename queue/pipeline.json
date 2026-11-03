@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-11-03-07:01",
-  "status": "completed",
-  "started_at": "2026-11-03T07:01:00.873931+03:00",
-  "updated_at": "2026-11-03T07:03:41.980961+03:00",
+  "run_id": "2026-11-03-08:00",
+  "status": "error",
+  "started_at": "2026-11-03T08:00:48.797072+03:00",
+  "updated_at": "2026-11-03T08:03:08.690559+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-            "link": "https://shiftdelete.net/yeni-renault-megane-tesla-model-y-rakip",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-03T04:00:00+00:00",
-            "summary": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor.",
-            "image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-            "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-            "image_candidates": [
-              "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp"
-            ],
-            "image_source": "rss",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "1400-elektrikli-megane-menzil-otonom-renault-surus-yenileniyor"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -112,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
             "attempts": 1,
             "instance": ""
           },
@@ -169,236 +147,46 @@
             "found": 143,
             "after_keyword": 91,
             "after_time": 7,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 143,
           "after_keyword": 91,
           "after_time": 7,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-03T07:02:54.905623+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-03T08:03:08.690559+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-          "link": "https://shiftdelete.net/yeni-renault-megane-tesla-model-y-rakip",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-03T04:00:00+00:00",
-          "summary": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor.",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp"
-          ],
-          "image_source": "rss",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "1400-elektrikli-megane-menzil-otonom-renault-surus-yenileniyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "1400 km menzil iddiası ve otonom sürüş özellikleri otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 85,
-        "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 16,
-          "gundem_gucu": 17,
-          "paylasilabilirlik": 10
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "1400 km menzil iddiası ve otonom sürüş özellikleri otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-            "score": 85,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 16,
-              "gundem_gucu": 17,
-              "paylasilabilirlik": 10
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-03T07:02:56.492927+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-          "link": "https://shiftdelete.net/yeni-renault-megane-tesla-model-y-rakip",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-03T04:00:00+00:00",
-          "summary": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor.",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp"
-          ],
-          "image_source": "rss",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "1400-elektrikli-megane-menzil-otonom-renault-surus-yenileniyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "1400 km menzil iddiası ve otonom sürüş özellikleri otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor. Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesilyeni Renault Meganemodeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor. Tamamen elden geçirilen tasarımı, gelişmiş elektrikli altyapısı ve modern teknolojileriyle dikkat çeken bu yeni model, Tesla Model Y gibi segmentin güçlü rakiplerine karşı meydan okumaya hazırlanıyor. AutoExpress platformunda paylaşılan dijital çizimler, aracın yüksek yapılı bir hatchback formunda olabileceğini gösteriyor. Yeni Clio'dan ilham alan aerodinamik silueti, ince far tasarımı ve modern LED aydınlatma detaylarıyla birleşerek aracın verimliliğini artırmayı amaçlıyor. Yeni Megane'ın altyapısı, hem tamamen elektrikli hem de menzil uzatıcılı (REx) versiyonları destekleyecek şekilde kurgulanıyor. Dört tekerlekten çekiş sistemiyle sunulması beklenen tamamen elektrikli versiyonun yaklaşık 748 kilometre menzil sunacağı ifade ediliyor. İçten yanmalı motorun jeneratör görevi üstlendiği REx seçeneğinde ise toplam menzilin 1.400 kilometreye ulaşması hedefleniyor. Renault Teknoloji Başkanı Philippe Brunet, araçta 90 kWh'nin altında LFP batarya kullanılacağını ve toplam ağırlığın 2 tonun altında tutulacağını belirtiyor. Modelde bataryanın doğrudan gövdeye entegre edildiği hücreden gövdeye teknolojisi kullanılacak. Bu yaklaşım, aracın yapısal verimliliğini artırırken ağırlık dengesini optimize etmeye yardımcı oluyor. Renault, yeni RG EV Medium 2.0 platformunu otonom sürüş teknolojilerini destekleyecek şekilde geliştiriyor. Seviye 4 otonom sürüşe geçişte kablo kumandalı direksiyon sisteminin zorunlu olacağını vurgulayan Brunet, markanın bu alandaki hazırlıklarını sürdürüyor. İç mekanda ise Renault E-Space konseptinden izler taşıyan bir tasarımın kullanılması bekleniyor. Ön konsol boyunca uzanan geniş ekran, göz yorgunluğunu azaltmak amacıyla ön cama yakın bir konumda yer alacak. Ek bir dokunmatik kontrol ekranı ve gelişmiş sesli komut sistemi de sürücü deneyimini destekleyecek. İlk kez 1995 yılında otomobil dünyasına katılan Megane ailesinin bu yeni nesliyle 2028 yılında yollara çıkması hedefleniyor. Peki, siz Renault'nun bu yeni elektrikli hamlesi hakkında ne düşünüyorsunuz? Haberde hata mı var?Bize bildirin Bu gelişme hakkında sen ne düşünüyorsun? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
-        },
-        "post_text": "1400 KM MENZİL RAKAMI, BİR ELEKTRİKLİ OTOMOBİLDEKİ EN BÜYÜK SORUNU ÇÖZÜYOR.\n\nRenault Megane, yeni neslinde 1400 km elektrikli menzil ve otonom sürüşle geliyor. Bu rakam, \"şarj nerede bitecek\" endişesini tarihe karıştırıyor.\n\nAsıl soru, bu menzile ulaşmak için ne kadar ekstra maliyet ödeyeceğimiz. Çünkü elektrikli araçta menzil, fiyatı doğrudan etkileyen bir faktör.\n\nYüksek menzil, Tesla Model Y gibi rakiplerle mücadelede en güçlü koz olabilir.",
-        "post_text_length": 447,
-        "story_card_title": "Megane'dan Otonom, Devrim Niteliğinde Menzil!",
-        "story_card_subtitle": "Renault Megane, yeni neslinde elektrikli otomobil pazarında ezber bozuyor. 1400 km elektrikli menzil ve otonom sürüş özellikleriyle yollara çıkmaya hazırlanıyor. Bu iddialı rakam, menzil kaygısını ortadan kaldırırken, markanın orta sınıf araçlardaki iddiasını güçlendiriyor. Peki bu devasa menzilin bedeli ne olacak?",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-03T07:02:59.844947+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Renault Megane Yenileniyor: 1400 Km Elektrikli Menzil ve Otonom Sürüş",
-          "link": "https://shiftdelete.net/yeni-renault-megane-tesla-model-y-rakip",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-03T04:00:00+00:00",
-          "summary": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor.",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp"
-          ],
-          "image_source": "article_img",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "1400-elektrikli-megane-menzil-otonom-renault-surus-yenileniyor",
-          "base_ai_score": 82,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 16,
-            "gundem_gucu": 17,
-            "paylasilabilirlik": 10
-          },
-          "score": 85,
-          "score_reason": "ai_scored",
-          "score_explanation": "1400 km menzil iddiası ve otonom sürüş özellikleri otomobil gündeminde büyük yankı uyandıracak ve yüksek etkileşim alacaktır.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesil yeni Renault Megane modeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor. Renault, orta sınıf araç ailesini kapsamlı bir şekilde yenilemeye hazırlanırken, yeni nesilyeni Renault Meganemodeliyle elektrikli otomobil pazarında iddialı bir konuma gelmeyi hedefliyor. Tamamen elden geçirilen tasarımı, gelişmiş elektrikli altyapısı ve modern teknolojileriyle dikkat çeken bu yeni model, Tesla Model Y gibi segmentin güçlü rakiplerine karşı meydan okumaya hazırlanıyor. AutoExpress platformunda paylaşılan dijital çizimler, aracın yüksek yapılı bir hatchback formunda olabileceğini gösteriyor. Yeni Clio'dan ilham alan aerodinamik silueti, ince far tasarımı ve modern LED aydınlatma detaylarıyla birleşerek aracın verimliliğini artırmayı amaçlıyor. Yeni Megane'ın altyapısı, hem tamamen elektrikli hem de menzil uzatıcılı (REx) versiyonları destekleyecek şekilde kurgulanıyor. Dört tekerlekten çekiş sistemiyle sunulması beklenen tamamen elektrikli versiyonun yaklaşık 748 kilometre menzil sunacağı ifade ediliyor. İçten yanmalı motorun jeneratör görevi üstlendiği REx seçeneğinde ise toplam menzilin 1.400 kilometreye ulaşması hedefleniyor. Renault Teknoloji Başkanı Philippe Brunet, araçta 90 kWh'nin altında LFP batarya kullanılacağını ve toplam ağırlığın 2 tonun altında tutulacağını belirtiyor. Modelde bataryanın doğrudan gövdeye entegre edildiği hücreden gövdeye teknolojisi kullanılacak. Bu yaklaşım, aracın yapısal verimliliğini artırırken ağırlık dengesini optimize etmeye yardımcı oluyor. Renault, yeni RG EV Medium 2.0 platformunu otonom sürüş teknolojilerini destekleyecek şekilde geliştiriyor. Seviye 4 otonom sürüşe geçişte kablo kumandalı direksiyon sisteminin zorunlu olacağını vurgulayan Brunet, markanın bu alandaki hazırlıklarını sürdürüyor. İç mekanda ise Renault E-Space konseptinden izler taşıyan bir tasarımın kullanılması bekleniyor. Ön konsol boyunca uzanan geniş ekran, göz yorgunluğunu azaltmak amacıyla ön cama yakın bir konumda yer alacak. Ek bir dokunmatik kontrol ekranı ve gelişmiş sesli komut sistemi de sürücü deneyimini destekleyecek. İlk kez 1995 yılında otomobil dünyasına katılan Megane ailesinin bu yeni nesliyle 2028 yılında yollara çıkması hedefleniyor. Peki, siz Renault'nun bu yeni elektrikli hamlesi hakkında ne düşünüyorsunuz? Haberde hata mı var?Bize bildirin Bu gelişme hakkında sen ne düşünüyorsun? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
-          "post_text_for_card": "1400 KM MENZİL RAKAMI, BİR ELEKTRİKLİ OTOMOBİLDEKİ EN BÜYÜK SORUNU ÇÖZÜYOR.\n\nRenault Megane, yeni neslinde 1400 km elektrikli menzil ve otonom sürüşle geliyor. Bu rakam, \"şarj nerede bitecek\" endişesini tarihe karıştırıyor.\n\nAsıl soru, bu menzile ulaşmak için ne kadar ekstra maliyet ödeyeceğimiz. Çünkü elektrikli araçta menzil, fiyatı doğrudan etkileyen bir faktör.\n\nYüksek menzil, Tesla Model Y gibi rakiplerle mücadelede en güçlü koz olabilir.",
-          "story_card_title": "Megane'dan Otonom, Devrim Niteliğinde Menzil!",
-          "story_card_subtitle": "Renault Megane, yeni neslinde elektrikli otomobil pazarında ezber bozuyor. 1400 km elektrikli menzil ve otonom sürüş özellikleriyle yollara çıkmaya hazırlanıyor. Bu iddialı rakam, menzil kaygısını ortadan kaldırırken, markanın orta sınıf araçlardaki iddiasını güçlendiriyor. Peki bu devasa menzilin bedeli ne olacak?",
-          "image_sources": [
-            "article_img",
-            "article_img",
-            "article_img",
-            "meta_og"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://shiftdelete.net/static/img/content/26-11/01/whatsapp-image-2026-11-01-at-174317-1.jpeg",
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-304891d561c940c2bfc99109bf231e5d.webp",
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-f149c5cd4b7c4b1abed825d7a3261282.webp",
-            "https://shiftdelete.net/static/img/content/26-11/03/renault-megane-yenileniyor-1400-km-elektrikli-menzil-ve-otonom-surus-db8c9d1b332841a4af08029eddaa1a52.webp"
-          ]
-        },
-        "post_text": "1400 KM MENZİL RAKAMI, BİR ELEKTRİKLİ OTOMOBİLDEKİ EN BÜYÜK SORUNU ÇÖZÜYOR.\n\nRenault Megane, yeni neslinde 1400 km elektrikli menzil ve otonom sürüşle geliyor. Bu rakam, \"şarj nerede bitecek\" endişesini tarihe karıştırıyor.\n\nAsıl soru, bu menzile ulaşmak için ne kadar ekstra maliyet ödeyeceğimiz. Çünkü elektrikli araçta menzil, fiyatı doğrudan etkileyen bir faktör.\n\nYüksek menzil, Tesla Model Y gibi rakiplerle mücadelede en güçlü koz olabilir.",
-        "story_card_title": "Megane'dan Otonom, Devrim Niteliğinde Menzil!",
-        "story_card_subtitle": "Renault Megane, yeni neslinde elektrikli otomobil pazarında ezber bozuyor. 1400 km elektrikli menzil ve otonom sürüş özellikleriyle yollara çıkmaya hazırlanıyor. Bu iddialı rakam, menzil kaygısını ortadan kaldırırken, markanın orta sınıf araçlardaki iddiasını güçlendiriyor. Peki bu devasa menzilin bedeli ne olacak?",
-        "image_path": "/tmp/otoxtra_img_j49h2s4s.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_j49h2s4s.jpg",
-          "/tmp/otoxtra_img_6y12aqtm.jpg",
-          "/tmp/otoxtra_img_uo67erj4.jpg",
-          "/tmp/otoxtra_img_gfijp7bg.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-03T07:03:02.146530+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122186375420916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "17973424443163193",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1790847099322334",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-03T07:03:41.980961+03:00"
+      "updated_at": null
     }
   }
 }
