@@ -1,103 +1,19 @@
 {
-  "run_id": "2026-11-06-06:01",
+  "run_id": "2026-11-06-07:00",
   "status": "completed",
-  "started_at": "2026-11-06T06:01:19.705604+03:00",
-  "updated_at": "2026-11-06T06:05:02.582122+03:00",
+  "started_at": "2026-11-06T07:00:58.748241+03:00",
+  "updated_at": "2026-11-06T07:04:32.410545+03:00",
   "stages": {
     "fetch": {
       "status": "done",
       "output": {
         "articles": [
           {
-            "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
-            "link": "https://www.donanimhaber.com/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde--212542",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-05T20:34:00+00:00",
-            "summary": "Şebeke bağlantısı için yıllarca bekleyen yapay zeka veri merkezleri, elektrik üretimini hızlandırmak için emekliye ayrılmış uçak motorlarını doğal gazla çalışan türbinlere dönüştürüyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acligi-bitmiyor-enerji-eski-gundemde-jet-motorlari-yapay-zekanin"
-          },
-          {
-            "title": "Fiat, Egea ailesini \"Efsane Serisi\" ile uğurluyor!",
-            "link": "https://tr.motor1.com/news/814578/fiat-egea-cross-efsane-serisi/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-05T17:11:10+00:00",
-            "summary": "Gönlümüzün efendisi 100 adetlik bir özel versiyonla veda edecek.",
-            "image_url": "https://cdn.motor1.com/images/mgl/NG6NxY/s3/fiat-egea-cross-limited-efsane-serisi.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/NG6NxY/s3/fiat-egea-cross-limited-efsane-serisi.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/NG6NxY/s3/fiat-egea-cross-limited-efsane-serisi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ailesini-efsane-egea-fiat-serisi-ugurluyor"
-          },
-          {
-            "title": "Dodge'un yeni Hellephant sandık motoru 1.040 bg güç sunuyor",
-            "link": "https://tr.motor1.com/news/814559/dodge-dc-hemi-sandik-motor/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-05T16:00:00+00:00",
-            "summary": "Direct Connection, ihtiyaca göre 390 bg'den başlayan paketler temin ediyor.",
-            "image_url": "https://cdn.motor1.com/images/mgl/1ZPWP3/s3/direct-connection-hellephant-c170-6.2l-supercharged-crate-hemi-engine-package.jpg",
-            "rss_image_url": "https://cdn.motor1.com/images/mgl/1ZPWP3/s3/direct-connection-hellephant-c170-6.2l-supercharged-crate-hemi-engine-package.jpg",
-            "image_candidates": [
-              "https://cdn.motor1.com/images/mgl/1ZPWP3/s3/direct-connection-hellephant-c170-6.2l-supercharged-crate-hemi-engine-package.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Motor1 TR",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "040-dodge-guc-hellephant-motoru-sandik-sunuyor"
-          },
-          {
-            "title": "Peugeot Fiyat Listesi Kasım 2026: En Ucuzu E-208",
-            "link": "https://shiftdelete.net/peugeot-fiyat-listesi",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-05T18:37:44+00:00",
-            "summary": "Kasım 2026'da Peugeot binekleri 2.080.000 TL'den başlıyor; 3008'de 212 bin TL'lik kampanya var. Güncel 2008 ve 408 fiyatları burada. Hangisini düşünüyorsunuz?",
-            "image_url": "https://shiftdelete.net/static/img/content/26-11/05/peugeot-fiyat-listesi-kasim-2026.jpg",
-            "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/05/peugeot-fiyat-listesi-kasim-2026.jpg",
-            "image_candidates": [
-              "https://shiftdelete.net/static/img/content/26-11/05/peugeot-fiyat-listesi-kasim-2026.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-208-fiyat-kasim-listesi-peugeot-ucuzu"
-          },
-          {
             "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
             "link": "https://www.log.com.tr/bydnin-rolls-royce-rakibinden-yeni-fotograflar-paylasildi/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-11-06T06:01:19.773939+03:00",
+            "published": "2026-11-06T07:00:58.811511+03:00",
             "summary": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımaya hazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak. BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
             "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
             "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
@@ -114,70 +30,28 @@
             "topic_fingerprint": "byd-fotograflar-paylasildi-rakibinden-rolls-royce"
           },
           {
-            "title": "Chery, daha önce gösterilen Arrizo S konseptinin Arrizo 7 olarak satılacağını açıkladı. Araç 1.5 litre turbo ve şarj edilebilir hibrit olarak satılacak. Bu PHEV modelin toplam menzilinin 1.700 km olacağı iddiası var. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2118389415315734887",
-            "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2118389415315734887#m",
-            "source_instance": "nitter.netbub.com",
-            "published": "2026-11-05T17:06:09+00:00",
-            "summary": "Chery, daha önce gösterilen Arrizo S konseptinin Arrizo 7 olarak satılacağını açıkladı. Araç 1.5 litre turbo ve şarj edilebilir hibrit olarak satılacak. Bu PHEV modelin toplam menzilinin 1.700 km olacağı iddiası var. . Haber, tanıtım. Murat Tosun (@murattosunMSE) Ona sedece ticari araç demek haksızlık olur. Yeni VW Caddy'ye kaç puan verdim? . İzlenim, tanıtım. Video — https://nitter.netbub.com/murattosunMSE/status/2118361585420849515#m",
-            "image_url": "https://pbs.twimg.com/media/HWYH79uXkAAmZaa.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HWYH79uXkAAmZaa.jpg",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HWYH79uXkAAmZaa.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "700-acikladi-arac-arrizo-arrizo-chery-edilebilir-gosterilen-haber-hibrit-iddiasi-konseptinin-litre-menzilinin-modelin-olacagi-phev-sarj-satilacagini-satilacak-tanitim-toplam-turbo-var"
-          },
-          {
-            "title": "TEB Arval 15 binden fazla şarj istasyonuna tek kartla ulaşma imkânı sunuyor",
-            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/teb-arval-15-binden-fazla-sarj-istasyonuna-tek-kartla-ulasma-imkani-5462h",
+            "title": "Sınırlı üretim “Fiat Egea Cross Limited Efsane Serisi” satışa sunuldu",
+            "link": "https://www.log.com.tr/sinirli-uretim-fiat-egea-cross-limited-efsane-serisi-satisa-sunuldu/",
             "nitter_url": "",
             "source_instance": "",
-            "published": "2026-11-05T15:55:59+00:00",
-            "summary": "Kurumsal filolara özel olarak sunulan bu hizmetle elektrikli araç sürücüleri 81 ildeki 15 binden fazla şarj noktasına tek kartla erişim sağlarken, filo yöneticileri de tüm operasyonu ve faturalandırmayı tek bir merkezden yönetme imkânına sahip olacak.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5778.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5778.jpg",
+            "published": "2026-11-06T07:00:58.811511+03:00",
+            "summary": "“2016 – 2025 yılları arasında 10 yıl üst üste Türkiye’nin en çok tercih edilen otomobili olan Fiat Egea, 11 yıllık üretim yolculuğunda 1 milyon 400 bin adedin üzerinde üretim adedi ve 750 bin adetlik iç pazar satışıyla Türkiye’de milyonların yol arkadaşı oldu. Fiat Egea’nın bu eşsiz başarısını taçlandırmak için, Egea Cross Limited Efsane Serisi sizlerle.” diyen Fiat Türkiye, “1.6 MultiJet 130 HP DCT GSR Traction+” araçta 17 inç elmas kesim Cross alaşımlı jantlar, Full LED ön farlar ve LED arka farlar, 10 inç tablet ekran, 7 inç renkli TFT gösterge paneli, geri görüş kamerası, kablosuz Apple CarPlay ve Android Auto, kablosuz akıllı telefon şarjı, anahtarsız giriş ve çalıştırma, yağmur ve karanlık sensörü, karartılmış arka camlar, Traction+ sistemi, siyah tavan, efsane etiketi ve üretim numara plaketinin bulunduğunu aktarıyor. Toplamda 100 adet üretileceği aktarılan model, 1 milyon 999 bin TL satışa fiyatına sahip. Sınırlı üretim “Fiat Egea Cross Limited Efsane Serisi” satışa sunuldu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-04_15-59-14_aHTsD-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-04_15-59-14_aHTsD-660x371.jpg",
             "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5778.jpg"
+              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-04_15-59-14_aHTsD-660x371.jpg"
             ],
             "image_source": "rss",
-            "source_name": "otopodyum",
+            "source_name": "LogDergisi",
             "source_priority": "medium",
             "language": "tr",
             "can_scrape_image": true,
             "trend_count": 1,
             "trend_bonus": 0,
-            "topic_fingerprint": "arval-binden-fazla-imk-istasyonuna-kartla-sarj-sunuyor-teb-tek-ulasma"
-          },
-          {
-            "title": "Opel Combo’da Kasım Ayına Özel 0 Faiz Fırsatı!",
-            "link": "https://otopodyum.com.tr/kampanyalar/opel-comboda-kasim-ayina-ozel-0-faiz-firsati-5461h",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-05T15:51:31+00:00",
-            "summary": "Opel, kasım ayında geniş hafif ticari araç ürün gamını cazip satın ama fırsatlarıyla müşterileriyle buluşturuyor. Combo Ultimate, 750 bin TL’ye 12 ay vadeli, 0 faizli kredi veya kredi kullanılmadığında 100 bin TL nakit indirim öne çıkıyor.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5777.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5777.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5777.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ayina-combo-faiz-firsati-kasim-opel-ozel"
+            "topic_fingerprint": "cross-efsane-egea-fiat-limited-satisa-serisi-sinirli-sunuldu-uretim"
           }
         ],
-        "count": 8,
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -238,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by NameResoluti",
             "attempts": 1,
             "instance": ""
           },
@@ -247,14 +121,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -314,314 +188,243 @@
           },
           "_metrics": {
             "found": 145,
-            "after_keyword": 95,
-            "after_time": 16,
-            "after_posted": 10,
-            "after_duplicate": 8,
-            "after_shared_variant_cooldown": 10
+            "after_keyword": 96,
+            "after_time": 7,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 145,
-          "after_keyword": 95,
-          "after_time": 16,
-          "after_posted": 10,
-          "after_duplicate": 8,
-          "after_shared_variant_cooldown": 10
+          "after_keyword": 96,
+          "after_time": 7,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
       "error": null,
-      "updated_at": "2026-11-06T06:03:31.576231+03:00"
+      "updated_at": "2026-11-06T07:03:14.570839+03:00"
     },
     "score": {
       "status": "done",
       "output": {
         "selected_article": {
-          "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
-          "link": "https://www.donanimhaber.com/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde--212542",
+          "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
+          "link": "https://www.log.com.tr/bydnin-rolls-royce-rakibinden-yeni-fotograflar-paylasildi/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-05T20:34:00+00:00",
-          "summary": "Şebeke bağlantısı için yıllarca bekleyen yapay zeka veri merkezleri, elektrik üretimini hızlandırmak için emekliye ayrılmış uçak motorlarını doğal gazla çalışan türbinlere dönüştürüyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
+          "published": "2026-11-06T07:00:58.811511+03:00",
+          "summary": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımaya hazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak. BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acligi-bitmiyor-enerji-eski-gundemde-jet-motorlari-yapay-zekanin",
-          "base_ai_score": 76,
+          "topic_fingerprint": "byd-fotograflar-paylasildi-rakibinden-rolls-royce",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 17,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
             "paylasilabilirlik": 6
           },
-          "score": 78,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yapay zeka ve enerji krizini havacılık teknolojisiyle harmanlayan son derece sıra dışı ve dikkat çekici bir haber.",
-          "freshness_bonus": 1,
+          "score_explanation": "Lüks segmentte Çinli üreticilerin iddialı hamleleri ve ultra lüks tasarım merak uyandırdığı için iyi etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1
         },
-        "score": 78,
-        "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
+        "score": 70,
+        "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
         "trend_count": 1,
         "trend_bonus": 1,
-        "freshness_bonus": 1,
+        "freshness_bonus": 10,
         "score_breakdown": {
-          "guncellik": 17,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 18,
-          "gundem_gucu": 15,
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 15,
+          "gundem_gucu": 11,
           "paylasilabilirlik": 6
         },
         "score_reason": "ai_scored",
-        "score_explanation": "Yapay zeka ve enerji krizini havacılık teknolojisiyle harmanlayan son derece sıra dışı ve dikkat çekici bir haber.",
+        "score_explanation": "Lüks segmentte Çinli üreticilerin iddialı hamleleri ve ultra lüks tasarım merak uyandırdığı için iyi etkileşim potansiyeline sahip.",
         "skipped": false,
         "threshold": 30,
         "top_articles": [
           {
-            "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
-            "score": 78,
+            "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
+            "score": 70,
             "score_breakdown": {
-              "guncellik": 17,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 18,
-              "gundem_gucu": 15,
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 15,
+              "gundem_gucu": 11,
               "paylasilabilirlik": 6
             }
           },
           {
-            "title": "Dodge'un yeni Hellephant sandık motoru 1.040 bg güç sunuyor",
-            "score": 70,
+            "title": "Sınırlı üretim “Fiat Egea Cross Limited Efsane Serisi” satışa sunuldu",
+            "score": 49,
             "score_breakdown": {
-              "guncellik": 15,
-              "etkilesim_potansiyeli": 19,
-              "benzersizlik": 15,
-              "gundem_gucu": 13,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "Fiat, Egea ailesini \"Efsane Serisi\" ile uğurluyor!",
-            "score": 67,
-            "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 12,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 7
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 6,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 4
             }
           }
         ],
-        "scored_count": 8,
+        "scored_count": 2,
         "cooldown_candidates": [
           {
-            "title": "Dodge'un yeni Hellephant sandık motoru 1.040 bg güç sunuyor",
-            "link": "https://tr.motor1.com/news/814559/dodge-dc-hemi-sandik-motor/",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "040-dodge-guc-hellephant-motoru-sandik-sunuyor"
-          },
-          {
-            "title": "Fiat, Egea ailesini \"Efsane Serisi\" ile uğurluyor!",
-            "link": "https://tr.motor1.com/news/814578/fiat-egea-cross-efsane-serisi/",
-            "score": 67,
-            "score_reason": "ai_scored",
-            "source_name": "Motor1 TR",
-            "topic_fingerprint": "ailesini-efsane-egea-fiat-serisi-ugurluyor"
-          },
-          {
-            "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
-            "link": "https://www.log.com.tr/bydnin-rolls-royce-rakibinden-yeni-fotograflar-paylasildi/",
-            "score": 67,
+            "title": "Sınırlı üretim “Fiat Egea Cross Limited Efsane Serisi” satışa sunuldu",
+            "link": "https://www.log.com.tr/sinirli-uretim-fiat-egea-cross-limited-efsane-serisi-satisa-sunuldu/",
+            "score": 49,
             "score_reason": "ai_scored",
             "source_name": "LogDergisi",
-            "topic_fingerprint": "byd-fotograflar-paylasildi-rakibinden-rolls-royce"
-          },
-          {
-            "title": "Chery, daha önce gösterilen Arrizo S konseptinin Arrizo 7 olarak satılacağını açıkladı. Araç 1.5 litre turbo ve şarj edilebilir hibrit olarak satılacak. Bu PHEV modelin toplam menzilinin 1.700 km olacağı iddiası var. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2118389415315734887",
-            "score": 60,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "700-acikladi-arac-arrizo-arrizo-chery-edilebilir-gosterilen-haber-hibrit-iddiasi-konseptinin-litre-menzilinin-modelin-olacagi-phev-sarj-satilacagini-satilacak-tanitim-toplam-turbo-var"
-          },
-          {
-            "title": "TEB Arval 15 binden fazla şarj istasyonuna tek kartla ulaşma imkânı sunuyor",
-            "link": "https://otopodyum.com.tr/yasamsektor-haberleri/teb-arval-15-binden-fazla-sarj-istasyonuna-tek-kartla-ulasma-imkani-5462h",
-            "score": 44,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "arval-binden-fazla-imk-istasyonuna-kartla-sarj-sunuyor-teb-tek-ulasma"
-          },
-          {
-            "title": "Opel Combo’da Kasım Ayına Özel 0 Faiz Fırsatı!",
-            "link": "https://otopodyum.com.tr/kampanyalar/opel-comboda-kasim-ayina-ozel-0-faiz-firsati-5461h",
-            "score": 40,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "ayina-combo-faiz-firsati-kasim-opel-ozel"
-          },
-          {
-            "title": "Peugeot Fiyat Listesi Kasım 2026: En Ucuzu E-208",
-            "link": "https://shiftdelete.net/peugeot-fiyat-listesi",
-            "score": 37,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "2026-208-fiyat-kasim-listesi-peugeot-ucuzu"
+            "topic_fingerprint": "cross-efsane-egea-fiat-limited-satisa-serisi-sinirli-sunuldu-uretim"
           }
         ]
       },
       "error": null,
-      "updated_at": "2026-11-06T06:03:35.852595+03:00"
+      "updated_at": "2026-11-06T07:03:16.130987+03:00"
     },
     "write": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
-          "link": "https://www.donanimhaber.com/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde--212542",
+          "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
+          "link": "https://www.log.com.tr/bydnin-rolls-royce-rakibinden-yeni-fotograflar-paylasildi/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-05T20:34:00+00:00",
-          "summary": "Şebeke bağlantısı için yıllarca bekleyen yapay zeka veri merkezleri, elektrik üretimini hızlandırmak için emekliye ayrılmış uçak motorlarını doğal gazla çalışan türbinlere dönüştürüyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
+          "published": "2026-11-06T07:00:58.811511+03:00",
+          "summary": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımaya hazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak. BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg",
           "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg"
+            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-05_11-25-43_w40XV-660x371.jpg"
           ],
           "image_source": "rss",
-          "source_name": "Donanimhaber",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acligi-bitmiyor-enerji-eski-gundemde-jet-motorlari-yapay-zekanin",
-          "base_ai_score": 76,
+          "topic_fingerprint": "byd-fotograflar-paylasildi-rakibinden-rolls-royce",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 17,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
             "paylasilabilirlik": 6
           },
-          "score": 78,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yapay zeka ve enerji krizini havacılık teknolojisiyle harmanlayan son derece sıra dışı ve dikkat çekici bir haber.",
-          "freshness_bonus": 1,
+          "score_explanation": "Lüks segmentte Çinli üreticilerin iddialı hamleleri ve ultra lüks tasarım merak uyandırdığı için iyi etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Seslendirme ve özetler yapay zeka ile oluşturulmuştur. Yapay zeka veri merkezlerinin artan elektrik ihtiyacı enerji altyapısındaki darboğazı derinleştiriyor. Şebekeye bağlanmak ve yeni türbinler edinmek için yıllarca beklemek zorunda kalan bazı şirketler, emekliye ayrılmışuçak motorlarınıdoğal gazla çalışanelektrik üretim sistemlerinedönüştürüyor. Yapay zeka altyapısına yönelik yatırımlar hızla artarken elektrik üretim ve dağıtım kapasitesi aynı hızda genişleyemiyor. Haliyle veri merkezi şirketleri de kendi elektriklerini üretmeye yöneliyor. Eski jet motorlarından dönüştürülen türbinler, kalıcı bir enerji çözümü olarak görülmese de elektrik üretimine çok daha kısa sürede başlanmasını sağlıyor. Rystad Energy analisti Audun Martinsen, The New York Times'a yaptığı açıklamada bu sistemlerin tercih edilmesindeki temel nedeninmümkün olan en kısa sürede elektrikelde etmek olduğunu belirtti. Martinsen'e göre jet motorlarından dönüştürülen türbinlerle bir veri merkezi yaklaşık24 ay içinde faaliyete geçirilebiliyor. Buna karşılık Uluslararası Enerji Ajansı'nın (IEA) verilerine göre ABD'nin Kuzey Virginia bölgesinde şebekeye100 megavatlık güç bağlantısısağlamak yaklaşıkyedi yıl sürüyor.Mitsubishi Power yöneticilerinden biri de Bloomberg'e yaptığı açıklamada yeni elektrik üretim kapasitesinin büyük bölümünün ancak 2031 yılına kadar devreye girmesinin beklendiğini ifade etti. Elektrik altyapısındaki gecikmeler veri merkezi işletmecilerinin ticari faaliyetlerini de etkiliyor. Microsoft, geçen ay İngiltere'nin Loughton kentinde Nscale tarafından geliştirilen veri merkezi projesinin ana müşterisi olmaktan vazgeçti. Kararda, yerel elektrik dağıtım şirketinin yeterli enerjiyi ancak 2030'ların başı ile ortası arasında sağlayabileceğini bildirmesi etkili oldu. Elon Musk'ın yapay zeka şirketixAI(veyaSpaceXAIveya SpaceXSI), eski uçak motorlarından dönüştürülen türbinleri kullanan şirketler arasında yer alıyor. Aktarılanlara göre şirket, Colossus 2 veri merkezine enerji sağlamak amacıyla sekiz türbin kurdu. Bu sistemlerBoeinguçaklarında yaygın olarak kullanılanGE motorlarınıyeniden yapılandıranProEnergytarafından üretiliyor. Emekliye ayrılmış uçak motorları doğal gaz yakacak şekilde dönüştürülerek elektrik üretiminde kullanılabiliyor. OpenAIda 2025 yılında ilk Stargate tesisinde doğal gaz türbinlerinden yararlanmaya başladı. Veri merkezlerini kuran Crusoe, söz konusu Abilene kampüsü için ProEnergy’den 13 adet dönüştürülmüş ünite sipariş etti.Her ne kadar bu sistemler birer geçici çözüm olsa da geleneksel doğal gaz santralleri için tasarlanmış türbinlere göre daha verimsizler hem de daha fazla kirliliğe neden oluyorlar.Bu aradaCrusoe, eylül ayında Boom Supersonic ile yaptığı 1,25 milyar dolarlık anlaşmadan çekildi. Anlaşma, ses hızını aşan yolcu uçağı geliştiren şirketten 29 doğal gaz türbini satın alınmasını öngörüyordu.Boom Supersonic, uçak motorunun bir versiyonunu veri merkezleri için elektrik üretiminde de kullanıma sunmuştu. Crusoe sözcüsü, anlaşmanın iptal edilmesine rağmen şirketin türbin kullanma planlarını sürdürdüğünü açıkladı.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtGreen Goblin’in uçan kaykayı gerçeğe dönüştü OpenAIda 2025 yılında ilk Stargate tesisinde doğal gaz türbinlerinden yararlanmaya başladı. Veri merkezlerini kuran Crusoe, söz konusu Abilene kampüsü için ProEnergy’den 13 adet dönüştürülmüş ünite sipariş etti. Her ne kadar bu sistemler birer geçici çözüm olsa da geleneksel doğal gaz santralleri için tasarlanmış türbinlere göre daha verimsizler hem de daha fazla kirliliğe neden oluyorlar. Bu aradaCrusoe, eylül ayında Boom Supersonic ile yaptığı 1,25 milyar dolarlık anlaşmadan çekildi. Anlaşma, ses hızını aşan yolcu uçağı geliştiren şirketten 29 doğal gaz türbini satın alınmasını öngörüyordu.Boom Supersonic, uçak motorunun bir versiyonunu veri merkezleri için elektrik üretiminde de kullanıma sunmuştu. Crusoe sözcüsü, anlaşmanın iptal edilmesine rağmen şirketin türbin kullanma planlarını sürdürdüğünü açıkladı. Green Goblin’in uçan kaykayı gerçeğe dönüştü https://www.amazon.com.tr/dp/B0BJZQ37G7 https://www.amazon.com.tr/dp/B0G7F87VDT https://www.amazon.com.tr/dp/B07L6Z417X https://www.amazon.com.tr/dp/B0764LMPDV https://app.hb.biz/1ltNyC10or88 https://www.amazon.com.tr/dp/B07BHQKW65?ref=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8&ref_=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8&social_share=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8"
+          "full_text": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımayahazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak."
         },
-        "post_text": "Yapay zeka veri merkezleri, şebeke bağlantısı için yıllarca beklemek istemiyor.\n\nEmekliye ayrılan uçak motorları, elektrik üretimi için doğal gazla çalışan türbinlere dönüştürülüyor.\n\nBu sistemler sayesinde şirketler yaklaşık 24 ay içinde kendi elektriğini üretmeye başlıyor.\n\nEnerji altyapısındaki darboğaz, teknolojinin fiziksel sınırlarını açıkça gözler önüne seriyor.",
-        "post_text_length": 371,
-        "story_card_title": "Uçak motorları yapay zeka için elektrik üretecek",
-        "story_card_subtitle": "Şebeke bağlantısı için yıllarca beklemek istemeyen veri merkezi devleri, emekliye ayrılan uçak motorlarını doğal gazlı türbinlere dönüştürüyor. Bu sayede enerji altyapısındaki darboğaz aşılırken, şirketler yaklaşık 24 ay içinde kendi elektriklerini üretmeye başlıyor. Teknolojinin enerji açlığı, çözümleri de gökyüzünden yere indiriyor.",
+        "post_text": "8 KASIM'DA TANITILACAK YENİ MODEL İÇİN GERİ SAYIM BAŞLADI.\n\nBYD çatısı altındaki Yangwang, Altior adını taşıyan lüks aracı için yeni fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip heybetli modelin, markanın katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia ediliyor.\n\nDört farklı elektrik motoru taşıması beklenen araç, şirketin en pahalı modeli olarak pazara gümrüğe hazırlanıyor.\n\nLüks segmentte alışılagelmiş ezberleri değiştirmek kolay değil.",
+        "post_text_length": 476,
+        "story_card_title": "BYD Çinlilerin lüks ezberini bozmaya geliyor",
+        "story_card_subtitle": "BYD çatısı altındaki Yangwang, Altior adını taşıyan yeni lüks modeli için heybetli fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip bu devasa aracın, markanın katı hal batarya kullanan ilk elektrikli modeli olacağı iddia ediliyor. Dört farklı elektrik motoruyla gelmesi beklenen araç, şirketin bugüne kadarki en pahalı projesi olarak pazara çıkmaya hazırlanıyor.",
         "skipped": false
       },
       "error": null,
-      "updated_at": "2026-11-06T06:04:02.870451+03:00"
+      "updated_at": "2026-11-06T07:03:29.937087+03:00"
     },
     "image": {
       "status": "done",
       "output": {
         "article": {
-          "title": "Yapay zekanın enerji açlığı bitmiyor: Eski jet motorları gündemde",
-          "link": "https://www.donanimhaber.com/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde--212542",
+          "title": "BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı",
+          "link": "https://www.log.com.tr/bydnin-rolls-royce-rakibinden-yeni-fotograflar-paylasildi/",
           "nitter_url": "",
           "source_instance": "",
-          "published": "2026-11-05T20:34:00+00:00",
-          "summary": "Şebeke bağlantısı için yıllarca bekleyen yapay zeka veri merkezleri, elektrik üretimini hızlandırmak için emekliye ayrılmış uçak motorlarını doğal gazla çalışan türbinlere dönüştürüyor.",
-          "image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-          "image_candidates": [
-            "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg"
-          ],
-          "image_source": "article_img",
-          "source_name": "Donanimhaber",
+          "published": "2026-11-06T07:00:58.811511+03:00",
+          "summary": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımaya hazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak. BYD’nin Rolls-Royce rakibinden yeni fotoğraflar paylaşıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "no_image",
+          "source_name": "LogDergisi",
           "source_priority": "medium",
           "language": "tr",
           "can_scrape_image": true,
           "trend_count": 1,
           "trend_bonus": 1,
-          "topic_fingerprint": "acligi-bitmiyor-enerji-eski-gundemde-jet-motorlari-yapay-zekanin",
-          "base_ai_score": 76,
+          "topic_fingerprint": "byd-fotograflar-paylasildi-rakibinden-rolls-royce",
+          "base_ai_score": 64,
           "score_breakdown": {
-            "guncellik": 17,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 18,
-            "gundem_gucu": 15,
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 15,
+            "gundem_gucu": 11,
             "paylasilabilirlik": 6
           },
-          "score": 78,
+          "score": 70,
           "score_reason": "ai_scored",
-          "score_explanation": "Yapay zeka ve enerji krizini havacılık teknolojisiyle harmanlayan son derece sıra dışı ve dikkat çekici bir haber.",
-          "freshness_bonus": 1,
+          "score_explanation": "Lüks segmentte Çinli üreticilerin iddialı hamleleri ve ultra lüks tasarım merak uyandırdığı için iyi etkileşim potansiyeline sahip.",
+          "freshness_bonus": 10,
           "trend_bonus_raw": 1,
-          "full_text": "Seslendirme ve özetler yapay zeka ile oluşturulmuştur. Yapay zeka veri merkezlerinin artan elektrik ihtiyacı enerji altyapısındaki darboğazı derinleştiriyor. Şebekeye bağlanmak ve yeni türbinler edinmek için yıllarca beklemek zorunda kalan bazı şirketler, emekliye ayrılmışuçak motorlarınıdoğal gazla çalışanelektrik üretim sistemlerinedönüştürüyor. Yapay zeka altyapısına yönelik yatırımlar hızla artarken elektrik üretim ve dağıtım kapasitesi aynı hızda genişleyemiyor. Haliyle veri merkezi şirketleri de kendi elektriklerini üretmeye yöneliyor. Eski jet motorlarından dönüştürülen türbinler, kalıcı bir enerji çözümü olarak görülmese de elektrik üretimine çok daha kısa sürede başlanmasını sağlıyor. Rystad Energy analisti Audun Martinsen, The New York Times'a yaptığı açıklamada bu sistemlerin tercih edilmesindeki temel nedeninmümkün olan en kısa sürede elektrikelde etmek olduğunu belirtti. Martinsen'e göre jet motorlarından dönüştürülen türbinlerle bir veri merkezi yaklaşık24 ay içinde faaliyete geçirilebiliyor. Buna karşılık Uluslararası Enerji Ajansı'nın (IEA) verilerine göre ABD'nin Kuzey Virginia bölgesinde şebekeye100 megavatlık güç bağlantısısağlamak yaklaşıkyedi yıl sürüyor.Mitsubishi Power yöneticilerinden biri de Bloomberg'e yaptığı açıklamada yeni elektrik üretim kapasitesinin büyük bölümünün ancak 2031 yılına kadar devreye girmesinin beklendiğini ifade etti. Elektrik altyapısındaki gecikmeler veri merkezi işletmecilerinin ticari faaliyetlerini de etkiliyor. Microsoft, geçen ay İngiltere'nin Loughton kentinde Nscale tarafından geliştirilen veri merkezi projesinin ana müşterisi olmaktan vazgeçti. Kararda, yerel elektrik dağıtım şirketinin yeterli enerjiyi ancak 2030'ların başı ile ortası arasında sağlayabileceğini bildirmesi etkili oldu. Elon Musk'ın yapay zeka şirketixAI(veyaSpaceXAIveya SpaceXSI), eski uçak motorlarından dönüştürülen türbinleri kullanan şirketler arasında yer alıyor. Aktarılanlara göre şirket, Colossus 2 veri merkezine enerji sağlamak amacıyla sekiz türbin kurdu. Bu sistemlerBoeinguçaklarında yaygın olarak kullanılanGE motorlarınıyeniden yapılandıranProEnergytarafından üretiliyor. Emekliye ayrılmış uçak motorları doğal gaz yakacak şekilde dönüştürülerek elektrik üretiminde kullanılabiliyor. OpenAIda 2025 yılında ilk Stargate tesisinde doğal gaz türbinlerinden yararlanmaya başladı. Veri merkezlerini kuran Crusoe, söz konusu Abilene kampüsü için ProEnergy’den 13 adet dönüştürülmüş ünite sipariş etti.Her ne kadar bu sistemler birer geçici çözüm olsa da geleneksel doğal gaz santralleri için tasarlanmış türbinlere göre daha verimsizler hem de daha fazla kirliliğe neden oluyorlar.Bu aradaCrusoe, eylül ayında Boom Supersonic ile yaptığı 1,25 milyar dolarlık anlaşmadan çekildi. Anlaşma, ses hızını aşan yolcu uçağı geliştiren şirketten 29 doğal gaz türbini satın alınmasını öngörüyordu.Boom Supersonic, uçak motorunun bir versiyonunu veri merkezleri için elektrik üretiminde de kullanıma sunmuştu. Crusoe sözcüsü, anlaşmanın iptal edilmesine rağmen şirketin türbin kullanma planlarını sürdürdüğünü açıkladı.Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtGreen Goblin’in uçan kaykayı gerçeğe dönüştü OpenAIda 2025 yılında ilk Stargate tesisinde doğal gaz türbinlerinden yararlanmaya başladı. Veri merkezlerini kuran Crusoe, söz konusu Abilene kampüsü için ProEnergy’den 13 adet dönüştürülmüş ünite sipariş etti. Her ne kadar bu sistemler birer geçici çözüm olsa da geleneksel doğal gaz santralleri için tasarlanmış türbinlere göre daha verimsizler hem de daha fazla kirliliğe neden oluyorlar. Bu aradaCrusoe, eylül ayında Boom Supersonic ile yaptığı 1,25 milyar dolarlık anlaşmadan çekildi. Anlaşma, ses hızını aşan yolcu uçağı geliştiren şirketten 29 doğal gaz türbini satın alınmasını öngörüyordu.Boom Supersonic, uçak motorunun bir versiyonunu veri merkezleri için elektrik üretiminde de kullanıma sunmuştu. Crusoe sözcüsü, anlaşmanın iptal edilmesine rağmen şirketin türbin kullanma planlarını sürdürdüğünü açıkladı. Green Goblin’in uçan kaykayı gerçeğe dönüştü https://www.amazon.com.tr/dp/B0BJZQ37G7 https://www.amazon.com.tr/dp/B0G7F87VDT https://www.amazon.com.tr/dp/B07L6Z417X https://www.amazon.com.tr/dp/B0764LMPDV https://app.hb.biz/1ltNyC10or88 https://www.amazon.com.tr/dp/B07BHQKW65?ref=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8&ref_=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8&social_share=cm_sw_r_cso_cp_apin_dp_42M3Q4JAPBG07P0NE9T8",
-          "post_text_for_card": "Yapay zeka veri merkezleri, şebeke bağlantısı için yıllarca beklemek istemiyor.\n\nEmekliye ayrılan uçak motorları, elektrik üretimi için doğal gazla çalışan türbinlere dönüştürülüyor.\n\nBu sistemler sayesinde şirketler yaklaşık 24 ay içinde kendi elektriğini üretmeye başlıyor.\n\nEnerji altyapısındaki darboğaz, teknolojinin fiziksel sınırlarını açıkça gözler önüne seriyor.",
-          "story_card_title": "Uçak motorları yapay zeka için elektrik üretecek",
-          "story_card_subtitle": "Şebeke bağlantısı için yıllarca beklemek istemeyen veri merkezi devleri, emekliye ayrılan uçak motorlarını doğal gazlı türbinlere dönüştürüyor. Bu sayede enerji altyapısındaki darboğaz aşılırken, şirketler yaklaşık 24 ay içinde kendi elektriklerini üretmeye başlıyor. Teknolojinin enerji açlığı, çözümleri de gökyüzünden yere indiriyor.",
+          "full_text": "BYD çatısı altında yer alan Yangwang, bugün paylaşışan fotoğraflarla bir kez daha gündeme getirildiği üzere “Altior (Çin’de Dingyao)” adında lüks bir aracı tanıtımayahazırlanıyor. Rolls-Royce, Bentley ve Mercedes-Maybach gibi markaların lüks modellerine rakip olacak araç, oldukça heybetli bir görünüme sahip ve arka kapıları ters yönde açılıyor. BYD’nin katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia edilen model, dört farklı elektrik motoru taşıyabilir ve açık ara farkla şirketin pazara sunduğu en pahalı araç olarak öne çıkabilir. İddialı modelin resmi tanıtımı paylaşılan açıklamaya göre 8 Kasım’da yapılacak.",
+          "post_text_for_card": "8 KASIM'DA TANITILACAK YENİ MODEL İÇİN GERİ SAYIM BAŞLADI.\n\nBYD çatısı altındaki Yangwang, Altior adını taşıyan lüks aracı için yeni fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip heybetli modelin, markanın katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia ediliyor.\n\nDört farklı elektrik motoru taşıması beklenen araç, şirketin en pahalı modeli olarak pazara gümrüğe hazırlanıyor.\n\nLüks segmentte alışılagelmiş ezberleri değiştirmek kolay değil.",
+          "story_card_title": "BYD Çinlilerin lüks ezberini bozmaya geliyor",
+          "story_card_subtitle": "BYD çatısı altındaki Yangwang, Altior adını taşıyan yeni lüks modeli için heybetli fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip bu devasa aracın, markanın katı hal batarya kullanan ilk elektrikli modeli olacağı iddia ediliyor. Dört farklı elektrik motoruyla gelmesi beklenen araç, şirketin bugüne kadarki en pahalı projesi olarak pazara çıkmaya hazırlanıyor.",
           "image_sources": [
-            "article_img",
-            "meta_og",
-            "article_img"
+            "no_image"
           ],
-          "prepared_image_count": 3,
-          "original_image_urls": [
-            "https://www.donanimhaber.com/images/images/haber/212542/src/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde212542_0.jpg",
-            "https://www.donanimhaber.com/images/images/haber/212542/1200x675yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde.jpg",
-            "https://www.donanimhaber.com/images/images/haber/212542/src/yapay-zekanin-enerji-acligi-bitmiyor-eski-jet-motorlari-gundemde212542_1.jpg"
-          ]
+          "prepared_image_count": 0,
+          "original_image_urls": []
         },
-        "post_text": "Yapay zeka veri merkezleri, şebeke bağlantısı için yıllarca beklemek istemiyor.\n\nEmekliye ayrılan uçak motorları, elektrik üretimi için doğal gazla çalışan türbinlere dönüştürülüyor.\n\nBu sistemler sayesinde şirketler yaklaşık 24 ay içinde kendi elektriğini üretmeye başlıyor.\n\nEnerji altyapısındaki darboğaz, teknolojinin fiziksel sınırlarını açıkça gözler önüne seriyor.",
-        "story_card_title": "Uçak motorları yapay zeka için elektrik üretecek",
-        "story_card_subtitle": "Şebeke bağlantısı için yıllarca beklemek istemeyen veri merkezi devleri, emekliye ayrılan uçak motorlarını doğal gazlı türbinlere dönüştürüyor. Bu sayede enerji altyapısındaki darboğaz aşılırken, şirketler yaklaşık 24 ay içinde kendi elektriklerini üretmeye başlıyor. Teknolojinin enerji açlığı, çözümleri de gökyüzünden yere indiriyor.",
-        "image_path": "/tmp/otoxtra_img__aswioij.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img__aswioij.jpg",
-          "/tmp/otoxtra_img_e97it4t2.jpg",
-          "/tmp/otoxtra_img_45ku2fee.jpg"
-        ],
-        "image_source": "article_img",
-        "image_count": 3
+        "post_text": "8 KASIM'DA TANITILACAK YENİ MODEL İÇİN GERİ SAYIM BAŞLADI.\n\nBYD çatısı altındaki Yangwang, Altior adını taşıyan lüks aracı için yeni fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip heybetli modelin, markanın katı hal batarya üzerine kurulu ilk elektrikli aracı olacağı iddia ediliyor.\n\nDört farklı elektrik motoru taşıması beklenen araç, şirketin en pahalı modeli olarak pazara gümrüğe hazırlanıyor.\n\nLüks segmentte alışılagelmiş ezberleri değiştirmek kolay değil.",
+        "story_card_title": "BYD Çinlilerin lüks ezberini bozmaya geliyor",
+        "story_card_subtitle": "BYD çatısı altındaki Yangwang, Altior adını taşıyan yeni lüks modeli için heybetli fotoğraflar paylaştı. Ters yönde açılan arka kapılara sahip bu devasa aracın, markanın katı hal batarya kullanan ilk elektrikli modeli olacağı iddia ediliyor. Dört farklı elektrik motoruyla gelmesi beklenen araç, şirketin bugüne kadarki en pahalı projesi olarak pazara çıkmaya hazırlanıyor.",
+        "image_path": "",
+        "image_paths": [],
+        "image_source": "no_image",
+        "image_count": 0
       },
       "error": null,
-      "updated_at": "2026-11-06T06:04:23.156925+03:00"
+      "updated_at": "2026-11-06T07:04:12.684270+03:00"
     },
     "publish": {
       "status": "done",
       "output": {
         "success": true,
-        "post_id": "678053852057751_122186974640916499",
+        "post_id": "678053852057751_122186992382916499",
         "story_status": {
           "instagram": {
             "enabled": true,
             "attempted": true,
-            "success": true,
-            "id": "18074478860782725",
-            "error": ""
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
           },
           "facebook": {
             "enabled": true,
             "attempted": true,
-            "success": true,
-            "id": "2229309624282475",
-            "error": ""
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
           }
         }
       },
       "error": null,
-      "updated_at": "2026-11-06T06:05:02.582122+03:00"
+      "updated_at": "2026-11-06T07:04:32.410545+03:00"
     }
   }
 }
