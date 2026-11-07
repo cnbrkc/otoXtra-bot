@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-11-07-08:01",
-  "status": "completed",
-  "started_at": "2026-11-07T08:01:23.396228+03:00",
-  "updated_at": "2026-11-07T08:04:24.214625+03:00",
+  "run_id": "2026-11-07-09:01",
+  "status": "error",
+  "started_at": "2026-11-07T09:01:18.233558+03:00",
+  "updated_at": "2026-11-07T09:03:16.061371+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-            "link": "https://www.log.com.tr/gerceklestirilen-yeni-bir-test-populer-elektrikli-otomobillerin-gercek-menzillerini-ortaya-koydu/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-07T08:01:23.476972+03:00",
-            "summary": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda […] Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "elektrikli-gercek-gerceklestirilen-koydu-menzillerini-ortaya-otomobillerin-populer-test"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by NameResoluti",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.mizuki.st/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -112,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.mizuki.st/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -169,221 +147,46 @@
             "found": 167,
             "after_keyword": 118,
             "after_time": 6,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 167,
           "after_keyword": 118,
           "after_time": 6,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-07T08:03:15.354223+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-07T09:03:16.061371+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-          "link": "https://www.log.com.tr/gerceklestirilen-yeni-bir-test-populer-elektrikli-otomobillerin-gercek-menzillerini-ortaya-koydu/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T08:01:23.476972+03:00",
-          "summary": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda […] Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-gercek-gerceklestirilen-koydu-menzillerini-ortaya-otomobillerin-populer-test",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç sahiplerinin en büyük merak konusu olan gerçek menzil verilerini sunması ve tartışma yaratmaya çok müsait olması nedeniyle yüksek viral potansiyele sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 80,
-        "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 22,
-          "benzersizlik": 15,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 8
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Elektrikli araç sahiplerinin en büyük merak konusu olan gerçek menzil verilerini sunması ve tartışma yaratmaya çok müsait olması nedeniyle yüksek viral potansiyele sahip.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-            "score": 80,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 22,
-              "benzersizlik": 15,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-07T08:03:17.048884+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-          "link": "https://www.log.com.tr/gerceklestirilen-yeni-bir-test-populer-elektrikli-otomobillerin-gercek-menzillerini-ortaya-koydu/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T08:01:23.476972+03:00",
-          "summary": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda […] Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-06_16-02-34_4SWHM-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-gercek-gerceklestirilen-koydu-menzillerini-ortaya-otomobillerin-populer-test",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç sahiplerinin en büyük merak konusu olan gerçek menzil verilerini sunması ve tartışma yaratmaya çok müsait olması nedeniyle yüksek viral potansiyele sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ınyeni sonuçları açıklandı.Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda 477 km yol alabilen Zeekr 7GT ve WLTP’ye göre 312 km, gerçek kullanımda ise 262 km menzil sunan BYD Atto 2 geliyor. Listede WLTP değeri 434 km olan ve gerçek kullanımda 357 km’ye ulaşan Leapmotor B10 ile 521 km’lik WLTP menziline karşılık 425 km gerçek menzil sunan Opel Grandland da yer alırken, sıralamada WLTP’de 614 km, gerçek kullanımda 488 km menzile ulaşan Volvo EX60 ile WLTP değeri 772 km, gerçek menzili ise 613 km olan Mercedes-Benz CLA da dikkat çekiyor. Listeyi WLTP’ye göre 479 km, gerçek kullanımda ise 380 km menzil sunan Mazda 6e ile 530 km’lik WLTP menziline karşılık gerçek kullanımda 419 km yol kat eden Xpeng P7+ tamamlıyor. İşte elektrikli otomobilleringerçek menzilleri 🔋⤵️ Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. 🔋Test edilen 15 otomobilden yalnızca ikisi açıklanan resmi menzilinin %90’ına ulaşırken; WLTP…pic.twitter.com/7uzAG5vJGI — Taylan Özgür Dil (@taylandil)November 5, 2026"
-        },
-        "post_text": "AUTOBEST’in 15 araçlık EcoBest Challenge testinde gerçek yol şartları ölçüldü.\n\nZirveye yerleşen Kia EV2, kağıttaki 418 km menzilin karşılığında gerçekte 397 km yol yaptı.\n\nAudi Q4 e-tron 473 km, Tesla Model Y ise 466 km gerçek menzille arkadan geliyor.\n\nLaboratuvardaki veriler asfalttaki gerçeği gizleyemiyor.",
-        "post_text_length": 311,
-        "story_card_title": "Elektrikli otomobillerin asfalttaki gerçek menzilleri ifşa oldu",
-        "story_card_subtitle": "AUTOBEST'in gerçek yol şartlarında gerçekleştirdiği EcoBest Challenge testleri, kağıt üzerinde yazan verilerle asfalttaki gerçeklerin birbirini tutmadığını bir kez daha kanıtladı. Testin zirvesine yerleşen Kia EV2, 418 kilometrelik resmi menziline karşılık asfalt üzerinde 397 kilometre yol yapmayı başardı. Listenin devamında yer alan Audi Q4 e-tron 473 kilometre, Tesla Model Y ise 466 kilometre gerçek menzille bu iddialı modelin arkasından geldi.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-07T08:03:24.256144+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu",
-          "link": "https://www.log.com.tr/gerceklestirilen-yeni-bir-test-populer-elektrikli-otomobillerin-gercek-menzillerini-ortaya-koydu/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T08:01:23.476972+03:00",
-          "summary": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda […] Gerçekleştirilen yeni bir test, popüler elektrikli otomobillerin “gerçek menzillerini” ortaya koydu yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "elektrikli-gercek-gerceklestirilen-koydu-menzillerini-ortaya-otomobillerin-populer-test",
-          "base_ai_score": 76,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 22,
-            "benzersizlik": 15,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 8
-          },
-          "score": 80,
-          "score_reason": "ai_scored",
-          "score_explanation": "Elektrikli araç sahiplerinin en büyük merak konusu olan gerçek menzil verilerini sunması ve tartışma yaratmaya çok müsait olması nedeniyle yüksek viral potansiyele sahip.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği 15 araçlık elektrikli araç testi EcoBest Challenge’ınyeni sonuçları açıklandı.Burada araçlar gerçek yol şartlarında ve kullanım senaryolarında test edildi. Gerçek menzilin WLTP değerine oranını esas alan EcoC 1 sıralamasında zirvede, Türkiye’de de satılan modellerden “Kia EV2” yer alıyor. Aracın WLTP’ye göre 418 km olan menzili, gerçek kullanımda 397 km olarak ölçüldü. Onu, 511 km’lik WLTP menzilinin karşılığında gerçek kullanımda 473 km yol kat edebilen Audi Q4 e-tron ile WLTP değeri 525 km, gerçek menzili ise 466 km olan Tesla Model Y takip ediyor. Listenin devamında WLTP’ye göre 261 km, gerçek kullanımda 229 km’ye ulaşabilen Renault Twingo, 498 km’lik WLTP menziline karşılık 436 km gerçek menzil sunan Citroën ë-C5 Aircross ve WLTP’de 737 km, gerçek kullanımda ise 640 km menzil sunan BMW iX3 bulunuyor. Bu modellerin ardından WLTP değeri 487 km, gerçek menzili 422 km olan Peugeot e-5008, 558 km’lik WLTP menziline karşılık gerçek kullanımda 477 km yol alabilen Zeekr 7GT ve WLTP’ye göre 312 km, gerçek kullanımda ise 262 km menzil sunan BYD Atto 2 geliyor. Listede WLTP değeri 434 km olan ve gerçek kullanımda 357 km’ye ulaşan Leapmotor B10 ile 521 km’lik WLTP menziline karşılık 425 km gerçek menzil sunan Opel Grandland da yer alırken, sıralamada WLTP’de 614 km, gerçek kullanımda 488 km menzile ulaşan Volvo EX60 ile WLTP değeri 772 km, gerçek menzili ise 613 km olan Mercedes-Benz CLA da dikkat çekiyor. Listeyi WLTP’ye göre 479 km, gerçek kullanımda ise 380 km menzil sunan Mazda 6e ile 530 km’lik WLTP menziline karşılık gerçek kullanımda 419 km yol kat eden Xpeng P7+ tamamlıyor. İşte elektrikli otomobilleringerçek menzilleri 🔋⤵️ Otomotiv gazetecilerinin oluşturduğu AUTOBEST’in düzenlediği elektrikli araç testi EcoBest Challenge’ın yeni sonuçları açıklandı. 🔋Test edilen 15 otomobilden yalnızca ikisi açıklanan resmi menzilinin %90’ına ulaşırken; WLTP…pic.twitter.com/7uzAG5vJGI — Taylan Özgür Dil (@taylandil)November 5, 2026",
-          "post_text_for_card": "AUTOBEST’in 15 araçlık EcoBest Challenge testinde gerçek yol şartları ölçüldü.\n\nZirveye yerleşen Kia EV2, kağıttaki 418 km menzilin karşılığında gerçekte 397 km yol yaptı.\n\nAudi Q4 e-tron 473 km, Tesla Model Y ise 466 km gerçek menzille arkadan geliyor.\n\nLaboratuvardaki veriler asfalttaki gerçeği gizleyemiyor.",
-          "story_card_title": "Elektrikli otomobillerin asfalttaki gerçek menzilleri ifşa oldu",
-          "story_card_subtitle": "AUTOBEST'in gerçek yol şartlarında gerçekleştirdiği EcoBest Challenge testleri, kağıt üzerinde yazan verilerle asfalttaki gerçeklerin birbirini tutmadığını bir kez daha kanıtladı. Testin zirvesine yerleşen Kia EV2, 418 kilometrelik resmi menziline karşılık asfalt üzerinde 397 kilometre yol yapmayı başardı. Listenin devamında yer alan Audi Q4 e-tron 473 kilometre, Tesla Model Y ise 466 kilometre gerçek menzille bu iddialı modelin arkasından geldi.",
-          "image_sources": [
-            "no_image"
-          ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
-        },
-        "post_text": "AUTOBEST’in 15 araçlık EcoBest Challenge testinde gerçek yol şartları ölçüldü.\n\nZirveye yerleşen Kia EV2, kağıttaki 418 km menzilin karşılığında gerçekte 397 km yol yaptı.\n\nAudi Q4 e-tron 473 km, Tesla Model Y ise 466 km gerçek menzille arkadan geliyor.\n\nLaboratuvardaki veriler asfalttaki gerçeği gizleyemiyor.",
-        "story_card_title": "Elektrikli otomobillerin asfalttaki gerçek menzilleri ifşa oldu",
-        "story_card_subtitle": "AUTOBEST'in gerçek yol şartlarında gerçekleştirdiği EcoBest Challenge testleri, kağıt üzerinde yazan verilerle asfalttaki gerçeklerin birbirini tutmadığını bir kez daha kanıtladı. Testin zirvesine yerleşen Kia EV2, 418 kilometrelik resmi menziline karşılık asfalt üzerinde 397 kilometre yol yapmayı başardı. Listenin devamında yer alan Audi Q4 e-tron 473 kilometre, Tesla Model Y ise 466 kilometre gerçek menzille bu iddialı modelin arkasından geldi.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-07T08:04:09.721764+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122187165302916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-07T08:04:24.214625+03:00"
+      "updated_at": null
     }
   }
 }
