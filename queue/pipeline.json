@@ -1,14 +1,78 @@
 {
-  "run_id": "2026-11-08-11:01",
-  "status": "error",
-  "started_at": "2026-11-08T11:01:23.840963+03:00",
-  "updated_at": "2026-11-08T11:03:01.663035+03:00",
+  "run_id": "2026-11-08-13:01",
+  "status": "completed",
+  "started_at": "2026-11-08T13:01:17.798259+03:00",
+  "updated_at": "2026-11-08T13:03:38.877045+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Çin'in elektrikli Rolls-Royce'u tanıtıldı: 1.000 km menzil ve ihtişamlı tasarım",
+            "link": "https://www.donanimhaber.com/cin-in-elektrikli-rolls-royce-u-tanitildi-1-000-km-menzil--212633",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-08T10:00:00+00:00",
+            "summary": "BYD'nin ultra lüks markası Yangwang, yeni amiral gemisi elektrikli sedan modelini tanıttı. Rolls-Royce çizgilerini Çin zanaatıyla buluşturan araç yüksek menzili ve lüks detaylarıyla dikkat çekiyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/212633/1200x675cin-in-elektrikli-rolls-royce-u-tanitildi-1-000-km-menzil.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212633/1200x675cin-in-elektrikli-rolls-royce-u-tanitildi-1-000-km-menzil.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/212633/1200x675cin-in-elektrikli-rolls-royce-u-tanitildi-1-000-km-menzil.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "000-cin-elektrikli-ihtisamli-menzil-rolls-royce-tasarim"
+          },
+          {
+            "title": "Yeni elektrikli motosiklet Yamaha XENTER E görücüye çıkarıldı",
+            "link": "https://www.log.com.tr/yeni-elektrikli-motosiklet-yamaha-xenter-e-gorucuye-cikarildi/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-08T09:17:02+00:00",
+            "summary": "Yamaha, EICMA 2026’da NMAX E’nin yanı sıra XENTER E adlı yeni elektrikli motosiklet modelini de tanıttı. 125cc sınıfındaki modellere rakip olarak konumlandırılan XENTER E, maksimum 7,5 kW (10 beygir) güç ve 33,3 Nm tork üretiyor. 3,5 kWh kapasiteli bataryayla donatılan motosiklet, Yamaha’nın resmi verilerine göre normal kullanımda yaklaşık 108 km kadar menzil sunuyor. Bataryası normal şarj istasyonlarında 5,5 saatte doldurulabilen model, rejeneratif frenleme, çekiş kontrolü ve geri sürüş modu gibi önemli sürüş destek sistemleriyle geliyor. 5 inç boyutunda TFT ekrana sahip olan XENTER E’de akıllı telefon şarjı için bir USB-C portu ve koltuğun altında kask alabilecek genişlikte bir saklama alanı bulunuyor. Fiyatı açıklanmayan ancak Avrupa’da yaklaşık 8.000 euroya satılması beklenen motosiklet, kesinleşmemiş olsa da 2027’de Türkiye’ye getirilebilir. Yeni elektrikli motosiklet Yamaha XENTER E görücüye çıkarıldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-08_12-14-15_G59Mv-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-08_12-14-15_G59Mv-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-08_12-14-15_G59Mv-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "cikarildi-elektrikli-gorucuye-motosiklet-xenter-yamaha"
+          },
+          {
+            "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+            "link": "https://shiftdelete.net/motorine-indirim-8-kasim-2026-akaryakit-fiyatlari",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-08T09:30:00+00:00",
+            "summary": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları.",
+            "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+            "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+            "image_candidates": [
+              "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp"
+            ],
+            "image_source": "rss",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "indirim-motorine-yaklasik"
+          }
+        ],
+        "count": 3,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +133,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 429 Client Error: Too Many Requests for url: https://nitter.anoxinon.de/teknotagstr/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.netbub.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +154,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.mizuki.st/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -145,48 +209,277 @@
           },
           "_metrics": {
             "found": 166,
-            "after_keyword": 115,
-            "after_time": 8,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_keyword": 113,
+            "after_time": 12,
+            "after_posted": 4,
+            "after_duplicate": 3,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
           "found": 166,
-          "after_keyword": 115,
-          "after_time": 8,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_keyword": 113,
+          "after_time": 12,
+          "after_posted": 4,
+          "after_duplicate": 3,
+          "after_shared_variant_cooldown": 4
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-08T11:03:01.663035+03:00"
+      "error": null,
+      "updated_at": "2026-11-08T13:02:30.777309+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+          "link": "https://shiftdelete.net/motorine-indirim-8-kasim-2026-akaryakit-fiyatlari",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T09:30:00+00:00",
+          "summary": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları.",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "indirim-motorine-yaklasik",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 12,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 12
+          },
+          "score": 89,
+          "score_reason": "ai_scored",
+          "score_explanation": "Akaryakıt fiyatlarındaki büyük değişimler (özellikle bu denli yüksek indirimler) doğrudan ekonomik etkisi nedeniyle halkın en çok konuştuğu, paylaştığı ve reaksiyon gösterdiği haberlerin başında gelir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 89,
+        "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 25,
+          "benzersizlik": 12,
+          "gundem_gucu": 20,
+          "paylasilabilirlik": 12
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Akaryakıt fiyatlarındaki büyük değişimler (özellikle bu denli yüksek indirimler) doğrudan ekonomik etkisi nedeniyle halkın en çok konuştuğu, paylaştığı ve reaksiyon gösterdiği haberlerin başında gelir.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+            "score": 89,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 25,
+              "benzersizlik": 12,
+              "gundem_gucu": 20,
+              "paylasilabilirlik": 12
+            }
+          },
+          {
+            "title": "Çin'in elektrikli Rolls-Royce'u tanıtıldı: 1.000 km menzil ve ihtişamlı tasarım",
+            "score": 88,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 18,
+              "paylasilabilirlik": 12
+            }
+          },
+          {
+            "title": "Yeni elektrikli motosiklet Yamaha XENTER E görücüye çıkarıldı",
+            "score": 58,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 12,
+              "benzersizlik": 10,
+              "gundem_gucu": 10,
+              "paylasilabilirlik": 6
+            }
+          }
+        ],
+        "scored_count": 3,
+        "cooldown_candidates": [
+          {
+            "title": "Çin'in elektrikli Rolls-Royce'u tanıtıldı: 1.000 km menzil ve ihtişamlı tasarım",
+            "link": "https://www.donanimhaber.com/cin-in-elektrikli-rolls-royce-u-tanitildi-1-000-km-menzil--212633",
+            "score": 88,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "000-cin-elektrikli-ihtisamli-menzil-rolls-royce-tasarim"
+          },
+          {
+            "title": "Yeni elektrikli motosiklet Yamaha XENTER E görücüye çıkarıldı",
+            "link": "https://www.log.com.tr/yeni-elektrikli-motosiklet-yamaha-xenter-e-gorucuye-cikarildi/",
+            "score": 58,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "cikarildi-elektrikli-gorucuye-motosiklet-xenter-yamaha"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T13:02:32.934648+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+          "link": "https://shiftdelete.net/motorine-indirim-8-kasim-2026-akaryakit-fiyatlari",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T09:30:00+00:00",
+          "summary": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları.",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "indirim-motorine-yaklasik",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 12,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 12
+          },
+          "score": 89,
+          "score_reason": "ai_scored",
+          "score_explanation": "Akaryakıt fiyatlarındaki büyük değişimler (özellikle bu denli yüksek indirimler) doğrudan ekonomik etkisi nedeniyle halkın en çok konuştuğu, paylaştığı ve reaksiyon gösterdiği haberlerin başında gelir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları. Motorinin litre fiyatı, 7 Kasım'da pompaya yansıyan yaklaşık 5,4 TL'likmotorine indirimile İstanbul'da 95 TL seviyesine geriledi. Bu, bir gün önce benzine gelen yaklaşık 6 TL'lik indirimin ardından iki gün içinde akaryakıtta görülen ikinci büyük indirim oldu. Ancak fark kapanmadı: Motorin İstanbul'da hala benzinden litre başına 20 TL'den fazla pahalı. İndirimin tutarı kaynaklara ve dağıtım şirketlerine göre 5,40 ile 5,47 TL arasında değişiyor. Haberlere göre indirimin nedeni uluslararası ürün fiyatlarındaki gerileme. Pazar günü itibarıyla motorinde yeni bir zam ya da indirim yok. 8 Kasım itibarıyla büyük şehirlerde motorinin litre fiyatları şöyle: İndirimden önce motorinin litresi İstanbul Avrupa Yakası'nda 100,50 TL, Ankara'da 101,60 TL, İzmir'de 101,90 TL seviyesindeydi. Fiyatlar dağıtım şirketine ve ilçeye göre birkaç kuruş farklı olabilir. Benzine 6 Kasım'da yaklaşık 6 TL indirim gelmişti (ayrıntılar). Benzinin litresi bugün İstanbul Avrupa Yakası'nda 74,60 TL, Anadolu Yakası'nda 74,40 TL, Ankara'da 75,60 TL ve İzmir'de 75,80 TL. LPG'de ise değişiklik yok. Otogazın litresi İstanbul Avrupa Yakası'nda 50,70 TL, Anadolu Yakası'nda 50,10 TL, Ankara'da 50,79 TL ve İzmir'de 50,70 TL. Türkiye'de pompa fiyatları rafineri çıkış fiyatı, dolar/TL kuru, Özel Tüketim Vergisi, KDV ile dağıtım ve bayi marjlarından oluşuyor. Motorinin uluslararası ürün fiyatı benzininkinden yüksek seyrettiği için iki indirimden sonra da aradaki fark sürüyor. Akaryakıt fiyatlarındaki bütün gelişmeleriakaryakıt fiyatlarısayfamızda takip edebilirsin. Kapak görseli: Rama, Wikimedia Commons, CC BY-SA 2.0 FR. Haberde hata mı var?Bize bildirin Motorindeki bu indirim sonrası, benzinden neden hâlâ 20 TL'den fazla pahalı olduğunu sen nasıl yorumluyorsun? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
+        },
+        "post_text": "7 Kasım'da pompaya yansıyan 5,4 TL'lik motorin indirimiyle İstanbul'da litre fiyatı 95 TL seviyesine geriledi.\n\nBenzine gelen yaklaşık 6 TL'lik indirimin ardından iki gün içinde akaryakıtta ikinci büyük hamle kaydedildi.\n\nAradaki makas kapanmıyor; motorin İstanbul'da hâlâ benzinden litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.\n\nUluslararası ürün fiyatlarındaki gerilemeyle gelen bu indirim bile akaryakıt bütçesindeki yükü hafifletmeye yetmiyor.",
+        "post_text_length": 459,
+        "story_card_title": "Motorinde rekor indirim pompaya yansıdı",
+        "story_card_subtitle": "7 Kasım'da yürürlüğe giren 5,4 TL'lik indirimle birlikte motorinin litre fiyatı İstanbul'da 95 TL seviyesine geriledi. Benzindeki benzer düşüşün ardından gelen bu hamle akaryakıt bütçelerinde bir rahatlama yarattı. Ancak motorin, İstanbul'da hâlâ benzine kıyasla litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T13:03:00.091881+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Motorine yaklaşık 5,4 TL indirim geldi",
+          "link": "https://shiftdelete.net/motorine-indirim-8-kasim-2026-akaryakit-fiyatlari",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T09:30:00+00:00",
+          "summary": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları.",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/motorin-indirim-8-kasim-2026-kapak.webp"
+          ],
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "indirim-motorine-yaklasik",
+          "base_ai_score": 88,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 25,
+            "benzersizlik": 12,
+            "gundem_gucu": 20,
+            "paylasilabilirlik": 12
+          },
+          "score": 89,
+          "score_reason": "ai_scored",
+          "score_explanation": "Akaryakıt fiyatlarındaki büyük değişimler (özellikle bu denli yüksek indirimler) doğrudan ekonomik etkisi nedeniyle halkın en çok konuştuğu, paylaştığı ve reaksiyon gösterdiği haberlerin başında gelir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Motorine yaklaşık 5,4 TL indirim geldi; litre fiyatı İstanbul'da 95 TL'ye indi. İşte İstanbul, Ankara ve İzmir'de güncel motorin, benzin ve LPG fiyatları. Motorinin litre fiyatı, 7 Kasım'da pompaya yansıyan yaklaşık 5,4 TL'likmotorine indirimile İstanbul'da 95 TL seviyesine geriledi. Bu, bir gün önce benzine gelen yaklaşık 6 TL'lik indirimin ardından iki gün içinde akaryakıtta görülen ikinci büyük indirim oldu. Ancak fark kapanmadı: Motorin İstanbul'da hala benzinden litre başına 20 TL'den fazla pahalı. İndirimin tutarı kaynaklara ve dağıtım şirketlerine göre 5,40 ile 5,47 TL arasında değişiyor. Haberlere göre indirimin nedeni uluslararası ürün fiyatlarındaki gerileme. Pazar günü itibarıyla motorinde yeni bir zam ya da indirim yok. 8 Kasım itibarıyla büyük şehirlerde motorinin litre fiyatları şöyle: İndirimden önce motorinin litresi İstanbul Avrupa Yakası'nda 100,50 TL, Ankara'da 101,60 TL, İzmir'de 101,90 TL seviyesindeydi. Fiyatlar dağıtım şirketine ve ilçeye göre birkaç kuruş farklı olabilir. Benzine 6 Kasım'da yaklaşık 6 TL indirim gelmişti (ayrıntılar). Benzinin litresi bugün İstanbul Avrupa Yakası'nda 74,60 TL, Anadolu Yakası'nda 74,40 TL, Ankara'da 75,60 TL ve İzmir'de 75,80 TL. LPG'de ise değişiklik yok. Otogazın litresi İstanbul Avrupa Yakası'nda 50,70 TL, Anadolu Yakası'nda 50,10 TL, Ankara'da 50,79 TL ve İzmir'de 50,70 TL. Türkiye'de pompa fiyatları rafineri çıkış fiyatı, dolar/TL kuru, Özel Tüketim Vergisi, KDV ile dağıtım ve bayi marjlarından oluşuyor. Motorinin uluslararası ürün fiyatı benzininkinden yüksek seyrettiği için iki indirimden sonra da aradaki fark sürüyor. Akaryakıt fiyatlarındaki bütün gelişmeleriakaryakıt fiyatlarısayfamızda takip edebilirsin. Kapak görseli: Rama, Wikimedia Commons, CC BY-SA 2.0 FR. Haberde hata mı var?Bize bildirin Motorindeki bu indirim sonrası, benzinden neden hâlâ 20 TL'den fazla pahalı olduğunu sen nasıl yorumluyorsun? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
+          "post_text_for_card": "7 Kasım'da pompaya yansıyan 5,4 TL'lik motorin indirimiyle İstanbul'da litre fiyatı 95 TL seviyesine geriledi.\n\nBenzine gelen yaklaşık 6 TL'lik indirimin ardından iki gün içinde akaryakıtta ikinci büyük hamle kaydedildi.\n\nAradaki makas kapanmıyor; motorin İstanbul'da hâlâ benzinden litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.\n\nUluslararası ürün fiyatlarındaki gerilemeyle gelen bu indirim bile akaryakıt bütçesindeki yükü hafifletmeye yetmiyor.",
+          "story_card_title": "Motorinde rekor indirim pompaya yansıdı",
+          "story_card_subtitle": "7 Kasım'da yürürlüğe giren 5,4 TL'lik indirimle birlikte motorinin litre fiyatı İstanbul'da 95 TL seviyesine geriledi. Benzindeki benzer düşüşün ardından gelen bu hamle akaryakıt bütçelerinde bir rahatlama yarattı. Ancak motorin, İstanbul'da hâlâ benzine kıyasla litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.",
+          "image_sources": [
+            "article_img",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://shiftdelete.net/static/img/content/26-11/05/chery-fiyat-listesi-kasim-2026.jpg",
+            "https://shiftdelete.net/static/img/content/26-11/07/dfa45070-a7ca-4382-9e8f-683721a4cbca.jpeg",
+            "https://shiftdelete.net/static/img/content/26-11/07/instagram-hesap-dondurma.jpg",
+            "https://shiftdelete.net/static/img/content/26-11/08/kia-fiyat-listesi-kasim-2026.jpg"
+          ]
+        },
+        "post_text": "7 Kasım'da pompaya yansıyan 5,4 TL'lik motorin indirimiyle İstanbul'da litre fiyatı 95 TL seviyesine geriledi.\n\nBenzine gelen yaklaşık 6 TL'lik indirimin ardından iki gün içinde akaryakıtta ikinci büyük hamle kaydedildi.\n\nAradaki makas kapanmıyor; motorin İstanbul'da hâlâ benzinden litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.\n\nUluslararası ürün fiyatlarındaki gerilemeyle gelen bu indirim bile akaryakıt bütçesindeki yükü hafifletmeye yetmiyor.",
+        "story_card_title": "Motorinde rekor indirim pompaya yansıdı",
+        "story_card_subtitle": "7 Kasım'da yürürlüğe giren 5,4 TL'lik indirimle birlikte motorinin litre fiyatı İstanbul'da 95 TL seviyesine geriledi. Benzindeki benzer düşüşün ardından gelen bu hamle akaryakıt bütçelerinde bir rahatlama yarattı. Ancak motorin, İstanbul'da hâlâ benzine kıyasla litre başına 20 TL'den fazla pahalı kalmaya devam ediyor.",
+        "image_path": "/tmp/otoxtra_img_um0v1437.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_um0v1437.jpg",
+          "/tmp/otoxtra_img_zoaj4vlp.jpg",
+          "/tmp/otoxtra_img_21dkbe_6.jpg",
+          "/tmp/otoxtra_img_lp40spin.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T13:03:02.151781+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122187316466916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17920331091467553",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1430188415995672",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T13:03:38.877045+03:00"
     }
   }
 }
