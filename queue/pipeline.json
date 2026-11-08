@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-11-08-08:01",
-  "status": "error",
-  "started_at": "2026-11-08T08:01:18.387525+03:00",
-  "updated_at": "2026-11-08T08:02:54.446015+03:00",
+  "run_id": "2026-11-08-09:01",
+  "status": "completed",
+  "started_at": "2026-11-08T09:01:19.463750+03:00",
+  "updated_at": "2026-11-08T09:04:50.418235+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Audi'nin Çin modellerinde neden halka yok?",
+            "link": "https://shiftdelete.net/audi-cin-logosu-dort-halka-yerine-audi-yazisi",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-08T05:21:00+00:00",
+            "summary": "Audi Çin logosu kararıyla dikkat çekiyor: SAIC ile kurulan yeni marka, dört halka yerine büyük harflerle yazılan AUDI adını taşıyor. Peki neden?",
+            "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+            "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+            "image_candidates": [
+              "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp"
+            ],
+            "image_source": "rss",
+            "source_name": "ShiftDelete Otomobil",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "audi-cin-halka-modellerinde-neden-yok"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.netbub.com/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +112,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.mizuki.st/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
             "attempts": 1,
             "instance": ""
           },
@@ -130,11 +152,11 @@
             "instance": "nitter.netbub.com"
           },
           "Sekizsilindir": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/sekizsilindir/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.netbub.com"
           },
           "otopodyum": {
             "status": "ok",
@@ -144,49 +166,239 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 156,
-            "after_keyword": 108,
-            "after_time": 6,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 166,
+            "after_keyword": 115,
+            "after_time": 7,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 156,
-          "after_keyword": 108,
-          "after_time": 6,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 166,
+          "after_keyword": 115,
+          "after_time": 7,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-08T08:02:54.446015+03:00"
+      "error": null,
+      "updated_at": "2026-11-08T09:03:53.050435+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Audi'nin Çin modellerinde neden halka yok?",
+          "link": "https://shiftdelete.net/audi-cin-logosu-dort-halka-yerine-audi-yazisi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T05:21:00+00:00",
+          "summary": "Audi Çin logosu kararıyla dikkat çekiyor: SAIC ile kurulan yeni marka, dört halka yerine büyük harflerle yazılan AUDI adını taşıyor. Peki neden?",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "audi-cin-halka-modellerinde-neden-yok",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "İkonik bir logo kararından vazgeçilmesi ve bunun arka planındaki strateji sosyal medyada yüksek merak ve tartışma uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 81,
+        "title": "Audi'nin Çin modellerinde neden halka yok?",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 20,
+          "benzersizlik": 17,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "İkonik bir logo kararından vazgeçilmesi ve bunun arka planındaki strateji sosyal medyada yüksek merak ve tartışma uyandıracak nitelikte.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Audi'nin Çin modellerinde neden halka yok?",
+            "score": 81,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 20,
+              "benzersizlik": 17,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 8
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T09:03:54.413937+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Audi'nin Çin modellerinde neden halka yok?",
+          "link": "https://shiftdelete.net/audi-cin-logosu-dort-halka-yerine-audi-yazisi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T05:21:00+00:00",
+          "summary": "Audi Çin logosu kararıyla dikkat çekiyor: SAIC ile kurulan yeni marka, dört halka yerine büyük harflerle yazılan AUDI adını taşıyor. Peki neden?",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp"
+          ],
+          "image_source": "rss",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "audi-cin-halka-modellerinde-neden-yok",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "İkonik bir logo kararından vazgeçilmesi ve bunun arka planındaki strateji sosyal medyada yüksek merak ve tartışma uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Audi Çin logosu değişti: SAIC ortaklığıyla doğan yeni marka, dört halka yerine büyük harfli AUDI yazısını kullanıyor. İşte nedeni. Audi denince akla ilk gelen şey, iç içe geçmiş dörtlü halka logosudur. AncakAudi Çin logosufarklı: Çin pazarına özel bazı modellerde halkalar yok. Bunun yerine büyük harflerle yazılmış AUDI adı var. Audi, Çinli otomotiv devi SAIC ile güçlerini birleştirdi. Bu ortaklıktan yeni bir marka doğdu. Üstelik marka, klasik logodan bağımsız olarak yalnızca AUDI adını taşıyor. İlk modeller ise E5 Sportback ve E7X SUV oldu. Şirketin vermek istediği mesaj net. Yeni marka, klasik Audi ile bağını korurken modelleri mevcut Audi ailesinden görsel olarak ayırıyor. Dolayısıyla bu karar, Audi'nin kendi logosundan memnun olmadığı anlamına gelmiyor. Ayrıca AUDI yazısını taşıyan otomobiller, klasik modellerin sadece farklı logolu versiyonları değil. Yeni marka, kendine özgü bir tasarım dili ve ürün ailesiyle konumlandırılıyor. Bu nedenle ayrı bir kimlik kurma çabası öne çıkıyor. Audi, klasik markasını terk etmiş değil. Şirket, bilinen Audi ile yeni AUDI markasını yan yana konumlandırıyor. Böylece farklı müşteri gruplarına, farklı ürün ve teknoloji yaklaşımlarıyla ulaşmayı hedefliyor. Açıklamaya göre büyük harfli AUDI yazısı, markanın köklü geçmişiyle bağı sürdürüyor. Aynı zamanda yeni oluşumun geleneksel modellerden farklı olduğunu gösteriyor. Amaç, dört halkayı modern bir simgeyle değiştirmek değil;Çiniçin ayrı bir kimlik kurmak. Çin'deki pazarlama yöneticilerinden Katy Tsang'a göre bu yazı logosu tüketiciye yenilik hissi verecek. Ayrıca \"Arkamda Audi kalitesi var\" güvenini aşılayacak. Bu nedenle hamlenin arkasında üç strateji öne çıkıyor: Yeni markanın en büyük dayanağı, Çinli üretici SAIC ile yapılan ortaklık. İki şirket, Çin pazarının dinamiklerine uygun elektrikli otomobiller üzerinde çalışıyor. Ayrıca yeni bir araç platformunu birlikte geliştiriyorlar. Böylece Audi'nin mühendislik birikimi, Çin'in teknoloji ekosistemiyle buluşuyor. Ortaklığın merkezinde Advanced Digitized Platform (ADP) yer alıyor. Bu platform; gelişmiş bağlantı özellikleri, otonom sürüş teknolojileri ve kablosuz güncellemelerin (OTA) merkez üssü olarak çalışıyor. Yani araçların yazılım tarafı da bu yapı üzerinden yönetiliyor. Kısacası AUDI markasında klasik logonun kullanılmaması, marka geçmişinden uzaklaşma isteğinden doğmuyor. Asıl amaç, Çin pazarı için farklı bir marka kimliği oluşturmak. Şimdilik yeni markanın ilk modelleri E5 Sportback ve E7X SUV olarak öne çıkıyor. Haberde hata mı var?Bize bildirin Sen olsan, Çin'e özel bu AUDI yazılı yeni marka sana güven verir miydi, yoksa klasik halkalı logoyu mu tercih ederdin? çin şirketleri ortaklık kurduğu tüm markaları yutuyor Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
+        },
+        "post_text": "AUDI LOGOSUNUN ÇİN PAZARINDAKİ DEĞİŞİMİ KLASİK ÇİZGİNİN DIŞINA ÇIKIYOR.\n\nSAIC ortaklığıyla kurulan yeni markanın ilk modelleri E5 Sportback ve E7X SUV oldu. Bu araçlarda iç içe geçmiş dört halka yerine büyük harflerle AUDI yazısı yer alıyor.\n\nKlasik tasarımdan vazgeçildiği algısı yaratılsa da mesele tamamen ayrı bir kimlik kurma çabasından ibaret.\n\nGeleneksel çizgiyi korurken yeni ürün ailesini görsel olarak ayırmak pazarda yeni bir refleks gerektiriyor.",
+        "post_text_length": 458,
+        "story_card_title": "AUDI'nin ikonik halkaları Çin'de tarih oluyor!",
+        "story_card_subtitle": "Alman devinin Çin pazarı için SAIC ortaklığıyla kurduğu yeni markada dört halka logosu yer almıyor. E5 Sportback ve E7X SUV modellerinde klasik logo yerine büyük harfli AUDI yazısı tercih edildi. Bu köklü değişim geleneksel çizgiden sapma değil, yeni ürün ailesini özel bir kimlikle konumlandırma hamlesi olarak öne çıkıyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T09:04:08.276715+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Audi'nin Çin modellerinde neden halka yok?",
+          "link": "https://shiftdelete.net/audi-cin-logosu-dort-halka-yerine-audi-yazisi",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-08T05:21:00+00:00",
+          "summary": "Audi Çin logosu kararıyla dikkat çekiyor: SAIC ile kurulan yeni marka, dört halka yerine büyük harflerle yazılan AUDI adını taşıyor. Peki neden?",
+          "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp",
+          "image_candidates": [
+            "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/audi-e5-sportback-kapak-0811.webp"
+          ],
+          "image_source": "article_img",
+          "source_name": "ShiftDelete Otomobil",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "audi-cin-halka-modellerinde-neden-yok",
+          "base_ai_score": 76,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 20,
+            "benzersizlik": 17,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 8
+          },
+          "score": 81,
+          "score_reason": "ai_scored",
+          "score_explanation": "İkonik bir logo kararından vazgeçilmesi ve bunun arka planındaki strateji sosyal medyada yüksek merak ve tartışma uyandıracak nitelikte.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Audi Çin logosu değişti: SAIC ortaklığıyla doğan yeni marka, dört halka yerine büyük harfli AUDI yazısını kullanıyor. İşte nedeni. Audi denince akla ilk gelen şey, iç içe geçmiş dörtlü halka logosudur. AncakAudi Çin logosufarklı: Çin pazarına özel bazı modellerde halkalar yok. Bunun yerine büyük harflerle yazılmış AUDI adı var. Audi, Çinli otomotiv devi SAIC ile güçlerini birleştirdi. Bu ortaklıktan yeni bir marka doğdu. Üstelik marka, klasik logodan bağımsız olarak yalnızca AUDI adını taşıyor. İlk modeller ise E5 Sportback ve E7X SUV oldu. Şirketin vermek istediği mesaj net. Yeni marka, klasik Audi ile bağını korurken modelleri mevcut Audi ailesinden görsel olarak ayırıyor. Dolayısıyla bu karar, Audi'nin kendi logosundan memnun olmadığı anlamına gelmiyor. Ayrıca AUDI yazısını taşıyan otomobiller, klasik modellerin sadece farklı logolu versiyonları değil. Yeni marka, kendine özgü bir tasarım dili ve ürün ailesiyle konumlandırılıyor. Bu nedenle ayrı bir kimlik kurma çabası öne çıkıyor. Audi, klasik markasını terk etmiş değil. Şirket, bilinen Audi ile yeni AUDI markasını yan yana konumlandırıyor. Böylece farklı müşteri gruplarına, farklı ürün ve teknoloji yaklaşımlarıyla ulaşmayı hedefliyor. Açıklamaya göre büyük harfli AUDI yazısı, markanın köklü geçmişiyle bağı sürdürüyor. Aynı zamanda yeni oluşumun geleneksel modellerden farklı olduğunu gösteriyor. Amaç, dört halkayı modern bir simgeyle değiştirmek değil;Çiniçin ayrı bir kimlik kurmak. Çin'deki pazarlama yöneticilerinden Katy Tsang'a göre bu yazı logosu tüketiciye yenilik hissi verecek. Ayrıca \"Arkamda Audi kalitesi var\" güvenini aşılayacak. Bu nedenle hamlenin arkasında üç strateji öne çıkıyor: Yeni markanın en büyük dayanağı, Çinli üretici SAIC ile yapılan ortaklık. İki şirket, Çin pazarının dinamiklerine uygun elektrikli otomobiller üzerinde çalışıyor. Ayrıca yeni bir araç platformunu birlikte geliştiriyorlar. Böylece Audi'nin mühendislik birikimi, Çin'in teknoloji ekosistemiyle buluşuyor. Ortaklığın merkezinde Advanced Digitized Platform (ADP) yer alıyor. Bu platform; gelişmiş bağlantı özellikleri, otonom sürüş teknolojileri ve kablosuz güncellemelerin (OTA) merkez üssü olarak çalışıyor. Yani araçların yazılım tarafı da bu yapı üzerinden yönetiliyor. Kısacası AUDI markasında klasik logonun kullanılmaması, marka geçmişinden uzaklaşma isteğinden doğmuyor. Asıl amaç, Çin pazarı için farklı bir marka kimliği oluşturmak. Şimdilik yeni markanın ilk modelleri E5 Sportback ve E7X SUV olarak öne çıkıyor. Haberde hata mı var?Bize bildirin Sen olsan, Çin'e özel bu AUDI yazılı yeni marka sana güven verir miydi, yoksa klasik halkalı logoyu mu tercih ederdin? çin şirketleri ortaklık kurduğu tüm markaları yutuyor Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
+          "post_text_for_card": "AUDI LOGOSUNUN ÇİN PAZARINDAKİ DEĞİŞİMİ KLASİK ÇİZGİNİN DIŞINA ÇIKIYOR.\n\nSAIC ortaklığıyla kurulan yeni markanın ilk modelleri E5 Sportback ve E7X SUV oldu. Bu araçlarda iç içe geçmiş dört halka yerine büyük harflerle AUDI yazısı yer alıyor.\n\nKlasik tasarımdan vazgeçildiği algısı yaratılsa da mesele tamamen ayrı bir kimlik kurma çabasından ibaret.\n\nGeleneksel çizgiyi korurken yeni ürün ailesini görsel olarak ayırmak pazarda yeni bir refleks gerektiriyor.",
+          "story_card_title": "AUDI'nin ikonik halkaları Çin'de tarih oluyor!",
+          "story_card_subtitle": "Alman devinin Çin pazarı için SAIC ortaklığıyla kurduğu yeni markada dört halka logosu yer almıyor. E5 Sportback ve E7X SUV modellerinde klasik logo yerine büyük harfli AUDI yazısı tercih edildi. Bu köklü değişim geleneksel çizgiden sapma değil, yeni ürün ailesini özel bir kimlikle konumlandırma hamlesi olarak öne çıkıyor.",
+          "image_sources": [
+            "article_img",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://shiftdelete.net/static/img/content/26-11/05/chery-fiyat-listesi-kasim-2026.jpg",
+            "https://shiftdelete.net/static/img/content/26-11/07/dfa45070-a7ca-4382-9e8f-683721a4cbca.jpeg",
+            "https://shiftdelete.net/static/img/content/26-11/07/instagram-hesap-dondurma.jpg",
+            "https://shiftdelete.net/static/img/content/26-11/06/gizli-numara-arama-iphone-android.jpg"
+          ]
+        },
+        "post_text": "AUDI LOGOSUNUN ÇİN PAZARINDAKİ DEĞİŞİMİ KLASİK ÇİZGİNİN DIŞINA ÇIKIYOR.\n\nSAIC ortaklığıyla kurulan yeni markanın ilk modelleri E5 Sportback ve E7X SUV oldu. Bu araçlarda iç içe geçmiş dört halka yerine büyük harflerle AUDI yazısı yer alıyor.\n\nKlasik tasarımdan vazgeçildiği algısı yaratılsa da mesele tamamen ayrı bir kimlik kurma çabasından ibaret.\n\nGeleneksel çizgiyi korurken yeni ürün ailesini görsel olarak ayırmak pazarda yeni bir refleks gerektiriyor.",
+        "story_card_title": "AUDI'nin ikonik halkaları Çin'de tarih oluyor!",
+        "story_card_subtitle": "Alman devinin Çin pazarı için SAIC ortaklığıyla kurduğu yeni markada dört halka logosu yer almıyor. E5 Sportback ve E7X SUV modellerinde klasik logo yerine büyük harfli AUDI yazısı tercih edildi. Bu köklü değişim geleneksel çizgiden sapma değil, yeni ürün ailesini özel bir kimlikle konumlandırma hamlesi olarak öne çıkıyor.",
+        "image_path": "/tmp/otoxtra_img_gaa65raj.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_gaa65raj.jpg",
+          "/tmp/otoxtra_img_jyd3l7ur.jpg",
+          "/tmp/otoxtra_img__t9y33st.jpg",
+          "/tmp/otoxtra_img_e2njljzr.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T09:04:11.314253+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122187297086916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "18174575950457207",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1268066015527721",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-08T09:04:50.418235+03:00"
     }
   }
 }
