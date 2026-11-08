@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-11-08-07:01",
+  "run_id": "2026-11-08-08:01",
   "status": "error",
-  "started_at": "2026-11-08T07:01:17.881072+03:00",
-  "updated_at": "2026-11-08T07:03:28.460040+03:00",
+  "started_at": "2026-11-08T08:01:18.387525+03:00",
+  "updated_at": "2026-11-08T08:02:54.446015+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.netbub.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -78,19 +78,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "Dolu Batarya": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/DoluBatarya/rss",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.netbub.com"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.mizuki.st/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -106,35 +106,35 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": "nitter.netbub.com"
           },
           "Sekizsilindir": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/sekizsilindir/rss",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": ""
           },
           "otopodyum": {
             "status": "ok",
@@ -145,7 +145,7 @@
           },
           "_metrics": {
             "found": 156,
-            "after_keyword": 106,
+            "after_keyword": 108,
             "after_time": 6,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -154,7 +154,7 @@
         },
         "metrics": {
           "found": 156,
-          "after_keyword": 106,
+          "after_keyword": 108,
           "after_time": 6,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-11-08T07:03:28.460040+03:00"
+      "updated_at": "2026-11-08T08:02:54.446015+03:00"
     },
     "score": {
       "status": "waiting",
