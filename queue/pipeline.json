@@ -1,162 +1,14 @@
 {
-  "run_id": "2026-11-08-06:01",
-  "status": "completed",
-  "started_at": "2026-11-08T06:01:18.072371+03:00",
-  "updated_at": "2026-11-08T06:04:07.706529+03:00",
+  "run_id": "2026-11-08-07:01",
+  "status": "error",
+  "started_at": "2026-11-08T07:01:17.881072+03:00",
+  "updated_at": "2026-11-08T07:03:28.460040+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "DJI Matrice 5T, LiDAR ve 176x zoom ile tanıtıldı",
-            "link": "https://www.donanimhaber.com/dji-matrice-5t-lidar-ve-176x-zoom-ile-tanitildi--212614",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-07T17:00:00+00:00",
-            "summary": "DJI Matrice 5T, LiDAR, termal kamera, 176x hibrit zoom ve 59 dakikalık uçuş süresiyle endüstriyel görevleri hedefliyor. İşte yeni nesil drone'un özellikleri ve fiyatı:",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212614/1200x675dji-matrice-5t-lidar-ve-176x-zoom-ile-tanitildi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212614/1200x675dji-matrice-5t-lidar-ve-176x-zoom-ile-tanitildi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212614/1200x675dji-matrice-5t-lidar-ve-176x-zoom-ile-tanitildi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "176x-dji-lidar-matrice-zoom"
-          },
-          {
-            "title": "Opel Fiyat Listesi Kasım 2026",
-            "link": "https://shiftdelete.net/opel-fiyat-listesi",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-07T17:22:52+00:00",
-            "summary": "Resmi 7 Kasım PDF'ye göre en ucuz Opel Corsa kampanyalı 1.335.000 TL, liste 1.535.000 TL. Grandland Elektrik 4.220.000 TL. Hangi model kaç para?",
-            "image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-            "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-            "image_candidates": [
-              "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2026-fiyat-kasim-listesi-opel"
-          },
-          {
-            "title": "Solar Roof davasında Tesla aleyhine karar",
-            "link": "https://shiftdelete.net/tesla-solar-roof-davasi-dolandiricilik-karari",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-07T16:22:27+00:00",
-            "summary": "Tesla Solar Roof davasında California'daki hakim, delilleri defalarca vermeyen Tesla'yı dolandırıcılıktan sorumlu tuttu. Ev sahibi onarımın 2,5 milyon dolardan fazlaya mal olacağını söylüyor.",
-            "image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/tesla-solar-roof-dava-kapak-0711.webp",
-            "rss_image_url": "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/tesla-solar-roof-dava-kapak-0711.webp",
-            "image_candidates": [
-              "https://ares.shiftdelete.net/static/sdnweb-rehber/2026/11/tesla-solar-roof-dava-kapak-0711.webp"
-            ],
-            "image_source": "rss",
-            "source_name": "ShiftDelete Otomobil",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "aleyhine-davasinda-karar-roof-solar-tesla"
-          },
-          {
-            "title": "R to @murattosunMSE: Yeni gelecek tasarımlar tamam. Ama yine o motor olacaksa hiç şansı yok. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2119102742811513079",
-            "nitter_url": "https://nitter.meowing.monster/murattosunMSE/status/2119102742811513079#m",
-            "source_instance": "nitter.meowing.monster",
-            "published": "2026-11-07T16:20:39+00:00",
-            "summary": "Yeni gelecek tasarımlar tamam. Ama yine o motor olacaksa hiç şansı yok. . Haber, tanıtım. Video",
-            "image_url": "https://pbs.twimg.com/media/HWiQtaXWMAAONAf.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HWiQtaXWMAAONAf.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HWiQtaXWMAAONAf.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "gelecek-haber-motor-murattosunmse-olacaksa-sansi-tamam-tanitim-tasarimlar-yine-yok"
-          },
-          {
-            "title": "En lüks Çin otomobili BYD Yangwang U8 tanıtıldı .",
-            "link": "https://x.com/veysellkaranii/status/2119159814093787278",
-            "nitter_url": "https://nitter.meowing.monster/veysellkaranii/status/2119159814093787278#m",
-            "source_instance": "nitter.meowing.monster",
-            "published": "2026-11-07T20:07:26+00:00",
-            "summary": "En lüks Çin otomobili BYD Yangwang U8 tanıtıldı .",
-            "image_url": "https://pbs.twimg.com/media/HWjEnGZWwAAFkKC.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HWjEnGZWwAAFkKC.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HWjEnGZWwAAFkKC.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "byd-cin-luks-otomobili-yangwang"
-          },
-          {
-            "title": "HABER | OMODA JAECOO , Kasım ayı fiyat listesini açıkladı . OMODA 5 : 2.300.000 TL OMODA 7 : 2.800.000 TL JAECOO 7 Revive : 2.390.000 TL JAECOO 7 Evolve 4x2 : 2.700.000 TL JAECOO 7 Evolve 4x4 : 2.900.000 TL",
-            "link": "https://x.com/veysellkaranii/status/2119157433083834398",
-            "nitter_url": "https://nitter.meowing.monster/veysellkaranii/status/2119157433083834398#m",
-            "source_instance": "nitter.meowing.monster",
-            "published": "2026-11-07T19:57:58+00:00",
-            "summary": "HABER | OMODA JAECOO , Kasım ayı fiyat listesini açıkladı . OMODA 5 : 2.300.000 TL OMODA 7 : 2.800.000 TL JAECOO 7 Revive : 2.390.000 TL JAECOO 7 Evolve 4x2 : 2.700.000 TL JAECOO 7 Evolve 4x4 : 2.900.000 TL",
-            "image_url": "https://pbs.twimg.com/media/HWjCc-bXQAAE6Mw.jpg?format=jpg&name=large",
-            "rss_image_url": "https://pbs.twimg.com/media/HWjCc-bXQAAE6Mw.jpg?format=jpg&name=large",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HWjCc-bXQAAE6Mw.jpg?format=jpg&name=large"
-            ],
-            "image_source": "rss",
-            "source_name": "VeyselKarani",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "000-000-000-000-000-300-390-4x2-4x4-700-800-900-acikladi-ayi-evolve-evolve-fiyat-haber-jaecoo-jaecoo-jaecoo-jaecoo-kasim-listesini-omoda-omoda-omoda-revive"
-          },
-          {
-            "title": "Esnafın sadık partneri, ailenin güvenli limanı: Yeni CADDY",
-            "link": "https://otopodyum.com.tr/oto-test/esnafin-sadik-partneri-ailenin-guvenli-limani-yeni-caddy-5467h",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-07T21:01:00+00:00",
-            "summary": "Ticari Araç mı, Binek Otomobil mi? Volkswagen Caddy'yi hâlâ sadece esnafın yük taşıdığı bir ticari araç olarak görenler, bu test yazısını sonuna kadar okusun! Çünkü bu hafif ticaride öyle detaylar var ki… Bazı binek otomobillerde bile bulamıyorsunuz!",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5782.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5782.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5782.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "ailenin-caddy-esnafin-guvenli-limani-partneri-sadik"
-          }
-        ],
-        "count": 7,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -217,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: Nitter failover: TeknoTags icin tum instance'lar basarisiz",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -226,19 +78,19 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.kareem.one"
+            "instance": "nitter.meowing.monster"
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/DoluBatarya/rss",
             "attempts": 1,
-            "instance": "nitter.meowing.monster"
+            "instance": ""
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -292,310 +144,49 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 166,
-            "after_keyword": 114,
-            "after_time": 13,
-            "after_posted": 7,
-            "after_duplicate": 7,
-            "after_shared_variant_cooldown": 7
+            "found": 156,
+            "after_keyword": 106,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 166,
-          "after_keyword": 114,
-          "after_time": 13,
-          "after_posted": 7,
-          "after_duplicate": 7,
-          "after_shared_variant_cooldown": 7
+          "found": 156,
+          "after_keyword": 106,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-08T06:03:09.650880+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-08T07:03:28.460040+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Opel Fiyat Listesi Kasım 2026",
-          "link": "https://shiftdelete.net/opel-fiyat-listesi",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T17:22:52+00:00",
-          "summary": "Resmi 7 Kasım PDF'ye göre en ucuz Opel Corsa kampanyalı 1.335.000 TL, liste 1.535.000 TL. Grandland Elektrik 4.220.000 TL. Hangi model kaç para?",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-fiyat-kasim-listesi-opel",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 8,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 67,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomobil fiyatları Türkiye gündeminde her zaman yüksek ilgi ve etkileşim çeker.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 67,
-        "title": "Opel Fiyat Listesi Kasım 2026",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 19,
-          "etkilesim_potansiyeli": 18,
-          "benzersizlik": 8,
-          "gundem_gucu": 15,
-          "paylasilabilirlik": 7
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otomobil fiyatları Türkiye gündeminde her zaman yüksek ilgi ve etkileşim çeker.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Opel Fiyat Listesi Kasım 2026",
-            "score": 67,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 8,
-              "gundem_gucu": 15,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "HABER | OMODA JAECOO , Kasım ayı fiyat listesini açıkladı . OMODA 5 : 2.300.000 TL OMODA 7 : 2.800.000 TL JAECOO 7 Revive : 2.390.000 TL JAECOO 7 Evolve 4x2 : 2.700.000 TL JAECOO 7 Evolve 4x4 : 2.900.000 TL",
-            "score": 64,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 16,
-              "benzersizlik": 8,
-              "gundem_gucu": 14,
-              "paylasilabilirlik": 7
-            }
-          },
-          {
-            "title": "Solar Roof davasında Tesla aleyhine karar",
-            "score": 60,
-            "score_breakdown": {
-              "guncellik": 16,
-              "etkilesim_potansiyeli": 15,
-              "benzersizlik": 12,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 7,
-        "cooldown_candidates": [
-          {
-            "title": "HABER | OMODA JAECOO , Kasım ayı fiyat listesini açıkladı . OMODA 5 : 2.300.000 TL OMODA 7 : 2.800.000 TL JAECOO 7 Revive : 2.390.000 TL JAECOO 7 Evolve 4x2 : 2.700.000 TL JAECOO 7 Evolve 4x4 : 2.900.000 TL",
-            "link": "https://x.com/veysellkaranii/status/2119157433083834398",
-            "score": 64,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "000-000-000-000-000-300-390-4x2-4x4-700-800-900-acikladi-ayi-evolve-evolve-fiyat-haber-jaecoo-jaecoo-jaecoo-jaecoo-kasim-listesini-omoda-omoda-omoda-revive"
-          },
-          {
-            "title": "Solar Roof davasında Tesla aleyhine karar",
-            "link": "https://shiftdelete.net/tesla-solar-roof-davasi-dolandiricilik-karari",
-            "score": 60,
-            "score_reason": "ai_scored",
-            "source_name": "ShiftDelete Otomobil",
-            "topic_fingerprint": "aleyhine-davasinda-karar-roof-solar-tesla"
-          },
-          {
-            "title": "En lüks Çin otomobili BYD Yangwang U8 tanıtıldı .",
-            "link": "https://x.com/veysellkaranii/status/2119159814093787278",
-            "score": 54,
-            "score_reason": "ai_scored",
-            "source_name": "VeyselKarani",
-            "topic_fingerprint": "byd-cin-luks-otomobili-yangwang"
-          },
-          {
-            "title": "DJI Matrice 5T, LiDAR ve 176x zoom ile tanıtıldı",
-            "link": "https://www.donanimhaber.com/dji-matrice-5t-lidar-ve-176x-zoom-ile-tanitildi--212614",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "176x-dji-lidar-matrice-zoom"
-          },
-          {
-            "title": "Esnafın sadık partneri, ailenin güvenli limanı: Yeni CADDY",
-            "link": "https://otopodyum.com.tr/oto-test/esnafin-sadik-partneri-ailenin-guvenli-limani-yeni-caddy-5467h",
-            "score": 42,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "ailenin-caddy-esnafin-guvenli-limani-partneri-sadik"
-          },
-          {
-            "title": "R to @murattosunMSE: Yeni gelecek tasarımlar tamam. Ama yine o motor olacaksa hiç şansı yok. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2119102742811513079",
-            "score": 17,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "gelecek-haber-motor-murattosunmse-olacaksa-sansi-tamam-tanitim-tasarimlar-yine-yok"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-08T06:03:13.198746+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Opel Fiyat Listesi Kasım 2026",
-          "link": "https://shiftdelete.net/opel-fiyat-listesi",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T17:22:52+00:00",
-          "summary": "Resmi 7 Kasım PDF'ye göre en ucuz Opel Corsa kampanyalı 1.335.000 TL, liste 1.535.000 TL. Grandland Elektrik 4.220.000 TL. Hangi model kaç para?",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-fiyat-kasim-listesi-opel",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 8,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 67,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomobil fiyatları Türkiye gündeminde her zaman yüksek ilgi ve etkileşim çeker.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Opel fiyat listesi Kasım 2026: Corsa, Mokka, Frontera, Astra ve Grandland güncel Türkiye fiyatları. Resmi 7 Kasım PDF listesine göre tüm modeller. Opel fiyat listesi 7 Kasım 2026 itibarıyla Corsa Edition 1.2 MT6 ile 1.535.000 TL'den başlıyor; kampanyalı en düşük binek fiyatı 1.335.000 TL ile yine aynı Corsa. Binek tarafta en yüksek liste fiyatı 4.220.000 TL ile Grandland Elektrik GS AWD 239 kW. Rakamlar Opel Türkiye / Tofaş resmi PDF'deki tavsiye edilen anahtar teslim fiyatlardan alındı. Opel Türkiye / Tofaş PDF sayfasında belge OPEL EKİM 2026 FİYAT LİSTESİ olarak geçiyor ve fiyat listesinin 7 Kasım 2026 tarihinden itibaren geçerli olduğu belirtiliyor. HTML sitedeki bazı kampanya rakamları PDF ile farklı olduğu için bu rehberde yalnızca resmi PDF rakamları kullanıldı. Kasım 2026 Opel fiyat listesi Corsa, Frontera, Mokka, Yeni Astra ve Grandland binek modellerini kapsıyor. Ticari tarafta ise bu rehberde Combo Essential MT6 ve Zafira Ultimate XL için özet fiyat bilgisi yer alıyor. Güncel rakamları Opel'in resmi fiyat listeleri sayfasından kontrol etmek isteyenlerOpel Türkiye fiyat listelerisayfasına bakabilir. Alternatif markalarla karşılaştırma yapmak isteyenler içinHyundai fiyat listesirehberi de yardımcı olur. Kasım 2026 PDF fiyatlarına göre en ucuz binek Opel modeli 1.535.000 TL liste fiyatıyla Corsa Edition 1.2 MT6. Kampanyalı en düşük binek fiyatı ise 1.335.000 TL ile yine Corsa Edition 1.2 MT6 için geçerli. Binek modellerde en pahalı seçenek 4.220.000 TL liste fiyatıyla Grandland Elektrik GS AWD 239 kW. Grandland Elektrik GS AWD 239 kW için lansmana özel fiyat 3.750.000 TL olarak listeleniyor. Opel Corsa fiyatı Kasım 2026 listesinde 1.535.000 TL'den başlıyor. Corsa Edition 1.2 MT6 için kampanyalı fiyat 1.335.000 TL olarak veriliyor. Opel Frontera fiyatı Kasım 2026 PDF listesinde 2.190.000 TL'den başlıyor. Frontera Hybrid Edition için kampanyalı fiyat 1.975.000 TL olarak açıklanıyor. Opel Mokka fiyatı Kasım 2026 listesinde 1.990.000 TL'den başlıyor. Mokka Edition 1.2 MT6 için kampanyalı fiyat 1.572.000 TL, Mokka GSE 207 kW için lansmana özel fiyat 2.890.000 TL. Mokka'nın önceki nesli ve tasarım değişimi için2021 Opel Mokkaiçeriğimizi de inceleyebilirsiniz. Yeni Opel Astra fiyatı Kasım 2026 PDF listesinde 2.330.000 TL'den başlıyor. PDF'de Yeni Astra için Edition dizel ve GS dizel seçenekleri yer alıyor. Opel Grandland fiyatı Kasım 2026 listesinde 2.850.000 TL'den başlıyor. Grandland Elektrik Edition 157 kW için lansmana özel fiyat 2.485.000 TL, Grandland Elektrik GS AWD 239 kW için lansmana özel fiyat 3.750.000 TL. Grandland özelinde daha detaylı takip içinOpel Grandland fiyat listesisayfamızı da ziyaret edebilirsiniz. Opel Türkiye / Tofaş PDF listesinde ticari özet olarak Combo Essential MT6 ve Zafira Ultimate XL fiyatları da yer alıyor. Combo Essential MT6 fiyatı 1.675.000 TL, Zafira Ultimate XL kampanyalı fiyatı 2.400.000 TL. Combo tarafındaki güncel seçenekleri ayrıcaOpel Combo fiyat listesisayfasında takip edebilirsiniz. Kasım 2026 Opel fiyat listesinde binek tarafta kampanyalı en düşük fiyat 1.335.000 TL, en yüksek liste fiyatı ise 4.220.000 TL. Bu nedenle Opel ürün gamında Corsa giriş seviyesi, Grandland Elektrik GS AWD ise üst seviye konumda yer alıyor. Haberde hata mı var?Bize bildirin Sen olsan bu fiyatlarla Corsa mı, Frontera mı, yoksa Mokka mı alırdın? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar"
-        },
-        "post_text": "1.535.000 TL LİK LİSTE FİYATIYLA BAŞLAYAN LİSTE, KAMPANYALI DÖNEMDE 1.335.000 TL SEVİYESİNE İNİYOR.\n\n7 Kasım 2026 tarihli resmi PDF listesine göre Opel Corsa Edition 1.2 giriş seviyesini oluştururken, listenin en tepesinde 4.220.000 TL ile Grandland Elektrik GS AWD yer alıyor.\n\nListe fiyatı ile kampanyalı rakam arasındaki bu makas, alıcının karar süresini doğrudan uzatıyor.\n\nEtiketler değiştikçe herkesin beklediği o net kampanya tarihi aslında listenin kendisi oluyor.",
-        "post_text_length": 472,
-        "story_card_title": "Opel Corsa kampanyayla bir buçuk milyona dayandı",
-        "story_card_subtitle": "Kasım 2026 resmi listelerine göre en ucuz Opel Corsa kampanyalı olarak 1.335.000 TL'den alıcı buluyor. Listenin zirvesindeki Grandland Elektrik GS AWD ise 4.220.000 TL'lik fiyat etiketiyle dikkat çekiyor. Liste fiyatı ile kampanyalı rakam arasındaki bu ciddi makas, otomobil alacakların hesaplarını yeniden yapmasına neden oluyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-08T06:03:24.010599+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Opel Fiyat Listesi Kasım 2026",
-          "link": "https://shiftdelete.net/opel-fiyat-listesi",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-07T17:22:52+00:00",
-          "summary": "Resmi 7 Kasım PDF'ye göre en ucuz Opel Corsa kampanyalı 1.335.000 TL, liste 1.535.000 TL. Grandland Elektrik 4.220.000 TL. Hangi model kaç para?",
-          "image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "rss_image_url": "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-          "image_candidates": [
-            "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg"
-          ],
-          "image_source": "meta_og",
-          "source_name": "ShiftDelete Otomobil",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "2026-fiyat-kasim-listesi-opel",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 19,
-            "etkilesim_potansiyeli": 18,
-            "benzersizlik": 8,
-            "gundem_gucu": 15,
-            "paylasilabilirlik": 7
-          },
-          "score": 67,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomobil fiyatları Türkiye gündeminde her zaman yüksek ilgi ve etkileşim çeker.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Opel fiyat listesi Kasım 2026: Corsa, Mokka, Frontera, Astra ve Grandland güncel Türkiye fiyatları. Resmi 7 Kasım PDF listesine göre tüm modeller. Opel fiyat listesi 7 Kasım 2026 itibarıyla Corsa Edition 1.2 MT6 ile 1.535.000 TL'den başlıyor; kampanyalı en düşük binek fiyatı 1.335.000 TL ile yine aynı Corsa. Binek tarafta en yüksek liste fiyatı 4.220.000 TL ile Grandland Elektrik GS AWD 239 kW. Rakamlar Opel Türkiye / Tofaş resmi PDF'deki tavsiye edilen anahtar teslim fiyatlardan alındı. Opel Türkiye / Tofaş PDF sayfasında belge OPEL EKİM 2026 FİYAT LİSTESİ olarak geçiyor ve fiyat listesinin 7 Kasım 2026 tarihinden itibaren geçerli olduğu belirtiliyor. HTML sitedeki bazı kampanya rakamları PDF ile farklı olduğu için bu rehberde yalnızca resmi PDF rakamları kullanıldı. Kasım 2026 Opel fiyat listesi Corsa, Frontera, Mokka, Yeni Astra ve Grandland binek modellerini kapsıyor. Ticari tarafta ise bu rehberde Combo Essential MT6 ve Zafira Ultimate XL için özet fiyat bilgisi yer alıyor. Güncel rakamları Opel'in resmi fiyat listeleri sayfasından kontrol etmek isteyenlerOpel Türkiye fiyat listelerisayfasına bakabilir. Alternatif markalarla karşılaştırma yapmak isteyenler içinHyundai fiyat listesirehberi de yardımcı olur. Kasım 2026 PDF fiyatlarına göre en ucuz binek Opel modeli 1.535.000 TL liste fiyatıyla Corsa Edition 1.2 MT6. Kampanyalı en düşük binek fiyatı ise 1.335.000 TL ile yine Corsa Edition 1.2 MT6 için geçerli. Binek modellerde en pahalı seçenek 4.220.000 TL liste fiyatıyla Grandland Elektrik GS AWD 239 kW. Grandland Elektrik GS AWD 239 kW için lansmana özel fiyat 3.750.000 TL olarak listeleniyor. Opel Corsa fiyatı Kasım 2026 listesinde 1.535.000 TL'den başlıyor. Corsa Edition 1.2 MT6 için kampanyalı fiyat 1.335.000 TL olarak veriliyor. Opel Frontera fiyatı Kasım 2026 PDF listesinde 2.190.000 TL'den başlıyor. Frontera Hybrid Edition için kampanyalı fiyat 1.975.000 TL olarak açıklanıyor. Opel Mokka fiyatı Kasım 2026 listesinde 1.990.000 TL'den başlıyor. Mokka Edition 1.2 MT6 için kampanyalı fiyat 1.572.000 TL, Mokka GSE 207 kW için lansmana özel fiyat 2.890.000 TL. Mokka'nın önceki nesli ve tasarım değişimi için2021 Opel Mokkaiçeriğimizi de inceleyebilirsiniz. Yeni Opel Astra fiyatı Kasım 2026 PDF listesinde 2.330.000 TL'den başlıyor. PDF'de Yeni Astra için Edition dizel ve GS dizel seçenekleri yer alıyor. Opel Grandland fiyatı Kasım 2026 listesinde 2.850.000 TL'den başlıyor. Grandland Elektrik Edition 157 kW için lansmana özel fiyat 2.485.000 TL, Grandland Elektrik GS AWD 239 kW için lansmana özel fiyat 3.750.000 TL. Grandland özelinde daha detaylı takip içinOpel Grandland fiyat listesisayfamızı da ziyaret edebilirsiniz. Opel Türkiye / Tofaş PDF listesinde ticari özet olarak Combo Essential MT6 ve Zafira Ultimate XL fiyatları da yer alıyor. Combo Essential MT6 fiyatı 1.675.000 TL, Zafira Ultimate XL kampanyalı fiyatı 2.400.000 TL. Combo tarafındaki güncel seçenekleri ayrıcaOpel Combo fiyat listesisayfasında takip edebilirsiniz. Kasım 2026 Opel fiyat listesinde binek tarafta kampanyalı en düşük fiyat 1.335.000 TL, en yüksek liste fiyatı ise 4.220.000 TL. Bu nedenle Opel ürün gamında Corsa giriş seviyesi, Grandland Elektrik GS AWD ise üst seviye konumda yer alıyor. Haberde hata mı var?Bize bildirin Sen olsan bu fiyatlarla Corsa mı, Frontera mı, yoksa Mokka mı alırdın? Hesabın varsagiriş yap, adınla yorum yaz. Yorumlar yapay zekâ destekli ön elemeden geçer; son karar moderatördedir.Topluluk kuralları Seçtiğiniz konularda günün 5 önemli haberi, her biri 30 saniyelik özetiyle. Reklamsız, tek tıkla ayrılırsınız. Çerez tercihlerinizSitenin çalışması için zorunlu çerezler kullanılır. Ölçüm ve reklam çerezleri yalnız onay verirseniz çalışır.Ayrıntılar",
-          "post_text_for_card": "1.535.000 TL LİK LİSTE FİYATIYLA BAŞLAYAN LİSTE, KAMPANYALI DÖNEMDE 1.335.000 TL SEVİYESİNE İNİYOR.\n\n7 Kasım 2026 tarihli resmi PDF listesine göre Opel Corsa Edition 1.2 giriş seviyesini oluştururken, listenin en tepesinde 4.220.000 TL ile Grandland Elektrik GS AWD yer alıyor.\n\nListe fiyatı ile kampanyalı rakam arasındaki bu makas, alıcının karar süresini doğrudan uzatıyor.\n\nEtiketler değiştikçe herkesin beklediği o net kampanya tarihi aslında listenin kendisi oluyor.",
-          "story_card_title": "Opel Corsa kampanyayla bir buçuk milyona dayandı",
-          "story_card_subtitle": "Kasım 2026 resmi listelerine göre en ucuz Opel Corsa kampanyalı olarak 1.335.000 TL'den alıcı buluyor. Listenin zirvesindeki Grandland Elektrik GS AWD ise 4.220.000 TL'lik fiyat etiketiyle dikkat çekiyor. Liste fiyatı ile kampanyalı rakam arasındaki bu ciddi makas, otomobil alacakların hesaplarını yeniden yapmasına neden oluyor.",
-          "image_sources": [
-            "meta_og",
-            "article_img",
-            "article_img",
-            "article_img"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://shiftdelete.net/static/img/content/26-11/07/opel-fiyat-listesi-kasim-2026.jpg",
-            "https://shiftdelete.net/static/img/content/26-11/05/chery-fiyat-listesi-kasim-2026.jpg",
-            "https://shiftdelete.net/static/img/content/26-11/07/dfa45070-a7ca-4382-9e8f-683721a4cbca.jpeg",
-            "https://shiftdelete.net/static/img/content/26-11/07/instagram-hesap-dondurma.jpg"
-          ]
-        },
-        "post_text": "1.535.000 TL LİK LİSTE FİYATIYLA BAŞLAYAN LİSTE, KAMPANYALI DÖNEMDE 1.335.000 TL SEVİYESİNE İNİYOR.\n\n7 Kasım 2026 tarihli resmi PDF listesine göre Opel Corsa Edition 1.2 giriş seviyesini oluştururken, listenin en tepesinde 4.220.000 TL ile Grandland Elektrik GS AWD yer alıyor.\n\nListe fiyatı ile kampanyalı rakam arasındaki bu makas, alıcının karar süresini doğrudan uzatıyor.\n\nEtiketler değiştikçe herkesin beklediği o net kampanya tarihi aslında listenin kendisi oluyor.",
-        "story_card_title": "Opel Corsa kampanyayla bir buçuk milyona dayandı",
-        "story_card_subtitle": "Kasım 2026 resmi listelerine göre en ucuz Opel Corsa kampanyalı olarak 1.335.000 TL'den alıcı buluyor. Listenin zirvesindeki Grandland Elektrik GS AWD ise 4.220.000 TL'lik fiyat etiketiyle dikkat çekiyor. Liste fiyatı ile kampanyalı rakam arasındaki bu ciddi makas, otomobil alacakların hesaplarını yeniden yapmasına neden oluyor.",
-        "image_path": "/tmp/otoxtra_img_tlh6iufa.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_tlh6iufa.jpg",
-          "/tmp/otoxtra_img_3qqy23qj.jpg",
-          "/tmp/otoxtra_img_ctst5j8s.jpg",
-          "/tmp/otoxtra_img_vazu0w_t.jpg"
-        ],
-        "image_source": "meta_og",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-08T06:03:27.026660+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122187280040916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18109586039220677",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "3572551369593022",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-08T06:04:07.706529+03:00"
+      "updated_at": null
     }
   }
 }
