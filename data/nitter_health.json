@@ -14,34 +14,34 @@
       "successes": 788,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794247337.8293054,
-      "last_change": "2026-11-09T17:02:17+00:00",
+      "blocked_until": 1794283289.4771147,
+      "last_change": "2026-11-10T03:01:29+00:00",
       "last_status": 403
     },
     "nitter.wisq.net": {
-      "failures": 25,
+      "failures": 26,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-11-09T12:02:24+00:00",
+      "last_change": "2026-11-10T03:02:25+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
-      "failures": 292,
+      "failures": 293,
       "successes": 0,
       "state": "degraded",
       "reason": "sslerror",
       "blocked_until": 0.0,
-      "last_change": "2026-11-09T16:01:53+00:00"
+      "last_change": "2026-11-10T03:02:30+00:00"
     },
     "nitter.anoxinon.de": {
       "failures": 1,
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1794247341.9203587,
-      "last_change": "2026-11-09T17:02:21+00:00",
+      "blocked_until": 1794283292.536364,
+      "last_change": "2026-11-10T03:01:32+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,17 +49,17 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794247311.2725945,
-      "last_change": "2026-11-09T17:01:51+00:00",
+      "blocked_until": 1794283294.9216835,
+      "last_change": "2026-11-10T03:01:34+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
-      "failures": 215,
+      "failures": 216,
       "successes": 111,
       "state": "degraded",
       "reason": "connectionerror",
       "blocked_until": 0.0,
-      "last_change": "2026-11-09T17:01:21+00:00",
+      "last_change": "2026-11-10T03:02:32+00:00",
       "last_status": 200
     },
     "tw.eir-nya.gay": {
@@ -67,8 +67,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1794247316.3582242,
-      "last_change": "2026-11-09T17:01:56+00:00",
+      "blocked_until": 1794283302.8203042,
+      "last_change": "2026-11-10T03:01:42+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
@@ -81,30 +81,30 @@
       "last_status": 404
     },
     "nitter.meowing.monster": {
-      "failures": 0,
-      "successes": 1199,
-      "state": "ok",
-      "reason": "",
+      "failures": 2,
+      "successes": 1201,
+      "state": "degraded",
+      "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-11-09T17:03:15+00:00",
+      "last_change": "2026-11-10T03:02:39+00:00",
       "last_status": 404
     },
     "nitter.netbub.com": {
-      "failures": 6,
-      "successes": 194,
-      "state": "blocked",
-      "reason": "http_429",
-      "blocked_until": 1794247359.1005545,
-      "last_change": "2026-11-09T17:02:39+00:00",
-      "last_status": 429
+      "failures": 0,
+      "successes": 199,
+      "state": "ok",
+      "reason": "",
+      "blocked_until": 0.0,
+      "last_change": "2026-11-10T03:03:02+00:00",
+      "last_status": 404
     },
     "shitter.thepixora.com": {
       "failures": 1,
       "successes": 171,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794247331.8696222,
-      "last_change": "2026-11-09T17:02:11+00:00",
+      "blocked_until": 1794283281.2623372,
+      "last_change": "2026-11-10T03:01:21+00:00",
       "last_status": 403
     },
     "nitter.jaydenha.uk": {
@@ -112,8 +112,8 @@
       "successes": 142,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1794247353.1240742,
-      "last_change": "2026-11-09T17:02:33+00:00",
+      "blocked_until": 1794283299.1409888,
+      "last_change": "2026-11-10T03:01:39+00:00",
       "last_status": 429
     },
     "nitter.gravitywell.xyz": {
@@ -135,5 +135,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-11-09T17:03:15+00:00"
+  "updated_at": "2026-11-10T03:03:02+00:00"
 }
