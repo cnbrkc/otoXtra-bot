@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-11-10-07:01",
-  "status": "completed",
-  "started_at": "2026-11-10T07:01:01.828112+03:00",
-  "updated_at": "2026-11-10T07:04:32.930724+03:00",
+  "run_id": "2026-11-10-08:01",
+  "status": "error",
+  "started_at": "2026-11-10T08:01:04.771305+03:00",
+  "updated_at": "2026-11-10T08:03:23.894815+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-            "link": "https://www.log.com.tr/toyota-gr-yaris-icin-ucuk-turkiye-fiyatlari-aciklandi/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-10T07:01:01.895406+03:00",
-            "summary": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugün detaylarına burada yer verdiğimiz iddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarak duyurdu. Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "fiyatlari-toyota-turkiye-ucuk-yaris"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by NameResoluti",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
             "attempts": 1,
             "instance": ""
           },
@@ -112,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
             "attempts": 1,
             "instance": ""
           },
@@ -169,221 +147,46 @@
             "found": 158,
             "after_keyword": 104,
             "after_time": 4,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 158,
           "after_keyword": 104,
           "after_time": 4,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-10T07:03:23.602299+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-10T08:03:23.894815+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-          "link": "https://www.log.com.tr/toyota-gr-yaris-icin-ucuk-turkiye-fiyatlari-aciklandi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-10T07:01:01.895406+03:00",
-          "summary": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugün detaylarına burada yer verdiğimiz iddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarak duyurdu. Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "fiyatlari-toyota-turkiye-ucuk-yaris",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek performanslı bir modelin Türkiye fiyatlarının açıklanması otomobil meraklıları arasında hızlıca tartışma ve etkileşim yaratacak bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 70,
-        "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 20,
-          "benzersizlik": 12,
-          "gundem_gucu": 12,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Yüksek performanslı bir modelin Türkiye fiyatlarının açıklanması otomobil meraklıları arasında hızlıca tartışma ve etkileşim yaratacak bir konu.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 12,
-              "gundem_gucu": 12,
-              "paylasilabilirlik": 6
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-10T07:03:29.194877+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-          "link": "https://www.log.com.tr/toyota-gr-yaris-icin-ucuk-turkiye-fiyatlari-aciklandi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-10T07:01:01.895406+03:00",
-          "summary": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugün detaylarına burada yer verdiğimiz iddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarak duyurdu. Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/05/2026-03-13_12-17-52_yZL7v_FHD-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "fiyatlari-toyota-turkiye-ucuk-yaris",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek performanslı bir modelin Türkiye fiyatlarının açıklanması otomobil meraklıları arasında hızlıca tartışma ve etkileşim yaratacak bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugündetaylarına burada yer verdiğimiziddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarakduyurdu."
-        },
-        "post_text": "8.950.000 TL BAŞLANGIÇ FİYATI YARIŞ GENLERİNİN BEDELİ.\n\nToyota, GR Yaris modelinin Türkiye fiyatlarını manuel Performance 4x4 280HP versiyonu için 8.950.000 TL, Aero Performance 4x4 280HP versiyonu için ise 10.190.000 TL olarak duyurdu.\n\nBu etiket, modelin sunduğu saf sürüş karakterini garajda saklamak yerine pistte arayan kitlenin profilini tamamen değiştirecek.\n\nSınırlı sayıda gelecek bu güç, bu rakamla sadece meraklısının erişebileceği bir koleksiyon objesine dönüşüyor.",
-        "post_text_length": 477,
-        "story_card_title": "Yarış genlerinin Türkiye faturası ağır oldu",
-        "story_card_subtitle": "Toyota'nın uzun süredir merakla beklenen ateşli hatchback modeli GR Yaris, sonunda Türkiye pazarındaki fiyat etiketiyle resmiyet kazandı. Manuel Performance versiyonu 8.950.000 TL'den başlarken, Aero Performance seçeneği ise 10.190.000 TL'lik fiyatıyla dikkat çekiyor. Sınırlı sayıda getirilecek bu özel model, sunduğu saf sürüş karakteriyle erişilmesi güç bir koleksiyon objesine dönüşüyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-10T07:03:40.417422+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı",
-          "link": "https://www.log.com.tr/toyota-gr-yaris-icin-ucuk-turkiye-fiyatlari-aciklandi/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-10T07:01:01.895406+03:00",
-          "summary": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugün detaylarına burada yer verdiğimiz iddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarak duyurdu. Toyota GR Yaris’in uçuk Türkiye fiyatları açıklandı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "fiyatlari-toyota-turkiye-ucuk-yaris",
-          "base_ai_score": 65,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 20,
-            "benzersizlik": 12,
-            "gundem_gucu": 12,
-            "paylasilabilirlik": 6
-          },
-          "score": 70,
-          "score_reason": "ai_scored",
-          "score_explanation": "Yüksek performanslı bir modelin Türkiye fiyatlarının açıklanması otomobil meraklıları arasında hızlıca tartışma ve etkileşim yaratacak bir konu.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Toyota Türkiye geçtiğimiz aylarda sosyal medya hesaplarından yaptığı sürpriz açıklamada, “Pistlerden yollara, GR Yaris geliyor! Sınırlı sayıda! Beklemede kalın!” ifadelerini kullanmıştı. Daha sonra yapılan açıklama ile aracın Türkiye’ye son çeyrekte getirileceğini duyuran şirket, bugündetaylarına burada yer verdiğimiziddialı modelin resmi Türkiye fiyatlarını manuel Performance 4×4 280HP M/T özelinde 8.950.000 TL, Aero Performance 4×4 280HP M/T özelindeyse tam 10.190.000 TL olarakduyurdu.",
-          "post_text_for_card": "8.950.000 TL BAŞLANGIÇ FİYATI YARIŞ GENLERİNİN BEDELİ.\n\nToyota, GR Yaris modelinin Türkiye fiyatlarını manuel Performance 4x4 280HP versiyonu için 8.950.000 TL, Aero Performance 4x4 280HP versiyonu için ise 10.190.000 TL olarak duyurdu.\n\nBu etiket, modelin sunduğu saf sürüş karakterini garajda saklamak yerine pistte arayan kitlenin profilini tamamen değiştirecek.\n\nSınırlı sayıda gelecek bu güç, bu rakamla sadece meraklısının erişebileceği bir koleksiyon objesine dönüşüyor.",
-          "story_card_title": "Yarış genlerinin Türkiye faturası ağır oldu",
-          "story_card_subtitle": "Toyota'nın uzun süredir merakla beklenen ateşli hatchback modeli GR Yaris, sonunda Türkiye pazarındaki fiyat etiketiyle resmiyet kazandı. Manuel Performance versiyonu 8.950.000 TL'den başlarken, Aero Performance seçeneği ise 10.190.000 TL'lik fiyatıyla dikkat çekiyor. Sınırlı sayıda getirilecek bu özel model, sunduğu saf sürüş karakteriyle erişilmesi güç bir koleksiyon objesine dönüşüyor.",
-          "image_sources": [
-            "no_image"
-          ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
-        },
-        "post_text": "8.950.000 TL BAŞLANGIÇ FİYATI YARIŞ GENLERİNİN BEDELİ.\n\nToyota, GR Yaris modelinin Türkiye fiyatlarını manuel Performance 4x4 280HP versiyonu için 8.950.000 TL, Aero Performance 4x4 280HP versiyonu için ise 10.190.000 TL olarak duyurdu.\n\nBu etiket, modelin sunduğu saf sürüş karakterini garajda saklamak yerine pistte arayan kitlenin profilini tamamen değiştirecek.\n\nSınırlı sayıda gelecek bu güç, bu rakamla sadece meraklısının erişebileceği bir koleksiyon objesine dönüşüyor.",
-        "story_card_title": "Yarış genlerinin Türkiye faturası ağır oldu",
-        "story_card_subtitle": "Toyota'nın uzun süredir merakla beklenen ateşli hatchback modeli GR Yaris, sonunda Türkiye pazarındaki fiyat etiketiyle resmiyet kazandı. Manuel Performance versiyonu 8.950.000 TL'den başlarken, Aero Performance seçeneği ise 10.190.000 TL'lik fiyatıyla dikkat çekiyor. Sınırlı sayıda getirilecek bu özel model, sunduğu saf sürüş karakteriyle erişilmesi güç bir koleksiyon objesine dönüşüyor.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-10T07:04:17.495604+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122187519080916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-10T07:04:32.930724+03:00"
+      "updated_at": null
     }
   }
 }
