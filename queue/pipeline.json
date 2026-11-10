@@ -1,14 +1,57 @@
 {
-  "run_id": "2026-11-10-09:01",
-  "status": "error",
-  "started_at": "2026-11-10T09:01:03.263520+03:00",
-  "updated_at": "2026-11-10T09:03:07.922336+03:00",
+  "run_id": "2026-11-10-11:01",
+  "status": "completed",
+  "started_at": "2026-11-10T11:01:04.074394+03:00",
+  "updated_at": "2026-11-10T11:03:50.804262+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+            "link": "https://www.log.com.tr/boston-dynamics-insansi-robotu-atlasa-test-icin-tekerlekler-ekledi-video/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-10T07:10:21+00:00",
+            "summary": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor. Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginç depo robotu “Handle” ile dikkat çekmişti. Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "atlas-boston-dynamics-ekledi-insansi-robotu-tekerlekler-test-video"
+          },
+          {
+            "title": "Samsung Galaxy S27 serisine yönelik yeni kamera iddiaları geldi",
+            "link": "https://www.log.com.tr/samsung-galaxy-s27-serisine-yonelik-yeni-kamera-iddialari-geldi/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-10T06:59:58+00:00",
+            "summary": "2027’nin başında tanıtılacak Samsung Galaxy S27 serisinde Galaxy S27, Galaxy S27 Plus, Galaxy S27 Pro ve Galaxy S27 Ultra modelleri yer alacak. Son sızıntıya göre Galaxy S27 ve Galaxy S27 Plus’ın önünde Samsung S5K3LU ya da Sony IMX874 sensörlü bir 12 megapiksel selfie kamerası, arkasında ise Sony IMX955 ya da Samsung S5KGNG sensörlü 50 megapiksel geniş açı, Sony IMX564 sensörlü 12 megapiksel ultra geniş açı ve Samsung S5K3K1 sensörlü 10 megapiksel “3x” telefoto kameralar bir araya getirilebilir. Galaxy S27 Pro’nun önünde Samsung S5K2P5 sensörlü bir 16 megapiksel selfie kamerası taşıdığı, arkada ise Samsung S5KHP6 sensörlü 200 megapiksel geniş açı, 1/2.55-inç Samsung S5KJN3 ya da Sony IMX855 sensörlü 50 megapiksel ultra geniş açı ve Samsung S5K3LD sensörlü 10 megapiksel “3x” telefoto kameraların yer aldığı öne sürülüyor. Ailenin üst modeli Galaxy S27 Ultra’nın önünde Samsung S5K2P5 sensörlü 16 megapiksel bir selfie kamerasının yer aldığı, arkada ise Samsung S5KHP6 sensörlü 200 megapiksel geniş […] Samsung Galaxy S27 serisine yönelik yeni kamera iddiaları geldi yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/samsung-galaxy-s27-serisi-ocak-ayinin-basinda-tanitilabilir-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/10/samsung-galaxy-s27-serisi-ocak-ayinin-basinda-tanitilabilir-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2026/10/samsung-galaxy-s27-serisi-ocak-ayinin-basinda-tanitilabilir-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "galaxy-iddialari-kamera-s27-samsung-serisine-yonelik"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://shitter.thepixora.com/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +133,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://ruf.st/ahmetcelik2016/rss",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -146,47 +189,242 @@
           "_metrics": {
             "found": 158,
             "after_keyword": 103,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 8,
+            "after_posted": 2,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 2
           }
         },
         "metrics": {
           "found": 158,
           "after_keyword": 103,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 8,
+          "after_posted": 2,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 2
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-10T09:03:07.922336+03:00"
+      "error": null,
+      "updated_at": "2026-11-10T11:02:22.437917+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+          "link": "https://www.log.com.tr/boston-dynamics-insansi-robotu-atlasa-test-icin-tekerlekler-ekledi-video/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-10T07:10:21+00:00",
+          "summary": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor. Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginç depo robotu “Handle” ile dikkat çekmişti. Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "atlas-boston-dynamics-ekledi-insansi-robotu-tekerlekler-test-video",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Robotik teknolojisindeki gelişmeler sosyal medyada yüksek etkileşim yaratıyor ve video içeriği barındırması viral potansiyelini artırıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 83,
+        "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 17,
+          "gundem_gucu": 15,
+          "paylasilabilirlik": 9
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Robotik teknolojisindeki gelişmeler sosyal medyada yüksek etkileşim yaratıyor ve video içeriği barındırması viral potansiyelini artırıyor.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+            "score": 83,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 17,
+              "gundem_gucu": 15,
+              "paylasilabilirlik": 9
+            }
+          },
+          {
+            "title": "Samsung Galaxy S27 serisine yönelik yeni kamera iddiaları geldi",
+            "score": 32,
+            "score_breakdown": {
+              "guncellik": 15,
+              "etkilesim_potansiyeli": 6,
+              "benzersizlik": 4,
+              "gundem_gucu": 4,
+              "paylasilabilirlik": 3
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Samsung Galaxy S27 serisine yönelik yeni kamera iddiaları geldi",
+            "link": "https://www.log.com.tr/samsung-galaxy-s27-serisine-yonelik-yeni-kamera-iddialari-geldi/",
+            "score": 32,
+            "score_reason": "ai_scored",
+            "source_name": "Log",
+            "topic_fingerprint": "galaxy-iddialari-kamera-s27-samsung-serisine-yonelik"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-10T11:02:24.512760+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+          "link": "https://www.log.com.tr/boston-dynamics-insansi-robotu-atlasa-test-icin-tekerlekler-ekledi-video/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-10T07:10:21+00:00",
+          "summary": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor. Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginç depo robotu “Handle” ile dikkat çekmişti. Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-10_10-05-05_KBm3B-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "atlas-boston-dynamics-ekledi-insansi-robotu-tekerlekler-test-video",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Robotik teknolojisindeki gelişmeler sosyal medyada yüksek etkileşim yaratıyor ve video içeriği barındırması viral potansiyelini artırıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor.Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginçdepo robotu “Handle” ile dikkat çekmişti."
+        },
+        "post_text": "INSANSI ROBOTLARA TEKERLEK EKLEMEK BAKIŞ AÇISINI DEĞİŞTİRİR.\n\nHyundai çatısı altındaki Boston Dynamics, gelişmiş insansı robot modeli Atlas’ın ayaklarına tekerlekler ekleyerek öğrenme tabanlı vücut kontrol sistemini test etti.\n\nLaboratuvar dışındaki gerçek dünya koşullarında ayak her zaman en pratik çözüm olmayabiliyor.\n\nYürüme formuna sadık kalmak yerine hızı seçmek robotik dünyasında ezberi bozar.",
+        "post_text_length": 402,
+        "story_card_title": "",
+        "story_card_subtitle": "",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-10T11:02:47.441079+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video]",
+          "link": "https://www.log.com.tr/boston-dynamics-insansi-robotu-atlasa-test-icin-tekerlekler-ekledi-video/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-10T07:10:21+00:00",
+          "summary": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor. Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginç depo robotu “Handle” ile dikkat çekmişti. Boston Dynamics, insansı robotu Atlas’a test için tekerlekler ekledi [Video] yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "no_image",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "atlas-boston-dynamics-ekledi-insansi-robotu-tekerlekler-test-video",
+          "base_ai_score": 78,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 15,
+            "paylasilabilirlik": 9
+          },
+          "score": 83,
+          "score_reason": "ai_scored",
+          "score_explanation": "Robotik teknolojisindeki gelişmeler sosyal medyada yüksek etkileşim yaratıyor ve video içeriği barındırması viral potansiyelini artırıyor.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Hyundai çatısı altında yer alan ABD merkezli robotik şirketi Boston Dynamics, gelişmiş insansı robot modeli Atlas’a tekerlekler ekledi. Şirketin açıklamasına göre robotlar gerçek dünyada, laboratuvar ortamında her zaman öngörülemeyen ya da yeniden oluşturulamayan zorluk ve koşullarla karşılaşıyor. “Bu yüzden sınırları zorlamak için yaratıcı olmamız gerekiyor” diyen şirket, Atlas’ın ayaklarına tekerlek takarak geliştirdiği öğrenme tabanlı vücut kontrol sisteminin performansını uç seviye hareket koşullarında test ettiğini belirtiyor.Bunun için aşağıda izleyebileceğiniz videoyu paylaşan şirket, Atlas’ın tekerlekler üzerinde de zorlanmadan ilerleyebildiğini gözler önüne seriyor. Boston Dynamics, 2019’da da tekerlekler üzerinde hareket eden ilginçdepo robotu “Handle” ile dikkat çekmişti.",
+          "post_text_for_card": "INSANSI ROBOTLARA TEKERLEK EKLEMEK BAKIŞ AÇISINI DEĞİŞTİRİR.\n\nHyundai çatısı altındaki Boston Dynamics, gelişmiş insansı robot modeli Atlas’ın ayaklarına tekerlekler ekleyerek öğrenme tabanlı vücut kontrol sistemini test etti.\n\nLaboratuvar dışındaki gerçek dünya koşullarında ayak her zaman en pratik çözüm olmayabiliyor.\n\nYürüme formuna sadık kalmak yerine hızı seçmek robotik dünyasında ezberi bozar.",
+          "story_card_title": "",
+          "story_card_subtitle": "",
+          "image_sources": [
+            "no_image"
+          ],
+          "prepared_image_count": 0,
+          "original_image_urls": []
+        },
+        "post_text": "INSANSI ROBOTLARA TEKERLEK EKLEMEK BAKIŞ AÇISINI DEĞİŞTİRİR.\n\nHyundai çatısı altındaki Boston Dynamics, gelişmiş insansı robot modeli Atlas’ın ayaklarına tekerlekler ekleyerek öğrenme tabanlı vücut kontrol sistemini test etti.\n\nLaboratuvar dışındaki gerçek dünya koşullarında ayak her zaman en pratik çözüm olmayabiliyor.\n\nYürüme formuna sadık kalmak yerine hızı seçmek robotik dünyasında ezberi bozar.",
+        "story_card_title": "",
+        "story_card_subtitle": "",
+        "image_path": "",
+        "image_paths": [],
+        "image_source": "no_image",
+        "image_count": 0
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-10T11:03:35.749133+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122187539138916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-10T11:03:50.804262+03:00"
     }
   }
 }
