@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-11-10-08:01",
+  "run_id": "2026-11-10-09:01",
   "status": "error",
-  "started_at": "2026-11-10T08:01:04.771305+03:00",
-  "updated_at": "2026-11-10T08:03:23.894815+03:00",
+  "started_at": "2026-11-10T09:01:03.263520+03:00",
+  "updated_at": "2026-11-10T09:03:07.922336+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://ruf.st/ahmetcelik2016/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -145,7 +145,7 @@
           },
           "_metrics": {
             "found": 158,
-            "after_keyword": 104,
+            "after_keyword": 103,
             "after_time": 4,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -154,7 +154,7 @@
         },
         "metrics": {
           "found": 158,
-          "after_keyword": 104,
+          "after_keyword": 103,
           "after_time": 4,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-11-10T08:03:23.894815+03:00"
+      "updated_at": "2026-11-10T09:03:07.922336+03:00"
     },
     "score": {
       "status": "waiting",
