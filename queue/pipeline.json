@@ -1,78 +1,14 @@
 {
-  "run_id": "2026-11-12-06:00",
-  "status": "completed",
-  "started_at": "2026-11-12T06:00:48.147928+03:00",
-  "updated_at": "2026-11-12T06:03:27.003360+03:00",
+  "run_id": "2026-11-12-07:00",
+  "status": "error",
+  "started_at": "2026-11-12T07:00:45.607094+03:00",
+  "updated_at": "2026-11-12T07:04:21.474429+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Huawei, 336 kWh kapasiteli yeni ev tipi enerji depolama sistemini tanıttı",
-            "link": "https://www.donanimhaber.com/huawei-den-336-kwh-kapasiteli-ev-tipi-enerji-depolama-sistemi--212788",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-11T20:08:00+00:00",
-            "summary": "Huawei, güneş enerjisi sistemleriyle birlikte çalışabilen yeni ev tipi bataryası Luterra S2'yi tanıttı. Sistem, birbirine bağlanan modüllerle 336 kWh enerji depolayabiliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212788/1200x675huawei-den-336-kwh-kapasiteli-ev-tipi-enerji-depolama-sistemi.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212788/1200x675huawei-den-336-kwh-kapasiteli-ev-tipi-enerji-depolama-sistemi.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212788/1200x675huawei-den-336-kwh-kapasiteli-ev-tipi-enerji-depolama-sistemi.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "336-depolama-enerji-huawei-kapasiteli-kwh-sistemini-tanitti-tipi"
-          },
-          {
-            "title": "Microsoft, Windows 11'in Windows 95'ten kalan arayüzlerini değiştirmeye hazırlanıyor",
-            "link": "https://www.donanimhaber.com/windows-11-in-30-yillik-arayuzleri-sonunda-degisiyor--212785",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-11T19:50:00+00:00",
-            "summary": "Microsoft, Windows 95 döneminden kalma iletişim pencerelerini ve sistem araçlarını modernleştirmeye hazırlanıyor. Şirket, eski arayüzleri WinUI 3 altyapısıyla yeniden tasarlamayı hedefliyor.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212785/1200x675windows-11-in-30-yillik-arayuzleri-sonunda-degisiyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212785/1200x675windows-11-in-30-yillik-arayuzleri-sonunda-degisiyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212785/1200x675windows-11-in-30-yillik-arayuzleri-sonunda-degisiyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "arayuzlerini-degistirmeye-hazirlaniyor-kalan-microsoft-windows-windows"
-          },
-          {
-            "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2120562175223660617",
-            "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120562175223660617#m",
-            "source_instance": "nitter.netbub.com",
-            "published": "2026-11-11T16:59:55+00:00",
-            "summary": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-            "image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "acik-ara-birkac-boreal-donem-fransiz-geride-gidiyor-gun-ispatladi-iyi-kalan-kisa-konugum-konusunda-liderler-markanin-modeli-neden-neden-renault-renault-satislarda-satislari-satiyor-sattigini-simdi-simdiden-sonucu-surus-suv-suv-tam-tanitim-tersini-test-toplam-uretici-uretim-uzun-yakinda-yasiyor-yayinlarim-yerli-yorumlu"
-          }
-        ],
-        "count": 3,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -133,23 +69,23 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: Nitter failover: TeknoTags icin tum instance'lar basarisiz",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": ""
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.jaydenha.uk"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -170,35 +106,35 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "otopodyum": {
             "status": "ok",
@@ -208,278 +144,49 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 153,
-            "after_keyword": 95,
-            "after_time": 11,
-            "after_posted": 3,
-            "after_duplicate": 3,
-            "after_shared_variant_cooldown": 3
+            "found": 143,
+            "after_keyword": 93,
+            "after_time": 6,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 153,
-          "after_keyword": 95,
-          "after_time": 11,
-          "after_posted": 3,
-          "after_duplicate": 3,
-          "after_shared_variant_cooldown": 3
+          "found": 143,
+          "after_keyword": 93,
+          "after_time": 6,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-12T06:02:25.197124+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-12T07:04:21.474429+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2120562175223660617",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120562175223660617#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-11T16:59:55+00:00",
-          "summary": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acik-ara-birkac-boreal-donem-fransiz-geride-gidiyor-gun-ispatladi-iyi-kalan-kisa-konugum-konusunda-liderler-markanin-modeli-neden-neden-renault-renault-satislarda-satislari-satiyor-sattigini-simdi-simdiden-sonucu-surus-suv-suv-tam-tanitim-tersini-test-toplam-uretici-uretim-uzun-yakinda-yasiyor-yayinlarim-yerli-yorumlu",
-          "base_ai_score": 52,
-          "score_breakdown": {
-            "guncellik": 15,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Pazar liderliği ve yerli üretim bir modelin test sürecine değinmesi açısından otomobil meraklılarının ilgisini çekecek yerel bir içerik.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 54,
-        "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 15,
-          "etkilesim_potansiyeli": 12,
-          "benzersizlik": 10,
-          "gundem_gucu": 11,
-          "paylasilabilirlik": 6
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Pazar liderliği ve yerli üretim bir modelin test sürecine değinmesi açısından otomobil meraklılarının ilgisini çekecek yerel bir içerik.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-            "score": 54,
-            "score_breakdown": {
-              "guncellik": 15,
-              "etkilesim_potansiyeli": 12,
-              "benzersizlik": 10,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 6
-            }
-          },
-          {
-            "title": "Huawei, 336 kWh kapasiteli yeni ev tipi enerji depolama sistemini tanıttı",
-            "score": 47,
-            "score_breakdown": {
-              "guncellik": 13,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 10,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 5
-            }
-          },
-          {
-            "title": "Microsoft, Windows 11'in Windows 95'ten kalan arayüzlerini değiştirmeye hazırlanıyor",
-            "score": 22,
-            "score_breakdown": {
-              "guncellik": 6,
-              "etkilesim_potansiyeli": 5,
-              "benzersizlik": 4,
-              "gundem_gucu": 5,
-              "paylasilabilirlik": 2
-            }
-          }
-        ],
-        "scored_count": 3,
-        "cooldown_candidates": [
-          {
-            "title": "Huawei, 336 kWh kapasiteli yeni ev tipi enerji depolama sistemini tanıttı",
-            "link": "https://www.donanimhaber.com/huawei-den-336-kwh-kapasiteli-ev-tipi-enerji-depolama-sistemi--212788",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "336-depolama-enerji-huawei-kapasiteli-kwh-sistemini-tanitti-tipi"
-          },
-          {
-            "title": "Microsoft, Windows 11'in Windows 95'ten kalan arayüzlerini değiştirmeye hazırlanıyor",
-            "link": "https://www.donanimhaber.com/windows-11-in-30-yillik-arayuzleri-sonunda-degisiyor--212785",
-            "score": 22,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "arayuzlerini-degistirmeye-hazirlaniyor-kalan-microsoft-windows-windows"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-12T06:02:27.519452+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2120562175223660617",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120562175223660617#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-11T16:59:55+00:00",
-          "summary": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acik-ara-birkac-boreal-donem-fransiz-geride-gidiyor-gun-ispatladi-iyi-kalan-kisa-konugum-konusunda-liderler-markanin-modeli-neden-neden-renault-renault-satislarda-satislari-satiyor-sattigini-simdi-simdiden-sonucu-surus-suv-suv-tam-tanitim-tersini-test-toplam-uretici-uretim-uzun-yakinda-yasiyor-yayinlarim-yerli-yorumlu",
-          "base_ai_score": 52,
-          "score_breakdown": {
-            "guncellik": 15,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Pazar liderliği ve yerli üretim bir modelin test sürecine değinmesi açısından otomobil meraklılarının ilgisini çekecek yerel bir içerik.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Please wait while Gandalf decides whether you shall pass Do not reload this page, or you may get blocked"
-        },
-        "post_text": "YERLİ ÜRETİM BOREAL TEST MASASINDA.\n\nUzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini Boreal ile sağlamlaştırıyor.\n\nBirkaç gündür konuğum olan yerli üretim model, markanın bu pazar payını neden ele geçirdiğini şimdiden gösterdi.\n\nSatış rakamındaki başarının tesadüf olmadığı ilk kilometrede anlaşılıyor.",
-        "post_text_length": 346,
-        "story_card_title": "RENAULT BOREAL LİDERLİĞİNİ TESADÜFE BIRAKMIYOR",
-        "story_card_subtitle": "Uzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini yerli üretim Boreal ile sağlamlaştırıyor. Birkaç gündür test konuğum olan yerli üretim model, markanın pazar payını neden ele geçirdiğini şimdiden net şekilde gösteriyor. Satış rakamlarındaki bu başarının tesadüf olmadığı ise aracın direksiyonuna geçilen ilk kilometrede açıkça anlaşılıyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-12T06:02:40.764526+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "link": "https://x.com/murattosunMSE/status/2120562175223660617",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120562175223660617#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-11T16:59:55+00:00",
-          "summary": "Renault neden çok satıyor? Uzun bir dönem SUV konusunda geride kalan Fransız üretici şimdi tam tersini yaşıyor. Markanın SUV satışları iyi gidiyor. Toplam satışlarda da açık ara liderler. Yerli Üretim Boreal modeli birkaç gün test konuğum. Şimdiden Renault'nun neden çok sattığını ispatladı. Kısa yorumlu sonucu yakında yayınlarım. . Sürüş, tanıtım.",
-          "image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "acik-ara-birkac-boreal-donem-fransiz-geride-gidiyor-gun-ispatladi-iyi-kalan-kisa-konugum-konusunda-liderler-markanin-modeli-neden-neden-renault-renault-satislarda-satislari-satiyor-sattigini-simdi-simdiden-sonucu-surus-suv-suv-tam-tanitim-tersini-test-toplam-uretici-uretim-uzun-yakinda-yasiyor-yayinlarim-yerli-yorumlu",
-          "base_ai_score": 52,
-          "score_breakdown": {
-            "guncellik": 15,
-            "etkilesim_potansiyeli": 12,
-            "benzersizlik": 10,
-            "gundem_gucu": 11,
-            "paylasilabilirlik": 6
-          },
-          "score": 54,
-          "score_reason": "ai_scored",
-          "score_explanation": "Pazar liderliği ve yerli üretim bir modelin test sürecine değinmesi açısından otomobil meraklılarının ilgisini çekecek yerel bir içerik.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Please wait while Gandalf decides whether you shall pass Do not reload this page, or you may get blocked",
-          "post_text_for_card": "YERLİ ÜRETİM BOREAL TEST MASASINDA.\n\nUzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini Boreal ile sağlamlaştırıyor.\n\nBirkaç gündür konuğum olan yerli üretim model, markanın bu pazar payını neden ele geçirdiğini şimdiden gösterdi.\n\nSatış rakamındaki başarının tesadüf olmadığı ilk kilometrede anlaşılıyor.",
-          "story_card_title": "RENAULT BOREAL LİDERLİĞİNİ TESADÜFE BIRAKMIYOR",
-          "story_card_subtitle": "Uzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini yerli üretim Boreal ile sağlamlaştırıyor. Birkaç gündür test konuğum olan yerli üretim model, markanın pazar payını neden ele geçirdiğini şimdiden net şekilde gösteriyor. Satış rakamlarındaki bu başarının tesadüf olmadığı ise aracın direksiyonuna geçilen ilk kilometrede açıkça anlaşılıyor.",
-          "image_sources": [
-            "nitter_still",
-            "nitter_still",
-            "nitter_still",
-            "nitter_still"
-          ],
-          "prepared_image_count": 4,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HW3AC1FXoAE1BtJ.jpg?name=orig",
-            "https://pbs.twimg.com/media/HW3ADOjWIAAjCMU.jpg?name=orig",
-            "https://pbs.twimg.com/media/HW3ADrOWsAAN6Fm.jpg?name=orig",
-            "https://pbs.twimg.com/media/HW3ACZ3WEAA9nwT.jpg?name=orig"
-          ]
-        },
-        "post_text": "YERLİ ÜRETİM BOREAL TEST MASASINDA.\n\nUzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini Boreal ile sağlamlaştırıyor.\n\nBirkaç gündür konuğum olan yerli üretim model, markanın bu pazar payını neden ele geçirdiğini şimdiden gösterdi.\n\nSatış rakamındaki başarının tesadüf olmadığı ilk kilometrede anlaşılıyor.",
-        "story_card_title": "RENAULT BOREAL LİDERLİĞİNİ TESADÜFE BIRAKMIYOR",
-        "story_card_subtitle": "Uzun süredir SUV segmentinde geride kalan Renault, toplam satışlardaki açık ara liderliğini yerli üretim Boreal ile sağlamlaştırıyor. Birkaç gündür test konuğum olan yerli üretim model, markanın pazar payını neden ele geçirdiğini şimdiden net şekilde gösteriyor. Satış rakamlarındaki bu başarının tesadüf olmadığı ise aracın direksiyonuna geçilen ilk kilometrede açıkça anlaşılıyor.",
-        "image_path": "/tmp/otoxtra_img_fddqipzh.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img_fddqipzh.jpg",
-          "/tmp/otoxtra_img_ob61dm0y.jpg",
-          "/tmp/otoxtra_img_awhyd277.jpg",
-          "/tmp/otoxtra_img_m9js4cer.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 4
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-12T06:02:47.658397+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122187792086916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18407336737203394",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "2584082202072503",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-12T06:03:27.003360+03:00"
+      "updated_at": null
     }
   }
 }
