@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-11-12-07:00",
+  "run_id": "2026-11-12-08:00",
   "status": "error",
-  "started_at": "2026-11-12T07:00:45.607094+03:00",
-  "updated_at": "2026-11-12T07:04:21.474429+03:00",
+  "started_at": "2026-11-12T08:00:45.450419+03:00",
+  "updated_at": "2026-11-12T08:03:26.485713+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "error",
-            "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "status": "ok",
+            "count": 10,
+            "detail": "",
             "attempts": 1,
-            "instance": ""
+            "instance": "nitter.kareem.one"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.jaydenha.uk"
+            "instance": "nitter.kareem.one"
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -106,35 +106,35 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.kareem.one"
           },
           "HakanDOgu": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.netbub.com"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.netbub.com"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.kareem.one"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.kareem.one"
           },
           "otopodyum": {
             "status": "ok",
@@ -144,8 +144,8 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 143,
-            "after_keyword": 93,
+            "found": 153,
+            "after_keyword": 95,
             "after_time": 6,
             "after_posted": 0,
             "after_duplicate": 0,
@@ -153,8 +153,8 @@
           }
         },
         "metrics": {
-          "found": 143,
-          "after_keyword": 93,
+          "found": 153,
+          "after_keyword": 95,
           "after_time": 6,
           "after_posted": 0,
           "after_duplicate": 0,
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-11-12T07:04:21.474429+03:00"
+      "updated_at": "2026-11-12T08:03:26.485713+03:00"
     },
     "score": {
       "status": "waiting",
