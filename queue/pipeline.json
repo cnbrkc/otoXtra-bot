@@ -1,14 +1,36 @@
 {
-  "run_id": "2026-11-13-08:01",
-  "status": "error",
-  "started_at": "2026-11-13T08:01:07.199061+03:00",
-  "updated_at": "2026-11-13T08:02:42.026670+03:00",
+  "run_id": "2026-11-13-09:01",
+  "status": "completed",
+  "started_at": "2026-11-13T09:01:06.677202+03:00",
+  "updated_at": "2026-11-13T09:05:53.483872+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+            "link": "https://www.donanimhaber.com/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8--212844",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-13T06:00:00+00:00",
+            "summary": "BYD'nin premium markası Denza, yeni elektrikli SUV modeli N8'i Çin'de satışa sundu. 1.193 beygir güce, 1.003 kilometre sahip araç, yalnızca 9 dakikada tamamen şarj olabiliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "003-193-beygir-byd-dakikada-denza-guc-menzil-sarj"
+          }
+        ],
+        "count": 1,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +91,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +112,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/ahmetcelik2016/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
             "attempts": 1,
             "instance": ""
           },
@@ -109,11 +131,11 @@
             "instance": "nitter.mizuki.st"
           },
           "HakanDOgu": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/HakanDOGU/rss",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": ""
           },
           "MuratTosun": {
             "status": "ok",
@@ -134,7 +156,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": "nitter.netbub.com"
           },
           "otopodyum": {
             "status": "ok",
@@ -144,49 +166,239 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 154,
-            "after_keyword": 90,
-            "after_time": 5,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 144,
+            "after_keyword": 85,
+            "after_time": 6,
+            "after_posted": 1,
+            "after_duplicate": 1,
+            "after_shared_variant_cooldown": 1
           }
         },
         "metrics": {
-          "found": 154,
-          "after_keyword": 90,
-          "after_time": 5,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 144,
+          "after_keyword": 85,
+          "after_time": 6,
+          "after_posted": 1,
+          "after_duplicate": 1,
+          "after_shared_variant_cooldown": 1
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-13T08:02:42.026670+03:00"
+      "error": null,
+      "updated_at": "2026-11-13T09:04:16.550714+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+          "link": "https://www.donanimhaber.com/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8--212844",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-13T06:00:00+00:00",
+          "summary": "BYD'nin premium markası Denza, yeni elektrikli SUV modeli N8'i Çin'de satışa sundu. 1.193 beygir güce, 1.003 kilometre sahip araç, yalnızca 9 dakikada tamamen şarj olabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "003-193-beygir-byd-dakikada-denza-guc-menzil-sarj",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "1193 beygir güç, 1000+ km menzil ve 9 dakikada şarj gibi ekstrem teknik veriler sosyal medyada yüksek etkileşim ve merak uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 86,
+        "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 17,
+          "gundem_gucu": 17,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "1193 beygir güç, 1000+ km menzil ve 9 dakikada şarj gibi ekstrem teknik veriler sosyal medyada yüksek etkileşim ve merak uyandırır.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+            "score": 86,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 17,
+              "gundem_gucu": 17,
+              "paylasilabilirlik": 10
+            }
+          }
+        ],
+        "scored_count": 1,
+        "cooldown_candidates": []
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-13T09:04:19.317680+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+          "link": "https://www.donanimhaber.com/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8--212844",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-13T06:00:00+00:00",
+          "summary": "BYD'nin premium markası Denza, yeni elektrikli SUV modeli N8'i Çin'de satışa sundu. 1.193 beygir güce, 1.003 kilometre sahip araç, yalnızca 9 dakikada tamamen şarj olabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "003-193-beygir-byd-dakikada-denza-guc-menzil-sarj",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "1193 beygir güç, 1000+ km menzil ve 9 dakikada şarj gibi ekstrem teknik veriler sosyal medyada yüksek etkileşim ve merak uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "BYD'nin premium markası Denza tarafından tanıtılan N8 EV, beş kişilik geniş bir SUV olarak konumlandırılıyor. Model, dört tamamen elektrikli ve iki şarj edilebilir hibrit olmak üzere toplam altı farklı versiyonla satışa sunuluyor. Tamamen elektrikli Denza N8'in başlangıç fiyatı269.900 yuan (40.500 dolar)olarak açıklanırken, en üst donanımlı Flagship versiyonunun fiyatı329.900 yuana (49.500 dolar)kadar çıkıyor. hibrit versiyonları ise 300.900 yuan ve 329.900 yuan seviyelerinden başlıyor. Aracın iç mekanında ise dijital ekranlar ve konfor odaklı donanımlar ön plana çıkıyor. Ön konsol boyunca uzanan30 inçlik panoramik bilgi-eğlence ekranı,kabinin en dikkat çekici unsurlarından biri. Buna ek olarak ön camın alt bölümüne yerleştirilen43 inçlik panoramik head-up display,sürücünün ihtiyaç duyduğu bilgileri geniş bir alanda görüntülemesini sağlıyor. Konfor donanımları arasında, sıfır yerçekimi ön ve arka koltuklar,tavana entegre açılır eğlence ekranı,ambiyans aydınlatması ve kablosuz telefon şarj üniteleri bulunuyor. Modelin en güçlü versiyonu ise BYD'nin yenie3 Evo teknolojisini kullanan üç motorlu sistemle donatılıyor.Bu konfigürasyonda ön aksta 270 kW (362 beygir), arka aksta ise ayrı ayrı 310 kW (416 beygir) güç üreten iki elektrik motoru yer alıyor. Böylece sistemin toplam gücü890 kW (1.193 beygire)ulaşıyor. Denza N8 EV'nin en önemli özelliklerinden biri, sunduğu yüksek menzil değeri. BYD, modelin1.003 kilometreye kadarCLTC menziline ulaşabildiğini ve bu değerledünyanın en uzun menzilli seri üretim elektrikli SUV'siolduğunu belirtiyor. Araçta BYD'ninikinci nesil Blade bataryateknolojisine sahip iki farklı batarya paketi kullanılıyor.105,792 kWhkapasiteli batarya ile 885 kilometreye kadar menzil sunulurken,130,15 kWhkapasiteli büyük batarya paketi menzili 1.003 kilometreye çıkarıyor. Bu değerlerin Çin'in CLTC ölçüm standardına göre açıklandığını ve gerçek kullanımda daha düşük menzil elde edilebileceğini belirtmek gerekiyor. BYD'nin ikinci nesil Blade bataryaları ve Flash Charging hızlı şarj teknolojisi de modelin öne çıkan özellikleri arasında. Açıklanan verilere göre Denza N8 EV,yüzde 10'dan yüzde 70 doluluk seviyesine yalnızca 5 dakikada ulaşabiliyor. Yüzde 10'dan yüzde 97'ye şarj işlemi ise 9 dakika sürüyor.Lüks donanımlarını teknolojik sistemlerle tamamlayan Denza N8 EV, BYD'ninDiSus-A akıllı hava süspansiyon sisteminikullanıyor. Bu sistemin yanı sıra araçtaGod’s Eye 5.0isimli gelişmiş sürüş destek teknolojisi de bulunuyor.BYD, Çin pazarında daha önce satışa sunduğu uzun gövdeliDenza N8Lmodelini de ürün gamında tutuyor. Bu yılın başlarında piyasaya çıkan N8L'nin başlangıç fiyatı 299.800 yuan (45.000 dolar) seviyesinde bulunuyor.BYD Denza N8 Görselleri(13)AçKaynakçahttps://electrek.co/2026/11/12/byds-new-luxury-suv-brings-big-screens-big-range-starts-at-40000/https://carnewschina.com/2026/11/12/byds-denza-n8-ev-launches-in-china-up-to-1003-km-cltc-range-starting-from-40300-usd/Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtEkranlı ve mikrofonlu akıllı yüzükKkadirozgur8719 saat öncemerhabalar, reklama karışmak istemem ama L40 Ultra Complete Edition (CE) L40 Ultra serisinin devamı değilmiş, aslında L10s Plus'ın emiş gücü artırılmış ve mop yıkalamalı versiyonuymuş. Burada Dreame markası kötü niyetli bir isimlendirme yapmış BYD'nin ikinci nesil Blade bataryaları ve Flash Charging hızlı şarj teknolojisi de modelin öne çıkan özellikleri arasında. Açıklanan verilere göre Denza N8 EV,yüzde 10'dan yüzde 70 doluluk seviyesine yalnızca 5 dakikada ulaşabiliyor. Yüzde 10'dan yüzde 97'ye şarj işlemi ise 9 dakika sürüyor. Lüks donanımlarını teknolojik sistemlerle tamamlayan Denza N8 EV, BYD'ninDiSus-A akıllı hava süspansiyon sisteminikullanıyor. Bu sistemin yanı sıra araçtaGod’s Eye 5.0isimli gelişmiş sürüş destek teknolojisi de bulunuyor. BYD, Çin pazarında daha önce satışa sunduğu uzun gövdeliDenza N8Lmodelini de ürün gamında tutuyor. Bu yılın başlarında piyasaya çıkan N8L'nin başlangıç fiyatı 299.800 yuan (45.000 dolar) seviyesinde bulunuyor. BYD Denza N8 Görselleri(13)AçKaynakçahttps://electrek.co/2026/11/12/byds-new-luxury-suv-brings-big-screens-big-range-starts-at-40000/https://carnewschina.com/2026/11/12/byds-denza-n8-ev-launches-in-china-up-to-1003-km-cltc-range-starting-from-40300-usd/Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtEkranlı ve mikrofonlu akıllı yüzükKkadirozgur8719 saat öncemerhabalar, reklama karışmak istemem ama L40 Ultra Complete Edition (CE) L40 Ultra serisinin devamı değilmiş, aslında L10s Plus'ın emiş gücü artırılmış ve mop..."
+        },
+        "post_text": "329.900 yuan başlangıç fiyatıyla Çin pazarında satışa çıkan BYD Denza N8, 1.193 beygir güç ve 1.003 kilometre menzil sunuyor.\n\nAltı farklı versiyonla alıcı bulan tamamen elektrikli yeni SUV, sadece 9 dakikada şarj olabiliyor.\n\nBu devasa teknik veriler, geleneksel otomotiv ezberlerini tamamen bozuyor.",
+        "post_text_length": 301,
+        "story_card_title": "BYD'nin yeni canavarı ezberleri bozuyor",
+        "story_card_subtitle": "Çin pazarında satışa sunulan BYD Denza N8, geleneksel otomotiv kurallarını tamamen değiştiriyor. Tamamen elektrikli yeni SUV modeli, 329.900 yuan başlangıç fiyatıyla altı farklı versiyonla alıcı buluyor. Devasa araç, sunduğu dikkat çeken teknik özelliklerle sınıfının standartlarını yeniden belirliyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-13T09:04:42.849188+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "BYD Denza N8 tanıtıldı: 1.193 beygir güç, 1.003 km menzil ve 9 dakikada şarj!",
+          "link": "https://www.donanimhaber.com/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8--212844",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-13T06:00:00+00:00",
+          "summary": "BYD'nin premium markası Denza, yeni elektrikli SUV modeli N8'i Çin'de satışa sundu. 1.193 beygir güce, 1.003 kilometre sahip araç, yalnızca 9 dakikada tamamen şarj olabiliyor.",
+          "image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg",
+          "image_candidates": [
+            "https://www.donanimhaber.com/images/images/haber/212844/1200x675byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8.jpg"
+          ],
+          "image_source": "article_img",
+          "source_name": "Donanimhaber",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "003-193-beygir-byd-dakikada-denza-guc-menzil-sarj",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 17,
+            "gundem_gucu": 17,
+            "paylasilabilirlik": 10
+          },
+          "score": 86,
+          "score_reason": "ai_scored",
+          "score_explanation": "1193 beygir güç, 1000+ km menzil ve 9 dakikada şarj gibi ekstrem teknik veriler sosyal medyada yüksek etkileşim ve merak uyandırır.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "BYD'nin premium markası Denza tarafından tanıtılan N8 EV, beş kişilik geniş bir SUV olarak konumlandırılıyor. Model, dört tamamen elektrikli ve iki şarj edilebilir hibrit olmak üzere toplam altı farklı versiyonla satışa sunuluyor. Tamamen elektrikli Denza N8'in başlangıç fiyatı269.900 yuan (40.500 dolar)olarak açıklanırken, en üst donanımlı Flagship versiyonunun fiyatı329.900 yuana (49.500 dolar)kadar çıkıyor. hibrit versiyonları ise 300.900 yuan ve 329.900 yuan seviyelerinden başlıyor. Aracın iç mekanında ise dijital ekranlar ve konfor odaklı donanımlar ön plana çıkıyor. Ön konsol boyunca uzanan30 inçlik panoramik bilgi-eğlence ekranı,kabinin en dikkat çekici unsurlarından biri. Buna ek olarak ön camın alt bölümüne yerleştirilen43 inçlik panoramik head-up display,sürücünün ihtiyaç duyduğu bilgileri geniş bir alanda görüntülemesini sağlıyor. Konfor donanımları arasında, sıfır yerçekimi ön ve arka koltuklar,tavana entegre açılır eğlence ekranı,ambiyans aydınlatması ve kablosuz telefon şarj üniteleri bulunuyor. Modelin en güçlü versiyonu ise BYD'nin yenie3 Evo teknolojisini kullanan üç motorlu sistemle donatılıyor.Bu konfigürasyonda ön aksta 270 kW (362 beygir), arka aksta ise ayrı ayrı 310 kW (416 beygir) güç üreten iki elektrik motoru yer alıyor. Böylece sistemin toplam gücü890 kW (1.193 beygire)ulaşıyor. Denza N8 EV'nin en önemli özelliklerinden biri, sunduğu yüksek menzil değeri. BYD, modelin1.003 kilometreye kadarCLTC menziline ulaşabildiğini ve bu değerledünyanın en uzun menzilli seri üretim elektrikli SUV'siolduğunu belirtiyor. Araçta BYD'ninikinci nesil Blade bataryateknolojisine sahip iki farklı batarya paketi kullanılıyor.105,792 kWhkapasiteli batarya ile 885 kilometreye kadar menzil sunulurken,130,15 kWhkapasiteli büyük batarya paketi menzili 1.003 kilometreye çıkarıyor. Bu değerlerin Çin'in CLTC ölçüm standardına göre açıklandığını ve gerçek kullanımda daha düşük menzil elde edilebileceğini belirtmek gerekiyor. BYD'nin ikinci nesil Blade bataryaları ve Flash Charging hızlı şarj teknolojisi de modelin öne çıkan özellikleri arasında. Açıklanan verilere göre Denza N8 EV,yüzde 10'dan yüzde 70 doluluk seviyesine yalnızca 5 dakikada ulaşabiliyor. Yüzde 10'dan yüzde 97'ye şarj işlemi ise 9 dakika sürüyor.Lüks donanımlarını teknolojik sistemlerle tamamlayan Denza N8 EV, BYD'ninDiSus-A akıllı hava süspansiyon sisteminikullanıyor. Bu sistemin yanı sıra araçtaGod’s Eye 5.0isimli gelişmiş sürüş destek teknolojisi de bulunuyor.BYD, Çin pazarında daha önce satışa sunduğu uzun gövdeliDenza N8Lmodelini de ürün gamında tutuyor. Bu yılın başlarında piyasaya çıkan N8L'nin başlangıç fiyatı 299.800 yuan (45.000 dolar) seviyesinde bulunuyor.BYD Denza N8 Görselleri(13)AçKaynakçahttps://electrek.co/2026/11/12/byds-new-luxury-suv-brings-big-screens-big-range-starts-at-40000/https://carnewschina.com/2026/11/12/byds-denza-n8-ev-launches-in-china-up-to-1003-km-cltc-range-starting-from-40300-usd/Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtEkranlı ve mikrofonlu akıllı yüzükKkadirozgur8719 saat öncemerhabalar, reklama karışmak istemem ama L40 Ultra Complete Edition (CE) L40 Ultra serisinin devamı değilmiş, aslında L10s Plus'ın emiş gücü artırılmış ve mop yıkalamalı versiyonuymuş. Burada Dreame markası kötü niyetli bir isimlendirme yapmış BYD'nin ikinci nesil Blade bataryaları ve Flash Charging hızlı şarj teknolojisi de modelin öne çıkan özellikleri arasında. Açıklanan verilere göre Denza N8 EV,yüzde 10'dan yüzde 70 doluluk seviyesine yalnızca 5 dakikada ulaşabiliyor. Yüzde 10'dan yüzde 97'ye şarj işlemi ise 9 dakika sürüyor. Lüks donanımlarını teknolojik sistemlerle tamamlayan Denza N8 EV, BYD'ninDiSus-A akıllı hava süspansiyon sisteminikullanıyor. Bu sistemin yanı sıra araçtaGod’s Eye 5.0isimli gelişmiş sürüş destek teknolojisi de bulunuyor. BYD, Çin pazarında daha önce satışa sunduğu uzun gövdeliDenza N8Lmodelini de ürün gamında tutuyor. Bu yılın başlarında piyasaya çıkan N8L'nin başlangıç fiyatı 299.800 yuan (45.000 dolar) seviyesinde bulunuyor. BYD Denza N8 Görselleri(13)AçKaynakçahttps://electrek.co/2026/11/12/byds-new-luxury-suv-brings-big-screens-big-range-starts-at-40000/https://carnewschina.com/2026/11/12/byds-denza-n8-ev-launches-in-china-up-to-1003-km-cltc-range-starting-from-40300-usd/Yorum YazPaylaşTweetleEposta ile Paylaşınbaşlıklı buarkadaşınıza postalayın.Bu haberi ve diğer DH içeriklerini, gelişmiş mobil uygulamamızı kullanarak görüntüleyin:Daha Fazla VideoSessiz Video TercihleriOtomatik yükle ve oynatVideo bitince sonrakine geçdonanimhabercomInstagramTakip EtEkranlı ve mikrofonlu akıllı yüzükKkadirozgur8719 saat öncemerhabalar, reklama karışmak istemem ama L40 Ultra Complete Edition (CE) L40 Ultra serisinin devamı değilmiş, aslında L10s Plus'ın emiş gücü artırılmış ve mop...",
+          "post_text_for_card": "329.900 yuan başlangıç fiyatıyla Çin pazarında satışa çıkan BYD Denza N8, 1.193 beygir güç ve 1.003 kilometre menzil sunuyor.\n\nAltı farklı versiyonla alıcı bulan tamamen elektrikli yeni SUV, sadece 9 dakikada şarj olabiliyor.\n\nBu devasa teknik veriler, geleneksel otomotiv ezberlerini tamamen bozuyor.",
+          "story_card_title": "BYD'nin yeni canavarı ezberleri bozuyor",
+          "story_card_subtitle": "Çin pazarında satışa sunulan BYD Denza N8, geleneksel otomotiv kurallarını tamamen değiştiriyor. Tamamen elektrikli yeni SUV modeli, 329.900 yuan başlangıç fiyatıyla altı farklı versiyonla alıcı buluyor. Devasa araç, sunduğu dikkat çeken teknik özelliklerle sınıfının standartlarını yeniden belirliyor.",
+          "image_sources": [
+            "article_img",
+            "article_img",
+            "article_img",
+            "article_img"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://www.donanimhaber.com/images/images/galeri/9511/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8-9511-4.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9511/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8-9511-10.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9511/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8-9511-2.jpg",
+            "https://www.donanimhaber.com/images/images/galeri/9511/byd-den-1-000-km-menzilli-dev-elektrikli-suv-denza-n8-9511-13.jpg"
+          ]
+        },
+        "post_text": "329.900 yuan başlangıç fiyatıyla Çin pazarında satışa çıkan BYD Denza N8, 1.193 beygir güç ve 1.003 kilometre menzil sunuyor.\n\nAltı farklı versiyonla alıcı bulan tamamen elektrikli yeni SUV, sadece 9 dakikada şarj olabiliyor.\n\nBu devasa teknik veriler, geleneksel otomotiv ezberlerini tamamen bozuyor.",
+        "story_card_title": "BYD'nin yeni canavarı ezberleri bozuyor",
+        "story_card_subtitle": "Çin pazarında satışa sunulan BYD Denza N8, geleneksel otomotiv kurallarını tamamen değiştiriyor. Tamamen elektrikli yeni SUV modeli, 329.900 yuan başlangıç fiyatıyla altı farklı versiyonla alıcı buluyor. Devasa araç, sunduğu dikkat çeken teknik özelliklerle sınıfının standartlarını yeniden belirliyor.",
+        "image_path": "/tmp/otoxtra_img_s7c6ooee.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img_s7c6ooee.jpg",
+          "/tmp/otoxtra_img_8yizbqgq.jpg",
+          "/tmp/otoxtra_img_f5ti4e1f.jpg",
+          "/tmp/otoxtra_img_jc2nxb5l.jpg"
+        ],
+        "image_source": "article_img",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-13T09:05:15.924773+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122187931628916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17910357810580357",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1605871141291396",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-13T09:05:53.483872+03:00"
     }
   }
 }
