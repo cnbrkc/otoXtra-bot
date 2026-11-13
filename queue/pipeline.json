@@ -1,181 +1,14 @@
 {
-  "run_id": "2026-11-13-06:01",
-  "status": "completed",
-  "started_at": "2026-11-13T06:01:02.966896+03:00",
-  "updated_at": "2026-11-13T06:03:50.287395+03:00",
+  "run_id": "2026-11-13-07:01",
+  "status": "error",
+  "started_at": "2026-11-13T07:01:04.684285+03:00",
+  "updated_at": "2026-11-13T07:04:46.533374+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Honda'nın yeni elektrikli motosiklet konsepti ezber bozuyor",
-            "link": "https://www.donanimhaber.com/honda-nin-yeni-elektrikli-motosiklet-konsepti-ezber-bozuyor--212836",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T19:17:00+00:00",
-            "summary": "Honda, EV Outlier konseptiyle elektrikli motosikletlerin geleceğine benzersiz bir ışık tuttu. EICMA 2026'da 400-500 cc sınıfındaki yeni modeller de dikkat çekti.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212836/1200x675honda-nin-yeni-elektrikli-motosiklet-konsepti-ezber-bozuyor.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212836/1200x675honda-nin-yeni-elektrikli-motosiklet-konsepti-ezber-bozuyor.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212836/1200x675honda-nin-yeni-elektrikli-motosiklet-konsepti-ezber-bozuyor.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "bozuyor-elektrikli-ezber-honda-konsepti-motosiklet"
-          },
-          {
-            "title": "Çin'in güneş enerjisiyle 30 saat havada kalabilen İHA'sı ilk uçuşunu yaptı",
-            "link": "https://www.donanimhaber.com/cin-den-30-saat-havada-kalabilen-tamamen-gunes-enerjili-iha--212835",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T18:55:00+00:00",
-            "summary": "Tamamen güneş enerjili Light Cavalry, ilk uçuşunu başarıyla gerçekleştirdi. Araç, 30 saate kadar havada kalabilecek ve sabit piste ihtiyaç duymadan havalanabilecek şekilde tasarlandı.",
-            "image_url": "https://www.donanimhaber.com/images/images/haber/212835/1200x675cin-den-30-saat-havada-kalabilen-tamamen-gunes-enerjili-iha.jpg",
-            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212835/1200x675cin-den-30-saat-havada-kalabilen-tamamen-gunes-enerjili-iha.jpg",
-            "image_candidates": [
-              "https://www.donanimhaber.com/images/images/haber/212835/1200x675cin-den-30-saat-havada-kalabilen-tamamen-gunes-enerjili-iha.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Donanimhaber",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cin-enerjisiyle-gunes-havada-kalabilen-saat-ucusunu-yapti"
-          },
-          {
-            "title": "Euro Truck Simulator 2’de otobüsle yolcu taşıma dönemi başladı",
-            "link": "https://www.log.com.tr/euro-truck-simulator-2de-otobusle-yolcu-tasima-donemi-basladi/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T17:10:39+00:00",
-            "summary": "Geçtiğimiz aylarda büyük ses getiren Türkiye DLC’siyle gündeme gelen Euro Truck Simulator 2 için hazırlanan resmi otobüs DLC’si Coaches çıktı. Uzun süredir merakla beklenen DLC için yapılan ilk açıklamada, “Bu yeni eklenti, oyunculara ETS2 dünyasında çalışmak için yepyeni bir yol sunacak. Kargo taşımak yerine bir otobüs şoförü olacaksınız.” ifadeleri kullanılmıştı. 8 dolar fiyatı bulunan yeni DLC’de Scania Touring, Volvo 9700 DD ve MAN Lion’s Coach gibi otobüs modelleri bulunuyor. Euro Truck Simulator 2’de otobüsle yolcu taşıma dönemi başladı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-09_16-31-59_Ho9Re-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-09_16-31-59_Ho9Re-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-09_16-31-59_Ho9Re-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "Log",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "donemi-euro-otobusle-simulator-tasima-truck-yolcu"
-          },
-          {
-            "title": "Volkswagen Caddy 2.0 TDI 122 HP DSG Style Test Sürüşü",
-            "link": "https://www.otomobil.com.tr/yeni-volkswagen-caddy-test-surusu-2026/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T16:43:15+00:00",
-            "summary": "Yeni Volkswagen Caddy test sürüşü. 2020 yılında tanıtılan beşinci nesil Volkswagen Caddy, 6 yıllık süreçte 500.000 adetlik satışı aşarak 2026 yılında makyajlandı. Beşinci neslin makyajlı halinin ilk fotoğrafları 2026 Mart ayında kamuoyu ile paylaşılmıştı ve 2026 Ekim ayında Polonya’nın Poznan şehrinde makyajlı versiyonun üretimine başlandığı duyurulmuştu. Kısa bir süre sonra, 2 Kasım 2026 itibarıyla 2.0 […] Sonrası Volkswagen Caddy 2.0 TDI 122 HP DSG Style Test Sürüşü Otomobil ilk ortaya çıktı.",
-            "image_url": "",
-            "rss_image_url": "",
-            "image_candidates": [],
-            "image_source": "none",
-            "source_name": "Otomobilcom",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "122-caddy-dsg-style-surusu-tdi-test-volkswagen"
-          },
-          {
-            "title": "Devir değişiyor! Karizmatik SUV'lar geliyor. 2027, araçların olduğu kadar tasarımların da değiştiği yıl olacak. Chery Tiggo X7 ile bu değişime hemen adapte olmuş görünüyor. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2120948003297263703",
-            "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120948003297263703#m",
-            "source_instance": "nitter.netbub.com",
-            "published": "2026-11-12T18:33:03+00:00",
-            "summary": "Devir değişiyor! Karizmatik SUV'lar geliyor. 2027, araçların olduğu kadar tasarımların da değiştiği yıl olacak. Chery Tiggo X7 ile bu değişime hemen adapte olmuş görünüyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) En sonuncu gelmeden kapattım Video — https://nitter.netbub.com/murattosunMSE/status/2120938556273099111#m",
-            "image_url": "https://pbs.twimg.com/media/HW8e88-WoAAhQ-n.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HW8e88-WoAAhQ-n.jpg",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HW8e88-WoAAhQ-n.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "2027-adapte-araclarin-chery-degisime-degisiyor-degistigi-devir-geliyor-gorunuyor-haber-hemen-karizmatik-lar-olacak-oldugu-olmus-suv-tanitim-tasarimlarin-tiggo-yil"
-          },
-          {
-            "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-            "link": "https://x.com/murattosunMSE/status/2120943871894970776",
-            "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120943871894970776#m",
-            "source_instance": "nitter.netbub.com",
-            "published": "2026-11-12T18:16:38+00:00",
-            "summary": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-            "image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-            "rss_image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-            "image_candidates": [
-              "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "MuratTosun",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "almanya-artiyor-avrupa-degerlendiriliyor-disina-durdurdu-fabrika-gecici-kapatmalari-medyasindan-mercedes-neler-olasiligi-oluyor-sirketin-tasinma-yatirimlarini-yurt"
-          },
-          {
-            "title": "Honda Yanımda Uygulamasına Özel  Kışa Hazırlık Servis Kampanyası",
-            "link": "https://otopodyum.com.tr/moto-bike/honda-yanimda-uygulamasina-ozel-kisa-hazirlik-servis-kampanyasi-5479h",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T16:00:45+00:00",
-            "summary": "Kampanya kapsamında periyodik bakım hizmetleri avantajlı fiyatlarla sunulurken, tamir parçalarında model ve araç yılına göre yüzde 20’den yüzde 30’a varan indirim fırsatı sağlanıyor.",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5793.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5793.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5793.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "hazirlik-honda-kampanyasi-kisa-ozel-servis-uygulamasina-yanimda"
-          },
-          {
-            "title": "Nissan Qashqai 20. Yılını 7,3 Milyon Satışla Zirvede Kutluyor",
-            "link": "https://otopodyum.com.tr/abc-segmenti-otolar/nissan-qashqai-20-yilini-73-milyon-satisla-zirvede-kutluyor-5478h",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-12T15:50:58+00:00",
-            "summary": "Kompakt crossover sınıfını yaratan Nissan Qashqai 20. yaşını kutluyor. ODMD verilerine göre Türkiye’de yaklaşık 250 bin adet satılan model, 9 kez yılın en çok satan SUV’si oldu",
-            "image_url": "https://cdn.otopodyum.com.tr/news/5462.jpg",
-            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5462.jpg",
-            "image_candidates": [
-              "https://cdn.otopodyum.com.tr/news/5462.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "otopodyum",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "kutluyor-milyon-nissan-qashqai-satisla-yilini-zirvede"
-          }
-        ],
-        "count": 8,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -236,28 +69,28 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 503 Server Error: Service Unavailable for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
           "Emre Ozpeynirci": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
-            "instance": "nitter.mizuki.st"
+            "instance": ""
           },
           "Dolu Batarya": {
-            "status": "ok",
-            "count": 10,
-            "detail": "",
+            "status": "error",
+            "count": 0,
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /DoluBatarya/rss (Caused by SSLError(SS",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": ""
           },
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by SSLError",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -280,28 +113,28 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "MuratTosun": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "otopodyum": {
             "status": "ok",
@@ -311,309 +144,49 @@
             "instance": ""
           },
           "_metrics": {
-            "found": 154,
-            "after_keyword": 90,
-            "after_time": 14,
-            "after_posted": 8,
-            "after_duplicate": 8,
-            "after_shared_variant_cooldown": 8
+            "found": 134,
+            "after_keyword": 78,
+            "after_time": 5,
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
-          "found": 154,
-          "after_keyword": 90,
-          "after_time": 14,
-          "after_posted": 8,
-          "after_duplicate": 8,
-          "after_shared_variant_cooldown": 8
+          "found": 134,
+          "after_keyword": 78,
+          "after_time": 5,
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-13T06:02:40.159142+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-13T07:04:46.533374+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "link": "https://x.com/murattosunMSE/status/2120943871894970776",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120943871894970776#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-12T18:16:38+00:00",
-          "summary": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-artiyor-avrupa-degerlendiriliyor-disina-durdurdu-fabrika-gecici-kapatmalari-medyasindan-mercedes-neler-olasiligi-oluyor-sirketin-tasinma-yatirimlarini-yurt",
-          "base_ai_score": 92,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 11
-          },
-          "score": 93,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devinin stratejik krizi, ekonomik ve sektörel açıdan büyük merak uyandırır, çok yüksek tartışma potansiyeline sahip.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1
-        },
-        "score": 93,
-        "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 1,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 25,
-          "benzersizlik": 18,
-          "gundem_gucu": 19,
-          "paylasilabilirlik": 11
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Otomotiv devinin stratejik krizi, ekonomik ve sektörel açıdan büyük merak uyandırır, çok yüksek tartışma potansiyeline sahip.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-            "score": 93,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 25,
-              "benzersizlik": 18,
-              "gundem_gucu": 19,
-              "paylasilabilirlik": 11
-            }
-          },
-          {
-            "title": "Çin'in güneş enerjisiyle 30 saat havada kalabilen İHA'sı ilk uçuşunu yaptı",
-            "score": 77,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 20,
-              "benzersizlik": 18,
-              "gundem_gucu": 11,
-              "paylasilabilirlik": 8
-            }
-          },
-          {
-            "title": "Honda'nın yeni elektrikli motosiklet konsepti ezber bozuyor",
-            "score": 70,
-            "score_breakdown": {
-              "guncellik": 19,
-              "etkilesim_potansiyeli": 18,
-              "benzersizlik": 16,
-              "gundem_gucu": 9,
-              "paylasilabilirlik": 8
-            }
-          }
-        ],
-        "scored_count": 8,
-        "cooldown_candidates": [
-          {
-            "title": "Çin'in güneş enerjisiyle 30 saat havada kalabilen İHA'sı ilk uçuşunu yaptı",
-            "link": "https://www.donanimhaber.com/cin-den-30-saat-havada-kalabilen-tamamen-gunes-enerjili-iha--212835",
-            "score": 77,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "cin-enerjisiyle-gunes-havada-kalabilen-saat-ucusunu-yapti"
-          },
-          {
-            "title": "Honda'nın yeni elektrikli motosiklet konsepti ezber bozuyor",
-            "link": "https://www.donanimhaber.com/honda-nin-yeni-elektrikli-motosiklet-konsepti-ezber-bozuyor--212836",
-            "score": 70,
-            "score_reason": "ai_scored",
-            "source_name": "Donanimhaber",
-            "topic_fingerprint": "bozuyor-elektrikli-ezber-honda-konsepti-motosiklet"
-          },
-          {
-            "title": "Euro Truck Simulator 2’de otobüsle yolcu taşıma dönemi başladı",
-            "link": "https://www.log.com.tr/euro-truck-simulator-2de-otobusle-yolcu-tasima-donemi-basladi/",
-            "score": 64,
-            "score_reason": "ai_scored",
-            "source_name": "Log",
-            "topic_fingerprint": "donemi-euro-otobusle-simulator-tasima-truck-yolcu"
-          },
-          {
-            "title": "Nissan Qashqai 20. Yılını 7,3 Milyon Satışla Zirvede Kutluyor",
-            "link": "https://otopodyum.com.tr/abc-segmenti-otolar/nissan-qashqai-20-yilini-73-milyon-satisla-zirvede-kutluyor-5478h",
-            "score": 47,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "kutluyor-milyon-nissan-qashqai-satisla-yilini-zirvede"
-          },
-          {
-            "title": "Devir değişiyor! Karizmatik SUV'lar geliyor. 2027, araçların olduğu kadar tasarımların da değiştiği yıl olacak. Chery Tiggo X7 ile bu değişime hemen adapte olmuş görünüyor. . Haber, tanıtım.",
-            "link": "https://x.com/murattosunMSE/status/2120948003297263703",
-            "score": 44,
-            "score_reason": "ai_scored",
-            "source_name": "MuratTosun",
-            "topic_fingerprint": "2027-adapte-araclarin-chery-degisime-degisiyor-degistigi-devir-geliyor-gorunuyor-haber-hemen-karizmatik-lar-olacak-oldugu-olmus-suv-tanitim-tasarimlarin-tiggo-yil"
-          },
-          {
-            "title": "Volkswagen Caddy 2.0 TDI 122 HP DSG Style Test Sürüşü",
-            "link": "https://www.otomobil.com.tr/yeni-volkswagen-caddy-test-surusu-2026/",
-            "score": 37,
-            "score_reason": "ai_scored",
-            "source_name": "Otomobilcom",
-            "topic_fingerprint": "122-caddy-dsg-style-surusu-tdi-test-volkswagen"
-          },
-          {
-            "title": "Honda Yanımda Uygulamasına Özel  Kışa Hazırlık Servis Kampanyası",
-            "link": "https://otopodyum.com.tr/moto-bike/honda-yanimda-uygulamasina-ozel-kisa-hazirlik-servis-kampanyasi-5479h",
-            "score": 22,
-            "score_reason": "ai_scored",
-            "source_name": "otopodyum",
-            "topic_fingerprint": "hazirlik-honda-kampanyasi-kisa-ozel-servis-uygulamasina-yanimda"
-          }
-        ]
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-13T06:02:46.949331+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "link": "https://x.com/murattosunMSE/status/2120943871894970776",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120943871894970776#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-12T18:16:38+00:00",
-          "summary": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-artiyor-avrupa-degerlendiriliyor-disina-durdurdu-fabrika-gecici-kapatmalari-medyasindan-mercedes-neler-olasiligi-oluyor-sirketin-tasinma-yatirimlarini-yurt",
-          "base_ai_score": 92,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 11
-          },
-          "score": 93,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devinin stratejik krizi, ekonomik ve sektörel açıdan büyük merak uyandırır, çok yüksek tartışma potansiyeline sahip.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Please wait while Gandalf decides whether you shall pass Do not reload this page, or you may get blocked"
-        },
-        "post_text": "ALMANYA'DA ÜRETİM MALİYETLERİ ARTIK MARKALARI MERKEZDEN UZAKLAŞTIRIYOR.\n\nMercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurma kararı aldı, fabrika kapatma senaryoları masada.\n\nYatırımların yurt dışına kayma ihtimali artık uzak bir ihtimal değil.\n\nAvrupa'da sanayinin omurgası sarsılırken, bu maliyet baskısı sadece markaların değil tüm bölgenin planlarını değiştiriyor.",
-        "post_text_length": 380,
-        "story_card_title": "MERCEDES ALMANYA'DAKİ TÜM YATIRIMLARI DURDURDU",
-        "story_card_subtitle": "Alman devi, artan maliyetler ve kâr baskısı nedeniyle evindeki yatırımlara askıya alma kararı verdi. Fabrika kapatma senaryoları ve üretimin yurt dışına kaydırılması ihtimali artık masadaki en güçlü seçenekler arasında yer alıyor. Avrupa sanayisinin omurgasını sarsan bu hamle, bölgedeki otomotiv üretimi için yeni bir dönemin habercisi.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-13T06:03:07.412064+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "link": "https://x.com/murattosunMSE/status/2120943871894970776",
-          "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2120943871894970776#m",
-          "source_instance": "nitter.netbub.com",
-          "published": "2026-11-12T18:16:38+00:00",
-          "summary": "NELER OLUYOR? Mercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurdu. Fabrika kapatmaları değerlendiriliyor. Şirketin yurt dışına taşınma olasılığı da artıyor. . Avrupa medyasından.",
-          "image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "rss_image_url": "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg",
-          "image_candidates": [
-            "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg"
-          ],
-          "image_source": "nitter_still",
-          "source_name": "MuratTosun",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "almanya-artiyor-avrupa-degerlendiriliyor-disina-durdurdu-fabrika-gecici-kapatmalari-medyasindan-mercedes-neler-olasiligi-oluyor-sirketin-tasinma-yatirimlarini-yurt",
-          "base_ai_score": 92,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 25,
-            "benzersizlik": 18,
-            "gundem_gucu": 19,
-            "paylasilabilirlik": 11
-          },
-          "score": 93,
-          "score_reason": "ai_scored",
-          "score_explanation": "Otomotiv devinin stratejik krizi, ekonomik ve sektörel açıdan büyük merak uyandırır, çok yüksek tartışma potansiyeline sahip.",
-          "freshness_bonus": 1,
-          "trend_bonus_raw": 1,
-          "full_text": "Please wait while Gandalf decides whether you shall pass Do not reload this page, or you may get blocked",
-          "post_text_for_card": "ALMANYA'DA ÜRETİM MALİYETLERİ ARTIK MARKALARI MERKEZDEN UZAKLAŞTIRIYOR.\n\nMercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurma kararı aldı, fabrika kapatma senaryoları masada.\n\nYatırımların yurt dışına kayma ihtimali artık uzak bir ihtimal değil.\n\nAvrupa'da sanayinin omurgası sarsılırken, bu maliyet baskısı sadece markaların değil tüm bölgenin planlarını değiştiriyor.",
-          "story_card_title": "MERCEDES ALMANYA'DAKİ TÜM YATIRIMLARI DURDURDU",
-          "story_card_subtitle": "Alman devi, artan maliyetler ve kâr baskısı nedeniyle evindeki yatırımlara askıya alma kararı verdi. Fabrika kapatma senaryoları ve üretimin yurt dışına kaydırılması ihtimali artık masadaki en güçlü seçenekler arasında yer alıyor. Avrupa sanayisinin omurgasını sarsan bu hamle, bölgedeki otomotiv üretimi için yeni bir dönemin habercisi.",
-          "image_sources": [
-            "nitter_still"
-          ],
-          "prepared_image_count": 1,
-          "original_image_urls": [
-            "https://pbs.twimg.com/media/HW8bNN4XwAAYB6B.jpg?name=orig"
-          ]
-        },
-        "post_text": "ALMANYA'DA ÜRETİM MALİYETLERİ ARTIK MARKALARI MERKEZDEN UZAKLAŞTIRIYOR.\n\nMercedes, Almanya'daki tüm yatırımlarını geçici olarak durdurma kararı aldı, fabrika kapatma senaryoları masada.\n\nYatırımların yurt dışına kayma ihtimali artık uzak bir ihtimal değil.\n\nAvrupa'da sanayinin omurgası sarsılırken, bu maliyet baskısı sadece markaların değil tüm bölgenin planlarını değiştiriyor.",
-        "story_card_title": "MERCEDES ALMANYA'DAKİ TÜM YATIRIMLARI DURDURDU",
-        "story_card_subtitle": "Alman devi, artan maliyetler ve kâr baskısı nedeniyle evindeki yatırımlara askıya alma kararı verdi. Fabrika kapatma senaryoları ve üretimin yurt dışına kaydırılması ihtimali artık masadaki en güçlü seçenekler arasında yer alıyor. Avrupa sanayisinin omurgasını sarsan bu hamle, bölgedeki otomotiv üretimi için yeni bir dönemin habercisi.",
-        "image_path": "/tmp/otoxtra_img__gml2uud.jpg",
-        "image_paths": [
-          "/tmp/otoxtra_img__gml2uud.jpg"
-        ],
-        "image_source": "nitter_still",
-        "image_count": 1
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-13T06:03:13.829044+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122187919562916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "18135073945809643",
-            "error": ""
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": true,
-            "id": "1150905031233645",
-            "error": ""
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-13T06:03:50.287395+03:00"
+      "updated_at": null
     }
   }
 }
