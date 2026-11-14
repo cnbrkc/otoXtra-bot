@@ -1,14 +1,57 @@
 {
-  "run_id": "2026-11-14-09:00",
-  "status": "error",
-  "started_at": "2026-11-14T09:00:30.415473+03:00",
-  "updated_at": "2026-11-14T09:02:10.143724+03:00",
+  "run_id": "2026-11-14-11:00",
+  "status": "completed",
+  "started_at": "2026-11-14T11:00:28.396831+03:00",
+  "updated_at": "2026-11-14T11:03:46.931809+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+            "link": "https://www.log.com.tr/mercedes-benz-almanyadaki-tesislerine-yonelik-tum-yeni-yatirimlari-askiya-alma-karari-aldi/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-14T07:44:25+00:00",
+            "summary": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararı aldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor. Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+            "image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+            "image_candidates": [
+              "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Log",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "aldi-alma-almanya-askiya-benz-karari-mercedes-tesislerine-yatirimlari-yonelik"
+          },
+          {
+            "title": "Castrol Ford Team Türkiye, Geleceğin Şampiyonlarıyla Sezon Finalinde",
+            "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiye-gelecegin-sampiyonlariyla-sezon-finalinde-5480h",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-14T07:36:25+00:00",
+            "summary": "Bu yıl Ali Türkkan ile ülkemize Junior WRC Dünya Şampiyonluğu gururunu yaşatan takım, geleceğin şampiyonlarını yetiştirme hedefiyle sezonun son yarışında mücadele edecek.",
+            "image_url": "https://cdn.otopodyum.com.tr/news/5794.jpg",
+            "rss_image_url": "https://cdn.otopodyum.com.tr/news/5794.jpg",
+            "image_candidates": [
+              "https://cdn.otopodyum.com.tr/news/5794.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "otopodyum",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "castrol-finalinde-ford-gelecegin-sampiyonlariyla-sezon-team-turkiye"
+          }
+        ],
+        "count": 2,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +112,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.kareem.one/teknotagstr/rss",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.kabii.moe/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -120,14 +163,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Sekizsilindir": {
             "status": "ok",
@@ -138,55 +181,250 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 4,
+            "count": 5,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 154,
-            "after_keyword": 95,
-            "after_time": 4,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "found": 155,
+            "after_keyword": 99,
+            "after_time": 11,
+            "after_posted": 3,
+            "after_duplicate": 2,
+            "after_shared_variant_cooldown": 3
           }
         },
         "metrics": {
-          "found": 154,
-          "after_keyword": 95,
-          "after_time": 4,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "found": 155,
+          "after_keyword": 99,
+          "after_time": 11,
+          "after_posted": 3,
+          "after_duplicate": 2,
+          "after_shared_variant_cooldown": 3
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-14T09:02:10.143724+03:00"
+      "error": null,
+      "updated_at": "2026-11-14T11:01:58.803678+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+          "link": "https://www.log.com.tr/mercedes-benz-almanyadaki-tesislerine-yonelik-tum-yeni-yatirimlari-askiya-alma-karari-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-14T07:44:25+00:00",
+          "summary": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararı aldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor. Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-alma-almanya-askiya-benz-karari-mercedes-tesislerine-yatirimlari-yonelik",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dev bir otomotiv üreticisinin ana vatanındaki yatırımları durdurması küresel ölçekte ekonomik ve sektörel yankı uyandıracak, yüksek etkileşim potansiyeline sahip bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1
+        },
+        "score": 84,
+        "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 10,
+        "score_breakdown": {
+          "guncellik": 20,
+          "etkilesim_potansiyeli": 22,
+          "benzersizlik": 16,
+          "gundem_gucu": 16,
+          "paylasilabilirlik": 10
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Dev bir otomotiv üreticisinin ana vatanındaki yatırımları durdurması küresel ölçekte ekonomik ve sektörel yankı uyandıracak, yüksek etkileşim potansiyeline sahip bir gelişmedir.",
+        "skipped": false,
+        "threshold": 40,
+        "top_articles": [
+          {
+            "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+            "score": 84,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 22,
+              "benzersizlik": 16,
+              "gundem_gucu": 16,
+              "paylasilabilirlik": 10
+            }
+          },
+          {
+            "title": "Castrol Ford Team Türkiye, Geleceğin Şampiyonlarıyla Sezon Finalinde",
+            "score": 52,
+            "score_breakdown": {
+              "guncellik": 20,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 9,
+              "gundem_gucu": 8,
+              "paylasilabilirlik": 5
+            }
+          }
+        ],
+        "scored_count": 2,
+        "cooldown_candidates": [
+          {
+            "title": "Castrol Ford Team Türkiye, Geleceğin Şampiyonlarıyla Sezon Finalinde",
+            "link": "https://otopodyum.com.tr/motor-sporlari/castrol-ford-team-turkiye-gelecegin-sampiyonlariyla-sezon-finalinde-5480h",
+            "score": 52,
+            "score_reason": "ai_scored",
+            "source_name": "otopodyum",
+            "topic_fingerprint": "castrol-finalinde-ford-gelecegin-sampiyonlariyla-sezon-team-turkiye"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-14T11:02:00.654173+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+          "link": "https://www.log.com.tr/mercedes-benz-almanyadaki-tesislerine-yonelik-tum-yeni-yatirimlari-askiya-alma-karari-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-14T07:44:25+00:00",
+          "summary": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararı aldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor. Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg",
+          "image_candidates": [
+            "https://www.log.com.tr/wp-content/uploads/2025/12/2026-Mercedes-Benz-GLB-EQ-3-660x371.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-alma-almanya-askiya-benz-karari-mercedes-tesislerine-yatirimlari-yonelik",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dev bir otomotiv üreticisinin ana vatanındaki yatırımları durdurması küresel ölçekte ekonomik ve sektörel yankı uyandıracak, yüksek etkileşim potansiyeline sahip bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararıaldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor."
+        },
+        "post_text": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya aldı.\n\nYüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması, üretimin Macaristan gibi ülkelere kaydırılmasını gündeme getirdi.\n\nAvrupa'daki maliyet krizi, köklü otomotiv devlerinin bile esneklik arayışından vazgeçmeyeceğini kanıtlıyor.",
+        "post_text_length": 321,
+        "story_card_title": "Mercedes Almanya yatırımlarını durdurdu",
+        "story_card_subtitle": "Mercedes-Benz yönetimi, yüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması nedeniyle Almanya'daki tesislere yönelik tüm yeni yatırımları askıya aldı. IG Metall sendikasıyla yaşanan krizin ardından üretimin Macaristan gibi ülkelere kaydırılması ihtimali güç kazandı. Bu hamle, Avrupa'daki maliyet krizinin köklü üreticileri bile esneklik arayışına zorladığını açıkça kanıtlıyor.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-14T11:02:26.908224+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı",
+          "link": "https://www.log.com.tr/mercedes-benz-almanyadaki-tesislerine-yonelik-tum-yeni-yatirimlari-askiya-alma-karari-aldi/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-14T07:44:25+00:00",
+          "summary": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararı aldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor. Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya alma kararı aldı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
+          "image_url": "",
+          "rss_image_url": "",
+          "image_candidates": [],
+          "image_source": "no_image",
+          "source_name": "Log",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "aldi-alma-almanya-askiya-benz-karari-mercedes-tesislerine-yatirimlari-yonelik",
+          "base_ai_score": 82,
+          "score_breakdown": {
+            "guncellik": 20,
+            "etkilesim_potansiyeli": 22,
+            "benzersizlik": 16,
+            "gundem_gucu": 16,
+            "paylasilabilirlik": 10
+          },
+          "score": 84,
+          "score_reason": "ai_scored",
+          "score_explanation": "Dev bir otomotiv üreticisinin ana vatanındaki yatırımları durdurması küresel ölçekte ekonomik ve sektörel yankı uyandıracak, yüksek etkileşim potansiyeline sahip bir gelişmedir.",
+          "freshness_bonus": 10,
+          "trend_bonus_raw": 1,
+          "full_text": "Mercedes-Benz yönetim kurulu, Almanya’daki tesislere yönelik tüm yeni yatırımları “şimdilik” askıya alma kararıaldı. Şirketin bu kararı, Almanya’daki yüksek işçilik maliyetleri ve işçi konseyi ile IG Metall sendikasıyla yürüttüğü görüşmelerin tıkanmasının ardından geldi. Almanya’daki bazı fabrikaları kapatmayı dahi gündemine aldığı öne sürülen şirketin, üretimi maliyetlerin daha düşük olduğu Macaristan’a kaydırmayı değerlendirdiği de aktarılıyor. Mercedes-Benz’in Almanya’daki çalışanlarından ek ücret almadan haftada 40 saat çalışmalarını istediği, bu sürenin Alman otomotiv sektöründeki standardın beş saat üzerinde olduğu belirtiliyor. Alman fabrikalarındaki işçilik maliyetlerinin Doğu Avrupa ve ABD’ye kıyasla çok yüksek olduğunu belirten şirket, çalışan maliyetlerini azaltarak kârlılık oranlarını ciddi seviyede artırmak istiyor.",
+          "post_text_for_card": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya aldı.\n\nYüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması, üretimin Macaristan gibi ülkelere kaydırılmasını gündeme getirdi.\n\nAvrupa'daki maliyet krizi, köklü otomotiv devlerinin bile esneklik arayışından vazgeçmeyeceğini kanıtlıyor.",
+          "story_card_title": "Mercedes Almanya yatırımlarını durdurdu",
+          "story_card_subtitle": "Mercedes-Benz yönetimi, yüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması nedeniyle Almanya'daki tesislere yönelik tüm yeni yatırımları askıya aldı. IG Metall sendikasıyla yaşanan krizin ardından üretimin Macaristan gibi ülkelere kaydırılması ihtimali güç kazandı. Bu hamle, Avrupa'daki maliyet krizinin köklü üreticileri bile esneklik arayışına zorladığını açıkça kanıtlıyor.",
+          "image_sources": [
+            "no_image"
+          ],
+          "prepared_image_count": 0,
+          "original_image_urls": []
+        },
+        "post_text": "Mercedes-Benz, Almanya’daki tesislerine yönelik tüm yeni yatırımları askıya aldı.\n\nYüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması, üretimin Macaristan gibi ülkelere kaydırılmasını gündeme getirdi.\n\nAvrupa'daki maliyet krizi, köklü otomotiv devlerinin bile esneklik arayışından vazgeçmeyeceğini kanıtlıyor.",
+        "story_card_title": "Mercedes Almanya yatırımlarını durdurdu",
+        "story_card_subtitle": "Mercedes-Benz yönetimi, yüksek işçilik maliyetleri ve sendika görüşmelerinin tıkanması nedeniyle Almanya'daki tesislere yönelik tüm yeni yatırımları askıya aldı. IG Metall sendikasıyla yaşanan krizin ardından üretimin Macaristan gibi ülkelere kaydırılması ihtimali güç kazandı. Bu hamle, Avrupa'daki maliyet krizinin köklü üreticileri bile esneklik arayışına zorladığını açıkça kanıtlıyor.",
+        "image_path": "",
+        "image_paths": [],
+        "image_source": "no_image",
+        "image_count": 0
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-14T11:03:33.313993+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122188068590916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": false,
+            "id": "",
+            "error": "story_card_missing"
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-14T11:03:46.931809+03:00"
     }
   }
 }
