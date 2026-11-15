@@ -1,36 +1,14 @@
 {
-  "run_id": "2026-11-15-07:00",
-  "status": "completed",
-  "started_at": "2026-11-15T07:00:30.604124+03:00",
-  "updated_at": "2026-11-15T07:03:53.838011+03:00",
+  "run_id": "2026-11-15-08:00",
+  "status": "error",
+  "started_at": "2026-11-15T08:00:32.922347+03:00",
+  "updated_at": "2026-11-15T08:03:27.304955+03:00",
   "stages": {
     "fetch": {
-      "status": "done",
+      "status": "error",
       "output": {
-        "articles": [
-          {
-            "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-            "link": "https://www.log.com.tr/honda-yeni-cbr1000rr-r-fireblade-serisini-tanitti/",
-            "nitter_url": "",
-            "source_instance": "",
-            "published": "2026-11-15T07:00:30.686605+03:00",
-            "summary": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonla sunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon […] Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-            "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-            "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-            "image_candidates": [
-              "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg"
-            ],
-            "image_source": "rss",
-            "source_name": "LogDergisi",
-            "source_priority": "medium",
-            "language": "tr",
-            "can_scrape_image": true,
-            "trend_count": 1,
-            "trend_bonus": 0,
-            "topic_fingerprint": "cbr1000rr-fireblade-honda-serisini-tanitti"
-          }
-        ],
-        "count": 1,
+        "articles": [],
+        "count": 0,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -91,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.zebes.info', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
             "attempts": 1,
             "instance": ""
           },
@@ -100,14 +78,14 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Dolu Batarya": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Ahmet Celik": {
             "status": "error",
@@ -128,7 +106,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "HakanDOgu": {
             "status": "ok",
@@ -142,21 +120,21 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "VeyselKarani": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "Sekizsilindir": {
             "status": "ok",
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "otopodyum": {
             "status": "ok",
@@ -169,221 +147,46 @@
             "found": 152,
             "after_keyword": 99,
             "after_time": 8,
-            "after_posted": 1,
-            "after_duplicate": 1,
-            "after_shared_variant_cooldown": 1
+            "after_posted": 0,
+            "after_duplicate": 0,
+            "after_shared_variant_cooldown": 0
           }
         },
         "metrics": {
           "found": 152,
           "after_keyword": 99,
           "after_time": 8,
-          "after_posted": 1,
-          "after_duplicate": 1,
-          "after_shared_variant_cooldown": 1
+          "after_posted": 0,
+          "after_duplicate": 0,
+          "after_shared_variant_cooldown": 0
         }
       },
-      "error": null,
-      "updated_at": "2026-11-15T07:02:44.219881+03:00"
+      "error": "No article found",
+      "updated_at": "2026-11-15T08:03:27.304955+03:00"
     },
     "score": {
-      "status": "done",
-      "output": {
-        "selected_article": {
-          "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-          "link": "https://www.log.com.tr/honda-yeni-cbr1000rr-r-fireblade-serisini-tanitti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-15T07:00:30.686605+03:00",
-          "summary": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonla sunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon […] Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cbr1000rr-fireblade-honda-serisini-tanitti",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motosiklet tutkunları için önemli bir model yenilemesi olsa da genel otomotiv ve sosyal medya gündeminde niş bir kitleye hitap ediyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1
-        },
-        "score": 48,
-        "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-        "trend_count": 1,
-        "trend_bonus": 1,
-        "freshness_bonus": 10,
-        "score_breakdown": {
-          "guncellik": 20,
-          "etkilesim_potansiyeli": 10,
-          "benzersizlik": 8,
-          "gundem_gucu": 6,
-          "paylasilabilirlik": 4
-        },
-        "score_reason": "ai_scored",
-        "score_explanation": "Motosiklet tutkunları için önemli bir model yenilemesi olsa da genel otomotiv ve sosyal medya gündeminde niş bir kitleye hitap ediyor.",
-        "skipped": false,
-        "threshold": 30,
-        "top_articles": [
-          {
-            "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-            "score": 48,
-            "score_breakdown": {
-              "guncellik": 20,
-              "etkilesim_potansiyeli": 10,
-              "benzersizlik": 8,
-              "gundem_gucu": 6,
-              "paylasilabilirlik": 4
-            }
-          }
-        ],
-        "scored_count": 1,
-        "cooldown_candidates": []
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-15T07:02:45.976891+03:00"
+      "updated_at": null
     },
     "write": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-          "link": "https://www.log.com.tr/honda-yeni-cbr1000rr-r-fireblade-serisini-tanitti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-15T07:00:30.686605+03:00",
-          "summary": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonla sunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon […] Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-          "rss_image_url": "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg",
-          "image_candidates": [
-            "https://www.log.com.tr/wp-content/uploads/2026/11/2026-11-14_12-01-27_D77BJ-660x371.jpg"
-          ],
-          "image_source": "rss",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cbr1000rr-fireblade-honda-serisini-tanitti",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motosiklet tutkunları için önemli bir model yenilemesi olsa da genel otomotiv ve sosyal medya gündeminde niş bir kitleye hitap ediyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonlasunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon tercih eden şirket, motosikletin yeni bir çift kirişli alüminyum şasi üzerine kurulduğunu açıklıyor. Motor silindir bağlantı noktaları da eski modeldeki burulma direncini koruyacak ve yanal rijitliği yüzde 20 azaltacak şekilde yenilenmiş durumda. Honda’ya göre tüm bu iyileştirmeler viraj performansını hatırı sayılır seviyede artırıyor."
-        },
-        "post_text": "YÜZDE 75’İ YENİDEN TASARLANAN BİR MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE.\n\nHonda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi.\n\n999 cc’lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor.\n\nSeri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.\n\nPist genlerini yola taşıyan bu makinelerde performans beklentisi artık standart sokak motorlarının çok ötesinde.",
-        "post_text_length": 476,
-        "story_card_title": "İDDİALI MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE!",
-        "story_card_subtitle": "Honda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi. 999 cc'lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor. Seri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.",
-        "skipped": false
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-15T07:02:48.914993+03:00"
+      "updated_at": null
     },
     "image": {
-      "status": "done",
-      "output": {
-        "article": {
-          "title": "Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı",
-          "link": "https://www.log.com.tr/honda-yeni-cbr1000rr-r-fireblade-serisini-tanitti/",
-          "nitter_url": "",
-          "source_instance": "",
-          "published": "2026-11-15T07:00:30.686605+03:00",
-          "summary": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonla sunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon […] Honda, yeni “CBR1000RR-R Fireblade” serisini tanıttı yazısı ilk olarak Teknoloji haberleri - LOG üzerinde yayınlandı.",
-          "image_url": "",
-          "rss_image_url": "",
-          "image_candidates": [],
-          "image_source": "no_image",
-          "source_name": "LogDergisi",
-          "source_priority": "medium",
-          "language": "tr",
-          "can_scrape_image": true,
-          "trend_count": 1,
-          "trend_bonus": 1,
-          "topic_fingerprint": "cbr1000rr-fireblade-honda-serisini-tanitti",
-          "base_ai_score": 42,
-          "score_breakdown": {
-            "guncellik": 20,
-            "etkilesim_potansiyeli": 10,
-            "benzersizlik": 8,
-            "gundem_gucu": 6,
-            "paylasilabilirlik": 4
-          },
-          "score": 48,
-          "score_reason": "ai_scored",
-          "score_explanation": "Motosiklet tutkunları için önemli bir model yenilemesi olsa da genel otomotiv ve sosyal medya gündeminde niş bir kitleye hitap ediyor.",
-          "freshness_bonus": 10,
-          "trend_bonus_raw": 1,
-          "full_text": "Seride kullanılan parçaların yaklaşık yüzde 75’inin 2027 model yılı için yeniden tasarlandığını belirten Honda, titanyum yakıt tankının kullanıldığı CBR1000RR-R Fireblade’i “Fireblade, Fireblade SP ve Fireblade HRC Works Edition” olmak üzere üç farklı versiyonlasunuyor. Üç versiyona da can veren 999 cc’lik dört silindirli motor, 14.000 devirde 214 beygir güç ve 10.500 devirde 114 Nm tork üretiyor. Motosikletin elektronik gaz kontrol sisteminin daha hızlı tepki ve daha etkili motor freni sunacak şekilde geliştirildiğini aktaran şirket, Fireblade HRC Works Edition’ın Superbike Dünya Şampiyonası’nda yarışan makinenin yola uyarlanmış versiyonu olduğunu belirtiyor. Yalnızca kırmızı renkte ve tek kişilik olarak hazırlanan bu versiyon, standart olarak mekanik ayarlı Öhlins NPX ön süspansiyon, TTX36 arka amortisör ve Brembo’nun en yeni Hypure Sports parçalarıyla geliyor. Pist kullanımına hazır olan HRC Works Edition’da ayrıca karbon fiber ön kanatçıklar, karbon ön çamurluk ve karbon arka grenaj bulunuyor. Fireblade modelinde özel iyileştirmeler içeren Showa, Fireblade SP’de ise elektronik kontrollü Öhlins süspansiyon tercih eden şirket, motosikletin yeni bir çift kirişli alüminyum şasi üzerine kurulduğunu açıklıyor. Motor silindir bağlantı noktaları da eski modeldeki burulma direncini koruyacak ve yanal rijitliği yüzde 20 azaltacak şekilde yenilenmiş durumda. Honda’ya göre tüm bu iyileştirmeler viraj performansını hatırı sayılır seviyede artırıyor.",
-          "post_text_for_card": "YÜZDE 75’İ YENİDEN TASARLANAN BİR MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE.\n\nHonda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi.\n\n999 cc’lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor.\n\nSeri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.\n\nPist genlerini yola taşıyan bu makinelerde performans beklentisi artık standart sokak motorlarının çok ötesinde.",
-          "story_card_title": "İDDİALI MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE!",
-          "story_card_subtitle": "Honda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi. 999 cc'lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor. Seri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.",
-          "image_sources": [
-            "no_image"
-          ],
-          "prepared_image_count": 0,
-          "original_image_urls": []
-        },
-        "post_text": "YÜZDE 75’İ YENİDEN TASARLANAN BİR MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE.\n\nHonda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi.\n\n999 cc’lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor.\n\nSeri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.\n\nPist genlerini yola taşıyan bu makinelerde performans beklentisi artık standart sokak motorlarının çok ötesinde.",
-        "story_card_title": "İDDİALI MOTORU GÜNLÜK YOLA UYarlamak CESUR BİR HAMLE!",
-        "story_card_subtitle": "Honda, CBR1000RR-R Fireblade serisinde parçaların yaklaşık yüzde 75'ini 2027 model yılı için yeniledi. 999 cc'lik dört silindirli motor 14.000 devirde 214 beygir güç üretiyor. Seri Fireblade, Fireblade SP ve tek kişilik HRC Works Edition olmak üzere üç farklı versiyonla geliyor.",
-        "image_path": "",
-        "image_paths": [],
-        "image_source": "no_image",
-        "image_count": 0
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-15T07:03:37.615033+03:00"
+      "updated_at": null
     },
     "publish": {
-      "status": "done",
-      "output": {
-        "success": true,
-        "post_id": "678053852057751_122188172612916499",
-        "story_status": {
-          "instagram": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          },
-          "facebook": {
-            "enabled": true,
-            "attempted": true,
-            "success": false,
-            "id": "",
-            "error": "story_card_missing"
-          }
-        }
-      },
+      "status": "waiting",
+      "output": null,
       "error": null,
-      "updated_at": "2026-11-15T07:03:53.838011+03:00"
+      "updated_at": null
     }
   }
 }
