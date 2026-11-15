@@ -1,12 +1,12 @@
 {
   "instances": {
     "nitter.zebes.info": {
-      "failures": 5,
+      "failures": 6,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-11-15T06:01:48+00:00",
+      "last_change": "2026-11-15T12:01:32+00:00",
       "last_status": 429
     },
     "nitter.kabii.moe": {
@@ -14,17 +14,17 @@
       "successes": 788,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794740476.0609415,
-      "last_change": "2026-11-15T10:01:16+00:00",
+      "blocked_until": 1794747641.3090982,
+      "last_change": "2026-11-15T12:00:41+00:00",
       "last_status": 403
     },
     "nitter.wisq.net": {
-      "failures": 3,
+      "failures": 4,
       "successes": 0,
       "state": "degraded",
       "reason": "readtimeout",
       "blocked_until": 0.0,
-      "last_change": "2026-11-15T06:02:06+00:00",
+      "last_change": "2026-11-15T12:01:49+00:00",
       "last_status": 429
     },
     "nt.vern.cc": {
@@ -40,8 +40,8 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_429",
-      "blocked_until": 1794740438.9262428,
-      "last_change": "2026-11-15T10:00:38+00:00",
+      "blocked_until": 1794747645.2666564,
+      "last_change": "2026-11-15T12:00:45+00:00",
       "last_status": 429
     },
     "nitter.freedit.eu": {
@@ -49,17 +49,17 @@
       "successes": 0,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794740441.4464595,
-      "last_change": "2026-11-15T10:00:41+00:00",
+      "blocked_until": 1794747647.0731473,
+      "last_change": "2026-11-15T12:00:47+00:00",
       "last_status": 403
     },
     "x.n0g.xyz": {
-      "failures": 293,
+      "failures": 294,
       "successes": 111,
       "state": "degraded",
       "reason": "connectionerror",
       "blocked_until": 0.0,
-      "last_change": "2026-11-15T08:01:27+00:00",
+      "last_change": "2026-11-15T12:02:50+00:00",
       "last_status": 200
     },
     "tw.eir-nya.gay": {
@@ -67,26 +67,26 @@
       "successes": 0,
       "state": "blocked",
       "reason": "bot_challenge",
-      "blocked_until": 1794740444.2907677,
-      "last_change": "2026-11-15T10:00:44+00:00",
+      "blocked_until": 1794747663.8302376,
+      "last_change": "2026-11-15T12:01:03+00:00",
       "last_status": 200
     },
     "nitter.kareem.one": {
-      "failures": 13,
+      "failures": 14,
       "successes": 90,
+      "state": "blocked",
+      "reason": "http_403",
+      "blocked_until": 1794747771.635016,
+      "last_change": "2026-11-15T12:02:51+00:00",
+      "last_status": 403
+    },
+    "nitter.meowing.monster": {
+      "failures": 2,
+      "successes": 1316,
       "state": "degraded",
       "reason": "http_404",
       "blocked_until": 0.0,
-      "last_change": "2026-11-15T10:01:19+00:00",
-      "last_status": 404
-    },
-    "nitter.meowing.monster": {
-      "failures": 1,
-      "successes": 1316,
-      "state": "ok",
-      "reason": "http_404",
-      "blocked_until": 0.0,
-      "last_change": "2026-11-15T10:01:51+00:00",
+      "last_change": "2026-11-15T12:01:09+00:00",
       "last_status": 404
     },
     "nitter.netbub.com": {
@@ -103,18 +103,18 @@
       "successes": 171,
       "state": "blocked",
       "reason": "http_403",
-      "blocked_until": 1794740452.269209,
-      "last_change": "2026-11-15T10:00:52+00:00",
+      "blocked_until": 1794747636.70582,
+      "last_change": "2026-11-15T12:00:36+00:00",
       "last_status": 403
     },
     "nitter.jaydenha.uk": {
-      "failures": 0,
-      "successes": 169,
-      "state": "ok",
-      "reason": "",
-      "blocked_until": 0.0,
-      "last_change": "2026-11-15T10:02:03+00:00",
-      "last_status": 404
+      "failures": 1,
+      "successes": 176,
+      "state": "blocked",
+      "reason": "http_403",
+      "blocked_until": 1794747769.4415069,
+      "last_change": "2026-11-15T12:02:49+00:00",
+      "last_status": 403
     },
     "nitter.gravitywell.xyz": {
       "failures": 0,
@@ -135,5 +135,5 @@
       "last_status": 200
     }
   },
-  "updated_at": "2026-11-15T10:02:03+00:00"
+  "updated_at": "2026-11-15T12:02:51+00:00"
 }
