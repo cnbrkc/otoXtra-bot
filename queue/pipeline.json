@@ -1,8 +1,8 @@
 {
-  "run_id": "2026-11-15-08:00",
+  "run_id": "2026-11-15-09:00",
   "status": "error",
-  "started_at": "2026-11-15T08:00:32.922347+03:00",
-  "updated_at": "2026-11-15T08:03:27.304955+03:00",
+  "started_at": "2026-11-15T09:00:34.541571+03:00",
+  "updated_at": "2026-11-15T09:02:52.290704+03:00",
   "stages": {
     "fetch": {
       "status": "error",
@@ -69,7 +69,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nt.vern.cc', port=443): Max retries exceeded with url: /teknotagstr/rss (Caused by SSLError(SS",
+            "detail": "unknown_error: 404 Client Error: Not Found for url: https://nitter.jaydenha.uk/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -90,7 +90,7 @@
           "Ahmet Celik": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='x.n0g.xyz', port=443): Max retries exceeded with url: /ahmetcelik2016/rss (Caused by NameResol",
+            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
             "attempts": 1,
             "instance": ""
           },
@@ -113,7 +113,7 @@
             "count": 10,
             "detail": "",
             "attempts": 1,
-            "instance": "nitter.netbub.com"
+            "instance": "nitter.mizuki.st"
           },
           "MuratTosun": {
             "status": "ok",
@@ -162,7 +162,7 @@
         }
       },
       "error": "No article found",
-      "updated_at": "2026-11-15T08:03:27.304955+03:00"
+      "updated_at": "2026-11-15T09:02:52.290704+03:00"
     },
     "score": {
       "status": "waiting",
