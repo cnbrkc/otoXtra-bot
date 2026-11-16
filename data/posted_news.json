@@ -1,19 +1,6 @@
 {
   "posts": [
     {
-      "title": "Porsche'nin yeni süper otomobilinde 'Kendi Başınasın' düğmesi ve başka havalı özellikler var",
-      "url": "https://tr.motor1.com/news/812243/porsche-missions-ozellikler/",
-      "topic_fingerprint": "basinasin-baska-dugmesi-havali-kendi-otomobilinde-ozellikler-porsche-super-var",
-      "source": "Motor1 TR",
-      "score": 82,
-      "trend_count": 1,
-      "posted_at": "2026-10-16T20:03:29.220537+03:00",
-      "fb_post_id": "678053852057751_122184059204916499",
-      "image_source": "meta_og",
-      "image_count": 4,
-      "hook": "KENDİ BAŞINASIN\" DÜĞMESİ İLE PORSCHE, SÜRÜCÜYE GÜVENİYOR."
-    },
-    {
       "title": "Uçan Tesla'nın teknik özellikleri açıklandı: 1.341 beygir güç, 0.8 saniyede 0-100 km/s!",
       "url": "https://www.donanimhaber.com/yeni-tesla-roadster-in-teknik-ozellikleri-aciklandi--211741",
       "topic_fingerprint": "100-341-beygir-guc-ozellikleri-saniyede-teknik-tesla-ucan",
@@ -3275,10 +3262,22 @@
       "image_source": "nitter_still",
       "image_count": 1,
       "hook": "YENİ BİR OTOMOBİLİN İLK ANAHTARI KİME VERİLECEĞİNİ SEÇERKEN MARKALAR DOĞRU PROFİLİ ARIYOR."
+    },
+    {
+      "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+      "url": "https://tr.motor1.com/news/815501/porsche-ring-missions-ilk-casus/",
+      "topic_fingerprint": "goruntulendi-nurburgring-otomobili-porsche-super",
+      "source": "Motor1 TR",
+      "score": 67,
+      "trend_count": 1,
+      "posted_at": "2026-11-16T06:02:47.855085+03:00",
+      "fb_post_id": "678053852057751_122188307954916499",
+      "image_source": "meta_og",
+      "image_count": 4,
+      "hook": "PORSCHE'NİN YENİ SÜPER OTOMOBİLİ NÜRBURGRİNG'DE GÖRÜNTÜLENDİ"
     }
   ],
   "daily_counts": {
-    "2026-10-16": 9,
     "2026-10-17": 7,
     "2026-10-18": 6,
     "2026-10-19": 8,
@@ -3308,12 +3307,12 @@
     "2026-11-12": 7,
     "2026-11-13": 8,
     "2026-11-14": 9,
-    "2026-11-15": 5
+    "2026-11-15": 5,
+    "2026-11-16": 1
   },
-  "last_check_time": "2026-11-15T20:02:52.576570+03:00",
+  "last_check_time": "2026-11-16T06:03:17.260003+03:00",
   "stats": {
     "daily_actions": {
-      "2026-10-16": 10,
       "2026-10-17": 10,
       "2026-10-18": 10,
       "2026-10-19": 10,
@@ -3343,76 +3342,10 @@
       "2026-11-12": 10,
       "2026-11-13": 10,
       "2026-11-14": 10,
-      "2026-11-15": 10
+      "2026-11-15": 10,
+      "2026-11-16": 1
     },
     "weekly": {
-      "2026-W27": {
-        "actions": 31,
-        "shares": 30,
-        "error_total": 0,
-        "errors": {},
-        "skip_total": 1,
-        "skips": {
-          "no_article_found": 1
-        },
-        "report_sent": true,
-        "report_sent_at": "2026-07-06T10:13:38.044986+03:00"
-      },
-      "2026-W28": {
-        "actions": 36,
-        "shares": 35,
-        "error_total": 1,
-        "errors": {
-          "PUBLISH_FAILED: Facebook paylasimi tamamen basarisiz": 1
-        },
-        "skip_total": 0,
-        "skips": {},
-        "report_sent": true,
-        "report_sent_at": "2026-07-13T09:19:42.396113+03:00"
-      },
-      "2026-W29": {
-        "actions": 46,
-        "shares": 43,
-        "error_total": 1,
-        "errors": {
-          "ORCHESTRATOR_CRITICAL: '(' was never closed (agent_image.py, line 710)": 1
-        },
-        "skip_total": 2,
-        "skips": {
-          "no_article_found": 2
-        },
-        "report_sent": true,
-        "report_sent_at": "2026-07-20T13:52:20.231604+03:00"
-      },
-      "2026-W30": {
-        "actions": 45,
-        "shares": 31,
-        "error_total": 5,
-        "errors": {
-          "FETCH_FAILED: name '_read_float_env' is not defined": 1,
-          "ORCHESTRATOR_CRITICAL: cannot import name '_get_active_threshold' from 'agents.scorer_helpers' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/scorer_helpers.py)": 1,
-          "ORCHESTRATOR_CRITICAL: cannot import name '_FALLBACK_BG_COLOR' from 'agents.image_utils' (/home/runner/work/otoXtra-bot/otoXtra-bot/agents/image_utils.py)": 1,
-          "IMAGE_FAILED: name '_candidate_key' is not defined": 2
-        },
-        "skip_total": 9,
-        "skips": {
-          "no_article_found": 9
-        },
-        "report_sent": true,
-        "report_sent_at": "2026-07-27T09:52:06.145169+03:00"
-      },
-      "2026-W31": {
-        "actions": 72,
-        "shares": 49,
-        "error_total": 0,
-        "errors": {},
-        "skip_total": 23,
-        "skips": {
-          "no_article_found": 23
-        },
-        "report_sent": true,
-        "report_sent_at": "2026-08-03T00:53:22.487921+03:00"
-      },
       "2026-W32": {
         "actions": 95,
         "shares": 44,
@@ -3605,6 +3538,16 @@
         "skips": {
           "no_article_found": 16
         },
+        "report_sent": true,
+        "report_sent_at": "2026-11-16T06:00:26.664388+03:00"
+      },
+      "2026-W47": {
+        "actions": 1,
+        "shares": 1,
+        "error_total": 0,
+        "errors": {},
+        "skip_total": 0,
+        "skips": {},
         "report_sent": false,
         "report_sent_at": null
       }

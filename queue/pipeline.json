@@ -1,14 +1,99 @@
 {
-  "run_id": "2026-11-15-20:00",
-  "status": "error",
-  "started_at": "2026-11-15T20:00:24.055936+03:00",
-  "updated_at": "2026-11-15T20:02:51.846238+03:00",
+  "run_id": "2026-11-16-06:00",
+  "status": "completed",
+  "started_at": "2026-11-16T06:00:26.934445+03:00",
+  "updated_at": "2026-11-16T06:03:17.257502+03:00",
   "stages": {
     "fetch": {
-      "status": "error",
+      "status": "done",
       "output": {
-        "articles": [],
-        "count": 0,
+        "articles": [
+          {
+            "title": "Çin'in elektrikli yolcu uçağı CE-25A ilk insanlı uçuşunu gerçekleştirdi",
+            "link": "https://www.donanimhaber.com/cin-in-elektrikli-yolcu-ucagi-ilk-insanli-ucusunu-gerceklestirdi--212943",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-15T18:00:00+00:00",
+            "summary": "COMAC tarafından geliştirilen CE-25A, ilk insanlı uçuşunu başarıyla tamamladı. 19 yolcu kapasiteli elektrikli uçak, 400 kilometrelik menziliyle kısa mesafeli şehirler arası ulaşımı hedefliyor.",
+            "image_url": "https://www.donanimhaber.com/images/images/haber/212943/1200x675cin-in-elektrikli-yolcu-ucagi-ilk-insanli-ucusunu-gerceklestirdi.jpg",
+            "rss_image_url": "https://www.donanimhaber.com/images/images/haber/212943/1200x675cin-in-elektrikli-yolcu-ucagi-ilk-insanli-ucusunu-gerceklestirdi.jpg",
+            "image_candidates": [
+              "https://www.donanimhaber.com/images/images/haber/212943/1200x675cin-in-elektrikli-yolcu-ucagi-ilk-insanli-ucusunu-gerceklestirdi.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Donanimhaber",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "25a-cin-elektrikli-gerceklestirdi-insanli-ucagi-ucusunu-yolcu"
+          },
+          {
+            "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+            "link": "https://tr.motor1.com/news/815501/porsche-ring-missions-ilk-casus/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-15T17:00:00+00:00",
+            "summary": "Mission S piste çıktı, ancak Porsche henüz testlere başlamadı.",
+            "image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+            "rss_image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+            "image_candidates": [
+              "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "Motor1 TR",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "goruntulendi-nurburgring-otomobili-porsche-super"
+          },
+          {
+            "title": "Türkiye otomotiv sektörü 2026: İhracat gelirleri hacim kaybına direniyor",
+            "link": "https://www.otoajanda.com/turkiye-otomotiv-sektoru-2026-ihracat-uretim-raporu/",
+            "nitter_url": "",
+            "source_instance": "",
+            "published": "2026-11-15T22:45:11+00:00",
+            "summary": "İSTANBUL — Avrupa otomotiv tedarik zincirinin kilit üretim merkezlerinden biri olan Türkiye otomotiv sektörü, 2026 yılının ilk 10 ayında iç pazardaki talep soğuması ve binek otomobil üretimindeki gerilemeye rağmen, katma değerli ticari araç ihracatının yarattığı kalkanla döviz gelirlerini büyütmeyi başardı. Otomotiv Sanayii Derneği (OSD) tarafından yayımlanan Kasım 2026 Raporu, sektörün makroekonomik sıkılaşma döngüsü ve küresel […] Türkiye otomotiv sektörü 2026: İhracat gelirleri hacim kaybına direniyor yazısı ilk önce Otoajanda üzerinde ortaya çıktı.",
+            "image_url": "https://www.otoajanda.com/wp-content/uploads/2026/11/Ekran-Resmi-2026-11-15-16.17.09-4-800x219.avif",
+            "rss_image_url": "https://www.otoajanda.com/wp-content/uploads/2026/11/Ekran-Resmi-2026-11-15-16.17.09-4-800x219.avif",
+            "image_candidates": [
+              "https://www.otoajanda.com/wp-content/uploads/2026/11/Ekran-Resmi-2026-11-15-16.17.09-4-800x219.avif"
+            ],
+            "image_source": "rss",
+            "source_name": "OtoAjanda",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "2026-direniyor-gelirleri-hacim-hracat-kaybina-otomotiv-sektoru-turkiye"
+          },
+          {
+            "title": "Yeni Hyundai Tucson En geç Nisan ayında Türkiye'de satışa sunulacak olan Yeni Tucson, iddialı tasarımıyla dikkat çekiyor. Yeni nesil Hibrit Sistem, yakıt ekonomisini sürüş performansıyla uyumlu hale getirirken, 17,4 km/litre gibi bir tüketim verisine sahip. 245 PS güç üreten Tucson Hibrit, 100 km/s hıza 8.5 saniyede ulaşıyor. . Haber, tanıtım.",
+            "link": "https://x.com/murattosunMSE/status/2122028666427257162",
+            "nitter_url": "https://nitter.netbub.com/murattosunMSE/status/2122028666427257162#m",
+            "source_instance": "nitter.netbub.com",
+            "published": "2026-11-15T18:07:14+00:00",
+            "summary": "Yeni Hyundai Tucson En geç Nisan ayında Türkiye'de satışa sunulacak olan Yeni Tucson, iddialı tasarımıyla dikkat çekiyor. Yeni nesil Hibrit Sistem, yakıt ekonomisini sürüş performansıyla uyumlu hale getirirken, 17,4 km/litre gibi bir tüketim verisine sahip. 245 PS güç üreten Tucson Hibrit, 100 km/s hıza 8.5 saniyede ulaşıyor. . Haber, tanıtım. Murat Tosun (@murattosunMSE) YENİ HYUNDAI ELANTRA Detaylar gelecek hafta belli oluyor. . Haber, tanıtım. — https://nitter.netbub.com/murattosunMSE/status/2121708452942688312#m",
+            "image_url": "https://pbs.twimg.com/media/HXL1zeNWgAE4m-n.jpg",
+            "rss_image_url": "https://pbs.twimg.com/media/HXL1zeNWgAE4m-n.jpg",
+            "image_candidates": [
+              "https://pbs.twimg.com/media/HXL1zeNWgAE4m-n.jpg"
+            ],
+            "image_source": "rss",
+            "source_name": "MuratTosun",
+            "source_priority": "medium",
+            "language": "tr",
+            "can_scrape_image": true,
+            "trend_count": 1,
+            "trend_bonus": 0,
+            "topic_fingerprint": "100-245-ayinda-cekiyor-dikkat-ekonomisini-gec-getirirken-guc-haber-hale-hibrit-hibrit-hiza-hyundai-iddiali-litre-nesil-nisan-performansiyla-sahip-saniyede-satisa-sistem-sunulacak-surus-tanitim-tasarimiyla-tucson-tucson-tucson-tuketim-turkiye-ulasiyor-ureten-uyumlu-verisine-yakit"
+          }
+        ],
+        "count": 4,
         "source_health": {
           "Donanimhaber": {
             "status": "ok",
@@ -69,7 +154,7 @@
           "TeknoTags": {
             "status": "error",
             "count": 0,
-            "detail": "unknown_error: HTTPSConnectionPool(host='nitter.wisq.net', port=443): Read timed out. (read timeout=15)",
+            "detail": "unknown_error: 403 Client Error: Forbidden for url: https://nitter.freedit.eu/teknotagstr/rss",
             "attempts": 1,
             "instance": ""
           },
@@ -138,55 +223,292 @@
           },
           "otopodyum": {
             "status": "ok",
-            "count": 2,
+            "count": 3,
             "detail": "",
             "attempts": 1,
             "instance": ""
           },
           "_metrics": {
-            "found": 152,
+            "found": 153,
             "after_keyword": 95,
-            "after_time": 9,
-            "after_posted": 0,
-            "after_duplicate": 0,
-            "after_shared_variant_cooldown": 0
+            "after_time": 13,
+            "after_posted": 4,
+            "after_duplicate": 4,
+            "after_shared_variant_cooldown": 4
           }
         },
         "metrics": {
-          "found": 152,
+          "found": 153,
           "after_keyword": 95,
-          "after_time": 9,
-          "after_posted": 0,
-          "after_duplicate": 0,
-          "after_shared_variant_cooldown": 0
+          "after_time": 13,
+          "after_posted": 4,
+          "after_duplicate": 4,
+          "after_shared_variant_cooldown": 4
         }
       },
-      "error": "No article found",
-      "updated_at": "2026-11-15T20:02:51.846238+03:00"
+      "error": null,
+      "updated_at": "2026-11-16T06:02:19.003411+03:00"
     },
     "score": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "selected_article": {
+          "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+          "link": "https://tr.motor1.com/news/815501/porsche-ring-missions-ilk-casus/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-15T17:00:00+00:00",
+          "summary": "Mission S piste çıktı, ancak Porsche henüz testlere başlamadı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-nurburgring-otomobili-porsche-super",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche markası ve Nürburgring testleri her zaman otomobil tutkunlarının ilgisini çeker, yüksek etkileşim potansiyeline sahip.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1
+        },
+        "score": 67,
+        "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+        "trend_count": 1,
+        "trend_bonus": 1,
+        "freshness_bonus": 1,
+        "score_breakdown": {
+          "guncellik": 17,
+          "etkilesim_potansiyeli": 18,
+          "benzersizlik": 12,
+          "gundem_gucu": 12,
+          "paylasilabilirlik": 8
+        },
+        "score_reason": "ai_scored",
+        "score_explanation": "Porsche markası ve Nürburgring testleri her zaman otomobil tutkunlarının ilgisini çeker, yüksek etkileşim potansiyeline sahip.",
+        "skipped": false,
+        "threshold": 30,
+        "top_articles": [
+          {
+            "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+            "score": 67,
+            "score_breakdown": {
+              "guncellik": 17,
+              "etkilesim_potansiyeli": 18,
+              "benzersizlik": 12,
+              "gundem_gucu": 12,
+              "paylasilabilirlik": 8
+            }
+          },
+          {
+            "title": "Çin'in elektrikli yolcu uçağı CE-25A ilk insanlı uçuşunu gerçekleştirdi",
+            "score": 50,
+            "score_breakdown": {
+              "guncellik": 16,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 12,
+              "gundem_gucu": 8,
+              "paylasilabilirlik": 4
+            }
+          },
+          {
+            "title": "Yeni Hyundai Tucson En geç Nisan ayında Türkiye'de satışa sunulacak olan Yeni Tucson, iddialı tasarımıyla dikkat çekiyor. Yeni nesil Hibrit Sistem, yakıt ekonomisini sürüş performansıyla uyumlu hale getirirken, 17,4 km/litre gibi bir tüketim verisine sahip. 245 PS güç üreten Tucson Hibrit, 100 km/s hıza 8.5 saniyede ulaşıyor. . Haber, tanıtım.",
+            "score": 44,
+            "score_breakdown": {
+              "guncellik": 15,
+              "etkilesim_potansiyeli": 10,
+              "benzersizlik": 6,
+              "gundem_gucu": 9,
+              "paylasilabilirlik": 4
+            }
+          }
+        ],
+        "scored_count": 4,
+        "cooldown_candidates": [
+          {
+            "title": "Çin'in elektrikli yolcu uçağı CE-25A ilk insanlı uçuşunu gerçekleştirdi",
+            "link": "https://www.donanimhaber.com/cin-in-elektrikli-yolcu-ucagi-ilk-insanli-ucusunu-gerceklestirdi--212943",
+            "score": 50,
+            "score_reason": "ai_scored",
+            "source_name": "Donanimhaber",
+            "topic_fingerprint": "25a-cin-elektrikli-gerceklestirdi-insanli-ucagi-ucusunu-yolcu"
+          },
+          {
+            "title": "Yeni Hyundai Tucson En geç Nisan ayında Türkiye'de satışa sunulacak olan Yeni Tucson, iddialı tasarımıyla dikkat çekiyor. Yeni nesil Hibrit Sistem, yakıt ekonomisini sürüş performansıyla uyumlu hale getirirken, 17,4 km/litre gibi bir tüketim verisine sahip. 245 PS güç üreten Tucson Hibrit, 100 km/s hıza 8.5 saniyede ulaşıyor. . Haber, tanıtım.",
+            "link": "https://x.com/murattosunMSE/status/2122028666427257162",
+            "score": 44,
+            "score_reason": "ai_scored",
+            "source_name": "MuratTosun",
+            "topic_fingerprint": "100-245-ayinda-cekiyor-dikkat-ekonomisini-gec-getirirken-guc-haber-hale-hibrit-hibrit-hiza-hyundai-iddiali-litre-nesil-nisan-performansiyla-sahip-saniyede-satisa-sistem-sunulacak-surus-tanitim-tasarimiyla-tucson-tucson-tucson-tuketim-turkiye-ulasiyor-ureten-uyumlu-verisine-yakit"
+          },
+          {
+            "title": "Türkiye otomotiv sektörü 2026: İhracat gelirleri hacim kaybına direniyor",
+            "link": "https://www.otoajanda.com/turkiye-otomotiv-sektoru-2026-ihracat-uretim-raporu/",
+            "score": 40,
+            "score_reason": "ai_scored",
+            "source_name": "OtoAjanda",
+            "topic_fingerprint": "2026-direniyor-gelirleri-hacim-hracat-kaybina-otomotiv-sektoru-turkiye"
+          }
+        ]
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-16T06:02:21.606871+03:00"
     },
     "write": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+          "link": "https://tr.motor1.com/news/815501/porsche-ring-missions-ilk-casus/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-15T17:00:00+00:00",
+          "summary": "Mission S piste çıktı, ancak Porsche henüz testlere başlamadı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg"
+          ],
+          "image_source": "rss",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-nurburgring-otomobili-porsche-super",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche markası ve Nürburgring testleri her zaman otomobil tutkunlarının ilgisini çeker, yüksek etkileşim potansiyeline sahip.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche'nin Mission S süper otomobil konseptini tanıtmasının üzerinden henüz 1 ay geçmeden, araç Nürburgring'de boy gösterdi. @jb922_3rsve @porsche.gt.brtarafından Instagram'da paylaşılan bir video, Mission S'i pistte, kaputunda kamera ekipmanı olan siyah bir Mercedes-Benz van eşliğinde gösteriyor. Arabanın sakince kullanılmasından yola çıkarak bunun bir test sürüşü değil bir fotoğraf çekimi olduğunu anlıyoruz. Ortadan motorlu süper otomobil,911'inüzerinde konumlanmak üzere tasarlanmış ve harika bir motor sesi çıkarıyor, ancak otomobil üreticisi kaputun altında ne olduğunu doğrulamıyor. Mission S'in hibritleşmiş bir boxer 8 silindirli motoru olabileceği konuşuluyor. Porsche, Mission S hakkında “çok etkileyici bir geri bildirim” aldı ve müşteriler sıraya girmeye başladı. Süper otomobil konsepti, markanın gelecekteki tasarım yönünü ve yeni bir süper spor otomobil platformunu önizleyen bir “vizyon modeli”. Yani henüz üretim programı bulunmuyor. Mission S; 911, 959, 917 ve GT1 gibi Porsche efsanelerinden ilham alan çarpıcı bir tasarıma sahip. Dış tasarım dili “Yüzen Hacimler” olarak adlandırılıyor ve içeride analog göstergeler ile dijital ekranları karıştırıyor. Güç ünitesi detayları gizemini korurken, konseptin gelecekteki bir versiyonumanuel şanzıman ile gelebilir.Porsche CEO'su Michael Leiters, “Müşteri talebi, bu platformda ne inşa edeceğimizi belirleyecek” dedi. Arabanın çarpıcı tasarımı ve egzoz kliplerinin ötesinde,Porschearaba hakkında herhangi bir detay vermedi. Teknik özellikler, performans rakamları ve muhtemel fiyat sıkı sıkıya korunan sırlar. Otomobil üreticisi, yeni bir süper otomobil için olası bir üretim tarihi bile ima etmedi. Kaynak:Jb922_3rs / InstagramileThe Supercar Blog Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin."
+        },
+        "post_text": "PORSCHE'NİN YENİ SÜPER OTOMOBİLİ NÜRBURGRİNG'DE GÖRÜNTÜLENDİ\n\nMission S piste çıktı, ancak Porsche henüz testlere başlamadı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "post_text_length": 179,
+        "story_card_title": "PORSCHE PİSTLERİ SALLAMAYA GELİYOR",
+        "story_card_subtitle": "Alman üreticinin gizemli yeni süper otomobili Nürburgring'de objektiflere takıldı. Mission S adı anılan prototip henüz testlerin başında olmasına rağmen şimdiden büyük merak uyandırdı. Performans dünyasının yeni gözdesi olacak bu modelin pistlerde ne süreler çıkaracağı ise şimdiden büyük bir tartışma konusu.",
+        "skipped": false
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-16T06:02:39.681004+03:00"
     },
     "image": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "article": {
+          "title": "Porsche'nin yeni süper otomobili Nürburgring'de görüntülendi",
+          "link": "https://tr.motor1.com/news/815501/porsche-ring-missions-ilk-casus/",
+          "nitter_url": "",
+          "source_instance": "",
+          "published": "2026-11-15T17:00:00+00:00",
+          "summary": "Mission S piste çıktı, ancak Porsche henüz testlere başlamadı.",
+          "image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "rss_image_url": "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg",
+          "image_candidates": [
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s3/porsche-mission-s-spy-video.jpg"
+          ],
+          "image_source": "meta_og",
+          "source_name": "Motor1 TR",
+          "source_priority": "medium",
+          "language": "tr",
+          "can_scrape_image": true,
+          "trend_count": 1,
+          "trend_bonus": 1,
+          "topic_fingerprint": "goruntulendi-nurburgring-otomobili-porsche-super",
+          "base_ai_score": 65,
+          "score_breakdown": {
+            "guncellik": 17,
+            "etkilesim_potansiyeli": 18,
+            "benzersizlik": 12,
+            "gundem_gucu": 12,
+            "paylasilabilirlik": 8
+          },
+          "score": 67,
+          "score_reason": "ai_scored",
+          "score_explanation": "Porsche markası ve Nürburgring testleri her zaman otomobil tutkunlarının ilgisini çeker, yüksek etkileşim potansiyeline sahip.",
+          "freshness_bonus": 1,
+          "trend_bonus_raw": 1,
+          "full_text": "Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin. Porsche'nin Mission S süper otomobil konseptini tanıtmasının üzerinden henüz 1 ay geçmeden, araç Nürburgring'de boy gösterdi. @jb922_3rsve @porsche.gt.brtarafından Instagram'da paylaşılan bir video, Mission S'i pistte, kaputunda kamera ekipmanı olan siyah bir Mercedes-Benz van eşliğinde gösteriyor. Arabanın sakince kullanılmasından yola çıkarak bunun bir test sürüşü değil bir fotoğraf çekimi olduğunu anlıyoruz. Ortadan motorlu süper otomobil,911'inüzerinde konumlanmak üzere tasarlanmış ve harika bir motor sesi çıkarıyor, ancak otomobil üreticisi kaputun altında ne olduğunu doğrulamıyor. Mission S'in hibritleşmiş bir boxer 8 silindirli motoru olabileceği konuşuluyor. Porsche, Mission S hakkında “çok etkileyici bir geri bildirim” aldı ve müşteriler sıraya girmeye başladı. Süper otomobil konsepti, markanın gelecekteki tasarım yönünü ve yeni bir süper spor otomobil platformunu önizleyen bir “vizyon modeli”. Yani henüz üretim programı bulunmuyor. Mission S; 911, 959, 917 ve GT1 gibi Porsche efsanelerinden ilham alan çarpıcı bir tasarıma sahip. Dış tasarım dili “Yüzen Hacimler” olarak adlandırılıyor ve içeride analog göstergeler ile dijital ekranları karıştırıyor. Güç ünitesi detayları gizemini korurken, konseptin gelecekteki bir versiyonumanuel şanzıman ile gelebilir.Porsche CEO'su Michael Leiters, “Müşteri talebi, bu platformda ne inşa edeceğimizi belirleyecek” dedi. Arabanın çarpıcı tasarımı ve egzoz kliplerinin ötesinde,Porschearaba hakkında herhangi bir detay vermedi. Teknik özellikler, performans rakamları ve muhtemel fiyat sıkı sıkıya korunan sırlar. Otomobil üreticisi, yeni bir süper otomobil için olası bir üretim tarihi bile ima etmedi. Kaynak:Jb922_3rs / InstagramileThe Supercar Blog Banner reklamlar, kişiselleştirilmiş takip ve video reklamlar olmadan bu ve diğer birçok web sitesinde gezinin.",
+          "post_text_for_card": "PORSCHE'NİN YENİ SÜPER OTOMOBİLİ NÜRBURGRİNG'DE GÖRÜNTÜLENDİ\n\nMission S piste çıktı, ancak Porsche henüz testlere başlamadı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+          "story_card_title": "PORSCHE PİSTLERİ SALLAMAYA GELİYOR",
+          "story_card_subtitle": "Alman üreticinin gizemli yeni süper otomobili Nürburgring'de objektiflere takıldı. Mission S adı anılan prototip henüz testlerin başında olmasına rağmen şimdiden büyük merak uyandırdı. Performans dünyasının yeni gözdesi olacak bu modelin pistlerde ne süreler çıkaracağı ise şimdiden büyük bir tartışma konusu.",
+          "image_sources": [
+            "meta_og",
+            "article_img",
+            "article_script",
+            "article_script"
+          ],
+          "prepared_image_count": 4,
+          "original_image_urls": [
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s1/porsche-mission-s-spy-video.jpg",
+            "https://cdn.motor1.com/images/mgl/407v0K/s3/porsche-mission-s-concept.jpg",
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s1/4x3/porsche-mission-s-spy-video.webp",
+            "https://cdn.motor1.com/images/mgl/1ZPjyL/s1/1x1/porsche-mission-s-spy-video.webp"
+          ]
+        },
+        "post_text": "PORSCHE'NİN YENİ SÜPER OTOMOBİLİ NÜRBURGRİNG'DE GÖRÜNTÜLENDİ\n\nMission S piste çıktı, ancak Porsche henüz testlere başlamadı.\n\nBu gelişme otomobil gündemini bir süre meşgul edecek.",
+        "story_card_title": "PORSCHE PİSTLERİ SALLAMAYA GELİYOR",
+        "story_card_subtitle": "Alman üreticinin gizemli yeni süper otomobili Nürburgring'de objektiflere takıldı. Mission S adı anılan prototip henüz testlerin başında olmasına rağmen şimdiden büyük merak uyandırdı. Performans dünyasının yeni gözdesi olacak bu modelin pistlerde ne süreler çıkaracağı ise şimdiden büyük bir tartışma konusu.",
+        "image_path": "/tmp/otoxtra_img__16320sc.jpg",
+        "image_paths": [
+          "/tmp/otoxtra_img__16320sc.jpg",
+          "/tmp/otoxtra_img_kmv5tloh.jpg",
+          "/tmp/otoxtra_img_y49vg672.jpg",
+          "/tmp/otoxtra_img_4y1ggqqh.jpg"
+        ],
+        "image_source": "meta_og",
+        "image_count": 4
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-16T06:02:40.639562+03:00"
     },
     "publish": {
-      "status": "waiting",
-      "output": null,
+      "status": "done",
+      "output": {
+        "success": true,
+        "post_id": "678053852057751_122188307954916499",
+        "story_status": {
+          "instagram": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "17876338062639978",
+            "error": ""
+          },
+          "facebook": {
+            "enabled": true,
+            "attempted": true,
+            "success": true,
+            "id": "1508008101190349",
+            "error": ""
+          }
+        }
+      },
       "error": null,
-      "updated_at": null
+      "updated_at": "2026-11-16T06:03:17.257502+03:00"
     }
   }
 }
